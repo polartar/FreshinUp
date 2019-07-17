@@ -1,0 +1,119 @@
+# CircleCI 2.0 configuration file
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+
+    docker:
+      # specify the version you desire here
+      - image: laratools/ci:7.2
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - c8:74:ee:f7:9d:4c:37:cc:56:cd:11:be:0d:c5:f0:78
+
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: COMPOSER_MEMORY_LIMIT=2G composer install -n -o --profile
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
+          paths:
+            - ./vendor
+
+  test_php:
+    working_directory: ~/repo
+
+    docker:
+      - image: laratools/ci:7.2
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - c8:74:ee:f7:9d:4c:37:cc:56:cd:11:be:0d:c5:f0:78
+
+      - checkout
+
+      - run: COMPOSER_MEMORY_LIMIT=2G composer install -n -o --profile
+
+      - run:
+          name: Information
+          command: |
+            php --version
+            composer --version
+            php artisan fresh-bus:version
+
+      - run:
+          name: Lint PHP
+          command: composer lint
+
+      - run:
+          name: Unit Test with Code Coverage
+          command: composer test
+
+  test_js:
+    working_directory: ~/repo
+
+    docker:
+      - image: laratools/ci:7.2
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 67:92:8e:2a:ea:99:9c:0f:04:6a:b6:b8:21:4f:01:34
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install Node Dependencies
+          command: |
+            set +e
+            export NVM_DIR="/root/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+            # Each step uses the same `$BASH_ENV`, so need to modify it
+            echo 'export NVM_DIR="/root/.nvm"' >> $BASH_ENV
+            echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
+            source /root/.nvm/nvm.sh
+            nvm install 8
+            nvm use 8
+            npm i -g yarn
+            yarn install
+
+      - run:
+          name: JS Lint
+          command: |
+            source /root/.nvm/nvm.sh
+            yarn lint
+
+      - run:
+          name: JS Test with Coverage
+          command: |
+            source /root/.nvm/nvm.sh
+            yarn test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test_php:
+          requires:
+            - build
+      - test_js:
+          requires:
+            - build
