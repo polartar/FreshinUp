@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "> 2%"
+          ]
+        },
+        "forceAllTransforms": true
+      }
+    ],
+    "vue"
+  ],
+  "plugins": [
+    [ "@babel/plugin-transform-runtime", { "helpers": false } ],
+    "@babel/plugin-transform-regenerator"
+  ]
+}
