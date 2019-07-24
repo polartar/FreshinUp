@@ -48,7 +48,7 @@ describe('Admin layout', () => {
       })
       window.location.assign = jest.fn() // Create a spy
       await wrapper.vm.signout()
-      expect(window.location.assign).toHaveBeenCalledWith('/auth');
+      expect(window.location.assign).toHaveBeenCalledWith('/auth')
     })
   })
 })
