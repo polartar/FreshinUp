@@ -34,6 +34,12 @@ return [
     */
 
     'connections' => [
+        'sqlite_testing' => [
+            'driver' => 'sqlite',
+            'database'  => dirname(__DIR__) . '/storage/testing.sqlite',
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
