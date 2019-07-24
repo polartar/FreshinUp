@@ -13,7 +13,7 @@
         width="220px"
       >
         <div class="logo-container">
-          <img :src="logo" />
+          <img :src="logo">
         </div>
         <navigation-drawer-list :items="items" />
       </v-navigation-drawer>
