@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.107.5",
+            "version": "3.107.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021"
+                "reference": "59e56f9ca6d32d3940d71dd9a95b6f784975fd89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99ec85834bbbeb9365c34a46b792c5421775f021",
-                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/59e56f9ca6d32d3940d71dd9a95b6f784975fd89",
+                "reference": "59e56f9ca6d32d3940d71dd9a95b6f784975fd89",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-22T18:31:27+00:00"
+            "time": "2019-07-23T18:42:17+00:00"
         },
         {
             "name": "bensampo/laravel-enum",
@@ -2573,29 +2573,24 @@
         },
         {
             "name": "maennchen/zipstream-php",
-            "version": "1.2.0",
+            "version": "v0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maennchen/ZipStream-PHP.git",
-                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2"
+                "reference": "95922b6324955974675fd4923f987faa598408af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
-                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/95922b6324955974675fd4923f987faa598408af",
+                "reference": "95922b6324955974675fd4923f987faa598408af",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "myclabs/php-enum": "^1.5",
-                "php": ">= 7.1",
-                "psr/http-message": "^1.0"
+                "php": ">= 7.0"
             },
             "require-dev": {
-                "ext-zip": "*",
-                "guzzlehttp/guzzle": ">= 6.3",
-                "mikey179/vfsstream": "^1.6",
-                "phpunit/phpunit": ">= 7.5"
+                "phpunit/phpunit": "^6.3"
             },
             "type": "library",
             "autoload": {
@@ -2619,10 +2614,6 @@
                 {
                     "name": "Jonatan Männchen",
                     "email": "jonatan@maennchen.ch"
-                },
-                {
-                    "name": "András Kolesár",
-                    "email": "kolesar@kolesar.hu"
                 }
             ],
             "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
@@ -2630,7 +2621,7 @@
                 "stream",
                 "zip"
             ],
-            "time": "2019-07-17T11:01:58+00:00"
+            "time": "2018-02-09T09:26:57+00:00"
         },
         {
             "name": "mnapoli/front-yaml",
@@ -3161,51 +3152,6 @@
                 "yml"
             ],
             "time": "2017-02-24T16:06:33+00:00"
-        },
-        {
-            "name": "myclabs/php-enum",
-            "version": "1.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/myclabs/php-enum.git",
-                "reference": "f46847626b8739de22e4ebc6b56010f317d4448d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/f46847626b8739de22e4ebc6b56010f317d4448d",
-                "reference": "f46847626b8739de22e4ebc6b56010f317d4448d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
-                "squizlabs/php_codesniffer": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MyCLabs\\Enum\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP Enum contributors",
-                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
-                }
-            ],
-            "description": "PHP Enum implementation",
-            "homepage": "http://github.com/myclabs/php-enum",
-            "keywords": [
-                "enum"
-            ],
-            "time": "2019-05-05T10:12:03+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -4390,21 +4336,20 @@
         },
         {
             "name": "spatie/image",
-            "version": "1.7.2",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "61fa48fa4cb85eda4ef4f8f20b1c27edd9d38e85"
+                "reference": "d4cb6afff1b98fd6e17396d91e0e584c3d91bb23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/61fa48fa4cb85eda4ef4f8f20b1c27edd9d38e85",
-                "reference": "61fa48fa4cb85eda4ef4f8f20b1c27edd9d38e85",
+                "url": "https://api.github.com/repos/spatie/image/zipball/d4cb6afff1b98fd6e17396d91e0e584c3d91bb23",
+                "reference": "d4cb6afff1b98fd6e17396d91e0e584c3d91bb23",
                 "shasum": ""
             },
             "require": {
-                "ext-exif": "*",
-                "league/glide": "^1.4",
+                "league/glide": "^1.2",
                 "php": "^7.0",
                 "spatie/image-optimizer": "^1.0",
                 "spatie/temporary-directory": "^1.0.0",
@@ -4439,7 +4384,7 @@
                 "image",
                 "spatie"
             ],
-            "time": "2019-05-13T11:38:22+00:00"
+            "time": "2018-05-05T21:44:52+00:00"
         },
         {
             "name": "spatie/image-optimizer",
@@ -4548,28 +4493,26 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "7.6.9",
+            "version": "7.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "b73de128de2fbc124beff3bc3dd9b6e549c4e009"
+                "reference": "8d85c4e9046f60d94f7df66c6c3163eb019f4f8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/b73de128de2fbc124beff3bc3dd9b6e549c4e009",
-                "reference": "b73de128de2fbc124beff3bc3dd9b6e549c4e009",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8d85c4e9046f60d94f7df66c6c3163eb019f4f8d",
+                "reference": "8d85c4e9046f60d94f7df66c6c3163eb019f4f8d",
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
-                "ext-imagick": "*",
                 "illuminate/bus": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/console": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/database": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/pipeline": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "league/flysystem": "^1.0.8",
-                "maennchen/zipstream-php": "^0.4|^1.0",
+                "maennchen/zipstream-php": "~0.4",
                 "php": "^7.2",
                 "spatie/image": "^1.4.0",
                 "spatie/pdf-to-image": "^1.2",
@@ -4629,7 +4572,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2019-07-22T23:50:27+00:00"
+            "time": "2019-07-12T11:25:27+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -4756,24 +4699,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.8.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26"
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
-                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
                 "shasum": ""
             },
             "require": {
-                "ext-imagick": "*",
-                "php": "^7.0"
+                "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2"
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
             "autoload": {
@@ -4802,7 +4745,7 @@
                 "pdf-to-image",
                 "spatie"
             ],
-            "time": "2018-07-02T09:30:32+00:00"
+            "time": "2016-12-14T15:37:00+00:00"
         },
         {
             "name": "spatie/temporary-directory",
