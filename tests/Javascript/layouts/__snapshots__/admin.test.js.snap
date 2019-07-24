@@ -1,0 +1,623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin layout mount snapshot of layout 1`] = `
+<div>
+  <aside
+    class="v-navigation-drawer v-navigation-drawer--fixed v-navigation-drawer--open theme--dark"
+    color="white"
+    style="height: 100%; margin-top: 0px; max-height: calc(100% - 32px); transform: translateX(0px); width: 220px;"
+  >
+    <div
+      class="logo-container"
+    >
+      <img
+        src="https://freshinup.com/wp-content/uploads/2018/08/logo_Freshinup_final-1.png"
+      />
+    </div>
+     
+    <div
+      class="v-list theme--dark"
+      role="list"
+    >
+      <div
+        class="v-list__group"
+      >
+        <div
+          class="v-list__group__header"
+        >
+          <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              dashboard
+            </i>
+          </div>
+          <div
+            role="listitem"
+          >
+            <div
+              class="v-list__tile theme--dark"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Dashboard
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-list__group__header__append-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-list__group__items v-list__group__items--no-action"
+          style="display: none;"
+        >
+           
+          <div
+            role="listitem"
+          >
+            <router-link
+              class="v-list__tile v-list__tile--link theme--dark"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Home
+                </div>
+              </div>
+               
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-list__group"
+      >
+        <div
+          class="v-list__group__header"
+        >
+          <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              supervised_user_circle
+            </i>
+          </div>
+          <div
+            role="listitem"
+          >
+            <div
+              class="v-list__tile theme--dark"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Base User
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-list__group__header__append-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-list__group__items v-list__group__items--no-action"
+          style="display: none;"
+        >
+           
+          <div
+            role="listitem"
+          >
+            <a
+              class="v-list__tile v-list__tile--link theme--dark"
+              href="/admin/users"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Users
+                </div>
+              </div>
+               
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
+            </a>
+          </div>
+          <div
+            role="listitem"
+          >
+            <a
+              class="v-list__tile v-list__tile--link theme--dark"
+              href="/admin/teams"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Teams
+                </div>
+              </div>
+               
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
+            </a>
+          </div>
+          <div
+            role="listitem"
+          >
+            <a
+              class="v-list__tile v-list__tile--link theme--dark"
+              href="/admin/companies"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Companies
+                </div>
+              </div>
+               
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-list__group"
+      >
+        <div
+          class="v-list__group__header"
+        >
+          <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              settings
+            </i>
+          </div>
+          <div
+            role="listitem"
+          >
+            <div
+              class="v-list__tile theme--dark"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Platform Settings
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-list__group__header__append-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-list__group__items v-list__group__items--no-action"
+          style="display: none;"
+        >
+           
+          <div
+            role="listitem"
+          >
+            <router-link
+              class="v-list__tile v-list__tile--link theme--dark"
+            >
+              <div
+                class="v-list__tile__content"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  Terms
+                </div>
+              </div>
+               
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-navigation-drawer__border"
+    />
+  </aside>
+   
+  <nav
+    class="v-toolbar elevation-0 v-toolbar--fixed theme--light white"
+    style="margin-top: 0px; padding-right: 0px; padding-left: 220px; transform: translateY(0px);"
+  >
+    <div
+      class="v-toolbar__content"
+      style="height: 64px;"
+    >
+      <div
+        class="v-toolbar__title"
+      >
+        <div
+          class="flex primary--text"
+        >
+          
+          Food Fleet Admins
+        
+        </div>
+      </div>
+       
+      <div
+        class="spacer"
+      />
+       
+      <div
+        class="v-menu v-menu--inline"
+      >
+        <div
+          class="v-menu__activator v-menu__activator--disabled"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <span
+                class="v-badge v-badge--overlap"
+              >
+                <!---->
+                 
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light grey--text text--darken-2"
+                  style="font-size: 28px;"
+                >
+                  notifications
+                </i>
+                <!---->
+              </span>
+            </div>
+          </button>
+        </div>
+        <div
+          class="v-menu__content theme--light "
+          style="max-height: auto; min-width: 0px; max-width: 320px; top: 12px; left: 12px; transform-origin: right top; z-index: 0; display: none;"
+        >
+           
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-list theme--light"
+              role="list"
+            />
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-menu v-menu--inline"
+      >
+        <div
+          class="v-menu__activator"
+        >
+          <button
+            class="avatar v-btn v-btn--flat v-btn--icon theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <div
+                class="v-avatar"
+                style="height: 48px; width: 48px;"
+              >
+                <img />
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="v-menu__content theme--light user-menu"
+          style="max-height: auto; min-width: 0px; max-width: 300px; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+        >
+           
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="layout pa-3 row"
+            >
+              <div
+                class="flex shrink"
+              >
+                <div
+                  class="v-avatar"
+                  style="height: 64px; width: 64px;"
+                >
+                  <img />
+                </div>
+              </div>
+               
+              <div
+                class="flex pl-3"
+              >
+                <h4
+                  class="title secondary--text"
+                >
+                  
+        
+      
+                </h4>
+                 
+                <span
+                  class="v-chip mx-0 pl-3 pr-3 v-chip--disabled v-chip--small theme--light secondary white--text"
+                  tabindex="-1"
+                >
+                  <span
+                    class="v-chip__content"
+                  >
+                    
+        
+      
+                  </span>
+                </span>
+                 
+                <div>
+                  <!---->
+                  
+        
+      
+                </div>
+              </div>
+            </div>
+             
+            <hr
+              class="v-divider theme--light"
+            />
+             
+            <div
+              class="v-list pb-0 theme--light"
+              role="list"
+            >
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Profile
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Teams
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Company
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Settings
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Company Settings
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+               
+              <!---->
+               
+              <hr
+                class="v-divider theme--light"
+              />
+               
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Sign Out
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+   
+  <main
+    class="v-content"
+    style="padding: 64px 0px 32px 220px;"
+  >
+    <div
+      class="v-content__wrap"
+    >
+      <!---->
+       
+      <router-view
+        style=""
+      />
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </main>
+   
+  <footer
+    class="v-footer white--text v-footer--fixed theme--light blue-grey"
+    style="height: 32px;"
+  >
+    <span>
+      Powered by FreshinUp
+    </span>
+     
+    <div
+      class="spacer"
+    />
+     
+    <span>
+      © 2019
+    </span>
+  </footer>
+</div>
+`;
