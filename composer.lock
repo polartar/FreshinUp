@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.107.1",
+            "version": "3.107.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ccd3d13ae49a45bdf6a394d701f207c276dbf05a"
+                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ccd3d13ae49a45bdf6a394d701f207c276dbf05a",
-                "reference": "ccd3d13ae49a45bdf6a394d701f207c276dbf05a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99ec85834bbbeb9365c34a46b792c5421775f021",
+                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021",
                 "shasum": ""
             },
             "require": {
@@ -87,20 +87,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-12T18:07:41+00:00"
+            "time": "2019-07-22T18:31:27+00:00"
         },
         {
             "name": "bensampo/laravel-enum",
-            "version": "v1.21.1",
+            "version": "v1.21.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BenSampo/laravel-enum.git",
-                "reference": "409196cbf8adb24e09cd40806951628e3a7f44db"
+                "reference": "2d8c2464d4857cec6ff76831635d6daa262b74e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BenSampo/laravel-enum/zipball/409196cbf8adb24e09cd40806951628e3a7f44db",
-                "reference": "409196cbf8adb24e09cd40806951628e3a7f44db",
+                "url": "https://api.github.com/repos/BenSampo/laravel-enum/zipball/2d8c2464d4857cec6ff76831635d6daa262b74e3",
+                "reference": "2d8c2464d4857cec6ff76831635d6daa262b74e3",
                 "shasum": ""
             },
             "require": {
@@ -152,7 +152,7 @@
                 "package",
                 "validation"
             ],
-            "time": "2019-07-15T07:30:54+00:00"
+            "time": "2019-07-17T09:21:09+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -774,16 +774,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.9",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25"
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/128cc721d771ec2c46ce59698f4ca42b73f71b25",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
                 "shasum": ""
             },
             "require": {
@@ -793,7 +793,8 @@
             "require-dev": {
                 "dominicsayers/isemail": "dev-master",
                 "phpunit/phpunit": "^4.8.35||^5.7||^6.0",
-                "satooshi/php-coveralls": "^1.0.1"
+                "satooshi/php-coveralls": "^1.0.1",
+                "symfony/phpunit-bridge": "^4.4@dev"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -827,7 +828,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-06-23T10:14:27+00:00"
+            "time": "2019-07-19T20:52:08+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1023,13 +1024,13 @@
             "authors": [
                 {
                     "name": "Neuman Vong",
-                    "email": "neuman+pear@twilio.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "neuman+pear@twilio.com"
                 },
                 {
                     "name": "Anant Narayanan",
-                    "email": "anant@php.net",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "anant@php.net"
                 }
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
@@ -2572,24 +2573,29 @@
         },
         {
             "name": "maennchen/zipstream-php",
-            "version": "v0.5.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maennchen/ZipStream-PHP.git",
-                "reference": "95922b6324955974675fd4923f987faa598408af"
+                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/95922b6324955974675fd4923f987faa598408af",
-                "reference": "95922b6324955974675fd4923f987faa598408af",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
+                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">= 7.0"
+                "myclabs/php-enum": "^1.5",
+                "php": ">= 7.1",
+                "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.3"
+                "ext-zip": "*",
+                "guzzlehttp/guzzle": ">= 6.3",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": ">= 7.5"
             },
             "type": "library",
             "autoload": {
@@ -2613,6 +2619,10 @@
                 {
                     "name": "Jonatan Männchen",
                     "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "András Kolesár",
+                    "email": "kolesar@kolesar.hu"
                 }
             ],
             "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
@@ -2620,7 +2630,7 @@
                 "stream",
                 "zip"
             ],
-            "time": "2018-02-09T09:26:57+00:00"
+            "time": "2019-07-17T11:01:58+00:00"
         },
         {
             "name": "mnapoli/front-yaml",
@@ -3153,17 +3163,62 @@
             "time": "2017-02-24T16:06:33+00:00"
         },
         {
-            "name": "nesbot/carbon",
-            "version": "2.21.0",
+            "name": "myclabs/php-enum",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "da6410b77f74eecd98d24ffb6dfecefccf3ca17f"
+                "url": "https://github.com/myclabs/php-enum.git",
+                "reference": "f46847626b8739de22e4ebc6b56010f317d4448d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/da6410b77f74eecd98d24ffb6dfecefccf3ca17f",
-                "reference": "da6410b77f74eecd98d24ffb6dfecefccf3ca17f",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/f46847626b8739de22e4ebc6b56010f317d4448d",
+                "reference": "f46847626b8739de22e4ebc6b56010f317d4448d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyCLabs\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Enum contributors",
+                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+                }
+            ],
+            "description": "PHP Enum implementation",
+            "homepage": "http://github.com/myclabs/php-enum",
+            "keywords": [
+                "enum"
+            ],
+            "time": "2019-05-05T10:12:03+00:00"
+        },
+        {
+            "name": "nesbot/carbon",
+            "version": "2.21.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/58bdbbfab17ccd2ec7347b99e997f18232def4dc",
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc",
                 "shasum": ""
             },
             "require": {
@@ -3217,7 +3272,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-07-14T17:06:46+00:00"
+            "time": "2019-07-18T18:47:28+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3686,21 +3741,21 @@
         },
         {
             "name": "piwik/device-detector",
-            "version": "3.11.8",
+            "version": "3.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matomo-org/device-detector.git",
-                "reference": "8bfdbafc07ef6ba1c3cfff3bbb0554a860828a39"
+                "reference": "a698de2c57d8e106b8f8e54671b4bf794dc9698e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/8bfdbafc07ef6ba1c3cfff3bbb0554a860828a39",
-                "reference": "8bfdbafc07ef6ba1c3cfff3bbb0554a860828a39",
+                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/a698de2c57d8e106b8f8e54671b4bf794dc9698e",
+                "reference": "a698de2c57d8e106b8f8e54671b4bf794dc9698e",
                 "shasum": ""
             },
             "require": {
                 "mustangostang/spyc": "*",
-                "php": ">=5.3.2"
+                "php": ">=5.5"
             },
             "require-dev": {
                 "fabpot/php-cs-fixer": "~1.7",
@@ -3737,7 +3792,7 @@
                 "parser",
                 "useragent"
             ],
-            "time": "2019-06-20T21:32:44+00:00"
+            "time": "2019-07-22T14:35:14+00:00"
         },
         {
             "name": "plank/laravel-metable",
@@ -4493,26 +4548,28 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "7.6.3",
+            "version": "7.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "8d85c4e9046f60d94f7df66c6c3163eb019f4f8d"
+                "reference": "b73de128de2fbc124beff3bc3dd9b6e549c4e009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8d85c4e9046f60d94f7df66c6c3163eb019f4f8d",
-                "reference": "8d85c4e9046f60d94f7df66c6c3163eb019f4f8d",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/b73de128de2fbc124beff3bc3dd9b6e549c4e009",
+                "reference": "b73de128de2fbc124beff3bc3dd9b6e549c4e009",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
+                "ext-imagick": "*",
                 "illuminate/bus": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/console": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/database": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/pipeline": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "league/flysystem": "^1.0.8",
-                "maennchen/zipstream-php": "~0.4",
+                "maennchen/zipstream-php": "^0.4|^1.0",
                 "php": "^7.2",
                 "spatie/image": "^1.4.0",
                 "spatie/pdf-to-image": "^1.2",
@@ -4555,9 +4612,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
+                    "homepage": "https://murze.be"
                 }
             ],
             "description": "Associate files with Eloquent models",
@@ -4572,7 +4629,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2019-07-12T11:25:27+00:00"
+            "time": "2019-07-22T23:50:27+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -4699,24 +4756,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.2.2",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
+                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
+                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "ext-imagick": "*",
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "autoload": {
@@ -4745,7 +4802,7 @@
                 "pdf-to-image",
                 "spatie"
             ],
-            "time": "2016-12-14T15:37:00+00:00"
+            "time": "2018-07-02T09:30:32+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -6498,7 +6555,7 @@
         },
         {
             "name": "windwalker/renderer",
-            "version": "3.5.8",
+            "version": "3.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-renderer.git",
@@ -6555,7 +6612,7 @@
         },
         {
             "name": "windwalker/structure",
-            "version": "3.5.8",
+            "version": "3.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-structure.git",
@@ -8012,8 +8069,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
