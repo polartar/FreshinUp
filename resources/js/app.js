@@ -88,3 +88,4 @@ appInstance.getRouter().addRoutes([ { path: '/', redirect: '/admin' }, { path: '
 
 // We may consider only exposing the app when a certain key is set (true EXPOSE_APP=true)
 window.__APP__ = appInstance
+export default appInstance
