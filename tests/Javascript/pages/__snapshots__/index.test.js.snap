@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page snapshot of page 1`] = `
+<main
+  class="v-content"
+  style="padding: 0px 0px 0px 0px;"
+>
+  <div
+    class="v-content__wrap"
+  >
+    
+  Welcome to Food Fleet
+
+  </div>
+</main>
+`;
