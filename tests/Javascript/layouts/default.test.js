@@ -4,14 +4,20 @@ import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_CURRENT_USER } from 'tests/__data__/users'
 import Component from '~/layouts/admin.vue'
 
-describe('Admin layout', () => {
+const mockAuth = {
+  logout: () => {
+    window.location.assign('/auth')
+  }
+}
+
+describe('Default layout', () => {
   let localVue, mock, store
   describe('mount', () => {
     beforeEach(async () => {
       store = createStore({
         currentUser: FIXTURE_CURRENT_USER,
         page: {
-          title: 'Admin template'
+          title: 'Default template'
         }
       })
       const vue = createLocalVue({ validation: true })
@@ -35,7 +41,18 @@ describe('Admin layout', () => {
       await wrapper.vm.$store.dispatch('users/getItem', { params: { id: 1 } })
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
+      expect(wrapper.find('.page-title').text()).toStrictEqual('Default template')
       expect(wrapper.element).toMatchSnapshot()
+    })
+    it('signout redirects', async () => {
+      const wrapper = mount(Component, {
+        localVue,
+        store,
+        mocks: { $auth: mockAuth }
+      })
+      window.location.assign = jest.fn() // Create a spy
+      await wrapper.vm.signout()
+      expect(window.location.assign).toHaveBeenCalledWith('/auth')
     })
   })
 })

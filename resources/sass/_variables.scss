@@ -1,5 +1,5 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #F2E6DB;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
@@ -18,12 +18,13 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
-$primary: #f37021;
-$secondary: #252525;
-$accent: #888;
-$error: #FF5252;
+$primary: #9fcebb;
+$primarydark: #508c85;
+$secondary: #d0883d;
+$accent: #888888;
+$error: #d94545;
 $info: #2196F3;
-$success: #4CAF50;
-$warning: #FFC107;
+$success: #71b179;
+$warning: #f9ad36;
 
 @import '~fresh-bus-sass/variables';

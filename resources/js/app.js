@@ -3,6 +3,7 @@ import {
   createStore
 } from 'fresh-bus'
 import NotFoundPage from 'fresh-bus/pages/404.vue'
+import page from '~/store/modules/page.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -13,7 +14,49 @@ const appInstance = new App({
   store: createStore({
     navigation: {
       title: 'Food Fleet',
-      drawerItems: [],
+      logo: '/images/logo.png',
+      drawerItems: [
+        {
+          action: 'icon-dashboard',
+          title: 'Dashboard',
+          to: '/admin'
+        },
+        {
+          action: 'icon-users',
+          title: 'Users',
+          to: '/admin/users'
+        },
+        {
+          action: 'icon-companies',
+          title: 'Companies',
+          to: '/admin/companies'
+        },
+        {
+          action: 'icon-trucks',
+          title: 'Fleet Members',
+          to: '/admin/fleet-members'
+        },
+        {
+          action: 'icon-venues',
+          title: 'Venues',
+          to: '/admin/venues'
+        },
+        {
+          action: 'icon-events',
+          title: 'Events',
+          to: '/admin/events'
+        },
+        {
+          action: 'icon-financial',
+          title: 'Financials',
+          to: '/admin/financials'
+        },
+        {
+          action: 'icon-reports',
+          title: 'Analytics',
+          to: '/admin/analytics'
+        }
+      ],
       items: []
     },
     navigationAdmin: {
@@ -63,9 +106,15 @@ const appInstance = new App({
       ]
     },
     ...initialState
+  },
+  {
+    modules: {
+      page: page({})
+    }
   }),
   theme: {
     primary: '#9fcebb',
+    primarydark: '#508c85',
     secondary: '#d0883d',
     accent: '#888888',
     inputaccent: '#E4EDEC',
