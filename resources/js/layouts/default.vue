@@ -290,7 +290,7 @@ export default {
   }
   /deep/ .v-navigation-drawer .v-list .v-list__tile.v-list__tile--active,
   /deep/ .v-navigation-drawer .v-list .v-list__tile:hover {
-    background-color: var(--v-primarydark-base);
+    background-color: var(--v-primary-base);
     color: white !important
   }
 

@@ -113,8 +113,7 @@ const appInstance = new App({
     }
   }),
   theme: {
-    primary: '#9fcebb',
-    primarydark: '#508c85',
+    primary: '#508c85',
     secondary: '#d0883d',
     accent: '#888888',
     inputaccent: '#E4EDEC',
