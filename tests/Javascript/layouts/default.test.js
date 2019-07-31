@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import { createLocalVue } from 'fresh-bus/tests/utils'
-import { FIXTURE_CURRENT_USER } from 'tests/__data__/users'
+import { FIXTURE_USER } from 'tests/__data__/users'
 import Component from '~/layouts/admin.vue'
 
 const mockAuth = {
@@ -15,7 +15,7 @@ describe('Default layout', () => {
   describe('mount', () => {
     beforeEach(async () => {
       store = createStore({
-        currentUser: FIXTURE_CURRENT_USER,
+        currentUser: FIXTURE_USER,
         page: {
           title: 'Default template'
         }
@@ -23,8 +23,8 @@ describe('Default layout', () => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
       mock = vue.mock
-        .onGet('api/currentUser').reply(200, FIXTURE_CURRENT_USER)
-        .onGet('api/users/1').reply(200, { data: FIXTURE_CURRENT_USER })
+        .onGet('api/currentUser').reply(200, FIXTURE_USER)
+        .onGet('api/users/1').reply(200, { data: FIXTURE_USER })
         .onAny().reply(config => {
           console.error('No mock match for ' + config.url, config)
           return [404, {}]

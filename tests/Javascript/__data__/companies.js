@@ -1,4 +1,4 @@
-export const FIXTURE_CURRENT_COMPANY = {
+export const FIXTURE_COMPANY = {
   'data': {
     'id': 1,
     'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',

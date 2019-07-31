@@ -1,4 +1,4 @@
-export const FIXTURE_CURRENT_USER = {
+export const FIXTURE_USER = {
   id: 1,
   uuid: '2cd4ac03-b3e1-4bbf-9c60-232af78e72a7',
   company_id: 1,
