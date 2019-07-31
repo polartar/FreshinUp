@@ -17,7 +17,7 @@ class NamedModelListTest extends TestCase
     /**
      * @test
      */
-    public function it_retrieves_model_list_in_the_correct_format()
+    public function itRetrievesModelListInTheCorrectFormat()
     {
         $this->listTest(PaymentType::class, 'payment-types');
         $this->listTest(Device::class, 'devices');
@@ -26,7 +26,7 @@ class NamedModelListTest extends TestCase
     /**
      * @test
      */
-    public function it_returns_the_correct_records_when_filtering_by_name()
+    public function itReturnsTheCorrectRecordsWhenFilteringByName()
     {
         $this->filterTest(PaymentType::class, 'payment-types');
         $this->filterTest(Device::class, 'devices');
