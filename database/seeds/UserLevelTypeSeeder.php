@@ -16,10 +16,10 @@ class UserLevelTypeSeeder extends Seeder
     public function run()
     {
         $levels = [
-            1 => 'Food Fleet Admin',
-            2 => 'Food Fleet Director',
-            3 => 'Food Fleet Lead',
-            4 => 'Food Fleet Member',
+            1 => 'FF Admin',
+            2 => 'FF Director',
+            3 => 'FF Lead',
+            4 => 'FF Member',
         ];
 
         $types = [
