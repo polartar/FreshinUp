@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Tests\Feature\Http\Controllers\CSM\SellStatuses;
+namespace Tests\Feature\Http\Controllers\Foodfleet\FinancialModifiers;
 
-use App\Models\CSM\Modifier;
+use App\Models\Foodfleet\FinancialModifier as Modifier;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -22,7 +22,7 @@ class FinancialReportsModifierTest extends TestCase
         Passport::actingAs($user);
 
         $data = $this
-            ->json('get', "/api/csm/financial-reports-modifiers")
+            ->json('get', "/api/foodfleet/financial-modifiers")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data',
@@ -36,7 +36,7 @@ class FinancialReportsModifierTest extends TestCase
         factory(Modifier::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/csm/financial-reports-modifiers")
+            ->json('get', "/api/foodfleet/financial-modifiers")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

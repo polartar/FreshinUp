@@ -14,75 +14,51 @@ class FinancialReportsTableSeeder extends Seeder
      */
     public function run()
     {
-        $modifierPreparedAfter = Modifier::where('name', 'prepared_after')->first();
-        $modifierPreparedBefore = Modifier::where('name', 'prepared_before')->first();
-        $modifierAppraisalStatus = Modifier::where('name', 'appraisal_status_uuid')->first();
-        $modifierSellStatus = Modifier::where('name', 'sell_status_uuid')->first();
-        $modifierOwningLocation = Modifier::where('name', 'owning_location_id')->first();
+        $modifierPaymentType = Modifier::where('name', 'payment_type_uuid')->first();
+        $modifierDevice = Modifier::where('name', 'device_uuid')->first();
+        $modifierMinPrice = Modifier::where('name', 'min_price')->first();
+        $modifierMaxPrice = Modifier::where('name', 'max_price')->first();
         $demoAdmin = User::where('email', 'demoAdmin@example.com')->first();
 
         $saved = [
             [
                 'name' => 'My Custom Report #1',
                 'filters' => json_encode([
-                    'prepared_by_uuid' => User::get()->random()->uuid,
-                    'prepared_after' => '2019-01-01',
-                    'prepared_before' => '2019-07-01',
-                    'appraisal_status_uuid' => \App\Models\CSM\AppraisalStatus::get()->random()->uuid,
-                    'taken_in_by_uuid' => User::get()->random()->uuid,
-                    'customer_uuid' => \App\Models\CSM\Company::get()->random()->uuid,
-                    'sell_status_uuid' => \App\Models\CSM\SellStatus::get()->random()->uuid,
-                    'vehicle_uuid' => \App\Models\CSM\Vehicle::get()->random()->uuid,
-                    'authorized_by_uuid' => User::get()->random()->uuid,
-                    'owning_location_id' => \App\Models\CSM\Branch::get()->random()->id,
-                    'current_location_id' => \App\Models\CSM\Branch::get()->random()->id,
-                    'matrix_value_range' => [30000, 50000],
-                    'appraised_value_range' => [null, 100000],
-                    'minimum_sell_range' => [5000, null],
-                    'scheduled_after' => '1972-01-01',
-                    'acquired_before' => '2020-01-01',
-                    'delivery_after' => '1972-01-01',
-                    'delivery_before' => '2020-01-01',
-                    'vin' => \App\Models\CSM\Vehicle::get()->random()->vin,
-                    'stock_number' => \App\Models\CSM\Vehicle::get()->random()->stock_number
+                    'transaction_id' => 1,
+                    'category' => 'Test',
                 ]),
                 'user_id' => $demoAdmin->id,
-                'modifier_1_id' => $modifierPreparedAfter->id,
-                'modifier_2_id' => $modifierPreparedBefore->id
+                'modifier_1_id' => $modifierPaymentType->id,
+                'modifier_2_id' => $modifierDevice->id
             ],
             [
                 'name' => 'My Custom Report #2',
-                'type' => ReportableType::SAVED,
                 'filters' => json_encode([
-                    'current_location_id' => 2,
+                    'customer_id' => 2,
                 ]),
                 'user_id' => $demoAdmin->id,
-                'modifier_1_id' => $modifierPreparedAfter->id,
-                'modifier_2_id' => $modifierPreparedBefore->id,
+                'modifier_1_id' => $modifierPaymentType->id,
+                'modifier_2_id' => $modifierDevice->id,
             ],
             [
                 'name' => 'My Custom Report #3',
-                'type' => ReportableType::SAVED,
                 'filters' => json_encode([
-                    'current_location_id' => 2,
-                    'prepared_after' => '2019-01-01',
-                    'prepared_before' => '2019-07-01',
+                    'customer_name' => 'John',
+                    'reference_id' => 2
                 ]),
                 'user_id' => $demoAdmin->id,
-                'modifier_1_id' => $modifierAppraisalStatus->id,
-                'modifier_2_id' => $modifierSellStatus->id
+                'modifier_1_id' => $modifierMinPrice->id,
+                'modifier_2_id' => $modifierMaxPrice->id
             ],
             [
                 'name' => 'My Custom Report #4',
-                'type' => ReportableType::SAVED,
                 'filters' => json_encode([
-                    'current_location_id' => 4,
-                    'prepared_after' => '2019-01-01',
-                    'prepared_before' => '2019-07-01',
+                    'transaction_id' => 4,
+                    'customer_name' => 'Rover'
                 ]),
                 'user_id' => $demoAdmin->id,
-                'modifier_1_id' => $modifierAppraisalStatus->id,
-                'modifier_2_id' => $modifierOwningLocation->id
+                'modifier_1_id' => $modifierMinPrice->id,
+                'modifier_2_id' => $modifierPaymentType->id
             ]
         ];
 

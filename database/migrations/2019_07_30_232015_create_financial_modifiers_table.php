@@ -16,7 +16,7 @@ class CreateFinancialModifiersTable extends Migration
         Schema::create('financial_modifiers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('resource_name');
+            $table->string('resource_name')->nullable();
             $table->string('label');
             $table->string('placeholder');
             $table->timestamps();

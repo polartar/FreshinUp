@@ -3,7 +3,6 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Modifier as ModifierResource;
 use App\Models\Foodfleet\FinancialModifier as Modifier;

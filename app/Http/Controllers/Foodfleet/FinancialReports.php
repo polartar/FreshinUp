@@ -44,8 +44,8 @@ class FinancialReports extends Controller
         $this->validate($request, [
             'name' => 'required',
             'filters' => 'json|required',
-            'modifier_1_id' => 'nullable|integer|exists:modifiers,id',
-            'modifier_2_id' => 'nullable|integer|exists:modifiers,id'
+            'modifier_1_id' => 'nullable|integer|exists:financial_modifiers,id',
+            'modifier_2_id' => 'nullable|integer|exists:financial_modifiers,id'
         ]);
 
         $inputs = $request->input();
@@ -83,8 +83,8 @@ class FinancialReports extends Controller
         $this->validate($request, [
             'name' => 'required',
             'filters' => 'json|required',
-            'modifier_1_id' => 'nullable|integer|exists:modifiers,id',
-            'modifier_2_id' => 'nullable|integer|exists:modifiers,id'
+            'modifier_1_id' => 'nullable|integer|exists:financial_modifiers,id',
+            'modifier_2_id' => 'nullable|integer|exists:financial_modifiers,id'
         ]);
 
         $inputs = $request->input();

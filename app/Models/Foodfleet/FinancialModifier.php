@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FinancialModifier extends Model
 {
-    public $table = 'modifiers';
+    public $table = 'financial_modifiers';
     protected $guarded = [];
     protected $dates = ['created_at', 'updated_at'];
 }

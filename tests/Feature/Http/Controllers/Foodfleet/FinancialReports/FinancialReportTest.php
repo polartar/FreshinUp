@@ -26,26 +26,12 @@ class FinancialReportTest extends TestCase
 
         Passport::actingAs($user);
 
-        $modifier1 = factory(Modifier::class)->create();
-        $modifier2 = factory(Modifier::class)->create();
-        $modifier3 = factory(Modifier::class)->create();
-        $modifier4 = factory(Modifier::class)->create();
-
-        $savedReports = factory(FinancialReport::class, 5)->create([
-            'user_id' => $user->id,
-            'modifier_1_id' => $modifier1->id,
-            'modifier_2_id' => $modifier2->id
+        $reports = factory(FinancialReport::class, 5)->create([
+            'user_id' => $user->id
         ]);
-        $featuredReports = factory(FinancialReport::class, 5)->create([
-            'modifier_1_id' => $modifier3->id,
-            'modifier_2_id' => $modifier4->id
-        ]);
-
-        $reports = $savedReports
-            ->toBase()->merge($featuredReports);
 
         $data = $this
-            ->json('get', "/api/csm/financial-reports")
+            ->json('get', "/api/foodfleet/financial-reports")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -53,7 +39,7 @@ class FinancialReportTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(10, count($data));
+        $this->assertEquals(5, count($data));
         foreach ($reports as $idx => $report) {
             $this->assertArraySubset([
                 'id' => $report->id,
@@ -77,7 +63,7 @@ class FinancialReportTest extends TestCase
         Passport::actingAs($user);
 
         $this
-            ->json('get', "/api/csm/financial-reports/1")
+            ->json('get', "/api/foodfleet/financial-reports/1")
             ->assertStatus(404);
 
         $modifier1 = factory(Modifier::class)->create();
@@ -90,7 +76,7 @@ class FinancialReportTest extends TestCase
         $data = $this
             ->json(
                 'get',
-                "/api/csm/financial-reports/" . $report->id
+                "/api/foodfleet/financial-reports/" . $report->id
             )
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -134,18 +120,17 @@ class FinancialReportTest extends TestCase
         Passport::actingAs($user);
 
         $this
-            ->json('post', "/api/csm/financial-reports", [])
+            ->json('post', "/api/foodfleet/financial-reports", [])
             ->assertStatus(422);
 
         $modifier1 = factory(Modifier::class)->create();
         $modifier2 = factory(Modifier::class)->create();
-        $report = factory(FinancialReport::class)->states('saved')->make();
+        $report = factory(FinancialReport::class)->make();
         $inputs = $report->toArray();
-        $inputs['type'] = strtolower(ReportableType::getKey($inputs['type']));
         $inputs['modifier_1_id'] = $modifier1->id;
         $inputs['modifier_2_id'] = $modifier2->id;
         $data = $this
-            ->json('post', "/api/csm/financial-reports", $inputs)
+            ->json('post', "/api/foodfleet/financial-reports", $inputs)
             ->assertStatus(201)
             ->assertJsonStructure([
                 'data'
@@ -154,7 +139,6 @@ class FinancialReportTest extends TestCase
 
         $this->assertDatabaseHas('financial_reports', [
             'name' => $report->name,
-            'type' => $report->type,
             'modifier_1_id' => $modifier1->id,
             'modifier_2_id' => $modifier2->id,
             'user_id' => $user->id
@@ -162,47 +146,6 @@ class FinancialReportTest extends TestCase
 
         $this->assertArraySubset([
             'name' => $report->name,
-            'type' => strtolower(ReportableType::getKey($report->type)),
-            'modifier_1' => [
-                'id' => $modifier1->id,
-                'name' => $modifier1->name,
-                'resource_name' => $modifier1->resource_name,
-                'label' => $modifier1->label,
-                'placeholder' => $modifier1->placeholder,
-            ],
-            'modifier_2' => [
-                'id' => $modifier2->id,
-                'name' => $modifier2->name,
-                'resource_name' => $modifier2->resource_name,
-                'label' => $modifier2->label,
-                'placeholder' => $modifier2->placeholder,
-            ],
-            'filters' => json_decode($report->filters, true)
-        ], $data);
-
-        $report = factory(FinancialReport::class)->states('featured')->make();
-        $inputs = $report->toArray();
-        $inputs['type'] = strtolower(ReportableType::getKey($inputs['type']));
-        $inputs['modifier_1_id'] = $modifier1->id;
-        $inputs['modifier_2_id'] = $modifier2->id;
-        $data = $this
-            ->json('post', "/api/csm/financial-reports", $inputs)
-            ->assertStatus(201)
-            ->assertJsonStructure([
-                'data'
-            ])
-            ->json('data');
-
-        $this->assertDatabaseHas('financial_reports', [
-            'name' => $report->name,
-            'type' => $report->type,
-            'modifier_1_id' => $modifier1->id,
-            'modifier_2_id' => $modifier2->id,
-        ]);
-
-        $this->assertArraySubset([
-            'name' => $report->name,
-            'type' => strtolower(ReportableType::getKey($report->type)),
             'modifier_1' => [
                 'id' => $modifier1->id,
                 'name' => $modifier1->name,
@@ -233,7 +176,7 @@ class FinancialReportTest extends TestCase
         Passport::actingAs($user);
 
         $this
-            ->json('put', "/api/csm/financial-reports/1", [])
+            ->json('put', "/api/foodfleet/financial-reports/1", [])
             ->assertStatus(404);
 
         $report = factory(FinancialReport::class)->create([
@@ -241,19 +184,18 @@ class FinancialReportTest extends TestCase
         ]);
 
         $this
-            ->json('put', "/api/csm/financial-reports/" . $report->id, [])
+            ->json('put', "/api/foodfleet/financial-reports/" . $report->id, [])
             ->assertStatus(422);
 
         $reportUpdate = factory(FinancialReport::class)->make();
         $modifier1 = factory(Modifier::class)->create();
         $modifier2 = factory(Modifier::class)->create();
         $inputs = $reportUpdate->toArray();
-        $inputs['type'] = strtolower(ReportableType::getKey($inputs['type']));
         $inputs['modifier_1_id'] = $modifier1->id;
         $inputs['modifier_2_id'] = $modifier2->id;
 
         $data = $this
-            ->json('put', "/api/csm/financial-reports/" . $report->id, $inputs)
+            ->json('put', "/api/foodfleet/financial-reports/" . $report->id, $inputs)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -263,7 +205,6 @@ class FinancialReportTest extends TestCase
         $this->assertDatabaseHas('financial_reports', [
             'id' => $report->id,
             'name' => $reportUpdate->name,
-            'type' => $reportUpdate->type,
             'modifier_1_id' => $modifier1->id,
             'modifier_2_id' => $modifier2->id,
         ]);
@@ -271,7 +212,6 @@ class FinancialReportTest extends TestCase
         $this->assertArraySubset([
             'id' => $report->id,
             'name' => $reportUpdate->name,
-            'type' => strtolower(ReportableType::getKey($reportUpdate->type)),
             'modifier_1' => [
                 'id' => $modifier1->id,
                 'name' => $modifier1->name,
@@ -302,7 +242,7 @@ class FinancialReportTest extends TestCase
         Passport::actingAs($user);
 
         $this
-            ->json('delete', "/api/csm/financial-reports/1", [])
+            ->json('delete', "/api/foodfleet/financial-reports/1", [])
             ->assertStatus(404);
 
         $report = factory(FinancialReport::class)->create([
@@ -310,13 +250,12 @@ class FinancialReportTest extends TestCase
         ]);
 
         $this
-            ->json('delete', "/api/csm/financial-reports/" . $report->id)
+            ->json('delete', "/api/foodfleet/financial-reports/" . $report->id)
             ->assertStatus(204);
 
         $this->assertSoftDeleted('financial_reports', [
             'id' => $report->id,
             'name' => $report->name,
-            'type' => $report->type,
             'user_id' => $user->id
         ]);
     }
