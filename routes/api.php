@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => ['auth:api']], function () {
     Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
+
+    Route::get('payment-types', 'Foodfleet\PaymentTypes@index');
+    Route::get('devices', 'Foodfleet\Devices@index');
 });
