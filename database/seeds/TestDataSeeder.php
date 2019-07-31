@@ -1,7 +1,5 @@
 <?php
 
-namespace FoodFleet\Seeds;
-
 use Illuminate\Database\Seeder;
 
 class TestDataSeeder extends Seeder
@@ -13,5 +11,8 @@ class TestDataSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            \FinancialReportsTableSeeder::class,
+        ]);
     }
 }
