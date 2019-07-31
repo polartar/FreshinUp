@@ -56,6 +56,61 @@ class FinancialReportTest extends TestCase
      *
      * @return void
      */
+    public function testGetListWithFilters()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        factory(FinancialReport::class, 5)->create([
+            'name' => 'Not visibles',
+            'user_id' => $user->id
+        ]);
+
+        $reportsToFind = factory(FinancialReport::class, 5)->create([
+            'name' => 'To find',
+            'user_id' => $user->id
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-reports")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(10, count($data));
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-reports?filter[name]=find")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+
+        foreach ($reportsToFind as $idx => $report) {
+            $this->assertArraySubset([
+                'id' => $report->id,
+                'name' => $report->name,
+                'filters' => json_decode($report->filters, true),
+                'created_at' => str_replace('"', '', json_encode($report->created_at)),
+                'updated_at' => str_replace('"', '', json_encode($report->updated_at)),
+            ], $data[$idx]);
+        }
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
     public function testGetSingle()
     {
         $user = factory(User::class)->create();

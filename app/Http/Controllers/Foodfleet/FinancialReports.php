@@ -25,6 +25,7 @@ class FinancialReports extends Controller
         $user = $request->user();
 
         $reports = QueryBuilder::for($user->financialReports()->getQuery())
+            ->allowedFilters(['name'])
             ->orderBy('updated_at', 'desc');
 
         return ReportableResource::collection($reports->jsonPaginate());
