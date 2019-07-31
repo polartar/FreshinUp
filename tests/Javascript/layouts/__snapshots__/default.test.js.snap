@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Admin layout mount snapshot of layout 1`] = `
+exports[`Default layout mount snapshot of layout 1`] = `
 <div
   class="page-layout"
 >
@@ -534,7 +534,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
           class="page-title"
         >
           
-        Admin template
+        Default template
       
         </h1>
       </div>

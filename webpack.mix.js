@@ -30,6 +30,9 @@ mix.webpackConfig({
       'fresh-bus': path.resolve(__dirname, 'vendor/freshinup/fresh-bus-forms/resources/assets/js'),
       'fresh-bus-sass': path.resolve(__dirname, 'vendor/freshinup/fresh-bus-forms/resources/sass')
     }
+  },
+  devServer: {
+    disableHostCheck: true
   }
 })
 mix.options({
