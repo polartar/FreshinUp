@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,3 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => ['auth:api']], function () {
+    Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
+    Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
+});
