@@ -71,6 +71,7 @@
         "vue": "^2.6.10",
         "vue-analytics": "^5.16.4",
         "vue-axios": "^2.1.4",
+        "vue-ctk-date-time-picker": "^2.1.1",
         "vue-jest": "^3.0.4",
         "vue-loader": "^15.7.0",
         "vue-router": "^3.0.3",
