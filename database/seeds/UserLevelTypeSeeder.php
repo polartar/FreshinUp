@@ -31,11 +31,11 @@ class UserLevelTypeSeeder extends Seeder
             6 => 'Supplier - Employee',
         ];
 
-        foreach($levels as $displyId => $name) {
-            $forPlatform = $displyId < 5 ? 1 : 0;
-            $forCompany = $displyId > 3 ? 1 : 0;
+        foreach($levels as $displayId => $name) {
+            $forPlatform = $displayId < 5 ? 1 : 0;
+            $forCompany = $displayId > 3 ? 1 : 0;
             UserLevel::updateOrCreate(
-                ['display_id' => $displyId],
+                ['display_id' => $displayId],
                 [
                     'name' => $name,
                     'enabled' => 1,
@@ -45,9 +45,9 @@ class UserLevelTypeSeeder extends Seeder
             );
         }
 
-        foreach($types as $displyId => $name) {
+        foreach($types as $displayId => $name) {
             UserType::updateOrCreate(
-                ['display_id' => $displyId],
+                ['display_id' => $displayId],
                 ['name' => $name]
             );
         }

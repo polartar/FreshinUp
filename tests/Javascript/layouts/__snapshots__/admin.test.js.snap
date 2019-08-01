@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Admin layout mount snapshot of layout 1`] = `
-<div>
+<div
+  class="page-layout"
+>
   <aside
     class="v-navigation-drawer v-navigation-drawer--fixed v-navigation-drawer--open theme--dark"
-    color="white"
     style="height: 100%; margin-top: 0px; max-height: calc(100% - 32px); transform: translateX(0px); width: 220px;"
   >
     <div
@@ -25,16 +26,6 @@ exports[`Admin layout mount snapshot of layout 1`] = `
         <div
           class="v-list__group__header"
         >
-          <div
-            class="v-list__group__header__prepend-icon"
-          >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--dark"
-            >
-              dashboard
-            </i>
-          </div>
           <div
             role="listitem"
           >
@@ -84,14 +75,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <div
-                class="v-list__tile__action"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--dark"
-                />
-              </div>
+              <!---->
             </router-link>
           </div>
         </div>
@@ -102,16 +86,6 @@ exports[`Admin layout mount snapshot of layout 1`] = `
         <div
           class="v-list__group__header"
         >
-          <div
-            class="v-list__group__header__prepend-icon"
-          >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--dark"
-            >
-              supervised_user_circle
-            </i>
-          </div>
           <div
             role="listitem"
           >
@@ -162,14 +136,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <div
-                class="v-list__tile__action"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--dark"
-                />
-              </div>
+              <!---->
             </a>
           </div>
           <div
@@ -189,14 +156,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <div
-                class="v-list__tile__action"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--dark"
-                />
-              </div>
+              <!---->
             </a>
           </div>
           <div
@@ -216,14 +176,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <div
-                class="v-list__tile__action"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--dark"
-                />
-              </div>
+              <!---->
             </a>
           </div>
         </div>
@@ -234,16 +187,6 @@ exports[`Admin layout mount snapshot of layout 1`] = `
         <div
           class="v-list__group__header"
         >
-          <div
-            class="v-list__group__header__prepend-icon"
-          >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--dark"
-            >
-              settings
-            </i>
-          </div>
           <div
             role="listitem"
           >
@@ -293,14 +236,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <div
-                class="v-list__tile__action"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--dark"
-                />
-              </div>
+              <!---->
             </router-link>
           </div>
         </div>
@@ -326,8 +262,8 @@ exports[`Admin layout mount snapshot of layout 1`] = `
           class="flex primary--text"
         >
           
-          Food Fleet Admins
-        
+            Food Fleet Admins
+          
         </div>
       </div>
        
@@ -585,12 +521,24 @@ exports[`Admin layout mount snapshot of layout 1`] = `
   </nav>
    
   <main
-    class="v-content"
+    class="v-content main-page-container"
     style="padding: 64px 0px 32px 220px;"
   >
     <div
       class="v-content__wrap"
     >
+      <div
+        class="container fluid"
+      >
+        <h1
+          class="page-title"
+        >
+          
+        Admin template
+      
+        </h1>
+      </div>
+       
       <!---->
        
       <router-view

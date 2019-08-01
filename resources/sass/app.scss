@@ -13,3 +13,10 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.theme--light.application {
+    background-color: $body-bg;
+}
+
+.card-heading {
+    color: $primary !important;
+}
