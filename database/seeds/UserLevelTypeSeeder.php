@@ -19,11 +19,12 @@ class UserLevelTypeSeeder extends Seeder
             1 => 'FF Admin',
             2 => 'FF Director',
             3 => 'FF Lead',
-            4 => 'FF Member',
+            4 => 'FF Employee',
+            8 => 'Employee',
         ];
 
         $types = [
-            1 => 'FF Staff - Admins',
+            1 => 'FF Staff - Admin',
             2 => 'FF Staff',
             3 => 'Customer',
             4 => 'Customer - Employee',
