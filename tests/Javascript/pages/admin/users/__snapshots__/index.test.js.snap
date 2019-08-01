@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users index page snapshot of page 1`] = `
+<div>
+  <div
+    class="flex d-inline-flex align-center ma-2"
+  >
+    <h2>
+      Users
+    </h2>
+     
+    <button
+      class="ml-4 v-btn theme--dark primary"
+      slot="activator"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        
+      New User
+    
+      </div>
+    </button>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <br />
+   
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog"
+        style="max-width: 500px; display: none;"
+      >
+        <div
+          class="simple-confirm pa-3 v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title px-0 justify-center"
+          >
+            <div
+              class="title font-weight-bold"
+            >
+              
+        Are you sure you want to delete this user?
+      
+            </div>
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="py-5 px-2"
+          >
+            <p
+              class="subheading"
+            >
+              <span>
+                User
+              </span>
+              
+            : 
+          
+            </p>
+          </div>
+           
+          <div
+            class="v-card__actions px-8"
+          >
+            <button
+              class="v-btn v-btn--block theme--light light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      No
+    
+              </div>
+            </button>
+             
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--block theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      Yes
+    
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
