@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Admin Users Page Mount onPaginate() invokes sort in the state and is reflected on the list 1`] = `
+exports[`Admin Users Page Mount snapshot 1`] = `
 <div>
   <v-flex-stub
     align-center=""
