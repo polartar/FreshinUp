@@ -51,6 +51,7 @@ mix.js('resources/js/main.js', 'public/js', {
     includePaths: ['node_modules/', 'vendor/', 'vendor/freshinup/fresh-bus-forms/node_modules/']
   })
   .copyDirectory('node_modules/tinymce/skins', 'public/js/skins')
+  .copyDirectory('resources/images', 'public/images')
 
 if (mix.inProduction()) {
   mix.version()
