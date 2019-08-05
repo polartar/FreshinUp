@@ -28,6 +28,9 @@ return [
         'ConsumerSPA'   => ConsumerController::class,
         'AdminSPA'      => SPAController::class,
     ],
+    'enums' => [
+        'user_status'   => App\Enums\UserStatus::class,
+    ],
     'redirects'         => [
         /**
          * When the users is Unauthenticated (i.e. 'not logged in')
