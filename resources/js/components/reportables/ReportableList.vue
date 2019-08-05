@@ -1,5 +1,6 @@
 <template>
   <v-data-table
+    v-model="selected"
     class="elevation-1"
     :headers="headers"
     :items="reportables"
@@ -13,13 +14,38 @@
     must-sort
   >
     <template
-      slot="items"
-      slot-scope="{ item }"
+      slot="headerCell"
+      slot-scope="props"
     >
+      <span v-if="selected.length > 1 && props.header.value === 'delete'">
+        <v-btn
+          color="primary"
+          dark
+          @click="deleteReportables"
+        >
+          Delete
+        </v-btn>
+      </span>
+
+      <span v-else>
+        {{ props.header.text }}
+      </span>
+    </template>
+    <template
+      slot="items"
+      slot-scope="props"
+    >
+      <td>
+        <v-checkbox
+          v-model="props.selected"
+          primary
+          hide-details
+        />
+      </td>
       <td
         class="text-xs-left"
       >
-
+        {{ props.item.name }}
       </td>
       <td>
         <v-layout row>
@@ -27,103 +53,34 @@
             xs6
             mr-1
           >
-            <template v-if="item.modifier_1.type === 'autocomplete'">
-              <v-select
-                v-if="item.modifier_1"
-                v-model="modifier_1[item.id]"
-                :items="getModifierSelectables(item.modifier_1)"
-                :placeholder="item.modifier_1.placeholder"
-                solo
-                flat
-                hide-details
-                class="rounded-input"
-              />
-            </template>
-            <template v-else-if="modifierType(item.modifier_1) === 'date'">
-              <v-menu
-                v-model="modifierDateMenus[1][item.id]"
-                :close-on-content-click="false"
-                transition="scale-transition"
-                full-width
-                min-width="290px"
-              >
-                <template v-slot:activator="{ on }">
-                  <v-text-field
-                    v-model="modifier_1[item.id]"
-                    :placeholder="item.modifier_1.placeholder"
-                    readonly
-                    solo
-                    flat
-                    hide-details
-                    class="rounded-input"
-                    append-icon="event"
-                    v-on="on"
-                  />
-                </template>
-                <v-date-picker
-                  v-model="modifier_1[item.id]"
-                  no-title
-                  @input="modifierDateMenus[1][item.id] = false"
-                />
-              </v-menu>
-            </template>
+            <modifier
+              v-if="props.item.modifier_1"
+              :modifier="props.item.modifier_1"
+              :items="getModifierSelectables(props.item.modifier_1)"
+              @change="changeModifier1Value($event, props.item)"
+            />
           </v-flex>
           <v-flex
             xs6
             ml-1
           >
-            <template v-if="modifierType(item.modifier_2) === 'select'">
-              <v-select
-                v-if="item.modifier_2"
-                v-model="modifier_2[item.id]"
-                :items="getModifierSelectables(item.modifier_2)"
-                :placeholder="item.modifier_2.placeholder"
-                solo
-                flat
-                hide-details
-                class="rounded-input"
-              />
-            </template>
-            <template v-else-if="modifierType(item.modifier_2) === 'date'">
-              <v-menu
-                v-model="modifierDateMenus[2][item.id]"
-                :close-on-content-click="false"
-                transition="scale-transition"
-                full-width
-                min-width="290px"
-              >
-                <template v-slot:activator="{ on }">
-                  <v-text-field
-                    v-model="modifier_2[item.id]"
-                    :placeholder="item.modifier_2.placeholder"
-                    readonly
-                    solo
-                    flat
-                    hide-details
-                    class="rounded-input"
-                    append-icon="event"
-                    v-on="on"
-                  />
-                </template>
-
-                <v-date-picker
-                  v-model="modifier_2[item.id]"
-                  no-title
-                  @input="modifierDateMenus[2][item.id] = false"
-                />
-              </v-menu>
-            </template>
+            <modifier
+              v-if="props.item.modifier_2"
+              :modifier="props.item.modifier_2"
+              :items="getModifierSelectables(props.item.modifier_2)"
+              @change="changeModifier2Value($event, props.item)"
+            />
           </v-flex>
         </v-layout>
       </td>
       <td class="text-xs-left mb-1">
-        {{ formatFilters(item.filters) }}
+        {{ formatFilters(props.item.filters) }}
       </td>
       <td class="text-xs-right">
         <a
           class="primary--text open"
           target="_blank"
-          :href="reportLink(item)"
+          :href="reportLinks[props.item.id]"
         >
           Open in new tab
         </a>
@@ -132,7 +89,7 @@
         <v-btn
           color="primary"
           dark
-          :href="reportLink(item)"
+          :href="reportLinks[props.item.id]"
         >
           Generate
         </v-btn>
@@ -145,7 +102,7 @@
           small
           color="grey"
           outline
-          @click="deleteReportable(item)"
+          @click="deleteReportable(props.item)"
         >
           <v-icon dark>
             fa-times
@@ -158,11 +115,11 @@
 
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
-import Simple from 'fresh-bus/components/search/simple'
+import Modifier from './Modifier'
 
 export default {
   components: {
-    Simple
+    Modifier
   },
   mixins: [
     Pagination
@@ -170,7 +127,11 @@ export default {
   props: {
     reportables: {
       type: Array,
-      default: () => []
+      default: () => ([])
+    },
+    selectables: {
+      type: Object,
+      default: () => ({})
     },
     baseUrl: {
       type: String,
@@ -178,38 +139,35 @@ export default {
     }
   },
   data () {
-    let modifierDateMenus = { 1: {}, 2: {} }
-    this.reportables.forEach((element) => {
-      modifierDateMenus[1][element.id] = false
-      modifierDateMenus[2][element.id] = false
-    })
-
     return {
       selected: [],
-      modifierDateMenus,
       modifier_1: [],
       modifier_2: [],
+      report_links: [],
       headers: [
         { text: 'Report name', sortable: false, value: 'date', align: 'left', class: 'font-weight-bold' },
-        { text: 'Modifiers', value: 'modifiers', sortable: false, align: 'left', class: 'font-weight-bold' },
-        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '25%' },
+        { text: 'Modifiers', value: 'modifiers', sortable: false, align: 'left', class: 'font-weight-bold', width: '35%' },
+        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '10%' },
         { value: 'new_tab', sortable: false },
         { value: 'action', sortable: false },
         { value: 'delete', sortable: false }
       ]
     }
   },
+  computed: {
+    reportLinks () {
+      let links = this.report_links
+      return links
+    }
+  },
   beforeMount () {
     this.reportables.forEach((element) => {
       this.modifier_1[element.id] = null
       this.modifier_2[element.id] = null
+      this.report_links[element.id] = this.reportLink(element)
     })
   },
   methods: {
-    modifierType (modifier) {
-      if (modifier && (modifier.resource_name.endsWith('_before') || modifier.resource_name.endsWith('_after'))) return 'date'
-      return 'select'
-    },
     reportLink (report) {
       let params = {}
       let modifier1 = this.modifier_1[report.id]
@@ -233,18 +191,13 @@ export default {
       return this.baseUrl + '?' + qs
     },
     getModifierSelectables (modifier) {
-      if (modifier) {
+      if (modifier && modifier.type === 'select') {
         let mapper = (item) => ({ value: item.uuid, text: item.label })
-
-        if (modifier.resource_name === 'branches') {
-          mapper = (branch) => ({ value: branch.id, text: branch.title })
-        }
-
-        let selectables = this[this.toCamelCase(modifier.resource_name)].map(mapper)
+        let selectables = this.selectables[modifier.resource_name].map(mapper)
         selectables.unshift({ value: null, text: modifier.placeholder })
         return selectables
       }
-      return null
+      return []
     },
     formatFilters (filters) {
       return Object.keys(filters).join(', ').replace(/_/g, ' ').replace(/ id/g, '').replace(/ uuid/g, '').replace(/\b\w/g, l => l.toUpperCase())
@@ -256,8 +209,19 @@ export default {
           .replace('_', '')
       })
     },
+    changeModifier1Value (value, report) {
+      this.modifier_1[report.id] = value
+      this.report_links[report.id] = this.reportLink(report)
+    },
+    changeModifier2Value (value, report) {
+      this.modifier_2[report.id] = value
+      this.report_links[report.id] = this.reportLink(report)
+    },
     deleteReportable (item) {
       this.$emit('delete', item)
+    },
+    deleteReportables () {
+      this.$emit('delete-multiple', this.selected)
     }
   }
 }

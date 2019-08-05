@@ -31,7 +31,7 @@ const modifier1 = {
 
 const modifier2 = {
   name: 'payment_uuid',
-  resource_name: 'paymentTypes',
+  resource_name: 'payment_types',
   label: 'Payment type',
   placeholder: 'All payment types',
   type: 'select'
@@ -73,7 +73,7 @@ const reportables = [
   {
     id: 4,
     name: 'Custom Report #1',
-    filters: { fleet_member: filterFleetMember, date_after: '2019-01-01', date_before: '2019-06-01' },
+    filters: { fleet_member_uuid: filterFleetMember, date_after: '2019-01-01', date_before: '2019-06-01' },
     modifier_1: modifier1,
     modifier_2: modifier2
   },
@@ -138,6 +138,9 @@ storiesOf('reportables/ReportableList', module)
       methods: {
         onDelete (item) {
           action('delete')(item)
+        },
+        onDeleteMultiple (array) {
+          action('delete')(array)
         }
       },
       data () {
@@ -155,6 +158,7 @@ storiesOf('reportables/ReportableList', module)
               :selectables="selectables"
               base-url="/admin/reportables"
               @delete="onDelete"
+              @delete-multiple="onDeleteMultiple"
             />
           </v-container>
       `
