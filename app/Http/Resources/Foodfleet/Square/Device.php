@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Square;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ResourceWithName extends JsonResource
+class Device extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -17,8 +17,8 @@ class ResourceWithName extends JsonResource
     public function toArray($request)
     {
         return [
-            "uuid" => $this->resource->uuid,
-            "label" => $this->resource->name
+            "uuid" => $this->uuid,
+            "name" => $this->name
         ];
     }
 }

@@ -15,8 +15,10 @@ use Faker\Generator as Faker;
 $factory->define(\App\Models\Foodfleet\FinancialModifier::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'resource_name' =>  $faker->word,
-        'label' =>  $faker->word,
-        'placeholder' =>  $faker->word,
+        'resource_name' => $faker->word,
+        'label' => $faker->word,
+        'placeholder' => $faker->word,
+        'type' => $faker->randomElement(['autocomplete', 'select', 'date', 'text']),
+        'filter' => $faker->randomElement([null, $faker->word])
     ];
 });

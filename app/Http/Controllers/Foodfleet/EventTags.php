@@ -4,12 +4,12 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
-use App\Models\Foodfleet\Square\PaymentType;
+use App\Models\Foodfleet\EventTag;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\Square\PaymentType as PaymentTypeResource;
+use App\Http\Resources\Foodfleet\EventTag as EventTagResource;
 
-class PaymentTypes extends Controller
+class EventTags extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,9 @@ class PaymentTypes extends Controller
      */
     public function index(Request $request)
     {
-        $paymentTypes = QueryBuilder::for(PaymentType::class, $request);
-        return PaymentTypeResource::collection($paymentTypes->get());
+        $eventTags = QueryBuilder::for(EventTag::class, $request)
+            ->allowedFilters(['name']);
+
+        return EventTagResource::collection($eventTags->get());
     }
 }
-

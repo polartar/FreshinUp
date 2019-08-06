@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Models\Foodfleet;
+namespace App\Models\Foodfleet\Square;
 
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $deleted_at
  *
  */
-class PaymentType extends Model
+class Item extends Model
 {
     use SoftDeletes;
     use GeneratesUuid;
