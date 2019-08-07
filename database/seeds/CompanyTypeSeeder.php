@@ -18,7 +18,7 @@ class CompanyTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Contractor',
-                //'key_id' => 'contractor'
+                'key_id' => 'contractor'
             ]
         );
     }
