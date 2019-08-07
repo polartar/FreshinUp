@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             \FinancialModifiersTableSeeder::class,
+            \StatusesSeeder::class,
+            \UserLevelTypeSeeder::class,
+            \CompanyTypeSeeder::class
         ]);
     }
 }

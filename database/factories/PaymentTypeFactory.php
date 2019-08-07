@@ -13,9 +13,8 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\App\Models\Foodfleet\PaymentType::class, function (Faker $faker) {
+$factory->define(\App\Models\Foodfleet\Square\PaymentType::class, function (Faker $faker) {
     return [
-        "uuid" => $faker->uuid,
         "name" => $faker->word
     ];
 });

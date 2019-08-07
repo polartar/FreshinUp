@@ -27,4 +27,5 @@ class Staff extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $table = 'staffs';
 }

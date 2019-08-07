@@ -4,13 +4,13 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
-use App\Models\Foodfleet\Square\Customer;
+use App\Models\Foodfleet\Square\Staff;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\Square\Customer as CustomerResource;
+use App\Http\Resources\Foodfleet\Square\Staff as StaffResource;
 use Illuminate\Support\Facades\DB;
 
-class Customers extends Controller
+class Staffs extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,10 +20,9 @@ class Customers extends Controller
      */
     public function index(Request $request)
     {
-        $customers = QueryBuilder::for(Customer::class, $request)
+        $staffs = QueryBuilder::for(Staff::class, $request)
             ->allowedFilters([
-                'square_id',
-                'reference_id'
+                'square_id'
             ]);
 
         $searchTerm = null;
@@ -35,12 +34,12 @@ class Customers extends Controller
         }
         if ($searchTerm) {
             if (DB::getDriverName() === 'sqlite') {
-                $customers->where(DB::raw('given_name || " " || family_name'), 'LIKE', '%' . $searchTerm . '%');
+                $staffs->where(DB::raw('first_name || " " || last_name'), 'LIKE', '%' . $searchTerm . '%');
             } else {
-                $customers->where(DB::raw('CONCAT(" ", given_name, family_name)'), 'LIKE', '%' . $searchTerm . '%');
+                $staffs->where(DB::raw('CONCAT(" ", first_name, last_name)'), 'LIKE', '%' . $searchTerm . '%');
             }
         }
 
-        return CustomerResource::collection($customers->jsonPaginate());
+        return StaffResource::collection($staffs->jsonPaginate());
     }
 }

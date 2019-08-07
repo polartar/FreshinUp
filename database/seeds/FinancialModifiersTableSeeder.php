@@ -81,7 +81,7 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Customer Name',
                 'placeholder' => 'Customer Name',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'term'
             ],
             [
                 'name' => 'customer_uuid',
@@ -105,7 +105,7 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Staff Name',
                 'placeholder' => 'Staff Name',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'term'
             ],
             [
                 'name' => 'staff_uuid',
