@@ -80,7 +80,7 @@
         <a
           class="primary--text open"
           target="_blank"
-          :href="reportLinks[props.item.id]"
+          :href="reportLinkComputed(props.item)"
         >
           Open in new tab
         </a>
@@ -89,7 +89,7 @@
         <v-btn
           color="primary"
           dark
-          :href="reportLinks[props.item.id]"
+          :href="reportLinkComputed(props.item)"
         >
           Generate
         </v-btn>
@@ -155,9 +155,10 @@ export default {
     }
   },
   computed: {
-    reportLinks () {
-      let links = this.report_links
-      return links
+    reportLinkComputed () {
+      return function (report) {
+        return this.reportLink(report)
+      }
     }
   },
   beforeMount () {

@@ -3,7 +3,7 @@
     <template v-if="modifier.type === 'autocomplete'">
       <simple
         :url="'/' + modifier.resource_name"
-        term-param="name"
+        :term-param="modifier.filter"
         :placeholder="modifier.placeholder"
         background-color="white"
         class="mt-0 pt-0"
@@ -90,8 +90,9 @@ export default {
     selectAutocomplete (object) {
       if (object) {
         this.selectValue(object.uuid)
+      } else {
+        this.selectValue(null)
       }
-      this.selectValue(null)
     },
     selectValue (value) {
       this.$emit('change', value)

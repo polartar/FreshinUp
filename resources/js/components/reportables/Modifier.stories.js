@@ -18,7 +18,8 @@ const modifierAutocomplete = {
   resource_name: 'events',
   label: 'Event',
   placeholder: 'All events',
-  type: 'autocomplete'
+  type: 'autocomplete',
+  filter: 'name'
 }
 
 const modifierSelect = {
