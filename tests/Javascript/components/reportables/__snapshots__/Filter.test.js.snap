@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modifier Snapshots defaults 1`] = `
+<div
+  autocomplete_url="/api/foodfleet/financial-reports"
+  class="v-card v-sheet theme--light white"
+>
+  <form
+    class="v-form"
+    novalidate="novalidate"
+  >
+    <div
+      class="container filter-sorter-container fluid"
+    >
+       
+      <div
+        class="layout filter-sorter-main-layout row wrap"
+      >
+        <!---->
+         
+        <div
+          class="flex grow"
+        >
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Search"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      search
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+         
+        <!---->
+         
+      </div>
+       
+      <!---->
+       
+      <div
+        class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+        style="display: none;"
+      >
+        <div
+          class="flex"
+        />
+         
+        <div
+          class="flex text-no-wrap"
+        >
+          <button
+            class="v-btn v-btn--large theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+            Clear Filters
+          
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

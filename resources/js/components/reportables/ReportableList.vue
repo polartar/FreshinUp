@@ -80,7 +80,7 @@
         <a
           class="primary--text open"
           target="_blank"
-          :href="reportLink(props.item)"
+          :href="report_links[props.item.id]"
         >
           Open in new tab
         </a>
@@ -89,7 +89,7 @@
         <v-btn
           color="primary"
           dark
-          :href="reportLink(props.item)"
+          :href="report_links[props.item.id]"
         >
           Generate
         </v-btn>
@@ -143,6 +143,7 @@ export default {
       selected: [],
       modifier_1: [],
       modifier_2: [],
+      report_links: [],
       headers: [
         { text: 'Report name', sortable: false, value: 'date', align: 'left', class: 'font-weight-bold' },
         { text: 'Modifiers', value: 'modifiers', sortable: false, align: 'left', class: 'font-weight-bold', width: '35%' },
@@ -153,15 +154,11 @@ export default {
       ]
     }
   },
-  computed: {
-    reportLinkComputed () {
-      return this.report_links
-    }
-  },
   beforeMount () {
     this.reportables.forEach((element) => {
       this.modifier_1[element.id] = null
       this.modifier_2[element.id] = null
+      this.report_links[element.id] = this.reportLink(element)
     })
   },
   methods: {
@@ -208,15 +205,20 @@ export default {
     },
     changeModifier1Value (value, report) {
       this.modifier_1[report.id] = value
+      this.updateLink(report)
     },
     changeModifier2Value (value, report) {
       this.modifier_2[report.id] = value
+      this.updateLink(report)
+    },
+    updateLink (report) {
+      this.$set(this.report_links, report.id, this.reportLink(report))
     },
     deleteReportable (item) {
       this.$emit('delete', item)
     },
     deleteReportables () {
-      this.$emit('delete-multiple', this.selected)
+      this.$emit('deleteMultiple', this.selected)
     }
   }
 }

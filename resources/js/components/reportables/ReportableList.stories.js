@@ -140,7 +140,7 @@ storiesOf('reportables/ReportableList', module)
           action('delete')(item)
         },
         onDeleteMultiple (array) {
-          action('delete')(array)
+          action('deleteMultiple')(array)
         }
       },
       data () {
@@ -158,7 +158,7 @@ storiesOf('reportables/ReportableList', module)
               :selectables="selectables"
               base-url="/admin/reportables"
               @delete="onDelete"
-              @delete-multiple="onDeleteMultiple"
+              @deleteMultiple="onDeleteMultiple"
             />
           </v-container>
       `
