@@ -16,7 +16,7 @@ class ContractorCompaniesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $companyType = CompanyType::where('name', 'Contractor')->get()->first();
+        $companyType = CompanyType::where('key_id', 'contractor')->get()->first();
         for ($i = 0; $i < 50; $i++) {
             $company = Company::updateOrCreate(
                 [
