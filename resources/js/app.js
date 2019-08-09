@@ -65,7 +65,7 @@ const appInstance = new App({
       items: [
         {
           title: 'Dashboard',
-          to: '/admin'
+          to: '/admin#'
         },
         {
           title: 'Users',
