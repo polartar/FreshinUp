@@ -17,7 +17,7 @@ describe('BasicFilter', () => {
     beforeEach(() => {
       localVue = createLocalVue()
     })
-    test('clickButton() emits clear', () => {
+    test('select functions change filters', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
           filters: {
