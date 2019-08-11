@@ -33,7 +33,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Event name',
                 'placeholder' => 'Event name',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'company_uuid',
@@ -41,7 +43,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Company name',
                 'placeholder' => 'Company name',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'fleet_member_uuid',
@@ -49,15 +53,19 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Fleet member name',
                 'placeholder' => 'Fleet member name',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'contractor_uuid',
-                'resource_name' => 'contractors',
-                'label' => 'Customer',
-                'placeholder' => 'Customer',
+                'resource_name' => 'companies?filter[key_id]=contractor',
+                'label' => 'Contractor',
+                'placeholder' => 'Contractor',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'event_tag_uuid',
@@ -65,7 +73,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Event tags',
                 'placeholder' => 'Event tags',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'location_uuid',
@@ -73,7 +83,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Location',
                 'placeholder' => 'Location',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'customer_uuid',
@@ -81,7 +93,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Customer Name',
                 'placeholder' => 'Customer Name',
                 'type' => 'autocomplete',
-                'filter' => 'term'
+                'filter' => 'term',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'customer_uuid',
@@ -89,7 +103,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Customer ID',
                 'placeholder' => 'Customer ID',
                 'type' => 'autocomplete',
-                'filter' => 'square_id'
+                'filter' => 'filter[square_id]',
+                'value_param' => 'uuid',
+                'text_param' => 'square_id'
             ],
             [
                 'name' => 'customer_uuid',
@@ -97,7 +113,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Reference ID',
                 'placeholder' => 'Reference ID',
                 'type' => 'autocomplete',
-                'filter' => 'reference_id'
+                'filter' => 'filter[reference_id]',
+                'value_param' => 'uuid',
+                'text_param' => 'reference_id'
             ],
             [
                 'name' => 'staff_uuid',
@@ -105,7 +123,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Staff Name',
                 'placeholder' => 'Staff Name',
                 'type' => 'autocomplete',
-                'filter' => 'term'
+                'filter' => 'term',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'staff_uuid',
@@ -113,14 +133,16 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Staff ID',
                 'placeholder' => 'Staff ID',
                 'type' => 'autocomplete',
-                'filter' => 'square_id'
+                'filter' => 'filter[square_id]',
+                'value_param' => 'uuid',
+                'text_param' => 'square_id'
             ],
             [
                 'name' => 'device_uuid',
                 'resource_name' => 'devices',
                 'label' => 'Device',
                 'placeholder' => 'Device',
-                'type' => 'select',
+                'type' => 'select'
             ],
             [
                 'name' => 'category_uuid',
@@ -128,7 +150,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Category',
                 'placeholder' => 'Category',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'item_uuid',
@@ -136,7 +160,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Item',
                 'placeholder' => 'Item',
                 'type' => 'autocomplete',
-                'filter' => 'name'
+                'filter' => 'filter[name]',
+                'value_param' => 'uuid',
+                'text_param' => 'name'
             ],
             [
                 'name' => 'min_price',
@@ -165,7 +191,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Transaction ID',
                 'placeholder' => 'Transaction ID',
                 'type' => 'autocomplete',
-                'filter' => 'square_id'
+                'filter' => 'filter[square_id]',
+                'value_param' => 'uuid',
+                'text_param' => 'square_id'
             ],
             [
                 'name' => 'payment_uuid',
@@ -173,7 +201,9 @@ class FinancialModifiersTableSeeder extends Seeder
                 'label' => 'Payment ID',
                 'placeholder' => 'Payment ID',
                 'type' => 'autocomplete',
-                'filter' => 'square_id'
+                'filter' => 'filter[square_id]',
+                'value_param' => 'uuid',
+                'text_param' => 'square_id'
             ]
         ];
 

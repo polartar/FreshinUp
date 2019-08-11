@@ -19,6 +19,8 @@ $factory->define(\App\Models\Foodfleet\FinancialModifier::class, function (Faker
         'label' => $faker->word,
         'placeholder' => $faker->word,
         'type' => $faker->randomElement(['autocomplete', 'select', 'date', 'text']),
-        'filter' => $faker->randomElement([null, $faker->word])
+        'filter' => $faker->randomElement([null, $faker->word]),
+        'value_param' => $faker->randomElement([null, $faker->word]),
+        'text_param' => $faker->randomElement([null, $faker->word])
     ];
 });

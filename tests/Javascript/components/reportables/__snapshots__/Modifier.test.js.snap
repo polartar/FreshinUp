@@ -1,0 +1,727 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modifier Snapshots autocomplete 1`] = `
+<div>
+  <div
+    background-color="white"
+    class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+    height="48"
+  >
+    <div
+      class="v-input__control"
+    >
+      <div
+        class="v-input__slot white"
+        style="height: 48px;"
+      >
+        <div
+          class="v-select__slot"
+        >
+          <input
+            aria-label=""
+            autocomplete="off"
+            placeholder="All events"
+            role="combobox"
+            type="text"
+          />
+          <div
+            class="v-input__append-inner"
+          >
+            <div
+              class="v-input__icon v-input__icon--"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--link material-icons theme--light"
+              />
+            </div>
+          </div>
+          <div
+            class="v-input__append-inner"
+          >
+            <div
+              class="v-input__icon v-input__icon--append"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                arrow_drop_down
+              </i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-menu"
+        >
+          <div
+            class="v-menu__content theme--light v-autocomplete__content"
+            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+          >
+            <div
+              class="v-select-list v-card theme--light"
+            >
+              <div
+                class="v-list theme--light"
+                role="list"
+              >
+                <div
+                  role="listitem"
+                >
+                  <div
+                    class="v-list__tile theme--light"
+                  >
+                    <div
+                      class="v-list__tile__content"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        No data available
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modifier Snapshots date 1`] = `
+<div>
+  <div
+    class="v-menu"
+  >
+    <div
+      class="v-input rounded-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
+    >
+      <div
+        class="v-input__control"
+      >
+        <div
+          class="v-input__slot"
+        >
+          <div
+            class="v-text-field__slot"
+          >
+            <input
+              placeholder="Any"
+              readonly="readonly"
+              type="text"
+            />
+          </div>
+          <div
+            class="v-input__append-inner"
+          >
+            <div
+              class="v-input__icon v-input__icon--append"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                event
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-menu__content theme--light "
+      style="max-height: auto; min-width: 290px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+    >
+       
+      <div
+        class="v-picker v-card v-picker--date theme--light"
+      >
+        <div
+          class="v-picker__body theme--light"
+          style="width: 290px;"
+        >
+          <div>
+            <div
+              class="v-date-picker-header theme--light"
+            >
+              <button
+                class="v-btn v-btn--icon theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    chevron_left
+                  </i>
+                </div>
+              </button>
+              <div
+                class="v-date-picker-header__value"
+              >
+                <div
+                  class="accent--text"
+                >
+                  <button
+                    type="button"
+                  >
+                    August 2019
+                  </button>
+                </div>
+              </div>
+              <button
+                class="v-btn v-btn--icon theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    chevron_right
+                  </i>
+                </div>
+              </button>
+            </div>
+            <div
+              class="v-date-picker-table v-date-picker-table--date theme--light"
+            >
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      S
+                    </th>
+                    <th>
+                      M
+                    </th>
+                    <th>
+                      T
+                    </th>
+                    <th>
+                      W
+                    </th>
+                    <th>
+                      T
+                    </th>
+                    <th>
+                      F
+                    </th>
+                    <th>
+                      S
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          1
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          2
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          3
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          4
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          5
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          6
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          7
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          8
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          9
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          10
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          11
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          12
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          13
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          14
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          15
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          16
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          17
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          18
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          19
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          20
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          21
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          22
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          23
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          24
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          25
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          26
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          27
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          28
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          29
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          30
+                        </div>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="v-btn v-btn--flat v-btn--floating theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          31
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modifier Snapshots select 1`] = `
+<div>
+  <div
+    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
+    role="combobox"
+  >
+    <div
+      class="v-input__control"
+    >
+      <div
+        class="v-input__slot"
+      >
+        <div
+          class="v-select__slot"
+        >
+          <div
+            class="v-select__selections"
+          >
+            <input
+              aria-readonly="false"
+              autocomplete="on"
+              placeholder="All payment types"
+              readonly="readonly"
+              type="text"
+            />
+          </div>
+          <div
+            class="v-input__append-inner"
+          >
+            <div
+              class="v-input__icon v-input__icon--append"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                arrow_drop_down
+              </i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-menu"
+        >
+          <div
+            class="v-menu__content theme--light "
+            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+          >
+            <div
+              class="v-select-list v-card theme--light"
+            >
+              <div
+                class="v-list theme--light"
+                role="list"
+              >
+                <div
+                  role="listitem"
+                >
+                  <div
+                    class="v-list__tile theme--light"
+                  >
+                    <div
+                      class="v-list__tile__content"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        No data available
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modifier Snapshots text 1`] = `
+<div>
+  <div
+    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details theme--light"
+  >
+    <div
+      class="v-input__control"
+    >
+      <div
+        class="v-input__slot"
+      >
+        <div
+          class="v-text-field__slot"
+        >
+          <input
+            placeholder="Min price"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

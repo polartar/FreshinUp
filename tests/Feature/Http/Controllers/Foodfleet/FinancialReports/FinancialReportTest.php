@@ -150,7 +150,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier1->label,
                 'placeholder' => $modifier1->placeholder,
                 'type' => $modifier1->type,
-                'filter' => $modifier1->filter
+                'filter' => $modifier1->filter,
+                'value_param' => $modifier1->value_param,
+                'text_param' => $modifier1->text_param
             ],
             'modifier_2' => [
                 'id' => $modifier2->id,
@@ -159,7 +161,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier2->label,
                 'placeholder' => $modifier2->placeholder,
                 'type' => $modifier2->type,
-                'filter' => $modifier2->filter
+                'filter' => $modifier2->filter,
+                'value_param' => $modifier2->value_param,
+                'text_param' => $modifier2->text_param
             ],
             'created_at' => str_replace('"', '', json_encode($report->created_at)),
             'updated_at' => str_replace('"', '', json_encode($report->updated_at))
@@ -212,7 +216,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier1->label,
                 'placeholder' => $modifier1->placeholder,
                 'type' => $modifier1->type,
-                'filter' => $modifier1->filter
+                'filter' => $modifier1->filter,
+                'value_param' => $modifier1->value_param,
+                'text_param' => $modifier1->text_param
             ],
             'modifier_2' => [
                 'id' => $modifier2->id,
@@ -221,7 +227,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier2->label,
                 'placeholder' => $modifier2->placeholder,
                 'type' => $modifier2->type,
-                'filter' => $modifier2->filter
+                'filter' => $modifier2->filter,
+                'value_param' => $modifier2->value_param,
+                'text_param' => $modifier2->text_param
             ],
             'filters' => json_decode($report->filters, true)
         ], $data);
@@ -282,7 +290,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier1->label,
                 'placeholder' => $modifier1->placeholder,
                 'type' => $modifier1->type,
-                'filter' => $modifier1->filter
+                'filter' => $modifier1->filter,
+                'value_param' => $modifier1->value_param,
+                'text_param' => $modifier1->text_param
             ],
             'modifier_2' => [
                 'id' => $modifier2->id,
@@ -291,7 +301,9 @@ class FinancialReportTest extends TestCase
                 'label' => $modifier2->label,
                 'placeholder' => $modifier2->placeholder,
                 'type' => $modifier2->type,
-                'filter' => $modifier2->filter
+                'filter' => $modifier2->filter,
+                'value_param' => $modifier2->value_param,
+                'text_param' => $modifier2->text_param
             ],
             'filters' => json_decode($reportUpdate->filters, true)
         ], $data);

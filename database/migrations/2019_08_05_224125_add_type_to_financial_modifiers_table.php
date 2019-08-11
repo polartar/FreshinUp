@@ -16,6 +16,8 @@ class AddTypeToFinancialModifiersTable extends Migration
         Schema::table('financial_modifiers', function (Blueprint $table) {
             $table->string('type')->nullable();
             $table->string('filter')->nullable();
+            $table->string('value_param')->nullable();
+            $table->string('text_param')->nullable();
         });
     }
 
@@ -27,7 +29,7 @@ class AddTypeToFinancialModifiersTable extends Migration
     public function down()
     {
         Schema::table('financial_modifiers', function (Blueprint $table) {
-            $table->dropColumn(['type', 'filter']);
+            $table->dropColumn(['type', 'filter', 'value_param', 'text_param']);
         });
     }
 }
