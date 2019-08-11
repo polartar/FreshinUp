@@ -4,8 +4,10 @@ module.exports = {
   resolve: {
     alias: {
       '~': path.resolve(__dirname, '../resources/js'),
+      'sass': path.resolve(__dirname, '../resources/sass'),
       'factright-sass': path.resolve(__dirname, '../resources/sass'),
-      'fresh-bus': path.resolve(__dirname, '../vendor/freshinup/fresh-bus-forms/resources/assets/js')
+      'fresh-bus': path.resolve(__dirname, '../vendor/freshinup/fresh-bus-forms/resources/assets/js'),
+      'fresh-bus-sass': path.resolve(__dirname, '../vendor/freshinup/fresh-bus-forms/resources/sass')
     }
   },
   module: {

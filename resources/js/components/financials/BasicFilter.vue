@@ -184,7 +184,7 @@ export default {
         }
         return result + param
       }, '')
-      return '/admin/searches?' + encodeURI(preparedParams.slice(1))
+      return '/admin/transactions?' + encodeURI(preparedParams.slice(1))
     }
   },
   methods: {

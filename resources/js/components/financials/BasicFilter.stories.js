@@ -52,7 +52,7 @@ mock.onGet('/companies?filter[type]=customer').reply(200, {
   ]
 })
 
-storiesOf('searches/BasicFilter', module)
+storiesOf('financials/BasicFilter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
