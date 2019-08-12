@@ -4,6 +4,21 @@ import {
 } from 'fresh-bus'
 import NotFoundPage from 'fresh-bus/pages/404.vue'
 import page from '~/store/modules/page.js'
+import categories from '~/store/modules/categories.js'
+import customers from '~/store/modules/customers.js'
+import devices from '~/store/modules/devices.js'
+import events from '~/store/modules/events.js'
+import eventTags from '~/store/modules/eventTags.js'
+import financialModifiers from '~/store/modules/financialModifiers.js'
+import financialReports from '~/store/modules/financialReports.js'
+import fleetMemebers from '~/store/modules/fleetMembers.js'
+import items from '~/store/modules/items.js'
+import locations from '~/store/modules/locations.js'
+import payments from '~/store/modules/payments.js'
+import paymentTypes from '~/store/modules/paymentTypes.js'
+import staffs from '~/store/modules/staffs.js'
+import transactions from '~/store/modules/transactions.js'
+
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -109,7 +124,21 @@ const appInstance = new App({
   },
   {
     modules: {
-      page: page({})
+      page: page({}),
+      categories: categories({}),
+      customers: customers({}),
+      devices: devices({}),
+      events: events({}),
+      eventTags: eventTags({}),
+      financialModifiers: financialModifiers({}),
+      financialReports: financialReports({}),
+      fleetMemebers: fleetMemebers({}),
+      items: items({}),
+      locations: locations({}),
+      payments: payments({}),
+      paymentTypes: paymentTypes({}),
+      staffs: staffs({}),
+      transacions: transactions({})
     }
   }),
   theme: {
