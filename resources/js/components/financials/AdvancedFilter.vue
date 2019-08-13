@@ -65,7 +65,7 @@
               </v-layout>
               <simple
                 :key="eventTagKey"
-                url="event-tags"
+                url="foodfleet/event-tags"
                 term-param="filter[name]"
                 value-param="uuid"
                 placeholder="All tags"
@@ -92,7 +92,7 @@
               </v-layout>
               <simple
                 :key="locationKey"
-                url="/locations"
+                url="foodfleet/locations"
                 term-param="filter[name]"
                 value-param="uuid"
                 placeholder="All locations"
@@ -149,7 +149,7 @@
               </v-layout>
               <simple
                 :key="customerNameKey"
-                url="/customers"
+                url="foodfleet/customers"
                 term-param="term"
                 value-param="uuid"
                 placeholder="All customers"
@@ -176,11 +176,11 @@
               </v-layout>
               <simple
                 :key="customerIdKey"
-                url="/customers"
+                url="foodfleet/customers"
                 term-param="filter[square_id]"
                 value-param="uuid"
                 text-param="square_id"
-                placeholder="All locations"
+                placeholder="All customers"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
@@ -209,7 +209,7 @@
               </v-layout>
               <simple
                 :key="customerReferenceKey"
-                url="/customers"
+                url="foodfleet/customers"
                 term-param="filter[reference_id]"
                 value-param="uuid"
                 text-param="reference_id"
@@ -242,7 +242,7 @@
               </v-layout>
               <simple
                 :key="staffNameKey"
-                url="/staffs"
+                url="foodfleet/staffs"
                 term-param="term"
                 value-param="uuid"
                 placeholder="All staff members"
@@ -269,7 +269,7 @@
               </v-layout>
               <simple
                 :key="staffIdKey"
-                url="/staffs"
+                url="foodfleet/staffs"
                 term-param="filter[square_id]"
                 value-param="uuid"
                 text-param="square_id"
@@ -355,7 +355,7 @@
               </v-layout>
               <simple
                 :key="categoryKey"
-                url="/categories"
+                url="foodfleet/categories"
                 term-param="filter[name]"
                 value-param="uuid"
                 placeholder="All categories"
@@ -382,7 +382,7 @@
               </v-layout>
               <simple
                 :key="itemKey"
-                url="/items"
+                url="foodfleet/items"
                 term-param="filter[name]"
                 value-param="uuid"
                 placeholder="All items"
@@ -507,7 +507,7 @@
               </v-layout>
               <simple
                 :key="transactionIdKey"
-                url="/transactions"
+                url="foodfleet/transactions"
                 term-param="filter[square_id]"
                 value-param="uuid"
                 text-param="square_id"
@@ -540,7 +540,7 @@
               </v-layout>
               <simple
                 :key="paymentIdKey"
-                url="/payments"
+                url="foodfleet/payments"
                 term-param="filter[square_id]"
                 value-param="uuid"
                 text-param="square_id"

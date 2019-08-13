@@ -54,3 +54,22 @@ export const FIXTURE_REPORTABLES = [
     modifier_2: FIXTURE_MODIFIER_TEXT
   }
 ]
+
+export const FIXTURE_REPORTABLES_RESPONSE = {
+  data: FIXTURE_REPORTABLES,
+  links: {
+    first: 'http://foodfleet.localdev.com/api/foodfleet/financial-reports?page%5Bsize%5D=10&page%5Bnumber%5D=1',
+    last: 'http://foodfleet.localdev.com/api/foodfleet/financial-reports?page%5Bsize%5D=10&page%5Bnumber%5D=8',
+    prev: null,
+    next: 'http://foodfleet.localdev.com/api/foodfleet/financial-reports?page%5Bsize%5D=10&page%5Bnumber%5D=2'
+  },
+  meta: {
+    current_page: 1,
+    from: 1,
+    last_page: 8,
+    path: 'http://foodfleet.localdev.com/api/foodfleet/financial-reports',
+    per_page: 10,
+    to: 10,
+    total: 79
+  }
+}

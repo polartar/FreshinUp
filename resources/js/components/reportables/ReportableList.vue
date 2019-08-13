@@ -1,116 +1,148 @@
 <template>
-  <v-data-table
-    v-model="selected"
-    class="elevation-1"
-    :headers="headers"
-    :items="reportables"
-    :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
-    :pagination.sync="pagination"
-    :loading="isLoading"
-    :total-items="totalItems"
-    item-key="id"
-    hide-actions
-    select-all
-    must-sort
-  >
-    <template
-      slot="headerCell"
-      slot-scope="props"
+  <div>
+    <v-data-table
+      v-model="selected"
+      class="elevation-1"
+      :headers="headers"
+      :items="reportables"
+      :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
+      :pagination.sync="pagination"
+      :loading="isLoading"
+      :total-items="totalItems"
+      item-key="id"
+      hide-actions
+      select-all
+      must-sort
     >
-      <span v-if="selected.length > 1 && props.header.value === 'delete'">
-        <v-btn
-          color="primary"
-          dark
-          @click="deleteReportables"
-        >
-          Delete
-        </v-btn>
-      </span>
-
-      <span v-else>
-        {{ props.header.text }}
-      </span>
-    </template>
-    <template
-      slot="items"
-      slot-scope="props"
-    >
-      <td>
-        <v-checkbox
-          v-model="props.selected"
-          primary
-          hide-details
-        />
-      </td>
-      <td
-        class="text-xs-left"
+      <template
+        slot="headerCell"
+        slot-scope="props"
       >
-        {{ props.item.name }}
-      </td>
-      <td>
-        <v-layout row>
-          <v-flex
-            xs6
-            mr-1
+        <span v-if="selected.length > 1 && props.header.value === 'delete'">
+          <v-btn
+            color="primary"
+            dark
+            @click="deleteReportables"
           >
-            <modifier
-              v-if="props.item.modifier_1"
-              :modifier="props.item.modifier_1"
-              :items="getModifierSelectables(props.item.modifier_1)"
-              @change="changeModifier1Value($event, props.item)"
-            />
-          </v-flex>
-          <v-flex
-            xs6
-            ml-1
+            Delete
+          </v-btn>
+        </span>
+
+        <span v-else>
+          {{ props.header.text }}
+        </span>
+      </template>
+      <template
+        slot="items"
+        slot-scope="props"
+      >
+        <td>
+          <v-checkbox
+            v-model="props.selected"
+            primary
+            hide-details
+          />
+        </td>
+        <td
+          class="text-xs-left"
+        >
+          {{ props.item.name }}
+        </td>
+        <td>
+          <v-layout row>
+            <v-flex
+              xs6
+              mr-1
+            >
+              <modifier
+                v-if="props.item.modifier_1"
+                :modifier="props.item.modifier_1"
+                :items="getModifierSelectables(props.item.modifier_1)"
+                @change="changeModifier1Value($event, props.item)"
+              />
+            </v-flex>
+            <v-flex
+              xs6
+              ml-1
+            >
+              <modifier
+                v-if="props.item.modifier_2"
+                :modifier="props.item.modifier_2"
+                :items="getModifierSelectables(props.item.modifier_2)"
+                @change="changeModifier2Value($event, props.item)"
+              />
+            </v-flex>
+          </v-layout>
+        </td>
+        <td class="text-xs-left mb-1">
+          {{ formatFilters(props.item.filters) }}
+        </td>
+        <td class="text-xs-right">
+          <a
+            class="primary--text open"
+            target="_blank"
+            :href="report_links[props.item.id]"
           >
-            <modifier
-              v-if="props.item.modifier_2"
-              :modifier="props.item.modifier_2"
-              :items="getModifierSelectables(props.item.modifier_2)"
-              @change="changeModifier2Value($event, props.item)"
-            />
-          </v-flex>
+            Open in new tab
+          </a>
+        </td>
+        <td class="text-xs-right">
+          <v-btn
+            color="primary"
+            dark
+            :href="report_links[props.item.id]"
+          >
+            Generate
+          </v-btn>
+        </td>
+        <td class="text-xs-right">
+          <v-btn
+            fab
+            icon
+            dark
+            small
+            color="grey"
+            outline
+            @click="deleteReportable(props.item)"
+          >
+            <v-icon dark>
+              fa-times
+            </v-icon>
+          </v-btn>
+        </td>
+      </template>
+    </v-data-table>
+    <v-layout
+      align-center
+    >
+      <v-flex
+        grow
+        justify-center
+      >
+        <v-layout
+          justify-center
+        >
+          <v-pagination
+            :value="page"
+            :length="pagination.totalPages"
+            :disabled="isLoading"
+            :total-visible="6"
+            @input="onPageChange"
+          />
         </v-layout>
-      </td>
-      <td class="text-xs-left mb-1">
-        {{ formatFilters(props.item.filters) }}
-      </td>
-      <td class="text-xs-right">
-        <a
-          class="primary--text open"
-          target="_blank"
-          :href="report_links[props.item.id]"
-        >
-          Open in new tab
-        </a>
-      </td>
-      <td class="text-xs-right">
-        <v-btn
-          color="primary"
-          dark
-          :href="report_links[props.item.id]"
-        >
-          Generate
-        </v-btn>
-      </td>
-      <td class="text-xs-right">
-        <v-btn
-          fab
-          icon
-          dark
-          small
-          color="grey"
-          outline
-          @click="deleteReportable(props.item)"
-        >
-          <v-icon dark>
-            fa-times
-          </v-icon>
-        </v-btn>
-      </td>
-    </template>
-  </v-data-table>
+      </v-flex>
+      <v-flex
+        shrink
+      >
+        <v-select
+          :value="rowsPerPage"
+          :items="rowsPerPageItems"
+          label="Results Per Page"
+          @input="onRowsPerPageChange"
+        />
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
@@ -162,6 +194,12 @@ export default {
     })
   },
   methods: {
+    onPageChange (value) {
+      this.pagination = { ...this.pagination, page: value }
+    },
+    onRowsPerPageChange (value) {
+      this.pagination = { ...this.pagination, rowsPerPage: value }
+    },
     reportLink (report) {
       let params = {}
       let modifier1 = this.modifier_1[report.id]

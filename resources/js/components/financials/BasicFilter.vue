@@ -19,8 +19,9 @@
       </v-layout>
       <simple
         :key="eventKey"
-        url="/events"
-        term-param="name"
+        url="foodfleet/events"
+        term-param="filter[name]"
+        value-param="uuid"
         placeholder="All Events"
         background-color="white"
         class="mt-0 pt-0"
@@ -71,8 +72,9 @@
       </v-layout>
       <simple
         :key="companyKey"
-        url="/companies"
-        term-param="name"
+        url="companies"
+        term-param="filter[name]"
+        value-param="uuid"
         placeholder="All Companies"
         background-color="white"
         class="mt-0 pt-0"
@@ -97,8 +99,9 @@
       </v-layout>
       <simple
         :key="truckKey"
-        url="/trucks"
-        term-param="name"
+        url="foodfleet/fleet-members"
+        term-param="filter[name]"
+        value-param="uuid"
         placeholder="All Trucks"
         background-color="white"
         class="mt-0 pt-0"
@@ -123,8 +126,9 @@
       </v-layout>
       <simple
         :key="customerKey"
-        url="/companies?filter[type]=customer"
-        term-param="name"
+        url="companies?filter[type_key]=contractor"
+        term-param="filter[name]"
+        value-param="uuid"
         placeholder="All Customers"
         background-color="white"
         class="mt-0 pt-0"
@@ -195,10 +199,10 @@ export default {
       this.filters.company_uuid = company ? company.uuid : null
     },
     selectTruck (truck) {
-      this.filters.truck_uuid = truck ? truck.uuid : null
+      this.filters.fleet_member_uuid = truck ? truck.uuid : null
     },
     selectCustomer (customer) {
-      this.filters.customer_uuid = customer ? customer.uuid : null
+      this.filters.contractor_uuid = customer ? customer.uuid : null
     },
     changeDate () {
       this.filters.date_after = this.range ? this.range.start : null
