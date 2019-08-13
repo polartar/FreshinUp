@@ -459,7 +459,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                       <input
                         aria-label=""
                         autocomplete="off"
-                        placeholder="All locations"
+                        placeholder="All customers"
                         role="combobox"
                         type="text"
                       />

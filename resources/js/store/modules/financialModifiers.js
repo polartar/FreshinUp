@@ -1,5 +1,17 @@
 import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
 
-export default ({ items, item }) => {
-  return makeRestStore('financial-modifiers', { items, item })
+export default (initialState = {}) => {
+  const store = makeRestStore(
+    'financialmodifiers',
+    { item: initialState.item, items: initialState.items },
+    {
+      itemsPath: () => `/foodfleet/financial-modifiers`,
+      itemPath: ({ id }) => `/foodfleet/financial-modifiers/${id}`
+    }
+  )
+
+  return {
+    namespaced: true,
+    ...store
+  }
 }

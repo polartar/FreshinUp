@@ -19,7 +19,6 @@ import paymentTypes from '~/store/modules/paymentTypes.js'
 import staffs from '~/store/modules/staffs.js'
 import transactions from '~/store/modules/transactions.js'
 
-
 const initialState = {
   loginSuccessRedirectPath: '/admin',
   ...window.__INITIAL_STATE__

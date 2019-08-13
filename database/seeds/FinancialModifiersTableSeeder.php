@@ -29,7 +29,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'event_uuid',
-                'resource_name' => 'events',
+                'resource_name' => 'foodfleet/events',
                 'label' => 'Event name',
                 'placeholder' => 'Event name',
                 'type' => 'autocomplete',
@@ -39,7 +39,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'company_uuid',
-                'resource_name' => 'companies',
+                'resource_name' => 'foodfleet/companies',
                 'label' => 'Company name',
                 'placeholder' => 'Company name',
                 'type' => 'autocomplete',
@@ -49,7 +49,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'fleet_member_uuid',
-                'resource_name' => 'fleet_members',
+                'resource_name' => 'foodfleet/fleet_members',
                 'label' => 'Fleet member name',
                 'placeholder' => 'Fleet member name',
                 'type' => 'autocomplete',
@@ -69,7 +69,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'event_tag_uuid',
-                'resource_name' => 'event_tags',
+                'resource_name' => 'foodfleet/event_tags',
                 'label' => 'Event tags',
                 'placeholder' => 'Event tags',
                 'type' => 'autocomplete',
@@ -79,7 +79,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'location_uuid',
-                'resource_name' => 'location',
+                'resource_name' => 'foodfleet/locations',
                 'label' => 'Location',
                 'placeholder' => 'Location',
                 'type' => 'autocomplete',
@@ -89,7 +89,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'customer_uuid',
-                'resource_name' => 'customers',
+                'resource_name' => 'foodfleet/customers',
                 'label' => 'Customer Name',
                 'placeholder' => 'Customer Name',
                 'type' => 'autocomplete',
@@ -99,7 +99,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'customer_uuid',
-                'resource_name' => 'customers',
+                'resource_name' => 'foodfleet/customers',
                 'label' => 'Customer ID',
                 'placeholder' => 'Customer ID',
                 'type' => 'autocomplete',
@@ -109,7 +109,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'customer_uuid',
-                'resource_name' => 'customers',
+                'resource_name' => 'foodfleet/customers',
                 'label' => 'Reference ID',
                 'placeholder' => 'Reference ID',
                 'type' => 'autocomplete',
@@ -119,7 +119,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'staff_uuid',
-                'resource_name' => 'staffs',
+                'resource_name' => 'foodfleet/staffs',
                 'label' => 'Staff Name',
                 'placeholder' => 'Staff Name',
                 'type' => 'autocomplete',
@@ -129,7 +129,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'staff_uuid',
-                'resource_name' => 'staffs',
+                'resource_name' => 'foodfleet/staffs',
                 'label' => 'Staff ID',
                 'placeholder' => 'Staff ID',
                 'type' => 'autocomplete',
@@ -146,7 +146,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'category_uuid',
-                'resource_name' => 'categories',
+                'resource_name' => 'foodfleet/categories',
                 'label' => 'Category',
                 'placeholder' => 'Category',
                 'type' => 'autocomplete',
@@ -156,7 +156,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'item_uuid',
-                'resource_name' => 'items',
+                'resource_name' => 'foodfleet/items',
                 'label' => 'Item',
                 'placeholder' => 'Item',
                 'type' => 'autocomplete',
@@ -187,7 +187,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'transaction_uuid',
-                'resource_name' => 'transactions',
+                'resource_name' => 'foodfleet/transactions',
                 'label' => 'Transaction ID',
                 'placeholder' => 'Transaction ID',
                 'type' => 'autocomplete',
@@ -197,7 +197,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'payment_uuid',
-                'resource_name' => 'payments',
+                'resource_name' => 'foodfleet/payments',
                 'label' => 'Payment ID',
                 'placeholder' => 'Payment ID',
                 'type' => 'autocomplete',
