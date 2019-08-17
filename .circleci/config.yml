@@ -98,13 +98,15 @@ jobs:
           name: JS Lint
           command: |
             source /root/.nvm/nvm.sh
+            nvm use 8
             yarn lint
 
       - run:
-          name: JS Test with Coverage
+          name: JS Test
           command: |
             source /root/.nvm/nvm.sh
-            yarn test
+            nvm use 8
+            yarn test --maxWorkers=4
 
 workflows:
   version: 2

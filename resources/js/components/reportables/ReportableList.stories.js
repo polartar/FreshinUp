@@ -114,7 +114,7 @@ const reportables = [
   }
 ]
 
-storiesOf('reportables/ReportableList', module)
+storiesOf('FoodFleet|reportables/ReportableList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

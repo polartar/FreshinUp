@@ -1,16 +1,16 @@
 {
-    "name": "laravel/laravel",
+    "name": "freshinup/foodfleet",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "FoodFleet Admin UI and API to power FoodFleet",
     "keywords": [
-        "framework",
         "laravel"
     ],
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
-        "freshinup/fresh-bus-forms": "1.28.0",
         "fideloper/proxy": "^4.0",
+        "freshinup/fresh-bus-forms": "1.33.0",
+        "imliam/laravel-env-set-command": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "~1.0",
