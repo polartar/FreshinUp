@@ -4,5 +4,5 @@ export default create({
   base: 'light',
 
   brandTitle: 'FoodFleet StyleGuide',
-  brandImage: '/images/logo.png',
+  brandImage: '/images/logo.png'
 })
