@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 // Components
 import ClearButton from './ClearButton.vue'
 
-storiesOf('ClearButton', module)
+storiesOf('FoodFleet|ui/ClearButton', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
