@@ -138,7 +138,7 @@ const advancedFilters = {
   payment_uuid: null
 }
 
-storiesOf('financials/AdvancedFilter', module)
+storiesOf('FoodFleet|financials/AdvancedFilter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
