@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'tests/utils'
+import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_USERS_RESPONSE, FIXTURE_USERS_SORTED_BY_FIRSTNAME } from 'tests/__data__/users'
 import { FIXTURE_CURRENT_USER } from 'tests/__data__/user'
 import Component from '~/pages/admin/users/index.vue'

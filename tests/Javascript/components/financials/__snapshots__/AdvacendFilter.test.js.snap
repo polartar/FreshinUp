@@ -94,6 +94,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -111,6 +112,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All tags"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -195,6 +197,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -212,6 +215,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All locations"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -344,6 +348,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -361,6 +366,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All customers"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -445,6 +451,8 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                text-param="square_id"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -461,7 +469,9 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         autocomplete="off"
                         placeholder="All customers"
                         role="combobox"
+                        text-param="square_id"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -550,6 +560,8 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                text-param="reference_id"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -566,7 +578,9 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         autocomplete="off"
                         placeholder="All customers"
                         role="combobox"
+                        text-param="reference_id"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -655,6 +669,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -672,6 +687,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All staff members"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -756,6 +772,8 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                text-param="square_id"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -772,7 +790,9 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         autocomplete="off"
                         placeholder="All staff members"
                         role="combobox"
+                        text-param="square_id"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -1068,6 +1088,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -1085,6 +1106,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All categories"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -1169,6 +1191,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -1186,6 +1209,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         placeholder="All items"
                         role="combobox"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -1569,6 +1593,8 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                text-param="square_id"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -1585,7 +1611,9 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         autocomplete="off"
                         placeholder="All transactions"
                         role="combobox"
+                        text-param="square_id"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"
@@ -1674,6 +1702,8 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                 background-color="white"
                 class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 height="48"
+                text-param="square_id"
+                value-param="uuid"
               >
                 <div
                   class="v-input__control"
@@ -1690,7 +1720,9 @@ exports[`BasicFilter Snapshots defaults 1`] = `
                         autocomplete="off"
                         placeholder="All payments"
                         role="combobox"
+                        text-param="square_id"
                         type="text"
+                        value-param="uuid"
                       />
                       <div
                         class="v-input__append-inner"

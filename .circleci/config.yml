@@ -6,7 +6,7 @@ jobs:
 
     docker:
       # specify the version you desire here
-      - image: laratools/ci:7.2
+      - image: laratools/ci:7.3
 
     steps:
       - add_ssh_keys:
@@ -22,6 +22,12 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run:
+          name: Information
+          command: |
+            php --version
+            composer --version
+
       - run: COMPOSER_MEMORY_LIMIT=2G composer install -n -o --profile
 
       - save_cache:
@@ -33,7 +39,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: laratools/ci:7.2
+      - image: laratools/ci:7.3
 
     steps:
       - add_ssh_keys:
@@ -63,7 +69,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: laratools/ci:7.2
+      - image: laratools/ci:7.3
 
     steps:
       - add_ssh_keys:
@@ -98,13 +104,15 @@ jobs:
           name: JS Lint
           command: |
             source /root/.nvm/nvm.sh
+            nvm use 8
             yarn lint
 
       - run:
-          name: JS Test with Coverage
+          name: JS Test
           command: |
             source /root/.nvm/nvm.sh
-            yarn test
+            nvm use 8
+            yarn test --maxWorkers=4
 
 workflows:
   version: 2

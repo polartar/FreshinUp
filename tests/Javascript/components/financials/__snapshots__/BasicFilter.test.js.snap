@@ -20,6 +20,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       background-color="white"
       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
       height="48"
+      value-param="uuid"
     >
       <div
         class="v-input__control"
@@ -37,6 +38,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               placeholder="All Events"
               role="combobox"
               type="text"
+              value-param="uuid"
             />
             <div
               class="v-input__append-inner"
@@ -165,6 +167,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       background-color="white"
       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
       height="48"
+      value-param="uuid"
     >
       <div
         class="v-input__control"
@@ -182,6 +185,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               placeholder="All Companies"
               role="combobox"
               type="text"
+              value-param="uuid"
             />
             <div
               class="v-input__append-inner"
@@ -266,6 +270,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       background-color="white"
       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
       height="48"
+      value-param="uuid"
     >
       <div
         class="v-input__control"
@@ -283,6 +288,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               placeholder="All Trucks"
               role="combobox"
               type="text"
+              value-param="uuid"
             />
             <div
               class="v-input__append-inner"
@@ -367,6 +373,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       background-color="white"
       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
       height="48"
+      value-param="uuid"
     >
       <div
         class="v-input__control"
@@ -384,6 +391,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               placeholder="All Customers"
               role="combobox"
               type="text"
+              value-param="uuid"
             />
             <div
               class="v-input__append-inner"

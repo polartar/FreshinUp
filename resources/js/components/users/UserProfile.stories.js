@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 // Components
 import UserProfile from './UserProfile.vue'
 
-storiesOf('users/UserProfile', module)
+storiesOf('FoodFleet|users/UserProfile', module)
   .add(
     'for any user',
     () => ({

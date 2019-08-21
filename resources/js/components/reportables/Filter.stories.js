@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 // Components
 import ReportableFilter from './Filter.vue'
 
-storiesOf('reportables/Filter', module)
+storiesOf('FoodFleet|reportables/Filter', module)
   .addDecorator(withBackgrounds([
     { name: 'report-center', value: '#c5dbe3' }
   ]))

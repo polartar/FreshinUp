@@ -2,6 +2,7 @@ import {
   App,
   createStore
 } from 'fresh-bus'
+import theme from './theme'
 import NotFoundPage from 'fresh-bus/pages/404.vue'
 import page from '~/store/modules/page.js'
 import categories from '~/store/modules/categories.js'
@@ -140,16 +141,7 @@ const appInstance = new App({
       transacions: transactions({})
     }
   }),
-  theme: {
-    primary: '#508c85',
-    secondary: '#d0883d',
-    accent: '#888888',
-    inputaccent: '#E4EDEC',
-    error: '#d94545',
-    info: '#2196F3',
-    success: '#71b179',
-    warning: '#f9ad36'
-  },
+  theme,
 
   // Page Not Found Configuration
   redirectOnNotFound: false,
