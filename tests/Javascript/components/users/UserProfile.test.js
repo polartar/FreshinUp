@@ -1,4 +1,4 @@
-import {mount, shallowMount} from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_USER } from 'tests/__data__/user'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
