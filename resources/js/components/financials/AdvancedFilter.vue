@@ -595,6 +595,18 @@ import ClearButton from '~/components/ClearButton.vue'
 import Simple from 'fresh-bus/components/search/simple'
 import TitleLink from 'fresh-bus/components/TitleLink'
 import reduce from 'lodash/reduce'
+import isFunction from 'lodash/isFunction'
+
+/**
+ * Safe stop event propagation
+ *
+ * @param event
+ */
+export function stopEventPropagation (event) {
+  if (event && isFunction(event.stopPropagation)) {
+    event.stopPropagation()
+  }
+}
 
 export default {
   components: { ClearButton, Simple, TitleLink },
@@ -682,14 +694,14 @@ export default {
     setValue (object, key) {
       this.filters[key] = object ? object.uuid : null
     },
-    clearAllEvents () {
-      event.stopPropagation()
+    clearAllEvents (event) {
+      stopEventPropagation(event)
       this.filters.event_tag_uuid = this.filters.location_uuid = null
       this.eventTagKey += 1
       this.locationKey += 1
     },
-    clearAllCustomers () {
-      event.stopPropagation()
+    clearAllCustomers (event) {
+      stopEventPropagation(event)
       this.filters.customer_uuid = this.filters.staff_uuid = this.filters.device_uuid = null
       this.customerNameKey += 1
       this.customerIdKey += 1
@@ -697,14 +709,14 @@ export default {
       this.staffNameKey += 1
       this.staffIdKey += 1
     },
-    clearAllItems () {
-      event.stopPropagation()
+    clearAllItems (event) {
+      stopEventPropagation(event)
       this.filters.category_uuid = this.filters.item_uuid = this.filters.min_price = this.filters.max_price = null
       this.categoryKey += 1
       this.itemKey += 1
     },
-    clearAllPayments () {
-      event.stopPropagation()
+    clearAllPayments (event) {
+      stopEventPropagation(event)
       this.filters.payment_type_uuid = this.filters.transaction_uuid = this.filters.payment_uuid = null
       this.transactionIdKey += 1
       this.paymentIdKey += 1
