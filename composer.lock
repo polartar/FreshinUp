@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48869628b08323ff5133890dc7b3f086",
+    "content-hash": "381e28c6d4402e0c03e0a988fe6ecc63",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -980,16 +980,16 @@
         },
         {
             "name": "freshinup/fresh-bus-forms",
-            "version": "1.33.0",
+            "version": "1.35.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:FreshinUp/fresh-bus-forms.git",
-                "reference": "2aa494109071bae7b3e9f98bd8343ad33f20362a"
+                "reference": "008af9da544cf5c4ccac96dc6a7b066bf4b4c904"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/2aa494109071bae7b3e9f98bd8343ad33f20362a",
-                "reference": "2aa494109071bae7b3e9f98bd8343ad33f20362a",
+                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/008af9da544cf5c4ccac96dc6a7b066bf4b4c904",
+                "reference": "008af9da544cf5c4ccac96dc6a7b066bf4b4c904",
                 "shasum": ""
             },
             "require": {
@@ -1095,10 +1095,10 @@
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/1.33.0",
+                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/1.35.0",
                 "issues": "https://github.com/FreshinUp/fresh-bus-forms/issues"
             },
-            "time": "2019-08-17T01:27:07+00:00"
+            "time": "2019-08-23T21:55:31+00:00"
         },
         {
             "name": "fzaninotto/faker",
