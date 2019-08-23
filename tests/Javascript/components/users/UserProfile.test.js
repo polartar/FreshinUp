@@ -11,6 +11,16 @@ describe('UserProfile', () => {
     localVue = vue.localVue
   })
   describe('Snapshots', () => {
+    it('without user and company', async () => {
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          adminUser: FIXTURE_USER,
+          isCurrentUser: true
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
     it('isCurrentUser', async () => {
       const wrapper = mount(Component, {
         localVue: localVue,
