@@ -4,8 +4,8 @@
       <simple
         :url="'/' + modifier.resource_name"
         :term-param="modifier.filter"
-        :value-param="modifier.value_param"
-        :text-param="modifier.text_param"
+        :results-value-key="modifier.value_param"
+        :results-text-key="modifier.text_param"
         :placeholder="modifier.placeholder"
         background-color="white"
         class="mt-0 pt-0"

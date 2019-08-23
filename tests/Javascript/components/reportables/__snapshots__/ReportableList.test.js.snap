@@ -1037,7 +1037,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
+                                          class="v-btn v-btn--flat v-btn--floating theme--light"
                                           type="button"
                                         >
                                           <div
@@ -1049,7 +1049,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating theme--light"
+                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
                                           type="button"
                                         >
                                           <div
@@ -2034,7 +2034,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
+                                          class="v-btn v-btn--flat v-btn--floating theme--light"
                                           type="button"
                                         >
                                           <div
@@ -2046,7 +2046,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating theme--light"
+                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
                                           type="button"
                                         >
                                           <div
@@ -2698,7 +2698,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
+                                          class="v-btn v-btn--flat v-btn--floating theme--light"
                                           type="button"
                                         >
                                           <div
@@ -2710,7 +2710,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
                                       </td>
                                       <td>
                                         <button
-                                          class="v-btn v-btn--flat v-btn--floating theme--light"
+                                          class="v-btn v-btn--flat v-btn--floating v-btn--outline theme--light accent--text"
                                           type="button"
                                         >
                                           <div
