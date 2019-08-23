@@ -218,4 +218,7 @@ export default {
   /deep/ .v-text-field--box > .v-input__control > .v-input__slot {
     min-height: 0;
   }
+  /deep/ .v-autocomplete .v-input__slot {
+    padding: 0 12px
+  }
 </style>

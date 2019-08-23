@@ -25,32 +25,15 @@
       />
     </template>
     <template v-else-if="modifier.type === 'date'">
-      <v-menu
-        v-model="modifierDateMenu"
-        :close-on-content-click="false"
-        transition="scale-transition"
-        full-width
-        min-width="290px"
-      >
-        <template v-slot:activator="{ on }">
-          <v-text-field
-            v-model="value"
-            :placeholder="modifier.placeholder"
-            readonly
-            solo
-            flat
-            hide-details
-            class="rounded-input"
-            append-icon="event"
-            v-on="on"
-          />
-        </template>
-        <v-date-picker
-          v-model="value"
-          no-title
-          @input="modifierDateMenu = false; selectValue(value)"
-        />
-      </v-menu>
+      <vue-ctk-date-time-picker
+        v-model="value"
+        only-date
+        format="YYYY-MM-DD"
+        formatted="YYYY-MM-DD"
+        input-size="lg"
+        :label="modifier.label"
+        @input="selectValue(value)"
+      />
     </template>
     <template v-else-if="modifier.type === 'text'">
       <v-text-field
@@ -67,10 +50,12 @@
 
 <script>
 import Simple from 'fresh-bus/components/search/simple'
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 
 export default {
   components: {
-    Simple
+    Simple, VueCtkDateTimePicker
   },
   props: {
     modifier: {
@@ -103,5 +88,7 @@ export default {
 }
 </script>
 <style lang="styl" scoped>
-
+  /deep/ .v-autocomplete .v-input__slot {
+    padding: 0 12px
+  }
 </style>

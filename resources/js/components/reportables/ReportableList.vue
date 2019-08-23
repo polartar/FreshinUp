@@ -262,18 +262,6 @@ export default {
 }
 </script>
 <style lang="styl" scoped>
-  /deep/ .v-datatable thead {
-    background: var(--v-secondary-base) !important
-  }
-  /deep/ table.v-table thead tr {
-    height: 30px;
-  }
-  /deep/ table.v-table tbody tr {
-    height: 78px;
-  }
-  /deep/ .v-datatable th {
-    color: white !important
-  }
   /deep/ .rounded-input .v-input__slot {
     border-radius: 50px !important;
     border: solid 1px #a9a9a9;

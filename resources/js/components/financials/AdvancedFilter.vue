@@ -780,4 +780,7 @@ export default {
   .full-width {
     width: 100%;
   }
+  /deep/ .v-autocomplete .v-input__slot {
+    padding: 0 12px
+  }
 </style>
