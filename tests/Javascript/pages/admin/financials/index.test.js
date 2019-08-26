@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_REPORTABLES, FIXTURE_REPORTABLES_RESPONSE } from 'tests/__data__/reportables'
@@ -18,18 +18,25 @@ describe('Admin Financial Reports Page', () => {
     afterEach(() => {
       mock.restore()
     })
-    test('snapshot', async () => {
+    test('snapshot', done => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
       mock = vue.mock
         .onGet('api/foodfleet/financial-reports', { params: { 'page[size]': 10, 'page[number]': 1 } })
         .reply(200, { data: FIXTURE_REPORTABLES })
         .onGet('api/foodfleet/financial-reports').reply(200, FIXTURE_REPORTABLES_RESPONSE)
-        .onAny()
-        .reply(config => {
-          console.warn('No mock match for ' + config.url, config)
-          return [404, {}]
-        })
+
+      mock.onGet('api/foodfleet/devices')
+        .reply(200, {})
+
+      mock.onGet('api/foodfleet/payment-types')
+        .reply(200, {})
+
+      mock.onAny().reply(config => {
+        console.warn('No mock match for ' + config.url, config)
+        return [404, { message: 'No mock match for ' + config.url, data: config }]
+      })
+
       const store = createStore({
         financialReports: {
           items: FIXTURE_REPORTABLES_RESPONSE
@@ -41,16 +48,18 @@ describe('Admin Financial Reports Page', () => {
           financialReports: financialReports({})
         }
       })
-      const wrapper = shallowMount(Component, {
+
+      const wrapper = mount(Component, {
         localVue: localVue,
         store
       })
-      // Action: change State Machine's state
-      await wrapper.vm.$store.dispatch('page/setLoading', false)
-      await wrapper.vm.$nextTick()
-      await wrapper.vm.$store.dispatch('financialReports/getItems')
-      await wrapper.vm.$nextTick()
-      expect(wrapper.element).toMatchSnapshot()
+
+      // Action: load the page data
+      Component.beforeRouteEnterOrUpdate(wrapper.vm, null, null, async () => {
+        await wrapper.vm.$nextTick()
+        expect(wrapper.element).toMatchSnapshot()
+        done()
+      })
     })
   })
 })
