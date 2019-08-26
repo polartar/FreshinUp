@@ -19,7 +19,9 @@ const modifierAutocomplete = {
   label: 'Event',
   placeholder: 'All events',
   type: 'autocomplete',
-  filter: 'name'
+  filter: 'name',
+  value_param: 'uuid',
+  text_param: 'name'
 }
 
 const modifierSelect = {

@@ -19,7 +19,11 @@ class Modifier extends JsonResource
             'name' => $this->name,
             'resource_name' => $this->resource_name,
             'label' => $this->label,
-            'placeholder' => $this->placeholder
+            'placeholder' => $this->placeholder,
+            'type' => $this->type,
+            'filter' => $this->filter,
+            'value_param' => $this->value_param,
+            'text_param' => $this->text_param
         ];
 
         return $data;

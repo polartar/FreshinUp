@@ -7,8 +7,6 @@ use App\Http\Resources\Foodfleet\Reportable as ReportableResource;
 use App\Models\Foodfleet\FinancialReport;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
-use Spatie\QueryBuilder\Filter;
-use Illuminate\Validation\Rule;
 
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 

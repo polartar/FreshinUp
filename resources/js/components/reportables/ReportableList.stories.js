@@ -5,10 +5,10 @@ import { action } from '@storybook/addon-actions'
 import ReportableList from './ReportableList.vue'
 
 const paymentTypes = [
-  { uuid: 1, label: 'Credit Card' },
-  { uuid: 2, label: 'Money Transfer' },
-  { uuid: 3, label: 'Google Pay' },
-  { uuid: 4, label: 'Apple Pay' }
+  { uuid: 1, name: 'Credit Card' },
+  { uuid: 2, name: 'Money Transfer' },
+  { uuid: 3, name: 'Google Pay' },
+  { uuid: 4, name: 'Apple Pay' }
 ]
 
 const filterFleetMember = {

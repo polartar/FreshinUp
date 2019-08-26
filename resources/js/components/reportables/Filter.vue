@@ -1,7 +1,6 @@
 <template>
   <search-filter-sorter
     autocomplete_url="/api/foodfleet/financial-reports"
-    :sort-options="sortables"
     without-filter-label
     without-sort-by
     placeholder="Search"

@@ -74,6 +74,40 @@ describe('ReportableList', () => {
       component.setData({ modifier_1: modifier1 })
       expect(component.vm.reportLink(FIXTURE_REPORTABLES[0])).toEqual('/admin/reportables?event_uuid=1&fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01')
     })
+    test('changeModifier1Value(value, report)', () => {
+      const component = shallowMount(Component, {
+        propsData: {
+          baseUrl: '/admin/reportables',
+          reportables: [FIXTURE_REPORTABLES[0]],
+          selectables: {
+            'payment_types': FIXTURE_PAYMENT_TYPES
+          }
+        },
+        localVue
+      })
+      let modifier1 = []
+      modifier1[FIXTURE_REPORTABLES[0].id] = 1
+      component.setData({ modifier_1: modifier1 })
+      component.vm.changeModifier1Value(2, FIXTURE_REPORTABLES[0])
+      expect(component.vm.modifier_1[FIXTURE_REPORTABLES[0].id]).toEqual(2)
+    })
+    test('changeModifier2Value(value, report)', () => {
+      const component = shallowMount(Component, {
+        propsData: {
+          baseUrl: '/admin/reportables',
+          reportables: [FIXTURE_REPORTABLES[0]],
+          selectables: {
+            'payment_types': FIXTURE_PAYMENT_TYPES
+          }
+        },
+        localVue
+      })
+      let modifier2 = []
+      modifier2[FIXTURE_REPORTABLES[0].id] = 1
+      component.setData({ modifier_1: modifier2 })
+      component.vm.changeModifier2Value(2, FIXTURE_REPORTABLES[0])
+      expect(component.vm.modifier_2[FIXTURE_REPORTABLES[0].id]).toEqual(2)
+    })
     test('formatFilters(filters)', () => {
       expect(Component.methods.formatFilters(FIXTURE_REPORTABLES[0].filters)).toEqual('Fleet Member, Date After, Date Before')
     })
