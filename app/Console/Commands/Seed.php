@@ -41,7 +41,7 @@ class Seed extends Command
 
         if ($this->option('quickstart')) {
             $this->call('db:seed', [
-                '--class' => 'DatabaseTestSeeder',
+                '--class' => 'TestDataSeeder',
                 '--force' => $this->hasOption('force')
             ]);
         }
