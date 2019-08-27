@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <div class="font-weight-bold subheading pa-2">
-      {{ title }}
-    </div>
-    <div class="py-2">
-      <lines
-        :chart-data="chartData"
-        :options="options"
-      />
-    </div>
+  <div class="pa-4">
+    <lines
+      :chart-data="chartData"
+      :options="options"
+    />
   </div>
 </template>
 
@@ -23,10 +18,6 @@ export default {
   },
   mixins: [FormatDate, FormatMoney],
   props: {
-    title: {
-      type: String,
-      default: 'Total Sales / Time'
-    },
     sales: {
       type: Array,
       required: true

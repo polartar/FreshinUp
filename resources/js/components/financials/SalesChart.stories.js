@@ -20,7 +20,7 @@ storiesOf('FoodFleet|financials/SalesChart', module)
       { name: 'blue', value: '#205a80' }
     ]
   })
-  .add('default title', () => {
+  .add('sales set', () => {
     return {
       components: { SalesChart },
       data () {
@@ -32,7 +32,11 @@ storiesOf('FoodFleet|financials/SalesChart', module)
           <v-container>
             <v-layout row>
               <v-flex xs12 sm8>
-                <v-card class="pa-4">
+                <v-card>
+                  <v-card-title class="font-weight-bold subheading">
+                    Total Sales / Time
+                  </v-card-title>
+                  <v-divider></v-divider>
                   <sales-chart
                       :sales="sales"
                   />
@@ -40,30 +44,6 @@ storiesOf('FoodFleet|financials/SalesChart', module)
               </v-flex>
             </v-layout>
           </v-container>
-      `
-    }
-  })
-  .add('custom title', () => {
-    return {
-      components: { SalesChart },
-      data () {
-        return {
-          sales: sales
-        }
-      },
-      template: `
-        <v-container>
-          <v-layout row>
-            <v-flex xs12 sm8>
-              <v-card class="pa-4">
-                <sales-chart
-                    title="Different title"
-                    :sales="sales"
-                />
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-    `
+        `
     }
   })

@@ -10,22 +10,9 @@ describe('financials/SalesChart', () => {
       localVue = createLocalVue()
       localVue.use(Vuetify)
     })
-    test('default title', () => {
+    test('sales set', () => {
       const component = mount(Component, {
         propsData: {
-          sales: FIXTURE_SALES
-        },
-        localVue,
-        stubs: {
-          Lines: true
-        }
-      })
-      expect(component.element).toMatchSnapshot()
-    })
-    test('custom title', () => {
-      const component = mount(Component, {
-        propsData: {
-          title: 'Custom title',
           sales: FIXTURE_SALES
         },
         localVue,
