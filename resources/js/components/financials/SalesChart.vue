@@ -50,7 +50,7 @@ export default {
         },
         tooltips: {
           callbacks: {
-            label: (tooltipItem, data) =>  {
+            label: (tooltipItem, data) => {
               return this.formatMoney(tooltipItem.yLabel, { format: '$0,0' })
             }
           }

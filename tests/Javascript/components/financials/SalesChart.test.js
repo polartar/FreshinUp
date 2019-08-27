@@ -1,4 +1,4 @@
-import {mount, createLocalVue, shallowMount} from '@vue/test-utils'
+import { mount, createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Component from '~/components/financials/SalesChart.vue'
 import { FIXTURE_SALES } from 'tests/__data__/sales'
