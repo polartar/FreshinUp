@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`financials/SalesChart Snapshots custom title 1`] = `
+<div>
+  <div
+    class="font-weight-bold subheading pa-2"
+  >
+    
+    Custom title
+  
+  </div>
+   
+  <div
+    class="py-2"
+  >
+    <lines-stub
+      chartdata="[object Object]"
+      chartid="line-chart"
+      cssclasses=""
+      height="400"
+      options="[object Object]"
+      plugins=""
+      width="400"
+    />
+  </div>
+</div>
+`;
+
+exports[`financials/SalesChart Snapshots default title 1`] = `
+<div>
+  <div
+    class="font-weight-bold subheading pa-2"
+  >
+    
+    Total Sales / Time
+  
+  </div>
+   
+  <div
+    class="py-2"
+  >
+    <lines-stub
+      chartdata="[object Object]"
+      chartid="line-chart"
+      cssclasses=""
+      height="400"
+      options="[object Object]"
+      plugins=""
+      width="400"
+    />
+  </div>
+</div>
+`;
