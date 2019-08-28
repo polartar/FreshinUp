@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`financials/SalesByMethod Snapshots sales set 1`] = `
+<div
+  class="pa-4"
+>
+  <doughnut-stub
+    chartdata="[object Object]"
+    chartid="doughnut-chart"
+    cssclasses=""
+    height="400"
+    options="[object Object]"
+    plugins=""
+    width="400"
+  />
+</div>
+`;
