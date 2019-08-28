@@ -2953,10 +2953,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             tabindex="-1"
                             type="button"
                           >
-                            <span
-                              class="datepicker-today"
-                              data-v-0da13aa6=""
-                            />
+                            <!---->
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
@@ -5031,10 +5028,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -6480,10 +6474,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -7664,10 +7655,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
