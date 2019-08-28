@@ -14,7 +14,9 @@ storiesOf('FoodFleet|financials/AverageTicket', module)
       template: `
           <v-container>
             <v-layout row>
-              <v-flex xs4>
+              <v-flex 
+                xs12
+                sm4>
                 <v-card>
                  <v-card-title class="font-weight-bold subheading">
                     AVG. Ticket
