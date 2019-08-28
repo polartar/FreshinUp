@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`charts/Lines Snapshots should render a canvas 1`] = `
+<div
+  class=""
+>
+  <canvas
+    height="400"
+    id="doughnut-chart"
+    width="400"
+  />
+</div>
+`;
