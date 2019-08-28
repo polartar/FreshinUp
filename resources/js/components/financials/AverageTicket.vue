@@ -1,0 +1,27 @@
+<template>
+  <div class="py-2">
+    <div class="text-xs-center my-5">
+      <div class="display-1 primary--text">
+        {{ formatMoney(averageTicket, { format: '$0,0' }) }}
+      </div>
+      <div class="font-weight-bold subheading mt-2">
+        Per Customer
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+export default {
+  mixins: [FormatMoney],
+  props: {
+    averageTicket: {
+      type: Number,
+      required: true
+    }
+  }
+}
+</script>
+<style lang="styl" scoped>
+</style>
