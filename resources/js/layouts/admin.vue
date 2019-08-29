@@ -16,3 +16,8 @@ export default {
   }
 }
 </script>
+<style>
+    .page-title {
+        color: white;
+    }
+</style>

@@ -114,7 +114,7 @@
         v-if="$store.state.page.title.length"
         fluid
       >
-        <h1 class="page-title">
+        <h1 class="page-title white--text">
           {{ $store.state.page.title }}
         </h1>
       </v-container>
