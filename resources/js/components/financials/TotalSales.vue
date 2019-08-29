@@ -57,9 +57,10 @@ export default {
   },
   computed: {
     cash () {
-      return this.paymentTypeTotals.find(total => {
+      let cashElement = this.paymentTypeTotals.find(total => {
         return total.name === 'CASH'
-      }).value
+      })
+      return cashElement ? cashElement.value : 0
     },
     credit () {
       return reduce(this.paymentTypeTotals, (result, value, key) => {

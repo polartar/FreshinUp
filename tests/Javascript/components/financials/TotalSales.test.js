@@ -35,20 +35,20 @@ describe('financials/TotalSales', () => {
         localVue
       })
       // gross
-      expect(component.html()).toContain('$20,000')
+      expect(component.text()).toContain('$20,000')
       // net
-      expect(component.html()).toContain('$10,000')
+      expect(component.text()).toContain('$10,000')
       // cash
-      expect(component.html()).toContain('$20,000')
+      expect(component.text()).toContain('$20,000')
       // credit
-      expect(component.html()).toContain('$105,000')
+      expect(component.text()).toContain('$105,000')
     })
   })
   describe('Computed', () => {
     beforeEach(() => {
       localVue = createLocalVue()
     })
-    test('cash', () => {
+    test('cash with set array', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
           gross: 20000,
@@ -58,7 +58,17 @@ describe('financials/TotalSales', () => {
       })
       expect(wrapper.vm.cash).toBe(20000)
     })
-    test('credit', () => {
+    test('cash with empty array', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          gross: 20000,
+          net: 10000,
+          paymentTypeTotals: []
+        }
+      })
+      expect(wrapper.vm.cash).toBe(0)
+    })
+    test('credit with set array', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
           gross: 20000,
@@ -67,6 +77,16 @@ describe('financials/TotalSales', () => {
         }
       })
       expect(wrapper.vm.credit).toBe(105000)
+    })
+    test('credit with empty array', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          gross: 20000,
+          net: 10000,
+          paymentTypeTotals: []
+        }
+      })
+      expect(wrapper.vm.credit).toBe(0)
     })
   })
 })
