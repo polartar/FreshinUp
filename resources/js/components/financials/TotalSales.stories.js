@@ -8,6 +8,9 @@ const paymentTypeTotals = [
   { name: 'CASH', value: 20000 }
 ]
 
+const gross = 200000
+const net = 20000
+
 storiesOf('FoodFleet|financials/TotalSales', module)
   .addParameters({
     backgrounds: [
@@ -20,7 +23,9 @@ storiesOf('FoodFleet|financials/TotalSales', module)
       components: { TotalSales },
       data () {
         return {
-          paymentTypeTotals: paymentTypeTotals
+          paymentTypeTotals: paymentTypeTotals,
+          gross: gross,
+          net: net
         }
       },
       template: `
@@ -33,8 +38,39 @@ storiesOf('FoodFleet|financials/TotalSales', module)
                   </v-card-title>
                   <v-divider></v-divider>
                   <total-sales
-                      gross=200000
-                      net=20000
+                      :gross="gross"
+                      :net="net"
+                      :payment-type-totals="paymentTypeTotals"
+                  />
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+      `
+    }
+  })
+  .add('empty payment type totals array', () => {
+    return {
+      components: { TotalSales },
+      data () {
+        return {
+          paymentTypeTotals: [],
+          gross: gross,
+          net: net
+        }
+      },
+      template: `
+          <v-container>
+            <v-layout row>
+              <v-flex xs4>
+                <v-card>
+                 <v-card-title class="font-weight-bold subheading">
+                    Total Sales
+                  </v-card-title>
+                  <v-divider></v-divider>
+                  <total-sales
+                      :gross="gross"
+                      :net="net"
                       :payment-type-totals="paymentTypeTotals"
                   />
                 </v-card>
