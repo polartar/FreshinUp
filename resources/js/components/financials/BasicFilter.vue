@@ -51,6 +51,7 @@
         formatted="YYYY-MM-DD"
         input-size="lg"
         label="Select date"
+        :color="$vuetify.theme.primary"
         @input="changeDate"
       />
     </v-flex>

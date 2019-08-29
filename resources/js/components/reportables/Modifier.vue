@@ -31,6 +31,7 @@
         formatted="YYYY-MM-DD"
         input-size="lg"
         :label="modifier.label"
+        :color="$vuetify.theme.primary"
         @input="selectValue(value)"
       />
     </template>
