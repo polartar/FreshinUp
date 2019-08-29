@@ -1710,7 +1710,9 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
       <h2
         class="white--text"
       >
+        
         Financial Reports
+      
       </h2>
     </div>
      
