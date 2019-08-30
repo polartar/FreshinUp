@@ -18,3 +18,4 @@ tests/.reports
 .php_cs.cache
 storage/testing.sqlite
 .idea/
+public/styleguide

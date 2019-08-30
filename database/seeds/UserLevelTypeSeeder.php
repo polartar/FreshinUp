@@ -1,7 +1,5 @@
 <?php
 
-namespace FoodFleet\Seeds;
-
 use FreshinUp\FreshBusForms\Models\User\UserLevel;
 use FreshinUp\FreshBusForms\Models\User\UserType;
 use Illuminate\Database\Seeder;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`financials/SalesChart Snapshots sales set 1`] = `
+<div
+  class="pa-4"
+>
+  <lines-stub
+    chartdata="[object Object]"
+    chartid="line-chart"
+    cssclasses=""
+    height="400"
+    options="[object Object]"
+    plugins=""
+    width="400"
+  />
+</div>
+`;

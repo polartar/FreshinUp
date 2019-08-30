@@ -13,9 +13,9 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      'branches': 0,
-      'functions': 40,
-      'lines': 40
+      'branches': 54,
+      'functions': 59,
+      'lines': 63
     }
   },
   setupFiles: JestConfig.setupFiles.concat([

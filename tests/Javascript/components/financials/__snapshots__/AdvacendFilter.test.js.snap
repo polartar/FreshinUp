@@ -1,0 +1,1806 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicFilter Snapshots defaults 1`] = `
+<div
+  class="full-width"
+>
+  <div
+    class="pa-4 pb-100 v-card v-sheet theme--light"
+  >
+    <div
+      class="layout row justify-space-between"
+    >
+      <a
+        class="mt-2 title primary--text"
+        href="#"
+      >
+        
+  Advanced Filters
+
+      </a>
+       
+      <button
+        class="mr-0 mt-2 small-btn v-btn v-btn--icon v-btn--large theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon grey--text far fa-times-circle theme--light"
+          />
+        </div>
+      </button>
+    </div>
+     
+    <ul
+      class="v-expansion-panel theme--light"
+    >
+      <li
+        class="v-expansion-panel__container"
+        tabindex="0"
+      >
+        <div
+          class="v-expansion-panel__header"
+        >
+          <div
+            class="title"
+          >
+            
+            Events
+          
+          </div>
+           
+          <a
+            class="black--text underline text-xs-right mr-2"
+          >
+            Clear all
+          </a>
+          <div
+            class="v-expansion-panel__header__icon"
+            name="fade-transition"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+              style="font-size: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-expansion-panel__body"
+          style="display: none;"
+        >
+            
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Event tag
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All tags"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Locations
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All locations"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+     
+    <ul
+      class="v-expansion-panel mt-3 theme--light"
+    >
+      <li
+        class="v-expansion-panel__container"
+        tabindex="0"
+      >
+        <div
+          class="v-expansion-panel__header"
+        >
+          <div
+            class="title"
+          >
+            
+            Customers
+          
+          </div>
+           
+          <a
+            class="black--text underline text-xs-right mr-2"
+          >
+            Clear all
+          </a>
+          <div
+            class="v-expansion-panel__header__icon"
+            name="fade-transition"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+              style="font-size: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-expansion-panel__body"
+          style="display: none;"
+        >
+            
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Customer name
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All customers"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Customer ID
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All customers"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Reference ID
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All customers"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Staff name
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All staff members"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Staff ID
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All staff members"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Device
+              
+                <!---->
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          placeholder="All devices"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    All
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Device 1
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Device 2
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Device 3
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Device 4
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+     
+    <ul
+      class="v-expansion-panel mt-3 theme--light"
+    >
+      <li
+        class="v-expansion-panel__container"
+        tabindex="0"
+      >
+        <div
+          class="v-expansion-panel__header"
+        >
+          <div
+            class="title"
+          >
+            
+            Items
+          
+          </div>
+           
+          <a
+            class="black--text underline text-xs-right mr-2"
+          >
+            Clear all
+          </a>
+          <div
+            class="v-expansion-panel__header__icon"
+            name="fade-transition"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+              style="font-size: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-expansion-panel__body"
+          style="display: none;"
+        >
+            
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Category
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All categories"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Item
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All items"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Min price
+              
+                <!---->
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Max price
+              
+                <!---->
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+     
+    <ul
+      class="v-expansion-panel mt-3 mb-5 theme--light"
+    >
+      <li
+        class="v-expansion-panel__container"
+        tabindex="0"
+      >
+        <div
+          class="v-expansion-panel__header"
+        >
+          <div
+            class="title"
+          >
+            
+            Payments
+          
+          </div>
+           
+          <a
+            class="black--text underline text-xs-right mr-2"
+          >
+            Clear all
+          </a>
+          <div
+            class="v-expansion-panel__header__icon"
+            name="fade-transition"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+              style="font-size: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div
+          class="v-expansion-panel__body"
+          style="display: none;"
+        >
+            
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Payment type
+              
+                <!---->
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          placeholder="All payment types"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    All
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Credit Card
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Money Transfer
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Google Pay
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Apple Pay
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm6 pl-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Transaction ID
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All transactions"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row my-2"
+          >
+            <div
+              class="flex sm6 pr-2"
+            >
+              <div
+                class="layout row justify-space-between my-2"
+              >
+                
+              Payment ID
+              
+                <!---->
+              </div>
+               
+              <div
+                background-color="white"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                height="48"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot white"
+                    style="height: 48px;"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <input
+                        aria-label=""
+                        autocomplete="off"
+                        placeholder="All payments"
+                        role="combobox"
+                        type="text"
+                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light v-autocomplete__content"
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+   
+  <div
+    class="layout secondary fixed-row row py-4"
+    style="width: 422px;"
+  >
+    <div
+      class="flex mr-2 ml-4 sm6"
+    >
+      <button
+        class="v-btn v-btn--block v-btn--large theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Clear
+      
+        </div>
+      </button>
+    </div>
+     
+    <div
+      class="flex ml-2 mr-4 sm6"
+    >
+      <a
+        class="primary v-btn v-btn--block v-btn--large theme--light"
+        href="/admin/transactions?"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Apply Filters
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

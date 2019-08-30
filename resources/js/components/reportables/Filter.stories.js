@@ -3,14 +3,14 @@ import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { action } from '@storybook/addon-actions'
 
 // Components
-import FilterSorter from './Filter.vue'
+import ReportableFilter from './Filter.vue'
 
-storiesOf('reportables/Filter', module)
+storiesOf('FoodFleet|reportables/Filter', module)
   .addDecorator(withBackgrounds([
     { name: 'report-center', value: '#c5dbe3' }
   ]))
   .add('default', () => ({
-    components: { FilterSorter },
+    components: { ReportableFilter },
     methods: {
       onRun (params) {
         action('Run')(params)
@@ -18,7 +18,7 @@ storiesOf('reportables/Filter', module)
     },
     template: `
       <v-container>
-        <filter-sorter 
+        <reportable-filter
         @runFilter="onRun"
         />
       </v-container>

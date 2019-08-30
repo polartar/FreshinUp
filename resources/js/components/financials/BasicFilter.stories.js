@@ -8,8 +8,8 @@ import BasicFilter from './BasicFilter.vue'
 let filters = {
   event_uuid: null,
   company_uuid: null,
-  truck_uuid: null,
-  customer_uuid: null,
+  fleet_member_uuid: null,
+  contractor_uuid: null,
   date_after: null,
   date_before: null
 }
@@ -34,7 +34,7 @@ mock.onGet('/companies').reply(200, {
   ]
 })
 
-mock.onGet('/trucks').reply(200, {
+mock.onGet('/fleet-members').reply(200, {
   data: [
     { uuid: 1, name: 'Truck 1' },
     { uuid: 2, name: 'Truck 2' },
@@ -52,7 +52,7 @@ mock.onGet('/companies?filter[type]=customer').reply(200, {
   ]
 })
 
-storiesOf('searches/BasicFilter', module)
+storiesOf('FoodFleet|financials/BasicFilter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

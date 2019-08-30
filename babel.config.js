@@ -1,9 +1,15 @@
 module.exports = {
   presets: [
+    '@vue/app',
     [
       '@babel/preset-env',
       {
-        modules: false
+        modules: false,
+        useBuiltIns: 'usage',
+        corejs: '2',
+        targets: {
+          node: 'current'
+        }
       }
     ]
   ],
@@ -11,16 +17,6 @@ module.exports = {
     test: {
       plugins: [
         'require-context-hook'
-      ],
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            targets: {
-              node: 'current'
-            }
-          }
-        ]
       ]
     }
   }
