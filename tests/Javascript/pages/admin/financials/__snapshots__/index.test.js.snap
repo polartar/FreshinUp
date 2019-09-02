@@ -2230,7 +2230,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                               style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
-            August
+            September
           
                             </span>
                           </button>
@@ -2359,22 +2359,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                           class="datepicker-days flex"
                           data-v-0da13aa6=""
                         >
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
                           <button
                             class="datepicker-day flex align-center justify-content-center enable"
                             data-v-0da13aa6=""
@@ -2403,7 +2387,10 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             tabindex="-1"
                             type="button"
                           >
-                            <!---->
+                            <span
+                              class="datepicker-today"
+                              data-v-0da13aa6=""
+                            />
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
@@ -2997,10 +2984,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             tabindex="-1"
                             type="button"
                           >
-                            <span
-                              class="datepicker-today"
-                              data-v-0da13aa6=""
-                            />
+                            <!---->
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
@@ -3038,28 +3022,26 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
             
                             </span>
                           </button>
-                          <button
-                            class="datepicker-day flex align-center justify-content-center enable"
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
                             data-v-0da13aa6=""
-                            tabindex="-1"
-                            type="button"
-                          >
-                            <!---->
-                            <span
-                              class="datepicker-day-effect"
-                              data-v-0da13aa6=""
-                              style="background-color: rgb(25, 118, 210);"
-                            />
-                            <!---->
-                            <span
-                              class="datepicker-day-text flex-1"
-                              data-v-0da13aa6=""
-                            >
-                              
-              31
-            
-                            </span>
-                          </button>
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
                         </div>
                       </span>
                     </div>
@@ -3083,10 +3065,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                   <span
                     class="datepicker-button-effect"
                     data-v-fea0e798=""
+                    style="background-color: rgb(25, 118, 210);"
                   />
                   <svg
                     data-v-fea0e798=""
                     height="24"
+                    style="color: rgb(25, 118, 210); fill: #1976D2;"
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -4305,7 +4289,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
-            August
+            September
           
                                                 </span>
                                               </button>
@@ -4434,22 +4418,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                               class="datepicker-days flex"
                                               data-v-0da13aa6=""
                                             >
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
                                               <button
                                                 class="datepicker-day flex align-center justify-content-center enable"
                                                 data-v-0da13aa6=""
@@ -4478,7 +4446,10 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <!---->
+                                                <span
+                                                  class="datepicker-today"
+                                                  data-v-0da13aa6=""
+                                                />
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -5072,10 +5043,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -5113,28 +5081,26 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
             
                                                 </span>
                                               </button>
-                                              <button
-                                                class="datepicker-day flex align-center justify-content-center enable"
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
                                                 data-v-0da13aa6=""
-                                                tabindex="-1"
-                                                type="button"
-                                              >
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-effect"
-                                                  data-v-0da13aa6=""
-                                                  style="background-color: rgb(25, 118, 210);"
-                                                />
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-text flex-1"
-                                                  data-v-0da13aa6=""
-                                                >
-                                                  
-              31
-            
-                                                </span>
-                                              </button>
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
                                             </div>
                                           </span>
                                         </div>
@@ -5157,10 +5123,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -5176,10 +5144,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -5751,7 +5721,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
-            August
+            September
           
                                                 </span>
                                               </button>
@@ -5880,22 +5850,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                               class="datepicker-days flex"
                                               data-v-0da13aa6=""
                                             >
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
                                               <button
                                                 class="datepicker-day flex align-center justify-content-center enable"
                                                 data-v-0da13aa6=""
@@ -5924,7 +5878,10 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <!---->
+                                                <span
+                                                  class="datepicker-today"
+                                                  data-v-0da13aa6=""
+                                                />
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -6518,10 +6475,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -6559,28 +6513,26 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
             
                                                 </span>
                                               </button>
-                                              <button
-                                                class="datepicker-day flex align-center justify-content-center enable"
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
                                                 data-v-0da13aa6=""
-                                                tabindex="-1"
-                                                type="button"
-                                              >
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-effect"
-                                                  data-v-0da13aa6=""
-                                                  style="background-color: rgb(25, 118, 210);"
-                                                />
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-text flex-1"
-                                                  data-v-0da13aa6=""
-                                                >
-                                                  
-              31
-            
-                                                </span>
-                                              </button>
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
                                             </div>
                                           </span>
                                         </div>
@@ -6603,10 +6555,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -6622,10 +6576,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -6932,7 +6888,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
-            August
+            September
           
                                                 </span>
                                               </button>
@@ -7061,22 +7017,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                               class="datepicker-days flex"
                                               data-v-0da13aa6=""
                                             >
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
-                                              <div
-                                                class="datepicker-day align-center justify-content-center"
-                                                data-v-0da13aa6=""
-                                              />
                                               <button
                                                 class="datepicker-day flex align-center justify-content-center enable"
                                                 data-v-0da13aa6=""
@@ -7105,7 +7045,10 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <!---->
+                                                <span
+                                                  class="datepicker-today"
+                                                  data-v-0da13aa6=""
+                                                />
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -7699,10 +7642,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 tabindex="-1"
                                                 type="button"
                                               >
-                                                <span
-                                                  class="datepicker-today"
-                                                  data-v-0da13aa6=""
-                                                />
+                                                <!---->
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
@@ -7740,28 +7680,26 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
             
                                                 </span>
                                               </button>
-                                              <button
-                                                class="datepicker-day flex align-center justify-content-center enable"
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
                                                 data-v-0da13aa6=""
-                                                tabindex="-1"
-                                                type="button"
-                                              >
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-effect"
-                                                  data-v-0da13aa6=""
-                                                  style="background-color: rgb(25, 118, 210);"
-                                                />
-                                                <!---->
-                                                <span
-                                                  class="datepicker-day-text flex-1"
-                                                  data-v-0da13aa6=""
-                                                >
-                                                  
-              31
-            
-                                                </span>
-                                              </button>
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
+                                              <div
+                                                class="datepicker-day flex align-center justify-content-center"
+                                                data-v-0da13aa6=""
+                                              />
                                             </div>
                                           </span>
                                         </div>
@@ -7784,10 +7722,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -7803,10 +7743,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
