@@ -27,4 +27,26 @@ class Event extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function fleetMember()
+    {
+        return $this->belongsTo(FleetMember::class, 'fleet_member_uuid', 'uuid');
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_uuid', 'uuid');
+    }
+
+    public function eventTags()
+    {
+        return $this->belongsToMany(
+            EventTag::class,
+            'events_event_tags',
+            'event_uuid',
+            'event_tag_uuid',
+            'uuid',
+            'uuid'
+        );
+    }
 }
