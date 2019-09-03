@@ -75,7 +75,7 @@
         "lint:fix": "vendor/bin/phpcbf && composer lint2:fix",
         "lint2": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --dry-run --using-cache=no --diff",
         "lint2:fix": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --using-cache=no --diff",
-        "test:coverage-check": "vendor/bin/coverage-check tests/.reports/coverage/clover.xml 63 --whitelist database/seeds/**",
+        "test:coverage-check": "vendor/bin/coverage-check tests/.reports/coverage/clover.xml 63",
         "test": "composer test:all-coverage && composer test:coverage-check",
         "test:all-coverage": [
             "touch storage/testing.sqlite",
