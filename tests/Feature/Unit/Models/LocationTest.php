@@ -4,15 +4,9 @@ namespace Tests\Feature\Unit\Models\Location;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Customer;
-use App\Models\Foodfleet\Square\Device;
-use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
-use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
-use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
