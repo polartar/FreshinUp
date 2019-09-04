@@ -37,6 +37,7 @@ class AddExternalKeyToTables extends Migration
             $table->uuid('device_uuid')->nullable()->index();
             $table->uuid('payment_type_uuid')->nullable()->index();
             $table->uuid('customer_uuid')->nullable()->index();
+            $table->uuid('event_uuid')->index();
         });
         Schema::create('payments_items', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -65,7 +66,7 @@ class AddExternalKeyToTables extends Migration
         Schema::dropIfExists('events_event_tags');
         Schema::dropIfExists('locations_staffs');
         Schema::table('payments', function (Blueprint $table) {
-            $table->dropColumn(['location_uuid', 'device_uuid', 'payment_type_uuid', 'customer_uuid']);
+            $table->dropColumn(['location_uuid', 'device_uuid', 'payment_type_uuid', 'customer_uuid', 'event_uuid']);
         });
         Schema::dropIfExists('payments_items');
         Schema::table('items', function (Blueprint $table) {
