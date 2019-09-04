@@ -8,6 +8,7 @@ use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\PaymentType;
 use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -29,17 +30,17 @@ class EventTest extends TestCase
         $location = factory(Location::class)->create();
         $device = factory(Device::class)->create();
         $customer = factory(Customer::class)->create();
-        $paymentType = factory(Payment::class)->create();
+        $paymentType = factory(PaymentType::class)->create();
         $item = factory(Item::class)->create();
         $event = factory(Event::class)->create();
 
-        $payment = factory(Payment::class)->create([
-            'location_uuid' => $location->uuid,
-            'device_uuid' => $device->uuid,
-            'customer_uuid' => $customer->uuid,
-            'payment_type_uuid' => $paymentType->uuid,
-            'event_uuid' => $event->uuid,
-        ]);
+        $payment = factory(Payment::class)->create();
+        $payment->location()->associate($location);
+        $payment->device()->associate($device);
+        $payment->customer()->associate($customer);
+        $payment->paymentType()->associate($paymentType);
+        $payment->event()->associate($event);
+        $payment->save();
         $payment->items()->sync([$item->uuid]);
 
         $this->assertDatabaseHas('payments', [
