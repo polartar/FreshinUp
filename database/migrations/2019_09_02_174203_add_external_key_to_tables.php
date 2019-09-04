@@ -37,7 +37,7 @@ class AddExternalKeyToTables extends Migration
             $table->uuid('device_uuid')->nullable()->index();
             $table->uuid('payment_type_uuid')->nullable()->index();
             $table->uuid('customer_uuid')->nullable()->index();
-            $table->uuid('event_uuid')->index();
+            $table->uuid('event_uuid')->nullable()->index();
         });
         Schema::create('payments_items', function (Blueprint $table) {
             $table->bigIncrements('id');
