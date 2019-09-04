@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Payment;
+namespace Tests\Feature\Unit\Models\Event;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
