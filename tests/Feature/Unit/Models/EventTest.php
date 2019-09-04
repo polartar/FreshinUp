@@ -3,6 +3,8 @@
 namespace Tests\Feature\Unit\Models\Payment;
 
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\EventTag;
+use App\Models\Foodfleet\FleetMember;
 use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
@@ -16,7 +18,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class LocationTest extends TestCase
+class EventTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -27,34 +29,32 @@ class LocationTest extends TestCase
      */
     public function testModel()
     {
+        $eventTag = factory(EventTag::class)->create();
+        $fleetMember = factory(FleetMember::class)->create();
         $location = factory(Location::class)->create();
-        $device = factory(Device::class)->create();
-        $customer = factory(Customer::class)->create();
-        $paymentType = factory(PaymentType::class)->create();
-        $item = factory(Item::class)->create();
-        $event = factory(Event::class)->create();
-
         $payment = factory(Payment::class)->create();
-        $payment->location()->associate($location);
-        $payment->device()->associate($device);
-        $payment->customer()->associate($customer);
-        $payment->paymentType()->associate($paymentType);
-        $payment->event()->associate($event);
-        $payment->save();
-        $payment->items()->sync([$item->uuid]);
+
+        $event = factory(Event::class)->create();
+        $event->payments()->save($payment);
+        $event->location()->associate($location);
+        $event->fleetMember()->associate($fleetMember);
+        $event->save();
+        $event->eventTags()->sync([$eventTag->uuid]);
+
+        $this->assertDatabaseHas('events', [
+            'uuid' => $event->uuid,
+            'location_uuid' => $location->uuid,
+            'fleet_member_uuid' => $fleetMember->uuid
+        ]);
 
         $this->assertDatabaseHas('payments', [
             'uuid' => $payment->uuid,
-            'location_uuid' => $location->uuid,
-            'device_uuid' => $device->uuid,
-            'customer_uuid' => $customer->uuid,
-            'payment_type_uuid' => $paymentType->uuid,
             'event_uuid' => $event->uuid
         ]);
 
-        $this->assertDatabaseHas('payments_items', [
-            'payment_uuid' => $payment->uuid,
-            'item_uuid' => $item->uuid
+        $this->assertDatabaseHas('events_event_tags', [
+            'event_uuid' => $event->uuid,
+            'event_tag_uuid' => $eventTag->uuid
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Payment;
+namespace Tests\Feature\Unit\Models\Location;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;
@@ -9,6 +9,7 @@ use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
+use App\Models\Foodfleet\Square\Staff;
 use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -28,33 +29,31 @@ class LocationTest extends TestCase
     public function testModel()
     {
         $location = factory(Location::class)->create();
-        $device = factory(Device::class)->create();
-        $customer = factory(Customer::class)->create();
-        $paymentType = factory(PaymentType::class)->create();
-        $item = factory(Item::class)->create();
         $event = factory(Event::class)->create();
-
         $payment = factory(Payment::class)->create();
-        $payment->location()->associate($location);
-        $payment->device()->associate($device);
-        $payment->customer()->associate($customer);
-        $payment->paymentType()->associate($paymentType);
-        $payment->event()->associate($event);
-        $payment->save();
-        $payment->items()->sync([$item->uuid]);
+        $staff = factory(Staff::class)->create();
+
+        $location->events()->save($event);
+        $location->payments()->save($payment);
+        $location->staffs()->sync([$staff->uuid]);
+
+        $this->assertDatabaseHas('locations', [
+            'uuid' => $location->uuid,
+        ]);
+
+        $this->assertDatabaseHas('events', [
+            'uuid' => $event->uuid,
+            'location_uuid' => $location->uuid
+        ]);
 
         $this->assertDatabaseHas('payments', [
             'uuid' => $payment->uuid,
-            'location_uuid' => $location->uuid,
-            'device_uuid' => $device->uuid,
-            'customer_uuid' => $customer->uuid,
-            'payment_type_uuid' => $paymentType->uuid,
-            'event_uuid' => $event->uuid
+            'location_uuid' => $location->uuid
         ]);
 
-        $this->assertDatabaseHas('payments_items', [
-            'payment_uuid' => $payment->uuid,
-            'item_uuid' => $item->uuid
+        $this->assertDatabaseHas('locations_staffs', [
+            'location_uuid' => $location->uuid,
+            'staff_uuid' => $staff->uuid
         ]);
     }
 }
