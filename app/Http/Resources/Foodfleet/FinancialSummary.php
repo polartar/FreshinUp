@@ -23,37 +23,38 @@ class FinancialSummary extends ResourceCollection
 
         // Sales over time points
         $salesTime = [];
-        $minDate = Carbon::parse($payments->sortBy('square_created_at')->first()->square_created_at);
-        $maxDate = Carbon::parse($payments->sortBy('square_created_at')->last()->square_created_at);
+        if ($payments->count() != 0 ) {
+            $minDate = Carbon::parse($payments->sortBy('square_created_at')->first()->square_created_at);
+            $maxDate = Carbon::parse($payments->sortBy('square_created_at')->last()->square_created_at);
 
-        // Iterate on each date between first date and last date
-        for ($date = $minDate; $date->lessThanOrEqualTo($maxDate); $date->addDay()) {
-            $clonedQuery = clone($payments);
-            $date->toImmutable();
+            // Iterate on each date between first date and last date
+            for ($date = clone($minDate); $date->lessThanOrEqualTo($maxDate); $date->addDay()) {
+                $clonedQuery = clone($payments);
+                $copyOfDate = clone($date);
+                $copyOfDate->toImmutable();
 
-            // Set lower bound as start of the day only if it is not min date
-            $lowerBound = $date->startOfDay();
-            if ($date === $minDate) {
-                $lowerBound = $minDate;
+                // Set lower bound as start of the day only if it is not min date
+                $lowerBound = clone($copyOfDate->startOfDay());
+                if ($date->equalTo($minDate)) {
+                    $lowerBound = clone($minDate);
+                }
+
+                // Set upper bound as end of the day only if it is lower than max date
+                $upperBound = clone($copyOfDate->endOfDay());
+                if ($upperBound->greaterThanOrEqualTo($maxDate)) {
+                    $upperBound = clone($maxDate);
+                }
+
+                // Get sum of total money attribute for the specified date
+                $value = $clonedQuery->filter(function ($item) use ($lowerBound, $upperBound) {
+                    return (data_get($item, 'square_created_at') >= $lowerBound) && (data_get($item, 'square_created_at') <= $upperBound);
+                })->sum('total_money');
+
+                $salesTime[] = [
+                    'value' => $value / 100,
+                    'date' => $date->toDateString()
+                ];
             }
-
-            // Set upper bound as end of the day only if it is lower than max date
-            $upperBound = $date->endOfDay();
-            if ($upperBound->greaterThanOrEqualTo($maxDate)) {
-                $upperBound = $maxDate;
-            }
-
-            // Get sum of total money attribute for the specified date
-            $value = $clonedQuery->where('square_created_at', '>=', $lowerBound)
-                ->where('square_created_at', '<=', $upperBound)
-                ->sum('total_money');
-
-            $salesTime[] = [
-                'value' => $value / 100,
-                'date' => $date->toDateString()
-            ];
-
-            $date->toMutable();
         }
 
         // Total calculation
@@ -73,7 +74,8 @@ class FinancialSummary extends ResourceCollection
         ];
 
         // Iterate on the remaining payment type
-        foreach (PaymentType::where('name', '!=', 'CASH') as $paymentType) {
+        $paymentTypes = PaymentType::where('name', '!=', 'CASH')->get();
+        foreach ($paymentTypes as $paymentType) {
             $clonedQuery = clone($payments);
             $salesType[] = [
                 'name' => $paymentType->name,
@@ -82,9 +84,12 @@ class FinancialSummary extends ResourceCollection
         }
 
         // Average ticket
-        $clonedQuery = clone($payments);
-        $numberOfCustomer = $clonedQuery->groupBy('customer_uuid')->count();
-        $avgTicket = ($gross / $numberOfCustomer) / 100;
+        $avgTicket = 0;
+        if ($payments->count() != 0 ) {
+            $clonedQuery = clone($payments);
+            $numberOfCustomer = $clonedQuery->groupBy('customer_uuid')->count();
+            $avgTicket = ($gross / $numberOfCustomer);
+        }
 
         return [
             'data' => [

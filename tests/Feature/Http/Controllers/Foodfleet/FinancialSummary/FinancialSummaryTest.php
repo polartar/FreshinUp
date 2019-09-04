@@ -1,17 +1,28 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet\FinancialReports;
+namespace Tests\Feature\Http\Controllers\Foodfleet\FinancialSummary;
 
-use App\Models\Foodfleet\FinancialModifier as Modifier;
-use App\Models\Foodfleet\FinancialReport;
+use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\EventTag;
+use App\Models\Foodfleet\FleetMember;
+use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Square\Category;
+use App\Models\Foodfleet\Square\Customer;
+use App\Models\Foodfleet\Square\Device;
+use App\Models\Foodfleet\Square\Item;
+use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\PaymentType;
+use App\Models\Foodfleet\Square\Staff;
 use App\User;
+use Carbon\Carbon;
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class FinancialReportTest extends TestCase
+class FinancialSummaryTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -20,8 +31,9 @@ class FinancialReportTest extends TestCase
      *
      * @return void
      */
-    public function testGetWithoutValueList()
+    public function testGetList()
     {
+        $this->createPaymentTypes();
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -36,31 +48,52 @@ class FinancialReportTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-    }
+        $this->assertEquals([
+            'sales_time' => [],
+            'gross' => 0,
+            'net' => 0,
+            'cash' => 0,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 0
+        ], $data);
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testGetListWithFilters()
-    {
-        $user = factory(User::class)->create();
-
-        Passport::actingAs($user);
-
-        factory(FinancialReport::class, 5)->create([
-            'name' => 'Not visibles',
-            'user_id' => $user->id
+        $customers = $this->createCustomers(2);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(2)->toDateTimeString(),
+            'customer_uuid' => $customers->first()->uuid
         ]);
-
-        $reportsToFind = factory(FinancialReport::class, 5)->create([
-            'name' => 'To find',
-            'user_id' => $user->id
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'MASTERCARD')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customers->last()->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customers->last()->uuid
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/financial-reports")
+            ->json('get', "/api/foodfleet/financial-summary")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -68,11 +101,73 @@ class FinancialReportTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(10, count($data));
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-19'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 30,
+            'net' => 24,
+            'cash' => 10,
+            'credit' => 20,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 10
+                ]
+            ],
+            'avg_ticket' => 15
+        ], $data);
+    }
 
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByEventUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $event = factory(Event::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'event_uuid' => $event->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
 
         $data = $this
-            ->json('get', "/api/foodfleet/financial-reports?filter[name]=find")
+            ->json('get', "/api/foodfleet/financial-summary")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -80,145 +175,74 @@ class FinancialReportTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(5, count($data));
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
 
-        foreach ($reportsToFind as $idx => $report) {
-            $this->assertArraySubset([
-                'id' => $report->id,
-                'name' => $report->name,
-                'filters' => json_decode($report->filters, true),
-                'created_at' => str_replace('"', '', json_encode($report->created_at)),
-                'updated_at' => str_replace('"', '', json_encode($report->updated_at)),
-            ], $data[$idx]);
-        }
-    }
-
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testGetSingle()
-    {
-        $user = factory(User::class)->create();
-
-        Passport::actingAs($user);
-
-        $this
-            ->json('get', "/api/foodfleet/financial-reports/1")
-            ->assertStatus(404);
-
-        $modifier1 = factory(Modifier::class)->create();
-        $modifier2 = factory(Modifier::class)->create();
-        $report = factory(FinancialReport::class)->create([
-            'modifier_1_id' => $modifier1->id,
-            'modifier_2_id' => $modifier2->id
-        ]);
 
         $data = $this
-            ->json(
-                'get',
-                "/api/foodfleet/financial-reports/" . $report->id
-            )
+            ->json('get', "/api/foodfleet/financial-summary?filter[event_uuid]=" . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
             ])
             ->json('data');
 
-        $this->assertArraySubset([
-            'id' => $report->id,
-            'name' => $report->name,
-            'filters' => json_decode($report->filters, true),
-            'modifier_1' => [
-                'id' => $modifier1->id,
-                'name' => $modifier1->name,
-                'resource_name' => $modifier1->resource_name,
-                'label' => $modifier1->label,
-                'placeholder' => $modifier1->placeholder,
-                'type' => $modifier1->type,
-                'filter' => $modifier1->filter,
-                'value_param' => $modifier1->value_param,
-                'text_param' => $modifier1->text_param
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
             ],
-            'modifier_2' => [
-                'id' => $modifier2->id,
-                'name' => $modifier2->name,
-                'resource_name' => $modifier2->resource_name,
-                'label' => $modifier2->label,
-                'placeholder' => $modifier2->placeholder,
-                'type' => $modifier2->type,
-                'filter' => $modifier2->filter,
-                'value_param' => $modifier2->value_param,
-                'text_param' => $modifier2->text_param
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
             ],
-            'created_at' => str_replace('"', '', json_encode($report->created_at)),
-            'updated_at' => str_replace('"', '', json_encode($report->updated_at))
-        ], $data);
-    }
-
-
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testPost()
-    {
-        $user = factory(User::class)->create();
-
-        Passport::actingAs($user);
-
-        $this
-            ->json('post', "/api/foodfleet/financial-reports", [])
-            ->assertStatus(422);
-
-        $modifier1 = factory(Modifier::class)->create();
-        $modifier2 = factory(Modifier::class)->create();
-        $report = factory(FinancialReport::class)->make();
-        $inputs = $report->toArray();
-        $inputs['modifier_1_id'] = $modifier1->id;
-        $inputs['modifier_2_id'] = $modifier2->id;
-        $data = $this
-            ->json('post', "/api/foodfleet/financial-reports", $inputs)
-            ->assertStatus(201)
-            ->assertJsonStructure([
-                'data'
-            ])
-            ->json('data');
-
-        $this->assertDatabaseHas('financial_reports', [
-            'name' => $report->name,
-            'modifier_1_id' => $modifier1->id,
-            'modifier_2_id' => $modifier2->id,
-            'user_id' => $user->id
-        ]);
-
-        $this->assertArraySubset([
-            'name' => $report->name,
-            'modifier_1' => [
-                'id' => $modifier1->id,
-                'name' => $modifier1->name,
-                'resource_name' => $modifier1->resource_name,
-                'label' => $modifier1->label,
-                'placeholder' => $modifier1->placeholder,
-                'type' => $modifier1->type,
-                'filter' => $modifier1->filter,
-                'value_param' => $modifier1->value_param,
-                'text_param' => $modifier1->text_param
-            ],
-            'modifier_2' => [
-                'id' => $modifier2->id,
-                'name' => $modifier2->name,
-                'resource_name' => $modifier2->resource_name,
-                'label' => $modifier2->label,
-                'placeholder' => $modifier2->placeholder,
-                'type' => $modifier2->type,
-                'filter' => $modifier2->filter,
-                'value_param' => $modifier2->value_param,
-                'text_param' => $modifier2->text_param
-            ],
-            'filters' => json_decode($report->filters, true)
+            'avg_ticket' => 10
         ], $data);
     }
 
@@ -227,72 +251,109 @@ class FinancialReportTest extends TestCase
      *
      * @return void
      */
-    public function testUpdate()
+    public function testGetListFilterByFleetMemberUuid()
     {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $fleetMember = factory(FleetMember::class)->create();
+        $event = factory(Event::class)->create([
+            'fleet_member_uuid' => $fleetMember->uuid
+        ]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'event_uuid' => $event->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
 
-        $this
-            ->json('put', "/api/foodfleet/financial-reports/1", [])
-            ->assertStatus(404);
-
-        $report = factory(FinancialReport::class)->create([
-            'user_id' => $user->id
-        ]);
-
-        $this
-            ->json('put', "/api/foodfleet/financial-reports/" . $report->id, [])
-            ->assertStatus(422);
-
-        $reportUpdate = factory(FinancialReport::class)->make();
-        $modifier1 = factory(Modifier::class)->create();
-        $modifier2 = factory(Modifier::class)->create();
-        $inputs = $reportUpdate->toArray();
-        $inputs['modifier_1_id'] = $modifier1->id;
-        $inputs['modifier_2_id'] = $modifier2->id;
-
         $data = $this
-            ->json('put', "/api/foodfleet/financial-reports/" . $report->id, $inputs)
+            ->json('get', "/api/foodfleet/financial-summary")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
             ])
             ->json('data');
 
-        $this->assertDatabaseHas('financial_reports', [
-            'id' => $report->id,
-            'name' => $reportUpdate->name,
-            'modifier_1_id' => $modifier1->id,
-            'modifier_2_id' => $modifier2->id,
-        ]);
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
 
-        $this->assertArraySubset([
-            'id' => $report->id,
-            'name' => $reportUpdate->name,
-            'modifier_1' => [
-                'id' => $modifier1->id,
-                'name' => $modifier1->name,
-                'resource_name' => $modifier1->resource_name,
-                'label' => $modifier1->label,
-                'placeholder' => $modifier1->placeholder,
-                'type' => $modifier1->type,
-                'filter' => $modifier1->filter,
-                'value_param' => $modifier1->value_param,
-                'text_param' => $modifier1->text_param
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[fleet_member_uuid]=" . $fleetMember->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
             ],
-            'modifier_2' => [
-                'id' => $modifier2->id,
-                'name' => $modifier2->name,
-                'resource_name' => $modifier2->resource_name,
-                'label' => $modifier2->label,
-                'placeholder' => $modifier2->placeholder,
-                'type' => $modifier2->type,
-                'filter' => $modifier2->filter,
-                'value_param' => $modifier2->value_param,
-                'text_param' => $modifier2->text_param
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
             ],
-            'filters' => json_decode($reportUpdate->filters, true)
+            'avg_ticket' => 10
         ], $data);
     }
 
@@ -301,28 +362,1524 @@ class FinancialReportTest extends TestCase
      *
      * @return void
      */
-    public function testDestroy()
+    public function testGetListFilterByContractorUuid()
     {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $contractor = factory(Company::class)->create();
+        $fleetMember = factory(FleetMember::class)->create([
+            'contractor_uuid' => $contractor->uuid
+        ]);
+        $event = factory(Event::class)->create([
+            'fleet_member_uuid' => $fleetMember->uuid
+        ]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'event_uuid' => $event->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
 
-        $this
-            ->json('delete', "/api/foodfleet/financial-reports/1", [])
-            ->assertStatus(404);
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
 
-        $report = factory(FinancialReport::class)->create([
-            'user_id' => $user->id
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[contractor_uuid]=" . $contractor->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByDateAfter()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
         ]);
-
-        $this
-            ->json('delete', "/api/foodfleet/financial-reports/" . $report->id)
-            ->assertStatus(204);
-
-        $this->assertSoftDeleted('financial_reports', [
-            'id' => $report->id,
-            'name' => $report->name,
-            'user_id' => $user->id
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
         ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[date_before]=2019-05-21")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByDateBefore()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[date_after]=2019-05-21")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 0,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByEventTagUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $eventTag = factory(EventTag::class)->create();
+        $event = factory(Event::class)->create();
+        $event->eventTags()->sync([$eventTag->uuid]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'event_uuid' => $event->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[event_tag_uuid]=" . $eventTag->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByLocationUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $location = factory(Location::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'location_uuid' => $location->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[location_uuid]=" . $location->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByCustomerUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $customer2 = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer2->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[customer_uuid]=" . $customer->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByStaffUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $staff = factory(Staff::class)->create();
+        $location = factory(Location::class)->create();
+        $location->staffs()->sync([$staff->uuid]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'location_uuid' => $location->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[staff_uuid]=" . $staff->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByDeviceUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $device = factory(Device::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+            'device_uuid' => $device->uuid
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[device_uuid]=" . $device->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByItemUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $item = factory(Item::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        $payment = factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        $payment->items()->sync(['item_uuid' => $item->uuid]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[item_uuid]=" . $item->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByCategoryUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        $category = factory(Category::class)->create();
+        $item = factory(Item::class)->create(['category_uuid' => $category->uuid]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        $payment = factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        $payment->items()->sync(['item_uuid' => $item->uuid]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[category_uuid]=" . $category->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByMinPrice()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 2000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 20,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 30,
+            'net' => 24,
+            'cash' => 20,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 20
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 30
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[min_price]=2000")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 20,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 20,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 20
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByMaxPrice()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 2000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 20,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 30,
+            'net' => 24,
+            'cash' => 20,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 20
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 30
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[max_price]=1000")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 0,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByPaymentTypeUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[payment_type_uuid]=" .
+                PaymentType::where('name', 'CASH')->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByPaymentUuid()
+    {
+        $this->createPaymentTypes();
+        $customer = factory(Customer::class)->create();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        $payment = factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid,
+        ]);
+        factory(Payment::class)->create([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ]);
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 10,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 20,
+            'net' => 16,
+            'cash' => 10,
+            'credit' => 10,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 20
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[payment_uuid]=" . $payment->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 10,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 10,
+            'net' => 8,
+            'cash' => 10,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 10
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 10
+        ], $data);
+    }
+
+
+    private function createPaymentTypes()
+    {
+        factory(PaymentType::class)->create(['name' => 'CASH']);
+        factory(PaymentType::class)->create(['name' => 'VISA']);
+        factory(PaymentType::class)->create(['name' => 'MASTERCARD']);
+    }
+
+    private function createCustomers($number)
+    {
+        return factory(Customer::class, $number)->create();
     }
 }

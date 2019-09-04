@@ -29,12 +29,12 @@ class PaymentQueryBuilderHelper
             Filter::exact('customer_uuid'),
             Filter::custom('staff_uuid', BelongsToWhereUuidEquals::class, 'location.staffs'),
             Filter::exact('device_uuid'),
-            Filter::exact('category_uuid', CategoryUuid::class),
+            Filter::custom('category_uuid', CategoryUuid::class),
             Filter::custom('item_uuid', BelongsToWhereUuidEquals::class, 'items'),
             Filter::custom('min_price', GreaterThanOrEqualTo::class, 'total_money'),
             Filter::custom('max_price', LessThanOrEqualTo::class, 'total_money'),
             Filter::exact('payment_type_uuid'),
-            Filter::exact('payment_uuid'),
+            Filter::exact('payment_uuid', 'uuid'),
         ];
     }
 }
