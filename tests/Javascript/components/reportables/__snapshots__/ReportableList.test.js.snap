@@ -465,9 +465,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -476,7 +475,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -704,9 +703,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?event=2,3"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -715,7 +713,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -1064,9 +1062,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?date_after=2019-01-01&date_before=2019-06-01"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -1075,7 +1072,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -1236,9 +1233,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -1247,7 +1243,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -1387,9 +1383,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?fleet_member=1&event=2,3&min_price=100000"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -1398,7 +1393,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -1616,9 +1611,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?fleet_member=1&event=2,3&min_price=0&max_price=100000"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -1627,7 +1621,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
@@ -1909,9 +1903,8 @@ exports[`ReportableList Snapshots snapshot 1`] = `
             <td
               class="text-xs-right"
             >
-              <a
-                class="v-btn theme--dark primary"
-                href="undefined?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
+              <router-link
+                class="v-btn v-btn--router theme--dark primary"
               >
                 <div
                   class="v-btn__content"
@@ -1920,7 +1913,7 @@ exports[`ReportableList Snapshots snapshot 1`] = `
           Generate
         
                 </div>
-              </a>
+              </router-link>
             </td>
              
             <td
