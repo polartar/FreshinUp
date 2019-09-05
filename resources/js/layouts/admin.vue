@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <style>
-    .fresh-admin-page-title {
+    .f-page__title--admin {
         color: white;
     }
 </style>
