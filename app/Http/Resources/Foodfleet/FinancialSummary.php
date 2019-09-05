@@ -51,19 +51,19 @@ class FinancialSummary extends ResourceCollection
                 })->sum('total_money');
 
                 $salesTime[] = [
-                    'value' => $value / 100,
+                    'value' => $value,
                     'date' => $date->toDateString()
                 ];
             }
         }
 
         // Total calculation
-        $gross = $payments->sum('total_money') / 100;
-        $net = $gross - ($gross * self::TAXES);
+        $gross = $payments->sum('total_money');
+        $net = round($gross - ($gross * self::TAXES));
         $clonedQuery = clone($payments);
-        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money')) / 100;
+        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
         $clonedQuery = clone($payments);
-        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money')) / 100;
+        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
 
         // Sales per method type
         $salesType = [
@@ -79,7 +79,7 @@ class FinancialSummary extends ResourceCollection
             $clonedQuery = clone($payments);
             $salesType[] = [
                 'name' => $paymentType->name,
-                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('total_money')) / 100
+                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('total_money'))
             ];
         }
 
@@ -88,7 +88,7 @@ class FinancialSummary extends ResourceCollection
         if ($payments->count() != 0 ) {
             $clonedQuery = clone($payments);
             $numberOfCustomer = $clonedQuery->groupBy('customer_uuid')->count();
-            $avgTicket = ($gross / $numberOfCustomer);
+            $avgTicket = round(($gross / $numberOfCustomer));
         }
 
         return [

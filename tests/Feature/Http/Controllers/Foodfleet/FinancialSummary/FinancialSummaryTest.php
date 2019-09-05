@@ -104,37 +104,37 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-19'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 30,
-            'net' => 24,
-            'cash' => 10,
-            'credit' => 20,
+            'gross' => 3000,
+            'net' => 2400,
+            'cash' => 1000,
+            'credit' => 2000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
-                    'value' => 10
+                    'value' => 1000
                 ]
             ],
-            'avg_ticket' => 15
+            'avg_ticket' => 1500
         ], $data);
     }
 
@@ -178,33 +178,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -220,18 +220,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -242,7 +242,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -289,33 +289,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -331,18 +331,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -353,7 +353,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -403,33 +403,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -445,18 +445,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -467,7 +467,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -509,33 +509,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -551,18 +551,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -573,7 +573,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -615,33 +615,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -657,14 +657,14 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
+            'gross' => 1000,
+            'net' => 800,
             'cash' => 0,
-            'credit' => 10,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
@@ -672,14 +672,14 @@ class FinancialSummaryTest extends TestCase
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -725,33 +725,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -767,18 +767,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -789,7 +789,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -833,33 +833,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -875,18 +875,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -897,7 +897,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -940,33 +940,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -982,18 +982,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1004,7 +1004,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1051,33 +1051,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1093,18 +1093,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1115,7 +1115,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1159,33 +1159,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1201,18 +1201,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1223,7 +1223,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1267,33 +1267,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1309,18 +1309,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1331,7 +1331,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1376,33 +1376,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1418,18 +1418,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1440,7 +1440,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1482,33 +1482,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 20,
+                    'value' => 2000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 30,
-            'net' => 24,
-            'cash' => 20,
-            'credit' => 10,
+            'gross' => 3000,
+            'net' => 2400,
+            'cash' => 2000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 20
+                    'value' => 2000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 30
+            'avg_ticket' => 3000
         ], $data);
 
 
@@ -1524,18 +1524,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 20,
+                    'value' => 2000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 20,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 2000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 20
+                    'value' => 2000
                 ],
                 [
                     'name' => 'VISA',
@@ -1546,7 +1546,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
     }
 
@@ -1588,33 +1588,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 20,
+                    'value' => 2000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 30,
-            'net' => 24,
-            'cash' => 20,
-            'credit' => 10,
+            'gross' => 3000,
+            'net' => 2400,
+            'cash' => 2000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 20
+                    'value' => 2000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 30
+            'avg_ticket' => 3000
         ], $data);
 
 
@@ -1630,14 +1630,14 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
+            'gross' => 1000,
+            'net' => 800,
             'cash' => 0,
-            'credit' => 10,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
@@ -1645,14 +1645,14 @@ class FinancialSummaryTest extends TestCase
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1694,33 +1694,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1737,18 +1737,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1759,7 +1759,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -1802,33 +1802,33 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ],
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-21'
                 ]
             ],
-            'gross' => 20,
-            'net' => 16,
-            'cash' => 10,
-            'credit' => 10,
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'MASTERCARD',
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 20
+            'avg_ticket' => 2000
         ], $data);
 
 
@@ -1844,18 +1844,18 @@ class FinancialSummaryTest extends TestCase
         $this->assertEquals([
             'sales_time' => [
                 [
-                    'value' => 10,
+                    'value' => 1000,
                     'date' => '2019-05-20'
                 ]
             ],
-            'gross' => 10,
-            'net' => 8,
-            'cash' => 10,
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 10
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1866,7 +1866,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 10
+            'avg_ticket' => 1000
         ], $data);
     }
 
