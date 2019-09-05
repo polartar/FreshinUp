@@ -129,7 +129,6 @@ import AverageTicket from '~/components/financials/AverageTicket.vue'
 import SalesByMethod from '~/components/financials/SalesByMethod.vue'
 import SalesChart from '~/components/financials/SalesChart.vue'
 import TotalSales from '~/components/financials/TotalSales.vue'
-import moment from 'moment'
 import { forEach } from 'lodash'
 
 export default {

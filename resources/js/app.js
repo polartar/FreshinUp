@@ -11,7 +11,6 @@ import financialReports from '~/store/modules/financialReports.js'
 import paymentTypes from '~/store/modules/paymentTypes.js'
 import financialsummary from '~/store/modules/financialsummary.js'
 
-
 const initialState = {
   loginSuccessRedirectPath: '/admin',
   ...window.__INITIAL_STATE__
