@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn href="https://connect.squareup.com/oauth2/authorize?client_id=sq0idp-HRNa4cLFkJNW0ZU4HDM1ug&scope=PAYMENTS_READ">
+    <v-btn href="https://connect.squareup.com/oauth2/authorize?client_id=sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw&scope=PAYMENTS_READ">
       Authorize Square
     </v-btn>
   </div>
