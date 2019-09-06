@@ -1897,7 +1897,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                 class="header-picker"
                 data-v-17cb1efe=""
                 data-v-1dc7d483=""
-                style="padding: 10px 0px 10px 10px; background-color: dodgerblue;"
+                style="padding: 10px 0px 10px 10px; background-color: rgb(25, 118, 210);"
               >
                 <div
                   class="header-picker-year"
@@ -1960,12 +1960,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -1988,12 +1988,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2016,12 +2016,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2044,12 +2044,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2072,12 +2072,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2100,12 +2100,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2128,12 +2128,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2156,12 +2156,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       <span
                         class="custom-button-effect"
                         data-v-02b1f8d2=""
-                        style="background-color: dodgerblue;"
+                        style="background-color: rgb(25, 118, 210);"
                       />
                       <span
                         class="custom-button-content flex align-center justify-content-center flex-1"
                         data-v-02b1f8d2=""
-                        style="color: dodgerblue; fill: dodgerblue;"
+                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
                         <span
                           class="lm-fs-12 flex-1"
@@ -2222,12 +2222,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="custom-button-effect"
                               data-v-02b1f8d2=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <span
                               class="custom-button-content flex align-center justify-content-center flex-1"
                               data-v-02b1f8d2=""
-                              style="color: dodgerblue; fill: dodgerblue;"
+                              style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
             June
@@ -2249,12 +2249,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="custom-button-effect"
                               data-v-02b1f8d2=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <span
                               class="custom-button-content flex align-center justify-content-center flex-1"
                               data-v-02b1f8d2=""
-                              style="color: dodgerblue; fill: dodgerblue;"
+                              style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
             2019
@@ -2393,7 +2393,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2415,7 +2415,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2437,7 +2437,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2459,7 +2459,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2481,7 +2481,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2503,7 +2503,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2525,7 +2525,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2547,7 +2547,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2569,7 +2569,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2591,7 +2591,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2613,7 +2613,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2635,7 +2635,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2657,7 +2657,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2679,7 +2679,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2701,7 +2701,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2723,7 +2723,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2745,7 +2745,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2767,7 +2767,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2789,7 +2789,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2811,7 +2811,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2833,7 +2833,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2855,7 +2855,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2877,7 +2877,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2899,7 +2899,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2921,7 +2921,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2943,7 +2943,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2968,7 +2968,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -2990,7 +2990,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -3012,7 +3012,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -3034,7 +3034,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                             <span
                               class="datepicker-day-effect"
                               data-v-0da13aa6=""
-                              style="background-color: dodgerblue;"
+                              style="background-color: rgb(25, 118, 210);"
                             />
                             <!---->
                             <span
@@ -3093,10 +3093,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                   <span
                     class="datepicker-button-effect"
                     data-v-fea0e798=""
+                    style="background-color: rgb(25, 118, 210);"
                   />
                   <svg
                     data-v-fea0e798=""
                     height="24"
+                    style="color: rgb(25, 118, 210); fill: #1976D2;"
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -4212,7 +4214,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                     class="header-picker"
                                     data-v-17cb1efe=""
                                     data-v-1dc7d483=""
-                                    style="padding: 10px 0px 10px 10px; background-color: dodgerblue;"
+                                    style="padding: 10px 0px 10px 10px; background-color: rgb(25, 118, 210);"
                                   >
                                     <div
                                       class="header-picker-year"
@@ -4307,12 +4309,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             June
@@ -4334,12 +4336,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             2019
@@ -4478,7 +4480,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4500,7 +4502,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4522,7 +4524,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4544,7 +4546,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4566,7 +4568,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4588,7 +4590,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4610,7 +4612,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4632,7 +4634,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4654,7 +4656,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4676,7 +4678,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4698,7 +4700,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4720,7 +4722,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4742,7 +4744,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4764,7 +4766,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4786,7 +4788,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4808,7 +4810,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4830,7 +4832,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4852,7 +4854,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4874,7 +4876,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4896,7 +4898,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4918,7 +4920,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4940,7 +4942,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4962,7 +4964,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -4984,7 +4986,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5006,7 +5008,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5028,7 +5030,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5053,7 +5055,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5075,7 +5077,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5097,7 +5099,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5119,7 +5121,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5177,10 +5179,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -5196,10 +5200,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -5668,7 +5674,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                     class="header-picker"
                                     data-v-17cb1efe=""
                                     data-v-1dc7d483=""
-                                    style="padding: 10px 0px 10px 10px; background-color: dodgerblue;"
+                                    style="padding: 10px 0px 10px 10px; background-color: rgb(25, 118, 210);"
                                   >
                                     <div
                                       class="header-picker-year"
@@ -5763,12 +5769,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             June
@@ -5790,12 +5796,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             2019
@@ -5934,7 +5940,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5956,7 +5962,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -5978,7 +5984,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6000,7 +6006,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6022,7 +6028,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6044,7 +6050,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6066,7 +6072,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6088,7 +6094,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6110,7 +6116,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6132,7 +6138,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6154,7 +6160,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6176,7 +6182,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6198,7 +6204,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6220,7 +6226,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6242,7 +6248,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6264,7 +6270,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6286,7 +6292,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6308,7 +6314,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6330,7 +6336,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6352,7 +6358,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6374,7 +6380,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6396,7 +6402,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6418,7 +6424,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6440,7 +6446,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6462,7 +6468,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6484,7 +6490,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6509,7 +6515,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6531,7 +6537,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6553,7 +6559,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6575,7 +6581,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -6633,10 +6639,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -6652,10 +6660,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -6859,7 +6869,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                     class="header-picker"
                                     data-v-17cb1efe=""
                                     data-v-1dc7d483=""
-                                    style="padding: 10px 0px 10px 10px; background-color: dodgerblue;"
+                                    style="padding: 10px 0px 10px 10px; background-color: rgb(25, 118, 210);"
                                   >
                                     <div
                                       class="header-picker-year"
@@ -6954,12 +6964,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             June
@@ -6981,12 +6991,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="custom-button-effect"
                                                   data-v-02b1f8d2=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <span
                                                   class="custom-button-content flex align-center justify-content-center flex-1"
                                                   data-v-02b1f8d2=""
-                                                  style="color: dodgerblue; fill: dodgerblue;"
+                                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
                                                 >
                                                   
             2019
@@ -7125,7 +7135,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7147,7 +7157,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7169,7 +7179,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7191,7 +7201,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7213,7 +7223,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7235,7 +7245,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7257,7 +7267,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7279,7 +7289,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7301,7 +7311,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7323,7 +7333,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7345,7 +7355,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7367,7 +7377,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7389,7 +7399,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7411,7 +7421,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7433,7 +7443,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7455,7 +7465,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7477,7 +7487,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7499,7 +7509,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7521,7 +7531,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7543,7 +7553,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7565,7 +7575,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7587,7 +7597,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7609,7 +7619,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7631,7 +7641,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7653,7 +7663,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7675,7 +7685,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7700,7 +7710,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7722,7 +7732,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7744,7 +7754,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7766,7 +7776,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                                 <span
                                                   class="datepicker-day-effect"
                                                   data-v-0da13aa6=""
-                                                  style="background-color: dodgerblue;"
+                                                  style="background-color: rgb(25, 118, 210);"
                                                 />
                                                 <!---->
                                                 <span
@@ -7824,10 +7834,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <span
                                         class="datepicker-button-content"
                                         data-v-fea0e798=""
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                       >
                                         
       Now
@@ -7843,10 +7855,12 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                                       <span
                                         class="datepicker-button-effect"
                                         data-v-fea0e798=""
+                                        style="background-color: rgb(25, 118, 210);"
                                       />
                                       <svg
                                         data-v-fea0e798=""
                                         height="24"
+                                        style="color: rgb(25, 118, 210); fill: #1976D2;"
                                         viewBox="0 0 24 24"
                                         width="24"
                                         xmlns="http://www.w3.org/2000/svg"
