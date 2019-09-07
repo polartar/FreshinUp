@@ -3,7 +3,7 @@ import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
 export default (initialState = {}) => {
   const store = makeRestStore(
     'squares',
-    { item: initialState.item, items: initialState.items },
+    { ...initialState },
     {
       itemsPath: () => `/foodfleet/squares`,
       itemPath: ({ id }) => `/foodfleet/squares/${id}`

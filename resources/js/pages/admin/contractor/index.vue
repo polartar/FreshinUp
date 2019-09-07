@@ -16,8 +16,8 @@ export default {
   data () {
     return {
       pageTitle: 'Square authorization',
-      squareUrl: 'https://squareupsandbox.com',
-      squareAppId: 'sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw',
+      squareUrl: process.env.SQ_DOMAIN,
+      squareAppId: process.env.SQ_APP_ID,
       scopes: [
         'PAYMENTS_READ',
         'CUSTOMERS_READ',
