@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn href="https://connect.squareup.com/oauth2/authorize?client_id=sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw&scope=PAYMENTS_READ">
+    <v-btn :href="url">
       Authorize Square
     </v-btn>
   </div>
@@ -15,7 +15,23 @@ export default {
   },
   data () {
     return {
-      pageTitle: 'Square authorization'
+      pageTitle: 'Square authorization',
+      squareUrl: 'https://squareupsandbox.com',
+      squareAppId: 'sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw',
+      scopes: [
+        'PAYMENTS_READ',
+        'CUSTOMERS_READ',
+        'EMPLOYEES_READ',
+        'INVENTORY_READ',
+        'ITEMS_READ',
+        'MERCHANT_PROFILE_READ',
+        'ORDERS_READ'
+      ]
+    }
+  },
+  computed: {
+    url () {
+      return this.squareUrl + '/oauth2/authorize?client_id=' + this.squareAppId + '&scope=' + this.scopes.join(' ')
     }
   },
   methods: {
