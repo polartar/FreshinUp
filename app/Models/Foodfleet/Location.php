@@ -3,6 +3,8 @@
 
 namespace App\Models\Foodfleet;
 
+use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\Staff;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -27,4 +29,26 @@ class Location extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class, 'location_uuid', 'uuid');
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'location_uuid', 'uuid');
+    }
+
+    public function staffs()
+    {
+        return $this->belongsToMany(
+            Staff::class,
+            'locations_staffs',
+            'location_uuid',
+            'staff_uuid',
+            'uuid',
+            'uuid'
+        );
+    }
 }
