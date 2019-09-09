@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`financials/TotalSales Snapshots required props set 1`] = `
+<div
+  class="py-2"
+>
+  <div
+    class="text-xs-center my-5"
+  >
+    <div
+      class="display-1 primary--text"
+    >
+      
+      $20,000
+    
+    </div>
+     
+    <div
+      class="font-weight-bold subheading mt-2"
+    >
+      
+      Gross
+    
+    </div>
+  </div>
+   
+  <div
+    class="text-xs-center my-5"
+  >
+    <div
+      class="display-1 primary--text"
+    >
+      
+      $10,000
+    
+    </div>
+     
+    <div
+      class="font-weight-bold subheading mt-2"
+    >
+      
+      Net
+    
+    </div>
+  </div>
+   
+  <div
+    class="text-xs-center my-5"
+  >
+    <div
+      class="display-1 primary--text"
+    >
+      
+      $20,000
+    
+    </div>
+     
+    <div
+      class="font-weight-bold subheading mt-2"
+    >
+      
+      Cash
+    
+    </div>
+  </div>
+   
+  <div
+    class="text-xs-center my-5"
+  >
+    <div
+      class="display-1 primary--text"
+    >
+      
+      $105,000
+    
+    </div>
+     
+    <div
+      class="font-weight-bold subheading mt-2"
+    >
+      
+      Credit
+    
+    </div>
+  </div>
+</div>
+`;
