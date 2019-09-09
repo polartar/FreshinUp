@@ -27,4 +27,21 @@ class Item extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function payments()
+    {
+        return $this->belongsToMany(
+            PaymentType::class,
+            'payments_items',
+            'item_uuid',
+            'payment_uuid',
+            'uuid',
+            'uuid'
+        );
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_uuid', 'uuid');
+    }
 }

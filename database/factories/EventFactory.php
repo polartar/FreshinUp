@@ -15,6 +15,8 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
     return [
-        "name" => $faker->word
+        "name" => $faker->word,
+        "start_at" => $faker->dateTime('now'),
+        "end_at" => $faker->dateTimeBetween('+1 days', '+2 days')
     ];
 });

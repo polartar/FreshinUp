@@ -1,5 +1,6 @@
 <?php
 
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Seeder;
 
 class FleetMembersTableSeeder extends Seeder
@@ -11,6 +12,13 @@ class FleetMembersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\FleetMember::class, 50)->create();
+        $contractors = Company::whereHas('company_types', function ($query) {
+            $query->where('key_id', 'contractor');
+        })->get();
+        for ($i = 0; $i < 50; $i++) {
+            factory(\App\Models\Foodfleet\FleetMember::class)->create([
+                'contractor_uuid' => $contractors->random()->uuid
+            ]);
+        }
     }
 }
