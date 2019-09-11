@@ -27,4 +27,9 @@ class Device extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'device_uuid', 'uuid');
+    }
 }

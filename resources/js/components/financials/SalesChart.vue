@@ -34,7 +34,7 @@ export default {
           yAxes: [{
             ticks: {
               callback: (value) => {
-                return this.formatMoney(value, { format: '$0,0' })
+                return value ? this.formatMoney(value, { format: '$0,0' }) : '$0,0'
               }
             }
           }]
