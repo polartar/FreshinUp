@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Foodfleet\Square\PaymentType;
 use Illuminate\Database\Seeder;
 
 class PaymentTypesTableSeeder extends Seeder
@@ -11,6 +12,15 @@ class PaymentTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\Square\PaymentType::class, 5)->create();
+        $paymentTypes = [
+            'VISA',
+            'AMEX',
+            'MASTERCARD',
+            'CASH'
+        ];
+
+        foreach ($paymentTypes as $paymentType) {
+            PaymentType::firstOrCreate(['name' => $paymentType]);
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models\Foodfleet;
 
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -27,4 +28,14 @@ class FleetMember extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function contractor()
+    {
+        return $this->belongsTo(Company::class, 'contractor_uuid', 'uuid');
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class, 'fleet_member_uuid', 'uuid');
+    }
 }

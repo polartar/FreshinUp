@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Foodfleet\Square\Category;
+use App\Models\Foodfleet\Square\Item;
 use Illuminate\Database\Seeder;
 
 class ItemsTableSeeder extends Seeder
@@ -11,6 +13,11 @@ class ItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\Square\Item::class, 50)->create();
+        $categories = Category::get();
+        for ($i = 0; $i < 50; $i++) {
+            factory(Item::class)->create([
+                'category_uuid' => $categories->random()->uuid
+            ]);
+        }
     }
 }
