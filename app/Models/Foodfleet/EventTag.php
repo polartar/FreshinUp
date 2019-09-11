@@ -27,4 +27,16 @@ class EventTag extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function events()
+    {
+        return $this->belongsToMany(
+            Event::class,
+            'events_event_tags',
+            'event_tag_uuid',
+            'event_uuid',
+            'uuid',
+            'uuid'
+        );
+    }
 }

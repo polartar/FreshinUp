@@ -27,4 +27,9 @@ class Category extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'category_uuid', 'uuid');
+    }
 }

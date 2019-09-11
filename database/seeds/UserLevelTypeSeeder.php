@@ -22,12 +22,14 @@ class UserLevelTypeSeeder extends Seeder
         ];
 
         $types = [
-            1 => 'FF Staff - Admin',
-            2 => 'FF Staff',
-            3 => 'Customer',
-            4 => 'Customer - Employee',
-            5 => 'Supplier',
-            6 => 'Supplier - Employee',
+            1 => 'FF Admin',
+            2 => 'FF Director',
+            3 => 'FF Lead',
+            4 => 'FF Employee',
+            5 => 'Company Admin',
+            6 => 'Company Director',
+            7 => 'Company Lead',
+            8 => 'Company Employee'
         ];
 
         foreach($levels as $displayId => $name) {
