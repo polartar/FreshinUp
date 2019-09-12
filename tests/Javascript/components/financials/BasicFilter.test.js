@@ -78,7 +78,7 @@ describe('BasicFilter', () => {
           }
         }
       })
-      expect(wrapper.vm.searchLink).toBe('/admin/transactions?event_uuid=1&company_uuid=2&truck_uuid=3&customer_uuid=4&date_after=2019-12-11&date_before=2019-12-17')
+      expect(wrapper.vm.searchLink).toBe('/admin/financials/transactions?event_uuid=1&company_uuid=2&truck_uuid=3&customer_uuid=4&date_after=2019-12-11&date_before=2019-12-17')
     })
   })
 })

@@ -457,7 +457,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
   >
     <a
       class="primary v-btn v-btn--large theme--light"
-      href="/admin/transactions?"
+      href="/admin/financials/transactions?"
     >
       <div
         class="v-btn__content"
