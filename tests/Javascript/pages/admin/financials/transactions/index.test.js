@@ -4,7 +4,8 @@ import { createLocalVue } from 'fresh-bus/tests/utils'
 import Component from '~/pages/admin/financials/transactions/index.vue'
 import devices from '~/store/modules/devices'
 import paymentTypes from '~/store/modules/paymentTypes'
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+import financialsummary from '~/store/modules/financialsummary'
+import { FIXTURE_FINANCIAL_SUMMARY } from 'tests/__data__/financialSummary'
 
 describe('Admin Financial Results Page', () => {
   let localVue, mock
@@ -28,6 +29,9 @@ describe('Admin Financial Results Page', () => {
       mock.onGet('api/foodfleet/payment-types')
         .reply(200, {})
 
+      mock.onGet('api/foodfleet/financial-summary')
+        .reply(200, FIXTURE_FINANCIAL_SUMMARY)
+
       mock.onAny().reply(config => {
         console.warn('No mock match for ' + config.url, config)
         return [404, { message: 'No mock match for ' + config.url, data: config }]
@@ -36,7 +40,8 @@ describe('Admin Financial Results Page', () => {
       const store = createStore({}, {
         modules: {
           devices: devices({}),
-          paymentTypes: paymentTypes({})
+          paymentTypes: paymentTypes({}),
+          financialsummary: financialsummary({})
         }
       })
 
@@ -57,11 +62,7 @@ describe('Admin Financial Results Page', () => {
       // Action: load the page data
       Component.beforeRouteEnterOrUpdate(wrapper.vm, null, null, async () => {
         await wrapper.vm.$nextTick()
-        expect(wrapper.html()).toContain(FormatMoney.methods.formatMoney(wrapper.vm.gross, { format: '$0,0' }))
-        expect(wrapper.html()).toContain(FormatMoney.methods.formatMoney(wrapper.vm.net, { format: '$0,0' }))
-        expect(wrapper.html()).toContain(FormatMoney.methods.formatMoney(wrapper.vm.avgTicket, { format: '$0,0' }))
-        // https://github.com/FreshinUp/foodfleet/issues/56
-        // expect(wrapper.element).toMatchSnapshot()
+        expect(wrapper.element).toMatchSnapshot()
         done()
       })
     })
