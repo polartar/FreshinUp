@@ -78,7 +78,7 @@
             :total-items="pagination.totalItems"
             :sort-by="sorting.sortBy"
             :descending="sorting.descending"
-            base-url="/admin/transactions"
+            base-url="/admin/financials/transactions"
             must-sort
             @paginate="onPaginate"
             @delete="deleteReport"
