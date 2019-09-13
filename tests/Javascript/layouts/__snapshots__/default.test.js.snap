@@ -531,7 +531,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
         class="container fluid"
       >
         <h1
-          class="page-title"
+          class="page-title white--text"
         >
           
         Default template

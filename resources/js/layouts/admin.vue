@@ -16,3 +16,8 @@ export default {
   }
 }
 </script>
+<style>
+    .f-page__title--admin {
+        color: white;
+    }
+</style>
