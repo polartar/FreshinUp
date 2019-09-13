@@ -90,7 +90,7 @@
           <v-btn
             color="primary"
             dark
-            :href="report_links[props.item.id]"
+            :to="report_links[props.item.id]"
           >
             Generate
           </v-btn>

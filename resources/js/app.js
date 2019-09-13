@@ -9,6 +9,7 @@ import devices from '~/store/modules/devices.js'
 import financialModifiers from '~/store/modules/financialModifiers.js'
 import financialReports from '~/store/modules/financialReports.js'
 import paymentTypes from '~/store/modules/paymentTypes.js'
+import financialsummary from '~/store/modules/financialsummary.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -118,7 +119,8 @@ const appInstance = new App({
       devices: devices({}),
       financialModifiers: financialModifiers({}),
       financialReports: financialReports({}),
-      paymentTypes: paymentTypes({})
+      paymentTypes: paymentTypes({}),
+      financialsummary: financialsummary({})
     }
   }),
   theme,

@@ -2,7 +2,7 @@
   <div class="py-2">
     <div class="text-xs-center my-5">
       <div class="display-1 primary--text">
-        {{ formatMoney(averageTicket, { format: '$0,0' }) }}
+        {{ formatMoney(averageTicket, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
         Per Customer

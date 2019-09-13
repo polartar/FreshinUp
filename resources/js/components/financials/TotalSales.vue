@@ -2,7 +2,7 @@
   <div class="py-2">
     <div class="text-xs-center my-5">
       <div class="display-1 primary--text">
-        {{ formatMoney(gross, { format: '$0,0' }) }}
+        {{ formatMoney(gross, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
         Gross
@@ -10,7 +10,7 @@
     </div>
     <div class="text-xs-center my-5">
       <div class="display-1 primary--text">
-        {{ formatMoney(net, { format: '$0,0' }) }}
+        {{ formatMoney(net, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
         Net
@@ -18,7 +18,7 @@
     </div>
     <div class="text-xs-center my-5">
       <div class="display-1 primary--text">
-        {{ formatMoney(cash, { format: '$0,0' }) }}
+        {{ formatMoney(cash, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
         Cash
@@ -26,7 +26,7 @@
     </div>
     <div class="text-xs-center my-5">
       <div class="display-1 primary--text">
-        {{ formatMoney(credit, { format: '$0,0' }) }}
+        {{ formatMoney(credit, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
         Credit
