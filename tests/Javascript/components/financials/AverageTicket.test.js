@@ -29,7 +29,7 @@ describe('financials/TotalSales', () => {
         },
         localVue
       })
-      expect(component.html()).toContain('$23,470')
+      expect(component.html()).toContain('$234.70')
     })
   })
 })

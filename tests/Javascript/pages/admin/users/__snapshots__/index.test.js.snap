@@ -8,8 +8,12 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     ma-2=""
     tag="div"
   >
-    <h2>
+    <h2
+      class="white--text"
+    >
+      
       Users
+    
     </h2>
      
     <v-btn-stub

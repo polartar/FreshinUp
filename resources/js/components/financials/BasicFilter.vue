@@ -93,8 +93,8 @@
       >
         Truck
         <clear-button
-          v-if="filters.truck_uuid"
-          @clear="filters.truck_uuid = null; truckKey += 1"
+          v-if="filters.fleet_member_uuid"
+          @clear="filters.fleet_member_uuid = null; truckKey += 1"
         />
       </v-layout>
       <simple
@@ -119,8 +119,8 @@
       >
         Customer
         <clear-button
-          v-if="filters.customer_uuid"
-          @clear="filters.customer_uuid = null; customerKey += 1"
+          v-if="filters.contractor_uuid"
+          @clear="filters.contractor_uuid = null; customerKey += 1"
         />
       </v-layout>
       <simple
@@ -186,7 +186,7 @@ export default {
         }
         return result + param
       }, '')
-      return '/admin/transactions?' + encodeURI(preparedParams.slice(1))
+      return '/admin/financials/transactions?' + encodeURI(preparedParams.slice(1))
     }
   },
   methods: {

@@ -1,0 +1,3651 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Financial Results Page Mount snapshot 1`] = `
+<div>
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog right-dialog v-dialog--scrollable"
+        style="max-width: 436px; display: none;"
+      >
+        <div
+          class="full-width"
+        >
+          <div
+            class="pa-4 pb-100 v-card v-sheet theme--light"
+          >
+            <div
+              class="layout row justify-space-between"
+            >
+              <a
+                class="mt-2 title primary--text"
+                href="#"
+              >
+                
+  Advanced Filters
+
+              </a>
+               
+              <button
+                class="mr-0 mt-2 small-btn v-btn v-btn--icon v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon grey--text far fa-times-circle theme--light"
+                  />
+                </div>
+              </button>
+            </div>
+             
+            <ul
+              class="v-expansion-panel theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Events
+          
+                  </div>
+                   
+                  <a
+                    class="black--text underline text-xs-right mr-2"
+                  >
+                    Clear all
+                  </a>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Event tag
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All tags"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Locations
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All locations"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+             
+            <ul
+              class="v-expansion-panel mt-3 theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Customers
+          
+                  </div>
+                   
+                  <a
+                    class="black--text underline text-xs-right mr-2"
+                  >
+                    Clear all
+                  </a>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Customer name
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All customers"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Customer ID
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All customers"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Reference ID
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All customers"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Staff name
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All staff members"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Staff ID
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All staff members"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Device
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                        role="combobox"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <div
+                                class="v-select__selections"
+                              >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  All
+                                </div>
+                                <input
+                                  aria-readonly="false"
+                                  autocomplete="on"
+                                  placeholder="All devices"
+                                  readonly="readonly"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      class="primary--text"
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            All
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+             
+            <ul
+              class="v-expansion-panel mt-3 theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Items
+          
+                  </div>
+                   
+                  <a
+                    class="black--text underline text-xs-right mr-2"
+                  >
+                    Clear all
+                  </a>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Category
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All categories"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Item
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All items"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Min price
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <input
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <div
+                                class="v-messages__wrapper"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Max price
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <input
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <div
+                                class="v-messages__wrapper"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+             
+            <ul
+              class="v-expansion-panel mt-3 mb-5 theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Payments
+          
+                  </div>
+                   
+                  <a
+                    class="black--text underline text-xs-right mr-2"
+                  >
+                    Clear all
+                  </a>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Payment type
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                        role="combobox"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <div
+                                class="v-select__selections"
+                              >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  All
+                                </div>
+                                <input
+                                  aria-readonly="false"
+                                  autocomplete="on"
+                                  placeholder="All payment types"
+                                  readonly="readonly"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      class="primary--text"
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            All
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm6 pl-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Transaction ID
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All transactions"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="layout row my-2"
+                  >
+                    <div
+                      class="flex sm6 pr-2"
+                    >
+                      <div
+                        class="layout row justify-space-between my-2"
+                      >
+                        
+              Payment ID
+              
+                        <!---->
+                      </div>
+                       
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All payments"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+           
+          <div
+            class="layout secondary fixed-row row py-4"
+            style="width: 422px;"
+          >
+            <div
+              class="flex mr-2 ml-4 sm6"
+            >
+              <button
+                class="v-btn v-btn--block v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+        Clear
+      
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex ml-2 mr-4 sm6"
+            >
+              <a
+                class="primary v-btn v-btn--block v-btn--large theme--light"
+                href="/admin/financials/transactions?"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+        Apply Filters
+      
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row wrap"
+  >
+    <div
+      class="flex d-inline-flex align-center ma-2"
+    >
+      <h2
+        class="white--text"
+      >
+        Financial Reports
+      </h2>
+    </div>
+     
+    <div
+      class="flex text-xs-right"
+    >
+      <button
+        class="v-btn theme--dark primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Advanced Filters
+      
+        </div>
+      </button>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <br />
+   
+  <div
+    class="pa-4 v-card v-sheet theme--light"
+  >
+    <div
+      class="layout row wrap"
+    >
+      <div
+        class="flex sm2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Events
+      
+          <!---->
+        </div>
+         
+        <div
+          background-color="white"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+          height="48"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+              style="height: 48px;"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <input
+                  aria-label=""
+                  autocomplete="off"
+                  placeholder="All Events"
+                  role="combobox"
+                  type="text"
+                />
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon v-icon--link material-icons theme--light"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-autocomplete__content"
+                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <div
+                          class="v-list__tile theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              No data available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 px-2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Date range
+      
+          <!---->
+        </div>
+         
+        <div
+          class="date-time-picker"
+          id="DateTimePicker"
+        >
+          <div
+            class="field flex align-center lg"
+            data-v-a0144ed0=""
+          >
+            <input
+              class="field-input"
+              data-v-a0144ed0=""
+              id="DateTimePicker"
+              placeholder="Select date"
+              readonly="readonly"
+              type="text"
+            />
+            <label
+              class="field-label"
+              data-v-a0144ed0=""
+              for="DateTimePicker"
+            >
+              
+    Select date
+  
+            </label>
+            <!---->
+          </div>
+          <!---->
+          <div
+            class="datetimepicker flex"
+            data-v-1dc7d483=""
+            style="top: 100%; margin-bottom: 10px; display: none;"
+          >
+            <div
+              class="datepicker flex flex-direction-column"
+              data-v-1dc7d483=""
+              style="top: 100%; margin-bottom: 10px; width: 400px; max-width: 400px; min-width: 400px;"
+            >
+              <div
+                class="header-picker"
+                data-v-17cb1efe=""
+                data-v-1dc7d483=""
+                style="padding: 10px 0px 10px 10px; background-color: dodgerblue;"
+              >
+                <div
+                  class="header-picker-year"
+                  data-v-17cb1efe=""
+                >
+                  <span
+                    data-v-17cb1efe=""
+                  >
+                    <div
+                      data-v-17cb1efe=""
+                    >
+                      
+        2019
+      
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex justify-content-between"
+                  data-v-17cb1efe=""
+                >
+                  <div
+                    class="flex justify-content-between"
+                    data-v-17cb1efe=""
+                  >
+                    <span
+                      class="header-picker-range dots-text flex-1"
+                      data-v-17cb1efe=""
+                    >
+                      
+        ... - ...
+      
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pickers-container flex"
+                data-v-1dc7d483=""
+              >
+                <div
+                  class="datepicker-container flex flex-fixed p-0 range flex-1 has-shortcuts"
+                  data-v-0da13aa6=""
+                  data-v-1dc7d483=""
+                  id="DateTimePicker-DatePicker"
+                >
+                  <div
+                    class="shortcuts-container"
+                    data-v-0da13aa6=""
+                    data-v-48f9f155=""
+                    style="height: 347px;"
+                  >
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      This week
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      Last week
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      Last 7 days
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      Last 30 days
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      This month
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      Last month
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      This year
+    
+                        </span>
+                      </span>
+                    </button>
+                    <button
+                      class="custom-button flex align-center justify-content-center shortcut-button with-border"
+                      data-v-02b1f8d2=""
+                      data-v-48f9f155=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        class="custom-button-effect"
+                        data-v-02b1f8d2=""
+                        style="background-color: dodgerblue;"
+                      />
+                      <span
+                        class="custom-button-content flex align-center justify-content-center flex-1"
+                        data-v-02b1f8d2=""
+                        style="color: dodgerblue; fill: dodgerblue;"
+                      >
+                        <span
+                          class="lm-fs-12 flex-1"
+                          data-v-02b1f8d2=""
+                          data-v-48f9f155=""
+                        >
+                          
+      Last year
+    
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    class="calendar lm-w-100"
+                    data-v-0da13aa6=""
+                  >
+                    <div
+                      class="datepicker-controls flex align-center justify-content-center"
+                      data-v-0da13aa6=""
+                    >
+                      <div
+                        class="arrow-month h-100"
+                        data-v-0da13aa6=""
+                      >
+                        <button
+                          class="datepicker-button datepicker-prev text-center h-100 flex align-center"
+                          data-v-0da13aa6=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <svg
+                            data-v-0da13aa6=""
+                            viewBox="0 0 1000 1000"
+                          >
+                            <path
+                              d="M336.2 274.5l-210.1 210h805.4c13 0 23 10 23 23s-10 23-23 23H126.1l210.1 210.1c11 11 11 21 0 32-5 5-10 7-16 7s-11-2-16-7l-249.1-249c-11-11-11-21 0-32l249.1-249.1c21-21.1 53 10.9 32 32z"
+                              data-v-0da13aa6=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        class="datepicker-container-label flex-1 flex justify-content-center"
+                        data-v-0da13aa6=""
+                      >
+                        <span
+                          class="h-100 flex align-center flex-1 flex justify-content-right"
+                          data-v-0da13aa6=""
+                        >
+                          <button
+                            class="custom-button flex align-center justify-content-center date-buttons lm-fs-16 padding-button"
+                            data-v-02b1f8d2=""
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="custom-button-effect"
+                              data-v-02b1f8d2=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <span
+                              class="custom-button-content flex align-center justify-content-center flex-1"
+                              data-v-02b1f8d2=""
+                              style="color: dodgerblue; fill: dodgerblue;"
+                            >
+                              
+            June
+          
+                            </span>
+                          </button>
+                        </span>
+                        <span
+                          class="h-100 flex align-center flex-1 flex"
+                          data-v-0da13aa6=""
+                        >
+                          <button
+                            class="custom-button flex align-center justify-content-center date-buttons lm-fs-16 padding-button"
+                            data-v-02b1f8d2=""
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="custom-button-effect"
+                              data-v-02b1f8d2=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <span
+                              class="custom-button-content flex align-center justify-content-center flex-1"
+                              data-v-02b1f8d2=""
+                              style="color: dodgerblue; fill: dodgerblue;"
+                            >
+                              
+            2019
+          
+                            </span>
+                          </button>
+                        </span>
+                      </div>
+                      <div
+                        class="arrow-month h-100 text-right"
+                        data-v-0da13aa6=""
+                      >
+                        <button
+                          class="datepicker-button datepicker-next text-center h-100 flex align-center justify-content-right"
+                          data-v-0da13aa6=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <svg
+                            data-v-0da13aa6=""
+                            viewBox="0 0 1000 1000"
+                          >
+                            <path
+                              d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z"
+                              data-v-0da13aa6=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="week-days flex"
+                      data-v-0da13aa6=""
+                      data-v-34f8dbed=""
+                    >
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Sun
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Mon
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Tue
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Wed
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Thu
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Fri
+  
+                      </div>
+                      <div
+                        class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
+                        data-v-34f8dbed=""
+                      >
+                        
+    Sat
+  
+                      </div>
+                    </div>
+                    <div
+                      class="month-container"
+                      data-v-0da13aa6=""
+                      style="height: 250px;"
+                    >
+                      <span
+                        data-v-0da13aa6=""
+                      >
+                        <div
+                          class="datepicker-days flex"
+                          data-v-0da13aa6=""
+                        >
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              1
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              2
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              3
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              4
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              5
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              6
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              7
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              8
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              9
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              10
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              11
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              12
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              13
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              14
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              15
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              16
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              17
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              18
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              19
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              20
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              21
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              22
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              23
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              24
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              25
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              26
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="datepicker-today"
+                              data-v-0da13aa6=""
+                            />
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              27
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              28
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              29
+            
+                            </span>
+                          </button>
+                          <button
+                            class="datepicker-day flex align-center justify-content-center enable"
+                            data-v-0da13aa6=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <!---->
+                            <span
+                              class="datepicker-day-effect"
+                              data-v-0da13aa6=""
+                              style="background-color: dodgerblue;"
+                            />
+                            <!---->
+                            <span
+                              class="datepicker-day-text flex-1"
+                              data-v-0da13aa6=""
+                            >
+                              
+              30
+            
+                            </span>
+                          </button>
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                        </div>
+                      </span>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+              </div>
+              <div
+                class="datepicker-buttons-container flex justify-content-right button-validate flex-fixed"
+                data-v-1dc7d483=""
+                data-v-fea0e798=""
+              >
+                <!---->
+                <button
+                  class="datepicker-button validate flex align-center justify-content-center"
+                  data-v-fea0e798=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="datepicker-button-effect"
+                    data-v-fea0e798=""
+                  />
+                  <svg
+                    data-v-fea0e798=""
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      data-v-fea0e798=""
+                      fill="none"
+                    />
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                      data-v-fea0e798=""
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 px-2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Companies
+      
+          <!---->
+        </div>
+         
+        <div
+          background-color="white"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+          height="48"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+              style="height: 48px;"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <input
+                  aria-label=""
+                  autocomplete="off"
+                  placeholder="All Companies"
+                  role="combobox"
+                  type="text"
+                />
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon v-icon--link material-icons theme--light"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-autocomplete__content"
+                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <div
+                          class="v-list__tile theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              No data available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 px-2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Truck
+      
+          <!---->
+        </div>
+         
+        <div
+          background-color="white"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+          height="48"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+              style="height: 48px;"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <input
+                  aria-label=""
+                  autocomplete="off"
+                  placeholder="All Trucks"
+                  role="combobox"
+                  type="text"
+                />
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon v-icon--link material-icons theme--light"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-autocomplete__content"
+                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <div
+                          class="v-list__tile theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              No data available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 px-2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Customer
+      
+          <!---->
+        </div>
+         
+        <div
+          background-color="white"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+          height="48"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+              style="height: 48px;"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <input
+                  aria-label=""
+                  autocomplete="off"
+                  placeholder="All Customers"
+                  role="combobox"
+                  type="text"
+                />
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon v-icon--link material-icons theme--light"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-autocomplete__content"
+                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <div
+                          class="v-list__tile theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              No data available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 pt-4 fill-height justify-end pl-2"
+      >
+        <a
+          class="primary v-btn v-btn--large theme--light"
+          href="/admin/financials/transactions?"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+      Generate
+    
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row px-5 py-2 wrap"
+  >
+    <div
+      class="flex xs12 sm12 md6"
+    >
+      <div
+        class="mx-2 v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title font-weight-bold subheading"
+        >
+          
+          Total Sales / Time
+        
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="pa-4"
+        >
+          <lines-stub
+            chart-data="[object Object]"
+            options="[object Object]"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex xs12 sm12 md3"
+    >
+      <div
+        class="mx-2 v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title font-weight-bold subheading"
+        >
+          
+          Total Sales
+        
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="py-2"
+        >
+          <div
+            class="text-xs-center my-5"
+          >
+            <div
+              class="display-1 primary--text"
+            >
+              
+      $3,904.27
+    
+            </div>
+             
+            <div
+              class="font-weight-bold subheading mt-2"
+            >
+              
+      Gross
+    
+            </div>
+          </div>
+           
+          <div
+            class="text-xs-center my-5"
+          >
+            <div
+              class="display-1 primary--text"
+            >
+              
+      $3,123.42
+    
+            </div>
+             
+            <div
+              class="font-weight-bold subheading mt-2"
+            >
+              
+      Net
+    
+            </div>
+          </div>
+           
+          <div
+            class="text-xs-center my-5"
+          >
+            <div
+              class="display-1 primary--text"
+            >
+              
+      $1,134.97
+    
+            </div>
+             
+            <div
+              class="font-weight-bold subheading mt-2"
+            >
+              
+      Cash
+    
+            </div>
+          </div>
+           
+          <div
+            class="text-xs-center my-5"
+          >
+            <div
+              class="display-1 primary--text"
+            >
+              
+      $2,769.30
+    
+            </div>
+             
+            <div
+              class="font-weight-bold subheading mt-2"
+            >
+              
+      Credit
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex xs12 sm12 md3"
+    >
+      <div
+        class="mx-2 v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title font-weight-bold subheading"
+        >
+          
+          AVG. Ticket
+        
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="py-2"
+        >
+          <div
+            class="text-xs-center my-5"
+          >
+            <div
+              class="display-1 primary--text"
+            >
+              
+      $100.11
+    
+            </div>
+             
+            <div
+              class="font-weight-bold subheading mt-2"
+            >
+              
+      Per Customer
+    
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="mx-2 mt-2 v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title font-weight-bold subheading"
+        >
+          
+          Sales By Method
+        
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="pa-4"
+        >
+          <doughnut-stub
+            chart-data="[object Object]"
+            options="[object Object]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
