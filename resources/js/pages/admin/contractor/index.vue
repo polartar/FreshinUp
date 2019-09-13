@@ -7,12 +7,10 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   layout: 'admin',
-  components: {
-  },
   data () {
     return {
       pageTitle: 'Square authorization',
@@ -37,17 +35,10 @@ export default {
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
-    }),
-    ...mapGetters(['currentUser']),
+    })
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(false)
-    Promise.all([
-      vm.$store.dispatch('currentUser/getCurrentUser')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
   }
 }
 </script>

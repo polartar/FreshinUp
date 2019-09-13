@@ -1,27 +1,23 @@
 <template>
-  <div>
-  </div>
+  <div />
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 import { forEach } from 'lodash'
 
 export default {
   layout: 'admin',
-  components: {
-  },
   data () {
     return {
       pageTitle: 'Square authorization',
-      result: null
+      result: false
     }
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
-    }),
-    ...mapGetters(['currentUser'])
+    })
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(false)
@@ -36,6 +32,11 @@ export default {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
+      .catch(() => {
+        vm.result = false
+        vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
+      })
   }
 }
 </script>
