@@ -14,18 +14,18 @@ class TestDataSeeder extends Seeder
         $this->call([
             \FinancialReportsTableSeeder::class,
             \CategoriesTableSeeder::class,
-            \CustomersTableSeeder::class,
+            \PaymentTypesTableSeeder::class,
             \DevicesTableSeeder::class,
-            \EventsTableSeeder::class,
+            \ContractorCompaniesTableSeeder::class,
             \EventTagsTableSeeder::class,
             \FleetMembersTableSeeder::class,
-            \ItemsTableSeeder::class,
-            \LocationsTableSeeder::class,
-            \PaymentsTableSeeder::class,
-            \PaymentTypesTableSeeder::class,
             \StaffsTableSeeder::class,
+            \LocationsTableSeeder::class,
+            \EventsTableSeeder::class,
             \TransactionsTableSeeder::class,
-            \ContractorCompaniesTableSeeder::class
+            \CustomersTableSeeder::class,
+            \ItemsTableSeeder::class,
+            \PaymentsTableSeeder::class,
         ]);
     }
 }

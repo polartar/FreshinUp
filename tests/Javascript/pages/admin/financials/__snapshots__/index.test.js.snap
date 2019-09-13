@@ -1684,7 +1684,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
             >
               <a
                 class="primary v-btn v-btn--block v-btn--large theme--light"
-                href="/admin/transactions?"
+                href="/admin/financials/transactions?"
               >
                 <div
                   class="v-btn__content"
@@ -3426,7 +3426,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
       >
         <a
           class="primary v-btn v-btn--large theme--light"
-          href="/admin/transactions?"
+          href="/admin/financials/transactions?"
         >
           <div
             class="v-btn__content"
@@ -3979,7 +3979,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
+                        href="/admin/financials/transactions?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
                         target="_blank"
                       >
                         
@@ -3993,7 +3993,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
+                        href="/admin/financials/transactions?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
                       >
                         <div
                           class="v-btn__content"
@@ -5237,7 +5237,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?event=2,3"
+                        href="/admin/financials/transactions?event=2,3"
                         target="_blank"
                       >
                         
@@ -5251,7 +5251,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?event=2,3"
+                        href="/admin/financials/transactions?event=2,3"
                       >
                         <div
                           class="v-btn__content"
@@ -5529,7 +5529,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?date_after=2019-01-01&date_before=2019-06-01"
+                        href="/admin/financials/transactions?date_after=2019-01-01&date_before=2019-06-01"
                         target="_blank"
                       >
                         
@@ -5543,7 +5543,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?date_after=2019-01-01&date_before=2019-06-01"
+                        href="/admin/financials/transactions?date_after=2019-01-01&date_before=2019-06-01"
                       >
                         <div
                           class="v-btn__content"
@@ -6720,7 +6720,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
                         target="_blank"
                       >
                         
@@ -6734,7 +6734,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
                       >
                         <div
                           class="v-btn__content"
@@ -7890,7 +7890,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=100000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000"
                         target="_blank"
                       >
                         
@@ -7904,7 +7904,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=100000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000"
                       >
                         <div
                           class="v-btn__content"
@@ -8119,7 +8119,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=0&max_price=100000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=0&max_price=100000"
                         target="_blank"
                       >
                         
@@ -8133,7 +8133,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?fleet_member=1&event=2,3&min_price=0&max_price=100000"
+                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=0&max_price=100000"
                       >
                         <div
                           class="v-btn__content"
@@ -8344,7 +8344,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="primary--text open"
-                        href="/admin/transactions?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
+                        href="/admin/financials/transactions?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
                         target="_blank"
                       >
                         
@@ -8358,7 +8358,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     >
                       <a
                         class="v-btn theme--dark primary"
-                        href="/admin/transactions?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
+                        href="/admin/financials/transactions?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
                       >
                         <div
                           class="v-btn__content"
