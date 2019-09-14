@@ -1,10 +1,47 @@
 <template>
-  <div class="pa-4">
-    <doughnut
-      :chart-data="chartData"
-      :options="options"
-    />
-  </div>
+  <v-container>
+    <v-layout
+      row
+      wrap
+      align-center
+    >
+      <v-flex
+        xs12
+        sm6
+        :class="{'mb-4': $vuetify.breakpoint.xs}"
+      >
+        <doughnut
+          :chart-data="chartData"
+          :options="options"
+        />
+      </v-flex>
+      <v-flex
+        xs12
+        sm6
+        :class="{'pl-4': $vuetify.breakpoint.smAndUp}"
+      >
+        <v-layout
+          v-for="(label, i) in labels"
+          :key="i"
+          d-flex
+          mb-3
+          row
+          align-left
+        >
+          <v-flex>
+            <v-icon
+              small
+              :color="colors[i]"
+              class="mr-2"
+            >
+              fa-circle
+            </v-icon>
+            <span class="body-2 text-lowercase">{{ label }}</span>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
