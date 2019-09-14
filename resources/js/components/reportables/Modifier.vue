@@ -28,9 +28,11 @@
         v-model="value"
         only-date
         format="YYYY-MM-DD"
-        formatted="YYYY-MM-DD"
+        formatted="MM-DD-YYYY"
         input-size="lg"
         :label="modifier.label"
+        :color="$vuetify.theme.primary"
+        :button-color="$vuetify.theme.primary"
         @input="selectValue(value)"
       />
     </template>

@@ -48,9 +48,11 @@
         only-date
         range
         format="YYYY-MM-DD"
-        formatted="YYYY-MM-DD"
+        formatted="MM-DD-YYYY"
         input-size="lg"
         label="Select date"
+        :color="$vuetify.theme.primary"
+        :button-color="$vuetify.theme.primary"
         @input="changeDate"
       />
     </v-flex>
