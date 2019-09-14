@@ -14,6 +14,15 @@ let filters = {
   date_before: null
 }
 
+let filtersDateRange = {
+  event_uuid: null,
+  company_uuid: null,
+  fleet_member_uuid: null,
+  contractor_uuid: null,
+  date_after: '2019-01-08',
+  date_before: '2019-01-08'
+}
+
 // Mock GET request to /users for colleagues
 const mock = new MockAdapter(axios)
 mock.onGet('/events').reply(200, {
@@ -63,6 +72,21 @@ storiesOf('FoodFleet|financials/BasicFilter', module)
     data () {
       return {
         filters: filters
+      }
+    },
+    template: `
+      <v-container>
+        <basic-filter
+        :filters="filters"
+        />
+      </v-container>
+    `
+  }))
+  .add('with date range set', () => ({
+    components: { BasicFilter },
+    data () {
+      return {
+        filters: filtersDateRange
       }
     },
     template: `
