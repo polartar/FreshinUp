@@ -12,15 +12,7 @@ describe('Contractor page', () => {
       const store = createStore({})
       const wrapper = shallowMount(Component, {
         localVue: localVue,
-        store,
-        mocks: {
-          process: {
-            env: {
-              SQ_DOMAIN: 'https://connect.squareupsandbox.com',
-              SQ_APP_ID: 'sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw'
-            }
-          }
-        }
+        store
       })
       // Action: change State Machine's state
       await wrapper.vm.$store.dispatch('page/setLoading', false)
@@ -35,15 +27,7 @@ describe('Contractor page', () => {
       const store = createStore({})
       const wrapper = mount(Component, {
         localVue: localVue,
-        store,
-        mocks: {
-          process: {
-            env: {
-              SQ_DOMAIN: 'https://connect.squareupsandbox.com',
-              SQ_APP_ID: 'sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw'
-            }
-          }
-        }
+        store
       })
 
       // Action: change State Machine's state
