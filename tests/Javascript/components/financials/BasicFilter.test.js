@@ -81,4 +81,29 @@ describe('BasicFilter', () => {
       expect(wrapper.vm.searchLink).toBe('/admin/financials/transactions?event_uuid=1&company_uuid=2&truck_uuid=3&customer_uuid=4&date_after=2019-12-11&date_before=2019-12-17')
     })
   })
+  describe('data()', () => {
+    beforeEach(() => {
+      localVue = createLocalVue()
+    })
+    test('range is set if date_before and/or date_after are set', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue,
+        propsData: {
+          filters: {
+            event_uuid: 1,
+            company_uuid: 2,
+            truck_uuid: 3,
+            customer_uuid: 4,
+            date_after: '2019-12-11',
+            date_before: '2019-12-17'
+          }
+        }
+      })
+      expect(wrapper.vm.range).toEqual({
+        start: '2019-12-11',
+        end: '2019-12-17'
+      })
+    })
+  })
 })
