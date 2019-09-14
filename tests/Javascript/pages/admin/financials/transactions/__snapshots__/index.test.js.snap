@@ -1702,7 +1702,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
   </div>
    
   <div
-    class="layout row wrap"
+    class="layout row wrap pt-3"
   >
     <div
       class="flex d-inline-flex align-center ma-2"
@@ -3637,12 +3637,101 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
         />
          
         <div
-          class="pa-4"
+          class="container"
         >
-          <doughnut-stub
-            chart-data="[object Object]"
-            options="[object Object]"
-          />
+          <div
+            class="layout row wrap align-center"
+          >
+            <div
+              class="flex xs12 sm6"
+            >
+              <doughnut-stub
+                chart-data="[object Object]"
+                options="[object Object]"
+              />
+            </div>
+             
+            <div
+              class="flex xs12 sm6 pl-4"
+            >
+              <div
+                class="layout d-flex mb-3 row align-left"
+              >
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon mr-2 fa fa-circle theme--light"
+                    style="font-size: 16px; color: rgb(25, 118, 210); caret-color: #1976D2;"
+                  />
+                   
+                  <span
+                    class="body-2 text-lowercase"
+                  >
+                    CASH 29%
+                  </span>
+                </div>
+              </div>
+              <div
+                class="layout d-flex mb-3 row align-left"
+              >
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon mr-2 fa fa-circle theme--light"
+                    style="font-size: 16px; color: rgb(251, 140, 0); caret-color: #FB8C00;"
+                  />
+                   
+                  <span
+                    class="body-2 text-lowercase"
+                  >
+                    VISA 21%
+                  </span>
+                </div>
+              </div>
+              <div
+                class="layout d-flex mb-3 row align-left"
+              >
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon mr-2 fa fa-circle theme--light"
+                    style="font-size: 16px; color: rgb(66, 66, 66); caret-color: #424242;"
+                  />
+                   
+                  <span
+                    class="body-2 text-lowercase"
+                  >
+                    AMEX 29%
+                  </span>
+                </div>
+              </div>
+              <div
+                class="layout d-flex mb-3 row align-left"
+              >
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon mr-2 fa fa-circle theme--light"
+                    style="font-size: 16px; color: rgb(33, 150, 243); caret-color: #2196F3;"
+                  />
+                   
+                  <span
+                    class="body-2 text-lowercase"
+                  >
+                    MASTERCARD 22%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
