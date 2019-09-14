@@ -1702,7 +1702,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
   </div>
    
   <div
-    class="layout row wrap"
+    class="layout row wrap pt-3"
   >
     <div
       class="flex d-inline-flex align-center ma-2"

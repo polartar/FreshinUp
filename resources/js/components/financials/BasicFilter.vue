@@ -174,7 +174,10 @@ export default {
       companyKey: 0,
       truckKey: 0,
       customerKey: 0,
-      range: null
+      range: {
+        start: this.filters.date_after,
+        end: this.filters.date_before
+      }
     }
   },
   computed: {

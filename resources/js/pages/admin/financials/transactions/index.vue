@@ -19,6 +19,7 @@
     <v-layout
       row
       wrap
+      pt-3
     >
       <v-flex
         d-inline-flex
