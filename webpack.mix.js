@@ -17,7 +17,8 @@ const path = require('path')
 mix.webpackConfig({
   plugins: [
     new Dotenv({
-      path: `./.env`
+      path: `./.env`,
+      silent: false
     }),
     new WebpackLaravelMixManifest()
   ],

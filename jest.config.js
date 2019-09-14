@@ -20,7 +20,8 @@ module.exports = {
   },
   setupFiles: JestConfig.setupFiles.concat([
     '<rootDir>/tests/Javascript/.jest/require-context',
-    '<rootDir>/tests/Javascript/mockDate.js'
+    '<rootDir>/tests/Javascript/mockDate.js',
+    '<rootDir>/tests/Javascript/envTest.js'
   ]),
   moduleNameMapper: {
     ...JestConfig.moduleNameMapper,

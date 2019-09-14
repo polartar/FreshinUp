@@ -46,6 +46,7 @@ $ yarn watch-poll
 
 ### Local Development (Homestead)
 - add `minio: true` to homestead.yaml
+- add `ssl: true` to homestead.yaml
 - add 
 ```
 buckets:
@@ -82,3 +83,20 @@ FS_CMS_BUCKET=bus
 FS_CMS_REGION=us-east-1
 FS_CMS_ROOT=
 ```
+
+- take out from your homestead machine the `ca.homestead.homestead.crt` file in the `/etc/nginx/ssl/` folder
+- add it to certificate exception on chrome advanced settings on `authorities` tab
+
+- create an account on `https://developer.squareup.com`
+- create a test application and set it as sandbox
+- set your callback url in the sandbox app under Oauth based on your base url (eg: `https://foodfleet.test/admin/contractor/check`)
+- set your env variables related to square
+```
+SQ_TOKEN=<your-app-token>
+SQ_APP_ID=<your-app-id>
+SQ_APP_SECRET=<your-app-secret>
+SQ_DOMAIN=https://connect.squareupsandbox.com
+```
+- go back to `https://developer.squareup.com` dashboard page and create a test user WITHOUT any permission on the app
+- click on the `Launch` button right after the test account
+- the test account will remain active for a limited amount of time. After that it will be necessary re-launch the account from the developer dashboard

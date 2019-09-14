@@ -19,7 +19,8 @@
         "spatie/laravel-json-api-paginate": "^1.4",
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-permission": "^2.29",
-        "spatie/laravel-query-builder": "^1.17"
+        "spatie/laravel-query-builder": "^1.17",
+        "square/connect": "^2.20190814"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
