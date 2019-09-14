@@ -11,7 +11,7 @@ exports[`financials/TotalSales Snapshots required props set 1`] = `
       class="display-1 primary--text"
     >
       
-      $20,000
+      $200.00
     
     </div>
      
@@ -31,7 +31,7 @@ exports[`financials/TotalSales Snapshots required props set 1`] = `
       class="display-1 primary--text"
     >
       
-      $10,000
+      $100.00
     
     </div>
      
@@ -51,7 +51,7 @@ exports[`financials/TotalSales Snapshots required props set 1`] = `
       class="display-1 primary--text"
     >
       
-      $20,000
+      $200.00
     
     </div>
      
@@ -71,7 +71,7 @@ exports[`financials/TotalSales Snapshots required props set 1`] = `
       class="display-1 primary--text"
     >
       
-      $105,000
+      $1,050.00
     
     </div>
      

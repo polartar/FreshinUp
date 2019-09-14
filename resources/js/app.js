@@ -9,6 +9,7 @@ import devices from '~/store/modules/devices.js'
 import financialModifiers from '~/store/modules/financialModifiers.js'
 import financialReports from '~/store/modules/financialReports.js'
 import paymentTypes from '~/store/modules/paymentTypes.js'
+import financialsummary from '~/store/modules/financialsummary.js'
 import squares from '~/store/modules/squares.js'
 
 const initialState = {
@@ -120,6 +121,7 @@ const appInstance = new App({
       financialModifiers: financialModifiers({}),
       financialReports: financialReports({}),
       paymentTypes: paymentTypes({}),
+      financialsummary: financialsummary({}),
       squares: squares({})
     }
   }),

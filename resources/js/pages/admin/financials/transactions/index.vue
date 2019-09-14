@@ -69,7 +69,7 @@
           <v-divider />
           <sales-chart
             v-if="!isLoading"
-            :sales="sales"
+            :sales="financialSummary.sales_time"
           />
         </v-card>
       </v-flex>
@@ -84,9 +84,10 @@
           </v-card-title>
           <v-divider />
           <total-sales
-            :gross="gross"
-            :net="net"
-            :payment-type-totals="paymentTypeTotals"
+            v-if="!isLoading"
+            :gross="financialSummary.gross"
+            :net="financialSummary.net"
+            :payment-type-totals="financialSummary.sales_type"
           />
         </v-card>
       </v-flex>
@@ -101,7 +102,8 @@
           </v-card-title>
           <v-divider />
           <average-ticket
-            :average-ticket="avgTicket"
+            v-if="!isLoading"
+            :average-ticket="financialSummary.avg_ticket"
           />
         </v-card>
         <v-card class="mx-2 mt-2">
@@ -110,7 +112,8 @@
           </v-card-title>
           <v-divider />
           <sales-by-method
-            :payment-type-totals="paymentTypeTotals"
+            v-if="!isLoading"
+            :payment-type-totals="financialSummary.sales_type"
           />
         </v-card>
       </v-flex>
@@ -126,32 +129,7 @@ import AverageTicket from '~/components/financials/AverageTicket.vue'
 import SalesByMethod from '~/components/financials/SalesByMethod.vue'
 import SalesChart from '~/components/financials/SalesChart.vue'
 import TotalSales from '~/components/financials/TotalSales.vue'
-import moment from 'moment'
-
-// https://github.com/FreshinUp/foodfleet/issues/56
-
-function getFirstDayOfYear () {
-  let thisYear = (new Date()).getFullYear()
-  return moment(thisYear + '-01-01')
-}
-
-function getDates (startDate, dateEnd) {
-  let dateArray = []
-  let currentDate = startDate ? moment(startDate) : getFirstDayOfYear()
-  let stopDate = dateEnd ? moment(dateEnd) : moment()
-  while (currentDate <= stopDate) {
-    dateArray.push(moment(currentDate).format('YYYY-MM-DD'))
-    currentDate = moment(currentDate).add(1, 'days')
-  }
-  return dateArray
-}
-
-function stubSales (dateStart, dateEnd) {
-  let dateArray = getDates(dateStart, dateEnd)
-  return dateArray.map((item) => {
-    return { value: Math.floor(Math.random() * (20000 - 10000 + 1) + 10000), date: item }
-  })
-}
+import { forEach } from 'lodash'
 
 export default {
   layout: 'admin',
@@ -196,26 +174,7 @@ export default {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('devices', { 'devices': 'items' }),
     ...mapGetters('paymentTypes', { paymentTypes: 'items' }),
-    gross () {
-      return Math.floor(Math.random() * (200000 - 100000 + 1) + 100000)
-    },
-    net () {
-      return Math.floor(this.gross * 0.80)
-    },
-    paymentTypeTotals () {
-      return [
-        { name: 'VISA', value: Math.floor(this.gross * 0.20) },
-        { name: 'MASTERCARD', value: Math.floor(this.gross * 0.23) },
-        { name: 'AMEX', value: Math.floor(this.gross * 0.30) },
-        { name: 'CASH', value: Math.floor(this.gross * 0.27) }
-      ]
-    },
-    avgTicket () {
-      return Math.floor(this.gross / (Math.random() * (50 - 10 + 1) + 10))
-    },
-    sales () {
-      return stubSales(this.$route.query.date_after, this.$route.query.date_before)
-    }
+    ...mapGetters('financialsummary', { financialSummary: 'items' })
   },
   methods: {
     ...mapActions('page', {
@@ -224,9 +183,15 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
+    let filtersForFinancialSummary = {}
+    forEach(vm.$route.query, function (value, key) {
+      filtersForFinancialSummary[key] = value
+    })
     Promise.all([
       vm.$store.dispatch('devices/getItems'),
-      vm.$store.dispatch('paymentTypes/getItems')
+      vm.$store.dispatch('paymentTypes/getItems'),
+      vm.$store.dispatch('financialsummary/setFilters', filtersForFinancialSummary),
+      vm.$store.dispatch('financialsummary/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()

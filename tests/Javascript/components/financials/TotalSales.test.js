@@ -35,13 +35,13 @@ describe('financials/TotalSales', () => {
         localVue
       })
       // gross
-      expect(component.text()).toContain('$20,000')
+      expect(component.text()).toContain('$200.00')
       // net
-      expect(component.text()).toContain('$10,000')
+      expect(component.text()).toContain('$100.00')
       // cash
-      expect(component.text()).toContain('$20,000')
+      expect(component.text()).toContain('$200.00')
       // credit
-      expect(component.text()).toContain('$105,000')
+      expect(component.text()).toContain('$1,050.00')
     })
   })
   describe('Computed', () => {
