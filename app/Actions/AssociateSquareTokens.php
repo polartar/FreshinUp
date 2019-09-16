@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Helpers\SquareHelper;
 use App\User;
 use FreshinUp\FreshBusForms\Actions\Action;
 
@@ -12,15 +13,11 @@ class AssociateSquareTokens implements Action
         $authorizationCode = $data['code'];
 
         // Create and configure a new API client object
-        $defaultApiConfig = new \SquareConnect\Configuration();
-        $defaultApiConfig->setAccessToken(config('square.access_token'));
-        $defaultApiConfig->setHost(config('square.domain'));
-
-        $defaultApiClient = new \SquareConnect\ApiClient($defaultApiConfig);
+        $apiClient = SquareHelper::getApiClient();
 
         // Create an OAuth API client
         $oauthApi = new \SquareConnect\Api\OAuthApi();
-        $oauthApi->setApiClient($defaultApiClient);
+        $oauthApi->setApiClient($apiClient);
         $body = new \SquareConnect\Model\ObtainTokenRequest();
 
         // Set the POST body
