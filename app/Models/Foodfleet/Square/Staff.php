@@ -3,7 +3,7 @@
 
 namespace App\Models\Foodfleet\Square;
 
-use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\FleetMember;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -30,13 +30,13 @@ class Staff extends Model
     protected $dates = ['deleted_at'];
     protected $table = 'staffs';
 
-    public function locations()
+    public function fleetMembers()
     {
         return $this->belongsToMany(
-            Location::class,
-            'locations_staffs',
+            FleetMember::class,
+            'fleet_members_staffs',
             'staff_uuid',
-            'location_uuid',
+            'fleet_member_uuid',
             'uuid',
             'uuid'
         );

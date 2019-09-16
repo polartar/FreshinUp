@@ -803,13 +803,14 @@ class FinancialSummaryTest extends TestCase
         $this->createPaymentTypes();
         $customer = factory(Customer::class)->create();
         $location = factory(Location::class)->create();
+        $event = factory(Event::class)->create(['location_uuid' => $location->uuid]);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
         factory(Payment::class)->create([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'customer_uuid' => $customer->uuid,
-            'location_uuid' => $location->uuid
+            'event_uuid' => $event->uuid
         ]);
         factory(Payment::class)->create([
             'total_money' => 1000,
@@ -1019,15 +1020,16 @@ class FinancialSummaryTest extends TestCase
         $this->createPaymentTypes();
         $customer = factory(Customer::class)->create();
         $staff = factory(Staff::class)->create();
-        $location = factory(Location::class)->create();
-        $location->staffs()->sync([$staff->uuid]);
+        $fleetMember = factory(FleetMember::class)->create();
+        $fleetMember->staffs()->sync([$staff->uuid]);
+        $event = factory(Event::class)->create(['fleet_member_uuid' => $fleetMember->uuid]);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
         factory(Payment::class)->create([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'customer_uuid' => $customer->uuid,
-            'location_uuid' => $location->uuid
+            'event_uuid' => $event->uuid
         ]);
         factory(Payment::class)->create([
             'total_money' => 1000,

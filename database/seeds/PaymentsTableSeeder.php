@@ -18,7 +18,6 @@ class PaymentsTableSeeder extends Seeder
      */
     public function run(Faker\Generator $faker)
     {
-        $locations = Location::get();
         $devices = Device::get();
         $customers = Customer::get();
         $paymentTypes = PaymentType::get();
@@ -27,7 +26,6 @@ class PaymentsTableSeeder extends Seeder
 
         for ($i = 0; $i < 500; $i++) {
             $payment = factory(Payment::class)->create([
-                'location_uuid' => $locations->random()->uuid,
                 'device_uuid' => $devices->random()->uuid,
                 'customer_uuid' => $customers->random()->uuid,
                 'payment_type_uuid' => $paymentTypes->random()->uuid,

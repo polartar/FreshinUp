@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet;
 
+use App\Models\Foodfleet\Square\Staff;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use FreshinUp\FreshBusForms\Models\Company\Company;
@@ -37,5 +38,17 @@ class FleetMember extends Model
     public function events()
     {
         return $this->hasMany(Event::class, 'fleet_member_uuid', 'uuid');
+    }
+
+    public function staffs()
+    {
+        return $this->belongsToMany(
+            Staff::class,
+            'fleet_members_staffs',
+            'fleet_member_uuid',
+            'staff_uuid',
+            'uuid',
+            'uuid'
+        );
     }
 }

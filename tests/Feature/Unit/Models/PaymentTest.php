@@ -25,7 +25,6 @@ class LocationTest extends TestCase
      */
     public function testModel()
     {
-        $location = factory(Location::class)->create();
         $device = factory(Device::class)->create();
         $customer = factory(Customer::class)->create();
         $paymentType = factory(PaymentType::class)->create();
@@ -33,7 +32,6 @@ class LocationTest extends TestCase
         $event = factory(Event::class)->create();
 
         $payment = factory(Payment::class)->create();
-        $payment->location()->associate($location);
         $payment->device()->associate($device);
         $payment->customer()->associate($customer);
         $payment->paymentType()->associate($paymentType);
@@ -43,7 +41,6 @@ class LocationTest extends TestCase
 
         $this->assertDatabaseHas('payments', [
             'uuid' => $payment->uuid,
-            'location_uuid' => $location->uuid,
             'device_uuid' => $device->uuid,
             'customer_uuid' => $customer->uuid,
             'payment_type_uuid' => $paymentType->uuid,
