@@ -28,13 +28,13 @@ class Item extends Model
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
 
-    public function payments()
+    public function transactions()
     {
         return $this->belongsToMany(
-            PaymentType::class,
-            'payments_items',
+            Transaction::class,
+            'transactions_items',
             'item_uuid',
-            'payment_uuid',
+            'transaction_uuid',
             'uuid',
             'uuid'
         );

@@ -28,8 +28,8 @@ class Customer extends Model
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
 
-    public function payments()
+    public function transactions()
     {
-        return $this->hasMany(Payment::class, 'payment_type_uuid', 'uuid');
+        return $this->hasMany(Payment::class, 'transaction_uuid', 'uuid');
     }
 }

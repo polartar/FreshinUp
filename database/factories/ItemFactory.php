@@ -16,6 +16,9 @@ use Faker\Generator as Faker;
 $factory->define(\App\Models\Foodfleet\Square\Item::class, function (Faker $faker) {
     return [
         "name" => $faker->word,
-        "square_id" => $faker->randomNumber(5)
+        "square_id" => $faker->randomNumber(5),
+        "total_money" => $faker->numberBetween(700, 10000),
+        "total_tax_money" => $faker->numberBetween(700, 10000),
+        "total_discount_money" => $faker->numberBetween(700, 10000)
     ];
 });

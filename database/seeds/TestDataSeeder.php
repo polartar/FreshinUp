@@ -22,9 +22,9 @@ class TestDataSeeder extends Seeder
             \FleetMembersTableSeeder::class,
             \LocationsTableSeeder::class,
             \EventsTableSeeder::class,
-            \TransactionsTableSeeder::class,
             \CustomersTableSeeder::class,
             \ItemsTableSeeder::class,
+            \TransactionsTableSeeder::class,
             \PaymentsTableSeeder::class,
         ]);
     }
