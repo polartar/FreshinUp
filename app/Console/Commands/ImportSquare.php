@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use FreshinUp\FreshBusForms\Models\Company\Company;
+use App\Models\Foodfleet\Company;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use App\Jobs\ImportSquare as ImportSquareJob;
