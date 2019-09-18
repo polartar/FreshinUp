@@ -26,9 +26,7 @@
         align-center
         ma-2
       >
-        <h2 class="white--text">
-          {{ pageTitle }}
-        </h2>
+        <h2 class="white--text">{{ pageTitle }}</h2>
       </v-flex>
       <v-flex
         text-xs-right
