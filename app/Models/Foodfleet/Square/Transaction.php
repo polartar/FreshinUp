@@ -50,4 +50,9 @@ class Transaction extends Model
             'uuid'
         );
     }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'transaction_uuid', 'uuid');
+    }
 }

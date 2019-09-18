@@ -4,7 +4,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\FinancialSummary;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
-use App\Models\Foodfleet\FleetMember;
+use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Customer;
@@ -13,6 +13,7 @@ use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
+use App\Models\Foodfleet\Square\Transaction;
 use App\User;
 use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\Company\Company;
@@ -71,26 +72,31 @@ class FinancialSummaryTest extends TestCase
             'avg_ticket' => 0
         ], $data);
 
-        $customers = $this->createCustomers(2);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(2)->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(2)->toDateTimeString(),
-            'customer_uuid' => $customers->first()->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'MASTERCARD')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customers->last()->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customers->last()->uuid
-        ]);
+        ]));
 
         $data = $this
             ->json('get', "/api/foodfleet/financial-summary")
@@ -134,7 +140,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 1000
                 ]
             ],
-            'avg_ticket' => 1500
+            'avg_ticket' => 1000
         ], $data);
     }
 
@@ -146,22 +152,25 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByEventUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $event = factory(Event::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -204,7 +213,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -251,28 +260,30 @@ class FinancialSummaryTest extends TestCase
      *
      * @return void
      */
-    public function testGetListFilterByFleetMemberUuid()
+    public function testGetListFilterByStoreUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
-        $fleetMember = factory(FleetMember::class)->create();
-        $event = factory(Event::class)->create([
-            'fleet_member_uuid' => $fleetMember->uuid
-        ]);
+        $store = factory(Store::class)->create();
+        $event = factory(Event::class)->create();
+        $event->stores()->sync($store->uuid);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -315,12 +326,12 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/financial-summary?filter[fleet_member_uuid]=" . $fleetMember->uuid)
+            ->json('get', "/api/foodfleet/financial-summary?filter[store_uuid]=" . $store->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -362,31 +373,33 @@ class FinancialSummaryTest extends TestCase
      *
      * @return void
      */
-    public function testGetListFilterByContractorUuid()
+    public function testGetListFilterBySupplierUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
-        $contractor = factory(Company::class)->create();
-        $fleetMember = factory(FleetMember::class)->create([
-            'contractor_uuid' => $contractor->uuid
+        $supplier = factory(Company::class)->create();
+        $store = factory(Store::class)->create([
+            'supplier_uuid' => $supplier->uuid
         ]);
-        $event = factory(Event::class)->create([
-            'fleet_member_uuid' => $fleetMember->uuid
-        ]);
+        $event = factory(Event::class)->create();
+        $event->stores()->sync($store->uuid);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -429,12 +442,124 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/financial-summary?filter[contractor_uuid]=" . $contractor->uuid)
+            ->json('get', "/api/foodfleet/financial-summary?filter[supplier_uuid]=" . $supplier->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 1000
+        ], $data);
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByHostUuid()
+    {
+        $this->createPaymentTypes();
+        $host = factory(Company::class)->create();
+        $event = factory(Event::class)->create(['host_uuid' => $host->uuid]);
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+        ]));
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 1000
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[host_uuid]=" . $host->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -479,20 +604,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByDateAfter()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -535,7 +663,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -585,20 +713,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByDateBefore()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -641,7 +772,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -691,24 +822,27 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByEventTagUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $eventTag = factory(EventTag::class)->create();
         $event = factory(Event::class)->create();
         $event->eventTags()->sync([$eventTag->uuid]);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -751,7 +885,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -801,23 +935,26 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByLocationUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $location = factory(Location::class)->create();
         $event = factory(Event::class)->create(['location_uuid' => $location->uuid]);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -860,7 +997,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -913,18 +1050,24 @@ class FinancialSummaryTest extends TestCase
         $customer = factory(Customer::class)->create();
         $customer2 = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'customer_uuid' => $customer->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
             'total_money' => 1000,
-            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+            'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString(),
             'customer_uuid' => $customer2->uuid
-        ]);
+        ])->payments()->save(factory(Payment::class)->make([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1018,25 +1161,29 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByStaffUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $staff = factory(Staff::class)->create();
-        $fleetMember = factory(FleetMember::class)->create();
-        $fleetMember->staffs()->sync([$staff->uuid]);
-        $event = factory(Event::class)->create(['fleet_member_uuid' => $fleetMember->uuid]);
+        $store = factory(Store::class)->create();
+        $store->staffs()->sync([$staff->uuid]);
+        $event = factory(Event::class)->create();
+        $event->stores()->sync($store->uuid);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+            'event_uuid' => $event->uuid
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1079,7 +1226,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -1129,22 +1276,25 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByDeviceUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $device = factory(Device::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
             'device_uuid' => $device->uuid
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1187,7 +1337,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -1237,22 +1387,26 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByItemUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $item = factory(Item::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        $payment = factory(Payment::class)->create([
+        $transaction = factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ]);
+        $transaction->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        $payment->items()->sync(['item_uuid' => $item->uuid]);
-        factory(Payment::class)->create([
+        ]));
+        $transaction->items()->sync([$item->uuid => ['quantity' => 2]]);
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1295,7 +1449,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -1345,23 +1499,27 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByCategoryUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         $category = factory(Category::class)->create();
         $item = factory(Item::class)->create(['category_uuid' => $category->uuid]);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        $payment = factory(Payment::class)->create([
+        $transaction = factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ]);
+        $transaction->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        $payment->items()->sync(['item_uuid' => $item->uuid]);
-        factory(Payment::class)->create([
+        ]));
+        $transaction->items()->sync([$item->uuid => ['quantity' => 2]]);
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1404,7 +1562,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -1454,20 +1612,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByMinPrice()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
             'total_money' => 2000,
-            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ])->payments()->save(factory(Payment::class)->make([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1493,13 +1654,13 @@ class FinancialSummaryTest extends TestCase
                 ]
             ],
             'gross' => 3000,
-            'net' => 2400,
-            'cash' => 2000,
+            'net' => 2600,
+            'cash' => 1000,
             'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 2000
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1510,7 +1671,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 3000
+            'avg_ticket' => 1500
         ], $data);
 
 
@@ -1531,13 +1692,13 @@ class FinancialSummaryTest extends TestCase
                 ]
             ],
             'gross' => 2000,
-            'net' => 1600,
-            'cash' => 2000,
+            'net' => 1800,
+            'cash' => 1000,
             'credit' => 0,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 2000
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1560,20 +1721,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByMaxPrice()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
             'total_money' => 2000,
-            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+            'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ])->payments()->save(factory(Payment::class)->make([
+            'total_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString()
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1599,13 +1763,13 @@ class FinancialSummaryTest extends TestCase
                 ]
             ],
             'gross' => 3000,
-            'net' => 2400,
-            'cash' => 2000,
+            'net' => 2600,
+            'cash' => 1000,
             'credit' => 1000,
             'sales_type' => [
                 [
                     'name' => 'CASH',
-                    'value' => 2000
+                    'value' => 1000
                 ],
                 [
                     'name' => 'VISA',
@@ -1616,7 +1780,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 3000
+            'avg_ticket' => 1500
         ], $data);
 
 
@@ -1666,20 +1830,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByPaymentTypeUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        factory(Payment::class)->create([
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1722,7 +1889,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 
@@ -1774,20 +1941,23 @@ class FinancialSummaryTest extends TestCase
     public function testGetListFilterByPaymentUuid()
     {
         $this->createPaymentTypes();
-        $customer = factory(Customer::class)->create();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
-        $payment = factory(Payment::class)->create([
+        $payment = factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
-            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'customer_uuid' => $customer->uuid,
-        ]);
-        factory(Payment::class)->create([
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
             'total_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
-            'square_created_at' => Carbon::now()->toDateTimeString(),
-            'customer_uuid' => $customer->uuid
-        ]);
+        ]));
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
@@ -1830,7 +2000,7 @@ class FinancialSummaryTest extends TestCase
                     'value' => 0
                 ]
             ],
-            'avg_ticket' => 2000
+            'avg_ticket' => 1000
         ], $data);
 
 

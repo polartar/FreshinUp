@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
 
-class ContractorCompaniesTableSeeder extends Seeder
+class SupplierCompaniesTableSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -16,7 +16,7 @@ class ContractorCompaniesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $companyType = CompanyType::where('key_id', 'contractor')->get()->first();
+        $companyType = CompanyType::where('key_id', 'supplier')->get()->first();
         for ($i = 0; $i < 50; $i++) {
             $company = Company::updateOrCreate(
                 [

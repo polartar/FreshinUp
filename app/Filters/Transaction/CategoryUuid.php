@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Filters\Payment;
+namespace App\Filters\Transaction;
 
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\QueryBuilder\Filters\Filter;

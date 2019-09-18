@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\App\Models\Foodfleet\FleetMember::class, function (Faker $faker) {
+$factory->define(\App\Models\Foodfleet\Store::class, function (Faker $faker) {
     return [
         "name" => $faker->word,
         "square_id" => $faker->randomNumber(5)

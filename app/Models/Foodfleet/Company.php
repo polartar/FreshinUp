@@ -18,6 +18,6 @@ class Company extends \FreshinUp\FreshBusForms\Models\Company\Company
 
     public function fleetMembers()
     {
-        return $this->hasMany(FleetMember::class, 'contractor_uuid', 'uuid');
+        return $this->hasMany(Store::class, 'contractor_uuid', 'uuid');
     }
 }

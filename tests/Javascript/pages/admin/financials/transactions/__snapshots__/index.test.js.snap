@@ -1710,7 +1710,9 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
       <h2
         class="white--text"
       >
+        
         Financial Reports
+      
       </h2>
     </div>
      
@@ -3129,7 +3131,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           class="layout row justify-space-between mb-2"
         >
           
-      Companies
+      Hosts
       
           <!---->
         </div>
@@ -3152,7 +3154,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  placeholder="All Companies"
+                  placeholder="All Hosts"
                   role="combobox"
                   type="text"
                 />
@@ -3230,7 +3232,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           class="layout row justify-space-between mb-2"
         >
           
-      Truck
+      Fleet members
       
           <!---->
         </div>
@@ -3253,7 +3255,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  placeholder="All Trucks"
+                  placeholder="All fleet members"
                   role="combobox"
                   type="text"
                 />
@@ -3331,7 +3333,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           class="layout row justify-space-between mb-2"
         >
           
-      Customer
+      Suppliers
       
           <!---->
         </div>
@@ -3354,7 +3356,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  placeholder="All Customers"
+                  placeholder="All Suppliers"
                   role="combobox"
                   type="text"
                 />
@@ -3616,7 +3618,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
               class="font-weight-bold subheading mt-2"
             >
               
-      Per Customer
+      Per Transaction
     
             </div>
           </div>

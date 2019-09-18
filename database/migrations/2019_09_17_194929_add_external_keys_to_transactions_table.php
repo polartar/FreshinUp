@@ -15,8 +15,10 @@ class AddExternalKeysToTransactionsTable extends Migration
     {
         Schema::dropIfExists('payments_items');
         Schema::table('payments', function (Blueprint $table) {
-            $table->uuid('transaction_uuid')->nullable()->index();
             $table->dropColumn(['customer_uuid', 'event_uuid', 'square_updated_at']);
+        });
+        Schema::table('payments', function (Blueprint $table) {
+            $table->uuid('transaction_uuid')->nullable()->index();
         });
         Schema::table('transactions', function (Blueprint $table) {
             $table->uuid('customer_uuid')->nullable()->index();
@@ -44,6 +46,8 @@ class AddExternalKeysToTransactionsTable extends Migration
         });
         Schema::table('payments', function (Blueprint $table) {
             $table->dropColumn(['transaction_uuid']);
+        });
+        Schema::table('payments', function (Blueprint $table) {
             $table->dateTime('square_updated_at')->nullable();
             $table->uuid('customer_uuid')->nullable()->index();
             $table->uuid('event_uuid')->nullable()->index();

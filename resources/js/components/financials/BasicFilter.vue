@@ -65,21 +65,21 @@
         justify-space-between
         mb-2
       >
-        Companies
+        Hosts
         <clear-button
-          v-if="filters.company_uuid"
-          @clear="filters.company_uuid = null; companyKey += 1"
+          v-if="filters.host_uuid"
+          @clear="filters.host_uuid = null; hostKey += 1"
         />
       </v-layout>
       <simple
-        :key="companyKey"
-        url="companies"
+        :key="hostKey"
+        url="companies?filter[type_key]=host"
         term-param="filter[name]"
-        placeholder="All Companies"
+        placeholder="All Hosts"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
-        @input="selectCompany"
+        @input="selectHost"
       />
     </v-flex>
     <v-flex
@@ -91,21 +91,21 @@
         justify-space-between
         mb-2
       >
-        Truck
+        Fleet members
         <clear-button
-          v-if="filters.fleet_member_uuid"
-          @clear="filters.fleet_member_uuid = null; truckKey += 1"
+          v-if="filters.store_uuid"
+          @clear="filters.store_uuid = null; truckKey += 1"
         />
       </v-layout>
       <simple
-        :key="truckKey"
-        url="foodfleet/fleet-members"
+        :key="storeKey"
+        url="foodfleet/stores"
         term-param="filter[name]"
-        placeholder="All Trucks"
+        placeholder="All fleet members"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
-        @input="selectTruck"
+        @input="selectStore"
       />
     </v-flex>
     <v-flex
@@ -117,21 +117,21 @@
         justify-space-between
         mb-2
       >
-        Customer
+        Suppliers
         <clear-button
-          v-if="filters.contractor_uuid"
-          @clear="filters.contractor_uuid = null; customerKey += 1"
+          v-if="filters.supplier_uuid"
+          @clear="filters.supplier_uuid = null; supplierKey += 1"
         />
       </v-layout>
       <simple
-        :key="customerKey"
-        url="companies?filter[type_key]=contractor"
+        :key="supplierKey"
+        url="companies?filter[type_key]=supplier"
         term-param="filter[name]"
-        placeholder="All Customers"
+        placeholder="All Suppliers"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
-        @input="selectCustomer"
+        @input="selectSupplier"
       />
     </v-flex>
     <v-flex
@@ -171,9 +171,9 @@ export default {
   data () {
     return {
       eventKey: 0,
-      companyKey: 0,
-      truckKey: 0,
-      customerKey: 0,
+      hostKey: 0,
+      storeKey: 0,
+      supplierKey: 0,
       range: {
         start: this.filters.date_after,
         end: this.filters.date_before
@@ -196,14 +196,14 @@ export default {
     selectEvent (event) {
       this.filters.event_uuid = event ? event.uuid : null
     },
-    selectCompany (company) {
-      this.filters.company_uuid = company ? company.uuid : null
+    selectHost (host) {
+      this.filters.host_uuid = host ? host.uuid : null
     },
-    selectTruck (truck) {
-      this.filters.fleet_member_uuid = truck ? truck.uuid : null
+    selectStore (store) {
+      this.filters.store_uuid = store ? store.uuid : null
     },
-    selectCustomer (customer) {
-      this.filters.contractor_uuid = customer ? customer.uuid : null
+    selectSupplier (supplier) {
+      this.filters.supplier_uuid = supplier ? supplier.uuid : null
     },
     changeDate () {
       this.filters.date_after = this.range ? this.range.start : null
