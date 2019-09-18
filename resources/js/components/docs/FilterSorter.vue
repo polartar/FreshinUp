@@ -1,9 +1,9 @@
 <template>
   <search-filter-sorter
     expanded
-    withoutFilterLabel
+    without-filter-label
     :autocomplete_url="autocompleteUrl"
-    sortLabel="Sort by"
+    sort-label="Sort by"
     :sort-options="sortables"
     :filters="filters"
     v-bind="$attrs"
@@ -17,8 +17,7 @@
           row
           justify-space-between
         >
-          <v-flex
-          >
+          <v-flex>
             <vue-ctk-date-time-picker
               v-model="expireFrom"
               only-date
@@ -103,7 +102,7 @@ export default {
   props: {
     autocompleteUrl: {
       type: String,
-      default: '/api/users'
+      default: ''
     },
     infoList: {
       type: Array,
@@ -116,14 +115,6 @@ export default {
     sortables: {
       type: Array,
       default: () => []
-    },
-    withoutStatus: {
-      type: Boolean,
-      default: false
-    },
-    withoutdocType: {
-      type: Boolean,
-      default: false
     }
   },
   data () {

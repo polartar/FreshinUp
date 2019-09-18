@@ -34,7 +34,7 @@
             </v-btn>
             <v-list>
               <v-list-tile
-                v-for="(item, index) in selectedUserActions"
+                v-for="(item, index) in selectedDocActions"
                 :key="index"
                 @click="manageMultiple(item.action)"
               >
@@ -105,8 +105,14 @@
                 :item="props.item"
               >
                 <div class="doc-type-icon">
-                  <i v-if="props.item.type === 1" class="fa fa-file-pdf"></i>
-                  <i v-else class="fa fa-file-image"></i>
+                  <i
+                    v-if="props.item.type === 1"
+                    class="fa fa-file-pdf"
+                  />
+                  <i
+                    v-else
+                    class="fa fa-file-image"
+                  />
                 </div>
               </slot>
             </td>
@@ -124,7 +130,9 @@
                 :name="'item-inner-'+header.value"
                 :item="props.item"
               >
-                <div class="subheading">{{ props.item.title }}</div>
+                <div class="subheading">
+                  {{ props.item.title }}
+                </div>
                 {{ props.item.owner }}
               </slot>
             </td>
@@ -272,7 +280,6 @@
 </template>
 
 <script>
-import filter from 'lodash/filter'
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
@@ -312,7 +319,7 @@ export default {
     }
   },
   computed: {
-    selectedUserActions () {
+    selectedDocActions () {
       if (!this.selected.length) return []
       let actions = []
       actions.push({ action: 'delete', text: 'Delete' })
@@ -326,19 +333,16 @@ export default {
     onRowsPerPageChange (value) {
       this.pagination = { ...this.pagination, rowsPerPage: value }
     },
-    manage (item, user) {
-      this.$emit('manage-' + item.action, user)
-      this.$emit('manage', item.action, user)
+    manage (item, doc) {
+      this.$emit('manage-' + item.action, doc)
+      this.$emit('manage', item.action, doc)
     },
     manageMultiple (action) {
       this.$emit('manage-multiple-' + action, this.selected)
       this.$emit('manage-multiple', action, this.selected)
     },
-    changeLevel (value, user) {
-      this.$emit('change-level', value, user)
-    },
-    changeStatus (value, user) {
-      this.$emit('change-status', value, user)
+    changeStatus (value, doc) {
+      this.$emit('change-status', value, doc)
     }
   }
 }

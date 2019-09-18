@@ -8,11 +8,16 @@
       <h2 class="white--text">
         {{ pageTitle }}
       </h2>
-      <v-flex text-xs-right sm2 xs12>
+      <v-flex
+        text-xs-right
+        sm2
+        xs12
+      >
         <v-select
           v-model="status"
           :items="statuses"
-          single-line solo
+          single-line
+          solo
           flat
           hide-details
         />
@@ -27,10 +32,15 @@
       justify-space-between
       class="doc-new-wrap"
     >
-      <v-flex md7 sm12>
+      <v-flex
+        md7
+        sm12
+      >
         <v-card>
-          <v-card-title class="subheading text-uppercase font-weight-bold">Basic information</v-card-title>
-          <v-divider></v-divider>
+          <v-card-title class="subheading text-uppercase font-weight-bold">
+            Basic information
+          </v-card-title>
+          <v-divider />
           <v-layout
             row
             wrap
@@ -48,9 +58,10 @@
                 Title
               </v-layout>
               <v-text-field
-                single-line outline
                 v-model="title"
                 v-validate="'required'"
+                single-line
+                outline
                 data-vv-name="title"
                 :error-messages="errors.collect('title')"
                 label="Title"
@@ -67,10 +78,11 @@
                 Type
               </v-layout>
               <v-select
-                single-line outline
-                :items="typeOptions"
                 v-model="type"
                 v-validate="'required'"
+                single-line
+                outline
+                :items="typeOptions"
                 data-vv-name="type"
                 :error-messages="errors.collect('type')"
                 label="Type"
@@ -87,15 +99,17 @@
                 Short Description
               </v-layout>
               <v-textarea
-                single-line outline
                 v-model="description"
                 v-validate="'required'"
+                single-line
+                outline
                 data-vv-name="description"
                 :error-messages="errors.collect('description')"
                 label="Short description"
               />
             </v-flex>
             <v-flex
+              v-if="type === 1"
               md7
               sm12
             >
@@ -106,14 +120,24 @@
                 Document Template
               </v-layout>
               <v-select
-                single-line outline
-                :items="templateOptions"
                 v-model="template"
                 v-validate="'required'"
+                single-line
+                outline
+                :items="templateOptions"
                 data-vv-name="template"
                 :error-messages="errors.collect('template')"
                 label="Document Template"
               />
+            </v-flex>
+            <v-flex
+              v-else-if="type === 2"
+              md7
+              sm12
+              mb-4
+              pt-5
+            >
+              <file-uploader v-model="file" />
             </v-flex>
             <v-flex
               xs12
@@ -125,9 +149,10 @@
                 Notes / Additional Info
               </v-layout>
               <v-textarea
-                single-line outline
                 v-model="notes"
                 v-validate="'required'"
+                single-line
+                outline
                 data-vv-name="notes"
                 :error-messages="errors.collect('notes')"
                 label="Notes / Additional Info"
@@ -136,10 +161,15 @@
           </v-layout>
         </v-card>
       </v-flex>
-      <v-flex md4 sm12>
+      <v-flex
+        md4
+        sm12
+      >
         <v-card>
-          <v-card-title class="subheading text-uppercase font-weight-bold">Publishing</v-card-title>
-          <v-divider></v-divider>
+          <v-card-title class="subheading text-uppercase font-weight-bold">
+            Publishing
+          </v-card-title>
+          <v-divider />
           <v-layout
             row
             wrap
@@ -176,10 +206,11 @@
                   sm12
                 >
                   <v-select
-                    single-line outline
-                    :items="assignOptions"
                     v-model="assignType"
                     v-validate="'required'"
+                    single-line
+                    outline
+                    :items="assignOptions"
                     data-vv-name="assignType"
                     :error-messages="errors.collect('assignType')"
                   />
@@ -193,7 +224,8 @@
                     cache-items
                     hide-no-data
                     hide-details
-                    single-line outline
+                    single-line
+                    outline
                   />
                 </v-flex>
               </v-layout>
@@ -208,8 +240,8 @@
                 Expiration Date
               </v-layout>
               <vue-ctk-date-time-picker
-                range
                 v-model="expireDate"
+                range
                 only-date
                 format="YYYY-MM-DD"
                 formatted="MM-DD-YYYY"
@@ -257,13 +289,16 @@
 </template>
 
 <script>
+import get from 'lodash/get'
 import { mapGetters, mapActions } from 'vuex'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import FileUploader from '~/components/FileUploader.vue'
 export default {
   layout: 'admin',
   components: {
-    VueCtkDateTimePicker
+    VueCtkDateTimePicker,
+    FileUploader
   },
   data () {
     return {
@@ -277,7 +312,7 @@ export default {
         { value: 4, text: 'Expiring' },
         { value: 5, text: 'Expired' }
       ],
-      type: 1,
+      type: 2,
       typeOptions: [
         { value: 1, text: 'From Template' },
         { value: 2, text: 'Downloadable' }
@@ -288,15 +323,16 @@ export default {
       notes: '',
       assignType: null,
       assignOptions: [
-        {  value: 1, text: 'User' },
-        {  value: 2, text: 'Fleet Member' },
-        {  value: 3, text: 'Venue' },
-        {  value: 4, text: 'Event' },
-        {  value: 5, text: 'Event/Fleet Mem' },
-        {  value: 6, text: 'Event/Venue' }
+        { value: 1, text: 'User' },
+        { value: 2, text: 'Fleet Member' },
+        { value: 3, text: 'Venue' },
+        { value: 4, text: 'Event' },
+        { value: 5, text: 'Event/Fleet Mem' },
+        { value: 6, text: 'Event/Venue' }
       ],
       assignId: null,
-      expireDate: null
+      expireDate: null,
+      file: { name: '', src: '' }
     }
   },
   computed: {
@@ -318,8 +354,7 @@ export default {
     Promise.all([
       vm.$store.dispatch('userLevels/getUserlevels'),
       vm.$store.dispatch('userTypes/getItems'),
-      vm.$store.dispatch('userStatuses/getUserstatuses'),
-      vm.$store.dispatch('companies/getCompanies')
+      vm.$store.dispatch('userStatuses/getUserstatuses')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
@@ -332,4 +367,3 @@ export default {
     background-color: #fff;
   }
 </style>
-
