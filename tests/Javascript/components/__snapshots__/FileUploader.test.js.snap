@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUploader Snapshots defaults 1`] = `
+<div
+  class="layout column fill-height"
+>
+  <div
+    class="layout subheading font-weight-bold row"
+  >
+    
+    File: 
+  
+  </div>
+   
+  <div
+    class="layout row wrap justify-space-between"
+  >
+    <div
+      class="flex xs5"
+    >
+      <button
+        class="v-btn v-btn--block theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Update file
+      
+        </div>
+      </button>
+    </div>
+     
+    <div
+      class="flex xs5"
+    >
+      <button
+        class="v-btn v-btn--block theme--light error"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Delete File
+      
+        </div>
+      </button>
+    </div>
+  </div>
+   
+  <input
+    style="display: none;"
+    type="file"
+  />
+   
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog"
+        style="max-width: 300px; display: none;"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__text subheading"
+          >
+            
+        
+      
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--flat theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Got it!
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
