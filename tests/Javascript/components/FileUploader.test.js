@@ -6,12 +6,12 @@ function MockFile (name, size, mimeType) {
   size = size || 1024
   mimeType = mimeType || 'application/pdf'
 
-  function range(count) {
-      let output = ''
-      for (let i = 0; i < count; i++) {
-          output += 'a'
-      }
-      return output
+  function range (count) {
+    let output = ''
+    for (let i = 0; i < count; i++) {
+      output += 'a'
+    }
+    return output
   }
 
   let blob = new Blob([range(size)], { type: mimeType })
