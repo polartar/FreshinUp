@@ -109,6 +109,7 @@
               />
             </v-flex>
             <v-flex
+              v-if="type === 1"
               md7
               sm12
             >
@@ -120,7 +121,6 @@
               </v-layout>
               <v-select
                 v-model="template"
-                v-validate="'required'"
                 single-line
                 outline
                 :items="templateOptions"
@@ -128,6 +128,15 @@
                 :error-messages="errors.collect('template')"
                 label="Document Template"
               />
+            </v-flex>
+            <v-flex
+              v-else-if="type === 2"
+              md7
+              sm12
+              mb-4
+              pt-5
+            >
+              <file-uploader v-model="file" />
             </v-flex>
             <v-flex
               xs12
@@ -140,7 +149,6 @@
               </v-layout>
               <v-textarea
                 v-model="notes"
-                v-validate="'required'"
                 single-line
                 outline
                 data-vv-name="notes"
@@ -197,7 +205,6 @@
                 >
                   <v-select
                     v-model="assignType"
-                    v-validate="'required'"
                     single-line
                     outline
                     :items="assignOptions"
@@ -230,13 +237,11 @@
                 Expiration Date
               </v-layout>
               <vue-ctk-date-time-picker
-                v-model="expireDate"
-                range
+                v-model="expiration_at"
                 only-date
                 format="YYYY-MM-DD"
                 formatted="MM-DD-YYYY"
                 input-size="lg"
-                label="Leave blank for none"
                 :color="$vuetify.theme.primary"
                 :button-color="$vuetify.theme.primary"
               />
@@ -264,7 +269,9 @@
                 >
                   <v-btn
                     block
+                    :disabled="!isValid"
                     class="primary"
+                    @click="onSaveClick"
                   >
                     Save Changes
                   </v-btn>
@@ -279,20 +286,29 @@
 </template>
 
 <script>
-import get from 'lodash/get'
+import { omit } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
+import { createHelpers } from 'vuex-map-fields'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import FileUploader from '~/components/FileUploader.vue'
+import Validate from 'fresh-bus/components/mixins/Validate'
+
+const { mapFields } = createHelpers({
+  getterType: 'getField',
+  mutationType: 'updateField'
+})
+
 export default {
   layout: 'admin',
   components: {
-    VueCtkDateTimePicker
+    VueCtkDateTimePicker,
+    FileUploader
   },
+  mixins: [Validate],
   data () {
     return {
       pageTitle: 'Document Details',
-      title: '',
-      status: 1,
       statuses: [
         { value: 1, text: 'Pending' },
         { value: 2, text: 'Approved' },
@@ -300,15 +316,12 @@ export default {
         { value: 4, text: 'Expiring' },
         { value: 5, text: 'Expired' }
       ],
-      type: 1,
       typeOptions: [
         { value: 1, text: 'From Template' },
         { value: 2, text: 'Downloadable' }
       ],
       template: null,
       templateOptions: [],
-      description: '',
-      notes: '',
       assignType: null,
       assignOptions: [
         { value: 1, text: 'User' },
@@ -319,30 +332,41 @@ export default {
         { value: 6, text: 'Event/Venue' }
       ],
       assignId: null,
-      expireDate: null
+      file: { name: '', src: '' }
     }
   },
   computed: {
-    isLoadingList () {
-      return get(this.$store, 'state.users.pending.items', true)
-    },
-    ...mapGetters('page', ['isLoading'])
+    ...mapGetters('page', ['isLoading']),
+    ...mapGetters('documents', { doc: 'item' }),
+    ...mapFields('documents', [
+      'title',
+      'type',
+      'status',
+      'expiration_at',
+      'description',
+      'notes'
+    ])
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
-    })
+    }),
+    onSaveClick () {
+      this.$validator.validate().then(valid => {
+        const data = omit(this.doc, ['created_at', 'updated_at'])
+        if (valid) {
+          this.$store.dispatch('documents/updateItem', { data, params: { id: data.id } }).then(() => {
+            this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          })
+        }
+      })
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    vm.$store.dispatch('users/setFilters', {
-      ...vm.$route.query
-    })
+    const id = to.params.id
     Promise.all([
-      vm.$store.dispatch('userLevels/getUserlevels'),
-      vm.$store.dispatch('userTypes/getItems'),
-      vm.$store.dispatch('userStatuses/getUserstatuses'),
-      vm.$store.dispatch('companies/getCompanies')
+      vm.$store.dispatch('documents/getItem', { params: { id } })
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()

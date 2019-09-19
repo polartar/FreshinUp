@@ -157,7 +157,7 @@
             </td>
           </slot>
           <slot
-            v-else-if="header.value === 'expiration_date'"
+            v-else-if="header.value === 'expiration_at'"
             :name="'item-'+header.value"
             :item="props.item"
           >
@@ -170,7 +170,7 @@
                 :item="props.item"
               >
                 <div class="fresh-bus-admin-user-list__joined_date">
-                  {{ formatDate(props.item.expiration_date, 'MMM DD, YYYY') }}
+                  {{ formatDate(props.item.expiration_at, 'MMM DD, YYYY') }}
                 </div>
               </slot>
             </td>
@@ -307,12 +307,11 @@ export default {
         { text: 'Type', sortable: true, value: 'type', align: 'center' },
         { text: 'Title / Owner', value: 'title,owner', align: 'left', width: '300' },
         { text: 'Submited on', value: 'created_at', align: 'center' },
-        { text: 'Expiration date', sortable: true, value: 'expiration_date', align: 'center' },
+        { text: 'Expiration date', sortable: true, value: 'expiration_at', align: 'center' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
       ],
       itemActions: [
-        { action: 'view', text: 'View' },
-        { action: 'edit', text: 'Edit' },
+        { action: 'view', text: 'View / Edit' },
         { action: 'delete', text: 'Delete' }
       ],
       actionBtnTitle: 'Manage'

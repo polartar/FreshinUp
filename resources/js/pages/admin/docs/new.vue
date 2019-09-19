@@ -14,7 +14,7 @@
         xs12
       >
         <v-select
-          v-model="status"
+          v-model="doc.status"
           :items="statuses"
           single-line
           solo
@@ -58,7 +58,7 @@
                 Title
               </v-layout>
               <v-text-field
-                v-model="title"
+                v-model="doc.title"
                 v-validate="'required'"
                 single-line
                 outline
@@ -78,7 +78,7 @@
                 Type
               </v-layout>
               <v-select
-                v-model="type"
+                v-model="doc.type"
                 v-validate="'required'"
                 single-line
                 outline
@@ -99,7 +99,7 @@
                 Short Description
               </v-layout>
               <v-textarea
-                v-model="description"
+                v-model="doc.description"
                 v-validate="'required'"
                 single-line
                 outline
@@ -109,7 +109,7 @@
               />
             </v-flex>
             <v-flex
-              v-if="type === 1"
+              v-if="doc.type === 1"
               md7
               sm12
             >
@@ -121,7 +121,6 @@
               </v-layout>
               <v-select
                 v-model="template"
-                v-validate="'required'"
                 single-line
                 outline
                 :items="templateOptions"
@@ -131,7 +130,7 @@
               />
             </v-flex>
             <v-flex
-              v-else-if="type === 2"
+              v-else-if="doc.type === 2"
               md7
               sm12
               mb-4
@@ -149,7 +148,7 @@
                 Notes / Additional Info
               </v-layout>
               <v-textarea
-                v-model="notes"
+                v-model="doc.notes"
                 v-validate="'required'"
                 single-line
                 outline
@@ -240,13 +239,11 @@
                 Expiration Date
               </v-layout>
               <vue-ctk-date-time-picker
-                v-model="expireDate"
-                range
+                v-model="doc.expiration_at"
                 only-date
                 format="YYYY-MM-DD"
                 formatted="MM-DD-YYYY"
                 input-size="lg"
-                label="Leave blank for none"
                 :color="$vuetify.theme.primary"
                 :button-color="$vuetify.theme.primary"
               />
@@ -274,7 +271,9 @@
                 >
                   <v-btn
                     block
+                    :disabled="!isValid"
                     class="primary"
+                    @click="onSaveClick"
                   >
                     Save Changes
                   </v-btn>
@@ -289,22 +288,23 @@
 </template>
 
 <script>
-import get from 'lodash/get'
+import { cloneDeep } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import FileUploader from '~/components/FileUploader.vue'
+import Validate from 'fresh-bus/components/mixins/Validate'
+
 export default {
   layout: 'admin',
   components: {
     VueCtkDateTimePicker,
     FileUploader
   },
+  mixins: [Validate],
   data () {
     return {
       pageTitle: 'Document Details',
-      title: '',
-      status: 1,
       statuses: [
         { value: 1, text: 'Pending' },
         { value: 2, text: 'Approved' },
@@ -312,16 +312,13 @@ export default {
         { value: 4, text: 'Expiring' },
         { value: 5, text: 'Expired' }
       ],
-      type: 2,
       typeOptions: [
         { value: 1, text: 'From Template' },
         { value: 2, text: 'Downloadable' }
       ],
       template: null,
       templateOptions: [],
-      description: '',
-      notes: '',
-      assignType: null,
+      assignType: 1,
       assignOptions: [
         { value: 1, text: 'User' },
         { value: 2, text: 'Fleet Member' },
@@ -330,35 +327,39 @@ export default {
         { value: 5, text: 'Event/Fleet Mem' },
         { value: 6, text: 'Event/Venue' }
       ],
+      doc: {
+        title: '',
+        status: 1,
+        type: 2,
+        description: '',
+        notes: '',
+        expiration_at: null
+      },
       assignId: null,
-      expireDate: null,
       file: { name: '', src: '' }
     }
   },
   computed: {
-    isLoadingList () {
-      return get(this.$store, 'state.users.pending.items', true)
-    },
     ...mapGetters('page', ['isLoading'])
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
-    })
+    }),
+    onSaveClick () {
+      this.$validator.validate().then(async valid => {
+        const data = cloneDeep(this.doc)
+        if (valid) {
+          await this.$store.dispatch('documents/createItem', { data })
+          await this.$store.dispatch('documents/getItems')
+          this.$router.push('/admin/docs/')
+        }
+      })
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    vm.$store.dispatch('users/setFilters', {
-      ...vm.$route.query
-    })
-    Promise.all([
-      vm.$store.dispatch('userLevels/getUserlevels'),
-      vm.$store.dispatch('userTypes/getItems'),
-      vm.$store.dispatch('userStatuses/getUserstatuses')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    vm.$store.dispatch('page/setLoading', false)
   }
 }
 </script>

@@ -25,14 +25,23 @@
     <br>
     <doc-filter
       v-if="!isLoading"
+      :types="types"
       :statuses="statuses"
       :info-list="infoList"
+      :sortables="sortables"
       @runFilter="filterDocs"
     />
     <doctable-list
       v-if="!isLoading"
       :docs="docs"
       :statuses="statuses"
+      :is-loading="isLoading || isLoadingList"
+      :rows-per-page="pagination.rowsPerPage"
+      :page="pagination.page"
+      :total-items="pagination.totalItems"
+      :sort-by="sorting.sortBy"
+      :descending="sorting.descending"
+      @paginate="onPaginate"
       @change-status="changeStatus"
       @manage-view="docView"
       @manage-edit="docEdit"
@@ -52,7 +61,23 @@
         @cancel="onCancelDelete"
       >
         <div class="py-5 px-2">
-          <template>
+          <template v-if="deletablesProcessing">
+            <div class="text-xs-center">
+              <p class="subheading">
+                Processing, please wait...
+              </p>
+              <v-progress-circular
+                :rotate="-90"
+                :size="200"
+                :width="15"
+                :value="deletablesProgress"
+                color="primary"
+              >
+                {{ deletablesStatus }}
+              </v-progress-circular>
+            </div>
+          </template>
+          <template v-else>
             <p class="subheading">
               <span v-if="deletables.length < 2">Document</span>
               <span v-else> Documents</span>
@@ -90,11 +115,11 @@ export default {
     return {
       pageTitle: 'Document List',
       deleteDialog: false,
-      docs: [
-        { id: 1, status: 1, type: 1, title: 'James Lee ID', owner: '3 Brothers Kitchen', created_at: '2019-09-16 06:26:03', expiration_date: '2019-09-16 06:26:03' },
-        { id: 2, status: 2, type: 2, title: 'James Lee ID', owner: '3 Brothers Kitchen', created_at: '2019-09-16 06:26:03', expiration_date: '2019-09-16 06:26:03' }
-      ],
       infoList: [],
+      types: [
+        { value: 1, text: 'From Template' },
+        { value: 2, text: 'Downloadable' }
+      ],
       statuses: [
         { value: 1, text: 'Pending' },
         { value: 2, text: 'Approved' },
@@ -102,16 +127,24 @@ export default {
         { value: 4, text: 'Expiring' },
         { value: 5, text: 'Expired' }
       ],
-      lastFilterParams: {},
+      lastFilterParams: {
+        sort: '-created_at'
+      },
       deleteTemp: []
     }
   },
   computed: {
     isLoadingList () {
-      return get(this.$store, 'state.users.pending.items', true)
+      return get(this.$store, 'state.documents.pending.items', true)
     },
+    ...mapGetters('documents', {
+      docs: 'items',
+      pagination: 'pagination',
+      sorting: 'sorting',
+      sortBy: 'sortBy'
+    }),
     ...mapGetters('page', ['isLoading']),
-    ...mapState('users', ['sortables']),
+    ...mapState('documents', ['sortables']),
     deleteDialogTitle () {
       return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this document?' : 'Are you sure you want to delete the following documents?'
     }
@@ -136,8 +169,30 @@ export default {
       this.deleteTemp = docs
       this.deleteDialog = true
     },
-    onSubmitDelete () {
-      // to do...
+    async onSubmitDelete () {
+      this.deletablesProcessing = true
+      this.deletablesProgress = 0
+      this.deletablesStatus = ''
+      let dispatcheables = []
+
+      this.deleteTemp.forEach((doc) => {
+        dispatcheables.push(this.$store.dispatch('documents/deleteItem', { getItems: false, params: { id: doc.id } }))
+      })
+
+      let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
+      let doneCount = 0
+
+      for (let i in chunks) {
+        await Promise.all(chunks[i])
+        doneCount += chunks[i].length
+        this.deleteTempStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
+        this.deleteTempProgress = doneCount / this.deleteTemp.length * 100
+        await this.sleep(this.deletablesSleepTime)
+      }
+
+      this.filterDocs(this.lastFilterParams)
+      await this.sleep(500)
+      this.deletablesProcessing = false
       this.deleteDialog = false
     },
     onCancelDelete () {
@@ -145,15 +200,35 @@ export default {
       this.deleteTemp = []
     },
     changeStatus (status, doc) {
-      // to do...
+      this.$store.dispatch('documents/patchItem', { data: { status }, params: { id: doc.id } }).then(() => {
+        this.filterDocs(this.lastFilterParams)
+      })
+    },
+    onPaginate (value) {
+      this.$store.dispatch('documents/setPagination', value)
+      this.$store.dispatch('documents/getItems')
     },
     filterDocs (params) {
-      // to do...
+      this.lastFilterParams = params
+      this.$store.dispatch('documents/setSort', params.sort)
+      this.$store.dispatch('documents/setFilters', {
+        ...this.$route.query,
+        ...this.lastFilterParams
+      })
+      this.$store.dispatch('documents/getItems')
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    vm.$store.dispatch('page/setLoading', false)
+    vm.$store.dispatch('documents/setFilters', {
+      ...vm.$route.query
+    })
+    Promise.all([
+      vm.$store.dispatch('documents/getItems')
+    ]).then(() => {
+      vm.$store.dispatch('page/setLoading', false)
+      if (next) next()
+    })
   }
 }
 </script>

@@ -19,37 +19,24 @@
         >
           <v-flex>
             <vue-ctk-date-time-picker
-              v-model="expireFrom"
+              v-model="expireDate"
+              range
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
-              label="Expiration date (from)"
+              label="Expiration date range"
               :color="$vuetify.theme.primary"
               :button-color="$vuetify.theme.primary"
+              @input="slotProps.run"
             />
           </v-flex>
           <v-flex
-            ml-2
-          >
-            <vue-ctk-date-time-picker
-              v-model="expireTo"
-              only-date
-              format="YYYY-MM-DD"
-              formatted="MM-DD-YYYY"
-              input-size="lg"
-              label="Expiration date (to)"
-              :color="$vuetify.theme.primary"
-              :button-color="$vuetify.theme.primary"
-            />
-          </v-flex>
-          <v-flex
-
             ml-2
           >
             <v-select
-              v-model="docType"
-              :items="docTypes"
+              v-model="type"
+              :items="types"
               placeholder="Document Type"
               solo
               flat
@@ -108,6 +95,10 @@ export default {
       type: Array,
       default: () => []
     },
+    types: {
+      type: Array,
+      default: () => []
+    },
     statuses: {
       type: Array,
       default: () => []
@@ -119,26 +110,27 @@ export default {
   },
   data () {
     return {
-      docType: null,
-      docTypes: [
-      ],
-
+      type: null,
       status: null,
       info: null,
-      expireFrom: null,
-      expireTo: null
+      expireDate: null
     }
   },
   computed: {
     // Get filters from inputs
     filters () {
       let filtersObject = {
-        docType: this.docType,
+        type: this.type,
         status: this.status
       }
 
       if (this.infoList.length > 0) {
         filtersObject.info = this.info
+      }
+
+      if (this.expireDate) {
+        filtersObject.expiration_from = this.expireDate.start
+        filtersObject.expiration_to = this.expireDate.end
       }
 
       return filtersObject
@@ -147,9 +139,9 @@ export default {
   methods: {
     run (params) {
       let finalParams = {
-        term: params.term,
+        title: params.term,
         sort: params.orderBy,
-        'filter[docType]': this.filters.docType,
+        'filter[type]': this.filters.type,
         'filter[status]': this.filters.status
       }
 
@@ -157,10 +149,18 @@ export default {
         finalParams['filter[info_id]'] = this.filters.info
       }
 
+      if ('expiration_from' in this.filters) {
+        finalParams['filter[expiration_from]'] = this.filters.expiration_from
+      }
+
+      if ('expiration_to' in this.filters) {
+        finalParams['filter[expiration_to]'] = this.filters.expiration_to
+      }
+
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
-      this.docType = this.status = this.info = null
+      this.type = this.status = this.info = null
       this.run(params)
     }
   }
