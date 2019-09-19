@@ -38,7 +38,7 @@ class Store extends Model
     public function events()
     {
         return $this->belongsToMany(
-            Staff::class,
+            Event::class,
             'events_stores',
             'store_uuid',
             'event_uuid',

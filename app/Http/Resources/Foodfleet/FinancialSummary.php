@@ -65,9 +65,9 @@ class FinancialSummary extends ResourceCollection
         }
         $payments = Payment::whereIn('uuid', $paymentUuids)->get();
         $clonedQuery = clone($payments);
-        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
+        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('amount_money'));
         $clonedQuery = clone($payments);
-        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
+        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('amount_money'));
 
         // Sales per method type
         $salesType = [
@@ -83,7 +83,7 @@ class FinancialSummary extends ResourceCollection
             $clonedQuery = clone($payments);
             $salesType[] = [
                 'name' => $paymentType->name,
-                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('total_money'))
+                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('amount_money'))
             ];
         }
 

@@ -9,16 +9,16 @@ use App\Jobs\ImportSquare as ImportSquareJob;
 
 class ImportSquare extends Command
 {
-    protected $signature = 'import:square {--contractor=}';
+    protected $signature = 'import:square {--supplier=}';
     protected $description = 'Square import';
 
     public function handle()
     {
-        if ($this->hasOption('contractor')) {
-            $companies = Company::where('id', $this->option('contractor'))->get();
+        if ($this->hasOption('supplier')) {
+            $companies = Company::where('id', $this->option('supplier'))->get();
         } else {
             $companies = Company::whereHas('company_types', function ($q) {
-                $q->where('key_id', 'contractor');
+                $q->where('key_id', 'supplier');
             });
         }
 

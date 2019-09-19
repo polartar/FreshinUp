@@ -27,8 +27,18 @@ class TransactionsTableSeeder extends Seeder
             ]);
             $itemRandomUuids = $items->random(2)->pluck('uuid')->toArray();
             $transaction->items()->sync([
-                $itemRandomUuids[0] => ['quantity' => $faker->numberBetween(1, 10)],
-                $itemRandomUuids[1] => ['quantity' => $faker->numberBetween(1, 10)]
+                $itemRandomUuids[0] => [
+                    'quantity' => $faker->numberBetween(1, 10),
+                    "total_money" => $faker->numberBetween(700, 10000),
+                    "total_tax_money" => $faker->numberBetween(700, 10000),
+                    "total_discount_money" => $faker->numberBetween(700, 10000)
+                ],
+                $itemRandomUuids[1] => [
+                    'quantity' => $faker->numberBetween(1, 10),
+                    "total_money" => $faker->numberBetween(700, 10000),
+                    "total_tax_money" => $faker->numberBetween(700, 10000),
+                    "total_discount_money" => $faker->numberBetween(700, 10000)
+                ]
             ]);
         }
     }

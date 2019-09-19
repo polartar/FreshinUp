@@ -78,7 +78,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(2)->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -86,7 +86,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'MASTERCARD')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -94,7 +94,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
 
@@ -160,7 +160,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -168,7 +168,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -273,7 +273,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -281,7 +281,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -389,7 +389,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -397,7 +397,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -501,7 +501,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -509,7 +509,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -610,7 +610,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -618,7 +618,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -719,7 +719,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -727,7 +727,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -832,7 +832,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -840,7 +840,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -944,7 +944,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -952,7 +952,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1056,7 +1056,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'customer_uuid' => $customer->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1065,7 +1065,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->toDateTimeString(),
             'customer_uuid' => $customer2->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1173,7 +1173,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
             'event_uuid' => $event->uuid
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1181,7 +1181,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1283,7 +1283,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
             'device_uuid' => $device->uuid
         ]));
@@ -1292,7 +1292,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1395,7 +1395,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ]);
         $transaction->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         $transaction->items()->sync([$item->uuid => ['quantity' => 2]]);
@@ -1404,7 +1404,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1508,7 +1508,7 @@ class FinancialSummaryTest extends TestCase
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ]);
         $transaction->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         $transaction->items()->sync([$item->uuid => ['quantity' => 2]]);
@@ -1517,7 +1517,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1618,7 +1618,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1626,7 +1626,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1727,7 +1727,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1735,7 +1735,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString()
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1836,7 +1836,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1844,7 +1844,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();
@@ -1947,7 +1947,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
         ]));
         factory(Transaction::class)->create([
@@ -1955,7 +1955,7 @@ class FinancialSummaryTest extends TestCase
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->toDateTimeString(),
         ])->payments()->save(factory(Payment::class)->make([
-            'total_money' => 1000,
+            'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
         ]));
         $user = factory(User::class)->create();

@@ -13,11 +13,11 @@ class TestDataSeeder extends Seeder
     {
         $this->call([
             \FinancialReportsTableSeeder::class,
-            \CategoriesTableSeeder::class,
             \PaymentTypesTableSeeder::class,
             \DevicesTableSeeder::class,
             \SupplierCompaniesTableSeeder::class,
             \HostCompaniesTableSeeder::class,
+            \CategoriesTableSeeder::class,
             \StaffsTableSeeder::class,
             \StoresTableSeeder::class,
             \EventTagsTableSeeder::class,

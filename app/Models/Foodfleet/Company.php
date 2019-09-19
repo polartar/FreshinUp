@@ -8,7 +8,6 @@
 
 namespace App\Models\Foodfleet;
 
-
 class Company extends \FreshinUp\FreshBusForms\Models\Company\Company
 {
     public function getMorphClass()
@@ -16,8 +15,8 @@ class Company extends \FreshinUp\FreshBusForms\Models\Company\Company
         return 'FreshinUp\FreshBusForms\Models\Company\Company';
     }
 
-    public function fleetMembers()
+    public function stores()
     {
-        return $this->hasMany(Store::class, 'contractor_uuid', 'uuid');
+        return $this->hasMany(Store::class, 'supplier_uuid', 'uuid');
     }
 }
