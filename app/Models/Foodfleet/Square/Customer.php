@@ -30,6 +30,6 @@ class Customer extends Model
 
     public function transactions()
     {
-        return $this->hasMany(Payment::class, 'transaction_uuid', 'uuid');
+        return $this->hasMany(Payment::class, 'customer_uuid', 'uuid');
     }
 }
