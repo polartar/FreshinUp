@@ -527,5 +527,4 @@ class ImportSquareTest extends TestCase
             'quantity' => 100
         ]);
     }
-
 }
