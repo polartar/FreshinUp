@@ -6,8 +6,8 @@ use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\Transaction;
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -28,10 +28,12 @@ class EventTest extends TestCase
         $store = factory(Store::class)->create();
         $location = factory(Location::class)->create();
         $transaction = factory(Transaction::class)->create();
+        $host = factory(Company::class)->create();
 
         $event = factory(Event::class)->create();
         $event->transactions()->save($transaction);
         $event->location()->associate($location);
+        $event->host()->associate($host);
         $event->save();
         $event->eventTags()->sync([$eventTag->uuid]);
         $event->stores()->sync($store->uuid);
@@ -39,6 +41,7 @@ class EventTest extends TestCase
         $this->assertDatabaseHas('events', [
             'uuid' => $event->uuid,
             'location_uuid' => $location->uuid,
+            'host_uuid' => $host->uuid
         ]);
 
         $this->assertDatabaseHas('transactions', [

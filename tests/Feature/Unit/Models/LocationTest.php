@@ -4,8 +4,6 @@ namespace Tests\Feature\Unit\Models\Location;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Payment;
-use App\Models\Foodfleet\Square\Staff;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;

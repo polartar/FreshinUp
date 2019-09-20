@@ -2,19 +2,16 @@
 
 namespace Tests\Feature\Unit\Models\Payment;
 
-use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
-use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
+use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class LocationTest extends TestCase
+class PaymentTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -27,8 +24,10 @@ class LocationTest extends TestCase
     {
         $device = factory(Device::class)->create();
         $paymentType = factory(PaymentType::class)->create();
+        $transaction = factory(Transaction::class)->create();
 
         $payment = factory(Payment::class)->create();
+        $payment->transaction()->associate($transaction);
         $payment->device()->associate($device);
         $payment->paymentType()->associate($paymentType);
         $payment->save();
@@ -37,6 +36,7 @@ class LocationTest extends TestCase
             'uuid' => $payment->uuid,
             'device_uuid' => $device->uuid,
             'payment_type_uuid' => $paymentType->uuid,
+            'transaction_uuid' => $transaction->uuid
         ]);
     }
 }

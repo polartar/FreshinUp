@@ -39,4 +39,9 @@ class Payment extends Model
     {
         return $this->belongsTo(PaymentType::class, 'payment_type_uuid', 'uuid');
     }
+
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class, 'transaction_uuid', 'uuid');
+    }
 }
