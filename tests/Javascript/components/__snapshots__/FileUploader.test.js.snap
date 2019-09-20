@@ -26,7 +26,7 @@ exports[`FileUploader Snapshots defaults 1`] = `
           class="v-btn__content"
         >
           
-        Update file
+        Upload file
       
         </div>
       </button>
