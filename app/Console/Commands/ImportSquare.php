@@ -14,12 +14,12 @@ class ImportSquare extends Command
 
     public function handle()
     {
-        if ($this->hasOption('supplier')) {
-            $companies = Company::where('id', $this->option('supplier'))->get();
+        if ($this->option('supplier')) {
+            $companies = collect([Company::findOrFail($this->option('supplier'))]);
         } else {
             $companies = Company::whereHas('company_types', function ($q) {
                 $q->where('key_id', 'supplier');
-            });
+            })->get();
         }
 
         foreach ($companies as $company) {
