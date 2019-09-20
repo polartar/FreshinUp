@@ -144,6 +144,9 @@ class ImportSquareTest extends TestCase
 
         $importJob = new ImportSquare($supplier);
         $reflection = new \ReflectionClass(get_class($importJob));
+        $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
+        $methodInitializeApi->setAccessible(true);
+        $methodInitializeApi->invokeArgs($importJob, []);
         $method = $reflection->getMethod('getOrders');
         $method->setAccessible(true);
         try {
@@ -171,6 +174,9 @@ class ImportSquareTest extends TestCase
 
         $importJob = new ImportSquare($supplier);
         $reflection = new \ReflectionClass(get_class($importJob));
+        $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
+        $methodInitializeApi->setAccessible(true);
+        $methodInitializeApi->invokeArgs($importJob, []);
         $method = $reflection->getMethod('getCustomer');
         $method->setAccessible(true);
         try {
@@ -202,6 +208,9 @@ class ImportSquareTest extends TestCase
 
         $importJob = new ImportSquare($supplier);
         $reflection = new \ReflectionClass(get_class($importJob));
+        $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
+        $methodInitializeApi->setAccessible(true);
+        $methodInitializeApi->invokeArgs($importJob, []);
         $method = $reflection->getMethod('getCategory');
         $method->setAccessible(true);
         try {
@@ -270,6 +279,9 @@ class ImportSquareTest extends TestCase
 
         $importJob = new ImportSquare($supplier);
         $reflection = new \ReflectionClass(get_class($importJob));
+        $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
+        $methodInitializeApi->setAccessible(true);
+        $methodInitializeApi->invokeArgs($importJob, []);
         $method = $reflection->getMethod('getDevice');
         $method->setAccessible(true);
         try {

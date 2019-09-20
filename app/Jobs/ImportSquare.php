@@ -41,17 +41,6 @@ class ImportSquare implements ShouldQueue
     {
         Log::info('Import constructor for supplier ' . $supplier->name . ' id ' . $supplier->id);
         $this->supplier = $supplier;
-
-        // Get square access token for the supplier
-        $accessToken = $this->supplier->square_access_token;
-        $apiClient = SquareHelper::getApiClient($accessToken);
-
-        // Initialize Api class for the square resources
-        $this->employeesApi = new \SquareConnect\Api\EmployeesApi($apiClient);
-        $this->ordersApi = new \SquareConnect\Api\OrdersApi($apiClient);
-        $this->customersApi = new \SquareConnect\Api\CustomersApi($apiClient);
-        $this->catalogsApi = new \SquareConnect\Api\CatalogApi($apiClient);
-        $this->v1TransactionApi = new \SquareConnect\Api\V1TransactionsApi($apiClient);
     }
 
     /**
@@ -61,6 +50,8 @@ class ImportSquare implements ShouldQueue
      */
     public function handle()
     {
+        $this->initializeSquareApi();
+
         $stores = $this->supplier->stores()->whereNotNull('square_id')->get();
 
         Log::info('Start import: ' . $stores->count() . ' stores with square id');
@@ -316,5 +307,22 @@ class ImportSquare implements ShouldQueue
             ]);
         }
         return $deviceModel;
+    }
+
+    /**
+     * Initialize square api properties
+     */
+    protected function initializeSquareApi(): void
+    {
+        // Get square access token for the supplier
+        $accessToken = $this->supplier->square_access_token;
+        $apiClient = SquareHelper::getApiClient($accessToken);
+
+        // Initialize Api class for the square resources
+        $this->employeesApi = new \SquareConnect\Api\EmployeesApi($apiClient);
+        $this->ordersApi = new \SquareConnect\Api\OrdersApi($apiClient);
+        $this->customersApi = new \SquareConnect\Api\CustomersApi($apiClient);
+        $this->catalogsApi = new \SquareConnect\Api\CatalogApi($apiClient);
+        $this->v1TransactionApi = new \SquareConnect\Api\V1TransactionsApi($apiClient);
     }
 }
