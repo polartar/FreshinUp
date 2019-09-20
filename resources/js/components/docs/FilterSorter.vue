@@ -61,6 +61,7 @@
             ml-2
           >
             <simple
+              :key="userSearchKey"
               url="users"
               placeholder="Search Users"
               background-color="white"
@@ -107,6 +108,7 @@ export default {
   },
   data () {
     return {
+      userSearchKey: +new Date(),
       type: null,
       status: null,
       assigned_user_uuid: null,
@@ -162,6 +164,7 @@ export default {
     },
     clearFilters (params) {
       this.type = this.status = this.assigned_user_uuid = null
+      this.userSearchKey++
       this.run(params)
     }
   }

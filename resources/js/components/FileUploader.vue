@@ -22,7 +22,7 @@
           color="primary"
           @click="launchFilePicker"
         >
-          Update file
+          Upload file
         </v-btn>
       </v-flex>
       <v-flex
