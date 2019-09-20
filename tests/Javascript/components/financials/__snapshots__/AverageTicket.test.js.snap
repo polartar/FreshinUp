@@ -19,7 +19,7 @@ exports[`financials/TotalSales Snapshots required props set 1`] = `
       class="font-weight-bold subheading mt-2"
     >
       
-      Per Customer
+      Per Transaction
     
     </div>
   </div>

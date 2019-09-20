@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet\Square;
 
+use App\Models\Foodfleet\Company;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -31,5 +32,10 @@ class Category extends Model
     public function items()
     {
         return $this->hasMany(Item::class, 'category_uuid', 'uuid');
+    }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Company::class, 'supplier_uuid', 'uuid');
     }
 }

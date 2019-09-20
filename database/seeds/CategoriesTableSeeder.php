@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Foodfleet\Company;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
@@ -11,6 +12,13 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\Square\Category::class, 5)->create();
+        $suppliers = Company::whereHas('company_types', function ($query) {
+            $query->where('key_id', 'supplier');
+        })->get();
+        for ($i = 0; $i < 50; $i++) {
+            factory(\App\Models\Foodfleet\Square\Category::class)->create([
+                'supplier_uuid' => $suppliers->random()->uuid
+            ]);
+        }
     }
 }

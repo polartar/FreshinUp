@@ -45,5 +45,6 @@
         <env name="SQ_APP_ID" value="sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw"/>
         <env name="SQ_APP_SECRET" value="sandbox-sq0csb-97eMZwHAinUbZnK_SJcFRV_sk8iMSOng8n5W8Vmvgqw"/>
         <env name="SQ_DOMAIN" value="https://connect.squareupsandbox.com"/>
+        <env name="LOG_CHANNEL" value="test"/>
     </php>
 </phpunit>

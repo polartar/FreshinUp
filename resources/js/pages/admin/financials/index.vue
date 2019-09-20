@@ -160,9 +160,9 @@ export default {
       lastFilterParams: {},
       basicFilters: {
         event_uuid: null,
-        company_uuid: null,
-        fleet_member_uuid: null,
-        contractor_uuid: null,
+        host_uuid: null,
+        store_uuid: null,
+        supplier_uuid: null,
         date_after: null,
         date_before: null
       },

@@ -2,15 +2,13 @@
 
 namespace App\Http\Resources\Foodfleet;
 
+use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class FinancialSummary extends ResourceCollection
 {
-    const TAXES = 0.2;
-
-
     /**
      * Transform the resource into an array.
      *
@@ -19,17 +17,17 @@ class FinancialSummary extends ResourceCollection
      */
     public function toArray($request)
     {
-        $payments = $this->collection;
+        $transactions = $this->collection;
 
         // Sales over time points
         $salesTime = [];
-        if ($payments->count() != 0 ) {
-            $minDate = Carbon::parse($payments->sortBy('square_created_at')->first()->square_created_at);
-            $maxDate = Carbon::parse($payments->sortBy('square_created_at')->last()->square_created_at);
+        if ($transactions->count() != 0 ) {
+            $minDate = Carbon::parse($transactions->sortBy('square_created_at')->first()->square_created_at);
+            $maxDate = Carbon::parse($transactions->sortBy('square_created_at')->last()->square_created_at);
 
             // Iterate on each date between first date and last date
             for ($date = clone($minDate); $date->lessThanOrEqualTo($maxDate); $date->addDay()) {
-                $clonedQuery = clone($payments);
+                $clonedQuery = clone($transactions);
                 $copyOfDate = clone($date);
                 $copyOfDate->toImmutable();
 
@@ -58,12 +56,18 @@ class FinancialSummary extends ResourceCollection
         }
 
         // Total calculation
-        $gross = $payments->sum('total_money');
-        $net = round($gross - ($gross * self::TAXES));
+        $gross = $transactions->sum('total_money');
+        $net = $gross - $transactions->sum('total_tax_money');
+
+        $paymentUuids = [];
+        foreach ($transactions as $transaction) {
+            $paymentUuids = array_merge($paymentUuids, $transaction->payments->pluck('uuid')->toArray());
+        }
+        $payments = Payment::whereIn('uuid', $paymentUuids)->get();
         $clonedQuery = clone($payments);
-        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
+        $cash = ($clonedQuery->where('payment_type_uuid', PaymentType::where('name', 'CASH')->first()->uuid)->sum('amount_money'));
         $clonedQuery = clone($payments);
-        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('total_money'));
+        $credit = ($clonedQuery->where('payment_type_uuid', '!=', PaymentType::where('name', 'CASH')->first()->uuid)->sum('amount_money'));
 
         // Sales per method type
         $salesType = [
@@ -79,16 +83,14 @@ class FinancialSummary extends ResourceCollection
             $clonedQuery = clone($payments);
             $salesType[] = [
                 'name' => $paymentType->name,
-                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('total_money'))
+                'value' => ($clonedQuery->where('payment_type_uuid', $paymentType->uuid)->sum('amount_money'))
             ];
         }
 
         // Average ticket
         $avgTicket = 0;
-        if ($payments->count() != 0 ) {
-            $clonedQuery = clone($payments);
-            $numberOfCustomer = $clonedQuery->groupBy('customer_uuid')->count();
-            $avgTicket = round(($gross / $numberOfCustomer));
+        if ($transactions->count() != 0 ) {
+            $avgTicket = round(($gross / $transactions->count()));
         }
 
         return [

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Helpers\PaymentQueryBuilderHelper;
+use App\Helpers\TransactionQueryBuilderHelper;
 use App\Http\Controllers\Controller;
-use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\FinancialSummary as FinancialSummaryResource;
@@ -19,8 +19,8 @@ class FinancialSummary extends Controller
      */
     public function index(Request $request)
     {
-        $payments = QueryBuilder::for(Payment::class, $request)
-            ->allowedFilters(PaymentQueryBuilderHelper::getPaymentFilters());
+        $payments = QueryBuilder::for(Transaction::class, $request)
+            ->allowedFilters(TransactionQueryBuilderHelper::getTransactionFilters());
 
         return new FinancialSummaryResource($payments->get());
     }

@@ -26,7 +26,9 @@
         align-center
         ma-2
       >
-        <h2 class="white--text">{{ pageTitle }}</h2>
+        <h2 class="white--text">
+          {{ pageTitle }}
+        </h2>
       </v-flex>
       <v-flex
         text-xs-right
@@ -149,9 +151,9 @@ export default {
       lastFilterParams: {},
       basicFilters: {
         event_uuid: this.$route.query.event_uuid || null,
-        company_uuid: this.$route.query.company_uuid || null,
-        fleet_member_uuid: this.$route.query.fleet_member_uuid || null,
-        contractor_uuid: this.$route.query.contractor_uuid || null,
+        host_uuid: this.$route.query.host_uuid || null,
+        store_uuid: this.$route.query.store_uuid || null,
+        supplier_uuid: this.$route.query.supplier_uuid || null,
         date_after: this.$route.query.date_after || null,
         date_before: this.$route.query.date_before || null
       },
