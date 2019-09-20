@@ -3,12 +3,12 @@
 namespace App\Jobs;
 
 use App\Helpers\SquareHelper;
-use App\Http\Resources\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Item;
+use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Square\Transaction;
@@ -58,22 +58,11 @@ class ImportSquare implements ShouldQueue
         foreach ($stores as $store) {
             try {
                 Log::info('Store ' . $store->name . ' id ' . $store->id);
+
                 // Staffs
                 $employeeList = $this->employeesApi->listEmployees($store->square_id);
                 $employees = $employeeList->getEmployees();
-                $staffUuids = [];
-                foreach ($employees as $employee) {
-                    $staff = Staff::updateOrCreate([
-                        'square_id' => $employee->getId()
-                    ], [
-                        'square_id' => $employee->getId(),
-                        'email' => $employee->getEmail(),
-                        'first_name' => $employee->getFirstName(),
-                        'last_name' => $employee->getLastName()
-                    ]);
-                    $staffUuids[] = $staff->uuid;
-                }
-                $store->staffs()->sync($staffUuids);
+                $this->updateOrCreateStaffs($employees, $store);
 
                 // Transactions
                 $events = $store->events;
@@ -84,48 +73,16 @@ class ImportSquare implements ShouldQueue
                             // Customer
                             $customer = $this->getCustomer($order);
 
-                            $transaction = Transaction::updateOrCreate([
-                                'square_id' => $order->getId()
-                            ], [
-                                'square_id' => $order->getId(),
-                                'event_uuid' => $event->uuid,
-                                'customer_uuid' => $customer ? $customer->uuid : null,
-                                'total_money' => $order->getTotalMoney() ? $order->getTotalMoney()->getAmount() : null,
-                                'total_tax_money' => $order->getTotalTaxMoney() ?
-                                    $order->getTotalTaxMoney()->getAmount() : null,
-                                'total_discount_money' => $order->getTotalDiscountMoney() ?
-                                    $order->getTotalDiscountMoney()->getAmount() : null,
-                                'total_service_charge_money' => $order->getTotalServiceChargeMoney() ?
-                                    $order->getTotalServiceChargeMoney()->getAmount() : null,
-                                'square_created_at' => $order->getCreatedAt() ?
-                                    Carbon::parse($order->getCreatedAt())->toDateTimeString() : null,
-                                'square_updated_at' => $order->getUpdatedAt() ?
-                                    Carbon::parse($order->getUpdatedAt())->toDateTimeString() : null
-                            ]);
+                            // Transaction
+                            $transaction = $this->getTransaction($order, $event, $customer);
 
                             // Items
                             $lineItems = $order->getLineItems();
                             foreach ($lineItems as $lineItem) {
                                 // Item Category
                                 $category = $this->getCategory($lineItem);
-
-                                $item = Item::updateOrCreate([
-                                    'square_id' => $lineItem->getUid(),
-                                ], [
-                                    'square_id' => $lineItem->getUid(),
-                                    'name' => $lineItem->getName(),
-                                    'category_uuid' => $category ? $category->uuid : null
-                                ]);
-
-                                $transaction->items()->attach($item->uuid, [
-                                    'quantity' => $lineItem->getQuantity(),
-                                    "total_money" => $lineItem->getTotalMoney() ?
-                                        $lineItem->getTotalMoney()->getAmount() : null,
-                                    "total_tax_money" => $lineItem->getTotalTaxMoney() ?
-                                        $lineItem->getTotalTaxMoney()->getAmount() : null,
-                                    "total_discount_money" => $lineItem->getTotalDiscountMoney() ?
-                                        $lineItem->getTotalDiscountMoney()->getAmount() : null
-                                ]);
+                                $item = $this->getItem($lineItem, $category);
+                                $this->attachItem($transaction, $item, $lineItem);
                             }
 
                             // Payments
@@ -137,21 +94,8 @@ class ImportSquare implements ShouldQueue
                                 // Device
                                 $deviceModel = $this->getDevice($tender, $store);
 
-                                Payment::updateOrCreate([
-                                    'square_id' => $tender->getId()
-                                ], [
-                                    'square_id' => $tender->getId(),
-                                    'payment_type_uuid' => $paymentType ? $paymentType->uuid : null,
-                                    'transaction_uuid' => $transaction->uuid,
-                                    'device_uuid' => $deviceModel ? $deviceModel->uuid : null,
-                                    'amount_money' => $tender->getAmountMoney() ?
-                                        $tender->getAmountMoney()->getAmount() : null,
-                                    'tip_money' => $tender->getTipMoney() ? $tender->getTipMoney()->getAmount() : null,
-                                    'processing_fee_money' => $tender->getProcessingFeeMoney() ?
-                                        $tender->getProcessingFeeMoney()->getAmount() : null,
-                                    'square_created_at' => $tender->getCreatedAt() ?
-                                        Carbon::parse($tender->getCreatedAt())->toDateTimeString() : null
-                                ]);
+                                // Payment
+                                $this->createPayment($tender, $paymentType, $transaction, $deviceModel);
                             }
                         }
                     }
@@ -324,5 +268,129 @@ class ImportSquare implements ShouldQueue
         $this->customersApi = new \SquareConnect\Api\CustomersApi($apiClient);
         $this->catalogsApi = new \SquareConnect\Api\CatalogApi($apiClient);
         $this->v1TransactionApi = new \SquareConnect\Api\V1TransactionsApi($apiClient);
+    }
+
+    /**
+     * Update or create staffs
+     *
+     * @param $store
+     * @param $employees
+     * @return void
+     */
+    protected function updateOrCreateStaffs($employees, $store): void
+    {
+        $staffUuids = [];
+        foreach ($employees as $employee) {
+            $staff = Staff::updateOrCreate([
+                'square_id' => $employee->getId()
+            ], [
+                'square_id' => $employee->getId(),
+                'email' => $employee->getEmail(),
+                'first_name' => $employee->getFirstName(),
+                'last_name' => $employee->getLastName()
+            ]);
+            $staffUuids[] = $staff->uuid;
+        }
+        $store->staffs()->sync($staffUuids);
+    }
+
+    /**
+     * Create transaction
+     *
+     * @param \SquareConnect\Model\Order $order
+     * @param $event
+     * @param Customer|null $customer
+     * @return mixed
+     */
+    protected function getTransaction(\SquareConnect\Model\Order $order, $event, ?Customer $customer)
+    {
+        return Transaction::updateOrCreate([
+            'square_id' => $order->getId()
+        ], [
+            'square_id' => $order->getId(),
+            'event_uuid' => $event->uuid,
+            'customer_uuid' => $customer ? $customer->uuid : null,
+            'total_money' => $order->getTotalMoney() ? $order->getTotalMoney()->getAmount() : null,
+            'total_tax_money' => $order->getTotalTaxMoney() ?
+                $order->getTotalTaxMoney()->getAmount() : null,
+            'total_discount_money' => $order->getTotalDiscountMoney() ?
+                $order->getTotalDiscountMoney()->getAmount() : null,
+            'total_service_charge_money' => $order->getTotalServiceChargeMoney() ?
+                $order->getTotalServiceChargeMoney()->getAmount() : null,
+            'square_created_at' => $order->getCreatedAt() ?
+                Carbon::parse($order->getCreatedAt())->toDateTimeString() : null,
+            'square_updated_at' => $order->getUpdatedAt() ?
+                Carbon::parse($order->getUpdatedAt())->toDateTimeString() : null
+        ]);
+    }
+
+    /**
+     * Create item
+     *
+     * @param \SquareConnect\Model\OrderLineItem $lineItem
+     * @param Category|null $category
+     * @return mixed
+     */
+    protected function getItem(\SquareConnect\Model\OrderLineItem $lineItem, ?Category $category)
+    {
+        $item = Item::updateOrCreate([
+            'square_id' => $lineItem->getUid(),
+        ], [
+            'square_id' => $lineItem->getUid(),
+            'name' => $lineItem->getName(),
+            'category_uuid' => $category ? $category->uuid : null
+        ]);
+        return $item;
+    }
+
+    /**
+     * Create payment
+     *
+     * @param \SquareConnect\Model\Tender $tender
+     * @param PaymentType|null $paymentType
+     * @param $transaction
+     * @param Device|null $deviceModel
+     */
+    protected function createPayment(
+        \SquareConnect\Model\Tender $tender,
+        ?PaymentType $paymentType,
+        $transaction,
+        ?Device $deviceModel
+    ): void {
+        Payment::updateOrCreate([
+            'square_id' => $tender->getId()
+        ], [
+            'square_id' => $tender->getId(),
+            'payment_type_uuid' => $paymentType ? $paymentType->uuid : null,
+            'transaction_uuid' => $transaction->uuid,
+            'device_uuid' => $deviceModel ? $deviceModel->uuid : null,
+            'amount_money' => $tender->getAmountMoney() ?
+                $tender->getAmountMoney()->getAmount() : null,
+            'tip_money' => $tender->getTipMoney() ? $tender->getTipMoney()->getAmount() : null,
+            'processing_fee_money' => $tender->getProcessingFeeMoney() ?
+                $tender->getProcessingFeeMoney()->getAmount() : null,
+            'square_created_at' => $tender->getCreatedAt() ?
+                Carbon::parse($tender->getCreatedAt())->toDateTimeString() : null
+        ]);
+    }
+
+    /**
+     * Attach an item to a transaction
+     *
+     * @param $transaction
+     * @param $item
+     * @param \SquareConnect\Model\OrderLineItem $lineItem
+     */
+    protected function attachItem($transaction, $item, \SquareConnect\Model\OrderLineItem $lineItem): void
+    {
+        $transaction->items()->attach($item->uuid, [
+            'quantity' => $lineItem->getQuantity(),
+            "total_money" => $lineItem->getTotalMoney() ?
+                $lineItem->getTotalMoney()->getAmount() : null,
+            "total_tax_money" => $lineItem->getTotalTaxMoney() ?
+                $lineItem->getTotalTaxMoney()->getAmount() : null,
+            "total_discount_money" => $lineItem->getTotalDiscountMoney() ?
+                $lineItem->getTotalDiscountMoney()->getAmount() : null
+        ]);
     }
 }
