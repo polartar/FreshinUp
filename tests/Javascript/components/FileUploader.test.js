@@ -37,6 +37,21 @@ describe('FileUploader', () => {
     beforeEach(() => {
       localVue = createLocalVue()
     })
+
+    test('remove() clear file name and src', () => {
+      global.URL.createObjectURL = jest.fn()
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          value: { name: 'test_name', src: '' }
+        }
+      })
+      wrapper.vm.remove()
+      expect(wrapper.emitted().onValueChange).toBeTruthy()
+      const changeValue = wrapper.emitted().onValueChange[0]
+      expect(changeValue[0].name).toEqual('')
+      expect(changeValue[0].src).toEqual('')
+    })
+
     test('onFileChange() change file name and src', () => {
       global.URL.createObjectURL = jest.fn()
       const wrapper = shallowMount(Component, {
@@ -47,6 +62,31 @@ describe('FileUploader', () => {
       const file = new MockFile()
       wrapper.vm.onFileChange([ file ])
       expect(wrapper.emitted().onValueChange).toBeTruthy()
+    })
+
+    test('Not PDF display error', () => {
+      global.URL.createObjectURL = jest.fn()
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          value: { name: '', src: '' }
+        }
+      })
+      const file = new MockFile(null, null, 'plain/txt')
+      wrapper.vm.onFileChange([ file ])
+      expect(wrapper.vm.errorDialog).toBeTruthy()
+    })
+
+    test('more than max file size display error', () => {
+      global.URL.createObjectURL = jest.fn()
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          value: { name: '', src: '' },
+          maxFileSize: 1
+        }
+      })
+      const file = new MockFile(null, 10 * 1024 * 1024, null)
+      wrapper.vm.onFileChange([ file ])
+      expect(wrapper.vm.errorDialog).toBeTruthy()
     })
   })
 })

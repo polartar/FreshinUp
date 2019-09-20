@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!isLoading">
     <v-layout
       row
       justify-space-between
@@ -216,13 +216,15 @@
                   md6
                   sm12
                 >
-                  <v-autocomplete
-                    v-model="assignId"
-                    cache-items
-                    hide-no-data
-                    hide-details
-                    single-line
-                    outline
+                  <simple
+                    url="users"
+                    placeholder="All Users"
+                    background-color="white"
+                    class="mt-0 pt-0"
+                    height="48"
+                    :init-val="assigned ? assigned.id : ''"
+                    :init-items="assigned ? [assigned] : []"
+                    @input="selectAssigned"
                   />
                 </v-flex>
               </v-layout>
@@ -293,6 +295,7 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import FileUploader from '~/components/FileUploader.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
+import Simple from 'fresh-bus/components/search/simple'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -303,7 +306,8 @@ export default {
   layout: 'admin',
   components: {
     VueCtkDateTimePicker,
-    FileUploader
+    FileUploader,
+    Simple
   },
   mixins: [Validate],
   data () {
@@ -322,7 +326,7 @@ export default {
       ],
       template: null,
       templateOptions: [],
-      assignType: null,
+      assignType: 1,
       assignOptions: [
         { value: 1, text: 'User' },
         { value: 2, text: 'Fleet Member' },
@@ -331,7 +335,6 @@ export default {
         { value: 5, text: 'Event/Fleet Mem' },
         { value: 6, text: 'Event/Venue' }
       ],
-      assignId: null,
       file: { name: '', src: '' }
     }
   },
@@ -344,16 +347,21 @@ export default {
       'status',
       'expiration_at',
       'description',
-      'notes'
+      'notes',
+      'assigned',
+      'assigned_user_uuid'
     ])
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    selectAssigned (assigned) {
+      this.assigned_user_uuid = assigned ? assigned.uuid : ''
+    },
     onSaveClick () {
       this.$validator.validate().then(valid => {
-        const data = omit(this.doc, ['created_at', 'updated_at'])
+        const data = omit(this.doc, ['created_at', 'updated_at', 'assigned', 'owner'])
         if (valid) {
           this.$store.dispatch('documents/updateItem', { data, params: { id: data.id } }).then(() => {
             this.$store.dispatch('generalMessage/setMessage', 'Saved')

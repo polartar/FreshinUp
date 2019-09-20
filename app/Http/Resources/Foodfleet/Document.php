@@ -21,6 +21,9 @@ class Document extends JsonResource
             'type' => $this->type,
             'description' => $this->description,
             'notes' => $this->notes,
+            'owner' => $this->owner,
+            'assigned' => $this->assigned,
+            'assigned_user_uuid' => $this->assigned_user_uuid,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

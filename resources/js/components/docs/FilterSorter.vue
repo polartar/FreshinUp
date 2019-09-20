@@ -60,14 +60,13 @@
           <v-flex
             ml-2
           >
-            <v-select
-              v-model="info"
-              :items="infoList"
-              placeholder="Other Info"
-              solo
-              flat
-              hide-details
-              @change="slotProps.run"
+            <simple
+              url="users"
+              placeholder="Search Users"
+              background-color="white"
+              class="mt-0 pt-0"
+              height="48"
+              @input="(user) => { selectUsers(user, slotProps.run) }"
             />
           </v-flex>
         </v-layout>
@@ -80,9 +79,11 @@
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
+import Simple from 'fresh-bus/components/search/simple'
 
 export default {
   components: {
+    Simple,
     SearchFilterSorter,
     VueCtkDateTimePicker
   },
@@ -90,10 +91,6 @@ export default {
     autocompleteUrl: {
       type: String,
       default: ''
-    },
-    infoList: {
-      type: Array,
-      default: () => []
     },
     types: {
       type: Array,
@@ -112,7 +109,7 @@ export default {
     return {
       type: null,
       status: null,
-      info: null,
+      assigned_user_uuid: null,
       expireDate: null
     }
   },
@@ -124,8 +121,8 @@ export default {
         status: this.status
       }
 
-      if (this.infoList.length > 0) {
-        filtersObject.info = this.info
+      if (this.assigned_user_uuid) {
+        filtersObject.assigned_user_uuid = this.assigned_user_uuid
       }
 
       if (this.expireDate) {
@@ -145,8 +142,8 @@ export default {
         'filter[status]': this.filters.status
       }
 
-      if ('info' in this.filters) {
-        finalParams['filter[info_id]'] = this.filters.info
+      if ('assigned_user_uuid' in this.filters) {
+        finalParams['filter[assigned_user_uuid]'] = this.filters.assigned_user_uuid
       }
 
       if ('expiration_from' in this.filters) {
@@ -159,8 +156,12 @@ export default {
 
       this.$emit('runFilter', finalParams)
     },
+    selectUsers (user, run) {
+      this.assigned_user_uuid = user ? user.uuid : ''
+      run()
+    },
     clearFilters (params) {
-      this.type = this.status = this.info = null
+      this.type = this.status = this.assigned_user_uuid = null
       this.run(params)
     }
   }

@@ -4,6 +4,7 @@
 namespace App\Models\Foodfleet;
 
 use Carbon\Carbon;
+use FreshinUp\FreshBusForms\Models\User\User;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -28,8 +29,13 @@ class Document extends Model
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
 
-    public function user()
+    public function owner()
     {
         return $this->belongsTo(User::class, 'created_by', 'uuid');
+    }
+
+    public function assigned()
+    {
+        return $this->belongsTo(User::class, 'assigned_user_uuid', 'uuid');
     }
 }

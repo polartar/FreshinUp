@@ -218,13 +218,13 @@
                   md6
                   sm12
                 >
-                  <v-autocomplete
-                    v-model="assignId"
-                    cache-items
-                    hide-no-data
-                    hide-details
-                    single-line
-                    outline
+                  <simple
+                    url="users"
+                    placeholder="All Users"
+                    background-color="white"
+                    class="mt-0 pt-0"
+                    height="48"
+                    @input="selectAssigned"
                   />
                 </v-flex>
               </v-layout>
@@ -294,12 +294,14 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import FileUploader from '~/components/FileUploader.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
+import Simple from 'fresh-bus/components/search/simple'
 
 export default {
   layout: 'admin',
   components: {
     VueCtkDateTimePicker,
-    FileUploader
+    FileUploader,
+    Simple
   },
   mixins: [Validate],
   data () {
@@ -333,6 +335,7 @@ export default {
         type: 2,
         description: '',
         notes: '',
+        assigned_user_uuid: '',
         expiration_at: null
       },
       assignId: null,
@@ -346,6 +349,9 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    selectAssigned (assigned) {
+      this.doc.assigned_user_uuid = assigned ? assigned.uuid : ''
+    },
     onSaveClick () {
       this.$validator.validate().then(async valid => {
         const data = cloneDeep(this.doc)

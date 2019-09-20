@@ -27,6 +27,8 @@ class Documents extends Controller
         $user = $request->user();
 
         $documents = QueryBuilder::for(Document::class, $request)
+            ->with('owner')
+            ->with('assigned')
             ->where('created_by', $user->uuid)
             ->allowedSorts([
                 'title',
@@ -40,6 +42,7 @@ class Documents extends Controller
                 'title',
                 'type',
                 'status',
+                'assigned_user_uuid',
                 Filter::custom('expiration_from', FilterLessExpirationDate::class),
                 Filter::custom('expiration_to', FilterOverExpirationDate::class)
             ]);
@@ -64,6 +67,7 @@ class Documents extends Controller
             'status' => 'integer|required',
             'description' => 'required',
             'notes' => 'string',
+            'assigned_user_uuid' => 'string',
             'expiration_at' => 'date'
         ]);
 
@@ -105,6 +109,7 @@ class Documents extends Controller
             'status' => 'integer',
             'description' => 'string',
             'notes' => 'string',
+            'assigned_user_uuid' => 'string',
             'expiration_at' => 'date'
         ]);
 

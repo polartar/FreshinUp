@@ -27,7 +27,6 @@
       v-if="!isLoading"
       :types="types"
       :statuses="statuses"
-      :info-list="infoList"
       :sortables="sortables"
       @runFilter="filterDocs"
     />
@@ -115,7 +114,6 @@ export default {
     return {
       pageTitle: 'Document List',
       deleteDialog: false,
-      infoList: [],
       types: [
         { value: 1, text: 'From Template' },
         { value: 2, text: 'Downloadable' }
