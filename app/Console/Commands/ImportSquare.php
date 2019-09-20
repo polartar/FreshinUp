@@ -23,9 +23,7 @@ class ImportSquare extends Command
         }
 
         foreach ($companies as $company) {
-            //ImportSquareJob::dispatch($company);
-            $job = new ImportSquareJob($company);
-            $job->handle();
+            ImportSquareJob::dispatch($company);
         }
     }
 
@@ -39,10 +37,10 @@ class ImportSquare extends Command
     {
         return [
             [
-                'contractor',
+                'supplier',
                 null,
                 InputOption::VALUE_NONE,
-                'Import square data for a specific contractor'
+                'Import square data for a specific supplier'
             ]
         ];
     }

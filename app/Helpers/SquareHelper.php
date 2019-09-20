@@ -17,9 +17,9 @@ class SquareHelper
         }
 
         // Create and configure a new API client object
-        $defaultApiConfig = new \SquareConnect\Configuration();
-        $defaultApiConfig->setAccessToken($accessToken);
-        $defaultApiConfig->setHost(config('square.domain'));
-        return new \SquareConnect\ApiClient($defaultApiConfig);
+        $apiConfig = new \SquareConnect\Configuration();
+        $apiConfig->setAccessToken($accessToken);
+        $apiConfig->setHost(config('square.domain'));
+        return new \SquareConnect\ApiClient($apiConfig);
     }
 }

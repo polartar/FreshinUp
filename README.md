@@ -1,5 +1,5 @@
 # FoodFleet
-FactRight is a client project to utilize the following modules:
+Foodfleet is a client project to utilize the following modules:
 * [FreshBUS Forms](https://github.com/FreshinUp/fresh-bus-forms)
 
 ## Release Pipeline
@@ -10,6 +10,33 @@ Automatically deployed as `master` branch of this repository is updated.
 
 ## Contributing
 For process instructions on introducing changes please read the [Platform Readme](https://github.com/FreshinUp/fresh-platform/blob/master/README.md) and [Wiki](https://github.com/FreshinUp/fresh-platform/wiki)
+
+### Server Setup
+
+#### Queue setup
+On https://forge.laravel.com go on `Site Details` and under `Queue` tab create a queue worker with `Run Worker As Daemon (Laravel 4.2+)` option selected.
+On envoyer go on `Deploy Hooks  »  Activate New Release` and under `After This Action` section create a new Hook with the following script:
+```
+cd {{project}}
+php artisan queue:restart
+```
+with `forge` user and `On Servers` option selected
+
+#### Square setup
+- create an account on `https://developer.squareup.com`
+- create a test application and set it as sandbox if you are on staging or without if you are in production
+- set your callback url in the app under Oauth based on your base url (eg: `https://foodfleet.freshinup.com/admin/contractor/check`)
+- set your env variables related to square
+```
+SQ_TOKEN=<your-app-token>
+SQ_APP_ID=<your-app-id>
+SQ_APP_SECRET=<your-app-secret>
+SQ_DOMAIN=https://connect.squareupsandbox.com (staging) OR https://connect.squareupsandbox.com (production)
+```
+IF you are on staging:
+- go back to `https://developer.squareup.com` dashboard page and create a test user WITHOUT any permission on the app
+- click on the `Launch` button right after the test account
+- the test account will remain active for a limited amount of time. After that it will be necessary re-launch the account from the developer dashboard
 
 ### Development Setup
 #### Requirements
