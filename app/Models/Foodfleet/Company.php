@@ -19,4 +19,9 @@ class Company extends \FreshinUp\FreshBusForms\Models\Company\Company
     {
         return $this->hasMany(Store::class, 'supplier_uuid', 'uuid');
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class, 'host_uuid', 'uuid');
+    }
 }
