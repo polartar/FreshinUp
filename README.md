@@ -22,6 +22,12 @@ php artisan queue:restart
 ```
 with `forge` user and `On Servers` option selected
 
+#### Command schedule setup
+On https://forge.laravel.com go on `Server` and under `Scheduler` tab create a new scheduler job with following options:
+Command: `php /home/forge/default/artisan schedule:run`
+User: `forge`
+Frequency: `Every minute`
+
 #### Square setup
 - create an account on `https://developer.squareup.com`
 - create a test application and set it as sandbox if you are on staging or without if you are in production

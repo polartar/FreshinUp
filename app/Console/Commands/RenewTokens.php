@@ -5,11 +5,11 @@ namespace App\Console\Commands;
 use App\Models\Foodfleet\Company;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
-use App\Jobs\ImportSquare as ImportSquareJob;
+use App\Jobs\RenewToken as RenewTokenJob;
 
-class ImportSquare extends Command
+class RenewTokens extends Command
 {
-    protected $signature = 'import:square {--supplier=}';
+    protected $signature = 'renew:square {--supplier=}';
     protected $description = 'Square import';
 
     public function handle()
@@ -19,11 +19,11 @@ class ImportSquare extends Command
         } else {
             $companies = Company::whereHas('company_types', function ($q) {
                 $q->where('key_id', 'supplier');
-            })->whereNotNull('square_access_token')->get();
+            })->whereNotNull('square_refresh_token')->get();
         }
 
         foreach ($companies as $company) {
-            ImportSquareJob::dispatch($company);
+            RenewTokenJob::dispatch($company);
         }
     }
 
@@ -40,7 +40,7 @@ class ImportSquare extends Command
                 'supplier',
                 null,
                 InputOption::VALUE_NONE,
-                'Import square data for a specific supplier'
+                'Renew square token for a specified supplier'
             ]
         ];
     }
