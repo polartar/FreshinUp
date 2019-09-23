@@ -8,6 +8,8 @@ use FreshinUp\FreshBusForms\Models\User\User;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class Document
@@ -34,8 +36,18 @@ class Document extends Model
         return $this->belongsTo(User::class, 'created_by', 'uuid');
     }
 
-    public function assigned()
+    public function assigned_user()
     {
         return $this->belongsTo(User::class, 'assigned_user_uuid', 'uuid');
+    }
+
+    public function assigned_fleet_member()
+    {
+        return $this->belongsTo(FleetMember::class, 'assigned_fleet_member_uuid', 'uuid');
+    }
+
+    public function assigned_event()
+    {
+        return $this->belongsTo(Event::class, 'assigned_event_uuid', 'uuid');
     }
 }

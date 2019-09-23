@@ -14,6 +14,25 @@ class Document extends JsonResource
      */
     public function toArray($request)
     {
+        $assigned = null;
+        switch ($this->assigned_type) {
+            case 1:
+                $assigned = $this->assigned_user;
+                break;
+            case 2:
+                $assigned = $this->assigned_fleet_member;
+                break;
+            case 3:
+                $assigned = $this->assigned_event;
+                break;
+            case 4:
+                $assigned = $this->assigned_venue;
+                break;
+            default:
+                $assigned = $this->assigned_user;
+                break;
+        }
+
         $data = [
             'id' => $this->id,
             'title' => $this->title,
@@ -22,8 +41,8 @@ class Document extends JsonResource
             'description' => $this->description,
             'notes' => $this->notes,
             'owner' => $this->owner,
-            'assigned' => $this->assigned,
-            'assigned_user_uuid' => $this->assigned_user_uuid,
+            'assigned_type' => $this->assigned_type,
+            'assigned' => $assigned,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

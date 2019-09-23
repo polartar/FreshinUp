@@ -28,8 +28,9 @@ class Documents extends Controller
 
         $documents = QueryBuilder::for(Document::class, $request)
             ->with('owner')
-            ->with('assigned')
-            ->where('created_by', $user->uuid)
+            ->with('assigned_user')
+            ->with('assigned_fleet_member')
+            ->with('assigned_event')
             ->allowedSorts([
                 'title',
                 'type',
@@ -67,7 +68,6 @@ class Documents extends Controller
             'status' => 'integer|required',
             'description' => 'required',
             'notes' => 'string',
-            'assigned_user_uuid' => 'string',
             'expiration_at' => 'date'
         ]);
 
@@ -109,7 +109,6 @@ class Documents extends Controller
             'status' => 'integer',
             'description' => 'string',
             'notes' => 'string',
-            'assigned_user_uuid' => 'string',
             'expiration_at' => 'date'
         ]);
 
@@ -131,5 +130,26 @@ class Documents extends Controller
         $document = Document::findOrFail($id);
         $document->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
+    }
+
+    /*
+    * Handle file attachment upload
+    *
+    * @param $request, $document
+    * @throws \Exception
+     */
+    protected static function handleFileAttachment($request, $document)
+    {
+        if (!empty($request->attached_file)) {
+            if (Storage::disk('tmp')->exists($request->attached_file)) {
+                $url = Storage::disk('tmp')->temporaryUrl($request->attached_file, now()->addMinutes(1));
+                $document
+                    ->addMediaFromUrl($url)
+                    ->usingFileName(basename($request->attached_file))
+                    ->toMediaCollection('attachment');
+
+                Storage::disk('tmp')->delete($request->attached_file);
+            }
+        }
     }
 }

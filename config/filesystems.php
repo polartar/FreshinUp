@@ -64,6 +64,45 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'bus' => [
+            'driver' => 's3',
+            'key' => env('FS_BUS_KEY'),
+            'secret' => env('FS_BUS_SECRET'),
+            'region' => env('FS_BUS_REGION', 'nyc3'),
+            'bucket' => env('FS_BUS_BUCKET'),
+            'endpoint' => env('FS_BUS_ENDPOINT'),
+            'root' => env('FS_BUS_ROOT', ''),
+            'visibility' => env('FS_BUS_VISIBILITY', 'public'),
+            'bucket_endpoint' => env('FS_BUS_BUCKET_ENDPOINT', false),
+            'use_path_style_endpoint' => env('FS_BUS_PATH_STYLE_ENDPOINT', true),
+        ],
+
+        'cms' => [
+            'driver' => 's3',
+            'key' => env('FS_CMS_KEY'),
+            'secret' => env('FS_CMS_SECRET'),
+            'region' => env('FS_CMS_REGION', 'nyc3'),
+            'bucket' => env('FS_CMS_BUCKET'),
+            'endpoint' => env('FS_CMS_ENDPOINT'),
+            'root' => env('FS_CMS_ROOT', '/cms'),
+            'visibility' => env('FS_CMS_VISIBILITY', 'public'),
+            'bucket_endpoint' => env('FS_CMS_BUCKET_ENDPOINT', false),
+            'use_path_style_endpoint' => env('FS_CMS_PATH_STYLE_ENDPOINT', true),
+        ],
+
+        'tmp' => [
+            'driver' => 's3',
+            'key' => env('FS_TMP_KEY'),
+            'secret' => env('FS_TMP_SECRET'),
+            'region' => env('FS_TMP_REGION', 'nyc3'),
+            'bucket' => env('FS_TMP_BUCKET'),
+            'endpoint' => env('FS_TMP_ENDPOINT'),
+            'root' => env('FS_TMP_ROOT', ''),
+            'visibility' => env('FS_TMP_VISIBILITY', 'private'),
+            'bucket_endpoint' => env('FS_TMP_BUCKET_ENDPOINT', false),
+            'use_path_style_endpoint' => env('FS_TMP_PATH_STYLE_ENDPOINT', true),
+        ],
+
     ],
 
 ];

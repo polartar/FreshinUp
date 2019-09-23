@@ -7,7 +7,17 @@
       row
       class="subheading font-weight-bold"
     >
-      File: {{ value.name }}
+      <v-flex
+        v-if="uploading"
+      >
+        <v-progress-linear v-model="uploadPercentage" />
+        <div>{{ uploadPercentage }}%</div>
+      </v-flex>
+      <v-flex
+        v-else
+      >
+        <div>File: {{ value.name }}</div>
+      </v-flex>
     </v-layout>
     <v-layout
       row
@@ -92,8 +102,11 @@ export default {
   },
   data () {
     return {
+      cancel: '',
       errorDialog: false,
-      errorText: ''
+      errorText: '',
+      uploadPercentage: 0,
+      uploading: false
     }
   },
   computed: {
@@ -105,23 +118,50 @@ export default {
     launchFilePicker () {
       this.$refs.file.click()
     },
-    onFileChange (file) {
+    async onFileChange (file) {
       if (file.length > 0) {
         let fileSouce = file[0]
         let size = fileSouce.size - this.maxInBytes
 
-        if (fileSouce.type !== 'application/pdf') {
-          // check file type is pdf
-          this.showError('Please choose a pdf file')
-        } else if (size > 1) {
-          // check size of file
+        if (size > 1) {
           this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
         } else {
-          const internalSrc = URL.createObjectURL(fileSouce)
-          this.$emit('onValueChange', { name: fileSouce.name, src: internalSrc })
+          // const fileSrc = await this.submitFile(fileSouce)
+          const fileSrc = 'mock'
+          if (fileSrc) {
+            this.$emit('onValueChange', { name: fileSouce.name, src: fileSrc })
+          }
         }
       }
     },
+    // async submitFile (file) {
+    //   try {
+    //     this.uploading = true
+    //     let formData = new FormData()
+    //     formData.append('file', file)
+    //     const response = await this.$http.post('/foodfleet/tmp-media',
+    //       formData,
+    //       {
+    //         cancelToken: new this.$http.CancelToken(function executor (c) { this.cancel = c }),
+    //         headers: {
+    //           'Content-Type': 'multipart/form-data'
+    //         },
+    //         onUploadProgress: function (progressEvent) {
+    //           this.uploadPercentage = parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)) || 0
+    //         }.bind(this)
+    //       }
+    //     )
+    //     this.uploading = false
+    //     this.uploadPercentage = 0
+
+    //     return response && response.data
+    //   } catch (e) {
+    //     this.uploading = false
+    //     this.uploadPercentage = 0
+
+    //     return false
+    //   }
+    // },
     showError (text) {
       this.errorText = text
       this.errorDialog = true

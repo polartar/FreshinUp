@@ -183,7 +183,7 @@
               >
                 Submitted on
               </v-layout>
-              <div>May 28, 2019 • 10:33 am by John Smith</div>
+              <div>{{ formatDate(doc.created_at, 'MMM DD, YYYY • HH:mm a') }} by {{ doc.owner.name }}</div>
             </v-flex>
             <v-flex
               xs12
@@ -194,40 +194,13 @@
               >
                 Assigned to
               </v-layout>
-              <v-layout
-                row
-                wrap
-                justify-space-between
-              >
-                <v-flex
-                  md5
-                  sm12
-                >
-                  <v-select
-                    v-model="assignType"
-                    single-line
-                    outline
-                    :items="assignOptions"
-                    data-vv-name="assignType"
-                    :error-messages="errors.collect('assignType')"
-                  />
-                </v-flex>
-                <v-flex
-                  md6
-                  sm12
-                >
-                  <simple
-                    url="users"
-                    placeholder="All Users"
-                    background-color="white"
-                    class="mt-0 pt-0"
-                    height="48"
-                    :init-val="assigned ? assigned.id : ''"
-                    :init-items="assigned ? [assigned] : []"
-                    @input="selectAssigned"
-                  />
-                </v-flex>
-              </v-layout>
+              <AssignedSearch
+                :init-val="assigned ? assigned.id : ''"
+                :init-items="assigned ? [assigned] : []"
+                :type="assigned_type"
+                :onAssignChange="selectAssigned"
+                :onTypeChange="changeAssignedType"
+              />
             </v-flex>
             <v-flex
               xs12
@@ -294,8 +267,9 @@ import { createHelpers } from 'vuex-map-fields'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import FileUploader from '~/components/FileUploader.vue'
+import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import Simple from 'fresh-bus/components/search/simple'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -307,9 +281,9 @@ export default {
   components: {
     VueCtkDateTimePicker,
     FileUploader,
-    Simple
+    AssignedSearch
   },
-  mixins: [Validate],
+  mixins: [Validate, FormatDate],
   data () {
     return {
       pageTitle: 'Document Details',
@@ -326,15 +300,7 @@ export default {
       ],
       template: null,
       templateOptions: [],
-      assignType: 1,
-      assignOptions: [
-        { value: 1, text: 'User' },
-        { value: 2, text: 'Fleet Member' },
-        { value: 3, text: 'Venue' },
-        { value: 4, text: 'Event' },
-        { value: 5, text: 'Event/Fleet Mem' },
-        { value: 6, text: 'Event/Venue' }
-      ],
+      assign_uuid: '',
       file: { name: '', src: '' }
     }
   },
@@ -349,25 +315,50 @@ export default {
       'description',
       'notes',
       'assigned',
-      'assigned_user_uuid'
+      'assigned_type'
     ])
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    selectAssigned (assigned) {
-      this.assigned_user_uuid = assigned ? assigned.uuid : ''
+    selectAssigned (uuid) {
+      this.assign_uuid = uuid
+    },
+    changeAssignedType (value) {
+      this.assigned_type = value
     },
     onSaveClick () {
       this.$validator.validate().then(valid => {
-        const data = omit(this.doc, ['created_at', 'updated_at', 'assigned', 'owner'])
+        let data = omit(this.doc, ['created_at', 'updated_at', 'assigned', 'owner'])
+        data = this.formatAssigned(data)
         if (valid) {
           this.$store.dispatch('documents/updateItem', { data, params: { id: data.id } }).then(() => {
             this.$store.dispatch('generalMessage/setMessage', 'Saved')
           })
         }
       })
+    },
+    formatAssigned (data) {
+      data.assigned_user_uuid = ''
+      data.assigned_fleet_member_uuid = ''
+      data.assigned_venue_uuid = ''
+      data.assigned_event_uuid = ''
+      switch (data.assigned_type) {
+        case 1:
+          data.assigned_user_uuid = this.assign_uuid
+          break
+        case 2:
+          data.assigned_fleet_member_uuid = this.assign_uuid
+          break
+        case 3:
+          data.assigned_venue_uuid = this.assign_uuid
+          break
+        case 4:
+          data.assigned_event_uuid = this.assign_uuid
+          break
+      }
+      return data
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

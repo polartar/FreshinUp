@@ -176,18 +176,6 @@
           >
             <v-flex
               xs12
-              mb-3
-            >
-              <v-layout
-                mb-2
-                class="title font-weight-bold"
-              >
-                Submitted on
-              </v-layout>
-              <div>May 28, 2019 • 10:33 am by John Smith</div>
-            </v-flex>
-            <v-flex
-              xs12
             >
               <v-layout
                 mb-2
@@ -195,39 +183,11 @@
               >
                 Assigned to
               </v-layout>
-              <v-layout
-                row
-                wrap
-                justify-space-between
-              >
-                <v-flex
-                  md5
-                  sm12
-                >
-                  <v-select
-                    v-model="assignType"
-                    v-validate="'required'"
-                    single-line
-                    outline
-                    :items="assignOptions"
-                    data-vv-name="assignType"
-                    :error-messages="errors.collect('assignType')"
-                  />
-                </v-flex>
-                <v-flex
-                  md6
-                  sm12
-                >
-                  <simple
-                    url="users"
-                    placeholder="All Users"
-                    background-color="white"
-                    class="mt-0 pt-0"
-                    height="48"
-                    @input="selectAssigned"
-                  />
-                </v-flex>
-              </v-layout>
+              <AssignedSearch
+                :type="doc.assigned_type"
+                :onAssignChange="selectAssigned"
+                :onTypeChange="changeAssignedType"
+              />
             </v-flex>
             <v-flex
               xs12
@@ -294,14 +254,14 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import FileUploader from '~/components/FileUploader.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import Simple from 'fresh-bus/components/search/simple'
+import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 
 export default {
   layout: 'admin',
   components: {
     VueCtkDateTimePicker,
     FileUploader,
-    Simple
+    AssignedSearch
   },
   mixins: [Validate],
   data () {
@@ -320,25 +280,16 @@ export default {
       ],
       template: null,
       templateOptions: [],
-      assignType: 1,
-      assignOptions: [
-        { value: 1, text: 'User' },
-        { value: 2, text: 'Fleet Member' },
-        { value: 3, text: 'Venue' },
-        { value: 4, text: 'Event' },
-        { value: 5, text: 'Event/Fleet Mem' },
-        { value: 6, text: 'Event/Venue' }
-      ],
       doc: {
         title: '',
         status: 1,
         type: 2,
         description: '',
         notes: '',
-        assigned_user_uuid: '',
+        assigned_type: 1,
         expiration_at: null
       },
-      assignId: null,
+      assign_uuid: null,
       file: { name: '', src: '' }
     }
   },
@@ -349,18 +300,43 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    selectAssigned (assigned) {
-      this.doc.assigned_user_uuid = assigned ? assigned.uuid : ''
+    selectAssigned (uuid) {
+      this.assign_uuid = uuid
+    },
+    changeAssignedType (value) {
+      this.doc.assigned_type = value
     },
     onSaveClick () {
       this.$validator.validate().then(async valid => {
-        const data = cloneDeep(this.doc)
+        let data = cloneDeep(this.doc)
+        data = this.formatAssigned(data)
         if (valid) {
           await this.$store.dispatch('documents/createItem', { data })
           await this.$store.dispatch('documents/getItems')
           this.$router.push('/admin/docs/')
         }
       })
+    },
+    formatAssigned (data) {
+      data.assigned_user_uuid = ''
+      data.assigned_fleet_member_uuid = ''
+      data.assigned_venue_uuid = ''
+      data.assigned_event_uuid = ''
+      switch (data.assigned_type) {
+        case 1:
+          data.assigned_user_uuid = this.assign_uuid
+          break
+        case 2:
+          data.assigned_fleet_member_uuid = this.assign_uuid
+          break
+        case 3:
+          data.assigned_venue_uuid = this.assign_uuid
+          break
+        case 4:
+          data.assigned_event_uuid = this.assign_uuid
+          break
+      }
+      return data
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

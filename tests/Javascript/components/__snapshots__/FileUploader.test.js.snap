@@ -7,9 +7,13 @@ exports[`FileUploader Snapshots defaults 1`] = `
   <div
     class="layout subheading font-weight-bold row"
   >
-    
-    File: 
-  
+    <div
+      class="flex"
+    >
+      <div>
+        File: 
+      </div>
+    </div>
   </div>
    
   <div

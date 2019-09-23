@@ -64,18 +64,6 @@ describe('FileUploader', () => {
       expect(wrapper.emitted().onValueChange).toBeTruthy()
     })
 
-    test('Not PDF display error', () => {
-      global.URL.createObjectURL = jest.fn()
-      const wrapper = shallowMount(Component, {
-        propsData: {
-          value: { name: '', src: '' }
-        }
-      })
-      const file = new MockFile(null, null, 'plain/txt')
-      wrapper.vm.onFileChange([ file ])
-      expect(wrapper.vm.errorDialog).toBeTruthy()
-    })
-
     test('more than max file size display error', () => {
       global.URL.createObjectURL = jest.fn()
       const wrapper = shallowMount(Component, {
