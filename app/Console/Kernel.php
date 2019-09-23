@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ImportSquare;
+use App\Console\Commands\RenewTokens;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        ImportSquare::class,
+        RenewTokens::class
     ];
 
     /**
@@ -24,6 +27,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command(ImportSquare::class)->dailyAt('00:00')->withoutOverlapping();
+        // Run renew tokens every 15 days
+        $schedule->command(RenewTokens::class)->monthlyOn(1, '23:00')->withoutOverlapping();
+        $schedule->command(RenewTokens::class)->monthlyOn(15, '23:00')->withoutOverlapping();
     }
 
     /**

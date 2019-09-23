@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Event;
+namespace Tests\Feature\Jobs;
 
 use App\Jobs\ImportSquare;
 use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
@@ -12,7 +11,6 @@ use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Store;
-use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Square\Transaction;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
