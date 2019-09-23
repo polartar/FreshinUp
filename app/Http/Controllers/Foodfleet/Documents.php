@@ -131,25 +131,4 @@ class Documents extends Controller
         $document->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
     }
-
-    /*
-    * Handle file attachment upload
-    *
-    * @param $request, $document
-    * @throws \Exception
-     */
-    protected static function handleFileAttachment($request, $document)
-    {
-        if (!empty($request->attached_file)) {
-            if (Storage::disk('tmp')->exists($request->attached_file)) {
-                $url = Storage::disk('tmp')->temporaryUrl($request->attached_file, now()->addMinutes(1));
-                $document
-                    ->addMediaFromUrl($url)
-                    ->usingFileName(basename($request->attached_file))
-                    ->toMediaCollection('attachment');
-
-                Storage::disk('tmp')->delete($request->attached_file);
-            }
-        }
-    }
 }

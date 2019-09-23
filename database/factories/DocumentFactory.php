@@ -23,6 +23,7 @@ $factory->define(Document::class, function (Faker $faker) {
         'status' => $faker->numberBetween(1, 2),
         'description' => Str::random(50),
         'notes' => Str::random(20),
+        'assigned_type' => $faker->numberBetween(1, 3),
         'expiration_at' => $faker->dateTimeBetween('+1 days', '+10 days')
     ];
 });
