@@ -17,19 +17,16 @@ class Document extends JsonResource
         $assigned = null;
         switch ($this->assigned_type) {
             case 1:
-                $assigned = $this->assigned_user;
+                $assigned = $this->assignedUser;
                 break;
             case 2:
-                $assigned = $this->assigned_fleet_member;
+                $assigned = $this->assignedFleetMember;
                 break;
             case 3:
-                $assigned = $this->assigned_event;
-                break;
-            case 4:
-                $assigned = $this->assigned_venue;
+                $assigned = $this->assignedEvent;
                 break;
             default:
-                $assigned = $this->assigned_user;
+                $assigned = $this->assignedUser;
                 break;
         }
 

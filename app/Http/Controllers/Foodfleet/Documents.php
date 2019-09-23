@@ -28,9 +28,9 @@ class Documents extends Controller
 
         $documents = QueryBuilder::for(Document::class, $request)
             ->with('owner')
-            ->with('assigned_user')
-            ->with('assigned_fleet_member')
-            ->with('assigned_event')
+            ->with('assignedUser')
+            ->with('assignedFleetMember')
+            ->with('assignedEvent')
             ->allowedSorts([
                 'title',
                 'type',

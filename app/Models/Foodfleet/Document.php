@@ -36,17 +36,17 @@ class Document extends Model
         return $this->belongsTo(User::class, 'created_by', 'uuid');
     }
 
-    public function assigned_user()
+    public function assignedUser()
     {
         return $this->belongsTo(User::class, 'assigned_user_uuid', 'uuid');
     }
 
-    public function assigned_fleet_member()
+    public function assignedFleetMember()
     {
         return $this->belongsTo(FleetMember::class, 'assigned_fleet_member_uuid', 'uuid');
     }
 
-    public function assigned_event()
+    public function assignedEvent()
     {
         return $this->belongsTo(Event::class, 'assigned_event_uuid', 'uuid');
     }
