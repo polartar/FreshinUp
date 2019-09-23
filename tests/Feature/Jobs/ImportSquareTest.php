@@ -373,6 +373,7 @@ class ImportSquareTest extends TestCase
         $order = new Order();
         $order->setId('123');
         $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
         $customer = factory(Customer::class)->create();
 
         $importJob = new ImportSquare($supplier);
@@ -383,24 +384,28 @@ class ImportSquareTest extends TestCase
         $method->invokeArgs($importJob, [
             'order' => $order,
             'event' => $event,
+            'store' => $store,
             'customer' => null
         ]);
 
         $this->assertDatabaseHas('transactions', [
             'square_id' => '123',
             'event_uuid' => $event->uuid,
+            'store_uuid' => $store->uuid,
             'customer_uuid' => null
         ]);
 
         $method->invokeArgs($importJob, [
             'order' => $order,
             'event' => $event,
+            'store' => $store,
             'customer' => $customer
         ]);
 
         $this->assertDatabaseHas('transactions', [
             'square_id' => '123',
             'event_uuid' => $event->uuid,
+            'store_uuid' => $store->uuid,
             'customer_uuid' => $customer->uuid
         ]);
     }

@@ -12,6 +12,7 @@ use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Square\Transaction;
+use App\Models\Foodfleet\Store;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -74,7 +75,7 @@ class ImportSquare implements ShouldQueue
                             $customer = $this->getCustomer($order);
 
                             // Transaction
-                            $transaction = $this->getTransaction($order, $event, $customer);
+                            $transaction = $this->getTransaction($order, $event, $store, $customer);
 
                             // Items
                             $lineItems = $order->getLineItems();
@@ -299,16 +300,18 @@ class ImportSquare implements ShouldQueue
      *
      * @param \SquareConnect\Model\Order $order
      * @param $event
+     * @param Store $store
      * @param Customer|null $customer
      * @return mixed
      */
-    protected function getTransaction(\SquareConnect\Model\Order $order, $event, ?Customer $customer)
+    protected function getTransaction(\SquareConnect\Model\Order $order, $event, $store, ?Customer $customer)
     {
         return Transaction::updateOrCreate([
             'square_id' => $order->getId()
         ], [
             'square_id' => $order->getId(),
             'event_uuid' => $event->uuid,
+            'store_uuid' => $store->uuid,
             'customer_uuid' => $customer ? $customer->uuid : null,
             'total_money' => $order->getTotalMoney() ? $order->getTotalMoney()->getAmount() : null,
             'total_tax_money' => $order->getTotalTaxMoney() ?

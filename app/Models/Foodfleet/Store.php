@@ -4,6 +4,7 @@
 namespace App\Models\Foodfleet;
 
 use App\Models\Foodfleet\Square\Staff;
+use App\Models\Foodfleet\Square\Transaction;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use FreshinUp\FreshBusForms\Models\Company\Company;
@@ -57,5 +58,10 @@ class Store extends Model
             'uuid',
             'uuid'
         );
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
     }
 }

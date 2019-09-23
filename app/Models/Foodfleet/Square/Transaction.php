@@ -4,6 +4,7 @@
 namespace App\Models\Foodfleet\Square;
 
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Store;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -54,5 +55,10 @@ class Transaction extends Model
     public function payments()
     {
         return $this->hasMany(Payment::class, 'transaction_uuid', 'uuid');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'store_uuid', 'uuid');
     }
 }

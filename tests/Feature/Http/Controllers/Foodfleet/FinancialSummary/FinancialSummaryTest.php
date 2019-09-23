@@ -264,14 +264,12 @@ class FinancialSummaryTest extends TestCase
     {
         $this->createPaymentTypes();
         $store = factory(Store::class)->create();
-        $event = factory(Event::class)->create();
-        $event->stores()->sync($store->uuid);
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
         factory(Transaction::class)->create([
             'total_money' => 1000,
             'total_tax_money' => 200,
             'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
-            'event_uuid' => $event->uuid
+            'store_uuid' => $store->uuid
         ])->payments()->save(factory(Payment::class)->make([
             'amount_money' => 1000,
             'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,

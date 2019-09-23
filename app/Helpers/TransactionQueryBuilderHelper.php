@@ -24,7 +24,7 @@ class TransactionQueryBuilderHelper
     {
         return [
             Filter::exact('event_uuid'),
-            Filter::custom('store_uuid', BelongsToWhereUuidEquals::class, 'event.stores'),
+            Filter::exact('store_uuid'),
             Filter::custom('supplier_uuid', SupplierUuid::class),
             Filter::exact('host_uuid', 'event.host_uuid'),
             Filter::custom('date_after', GreaterThanOrEqualTo::class, 'square_created_at'),
