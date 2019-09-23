@@ -17,6 +17,7 @@ $factory->define(\App\Models\Foodfleet\Square\Staff::class, function (Faker $fak
     return [
         "first_name" => $faker->firstName,
         "last_name" => $faker->lastName,
-        "square_id" => $faker->randomNumber(5)
+        "square_id" => $faker->randomNumber(5),
+        "email" => $faker->email
     ];
 });

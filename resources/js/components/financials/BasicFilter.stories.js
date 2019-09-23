@@ -7,18 +7,18 @@ import BasicFilter from './BasicFilter.vue'
 
 let filters = {
   event_uuid: null,
-  company_uuid: null,
-  fleet_member_uuid: null,
-  contractor_uuid: null,
+  host_uuid: null,
+  store_uuid: null,
+  supplier_uuid: null,
   date_after: null,
   date_before: null
 }
 
 let filtersDateRange = {
   event_uuid: null,
-  company_uuid: null,
-  fleet_member_uuid: null,
-  contractor_uuid: null,
+  host_uuid: null,
+  store_uuid: null,
+  supplier_uuid: null,
   date_after: '2019-01-08',
   date_before: '2019-01-08'
 }
@@ -34,16 +34,16 @@ mock.onGet('/events').reply(200, {
   ]
 })
 
-mock.onGet('/companies').reply(200, {
+mock.onGet('/companies?filter[type_key]=host').reply(200, {
   data: [
-    { uuid: 1, name: 'Company 1' },
-    { uuid: 2, name: 'Company 2' },
-    { uuid: 3, name: 'Company 3' },
-    { uuid: 4, name: 'Company 4' }
+    { uuid: 1, name: 'Host 1' },
+    { uuid: 2, name: 'Host 2' },
+    { uuid: 3, name: 'Host 3' },
+    { uuid: 4, name: 'Host 4' }
   ]
 })
 
-mock.onGet('/fleet-members').reply(200, {
+mock.onGet('foodfleet/stores').reply(200, {
   data: [
     { uuid: 1, name: 'Truck 1' },
     { uuid: 2, name: 'Truck 2' },
@@ -52,12 +52,12 @@ mock.onGet('/fleet-members').reply(200, {
   ]
 })
 
-mock.onGet('/companies?filter[type]=customer').reply(200, {
+mock.onGet('/companies?filter[type_key]=supplier').reply(200, {
   data: [
-    { uuid: 1, name: 'Customer 1' },
-    { uuid: 2, name: 'Customer 2' },
-    { uuid: 3, name: 'Customer 3' },
-    { uuid: 4, name: 'Customer 4' }
+    { uuid: 1, name: 'Supplier 1' },
+    { uuid: 2, name: 'Supplier 2' },
+    { uuid: 3, name: 'Supplier 3' },
+    { uuid: 4, name: 'Supplier 4' }
   ]
 })
 

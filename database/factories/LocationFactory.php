@@ -15,6 +15,6 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Foodfleet\Location::class, function (Faker $faker) {
     return [
-        "name" => $faker->word
+        "name" => $faker->city
     ];
 });

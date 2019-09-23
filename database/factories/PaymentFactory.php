@@ -18,9 +18,7 @@ $factory->define(\App\Models\Foodfleet\Square\Payment::class, function (Faker $f
         "square_id" => $faker->randomNumber(5),
         "amount_money" => $faker->numberBetween(700, 10000),
         "tip_money" => $faker->numberBetween(700, 10000),
-        "total_money" => $faker->numberBetween(700, 10000),
-        "app_fee_money" => $faker->numberBetween(700, 10000),
-        "refunded_money" => $faker->numberBetween(700, 10000),
+        "processing_fee_money" => $faker->numberBetween(700, 10000),
         "square_created_at" => $faker->dateTime('now')
     ];
 });

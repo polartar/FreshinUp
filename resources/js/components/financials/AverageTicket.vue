@@ -5,7 +5,7 @@
         {{ formatMoney(averageTicket, { format: '$0,0.00', precision: 4 }) }}
       </div>
       <div class="font-weight-bold subheading mt-2">
-        Per Customer
+        Per Transaction
       </div>
     </div>
   </div>

@@ -15,7 +15,6 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Foodfleet\Square\Category::class, function (Faker $faker) {
     return [
-        "name" => $faker->word,
-        "square_id" => $faker->randomNumber(5)
+        "name" => $faker->word
     ];
 });
