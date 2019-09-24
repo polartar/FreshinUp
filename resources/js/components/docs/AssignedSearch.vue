@@ -14,7 +14,6 @@
         outline
         :items="options"
         data-vv-name="type"
-        :error-messages="errors.collect('type')"
       />
     </v-flex>
     <v-flex

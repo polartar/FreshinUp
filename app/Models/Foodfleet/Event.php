@@ -70,6 +70,6 @@ class Event extends Model
 
     public function documents()
     {
-        return $this->morphMany(Document::class , 'assigned' , 'assigned_type' , 'assigned_uuid' , 'uuid');
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
 }

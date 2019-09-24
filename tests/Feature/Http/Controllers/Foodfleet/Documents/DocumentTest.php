@@ -27,7 +27,7 @@ class DocumentTest extends TestCase
         Passport::actingAs($user);
 
         $documents = factory(Document::class, 5)->create([
-            'created_by' => $user->uuid
+            'created_by_uuid' => $user->uuid
         ]);
 
         $data = $this
@@ -49,7 +49,6 @@ class DocumentTest extends TestCase
                 'description' => $document->description,
                 'notes' => $document->notes,
                 'owner' => json_decode($document->owner, true),
-                'assigned_type' => $document->assigned_type,
                 'assigned' => null,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))
@@ -70,7 +69,7 @@ class DocumentTest extends TestCase
 
         factory(Document::class, 5)->create([
             'title' => 'Not visibles',
-            'created_by' => $user->uuid
+            'created_by_uuid' => $user->uuid
         ]);
 
         $documentsToFind = factory(Document::class, 5)->create([
@@ -109,7 +108,6 @@ class DocumentTest extends TestCase
                 'description' => $document->description,
                 'notes' => $document->notes,
                 'owner' => json_decode($document->owner, true),
-                'assigned_type' => $document->assigned_type,
                 'assigned' => null,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))

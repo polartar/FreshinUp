@@ -128,7 +128,7 @@ const appInstance = new App({
       squares: squares({}),
       documents: documents({}),
       documentStatuses: documentStatuses({}),
-      documentTypes: documentTypes({}),
+      documentTypes: documentTypes({})
     }
   }),
   theme,

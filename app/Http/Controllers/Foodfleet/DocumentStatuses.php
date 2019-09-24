@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Foodfleet;
+
 use App\Http\Resources\Foodfleet\Document\Status as DocumentStatusResource;
 use App\Models\Foodfleet\DocumentStatus;
 

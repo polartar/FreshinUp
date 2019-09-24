@@ -40,5 +40,4 @@ class Document extends Model
     {
         return $this->morphTo('assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
-
 }

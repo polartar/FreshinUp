@@ -43,8 +43,8 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
   <doc-filter-stub
     autocompleteurl=""
     sortables="[object Object],[object Object],[object Object],[object Object]"
-    statuses="[object Object],[object Object],[object Object],[object Object],[object Object]"
-    types="[object Object],[object Object]"
+    statuses=""
+    types=""
   />
    
   <doctable-list-stub
@@ -53,7 +53,7 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
     rowsperpage="10"
     rowsperpageitems="5,10,15,25,30,50"
     sortby=""
-    statuses="[object Object],[object Object],[object Object],[object Object],[object Object]"
+    statuses=""
     totalitems="6"
   />
    

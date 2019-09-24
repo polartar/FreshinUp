@@ -7,7 +7,6 @@ use FreshinUp\FreshBusForms\Actions\Action;
 use App\Models\Foodfleet\Document;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 
-
 class UpdateDocument implements Action
 {
     public function execute(array $data)

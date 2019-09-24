@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Foodfleet;
+
 use App\Http\Resources\Foodfleet\Document\Type as DocumentTypeResource;
 use App\Models\Foodfleet\DocumentType;
 
