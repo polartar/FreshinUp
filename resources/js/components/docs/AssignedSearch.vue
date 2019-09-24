@@ -85,7 +85,7 @@ export default {
         },
         {
           value: 5,
-          text: 'Event/Fleet Mem',
+          text: 'Event/Fleet Memeber',
           url: 'users',
           param: 'term'
         },

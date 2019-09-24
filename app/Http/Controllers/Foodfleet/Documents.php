@@ -41,7 +41,7 @@ class Documents extends Controller
                 'title',
                 'type',
                 'status',
-                'assigned_user_uuid',
+                'assigned_uuid',
                 Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
                 Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at')
             ]);

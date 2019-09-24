@@ -111,7 +111,7 @@ export default {
       userSearchKey: +new Date(),
       type: null,
       status: null,
-      assigned_user_uuid: null,
+      assigned_uuid: null,
       expireDate: null
     }
   },
@@ -123,8 +123,8 @@ export default {
         status: this.status
       }
 
-      if (this.assigned_user_uuid) {
-        filtersObject.assigned_user_uuid = this.assigned_user_uuid
+      if (this.assigned_uuid) {
+        filtersObject.assigned_uuid = this.assigned_uuid
       }
 
       if (this.expireDate) {
@@ -144,8 +144,8 @@ export default {
         'filter[status]': this.filters.status
       }
 
-      if ('assigned_user_uuid' in this.filters) {
-        finalParams['filter[assigned_user_uuid]'] = this.filters.assigned_user_uuid
+      if ('assigned_uuid' in this.filters) {
+        finalParams['filter[assigned_uuid]'] = this.filters.assigned_uuid
       }
 
       if ('expiration_from' in this.filters) {
@@ -159,11 +159,11 @@ export default {
       this.$emit('runFilter', finalParams)
     },
     selectUsers (user, run) {
-      this.assigned_user_uuid = user ? user.uuid : ''
+      this.assigned_uuid = user ? user.uuid : ''
       run()
     },
     clearFilters (params) {
-      this.type = this.status = this.assigned_user_uuid = null
+      this.type = this.status = this.assigned_uuid = null
       this.userSearchKey++
       this.run(params)
     }
