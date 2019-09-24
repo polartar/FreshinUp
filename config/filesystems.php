@@ -79,15 +79,15 @@ return [
 
         'cms' => [
             'driver' => 's3',
-            'key' => env('FS_CMS_KEY'),
-            'secret' => env('FS_CMS_SECRET'),
-            'region' => env('FS_CMS_REGION', 'nyc3'),
-            'bucket' => env('FS_CMS_BUCKET'),
-            'endpoint' => env('FS_CMS_ENDPOINT'),
-            'root' => env('FS_CMS_ROOT', '/cms'),
-            'visibility' => env('FS_CMS_VISIBILITY', 'public'),
-            'bucket_endpoint' => env('FS_CMS_BUCKET_ENDPOINT', false),
-            'use_path_style_endpoint' => env('FS_CMS_PATH_STYLE_ENDPOINT', true),
+            'key' => env('FS_FF_KEY'),
+            'secret' => env('FFS_FF__SECRET'),
+            'region' => env('FS_FF_REGION', 'nyc3'),
+            'bucket' => env('FS_FF_BUCKET'),
+            'endpoint' => env('FS_FF_ENDPOINT'),
+            'root' => env('FS_FF_ROOT', '/cms'),
+            'visibility' => env('FS_FF_VISIBILITY', 'public'),
+            'bucket_endpoint' => env('FS_FF_BUCKET_ENDPOINT', false),
+            'use_path_style_endpoint' => env('FS_FF_PATH_STYLE_ENDPOINT', true),
         ],
 
         'tmp' => [

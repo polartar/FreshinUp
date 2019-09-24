@@ -101,20 +101,20 @@ FS_TMP_BUCKET=tmp
 FS_TMP_REGION=us-east-1
 
 # Filesystem for Content Management media
-FS_CMS_KEY=homestead
-FS_CMS_SECRET=secretkey
-FS_CMS_ENDPOINT=http://homestead:9600
-FS_CMS_BUCKET=cms
-FS_CMS_REGION=us-east-1
-FS_CMS_ROOT=
+FS_FF_KEY=homestead
+FS_FF_SECRET=secretkey
+FS_FF_ENDPOINT=http://homestead:9600
+FS_FF_BUCKET=cms
+FS_FF_REGION=us-east-1
+FS_FF_ROOT=
 
 # Filesystem for BUS media
-FS_CMS_KEY=homestead
-FS_CMS_SECRET=secretkey
-FS_CMS_ENDPOINT=http://homestead:9600
-FS_CMS_BUCKET=bus
-FS_CMS_REGION=us-east-1
-FS_CMS_ROOT=
+FS_FF_KEY=homestead
+FS_FF_SECRET=secretkey
+FS_FF_ENDPOINT=http://homestead:9600
+FS_FF_BUCKET=bus
+FS_FF_REGION=us-east-1
+FS_FF_ROOT=
 ```
 
 - take out from your homestead machine the `ca.homestead.homestead.crt` file in the `/etc/nginx/ssl/` folder
