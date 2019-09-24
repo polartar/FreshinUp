@@ -2,19 +2,16 @@
 
 namespace Tests\Feature\Unit\Models\Payment;
 
-use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
-use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
+use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class LocationTest extends TestCase
+class PaymentTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -25,34 +22,21 @@ class LocationTest extends TestCase
      */
     public function testModel()
     {
-        $location = factory(Location::class)->create();
         $device = factory(Device::class)->create();
-        $customer = factory(Customer::class)->create();
         $paymentType = factory(PaymentType::class)->create();
-        $item = factory(Item::class)->create();
-        $event = factory(Event::class)->create();
+        $transaction = factory(Transaction::class)->create();
 
         $payment = factory(Payment::class)->create();
-        $payment->location()->associate($location);
+        $payment->transaction()->associate($transaction);
         $payment->device()->associate($device);
-        $payment->customer()->associate($customer);
         $payment->paymentType()->associate($paymentType);
-        $payment->event()->associate($event);
         $payment->save();
-        $payment->items()->sync([$item->uuid]);
 
         $this->assertDatabaseHas('payments', [
             'uuid' => $payment->uuid,
-            'location_uuid' => $location->uuid,
             'device_uuid' => $device->uuid,
-            'customer_uuid' => $customer->uuid,
             'payment_type_uuid' => $paymentType->uuid,
-            'event_uuid' => $event->uuid
-        ]);
-
-        $this->assertDatabaseHas('payments_items', [
-            'payment_uuid' => $payment->uuid,
-            'item_uuid' => $item->uuid
+            'transaction_uuid' => $transaction->uuid
         ]);
     }
 }

@@ -3,6 +3,8 @@
 
 namespace App\Models\Foodfleet\Square;
 
+use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Store;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -27,4 +29,36 @@ class Transaction extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_uuid', 'uuid');
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_uuid', 'uuid');
+    }
+
+    public function items()
+    {
+        return $this->belongsToMany(
+            Item::class,
+            'transactions_items',
+            'transaction_uuid',
+            'item_uuid',
+            'uuid',
+            'uuid'
+        );
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'transaction_uuid', 'uuid');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'store_uuid', 'uuid');
+    }
 }

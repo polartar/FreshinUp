@@ -156,7 +156,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Companies
+      Hosts
       
       <!---->
     </div>
@@ -179,7 +179,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All Companies"
+              placeholder="All Hosts"
               role="combobox"
               type="text"
             />
@@ -257,7 +257,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Truck
+      Fleet members
       
       <!---->
     </div>
@@ -280,7 +280,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All Trucks"
+              placeholder="All fleet members"
               role="combobox"
               type="text"
             />
@@ -358,7 +358,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Customer
+      Suppliers
       
       <!---->
     </div>
@@ -381,7 +381,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All Customers"
+              placeholder="All Suppliers"
               role="combobox"
               type="text"
             />

@@ -38,18 +38,18 @@ class FinancialModifiersTableSeeder extends Seeder
                 'text_param' => 'name'
             ],
             [
-                'name' => 'company_uuid',
-                'resource_name' => 'foodfleet/companies',
-                'label' => 'Company name',
-                'placeholder' => 'Company name',
+                'name' => 'host_uuid',
+                'resource_name' => 'companies?filter[key_id]=host',
+                'label' => 'Host name',
+                'placeholder' => 'Host name',
                 'type' => 'autocomplete',
                 'filter' => 'filter[name]',
                 'value_param' => 'uuid',
                 'text_param' => 'name'
             ],
             [
-                'name' => 'fleet_member_uuid',
-                'resource_name' => 'foodfleet/fleet_members',
+                'name' => 'store_uuid',
+                'resource_name' => 'foodfleet/stores',
                 'label' => 'Fleet member name',
                 'placeholder' => 'Fleet member name',
                 'type' => 'autocomplete',
@@ -58,10 +58,10 @@ class FinancialModifiersTableSeeder extends Seeder
                 'text_param' => 'name'
             ],
             [
-                'name' => 'contractor_uuid',
-                'resource_name' => 'companies?filter[key_id]=contractor',
-                'label' => 'Contractor',
-                'placeholder' => 'Contractor',
+                'name' => 'supplier_uuid',
+                'resource_name' => 'companies?filter[key_id]=supplier',
+                'label' => 'Supplier name',
+                'placeholder' => 'Supplier name',
                 'type' => 'autocomplete',
                 'filter' => 'filter[name]',
                 'value_param' => 'uuid',

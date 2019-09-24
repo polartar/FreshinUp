@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet\FleetMembers;
+namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 
-use App\Models\Foodfleet\FleetMember;
+use App\Models\Foodfleet\Store;
 use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -10,7 +10,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class FleetMemberTest extends TestCase
+class StoresTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -25,10 +25,10 @@ class FleetMemberTest extends TestCase
 
         Passport::actingAs($user);
 
-        $fleetMembers = factory(FleetMember::class, 5)->create();
+        $stores = factory(Store::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/fleet-members")
+            ->json('get', "/api/foodfleet/stores")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -37,7 +37,7 @@ class FleetMemberTest extends TestCase
 
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
-        foreach ($fleetMembers as $idx => $fleetMember) {
+        foreach ($stores as $idx => $fleetMember) {
             $this->assertArraySubset([
                 'uuid' => $fleetMember->uuid,
                 'name' => $fleetMember->name
@@ -56,16 +56,16 @@ class FleetMemberTest extends TestCase
 
         Passport::actingAs($user);
 
-        factory(FleetMember::class, 5)->create([
+        factory(Store::class, 5)->create([
             'name' => 'Not visibles'
         ]);
 
-        $fleetMembersToFind = factory(FleetMember::class, 5)->create([
+        $storesToFind = factory(Store::class, 5)->create([
             'name' => 'To find'
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/fleet-members")
+            ->json('get', "/api/foodfleet/stores")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -77,7 +77,7 @@ class FleetMemberTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/fleet-members?filter[name]=find")
+            ->json('get', "/api/foodfleet/stores?filter[name]=find")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -87,7 +87,7 @@ class FleetMemberTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
 
-        foreach ($fleetMembersToFind as $idx => $fleetMember) {
+        foreach ($storesToFind as $idx => $fleetMember) {
             $this->assertArraySubset([
                 'uuid' => $fleetMember->uuid,
                 'name' => $fleetMember->name

@@ -4,12 +4,12 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
-use App\Models\Foodfleet\FleetMember;
+use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\FleetMember as FleetMemberResource;
+use App\Http\Resources\Foodfleet\Store as StoreResource;
 
-class FleetMembers extends Controller
+class Stores extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,9 @@ class FleetMembers extends Controller
      */
     public function index(Request $request)
     {
-        $fleetMembers = QueryBuilder::for(FleetMember::class, $request)
+        $stores = QueryBuilder::for(Store::class, $request)
             ->allowedFilters(['name']);
 
-        return FleetMemberResource::collection($fleetMembers->jsonPaginate());
+        return StoreResource::collection($stores->jsonPaginate());
     }
 }

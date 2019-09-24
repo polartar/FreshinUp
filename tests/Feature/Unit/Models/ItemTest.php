@@ -4,7 +4,7 @@ namespace Tests\Feature\Unit\Models\Item;
 
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Item;
-use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -22,21 +22,22 @@ class ItemTest extends TestCase
     public function testModel()
     {
         $category = factory(Category::class)->create();
-        $payment = factory(Payment::class)->create();
+        $transaction = factory(Transaction::class)->create();
 
         $item = factory(Item::class)->create();
         $item->category()->associate($category);
         $item->save();
-        $item->payments()->sync([$payment->uuid]);
+        $item->transactions()->sync([$transaction->uuid => ['quantity' => 1]]);
 
         $this->assertDatabaseHas('items', [
             'uuid' => $item->uuid,
             'category_uuid' => $category->uuid,
         ]);
 
-        $this->assertDatabaseHas('payments_items', [
-            'payment_uuid' => $payment->uuid,
-            'item_uuid' => $item->uuid
+        $this->assertDatabaseHas('transactions_items', [
+            'transaction_uuid' => $transaction->uuid,
+            'item_uuid' => $item->uuid,
+            'quantity' => 1
         ]);
     }
 }
