@@ -38,4 +38,9 @@ class FleetMember extends Model
     {
         return $this->hasMany(Event::class, 'fleet_member_uuid', 'uuid');
     }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class , 'assigned' , 'assigned_type' , 'assigned_uuid' , 'uuid');
+    }
 }

@@ -286,10 +286,10 @@ export default {
         type: 2,
         description: '',
         notes: '',
+        assigned_uuid: null,
         assigned_type: 1,
         expiration_at: null
       },
-      assign_uuid: null,
       file: { name: '', src: '' }
     }
   },
@@ -301,7 +301,7 @@ export default {
       setPageLoading: 'setLoading'
     }),
     selectAssigned (uuid) {
-      this.assign_uuid = uuid
+      this.doc.assigned_uuid = uuid
     },
     changeAssignedType (value) {
       this.doc.assigned_type = value
@@ -309,34 +309,12 @@ export default {
     onSaveClick () {
       this.$validator.validate().then(async valid => {
         let data = cloneDeep(this.doc)
-        data = this.formatAssigned(data)
         if (valid) {
           await this.$store.dispatch('documents/createItem', { data })
           await this.$store.dispatch('documents/getItems')
           this.$router.push('/admin/docs/')
         }
       })
-    },
-    formatAssigned (data) {
-      data.assigned_user_uuid = ''
-      data.assigned_fleet_member_uuid = ''
-      data.assigned_venue_uuid = ''
-      data.assigned_event_uuid = ''
-      switch (data.assigned_type) {
-        case 1:
-          data.assigned_user_uuid = this.assign_uuid
-          break
-        case 2:
-          data.assigned_fleet_member_uuid = this.assign_uuid
-          break
-        case 3:
-          data.assigned_venue_uuid = this.assign_uuid
-          break
-        case 4:
-          data.assigned_event_uuid = this.assign_uuid
-          break
-      }
-      return data
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

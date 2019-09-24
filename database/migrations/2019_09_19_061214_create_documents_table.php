@@ -22,7 +22,7 @@ class CreateDocumentsTable extends Migration
             $table->string('description');
             $table->string('notes')->nullable();
             $table->dateTime('expiration_at')->nullable();
-            $table->uuid('created_by')->nullable()->index();
+            $table->uuid('created_by_uuid')->nullable()->index();
             $table->timestamps();
             $table->softDeletes();
         });

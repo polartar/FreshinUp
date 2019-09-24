@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
+use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 use App\Http\Resources\Foodfleet\Document as DocumentResource;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\FleetMember;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\Filter;
+use App\User;
 
 
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
@@ -24,13 +27,8 @@ class Documents extends Controller
      */
     public function index(Request $request)
     {
-        $user = $request->user();
-
         $documents = QueryBuilder::for(Document::class, $request)
             ->with('owner')
-            ->with('assignedUser')
-            ->with('assignedFleetMember')
-            ->with('assignedEvent')
             ->allowedSorts([
                 'title',
                 'type',
@@ -71,9 +69,15 @@ class Documents extends Controller
             'expiration_at' => 'date'
         ]);
 
-        $inputs = $request->input();
-        $inputs['created_by'] = $user->uuid;
+        $inputs = $request->except(['assigned_uuid', 'assigned_type']);
+        $inputs['created_by_uuid'] = $user->uuid;
         $document = Document::create($inputs);
+
+        if ($request->assigned_type && $request->assigned_uuid) {
+            $assignedModelName = DocumentAssignedEnum::getDescription($request->assigned_type);
+            $assigned = (new $assignedModelName)::where('uuid', $request->assigned_uuid)->first();
+            $assigned->documents()->save($document);
+        }
 
         return new DocumentResource($document);
     }
@@ -112,8 +116,14 @@ class Documents extends Controller
             'expiration_at' => 'date'
         ]);
 
-        $inputs = $request->input();
+        $inputs = $request->except(['assigned_uuid', 'assigned_type']);
         $document->update($inputs);
+
+        if ($request->assigned_type && $request->assigned_uuid) {
+            $assignedModelName = DocumentAssignedEnum::getDescription($request->assigned_type);
+            $assigned = (new $assignedModelName)::where('uuid', $request->assigned_uuid)->first();
+            $assigned->documents()->save($document);
+        }
 
         return new DocumentResource($document);
     }

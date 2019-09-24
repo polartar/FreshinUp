@@ -17,7 +17,7 @@ class DocumentsTableSeeder extends Seeder
 
         for ($i = 0; $i < 50; $i++) {
             $event = factory(Document::class)->create([
-                'created_by' => $users->random()->uuid
+                'created_by_uuid' => $users->random()->uuid
             ]);
         }
     }

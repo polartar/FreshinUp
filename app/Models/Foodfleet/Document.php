@@ -33,21 +33,12 @@ class Document extends Model
 
     public function owner()
     {
-        return $this->belongsTo(User::class, 'created_by', 'uuid');
+        return $this->belongsTo(User::class, 'created_by_uuid', 'uuid');
     }
 
-    public function assignedUser()
+    public function assigned()
     {
-        return $this->belongsTo(User::class, 'assigned_user_uuid', 'uuid');
+        return $this->morphTo('assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
 
-    public function assignedFleetMember()
-    {
-        return $this->belongsTo(FleetMember::class, 'assigned_fleet_member_uuid', 'uuid');
-    }
-
-    public function assignedEvent()
-    {
-        return $this->belongsTo(Event::class, 'assigned_event_uuid', 'uuid');
-    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAssignedUserUuidToDocumentsTable extends Migration
+class AddAssignedToDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddAssignedUserUuidToDocumentsTable extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->string('assigned_user_uuid')->nullable()->index();
+            $table->uuid('assigned_uuid')->nullable()->index();
+            $table->string('assigned_type')->nullable();
         });
     }
 
@@ -26,7 +27,7 @@ class AddAssignedUserUuidToDocumentsTable extends Migration
     public function down()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->dropColumn(['assigned_user_uuid']);
+            $table->dropColumn(['assigned_uuid', 'assigned_type']);
         });
     }
 }

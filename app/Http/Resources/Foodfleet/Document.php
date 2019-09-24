@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Foodfleet;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 
 class Document extends JsonResource
 {
@@ -14,22 +15,7 @@ class Document extends JsonResource
      */
     public function toArray($request)
     {
-        $assigned = null;
-        switch ($this->assigned_type) {
-            case 1:
-                $assigned = $this->assignedUser;
-                break;
-            case 2:
-                $assigned = $this->assignedFleetMember;
-                break;
-            case 3:
-                $assigned = $this->assignedEvent;
-                break;
-            default:
-                $assigned = $this->assignedUser;
-                break;
-        }
-
+        $assigned_type = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type);
         $data = [
             'id' => $this->id,
             'title' => $this->title,
@@ -38,8 +24,8 @@ class Document extends JsonResource
             'description' => $this->description,
             'notes' => $this->notes,
             'owner' => $this->owner,
-            'assigned_type' => intval($this->assigned_type),
-            'assigned' => $assigned,
+            'assigned' => $this->assigned,
+            'assigned_type' => $assigned_type,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

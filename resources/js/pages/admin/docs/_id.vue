@@ -300,7 +300,7 @@ export default {
       ],
       template: null,
       templateOptions: [],
-      assign_uuid: '',
+      assigned_uuid: '',
       file: { name: '', src: '' }
     }
   },
@@ -313,9 +313,9 @@ export default {
       'status',
       'expiration_at',
       'description',
+      'assigned_type',
       'notes',
-      'assigned',
-      'assigned_type'
+      'assigned'
     ])
   },
   methods: {
@@ -323,7 +323,7 @@ export default {
       setPageLoading: 'setLoading'
     }),
     selectAssigned (uuid) {
-      this.assign_uuid = uuid
+      this.assigned_uuid = uuid
     },
     changeAssignedType (value) {
       this.assigned_type = value
@@ -331,34 +331,13 @@ export default {
     onSaveClick () {
       this.$validator.validate().then(valid => {
         let data = omit(this.doc, ['created_at', 'updated_at', 'assigned', 'owner'])
-        data = this.formatAssigned(data)
+        data = { ...data, assigned_uuid: this.assigned_uuid }
         if (valid) {
           this.$store.dispatch('documents/updateItem', { data, params: { id: data.id } }).then(() => {
             this.$store.dispatch('generalMessage/setMessage', 'Saved')
           })
         }
       })
-    },
-    formatAssigned (data) {
-      data.assigned_user_uuid = ''
-      data.assigned_fleet_member_uuid = ''
-      data.assigned_venue_uuid = ''
-      data.assigned_event_uuid = ''
-      switch (data.assigned_type) {
-        case 1:
-          data.assigned_user_uuid = this.assign_uuid
-          break
-        case 2:
-          data.assigned_fleet_member_uuid = this.assign_uuid
-          break
-        case 3:
-          data.assigned_venue_uuid = this.assign_uuid
-          break
-        case 4:
-          data.assigned_event_uuid = this.assign_uuid
-          break
-      }
-      return data
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
