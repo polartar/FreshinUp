@@ -134,34 +134,6 @@ export default {
         }
       }
     },
-    // async submitFile (file) {
-    //   try {
-    //     this.uploading = true
-    //     let formData = new FormData()
-    //     formData.append('file', file)
-    //     const response = await this.$http.post('/foodfleet/tmp-media',
-    //       formData,
-    //       {
-    //         cancelToken: new this.$http.CancelToken(function executor (c) { this.cancel = c }),
-    //         headers: {
-    //           'Content-Type': 'multipart/form-data'
-    //         },
-    //         onUploadProgress: function (progressEvent) {
-    //           this.uploadPercentage = parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)) || 0
-    //         }.bind(this)
-    //       }
-    //     )
-    //     this.uploading = false
-    //     this.uploadPercentage = 0
-
-    //     return response && response.data
-    //   } catch (e) {
-    //     this.uploading = false
-    //     this.uploadPercentage = 0
-
-    //     return false
-    //   }
-    // },
     showError (text) {
       this.errorText = text
       this.errorDialog = true

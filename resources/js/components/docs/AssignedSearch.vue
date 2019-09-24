@@ -63,42 +63,36 @@ export default {
         {
           value: 1,
           text: 'User',
-          key: 'assigned_user_uuid',
           url: 'users',
           param: 'term'
         },
         {
           value: 2,
           text: 'Fleet Member',
-          key: 'assigned_fleet_member_uuid',
-          url: 'foodfleet/fleet-members',
+          url: 'foodfleet/stores',
           param: 'filter[name]'
         },
         {
           value: 3,
           text: 'Venue',
-          key: 'assigned_venue_uuid',
           url: 'foodfleet/venues',
           param: 'filter[name]'
         },
         {
           value: 4,
           text: 'Event',
-          key: 'assigned_event_uuid',
           url: 'foodfleet/events',
           param: 'filter[name]'
         },
         {
           value: 5,
           text: 'Event/Fleet Mem',
-          key: 'assigned_user_uuid',
           url: 'users',
           param: 'term'
         },
         {
           value: 6,
           text: 'Event/Venue',
-          key: 'assigned_user_uuid',
           url: 'users',
           param: 'term'
         }

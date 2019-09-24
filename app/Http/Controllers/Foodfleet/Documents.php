@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
-use App\Enums\DocumentAssigned as DocumentAssignedEnum;
+use App\Actions\CreateDocument;
+use App\Actions\UpdateDocument;
 use App\Http\Resources\Foodfleet\Document\Document as DocumentResource;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
@@ -55,7 +56,7 @@ class Documents extends Controller
      * @return DocumentResource
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(Request $request, CreateDocument $action)
     {
         $user = $request->user();
 
@@ -68,15 +69,10 @@ class Documents extends Controller
             'expiration_at' => 'date'
         ]);
 
-        $inputs = $request->except(['assigned_uuid', 'assigned_type']);
+        $inputs = $request->input();
         $inputs['created_by_uuid'] = $user->uuid;
-        $document = Document::create($inputs);
 
-        if ($request->assigned_type && $request->assigned_uuid) {
-            $assignedModelName = DocumentAssignedEnum::getDescription($request->assigned_type);
-            $assigned = (new $assignedModelName)::where('uuid', $request->assigned_uuid)->first();
-            $assigned->documents()->save($document);
-        }
+        $document = $action->execute($inputs);
 
         return new DocumentResource($document);
     }
@@ -102,10 +98,8 @@ class Documents extends Controller
      * @return DocumentResource
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, UpdateDocument $action)
     {
-        $document = Document::findOrFail($id);
-
         $this->validate($request, [
             'title' => 'string',
             'type' => 'integer',
@@ -115,14 +109,10 @@ class Documents extends Controller
             'expiration_at' => 'date'
         ]);
 
-        $inputs = $request->except(['assigned_uuid', 'assigned_type']);
-        $document->update($inputs);
+        $inputs = $request->input();
+        $inputs['id'] = $id;
 
-        if ($request->assigned_type && $request->assigned_uuid) {
-            $assignedModelName = DocumentAssignedEnum::getDescription($request->assigned_type);
-            $assigned = (new $assignedModelName)::where('uuid', $request->assigned_uuid)->first();
-            $assigned->documents()->save($document);
-        }
+        $document = $action->execute($inputs);
 
         return new DocumentResource($document);
     }
