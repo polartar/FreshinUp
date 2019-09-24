@@ -114,17 +114,6 @@ export default {
     return {
       pageTitle: 'Document List',
       deleteDialog: false,
-      types: [
-        { value: 1, text: 'From Template' },
-        { value: 2, text: 'Downloadable' }
-      ],
-      statuses: [
-        { value: 1, text: 'Pending' },
-        { value: 2, text: 'Approved' },
-        { value: 3, text: 'Rejected' },
-        { value: 4, text: 'Expiring' },
-        { value: 5, text: 'Expired' }
-      ],
       lastFilterParams: {
         sort: '-created_at'
       },
@@ -141,6 +130,8 @@ export default {
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
+    ...mapGetters('documentTypes', { 'types': 'items' }),
+    ...mapGetters('documentStatuses', { 'statuses': 'items' }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('documents', ['sortables']),
     deleteDialogTitle () {
@@ -222,7 +213,8 @@ export default {
       ...vm.$route.query
     })
     Promise.all([
-      vm.$store.dispatch('documents/getItems')
+      vm.$store.dispatch('documentStatuses/getItems'),
+      vm.$store.dispatch('documentTypes/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()

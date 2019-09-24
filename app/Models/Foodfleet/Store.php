@@ -64,4 +64,9 @@ class Store extends Model
     {
         return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
     }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class , 'assigned' , 'assigned_type' , 'assigned_uuid' , 'uuid');
+    }
 }

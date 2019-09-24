@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Document;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;

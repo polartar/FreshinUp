@@ -27,6 +27,8 @@ class TestDataSeeder extends Seeder
             \ItemsTableSeeder::class,
             \TransactionsTableSeeder::class,
             \PaymentsTableSeeder::class,
+            \DocumentTypesSeeder::class,
+            \DocumentStatusesSeeder::class,
             \DocumentsTableSeeder::class,
         ]);
     }

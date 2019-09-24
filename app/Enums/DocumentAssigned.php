@@ -3,14 +3,14 @@
 namespace App\Enums;
 
 use BenSampo\Enum\Enum;
-use App\Models\Foodfleet\FleetMember;
+use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Event;
 use App\User;
 
 final class DocumentAssigned extends Enum
 {
     const USER = 1;
-    const FLEET_MEMBER = 2;
+    const STORE = 2;
     const VENUE = 3;
     const EVENT = 4;
 
@@ -54,8 +54,8 @@ final class DocumentAssigned extends Enum
             return 'App\User';
         }
 
-        if ($value === self::FLEET_MEMBER) {
-            return 'App\Models\Foodfleet\FleetMember';
+        if ($value === self::STORE) {
+            return 'App\Models\Foodfleet\Store';
         }
 
         if ($value === self::VENUE) {

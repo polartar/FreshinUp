@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
-use App\Http\Resources\Foodfleet\Document as DocumentResource;
+use App\Http\Resources\Foodfleet\Document\Document as DocumentResource;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
 use App\Models\Foodfleet\Document;
-use App\Models\Foodfleet\FleetMember;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\Filter;

@@ -82,7 +82,7 @@
                 v-validate="'required'"
                 single-line
                 outline
-                :items="typeOptions"
+                :items="types"
                 data-vv-name="type"
                 :error-messages="errors.collect('type')"
                 label="Type"
@@ -267,17 +267,6 @@ export default {
   data () {
     return {
       pageTitle: 'Document Details',
-      statuses: [
-        { value: 1, text: 'Pending' },
-        { value: 2, text: 'Approved' },
-        { value: 3, text: 'Rejected' },
-        { value: 4, text: 'Expiring' },
-        { value: 5, text: 'Expired' }
-      ],
-      typeOptions: [
-        { value: 1, text: 'From Template' },
-        { value: 2, text: 'Downloadable' }
-      ],
       template: null,
       templateOptions: [],
       doc: {
@@ -294,7 +283,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('page', ['isLoading'])
+    ...mapGetters('page', ['isLoading']),
+    ...mapGetters('documentTypes', { 'types': 'items' }),
+    ...mapGetters('documentStatuses', { 'statuses': 'items' })
   },
   methods: {
     ...mapActions('page', {
@@ -319,7 +310,13 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    vm.$store.dispatch('page/setLoading', false)
+    Promise.all([
+      vm.$store.dispatch('documentStatuses/getItems'),
+      vm.$store.dispatch('documentTypes/getItems')
+    ]).then(() => {
+      vm.$store.dispatch('page/setLoading', false)
+      if (next) next()
+    })
   }
 }
 </script>
