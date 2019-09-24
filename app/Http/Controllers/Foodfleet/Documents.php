@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Document as DocumentResource;
-use App\Filters\Document\LessExpirationDate as FilterLessExpirationDate;
-use App\Filters\Document\OverExpirationDate as FilterOverExpirationDate;
+use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
+use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
 use App\Models\Foodfleet\Document;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -44,8 +44,8 @@ class Documents extends Controller
                 'type',
                 'status',
                 'assigned_user_uuid',
-                Filter::custom('expiration_from', FilterLessExpirationDate::class),
-                Filter::custom('expiration_to', FilterOverExpirationDate::class)
+                Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
+                Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at')
             ]);
 
         return DocumentResource::collection($documents->jsonPaginate());
