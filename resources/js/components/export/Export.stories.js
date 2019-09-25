@@ -60,7 +60,7 @@ storiesOf('FoodFleet|export/Export', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('transactions', () => ({
+  .add('data visibility partial', () => ({
     components: { Export },
     methods: {
       onClose () {
@@ -77,7 +77,7 @@ storiesOf('FoodFleet|export/Export', module)
   <v-container>
        <export
             :transactions="transactions"
-            :="dataVisibility"
+            :data-visibility="dataVisibility"
             @close="onClose"
             />
   </v-container>
@@ -87,12 +87,8 @@ storiesOf('FoodFleet|export/Export', module)
     components: { Export },
     data () {
       return {
-        arrayDatas: vehicles,
-        tireChartStatuses: tireChartStatuses,
-        wheels: wheels,
-        branches: branches,
-        vehicleDataVisibility: vehicleDataVisibility,
-        vehicleParameters: vehicleParameters,
+        transactions: transactions,
+        dataVisibility: dataVisibilityPartial,
         dialog: false
       }
     },
@@ -120,20 +116,15 @@ storiesOf('FoodFleet|export/Export', module)
               Export
             </v-btn>
              <export
-              data-type="vehicle"
-              :array-datas="arrayDatas"
-              :wheels="wheels"
-              :tire-chart-statuses="tireChartStatuses"
-              :branches="branches"
-              :visible-parameters="vehicleDataVisibility"
-              :parameters="vehicleParameters"
+              :transactions="transactions"
+              :data-visibility="dataVisibility"
               @close="closeDialog"
               />
         </v-dialog>
     </v-container>
 `
   }))
-  .add('appraisals', () => ({
+  .add('all data visibility selected', () => ({
     components: { Export },
     methods: {
       onClose () {
@@ -142,18 +133,15 @@ storiesOf('FoodFleet|export/Export', module)
     },
     data () {
       return {
-        arrayDatas: appraisals,
-        appraisalDataVisibility: appraisalDataVisibility,
-        appraisalParameters: appraisalParameters
+        transactions: transactions,
+        dataVisibility: dataVisibility
       }
     },
     template: `
   <v-container>
        <export
-            data-type="appraisal"
-            :array-datas="arrayDatas"
-            :visible-parameters="appraisalDataVisibility"
-            :parameters="appraisalParameters"
+            :transactions="transactions"
+            :data-visibility="dataVisibility"
             @close="onClose"
             />
   </v-container>

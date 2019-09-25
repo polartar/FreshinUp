@@ -68,41 +68,42 @@
 import reduce from 'lodash/reduce'
 import Jspdf from 'jspdf'
 import 'jspdf-autotable'
-import moment from 'moment'
+import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
 export default {
+  mixins: [FormatMoney, FormatDate],
   props: {
-    arrayDatas: {
+    transactions: {
       type: Array,
       required: true
     },
-    visibleParameters: {
+    dataVisibility: {
       type: Array,
       required: true
-    },
-    parameters: {
-      type: Array,
-      required: true
-    },
-    dataType: {
-      type: String,
-      required: true
-    },
-    tireChartStatuses: {
-      type: Array,
-      default: () => []
-    },
-    wheels: {
-      type: Array,
-      default: () => []
-    },
-    branches: {
-      type: Array,
-      default: () => []
     }
   },
   data () {
     return {
+      parameters: [
+        { name: 'event_location', label: 'Event / Location' },
+        { name: 'square_created_at', label: 'Creation Date' },
+        { name: 'square_updated_at', label: 'Update Date' },
+        { name: 'total_money', label: 'Total' },
+        { name: 'total_tax_money', label: 'Tax Total' },
+        { name: 'total_discount_money', label: 'Total Discount' },
+        { name: 'total_service_charge_money', label: 'Total Service Charge' },
+        { name: 'items', label: 'Items' },
+        { name: 'event_tags', label: 'Event Tags' },
+        { name: 'square_id', label: 'Square ID' },
+        { name: 'store', label: 'Fleet member' },
+        { name: 'store_square_id', label: 'Fleet Member Square ID' },
+        { name: 'host', label: 'Host' },
+        { name: 'supplier', label: 'Supplier' },
+        { name: 'customer', label: 'Customer name' },
+        { name: 'customer_square_id', label: 'Customer Square ID' },
+        { name: 'customer_reference_id', label: 'Customer Reference ID' }
+      ],
       selected_type: 'csv',
       selectable_types: [
         { value: 'csv', text: 'Export to csv' },
@@ -118,30 +119,12 @@ export default {
       return 'export.pdf'
     },
     dataVisibilityComputed () {
-      return this.visibleParameters
+      return this.dataVisibility
     },
     headerArray () {
       return reduce(this.dataVisibilityComputed, (result, value, key) => {
         let headerObject = this.parameters.find(item => item.name === value)
         result.push(headerObject.label)
-        return result
-      }, [])
-    },
-    tireChartStatusesForComparison () {
-      return reduce(this.tireChartStatuses, (result, value, key) => {
-        result[value.uuid] = value.label
-        return result
-      }, [])
-    },
-    wheelsForComparison () {
-      return reduce(this.wheels, (result, value, key) => {
-        result[value.uuid] = value.label
-        return result
-      }, [])
-    },
-    branchesValues () {
-      return reduce(this.branches, (result, value, key) => {
-        result[value.id] = value.title
         return result
       }, [])
     }
@@ -151,15 +134,8 @@ export default {
       this.$emit('close')
     },
     csvExport () {
-      let arrData = this.arrayDatas
       let csvContent = 'data:text/csv;charset=utf-8,'
-      let attributesArray = []
-      if (this.dataType === 'vehicle') {
-        attributesArray = this.vehicleAttributes(arrData)
-      }
-      if (this.dataType === 'appraisal') {
-        attributesArray = this.appraisalAttributes(arrData)
-      }
+      let attributesArray = this.attributes(this.transactions)
       csvContent += [
         this.headerArray.join(';'),
         ...attributesArray.map(item => item.join(';').replace(/#/g, ''))
@@ -172,15 +148,8 @@ export default {
       link.click()
     },
     pdfExport () {
-      let arrData = this.arrayDatas
       var doc = new Jspdf('landscape')
-      let attributesArray = []
-      if (this.dataType === 'vehicle') {
-        attributesArray = this.vehicleAttributes(arrData)
-      }
-      if (this.dataType === 'appraisal') {
-        attributesArray = this.appraisalAttributes(arrData)
-      }
+      let attributesArray = this.attributes(this.transactions)
       doc.autoTable({
         head: [this.headerArray],
         body: attributesArray,
@@ -196,123 +165,72 @@ export default {
         this.pdfExport()
       }
     },
-    formatCreatedAt (date) {
-      return moment(date).format('MMM D, YYYY')
+    formatTransactionDate (date) {
+      return this.formatDate(date, 'MMM DD, YYYY - hh:mma')
     },
-    vehicleAttributes (vehicles) {
-      return reduce(vehicles, (result, value, key) => {
-        let elementArray = reduce(this.dataVisibilityComputed, (resultElement, element, key) => {
-          let val = ''
-          switch (element) {
-            case 'truck_overview':
-              val = value.make.label + ' ' + value.model.label + '/' +
-                      value.stock_number + '/' + value.vin + '/' + value.mileage
-              break
-            case 'optional_equipment':
-            case 'glider_types':
-            case 'deposit_statuses':
-              val = value[element].map(item => item.label).join(',')
-              break
-            case 'engine':
-              val = value.engine.label + ' ' + value.engine_model.label
-              break
-            case 'tire_chart':
-              val = value.tire_chart.map(item => this.tireChartStatusesForComparison[item.tire_chart_status_uuid] + ' ' + item.remaining_tread).join(',')
-              break
-            case 'wheels':
-              val = value.wheels.map(item => item.label + ' ' + this.wheelsForComparison[item.wheel_uuid]).join(',')
-              break
-            case 'axles':
-              val = value.axles.map(item => item.label + ' ' + item.value).join(',')
-              break
-            case 'prepared_by':
-            case 'taken_in_by':
-            case 'authorized_by':
-            case 'customer':
-              if (value.appraisal !== null && value.appraisal[element] !== null) {
-                val = value.appraisal[element].name
-              }
-              break
-            case 'appraisal_status':
-            case 'sell_status':
-              if (value.appraisal !== null && value.appraisal[element] !== null) {
-                val = value.appraisal[element].label
-              }
-              break
-            case 'owning_location':
-            case 'current_location':
-              if (value.appraisal !== null && value.appraisal[element + '_id'] !== null) {
-                val = this.branchesValues[value.appraisal[element + '_id']]
-              }
-              break
-            case 'matrix_value':
-            case 'appraised_value':
-            case 'minimum_sell':
-            case 'asking_price':
-            case 'serial_number':
-              if (value.appraisal !== null && value.appraisal[element] !== null) {
-                val = value.appraisal[element]
-              }
-              break
-            case 'prepared_at':
-            case 'scheduled_at':
-            case 'acquired_at':
-            case 'delivery_at':
-              if (value.appraisal !== null && value.appraisal[element] !== null) {
-                val = this.formatCreatedAt(value.appraisal[element])
-              }
-              break
-            default:
-              if (typeof value[element] === 'object') {
-                val = value[element].label
-              } else {
-                val = value[element]
-              }
-          }
-          resultElement.push(val)
-          return resultElement
-        }, [])
-        result.push(elementArray)
+    formatItems (array) {
+      return reduce(array, (result, value, key) => {
+        if (result !== '') {
+          result += ', '
+        }
+        result += value.quantity + ' ' + value.name
         return result
-      }, [])
+      }, '')
     },
-    appraisalAttributes (appraisals) {
-      return reduce(appraisals, (result, value, key) => {
+    formatEventTags (array) {
+      return reduce(array, (result, value, key) => {
+        if (result !== '') {
+          result += ', '
+        }
+        result += value.name
+        return result
+      }, '')
+    },
+    attributes (transactions) {
+      return reduce(transactions, (result, value, key) => {
         let elementArray = reduce(this.dataVisibilityComputed, (resultElement, element, key) => {
           let val = ''
           switch (element) {
-            case 'truck_overview':
-              val = value.vehicle.make.label + ' ' + value.vehicle.model.label + '/' +
-                      value.vehicle.stock_number + '/' + value.vehicle.vin + '/' + value.vehicle.mileage
+            case 'event_location':
+              val = value.event.name + ' / ' + ((value.event.location) ? value.event.location.name : '')
               break
-            case 'prepared_by':
-            case 'taken_in_by':
-            case 'authorized_by':
+            case 'square_created_at':
+            case 'square_updated_at':
+              val = this.formatTransactionDate(value[element])
+              break
+            case 'total_money':
+            case 'total_tax_money':
+            case 'total_discount_money':
+            case 'total_service_charge_money':
+              val = this.formatMoney(value[element], { format: '$0,0.00', precision: 4 })
+              break
+            case 'items':
+              val = this.formatItems(value[element])
+              break
+            case 'event_tags':
+              val = this.formatEventTags(value.event.event_tags)
+              break
             case 'customer':
-              if (value[element] !== null) {
-                val = value[element].name
-              }
+            case 'store':
+              val = value[element] ? value[element].name : ''
               break
-            case 'owning_location':
-            case 'current_location':
-              if (value[element] !== null) {
-                val = value[element].company.name + ' ' + value[element].title
-              }
+            case 'host':
+              val = value.event.host ? value.event.host.name : ''
               break
-            case 'prepared_at':
-            case 'scheduled_at':
-            case 'acquired_at':
-            case 'delivery_at':
-              if (value.appraisal !== null && value !== null) {
-                val = this.formatCreatedAt(value[element])
-              }
+            case 'supplier':
+              val = value.store.supplier.name
+              break
+            case 'store_square_id':
+              val = value.store.square_id
+              break
+            case 'customer_square_id':
+              val = value.customer ? value.customer.square_id : ''
+              break
+            case 'customer_reference_id':
+              val = value.customer ? value.customer.reference_id : ''
               break
             default:
-              if (typeof value[element] === 'object') {
-                val = value[element].label
-              } else {
-                val = value[element]
-              }
+              val = value[element]
           }
           resultElement.push(val)
           return resultElement
