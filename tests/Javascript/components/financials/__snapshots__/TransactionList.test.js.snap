@@ -3,7 +3,6 @@
 exports[`TransactionList Snapshots all visibility selected 1`] = `
 <div
   class="elevation-1"
-  visibility="event_location,square_created_at,square_updated_at,total_money,total_tax_money,total_discount_money,total_service_charge_money,items,event_tags,square_id,store,store_square_id,host,supplier,customer,customer_square_id,customer_reference_id"
 >
   <div
     class="v-table__overflow"
@@ -32,13 +31,13 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             Creation Date
           </th>
           <th
-            aria-label="Items: Not sorted."
+            aria-label="Update Date: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Items
+            Update Date
           </th>
           <th
             aria-label="Total: Not sorted."
@@ -68,6 +67,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             Total Discount
           </th>
           <th
+            aria-label="Total Service Charge: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Service Charge
+          </th>
+          <th
+            aria-label="Items: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Items
+          </th>
+          <th
+            aria-label="Event Tags: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event Tags
+          </th>
+          <th
+            aria-label="Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Square ID
+          </th>
+          <th
+            aria-label="Fleet member: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Fleet member
+          </th>
+          <th
+            aria-label="Fleet Member Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Fleet Member Square ID
+          </th>
+          <th
+            aria-label="Host: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Host
+          </th>
+          <th
+            aria-label="Supplier: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Supplier
+          </th>
+          <th
+            aria-label="Customer name: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer name
+          </th>
+          <th
+            aria-label="Customer Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer Square ID
+          </th>
+          <th
+            aria-label="Customer Reference ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer Reference ID
+          </th>
+          <th
             aria-label=": Not sorted."
             aria-sort="none"
             class="column text-xs-left"
@@ -80,7 +178,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
         >
           <th
             class="column"
-            colspan="7"
+            colspan="18"
           />
         </tr>
       </thead>
@@ -119,7 +217,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -147,6 +245,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -232,7 +429,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -260,6 +457,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -345,7 +641,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -373,6 +669,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -458,7 +853,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -486,6 +881,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -571,7 +1065,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -599,6 +1093,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -684,7 +1277,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -712,6 +1305,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -797,7 +1489,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -825,6 +1517,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 4
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -910,7 +1701,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
+        Jan 22, 2018 - 07:22pm
       
             </div>
           </td>
@@ -938,6 +1729,105 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             <div>
               
         $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 4
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
       
             </div>
           </td>
@@ -1222,7 +2112,6 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
 exports[`TransactionList Snapshots partial visibility selected 1`] = `
 <div
   class="elevation-1"
-  visibility="event_location,square_created_at,total_money,total_tax_money,total_discount_money"
 >
   <div
     class="v-table__overflow"
@@ -1249,15 +2138,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
             scope="col"
           >
             Creation Date
-          </th>
-          <th
-            aria-label="Items: Not sorted."
-            aria-sort="none"
-            class="column text-xs-left font-weight-bold"
-            role="columnheader"
-            scope="col"
-          >
-            Items
           </th>
           <th
             aria-label="Total: Not sorted."
@@ -1299,7 +2179,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
         >
           <th
             class="column"
-            colspan="7"
+            colspan="6"
           />
         </tr>
       </thead>
@@ -1330,15 +2210,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
             <div>
               
         Jan 22, 2018 - 07:22pm
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
-        3 Hamburger, 2 Coke, 2 Beer
       
             </div>
           </td>
@@ -1451,15 +2322,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
         $100.00
       
             </div>
@@ -1556,15 +2418,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
             <div>
               
         Jan 22, 2018 - 07:22pm
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
-        3 Hamburger, 2 Coke, 2 Beer
       
             </div>
           </td>
@@ -1677,15 +2530,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
         $100.00
       
             </div>
@@ -1782,15 +2626,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
             <div>
               
         Jan 22, 2018 - 07:22pm
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
-        3 Hamburger, 2 Coke, 2 Beer
       
             </div>
           </td>
@@ -1903,15 +2738,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
         $100.00
       
             </div>
@@ -2016,15 +2842,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               
-        3 Hamburger, 2 Coke, 2 Beer
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
         $100.00
       
             </div>
@@ -2121,15 +2938,6 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
             <div>
               
         Jan 22, 2018 - 07:22pm
-      
-            </div>
-          </td>
-          <td
-            class="text-xs-left"
-          >
-            <div>
-              
-        3 Hamburger, 2 Coke, 2 Beer
       
             </div>
           </td>

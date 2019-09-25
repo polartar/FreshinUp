@@ -60,7 +60,7 @@ describe('TransactionList', () => {
         localVue: localVue,
         propsData: {
           transactions: FIXTURE_TRANSACTIONS,
-          visibility: dataVisibilityPartial
+          dataVisibility: dataVisibilityPartial
         }
       })
       expect(wrapper.element).toMatchSnapshot()
@@ -71,7 +71,7 @@ describe('TransactionList', () => {
         localVue: localVue,
         propsData: {
           transactions: FIXTURE_TRANSACTIONS,
-          visibility: dataVisibility
+          dataVisibility: dataVisibility
         }
       })
       expect(wrapper.element).toMatchSnapshot()
