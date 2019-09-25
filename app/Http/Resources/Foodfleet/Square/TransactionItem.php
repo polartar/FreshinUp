@@ -1,13 +1,12 @@
 <?php
 
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Square;
 
-use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Store extends JsonResource
+class TransactionItem extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -21,7 +20,7 @@ class Store extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "square_id" => $this->square_id,
-            "supplier" => new Company($this->whenLoaded('supplier'))
+            "quantity" => $this->pivot->quantity
         ];
     }
 }
