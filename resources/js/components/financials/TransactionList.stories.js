@@ -72,7 +72,6 @@ storiesOf('FoodFleet|financials/TransactionList', module)
           <v-container>
             <TransactionList
                 :transactions="transactions"
-                :branches="branches"
             />
           </v-container>
       `
