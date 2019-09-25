@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Foodfleet\DocumentType;
+use App\Enums\DocumentTypes as DocumentTypesEmums;
 
 class DocumentTypesSeeder extends Seeder
 {
@@ -12,10 +13,7 @@ class DocumentTypesSeeder extends Seeder
      */
     public function run()
     {
-        $types = [
-            1 => 'From Template',
-            2 => 'Downloadable',
-        ];
+        $types = DocumentTypesEmums::toKeyedSelectArray();
 
         foreach($types as $id => $name) {
             DocumentType::updateOrCreate(

@@ -80,7 +80,7 @@ return [
         'cms' => [
             'driver' => 's3',
             'key' => env('FS_FF_KEY'),
-            'secret' => env('FFS_FF__SECRET'),
+            'secret' => env('FS_FF__SECRET'),
             'region' => env('FS_FF_REGION', 'nyc3'),
             'bucket' => env('FS_FF_BUCKET'),
             'endpoint' => env('FS_FF_ENDPOINT'),

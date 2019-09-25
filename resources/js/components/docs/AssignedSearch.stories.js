@@ -6,37 +6,37 @@ import AssignedSearch from './AssignedSearch.vue'
 const mock = new MockAdapter(axios)
 mock.onGet('users').reply(200, {
   data: [
-    { uuid: 1, name: 'User 1' },
-    { uuid: 2, name: 'User 2' },
-    { uuid: 3, name: 'User 3' },
-    { uuid: 4, name: 'User 4' }
+    { id: 1, uuid: 1, name: 'User 1' },
+    { id: 2, uuid: 2, name: 'User 2' },
+    { id: 3, uuid: 3, name: 'User 3' },
+    { id: 4, uuid: 4, name: 'User 4' }
   ]
 })
 
 mock.onGet('foodfleet/stores').reply(200, {
   data: [
-    { uuid: 1, name: 'Store 1' },
-    { uuid: 2, name: 'Store 2' },
-    { uuid: 3, name: 'Store 3' },
-    { uuid: 4, name: 'Store 4' }
+    { id: 1, uuid: 1, name: 'Store 1' },
+    { id: 2, uuid: 2, name: 'Store 2' },
+    { id: 3, uuid: 3, name: 'Store 3' },
+    { id: 4, uuid: 4, name: 'Store 4' }
   ]
 })
 
 mock.onGet('foodfleet/venues').reply(200, {
   data: [
-    { uuid: 1, name: 'Venues 1' },
-    { uuid: 2, name: 'Venues 2' },
-    { uuid: 3, name: 'Venues 3' },
-    { uuid: 4, name: 'Venues 4' }
+    { id: 1, uuid: 1, name: 'Venues 1' },
+    { id: 2, uuid: 2, name: 'Venues 2' },
+    { id: 3, uuid: 3, name: 'Venues 3' },
+    { id: 4, uuid: 4, name: 'Venues 4' }
   ]
 })
 
 mock.onGet('foodfleet/events').reply(200, {
   data: [
-    { uuid: 1, name: 'Events 1' },
-    { uuid: 2, name: 'Events 2' },
-    { uuid: 3, name: 'Events 3' },
-    { uuid: 4, name: 'Events 4' }
+    { id: 1, uuid: 1, name: 'Events 1' },
+    { id: 2, uuid: 2, name: 'Events 2' },
+    { id: 3, uuid: 3, name: 'Events 3' },
+    { id: 4, uuid: 4, name: 'Events 4' }
   ]
 })
 
@@ -67,8 +67,37 @@ storiesOf('FoodFleet|doc/AssignedSearch', module)
       <v-container>
         <assigned-search
           :type="assigned_type"
-          :onAssignChange="selectAssigned"
-          :onTypeChange="changeAssignedType"
+          @assign-change="selectAssigned"
+          @type-change="changeAssignedType"
+        />
+      </v-container>
+    `
+  }))
+  .add('assigned type is set', () => ({
+    components: { AssignedSearch },
+    data () {
+      return {
+        assigned: { id: 1, uuid: 1, name: 'Store 1' },
+        assigned_type: 2,
+        assigned_uuid: ''
+      }
+    },
+    methods: {
+      selectAssigned (uuid) {
+        this.assigned_uuid = uuid
+      },
+      changeAssignedType (type) {
+        this.assigned_type = type
+      }
+    },
+    template: `
+      <v-container>
+        <assigned-search
+          :type="assigned_type"
+          :init-val="assigned ? assigned.id : ''"
+          :init-items="assigned ? [assigned] : []"
+          @assign-change="selectAssigned"
+          @type-change="changeAssignedType"
         />
       </v-container>
     `

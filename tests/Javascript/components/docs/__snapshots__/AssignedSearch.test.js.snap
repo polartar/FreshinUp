@@ -3,6 +3,8 @@
 exports[`AssignedSearch Snapshots defaults 1`] = `
 <div
   class="layout row wrap justify-space-between"
+  onassignchange="() => {}"
+  ontypechange="() => {}"
 >
   <div
     class="flex md5 sm12"
@@ -195,6 +197,8 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
       background-color="white"
       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
       height="48"
+      onassignchange="() => {}"
+      ontypechange="() => {}"
     >
       <div
         class="v-input__control"
@@ -209,6 +213,8 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
+              onassignchange="() => {}"
+              ontypechange="() => {}"
               placeholder="Search Fleet Member"
               role="combobox"
               type="text"

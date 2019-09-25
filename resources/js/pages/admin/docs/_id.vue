@@ -198,8 +198,8 @@
                 :init-val="assigned ? assigned.id : ''"
                 :init-items="assigned ? [assigned] : []"
                 :type="assigned_type"
-                :onAssignChange="selectAssigned"
-                :onTypeChange="changeAssignedType"
+                @assign-change="selectAssigned"
+                @type-change="changeAssignedType"
               />
             </v-flex>
             <v-flex

@@ -73,6 +73,38 @@ storiesOf('FoodFleet|doc/DoctableList', module)
     components: { DoctableList },
     data () {
       return {
+        docs: [],
+        statuses: statuses,
+        sortables: sortables,
+        pagination: {
+          page: 1,
+          rowsPerPage: 10,
+          totalItems: 5
+        },
+        sorting: {
+          descending: false,
+          sortBy: ''
+        }
+      }
+    },
+    template: `
+      <v-container>
+        <doctable-list
+          :docs="docs"
+          :statuses="statuses"
+          :rows-per-page="pagination.rowsPerPage"
+          :page="pagination.page"
+          :total-items="pagination.totalItems"
+          :sort-by="sorting.sortBy"
+          :descending="sorting.descending"
+        />
+      </v-container>
+    `
+  }))
+  .add('docs is set', () => ({
+    components: { DoctableList },
+    data () {
+      return {
         docs: docs,
         statuses: statuses,
         sortables: sortables,

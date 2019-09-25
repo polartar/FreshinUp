@@ -185,8 +185,8 @@
               </v-layout>
               <AssignedSearch
                 :type="doc.assigned_type"
-                :onAssignChange="selectAssigned"
-                :onTypeChange="changeAssignedType"
+                @assign-change="selectAssigned"
+                @type-change="changeAssignedType"
               />
             </v-flex>
             <v-flex

@@ -32,11 +32,24 @@ storiesOf('FoodFleet|doc/FilterSorter', module)
   })
   .add('default', () => ({
     components: { FilterSorter },
+    methods: {
+      filterDocs (params) {
+        action('Run')(params)
+      }
+    },
+    template: `
+      <v-container>
+        <filter-sorter
+          @runFilter="filterDocs"
+        />
+      </v-container>
+    `
+  }))
+  .add('with types', () => ({
+    components: { FilterSorter },
     data () {
       return {
-        types: types,
-        statuses: statuses,
-        sortables: sortables
+        types: types
       }
     },
     methods: {
@@ -48,7 +61,47 @@ storiesOf('FoodFleet|doc/FilterSorter', module)
       <v-container>
         <filter-sorter
           :types="types"
+          @runFilter="filterDocs"
+        />
+      </v-container>
+    `
+  }))
+  .add('with statuses', () => ({
+    components: { FilterSorter },
+    data () {
+      return {
+        statuses: statuses
+      }
+    },
+    methods: {
+      filterDocs (params) {
+        action('Run')(params)
+      }
+    },
+    template: `
+      <v-container>
+        <filter-sorter
           :statuses="statuses"
+          @runFilter="filterDocs"
+        />
+      </v-container>
+    `
+  }))
+  .add('with sortables', () => ({
+    components: { FilterSorter },
+    data () {
+      return {
+        sortables: sortables
+      }
+    },
+    methods: {
+      filterDocs (params) {
+        action('Run')(params)
+      }
+    },
+    template: `
+      <v-container>
+        <filter-sorter
           :sortables="sortables"
           @runFilter="filterDocs"
         />

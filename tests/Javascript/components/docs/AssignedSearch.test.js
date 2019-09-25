@@ -19,6 +19,18 @@ describe('AssignedSearch', () => {
     })
   })
 
+  describe('Methods', () => {
+    beforeEach(() => {
+      localVue = createLocalVue()
+    })
+
+    test('selectAssigned function emitted assign-change', () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.selectAssigned({})
+      expect(wrapper.emitted()['assign-change']).toBeTruthy()
+    })
+  })
+
   describe('Computed', () => {
     beforeEach(() => {
       localVue = createLocalVue()
@@ -26,12 +38,21 @@ describe('AssignedSearch', () => {
     test('currentOption', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          type: 2,
-          onAssignChange: () => {},
-          onTypeChange: () => {}
+          type: 2
         }
       })
       expect(wrapper.vm.currentOption.value).toBe(2)
+    })
+
+    test('typeValue', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          type: 1
+        }
+      })
+
+      wrapper.vm.type = 2
+      expect(wrapper.vm.typeValue).toBe(2)
     })
   })
 })

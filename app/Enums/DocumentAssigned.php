@@ -51,7 +51,7 @@ final class DocumentAssigned extends Enum
     public static function getDescription($value): string
     {
         if ($value === self::USER) {
-            return 'App\User';
+            return 'FreshinUp\FreshBusForms\Models\User\User';
         }
 
         if ($value === self::STORE) {
@@ -67,5 +67,26 @@ final class DocumentAssigned extends Enum
         }
 
         return parent::getDescription($value);
+    }
+
+    public static function getResource($value): string
+    {
+        if ($value === self::USER) {
+            return 'FreshinUp\FreshBusForms\Http\Resources\User\User';
+        }
+
+        if ($value === self::STORE) {
+            return 'App\Http\Resources\Foodfleet\Store';
+        }
+
+        if ($value === self::VENUE) {
+            return 'App\Http\Resources\Foodfleet\Venue';
+        }
+
+        if ($value === self::EVENT) {
+            return 'App\Http\Resources\Foodfleet\Event';
+        }
+
+        return '';
     }
 }

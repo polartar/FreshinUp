@@ -46,14 +46,6 @@ export default {
     type: {
       type: Number,
       default: 1
-    },
-    onAssignChange: {
-      type: Function,
-      required: true
-    },
-    onTypeChange: {
-      type: Function,
-      required: true
     }
   },
   data () {
@@ -108,16 +100,16 @@ export default {
       },
       set: function (value) {
         if (value !== this.typeValue) {
-          this.onTypeChange(value)
+          this.$emit('type-change', value)
           this.$refs.searchAssigned.resetTerm()
-          this.onAssignChange('')
+          this.$emit('assign-change', '')
         }
       }
     }
   },
   methods: {
     selectAssigned (assigned) {
-      this.onAssignChange(assigned ? assigned.uuid : '')
+      this.$emit('assign-change', assigned ? assigned.uuid : '')
     }
   }
 }

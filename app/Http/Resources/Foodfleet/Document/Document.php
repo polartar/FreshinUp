@@ -4,6 +4,7 @@ namespace App\Http\Resources\Foodfleet\Document;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
+use FreshinUp\FreshBusForms\Http\Resources\User\User as UserResource;
 
 class Document extends JsonResource
 {
@@ -15,7 +16,9 @@ class Document extends JsonResource
      */
     public function toArray($request)
     {
-        $assigned_type = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type);
+        $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type);
+        $assignedResource = DocumentAssignedEnum::getResource($assignedType);
+
         $data = [
             'id' => $this->id,
             'title' => $this->title,
@@ -23,9 +26,9 @@ class Document extends JsonResource
             'type' => intval($this->type),
             'description' => $this->description,
             'notes' => $this->notes,
-            'owner' => $this->owner,
-            'assigned' => $this->assigned,
-            'assigned_type' => $assigned_type,
+            'owner' => new UserResource($this->whenLoaded('owner')),
+            'assigned' => new $assignedResource($this->whenLoaded('assigned')),
+            'assigned_type' => $assignedType,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

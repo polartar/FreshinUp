@@ -29,6 +29,7 @@ class Documents extends Controller
     {
         $documents = QueryBuilder::for(Document::class, $request)
             ->with('owner')
+            ->with('assigned')
             ->allowedSorts([
                 'title',
                 'type',
@@ -39,9 +40,9 @@ class Documents extends Controller
             ])
             ->allowedFilters([
                 'title',
-                'type',
-                'status',
-                'assigned_uuid',
+                Filter::exact('type'),
+                Filter::exact('status'),
+                Filter::exact('assigned_uuid'),
                 Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
                 Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at')
             ]);
@@ -85,7 +86,7 @@ class Documents extends Controller
      */
     public function show($id)
     {
-        $document = Document::findOrFail($id);
+        $document = Document::with('owner')->with('assigned')->findOrFail($id);
 
         return new DocumentResource($document);
     }

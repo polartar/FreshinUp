@@ -19,8 +19,6 @@ use App\Models\Foodfleet\Document;
 $factory->define(Document::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
-        'type' => $faker->numberBetween(1, 2),
-        'status' => $faker->numberBetween(1, 2),
         'description' => Str::random(50),
         'notes' => Str::random(20),
         'expiration_at' => $faker->dateTimeBetween('+1 days', '+10 days')

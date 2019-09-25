@@ -83,9 +83,11 @@ $ yarn watch-poll
 - add 
 ```
 buckets:
-    - name: cms
+    - name: swaymob
       policy: public
-    - name: tmp
+    - name: swaymob-bus
+      policy: public
+    - name: swaymob-tmp
       policy: public
 ```
 - `$ vagrant up --provision`
@@ -99,22 +101,29 @@ FS_TMP_SECRET=secretkey
 FS_TMP_ENDPOINT=http://homestead:9600
 FS_TMP_BUCKET=tmp
 FS_TMP_REGION=us-east-1
+FS_TMP_ROOT=
+FS_TMP_BUCKET_ENDPOINT=false
+FS_TMP_PATH_STYLE_ENDPOINT=true
 
-# Filesystem for Content Management media
+# Filesystem for FoodFleet
 FS_FF_KEY=homestead
 FS_FF_SECRET=secretkey
 FS_FF_ENDPOINT=http://homestead:9600
 FS_FF_BUCKET=cms
 FS_FF_REGION=us-east-1
 FS_FF_ROOT=
+FS_FF_BUCKET_ENDPOINT=false
+FS_FF_PATH_STYLE_ENDPOINT=true
 
 # Filesystem for BUS media
-FS_FF_KEY=homestead
-FS_FF_SECRET=secretkey
-FS_FF_ENDPOINT=http://homestead:9600
-FS_FF_BUCKET=bus
-FS_FF_REGION=us-east-1
-FS_FF_ROOT=
+FS_BUS_KEY=homestead
+FS_BUS_SECRET=secretkey
+FS_BUS_ENDPOINT=http://homestead:9600
+FS_BUS_BUCKET=csm-bus
+FS_BUS_REGION=us-east-1
+FS_BUS_ROOT=
+FS_BUS_BUCKET_ENDPOINT=false
+FS_BUS_PATH_STYLE_ENDPOINT=true
 ```
 
 - take out from your homestead machine the `ca.homestead.homestead.crt` file in the `/etc/nginx/ssl/` folder

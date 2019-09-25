@@ -2,8 +2,9 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Documents;
 
-use App\Models\Foodfleet\Document;
 use App\User;
+use App\Models\Foodfleet\Document;
+
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
@@ -26,8 +27,11 @@ class DocumentTest extends TestCase
 
         Passport::actingAs($user);
 
+
         $documents = factory(Document::class, 5)->create([
-            'created_by_uuid' => $user->uuid
+            'created_by_uuid' => $user->uuid,
+            'type' => 1,
+            'status' => 1
         ]);
 
         $data = $this
@@ -48,8 +52,6 @@ class DocumentTest extends TestCase
                 'type' => $document->type,
                 'description' => $document->description,
                 'notes' => $document->notes,
-                'owner' => json_decode($document->owner, true),
-                'assigned' => null,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))
             ], $data[$idx]);
@@ -69,11 +71,16 @@ class DocumentTest extends TestCase
 
         factory(Document::class, 5)->create([
             'title' => 'Not visibles',
-            'created_by_uuid' => $user->uuid
+            'created_by_uuid' => $user->uuid,
+            'type' => 1,
+            'status' => 1
         ]);
 
         $documentsToFind = factory(Document::class, 5)->create([
-            'title' => 'To find'
+            'title' => 'To find',
+            'created_by_uuid' => $user->uuid,
+            'type' => 1,
+            'status' => 1
         ]);
 
         $data = $this
@@ -107,7 +114,6 @@ class DocumentTest extends TestCase
                 'type' => $document->type,
                 'description' => $document->description,
                 'notes' => $document->notes,
-                'owner' => json_decode($document->owner, true),
                 'assigned' => null,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))

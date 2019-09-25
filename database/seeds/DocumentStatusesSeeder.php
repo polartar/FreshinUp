@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Foodfleet\DocumentStatus;
+use App\Enums\DocumentStatus as DocumentStatusEmums;
+
 
 class DocumentStatusesSeeder extends Seeder
 {
@@ -12,13 +14,7 @@ class DocumentStatusesSeeder extends Seeder
      */
     public function run()
     {
-        $statuses = [
-            1 => 'Pending',
-            2 => 'Approved',
-            3 => 'Rejected',
-            4 => 'Expiring',
-            5 => 'Expired',
-        ];
+        $statuses = DocumentStatusEmums::toKeyedSelectArray();
 
         foreach($statuses as $id => $name) {
             DocumentStatus::updateOrCreate(

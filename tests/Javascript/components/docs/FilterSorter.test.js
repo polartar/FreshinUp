@@ -49,11 +49,11 @@ describe('FilterSorter', () => {
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
-      expect(runParams['filter[type]']).toEqual(1)
-      expect(runParams['filter[status]']).toEqual(2)
-      expect(runParams['filter[assigned_uuid]']).toEqual('3')
-      expect(runParams['filter[expiration_from]']).toEqual('2020-09-18')
-      expect(runParams['filter[expiration_to]']).toEqual('2020-09-30')
+      expect(runParams['type']).toEqual(1)
+      expect(runParams['status']).toEqual(2)
+      expect(runParams['assigned_uuid']).toEqual('3')
+      expect(runParams['expiration_from']).toEqual('2020-09-18')
+      expect(runParams['expiration_to']).toEqual('2020-09-30')
     })
   })
 

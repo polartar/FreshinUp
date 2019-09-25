@@ -140,20 +140,7 @@ export default {
       let finalParams = {
         title: params.term,
         sort: params.orderBy,
-        'filter[type]': this.filters.type,
-        'filter[status]': this.filters.status
-      }
-
-      if ('assigned_uuid' in this.filters) {
-        finalParams['filter[assigned_uuid]'] = this.filters.assigned_uuid
-      }
-
-      if ('expiration_from' in this.filters) {
-        finalParams['filter[expiration_from]'] = this.filters.expiration_from
-      }
-
-      if ('expiration_to' in this.filters) {
-        finalParams['filter[expiration_to]'] = this.filters.expiration_to
+        ...this.filters
       }
 
       this.$emit('runFilter', finalParams)
