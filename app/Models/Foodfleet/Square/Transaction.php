@@ -49,7 +49,7 @@ class Transaction extends Model
             'item_uuid',
             'uuid',
             'uuid'
-        );
+        )->withPivot('quantity');
     }
 
     public function payments()
