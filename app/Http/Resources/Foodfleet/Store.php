@@ -18,7 +18,8 @@ class Store extends JsonResource
     {
         return [
             "uuid" => $this->uuid,
-            "name" => $this->name
+            "name" => $this->name,
+            "square_id" => $this->square_id
         ];
     }
 }

@@ -49,7 +49,12 @@ class Transaction extends Model
             'item_uuid',
             'uuid',
             'uuid'
-        );
+        )->withPivot([
+            'quantity',
+            'total_money',
+            'total_tax_money',
+            'total_discount_money'
+        ]);
     }
 
     public function payments()
