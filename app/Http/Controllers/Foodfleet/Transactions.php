@@ -35,4 +35,17 @@ class Transactions extends Controller
 
         return TransactionResource::collection($transactions->jsonPaginate());
     }
+
+    public function show(Request $request, $uuid)
+    {
+        $transactionModel = QueryBuilder::for(Transaction::class, $request)
+            ->where('uuid', $uuid)
+            ->allowedIncludes([
+                'items.category',
+                'store',
+                'event.location'
+            ])->first();
+
+        return new TransactionResource($transactionModel);
+    }
 }

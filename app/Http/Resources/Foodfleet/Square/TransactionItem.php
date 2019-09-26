@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Resources\Foodfleet\Square;
 
 use Illuminate\Http\Request;
@@ -20,7 +19,11 @@ class TransactionItem extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "square_id" => $this->square_id,
-            "quantity" => $this->pivot->quantity
+            "quantity" => $this->pivot->quantity,
+            "total_money" => $this->pivot->total_money,
+            "total_tax_money" => $this->pivot->total_tax_money,
+            "total_discount_money" => $this->pivot->total_discount_money,
+            "category" => new Category($this->whenLoaded('category'))
         ];
     }
 }
