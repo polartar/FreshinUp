@@ -702,7 +702,7 @@ exports[`DataVisibility Snapshots maxWidthBottomRow set 1`] = `
   </div>
    
   <div
-    class="layout foodfleet-datavisibility__darkbackground fixed-row row py-4"
+    class="layout foodfleet-datavisibility--darkbackground fixed-row row py-4"
     style="width: 200px;"
   >
     <div
@@ -1444,7 +1444,7 @@ exports[`DataVisibility Snapshots parameters and visibleParameters set 1`] = `
   </div>
    
   <div
-    class="layout foodfleet-datavisibility__darkbackground fixed-row row py-4"
+    class="layout foodfleet-datavisibility--darkbackground fixed-row row py-4"
     style="width: 422px;"
   >
     <div

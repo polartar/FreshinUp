@@ -110,7 +110,7 @@
     <v-layout
       row
       py-4
-      class="foodfleet-datavisibility__darkbackground fixed-row"
+      class="foodfleet-datavisibility--darkbackground fixed-row"
       :style="width"
     >
       <v-flex
@@ -248,7 +248,7 @@ export default {
   .full-width {
     width: 100%;
   }
-  .foodfleet-datavisibility__darkbackground {
+  .foodfleet-datavisibility--darkbackground {
     background-color: #192530
   }
 </style>
