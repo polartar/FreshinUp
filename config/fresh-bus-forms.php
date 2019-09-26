@@ -10,7 +10,7 @@ return [
         'name' => 'FoodFleet'
     ],
     'models' => [
-        'user'          => FreshinUp\FreshBusForms\Models\User\User::class,
+        'user'          => \App\User::class,
         'user_level'    => FreshinUp\FreshBusForms\Models\User\UserLevel::class,
         'user_type'     => FreshinUp\FreshBusForms\Models\User\UserType::class,
         'user_status'   => FreshinUp\FreshBusForms\Models\User\UserStatus::class,
@@ -20,7 +20,7 @@ return [
     ],
     'resources' => [
         'user'          => FreshinUp\FreshBusForms\Http\Resources\User\User::class,
-        'current_user'  => FreshinUp\FreshBusForms\Http\Resources\User\CurrentUser::class
+        'current_user'  => \App\Http\Resources\CurrentUser::class
     ],
     'controllers' => [
         'login'         => LoginController::class,
