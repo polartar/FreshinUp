@@ -30,7 +30,7 @@ class Transaction extends JsonResource
             "event" => new Event($this->whenLoaded('event')),
             "customer" => new Customer($this->whenLoaded('customer')),
             "items" => TransactionItem::collection($this->whenLoaded('items')),
-            "store" => new Store($this->whenLoaded('store')),
+            "store" => new Store($this->whenLoaded('store'))
         ];
     }
 }

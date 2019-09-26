@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Resources\Foodfleet\Square;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+
 class TransactionItem extends JsonResource
 {
     /**

@@ -19,9 +19,9 @@ class FinancialSummary extends Controller
      */
     public function index(Request $request)
     {
-        $payments = QueryBuilder::for(Transaction::class, $request)
+        $transactions = QueryBuilder::for(Transaction::class, $request)
             ->allowedFilters(TransactionQueryBuilderHelper::getTransactionFilters());
 
-        return new FinancialSummaryResource($payments->get());
+        return new FinancialSummaryResource($transactions->get());
     }
 }

@@ -599,7 +599,7 @@ class FinancialSummaryTest extends TestCase
      *
      * @return void
      */
-    public function testGetListFilterByDateAfter()
+    public function testGetListFilterByDateBefore()
     {
         $this->createPaymentTypes();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
@@ -708,7 +708,7 @@ class FinancialSummaryTest extends TestCase
      *
      * @return void
      */
-    public function testGetListFilterByDateBefore()
+    public function testGetListFilterByDateAfter()
     {
         $this->createPaymentTypes();
         Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
