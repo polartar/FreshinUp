@@ -547,7 +547,7 @@
     <v-layout
       row
       py-4
-      class="secondary fixed-row"
+      class="foodfleet-advancedfilter--darkbackground fixed-row"
       :style="width"
     >
       <v-flex
@@ -771,5 +771,8 @@ export default {
   }
   /deep/ .v-autocomplete .v-input__slot {
     padding: 0 12px
+  }
+  .foodfleet-advancedfilter--darkbackground {
+    background-color: #192530
   }
 </style>
