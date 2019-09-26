@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Helpers\TransactionQueryBuilderHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Http\Request;
@@ -20,10 +21,31 @@ class Transactions extends Controller
     public function index(Request $request)
     {
         $transactions = QueryBuilder::for(Transaction::class, $request)
-            ->allowedFilters([
+            ->allowedFilters(array_merge([
                 'square_id'
+            ], TransactionQueryBuilderHelper::getTransactionFilters()))
+            ->allowedIncludes([
+                'items',
+                'store.supplier',
+                'event.host',
+                'event.event_tags',
+                'event.location',
+                'customer'
             ]);
 
         return TransactionResource::collection($transactions->jsonPaginate());
+    }
+
+    public function show(Request $request, $uuid)
+    {
+        $transactionModel = QueryBuilder::for(Transaction::class, $request)
+            ->where('uuid', $uuid)
+            ->allowedIncludes([
+                'items.category',
+                'store',
+                'event.location'
+            ])->first();
+
+        return new TransactionResource($transactionModel);
     }
 }

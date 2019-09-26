@@ -1659,7 +1659,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           </div>
            
           <div
-            class="layout secondary fixed-row row py-4"
+            class="layout foodfleet-advancedfilter--darkbackground fixed-row row py-4"
             style="width: 422px;"
           >
             <div

@@ -1,0 +1,4787 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionList Snapshots all visibility selected 1`] = `
+<div
+  class="elevation-1"
+>
+  <div
+    class="v-table__overflow"
+  >
+    <table
+      class="v-datatable v-table theme--light"
+    >
+      <thead>
+        <tr>
+          <th
+            aria-label="Event / Location: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event / Location
+          </th>
+          <th
+            aria-label="Creation Date: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Creation Date
+          </th>
+          <th
+            aria-label="Update Date: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Update Date
+          </th>
+          <th
+            aria-label="Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total
+          </th>
+          <th
+            aria-label="Tax Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Tax Total
+          </th>
+          <th
+            aria-label="Total Discount: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Discount
+          </th>
+          <th
+            aria-label="Total Service Charge: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Service Charge
+          </th>
+          <th
+            aria-label="Items: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Items
+          </th>
+          <th
+            aria-label="Event Tags: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event Tags
+          </th>
+          <th
+            aria-label="Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Square ID
+          </th>
+          <th
+            aria-label="Fleet member: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Fleet member
+          </th>
+          <th
+            aria-label="Fleet Member Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Fleet Member Square ID
+          </th>
+          <th
+            aria-label="Host: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Host
+          </th>
+          <th
+            aria-label="Supplier: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Supplier
+          </th>
+          <th
+            aria-label="Customer name: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer name
+          </th>
+          <th
+            aria-label="Customer Square ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer Square ID
+          </th>
+          <th
+            aria-label="Customer Reference ID: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Customer Reference ID
+          </th>
+          <th
+            aria-label=": Not sorted."
+            aria-sort="none"
+            class="column text-xs-left"
+            role="columnheader"
+            scope="col"
+          />
+        </tr>
+        <tr
+          class="v-datatable__progress"
+        >
+          <th
+            class="column"
+            colspan="18"
+          />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249929"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249929"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249930"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249930"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249931"
+              >
+                
+  Song festival
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249931"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249932"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249932"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249933"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249933"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249934"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249934"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249935"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 4
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249935"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249936"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $2.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Tag 1, Tag 2
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123533
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Truck 4
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12333
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Host 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Supplier 1
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        John Smith
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        123412
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        12331
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249936"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="v-datatable v-table theme--light"
+  >
+    <div
+      class="v-datatable__actions"
+    >
+      <div
+        class="v-datatable__actions__select"
+      >
+        Rows per page:
+        <div
+          class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+          role="combobox"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <div
+                  class="v-select__selections"
+                >
+                  <div
+                    class="v-select__selection v-select__selection--comma"
+                  >
+                    10
+                  </div>
+                  <input
+                    aria-label="Rows per page:"
+                    aria-readonly="false"
+                    autocomplete="on"
+                    readonly="readonly"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-menu__content--auto "
+                  style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              5
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="primary--text"
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              10
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              15
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              25
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              30
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              50
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-datatable__actions__range-controls"
+      >
+        <div
+          class="v-datatable__actions__pagination"
+        >
+          1-10 of 10
+        </div>
+        <button
+          aria-label="Previous page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_left
+            </i>
+          </div>
+        </button>
+        <button
+          aria-label="Next page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_right
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionList Snapshots partial visibility selected 1`] = `
+<div
+  class="elevation-1"
+>
+  <div
+    class="v-table__overflow"
+  >
+    <table
+      class="v-datatable v-table theme--light"
+    >
+      <thead>
+        <tr>
+          <th
+            aria-label="Event / Location: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event / Location
+          </th>
+          <th
+            aria-label="Creation Date: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Creation Date
+          </th>
+          <th
+            aria-label="Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total
+          </th>
+          <th
+            aria-label="Tax Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Tax Total
+          </th>
+          <th
+            aria-label="Total Discount: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Discount
+          </th>
+          <th
+            aria-label=": Not sorted."
+            aria-sort="none"
+            class="column text-xs-left"
+            role="columnheader"
+            scope="col"
+          />
+        </tr>
+        <tr
+          class="v-datatable__progress"
+        >
+          <th
+            class="column"
+            colspan="6"
+          />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249929"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249929"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249930"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249930"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249931"
+              >
+                
+  Song festival
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249931"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249932"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249932"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249933"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249933"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249934"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249934"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249935"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249935"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249936"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249936"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="v-datatable v-table theme--light"
+  >
+    <div
+      class="v-datatable__actions"
+    >
+      <div
+        class="v-datatable__actions__select"
+      >
+        Rows per page:
+        <div
+          class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+          role="combobox"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <div
+                  class="v-select__selections"
+                >
+                  <div
+                    class="v-select__selection v-select__selection--comma"
+                  >
+                    10
+                  </div>
+                  <input
+                    aria-label="Rows per page:"
+                    aria-readonly="false"
+                    autocomplete="on"
+                    readonly="readonly"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-menu__content--auto "
+                  style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              5
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="primary--text"
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              10
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              15
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              25
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              30
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              50
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-datatable__actions__range-controls"
+      >
+        <div
+          class="v-datatable__actions__pagination"
+        >
+          1-10 of 10
+        </div>
+        <button
+          aria-label="Previous page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_left
+            </i>
+          </div>
+        </button>
+        <button
+          aria-label="Next page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_right
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionList Snapshots transaction empty 1`] = `
+<div
+  class="elevation-1"
+>
+  <div
+    class="v-table__overflow"
+  >
+    <table
+      class="v-datatable v-table theme--light"
+    >
+      <thead>
+        <tr>
+          <th
+            aria-label="Event / Location: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event / Location
+          </th>
+          <th
+            aria-label="Creation Date: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Creation Date
+          </th>
+          <th
+            aria-label="Items: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Items
+          </th>
+          <th
+            aria-label="Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total
+          </th>
+          <th
+            aria-label="Tax Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Tax Total
+          </th>
+          <th
+            aria-label="Total Discount: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Discount
+          </th>
+          <th
+            aria-label=": Not sorted."
+            aria-sort="none"
+            class="column text-xs-left"
+            role="columnheader"
+            scope="col"
+          />
+        </tr>
+        <tr
+          class="v-datatable__progress"
+        >
+          <th
+            class="column"
+            colspan="7"
+          />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="text-xs-center"
+            colspan="7"
+          >
+            No matching records found
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="v-datatable v-table theme--light"
+  >
+    <div
+      class="v-datatable__actions"
+    >
+      <div
+        class="v-datatable__actions__select"
+      >
+        Rows per page:
+        <div
+          class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+          role="combobox"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <div
+                  class="v-select__selections"
+                >
+                  <div
+                    class="v-select__selection v-select__selection--comma"
+                  >
+                    10
+                  </div>
+                  <input
+                    aria-label="Rows per page:"
+                    aria-readonly="false"
+                    autocomplete="on"
+                    readonly="readonly"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-menu__content--auto "
+                  style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              5
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="primary--text"
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              10
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              15
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              25
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              30
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              50
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-datatable__actions__range-controls"
+      >
+        <div
+          class="v-datatable__actions__pagination"
+        >
+          1-10 of 10
+        </div>
+        <button
+          aria-label="Previous page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_left
+            </i>
+          </div>
+        </button>
+        <button
+          aria-label="Next page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_right
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionList Snapshots transactions set 1`] = `
+<div
+  class="elevation-1"
+>
+  <div
+    class="v-table__overflow"
+  >
+    <table
+      class="v-datatable v-table theme--light"
+    >
+      <thead>
+        <tr>
+          <th
+            aria-label="Event / Location: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Event / Location
+          </th>
+          <th
+            aria-label="Creation Date: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Creation Date
+          </th>
+          <th
+            aria-label="Items: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Items
+          </th>
+          <th
+            aria-label="Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total
+          </th>
+          <th
+            aria-label="Tax Total: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Tax Total
+          </th>
+          <th
+            aria-label="Total Discount: Not sorted."
+            aria-sort="none"
+            class="column text-xs-left font-weight-bold"
+            role="columnheader"
+            scope="col"
+          >
+            Total Discount
+          </th>
+          <th
+            aria-label=": Not sorted."
+            aria-sort="none"
+            class="column text-xs-left"
+            role="columnheader"
+            scope="col"
+          />
+        </tr>
+        <tr
+          class="v-datatable__progress"
+        >
+          <th
+            class="column"
+            colspan="7"
+          />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249929"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249929"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249930"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249930"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249931"
+              >
+                
+  Song festival
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249931"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249932"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249932"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249933"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249933"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249934"
+              >
+                
+  Burger fest
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249934"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249935"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249935"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              <a
+                class="title primary--text"
+                href="/admin/financials/transactions/17249936"
+              >
+                
+  Art Basel
+
+              </a>
+               
+              <br />
+              
+        New York
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        Jan 22, 2018 - 07:22pm
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        3 Hamburger, 2 Coke, 2 Beer
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $100.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $20.00
+      
+            </div>
+          </td>
+          <td
+            class="text-xs-left"
+          >
+            <div>
+              
+        $0.00
+      
+            </div>
+          </td>
+           
+          <td
+            class="text-xs-center"
+          >
+            <div
+              class="v-menu"
+            >
+              <button
+                class="v-btn v-btn--floating v-btn--small theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fas fa-ellipsis-h theme--light"
+                  />
+                </div>
+              </button>
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                 
+                <div
+                  class="v-list theme--light"
+                  role="list"
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                      href="/admin/financials/transactions/17249936"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        View details
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="v-datatable v-table theme--light"
+  >
+    <div
+      class="v-datatable__actions"
+    >
+      <div
+        class="v-datatable__actions__select"
+      >
+        Rows per page:
+        <div
+          class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+          role="combobox"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <div
+                  class="v-select__selections"
+                >
+                  <div
+                    class="v-select__selection v-select__selection--comma"
+                  >
+                    10
+                  </div>
+                  <input
+                    aria-label="Rows per page:"
+                    aria-readonly="false"
+                    autocomplete="on"
+                    readonly="readonly"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="v-input__append-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--append"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-menu__content--auto "
+                  style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              5
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="primary--text"
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              10
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              15
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              25
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              30
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              50
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="v-datatable__actions__range-controls"
+      >
+        <div
+          class="v-datatable__actions__pagination"
+        >
+          1-10 of 10
+        </div>
+        <button
+          aria-label="Previous page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_left
+            </i>
+          </div>
+        </button>
+        <button
+          aria-label="Next page"
+          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--light"
+            >
+              chevron_right
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

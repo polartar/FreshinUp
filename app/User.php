@@ -7,6 +7,15 @@ use App\Models\Foodfleet\Document;
 
 class User extends \FreshinUp\FreshBusForms\Models\User\User
 {
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'data_visibility' => 'array'
+    ];
+
     public function getMorphClass()
     {
         return 'FreshinUp\FreshBusForms\Models\User\User';
