@@ -4,6 +4,7 @@
 namespace App\Http\Resources\Foodfleet\Square;
 
 use App\Http\Resources\Foodfleet\Event;
+use App\Http\Resources\Foodfleet\Store;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -29,6 +30,7 @@ class Transaction extends JsonResource
             "event" => new Event($this->whenLoaded('event')),
             "customer" => new Customer($this->whenLoaded('customer')),
             "items" => TransactionItem::collection($this->whenLoaded('items')),
+            "store" => new Store($this->whenLoaded('store'))
         ];
     }
 }

@@ -26,7 +26,7 @@ class Transactions extends Controller
             ], TransactionQueryBuilderHelper::getTransactionFilters()))
             ->allowedIncludes([
                 'items',
-                'event.stores.supplier',
+                'store.supplier',
                 'event.host',
                 'event.event_tags',
                 'event.location',

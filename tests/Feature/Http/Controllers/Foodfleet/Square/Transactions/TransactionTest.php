@@ -120,7 +120,7 @@ class TransactionTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/transactions?include=items,event.stores.supplier,event.host," .
+            ->json('get', "/api/foodfleet/transactions?include=items,store.supplier,event.host," .
             "event.event_tags,event.location,customer")
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -141,7 +141,6 @@ class TransactionTest extends TestCase
         $events = factory(Event::class, 2)->create(['host_uuid' => $host->uuid, 'location_uuid' => $location->uuid]);
         foreach ($events as $event) {
             $event->eventTags()->sync($eventTags->pluck('uuid')->toArray());
-            $event->stores()->sync($stores->pluck('uuid')->toArray());
         }
 
         $transactions = [];
@@ -166,7 +165,7 @@ class TransactionTest extends TestCase
         }
 
         $data = $this
-            ->json('get', "/api/foodfleet/transactions?include=items,event.stores.supplier,event.host," .
+            ->json('get', "/api/foodfleet/transactions?include=items,store.supplier,event.host," .
             "event.event_tags,event.location,customer")
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -212,26 +211,6 @@ class TransactionTest extends TestCase
                     'host' => [
                         'uuid' => $transaction->event->host->uuid,
                         'name' => $transaction->event->host->name,
-                    ],
-                    'stores' => [
-                        0 => [
-                            'uuid' => $transaction->event->stores()->get()->first()->uuid,
-                            'name' => $transaction->event->stores()->get()->first()->name,
-                            'square_id' => $transaction->event->stores()->first()->square_id,
-                            'supplier' => [
-                                'uuid' => $transaction->event->stores()->get()->first()->supplier->uuid,
-                                'name' => $transaction->event->stores()->get()->first()->supplier->name,
-                            ],
-                        ],
-                        1 => [
-                            'uuid' => $transaction->event->stores()->get()->last()->uuid,
-                            'name' => $transaction->event->stores()->get()->last()->name,
-                            'square_id' => $transaction->event->stores()->get()->last()->square_id,
-                            'supplier' => [
-                                'uuid' => $transaction->event->stores()->get()->last()->supplier->uuid,
-                                'name' => $transaction->event->stores()->get()->last()->supplier->name,
-                            ],
-                        ]
                     ]
                 ],
                 'items' => [
@@ -245,6 +224,15 @@ class TransactionTest extends TestCase
                         'name' => $transaction->items()->get()->last()->name,
                         'quantity' => $transaction->items()->get()->last()->pivot->quantity,
                     ]
+                ],
+                'store' => [
+                    'uuid' => $transaction->store->uuid,
+                    'name' => $transaction->store->name,
+                    'square_id' => $transaction->store->square_id,
+                    'supplier' => [
+                        'uuid' => $transaction->store->supplier->uuid,
+                        'name' => $transaction->store->supplier->name,
+                    ],
                 ]
             ], $data[$idx], true);
         }
