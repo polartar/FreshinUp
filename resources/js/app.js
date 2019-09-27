@@ -11,6 +11,7 @@ import financialReports from '~/store/modules/financialReports.js'
 import paymentTypes from '~/store/modules/paymentTypes.js'
 import financialsummary from '~/store/modules/financialsummary.js'
 import squares from '~/store/modules/squares.js'
+import transactions from '~/store/modules/transactions.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -122,7 +123,8 @@ const appInstance = new App({
       financialReports: financialReports({}),
       paymentTypes: paymentTypes({}),
       financialsummary: financialsummary({}),
-      squares: squares({})
+      squares: squares({}),
+      transactions: transactions({})
     }
   }),
   theme,
