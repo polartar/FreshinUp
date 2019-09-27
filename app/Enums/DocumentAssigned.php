@@ -51,7 +51,7 @@ final class DocumentAssigned extends Enum
     public static function getDescription($value): string
     {
         if ($value === self::USER) {
-            return 'FreshinUp\FreshBusForms\Models\User\User';
+            return 'App\User';
         }
 
         if ($value === self::STORE) {

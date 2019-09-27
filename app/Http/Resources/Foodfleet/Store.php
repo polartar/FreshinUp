@@ -18,7 +18,6 @@ class Store extends JsonResource
     public function toArray($request)
     {
         return [
-            "id" => $this->id,
             "uuid" => $this->uuid,
             "name" => $this->name,
             "square_id" => $this->square_id,

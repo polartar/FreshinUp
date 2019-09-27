@@ -44,6 +44,58 @@ IF you are on staging:
 - click on the `Launch` button right after the test account
 - the test account will remain active for a limited amount of time. After that it will be necessary re-launch the account from the developer dashboard
 
+#### Homestead setup
+- add `minio: true` to homestead.yaml
+- add `ssl: true` to homestead.yaml
+- add 
+```
+buckets:
+    - name: footfleet
+      policy: public
+    - name: footfleet-bus
+      policy: public
+    - name: footfleet-tmp
+      policy: public
+```
+- `$ vagrant up --provision`
+- add homestead site to your hosts file:
+`192.168.10.10   homestead`
+- the local configuration for projects on homestead has to be (it's different from the docker configuration):
+```
+# Filesystem for FoodFleet
+FS_FF_KEY=homestead
+FS_FF_SECRET=secretkey
+FS_FF_ENDPOINT=http://homestead:9600
+FS_FF_BUCKET=footfleet
+FS_FF_REGION=us-east-1
+FS_FF_ROOT=
+FS_FF_BUCKET_ENDPOINT=false
+FS_FF_PATH_STYLE_ENDPOINT=true
+
+# TMP Storage
+FS_TMP_KEY=homestead
+FS_TMP_SECRET=secretkey
+FS_TMP_ENDPOINT=http://homestead:9600
+FS_TMP_BUCKET=footfleet-tmp
+FS_TMP_REGION=us-east-1
+FS_TMP_ROOT=
+FS_TMP_BUCKET_ENDPOINT=false
+FS_TMP_PATH_STYLE_ENDPOINT=true
+
+# Filesystem for BUS media
+FS_BUS_KEY=homestead
+FS_BUS_SECRET=secretkey
+FS_BUS_ENDPOINT=http://homestead:9600
+FS_BUS_BUCKET=footfleet-bus
+FS_BUS_REGION=us-east-1
+FS_BUS_ROOT=
+FS_BUS_BUCKET_ENDPOINT=false
+FS_BUS_PATH_STYLE_ENDPOINT=true
+```
+
+- take out from your homestead machine the `ca.homestead.homestead.crt` file in the `/etc/nginx/ssl/` folder
+- add it to certificate exception on chrome advanced settings on `authorities` tab
+
 ### Development Setup
 #### Requirements
 * Git (https://git-scm.com/downloads)

@@ -11,10 +11,13 @@ class UpdateDocument implements Action
 {
     public function execute(array $data)
     {
-        $document = Document::findOrFail($data['id']);
+        $document = Document::where('uuid', $data['uuid'])
+            ->with('assigned')
+            ->with('owner')
+            ->first();
 
         $collection = collect($data);
-        $updateData = $collection->except(['assigned_type', 'assigned_uuid', 'id'])->all();
+        $updateData = $collection->except(['assigned_type', 'assigned_uuid', 'uuid'])->all();
         $document->update($updateData);
 
         if ($data['assigned_type'] && $data['assigned_uuid']) {

@@ -69,7 +69,7 @@ storiesOf('FoodFleet|doc/DoctableList', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
+  .add('doc is empty', () => ({
     components: { DoctableList },
     data () {
       return {

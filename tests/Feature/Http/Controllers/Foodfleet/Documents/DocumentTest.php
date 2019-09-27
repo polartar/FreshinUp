@@ -46,7 +46,7 @@ class DocumentTest extends TestCase
         $this->assertEquals(5, count($data));
         foreach ($documents as $idx => $document) {
             $this->assertArraySubset([
-                'id' => $document->id,
+                'uuid' => $document->uuid,
                 'title' => $document->title,
                 'status' => $document->status,
                 'type' => $document->type,
@@ -108,7 +108,7 @@ class DocumentTest extends TestCase
 
         foreach ($documentsToFind as $idx => $document) {
             $this->assertArraySubset([
-                'id' => $document->id,
+                'uuid' => $document->uuid,
                 'title' => $document->title,
                 'status' => $document->status,
                 'type' => $document->type,

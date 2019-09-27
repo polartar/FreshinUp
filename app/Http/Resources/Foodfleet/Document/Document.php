@@ -20,7 +20,7 @@ class Document extends JsonResource
         $assignedResource = DocumentAssignedEnum::getResource($assignedType);
 
         $data = [
-            'id' => $this->id,
+            'uuid' => $this->uuid,
             'title' => $this->title,
             'status' => intval($this->status),
             'type' => intval($this->type),

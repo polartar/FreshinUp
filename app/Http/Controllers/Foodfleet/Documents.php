@@ -81,12 +81,16 @@ class Documents extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $id
+     * @param $uuid
      * @return DocumentResource
      */
-    public function show($id)
+    public function show(Request $request, $uuid)
     {
-        $document = Document::with('owner')->with('assigned')->findOrFail($id);
+        $document = QueryBuilder::for(Document::class, $request)
+            ->with('assigned')
+            ->with('owner')
+            ->where('uuid', $uuid)
+            ->first();
 
         return new DocumentResource($document);
     }
@@ -95,11 +99,11 @@ class Documents extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param $id
+     * @param $uuid
      * @return DocumentResource
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, $id, UpdateDocument $action)
+    public function update(Request $request, $uuid, UpdateDocument $action)
     {
         $this->validate($request, [
             'title' => 'string',
@@ -111,7 +115,7 @@ class Documents extends Controller
         ]);
 
         $inputs = $request->input();
-        $inputs['id'] = $id;
+        $inputs['uuid'] = $uuid;
 
         $document = $action->execute($inputs);
 
@@ -121,13 +125,13 @@ class Documents extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param $uuid
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        $document = Document::findOrFail($id);
+        $document = Document::where('uuid', $uuid)->first();
         $document->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
     }

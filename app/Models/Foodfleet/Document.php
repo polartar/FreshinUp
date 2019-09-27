@@ -31,6 +31,16 @@ class Document extends Model
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
     public function owner()
     {
         return $this->belongsTo(User::class, 'created_by_uuid', 'uuid');

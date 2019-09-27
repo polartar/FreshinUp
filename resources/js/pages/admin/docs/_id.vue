@@ -195,8 +195,8 @@
                 Assigned to
               </v-layout>
               <AssignedSearch
-                :init-val="assigned ? assigned.id : ''"
-                :init-items="assigned ? [assigned] : []"
+                :init-val="assigned ? assigned.uuid : ''"
+                :init-items="assigned ? [{ ...assigned, id: assigned.uuid}] : []"
                 :type="assigned_type"
                 @assign-change="selectAssigned"
                 @type-change="changeAssignedType"
@@ -324,7 +324,7 @@ export default {
         let data = omit(this.doc, ['created_at', 'updated_at', 'assigned', 'owner'])
         data = { ...data, assigned_uuid: this.assigned_uuid }
         if (valid) {
-          this.$store.dispatch('documents/updateItem', { data, params: { id: data.id } }).then(() => {
+          this.$store.dispatch('documents/updateItem', { data, params: { id: data.uuid } }).then(() => {
             this.$store.dispatch('generalMessage/setMessage', 'Saved')
           })
         }

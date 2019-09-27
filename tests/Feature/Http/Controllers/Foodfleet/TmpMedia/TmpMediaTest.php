@@ -31,18 +31,5 @@ class TmpMediaTest extends TestCase
                 'file' => UploadedFile::fake()->create('document.pdf', 100)
             ])
             ->assertStatus(500);
-
-        /*
-        * Comment this code is to pass the test in circleci,
-        * Now the test environment does not have a minio file system.
-
-        $data = $this
-            ->json('post', "/api/foodfleet/tmp-media", [
-                'file' => UploadedFile::fake()->create('document.pdf', 100)
-            ])
-            ->assertStatus(200);
-
-        $data->assertSeeText('document.pdf');
-        */
     }
 }

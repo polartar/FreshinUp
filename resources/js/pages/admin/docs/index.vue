@@ -146,10 +146,10 @@ export default {
       this.$router.push({ path: '/admin/docs/new' })
     },
     docView (doc) {
-      this.$router.push({ path: '/admin/docs/' + doc.id })
+      this.$router.push({ path: '/admin/docs/' + doc.uuid })
     },
     docEdit (doc) {
-      this.$router.push({ path: '/admin/docs/' + doc.id })
+      this.$router.push({ path: '/admin/docs/' + doc.uuid })
     },
     deleteDoc (docs) {
       if (!Array.isArray(docs)) {
@@ -165,7 +165,7 @@ export default {
       let dispatcheables = []
 
       this.deleteTemp.forEach((doc) => {
-        dispatcheables.push(this.$store.dispatch('documents/deleteItem', { getItems: false, params: { id: doc.id } }))
+        dispatcheables.push(this.$store.dispatch('documents/deleteItem', { getItems: false, params: { id: doc.uuid } }))
       })
 
       let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
