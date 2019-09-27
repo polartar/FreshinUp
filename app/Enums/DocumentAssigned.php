@@ -13,6 +13,8 @@ final class DocumentAssigned extends Enum
     const STORE = 2;
     const VENUE = 3;
     const EVENT = 4;
+    const EVENT_STORE = 5;
+    const EVENT_LOCATION = 6;
 
     public static function toKeyedSelectArray()
     {
@@ -35,9 +37,17 @@ final class DocumentAssigned extends Enum
         return $selectArray;
     }
 
-    public static function getKeyUseDescription($description)
+    public static function getKeyUseDescription($description, $isEventStore, $isEventLocation)
     {
         $array = static::toSelectArray($description);
+
+        if ($isEventStore) {
+            return self::EVENT_STORE;
+        }
+
+        if ($isEventLocation) {
+            return self::EVENT_LOCATION;
+        }
 
         foreach ($array as $key => $value) {
             if ($description === $value) {
@@ -66,6 +76,14 @@ final class DocumentAssigned extends Enum
             return 'App\Models\Foodfleet\Event';
         }
 
+        if ($value === self::EVENT_STORE) {
+            return 'App\Models\Foodfleet\Event';
+        }
+
+        if ($value === self::EVENT_LOCATION) {
+            return 'App\Models\Foodfleet\Event';
+        }
+
         return parent::getDescription($value);
     }
 
@@ -84,6 +102,14 @@ final class DocumentAssigned extends Enum
         }
 
         if ($value === self::EVENT) {
+            return 'App\Http\Resources\Foodfleet\Event';
+        }
+
+        if ($value === self::EVENT_STORE) {
+            return 'App\Http\Resources\Foodfleet\Event';
+        }
+
+        if ($value === self::EVENT_LOCATION) {
             return 'App\Http\Resources\Foodfleet\Event';
         }
 

@@ -306,15 +306,19 @@ export default {
       'description',
       'assigned_type',
       'notes',
-      'assigned'
+      'assigned',
+      'event_store_uuid',
+      'event_location_uuid'
     ])
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    selectAssigned (uuid) {
-      this.assigned_uuid = uuid
+    selectAssigned (assigned) {
+      this.assigned_uuid = assigned.uuid
+      this.event_store_uuid = assigned.event_store_uuid
+      this.event_location_uuid = assigned.event_location_uuid
     },
     changeAssignedType (value) {
       this.assigned_type = value

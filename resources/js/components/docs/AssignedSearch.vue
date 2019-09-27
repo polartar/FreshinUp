@@ -78,14 +78,14 @@ export default {
         {
           value: 5,
           text: 'Event/Fleet Memeber',
-          url: 'users',
-          param: 'term'
+          url: 'foodfleet/events',
+          param: 'filter[name]'
         },
         {
           value: 6,
           text: 'Event/Venue',
-          url: 'users',
-          param: 'term'
+          url: 'foodfleet/events',
+          param: 'filter[name]'
         }
       ]
     }
@@ -109,7 +109,18 @@ export default {
   },
   methods: {
     selectAssigned (assigned) {
-      this.$emit('assign-change', assigned ? assigned.uuid : '')
+      let changeDate = {}
+      changeDate.uuid = assigned ? assigned.uuid : ''
+      changeDate.event_location_uuid = ''
+      changeDate.event_store_uuid = ''
+
+      if (this.type === 5) {
+        changeDate.event_store_uuid = assigned.stores[0] ? assigned.stores[0].uuid : ''
+      }
+      if (this.type === 6) {
+        changeDate.event_location_uuid = assigned.location ? assigned.location.uuid : ''
+      }
+      this.$emit('assign-change', changeDate)
     }
   }
 }
