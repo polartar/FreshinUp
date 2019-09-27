@@ -66,7 +66,7 @@ export default {
         {
           value: 3,
           text: 'Venue',
-          url: 'foodfleet/venues',
+          url: 'foodfleet/locations',
           param: 'filter[name]'
         },
         {

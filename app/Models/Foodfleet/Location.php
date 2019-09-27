@@ -33,4 +33,9 @@ class Location extends Model
     {
         return $this->hasMany(Event::class, 'location_uuid', 'uuid');
     }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
 }
