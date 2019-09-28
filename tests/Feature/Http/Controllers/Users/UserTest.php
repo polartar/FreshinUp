@@ -31,9 +31,9 @@ class UserTest extends TestCase
             ->json(
                 'get',
                 "/api/currentUser"
-            );
-        dd($data);
-
+            )
+            ->assertStatus(200)
+            ->json();
 
         $this->assertEquals(4, count($data['data_visibility']));
         $this->assertArraySubset([
