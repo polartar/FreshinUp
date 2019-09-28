@@ -98,22 +98,6 @@
           </v-flex>
         </v-layout>
         <v-layout
-          v-if="isPlatformAdmin"
-          row
-          mt-4
-        >
-          <v-flex
-            sm12
-            :class="{'pr-2': $vuetify.breakpoint.smAndUp}"
-          >
-            <v-checkbox
-              v-model="search.featured"
-              label="Save as Featured"
-              color="primary"
-            />
-          </v-flex>
-        </v-layout>
-        <v-layout
           row
           mt-4
           mb-2
@@ -154,10 +138,6 @@ export default {
     modifiers: {
       type: Array,
       required: true
-    },
-    isPlatformAdmin: {
-      type: Boolean,
-      default: false
     }
   },
   data () {
@@ -165,8 +145,7 @@ export default {
       search: {
         name: null,
         modifier_1_id: null,
-        modifier_2_id: null,
-        featured: false
+        modifier_2_id: null
       }
     }
   },

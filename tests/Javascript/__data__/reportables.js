@@ -1,12 +1,12 @@
 import { FIXTURE_MODIFIER_AUTOCOMPLETE, FIXTURE_MODIFIER_SELECT, FIXTURE_MODIFIER_DATE, FIXTURE_MODIFIER_TEXT } from './modifiers'
 
 const filterFleetMember = {
-  label: 'Fleet Member 1',
+  label: 'Fleet Member',
   value: 1
 }
 
 const filterEvent = {
-  label: ['Meeting', 'Furt'],
+  label: 'Event',
   value: [2, 3]
 }
 
