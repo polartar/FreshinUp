@@ -27,16 +27,6 @@ describe('SaveSearch', () => {
       })
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('is platform admin', () => {
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          modifiers: modifiers,
-          isPlatformAdmin: true
-        }
-      })
-      expect(wrapper.element).toMatchSnapshot()
-    })
   })
   describe('Methods', () => {
     beforeEach(() => {
@@ -63,8 +53,7 @@ describe('SaveSearch', () => {
       wrapper.vm.search = {
         name: 'test',
         modifier_1_id: 1,
-        modifier_2_id: 2,
-        featured: false
+        modifier_2_id: 2
       }
       wrapper.vm.save()
       expect(wrapper.emitted().save).toBeTruthy()
@@ -72,8 +61,7 @@ describe('SaveSearch', () => {
       expect(wrapper.emitted().save[0]).toEqual([{
         name: 'test',
         modifier_1_id: 1,
-        modifier_2_id: 2,
-        featured: false
+        modifier_2_id: 2
       }])
     })
   })

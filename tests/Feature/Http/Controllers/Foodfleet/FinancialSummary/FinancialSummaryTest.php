@@ -2040,6 +2040,116 @@ class FinancialSummaryTest extends TestCase
         ], $data);
     }
 
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByTransactionUuid()
+    {
+        $this->createPaymentTypes();
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        $transaction = factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->subDays(1)->toDateTimeString(),
+        ]);
+        $transaction->payments()->save(factory(Payment::class)->make([
+            'amount_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'CASH')->first()->uuid,
+        ]));
+        factory(Transaction::class)->create([
+            'total_money' => 1000,
+            'total_tax_money' => 200,
+            'square_created_at' => Carbon::now()->toDateTimeString(),
+        ])->payments()->save(factory(Payment::class)->make([
+            'amount_money' => 1000,
+            'payment_type_uuid' => PaymentType::where('name', 'VISA')->first()->uuid,
+        ]));
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-20'
+                ],
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-21'
+                ]
+            ],
+            'gross' => 2000,
+            'net' => 1600,
+            'cash' => 1000,
+            'credit' => 1000,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 1000
+        ], $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/financial-summary?filter[transaction_uuid]=" . $transaction->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals([
+            'sales_time' => [
+                [
+                    'value' => 1000,
+                    'date' => '2019-05-20'
+                ]
+            ],
+            'gross' => 1000,
+            'net' => 800,
+            'cash' => 1000,
+            'credit' => 0,
+            'sales_type' => [
+                [
+                    'name' => 'CASH',
+                    'value' => 1000
+                ],
+                [
+                    'name' => 'VISA',
+                    'value' => 0
+                ],
+                [
+                    'name' => 'MASTERCARD',
+                    'value' => 0
+                ]
+            ],
+            'avg_ticket' => 1000
+        ], $data);
+    }
+
 
     private function createPaymentTypes()
     {
