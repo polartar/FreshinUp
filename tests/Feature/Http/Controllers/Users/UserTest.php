@@ -33,7 +33,7 @@ class UserTest extends TestCase
                 "/api/currentUser"
             );
         dd($data);
-          
+
 
         $this->assertEquals(4, count($data['data_visibility']));
         $this->assertArraySubset([

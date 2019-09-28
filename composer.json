@@ -20,7 +20,8 @@
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-permission": "^2.29",
         "spatie/laravel-query-builder": "^1.17",
-        "square/connect": "^2.20190814"
+        "square/connect": "^2.20190814",
+        "laravel/passport": "7.4.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
