@@ -93,5 +93,21 @@ class LocationTest extends TestCase
                 'name' => $location->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/locations?filter[uuid]=" . $locationsToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $locationsToFind->first()->uuid,
+            'name' => $locationsToFind->first()->name
+        ], $data[0]);
     }
 }
