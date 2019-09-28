@@ -41,122 +41,13 @@
             Basic information
           </v-card-title>
           <v-divider />
-          <v-layout
-            row
-            wrap
-            pa-3
-            justify-space-between
-          >
-            <v-flex
-              md7
-              sm12
-            >
-              <v-layout
-                row
-                mb-2
-              >
-                Title
-              </v-layout>
-              <v-text-field
-                v-model="title"
-                v-validate="'required'"
-                single-line
-                outline
-                data-vv-name="title"
-                :error-messages="errors.collect('title')"
-                label="Title"
-              />
-            </v-flex>
-            <v-flex
-              md4
-              sm12
-            >
-              <v-layout
-                row
-                mb-2
-              >
-                Type
-              </v-layout>
-              <v-select
-                v-model="type"
-                v-validate="'required'"
-                single-line
-                outline
-                :items="types"
-                data-vv-name="type"
-                :error-messages="errors.collect('type')"
-                label="Type"
-              />
-            </v-flex>
-            <v-flex
-              md7
-              sm12
-            >
-              <v-layout
-                row
-                mb-2
-              >
-                Short Description
-              </v-layout>
-              <v-textarea
-                v-model="description"
-                v-validate="'required'"
-                single-line
-                outline
-                data-vv-name="description"
-                :error-messages="errors.collect('description')"
-                label="Short description"
-              />
-            </v-flex>
-            <v-flex
-              v-if="type === 1"
-              md7
-              sm12
-            >
-              <v-layout
-                row
-                mb-2
-              >
-                Document Template
-              </v-layout>
-              <v-select
-                v-model="template"
-                single-line
-                outline
-                :items="templateOptions"
-                data-vv-name="template"
-                :error-messages="errors.collect('template')"
-                label="Document Template"
-              />
-            </v-flex>
-            <v-flex
-              v-else-if="type === 2"
-              md7
-              sm12
-              mb-4
-              pt-5
-            >
-              <file-uploader v-model="file" />
-            </v-flex>
-            <v-flex
-              xs12
-            >
-              <v-layout
-                row
-                mb-2
-              >
-                Notes / Additional Info
-              </v-layout>
-              <v-textarea
-                v-model="notes"
-                single-line
-                outline
-                data-vv-name="notes"
-                :error-messages="errors.collect('notes')"
-                label="Notes / Additional Info"
-              />
-            </v-flex>
-          </v-layout>
+          <BasicInfoForm
+            :types="types"
+            :templates="templates"
+            :initdata="doc"
+            :errors="errors"
+            @data-change="changeBasicInfo"
+          />
         </v-card>
       </v-flex>
       <v-flex
@@ -266,8 +157,8 @@ import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
-import FileUploader from '~/components/FileUploader.vue'
 import AssignedSearch from '~/components/docs/AssignedSearch.vue'
+import BasicInfoForm from '~/components/docs/BasicInfoForm.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
@@ -280,16 +171,16 @@ export default {
   layout: 'admin',
   components: {
     VueCtkDateTimePicker,
-    FileUploader,
-    AssignedSearch
+    AssignedSearch,
+    BasicInfoForm
   },
   mixins: [Validate, FormatDate],
   data () {
     return {
       pageTitle: 'Document Details',
-      template: null,
-      templateOptions: [],
       assigned_uuid: '',
+      template: null,
+      templates: [],
       file: { name: '', src: '' }
     }
   },
@@ -318,6 +209,14 @@ export default {
     },
     changeAssignedType (value) {
       this.assigned_type = value
+    },
+    changeBasicInfo (data) {
+      this.title = data.title
+      this.type = data.type
+      this.description = data.description
+      this.notes = data.notes
+      this.template = data.template
+      this.file = data.file
     },
     onSaveClick () {
       this.$validator.validate().then(valid => {
