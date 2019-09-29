@@ -76,4 +76,8 @@ class Store extends Model
             'uuid'
         );
     }
+
+    public function address() {
+        return $this->belongsTo(Address::class, 'address_uuid', 'uuid');
+    }
 }

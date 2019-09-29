@@ -3,6 +3,7 @@
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\StoreStatus;
+use App\Models\Foodfleet\Address;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,7 @@ class StoresTableSeeder extends Seeder
         $staffs = Staff::get();
         $tags = StoreTag::get();
         $statuses = StoreStatus::get();
+        $addresses = Address::get();
 
         $suppliers = Company::whereHas('company_types', function ($query) {
             $query->where('key_id', 'supplier');
@@ -25,6 +27,7 @@ class StoresTableSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
             $store = factory(\App\Models\Foodfleet\Store::class)->create([
                 'status' => $statuses->random()->id,
+                'address_uuid' => $addresses->random()->uuid,
                 'supplier_uuid' => $suppliers->random()->uuid
             ]);
 
