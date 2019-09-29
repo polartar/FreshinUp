@@ -65,7 +65,7 @@ class Store extends Model
         return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
     }
 
-    public function storeTags()
+    public function tags()
     {
         return $this->belongsToMany(
             StoreTag::class,

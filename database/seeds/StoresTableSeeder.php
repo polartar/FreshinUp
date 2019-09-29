@@ -35,7 +35,7 @@ class StoresTableSeeder extends Seeder
             $store->staffs()->sync($staffRandomUuids);
 
             $tagRandomUuids = $tags->random(2)->pluck('uuid')->toArray();
-            $store->storeTags()->sync($tagRandomUuids);
+            $store->tags()->sync($tagRandomUuids);
         }
     }
 }

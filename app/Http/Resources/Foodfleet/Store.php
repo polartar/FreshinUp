@@ -20,6 +20,9 @@ class Store extends JsonResource
         return [
             "uuid" => $this->uuid,
             "name" => $this->name,
+            "status" => $this->status,
+            "address" => new Address($this->whenLoaded('address')),
+            "tags" => StoreTag::collection($this->whenLoaded('tags')),
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier'))
         ];
