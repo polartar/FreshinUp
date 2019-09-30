@@ -93,5 +93,21 @@ class ItemTest extends TestCase
                 'name' => $item->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/items?filter[uuid]=" . $itemsToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $itemsToFind->first()->uuid,
+            'name' => $itemsToFind->first()->name
+        ], $data[0]);
     }
 }

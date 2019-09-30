@@ -8,6 +8,7 @@ use App\Models\Foodfleet\Square\Category;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\Category as CategoryResource;
+use Spatie\QueryBuilder\Filter;
 
 class Categories extends Controller
 {
@@ -21,6 +22,7 @@ class Categories extends Controller
     {
         $categories = QueryBuilder::for(Category::class, $request)
             ->allowedFilters([
+                Filter::exact('uuid'),
                 'name'
             ]);
 
