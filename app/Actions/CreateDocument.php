@@ -22,6 +22,6 @@ class CreateDocument implements Action
             $assigned->documents()->save($document);
         }
 
-        return $document;
+        return $document->refresh();
     }
 }

@@ -1,5 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
+import { FIXTURE_DOCUMENT } from 'tests/__data__/document'
+import { FIXTURE_DOCUMENT_TYPES } from 'tests/__data__/documentTypes'
 import Component from '~/components/docs/BasicInfoForm.vue'
 
 describe('BasicInfoForm', () => {
@@ -12,7 +14,11 @@ describe('BasicInfoForm', () => {
     })
     test('defaults', () => {
       const wrapper = mount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        propsData: {
+          types: FIXTURE_DOCUMENT_TYPES,
+          initdata: FIXTURE_DOCUMENT
+        }
       })
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -26,11 +32,15 @@ describe('BasicInfoForm', () => {
 
     test('watch doc change emitted data-change', async () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        propsData: {
+          types: FIXTURE_DOCUMENT_TYPES
+        }
       })
       wrapper.vm.doc.title = 'mock'
       await wrapper.vm.$nextTick()
       expect(wrapper.emitted()['data-change']).toBeTruthy()
+      expect(wrapper.emitted()['data-change'][0][0].title).toEqual('mock')
     })
   })
 })

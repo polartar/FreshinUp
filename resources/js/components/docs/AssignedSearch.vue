@@ -21,7 +21,7 @@
       sm12
     >
       <simple
-        ref="searchAssigned"
+        :key="assignedKey"
         :placeholder="`Search ${currentOption.text}`"
         :url="currentOption.url"
         :term-param="currentOption.param"
@@ -50,6 +50,7 @@ export default {
   },
   data () {
     return {
+      assignedKey: 0,
       options: [
         {
           value: 1,
@@ -101,7 +102,7 @@ export default {
       set: function (value) {
         if (value !== this.typeValue) {
           this.$emit('type-change', value)
-          this.$refs.searchAssigned.resetTerm()
+          this.assignedKey += 1
           this.$emit('assign-change', '')
         }
       }

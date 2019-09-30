@@ -81,7 +81,7 @@
         v-model="doc.template"
         single-line
         outline
-        :items="templateOptions"
+        :items="templates"
         data-vv-name="template"
         :error-messages="errors.collect('template')"
         label="Document Template"
@@ -125,7 +125,7 @@ export default {
   props: {
     types: {
       type: Array,
-      default: () => []
+      required: true
     },
     templates: {
       type: Array,
@@ -135,12 +135,12 @@ export default {
       type: Object,
       default: () => {
         return {
-          title: '',
-          type: '',
-          description: '',
-          notes: '',
+          title: null,
+          type: null,
+          description: null,
+          notes: null,
           template: null,
-          file: { name: '', src: '' }
+          file: { name: null, src: null }
         }
       }
     }

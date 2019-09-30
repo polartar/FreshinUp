@@ -1,5 +1,10 @@
 <template>
-  <div v-if="!isLoading">
+  <v-form
+    v-if="!isLoading"
+    ref="form"
+    v-model="isValid"
+    lazy-validation
+  >
     <v-layout
       row
       justify-space-between
@@ -59,108 +64,25 @@
             Publishing
           </v-card-title>
           <v-divider />
-          <v-layout
-            row
-            wrap
-            pa-3
-          >
-            <v-flex
-              xs12
-              mb-3
-            >
-              <v-layout
-                mb-2
-                class="title font-weight-bold"
-              >
-                Submitted on
-              </v-layout>
-              <div>{{ formatDate(doc.created_at, 'MMM DD, YYYY • HH:mm a') }} by {{ doc.owner.name }}</div>
-            </v-flex>
-            <v-flex
-              xs12
-            >
-              <v-layout
-                mb-2
-                class="title font-weight-bold"
-              >
-                Assigned to
-              </v-layout>
-              <AssignedSearch
-                :init-val="assigned ? assigned.uuid : ''"
-                :init-items="assigned ? [{ ...assigned, id: assigned.uuid}] : []"
-                :type="assigned_type"
-                @assign-change="selectAssigned"
-                @type-change="changeAssignedType"
-              />
-            </v-flex>
-            <v-flex
-              xs12
-            >
-              <v-layout
-                mb-2
-                class="title font-weight-bold"
-              >
-                Expiration Date
-              </v-layout>
-              <vue-ctk-date-time-picker
-                v-model="expiration_at"
-                only-date
-                format="YYYY-MM-DD"
-                formatted="MM-DD-YYYY"
-                input-size="lg"
-                :color="$vuetify.theme.primary"
-                :button-color="$vuetify.theme.primary"
-              />
-            </v-flex>
-            <v-flex
-              xs12
-              mt-3
-            >
-              <v-layout
-                row
-                wrap
-                justify-space-between
-              >
-                <v-flex
-                  xs5
-                >
-                  <v-btn
-                    block
-                  >
-                    Preview
-                  </v-btn>
-                </v-flex>
-                <v-flex
-                  xs5
-                >
-                  <v-btn
-                    block
-                    :disabled="!isValid"
-                    class="primary"
-                    @click="onSaveClick"
-                  >
-                    Save Changes
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-          </v-layout>
+          <PublishingForm
+            :isvalid="isValid"
+            :initdata="doc"
+            @data-change="changePublishing"
+            @data-save="onSaveClick"
+          />
         </v-card>
       </v-flex>
     </v-layout>
-  </div>
+  </v-form>
 </template>
 
 <script>
 import { omit } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
-import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
-import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 import BasicInfoForm from '~/components/docs/BasicInfoForm.vue'
+import PublishingForm from '~/components/docs/PublishingForm.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -170,18 +92,17 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
-    VueCtkDateTimePicker,
-    AssignedSearch,
-    BasicInfoForm
+    BasicInfoForm,
+    PublishingForm
   },
-  mixins: [Validate, FormatDate],
+  mixins: [Validate],
   data () {
     return {
+      assigned_uuid: null,
       pageTitle: 'Document Details',
-      assigned_uuid: '',
       template: null,
       templates: [],
-      file: { name: '', src: '' }
+      file: { name: null, src: null }
     }
   },
   computed: {
@@ -204,12 +125,6 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    selectAssigned (uuid) {
-      this.assigned_uuid = uuid
-    },
-    changeAssignedType (value) {
-      this.assigned_type = value
-    },
     changeBasicInfo (data) {
       this.title = data.title
       this.type = data.type
@@ -217,6 +132,11 @@ export default {
       this.notes = data.notes
       this.template = data.template
       this.file = data.file
+    },
+    changePublishing (data) {
+      this.assigned_type = data.assigned_type
+      this.assigned_uuid = data.assigned_uuid
+      this.expiration_at = data.expiration_at
     },
     onSaveClick () {
       this.$validator.validate().then(valid => {
