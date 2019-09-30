@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\PaymentType;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\PaymentType as PaymentTypeResource;
 
@@ -19,7 +20,9 @@ class PaymentTypes extends Controller
      */
     public function index(Request $request)
     {
-        $paymentTypes = QueryBuilder::for(PaymentType::class, $request);
+        $paymentTypes = QueryBuilder::for(PaymentType::class, $request)->allowedFilters([
+            Filter::exact('uuid')
+        ]);
         return PaymentTypeResource::collection($paymentTypes->get());
     }
 }
