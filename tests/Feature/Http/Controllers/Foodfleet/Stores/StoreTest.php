@@ -93,5 +93,21 @@ class StoresTest extends TestCase
                 'name' => $fleetMember->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?filter[uuid]=" . $storesToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $storesToFind->first()->uuid,
+            'name' => $storesToFind->first()->name
+        ], $data[0]);
     }
 }

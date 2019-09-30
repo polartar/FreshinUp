@@ -207,4 +207,53 @@ class CustomerTest extends TestCase
             'reference_id' => $customerToFind->reference_id
         ], $data[0]);
     }
+
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListWithUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $customer = factory(Customer::class)->create();
+        factory(Customer::class)->create();
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/customers")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/customers?filter[uuid]=" . $customer->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $customer->uuid,
+            'name' => $customer->given_name . ' ' . $customer->family_name,
+            'first_name' => $customer->given_name,
+            'last_name' => $customer->family_name,
+            'square_id' => $customer->square_id,
+            'reference_id' => $customer->reference_id
+        ], $data[0]);
+    }
 }
