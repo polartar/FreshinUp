@@ -14,6 +14,7 @@ import squares from '~/store/modules/squares.js'
 import documents from '~/store/modules/documents.js'
 import documentStatuses from '~/store/modules/documentStatuses.js'
 import documentTypes from '~/store/modules/documentTypes.js'
+import transactions from '~/store/modules/transactions.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -128,7 +129,8 @@ const appInstance = new App({
       squares: squares({}),
       documents: documents({}),
       documentStatuses: documentStatuses({}),
-      documentTypes: documentTypes({})
+      documentTypes: documentTypes({}),
+      transactions: transactions({})
     }
   }),
   theme,

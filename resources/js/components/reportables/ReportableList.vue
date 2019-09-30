@@ -148,6 +148,7 @@
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import Modifier from './Modifier'
+import reduce from 'lodash/reduce'
 
 export default {
   components: {
@@ -232,7 +233,12 @@ export default {
       return []
     },
     formatFilters (filters) {
-      return Object.keys(filters).join(', ').replace(/_/g, ' ').replace(/ id/g, '').replace(/ uuid/g, '').replace(/\b\w/g, l => l.toUpperCase())
+      let filterLabels = reduce(filters, (result, value, key) => {
+        let keyValue = value.label ? value.label : key
+        result.push(keyValue)
+        return result
+      }, [])
+      return filterLabels.join(', ').replace(/_/g, ' ').replace(/ id/g, '').replace(/ uuid/g, '').replace(/\b\w/g, l => l.toUpperCase())
     },
     toCamelCase (text) {
       return text.replace(/([-_][a-z])/ig, ($1) => {
