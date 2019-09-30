@@ -1,3 +1,15 @@
+export const EMPTY_DOCUMENT = {
+  assigned_type: 1,
+  created_at: null,
+  description: null,
+  expiration_at: null,
+  notes: null,
+  status: 1,
+  title: null,
+  type: 1,
+  updated_at: null,
+  uuid: null
+}
 export const FIXTURE_DOCUMENT = {
   uuid: 'f38af949-678f-42d3-8908-f2527306c1d8',
   title: 'aliasa',

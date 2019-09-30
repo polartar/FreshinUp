@@ -38,11 +38,11 @@
       <v-select
         v-model="doc.type"
         v-validate="'required'"
+        data-vv-name="type"
+        :error-messages="errors.collect('type')"
         single-line
         outline
         :items="types"
-        data-vv-name="type"
-        :error-messages="errors.collect('type')"
         label="Type"
       />
     </v-flex>
@@ -118,10 +118,12 @@
 </template>
 <script>
 import FileUploader from '~/components/FileUploader.vue'
+import Validate from 'fresh-bus/components/mixins/Validate'
 export default {
   components: {
     FileUploader
   },
+  mixins: [Validate],
   props: {
     types: {
       type: Array,

@@ -51,6 +51,19 @@ class Documents extends Controller
     }
 
     /**
+     * Generates an empty document.
+     *
+     * @return DocumentResource
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function showNewRecommendation()
+    {
+        return new DocumentResource(
+            Document::make()
+        );
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
@@ -66,7 +79,6 @@ class Documents extends Controller
             'type' => 'integer|required',
             'status' => 'integer|required',
             'description' => 'required',
-            'notes' => 'string',
             'expiration_at' => 'date'
         ]);
 
@@ -110,7 +122,6 @@ class Documents extends Controller
             'type' => 'integer',
             'status' => 'integer',
             'description' => 'string',
-            'notes' => 'string',
             'expiration_at' => 'date'
         ]);
 
