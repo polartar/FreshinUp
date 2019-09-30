@@ -93,5 +93,21 @@ class EventTest extends TestCase
                 'name' => $event->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[uuid]=" . $eventsToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $eventsToFind->first()->uuid,
+            'name' => $eventsToFind->first()->name
+        ], $data[0]);
     }
 }

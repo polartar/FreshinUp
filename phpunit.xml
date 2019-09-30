@@ -34,6 +34,7 @@
     </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
+        <env name="APP_KEY" value="base64:dDnKDk0sJHymckQEFkgTPjNP6mTdpbHcnaMW7wKbPFc="/>
         <env name="DB_CONNECTION" value="sqlite_testing" force="true"/>
         <env name="DB_DATABASE" value=":memory:" force="true"/>
         <env name="BCRYPT_ROUNDS" value="4"/>

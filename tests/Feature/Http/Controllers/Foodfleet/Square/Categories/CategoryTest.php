@@ -93,5 +93,21 @@ class CategoryTest extends TestCase
                 'name' => $category->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/categories?filter[uuid]=" . $categoriesToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $categoriesToFind->first()->uuid,
+            'name' => $categoriesToFind->first()->name
+        ], $data[0]);
     }
 }
