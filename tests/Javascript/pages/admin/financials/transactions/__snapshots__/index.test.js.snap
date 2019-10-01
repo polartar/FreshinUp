@@ -1702,6 +1702,1736 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
   </div>
    
   <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog right-dialog v-dialog--scrollable"
+        style="max-width: 436px; display: none;"
+      >
+        <div
+          class="full-width csm-data-visibility"
+        >
+          <div
+            class="pa-4 pb-100 v-card v-sheet theme--light"
+          >
+            <div
+              class="layout row justify-space-between"
+            >
+              <a
+                class="mt-2 title primary--text"
+                href="#"
+              >
+                
+  Data visibility
+
+              </a>
+               
+              <button
+                class="mr-0 mt-2 small-btn v-btn v-btn--icon v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon grey--text far fa-times-circle theme--light"
+                  />
+                </div>
+              </button>
+            </div>
+             
+            <ul
+              class="v-expansion-panel mt-3 mb-3 theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Visible Parameters
+          
+                  </div>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="mt-4"
+                  >
+                    <div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Event / Location"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="event_location"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Event / Location
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Creation Date"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="square_created_at"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Creation Date
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Items"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="items"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Items
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Total"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="total_money"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Total
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Tax Total"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="total_tax_money"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Tax Total
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout dotted-bottom mt-2 row"
+                      >
+                        <div
+                          class="v-input my-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                        >
+                          <div
+                            class="v-input__prepend-outer"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--prepend"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon fa fa-th theme--light"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-input--selection-controls__input"
+                              >
+                                <input
+                                  aria-checked="true"
+                                  aria-label="Total Discount"
+                                  role="checkbox"
+                                  type="checkbox"
+                                  value="total_discount_money"
+                                />
+                                <div
+                                  class="v-input--selection-controls__ripple primary--text"
+                                />
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  check_box
+                                </i>
+                              </div>
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: relative;"
+                              >
+                                Total Discount
+                              </label>
+                            </div>
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+             
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-input__prepend-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--prepend-inner"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        search
+                      </i>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Search parameter"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <ul
+              class="v-expansion-panel mt-0 theme--light"
+            >
+              <li
+                aria-expanded="true"
+                class="v-expansion-panel__container v-expansion-panel__container--active"
+                tabindex="0"
+              >
+                <div
+                  class="v-expansion-panel__header"
+                >
+                  <div
+                    class="title"
+                  >
+                    
+            Parameters
+          
+                  </div>
+                  <div
+                    class="v-expansion-panel__header__icon"
+                    name="fade-transition"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      keyboard_arrow_down
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="v-expansion-panel__body"
+                  style=""
+                >
+                    
+                  <div
+                    class="mt-4"
+                  >
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Update Date"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Update Date
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Total Service Charge"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Total Service Charge
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Event Tags"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Event Tags
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Square ID"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Square ID
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Fleet member"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Fleet member
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Fleet Member Square ID"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Fleet Member Square ID
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Host"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Host
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Supplier"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Supplier
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Customer name"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Customer name
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Customer Square ID"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Customer Square ID
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout dotted-bottom mt-2 row"
+                    >
+                      <div
+                        class="v-input my-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Customer Reference ID"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Customer Reference ID
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+           
+          <div
+            class="layout foodfleet-datavisibility--darkbackground fixed-row row py-4"
+            style="width: 422px;"
+          >
+            <div
+              class="flex mr-2 ml-4 sm6"
+            >
+              <button
+                class="v-btn v-btn--block v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+        Clear
+      
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex ml-2 mr-4 sm6"
+            >
+              <button
+                class="primary v-btn v-btn--block v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+        Apply
+      
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog v-dialog--scrollable"
+        style="max-width: 436px; display: none;"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title justify-space-between px-4"
+          >
+            <span
+              class="black--text font-weight-bold title text-uppercase"
+            >
+              Save Report
+            </span>
+             
+            <button
+              class="mr-0 mt-2 small-btn v-btn v-btn--icon v-btn--large theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon grey--text far fa-times-circle theme--light"
+                />
+              </div>
+            </button>
+          </div>
+           
+          <hr />
+           
+          <div
+            class="pa-4"
+          >
+            <form
+              class="v-form"
+              novalidate="novalidate"
+            >
+              <div
+                class="layout row"
+              >
+                <div
+                  class="flex sm12"
+                >
+                  <div
+                    class="layout row justify-space-between my-2"
+                  >
+                    
+            Title
+            
+                    <!---->
+                  </div>
+                   
+                  <div
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot"
+                      >
+                        <div
+                          class="v-text-field__slot"
+                        >
+                          <input
+                            data-vv-name="name"
+                            required="required"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="v-text-field__details"
+                      >
+                        <div
+                          class="v-messages theme--light"
+                        >
+                          <div
+                            class="v-messages__wrapper"
+                          />
+                        </div>
+                        <div
+                          class="v-counter theme--light"
+                        >
+                          0 / 255
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="layout row mb-2"
+              >
+                <div
+                  class="flex sm6 pr-2"
+                >
+                  <div
+                    class="layout row justify-space-between my-2"
+                  >
+                    
+            Modifier 1
+            
+                    <!---->
+                  </div>
+                   
+                  <div
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                    role="combobox"
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <div
+                            class="v-select__selections"
+                          >
+                            <div
+                              class="v-select__selection v-select__selection--comma"
+                            >
+                              None selected
+                            </div>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
+                          </div>
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  class="primary--text"
+                                  role="listitem"
+                                >
+                                  <a
+                                    class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        None selected
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex sm6 pl-2"
+                >
+                  <div
+                    class="layout row justify-space-between my-2"
+                  >
+                    
+            Modifier 2
+            
+                    <!---->
+                  </div>
+                   
+                  <div
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                    role="combobox"
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <div
+                            class="v-select__selections"
+                          >
+                            <div
+                              class="v-select__selection v-select__selection--comma"
+                            >
+                              None selected
+                            </div>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
+                          </div>
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  class="primary--text"
+                                  role="listitem"
+                                >
+                                  <a
+                                    class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        None selected
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="layout row mt-4 mb-2"
+              >
+                <div
+                  class="flex"
+                >
+                  <button
+                    class="ml-0 v-btn theme--light"
+                    type="button"
+                  >
+                    <div
+                      class="v-btn__content"
+                    >
+                      
+            Cancel
+          
+                    </div>
+                  </button>
+                </div>
+                 
+                <div
+                  class="flex texs-xs-right"
+                >
+                  <button
+                    class="mr-0 right primary v-btn theme--light"
+                    type="button"
+                  >
+                    <div
+                      class="v-btn__content"
+                    >
+                      
+            Save
+          
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog v-dialog--scrollable"
+        style="max-width: 400px; display: none;"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title justify-space-between px-4"
+          >
+            <span
+              class="black--text font-weight-bold title text-uppercase"
+            >
+              Export to PDF/CSV
+            </span>
+             
+            <button
+              class="mr-0 mt-2 small-btn v-btn v-btn--icon v-btn--large theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon grey--text far fa-times-circle theme--light"
+                />
+              </div>
+            </button>
+          </div>
+           
+          <hr />
+           
+          <div
+            class="pa-4"
+          >
+            <div
+              class="layout row mb-2"
+            >
+              <div
+                class="flex sm12 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between my-2"
+                >
+                  
+          Select the file format
+        
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <div
+                            class="v-select__selection v-select__selection--comma"
+                          >
+                            Export to csv
+                          </div>
+                          <input
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                class="primary--text"
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Export to csv
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Export to pdf
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="layout row mt-4 mb-2"
+            >
+              <div
+                class="flex"
+              >
+                <button
+                  class="ml-0 v-btn theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+          Cancel
+        
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex texs-xs-right"
+              >
+                <button
+                  class="mr-0 right primary v-btn theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+          Export
+        
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
     class="layout row wrap pt-3"
   >
     <div
@@ -1728,6 +3458,45 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
         >
           
         Advanced Filters
+      
+        </div>
+      </button>
+       
+      <button
+        class="v-btn theme--dark primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Data Visibility
+      
+        </div>
+      </button>
+       
+      <button
+        class="v-btn theme--dark primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Save Search
+      
+        </div>
+      </button>
+       
+      <button
+        class="v-btn theme--dark primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        Export
       
         </div>
       </button>
@@ -3733,6 +5502,1301 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                     MASTERCARD 22%
                   </span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row px-5 py-4"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title"
+        >
+          <div
+            class="layout"
+          >
+            <div
+              class="flex xs12 sm6"
+            >
+              <p
+                class="font-weight-bold mt-3"
+              >
+                
+                Showing 0 Results
+              
+              </p>
+            </div>
+             
+            <div
+              class="flex xs12 sm6"
+            >
+              <p
+                class="mt-3 text-sm-right"
+              >
+                
+                Tip: use the 
+                <a
+                  class="primary--text underline"
+                >
+                   Data visibility
+                
+                </a>
+                 settings to list specific parameters
+              
+              </p>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="elevation-1"
+        >
+          <div
+            class="v-table__overflow"
+          >
+            <table
+              class="v-datatable v-table theme--light"
+            >
+              <thead>
+                <tr>
+                  <th
+                    aria-label="Event / Location: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Event / Location
+                  </th>
+                  <th
+                    aria-label="Creation Date: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Creation Date
+                  </th>
+                  <th
+                    aria-label="Items: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Items
+                  </th>
+                  <th
+                    aria-label="Total: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Total
+                  </th>
+                  <th
+                    aria-label="Tax Total: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Tax Total
+                  </th>
+                  <th
+                    aria-label="Total Discount: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Total Discount
+                  </th>
+                  <th
+                    aria-label=": Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                  />
+                </tr>
+                <tr
+                  class="v-datatable__progress"
+                >
+                  <th
+                    class="column"
+                    colspan="7"
+                  >
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="v-progress-linear"
+                      role="progressbar"
+                      style="height: 2px;"
+                    >
+                      <div
+                        class="v-progress-linear__background primary"
+                        style="height: 2px; opacity: 0.3; width: 100%;"
+                      />
+                      <div
+                        class="v-progress-linear__bar"
+                      >
+                        <div
+                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                        >
+                          <div
+                            class="v-progress-linear__bar__indeterminate long primary"
+                          />
+                          <div
+                            class="v-progress-linear__bar__indeterminate short primary"
+                          />
+                        </div>
+                        <!---->
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249929"
+                      >
+                        
+  Burger fest
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249929"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249930"
+                      >
+                        
+  Burger fest
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249930"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249931"
+                      >
+                        
+  Song festival
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249931"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249932"
+                      >
+                        
+  Burger fest
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249932"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249933"
+                      >
+                        
+  Burger fest
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249933"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249934"
+                      >
+                        
+  Burger fest
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249934"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249935"
+                      >
+                        
+  Art Basel
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249935"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      <a
+                        class="title primary--text"
+                        href="/admin/financials/transactions/17249936"
+                      >
+                        
+  Art Basel
+
+                      </a>
+                       
+                      <br />
+                      
+        New York
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        Jan 22, 2018 - 07:22pm
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        3 Hamburger, 2 Coke, 2 Beer
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $100.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $20.00
+      
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-left"
+                  >
+                    <div>
+                      
+        $0.00
+      
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--floating v-btn--small theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon fas fa-ellipsis-h theme--light"
+                        />
+                      </div>
+                    </button>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                         
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                              href="/admin/financials/transactions/17249936"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                View details
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="v-datatable v-table theme--light"
+          >
+            <div
+              class="v-datatable__actions"
+            >
+              <div
+                class="v-datatable__actions__select"
+              >
+                Rows per page:
+                <div
+                  class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <div
+                            class="v-select__selection v-select__selection--comma"
+                          >
+                            10
+                          </div>
+                          <input
+                            aria-label="Rows per page:"
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light v-menu__content--auto "
+                          style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      5
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                class="primary--text"
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      10
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      15
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      25
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      30
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      50
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-datatable__actions__range-controls"
+              >
+                <div
+                  class="v-datatable__actions__pagination"
+                >
+                  1-8 of 8
+                </div>
+                <button
+                  aria-label="Previous page"
+                  class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_left
+                    </i>
+                  </div>
+                </button>
+                <button
+                  aria-label="Next page"
+                  class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_right
+                    </i>
+                  </div>
+                </button>
               </div>
             </div>
           </div>

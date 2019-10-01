@@ -92,4 +92,48 @@ class PaymentTest extends TestCase
             'square_id' => $paymentToFind->square_id
         ], $data[0]);
     }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListWithUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        factory(Payment::class)->create();
+
+        $paymentToFind = factory(Payment::class)->create();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/payments")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/payments?filter[uuid]=" . $paymentToFind->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $paymentToFind->uuid,
+            'square_id' => $paymentToFind->square_id
+        ], $data[0]);
+    }
 }

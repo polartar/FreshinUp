@@ -1057,6 +1057,50 @@ class TransactionTest extends TestCase
         ], $data);
     }
 
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListFilterByTransactionUuid()
+    {
+        $this->createPaymentTypes();
+
+        $transaction = factory(Transaction::class)->create();
+        factory(Transaction::class)->create();
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/transactions")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(2, $data);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/transactions?filter[transaction_uuid]=" . $transaction->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(1, $data);
+        $this->assertArraySubset([
+            [
+                'uuid' => $transaction->uuid
+            ]
+        ], $data);
+    }
+
 
     private function createPaymentTypes()
     {
