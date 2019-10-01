@@ -1,6 +1,6 @@
 import sortBy from 'lodash/sortBy'
 
-export const FIXTURE_USERS = [{
+export const FIXTURE_DOCUMENTS = [{
   uuid: 'f38af949-678f-42d3-8908-f2527306c1d8',
   title: 'aliasa',
   status: 2,
@@ -702,8 +702,6 @@ export const FIXTURE_USERS = [{
   created_at: '2019-09-30T03:51:14.000000Z',
   updated_at: '2019-09-30T03:51:14.000000Z'
 }]
-
-export const FIXTURE_DOCUMENTS = []
 
 export const FIXTURE_DOCUMENTS_SORTED_BY_FIRSTNAME = sortBy(FIXTURE_DOCUMENTS, ['first_name'])
 

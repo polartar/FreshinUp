@@ -1,5 +1,5 @@
 <script>
-import CreateUpdate from '~/components/pages/admin/docs/CreateUpdate.vue'
+import CreateUpdate from '~/components/docs/CreateUpdate.vue'
 
 export default {
   extends: CreateUpdate,

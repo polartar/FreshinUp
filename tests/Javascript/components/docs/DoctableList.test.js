@@ -1,9 +1,25 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
+import { FIXTURE_DOCUMENTS } from 'tests/__data__/documents'
 import Component from '~/components/docs/DoctableList.vue'
 
 describe('Document List component', () => {
   // Component instance "under test"
   let localVue
+  describe('Snapshots', () => {
+    test('defaults', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          docs: FIXTURE_DOCUMENTS,
+          statuses: FIXTURE_DOCUMENT_STATUSES
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+  })
+
   describe('Methods', () => {
     beforeEach(() => {
       localVue = createLocalVue()
