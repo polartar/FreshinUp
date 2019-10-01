@@ -76,7 +76,13 @@ describe('Document List component', () => {
       wrapper.vm.manage(itemActions[1], mockDoc)
 
       expect(wrapper.emitted()['manage-view']).toBeTruthy()
+      expect(wrapper.emitted()['manage-view'][0][0].id).toEqual(1)
+      expect(wrapper.emitted()['manage-view'][0][0].title).toEqual('mock title')
+      expect(wrapper.emitted()['manage-view'][0][0].status).toEqual(1)
       expect(wrapper.emitted()['manage-delete']).toBeTruthy()
+      expect(wrapper.emitted()['manage-delete'][0][0].id).toEqual(1)
+      expect(wrapper.emitted()['manage-delete'][0][0].title).toEqual('mock title')
+      expect(wrapper.emitted()['manage-delete'][0][0].status).toEqual(1)
     })
 
     test('manageMultiple function emitted multiple manage action', () => {
@@ -87,6 +93,7 @@ describe('Document List component', () => {
       wrapper.vm.manageMultiple('delete')
 
       expect(wrapper.emitted()['manage-multiple-delete']).toBeTruthy()
+      expect(wrapper.emitted()['manage-multiple-delete'][0][0]).toEqual([])
     })
 
     test('changeStatus function emitted change-status action', () => {
@@ -99,6 +106,10 @@ describe('Document List component', () => {
       wrapper.vm.changeStatus(2, mockDoc)
 
       expect(wrapper.emitted()['change-status']).toBeTruthy()
+      expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)
+      expect(wrapper.emitted()['change-status'][0][1].id).toEqual(1)
+      expect(wrapper.emitted()['change-status'][0][1].title).toEqual('mock title')
+      expect(wrapper.emitted()['change-status'][0][1].status).toEqual(1)
     })
   })
 

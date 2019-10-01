@@ -76,6 +76,7 @@ describe('PublishingForm', () => {
 
       wrapper.vm.onSaveClick()
       expect(wrapper.emitted()['data-save']).toBeTruthy()
+      expect(wrapper.emitted()['data-save'][0][0]).toBeFalsy()
     })
   })
 })
