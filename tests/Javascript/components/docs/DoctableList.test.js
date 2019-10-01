@@ -115,27 +115,4 @@ describe('Document List component', () => {
       expect(wrapper.vm.selectedDocActions[0].text).toBe('Delete')
     })
   })
-
-  describe('page property', () => {
-    test('changes the v-pagination components selected item', async () => {
-      const wrapper = mount(Component, {
-        localVue: createLocalVue.localVue,
-        propsData: {
-          page: 1,
-          isLoading: false,
-          rowsPerPage: 5,
-          totalItems: 10
-        }
-      })
-      expect(wrapper.find('.v-pagination .v-pagination__item--active').text()).toEqual('1')
-      wrapper.setProps({
-        page: 2,
-        isLoading: false,
-        rowsPerPage: 5,
-        totalItems: 10
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.find('.v-pagination .v-pagination__item--active').text()).toEqual('2')
-    })
-  })
 })
