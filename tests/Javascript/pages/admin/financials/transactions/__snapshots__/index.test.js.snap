@@ -3483,7 +3483,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           class="v-btn__content"
         >
           
-        Save Search
+        Save Report
       
         </div>
       </button>
