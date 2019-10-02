@@ -11,6 +11,9 @@ import financialReports from '~/store/modules/financialReports.js'
 import paymentTypes from '~/store/modules/paymentTypes.js'
 import financialsummary from '~/store/modules/financialsummary.js'
 import squares from '~/store/modules/squares.js'
+import documents from '~/store/modules/documents.js'
+import documentStatuses from '~/store/modules/documentStatuses.js'
+import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
 
 const initialState = {
@@ -72,42 +75,52 @@ const appInstance = new App({
       logo: '/images/logo.png',
       items: [
         {
+          action: 'icon-dashboard',
           title: 'Dashboard',
           to: '/admin#'
         },
         {
+          action: 'icon-users',
           title: 'Users',
           to: '/admin/users'
         },
         {
+          action: 'icon-companies',
           title: 'Companies',
           to: '/admin/companies'
         },
         {
+          action: 'icon-trucks',
           title: 'Fleet Members',
           to: '/admin/fleet-members'
         },
         {
+          action: 'icon-events',
           title: 'Events',
           to: '/admin/events'
         },
         {
+          action: 'icon-venues',
           title: 'Venues',
           to: '/admin/venues'
         },
         {
+          action: 'icon-documents',
           title: 'Documents',
           to: '/admin/docs'
         },
         {
+          action: 'icon-templates',
           title: 'Doc. Templates',
           to: '/admin/doc-templates'
         },
         {
+          action: 'icon-financial',
           title: 'Financials',
           to: '/admin/financials'
         },
         {
+          action: 'icon-reports',
           title: 'Analytics',
           to: '/admin/analytics'
         }
@@ -124,6 +137,9 @@ const appInstance = new App({
       paymentTypes: paymentTypes({}),
       financialsummary: financialsummary({}),
       squares: squares({}),
+      documents: documents({}),
+      documentStatuses: documentStatuses({}),
+      documentTypes: documentTypes({}),
       transactions: transactions({})
     }
   }),
