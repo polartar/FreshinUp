@@ -34,7 +34,7 @@ export default {
           yAxes: [{
             ticks: {
               callback: (value) => {
-                return value ? this.formatMoney(value, { format: '$0,0.00', precision: 4 }) : '$0.00'
+                return value ? this.formatMoney(Math.round(value), { format: '$0,0.00', precision: 4 }) : '$0.00'
               }
             }
           }]
@@ -42,7 +42,7 @@ export default {
         tooltips: {
           callbacks: {
             label: (tooltipItem, data) => {
-              return this.formatMoney(tooltipItem.yLabel, { format: '$0,0.00', precision: 4 })
+              return tooltipItem.yLabel ? this.formatMoney(tooltipItem.yLabel, { format: '$0,0.00', precision: 4 }) : '$0.00'
             }
           }
         }
