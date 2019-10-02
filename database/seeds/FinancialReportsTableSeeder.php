@@ -4,7 +4,6 @@ use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\FinancialModifier as Modifier;
 use App\Models\Foodfleet\FinancialReport;
 use App\Models\Foodfleet\Square\Customer;
-use App\Models\Foodfleet\Store;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -25,7 +24,7 @@ class FinancialReportsTableSeeder extends Seeder
         $demoAdmin = User::where('email', 'demoAdmin@example.com')->first();
 
         $events = Event::get();
-        $items = Store::get();
+        $items = \App\Models\Foodfleet\Square\Item::get();
         $customers = Customer::get();
 
         $saved = [
