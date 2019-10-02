@@ -17,6 +17,12 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
+    Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
+    Route::apiResource('documents', 'Foodfleet\Documents');
+    Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
+    Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
+    Route::apiResource('tmp-media', 'Foodfleet\TmpMedia');
+
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('events', 'Foodfleet\Events@index');
