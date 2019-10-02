@@ -113,7 +113,7 @@ describe('TransactionList', () => {
 
         }
       })
-      expect(wrapper.vm.headerArray).toEqual(['Event / Location', 'Creation Date', 'Update Date', 'Total', 'Tax Total', 'Total Discount', 'Total Service Charge', 'Items', 'Event Tags', 'Square ID', 'Fleet member', 'Fleet Member Square ID', 'Host', 'Supplier', 'Customer name', 'Customer Square ID', 'Customer Reference ID'])
+      expect(wrapper.vm.headerArray).toEqual(['Event / Location', 'Creation Date', 'Update Date', 'Total', 'Tax Total', 'Total Discount', 'Total Service Charge', 'Items', 'Event Tags', 'Square ID', 'Fleet member', 'Fleet Member Square ID', 'Customer Company', 'Supplier', 'Customer name', 'Customer Square ID', 'Customer Reference ID'])
     })
     test('dataVisibilityComputed()', () => {
       const wrapper = shallowMount(Component, {

@@ -156,7 +156,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Hosts
+      Customer Companies
       
       <!---->
     </div>
@@ -179,7 +179,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All Hosts"
+              placeholder="All Customer Companies"
               role="combobox"
               type="text"
             />

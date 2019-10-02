@@ -2591,7 +2591,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                             >
                               <input
                                 aria-checked="false"
-                                aria-label="Host"
+                                aria-label="Customer Company"
                                 role="checkbox"
                                 type="checkbox"
                                 value=""
@@ -2611,7 +2611,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                               class="v-label theme--light"
                               style="left: 0px; position: relative;"
                             >
-                              Host
+                              Customer Company
                             </label>
                           </div>
                           <div
@@ -4900,7 +4900,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
           class="layout row justify-space-between mb-2"
         >
           
-      Hosts
+      Customer Companies
       
           <!---->
         </div>
@@ -4923,7 +4923,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  placeholder="All Hosts"
+                  placeholder="All Customer Companies"
                   role="combobox"
                   type="text"
                 />

@@ -121,13 +121,13 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             Fleet Member Square ID
           </th>
           <th
-            aria-label="Host: Not sorted."
+            aria-label="Customer Company: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Host
+            Customer Company
           </th>
           <th
             aria-label="Supplier: Not sorted."

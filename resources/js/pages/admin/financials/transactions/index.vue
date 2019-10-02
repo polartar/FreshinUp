@@ -262,7 +262,7 @@ export const VISIBILITY_OPTIONS = [
   { name: 'square_id', label: 'Square ID' },
   { name: 'store', label: 'Fleet member' },
   { name: 'store_square_id', label: 'Fleet Member Square ID' },
-  { name: 'host', label: 'Host' },
+  { name: 'host', label: 'Customer Company' },
   { name: 'supplier', label: 'Supplier' },
   { name: 'customer', label: 'Customer name' },
   { name: 'customer_square_id', label: 'Customer Square ID' },

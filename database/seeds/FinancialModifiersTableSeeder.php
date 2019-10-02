@@ -40,8 +40,8 @@ class FinancialModifiersTableSeeder extends Seeder
             [
                 'name' => 'host_uuid',
                 'resource_name' => 'companies?filter[type_key]=host',
-                'label' => 'Host name',
-                'placeholder' => 'Host name',
+                'label' => 'Customer company name',
+                'placeholder' => 'Customer company name',
                 'type' => 'autocomplete',
                 'filter' => 'filter[name]',
                 'value_param' => 'uuid',
