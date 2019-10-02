@@ -83,9 +83,11 @@ $ yarn watch-poll
 - add 
 ```
 buckets:
-    - name: cms
+    - name: footfleet
       policy: public
-    - name: tmp
+    - name: footfleet-bus
+      policy: public
+    - name: footfleet-tmp
       policy: public
 ```
 - `$ vagrant up --provision`
@@ -93,28 +95,35 @@ buckets:
 `192.168.10.10   homestead`
 - the local configuration for projects on homestead has to be (it's different from the docker configuration):
 ```
+# Filesystem for FoodFleet
+FS_FF_KEY=homestead
+FS_FF_SECRET=secretkey
+FS_FF_ENDPOINT=http://homestead:9600
+FS_FF_BUCKET=footfleet
+FS_FF_REGION=us-east-1
+FS_FF_ROOT=
+FS_FF_BUCKET_ENDPOINT=false
+FS_FF_PATH_STYLE_ENDPOINT=true
+
 # TMP Storage
 FS_TMP_KEY=homestead
 FS_TMP_SECRET=secretkey
 FS_TMP_ENDPOINT=http://homestead:9600
-FS_TMP_BUCKET=tmp
+FS_TMP_BUCKET=footfleet-tmp
 FS_TMP_REGION=us-east-1
-
-# Filesystem for Content Management media
-FS_CMS_KEY=homestead
-FS_CMS_SECRET=secretkey
-FS_CMS_ENDPOINT=http://homestead:9600
-FS_CMS_BUCKET=cms
-FS_CMS_REGION=us-east-1
-FS_CMS_ROOT=
+FS_TMP_ROOT=
+FS_TMP_BUCKET_ENDPOINT=false
+FS_TMP_PATH_STYLE_ENDPOINT=true
 
 # Filesystem for BUS media
-FS_CMS_KEY=homestead
-FS_CMS_SECRET=secretkey
-FS_CMS_ENDPOINT=http://homestead:9600
-FS_CMS_BUCKET=bus
-FS_CMS_REGION=us-east-1
-FS_CMS_ROOT=
+FS_BUS_KEY=homestead
+FS_BUS_SECRET=secretkey
+FS_BUS_ENDPOINT=http://homestead:9600
+FS_BUS_BUCKET=footfleet-bus
+FS_BUS_REGION=us-east-1
+FS_BUS_ROOT=
+FS_BUS_BUCKET_ENDPOINT=false
+FS_BUS_PATH_STYLE_ENDPOINT=true
 ```
 
 - take out from your homestead machine the `ca.homestead.homestead.crt` file in the `/etc/nginx/ssl/` folder
