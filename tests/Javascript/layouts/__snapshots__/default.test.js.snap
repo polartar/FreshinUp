@@ -27,6 +27,16 @@ exports[`Default layout mount snapshot of layout 1`] = `
           class="v-list__group__header"
         >
           <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              dashboard
+            </i>
+          </div>
+          <div
             role="listitem"
           >
             <div
@@ -75,7 +85,14 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
             </router-link>
           </div>
         </div>
@@ -86,6 +103,16 @@ exports[`Default layout mount snapshot of layout 1`] = `
         <div
           class="v-list__group__header"
         >
+          <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              supervised_user_circle
+            </i>
+          </div>
           <div
             role="listitem"
           >
@@ -136,7 +163,14 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
             </a>
           </div>
           <div
@@ -156,7 +190,14 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
             </a>
           </div>
           <div
@@ -176,7 +217,14 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
             </a>
           </div>
         </div>
@@ -187,6 +235,16 @@ exports[`Default layout mount snapshot of layout 1`] = `
         <div
           class="v-list__group__header"
         >
+          <div
+            class="v-list__group__header__prepend-icon"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon material-icons theme--dark"
+            >
+              settings
+            </i>
+          </div>
           <div
             role="listitem"
           >
@@ -236,7 +294,14 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="v-list__tile__action"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--dark"
+                />
+              </div>
             </router-link>
           </div>
         </div>

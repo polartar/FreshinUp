@@ -89,7 +89,7 @@
           dark
           @click.stop="saveDialog = true"
         >
-          Save Search
+          Save Report
         </v-btn>
         <v-btn
           color="primary"

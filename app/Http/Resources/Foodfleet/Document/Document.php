@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Resources\Foodfleet\Document;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+use App\Enums\DocumentAssigned as DocumentAssignedEnum;
+use App\Enums\DocumentStatus as DocumentStatusEnum;
+use App\Enums\DocumentTypes as DocumentTypeEnum;
+use FreshinUp\FreshBusForms\Http\Resources\User\User as UserResource;
+
+class Document extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type);
+        $assignedResource = DocumentAssignedEnum::getResource($assignedType);
+        $data = [
+            'uuid' => $this->uuid,
+            'title' => $this->title,
+            'status' => $this->status ? intval($this->status) : DocumentStatusEnum::PENDING,
+            'type' => $this->type ? intval($this->type) : DocumentTypeEnum::FROM_TEMPLATE,
+            'description' => $this->description,
+            'notes' => $this->notes,
+            'owner' => new UserResource($this->whenLoaded('owner')),
+            'assigned' => new $assignedResource($this->whenLoaded('assigned')),
+            'assigned_type' => $assignedType,
+            'expiration_at' => $this->expiration_at,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at
+        ];
+
+        return $data;
+    }
+}
