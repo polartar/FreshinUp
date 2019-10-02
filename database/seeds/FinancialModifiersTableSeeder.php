@@ -39,7 +39,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'host_uuid',
-                'resource_name' => 'companies?filter[key_id]=host',
+                'resource_name' => 'companies?filter[type_key]=host',
                 'label' => 'Host name',
                 'placeholder' => 'Host name',
                 'type' => 'autocomplete',
@@ -59,7 +59,7 @@ class FinancialModifiersTableSeeder extends Seeder
             ],
             [
                 'name' => 'supplier_uuid',
-                'resource_name' => 'companies?filter[key_id]=supplier',
+                'resource_name' => 'companies?filter[type_key]=supplier',
                 'label' => 'Supplier name',
                 'placeholder' => 'Supplier name',
                 'type' => 'autocomplete',
@@ -208,9 +208,13 @@ class FinancialModifiersTableSeeder extends Seeder
         ];
 
         foreach ($modifiers as $item) {
-            $modifier = Modifier::firstOrCreate([
+            $comparationArray = [
                 'name' => $item['name']
-            ], $item);
+            ];
+            if (array_key_exists('filter', $item)) {
+                $comparationArray['filter'] = $item['filter'];
+            }
+            $modifier = Modifier::firstOrCreate($comparationArray, $item);
             $modifier->update($item);
         }
     }
