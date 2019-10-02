@@ -67,7 +67,7 @@
         justify-space-between
         mb-2
       >
-        Hosts
+        Customer Companies
         <clear-button
           v-if="filters.host_uuid"
           @clear="filters.host_uuid = null; hostKey += 1"
@@ -78,7 +78,7 @@
         :key="hostKey"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
-        placeholder="All Hosts"
+        placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
