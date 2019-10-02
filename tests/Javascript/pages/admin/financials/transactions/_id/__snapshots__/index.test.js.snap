@@ -3,32 +3,27 @@
 exports[`Admin Transaction Details Page Mount default 1`] = `
 <div>
   <div
-    class="layout row wrap pt-3"
+    class="layout row wrap pt-3 pl-1"
   >
-    <div
-      class="flex d-inline-flex align-center ma-2"
+    <a
+      class="white--text font-weight-bold"
     >
-      <h2
-        class="white--text"
-      >
-        
-        Transaction Details
       
-      </h2>
-    </div>
-     
-    <div
-      class="flex text-xs-right mt-2 mr-2"
+      Back to financial report
+    
+    </a>
+  </div>
+   
+  <div
+    class="layout row wrap pl-1"
+  >
+    <h2
+      class="white--text"
     >
-      <a
-        class="white--text font-weight-bold"
-        to="backPage"
-      >
-        
-        Back to financial report
       
-      </a>
-    </div>
+      Transaction Details
+    
+    </h2>
   </div>
    
   <hr
