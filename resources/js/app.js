@@ -72,42 +72,52 @@ const appInstance = new App({
       logo: '/images/logo.png',
       items: [
         {
+          action: 'icon-dashboard',
           title: 'Dashboard',
           to: '/admin#'
         },
         {
+          action: 'icon-users',
           title: 'Users',
           to: '/admin/users'
         },
         {
+          action: 'icon-companies',
           title: 'Companies',
           to: '/admin/companies'
         },
         {
+          action: 'icon-trucks',
           title: 'Fleet Members',
           to: '/admin/fleet-members'
         },
         {
+          action: 'icon-events',
           title: 'Events',
           to: '/admin/events'
         },
         {
+          action: 'icon-venues',
           title: 'Venues',
           to: '/admin/venues'
         },
         {
+          action: 'icon-documents',
           title: 'Documents',
           to: '/admin/docs'
         },
         {
+          action: 'icon-templates',
           title: 'Doc. Templates',
           to: '/admin/doc-templates'
         },
         {
+          action: 'icon-financial',
           title: 'Financials',
           to: '/admin/financials'
         },
         {
+          action: 'icon-reports',
           title: 'Analytics',
           to: '/admin/analytics'
         }
