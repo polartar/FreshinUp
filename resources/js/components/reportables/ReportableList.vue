@@ -78,15 +78,6 @@
           {{ formatFilters(props.item.filters) }}
         </td>
         <td class="text-xs-right">
-          <a
-            class="primary--text open"
-            target="_blank"
-            :href="report_links[props.item.id]"
-          >
-            Open in new tab
-          </a>
-        </td>
-        <td class="text-xs-right">
           <v-btn
             color="primary"
             dark
@@ -180,7 +171,7 @@ export default {
       headers: [
         { text: 'Report name', sortable: false, value: 'date', align: 'left', class: 'font-weight-bold' },
         { text: 'Modifiers', value: 'modifiers', sortable: false, align: 'left', class: 'font-weight-bold', width: '35%' },
-        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '10%' },
+        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '15%' },
         { value: 'new_tab', sortable: false },
         { value: 'action', sortable: false },
         { value: 'delete', sortable: false }
