@@ -4,28 +4,23 @@
       row
       wrap
       pt-3
+      pl-1
     >
-      <v-flex
-        d-inline-flex
-        align-center
-        ma-2
+      <a
+        class="white--text font-weight-bold"
+        @click.prevent="backPage"
       >
-        <h2 class="white--text">
-          {{ pageTitle }}
-        </h2>
-      </v-flex>
-      <v-flex
-        text-xs-right
-        mt-2
-        mr-2
-      >
-        <a
-          to="backPage"
-          class="white--text font-weight-bold"
-        >
-          Back to financial report
-        </a>
-      </v-flex>
+        Back to financial report
+      </a>
+    </v-layout>
+    <v-layout
+      row
+      wrap
+      pl-1
+    >
+      <h2 class="white--text">
+        {{ pageTitle }}
+      </h2>
     </v-layout>
     <v-divider />
 
