@@ -2,14 +2,14 @@
 
 namespace Tests\Feature\Jobs;
 
-use App\Jobs\RenewToken;
+use App\Jobs\RevokeToken;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class RenewTokenTest extends TestCase
+class RevokeTokenTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -18,11 +18,11 @@ class RenewTokenTest extends TestCase
      *
      * @return void
      */
-    public function testRenewWithoutSquareRefreshToken()
+    public function testRevokeWithoutSquareAccessToken()
     {
         $supplier = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
 
-        $importJob = new RenewToken(\App\Models\Foodfleet\Company::find($supplier->id));
+        $importJob = new RevokeToken(\App\Models\Foodfleet\Company::find($supplier->id));
         $importJob->handle();
 
         // Retrieve the records from the Monolog TestHandler
@@ -66,7 +66,7 @@ class RenewTokenTest extends TestCase
             'square_refresh_token' => 'not_a_valid_token'
         ]);
 
-        $importJob = new RenewToken(\App\Models\Foodfleet\Company::find($supplier->id));
+        $importJob = new RevokeToken(\App\Models\Foodfleet\Company::find($supplier->id));
         $importJob->handle();
 
         // Retrieve the records from the Monolog TestHandler
