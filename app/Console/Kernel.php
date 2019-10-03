@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(ImportSquare::class)->dailyAt('00:00')->withoutOverlapping();
+        $schedule->command(ImportSquare::class)->cron('0 */4 * * *')->withoutOverlapping();
         // Run renew tokens every 15 days
         $schedule->command(RenewTokens::class)->monthlyOn(1, '23:00')->withoutOverlapping();
         $schedule->command(RenewTokens::class)->monthlyOn(15, '23:00')->withoutOverlapping();
