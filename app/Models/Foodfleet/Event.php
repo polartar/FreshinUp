@@ -67,4 +67,9 @@ class Event extends Model
             'uuid'
         );
     }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
 }
