@@ -286,8 +286,8 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                               <div
                                 role="listitem"
                               >
-                                <div
-                                  class="v-list__tile theme--light"
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -295,10 +295,27 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      No data available
+                                      From Template
                                     </div>
                                   </div>
-                                </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Downloadable
+                                    </div>
+                                  </div>
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -368,8 +385,8 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                               <div
                                 role="listitem"
                               >
-                                <div
-                                  class="v-list__tile theme--light"
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -377,10 +394,78 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      No data available
+                                      Pending
                                     </div>
                                   </div>
-                                </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Approved
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Rejected
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Expiring
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Expired
+                                    </div>
+                                  </div>
+                                </a>
                               </div>
                             </div>
                           </div>

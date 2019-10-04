@@ -1,4 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { FIXTURE_DOCUMENT_TYPES } from 'tests/__data__/documentTypes'
+import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
 import Component from '~/components/docs/FilterSorter.vue'
 
 describe('FilterSorter', () => {
@@ -8,7 +10,11 @@ describe('FilterSorter', () => {
     test('defaults', () => {
       localVue = createLocalVue()
       const wrapper = mount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        propsData: {
+          types: FIXTURE_DOCUMENT_TYPES,
+          statuses: FIXTURE_DOCUMENT_STATUSES
+        }
       })
       expect(wrapper.element).toMatchSnapshot()
     })

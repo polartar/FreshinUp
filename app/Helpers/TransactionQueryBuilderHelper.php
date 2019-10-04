@@ -23,6 +23,7 @@ class TransactionQueryBuilderHelper
     public static function getTransactionFilters()
     {
         return [
+            Filter::exact('transaction_uuid', 'uuid'),
             Filter::exact('event_uuid'),
             Filter::exact('store_uuid'),
             Filter::custom('supplier_uuid', SupplierUuid::class),

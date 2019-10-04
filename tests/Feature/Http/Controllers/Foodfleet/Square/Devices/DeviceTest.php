@@ -43,5 +43,22 @@ class DeviceTest extends TestCase
                 'name' => $device->name
             ], $data[$idx]);
         }
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/devices?filter[uuid]=" . $devices->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $devices->first()->uuid,
+            'name' => $devices->first()->name
+        ], $data[0]);
     }
 }

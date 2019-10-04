@@ -21,6 +21,8 @@
         :key="eventKey"
         url="foodfleet/events"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.event_uuid"
         placeholder="All Events"
         background-color="white"
         class="mt-0 pt-0"
@@ -65,17 +67,18 @@
         justify-space-between
         mb-2
       >
-        Hosts
+        Customer Companies
         <clear-button
           v-if="filters.host_uuid"
           @clear="filters.host_uuid = null; hostKey += 1"
         />
       </v-layout>
+      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         :key="hostKey"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
-        placeholder="All Hosts"
+        placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
@@ -101,6 +104,8 @@
         :key="storeKey"
         url="foodfleet/stores"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.store_uuid"
         placeholder="All fleet members"
         background-color="white"
         class="mt-0 pt-0"
@@ -123,6 +128,7 @@
           @clear="filters.supplier_uuid = null; supplierKey += 1"
         />
       </v-layout>
+      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         :key="supplierKey"
         url="companies?filter[type_key]=supplier"

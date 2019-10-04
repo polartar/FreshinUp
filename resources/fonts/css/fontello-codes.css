@@ -1,9 +1,11 @@
 
-.icon-venues:before { content: '\e800'; } /* '' */
-.icon-users:before { content: '\e801'; } /* '' */
-.icon-trucks:before { content: '\e802'; } /* '' */
-.icon-reports:before { content: '\e803'; } /* '' */
+.icon-companies:before { content: '\e800'; } /* '' */
+.icon-dashboard:before { content: '\e801'; } /* '' */
+.icon-documents:before { content: '\e802'; } /* '' */
+.icon-events:before { content: '\e803'; } /* '' */
 .icon-financial:before { content: '\e804'; } /* '' */
-.icon-events:before { content: '\e805'; } /* '' */
-.icon-dashboard:before { content: '\e806'; } /* '' */
-.icon-companies:before { content: '\e807'; } /* '' */
+.icon-reports:before { content: '\e805'; } /* '' */
+.icon-templates:before { content: '\e806'; } /* '' */
+.icon-trucks:before { content: '\e807'; } /* '' */
+.icon-users:before { content: '\e808'; } /* '' */
+.icon-venues:before { content: '\e809'; } /* '' */

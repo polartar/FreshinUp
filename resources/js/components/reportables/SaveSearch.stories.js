@@ -40,32 +40,6 @@ storiesOf('FoodFleet|reportables/SaveSearch', module)
   </v-container>
 `
   }))
-  .add('is platform admin', () => ({
-    components: { SaveSearch },
-    methods: {
-      onClose () {
-        action('Close')('close')
-      },
-      onSave (params) {
-        action('Save')(params)
-      }
-    },
-    data () {
-      return {
-        modifiers: modifiers
-      }
-    },
-    template: `
-  <v-container>
-       <save-search
-            is-platform-admin
-            :modifiers="modifiers"
-            @close="onClose"
-            @save="onSave"
-            />
-  </v-container>
-`
-  }))
   .add('inside dialog', () => ({
     components: { SaveSearch },
     data () {

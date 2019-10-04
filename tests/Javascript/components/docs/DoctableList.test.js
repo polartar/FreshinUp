@@ -1,9 +1,25 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
+import { FIXTURE_DOCUMENTS } from 'tests/__data__/documents'
 import Component from '~/components/docs/DoctableList.vue'
 
 describe('Document List component', () => {
   // Component instance "under test"
   let localVue
+  describe('Snapshots', () => {
+    test('defaults', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          docs: FIXTURE_DOCUMENTS,
+          statuses: FIXTURE_DOCUMENT_STATUSES
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+  })
+
   describe('Methods', () => {
     beforeEach(() => {
       localVue = createLocalVue()
@@ -60,7 +76,13 @@ describe('Document List component', () => {
       wrapper.vm.manage(itemActions[1], mockDoc)
 
       expect(wrapper.emitted()['manage-view']).toBeTruthy()
+      expect(wrapper.emitted()['manage-view'][0][0].id).toEqual(1)
+      expect(wrapper.emitted()['manage-view'][0][0].title).toEqual('mock title')
+      expect(wrapper.emitted()['manage-view'][0][0].status).toEqual(1)
       expect(wrapper.emitted()['manage-delete']).toBeTruthy()
+      expect(wrapper.emitted()['manage-delete'][0][0].id).toEqual(1)
+      expect(wrapper.emitted()['manage-delete'][0][0].title).toEqual('mock title')
+      expect(wrapper.emitted()['manage-delete'][0][0].status).toEqual(1)
     })
 
     test('manageMultiple function emitted multiple manage action', () => {
@@ -71,6 +93,7 @@ describe('Document List component', () => {
       wrapper.vm.manageMultiple('delete')
 
       expect(wrapper.emitted()['manage-multiple-delete']).toBeTruthy()
+      expect(wrapper.emitted()['manage-multiple-delete'][0][0]).toEqual([])
     })
 
     test('changeStatus function emitted change-status action', () => {
@@ -83,6 +106,10 @@ describe('Document List component', () => {
       wrapper.vm.changeStatus(2, mockDoc)
 
       expect(wrapper.emitted()['change-status']).toBeTruthy()
+      expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)
+      expect(wrapper.emitted()['change-status'][0][1].id).toEqual(1)
+      expect(wrapper.emitted()['change-status'][0][1].title).toEqual('mock title')
+      expect(wrapper.emitted()['change-status'][0][1].status).toEqual(1)
     })
   })
 
@@ -97,29 +124,6 @@ describe('Document List component', () => {
       wrapper.setData({ selected: [ 1 ] })
       expect(wrapper.vm.selectedDocActions[0].action).toBe('delete')
       expect(wrapper.vm.selectedDocActions[0].text).toBe('Delete')
-    })
-  })
-
-  describe('page property', () => {
-    test('changes the v-pagination components selected item', async () => {
-      const wrapper = mount(Component, {
-        localVue: createLocalVue.localVue,
-        propsData: {
-          page: 1,
-          isLoading: false,
-          rowsPerPage: 5,
-          totalItems: 10
-        }
-      })
-      expect(wrapper.find('.v-pagination .v-pagination__item--active').text()).toEqual('1')
-      wrapper.setProps({
-        page: 2,
-        isLoading: false,
-        rowsPerPage: 5,
-        totalItems: 10
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.find('.v-pagination .v-pagination__item--active').text()).toEqual('2')
     })
   })
 })

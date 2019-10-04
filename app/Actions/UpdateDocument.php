@@ -20,9 +20,9 @@ class UpdateDocument implements Action
         $updateData = $collection->except(['assigned_type', 'assigned_uuid', 'uuid'])->all();
         $document->update($updateData);
 
-        if ($data['assigned_type'] && $data['assigned_uuid']) {
+        if ($collection->get('assigned_type') && $collection->get('assigned_uuid')) {
             $assignedModelName = DocumentAssignedEnum::getDescription($data['assigned_type']);
-            $assigned = (new $assignedModelName)::where('uuid', $data['assigned_uuid'])->first();
+            $assigned = call_user_func(array($assignedModelName, 'where'), 'uuid', $data['assigned_uuid'])->first();
             $assigned->documents()->save($document);
         }
 

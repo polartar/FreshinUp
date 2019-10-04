@@ -3131,7 +3131,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
           class="layout row justify-space-between mb-2"
         >
           
-      Hosts
+      Customer Companies
       
           <!---->
         </div>
@@ -3154,7 +3154,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  placeholder="All Hosts"
+                  placeholder="All Customer Companies"
                   role="combobox"
                   type="text"
                 />
@@ -3651,7 +3651,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       class="column text-xs-left font-weight-bold"
                       role="columnheader"
                       scope="col"
-                      width="10%"
+                      width="15%"
                     >
                       <span>
                         
@@ -3978,20 +3978,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       
         Fleet Member, Date After, Date Before
       
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?fleet_member_uuid=1&date_after=2019-01-01&date_before=2019-06-01"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
                     </td>
                      
                     <td
@@ -5244,20 +5230,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     <td
                       class="text-xs-right"
                     >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?event=2,3"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
                       <router-link
                         class="v-btn v-btn--router theme--dark primary"
                       >
@@ -5530,20 +5502,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       
         Date After, Date Before
       
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?date_after=2019-01-01&date_before=2019-06-01"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
                     </td>
                      
                     <td
@@ -6729,20 +6687,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     <td
                       class="text-xs-right"
                     >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000&max_price=200000"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
                       <router-link
                         class="v-btn v-btn--router theme--dark primary"
                       >
@@ -7902,20 +7846,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     <td
                       class="text-xs-right"
                     >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=100000"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
                       <router-link
                         class="v-btn v-btn--router theme--dark primary"
                       >
@@ -8130,20 +8060,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                     <td
                       class="text-xs-right"
                     >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?fleet_member=1&event=2,3&min_price=0&max_price=100000"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
                       <router-link
                         class="v-btn v-btn--router theme--dark primary"
                       >
@@ -8349,20 +8265,6 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
                       
         Company, Prepared After, Prepared Before
       
-                    </td>
-                     
-                    <td
-                      class="text-xs-right"
-                    >
-                      <a
-                        class="primary--text open"
-                        href="/admin/financials/transactions?company_uuid=4&prepared_after=2019-01-01&prepared_before=2019-07-01"
-                        target="_blank"
-                      >
-                        
-          Open in new tab
-        
-                      </a>
                     </td>
                      
                     <td

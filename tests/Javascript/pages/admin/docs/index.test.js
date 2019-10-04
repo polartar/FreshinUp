@@ -4,6 +4,8 @@ import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_DOCUMENTS_RESPONSE, FIXTURE_DOCUMENTS_SORTED_BY_FIRSTNAME } from 'tests/__data__/documents'
 import Component from '~/pages/admin/docs/index.vue'
 import documents from '~/store/modules/documents'
+import documentStatuses from '~/store/modules/documentStatuses'
+import documentTypes from '~/store/modules/documentTypes'
 
 describe('Admin Docs Page', () => {
   let localVue, mock
@@ -30,13 +32,11 @@ describe('Admin Docs Page', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      const store = createStore({
-        docs: {
-          items: FIXTURE_DOCUMENTS_RESPONSE
-        }
-      }, {
+      const store = createStore({}, {
         modules: {
-          documents: documents({})
+          documents: documents({}),
+          documentStatuses: documentStatuses({}),
+          documentTypes: documentTypes({})
         }
       })
       const wrapper = shallowMount(Component, {

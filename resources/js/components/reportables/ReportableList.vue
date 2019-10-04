@@ -78,15 +78,6 @@
           {{ formatFilters(props.item.filters) }}
         </td>
         <td class="text-xs-right">
-          <a
-            class="primary--text open"
-            target="_blank"
-            :href="report_links[props.item.id]"
-          >
-            Open in new tab
-          </a>
-        </td>
-        <td class="text-xs-right">
           <v-btn
             color="primary"
             dark
@@ -148,6 +139,7 @@
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import Modifier from './Modifier'
+import reduce from 'lodash/reduce'
 
 export default {
   components: {
@@ -179,7 +171,7 @@ export default {
       headers: [
         { text: 'Report name', sortable: false, value: 'date', align: 'left', class: 'font-weight-bold' },
         { text: 'Modifiers', value: 'modifiers', sortable: false, align: 'left', class: 'font-weight-bold', width: '35%' },
-        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '10%' },
+        { text: 'Filters', value: 'filters', sortable: false, align: 'left', class: 'font-weight-bold', width: '15%' },
         { value: 'new_tab', sortable: false },
         { value: 'action', sortable: false },
         { value: 'delete', sortable: false }
@@ -232,7 +224,12 @@ export default {
       return []
     },
     formatFilters (filters) {
-      return Object.keys(filters).join(', ').replace(/_/g, ' ').replace(/ id/g, '').replace(/ uuid/g, '').replace(/\b\w/g, l => l.toUpperCase())
+      let filterLabels = reduce(filters, (result, value, key) => {
+        let keyValue = value.label ? value.label : key
+        result.push(keyValue)
+        return result
+      }, [])
+      return filterLabels.join(', ').replace(/_/g, ' ').replace(/ id/g, '').replace(/ uuid/g, '').replace(/\b\w/g, l => l.toUpperCase())
     },
     toCamelCase (text) {
       return text.replace(/([-_][a-z])/ig, ($1) => {

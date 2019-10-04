@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a1039029fac913e0411f74a0778307a",
+    "content-hash": "be29ac844685e3a883f8f7574de4fce5",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.0",
+            "version": "3.112.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1e21446c6780a3b9b5e4315bd6d4347d2c3381eb"
+                "reference": "d744986383812c6a9e52134adabbb5683e6750fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1e21446c6780a3b9b5e4315bd6d4347d2c3381eb",
-                "reference": "1e21446c6780a3b9b5e4315bd6d4347d2c3381eb",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d744986383812c6a9e52134adabbb5683e6750fe",
+                "reference": "d744986383812c6a9e52134adabbb5683e6750fe",
                 "shasum": ""
             },
             "require": {
@@ -87,20 +87,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-12T18:09:53+00:00"
+            "time": "2019-09-27T18:09:39+00:00"
         },
         {
             "name": "bensampo/laravel-enum",
-            "version": "v1.26",
+            "version": "v1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BenSampo/laravel-enum.git",
-                "reference": "bf1e043ef489a281e57ecf4d69606e56007f3846"
+                "reference": "e78d0e80bdfc58d9caefec623dce112a92e677a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BenSampo/laravel-enum/zipball/bf1e043ef489a281e57ecf4d69606e56007f3846",
-                "reference": "bf1e043ef489a281e57ecf4d69606e56007f3846",
+                "url": "https://api.github.com/repos/BenSampo/laravel-enum/zipball/e78d0e80bdfc58d9caefec623dce112a92e677a7",
+                "reference": "e78d0e80bdfc58d9caefec623dce112a92e677a7",
                 "shasum": ""
             },
             "require": {
@@ -152,7 +152,7 @@
                 "package",
                 "validation"
             ],
-            "time": "2019-08-30T11:19:34+00:00"
+            "time": "2019-09-17T19:20:10+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -965,13 +965,13 @@
             "authors": [
                 {
                     "name": "Neuman Vong",
-                    "email": "neuman+pear@twilio.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "neuman+pear@twilio.com"
                 },
                 {
                     "name": "Anant Narayanan",
-                    "email": "anant@php.net",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "anant@php.net"
                 }
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
@@ -980,16 +980,16 @@
         },
         {
             "name": "freshinup/fresh-bus-forms",
-            "version": "1.38.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:FreshinUp/fresh-bus-forms.git",
-                "reference": "6a5c64626cc4bb67a248bceeeae195a2c5d9a8f1"
+                "reference": "26e46830b3aede08a3178627f2bd0b26eff2770f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/6a5c64626cc4bb67a248bceeeae195a2c5d9a8f1",
-                "reference": "6a5c64626cc4bb67a248bceeeae195a2c5d9a8f1",
+                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/26e46830b3aede08a3178627f2bd0b26eff2770f",
+                "reference": "26e46830b3aede08a3178627f2bd0b26eff2770f",
                 "shasum": ""
             },
             "require": {
@@ -999,6 +999,7 @@
                 "ext-json": "^1.7",
                 "hisorange/browser-detect": "^3.1",
                 "illuminate/support": "~5",
+                "imliam/laravel-env-set-command": "^1.0",
                 "jjclane/laravel-sqlite-migrations": "^0.1.3",
                 "laravel/passport": "^7.1",
                 "laravelcollective/html": "^5.7.1",
@@ -1011,6 +1012,7 @@
                 "spatie/laravel-medialibrary": "^7.0.0",
                 "spatie/laravel-permission": "^2.29",
                 "spatie/laravel-query-builder": "^1.17",
+                "symfony/psr-http-message-bridge": "^1.2",
                 "tightenco/ziggy": "^0.6.9"
             },
             "require-dev": {
@@ -1066,7 +1068,7 @@
                     "composer test:all-coverage && composer test:coverage-check"
                 ],
                 "test:coverage-check": [
-                    "vendor/bin/coverage-check tests/.reports/coverage/clover.xml 32"
+                    "vendor/bin/coverage-check tests/.reports/coverage/clover.xml 39"
                 ],
                 "test:all-coverage": [
                     "phpdbg -qrr vendor/bin/phpunit --configuration phpunit.xml --testsuite Package -d memory_limit=512M"
@@ -1095,10 +1097,10 @@
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/1.38.0",
+                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.1.0",
                 "issues": "https://github.com/FreshinUp/fresh-bus-forms/issues"
             },
-            "time": "2019-09-04T20:14:53+00:00"
+            "time": "2019-09-26T01:09:09+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -1901,16 +1903,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v7.4.1",
+            "version": "v7.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0"
+                "reference": "663e720a6d15e8ec70bf5309f774439a110efc89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0",
-                "reference": "cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/663e720a6d15e8ec70bf5309f774439a110efc89",
+                "reference": "663e720a6d15e8ec70bf5309f774439a110efc89",
                 "shasum": ""
             },
             "require": {
@@ -1968,7 +1970,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2019-09-10T19:55:34+00:00"
+            "time": "2019-09-24T20:59:35+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2713,16 +2715,16 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.33",
+            "version": "2.8.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "cd385290f9a0d609d2eddd165a1e44ec1bf12102"
+                "reference": "6f8113f57a508494ca36acbcfa2dc2d923c7ed5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/cd385290f9a0d609d2eddd165a1e44ec1bf12102",
-                "reference": "cd385290f9a0d609d2eddd165a1e44ec1bf12102",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/6f8113f57a508494ca36acbcfa2dc2d923c7ed5b",
+                "reference": "6f8113f57a508494ca36acbcfa2dc2d923c7ed5b",
                 "shasum": ""
             },
             "require": {
@@ -2761,7 +2763,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2018-09-01T15:05:15+00:00"
+            "time": "2019-09-18T18:44:20+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3432,25 +3434,25 @@
         },
         {
             "name": "petercoles/multilingual-language-list",
-            "version": "1.1.4",
+            "version": "1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/petercoles/Multilingual-Language-List.git",
-                "reference": "26304354d7892561966e63312884eaa089a3ac24"
+                "reference": "a9ad7d6ddd552f184fa8cf2f26e3784440f7922e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/petercoles/Multilingual-Language-List/zipball/26304354d7892561966e63312884eaa089a3ac24",
-                "reference": "26304354d7892561966e63312884eaa089a3ac24",
+                "url": "https://api.github.com/repos/petercoles/Multilingual-Language-List/zipball/a9ad7d6ddd552f184fa8cf2f26e3784440f7922e",
+                "reference": "a9ad7d6ddd552f184fa8cf2f26e3784440f7922e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~5",
-                "php": ">=5.6.0"
+                "illuminate/support": "~5|~6",
+                "php": "^7.2"
             },
             "require-dev": {
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "~5.3"
+                "mockery/mockery": "^1",
+                "phpunit/phpunit": "^8"
             },
             "type": "library",
             "extra": {
@@ -3476,7 +3478,7 @@
                 {
                     "name": "Peter Coles",
                     "email": "peterdcoles@gmail.com",
-                    "homepage": "http://petercoles.com"
+                    "homepage": "https://petercoles.com"
                 }
             ],
             "description": "Lookup Objects for Language Names and Codes",
@@ -3487,7 +3489,7 @@
                 "language lookup",
                 "laravel"
             ],
-            "time": "2018-01-02T16:25:28+00:00"
+            "time": "2019-09-16T15:22:51+00:00"
         },
         {
             "name": "php-di/invoker",
@@ -3584,16 +3586,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.21",
+            "version": "2.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d"
+                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/9f1287e68b3f283339a9f98f67515dd619e5bf9d",
-                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
+                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
                 "shasum": ""
             },
             "require": {
@@ -3672,7 +3674,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-07-12T12:53:49+00:00"
+            "time": "2019-09-17T03:41:22+00:00"
         },
         {
             "name": "piwik/device-detector",
@@ -4483,16 +4485,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "7.12.1",
+            "version": "7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "8c4adaeb16985a108da4e0dab186bc7561bbbf8f"
+                "reference": "34f3700a2dc58032d0ab443dcb09c2be72d2a826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8c4adaeb16985a108da4e0dab186bc7561bbbf8f",
-                "reference": "8c4adaeb16985a108da4e0dab186bc7561bbbf8f",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/34f3700a2dc58032d0ab443dcb09c2be72d2a826",
+                "reference": "34f3700a2dc58032d0ab443dcb09c2be72d2a826",
                 "shasum": ""
             },
             "require": {
@@ -4563,7 +4565,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2019-09-12T22:01:47+00:00"
+            "time": "2019-09-26T22:59:00+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -4789,16 +4791,16 @@
         },
         {
             "name": "square/connect",
-            "version": "2.20190814.2",
+            "version": "2.20190925.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/square/connect-php-sdk.git",
-                "reference": "d778579a9f42c06d4eb68bcd78e7371f1b2f8f94"
+                "reference": "9d94237953c438f07f5f0471a2ab0f3848368b80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/square/connect-php-sdk/zipball/d778579a9f42c06d4eb68bcd78e7371f1b2f8f94",
-                "reference": "d778579a9f42c06d4eb68bcd78e7371f1b2f8f94",
+                "url": "https://api.github.com/repos/square/connect-php-sdk/zipball/9d94237953c438f07f5f0471a2ab0f3848368b80",
+                "reference": "9d94237953c438f07f5f0471a2ab0f3848368b80",
                 "shasum": ""
             },
             "require": {
@@ -4836,7 +4838,7 @@
                 "sdk",
                 "swagger"
             ],
-            "time": "2019-08-23T19:44:40+00:00"
+            "time": "2019-09-25T17:56:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8068,16 +8070,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a"
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e899757bb3df5ff6e95089132f32cd59aac2220a",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff",
                 "shasum": ""
             },
             "require": {
@@ -8113,20 +8115,20 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2019-07-25T05:29:42+00:00"
+            "time": "2019-09-17T06:23:10+00:00"
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.15",
+            "version": "7.5.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d79c053d972856b8b941bb233e39dc521a5093f0"
+                "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d79c053d972856b8b941bb233e39dc521a5093f0",
-                "reference": "d79c053d972856b8b941bb233e39dc521a5093f0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/316afa6888d2562e04aeb67ea7f2017a0eb41661",
+                "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661",
                 "shasum": ""
             },
             "require": {
@@ -8186,8 +8188,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -8197,7 +8199,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-08-21T07:05:16+00:00"
+            "time": "2019-09-14T09:08:39+00:00"
         },
         {
             "name": "rregeer/phpunit-coverage-check",
@@ -8461,16 +8463,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "06a9a5947f47b3029d76118eb5c22802e5869687"
+                "reference": "68609e1261d215ea5b21b7987539cbfbe156ec3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/06a9a5947f47b3029d76118eb5c22802e5869687",
-                "reference": "06a9a5947f47b3029d76118eb5c22802e5869687",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/68609e1261d215ea5b21b7987539cbfbe156ec3e",
+                "reference": "68609e1261d215ea5b21b7987539cbfbe156ec3e",
                 "shasum": ""
             },
             "require": {
@@ -8524,7 +8526,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2019-08-11T12:43:14+00:00"
+            "time": "2019-09-14T09:02:43+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -8809,16 +8811,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.4.2",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8"
+                "reference": "0afebf16a2e7f1e434920fa976253576151effe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
-                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/0afebf16a2e7f1e434920fa976253576151effe9",
+                "reference": "0afebf16a2e7f1e434920fa976253576151effe9",
                 "shasum": ""
             },
             "require": {
@@ -8856,7 +8858,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-04-10T23:49:02+00:00"
+            "time": "2019-09-26T23:12:26+00:00"
         },
         {
             "name": "symfony/filesystem",

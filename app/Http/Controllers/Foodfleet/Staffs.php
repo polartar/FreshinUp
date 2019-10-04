@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Staff;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\Staff as StaffResource;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,7 @@ class Staffs extends Controller
     {
         $staffs = QueryBuilder::for(Staff::class, $request)
             ->allowedFilters([
+                Filter::exact('uuid'),
                 'square_id'
             ]);
 

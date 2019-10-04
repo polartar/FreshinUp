@@ -121,13 +121,13 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
             Fleet Member Square ID
           </th>
           <th
-            aria-label="Host: Not sorted."
+            aria-label="Customer Company: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Host
+            Customer Company
           </th>
           <th
             aria-label="Supplier: Not sorted."
@@ -351,48 +351,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249929"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -563,48 +532,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249930"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -775,48 +713,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249931"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -987,48 +894,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249932"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -1199,48 +1075,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249933"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -1411,48 +1256,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249934"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -1623,48 +1437,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249935"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -1835,48 +1618,17 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249936"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
       </tbody>
@@ -2244,48 +1996,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249929"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2348,48 +2069,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249930"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2452,48 +2142,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249931"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2556,48 +2215,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249932"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2660,48 +2288,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249933"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2764,48 +2361,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249934"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2868,48 +2434,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249935"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -2972,48 +2507,17 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249936"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
       </tbody>
@@ -3721,48 +3225,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249929"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -3834,48 +3307,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249930"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -3947,48 +3389,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249931"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -4060,48 +3471,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249932"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -4173,48 +3553,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249933"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -4286,48 +3635,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249934"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -4399,48 +3717,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249935"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
         <tr>
@@ -4512,48 +3799,17 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           <td
             class="text-xs-center"
           >
-            <div
-              class="v-menu"
+            <router-link
+              class="v-btn v-btn--router theme--dark primary"
             >
-              <button
-                class="v-btn v-btn--floating v-btn--small theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon fas fa-ellipsis-h theme--light"
-                  />
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-btn__content"
               >
-                 
-                <div
-                  class="v-list theme--light"
-                  role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                      href="/admin/financials/transactions/17249936"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        View details
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                
+        View details
+      
               </div>
-            </div>
+            </router-link>
           </td>
         </tr>
       </tbody>

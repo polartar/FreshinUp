@@ -1,0 +1,575 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Transaction Details Page Mount default 1`] = `
+<div>
+  <div
+    class="layout row wrap pt-3 pl-1"
+  >
+    <a
+      class="white--text font-weight-bold"
+    >
+      
+      Back to financial report
+    
+    </a>
+  </div>
+   
+  <div
+    class="layout row wrap pl-1"
+  >
+    <h2
+      class="white--text"
+    >
+      
+      Transaction Details
+    
+    </h2>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <br />
+   
+  <div
+    class="pa-4 v-card v-sheet theme--light"
+  >
+    <div
+      class="layout row"
+    >
+      <div
+        class="flex sm4"
+      >
+        <h3>
+          Burger fest - New York
+        </h3>
+      </div>
+       
+      <div
+        class="flex text-sm-center sm4"
+      >
+        
+        Jan 22, 2018 - 07:22pm
+      
+      </div>
+       
+      <div
+        class="flex text-xs-right sm4"
+      >
+        
+        Transaction ID: 123533
+      
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row px-1 py-4"
+  >
+    <div
+      class="flex"
+    >
+      <div>
+        <div
+          class="elevation-1"
+        >
+          <div
+            class="v-table__overflow"
+          >
+            <table
+              class="v-datatable v-table theme--light"
+            >
+              <thead>
+                <tr>
+                  <th
+                    aria-label="Category: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-left font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Category
+                  </th>
+                  <th
+                    aria-label="Item: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Item
+                  </th>
+                  <th
+                    aria-label="Quantity: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Quantity
+                  </th>
+                  <th
+                    aria-label="Gross Sales: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Gross Sales
+                  </th>
+                  <th
+                    aria-label="Discount: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Discount
+                  </th>
+                  <th
+                    aria-label="Taxes: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Taxes
+                  </th>
+                  <th
+                    aria-label="Net Sales: Not sorted."
+                    aria-sort="none"
+                    class="column text-xs-center font-weight-bold"
+                    role="columnheader"
+                    scope="col"
+                  >
+                    Net Sales
+                  </th>
+                </tr>
+                <tr
+                  class="v-datatable__progress"
+                >
+                  <th
+                    class="column"
+                    colspan="7"
+                  />
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    
+        Category 1
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        Hamburger
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        3
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $10.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $0.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $2.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $8.00
+      
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    
+        Category 2
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        Coke
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        2
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $20.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $1.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $4.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $16.00
+      
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-xs-left"
+                  >
+                    
+        Category 2
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        Beer
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        2
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $20.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $1.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $4.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center"
+                  >
+                    
+        $16.00
+      
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td
+                    class="text-xs-left font-weight-bold"
+                  >
+                    
+        Totals:
+      
+                  </td>
+                   
+                  <td />
+                   
+                  <td />
+                   
+                  <td
+                    class="text-xs-center font-weight-bold"
+                  >
+                    
+        $50.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center font-weight-bold"
+                  >
+                    
+        $2.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center font-weight-bold"
+                  >
+                    
+        $10.00
+      
+                  </td>
+                   
+                  <td
+                    class="text-xs-center font-weight-bold"
+                  >
+                    
+        $40.00
+      
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div
+            class="v-datatable v-table theme--light"
+          >
+            <div
+              class="v-datatable__actions"
+            >
+              <div
+                class="v-datatable__actions__select"
+              >
+                Rows per page:
+                <div
+                  class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <div
+                            class="v-select__selection v-select__selection--comma"
+                          >
+                            5
+                          </div>
+                          <input
+                            aria-label="Rows per page:"
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light v-menu__content--auto "
+                          style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                class="primary--text"
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      5
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      10
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      25
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      All
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-datatable__actions__range-controls"
+              >
+                <div
+                  class="v-datatable__actions__pagination"
+                >
+                  1-3 of 3
+                </div>
+                <button
+                  aria-label="Previous page"
+                  class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_left
+                    </i>
+                  </div>
+                </button>
+                <button
+                  aria-label="Next page"
+                  class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_right
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

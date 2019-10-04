@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Device;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\Device as DeviceResource;
 
@@ -19,7 +20,9 @@ class Devices extends Controller
      */
     public function index(Request $request)
     {
-        $devices = QueryBuilder::for(Device::class, $request);
+        $devices = QueryBuilder::for(Device::class, $request)->allowedFilters([
+            Filter::exact('uuid')
+        ]);
         return DeviceResource::collection($devices->get());
     }
 }

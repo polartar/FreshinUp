@@ -10,9 +10,8 @@
       :loading="isLoading"
       :total-items="totalItems"
       item-key="id"
-      hide-actions
       select-all
-      must-sort
+      disable-initial-sort
     >
       <v-progress-linear
         slot="progress"
@@ -246,36 +245,6 @@
         </template>
       </template>
     </v-data-table>
-    <v-layout
-      align-center
-    >
-      <v-flex
-        grow
-        justify-center
-      >
-        <v-layout
-          justify-center
-        >
-          <v-pagination
-            :value="page"
-            :length="pagination.totalPages"
-            :disabled="isLoading"
-            :total-visible="6"
-            @input="onPageChange"
-          />
-        </v-layout>
-      </v-flex>
-      <v-flex
-        shrink
-      >
-        <v-select
-          :value="rowsPerPage"
-          :items="rowsPerPageItems"
-          label="Results Per Page"
-          @input="onRowsPerPageChange"
-        />
-      </v-flex>
-    </v-layout>
   </div>
 </template>
 
@@ -326,12 +295,6 @@ export default {
     }
   },
   methods: {
-    onPageChange (value) {
-      this.pagination = { ...this.pagination, page: value }
-    },
-    onRowsPerPageChange (value) {
-      this.pagination = { ...this.pagination, rowsPerPage: value }
-    },
     manage (item, doc) {
       this.$emit('manage-' + item.action, doc)
       this.$emit('manage', item.action, doc)

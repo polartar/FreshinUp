@@ -48,13 +48,13 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
   />
    
   <doctable-list-stub
-    docs=""
+    docs="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
     page="1"
     rowsperpage="10"
     rowsperpageitems="5,10,15,25,30,50"
     sortby=""
     statuses=""
-    totalitems="6"
+    totalitems="50"
   />
    
   <v-dialog-stub
