@@ -36,15 +36,19 @@ class RevokeToken implements ShouldQueue
      */
     public function handle()
     {
-        // Get square refresh token for the supplier
-        $accessToken = $this->supplier->square_access_token;
-        $apiClient = SquareHelper::getApiClient();
+        // Configure square access
+        $apiConfig = new \SquareConnect\Configuration();
+        $apiConfig->setHost(config('square.domain'));
+        $apiConfig->setApiKey('Authorization', config('square.app_secret'));
+        $apiConfig->setApiKeyPrefix('Authorization', 'Client ');
+        $apiClient =  new \SquareConnect\ApiClient($apiConfig);
 
         // Create an OAuth API client
         $oauthApi = new \SquareConnect\Api\OAuthApi($apiClient);
         $body = new \SquareConnect\Model\RevokeTokenRequest();
 
         // Set the POST body
+        $accessToken = $this->supplier->square_access_token;
         $body->setClientId(config('square.application_id'));
         $body->setAccessToken($accessToken);
 

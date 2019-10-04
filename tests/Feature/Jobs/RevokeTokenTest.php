@@ -20,7 +20,7 @@ class RevokeTokenTest extends TestCase
      */
     public function testRevokeWithoutSquareAccessToken()
     {
-        $supplier = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
+        $supplier = factory(Company::class)->create(['name' => 'test']);
 
         $importJob = new RevokeToken(\App\Models\Foodfleet\Company::find($supplier->id));
         $importJob->handle();
@@ -31,7 +31,7 @@ class RevokeTokenTest extends TestCase
             ->getRecords();
         $this->assertCount(2, $records);
         $this->assertEquals(
-            'Renew token for supplier test id 1',
+            'Revoke token for supplier test id 1',
             $records[0]['message']
         );
         $this->assertStringContainsString(
@@ -39,7 +39,7 @@ class RevokeTokenTest extends TestCase
             $records[1]['message']
         );
         $this->assertStringContainsString(
-            '"message": "missing required parameter \'refresh_token\'"',
+            '"message": "one of either \'access_token\' or \'merchant_id\' is required"',
             $records[1]['message']
         );
         $this->assertStringContainsString(
@@ -49,7 +49,7 @@ class RevokeTokenTest extends TestCase
 
         $this->assertDatabaseHas('companies', [
             'id' => $supplier->id,
-            'square_access_token' => 'test'
+            'square_access_token' => null
         ]);
     }
 
@@ -58,12 +58,11 @@ class RevokeTokenTest extends TestCase
      *
      * @return void
      */
-    public function testRenewWithSquareRefreshTokenButWrong()
+    public function testRenewWithSquareAccessTokenButWrong()
     {
         $supplier = factory(Company::class)->create([
             'name' => 'test',
-            'square_access_token' => 'test',
-            'square_refresh_token' => 'not_a_valid_token'
+            'square_access_token' => 'not_a_valid_token',
         ]);
 
         $importJob = new RevokeToken(\App\Models\Foodfleet\Company::find($supplier->id));
@@ -75,25 +74,25 @@ class RevokeTokenTest extends TestCase
             ->getRecords();
         $this->assertCount(2, $records);
         $this->assertEquals(
-            'Renew token for supplier test id 1',
+            'Revoke token for supplier test id 1',
             $records[0]['message']
         );
         $this->assertStringContainsString(
-            'Message: [HTTP/1.1 401 Unauthorized]',
+            'Message: [HTTP/1.1 404 Not Found]',
             $records[1]['message']
         );
         $this->assertStringContainsString(
-            '"message": "Invalid refresh token"',
+            '"message": "access token not found"',
             $records[1]['message']
         );
         $this->assertStringContainsString(
-            '"type": "service.not_authorized"',
+            '"type": "not_found"',
             $records[1]['message']
         );
 
         $this->assertDatabaseHas('companies', [
             'id' => $supplier->id,
-            'square_access_token' => 'test'
+            'square_access_token' => 'not_a_valid_token'
         ]);
     }
 }
