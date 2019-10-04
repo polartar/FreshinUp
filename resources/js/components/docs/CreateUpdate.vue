@@ -118,7 +118,9 @@ export default {
       'description',
       'assigned_type',
       'notes',
-      'assigned'
+      'assigned',
+      'event_location_uuid',
+      'event_store_uuid'
     ]),
     pageTitle () {
       return (this.isNew ? 'New Document' : 'Document Details')
@@ -140,6 +142,8 @@ export default {
       this.assigned_type = data.assigned_type
       this.assigned_uuid = data.assigned_uuid
       this.expiration_at = data.expiration_at
+      this.event_location_uuid = data.event_location_uuid
+      this.event_store_uuid = data.event_store_uuid
     },
     async validator () {
       const valids = await Promise.all([

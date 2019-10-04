@@ -20,11 +20,14 @@
       md6
       sm12
     >
-      <simple
+      <DocSimple
         ref="assigned"
         :placeholder="`Search ${currentOption.text}`"
         :url="currentOption.url"
         :term-param="currentOption.param"
+        :results-id-key="currentOption.idKey"
+        :format-items="currentOption.formatItems"
+        :results-text-key="currentOption.textKey"
         v-bind="$attrs"
         background-color="white"
         class="mt-0 pt-0"
@@ -36,11 +39,11 @@
 </template>
 
 <script>
-import Simple from 'fresh-bus/components/search/simple'
+import DocSimple from '~/components/docs/DocSimple'
 
 export default {
   components: {
-    Simple
+    DocSimple
   },
   props: {
     type: {
@@ -49,43 +52,85 @@ export default {
     }
   },
   data () {
+    const formatEventStore = (list) => {
+      let result = []
+      list.forEach(event => {
+        result = result.concat(event.stores.map(store => {
+          return {
+            uuid: event.uuid,
+            event_store_uuid: store.uuid,
+            event_store_name: `${event.name}/${store.name}`
+          }
+        }))
+      })
+      return result
+    }
+    const formatEventLocation = (list) => {
+      return list.filter(event => {
+        return event.location
+      }).map(event => {
+        return {
+          uuid: event.uuid,
+          event_location_uuid: event.location.uuid,
+          event_location_name: `${event.name}/${event.location.name}`
+        }
+      })
+    }
     return {
       options: [
         {
           value: 1,
           text: 'User',
           url: 'users',
-          param: 'term'
+          param: 'term',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 2,
           text: 'Fleet Member',
           url: 'foodfleet/stores',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 3,
           text: 'Venue',
           url: 'foodfleet/locations',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 4,
           text: 'Event',
           url: 'foodfleet/events',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 5,
           text: 'Event/Fleet Memeber',
           url: 'foodfleet/events',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'event_store_name',
+          formatItems: formatEventStore
         },
         {
           value: 6,
           text: 'Event/Venue',
           url: 'foodfleet/events',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'event_location_name',
+          formatItems: formatEventLocation
         }
       ]
     }
@@ -111,17 +156,12 @@ export default {
   },
   methods: {
     selectAssigned (assigned) {
-      let changeDate = {}
-      changeDate.uuid = assigned ? assigned.uuid : ''
-      changeDate.event_location_uuid = ''
-      changeDate.event_store_uuid = ''
-
-      if (this.type === 5) {
-        changeDate.event_store_uuid = assigned.stores[0] ? assigned.stores[0].uuid : ''
+      let changeDate = {
+        uuid: '',
+        event_location_uuid: '',
+        event_store_uuid: ''
       }
-      if (this.type === 6) {
-        changeDate.event_location_uuid = assigned.location ? assigned.location.uuid : ''
-      }
+      changeDate = assigned ? { ...changeDate, ...assigned } : changeDate
       this.$emit('assign-change', changeDate)
     }
   }

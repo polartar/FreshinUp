@@ -28,8 +28,7 @@
         Assigned to
       </v-layout>
       <AssignedSearch
-        :init-val="doc.assigned ? doc.assigned.uuid : ''"
-        :init-items="doc.assigned ? [{ ...doc.assigned, id: doc.assigned.uuid}] : []"
+        :value="doc.assigned && doc.assigned.uuid"
         :type="doc.assigned_type"
         @assign-change="selectAssigned"
         @type-change="changeAssignedType"
@@ -114,7 +113,9 @@ export default {
           created_at: null,
           assigned: null,
           expiration_at: null,
-          assigned_type: 1
+          assigned_type: 1,
+          event_location_uuid: null,
+          event_store_uuid: null
         }
       }
     }
@@ -127,7 +128,9 @@ export default {
           'created_at',
           'assigned',
           'expiration_at',
-          'assigned_type'
+          'assigned_type',
+          'event_location_uuid',
+          'event_store_uuid'
         ]),
         assigned_uuid: null
       }
@@ -147,15 +150,19 @@ export default {
         this.$emit('data-change', pick(val, [
           'assigned_type',
           'assigned_uuid',
-          'expiration_at'
+          'expiration_at',
+          'event_location_uuid',
+          'event_store_uuid'
         ]))
       },
       deep: true
     }
   },
   methods: {
-    selectAssigned (uuid) {
-      this.doc.assigned_uuid = uuid
+    selectAssigned (assigned) {
+      this.doc.assigned_uuid = assigned.uuid
+      this.doc.event_location_uuid = assigned.event_location_uuid
+      this.doc.event_store_uuid = assigned.event_store_uuid
     },
     changeAssignedType (value) {
       this.doc.assigned_type = value
