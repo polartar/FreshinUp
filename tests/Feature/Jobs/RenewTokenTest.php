@@ -35,7 +35,7 @@ class RenewTokenTest extends TestCase
             $records[0]['message']
         );
         $this->assertStringContainsString(
-            'Message: [HTTP/1.1 400 Bad Request]',
+            'Message: [HTTP/2 400]',
             $records[1]['message']
         );
         $this->assertStringContainsString(
@@ -79,7 +79,7 @@ class RenewTokenTest extends TestCase
             $records[0]['message']
         );
         $this->assertStringContainsString(
-            'Message: [HTTP/1.1 401 Unauthorized]',
+            'Message: [HTTP/2 401]',
             $records[1]['message']
         );
         $this->assertStringContainsString(

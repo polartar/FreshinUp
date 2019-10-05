@@ -21,28 +21,28 @@ class Seed extends Command
             return;
         }
 
-        if ($this->hasOption('refresh')) {
+        if ($this->option('refresh')) {
             $this->call('migrate:refresh', [
-                '--force' => $this->hasOption('force')
+                '--force' => $this->option('force')
             ]);
             $this->call('passport:install', [
-                '--force' => $this->hasOption('force')
+                '--force' => $this->option('force')
             ]);
         }
 
         $this->call('fresh-bus:seed', [
-            '--quickstart' =>  $this->hasOption('quickstart')
+            '--quickstart' =>  $this->option('quickstart')
         ]);
 
         $this->call('db:seed', [
             '--class' => 'DatabaseSeeder',
-            '--force' => $this->hasOption('force')
+            '--force' => $this->option('force')
         ]);
 
         if ($this->option('quickstart')) {
             $this->call('db:seed', [
                 '--class' => 'TestDataSeeder',
-                '--force' => $this->hasOption('force')
+                '--force' => $this->option('force')
             ]);
         }
     }
