@@ -23,7 +23,6 @@
     <br>
     <user-filter
       v-if="!isLoading"
-      :companies="companies"
       :sortables="sortables"
       @runFilter="filterUsers"
     />
@@ -159,7 +158,6 @@ export default {
     ...mapGetters('userLevels', { 'userlevels': 'items' }),
     ...mapGetters('userTypes', { 'userTypes': 'items' }),
     ...mapGetters('userStatuses', { 'userstatuses': 'items' }),
-    ...mapGetters('companies', { 'companies': 'active' }),
     ...mapState('users', ['sortables']),
     deleteDialogTitle () {
       return this.deletables.length < 2 ? 'Are you sure you want to delete this user?' : 'Are you sure you want to delete the following users?'
@@ -248,7 +246,7 @@ export default {
         ...this.$route.query,
         ...this.lastFilterParams
       })
-      this.$store.dispatch('users/getItems')
+      this.$store.dispatch('users/getItems', { params: { include: ['user_type'] } })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -259,8 +257,7 @@ export default {
     Promise.all([
       vm.$store.dispatch('userLevels/getUserlevels'),
       vm.$store.dispatch('userTypes/getItems'),
-      vm.$store.dispatch('userStatuses/getUserstatuses'),
-      vm.$store.dispatch('companies/getCompanies')
+      vm.$store.dispatch('userStatuses/getUserstatuses')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
