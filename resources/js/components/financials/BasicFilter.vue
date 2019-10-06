@@ -73,11 +73,12 @@
           @clear="filters.host_uuid = null; hostKey += 1"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         :key="hostKey"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.host_uuid"
         placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
@@ -128,11 +129,12 @@
           @clear="filters.supplier_uuid = null; supplierKey += 1"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         :key="supplierKey"
         url="companies?filter[type_key]=supplier"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.supplier_uuid"
         placeholder="All Suppliers"
         background-color="white"
         class="mt-0 pt-0"
