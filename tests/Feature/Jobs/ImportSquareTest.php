@@ -294,8 +294,8 @@ class ImportSquareTest extends TestCase
         try {
             $method->invokeArgs($importJob, ['tender' => $tender, 'store' => $store]);
         } catch (\Exception $e) {
-            $this->assertStringContainsString(
-                '[HTTP/2 301] ',
+            $this->assertRegExp(
+                '/HTTP\/(1.1|2) 301/',
                 $e->getMessage()
             );
         }
