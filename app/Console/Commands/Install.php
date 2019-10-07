@@ -21,7 +21,7 @@ class Install extends Command
             '--dev' => $this->option('dev')
         ]);
         $this->call('fresh-bus:seed');
-        $this->call('csm:seed');
+        $this->call('foodfleet:seed');
         passthru('yarn install' . ($this->option('dev') ? '' : '--production'));
         passthru('yarn ' . ($this->option('dev') ? 'dev' : 'prod'));
     }
