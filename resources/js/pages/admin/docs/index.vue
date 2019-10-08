@@ -189,7 +189,7 @@ export default {
       this.deleteTemp = []
     },
     changeStatus (status, doc) {
-      this.$store.dispatch('documents/patchItem', { data: { status }, params: { id: doc.id } }).then(() => {
+      this.$store.dispatch('documents/patchItem', { data: { status }, params: { id: doc.uuid } }).then(() => {
         this.filterDocs(this.lastFilterParams)
       })
     },

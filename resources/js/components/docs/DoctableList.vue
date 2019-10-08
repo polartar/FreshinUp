@@ -9,7 +9,7 @@
       :pagination.sync="pagination"
       :loading="isLoading"
       :total-items="totalItems"
-      item-key="id"
+      item-key="uuid"
       select-all
       disable-initial-sort
     >
