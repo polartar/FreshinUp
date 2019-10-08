@@ -60,14 +60,11 @@
           <v-flex
             ml-2
           >
-            <simple
-              :key="userSearchKey"
-              url="users"
-              placeholder="Search Users"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              @input="(user) => { selectUsers(user, slotProps.run) }"
+            <AssignedSearch
+              stick
+              :type="assignedType"
+              @type-change="selectAssignedType"
+              @assign-change="(assigned) => selectAssigned(assigned, slotProps.run)"
             />
           </v-flex>
         </v-layout>
@@ -80,11 +77,11 @@
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
-import Simple from 'fresh-bus/components/search/simple'
+import AssignedSearch from '~/components/docs/AssignedSearch'
 
 export default {
   components: {
-    Simple,
+    AssignedSearch,
     SearchFilterSorter,
     VueCtkDateTimePicker
   },
@@ -108,7 +105,7 @@ export default {
   },
   data () {
     return {
-      userSearchKey: +new Date(),
+      assignedType: 1,
       type: null,
       status: null,
       assigned_uuid: null,
@@ -145,8 +142,11 @@ export default {
 
       this.$emit('runFilter', finalParams)
     },
-    selectUsers (user, run) {
-      this.assigned_uuid = user ? user.uuid : ''
+    selectAssignedType (assignedType) {
+      this.assignedType = assignedType
+    },
+    selectAssigned (assigned, run) {
+      this.assigned_uuid = assigned
       run()
     },
     clearFilters (params) {

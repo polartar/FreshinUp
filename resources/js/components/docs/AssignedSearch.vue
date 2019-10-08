@@ -2,7 +2,7 @@
   <v-layout
     row
     wrap
-    justify-space-between
+    :justify-space-between="!stick"
   >
     <v-flex
       md5
@@ -11,7 +11,9 @@
       <v-select
         v-model="typeValue"
         single-line
-        outline
+        solo
+        :flat="stick"
+        height="48"
         :items="options"
         data-vv-name="type"
       />
@@ -46,6 +48,10 @@ export default {
     type: {
       type: Number,
       default: 1
+    },
+    stick: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

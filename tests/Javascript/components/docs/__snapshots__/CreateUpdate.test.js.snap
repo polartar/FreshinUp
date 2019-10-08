@@ -655,7 +655,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                 class="flex md5 sm12"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
                   role="combobox"
                 >
                   <div
@@ -663,6 +663,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                   >
                     <div
                       class="v-input__slot"
+                      style="height: 48px;"
                     >
                       <div
                         class="v-select__slot"
@@ -2685,7 +2686,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                 class="flex md5 sm12"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
                   role="combobox"
                 >
                   <div
@@ -2693,6 +2694,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                   >
                     <div
                       class="v-input__slot"
+                      style="height: 48px;"
                     >
                       <div
                         class="v-select__slot"
