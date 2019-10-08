@@ -119,7 +119,6 @@ export default {
       'assigned_type',
       'notes',
       'assigned',
-      'event_location_uuid',
       'event_store_uuid'
     ]),
     pageTitle () {
@@ -142,7 +141,6 @@ export default {
       this.assigned_type = data.assigned_type
       this.assigned_uuid = data.assigned_uuid
       this.expiration_at = data.expiration_at
-      this.event_location_uuid = data.event_location_uuid
       this.event_store_uuid = data.event_store_uuid
     },
     async validator () {

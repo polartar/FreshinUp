@@ -65,17 +65,6 @@ export default {
       })
       return result
     }
-    const formatEventLocation = (list) => {
-      return list.filter(event => {
-        return event.location
-      }).map(event => {
-        return {
-          uuid: event.uuid,
-          event_location_uuid: event.location.uuid,
-          event_location_name: `${event.name}/${event.location.name}`
-        }
-      })
-    }
     return {
       options: [
         {
@@ -122,15 +111,6 @@ export default {
           idKey: 'uuid',
           textKey: 'event_store_name',
           formatItems: formatEventStore
-        },
-        {
-          value: 6,
-          text: 'Event/Venue',
-          url: 'foodfleet/events',
-          param: 'filter[name]',
-          idKey: 'uuid',
-          textKey: 'event_location_name',
-          formatItems: formatEventLocation
         }
       ]
     }
@@ -158,7 +138,6 @@ export default {
     selectAssigned (assigned) {
       let changeDate = {
         uuid: '',
-        event_location_uuid: '',
         event_store_uuid: ''
       }
       changeDate = assigned ? { ...changeDate, ...assigned } : changeDate

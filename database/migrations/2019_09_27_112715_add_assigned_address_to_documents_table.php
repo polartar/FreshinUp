@@ -14,7 +14,6 @@ class AddAssignedAddressToDocumentsTable extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->uuid('event_location_uuid')->nullable()->index();
             $table->uuid('event_store_uuid')->nullable()->index();
         });
     }
@@ -27,7 +26,7 @@ class AddAssignedAddressToDocumentsTable extends Migration
     public function down()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->dropColumn(['event_location_uuid', 'event_store_uuid']);
+            $table->dropColumn(['event_store_uuid']);
         });
     }
 }

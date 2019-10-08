@@ -114,7 +114,6 @@ export default {
           assigned: null,
           expiration_at: null,
           assigned_type: 1,
-          event_location_uuid: null,
           event_store_uuid: null
         }
       }
@@ -129,7 +128,6 @@ export default {
           'assigned',
           'expiration_at',
           'assigned_type',
-          'event_location_uuid',
           'event_store_uuid'
         ]),
         assigned_uuid: null
@@ -151,7 +149,6 @@ export default {
           'assigned_type',
           'assigned_uuid',
           'expiration_at',
-          'event_location_uuid',
           'event_store_uuid'
         ]))
       },
@@ -161,7 +158,6 @@ export default {
   methods: {
     selectAssigned (assigned) {
       this.doc.assigned_uuid = assigned.uuid
-      this.doc.event_location_uuid = assigned.event_location_uuid
       this.doc.event_store_uuid = assigned.event_store_uuid
     },
     changeAssignedType (value) {
