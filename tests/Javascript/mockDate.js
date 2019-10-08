@@ -1,2 +1,2 @@
-import { advanceTo } from 'jest-date-mock'
-advanceTo(new Date(2019, 5, 27, 0, 0, 0))
+import { DEFAULT_DATE as DEFAULT_DATE_ }from 'vue-cli-plugin-freshinup/utils/testing/mockDate'
+export const DEFAULT_DATE = DEFAULT_DATE_
