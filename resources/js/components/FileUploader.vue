@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 const MB = 1024 * 1024
 
@@ -102,7 +103,6 @@ export default {
   },
   data () {
     return {
-      cancel: '',
       errorDialog: false,
       errorText: '',
       uploadPercentage: 0,
@@ -127,7 +127,6 @@ export default {
           this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
         } else {
           const fileSrc = await this.submitFile(fileSouce)
-          // const fileSrc = 'mock'
           if (fileSrc) {
             this.$emit('onValueChange', { name: fileSouce.name, src: fileSrc })
           }
@@ -139,10 +138,9 @@ export default {
         this.uploading = true
         let formData = new FormData()
         formData.append('file', file)
-        const response = await this.$http.post('/foodfleet/tmp-media',
+        const response = await axios.post('/foodfleet/tmp-media',
           formData,
           {
-            cancelToken: new this.$http.CancelToken(function executor (c) { this.cancel = c }.bind(this)),
             headers: {
               'Content-Type': 'multipart/form-data'
             },
@@ -155,7 +153,6 @@ export default {
         this.uploadPercentage = 0
         return response && response.data
       } catch (e) {
-        console.log(e)
         this.uploading = false
         this.uploadPercentage = 0
         return false
