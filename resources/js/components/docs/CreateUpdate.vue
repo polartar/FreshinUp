@@ -6,6 +6,24 @@
   >
     <v-layout
       row
+      align-center
+      pt-3
+    >
+      <v-btn
+        flat
+        icon
+        small
+        color="white"
+        @click="backToList"
+      >
+        <v-icon>fas fa-arrow-left</v-icon>
+      </v-btn>
+      <h5 class="white--text">
+        Return to Document list
+      </h5>
+    </v-layout>
+    <v-layout
+      row
       justify-space-between
       ma-2
     >
@@ -167,6 +185,9 @@ export default {
           }
         }
       })
+    },
+    backToList () {
+      this.$router.push({ path: '/admin/docs' })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

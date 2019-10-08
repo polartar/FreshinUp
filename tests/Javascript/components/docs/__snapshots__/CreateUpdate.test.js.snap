@@ -6,6 +6,32 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
   novalidate="novalidate"
 >
   <div
+    class="layout row align-center pt-3"
+  >
+    <button
+      class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light white--text"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        <i
+          aria-hidden="true"
+          class="v-icon fas fa-arrow-left theme--light"
+        />
+      </div>
+    </button>
+     
+    <h5
+      class="white--text"
+    >
+      
+      Return to Document list
+    
+    </h5>
+  </div>
+   
+  <div
     class="layout row justify-space-between ma-2"
   >
     <h2
@@ -2052,6 +2078,32 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
   class="v-form"
   novalidate="novalidate"
 >
+  <div
+    class="layout row align-center pt-3"
+  >
+    <button
+      class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light white--text"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        <i
+          aria-hidden="true"
+          class="v-icon fas fa-arrow-left theme--light"
+        />
+      </div>
+    </button>
+     
+    <h5
+      class="white--text"
+    >
+      
+      Return to Document list
+    
+    </h5>
+  </div>
+   
   <div
     class="layout row justify-space-between ma-2"
   >
