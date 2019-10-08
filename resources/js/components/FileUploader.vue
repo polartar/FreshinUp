@@ -126,12 +126,39 @@ export default {
         if (size > 1) {
           this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
         } else {
-          // const fileSrc = await this.submitFile(fileSouce)
-          const fileSrc = 'mock'
+          const fileSrc = await this.submitFile(fileSouce)
+          // const fileSrc = 'mock'
           if (fileSrc) {
             this.$emit('onValueChange', { name: fileSouce.name, src: fileSrc })
           }
         }
+      }
+    },
+    async submitFile (file) {
+      try {
+        this.uploading = true
+        let formData = new FormData()
+        formData.append('file', file)
+        const response = await this.$http.post('/foodfleet/tmp-media',
+          formData,
+          {
+            cancelToken: new this.$http.CancelToken(function executor (c) { this.cancel = c }.bind(this)),
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            },
+            onUploadProgress: function (progressEvent) {
+              this.uploadPercentage = parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)) || 0
+            }.bind(this)
+          }
+        )
+        this.uploading = false
+        this.uploadPercentage = 0
+        return response && response.data
+      } catch (e) {
+        console.log(e)
+        this.uploading = false
+        this.uploadPercentage = 0
+        return false
       }
     },
     showError (text) {
