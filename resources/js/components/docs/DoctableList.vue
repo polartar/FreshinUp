@@ -302,6 +302,7 @@ export default {
     manageMultiple (action) {
       this.$emit('manage-multiple-' + action, this.selected)
       this.$emit('manage-multiple', action, this.selected)
+      this.selected = []
     },
     changeStatus (value, doc) {
       this.$emit('change-status', value, doc)
