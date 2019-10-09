@@ -35,10 +35,6 @@ class RenewTokenTest extends TestCase
             $records[0]['message']
         );
         $this->assertStringContainsString(
-            'Message: [HTTP/1.1 400 Bad Request]',
-            $records[1]['message']
-        );
-        $this->assertStringContainsString(
             '"message": "missing required parameter \'refresh_token\'"',
             $records[1]['message']
         );
@@ -77,10 +73,6 @@ class RenewTokenTest extends TestCase
         $this->assertEquals(
             'Renew token for supplier test id 1',
             $records[0]['message']
-        );
-        $this->assertStringContainsString(
-            'Message: [HTTP/1.1 401 Unauthorized]',
-            $records[1]['message']
         );
         $this->assertStringContainsString(
             '"message": "Invalid refresh token"',
