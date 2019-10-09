@@ -48,7 +48,7 @@
           >
             <simple
               :key="addressSearchKey"
-              url="foodfleet/addresses"
+              url="foodfleet/locations"
               term-param="filter[name]"
               placeholder="Search Address"
               background-color="white"

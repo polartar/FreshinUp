@@ -31,12 +31,12 @@ mock.onGet('foodfleet/store-tags').reply(200, {
     { uuid: 4, name: 'Store Tag 4' }
   ]
 })
-mock.onGet('foodfleet/addresses').reply(200, {
+mock.onGet('foodfleet/locations').reply(200, {
   data: [
-    { uuid: 1, name: 'Address 1' },
-    { uuid: 2, name: 'Address 2' },
-    { uuid: 3, name: 'Address 3' },
-    { uuid: 4, name: 'Address 4' }
+    { uuid: 1, name: 'Location 1' },
+    { uuid: 2, name: 'Location 2' },
+    { uuid: 3, name: 'Location 3' },
+    { uuid: 4, name: 'Location 4' }
   ]
 })
 
