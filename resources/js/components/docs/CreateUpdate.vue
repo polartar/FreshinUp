@@ -11,16 +11,14 @@
     >
       <v-btn
         flat
-        icon
         small
-        color="white"
         @click="backToList"
       >
-        <v-icon>fas fa-arrow-left</v-icon>
+        <div class="back-btn-inner">
+          <v-icon>fas fa-arrow-left</v-icon>
+          <span>Return to Document list</span>
+        </div>
       </v-btn>
-      <h5 class="white--text">
-        Return to Document list
-      </h5>
     </v-layout>
     <v-layout
       row
@@ -207,5 +205,19 @@ export default {
 <style scoped>
   .doc-new-wrap{
     background-color: #fff;
+  }
+  .back-btn-inner{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  .back-btn-inner span{
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: initial;
+  }
+  .back-btn-inner .v-icon{
+    font-size: 16px;
   }
 </style>

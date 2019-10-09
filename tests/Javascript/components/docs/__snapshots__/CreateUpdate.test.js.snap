@@ -9,26 +9,26 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
     class="layout row align-center pt-3"
   >
     <button
-      class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light white--text"
+      class="v-btn v-btn--flat v-btn--small theme--light"
       type="button"
     >
       <div
         class="v-btn__content"
       >
-        <i
-          aria-hidden="true"
-          class="v-icon fas fa-arrow-left theme--light"
-        />
+        <div
+          class="back-btn-inner"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon fas fa-arrow-left theme--light"
+          />
+           
+          <span>
+            Return to Document list
+          </span>
+        </div>
       </div>
     </button>
-     
-    <h5
-      class="white--text"
-    >
-      
-      Return to Document list
-    
-    </h5>
   </div>
    
   <div
@@ -2082,26 +2082,26 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
     class="layout row align-center pt-3"
   >
     <button
-      class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light white--text"
+      class="v-btn v-btn--flat v-btn--small theme--light"
       type="button"
     >
       <div
         class="v-btn__content"
       >
-        <i
-          aria-hidden="true"
-          class="v-icon fas fa-arrow-left theme--light"
-        />
+        <div
+          class="back-btn-inner"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon fas fa-arrow-left theme--light"
+          />
+           
+          <span>
+            Return to Document list
+          </span>
+        </div>
       </div>
     </button>
-     
-    <h5
-      class="white--text"
-    >
-      
-      Return to Document list
-    
-    </h5>
   </div>
    
   <div
