@@ -233,7 +233,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Fleet members
+      Supplier Companies
       
       <!---->
     </div>
@@ -256,7 +256,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All fleet members"
+              placeholder="All Suppliers"
               role="combobox"
               type="text"
             />
@@ -322,7 +322,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
       class="layout row justify-space-between mb-2"
     >
       
-      Suppliers
+      Fleet members
       
       <!---->
     </div>
@@ -345,7 +345,7 @@ exports[`BasicFilter Snapshots defaults 1`] = `
             <input
               aria-label=""
               autocomplete="off"
-              placeholder="All Suppliers"
+              placeholder="All fleet members"
               role="combobox"
               type="text"
             />
