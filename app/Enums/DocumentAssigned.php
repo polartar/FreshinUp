@@ -64,7 +64,7 @@ final class DocumentAssigned extends Enum
         }
 
         if ($value === self::VENUE) {
-            return 'App\Models\Foodfleet\Location';
+            return 'App\Models\Foodfleet\Venue';
         }
 
         if ($value === self::EVENT) {
@@ -89,7 +89,7 @@ final class DocumentAssigned extends Enum
         }
 
         if ($value === self::VENUE) {
-            return 'App\Http\Resources\Foodfleet\Location';
+            return 'App\Http\Resources\Foodfleet\Venue';
         }
 
         if ($value === self::EVENT) {
