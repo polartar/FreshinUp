@@ -42,18 +42,6 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               class="v-input__append-inner"
             >
               <div
-                class="v-input__icon v-input__icon--"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon v-icon--link material-icons theme--light"
-                />
-              </div>
-            </div>
-            <div
-              class="v-input__append-inner"
-            >
-              <div
                 class="v-input__icon v-input__icon--append"
               >
                 <i
@@ -187,18 +175,6 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               class="v-input__append-inner"
             >
               <div
-                class="v-input__icon v-input__icon--"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon v-icon--link material-icons theme--light"
-                />
-              </div>
-            </div>
-            <div
-              class="v-input__append-inner"
-            >
-              <div
                 class="v-input__icon v-input__icon--append"
               >
                 <i
@@ -288,18 +264,6 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               class="v-input__append-inner"
             >
               <div
-                class="v-input__icon v-input__icon--"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon v-icon--link material-icons theme--light"
-                />
-              </div>
-            </div>
-            <div
-              class="v-input__append-inner"
-            >
-              <div
                 class="v-input__icon v-input__icon--append"
               >
                 <i
@@ -385,18 +349,6 @@ exports[`BasicFilter Snapshots defaults 1`] = `
               role="combobox"
               type="text"
             />
-            <div
-              class="v-input__append-inner"
-            >
-              <div
-                class="v-input__icon v-input__icon--"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon v-icon--link material-icons theme--light"
-                />
-              </div>
-            </div>
             <div
               class="v-input__append-inner"
             >

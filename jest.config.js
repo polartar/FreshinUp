@@ -9,9 +9,12 @@ module.exports = {
     global: {
       branches: 54,
       functions: 59,
-      lines: 90
+      lines: 63
     }
   },
+  setupFiles: JestConfig.setupFiles.concat([
+    '<rootDir>/tests/Javascript/mockDate.js'
+  ]),
   moduleNameMapper: {
     ...JestConfig.moduleNameMapper,
     '^foodfleet/(.*)$': '<rootDir>/resources/js/$1',
