@@ -46,6 +46,7 @@
       @manage-edit="docEdit"
       @manage-delete="deleteDoc"
       @manage-multiple-delete="deleteDoc"
+      @change_status_multiple="changeStatusMultiple"
     />
     <v-dialog
       v-model="deleteDialog"
@@ -191,6 +192,11 @@ export default {
     changeStatus (status, doc) {
       this.$store.dispatch('documents/patchItem', { data: { status }, params: { id: doc.uuid } }).then(() => {
         this.filterDocs(this.lastFilterParams)
+      })
+    },
+    changeStatusMultiple (status, docs) {
+      docs.forEach((doc) => {
+        this.changeStatus(status, doc)
       })
     },
     onPaginate (value) {

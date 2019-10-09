@@ -8,7 +8,7 @@ import documentStatuses from '~/store/modules/documentStatuses'
 import documentTypes from '~/store/modules/documentTypes'
 
 describe('Admin Docs Page', () => {
-  let localVue, mock
+  let localVue, mock, store, actions
   describe('Mount', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
@@ -55,21 +55,37 @@ describe('Admin Docs Page', () => {
   describe('Methods', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
+      const docModule = documents({})
       localVue = vue.localVue
+      actions = {
+        patchItem: jest.fn()
+      }
+      store = createStore({
+        docs: {
+          items: FIXTURE_DOCUMENTS_RESPONSE
+        }
+      }, {
+        modules: {
+          documents: { ...docModule, actions: { ...docModule.actions, ...actions } }
+        }
+      })
     })
 
     afterEach(() => {
       mock.restore()
     })
 
-    const store = createStore({
-      docs: {
-        items: FIXTURE_DOCUMENTS_RESPONSE
-      }
-    }, {
-      modules: {
-        documents: documents({})
-      }
+    test('changeStatus function change doc status', async () => {
+      const wrapper = shallowMount(Component, {
+        localVue: localVue,
+        store
+      })
+
+      wrapper.vm.changeStatus(2, { uuid: 'mock uuid' })
+      const data = { data: { status: 2 }, params: { id: 'mock uuid' } }
+      expect(actions.patchItem).toHaveBeenCalled()
+      expect(actions.patchItem.mock.calls).toHaveLength(1)
+      expect(actions.patchItem.mock.calls[0][1]).toEqual(data)
     })
 
     test('onPaginate function change paginate', () => {
