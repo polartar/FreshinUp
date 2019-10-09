@@ -94,6 +94,33 @@
         justify-space-between
         mb-2
       >
+        Supplier Companies
+        <clear-button
+          v-if="filters.supplier_uuid"
+          @clear="filters.supplier_uuid = null; supplierKey += 1"
+        />
+      </v-layout>
+      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
+      <simple
+        :key="supplierKey"
+        url="companies?filter[type_key]=supplier"
+        term-param="filter[name]"
+        placeholder="All Suppliers"
+        background-color="white"
+        class="mt-0 pt-0"
+        height="48"
+        @input="selectSupplier"
+      />
+    </v-flex>
+    <v-flex
+      sm2
+      :class="{'px-2': $vuetify.breakpoint.smAndUp, 'mt-3': $vuetify.breakpoint.xs}"
+    >
+      <v-layout
+        row
+        justify-space-between
+        mb-2
+      >
         Fleet members
         <clear-button
           v-if="filters.store_uuid"
@@ -111,33 +138,6 @@
         class="mt-0 pt-0"
         height="48"
         @input="selectStore"
-      />
-    </v-flex>
-    <v-flex
-      sm2
-      :class="{'px-2': $vuetify.breakpoint.smAndUp, 'mt-3': $vuetify.breakpoint.xs}"
-    >
-      <v-layout
-        row
-        justify-space-between
-        mb-2
-      >
-        Suppliers
-        <clear-button
-          v-if="filters.supplier_uuid"
-          @clear="filters.supplier_uuid = null; supplierKey += 1"
-        />
-      </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
-      <simple
-        :key="supplierKey"
-        url="companies?filter[type_key]=supplier"
-        term-param="filter[name]"
-        placeholder="All Suppliers"
-        background-color="white"
-        class="mt-0 pt-0"
-        height="48"
-        @input="selectSupplier"
       />
     </v-flex>
     <v-flex
