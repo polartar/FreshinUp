@@ -25,6 +25,12 @@ describe('FilterSorter', () => {
       localVue = createLocalVue()
     })
 
+    test('selectAssignedType function change filters', () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.selectAssignedType(2)
+      expect(wrapper.vm.assignedType).toBe(2)
+    })
+
     test('selectAssigned function change filters', () => {
       const wrapper = shallowMount(Component)
       wrapper.vm.selectAssigned(1, () => {})

@@ -61,7 +61,6 @@
             ml-2
           >
             <AssignedSearch
-              stick
               :type="assignedType"
               @type-change="selectAssignedType"
               @assign-change="(assigned) => selectAssigned(assigned, slotProps.run)"
