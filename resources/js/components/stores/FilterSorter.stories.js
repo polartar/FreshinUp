@@ -49,14 +49,14 @@ storiesOf('FoodFleet|fleet-member/FilterSorter', module)
   .add('default', () => ({
     components: { FilterSorter },
     methods: {
-      filterDocs (params) {
+      filterStores (params) {
         action('Run')(params)
       }
     },
     template: `
       <v-container>
         <filter-sorter
-          @runFilter="filterDocs"
+          @runFilter="filterStores"
         />
       </v-container>
     `
@@ -69,7 +69,7 @@ storiesOf('FoodFleet|fleet-member/FilterSorter', module)
       }
     },
     methods: {
-      filterDocs (params) {
+      filterStores (params) {
         action('Run')(params)
       }
     },
@@ -77,7 +77,7 @@ storiesOf('FoodFleet|fleet-member/FilterSorter', module)
       <v-container>
         <filter-sorter
           :statuses="statuses"
-          @runFilter="filterDocs"
+          @runFilter="filterStores"
         />
       </v-container>
     `
@@ -90,7 +90,7 @@ storiesOf('FoodFleet|fleet-member/FilterSorter', module)
       }
     },
     methods: {
-      filterDocs (params) {
+      filterStores (params) {
         action('Run')(params)
       }
     },
@@ -98,7 +98,7 @@ storiesOf('FoodFleet|fleet-member/FilterSorter', module)
       <v-container>
         <filter-sorter
           :sortables="sortables"
-          @runFilter="filterDocs"
+          @runFilter="filterStores"
         />
       </v-container>
     `
