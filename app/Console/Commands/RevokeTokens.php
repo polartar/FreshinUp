@@ -45,7 +45,7 @@ class RevokeTokens extends Command
             [
                 'supplier',
                 null,
-                InputOption::VALUE_NONE,
+                InputOption::VALUE_OPTIONAL,
                 'Revoke square token for a specified supplier'
             ]
         ];

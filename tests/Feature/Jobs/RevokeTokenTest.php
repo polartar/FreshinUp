@@ -35,10 +35,6 @@ class RevokeTokenTest extends TestCase
             $records[0]['message']
         );
         $this->assertStringContainsString(
-            'Message: [HTTP/1.1 400 Bad Request]',
-            $records[1]['message']
-        );
-        $this->assertStringContainsString(
             '"message": "one of either \'access_token\' or \'merchant_id\' is required"',
             $records[1]['message']
         );
@@ -58,7 +54,7 @@ class RevokeTokenTest extends TestCase
      *
      * @return void
      */
-    public function testRenewWithSquareAccessTokenButWrong()
+    public function testRevokeWithSquareAccessTokenButWrong()
     {
         $supplier = factory(Company::class)->create([
             'name' => 'test',
@@ -76,10 +72,6 @@ class RevokeTokenTest extends TestCase
         $this->assertEquals(
             'Revoke token for supplier test id 1',
             $records[0]['message']
-        );
-        $this->assertStringContainsString(
-            'Message: [HTTP/1.1 404 Not Found]',
-            $records[1]['message']
         );
         $this->assertStringContainsString(
             '"message": "access token not found"',

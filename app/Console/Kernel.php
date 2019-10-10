@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(ImportSquare::class)->dailyAt('00:00')->withoutOverlapping();
+        $schedule->command(ImportSquare::class)->cron('0 */4 * * *')->withoutOverlapping();
         $schedule->command(RevokeTokens::class)->dailyAt('00:00')->withoutOverlapping();
     }
 
