@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet;
 
+use App\User;
 use App\Models\Foodfleet\Square\Transaction;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -44,6 +45,11 @@ class Event extends Model
     public function host()
     {
         return $this->belongsTo(Company::class, 'host_uuid', 'uuid');
+    }
+
+    public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_uuid', 'uuid');
     }
 
     public function location()
