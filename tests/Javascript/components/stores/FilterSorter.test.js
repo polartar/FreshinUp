@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
-import Component from '~/components/fleet-members/FilterSorter.vue'
+import Component from '~/components/stores/FilterSorter.vue'
 
 describe('FilterSorter', () => {
   // Component instance "under test"
