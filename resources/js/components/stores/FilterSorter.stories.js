@@ -40,7 +40,7 @@ mock.onGet('foodfleet/locations').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|fleet-member/FilterSorter', module)
+storiesOf('FoodFleet|stores/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

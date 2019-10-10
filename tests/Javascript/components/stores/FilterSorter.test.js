@@ -19,12 +19,12 @@ describe('FilterSorter', () => {
       localVue = createLocalVue()
     })
 
-    test('selectAddress function change filters', () => {
+    test('selectLocation function change filters', () => {
       const wrapper = shallowMount(Component)
-      wrapper.vm.selectAddress({ uuid: 1 }, () => {})
-      expect(wrapper.vm.address_uuid).toBe(1)
-      wrapper.vm.selectAddress(null, () => {})
-      expect(wrapper.vm.address_uuid).toBe('')
+      wrapper.vm.selectLocation({ uuid: 1 }, () => {})
+      expect(wrapper.vm.location_uuid).toBe(1)
+      wrapper.vm.selectLocation(null, () => {})
+      expect(wrapper.vm.location_uuid).toBe('')
     })
 
     test('selectTag function change filters', () => {
@@ -40,7 +40,7 @@ describe('FilterSorter', () => {
       wrapper.vm.clearFilters({})
       expect(wrapper.vm.status).toBeNull()
       expect(wrapper.vm.tag).toBeNull()
-      expect(wrapper.vm.address_uuid).toBeNull()
+      expect(wrapper.vm.location_uuid).toBeNull()
     })
 
     test('run function emitted runFilter', () => {
@@ -48,14 +48,14 @@ describe('FilterSorter', () => {
       wrapper.setData({
         status: 2,
         tag: '2',
-        address_uuid: '3'
+        location_uuid: '3'
       })
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
       expect(runParams['status']).toEqual(2)
       expect(runParams['tag']).toEqual('2')
-      expect(runParams['address_uuid']).toEqual('3')
+      expect(runParams['location_uuid']).toEqual('3')
     })
   })
 
@@ -68,11 +68,11 @@ describe('FilterSorter', () => {
       wrapper.setData({
         status: 2,
         tag: '2',
-        address_uuid: '3'
+        location_uuid: '3'
       })
       expect(wrapper.vm.filters.status).toBe(2)
       expect(wrapper.vm.filters.tag).toBe('2')
-      expect(wrapper.vm.filters.address_uuid).toBe('3')
+      expect(wrapper.vm.filters.location_uuid).toBe('3')
     })
   })
 })

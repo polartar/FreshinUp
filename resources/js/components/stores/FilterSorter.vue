@@ -47,14 +47,14 @@
             ml-2
           >
             <simple
-              :key="addressSearchKey"
+              :key="locationSearchKey"
               url="foodfleet/locations"
               term-param="filter[name]"
               placeholder="Search Address"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
-              @input="(address) => { selectAddress(address, slotProps.run) }"
+              @input="(location) => { selectLocation(location, slotProps.run) }"
             />
           </v-flex>
         </v-layout>
@@ -84,11 +84,11 @@ export default {
   },
   data () {
     return {
-      addressSearchKey: 0,
+      locationSearchKey: 0,
       tagSearchKey: 0,
       status: null,
       tag: null,
-      address_uuid: null
+      location_uuid: null
     }
   },
   computed: {
@@ -98,8 +98,8 @@ export default {
         status: this.status
       }
 
-      if (this.address_uuid) {
-        filtersObject.address_uuid = this.address_uuid
+      if (this.location_uuid) {
+        filtersObject.location_uuid = this.location_uuid
       }
 
       if (this.tag) {
@@ -118,8 +118,8 @@ export default {
       }
       this.$emit('runFilter', finalParams)
     },
-    selectAddress (address, run) {
-      this.address_uuid = address ? address.uuid : ''
+    selectLocation (location, run) {
+      this.location_uuid = location ? location.uuid : ''
       run()
     },
     selectTag (tag, run) {
@@ -127,8 +127,8 @@ export default {
       run()
     },
     clearFilters (params) {
-      this.status = this.address_uuid = null
-      this.addressSearchKey++
+      this.status = this.location_uuid = null
+      this.locationSearchKey++
       this.tagSearchKey++
       this.run(params)
     }
