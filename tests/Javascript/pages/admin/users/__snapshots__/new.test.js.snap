@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
+exports[`Admin New User Page mount enabledFields for foodfleet 1`] = `
 <div
   class="container fluid fill-height justify-space-between"
 >
@@ -11,7 +11,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
       class="text-sm-left font-weight-bold"
     >
       
-      Edit User
+      New User
     
     </h3>
      
@@ -1119,18 +1119,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
               class="spacer"
             />
              
-            <button
-              class="v-btn v-btn--flat v-btn--small theme--light error--text"
-              type="button"
-            >
-              <div
-                class="v-btn__content"
-              >
-                
-              Delete
-            
-              </div>
-            </button>
+            <!---->
              
             <button
               class="v-btn theme--light primary"
