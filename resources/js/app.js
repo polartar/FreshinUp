@@ -15,6 +15,7 @@ import documents from '~/store/modules/documents.js'
 import documentStatuses from '~/store/modules/documentStatuses.js'
 import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
+import companyOwners from '~/store/modules/companyOwners.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -140,6 +141,7 @@ const appInstance = new App({
       documents: documents({}),
       documentStatuses: documentStatuses({}),
       documentTypes: documentTypes({}),
+      companyOwners: companyOwners({}),
       transactions: transactions({})
     }
   }),
