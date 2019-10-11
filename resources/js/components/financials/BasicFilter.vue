@@ -134,7 +134,7 @@
       </v-layout>
       <simple
         ref="store"
-        url="storeUrl"
+        :url="storeUrl"
         term-param="filter[name]"
         results-id-key="uuid"
         :value="filters.store_uuid"
