@@ -1,7 +1,4 @@
-import {
-  App,
-  createStore
-} from 'fresh-bus'
+import { App, createStore } from 'fresh-bus'
 import theme from './theme'
 import NotFoundPage from 'fresh-bus/pages/404.vue'
 import page from '~/store/modules/page.js'
