@@ -88,6 +88,24 @@ describe('Admin Docs Page', () => {
       expect(actions.patchItem.mock.calls[0][1]).toEqual(data)
     })
 
+    test('changeStatusMultiple function change doc status for each', async () => {
+      const wrapper = shallowMount(Component, {
+        localVue: localVue,
+        store
+      })
+
+      wrapper.vm.changeStatusMultiple(3, [{ uuid: 'mock uuid 1' }, { uuid: 'mock uuid 2' }])
+
+      expect(actions.patchItem).toHaveBeenCalled()
+      expect(actions.patchItem.mock.calls).toHaveLength(2)
+
+      const firstData = { data: { status: 3 }, params: { id: 'mock uuid 1' } }
+      const secondData = { data: { status: 3 }, params: { id: 'mock uuid 2' } }
+
+      expect(actions.patchItem.mock.calls[0][1]).toEqual(firstData)
+      expect(actions.patchItem.mock.calls[1][1]).toEqual(secondData)
+    })
+
     test('onPaginate function change paginate', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
