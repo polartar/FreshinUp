@@ -132,7 +132,7 @@
       </v-layout>
       <simple
         ref="store"
-        url="foodfleet/stores"
+        url="storeUrl"
         term-param="filter[name]"
         results-id-key="uuid"
         :value="filters.store_uuid"
@@ -200,6 +200,13 @@ export default {
         return result + param
       }, '')
       return '/admin/financials/transactions?' + encodeURI(preparedParams.slice(1))
+    },
+    storeUrl () {
+      let url = 'foodfleet/stores'
+      if (this.filters.supplier_uuid) {
+        url += '?filter[supplier_uuid]=' + this.filters.supplier_uuid
+      }
+      return url
     }
   },
   methods: {
