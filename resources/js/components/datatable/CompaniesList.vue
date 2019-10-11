@@ -153,7 +153,7 @@ import CompaniesList from 'fresh-bus/components/datatable/CompaniesList.vue'
 
 export default {
   extends: CompaniesList,
-  
+
   data () {
     return {
       headers: [
@@ -168,8 +168,8 @@ export default {
 
   methods: {
     _companyActions (company) {
-      return this.companyActions(company).filter(item => item.action != 'team-add')
-    },
+      return this.companyActions(company).filter(item => item.action !== 'team-add')
+    }
   }
 }
 </script>

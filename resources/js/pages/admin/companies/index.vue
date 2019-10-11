@@ -4,10 +4,10 @@ import CompaniesList from '~/components/datatable/CompaniesList.vue'
 import CompaniesFilter from '~/components/companies/FilterSorter.vue'
 
 export default {
-  extends: CompaniesPage,
   components: {
     CompaniesList,
     CompaniesFilter
-  }
+  },
+  extends: CompaniesPage
 }
 </script>

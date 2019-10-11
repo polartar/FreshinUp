@@ -94,14 +94,14 @@ import CompaniesFilter from 'fresh-bus/components/companies/FilterSorter.vue'
 import FSimple from 'fresh-bus/components/search/simple.vue'
 
 export default {
+  components: {
+    FSimple
+  },
   extends: CompaniesFilter,
-  data() {
+  data () {
     return {
       owner: null
     }
-  },
-  components: {
-    FSimple
   },
   methods: {
     run (params) {
