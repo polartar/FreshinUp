@@ -74,11 +74,12 @@
           @clear="filters.host_uuid = null; $refs.host.resetTerm()"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         ref="host"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.host_uuid"
         placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
@@ -102,11 +103,12 @@
           @clear="filters.supplier_uuid = null; $refs.supplier.resetTerm()"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         ref="supplier"
         url="companies?filter[type_key]=supplier"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.supplier_uuid"
         placeholder="All Suppliers"
         background-color="white"
         class="mt-0 pt-0"
