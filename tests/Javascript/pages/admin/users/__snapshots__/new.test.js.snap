@@ -1056,10 +1056,10 @@ exports[`Admin New User Page mount enabledFields for foodfleet 1`] = `
               </div>
                
               <div
-                class="flex lg4 xl4 md4"
+                class="flex fresh-createUpdate__aside lg4 xl4 md4"
               >
                 <div
-                  class="layout column align-center justify-center fill-height"
+                  class="layout align-center justify-center"
                 >
                   <div
                     class="layout column justify-center fill-height"
@@ -1103,6 +1103,7 @@ exports[`Admin New User Page mount enabledFields for foodfleet 1`] = `
                     />
                   </div>
                 </div>
+                 
               </div>
             </div>
           </div>
