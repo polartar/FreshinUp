@@ -14,11 +14,11 @@
         Events
         <clear-button
           v-if="filters.event_uuid"
-          @clear="filters.event_uuid = null; eventKey += 1"
+          @clear="filters.event_uuid = null; $refs.event.resetTerm()"
         />
       </v-layout>
       <simple
-        :key="eventKey"
+        ref="event"
         url="foodfleet/events"
         term-param="filter[name]"
         results-id-key="uuid"
@@ -27,6 +27,7 @@
         background-color="white"
         class="mt-0 pt-0"
         height="48"
+        not-clearable
         @input="selectEvent"
       />
     </v-flex>
@@ -70,18 +71,19 @@
         Customer Companies
         <clear-button
           v-if="filters.host_uuid"
-          @clear="filters.host_uuid = null; hostKey += 1"
+          @clear="filters.host_uuid = null; $refs.host.resetTerm()"
         />
       </v-layout>
       <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
-        :key="hostKey"
+        ref="host"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
         placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
+        not-clearable
         @input="selectHost"
       />
     </v-flex>
@@ -97,18 +99,19 @@
         Supplier Companies
         <clear-button
           v-if="filters.supplier_uuid"
-          @clear="filters.supplier_uuid = null; supplierKey += 1"
+          @clear="filters.supplier_uuid = null; $refs.supplier.resetTerm()"
         />
       </v-layout>
       <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
-        :key="supplierKey"
+        ref="supplier"
         url="companies?filter[type_key]=supplier"
         term-param="filter[name]"
         placeholder="All Suppliers"
         background-color="white"
         class="mt-0 pt-0"
         height="48"
+        not-clearable
         @input="selectSupplier"
       />
     </v-flex>
@@ -124,12 +127,12 @@
         Fleet members
         <clear-button
           v-if="filters.store_uuid"
-          @clear="filters.store_uuid = null; truckKey += 1"
+          @clear="filters.store_uuid = null; $refs.store.resetTerm()"
         />
       </v-layout>
       <simple
-        :key="storeKey"
-        :url="storeUrl"
+        ref="store"
+        url="storeUrl"
         term-param="filter[name]"
         results-id-key="uuid"
         :value="filters.store_uuid"
@@ -137,6 +140,7 @@
         background-color="white"
         class="mt-0 pt-0"
         height="48"
+        not-clearable
         @input="selectStore"
       />
     </v-flex>

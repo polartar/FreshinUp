@@ -6,6 +6,22 @@
   >
     <v-layout
       row
+      align-center
+      pt-3
+    >
+      <v-btn
+        flat
+        small
+        @click="backToList"
+      >
+        <div class="back-btn-inner">
+          <v-icon>fas fa-arrow-left</v-icon>
+          <span>Return to Document list</span>
+        </div>
+      </v-btn>
+    </v-layout>
+    <v-layout
+      row
       justify-space-between
       ma-2
     >
@@ -167,6 +183,9 @@ export default {
           }
         }
       })
+    },
+    backToList () {
+      this.$router.push({ path: '/admin/docs' })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -186,5 +205,19 @@ export default {
 <style scoped>
   .doc-new-wrap{
     background-color: #fff;
+  }
+  .back-btn-inner{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  .back-btn-inner span{
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: initial;
+  }
+  .back-btn-inner .v-icon{
+    font-size: 16px;
   }
 </style>
