@@ -49,7 +49,7 @@ class ImportSquare extends Command
             [
                 'event',
                 null,
-                InputOption::VALUE_NONE,
+                InputOption::VALUE_OPTIONAL,
                 'Import square data for a specific event'
             ]
         ];
