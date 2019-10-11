@@ -3,6 +3,8 @@
 namespace Tests\Feature\Commands;
 
 use App\Jobs\ImportSquare;
+use App\Models\Foodfleet\Event;
+use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use FreshinUp\FreshBusForms\Models\Company\CompanyType;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -21,69 +23,30 @@ class ImportSquareTest extends TestCase
      *
      * @return void
      */
-    public function testReneweTokensWithTwoSupplierWithTokenSet()
+    public function testThatOnlyInsideRangeEventAreRunned()
     {
         Queue::fake();
-        $companyType = new CompanyType(['name' => 'Supplier', 'key_id' => 'supplier']);
-        $companyType->save();
-        $suppliers = factory(Company::class, 2)->create(['name' => 'test', 'square_access_token' => 'test']);
-        foreach ($suppliers as $supplier) {
-            $supplier->company_types()->sync([$companyType->id]);
-        }
+        Carbon::setTestNow(Carbon::create(2019, 5, 21, 12));
+        factory(Event::class, 2)->create(['start_at' => Carbon::now()->toDateTimeString()]);
+        factory(Event::class, 2)->create(['start_at' => Carbon::now()->subDays(2)->toDateTimeString()]);
 
         Artisan::call('import:square');
 
         Queue::assertPushed(ImportSquare::class, 2);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testReneweTokensWithTwoSupplierWithoutTokenSet()
-    {
-        Queue::fake();
-        $companyType = new CompanyType(['name' => 'Supplier', 'key_id' => 'supplier']);
-        $companyType->save();
-        $suppliers = factory(Company::class, 2)->create(['name' => 'test']);
-        foreach ($suppliers as $supplier) {
-            $supplier->company_types()->sync([$companyType->id]);
-        }
-
-        Artisan::call('import:square');
-
-        Queue::assertPushed(ImportSquare::class, 0);
-    }
-
 
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function testReneweTokensWithTokenSetButNotSupplier()
+    public function testRenewTokenToASpecificEvent()
     {
         Queue::fake();
-        factory(Company::class, 2)->create(['name' => 'test', 'square_access_token' => 'test']);
+        $event = factory(Event::class)->create();
 
-        Artisan::call('import:square');
-
-        Queue::assertPushed(ImportSquare::class, 0);
-    }
-
-
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testRenewTokenToASpecificSupplier()
-    {
-        Queue::fake();
-        $supplier = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-
-        Artisan::call('import:square --supplier=' . $supplier->id);
+        Artisan::call('import:square --event=' . $event->id);
 
         Queue::assertPushed(ImportSquare::class, 1);
     }
@@ -93,15 +56,15 @@ class ImportSquareTest extends TestCase
      *
      * @return void
      */
-    public function testRenewTokenReturnsExceptionIfNoSupplierIsFound()
+    public function testRenewTokenReturnsExceptionIfNoEventIsFound()
     {
         Queue::fake();
 
         try {
-            Artisan::call('import:square --supplier=not_an_id');
+            Artisan::call('import:square --event=not_an_id');
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                'No query results for model [App\Models\Foodfleet\Company] not_an_id',
+                'No query results for model [App\Models\Foodfleet\Event] not_an_id',
                 $e->getMessage()
             );
         }
