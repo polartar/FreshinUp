@@ -4,6 +4,9 @@ jobs:
   build:
     working_directory: ~/repo
 
+    environment:
+      BASH_ENV: ~/.nvm/nvm.sh
+
     docker:
       # specify the version you desire here
       - image: laratools/ci:7.3
@@ -11,67 +14,34 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - c8:74:ee:f7:9d:4c:37:cc:56:cd:11:be:0d:c5:f0:78
+            - 67:92:8e:2a:ea:99:9c:0f:04:6a:b6:b8:21:4f:01:34
 
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
       - run:
-          name: Information
+          name: PHP Information
           command: |
             php --version
             composer --version
 
-      - run: COMPOSER_MEMORY_LIMIT=2G composer install -n -o --profile
+      - run:
+          name: Install PHP Dependencies
+          command: composer install -n --prefer-dist
+
+      - run:
+          name: Install Node Dependencies
+          command: |
+            nvm install
+            npm i -g yarn
+            yarn install
 
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
           paths:
             - ./vendor
+            - ./node_modules
 
   test_php:
-    working_directory: ~/repo
-
-    docker:
-      - image: laratools/ci:7.3
-
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - c8:74:ee:f7:9d:4c:37:cc:56:cd:11:be:0d:c5:f0:78
-
-      - checkout
-
-      - run: COMPOSER_MEMORY_LIMIT=2G composer install -n -o --profile
-
-      - run:
-          name: Information
-          command: |
-            php --version
-            composer --version
-            php artisan fresh-bus:version
-
-      - run:
-          name: Lint PHP
-          command: composer lint
-
-      - run:
-          name: Passport keys workaround (https://github.com/laravel/passport/issues/441#issuecomment-413167867)
-          command: |
-            openssl genrsa -out storage/oauth-private.key 4096
-            openssl rsa -in storage/oauth-private.key -pubout > storage/oauth-public.key
-
-      - run:
-          name: Unit Test with Code Coverage
-          command: composer test
-
-  test_js:
     working_directory: ~/repo
 
     docker:
@@ -91,34 +61,61 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: Install Node Dependencies
+          name: PHP Information
           command: |
-            set +e
-            export NVM_DIR="/root/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            php --version
+            composer --version
 
-            # Each step uses the same `$BASH_ENV`, so need to modify it
-            echo 'export NVM_DIR="/root/.nvm"' >> $BASH_ENV
-            echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
-            source /root/.nvm/nvm.sh
-            nvm install 8
-            nvm use 8
-            npm i -g yarn
-            yarn install
+      - run:
+          name: Lint PHP
+          command: composer lint
+
+      - run:
+          name: Passport keys workaround (https://github.com/laravel/passport/issues/441#issuecomment-413167867)
+          command: |
+            openssl genrsa -out storage/oauth-private.key 4096
+            openssl rsa -in storage/oauth-private.key -pubout > storage/oauth-public.key
+
+      - run:
+          name: Unit Test with Code Coverage
+          command: composer test
+
+  test_js:
+    working_directory: ~/repo
+
+    environment:
+      BASH_ENV: ~/.nvm/nvm.sh
+
+    docker:
+      - image: laratools/ci:7.3
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 67:92:8e:2a:ea:99:9c:0f:04:6a:b6:b8:21:4f:01:34
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run:
           name: JS Lint
           command: |
-            source /root/.nvm/nvm.sh
-            nvm use 8
+            nvm install
+            npm i -g yarn
             yarn lint
 
       - run:
           name: JS Test
           command: |
-            source /root/.nvm/nvm.sh
-            nvm use 8
+            nvm install
+            npm i -g yarn
             yarn test --maxWorkers=4
+          no_output_timeout: 20m
 
 workflows:
   version: 2

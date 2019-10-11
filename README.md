@@ -56,16 +56,9 @@ IF you are on staging:
 ```bash
 $ git clone git@github.com:FreshinUp/foodfleet.git
 $ cd foodfleet
+$ nvm install
 $ composer install
-```
-* Copy `.env.example` to `.env`
-* Update `.env` with your database settings (`DB_*`) and application URL (`APP_URL`).
-```bash
-$ php artisan foodfleet:install
-$ php artisan key:generate
--- Only enter the next command if you want to seed the database with demo data
-$ php artisan fresh-bus:seed --quickstart
--- Compile Javascript libraries and auto-recompile on file changes
+$ php artisan foodfleet:install --dev
 $ yarn watch-poll
 ```
 
