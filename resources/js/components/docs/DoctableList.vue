@@ -9,7 +9,7 @@
       :pagination.sync="pagination"
       :loading="isLoading"
       :total-items="totalItems"
-      item-key="id"
+      item-key="uuid"
       select-all
       disable-initial-sort
     >
@@ -36,6 +36,27 @@
                 v-for="(item, index) in selectedDocActions"
                 :key="index"
                 @click="manageMultiple(item.action)"
+              >
+                <v-list-tile-title>
+                  {{ item.text }}
+                </v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+        </span>
+        <span v-else-if="selected.length > 1 && props.header.value === 'status'">
+          <v-menu offset-y>
+            <v-btn
+              slot="activator"
+              light
+            >
+              Change Statuses
+            </v-btn>
+            <v-list>
+              <v-list-tile
+                v-for="(item, index) in statuses"
+                :key="index"
+                @click="changeStatusMultiple(item.value)"
               >
                 <v-list-tile-title>
                   {{ item.text }}
@@ -272,11 +293,11 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status', align: 'center', width: '200' },
-        { text: 'Type', sortable: true, value: 'type', align: 'center' },
+        { text: 'Status', sortable: false, value: 'status', align: 'center', width: '200' },
+        { text: 'Type', sortable: false, value: 'type', align: 'center' },
         { text: 'Title / Owner', value: 'title,owner', align: 'left', width: '300' },
         { text: 'Submited on', value: 'created_at', align: 'center' },
-        { text: 'Expiration date', sortable: true, value: 'expiration_at', align: 'center' },
+        { text: 'Expiration date', sortable: false, value: 'expiration_at', align: 'center' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
       ],
       itemActions: [
@@ -302,9 +323,13 @@ export default {
     manageMultiple (action) {
       this.$emit('manage-multiple-' + action, this.selected)
       this.$emit('manage-multiple', action, this.selected)
+      this.selected = []
     },
     changeStatus (value, doc) {
       this.$emit('change-status', value, doc)
+    },
+    changeStatusMultiple (value) {
+      this.$emit('change_status_multiple', value, this.selected)
     }
   }
 }
