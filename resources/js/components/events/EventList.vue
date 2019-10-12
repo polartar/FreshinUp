@@ -252,7 +252,7 @@
               :name="'item-inner-'+header.value"
               :item="props.item"
             >
-              <status-select 
+              <status-select
                 v-model="props.item.status"
                 :options="statuses"
                 @input="changeStatus($event, props.item)"

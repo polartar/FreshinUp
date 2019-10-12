@@ -12,14 +12,6 @@ export default {
       required: true
     }
   },
-  computed: {
-    activeItem () {
-      for (let i in this.items) {
-        if (this.items[i].id === this.value) return this.items[i]
-      }
-      return null
-    }
-  },
   data () {
     const color = ['grey', 'warning', 'success', 'secondary', 'grey']
     return {
@@ -30,6 +22,14 @@ export default {
           color: color[item.id - 1]
         }
       })
+    }
+  },
+  computed: {
+    activeItem () {
+      for (let i in this.items) {
+        if (this.items[i].id === this.value) return this.items[i]
+      }
+      return null
     }
   }
 }
