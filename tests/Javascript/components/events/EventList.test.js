@@ -1,6 +1,7 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/EventList.vue'
 import { FIXTURE_EVENTS } from 'tests/__data__/events'
+import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 
 describe('Event List component', () => {
   // Component instance "under test"
@@ -11,6 +12,7 @@ describe('Event List component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
+          statuses: FIXTURE_EVENT_STATUSES,
           events: FIXTURE_EVENTS
         }
       })
@@ -21,6 +23,7 @@ describe('Event List component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
+          statuses: FIXTURE_EVENT_STATUSES,
           events: []
         }
       })

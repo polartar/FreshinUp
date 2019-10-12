@@ -55,10 +55,10 @@
             <v-list-tile
               v-for="(item, index) in statuses"
               :key="index"
-              @click="changeStatusMultiple(item.value)"
+              @click="changeStatusMultiple(item.id)"
             >
               <v-list-tile-title>
-                {{ item.text }}
+                {{ item.name }}
               </v-list-tile-title>
             </v-list-tile>
           </v-list>
