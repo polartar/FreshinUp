@@ -7,18 +7,11 @@ import axios from 'axios/index'
 import ListFilter from './ListFilter.vue'
 
 let statuses = [
-  { value: 1, text: 'Draft' },
-  { value: 2, text: 'Pending' },
-  { value: 3, text: 'Confirmed' },
-  { value: 4, text: 'Past' },
-  { value: 5, text: 'Cancelled' }
-]
-
-let sortables = [
-  { value: '-created_at', text: 'Newest' },
-  { value: 'created_at', text: 'Oldest' },
-  { value: 'title', text: 'Title (A - Z)' },
-  { value: '-title', text: 'Title (Z - A)' }
+  { id: 1, name: 'Draft' },
+  { id: 2, name: 'Pending' },
+  { id: 3, name: 'Confirmed' },
+  { id: 4, name: 'Past' },
+  { id: 5, name: 'Cancelled' }
 ]
 
 const mock = new MockAdapter(axios)
@@ -72,7 +65,15 @@ storiesOf('FoodFleet|event/ListFilter', module)
     components: { ListFilter },
     data () {
       return {
-        statuses: statuses
+        statuses: statuses,
+        filters: {
+          status: statuses.map(item => item.id),
+          host_uuid: null,
+          manager_uuid: null,
+          event_tag_uuid: null,
+          start_at: null,
+          end_at: null
+        }
       }
     },
     methods: {
@@ -83,28 +84,8 @@ storiesOf('FoodFleet|event/ListFilter', module)
     template: `
       <v-container>
         <list-filter
+          :filters="filters"
           :statuses="statuses"
-          @runFilter="filterEvents"
-        />
-      </v-container>
-    `
-  }))
-  .add('with sortables', () => ({
-    components: { ListFilter },
-    data () {
-      return {
-        sortables: sortables
-      }
-    },
-    methods: {
-      filterEvents (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
-      <v-container>
-        <list-filter
-          :sortables="sortables"
           @runFilter="filterEvents"
         />
       </v-container>

@@ -21,19 +21,24 @@
             <v-layout
               row
               justify-space-between
+              align-center
               mb-2
             >
-              <div class="caption font-weight-bold white--text">
+              <div class="filter-simple-label font-weight-bold white--text nowrap">
                 Statuses
               </div>
               <clear-button
-                v-if="filters.status"
-                @clear="filters.status = null;"
+                color="white"
+                v-if="filters.status.length > 0"
+                @clear="filters.status = [];"
               />
             </v-layout>
-            <v-select
+            <multi-select
               v-model="filters.status"
+              placeholder="Select Status"
               :items="statuses"
+              item-value="id"
+              item-text="name"
               solo
               flat
               hide-details
@@ -47,10 +52,11 @@
               justify-space-between
               mb-2
             >
-              <div class="caption font-weight-bold white--text">
+              <div class="filter-simple-label font-weight-bold white--text nowrap">
                 Customers
               </div>
               <clear-button
+                color="white"
                 v-if="filters.host_uuid"
                 @clear="filters.host_uuid = null; $refs.host.resetTerm()"
               />
@@ -76,10 +82,11 @@
               justify-space-between
               mb-2
             >
-              <div class="caption font-weight-bold white--text">
+              <div class="filter-simple-label font-weight-bold white--text nowrap">
                 Managed By
               </div>
               <clear-button
+                color="white"
                 v-if="filters.manager_uuid"
                 @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
               />
@@ -105,10 +112,11 @@
               justify-space-between
               mb-2
             >
-              <div class="caption font-weight-bold white--text">
+              <div class="filter-simple-label font-weight-bold white--text nowrap">
                 Scheduled Date
               </div>
               <clear-button
+                color="white"
                 v-if="filters.start_at || filters.end_at"
                 @clear="filters.start_at = filters.end_at = rangeDate = null"
               />
@@ -135,10 +143,11 @@
               justify-space-between
               mb-2
             >
-              <div class="caption font-weight-bold white--text">
+              <div class="filter-simple-label font-weight-bold white--text">
                 Tags
               </div>
               <clear-button
+                color="white"
                 v-if="filters.event_tag_uuid"
                 @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
               />
@@ -168,10 +177,12 @@ import ClearButton from '~/components/ClearButton'
 import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
+import MultiSelect from '~/components/events/MultiSelect'
 export default {
   components: {
     Simple,
     ClearButton,
+    MultiSelect,
     VueCtkDateTimePicker,
     SearchFilterSorter
   },
@@ -179,7 +190,7 @@ export default {
     filters: {
       type: Object,
       default: () => ({
-        status: null,
+        status: [],
         host_uuid: null,
         manager_uuid: null,
         event_tag_uuid: null,
@@ -229,7 +240,8 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.filters.status = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.status = []
       this.$refs.tag.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
@@ -238,10 +250,19 @@ export default {
 }
 </script>
 <style>
+  .filter-simple-label{
+    font-size: 13px;
+    line-height: 22px;
+  }
   .no-padding-left{
     padding-left: 0;
   }
   .data-time-picker.no-border input.field-input{
     border: none !important;
+  }
+  .nowrap{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 </style>
