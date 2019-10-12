@@ -145,8 +145,8 @@
               :name="'item-inner-'+header.value"
               :item="props.item"
             >
-              <div class="grey--text">
-                {{ formatDate(props.item.start_at, 'MMM DD, YYYY') }}
+              <div class="grey--text format-range-date">
+                {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
               </div>
             </slot>
           </td>
@@ -167,6 +167,7 @@
               <v-layout
                 row
                 wrap
+                class="list-tag-wrap"
               >
                 <v-flex
                   v-for="tag in props.item.event_tags"
@@ -290,15 +291,15 @@
 
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FChip from 'fresh-bus/components/ui/FChip'
 import StatusSelect from '~/components/events/StatusSelect'
+import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
   components: { FBtnMenu, StatusSelect, FChip },
   mixins: [
     Pagination,
-    FormatDate
+    FormatRangeDate
   ],
   props: {
     events: {
@@ -365,5 +366,11 @@ export default {
   table.v-table tbody td.select-td{
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+  .format-range-date{
+    min-width: 130px;
+  }
+  .list-tag-wrap{
+    min-width: 180px;
   }
 </style>
