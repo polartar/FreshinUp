@@ -3,22 +3,30 @@
     :value="value"
     :items="items"
     v-bind="$attrs"
-    @input="value => $emit('input', value)"
     multiple
+    @input="value => $emit('input', value)"
   >
     <template v-slot:prepend-item>
-      <v-list-tile ripple @click="toggle">
+      <v-list-tile
+        ripple
+        @click="toggle"
+      >
         <v-list-tile-action>
-          <v-icon :color="value.length > 0 ? 'primary' : ''">{{ icon }}</v-icon>
+          <v-icon :color="value.length > 0 ? 'primary' : ''">
+            {{ icon }}
+          </v-icon>
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>Select All</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-divider class="mt-2"></v-divider>
+      <v-divider class="mt-2" />
     </template>
     <template v-slot:selection="{ item, index }">
-      <div v-if="index === 0" class="nowrap">
+      <div
+        v-if="index === 0"
+        class="nowrap"
+      >
         <span v-if="value.length === items.length">All Statuses</span>
         <span v-else-if="value.length > 1">{{ value.length }} selected</span>
         <span v-else>{{ item[$attrs['item-text']] }}</span>
@@ -39,20 +47,20 @@ export default {
     }
   },
   computed: {
-    selectAll() {
+    selectAll () {
       return this.value.length === this.items.length
     },
-    selectSome() {
+    selectSome () {
       return this.value.length > 0 && !this.selectAll
     },
-    icon() {
+    icon () {
       if (this.selectAll) return 'fa-check-square'
       if (this.selectSome) return 'fa-minus-square'
       return 'far fa-square'
     }
   },
   methods: {
-    toggle() {
+    toggle () {
       this.$nextTick(() => {
         if (this.selectAll) {
           this.$emit('input', [])

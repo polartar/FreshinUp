@@ -103,7 +103,7 @@ describe('MultiSelect', () => {
       })
       expect(wrapper.vm.icon).toBe('fa-minus-square')
     })
-    test('icon for no select', () => {
+    test('icon for select all', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {

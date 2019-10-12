@@ -28,8 +28,8 @@
                 Statuses
               </div>
               <clear-button
-                color="white"
                 v-if="filters.status.length > 0"
+                color="white"
                 @clear="filters.status = [];"
               />
             </v-layout>
@@ -56,8 +56,8 @@
                 Customers
               </div>
               <clear-button
-                color="white"
                 v-if="filters.host_uuid"
+                color="white"
                 @clear="filters.host_uuid = null; $refs.host.resetTerm()"
               />
             </v-layout>
@@ -86,8 +86,8 @@
                 Managed By
               </div>
               <clear-button
-                color="white"
                 v-if="filters.manager_uuid"
+                color="white"
                 @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
               />
             </v-layout>
@@ -116,8 +116,8 @@
                 Scheduled Date
               </div>
               <clear-button
-                color="white"
                 v-if="filters.start_at || filters.end_at"
+                color="white"
                 @clear="filters.start_at = filters.end_at = rangeDate = null"
               />
             </v-layout>
@@ -147,8 +147,8 @@
                 Tags
               </div>
               <clear-button
-                color="white"
                 v-if="filters.event_tag_uuid"
+                color="white"
                 @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
               />
             </v-layout>
