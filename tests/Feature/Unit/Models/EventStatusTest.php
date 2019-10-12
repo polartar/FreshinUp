@@ -9,7 +9,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class PaymentTypeTest extends TestCase
+class EventStatusTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -31,7 +31,7 @@ class PaymentTypeTest extends TestCase
 
         $this->assertDatabaseHas('events', [
             'uuid' => $event->uuid,
-            'status' => $eventStatus->id
+            'status_id' => $eventStatus->id
         ]);
     }
 }

@@ -14,7 +14,7 @@ class AddStatusToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->integer('status')->default(1);
+            $table->integer('status_id')->default(1);
         });
     }
 
@@ -26,7 +26,7 @@ class AddStatusToEventsTable extends Migration
     public function down()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->dropColumn('status');
+            $table->dropColumn('status_id');
         });
     }
 }

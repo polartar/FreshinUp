@@ -75,6 +75,6 @@ class Event extends Model
 
     public function status()
     {
-        return $this->belongsTo(EventStatus::class, 'status');
+        return $this->belongsTo(EventStatus::class, 'status_id');
     }
 }

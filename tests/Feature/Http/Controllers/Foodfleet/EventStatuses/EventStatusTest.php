@@ -41,8 +41,8 @@ class EventStatusTest extends TestCase
         $this->assertEquals(5, count($data));
         foreach ($eventStatuses as $idx => $eventStatus) {
             $this->assertArraySubset([
-                'value' => $eventStatus->id,
-                'text' => $eventStatus->name,
+                'id' => $eventStatus->id,
+                'name' => $eventStatus->name,
             ], $data[$idx]);
         }
     }
@@ -91,8 +91,8 @@ class EventStatusTest extends TestCase
 
         foreach ($eventStatusesToFind as $idx => $eventStatus) {
             $this->assertArraySubset([
-                'value' => $eventStatus->id,
-                'text' => $eventStatus->name,
+                'id' => $eventStatus->id,
+                'name' => $eventStatus->name,
             ], $data[$idx]);
         }
     }

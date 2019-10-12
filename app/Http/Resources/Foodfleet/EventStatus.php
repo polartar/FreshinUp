@@ -17,8 +17,8 @@ class EventStatus extends JsonResource
     public function toArray($request)
     {
         return [
-            'value' => $this->id,
-            'text' => $this->name,
+            'id' => $this->id,
+            'name' => $this->name,
         ];
     }
 }

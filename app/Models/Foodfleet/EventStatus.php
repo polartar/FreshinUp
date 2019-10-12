@@ -8,6 +8,6 @@ class EventStatus extends Model
 {
     public function events()
     {
-        return $this->hasMany(Event::class, 'status');
+        return $this->hasMany(Event::class, 'status_id');
     }
 }
