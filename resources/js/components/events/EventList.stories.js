@@ -21,12 +21,16 @@ let events = [
     },
     event_tags: [
       {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
+        uuid: '1',
         name: 'minus'
       },
       {
-        uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
+        uuid: '2',
         name: 'hic'
+      },
+      {
+        uuid: '3',
+        name: 'hicsdfsdf'
       }
     ],
     host: {
@@ -52,12 +56,16 @@ let events = [
     },
     event_tags: [
       {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
+        uuid: '1',
         name: 'minus'
       },
       {
-        uuid: 'dd6dccb2-424e-4f0c-8c36-3bf75b5f7cb0',
+        uuid: '2',
         name: 'sit'
+      },
+      {
+        uuid: '3',
+        name: 'hicsdfsdf'
       }
     ],
     host: {
@@ -83,12 +91,20 @@ let events = [
     },
     event_tags: [
       {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
+        uuid: '1',
         name: 'minus'
       },
       {
-        uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
+        uuid: '2',
         name: 'hic'
+      },
+      {
+        uuid: '3',
+        name: 'hicsdfsdf'
+      },
+      {
+        uuid: '4',
+        name: 'hicsdfsdf'
       }
     ],
     host: {
@@ -100,11 +116,11 @@ let events = [
 ]
 
 let statuses = [
-  { value: 1, text: 'Draft' },
-  { value: 2, text: 'Pending' },
-  { value: 3, text: 'Confirmed' },
-  { value: 4, text: 'Past' },
-  { value: 5, text: 'Cancelled' }
+  { id: 1, name: 'Draft' },
+  { id: 2, name: 'Pending' },
+  { id: 3, name: 'Confirmed' },
+  { id: 4, name: 'Past' },
+  { id: 5, name: 'Cancelled' }
 ]
 
 storiesOf('FoodFleet|event/EventList', module)
@@ -131,17 +147,15 @@ storiesOf('FoodFleet|event/EventList', module)
       }
     },
     template: `
-      <v-container>
-        <EventList
-          :events="events"
-          :statuses="statuses"
-          :rows-per-page="pagination.rowsPerPage"
-          :page="pagination.page"
-          :total-items="pagination.totalItems"
-          :sort-by="sorting.sortBy"
-          :descending="sorting.descending"
-        />
-      </v-container>
+      <event-list
+        :events="events"
+        :statuses="statuses"
+        :rows-per-page="pagination.rowsPerPage"
+        :page="pagination.page"
+        :total-items="pagination.totalItems"
+        :sort-by="sorting.sortBy"
+        :descending="sorting.descending"
+      />
     `
   }))
   .add('Events is set', () => ({
@@ -162,16 +176,14 @@ storiesOf('FoodFleet|event/EventList', module)
       }
     },
     template: `
-      <v-container>
-        <EventList
-          :events="events"
-          :statuses="statuses"
-          :rows-per-page="pagination.rowsPerPage"
-          :page="pagination.page"
-          :total-items="pagination.totalItems"
-          :sort-by="sorting.sortBy"
-          :descending="sorting.descending"
-        />
-      </v-container>
+      <event-list
+        :events="events"
+        :statuses="statuses"
+        :rows-per-page="pagination.rowsPerPage"
+        :page="pagination.page"
+        :total-items="pagination.totalItems"
+        :sort-by="sorting.sortBy"
+        :descending="sorting.descending"
+      />
     `
   }))

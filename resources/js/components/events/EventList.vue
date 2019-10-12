@@ -164,14 +164,23 @@
               :name="'item-inner-'+header.value"
               :item="props.item"
             >
-              <v-chip
-                v-for="item in props.item.event_tags"
-                :key="item.uuid"
-                color="orange"
-                text-color="white"
+              <v-layout
+                row
+                wrap
               >
-                {{ item.name }}
-              </v-chip>
+                <v-flex
+                  v-for="tag in props.item.event_tags"
+                  :key="tag.uuid"
+                  xs6
+                  class="text-xs-left"
+                >
+                  <f-chip
+                    color="secondary"
+                  >
+                    {{ tag.name }}
+                  </f-chip>
+                </v-flex>
+              </v-layout>
             </slot>
           </td>
         </slot>
@@ -243,19 +252,10 @@
               :name="'item-inner-'+header.value"
               :item="props.item"
             >
-              <v-select
-                :background-color="props.item.status | statusColor"
-                :items="statuses"
-                :value="props.item.status"
-                item-text="text"
-                item-value="value"
-                menu-props="auto"
-                label="Status"
-                hide-details
-                single-line
-                solo
-                dark
-                @change="changeStatus($event, props.item)"
+              <status-select 
+                v-model="props.item.status"
+                :options="statuses"
+                @input="changeStatus($event, props.item)"
               />
             </slot>
           </td>
@@ -292,14 +292,10 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
+import FChip from 'fresh-bus/components/ui/FChip'
+import StatusSelect from '~/components/events/StatusSelect'
 export default {
-  components: { FBtnMenu },
-  filters: {
-    statusColor (status) {
-      const color = ['grey', 'warning', 'success', 'secondary', 'grey']
-      return color[status - 1]
-    }
-  },
+  components: { FBtnMenu, StatusSelect, FChip },
   mixins: [
     Pagination,
     FormatDate
