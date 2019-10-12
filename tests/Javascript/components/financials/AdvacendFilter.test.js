@@ -73,7 +73,8 @@ describe('BasicFilter', () => {
       ])
     })
     test('clearAllEvents() set to null all event related filters', () => {
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
+        localVue: localVue,
         propsData: {
           advancedFilters: {
             event_tag_uuid: 1,
@@ -100,7 +101,8 @@ describe('BasicFilter', () => {
       expect(wrapper.vm.filters.location_uuid).toBeNull()
     })
     test('clearAllCustomers() set to null all customer related filters', () => {
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
+        localVue: localVue,
         propsData: {
           advancedFilters: {
             event_tag_uuid: null,
@@ -129,7 +131,8 @@ describe('BasicFilter', () => {
       expect(wrapper.vm.filters.device_uuid).toBeNull()
     })
     test('clearAllItems() set to null all item related filters', () => {
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
+        localVue: localVue,
         propsData: {
           advancedFilters: {
             event_tag_uuid: null,
@@ -160,7 +163,8 @@ describe('BasicFilter', () => {
       expect(wrapper.vm.filters.max_price).toBeNull()
     })
     test('clearAllPayments() set to null all payment related filters', () => {
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
+        localVue: localVue,
         propsData: {
           advancedFilters: {
             event_tag_uuid: null,
@@ -189,7 +193,8 @@ describe('BasicFilter', () => {
       expect(wrapper.vm.filters.payment_uuid).toBeNull()
     })
     test('clearAll() set to null all filters', () => {
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
+        localVue: localVue,
         propsData: {
           advancedFilters: {
             event_tag_uuid: 1,
