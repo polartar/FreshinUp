@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
-use App\Filters\Transaction\BelongsToWhereUuidEquals;
+use App\Filters\Event\BelongsToWhereInUuidEquals;
+use App\Filters\Event\BelongsToWhereInIdEquals;
 
 class Events extends Controller
 {
@@ -23,14 +24,15 @@ class Events extends Controller
     {
         $events = QueryBuilder::for(Event::class, $request)
             ->allowedFilters([
-                Filter::exact('uuid'),
                 'name',
-                Filter::exact('status'),
+                Filter::exact('uuid'),
                 Filter::exact('host_uuid'),
                 Filter::exact('manager_uuid'),
-                Filter::custom('event_tag_uuid', BelongsToWhereUuidEquals::class, 'eventTags'),
+                Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
+                Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
             ])
             ->allowedIncludes([
+                'status',
                 'host',
                 'location',
                 'manager',
