@@ -35,9 +35,9 @@ class ImportSquareTest extends TestCase
      */
     public function testImportWithoutStoresWithSquareId()
     {
-        $supplier = factory(Company::class)->create(['name' => 'test']);
+        $event = factory(Event::class)->create(['name' => 'test']);
 
-        $importJob = new ImportSquare(\App\Models\Foodfleet\Company::find($supplier->id));
+        $importJob = new ImportSquare(\App\Models\Foodfleet\Event::find($event->id));
         $importJob->handle();
 
         // Retrieve the records from the Monolog TestHandler
@@ -46,7 +46,7 @@ class ImportSquareTest extends TestCase
             ->getRecords();
         $this->assertCount(2, $records);
         $this->assertEquals(
-            'Import constructor for supplier test id 1',
+            'Import constructor for event test id 1',
             $records[0]['message']
         );
         $this->assertEquals(
@@ -62,34 +62,31 @@ class ImportSquareTest extends TestCase
      */
     public function testImportWithStoresWithSquareIdButSquareTokenNotSet()
     {
-        $company = factory(Company::class)->create(['name' => 'test']);
+        $company = factory(Company::class)->create();
         $supplier = \App\Models\Foodfleet\Company::find($company->id);
-        factory(Store::class)->create(['name' => 'test', 'supplier_uuid' => $supplier->uuid, 'square_id' => 'test']);
+        $event = factory(Event::class)->create(['name' => 'test']);
+        $store = factory(Store::class)->create([
+            'name' => 'test',
+            'supplier_uuid' => $supplier->uuid,
+            'square_id' => 'test'
+        ]);
+        $event->stores()->sync($store->uuid);
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare(\App\Models\Foodfleet\Event::find($event->id));
         $importJob->handle();
 
         // Retrieve the records from the Monolog TestHandler
         $records = app('log')
             ->getHandlers()[0]
             ->getRecords();
-        $this->assertCount(4, $records);
+        $this->assertCount(2, $records);
         $this->assertEquals(
-            'Import constructor for supplier test id 1',
+            'Import constructor for event test id 1',
             $records[0]['message']
         );
         $this->assertEquals(
-            'Start import: 1 stores with square id',
+            'Start import: 0 stores with square id',
             $records[1]['message']
-        );
-        $this->assertEquals(
-            'Store test id 1',
-            $records[2]['message']
-        );
-        $this->assertStringContainsString(
-            '{"errors": [{"code": "INVALID_FORM_VALUE","detail": ' .
-            '"Invalid input supplied for field: location_id","category": "INVALID_REQUEST_ERROR"}]}',
-            $records[3]['message']
         );
     }
 
@@ -98,13 +95,21 @@ class ImportSquareTest extends TestCase
      *
      * @return void
      */
-    public function testImportWithStoresWithSquareIdAndSquareTokenSetButNotValid()
+    public function testImportWithStoresWithSquareIdButSquareTokenNotValid()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
-        factory(Store::class)->create(['name' => 'test', 'supplier_uuid' => $supplier->uuid, 'square_id' => 'test']);
 
-        $importJob = new ImportSquare($supplier);
+        $company = factory(Company::class)->create(['square_access_token' => 'not_valid']);
+        $supplier = \App\Models\Foodfleet\Company::find($company->id);
+        $event = factory(Event::class)->create(['name' => 'test']);
+        $store = factory(Store::class)->create([
+            'name' => 'test',
+            'supplier_uuid' => $supplier->uuid,
+            'square_id' => 'test'
+        ]);
+        $event->stores()->sync($store->uuid);
+
+
+        $importJob = new ImportSquare($event);
         $importJob->handle();
 
         // Retrieve the records from the Monolog TestHandler
@@ -113,7 +118,7 @@ class ImportSquareTest extends TestCase
             ->getRecords();
         $this->assertCount(4, $records);
         $this->assertEquals(
-            'Import constructor for supplier test id 1',
+            'Import constructor for event test id 1',
             $records[0]['message']
         );
         $this->assertEquals(
@@ -147,12 +152,13 @@ class ImportSquareTest extends TestCase
             'square_id' => 'test'
         ]);
         $event = factory(Event::class)->create();
+        $event->stores()->sync($store->uuid);
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
         $methodInitializeApi->setAccessible(true);
-        $methodInitializeApi->invokeArgs($importJob, []);
+        $methodInitializeApi->invokeArgs($importJob, ['supplier' => $supplier]);
         $method = $reflection->getMethod('getOrders');
         $method->setAccessible(true);
         try {
@@ -178,12 +184,13 @@ class ImportSquareTest extends TestCase
         $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $order = new Order();
         $order->setCustomerId('123');
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
         $methodInitializeApi->setAccessible(true);
-        $methodInitializeApi->invokeArgs($importJob, []);
+        $methodInitializeApi->invokeArgs($importJob, ['supplier' => $supplier]);
         $method = $reflection->getMethod('getCustomer');
         $method->setAccessible(true);
         try {
@@ -212,12 +219,13 @@ class ImportSquareTest extends TestCase
         $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $lineItem = new OrderLineItem();
         $lineItem->setCatalogObjectId('123');
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
         $methodInitializeApi->setAccessible(true);
-        $methodInitializeApi->invokeArgs($importJob, []);
+        $methodInitializeApi->invokeArgs($importJob, ['supplier' => $supplier]);
         $method = $reflection->getMethod('getCategory');
         $method->setAccessible(true);
         try {
@@ -242,12 +250,11 @@ class ImportSquareTest extends TestCase
      */
     public function testGetPaymentType()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $tender = new Tender();
         $tender->setType('CASH');
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('getPaymentType');
         $method->setAccessible(true);
@@ -283,12 +290,13 @@ class ImportSquareTest extends TestCase
             'supplier_uuid' => $supplier->uuid,
             'square_id' => 'test'
         ]);
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $methodInitializeApi = $reflection->getMethod('initializeSquareApi');
         $methodInitializeApi->setAccessible(true);
-        $methodInitializeApi->invokeArgs($importJob, []);
+        $methodInitializeApi->invokeArgs($importJob, ['supplier' => $supplier]);
         $method = $reflection->getMethod('getDevice');
         $method->setAccessible(true);
         try {
@@ -319,8 +327,9 @@ class ImportSquareTest extends TestCase
         $employee->setEmail('test@test.it');
         $employee->setFirstName('test');
         $employee->setLastName('test');
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('updateOrCreateStaffs');
         $method->setAccessible(true);
@@ -370,15 +379,13 @@ class ImportSquareTest extends TestCase
      */
     public function testGetTransaction()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $order = new Order();
         $order->setId('123');
         $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
         $customer = factory(Customer::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('getTransaction');
         $method->setAccessible(true);
@@ -419,14 +426,13 @@ class ImportSquareTest extends TestCase
      */
     public function testGetItem()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $orderLineItem = new OrderLineItem();
         $orderLineItem->setUid('123');
         $orderLineItem->setName('test');
         $category = factory(Category::class)->create();
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('getItem');
         $method->setAccessible(true);
@@ -459,15 +465,14 @@ class ImportSquareTest extends TestCase
      */
     public function testCreatePayment()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $tender = new Tender();
         $tender->setId('123');
         $paymentType = factory(PaymentType::class)->create();
         $transaction = factory(Transaction::class)->create();
         $device = factory(Device::class)->create();
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('createPayment');
         $method->setAccessible(true);
@@ -507,16 +512,15 @@ class ImportSquareTest extends TestCase
      */
     public function testAttachItem()
     {
-        $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
-        $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $orderLineItem = new OrderLineItem();
         $orderLineItem->setUid('123');
         $orderLineItem->setName('test');
         $orderLineItem->setQuantity(100);
         $item = factory(Item::class)->create();
         $transaction = factory(Transaction::class)->create();
+        $event = factory(Event::class)->create();
 
-        $importJob = new ImportSquare($supplier);
+        $importJob = new ImportSquare($event);
         $reflection = new \ReflectionClass(get_class($importJob));
         $method = $reflection->getMethod('attachItem');
         $method->setAccessible(true);
