@@ -78,4 +78,9 @@ class Event extends Model
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
+
+    public function status()
+    {
+        return $this->belongsTo(EventStatus::class, 'status_id');
+    }
 }
