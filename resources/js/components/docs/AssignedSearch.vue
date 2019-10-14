@@ -22,6 +22,7 @@
     <v-flex
       md6
       sm12
+      pl-2
     >
       <simple
         ref="assigned"
