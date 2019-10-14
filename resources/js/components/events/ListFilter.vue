@@ -28,9 +28,9 @@
                 Statuses
               </div>
               <clear-button
-                v-if="filters.status.length > 0"
+                v-if="filters.status && filters.status.length > 0"
                 color="white"
-                @clear="filters.status = [];"
+                @clear="filters.status = null;"
               />
             </v-layout>
             <multi-select
@@ -61,17 +61,19 @@
                 @clear="filters.host_uuid = null; $refs.host.resetTerm()"
               />
             </v-layout>
-            <simple
+            <multi-simple
               ref="host"
               url="companies?filter[type_key]=host"
               term-param="filter[name]"
+              results-id-key="uuid"
               placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
               solo
               flat
-              notClearable
+              multiple
+              not-clearable
               @input="selectHost"
             />
           </v-flex>
@@ -100,7 +102,7 @@
               background-color="white"
               class="mt-0 pt-0"
               height="48"
-              notClearable
+              not-clearable
               solo
               flat
               @input="selectManager"
@@ -128,7 +130,7 @@
               class="data-time-picker no-border"
               range
               only-date
-              noClearButton
+              no-clear-button
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
@@ -155,15 +157,16 @@
                 @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
               />
             </v-layout>
-            <simple
+            <multi-simple
               ref="tag"
               url="foodfleet/event-tags"
               term-param="filter[name]"
+              results-id-key="uuid"
               placeholder="Search Tag"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
-              notClearable
+              not-clearable
               solo
               flat
               @input="selectTag"
@@ -178,13 +181,15 @@
 <script>
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import ClearButton from '~/components/ClearButton'
-import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from '~/components/events/MultiSelect'
+import MultiSimple from '~/components/events/MultiSimple'
+import Simple from 'fresh-bus/components/search/simple'
 export default {
   components: {
     Simple,
+    MultiSimple,
     ClearButton,
     MultiSelect,
     VueCtkDateTimePicker,
@@ -194,7 +199,7 @@ export default {
     filters: {
       type: Object,
       default: () => ({
-        status: [],
+        status: null,
         host_uuid: null,
         manager_uuid: null,
         event_tag_uuid: null,
@@ -244,8 +249,7 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
-      this.filters.status = []
+      this.filters.status = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
       this.$refs.tag.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()

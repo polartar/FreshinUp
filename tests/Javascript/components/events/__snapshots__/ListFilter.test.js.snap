@@ -544,28 +544,30 @@ exports[`ListFilter Snapshots defaults 1`] = `
                  
                 <div
                   background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                  class="v-menu mt-0 pt-0"
                   flat=""
                   height="48"
+                  multiple="multiple"
                   solo=""
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
                   >
                     <div
-                      class="v-input__slot white"
-                      style="height: 48px;"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot"
                       >
-                        <input
-                          aria-label=""
-                          autocomplete="off"
-                          placeholder="Select"
-                          role="combobox"
-                          type="text"
-                        />
+                        <div
+                          class="v-text-field__slot"
+                        >
+                          <input
+                            placeholder="Select"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
                         <div
                           class="v-input__append-inner"
                         >
@@ -574,44 +576,117 @@ exports[`ListFilter Snapshots defaults 1`] = `
                           >
                             <i
                               aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                              class="v-icon fas fa-caret-down theme--light"
+                            />
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                    >
                       <div
-                        class="v-menu"
+                        class="v-input__control"
                       >
                         <div
-                          class="v-menu__content theme--light v-autocomplete__content"
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          class="v-input__slot white"
+                          style="height: 48px;"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                autofocus="autofocus"
+                                placeholder="search"
+                                role="combobox"
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                             >
                               <div
-                                role="listitem"
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-list__tile theme--light"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    role="listitem"
+                                    style="display: none;"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile theme--light"
                                     >
-                                      No data available
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        SELECTION
+                                      </span>
                                     </div>
                                   </div>
+                                    
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        RESULTS
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <span />
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-valuemax="100"
+                            aria-valuemin="0"
+                            class="v-progress-linear"
+                            role="progressbar"
+                            style="height: 2px;"
+                          >
+                            <div
+                              class="v-progress-linear__background primary"
+                              style="height: 2px; opacity: 0.3; width: 100%;"
+                            />
+                            <div
+                              class="v-progress-linear__bar"
+                            >
+                              <div
+                                class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                              >
+                                <div
+                                  class="v-progress-linear__bar__indeterminate long primary"
+                                />
+                                <div
+                                  class="v-progress-linear__bar__indeterminate short primary"
+                                />
+                              </div>
+                              <!---->
                             </div>
                           </div>
                         </div>
@@ -785,28 +860,29 @@ exports[`ListFilter Snapshots defaults 1`] = `
                  
                 <div
                   background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                  class="v-menu mt-0 pt-0"
                   flat=""
                   height="48"
                   solo=""
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
                   >
                     <div
-                      class="v-input__slot white"
-                      style="height: 48px;"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot"
                       >
-                        <input
-                          aria-label=""
-                          autocomplete="off"
-                          placeholder="Search Tag"
-                          role="combobox"
-                          type="text"
-                        />
+                        <div
+                          class="v-text-field__slot"
+                        >
+                          <input
+                            placeholder="Search Tag"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
                         <div
                           class="v-input__append-inner"
                         >
@@ -815,44 +891,117 @@ exports[`ListFilter Snapshots defaults 1`] = `
                           >
                             <i
                               aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                              class="v-icon fas fa-caret-down theme--light"
+                            />
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                    >
                       <div
-                        class="v-menu"
+                        class="v-input__control"
                       >
                         <div
-                          class="v-menu__content theme--light v-autocomplete__content"
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          class="v-input__slot white"
+                          style="height: 48px;"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                autofocus="autofocus"
+                                placeholder="search"
+                                role="combobox"
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                             >
                               <div
-                                role="listitem"
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-list__tile theme--light"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    role="listitem"
+                                    style="display: none;"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile theme--light"
                                     >
-                                      No data available
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        SELECTION
+                                      </span>
                                     </div>
                                   </div>
+                                    
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        RESULTS
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <span />
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-valuemax="100"
+                            aria-valuemin="0"
+                            class="v-progress-linear"
+                            role="progressbar"
+                            style="height: 2px;"
+                          >
+                            <div
+                              class="v-progress-linear__background primary"
+                              style="height: 2px; opacity: 0.3; width: 100%;"
+                            />
+                            <div
+                              class="v-progress-linear__bar"
+                            >
+                              <div
+                                class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                              >
+                                <div
+                                  class="v-progress-linear__bar__indeterminate long primary"
+                                />
+                                <div
+                                  class="v-progress-linear__bar__indeterminate short primary"
+                                />
+                              </div>
+                              <!---->
                             </div>
                           </div>
                         </div>

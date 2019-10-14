@@ -103,7 +103,7 @@ describe('ListFilter', () => {
       expect(wrapper.vm.filters.event_tag_uuid).toBeNull()
       expect(wrapper.vm.filters.start_at).toBeNull()
       expect(wrapper.vm.filters.end_at).toBeNull()
-      expect(wrapper.vm.filters.status).toEqual([])
+      expect(wrapper.vm.filters.status).toBeNull()
     })
 
     test('run function emitted runFilter', () => {

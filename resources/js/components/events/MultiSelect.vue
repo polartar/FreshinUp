@@ -12,7 +12,7 @@
         @click="toggle"
       >
         <v-list-tile-action>
-          <v-icon :color="value.length > 0 ? 'primary' : ''">
+          <v-icon :color="value && value.length > 0 ? 'primary' : ''">
             {{ icon }}
           </v-icon>
         </v-list-tile-action>
@@ -27,8 +27,8 @@
         v-if="index === 0"
         class="nowrap"
       >
-        <span v-if="value.length === items.length">All Statuses</span>
-        <span v-else-if="value.length > 1">{{ value.length }} selected</span>
+        <span v-if="value && value.length === items.length">All Statuses</span>
+        <span v-else-if="value && value.length > 1">{{ value.length }} selected</span>
         <span v-else>{{ item[$attrs['item-text']] }}</span>
       </div>
     </template>
@@ -38,7 +38,7 @@
 export default {
   props: {
     value: {
-      type: Array,
+      type: [ Object, Array ],
       default: () => []
     },
     items: {
@@ -48,10 +48,10 @@ export default {
   },
   computed: {
     selectAll () {
-      return this.value.length === this.items.length
+      return this.value && this.value.length === this.items.length
     },
     selectSome () {
-      return this.value.length > 0 && !this.selectAll
+      return this.value && this.value.length > 0 && !this.selectAll
     },
     icon () {
       if (this.selectAll) return 'fa-check-square'

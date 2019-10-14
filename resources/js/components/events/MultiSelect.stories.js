@@ -22,7 +22,7 @@ storiesOf('FoodFleet|event/MultiSelect', module)
     components: { MultiSelect },
     data () {
       return {
-        status: [],
+        status: null,
         statuses: statuses
       }
     },
