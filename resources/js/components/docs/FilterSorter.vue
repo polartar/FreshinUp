@@ -12,7 +12,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-card-text>
+      <v-container pr-0>
         <v-layout
           row
           justify-space-between
@@ -32,7 +32,7 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
             <v-select
               v-model="type"
@@ -45,7 +45,7 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
             <v-select
               v-model="status"
@@ -58,7 +58,7 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
             <AssignedSearch
               :type="assignedType"
@@ -67,7 +67,7 @@
             />
           </v-flex>
         </v-layout>
-      </v-card-text>
+      </v-container>
     </template>
   </search-filter-sorter>
 </template>
