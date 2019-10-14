@@ -1,13 +1,9 @@
 <template>
   <v-layout
     row
-    wrap
     justify-space-between
   >
-    <v-flex
-      md5
-      sm12
-    >
+    <v-flex>
       <v-select
         v-model="typeValue"
         single-line
@@ -19,11 +15,7 @@
         data-vv-name="type"
       />
     </v-flex>
-    <v-flex
-      md6
-      sm12
-      pl-2
-    >
+    <v-flex ml-4>
       <simple
         ref="assigned"
         :placeholder="`Search ${currentOption.text}`"
