@@ -15,6 +15,7 @@
         flat
         height="48"
         :items="options"
+        hide-details
         data-vv-name="type"
       />
     </v-flex>

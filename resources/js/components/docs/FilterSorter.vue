@@ -12,7 +12,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-container pr-0>
+      <v-container pr-0 pt-1 pb-0>
         <v-layout
           row
           justify-space-between
