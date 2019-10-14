@@ -54,7 +54,7 @@ storiesOf('FoodFleet|event/ListFilter', module)
       }
     },
     template: `
-      <v-container>
+      <v-container style="background-color: rgba(0,0,0,.2)">
         <list-filter
           @runFilter="filterEvents"
         />
@@ -82,7 +82,7 @@ storiesOf('FoodFleet|event/ListFilter', module)
       }
     },
     template: `
-      <v-container>
+      <v-container style="background-color: rgba(0,0,0,.2)">
         <list-filter
           :filters="filters"
           :statuses="statuses"

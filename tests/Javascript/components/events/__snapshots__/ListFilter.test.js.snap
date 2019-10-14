@@ -2,7 +2,7 @@
 
 exports[`ListFilter Snapshots defaults 1`] = `
 <div
-  class="v-card v-card--flat v-sheet theme--light transparent"
+  class="v-card v-sheet theme--light transparent"
 >
   <form
     class="v-form"
@@ -85,7 +85,7 @@ exports[`ListFilter Snapshots defaults 1`] = `
           class="flex"
         >
           <div
-            class="v-card__text no-padding-left"
+            class="v-card__text just-padding-top"
           >
             <div
               class="layout row justify-space-between"
@@ -562,22 +562,10 @@ exports[`ListFilter Snapshots defaults 1`] = `
                         <input
                           aria-label=""
                           autocomplete="off"
-                          placeholder="Search Customer"
+                          placeholder="Select"
                           role="combobox"
                           type="text"
                         />
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon v-icon--link material-icons theme--light"
-                            />
-                          </div>
-                        </div>
                         <div
                           class="v-input__append-inner"
                         >
@@ -670,22 +658,10 @@ exports[`ListFilter Snapshots defaults 1`] = `
                         <input
                           aria-label=""
                           autocomplete="off"
-                          placeholder="Search Manager"
+                          placeholder="Select"
                           role="combobox"
                           type="text"
                         />
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon v-icon--link material-icons theme--light"
-                            />
-                          </div>
-                        </div>
                         <div
                           class="v-input__append-inner"
                         >
@@ -767,10 +743,10 @@ exports[`ListFilter Snapshots defaults 1`] = `
                     data-v-a0144ed0=""
                   >
                     <input
-                      class="field-input"
+                      class="field-input no-clear-button"
                       data-v-a0144ed0=""
                       id="DateTimePicker"
-                      placeholder="Scheduled Date"
+                      placeholder="Select Date"
                       readonly="readonly"
                       type="text"
                     />
@@ -780,7 +756,7 @@ exports[`ListFilter Snapshots defaults 1`] = `
                       for="DateTimePicker"
                     >
                       
-    Scheduled Date
+    Select Date
   
                     </label>
                     <!---->
@@ -831,18 +807,6 @@ exports[`ListFilter Snapshots defaults 1`] = `
                           role="combobox"
                           type="text"
                         />
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon v-icon--link material-icons theme--light"
-                            />
-                          </div>
-                        </div>
                         <div
                           class="v-input__append-inner"
                         >

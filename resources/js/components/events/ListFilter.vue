@@ -12,7 +12,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-card-text class="no-padding-left">
+      <v-card-text class="just-padding-top">
         <v-layout
           row
           justify-space-between
@@ -65,12 +65,13 @@
               ref="host"
               url="companies?filter[type_key]=host"
               term-param="filter[name]"
-              placeholder="Search Customer"
+              placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
               solo
               flat
+              notClearable
               @input="selectHost"
             />
           </v-flex>
@@ -95,10 +96,11 @@
               ref="manager"
               url="users"
               term-param="filter[name]"
-              placeholder="Search Manager"
+              placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
+              notClearable
               solo
               flat
               @input="selectManager"
@@ -126,10 +128,11 @@
               class="data-time-picker no-border"
               range
               only-date
+              noClearButton
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
-              label="Scheduled Date"
+              label="Select Date"
               :color="$vuetify.theme.primary"
               :button-color="$vuetify.theme.primary"
               @input="changeDate"
@@ -160,6 +163,7 @@
               background-color="white"
               class="mt-0 pt-0"
               height="48"
+              notClearable
               solo
               flat
               @input="selectTag"
@@ -249,20 +253,29 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="styl" scoped>
   .filter-simple-label{
     font-size: 13px;
     line-height: 22px;
   }
-  .no-padding-left{
+  .just-padding-top{
     padding-left: 0;
-  }
-  .data-time-picker.no-border input.field-input{
-    border: none !important;
+    padding-bottom: 0;
+    padding-right: 0;
   }
   .nowrap{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+  /deep/ .data-time-picker.no-border input.field-input{
+    border: none !important;
+  }
+  /deep/ .filter-sorter-expanded-layout{
+    align-items: flex-end;
+  }
+  /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
+    margin: 0;
+    height: 48px;
   }
 </style>
