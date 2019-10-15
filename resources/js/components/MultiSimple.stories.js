@@ -22,8 +22,15 @@ mock.onGet('/foodfleet/event-tags').reply(200, {
     { uuid: 12, name: 'Bbbbb' }
   ]
 })
+mock.onGet('/terms').reply(200, {
+  data: [
+    { id: 1, name: 'John Smith' },
+    { id: 2, name: 'Bob Loblaw' },
+    { id: 3, name: 'Mario Brother' }
+  ]
+})
 
-storiesOf('FoodFleet|event/MultiSimple', module)
+storiesOf('FoodFleet|ui/MultiSimple', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
@@ -34,16 +41,7 @@ storiesOf('FoodFleet|event/MultiSimple', module)
     template: `
       <v-container>
         <multi-simple
-          url="foodfleet/event-tags"
-          term-param="filter[name]"
-          results-id-key="uuid"
-          placeholder="Search Tag"
-          background-color="white"
-          class="mt-0 pt-0"
-          height="48"
-          notClearable
-          solo
-          flat
+          url="/terms"
         />
       </v-container>
     `

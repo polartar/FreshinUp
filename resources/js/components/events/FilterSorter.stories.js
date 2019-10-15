@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios/index'
 
 // Components
-import ListFilter from './ListFilter.vue'
+import FilterSorter from './FilterSorter.vue'
 
 let statuses = [
   { id: 1, name: 'Draft' },
@@ -40,14 +40,14 @@ mock.onGet('/users').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/ListFilter', module)
+storiesOf('FoodFleet|event/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('default', () => ({
-    components: { ListFilter },
+    components: { FilterSorter },
     methods: {
       filterEvents (params) {
         action('Run')(params)
@@ -55,14 +55,14 @@ storiesOf('FoodFleet|event/ListFilter', module)
     },
     template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
-        <list-filter
+        <filter-sorter
           @runFilter="filterEvents"
         />
       </v-container>
     `
   }))
   .add('with statuses', () => ({
-    components: { ListFilter },
+    components: { FilterSorter },
     data () {
       return {
         statuses: statuses,
@@ -83,7 +83,7 @@ storiesOf('FoodFleet|event/ListFilter', module)
     },
     template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
-        <list-filter
+        <filter-sorter
           :filters="filters"
           :statuses="statuses"
           @runFilter="filterEvents"

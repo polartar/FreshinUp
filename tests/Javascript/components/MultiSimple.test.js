@@ -1,7 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_EVENT_TAGS } from 'tests/__data__/eventTags'
-import Component from '~/components/events/MultiSimple.vue'
+import Component from '~/components/MultiSimple.vue'
 
 describe('MultiSimple', () => {
   // Component instance "under test"

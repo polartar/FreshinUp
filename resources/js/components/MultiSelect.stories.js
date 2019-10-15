@@ -12,7 +12,7 @@ let statuses = [
   { id: 5, name: 'Cancelled' }
 ]
 
-storiesOf('FoodFleet|event/MultiSelect', module)
+storiesOf('FoodFleet|ui/MultiSelect', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

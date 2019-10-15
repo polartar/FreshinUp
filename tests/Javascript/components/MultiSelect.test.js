@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
-import Component from '~/components/events/MultiSelect.vue'
+import Component from '~/components/MultiSelect.vue'
 
 const allSelected = FIXTURE_EVENT_STATUSES.map(item => item.id)
 

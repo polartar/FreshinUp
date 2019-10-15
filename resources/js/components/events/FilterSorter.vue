@@ -10,6 +10,7 @@
     v-on="$listeners"
     @run="run"
     @clear="clearFilters"
+    class="filter-transparent"
   >
     <template v-slot:expanded="slotProps">
       <v-card-text class="just-padding-top">
@@ -97,7 +98,6 @@
             <simple
               ref="manager"
               url="users"
-              term-param="filter[name]"
               placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
@@ -183,8 +183,8 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import ClearButton from '~/components/ClearButton'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
-import MultiSelect from '~/components/events/MultiSelect'
-import MultiSimple from '~/components/events/MultiSimple'
+import MultiSelect from '~/components/MultiSelect'
+import MultiSimple from '~/components/MultiSimple'
 import Simple from 'fresh-bus/components/search/simple'
 export default {
   components: {
@@ -281,5 +281,8 @@ export default {
   /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
     margin: 0;
     height: 48px;
+  }
+  .filter-transparent{
+    box-shadow: none;
   }
 </style>

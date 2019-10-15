@@ -8,10 +8,9 @@
         :value="showText"
         append-icon="fas fa-caret-down"
         :placeholder="placeholder"
-        solo
-        flat
         readonly
         hide-details
+        v-bind="$attrs"
         @click="toggleMenu(on)"
       />
     </template>
@@ -77,7 +76,7 @@ export default {
   props: {
     value: {
       type: Array,
-      default: () => []
+      default: null
     }
   },
   data () {
@@ -113,7 +112,7 @@ export default {
     }
   },
   beforeMount () {
-    if (!this.value) {
+    if (!this.value || this.value.length === 0) {
       return
     }
 

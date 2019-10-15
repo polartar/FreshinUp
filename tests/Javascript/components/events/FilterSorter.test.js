@@ -1,10 +1,10 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
-import Component from '~/components/events/ListFilter.vue'
+import Component from '~/components/events/FilterSorter.vue'
 
 const allSelected = FIXTURE_EVENT_STATUSES.map(item => item.id)
 
-describe('ListFilter', () => {
+describe('FilterSorter', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
