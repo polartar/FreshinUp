@@ -38,4 +38,5 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::post('squares', 'Foodfleet\Squares@store');
+    Route::get('venues', 'Foodfleet\Venues@index');
 });
