@@ -38,4 +38,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::post('squares', 'Foodfleet\Squares@store');
+
+    Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');
 });
