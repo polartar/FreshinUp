@@ -1,7 +1,7 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/reportables/Filter.vue'
 
-describe('Modifier', () => {
+describe('Filter', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
