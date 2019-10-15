@@ -37,7 +37,6 @@ exports[`Admin Users Page Mount snapshot 1`] = `
    
   <user-filter-stub
     autocompleteurl="/api/users"
-    companies=""
     sortables="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
   />
    
