@@ -26,8 +26,8 @@ class Events extends Controller
             ->allowedFilters([
                 'name',
                 Filter::exact('uuid'),
-                Filter::exact('host_uuid'),
-                Filter::exact('manager_uuid'),
+                Filter::custom('host_uuid', BelongsToWhereInUuidEquals::class, 'host'),
+                Filter::custom('manager_uuid', BelongsToWhereInUuidEquals::class, 'manager'),
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
             ])
