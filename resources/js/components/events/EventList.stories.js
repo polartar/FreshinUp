@@ -27,10 +27,6 @@ let events = [
       {
         uuid: '2',
         name: 'hic'
-      },
-      {
-        uuid: '3',
-        name: 'hicsdfsdf'
       }
     ],
     host: {
@@ -42,7 +38,7 @@ let events = [
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
     name: 'saepe',
-    status: 2,
+    status: 1,
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -77,7 +73,7 @@ let events = [
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
     name: 'quibusdam',
-    status: 3,
+    status: 1,
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -100,11 +96,11 @@ let events = [
       },
       {
         uuid: '3',
-        name: 'hicsdfsdf'
+        name: 'acsfdd'
       },
       {
         uuid: '4',
-        name: 'hicsdfsdf'
+        name: 'fsdf'
       }
     ],
     host: {

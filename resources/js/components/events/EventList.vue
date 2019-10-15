@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     v-model="selected"
-    class="elevation-1"
+    class="event-list-table"
     :headers="headers"
     :items="events"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
@@ -139,13 +139,13 @@
         >
           <td
             :key="headerIndex"
-            class="text-xs-center"
+            class="text-xs-left"
           >
             <slot
               :name="'item-inner-'+header.value"
               :item="props.item"
             >
-              <div class="grey--text format-range-date">
+              <div class="grey--text">
                 {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
               </div>
             </slot>
@@ -158,7 +158,7 @@
         >
           <td
             :key="headerIndex"
-            class="text-xs-center"
+            class="text-xs-left tag-td"
           >
             <slot
               :name="'item-inner-'+header.value"
@@ -169,18 +169,13 @@
                 wrap
                 class="list-tag-wrap"
               >
-                <v-flex
+                <f-chip
                   v-for="tag in props.item.event_tags"
                   :key="tag.uuid"
-                  xs6
-                  class="text-xs-left"
+                  color="secondary"
                 >
-                  <f-chip
-                    color="secondary"
-                  >
-                    {{ tag.name }}
-                  </f-chip>
-                </v-flex>
+                  {{ tag.name }}
+                </f-chip>
               </v-layout>
             </slot>
           </td>
@@ -192,7 +187,7 @@
         >
           <td
             :key="headerIndex"
-            class="text-xs-center"
+            class="text-xs-left"
           >
             <slot
               :name="'item-inner-'+header.value"
@@ -211,7 +206,7 @@
         >
           <td
             :key="headerIndex"
-            class="text-xs-center"
+            class="text-xs-left"
           >
             <slot
               :name="'item-inner-'+header.value"
@@ -247,7 +242,7 @@
         >
           <td
             :key="headerIndex"
-            class="justify-center text-xs-center select-td"
+            class="justify-center text-xs-left select-td"
           >
             <slot
               :name="'item-inner-'+header.value"
@@ -268,7 +263,7 @@
         >
           <td
             :key="headerIndex"
-            class="justify-center text-xs-center"
+            class="justify-center text-xs-left"
           >
             <slot
               :name="'item-inner-'+header.value"
@@ -315,13 +310,13 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status', align: 'center', width: '200' },
-        { text: 'Title / Venue', value: 'name,venue', align: 'left', width: '300' },
-        { text: 'Date', sortable: true, value: 'start_at,end_at', align: 'center' },
-        { text: 'Tags', value: 'event_tags', align: 'center', width: '300' },
-        { text: 'Managed By', value: 'manager', align: 'center' },
-        { text: 'Customer', value: 'host', align: 'center' },
-        { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
+        { text: 'Status', sortable: true, value: 'status', align: 'left' },
+        { text: 'Title / Venue', value: 'name,venue', align: 'left' },
+        { text: 'Date', sortable: true, value: 'start_at,end_at', align: 'left' },
+        { text: 'Tags', value: 'event_tags', align: 'left' },
+        { text: 'Managed By', value: 'manager', align: 'left' },
+        { text: 'Customer', value: 'host', align: 'left' },
+        { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
       ],
       itemActions: [
         { action: 'edit', text: 'Edit' },
@@ -359,18 +354,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="styl" scoped>
   .highlight {
     background: #ffa;
   }
-  table.v-table tbody td.select-td{
+  /deep/ table.v-table tbody td.select-td{
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 16px;
   }
-  .format-range-date{
-    min-width: 130px;
-  }
-  .list-tag-wrap{
-    min-width: 180px;
+  /deep/ table.v-table tbody td.tag-td{
+    width: 15%;
   }
 </style>
