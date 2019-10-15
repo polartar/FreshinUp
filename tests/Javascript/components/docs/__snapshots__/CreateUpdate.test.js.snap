@@ -673,15 +673,15 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
             </div>
              
             <div
-              class="layout row wrap justify-space-between"
+              class="layout row justify-space-between"
               init-items=""
               init-val=""
             >
               <div
-                class="flex md5 sm12"
+                class="flex"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                   role="combobox"
                 >
                   <div
@@ -847,23 +847,12 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="v-text-field__details"
-                    >
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <div
-                          class="v-messages__wrapper"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
                
               <div
-                class="flex md6 sm12"
+                class="flex ml-4"
               >
                 <div
                   background-color="white"
@@ -2730,15 +2719,15 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
             </div>
              
             <div
-              class="layout row wrap justify-space-between"
+              class="layout row justify-space-between"
               init-items="[object Object]"
               init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
             >
               <div
-                class="flex md5 sm12"
+                class="flex"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                   role="combobox"
                 >
                   <div
@@ -2904,23 +2893,12 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="v-text-field__details"
-                    >
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <div
-                          class="v-messages__wrapper"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
                
               <div
-                class="flex md6 sm12"
+                class="flex ml-4"
               >
                 <div
                   background-color="white"
