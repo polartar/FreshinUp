@@ -1,6 +1,7 @@
 <template>
   <search-filter-sorter
     ref="filter"
+    class="filter-transparent"
     expanded
     without-filter-label
     without-sort-by
@@ -10,7 +11,6 @@
     v-on="$listeners"
     @run="run"
     @clear="clearFilters"
-    class="filter-transparent"
   >
     <template v-slot:expanded="slotProps">
       <v-card-text class="just-padding-top">
