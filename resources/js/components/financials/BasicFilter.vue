@@ -74,11 +74,12 @@
           @clear="filters.host_uuid = null; $refs.host.resetTerm()"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         ref="host"
         url="companies?filter[type_key]=host"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.host_uuid"
         placeholder="All Customer Companies"
         background-color="white"
         class="mt-0 pt-0"
@@ -102,11 +103,12 @@
           @clear="filters.supplier_uuid = null; $refs.supplier.resetTerm()"
         />
       </v-layout>
-      <!-- https://github.com/FreshinUp/foodfleet/issues/117 -->
       <simple
         ref="supplier"
         url="companies?filter[type_key]=supplier"
         term-param="filter[name]"
+        results-id-key="uuid"
+        :value="filters.supplier_uuid"
         placeholder="All Suppliers"
         background-color="white"
         class="mt-0 pt-0"
@@ -132,7 +134,7 @@
       </v-layout>
       <simple
         ref="store"
-        url="foodfleet/stores"
+        :url="storeUrl"
         term-param="filter[name]"
         results-id-key="uuid"
         :value="filters.store_uuid"
@@ -200,6 +202,13 @@ export default {
         return result + param
       }, '')
       return '/admin/financials/transactions?' + encodeURI(preparedParams.slice(1))
+    },
+    storeUrl () {
+      let url = 'foodfleet/stores'
+      if (this.filters.supplier_uuid) {
+        url += '?filter[supplier_uuid]=' + this.filters.supplier_uuid
+      }
+      return url
     }
   },
   methods: {

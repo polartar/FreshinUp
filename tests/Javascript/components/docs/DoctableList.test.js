@@ -111,6 +111,19 @@ describe('Document List component', () => {
       expect(wrapper.emitted()['change-status'][0][1].title).toEqual('mock title')
       expect(wrapper.emitted()['change-status'][0][1].status).toEqual(1)
     })
+
+    test('changeStatusMultiple function emitted change_status_multiple action', () => {
+      const wrapper = shallowMount(Component, {
+        localVue
+      })
+
+      wrapper.setData({ selected: [ 1 ] })
+      wrapper.vm.changeStatusMultiple(2)
+
+      expect(wrapper.emitted()['change_status_multiple']).toBeTruthy()
+      expect(wrapper.emitted()['change_status_multiple'][0][0]).toEqual(2)
+      expect(wrapper.emitted()['change_status_multiple'][0][1]).toEqual([ 1 ])
+    })
   })
 
   describe('Computed', () => {
