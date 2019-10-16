@@ -74,8 +74,8 @@ export default {
         {
           value: 5,
           text: 'Event/Fleet Memeber',
-          url: 'foodfleet',
-          param: 'term'
+          url: 'foodfleet/stores',
+          param: 'filter[name]'
         }
       ]
     }
