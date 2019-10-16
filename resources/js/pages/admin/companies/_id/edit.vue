@@ -1,9 +1,11 @@
 <template>
   <div>
-    <create-update ref="createUpdate" />
+    <div :class="`fresh-company__status--${company ? company.status : ''}`">
+      <create-update :is-admin="isCurrentUserAdmin" />
+    </div>
 
-    <v-container fluid>
-      <v-card>
+    <v-container fluid v-if="companyId && company">
+      <v-card class="mb-5">
         <v-card-title>
           <h3>Company Members</h3>
         </v-card-title>
@@ -40,12 +42,62 @@
           @manage-multiple-delete="deleteMultiple"
         />
       </v-card>
+      
+      <v-card v-if="isCustomer" class="mb-5">
+        <v-card-title>
+          <h3>Company Venues</h3>
+        </v-card-title>
+
+        <v-divider/>
+
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+      </v-card>
+
+      <v-card v-if="isSupplier" class="mb-5">
+        <v-card-title>
+          <h3>Company Fleet</h3>
+        </v-card-title>
+
+        <v-divider/>
+
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+      </v-card>
+
+      <v-card>
+        <v-card-title>
+          <h3>Company Events</h3>
+        </v-card-title>
+
+        <v-divider/>
+
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+      </v-card>
     </v-container>
+
   </div>
 </template>
 
 <script>
-import CreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
+import CreateUpdate from '~/components/companies/CreateUpdate.vue'
+import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
 import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
 import { mapActions, mapGetters } from 'vuex'
 
@@ -54,7 +106,7 @@ export default {
     CreateUpdate
   },
   mixins: [UsersPage],
-  layout: CreateUpdate.layout,
+  layout: BusCreateUpdate.layout,
 
   data() {
     return {
@@ -65,7 +117,7 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.companyId = to.params.id
 
-    CreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
+    BusCreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
       if(vm.companyId) {
         vm.$store.dispatch('companyDetails/users/getItems', { params: { companyId: vm.companyId } }).then(() => {
           Promise.all([
@@ -83,12 +135,28 @@ export default {
   },
 
   computed: {
+    ...mapGetters('currentUser', {
+      isCurrentUserAdmin: 'isAdmin'
+    }),
+    ...mapGetters('companies', {
+      company: 'item'
+    }),
     ...mapGetters('companyDetails/users', {
       users: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
+    isSupplier() {
+      return this.company.company_types.reduce((result, type) => {
+        return result || (type.key_id === 'supplier')
+      }, false)
+    },
+    isCustomer() {
+      return this.company.company_types.reduce((result, type) => {
+        return result || (type.key_id === 'host')
+      }, false)
+    }
   },
 
   methods: {
@@ -107,7 +175,22 @@ export default {
         ...this.lastFilterParams
       })
       this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
+    },
+    test() {
+      console.log({isSupplier: this.isSupplier, isCustomer: this.isCustomer})
     }
   }
 }
 </script>
+
+<style lang="scss">
+.fresh-company__status--1 .v-select__selections {
+  color: #71b179 !important;
+}
+.fresh-company__status--4 .v-select__selections {
+  color: #f9ad36 !important;
+}
+.fresh-company__status--3 .v-select__selections {
+  color: #888888 !important;
+}
+</style>
