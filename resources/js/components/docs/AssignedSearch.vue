@@ -74,13 +74,7 @@ export default {
         {
           value: 5,
           text: 'Event/Fleet Memeber',
-          url: 'users',
-          param: 'term'
-        },
-        {
-          value: 6,
-          text: 'Event/Venue',
-          url: 'users',
+          url: 'foodfleet',
           param: 'term'
         }
       ]

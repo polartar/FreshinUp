@@ -186,23 +186,6 @@ exports[`PublishingForm Snapshots defaults 1`] = `
                           </div>
                         </a>
                       </div>
-                      <div
-                        role="listitem"
-                      >
-                        <a
-                          class="v-list__tile v-list__tile--link theme--light"
-                        >
-                          <div
-                            class="v-list__tile__content"
-                          >
-                            <div
-                              class="v-list__tile__title"
-                            >
-                              Event/Venue
-                            </div>
-                          </div>
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </div>
