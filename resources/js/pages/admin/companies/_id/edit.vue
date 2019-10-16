@@ -67,7 +67,7 @@ export default {
 
     CreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
       if(vm.companyId) {
-        vm.$store.dispatch('companyMembers/users/getItems', { params: { companyId: vm.companyId } }).then(() => {
+        vm.$store.dispatch('companyDetails/users/getItems', { params: { companyId: vm.companyId } }).then(() => {
           Promise.all([
             vm.$store.dispatch('userLevels/getUserlevels'),
             vm.$store.dispatch('userStatuses/getUserstatuses')
@@ -83,7 +83,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters('companyMembers/users', {
+    ...mapGetters('companyDetails/users', {
       users: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
@@ -96,17 +96,17 @@ export default {
       setPageLoading: 'setLoading'
     }),
     onUsersPaginate (value) {
-      this.$store.dispatch('companyMembers/users/setPagination', value)
-      this.$store.dispatch('companyMembers/users/getItems', { params: { companyId: this.companyId } })
+      this.$store.dispatch('companyDetails/users/setPagination', value)
+      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
     },
     filterUsers (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('companyMembers/users/setSort', params.sort)
-      this.$store.dispatch('companyMembers/users/setFilters', {
+      this.$store.dispatch('companyDetails/users/setSort', params.sort)
+      this.$store.dispatch('companyDetails/users/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams
       })
-      this.$store.dispatch('companyMembers/users/getItems', { params: { companyId: this.companyId } })
+      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
     }
   }
 }

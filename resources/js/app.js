@@ -12,7 +12,7 @@ import documents from '~/store/modules/documents.js'
 import documentStatuses from '~/store/modules/documentStatuses.js'
 import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
-import companyMembers from '~/store/modules/companyMembers.js'
+import companyDetails from '~/store/modules/companyDetails.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -139,7 +139,7 @@ const appInstance = new App({
       documentStatuses: documentStatuses({}),
       documentTypes: documentTypes({}),
       transactions: transactions({}),
-      companyMembers: companyMembers({})
+      companyDetails: companyDetails({})
     }
   }),
   theme,
