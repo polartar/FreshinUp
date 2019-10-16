@@ -94,24 +94,7 @@
         v-for="(header, headerIndex) in headers"
       >
         <slot
-          v-if="header.value === 'id'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="idx"
-            class="text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              {{ props.item.uuid }}
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'name,venue'"
+          v-if="header.value === 'name,venue'"
           :name="'item-'+header.value"
           :item="props.item"
         >
@@ -133,7 +116,7 @@
           </td>
         </slot>
         <slot
-          v-else-if="header.value === 'start_at,end_at'"
+          v-else-if="header.value === 'start_at'"
           :name="'item-'+header.value"
           :item="props.item"
         >
@@ -304,6 +287,12 @@ export default {
     statuses: {
       type: Array,
       default: () => []
+    },
+    role: {
+      default: 'admin',
+      validator: value => {
+        return ['admin', 'host', 'supplier'].indexOf(value) !== -1
+      }
     }
   },
   data () {
@@ -312,27 +301,26 @@ export default {
       headers: [
         { text: 'Status', sortable: true, value: 'status', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
-        { text: 'Date', sortable: true, value: 'start_at,end_at', align: 'left' },
+        { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
         { text: 'Tags', value: 'event_tags', align: 'left' },
         { text: 'Managed By', value: 'manager', align: 'left' },
         { text: 'Customer', value: 'host', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
       ],
-      itemActions: [
-        { action: 'edit', text: 'Edit' },
-        { action: 'delete', text: 'Delete' },
-        { action: 'cancel', text: 'Cancel' },
-        { action: 'leave', text: 'Leave Event' }
-      ],
       actionBtnTitle: 'Manage'
     }
   },
   computed: {
+    itemActions () {
+      let actions = [
+        { action: 'edit', text: 'Edit' }
+      ]
+      actions = this.generateActions(actions)
+      return actions
+    },
     selectedActions () {
       if (!this.selected.length) return []
-      let actions = []
-      actions.push({ action: 'delete', text: 'Delete' })
-      return actions
+      return this.generateActions()
     }
   },
   methods: {
@@ -349,6 +337,23 @@ export default {
     },
     changeStatusMultiple (value) {
       this.$emit('change-status-multiple', value, this.selected)
+    },
+    generateActions (actions) {
+      if (!(actions instanceof Array)) {
+        actions = []
+      }
+      switch (this.role) {
+        case 'admin':
+          actions.push({ action: 'delete', text: 'Delete' })
+          break
+        case 'host':
+          actions.push({ action: 'cancel', text: 'Cancel' })
+          break
+        case 'supplier':
+          actions.push({ action: 'leave', text: 'Leave Event' })
+          break
+      }
+      return actions
     }
   }
 }
