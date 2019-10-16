@@ -1,13 +1,14 @@
 <script>
 import CompaniesPage from 'fresh-bus/pages/admin/companies/index.vue'
-import CompaniesList from '~/components/datatable/CompaniesList.vue'
-import CompaniesFilter from '~/components/companies/FilterSorter.vue'
+import companiesList from '~/components/datatable/CompaniesList.vue'
+import companiesFilter from '~/components/companies/FilterSorter.vue'
 
 export default {
   components: {
-    CompaniesList,
-    CompaniesFilter
+    companiesList,
+    companiesFilter
   },
-  extends: CompaniesPage
+  extends: CompaniesPage,
+  beforeRouteEnterOrUpdate: CompaniesPage.beforeRouteEnterOrUpdate
 }
 </script>
