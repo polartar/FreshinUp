@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
-import { FIXTURE_COMPANIES_RESPONSE } from 'fresh-bus/tests/__data__/companies'
+import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Component from '~/components/datatable/CompaniesList.vue'
 
 describe('Companies List Component', () => {

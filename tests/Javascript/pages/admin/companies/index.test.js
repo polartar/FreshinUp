@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import { createLocalVue } from 'fresh-bus/tests/utils'
-import { FIXTURE_COMPANIES_RESPONSE } from 'fresh-bus/tests/__data__/companies'
+import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Page from '~/pages/admin/companies/index.vue'
 
 describe('Admin Companies Page', () => {
