@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use FreshinUp\FreshBusForms\Http\Resources\User\User as UserResource;
+use Illuminate\Support\Facades\DB;
 
 class CompanyMembers extends Controller
 {
@@ -22,7 +23,7 @@ class CompanyMembers extends Controller
     {
         $company = Company::findOrFail($id);
 
-        $users = QueryBuilder::for(
+        $query = QueryBuilder::for(
             User::whereIn('id', $company->users()->pluck('users.id')->toArray()),
             $request
         )
@@ -39,7 +40,22 @@ class CompanyMembers extends Controller
                 'last_name',
                 'email'
             ]);
+        
+        $searchTerm = null;
+        if ($request->has('q')) {
+            $searchTerm = $request->get('q');
+        }
+        if ($request->has('term')) {
+            $searchTerm = $request->get('term');
+        }
+        if ($searchTerm) {
+            if (DB::getDriverName() === 'sqlite') {
+                $query->where(DB::raw('first_name || " " || last_name'), 'LIKE', '%' . $searchTerm . '%');
+            } else {
+                $query->where(DB::raw('CONCAT(" ", first_name, last_name)'), 'LIKE', '%' . $searchTerm . '%');
+            }
+        }
 
-        return UserResource::collection($users->jsonPaginate());
+        return UserResource::collection($query->jsonPaginate());
     }
 }

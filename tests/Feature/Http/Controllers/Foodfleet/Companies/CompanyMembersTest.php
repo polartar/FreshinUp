@@ -80,4 +80,36 @@ class CompanyTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
     }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListWithTerm()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $company = factory(Company::class)->create();
+
+        factory(User::class, 2)->create([
+            'first_name' => 'Not visibles',
+            'company_id' => $company->id
+        ]);
+
+        $usersToFind = factory(User::class, 5)->create([
+            'first_name' => 'To find',
+            'company_id' => $company->id
+        ]);
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/companies/{$company->id}/members?term=find")
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+    }
 }
