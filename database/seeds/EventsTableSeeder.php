@@ -3,6 +3,7 @@
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
+use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Location;
 use FreshinUp\FreshBusForms\Models\Company\Company;
@@ -19,6 +20,7 @@ class EventsTableSeeder extends Seeder
     {
         $stores = Store::get();
         $eventTags = EventTag::get();
+        $status = EventStatus::get();
         $locations = Location::get();
         $users = User::role('admin')->get();
         $hosts = Company::whereHas('company_types', function ($query) {
@@ -28,6 +30,7 @@ class EventsTableSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
             $event = factory(Event::class)->create([
                 'manager_uuid' => $users->random()->uuid,
+                'status_id' => $status->random()->id,
                 'location_uuid' => $locations->random()->uuid,
                 'host_uuid' => $hosts->random()->uuid
             ]);
