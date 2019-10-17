@@ -149,7 +149,7 @@ export default {
       this.assignedType = assignedType
     },
     selectAssigned (assigned, run) {
-      this.assigned_uuid = assigned
+      this.assigned_uuid = assigned ? assigned.uuid : ''
       run()
     },
     clearFilters (params) {

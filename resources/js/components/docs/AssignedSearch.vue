@@ -87,7 +87,7 @@ export default {
         {
           value: 3,
           text: 'Venue',
-          url: 'foodfleet/locations',
+          url: 'foodfleet/venues',
           param: 'filter[name]',
           idKey: 'uuid',
           textKey: 'name',
