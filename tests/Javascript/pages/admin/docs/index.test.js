@@ -119,5 +119,20 @@ describe('Admin Docs Page', () => {
       })
       expect(wrapper.vm.pagination.rowsPerPage).toBe(2)
     })
+
+    test('deleteDoc function change deleteTemp', () => {
+      const wrapper = shallowMount(Component, {
+        localVue: localVue,
+        store
+      })
+
+      wrapper.vm.deleteDoc({ id: 1 })
+      expect(wrapper.vm.deleteTemp[0].id).toBe(1)
+      expect(wrapper.vm.deleteDialog).toBeTruthy()
+
+      wrapper.vm.deleteDoc([{ id: 1 }])
+      expect(wrapper.vm.deleteTemp[0].id).toBe(1)
+      expect(wrapper.vm.deleteDialog).toBeTruthy()
+    })
   })
 })
