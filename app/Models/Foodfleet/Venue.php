@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
+ * Class Venue
  *
  * @property int $id
  * @property string $uuid
@@ -20,21 +20,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $deleted_at
  *
  */
-class Location extends Model
+class Venue extends Model
 {
     use SoftDeletes;
     use GeneratesUuid;
-
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
 
-    public function events()
+    public function locations()
     {
-        return $this->hasMany(Event::class, 'location_uuid', 'uuid');
-    }
-
-    public function venue()
-    {
-        return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');
+        return $this->hasMany(Location::class, 'venue_uuid', 'uuid');
     }
 }
