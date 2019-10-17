@@ -15,16 +15,20 @@ storiesOf('FoodFleet|event/EventCalendar', module)
       return {
         events: [],
         type: 'month',
-        start: '2019-01-01',
-        end: '2019-01-06'
+        yearRange: [2010, 2020],
+        year: 2019,
+        month: 12,
+        day: 31
       }
     },
     template: `
       <event-calendar
         :events="events"
         :type="type"
-        :start="start"
-        :end="end"
+        :yearRange="yearRange"
+        :year="year"
+        :month="month"
+        :day="day"
       />
     `
   }))
