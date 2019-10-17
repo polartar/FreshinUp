@@ -90,179 +90,54 @@
           hide-details
         />
       </td>
-      <template
-        v-for="(header, headerIndex) in headers"
-      >
-        <slot
-          v-if="header.value === 'name,venue'"
-          :name="'item-'+header.value"
-          :item="props.item"
+      <td class="select-td">
+        <status-select
+          v-model="props.item.status"
+          :options="statuses"
+          @input="changeStatus($event, props.item)"
+        />
+      </td>
+      <td>
+        <div class="subheading primary--text">
+          {{ props.item.name }}
+        </div>
+        <div class="grey--text">
+          @{{ props.item.venue && props.item.venue.name }}
+        </div>
+      </td>
+      <td>
+        <div class="grey--text">
+          {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
+        </div>
+      </td>
+      <td class="tag-td">
+        <f-chip
+          v-for="tag in props.item.event_tags"
+          :key="tag.uuid"
+          color="secondary"
         >
-          <td
-            :key="headerIndex"
-            class="text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <div class="subheading primary--text">
-                {{ props.item.name }}
-              </div>
-              <div class="grey--text">
-                @{{ props.item.venue && props.item.venue.name }}
-              </div>
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'start_at'"
-          :name="'item-'+header.value"
-          :item="props.item"
+          {{ tag.name }}
+        </f-chip>
+      </td>
+      <td>
+        <div class="grey--text">
+          {{ props.item.host.name }}
+        </div>
+      </td>
+      <td>
+        <div class="grey--text">
+          {{ props.item.manager.name }}
+        </div>
+      </td>
+      <td>
+        <f-btn-menu
+          :items="itemActions"
+          item-label="text"
+          @item="manage($event, props.item)"
         >
-          <td
-            :key="headerIndex"
-            class="text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <div class="grey--text">
-                {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
-              </div>
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'event_tags'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            class="text-xs-left tag-td"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <v-layout
-                row
-                wrap
-                class="list-tag-wrap"
-              >
-                <f-chip
-                  v-for="tag in props.item.event_tags"
-                  :key="tag.uuid"
-                  color="secondary"
-                >
-                  {{ tag.name }}
-                </f-chip>
-              </v-layout>
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'manager'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            class="text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <div class="grey--text">
-                {{ props.item.manager.name }}
-              </div>
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'host'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            class="text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <div class="grey--text">
-                {{ props.item.host.name }}
-              </div>
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="['status', 'manage'].indexOf(header.value) === -1"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            :class="'text-xs-' + header.align"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              {{ props.item[header.value] }}
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'status'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            class="justify-center text-xs-left select-td"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <status-select
-                v-model="props.item.status"
-                :options="statuses"
-                @input="changeStatus($event, props.item)"
-              />
-            </slot>
-          </td>
-        </slot>
-        <slot
-          v-else-if="header.value === 'manage'"
-          :name="'item-'+header.value"
-          :item="props.item"
-        >
-          <td
-            :key="headerIndex"
-            class="justify-center text-xs-left"
-          >
-            <slot
-              :name="'item-inner-'+header.value"
-              :item="props.item"
-            >
-              <f-btn-menu
-                :items="itemActions"
-                item-label="text"
-                @item="manage($event, props.item)"
-              >
-                Manage
-              </f-btn-menu>
-            </slot>
-          </td>
-        </slot>
-      </template>
+          Manage
+        </f-btn-menu>
+      </td>
     </template>
   </v-data-table>
 </template>
