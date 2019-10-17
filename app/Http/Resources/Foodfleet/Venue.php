@@ -18,7 +18,8 @@ class Venue extends JsonResource
     {
         return [
             "uuid" => $this->uuid,
-            "name" => $this->name
+            "name" => $this->name,
+            "address" => $this->address
         ];
     }
 }

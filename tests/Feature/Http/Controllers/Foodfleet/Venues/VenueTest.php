@@ -40,7 +40,8 @@ class VenueTest extends TestCase
         foreach ($venues as $idx => $venue) {
             $this->assertArraySubset([
                 'uuid' => $venue->uuid,
-                'name' => $venue->name
+                'name' => $venue->name,
+                'address' => $venue->address
             ], $data[$idx]);
         }
     }
@@ -90,7 +91,8 @@ class VenueTest extends TestCase
         foreach ($venuesToFind as $idx => $venue) {
             $this->assertArraySubset([
                 'uuid' => $venue->uuid,
-                'name' => $venue->name
+                'name' => $venue->name,
+                'address' => $venue->address
             ], $data[$idx]);
         }
 
@@ -107,7 +109,8 @@ class VenueTest extends TestCase
 
         $this->assertArraySubset([
             'uuid' => $venuesToFind->first()->uuid,
-            'name' => $venuesToFind->first()->name
+            'name' => $venuesToFind->first()->name,
+            'address' => $venuesToFind->first()->address
         ], $data[0]);
     }
 }
