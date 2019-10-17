@@ -34,7 +34,7 @@ exports[`PublishingForm Snapshots defaults 1`] = `
     </div>
      
     <div
-      class="layout row wrap justify-space-between"
+      class="layout row justify-space-between"
       value="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
     >
       <div
@@ -195,7 +195,7 @@ exports[`PublishingForm Snapshots defaults 1`] = `
       </div>
        
       <div
-        class="flex ml-4"
+        class="flex md6 sm12"
       >
         <div
           background-color="white"
