@@ -31,7 +31,7 @@ class Transactions extends Controller
                 'store.supplier',
                 'event.host',
                 'event.event_tags',
-                'event.location',
+                'event.location.venue',
                 'customer'
             ]);
 
@@ -45,7 +45,7 @@ class Transactions extends Controller
             ->allowedIncludes([
                 'items.category',
                 'store',
-                'event.location'
+                'event.location.venue'
             ])->first();
 
         return new TransactionResource($transactionModel);
