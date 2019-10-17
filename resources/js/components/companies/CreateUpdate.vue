@@ -9,13 +9,13 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       disableStatus: true
     }
   },
   watch: {
-    isAdmin() {
+    isAdmin () {
       this.disableStatus = !this.isAdmin
     }
   }

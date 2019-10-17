@@ -4,7 +4,7 @@ export default ({ items, item }) => {
   return {
     ...makeRestStore(
       'companyDetails',
-      { items, item },
+      { items, item }
     ),
     modules: {
       users: makeRestStore(
@@ -14,7 +14,7 @@ export default ({ items, item }) => {
           itemsPath: ({ companyId }) => `/foodfleet/companies/${companyId}/members`,
           itemPath: ({ companyId }) => `/foodfleet/companies/${companyId}/members`
         }
-      ),
+      )
     }
   }
 }
