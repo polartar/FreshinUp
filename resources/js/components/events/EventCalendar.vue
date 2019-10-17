@@ -18,7 +18,7 @@
         v-model="type"
         :items="typeOptions"
         label="Type"
-      ></v-select>
+      />
     </v-flex>
     <v-flex
       xs12
@@ -31,7 +31,7 @@
           :type="type"
           :end="end"
           color="primary"
-        ></v-calendar>
+        />
       </v-sheet>
     </v-flex>
   </v-layout>
