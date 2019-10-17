@@ -1,5 +1,6 @@
 const mix = require('laravel-mix')
-const WebpackLaravelMixManifest = require('webpack-laravel-mix-manifest').default
+const WebpackLaravelMixManifest = require('webpack-laravel-mix-manifest')
+const isFunction = require('lodash/isFunction')
 const Dotenv = require('dotenv-webpack')
 const path = require('path')
 
@@ -13,21 +14,21 @@ const path = require('path')
  | file for the application as well as bundling up all the JS files.
  |
  */
-
+const WebpackLaravelMixManifestConstructor = isFunction(WebpackLaravelMixManifest.default) ? WebpackLaravelMixManifest.default : WebpackLaravelMixManifest
 mix.webpackConfig({
   plugins: [
     new Dotenv({
       path: `./.env`,
       silent: false
     }),
-    new WebpackLaravelMixManifest()
+    new WebpackLaravelMixManifestConstructor()
   ],
   resolve: {
     /* Path Shortcuts */
     alias: {
       /* root */
       '~': path.resolve(__dirname, 'resources/js'),
-      'sass': path.resolve(__dirname, 'resources/sass'),
+      sass: path.resolve(__dirname, 'resources/sass'),
       'fresh-bus': path.resolve(__dirname, 'vendor/freshinup/fresh-bus-forms/resources/assets/js'),
       'fresh-bus-sass': path.resolve(__dirname, 'vendor/freshinup/fresh-bus-forms/resources/sass')
     }

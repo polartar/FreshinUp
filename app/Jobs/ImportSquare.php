@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Helpers\SquareHelper;
 use App\Models\Foodfleet\Company;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
@@ -20,12 +21,13 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\Builder;
 
 class ImportSquare implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $supplier;
+    protected $event;
     protected $employeesApi;
     protected $ordersApi;
     protected $customersApi;
@@ -35,13 +37,13 @@ class ImportSquare implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Company $supplier
+     * @param Event $event
      * @return void
      */
-    public function __construct(Company $supplier)
+    public function __construct(Event $event)
     {
-        Log::info('Import constructor for supplier ' . $supplier->name . ' id ' . $supplier->id);
-        $this->supplier = $supplier;
+        Log::info('Import constructor for event ' . $event->name . ' id ' . $event->id);
+        $this->event = $event;
     }
 
     /**
@@ -51,14 +53,17 @@ class ImportSquare implements ShouldQueue
      */
     public function handle()
     {
-        $this->initializeSquareApi();
-
-        $stores = $this->supplier->stores()->whereNotNull('square_id')->get();
+        $stores = $this->event->stores()->whereNotNull('square_id')
+            ->whereHas('supplier', function (Builder $query) {
+                $query->whereNotNull('square_access_token');
+            })->get();
 
         Log::info('Start import: ' . $stores->count() . ' stores with square id');
         foreach ($stores as $store) {
             try {
                 Log::info('Store ' . $store->name . ' id ' . $store->id);
+
+                $this->initializeSquareApi($store->supplier);
 
                 // Staffs
                 $employeeList = $this->employeesApi->listEmployees($store->square_id);
@@ -66,44 +71,41 @@ class ImportSquare implements ShouldQueue
                 $this->updateOrCreateStaffs($employees, $store);
 
                 // Transactions
-                $events = $store->events;
-                foreach ($events as $event) {
-                    $orders = $this->getOrders($event, $store);
-                    if ($orders) {
-                        foreach ($orders as $order) {
-                            // Customer
-                            $customer = $this->getCustomer($order);
+                $orders = $this->getOrders($this->event, $store);
+                if ($orders) {
+                    foreach ($orders as $order) {
+                        // Customer
+                        $customer = $this->getCustomer($order);
 
-                            // Transaction
-                            $transaction = $this->getTransaction($order, $event, $store, $customer);
+                        // Transaction
+                        $transaction = $this->getTransaction($order, $this->event, $store, $customer);
 
-                            // Items
-                            $lineItems = $order->getLineItems();
-                            foreach ($lineItems as $lineItem) {
-                                // Item Category
-                                $category = $this->getCategory($lineItem);
-                                $item = $this->getItem($lineItem, $category);
-                                $this->attachItem($transaction, $item, $lineItem);
-                            }
+                        // Items
+                        $lineItems = $order->getLineItems();
+                        foreach ($lineItems as $lineItem) {
+                            // Item Category
+                            $category = $this->getCategory($lineItem);
+                            $item = $this->getItem($lineItem, $category);
+                            $this->attachItem($transaction, $item, $lineItem);
+                        }
 
-                            // Payments
-                            $tenders = $order->getTenders();
-                            foreach ($tenders as $tender) {
-                                // Payment Type
-                                $paymentType = $this->getPaymentType($tender);
+                        // Payments
+                        $tenders = $order->getTenders();
+                        foreach ($tenders as $tender) {
+                            // Payment Type
+                            $paymentType = $this->getPaymentType($tender);
 
-                                // Device
-                                $deviceModel = $this->getDevice($tender, $store);
+                            // Device
+                            $deviceModel = $this->getDevice($tender, $store);
 
-                                // Payment
-                                $this->createPayment($tender, $paymentType, $transaction, $deviceModel);
-                            }
+                            // Payment
+                            $this->createPayment($tender, $paymentType, $transaction, $deviceModel);
                         }
                     }
                 }
             } catch (\Exception $e) {
-                Log::error('Error importing square data for supplier ' . $this->supplier->name . ' with id ' .
-                    $this->supplier->id . ' on line ' . $e->getLine() . ' for fleet member ' . ($store->name ?? '') .
+                Log::error('Error importing square data for event ' . $this->event->name . ' with id ' .
+                    $this->event->id . ' on line ' . $e->getLine() . ' for fleet member ' . ($store->name ?? '') .
                     ' with id ' . $store->id . '. Message: ' . $e->getMessage());
             }
         }
@@ -256,11 +258,13 @@ class ImportSquare implements ShouldQueue
 
     /**
      * Initialize square api properties
+     *
+     * @param Company $supplier
      */
-    protected function initializeSquareApi(): void
+    protected function initializeSquareApi(Company $supplier): void
     {
         // Get square access token for the supplier
-        $accessToken = $this->supplier->square_access_token;
+        $accessToken = $supplier->square_access_token;
         $apiClient = SquareHelper::getApiClient($accessToken);
 
         // Initialize Api class for the square resources

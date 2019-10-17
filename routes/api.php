@@ -27,6 +27,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('events', 'Foodfleet\Events@index');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
+    Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('stores', 'Foodfleet\Stores@index');
     Route::get('items', 'Foodfleet\Items@index');
     Route::get('locations', 'Foodfleet\Locations@index');
@@ -38,4 +39,5 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::post('squares', 'Foodfleet\Squares@store');
+    Route::get('venues', 'Foodfleet\Venues@index');
 });

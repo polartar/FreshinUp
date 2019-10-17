@@ -23,7 +23,8 @@ class Stores extends Controller
         $stores = QueryBuilder::for(Store::class, $request)
             ->allowedFilters([
                 Filter::exact('uuid'),
-                'name'
+                'name',
+                Filter::exact('supplier_uuid')
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());

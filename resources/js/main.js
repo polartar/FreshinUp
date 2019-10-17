@@ -1,2 +1,3 @@
 // Here for backwards support of main.js
-import AppInit from './app' // eslint-disable-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
+import AppInit from './app'

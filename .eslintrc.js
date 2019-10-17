@@ -5,7 +5,7 @@ module.exports = {
   root: true,
 
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: 'babel-eslint'
   },
 
   env: {
@@ -27,10 +27,10 @@ module.exports = {
   ],
 
   rules: {
-    'no-console': ["error", { allow: ["warn", "error"] }]
+    'no-console': ['error', { allow: ['warn', 'error'] }]
   },
 
   globals: {
-    'use': true
+    use: true
   }
 }

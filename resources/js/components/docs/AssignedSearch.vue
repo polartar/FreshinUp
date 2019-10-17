@@ -1,18 +1,17 @@
 <template>
   <v-layout
     row
-    wrap
     justify-space-between
   >
-    <v-flex
-      md5
-      sm12
-    >
+    <v-flex>
       <v-select
         v-model="typeValue"
         single-line
-        outline
+        solo
+        flat
+        height="48"
         :items="options"
+        hide-details
         data-vv-name="type"
       />
     </v-flex>

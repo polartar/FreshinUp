@@ -131,18 +131,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -228,18 +216,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 role="combobox"
                                 type="text"
                               />
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
                               <div
                                 class="v-input__append-inner"
                               >
@@ -382,18 +358,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -479,18 +443,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 role="combobox"
                                 type="text"
                               />
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
                               <div
                                 class="v-input__append-inner"
                               >
@@ -588,18 +540,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -693,18 +633,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -790,18 +718,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 role="combobox"
                                 type="text"
                               />
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
                               <div
                                 class="v-input__append-inner"
                               >
@@ -1045,18 +961,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -1142,18 +1046,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 role="combobox"
                                 type="text"
                               />
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
                               <div
                                 class="v-input__append-inner"
                               >
@@ -1485,18 +1377,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
                                   class="v-input__icon v-input__icon--append"
                                 >
                                   <i
@@ -1586,18 +1466,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 role="combobox"
                                 type="text"
                               />
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon v-icon--link material-icons theme--light"
-                                  />
-                                </div>
-                              </div>
                               <div
                                 class="v-input__append-inner"
                               >
@@ -1816,7 +1684,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                               >
                                 <input
                                   aria-checked="true"
-                                  aria-label="Event / Location"
+                                  aria-label="Event / Venue / Location"
                                   role="checkbox"
                                   type="checkbox"
                                   value="event_location"
@@ -1836,7 +1704,7 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                                 class="v-label theme--light"
                                 style="left: 0px; position: relative;"
                               >
-                                Event / Location
+                                Event / Venue / Location
                               </label>
                             </div>
                             <div
@@ -3553,18 +3421,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                   class="v-input__append-inner"
                 >
                   <div
-                    class="v-input__icon v-input__icon--"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="v-icon v-icon--link material-icons theme--light"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="v-input__append-inner"
-                >
-                  <div
                     class="v-input__icon v-input__icon--append"
                   >
                     <i
@@ -4931,14 +4787,91 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                   class="v-input__append-inner"
                 >
                   <div
-                    class="v-input__icon v-input__icon--"
+                    class="v-input__icon v-input__icon--append"
                   >
                     <i
                       aria-hidden="true"
-                      class="v-icon v-icon--link material-icons theme--light"
-                    />
+                      class="v-icon material-icons theme--light"
+                    >
+                      arrow_drop_down
+                    </i>
                   </div>
                 </div>
+              </div>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light v-autocomplete__content"
+                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                  <div
+                    class="v-select-list v-card theme--light"
+                  >
+                    <div
+                      class="v-list theme--light"
+                      role="list"
+                    >
+                      <div
+                        role="listitem"
+                      >
+                        <div
+                          class="v-list__tile theme--light"
+                        >
+                          <div
+                            class="v-list__tile__content"
+                          >
+                            <div
+                              class="v-list__tile__title"
+                            >
+                              No data available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex sm2 px-2"
+      >
+        <div
+          class="layout row justify-space-between mb-2"
+        >
+          
+      Supplier Companies
+      
+          <!---->
+        </div>
+         
+        <div
+          background-color="white"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+          height="48"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+              style="height: 48px;"
+            >
+              <div
+                class="v-select__slot"
+              >
+                <input
+                  aria-label=""
+                  autocomplete="off"
+                  placeholder="All Suppliers"
+                  role="combobox"
+                  type="text"
+                />
                 <div
                   class="v-input__append-inner"
                 >
@@ -5028,119 +4961,6 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
                   role="combobox"
                   type="text"
                 />
-                <div
-                  class="v-input__append-inner"
-                >
-                  <div
-                    class="v-input__icon v-input__icon--"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="v-icon v-icon--link material-icons theme--light"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="v-input__append-inner"
-                >
-                  <div
-                    class="v-input__icon v-input__icon--append"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="v-icon material-icons theme--light"
-                    >
-                      arrow_drop_down
-                    </i>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="v-menu"
-              >
-                <div
-                  class="v-menu__content theme--light v-autocomplete__content"
-                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                >
-                  <div
-                    class="v-select-list v-card theme--light"
-                  >
-                    <div
-                      class="v-list theme--light"
-                      role="list"
-                    >
-                      <div
-                        role="listitem"
-                      >
-                        <div
-                          class="v-list__tile theme--light"
-                        >
-                          <div
-                            class="v-list__tile__content"
-                          >
-                            <div
-                              class="v-list__tile__title"
-                            >
-                              No data available
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="flex sm2 px-2"
-      >
-        <div
-          class="layout row justify-space-between mb-2"
-        >
-          
-      Suppliers
-      
-          <!---->
-        </div>
-         
-        <div
-          background-color="white"
-          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
-          height="48"
-        >
-          <div
-            class="v-input__control"
-          >
-            <div
-              class="v-input__slot white"
-              style="height: 48px;"
-            >
-              <div
-                class="v-select__slot"
-              >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  placeholder="All Suppliers"
-                  role="combobox"
-                  type="text"
-                />
-                <div
-                  class="v-input__append-inner"
-                >
-                  <div
-                    class="v-input__icon v-input__icon--"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="v-icon v-icon--link material-icons theme--light"
-                    />
-                  </div>
-                </div>
                 <div
                   class="v-input__append-inner"
                 >
@@ -5570,13 +5390,13 @@ exports[`Admin Financial Results Page Mount snapshot 1`] = `
               <thead>
                 <tr>
                   <th
-                    aria-label="Event / Location: Not sorted."
+                    aria-label="Event / Venue / Location: Not sorted."
                     aria-sort="none"
                     class="column text-xs-left font-weight-bold"
                     role="columnheader"
                     scope="col"
                   >
-                    Event / Location
+                    Event / Venue / Location
                   </th>
                   <th
                     aria-label="Creation Date: Not sorted."
