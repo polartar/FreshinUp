@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="`fresh-company__status--${company ? company.status : ''}`">
+    <div :class="`fresh-company__edit fresh-company__edit--${company ? company.status : ''}`">
       <create-update :is-admin="isCurrentUserAdmin" />
     </div>
 
@@ -189,13 +189,13 @@ export default {
 </script>
 
 <style lang="scss">
-.fresh-company__status--1 .v-select__selections {
+.fresh-company__edit--1 .v-select__selections {
   color: #71b179 !important;
 }
-.fresh-company__status--4 .v-select__selections {
+.fresh-company__edit--4 .v-select__selections {
   color: #f9ad36 !important;
 }
-.fresh-company__status--3 .v-select__selections {
+.fresh-company__edit--3 .v-select__selections {
   color: #888888 !important;
 }
 </style>

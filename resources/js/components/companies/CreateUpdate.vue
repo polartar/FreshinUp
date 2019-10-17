@@ -11,7 +11,7 @@ export default {
   },
   data () {
     return {
-      disableStatus: true
+      disableStatus: !this.isAdmin
     }
   },
   watch: {
