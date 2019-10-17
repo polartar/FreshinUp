@@ -6,7 +6,7 @@ namespace App\Http\Resources\Foodfleet;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Location extends JsonResource
+class Venue extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -19,7 +19,7 @@ class Location extends JsonResource
         return [
             "uuid" => $this->uuid,
             "name" => $this->name,
-            "venue" => new Venue($this->whenLoaded('venue'))
+            "address" => $this->address
         ];
     }
 }

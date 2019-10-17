@@ -12,7 +12,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-card-text>
+      <v-container pr-0 pt-1 pb-0>
         <v-layout
           row
           justify-space-between
@@ -32,7 +32,7 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
             <v-select
               v-model="type"
@@ -45,7 +45,7 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
             <v-select
               v-model="status"
@@ -58,20 +58,16 @@
             />
           </v-flex>
           <v-flex
-            ml-2
+            ml-4
           >
-            <simple
-              :key="userSearchKey"
-              url="users"
-              placeholder="Search Users"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              @input="(user) => { selectUsers(user, slotProps.run) }"
+            <AssignedSearch
+              :type="assignedType"
+              @type-change="selectAssignedType"
+              @assign-change="(assigned) => selectAssigned(assigned, slotProps.run)"
             />
           </v-flex>
         </v-layout>
-      </v-card-text>
+      </v-container>
     </template>
   </search-filter-sorter>
 </template>
@@ -80,11 +76,11 @@
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
-import Simple from 'fresh-bus/components/search/simple'
+import AssignedSearch from '~/components/docs/AssignedSearch'
 
 export default {
   components: {
-    Simple,
+    AssignedSearch,
     SearchFilterSorter,
     VueCtkDateTimePicker
   },
@@ -108,7 +104,7 @@ export default {
   },
   data () {
     return {
-      userSearchKey: +new Date(),
+      assignedType: 1,
       type: null,
       status: null,
       assigned_uuid: null,
@@ -145,8 +141,11 @@ export default {
 
       this.$emit('runFilter', finalParams)
     },
-    selectUsers (user, run) {
-      this.assigned_uuid = user ? user.uuid : ''
+    selectAssignedType (assignedType) {
+      this.assignedType = assignedType
+    },
+    selectAssigned (assigned, run) {
+      this.assigned_uuid = assigned
       run()
     },
     clearFilters (params) {

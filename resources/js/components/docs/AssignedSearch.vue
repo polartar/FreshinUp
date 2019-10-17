@@ -1,25 +1,21 @@
 <template>
   <v-layout
     row
-    wrap
     justify-space-between
   >
-    <v-flex
-      md5
-      sm12
-    >
+    <v-flex>
       <v-select
         v-model="typeValue"
         single-line
-        outline
+        solo
+        flat
+        height="48"
         :items="options"
+        hide-details
         data-vv-name="type"
       />
     </v-flex>
-    <v-flex
-      md6
-      sm12
-    >
+    <v-flex ml-4>
       <simple
         ref="assigned"
         :placeholder="`Search ${currentOption.text}`"
@@ -78,14 +74,8 @@ export default {
         {
           value: 5,
           text: 'Event/Fleet Memeber',
-          url: 'users',
-          param: 'term'
-        },
-        {
-          value: 6,
-          text: 'Event/Venue',
-          url: 'users',
-          param: 'term'
+          url: 'foodfleet/stores',
+          param: 'filter[name]'
         }
       ]
     }
