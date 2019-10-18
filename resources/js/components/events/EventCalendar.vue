@@ -1,20 +1,20 @@
 <template>
   <v-container>
-    <v-layout 
-      wrap 
+    <v-layout
+      wrap
       row
     >
       <v-flex
         xs8
         class="text-xs-left"
       >
-        <v-layout 
-          wrap 
+        <v-layout
+          wrap
           row
         >
-          <v-btn 
+          <v-btn
             large
-            class="ml-0 mt-0" 
+            class="ml-0 mt-0"
             @click="moveToToday"
           >
             Today
@@ -80,7 +80,7 @@
 
 <script>
 
-import _ from "lodash"
+import _ from 'lodash'
 
 export default {
   props: {
@@ -94,7 +94,7 @@ export default {
     },
     yearRange: {
       type: Array,
-      default: [2017, 2020]
+      default: () => [2017, 2020]
     },
     year: {
       type: Number,
@@ -137,6 +137,18 @@ export default {
       currentDate: [this.year, this.month, this.day].join('-')
     }
   },
+  watch: {
+    currentYear: function (yearValue) {
+      this.moveDate({
+        year: yearValue
+      })
+    },
+    currentMonth: function (monthValue) {
+      this.moveDate({
+        month: monthValue
+      })
+    }
+  },
   methods: {
     moveToToday: function () {
       const calendarToday = this.$refs.calendar.times.today
@@ -153,20 +165,7 @@ export default {
       if (date.month) {
         months = date.month - currentDateValues[1]
       }
-      console.log(years * 12 + months);
       this.$refs.calendar.move(years * 12 + months)
-    }
-  },
-  watch: {
-    currentYear: function (yearValue) {
-      this.moveDate({
-        year: yearValue
-      })
-    },
-    currentMonth: function (monthValue) {
-      this.moveDate({
-        month: monthValue
-      })
     }
   }
 }
