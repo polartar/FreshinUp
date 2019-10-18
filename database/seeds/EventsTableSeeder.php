@@ -22,7 +22,7 @@ class EventsTableSeeder extends Seeder
         $eventTags = EventTag::get();
         $status = EventStatus::get();
         $locations = Location::get();
-        $users = User::role('admin')->get();
+        $users = User::where(["type" => 1])->get();
         $hosts = Company::whereHas('company_types', function ($query) {
             $query->where('key_id', 'host');
         })->get();
