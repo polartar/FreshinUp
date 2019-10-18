@@ -19,3 +19,4 @@ tests/.reports
 storage/testing.sqlite
 .idea/
 public/styleguide
+.DS_Store

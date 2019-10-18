@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modifier Snapshots defaults 1`] = `
+exports[`Filter Snapshots defaults 1`] = `
 <div
   autocomplete_url="/api/foodfleet/financial-reports"
   class="v-card v-sheet theme--light white"

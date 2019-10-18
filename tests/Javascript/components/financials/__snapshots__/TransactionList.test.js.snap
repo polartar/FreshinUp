@@ -13,13 +13,13 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
       <thead>
         <tr>
           <th
-            aria-label="Event / Location: Not sorted."
+            aria-label="Event / Venue / Location: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Event / Location
+            Event / Venue / Location
           </th>
           <th
             aria-label="Creation Date: Not sorted."
@@ -1874,13 +1874,13 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
       <thead>
         <tr>
           <th
-            aria-label="Event / Location: Not sorted."
+            aria-label="Event / Venue / Location: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Event / Location
+            Event / Venue / Location
           </th>
           <th
             aria-label="Creation Date: Not sorted."
@@ -2763,13 +2763,13 @@ exports[`TransactionList Snapshots transaction empty 1`] = `
       <thead>
         <tr>
           <th
-            aria-label="Event / Location: Not sorted."
+            aria-label="Event / Venue / Location: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Event / Location
+            Event / Venue / Location
           </th>
           <th
             aria-label="Creation Date: Not sorted."
@@ -3085,13 +3085,13 @@ exports[`TransactionList Snapshots transactions set 1`] = `
       <thead>
         <tr>
           <th
-            aria-label="Event / Location: Not sorted."
+            aria-label="Event / Venue / Location: Not sorted."
             aria-sort="none"
             class="column text-xs-left font-weight-bold"
             role="columnheader"
             scope="col"
           >
-            Event / Location
+            Event / Venue / Location
           </th>
           <th
             aria-label="Creation Date: Not sorted."

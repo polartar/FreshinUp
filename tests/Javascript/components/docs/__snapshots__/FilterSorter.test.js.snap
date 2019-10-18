@@ -187,7 +187,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
           class="flex"
         >
           <div
-            class="v-card__text"
+            class="container pr-0 pt-1 pb-0"
           >
             <div
               class="layout row justify-space-between"
@@ -228,7 +228,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
               </div>
                
               <div
-                class="flex ml-2"
+                class="flex ml-4"
               >
                 <div
                   class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
@@ -327,7 +327,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
               </div>
                
               <div
-                class="flex ml-2"
+                class="flex ml-4"
               >
                 <div
                   class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
@@ -477,84 +477,249 @@ exports[`FilterSorter Snapshots defaults 1`] = `
               </div>
                
               <div
-                class="flex ml-2"
+                class="flex ml-4"
               >
                 <div
-                  background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
-                  height="48"
+                  class="layout row justify-space-between"
                 >
                   <div
-                    class="v-input__control"
+                    class="flex"
                   >
                     <div
-                      class="v-input__slot white"
-                      style="height: 48px;"
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                      role="combobox"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__control"
                       >
-                        <input
-                          aria-label=""
-                          autocomplete="off"
-                          placeholder="Search Users"
-                          role="combobox"
-                          type="text"
-                        />
                         <div
-                          class="v-input__append-inner"
+                          class="v-input__slot"
+                          style="height: 48px;"
                         >
                           <div
-                            class="v-input__icon v-input__icon--"
+                            class="v-select__slot"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon v-icon--link material-icons theme--light"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
+                            <div
+                              class="v-select__selections"
                             >
-                              arrow_drop_down
-                            </i>
+                              <div
+                                class="v-select__selection v-select__selection--comma"
+                              >
+                                User
+                              </div>
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                data-vv-name="type"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
+                              >
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    class="primary--text"
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          User
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          Fleet Member
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          Venue
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          Event
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          Event/Fleet Memeber
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex md6 sm12"
+                  >
+                    <div
+                      background-color="white"
+                      class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                      height="48"
+                    >
                       <div
-                        class="v-menu"
+                        class="v-input__control"
                       >
                         <div
-                          class="v-menu__content theme--light v-autocomplete__content"
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          class="v-input__slot white"
+                          style="height: 48px;"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-select__slot"
                           >
+                            <input
+                              aria-label=""
+                              autocomplete="off"
+                              placeholder="Search User"
+                              role="combobox"
+                              type="text"
+                            />
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-input__append-inner"
                             >
                               <div
-                                role="listitem"
+                                class="v-input__icon v-input__icon--"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon v-icon--link material-icons theme--light"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-list__tile theme--light"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    role="listitem"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile theme--light"
                                     >
-                                      No data available
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
