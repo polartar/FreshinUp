@@ -11,15 +11,7 @@ mock.onGet('/foodfleet/event-tags').reply(200, {
     { uuid: 1, name: 'Event Tag 1' },
     { uuid: 2, name: 'Event Tag 2' },
     { uuid: 3, name: 'Event Tag 3' },
-    { uuid: 4, name: 'Event Tag 4' },
-    { uuid: 5, name: 'Event Tag 5' },
-    { uuid: 6, name: 'Event Tag 6' },
-    { uuid: 7, name: 'Event Tag 7' },
-    { uuid: 8, name: 'Event Tag 8' },
-    { uuid: 9, name: 'Event Tag 9' },
-    { uuid: 10, name: 'Event Tag 10' },
-    { uuid: 11, name: 'Aaaaa' },
-    { uuid: 12, name: 'Bbbbb' }
+    { uuid: 4, name: 'Event Tag 4' }
   ]
 })
 mock.onGet('/terms').reply(200, {
@@ -30,7 +22,7 @@ mock.onGet('/terms').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|ui/MultiSimple', module)
+storiesOf(`${BUS}|search/MultiSimple`, module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
@@ -48,11 +40,16 @@ storiesOf('FoodFleet|ui/MultiSimple', module)
   }))
   .add('set tags', () => ({
     components: { MultiSimple },
+    data () {
+      return {
+        selectTags: [1, 2, 3]
+      }
+    },
     template: `
       <v-container>
         <multi-simple
-          :value="[1, 2, 3]"
-          url="foodfleet/event-tags"
+          v-model="selectTags"
+          url="/tags"
           term-param="filter[name]"
           results-id-key="uuid"
           placeholder="Search Tag"
