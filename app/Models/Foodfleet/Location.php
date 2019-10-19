@@ -3,7 +3,6 @@
 
 namespace App\Models\Foodfleet;
 
-use App\Models\Foodfleet\Square\Payment;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -32,5 +31,15 @@ class Location extends Model
     public function events()
     {
         return $this->hasMany(Event::class, 'location_uuid', 'uuid');
+    }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+  
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');
     }
 }

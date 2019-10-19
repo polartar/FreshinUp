@@ -14,7 +14,7 @@ class CompanyTypeSeeder extends Seeder
     {
         CompanyType::updateOrCreate(
             [
-                'name' => 'Supplier'
+                'key_id' => 'supplier'
             ],
             [
                 'name' => 'Supplier',
@@ -23,10 +23,10 @@ class CompanyTypeSeeder extends Seeder
         );
         CompanyType::updateOrCreate(
             [
-                'name' => 'Host'
+                'key_id' => 'host'
             ],
             [
-                'name' => 'Host',
+                'name' => 'Customer',
                 'key_id' => 'host'
             ]
         );

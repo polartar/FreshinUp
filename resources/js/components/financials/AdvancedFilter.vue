@@ -60,17 +60,20 @@
                 Event tag
                 <clear-button
                   v-if="filters.event_tag_uuid"
-                  @clear="filters.event_tag_uuid = null; eventTagKey += 1"
+                  @clear="filters.event_tag_uuid = null; $refs.eventTag.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="eventTagKey"
+                ref="eventTag"
                 url="foodfleet/event-tags"
                 term-param="filter[name]"
+                results-id-key="uuid"
+                :value="filters.event_tag_uuid"
                 placeholder="All tags"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'event_tag_uuid')"
               />
             </v-flex>
@@ -86,17 +89,20 @@
                 Locations
                 <clear-button
                   v-if="filters.location_uuid"
-                  @clear="filters.location_uuid = null; locationKey += 1"
+                  @clear="filters.location_uuid = null; $refs.location.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="locationKey"
+                ref="location"
                 url="foodfleet/locations"
                 term-param="filter[name]"
+                results-id-key="uuid"
+                :value="filters.location_uuid"
                 placeholder="All locations"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'location_uuid')"
               />
             </v-flex>
@@ -142,17 +148,20 @@
                 Customer name
                 <clear-button
                   v-if="filters.customer_uuid"
-                  @clear="filters.customer_uuid = null; customerNameKey += 1"
+                  @clear="filters.customer_uuid = null; $refs.customerName.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="customerNameKey"
+                ref="customerName"
                 url="foodfleet/customers"
                 term-param="term"
+                results-id-key="uuid"
+                :value="filters.customer_uuid"
                 placeholder="All customers"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'customer_uuid')"
               />
             </v-flex>
@@ -168,18 +177,21 @@
                 Customer ID
                 <clear-button
                   v-if="filters.customer_uuid"
-                  @clear="filters.customer_uuid = null; customerIdKey += 1"
+                  @clear="filters.customer_uuid = null; $refs.customerId.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="customerIdKey"
+                ref="customerId"
                 url="foodfleet/customers"
                 term-param="filter[square_id]"
+                results-id-key="uuid"
+                :value="filters.customer_uuid"
                 results-text-key="square_id"
                 placeholder="All customers"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'customer_uuid')"
               />
             </v-flex>
@@ -200,18 +212,21 @@
                 Reference ID
                 <clear-button
                   v-if="filters.customer_uuid"
-                  @clear="filters.customer_uuid = null; customerReferenceKey += 1"
+                  @clear="filters.customer_uuid = null; $refs.customerReference.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="customerReferenceKey"
+                ref="customerReference"
                 url="foodfleet/customers"
                 term-param="filter[reference_id]"
                 results-text-key="reference_id"
+                results-id-key="uuid"
+                :value="filters.customer_uuid"
                 placeholder="All customers"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'customer_uuid')"
               />
             </v-flex>
@@ -232,17 +247,20 @@
                 Staff name
                 <clear-button
                   v-if="filters.staff_uuid"
-                  @clear="filters.staff_uuid = null; staffNameKey += 1"
+                  @clear="filters.staff_uuid = null; $refs.staffName.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="staffNameKey"
+                ref="staffName"
                 url="foodfleet/staffs"
                 term-param="term"
+                results-id-key="uuid"
+                :value="filters.staff_uuid"
                 placeholder="All staff members"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'staff_uuid')"
               />
             </v-flex>
@@ -258,18 +276,21 @@
                 Staff ID
                 <clear-button
                   v-if="filters.staff_uuid"
-                  @clear="filters.staff_uuid = null; staffIdKey += 1"
+                  @clear="filters.staff_uuid = null; $refs.staffId.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="staffIdKey"
+                ref="staffId"
                 url="foodfleet/staffs"
                 term-param="filter[square_id]"
                 results-text-key="square_id"
+                results-id-key="uuid"
+                :value="filters.staff_uuid"
                 placeholder="All staff members"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'staff_uuid')"
               />
             </v-flex>
@@ -343,17 +364,20 @@
                 Category
                 <clear-button
                   v-if="filters.category_uuid"
-                  @clear="filters.category_uuid = null; categoryKey += 1"
+                  @clear="filters.category_uuid = null; $refs.category.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="categoryKey"
+                ref="category"
                 url="foodfleet/categories"
                 term-param="filter[name]"
+                results-id-key="uuid"
+                :value="filters.category_uuid"
                 placeholder="All categories"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'category_uuid')"
               />
             </v-flex>
@@ -369,17 +393,20 @@
                 Item
                 <clear-button
                   v-if="filters.item_uuid"
-                  @clear="filters.item_uuid = null; itemKey += 1"
+                  @clear="filters.item_uuid = null; $refs.item.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="itemKey"
+                ref="item"
                 url="foodfleet/items"
                 term-param="filter[name]"
+                results-id-key="uuid"
+                :value="filters.item_uuid"
                 placeholder="All items"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'item_uuid')"
               />
             </v-flex>
@@ -493,18 +520,21 @@
                 Transaction ID
                 <clear-button
                   v-if="filters.transaction_uuid"
-                  @clear="filters.transaction_uuid = null; transactionIdKey += 1"
+                  @clear="filters.transaction_uuid = null; $refs.transactionId.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="transactionIdKey"
+                ref="transactionId"
                 url="foodfleet/transactions"
                 term-param="filter[square_id]"
                 results-text-key="square_id"
+                results-id-key="uuid"
+                :value="filters.transaction_uuid"
                 placeholder="All transactions"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'transaction_uuid')"
               />
             </v-flex>
@@ -525,18 +555,21 @@
                 Payment ID
                 <clear-button
                   v-if="filters.payment_uuid"
-                  @clear="filters.payment_uuid = null; paymentIdKey += 1"
+                  @clear="filters.payment_uuid = null; $refs.payment.resetTerm()"
                 />
               </v-layout>
               <simple
-                :key="paymentIdKey"
+                ref="payment"
                 url="foodfleet/payments"
                 term-param="filter[square_id]"
                 results-text-key="square_id"
+                results-id-key="uuid"
+                :value="filters.payment_uuid"
                 placeholder="All payments"
                 background-color="white"
                 class="mt-0 pt-0"
                 height="48"
+                not-clearable
                 @input="setValue($event, 'payment_uuid')"
               />
             </v-flex>
@@ -627,17 +660,6 @@ export default {
       customers: [true],
       items: [true],
       payments: [true],
-      eventTagKey: 0,
-      locationKey: 0,
-      customerNameKey: 0,
-      customerIdKey: 0,
-      customerReferenceKey: 0,
-      staffNameKey: 0,
-      staffIdKey: 0,
-      categoryKey: 0,
-      itemKey: 0,
-      transactionIdKey: 0,
-      paymentIdKey: 0,
       filters: {
         ...this.advancedFilters
       }
@@ -686,29 +708,29 @@ export default {
     clearAllEvents (event) {
       stopEventPropagation(event)
       this.filters.event_tag_uuid = this.filters.location_uuid = null
-      this.eventTagKey += 1
-      this.locationKey += 1
+      this.$refs.eventTag.resetTerm()
+      this.$refs.location.resetTerm()
     },
     clearAllCustomers (event) {
       stopEventPropagation(event)
       this.filters.customer_uuid = this.filters.staff_uuid = this.filters.device_uuid = null
-      this.customerNameKey += 1
-      this.customerIdKey += 1
-      this.customerReferenceKey += 1
-      this.staffNameKey += 1
-      this.staffIdKey += 1
+      this.$refs.customerName.resetTerm()
+      this.$refs.customerId.resetTerm()
+      this.$refs.customerReference.resetTerm()
+      this.$refs.staffId.resetTerm()
+      this.$refs.staffName.resetTerm()
     },
     clearAllItems (event) {
       stopEventPropagation(event)
       this.filters.category_uuid = this.filters.item_uuid = this.filters.min_price = this.filters.max_price = null
-      this.categoryKey += 1
-      this.itemKey += 1
+      this.$refs.category.resetTerm()
+      this.$refs.item.resetTerm()
     },
     clearAllPayments (event) {
       stopEventPropagation(event)
       this.filters.payment_type_uuid = this.filters.transaction_uuid = this.filters.payment_uuid = null
-      this.transactionIdKey += 1
-      this.paymentIdKey += 1
+      this.$refs.transactionId.resetTerm()
+      this.$refs.payment.resetTerm()
     },
     clearAll () {
       this.clearAllEvents()

@@ -152,4 +152,51 @@ class StaffTest extends TestCase
             'square_id' => $staffToFind->square_id
         ], $data[0]);
     }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testGetListWithUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        factory(Staff::class)->create();
+
+        $staffToFind = factory(Staff::class)->create();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/staffs")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/staffs?filter[uuid]=" . $staffToFind->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $staffToFind->uuid,
+            'name' => $staffToFind->first_name . ' ' . $staffToFind->last_name,
+            'first_name' => $staffToFind->first_name,
+            'last_name' => $staffToFind->last_name,
+            'square_id' => $staffToFind->square_id
+        ], $data[0]);
+    }
 }

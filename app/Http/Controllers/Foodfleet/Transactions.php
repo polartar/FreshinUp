@@ -7,6 +7,7 @@ use App\Helpers\TransactionQueryBuilderHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\Transaction as TransactionResource;
 
@@ -22,6 +23,7 @@ class Transactions extends Controller
     {
         $transactions = QueryBuilder::for(Transaction::class, $request)
             ->allowedFilters(array_merge([
+                Filter::exact('uuid'),
                 'square_id'
             ], TransactionQueryBuilderHelper::getTransactionFilters()))
             ->allowedIncludes([
@@ -29,7 +31,7 @@ class Transactions extends Controller
                 'store.supplier',
                 'event.host',
                 'event.event_tags',
-                'event.location',
+                'event.location.venue',
                 'customer'
             ]);
 
@@ -43,7 +45,7 @@ class Transactions extends Controller
             ->allowedIncludes([
                 'items.category',
                 'store',
-                'event.location'
+                'event.location.venue'
             ])->first();
 
         return new TransactionResource($transactionModel);

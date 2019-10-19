@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Customer;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Square\Customer as CustomerResource;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,7 @@ class Customers extends Controller
     {
         $customers = QueryBuilder::for(Customer::class, $request)
             ->allowedFilters([
+                Filter::exact('uuid'),
                 'square_id',
                 'reference_id'
             ]);

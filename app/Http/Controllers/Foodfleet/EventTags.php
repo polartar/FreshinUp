@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\EventTag;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\EventTag as EventTagResource;
 
@@ -20,7 +21,10 @@ class EventTags extends Controller
     public function index(Request $request)
     {
         $eventTags = QueryBuilder::for(EventTag::class, $request)
-            ->allowedFilters(['name']);
+            ->allowedFilters([
+                Filter::exact('uuid'),
+                'name'
+            ]);
 
         return EventTagResource::collection($eventTags->get());
     }

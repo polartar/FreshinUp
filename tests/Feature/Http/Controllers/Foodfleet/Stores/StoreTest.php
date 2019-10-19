@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 
+use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Store;
 use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -93,5 +94,42 @@ class StoresTest extends TestCase
                 'name' => $fleetMember->name
             ], $data[$idx]);
         }
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?filter[uuid]=" . $storesToFind->first()->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $storesToFind->first()->uuid,
+            'name' => $storesToFind->first()->name
+        ], $data[0]);
+
+
+        $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create();
+        $storesToFind->first()->supplier_uuid = $company->uuid;
+        $storesToFind->first()->save();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?filter[supplier_uuid]=" . $company->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+
+        $this->assertArraySubset([
+            'uuid' => $storesToFind->first()->uuid,
+            'name' => $storesToFind->first()->name
+        ], $data[0]);
     }
 }

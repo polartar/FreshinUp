@@ -13,7 +13,7 @@ const visibleParameters = [
 ]
 
 const parameters = [
-  { name: 'event_location', label: 'Event / Location' },
+  { name: 'event_location', label: 'Event / Venue / Location' },
   { name: 'square_created_at', label: 'Creation date' },
   { name: 'total_money', label: 'Total' },
   { name: 'total_tax_money', label: 'Tax total' },

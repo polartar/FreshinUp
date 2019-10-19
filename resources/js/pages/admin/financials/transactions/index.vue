@@ -89,7 +89,7 @@
           dark
           @click.stop="saveDialog = true"
         >
-          Save Search
+          Save Report
         </v-btn>
         <v-btn
           color="primary"
@@ -245,12 +245,12 @@ const include = [
   'store.supplier',
   'event.host',
   'event.event_tags',
-  'event.location',
+  'event.location.venue',
   'customer'
 ]
 
 export const VISIBILITY_OPTIONS = [
-  { name: 'event_location', label: 'Event / Location' },
+  { name: 'event_location', label: 'Event / Venue / Location' },
   { name: 'square_created_at', label: 'Creation Date' },
   { name: 'square_updated_at', label: 'Update Date' },
   { name: 'total_money', label: 'Total' },
@@ -262,7 +262,7 @@ export const VISIBILITY_OPTIONS = [
   { name: 'square_id', label: 'Square ID' },
   { name: 'store', label: 'Fleet member' },
   { name: 'store_square_id', label: 'Fleet Member Square ID' },
-  { name: 'host', label: 'Host' },
+  { name: 'host', label: 'Customer Company' },
   { name: 'supplier', label: 'Supplier' },
   { name: 'customer', label: 'Customer name' },
   { name: 'customer_square_id', label: 'Customer Square ID' },
