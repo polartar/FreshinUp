@@ -33,7 +33,7 @@ describe('FilterSorter', () => {
 
     test('selectAssigned function change filters', () => {
       const wrapper = shallowMount(Component)
-      wrapper.vm.selectAssigned(1, () => {})
+      wrapper.vm.selectAssigned({ uuid: 1 }, () => {})
       expect(wrapper.vm.assigned_uuid).toBe(1)
       wrapper.vm.selectAssigned('', () => {})
       expect(wrapper.vm.assigned_uuid).toBe('')

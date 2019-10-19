@@ -164,7 +164,7 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
   </div>
    
   <div
-    class="flex ml-4"
+    class="flex md6 sm12"
   >
     <div
       background-color="white"

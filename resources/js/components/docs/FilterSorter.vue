@@ -12,7 +12,11 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-container pr-0 pt-1 pb-0>
+      <v-container
+        pr-0
+        pt-1
+        pb-0
+      >
         <v-layout
           row
           justify-space-between
@@ -145,7 +149,7 @@ export default {
       this.assignedType = assignedType
     },
     selectAssigned (assigned, run) {
-      this.assigned_uuid = assigned
+      this.assigned_uuid = assigned ? assigned.uuid : ''
       run()
     },
     clearFilters (params) {

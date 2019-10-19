@@ -5,11 +5,24 @@ import Component from '~/components/docs/PublishingForm.vue'
 
 describe('PublishingForm', () => {
   // Component instance "under test"
-  let localVue
+  let localVue, mock
   describe('Snapshots', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
+      mock = vue.mock
+      mock.onGet('foodfleet/stores').reply(200, {
+        data: [
+          { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
+        ]
+      })
+        .onAny().reply(config => {
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
+    })
+    afterEach(() => {
+      mock.restore()
     })
     test('defaults', () => {
       const wrapper = mount(Component, {
@@ -27,6 +40,20 @@ describe('PublishingForm', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
+      mock = vue.mock
+      mock.onGet('foodfleet/stores').reply(200, {
+        data: [
+          { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
+        ]
+      })
+        .onAny().reply(config => {
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
+    })
+
+    afterEach(() => {
+      mock.restore()
     })
 
     test('watch doc change emitted data-change', async () => {
@@ -50,7 +77,9 @@ describe('PublishingForm', () => {
         }
       })
 
-      wrapper.vm.selectAssigned('mock')
+      wrapper.vm.selectAssigned({
+        uuid: 'mock'
+      })
       expect(wrapper.vm.doc.assigned_uuid).toBe('mock')
     })
 
