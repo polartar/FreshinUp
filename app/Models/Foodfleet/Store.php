@@ -10,6 +10,7 @@ use Dyrynda\Database\Support\GeneratesUuid;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use FreshinUp\FreshBusForms\Traits\HasAddresses;
 
 /**
  * Class PaymentType
@@ -27,6 +28,7 @@ class Store extends Model
 {
     use SoftDeletes;
     use GeneratesUuid;
+    use HasAddresses;
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
@@ -75,10 +77,5 @@ class Store extends Model
             'uuid',
             'uuid'
         );
-    }
-
-    public function address()
-    {
-        return $this->belongsTo(Address::class, 'address_uuid', 'uuid');
     }
 }

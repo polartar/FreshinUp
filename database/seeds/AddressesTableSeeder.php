@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use FreshinUp\FreshBusForms\Models\Address\Country;
+use FreshinUp\FreshBusForms\Models\Address\Address;
 
 class AddressesTableSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class AddressesTableSeeder extends Seeder
     {
         $countries = Country::get();
         for ($i = 0; $i < 50; $i++) {
-            factory(\App\Models\Foodfleet\Address::class)->create([
+            factory(Address::class)->create([
                 'country_id' => $countries->random()->id
             ]);
         }

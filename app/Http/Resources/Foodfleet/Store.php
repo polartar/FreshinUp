@@ -6,6 +6,7 @@ namespace App\Http\Resources\Foodfleet;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
 
 class Store extends JsonResource
 {

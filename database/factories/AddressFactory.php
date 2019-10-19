@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\Models\Foodfleet\Address;
+use FreshinUp\FreshBusForms\Models\Address\Address;
 
 /*
 |--------------------------------------------------------------------------

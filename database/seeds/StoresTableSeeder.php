@@ -3,7 +3,7 @@
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\StoreStatus;
-use App\Models\Foodfleet\Address;
+use FreshinUp\FreshBusForms\Models\Address\Address;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Seeder;
 

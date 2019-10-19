@@ -34,7 +34,6 @@ class Stores extends Controller
             ->allowedFilters([
                 'name',
                 Filter::exact('status'),
-                Filter::exact('address_uuid'),
                 Filter::custom('tag', FilterTagUuid::class),
             ]);
 
