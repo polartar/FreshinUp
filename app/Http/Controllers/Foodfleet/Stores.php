@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Store as StoreResource;
-use Spatie\QueryBuilder\Filter;
 use App\Filters\Store\TagUuid as FilterTagUuid;
 
 class Stores extends Controller
