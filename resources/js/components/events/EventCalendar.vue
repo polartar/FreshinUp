@@ -74,22 +74,16 @@
           >
             <template v-slot:day="{ date }">
               <template v-for="event in eventsMap[date]">
-                <v-menu
+                <div
+                  v-if="!event.time"
                   :key="event.name"
                   full-width
                   offset-x
-                >
-                  <template v-slot:activator="{ on }">
-                    <div
-                      v-if="!event.time"
-                      v-ripple
-                      class="white--text"
-                      :class="statusColorMaps[event.status]"
-                      v-on="on"
-                      v-html="event.name"
-                    ></div>
-                  </template>
-                </v-menu>
+                  class="white--text"
+                  :class="statusColorMaps[event.status]"
+                  @click="clickEvent(event)"
+                  v-text="event.name"
+                />
               </template>
             </template>
           </v-calendar>
@@ -166,6 +160,20 @@ export default {
       }
     }
   },
+  computed: {
+    eventsMap () {
+      const map = {}
+      this.events.forEach(evt => {
+        map[evt.start] = map[evt.start] || []
+        const dateFormat = 'YYYY-MM-DD'
+        const startMoment = moment(evt.start, dateFormat)
+        const endMoment = moment(evt.end, dateFormat)
+        evt.periods = endMoment.diff(startMoment, 'days')
+        map[evt.start].push(evt)
+      })
+      return map
+    }
+  },
   watch: {
     currentYear (yearValue) {
       this.moveDate({
@@ -195,20 +203,9 @@ export default {
         months = date.month - currentDateValues[1]
       }
       this.$refs.calendar.move(years * 12 + months)
-    }
-  },
-  computed: {
-    eventsMap () {
-      const map = {}
-      this.events.forEach(evt => {
-        map[evt.start] = map[evt.start] || []
-        const dateFormat = 'YYYY-MM-DD'
-        const startMoment = moment(evt.start, dateFormat)
-        const endMoment = moment(evt.end, dateFormat)
-        evt.periods = endMoment.diff(startMoment, 'days')
-        map[evt.start].push(evt)
-      })
-      return map
+    },
+    clickEvent (evt) {
+      this.$emit('click-event', evt)
     }
   }
 }

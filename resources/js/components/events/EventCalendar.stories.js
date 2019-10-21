@@ -41,22 +41,22 @@ storiesOf('FoodFleet|event/EventCalendar', module)
           start: '2019-12-27',
           end: '2019-12-27',
           status: 'draft'
-        },{
+        }, {
           name: 'Meeting B',
           start: '2019-12-23',
           end: '2019-12-24',
           status: 'pending'
-        },{
+        }, {
           name: 'Meeting C',
           start: '2019-12-24',
           end: '2019-12-24',
           status: 'confirmed'
-        },{
+        }, {
           name: 'Meeting D',
           start: '2019-12-12',
           end: '2019-12-15',
           status: 'past'
-        },{
+        }, {
           name: 'Meeting E',
           start: '2019-12-23',
           end: '2019-12-23',
@@ -69,6 +69,11 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         day: 31
       }
     },
+    methods: {
+      clickEvent () {
+        alert('click event')
+      }
+    },
     template: `
       <event-calendar
         :events="events"
@@ -77,6 +82,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         :year="year"
         :month="month"
         :day="day"
+        @click-event="clickEvent"
       />
     `
   }))

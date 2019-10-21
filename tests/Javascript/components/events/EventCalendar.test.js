@@ -19,7 +19,28 @@ describe('EventCalendar', () => {
       localVue = createLocalVue()
     })
 
-    test('moveToToday function go back today', () => {
+    test('moveDate function to move date', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          year: 2002,
+          month: 1,
+          day: 10
+        }
+      })
+
+      wrapper.vm.$refs.calendar = {
+        move: jest.fn()
+      }
+      wrapper.vm.moveDate({
+        year: 2003,
+        month: 11
+      })
+
+      expect(wrapper.vm.$refs.calendar.move).toHaveBeenCalled()
+      expect(wrapper.vm.$refs.calendar.move).toHaveBeenCalledWith(22)
+    })
+
+    test('moveToToday function to go back today', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
           year: 2002,
@@ -43,6 +64,21 @@ describe('EventCalendar', () => {
 
       expect(wrapper.vm.currentYear).toBe(2000)
       expect(wrapper.vm.currentMonth).toBe(12)
+    })
+
+    test('clickEvent function to emit', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          year: 2004,
+          month: 5,
+          day: 1
+        }
+      })
+
+      wrapper.vm.clickEvent('event')
+
+      expect(wrapper.emitted()['click-event']).toBeTruthy()
+      expect(wrapper.emitted()['click-event'][0][0]).toBe('event')
     })
   })
 
