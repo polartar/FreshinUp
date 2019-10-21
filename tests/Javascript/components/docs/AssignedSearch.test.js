@@ -29,7 +29,8 @@ describe('AssignedSearch', () => {
       wrapper.vm.selectAssigned({ uuid: 'mock' })
       wrapper.vm.selectAssigned()
       expect(wrapper.emitted()['assign-change']).toBeTruthy()
-      expect(wrapper.emitted()['assign-change'][1][0]).toEqual('')
+      expect(wrapper.emitted()['assign-change'][0][0].uuid).toEqual('mock')
+      expect(wrapper.emitted()['assign-change'][1][0].uuid).toEqual('')
     })
   })
 

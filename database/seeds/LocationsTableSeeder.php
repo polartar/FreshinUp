@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Venue;
 use Illuminate\Database\Seeder;
 
 class LocationsTableSeeder extends Seeder
@@ -11,6 +13,11 @@ class LocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\Location::class, 50)->create();
+        $venues = Venue::get();
+        for ($i = 0; $i < 50; $i++) {
+            factory(Location::class)->create([
+                'venue_uuid' => $venues->random()->uuid
+            ]);
+        }
     }
 }

@@ -21,6 +21,8 @@ class Events extends Controller
     public function index(Request $request)
     {
         $events = QueryBuilder::for(Event::class, $request)
+            ->with('location')
+            ->with('stores')
             ->allowedFilters([
                 Filter::exact('uuid'),
                 'name'

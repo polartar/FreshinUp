@@ -20,6 +20,7 @@ class TestDataSeeder extends Seeder
             \StaffsTableSeeder::class,
             \StoresTableSeeder::class,
             \EventTagsTableSeeder::class,
+            \VenuesTableSeeder::class,
             \LocationsTableSeeder::class,
             \EventsTableSeeder::class,
             \CustomersTableSeeder::class,
