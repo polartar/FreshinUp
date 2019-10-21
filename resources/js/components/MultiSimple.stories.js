@@ -22,7 +22,7 @@ mock.onGet('/terms').reply(200, {
   ]
 })
 
-storiesOf(`${BUS}|search/MultiSimple`, module)
+storiesOf('FoodFleet|ui/MultiSimple', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

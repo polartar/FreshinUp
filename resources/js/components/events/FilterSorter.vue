@@ -97,7 +97,7 @@
             </v-layout>
             <simple
               ref="manager"
-              url="users"
+              url="users?filter[type]=1"
               placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"

@@ -66,21 +66,6 @@ describe('MultiSimple', () => {
       wrapper.vm.toggleMenu()
       expect(wrapper.vm.showMenu).toBeTruthy()
     })
-
-    test('cancelSelected function chanage model', async () => {
-      const wrapper = shallowMount(Component, {
-        localVue: localVue,
-        propsData: {
-          url: 'foodfleet/event-tags',
-          termParam: 'filter[name]',
-          resultsIdKey: 'uuid'
-        }
-      })
-      wrapper.setData({ model: [ { uuid: 1, name: 'mock' }, { uuid: 2, name: 'mock' } ] })
-      wrapper.vm.cancelSelected(1)
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.model).toEqual([ { uuid: 2, name: 'mock' } ])
-    })
   })
 
   describe('Computed', () => {
@@ -109,13 +94,13 @@ describe('MultiSimple', () => {
           resultsIdKey: 'uuid'
         }
       })
-      wrapper.setData({ model: null })
+      wrapper.setData({ value: null })
       expect(wrapper.vm.showText).toBeNull()
-      wrapper.setData({ model: [] })
+      wrapper.setData({ value: [] })
       expect(wrapper.vm.showText).toBeNull()
-      wrapper.setData({ model: [ { uuid: 1, name: 'mock' } ] })
+      wrapper.setData({ value: [ { uuid: 1, name: 'mock' } ] })
       expect(wrapper.vm.showText).toBe('mock')
-      wrapper.setData({ model: [ { uuid: 1, name: 'mock' }, { uuid: 2, name: 'mock' } ] })
+      wrapper.setData({ value: [ { uuid: 1, name: 'mock' }, { uuid: 2, name: 'mock' } ] })
       expect(wrapper.vm.showText).toBe('2 selected')
     })
   })

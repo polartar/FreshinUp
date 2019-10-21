@@ -18,15 +18,14 @@
       v-model="selected"
       v-bind="$attrs"
       multiple
-      notSelection
+      not-selection
       autofocus
       :menu-props="{ value: showAutocomplete, closeOnContentClick: false }"
     />
   </v-menu>
 </template>
 <script>
-import axios from 'axios'
-import Simple from './simple'
+  import Simple from 'fresh-bus/components/search/simple'
 
 export default {
   components: {
@@ -80,6 +79,9 @@ export default {
   methods: {
     toggleMenu () {
       this.showMenu = !this.showMenu
+    },
+    resetTerm () {
+      this.$refs.search.resetTerm()
     }
   }
 }
