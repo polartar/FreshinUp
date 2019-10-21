@@ -177,7 +177,8 @@ class EventTest extends TestCase
             ->assertStatus(201)
             ->json('data');
 
-        $returnedEvent = $this->json('GET', 'api/foodfleet/events/' . $data['uuid'] . '?include=host,location,event_tags')
+        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=host,location,event_tags';
+        $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
@@ -230,7 +231,8 @@ class EventTest extends TestCase
             ->assertStatus(200)
             ->json('data');
 
-        $returnedEvent = $this->json('GET', 'api/foodfleet/events/' . $event->uuid . '?include=host,location,event_tags')
+        $url = 'api/foodfleet/events/' . $event->uuid . '?include=host,location,event_tags';
+        $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
