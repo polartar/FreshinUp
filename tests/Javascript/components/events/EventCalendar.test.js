@@ -45,4 +45,35 @@ describe('EventCalendar', () => {
       expect(wrapper.vm.currentMonth).toBe(12)
     })
   })
+
+  describe('Computed', () => {
+    beforeEach(() => {
+      localVue = createLocalVue()
+    })
+
+    test('eventsMap computed for mapping events', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          events: [
+            {
+              name: 'Meeting A',
+              start: '2019-12-27',
+              end: '2019-12-28',
+              status: 'draft'
+            }
+          ]
+        }
+      })
+
+      expect(wrapper.vm.eventsMap).toEqual({
+        '2019-12-27': [{
+          name: 'Meeting A',
+          start: '2019-12-27',
+          end: '2019-12-28',
+          status: 'draft',
+          periods: 1
+        }]
+      })
+    })
+  })
 })

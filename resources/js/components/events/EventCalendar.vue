@@ -71,7 +71,28 @@
             v-model="currentDate"
             :type="type"
             color="primary"
-          />
+          >
+            <template v-slot:day="{ date }">
+              <template v-for="event in eventsMap[date]">
+                <v-menu
+                  :key="event.name"
+                  full-width
+                  offset-x
+                >
+                  <template v-slot:activator="{ on }">
+                    <div
+                      v-if="!event.time"
+                      v-ripple
+                      class="white--text"
+                      :class="statusColorMaps[event.status]"
+                      v-on="on"
+                      v-html="event.name"
+                    ></div>
+                  </template>
+                </v-menu>
+              </template>
+            </template>
+          </v-calendar>
         </v-sheet>
       </v-flex>
     </v-layout>
@@ -81,6 +102,7 @@
 <script>
 
 import _ from 'lodash'
+import moment from 'moment'
 
 export default {
   props: {
@@ -109,7 +131,7 @@ export default {
       default: 1
     }
   },
-  data: function () {
+  data () {
     return {
       typeOptions: [
         { text: 'Day', value: 'day' },
@@ -134,28 +156,35 @@ export default {
       ],
       currentMonth: this.month,
       currentYear: this.year,
-      currentDate: [this.year, this.month, this.day].join('-')
+      currentDate: [this.year, this.month, this.day].join('-'),
+      statusColorMaps: {
+        'draft': 'accent',
+        'pending': 'warning',
+        'confirmed': 'success',
+        'past': 'secondary',
+        'cancelled': 'accent'
+      }
     }
   },
   watch: {
-    currentYear: function (yearValue) {
+    currentYear (yearValue) {
       this.moveDate({
         year: yearValue
       })
     },
-    currentMonth: function (monthValue) {
+    currentMonth (monthValue) {
       this.moveDate({
         month: monthValue
       })
     }
   },
   methods: {
-    moveToToday: function () {
+    moveToToday () {
       const calendarToday = this.$refs.calendar.times.today
       this.currentYear = calendarToday.year
       this.currentMonth = calendarToday.month
     },
-    moveDate: function (date) {
+    moveDate (date) {
       const currentDateValues = this.currentDate.split('-')
       let years = 0
       let months = 0
@@ -167,7 +196,27 @@ export default {
       }
       this.$refs.calendar.move(years * 12 + months)
     }
+  },
+  computed: {
+    eventsMap () {
+      const map = {}
+      this.events.forEach(evt => {
+        map[evt.start] = map[evt.start] || []
+        const dateFormat = 'YYYY-MM-DD'
+        const startMoment = moment(evt.start, dateFormat)
+        const endMoment = moment(evt.end, dateFormat)
+        evt.periods = endMoment.diff(startMoment, 'days')
+        map[evt.start].push(evt)
+      })
+      return map
+    }
   }
 }
 
 </script>
+
+<style>
+  .v-calendar-weekly__day {
+    overflow: visible;
+  }
+</style>
