@@ -121,12 +121,12 @@
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.host.name }}
+          {{ props.item.host && props.item.host.name }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.manager.name }}
+          {{ props.item.manager && props.item.manager.name }}
         </div>
       </td>
       <td>
