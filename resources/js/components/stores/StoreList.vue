@@ -117,7 +117,6 @@
             Manage
           </f-btn-menu>
         </td>
-
       </template>
     </v-data-table>
   </div>
@@ -180,7 +179,7 @@ export default {
       this.$emit('change-status', value, store)
     },
     changeStatusMultiple (value) {
-      this.$emit('change_status_multiple', value, this.selected)
+      this.$emit('change-status-multiple', value, this.selected)
     }
   }
 }

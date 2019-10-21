@@ -20,7 +20,7 @@
         </v-btn>
       </v-flex>
     </v-flex>
-    
+
     <store-list
       v-if="!isLoading"
       :stores="stores"
