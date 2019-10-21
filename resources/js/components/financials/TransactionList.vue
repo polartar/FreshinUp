@@ -35,7 +35,7 @@
             color="primary"
           />
           <br>
-          {{ props.item.event.location.name }}
+          {{ formatEventLocation(props.item.event.location) }}
         </div>
         <div v-else-if="parameter === 'square_created_at' || parameter === 'square_updated_at'">
           {{ formatTransactionDate(props.item[parameter]) }}
@@ -72,27 +72,13 @@
         </div>
       </td>
       <td class="text-xs-center">
-        <v-menu
-          bottom
+        <v-btn
+          color="primary"
+          dark
+          :to="viewDetails(props.item.uuid)"
         >
-          <template v-slot:activator="{ on }">
-            <v-btn
-              fab
-              small
-              v-on="on"
-            >
-              <v-icon>fas fa-ellipsis-h</v-icon>
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-tile
-              :href="viewDetails(props.item.uuid)"
-            >
-              <v-list-tile-title>View details</v-list-tile-title>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
+          View details
+        </v-btn>
       </td>
     </template>
   </v-data-table>
@@ -130,7 +116,7 @@ export default {
   data () {
     return {
       parameters: [
-        { name: 'event_location', label: 'Event / Location' },
+        { name: 'event_location', label: 'Event / Venue / Location' },
         { name: 'square_created_at', label: 'Creation Date' },
         { name: 'square_updated_at', label: 'Update Date' },
         { name: 'total_money', label: 'Total' },
@@ -142,7 +128,7 @@ export default {
         { name: 'square_id', label: 'Square ID' },
         { name: 'store', label: 'Fleet member' },
         { name: 'store_square_id', label: 'Fleet Member Square ID' },
-        { name: 'host', label: 'Host' },
+        { name: 'host', label: 'Customer Company' },
         { name: 'supplier', label: 'Supplier' },
         { name: 'customer', label: 'Customer name' },
         { name: 'customer_square_id', label: 'Customer Square ID' },
@@ -197,6 +183,10 @@ export default {
         result += value.name
         return result
       }, '')
+    },
+    formatEventLocation (location) {
+      const venue = location && location.venue
+      return (venue ? venue.name + ' / ' : '') + (location ? location.name : '')
     }
   }
 }

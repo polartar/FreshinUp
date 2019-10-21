@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             \FinancialModifiersTableSeeder::class,
             \StatusesSeeder::class,
             \UserLevelTypeSeeder::class,
-            \CompanyTypeSeeder::class
+            \CompanyTypeSeeder::class,
+            \EventStatusesSeeder::class
         ]);
     }
 }

@@ -6,7 +6,7 @@ export default {
   data: () => ({
     isAdmin: true,
     navDrawerLogo: true,
-    navDrawerNoActions: true
+    navDrawerNoActions: false
   }),
   computed: {
     ...mapState('navigationAdmin', [

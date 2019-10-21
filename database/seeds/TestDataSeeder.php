@@ -12,7 +12,6 @@ class TestDataSeeder extends Seeder
     public function run()
     {
         $this->call([
-            \FinancialReportsTableSeeder::class,
             \PaymentTypesTableSeeder::class,
             \DevicesTableSeeder::class,
             \SupplierCompaniesTableSeeder::class,
@@ -21,12 +20,17 @@ class TestDataSeeder extends Seeder
             \StaffsTableSeeder::class,
             \StoresTableSeeder::class,
             \EventTagsTableSeeder::class,
+            \VenuesTableSeeder::class,
             \LocationsTableSeeder::class,
             \EventsTableSeeder::class,
             \CustomersTableSeeder::class,
             \ItemsTableSeeder::class,
             \TransactionsTableSeeder::class,
             \PaymentsTableSeeder::class,
+            \FinancialReportsTableSeeder::class,
+            \DocumentTypesSeeder::class,
+            \DocumentStatusesSeeder::class,
+            \DocumentsTableSeeder::class
         ]);
     }
 }

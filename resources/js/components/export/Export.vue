@@ -86,7 +86,7 @@ export default {
   data () {
     return {
       parameters: [
-        { name: 'event_location', label: 'Event / Location' },
+        { name: 'event_location', label: 'Event / Venue / Location' },
         { name: 'square_created_at', label: 'Creation Date' },
         { name: 'square_updated_at', label: 'Update Date' },
         { name: 'total_money', label: 'Total' },
@@ -98,7 +98,7 @@ export default {
         { name: 'square_id', label: 'Square ID' },
         { name: 'store', label: 'Fleet member' },
         { name: 'store_square_id', label: 'Fleet Member Square ID' },
-        { name: 'host', label: 'Host' },
+        { name: 'host', label: 'Customer Company' },
         { name: 'supplier', label: 'Supplier' },
         { name: 'customer', label: 'Customer name' },
         { name: 'customer_square_id', label: 'Customer Square ID' },
@@ -192,7 +192,9 @@ export default {
           let val = ''
           switch (element) {
             case 'event_location':
-              val = value.event.name + ' / ' + ((value.event.location) ? value.event.location.name : '')
+              const location = value.event.location
+              const venue = location && location.venue
+              val = value.event.name + ' / ' + (venue ? venue.name + ' / ' : '') + (location ? location.name : '')
               break
             case 'square_created_at':
             case 'square_updated_at':

@@ -80,6 +80,36 @@ describe('BasicFilter', () => {
       })
       expect(wrapper.vm.searchLink).toBe('/admin/financials/transactions?event_uuid=1&host_uuid=2&store_uuid=3&supplier_uuid=4&date_after=2019-12-11&date_before=2019-12-17')
     })
+    test('storeUrl with supplier_uuid filter not set', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          filters: {
+            event_uuid: null,
+            host_uuid: null,
+            store_uuid: null,
+            supplier_uuid: null,
+            date_after: null,
+            date_before: null
+          }
+        }
+      })
+      expect(wrapper.vm.storeUrl).toBe('foodfleet/stores')
+    })
+    test('storeUrl with supplier_uuid filter set', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          filters: {
+            event_uuid: null,
+            host_uuid: null,
+            store_uuid: null,
+            supplier_uuid: 1,
+            date_after: null,
+            date_before: null
+          }
+        }
+      })
+      expect(wrapper.vm.storeUrl).toBe('foodfleet/stores?filter[supplier_uuid]=1')
+    })
   })
   describe('data()', () => {
     beforeEach(() => {

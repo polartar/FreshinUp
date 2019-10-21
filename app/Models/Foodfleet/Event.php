@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
+ * Class Event
  *
  * @property int $id
  * @property string $uuid
@@ -66,5 +66,15 @@ class Event extends Model
             'uuid',
             'uuid'
         );
+    }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(EventStatus::class, 'status_id');
     }
 }

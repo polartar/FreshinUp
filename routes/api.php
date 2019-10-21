@@ -17,10 +17,17 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
+    Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
+    Route::apiResource('documents', 'Foodfleet\Documents');
+    Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
+    Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
+    Route::apiResource('tmp-media', 'Foodfleet\TmpMedia');
+
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('events', 'Foodfleet\Events@index');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
+    Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('stores', 'Foodfleet\Stores@index');
     Route::get('items', 'Foodfleet\Items@index');
     Route::get('locations', 'Foodfleet\Locations@index');
@@ -32,4 +39,5 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::post('squares', 'Foodfleet\Squares@store');
+    Route::get('venues', 'Foodfleet\Venues@index');
 });

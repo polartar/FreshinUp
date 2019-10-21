@@ -7,7 +7,6 @@ use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Square\Transaction;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
-use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -63,5 +62,10 @@ class Store extends Model
     public function transactions()
     {
         return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
+    }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
 }
