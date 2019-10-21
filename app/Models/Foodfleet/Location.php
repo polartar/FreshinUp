@@ -33,6 +33,11 @@ class Location extends Model
         return $this->hasMany(Event::class, 'location_uuid', 'uuid');
     }
 
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+  
     public function venue()
     {
         return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');

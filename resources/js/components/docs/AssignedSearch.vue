@@ -15,12 +15,18 @@
         data-vv-name="type"
       />
     </v-flex>
-    <v-flex ml-4>
-      <simple
+    <v-flex
+      md6
+      sm12
+    >
+      <DocSimple
         ref="assigned"
         :placeholder="`Search ${currentOption.text}`"
         :url="currentOption.url"
         :term-param="currentOption.param"
+        :results-id-key="currentOption.idKey"
+        :format-items="currentOption.formatItems"
+        :results-text-key="currentOption.textKey"
         v-bind="$attrs"
         background-color="white"
         class="mt-0 pt-0"
@@ -32,11 +38,11 @@
 </template>
 
 <script>
-import Simple from 'fresh-bus/components/search/simple'
+import DocSimple from '~/components/docs/DocSimple'
 
 export default {
   components: {
-    Simple
+    DocSimple
   },
   props: {
     type: {
@@ -45,37 +51,65 @@ export default {
     }
   },
   data () {
+    const formatEventStore = (list) => {
+      let result = []
+      list.forEach(event => {
+        result = result.concat(event.stores.map(store => {
+          return {
+            uuid: event.uuid,
+            event_store_uuid: store.uuid,
+            event_store_name: `${event.name}/${store.name}`
+          }
+        }))
+      })
+      return result
+    }
     return {
       options: [
         {
           value: 1,
           text: 'User',
           url: 'users',
-          param: 'term'
+          param: 'term',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 2,
           text: 'Fleet Member',
           url: 'foodfleet/stores',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 3,
           text: 'Venue',
           url: 'foodfleet/venues',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 4,
           text: 'Event',
           url: 'foodfleet/events',
-          param: 'filter[name]'
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'name',
+          formatItems: null
         },
         {
           value: 5,
           text: 'Event/Fleet Memeber',
-          url: 'foodfleet/stores',
-          param: 'filter[name]'
+          url: 'foodfleet/events',
+          param: 'filter[name]',
+          idKey: 'uuid',
+          textKey: 'event_store_name',
+          formatItems: formatEventStore
         }
       ]
     }
@@ -101,7 +135,12 @@ export default {
   },
   methods: {
     selectAssigned (assigned) {
-      this.$emit('assign-change', assigned ? assigned.uuid : '')
+      let changeDate = {
+        uuid: '',
+        event_store_uuid: ''
+      }
+      changeDate = assigned ? { ...changeDate, ...assigned } : changeDate
+      this.$emit('assign-change', changeDate)
     }
   }
 }

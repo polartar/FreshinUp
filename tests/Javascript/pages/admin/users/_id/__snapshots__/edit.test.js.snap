@@ -8,7 +8,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
     class="layout column"
   >
     <h3
-      class="text-sm-left font-weight-bold"
+      class="f-page__title f-page__title--admin"
     >
       
       Edit User
