@@ -547,8 +547,12 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="v-menu mt-0 pt-0"
                   flat=""
                   height="48"
-                  multiple="multiple"
+                  not-clearable=""
+                  placeholder="Select"
+                  results-id-key="uuid"
                   solo=""
+                  term-param="filter[name]"
+                  url="companies?filter[type_key]=host"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -564,10 +568,13 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                           class="v-text-field__slot"
                         >
                           <input
-                            multiple="multiple"
+                            not-clearable=""
                             placeholder="Select"
                             readonly="readonly"
+                            results-id-key="uuid"
+                            term-param="filter[name]"
                             type="text"
+                            url="companies?filter[type_key]=host"
                           />
                         </div>
                         <div
@@ -591,7 +598,13 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   >
                      
                     <div
+                      autofocus="autofocus"
+                      background-color="white"
                       class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                      flat=""
+                      height="48"
+                      menu-props="[object Object]"
+                      solo=""
                     >
                       <div
                         class="v-input__control"
@@ -610,10 +623,24 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                 aria-label=""
                                 autocomplete="off"
                                 autofocus="autofocus"
-                                placeholder="search"
+                                placeholder="Select"
                                 role="combobox"
                                 type="text"
                               />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -659,7 +686,23 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                       </span>
                                     </div>
                                   </div>
-                                  <span />
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -690,28 +733,35 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                  
                 <div
                   background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                  class="v-menu mt-0 pt-0"
                   flat=""
                   height="48"
+                  not-clearable=""
+                  placeholder="Select"
                   solo=""
+                  url="users?filter[type]=1"
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
                   >
                     <div
-                      class="v-input__slot white"
-                      style="height: 48px;"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot white"
+                        style="height: 48px;"
                       >
-                        <input
-                          aria-label=""
-                          autocomplete="off"
-                          placeholder="Select"
-                          role="combobox"
-                          type="text"
-                        />
+                        <div
+                          class="v-text-field__slot"
+                        >
+                          <input
+                            not-clearable=""
+                            placeholder="Select"
+                            readonly="readonly"
+                            type="text"
+                            url="users?filter[type]=1"
+                          />
+                        </div>
                         <div
                           class="v-input__append-inner"
                         >
@@ -720,40 +770,122 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                           >
                             <i
                               aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                              class="v-icon fas fa-caret-down theme--light"
+                            />
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      autofocus="autofocus"
+                      background-color="white"
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                      flat=""
+                      height="48"
+                      menu-props="[object Object]"
+                      solo=""
+                    >
                       <div
-                        class="v-menu"
+                        class="v-input__control"
                       >
                         <div
-                          class="v-menu__content theme--light v-autocomplete__content"
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          class="v-input__slot white"
+                          style="height: 48px;"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                autofocus="autofocus"
+                                placeholder="Select"
+                                role="combobox"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
                             >
                               <div
-                                role="listitem"
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-list__tile theme--light"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    role="listitem"
+                                    style="display: none;"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile theme--light"
                                     >
-                                      No data available
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        SELECTION
+                                      </span>
+                                    </div>
+                                  </div>
+                                    
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        RESULTS
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -838,7 +970,12 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="v-menu mt-0 pt-0"
                   flat=""
                   height="48"
+                  not-clearable=""
+                  placeholder="Search Tag"
+                  results-id-key="uuid"
                   solo=""
+                  term-param="filter[name]"
+                  url="foodfleet/event-tags"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -854,9 +991,13 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                           class="v-text-field__slot"
                         >
                           <input
+                            not-clearable=""
                             placeholder="Search Tag"
                             readonly="readonly"
+                            results-id-key="uuid"
+                            term-param="filter[name]"
                             type="text"
+                            url="foodfleet/event-tags"
                           />
                         </div>
                         <div
@@ -880,7 +1021,13 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   >
                      
                     <div
+                      autofocus="autofocus"
+                      background-color="white"
                       class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                      flat=""
+                      height="48"
+                      menu-props="[object Object]"
+                      solo=""
                     >
                       <div
                         class="v-input__control"
@@ -899,10 +1046,24 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                 aria-label=""
                                 autocomplete="off"
                                 autofocus="autofocus"
-                                placeholder="search"
+                                placeholder="Search Tag"
                                 role="combobox"
                                 type="text"
                               />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -948,7 +1109,23 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                       </span>
                                     </div>
                                   </div>
-                                  <span />
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>

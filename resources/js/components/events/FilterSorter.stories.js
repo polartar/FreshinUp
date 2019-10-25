@@ -31,7 +31,7 @@ mock.onGet('/companies?filter[type_key]=host').reply(200, {
     { uuid: 4, name: 'company 4' }
   ]
 })
-mock.onGet('/users').reply(200, {
+mock.onGet('/users?filter[type]=1').reply(200, {
   data: [
     { uuid: 1, name: 'user 1' },
     { uuid: 2, name: 'user 2' },

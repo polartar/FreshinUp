@@ -25,7 +25,7 @@
   </v-menu>
 </template>
 <script>
-  import Simple from 'fresh-bus/components/search/simple'
+import Simple from 'fresh-bus/components/search/simple'
 
 export default {
   components: {

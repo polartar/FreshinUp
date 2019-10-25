@@ -64,6 +64,7 @@
             </v-layout>
             <multi-simple
               ref="host"
+              v-model="filters.host_uuid"
               url="companies?filter[type_key]=host"
               term-param="filter[name]"
               results-id-key="uuid"
@@ -71,11 +72,9 @@
               background-color="white"
               class="mt-0 pt-0"
               height="48"
+              not-clearable
               solo
               flat
-              multiple
-              not-clearable
-              @input="selectHost"
             />
           </v-flex>
           <v-flex
@@ -95,8 +94,9 @@
                 @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
               />
             </v-layout>
-            <simple
+            <multi-simple
               ref="manager"
+              v-model="filters.manager_uuid"
               url="users?filter[type]=1"
               placeholder="Select"
               background-color="white"
@@ -105,7 +105,6 @@
               not-clearable
               solo
               flat
-              @input="selectManager"
             />
           </v-flex>
           <v-flex
@@ -159,6 +158,7 @@
             </v-layout>
             <multi-simple
               ref="tag"
+              v-model="filters.event_tag_uuid"
               url="foodfleet/event-tags"
               term-param="filter[name]"
               results-id-key="uuid"
@@ -169,7 +169,6 @@
               not-clearable
               solo
               flat
-              @input="selectTag"
             />
           </v-flex>
         </v-layout>
@@ -185,10 +184,8 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from '~/components/MultiSelect'
 import MultiSimple from '~/components/MultiSimple'
-import Simple from 'fresh-bus/components/search/simple'
 export default {
   components: {
-    Simple,
     MultiSimple,
     ClearButton,
     MultiSelect,
