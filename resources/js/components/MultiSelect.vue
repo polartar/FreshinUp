@@ -65,7 +65,7 @@ export default {
         if (this.selectAll) {
           this.$emit('input', [])
         } else {
-          this.$emit('input', this.items.slice())
+          this.$emit('input', this.items.map(item => item.id))
         }
       })
     }

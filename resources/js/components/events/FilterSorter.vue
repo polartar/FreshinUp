@@ -29,13 +29,13 @@
                 Statuses
               </div>
               <clear-button
-                v-if="filters.status && filters.status.length > 0"
+                v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="filters.status = null;"
+                @clear="filters.status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="filters.status"
+              v-model="filters.status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -57,7 +57,7 @@
                 Customers
               </div>
               <clear-button
-                v-if="filters.host_uuid"
+                v-if="filters.host_uuid && filters.host_uuid.length > 0"
                 color="white"
                 @clear="filters.host_uuid = null; $refs.host.resetTerm()"
               />
@@ -89,7 +89,7 @@
                 Managed By
               </div>
               <clear-button
-                v-if="filters.manager_uuid"
+                v-if="filters.manager_uuid && filters.manager_uuid.length > 0"
                 color="white"
                 @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
               />
@@ -151,7 +151,7 @@
                 Tags
               </div>
               <clear-button
-                v-if="filters.event_tag_uuid"
+                v-if="filters.event_tag_uuid && filters.event_tag_uuid.length > 0"
                 color="white"
                 @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
               />
@@ -196,7 +196,7 @@ export default {
     filters: {
       type: Object,
       default: () => ({
-        status: null,
+        status_id: null,
         host_uuid: null,
         manager_uuid: null,
         event_tag_uuid: null,
@@ -230,26 +230,26 @@ export default {
         sort: params.orderBy,
         ...this.filters
       }
+      if (this.filters.host_uuid) {
+        finalParams.host_uuid = this.filters.host_uuid.map(item => item.uuid)
+      }
+      if (this.filters.manager_uuid) {
+        finalParams.manager_uuid = this.filters.manager_uuid.map(item => item.uuid)
+      }
+      if (this.filters.event_tag_uuid) {
+        finalParams.event_tag_uuid = this.filters.event_tag_uuid.map(item => item.uuid)
+      }
       this.$emit('runFilter', finalParams)
-    },
-    selectHost (host) {
-      this.filters.host_uuid = host ? host.uuid : null
-    },
-    selectManager (manager) {
-      this.filters.manager_uuid = manager ? manager.uuid : null
-    },
-    selectTag (eventTag) {
-      this.filters.event_tag_uuid = eventTag ? eventTag.uuid : null
     },
     changeDate () {
       this.filters.start_at = this.rangeDate ? this.rangeDate.start : null
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.filters.status = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
       this.$refs.tag.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
+      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
     }
   }
 }

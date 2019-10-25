@@ -82,6 +82,9 @@ export default {
     },
     resetTerm () {
       this.$refs.search.resetTerm()
+      this.value && this.value.forEach(item => {
+        this.$refs.search.cancelSelected(item[this.$attrs['results-id-key'] || 'id'])
+      })
     }
   }
 }
