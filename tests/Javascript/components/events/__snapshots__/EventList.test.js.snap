@@ -781,7 +781,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @New Hattie
+        @
       
             </div>
           </td>
@@ -951,14 +951,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn theme--dark grey grey-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Pending
+  Draft
  
                   <i
                     aria-hidden="true"
@@ -1060,7 +1060,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @Baronhaven
+        @
       
             </div>
           </td>
@@ -1230,14 +1230,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark success success-text--text"
+                class="v-btn theme--dark grey grey-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Confirmed
+  Draft
  
                   <i
                     aria-hidden="true"
@@ -1339,7 +1339,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @Lake Lavernehaven
+        @
       
             </div>
           </td>

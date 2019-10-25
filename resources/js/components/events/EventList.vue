@@ -43,7 +43,7 @@
           </v-list>
         </v-menu>
       </span>
-      <span v-else-if="selected.length > 1 && props.header.value === 'status'">
+      <span v-else-if="selected.length > 1 && props.header.value === 'status_id'">
         <v-menu offset-y>
           <v-btn
             slot="activator"
@@ -92,7 +92,7 @@
       </td>
       <td class="select-td">
         <status-select
-          v-model="props.item.status"
+          v-model="props.item.status_id"
           :options="statuses"
           @input="changeStatus($event, props.item)"
         />
@@ -102,7 +102,7 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ props.item.venue && props.item.venue.name }}
+          @{{ props.item.location && props.item.location.venue && props.item.location.venue.name }}
         </div>
       </td>
       <td>
@@ -174,7 +174,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status', align: 'left' },
+        { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
         { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
         { text: 'Tags', value: 'event_tags', align: 'left' },

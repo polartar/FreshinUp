@@ -37,6 +37,11 @@
       </v-flex>
     </v-flex>
     <v-divider />
+    <filter-sorter
+      v-if="!isLoading"
+      :statuses="statuses"
+      @runFilter="filterEvents"
+    />
     <event-list
       v-if="!isLoading"
       :events="events"
@@ -47,6 +52,7 @@
       :total-items="pagination.totalItems"
       :sort-by="sorting.sortBy"
       :descending="sorting.descending"
+      @paginate="onPaginate"
       @manage-edit="eventEdit"
       @manage-delete="deleteSingle"
       @manage-multiple-delete="multipleDelete"
@@ -98,12 +104,22 @@
 import get from 'lodash/get'
 import { mapGetters, mapActions, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
+import FilterSorter from '~/components/events/FilterSorter.vue'
 import EventList from '~/components/events/EventList.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+const include = [
+  'status',
+  'host',
+  'location.venue',
+  'manager',
+  'event_tags'
+]
+
 export default {
   layout: 'admin',
   components: {
     EventList,
+    FilterSorter,
     SimpleConfirm
   },
   filters: {
@@ -120,6 +136,7 @@ export default {
       deletablesProcessing: false,
       deletablesProgress: 0,
       deletablesStatus: '',
+      lastFilterParams: {},
       view: 1,
       views: [
         { value: 1, text: 'List view' },
@@ -155,33 +172,75 @@ export default {
       this.$router.push({ path: '/admin/events/' + event.uuid })
     },
     deleteSingle (event) {
-      // to do
+      this.deleteTemp = [event]
+      this.deleteDialog = true
     },
     multipleDelete (events) {
-      // to do
+      this.deleteTemp = events
+      this.deleteDialog = true
     },
-    changeStatusSingle (status, event) {
-      // to do
+    changeStatusSingle (statusId, event) {
+      this.$store.dispatch('events/patchItem', { data: { status_id: statusId }, params: { id: event.uuid } }).then(() => {
+        this.filterEvents(this.lastFilterParams)
+      })
     },
-    changeStatusMultiple (status, events) {
-      // to do
+    changeStatusMultiple (statusId, events) {
+      events.forEach((event) => {
+        this.changeStatus(statusId, event)
+      })
     },
-    onSubmitDelete () {
-      // to do
+    async onSubmitDelete () {
+      this.deletablesProcessing = true
+      this.deletablesProgress = 0
+      this.deletablesStatus = ''
+      let dispatcheables = []
+
+      this.deleteTemp.forEach((event) => {
+        dispatcheables.push(this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: event.uuid } }))
+      })
+
+      let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
+      let doneCount = 0
+
+      for (let i in chunks) {
+        await Promise.all(chunks[i])
+        doneCount += chunks[i].length
+        this.deleteTempStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
+        this.deleteTempProgress = doneCount / this.deleteTemp.length * 100
+        await this.sleep(this.deletablesSleepTime)
+      }
+
+      this.filterDocs(this.lastFilterParams)
+      await this.sleep(500)
+      this.deletablesProcessing = false
+      this.deleteDialog = false
     },
     onCancelDelete () {
       this.deleteDialog = false
       this.deleteTemp = []
+    },
+    onPaginate (value) {
+      this.$store.dispatch('events/setPagination', value)
+      this.$store.dispatch('events/getItems', { params: { include: include } })
+    },
+    filterEvents (params) {
+      this.lastFilterParams = params
+      this.$store.dispatch('events/setSort', params.sort)
+      this.$store.dispatch('events/setFilters', {
+        ...this.$route.query,
+        ...this.lastFilterParams
+      })
+      this.$store.dispatch('events/getItems', { params: { include: include } })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
     vm.$store.dispatch('events/setFilters', {
-      ...vm.$route.query
+      ...vm.$route.query,
+      ...this.lastFilterParams
     })
     Promise.all([
-      vm.$store.dispatch('eventStatuses/getItems'),
-      vm.$store.dispatch('events/getItems')
+      vm.$store.dispatch('eventStatuses/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
