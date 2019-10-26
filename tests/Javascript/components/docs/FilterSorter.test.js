@@ -25,11 +25,17 @@ describe('FilterSorter', () => {
       localVue = createLocalVue()
     })
 
-    test('selectUsers function change filters', () => {
+    test('selectAssignedType function change filters', () => {
       const wrapper = shallowMount(Component)
-      wrapper.vm.selectUsers({ uuid: 1 }, () => {})
+      wrapper.vm.selectAssignedType(2)
+      expect(wrapper.vm.assignedType).toBe(2)
+    })
+
+    test('selectAssigned function change filters', () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.selectAssigned({ uuid: 1 }, () => {})
       expect(wrapper.vm.assigned_uuid).toBe(1)
-      wrapper.vm.selectUsers(null, () => {})
+      wrapper.vm.selectAssigned('', () => {})
       expect(wrapper.vm.assigned_uuid).toBe('')
     })
 

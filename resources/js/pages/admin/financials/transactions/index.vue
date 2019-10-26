@@ -245,12 +245,12 @@ const include = [
   'store.supplier',
   'event.host',
   'event.event_tags',
-  'event.location',
+  'event.location.venue',
   'customer'
 ]
 
 export const VISIBILITY_OPTIONS = [
-  { name: 'event_location', label: 'Event / Location' },
+  { name: 'event_location', label: 'Event / Venue / Location' },
   { name: 'square_created_at', label: 'Creation Date' },
   { name: 'square_updated_at', label: 'Update Date' },
   { name: 'total_money', label: 'Total' },
