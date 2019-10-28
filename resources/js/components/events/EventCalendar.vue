@@ -194,7 +194,7 @@ export default {
         years = date.year - currentDate.year()
       }
       if (date.month) {
-        months = date.month - ( currentDate.month() + 1 )
+        months = date.month - (currentDate.month() + 1)
       }
       this.$refs.calendar.move(years * 12 + months)
     },
