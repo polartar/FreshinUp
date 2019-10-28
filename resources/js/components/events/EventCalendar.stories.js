@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/vue'
+import { action } from '@storybook/addon-actions'
 
 // Components
 import EventCalendar from './EventCalendar.vue'
@@ -70,8 +71,8 @@ storiesOf('FoodFleet|event/EventCalendar', module)
       }
     },
     methods: {
-      clickEvent () {
-        alert('click event')
+      clickEvent (params) {
+        action('Click Event')(params)
       }
     },
     template: `
