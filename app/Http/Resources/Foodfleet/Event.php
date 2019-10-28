@@ -22,6 +22,7 @@ class Event extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status_id" => $this->status_id,
+            "status" => new EventStatus($this->whenLoaded('status')),
             "manager" => new User($this->whenLoaded('manager')),
             "location" => new Location($this->whenLoaded('location')),
             "event_tags" => EventTag::collection($this->whenLoaded('eventTags')),
