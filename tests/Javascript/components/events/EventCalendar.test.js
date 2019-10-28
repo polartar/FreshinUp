@@ -22,9 +22,7 @@ describe('EventCalendar', () => {
     test('moveDate function to move date', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          year: 2002,
-          month: 1,
-          day: 10
+          date: '2002-01-10'
         }
       })
 
@@ -43,9 +41,7 @@ describe('EventCalendar', () => {
     test('moveToToday function to go back today', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          year: 2002,
-          month: 1,
-          day: 10
+          date: '2002-01-10'
         }
       })
 
@@ -69,9 +65,7 @@ describe('EventCalendar', () => {
     test('clickEvent function to emit', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          year: 2004,
-          month: 5,
-          day: 1
+          date: '2004-05-01'
         }
       })
 

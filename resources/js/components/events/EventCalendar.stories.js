@@ -17,9 +17,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         events: [],
         type: 'month',
         yearRange: [2010, 2020],
-        year: 2019,
-        month: 12,
-        day: 31
+        date: '2019-12-31'
       }
     },
     template: `
@@ -65,9 +63,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         }],
         type: 'month',
         yearRange: [2010, 2020],
-        year: 2019,
-        month: 12,
-        day: 31
+        date: '2019-12-31'
       }
     },
     methods: {
@@ -80,9 +76,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         :events="events"
         :type="type"
         :yearRange="yearRange"
-        :year="year"
-        :month="month"
-        :day="day"
+        :date="date"
         @click-event="clickEvent"
       />
     `

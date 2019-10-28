@@ -98,6 +98,8 @@
 import _ from 'lodash'
 import moment from 'moment'
 
+const DATE_FORMAT = 'YYYY-MM-DD'
+
 export default {
   props: {
     events: {
@@ -112,20 +114,13 @@ export default {
       type: Array,
       default: () => [2017, 2020]
     },
-    year: {
-      type: Number,
-      default: 2019
-    },
-    month: {
-      type: Number,
-      default: 1
-    },
-    day: {
-      type: Number,
-      default: 1
+    date: {
+      type: String,
+      default: '2019-1-1'
     }
   },
   data () {
+    const currentDate = moment(this.date)
     return {
       typeOptions: [
         { text: 'Day', value: 'day' },
@@ -148,9 +143,9 @@ export default {
         { text: 'November', value: 11 },
         { text: 'December', value: 12 }
       ],
-      currentMonth: this.month,
-      currentYear: this.year,
-      currentDate: [this.year, this.month, this.day].join('-'),
+      currentMonth: currentDate.month() + 1,
+      currentYear: currentDate.year(),
+      currentDate: currentDate.format(DATE_FORMAT),
       statusColorMaps: {
         'draft': 'accent',
         'pending': 'warning',
@@ -165,9 +160,8 @@ export default {
       const map = {}
       this.events.forEach(evt => {
         map[evt.start] = map[evt.start] || []
-        const dateFormat = 'YYYY-MM-DD'
-        const startMoment = moment(evt.start, dateFormat)
-        const endMoment = moment(evt.end, dateFormat)
+        const startMoment = moment(evt.start, DATE_FORMAT)
+        const endMoment = moment(evt.end, DATE_FORMAT)
         evt.periods = endMoment.diff(startMoment, 'days')
         map[evt.start].push(evt)
       })
@@ -193,14 +187,14 @@ export default {
       this.currentMonth = calendarToday.month
     },
     moveDate (date) {
-      const currentDateValues = this.currentDate.split('-')
+      const currentDate = moment(this.currentDate)
       let years = 0
       let months = 0
       if (date.year) {
-        years = date.year - currentDateValues[0]
+        years = date.year - currentDate.year()
       }
       if (date.month) {
-        months = date.month - currentDateValues[1]
+        months = date.month - ( currentDate.month() + 1 )
       }
       this.$refs.calendar.move(years * 12 + months)
     },
