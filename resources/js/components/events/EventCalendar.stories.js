@@ -9,7 +9,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('with out events', () => ({
+  .add('without events', () => ({
     components: { EventCalendar },
     data () {
       return {
