@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
-use App\Filters\Event\BelongsToWhereInUuidEquals;
-use App\Filters\Event\BelongsToWhereInIdEquals;
+use App\Filters\BelongsToWhereInUuidEquals;
+use App\Filters\BelongsToWhereInIdEquals;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo;
 

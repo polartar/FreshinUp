@@ -1,17 +1,18 @@
 <?php
 
 
-namespace App\Filters\Transaction;
+namespace App\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\QueryBuilder\Filters\Filter;
 
-class BelongsToWhereUuidEquals implements Filter
+class BelongsToWhereInIdEquals implements Filter
 {
     public function __invoke(Builder $query, $value, string $property): Builder
     {
+        $value = is_array($value) ? $value : [$value];
         return $query->whereHas($property, function (Builder $query) use ($value) {
-            $query->where('uuid', $value);
+            $query->whereIn('id', $value);
         });
     }
 }
