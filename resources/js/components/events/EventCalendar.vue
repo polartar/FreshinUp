@@ -159,11 +159,12 @@ export default {
     eventsMap () {
       const map = {}
       this.events.forEach(evt => {
-        map[evt.start_at] = map[evt.start_at] || []
         const startMoment = moment(evt.start_at, DATE_FORMAT)
         const endMoment = moment(evt.end_at, DATE_FORMAT)
+        const startDate = startMoment.format('YYYY-MM-DD')
+        map[startDate] = map[startDate] || []
         evt.periods = endMoment.diff(startMoment, 'days')
-        map[evt.start_at].push(evt)
+        map[startDate].push(evt)
       })
       return map
     }
@@ -192,9 +193,11 @@ export default {
       let months = 0
       if (date.year) {
         years = date.year - currentDate.year()
+        this.$emit('change-year', date.year)
       }
       if (date.month) {
         months = date.month - (currentDate.month() + 1)
+        this.$emit('change-month', date.month)
       }
       this.$refs.calendar.move(years * 12 + months)
     },

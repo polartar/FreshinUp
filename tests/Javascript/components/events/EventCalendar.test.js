@@ -72,6 +72,12 @@ describe('EventCalendar', () => {
 
       expect(wrapper.vm.$refs.calendar.move).toHaveBeenCalled()
       expect(wrapper.vm.$refs.calendar.move).toHaveBeenCalledWith(22)
+
+      expect(wrapper.emitted()['change-month']).toBeTruthy()
+      expect(wrapper.emitted()['change-month'][0][0]).toBe(11)
+
+      expect(wrapper.emitted()['change-year']).toBeTruthy()
+      expect(wrapper.emitted()['change-year'][0][0]).toBe(2003)
     })
 
     test('moveToToday function to go back today', () => {

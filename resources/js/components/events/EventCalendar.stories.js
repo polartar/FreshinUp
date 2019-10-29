@@ -25,9 +25,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         :events="events"
         :type="type"
         :yearRange="yearRange"
-        :year="year"
-        :month="month"
-        :day="day"
+        :date="date"
       />
     `
   }))
@@ -69,6 +67,12 @@ storiesOf('FoodFleet|event/EventCalendar', module)
     methods: {
       clickEvent (params) {
         action('Click Event')(params)
+      },
+      changeMonth (params) {
+        action('Change Month')(params)
+      },
+      changeYear (params) {
+        action('Change Year')(params)
       }
     },
     template: `
@@ -78,6 +82,8 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         :yearRange="yearRange"
         :date="date"
         @click-event="clickEvent"
+        @change-year="changeYear"
+        @change-month="changeMonth"
       />
     `
   }))
