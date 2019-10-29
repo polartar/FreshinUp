@@ -81,7 +81,7 @@ describe('EventCalendar', () => {
         }
       })
 
-      expect(wrapper.vm.currentDate).toBe('2002-1-10')
+      expect(wrapper.vm.currentDate).toBe('2002-01-10')
 
       wrapper.vm.$refs.calendar = {
         times: {
