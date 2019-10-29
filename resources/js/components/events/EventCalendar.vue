@@ -159,11 +159,11 @@ export default {
     eventsMap () {
       const map = {}
       this.events.forEach(evt => {
-        map[evt.start] = map[evt.start] || []
-        const startMoment = moment(evt.start, DATE_FORMAT)
-        const endMoment = moment(evt.end, DATE_FORMAT)
+        map[evt.start_at] = map[evt.start_at] || []
+        const startMoment = moment(evt.start_at, DATE_FORMAT)
+        const endMoment = moment(evt.end_at, DATE_FORMAT)
         evt.periods = endMoment.diff(startMoment, 'days')
-        map[evt.start].push(evt)
+        map[evt.start_at].push(evt)
       })
       return map
     }

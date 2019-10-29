@@ -37,28 +37,28 @@ storiesOf('FoodFleet|event/EventCalendar', module)
       return {
         events: [{
           name: 'Meeting A',
-          start: '2019-12-27',
-          end: '2019-12-27',
+          start_at: '2019-12-27 13:15:01',
+          end_at: '2019-12-27 05:33:29',
           status: 'draft'
         }, {
           name: 'Meeting B',
-          start: '2019-12-23',
-          end: '2019-12-24',
+          start_at: '2019-12-23 13:15:02',
+          end_at: '2019-12-24 05:33:28',
           status: 'pending'
         }, {
           name: 'Meeting C',
-          start: '2019-12-24',
-          end: '2019-12-24',
+          start_at: '2019-12-24 13:15:03',
+          end_at: '2019-12-24 05:33:27',
           status: 'confirmed'
         }, {
           name: 'Meeting D',
-          start: '2019-12-12',
-          end: '2019-12-15',
+          start_at: '2019-12-12 13:15:04',
+          end_at: '2019-12-15 05:33:26',
           status: 'past'
         }, {
           name: 'Meeting E',
-          start: '2019-12-23',
-          end: '2019-12-23',
+          start_at: '2019-12-23 13:15:05',
+          end_at: '2019-12-23 05:33:25',
           status: 'cancelled'
         }],
         type: 'month',
