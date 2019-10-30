@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
+use App\Filters\BelongsToWhereInUuidEquals;
+use App\Filters\BelongsToWhereInIdEquals;
+use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo;
+use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo;
 
 class Events extends Controller
 {
@@ -23,11 +27,23 @@ class Events extends Controller
     public function index(Request $request)
     {
         $events = QueryBuilder::for(Event::class, $request)
-            ->with('location')
             ->with('stores')
             ->allowedFilters([
+                'name',
                 Filter::exact('uuid'),
-                'name'
+                Filter::custom('start_at', GreaterThanOrEqualTo::class, 'start_at'),
+                Filter::custom('end_at', LessThanOrEqualTo::class, 'end_at'),
+                Filter::custom('host_uuid', BelongsToWhereInUuidEquals::class, 'host'),
+                Filter::custom('manager_uuid', BelongsToWhereInUuidEquals::class, 'manager'),
+                Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
+                Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
+            ])
+            ->allowedIncludes([
+                'status',
+                'host',
+                'location',
+                'manager',
+                'event_tags'
             ]);
 
         return EventResource::collection($events->jsonPaginate());
