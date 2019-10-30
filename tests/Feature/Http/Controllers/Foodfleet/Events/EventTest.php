@@ -388,13 +388,14 @@ class EventTest extends TestCase
 
         $event = factory(Event::class)->create([
             'host_uuid' => $company->uuid,
-            'location_uuid' => $location->uuid
+            'location_uuid' => $location->uuid,
+            'manager_uuid' => $user->uuid
         ]);
 
         $event->eventTags()->save($eventTag);
 
         $data = $this
-            ->json('GET', 'api/foodfleet/events/' . $event->uuid . '?include=host,location,event_tags')
+            ->json('GET', 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -403,6 +404,7 @@ class EventTest extends TestCase
 
         $this->assertEquals($event->uuid, $data['uuid']);
         $this->assertEquals($event->name, $data['name']);
+        $this->assertEquals($user->uuid, $data['manager']['uuid']);
         $this->assertEquals($company->uuid, $data['host']['uuid']);
         $this->assertEquals($location->uuid, $data['location']['uuid']);
         $this->assertEquals($eventTag->uuid, $data['event_tags'][0]['uuid']);
@@ -427,6 +429,7 @@ class EventTest extends TestCase
         $data = $this
             ->json('POST', 'api/foodfleet/events', [
                 'name' => 'test event',
+                'manager_uuid' => $admin->uuid,
                 'host_uuid' => $company->uuid,
                 'location_uuid' => $location->uuid,
                 'event_tags' => $eventTagNames,
@@ -439,7 +442,7 @@ class EventTest extends TestCase
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=host,location,event_tags';
+        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=manager,host,location,event_tags';
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -450,6 +453,7 @@ class EventTest extends TestCase
         $this->assertEquals('2019-09-20', $returnedEvent['end_at']);
         $this->assertEquals(30, $returnedEvent['commission_rate']);
         $this->assertEquals(1, $returnedEvent['commission_type']);
+        $this->assertEquals($admin->uuid, $returnedEvent['manager']['uuid']);
         $this->assertEquals($company->uuid, $returnedEvent['host']['uuid']);
         $this->assertEquals($location->uuid, $returnedEvent['location']['uuid']);
         $this->assertArraySubset($eventTags->map(function ($item) {
@@ -470,12 +474,14 @@ class EventTest extends TestCase
         $location = factory(Location::class)->create();
         $eventTag = factory(EventTag::class)->create();
 
+        $user2 = factory(User::class)->create();
         $company2 = factory(Company::class)->create();
         $location2 = factory(Location::class)->create();
         $eventTag2 = factory(EventTag::class)->create();
 
         $event = factory(Event::class)->create([
             'status_id' => 1,
+            'manager_uuid' => $user->uuid,
             'host_uuid' => $company->uuid,
             'location_uuid' => $location->uuid
         ]);
@@ -485,6 +491,7 @@ class EventTest extends TestCase
         $data = $this
             ->json('PUT', 'api/foodfleet/events/' . $event->uuid, [
                 'name' => 'test event',
+                'manager_uuid' => $user2->uuid,
                 'host_uuid' => $company2->uuid,
                 'location_uuid' => $location2->uuid,
                 'event_tags' => [$eventTag2->name],
@@ -493,13 +500,14 @@ class EventTest extends TestCase
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/events/' . $event->uuid . '?include=host,location,event_tags';
+        $url = 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags';
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
         $this->assertEquals('test event', $returnedEvent['name']);
         $this->assertEquals(2, $returnedEvent['status_id']);
+        $this->assertEquals($user2->uuid, $returnedEvent['manager']['uuid']);
         $this->assertEquals($company2->uuid, $returnedEvent['host']['uuid']);
         $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);

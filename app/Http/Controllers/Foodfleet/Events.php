@@ -73,6 +73,7 @@ class Events extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'manager_uuid' => 'string|required|exists:users,uuid',
             'host_uuid' => 'string|required|exists:companies,uuid',
             'location_uuid' => 'string|exists:locations,uuid',
             'status_id' => 'integer|required',
@@ -98,7 +99,7 @@ class Events extends Controller
     {
         $event = QueryBuilder::for(Event::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'host', 'location', 'event_tags' ])
+            ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags' ])
             ->first();
 
         return new EventResource($event);
@@ -118,6 +119,7 @@ class Events extends Controller
             'name' => 'string',
             'manager_uuid' => 'string|exists:users,uuid',
             'host_uuid' => 'string|exists:companies,uuid',
+            'location_uuid' => 'string|exists:locations,uuid',
             'status_id' => 'integer',
             'start_at' => 'date',
             'end_at' => 'date',
