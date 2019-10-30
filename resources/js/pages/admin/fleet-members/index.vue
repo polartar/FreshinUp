@@ -21,6 +21,12 @@
       </v-flex>
     </v-flex>
 
+    <search-filter-sorter
+      without-filter-label
+      without-sort-by
+      @run="runFilter"
+    />
+
     <store-list
       v-if="!isLoading"
       :stores="stores"
@@ -87,12 +93,14 @@ import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import StoreList from '~/components/stores/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import get from 'lodash/get'
+import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 
 export default {
   layout: 'admin',
   components: {
     StoreList,
-    simpleConfirm
+    simpleConfirm,
+    SearchFilterSorter
   },
   filters: {
     formatDeleteTitles (value) {
@@ -190,6 +198,12 @@ export default {
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems')
+    },
+    runFilter(params) {
+      this.filterStores({
+        name: params.term,
+        ...this.lastFilterParams
+      })
     },
     filterStores (params) {
       this.lastFilterParams = params
