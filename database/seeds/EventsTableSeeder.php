@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\EventStatus;
@@ -21,12 +22,14 @@ class EventsTableSeeder extends Seeder
         $eventTags = EventTag::get();
         $status = EventStatus::get();
         $locations = Location::get();
+        $users = User::where(["type" => 1])->get();
         $hosts = Company::whereHas('company_types', function ($query) {
             $query->where('key_id', 'host');
         })->get();
 
         for ($i = 0; $i < 50; $i++) {
             $event = factory(Event::class)->create([
+                'manager_uuid' => $users->random()->uuid,
                 'status_id' => $status->random()->id,
                 'location_uuid' => $locations->random()->uuid,
                 'host_uuid' => $hosts->random()->uuid
