@@ -4,7 +4,7 @@
 namespace App\Http\Resources\Foodfleet\Square;
 
 use App\Http\Resources\Foodfleet\Event;
-use App\Http\Resources\Foodfleet\Store;
+use App\Http\Resources\Foodfleet\Store\Store;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 

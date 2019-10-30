@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Store;
 
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
