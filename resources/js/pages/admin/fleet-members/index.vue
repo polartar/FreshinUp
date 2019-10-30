@@ -24,7 +24,7 @@
     <store-list
       v-if="!isLoading"
       :stores="stores"
-      :statuses="[]"
+      :statuses="statuses"
       :is-loading="isLoading || isLoadingList"
       :rows-per-page="pagination.rowsPerPage"
       :page="pagination.page"
@@ -122,6 +122,7 @@ export default {
     }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('stores', ['sortables']),
+    ...mapGetters('storeStatuses', { 'statuses': 'items' }),
     deleteDialogTitle () {
       return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this store?' : 'Are you sure you want to delete the following stores?'
     }
@@ -202,12 +203,17 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    vm.$store.dispatch('stores/setFilters', {
-      ...vm.$route.query
-    }).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+
+    Promise.all([
+      vm.$store.dispatch('stores/setFilters', {
+        ...vm.$route.query
+      }),
+      vm.$store.dispatch('storeStatuses/getItems')
+    ])
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
+      })
   }
 }
 </script>

@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 
-final class DocumentStatus extends Enum
+final class StoreStatus extends Enum
 {
     const DRAFT = 1;
     const PENDING = 2;

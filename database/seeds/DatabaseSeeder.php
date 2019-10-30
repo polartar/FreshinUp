@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             \StatusesSeeder::class,
             \UserLevelTypeSeeder::class,
             \CompanyTypeSeeder::class,
-            \EventStatusesSeeder::class
+            \EventStatusesSeeder::class,
+            \StoreStatusesSeeder::class,
         ]);
     }
 }

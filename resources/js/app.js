@@ -13,6 +13,7 @@ import documentStatuses from '~/store/modules/documentStatuses.js'
 import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
 import stores from '~/store/modules/stores.js'
+import storeStatuses from '~/store/modules/storeStatuses.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin',
@@ -139,7 +140,8 @@ const appInstance = new App({
       documentStatuses: documentStatuses({}),
       documentTypes: documentTypes({}),
       transactions: transactions({}),
-      stores: stores({})
+      stores: stores({}),
+      storeStatuses: storeStatuses({})
     }
   }),
   theme,
