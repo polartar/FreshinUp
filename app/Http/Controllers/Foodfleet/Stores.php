@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Filters\Transaction\BelongsToWhereUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class Stores extends Controller
             ->allowedFilters([
                 'name',
                 Filter::exact('status'),
-                Filter::custom('tag', FilterTagUuid::class),
+                Filter::custom('tag', BelongsToWhereUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
             ]);
