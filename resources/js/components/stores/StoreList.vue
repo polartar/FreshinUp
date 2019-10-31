@@ -117,7 +117,7 @@
           </v-chip>
         </td>
         <td>
-          {{ props.item.addresses.length ? props.item.addresses[0].city : '' }}
+          {{ props.item.addresses && props.item.addresses.length ? props.item.addresses[0].city : '' }}
         </td>
         <td class="justify-center text-xs-center">
           <f-btn-menu
