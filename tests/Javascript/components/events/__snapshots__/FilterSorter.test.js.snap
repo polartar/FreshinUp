@@ -146,7 +146,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                             class="nowrap"
                           >
                             <span>
-                              All Statuses
+                              All Status
                             </span>
                           </div>
                           <input
@@ -207,7 +207,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Select All
+                                      All Status
                                     </div>
                                   </div>
                                 </a>

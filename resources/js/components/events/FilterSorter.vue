@@ -40,6 +40,7 @@
               :items="statuses"
               item-value="id"
               item-text="name"
+              select-all-name="All Status"
               solo
               flat
               hide-details
@@ -182,8 +183,8 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import ClearButton from '~/components/ClearButton'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
-import MultiSelect from '~/components/MultiSelect'
-import MultiSimple from '~/components/MultiSimple'
+import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
+import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
 export default {
   components: {
     MultiSimple,
