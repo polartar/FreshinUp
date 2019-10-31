@@ -22,7 +22,7 @@ class Store extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status" => $this->status,
-            "addresses" => Address::collection($this->addresses),
+            "addresses" => Address::collection($this->whenLoaded('addresses')),
             "tags" => Tag::collection($this->whenLoaded('tags')),
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier'))

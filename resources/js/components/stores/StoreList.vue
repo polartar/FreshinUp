@@ -108,6 +108,17 @@
         <td>
           {{ props.item.name }}
         </td>
+        <td>
+          <v-chip
+            v-for="(tag, index) in props.item.tags"
+            :key="index"
+          >
+            {{ tag.name }}
+          </v-chip>
+        </td>
+        <td>
+          {{ props.item.addresses.length ? props.item.addresses[0].city : '' }}
+        </td>
         <td class="justify-center text-xs-center">
           <f-btn-menu
             :items="itemActions"
@@ -148,6 +159,8 @@ export default {
       headers: [
         { text: 'Status', sortable: false, value: 'status' },
         { text: 'Name', value: 'name' },
+        { text: 'Tags', value: 'tags', sortable: false },
+        { text: 'Hometown', value: 'city', sortable: false },
         { text: 'Manage', sortable: false, value: 'manage' }
       ],
       itemActions: [
