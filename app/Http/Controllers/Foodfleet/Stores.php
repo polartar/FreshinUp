@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Filters\Transaction\BelongsToWhereUuidEquals;
+use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class Stores extends Controller
         $stores = QueryBuilder::for(Store::class, $request)
             ->allowedIncludes([
                 'tags',
-                'address'
+                'addresses'
             ])
             ->allowedSorts([
                 'name',
@@ -35,7 +35,7 @@ class Stores extends Controller
             ->allowedFilters([
                 'name',
                 Filter::exact('status'),
-                Filter::custom('tag', BelongsToWhereUuidEquals::class, 'tags'),
+                Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
             ]);

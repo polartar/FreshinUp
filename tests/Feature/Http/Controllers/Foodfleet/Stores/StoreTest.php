@@ -11,6 +11,7 @@ use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use FreshinUp\FreshBusForms\Models\Address\Address;
 
 class StoresTest extends TestCase
 {
@@ -56,7 +57,7 @@ class StoresTest extends TestCase
         return $store;
     }
 
-    public function testFilterInclude()
+    public function testFilterAndTags()
     {
         $user = factory(User::class)->create();
 
@@ -91,6 +92,46 @@ class StoresTest extends TestCase
             'name' => $stores[1]->name,
             'tags' => [ [ 'name' => $tags[0]->name ] ]
         ], $data[1]);
+    }
+
+    public function testStatusAndAddress()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $stores = factory(Store::class, 2)->create([
+            'status' => 1
+        ]);
+            
+        $addresses = factory(Address::class, 2)->create();
+        
+        foreach ($stores as $key => $store) {
+            $store->addresses()->save($addresses[$key]);
+        }
+
+        factory(Store::class, 3)->create([
+            'status' => 2
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?include=addresses&filter[status]=1")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+
+        foreach ($data as $key => $value) {
+            $this->assertArraySubset([
+                'uuid' => $stores[$key]->uuid,
+                'name' => $stores[$key]->name,
+                'addresses' => [ [ 'id' => $addresses[$key]->id ] ]
+            ], $value);
+        }
     }
 
     /**
