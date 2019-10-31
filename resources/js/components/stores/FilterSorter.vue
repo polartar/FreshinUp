@@ -64,7 +64,6 @@
 </template>
 
 <script>
-import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 import Simple from 'fresh-bus/components/search/simple'
 export default {
