@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 use App\Models\Foodfleet\StoreStatus;
 use App\Enums\StoreStatus as StoreStatusEmums;
 
-
 class StoreStatusesSeeder extends Seeder
 {
     /**

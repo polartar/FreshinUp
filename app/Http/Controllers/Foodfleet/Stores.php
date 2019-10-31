@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Actions\UpdateStore;
+use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Store;
 use App\Actions\UpdateDocument;
@@ -23,9 +24,20 @@ class Stores extends Controller
     public function index(Request $request)
     {
         $stores = QueryBuilder::for(Store::class, $request)
-            ->allowedFilters([
-                Filter::exact('uuid'),
+            ->allowedIncludes([
+                'tags',
+                'addresses'
+            ])
+            ->allowedSorts([
                 'name',
+                'status',
+                'created_at',
+            ])
+            ->allowedFilters([
+                'name',
+                Filter::exact('status'),
+                Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
+                Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
             ]);
 
