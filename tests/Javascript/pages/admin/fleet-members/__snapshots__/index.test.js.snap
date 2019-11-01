@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Docs Page Mount snapshot 1`] = `
+<div>
+  <v-flex-stub
+    align-center=""
+    d-flex=""
+    justify-space-between=""
+    ma-2=""
+    tag="div"
+  >
+    <h2
+      class="white--text"
+    >
+      
+      Fleet Member List
+    
+    </h2>
+     
+    <v-flex-stub
+      tag="div"
+      text-xs-right=""
+    >
+      <v-btn-stub
+        activeclass="v-btn--active"
+        color="primary"
+        dark="true"
+        slot="activator"
+        tag="button"
+        type="button"
+      >
+        
+        Add New Fleet Member
+      
+      </v-btn-stub>
+    </v-flex-stub>
+  </v-flex-stub>
+   
+  <search-filter-sorter-stub
+    color="#f8f8f8"
+    coloraddfilterbtn=""
+    colorclearfilterbtn=""
+    icon=""
+    placeholder="Start typing to Search"
+    sortlabel="Sort by"
+    sortoptions=""
+    textfieldclass="grow"
+    withoutfilterlabel="true"
+    withoutsortby="true"
+  />
+   
+  <store-list-stub
+    page="1"
+    rowsperpage="10"
+    rowsperpageitems="5,10,15,25,30,50"
+    sortby=""
+    statuses=""
+    stores="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+    totalitems="51"
+  />
+   
+  <v-dialog-stub
+    contentclass=""
+    maxwidth="500"
+    origin="center center"
+    transition="dialog-transition"
+    width="auto"
+  >
+    <simple-confirm-stub
+      cancellabel="No"
+      class=""
+      oklabel="Yes"
+      title="Are you sure you want to delete this store?"
+    >
+      <div
+        class="py-5 px-2"
+      >
+        <p
+          class="subheading"
+        >
+          <span>
+            Store
+          </span>
+          
+            : 
+          
+        </p>
+      </div>
+    </simple-confirm-stub>
+  </v-dialog-stub>
+</div>
+`;
