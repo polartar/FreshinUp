@@ -94,6 +94,27 @@ exports[`Store List component Snapshots stores empty 1`] = `
               </span>
             </th>
             <th
+              aria-label="Scheduled events: Not sorted. Activate to sort ascending."
+              aria-sort="none"
+              class="column sortable text-xs-left"
+              role="columnheader"
+              scope="col"
+              tabindex="0"
+            >
+              <span>
+                
+        Scheduled events
+      
+              </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
+            </th>
+            <th
               aria-label="Hometown: Not sorted."
               aria-sort="none"
               class="column text-xs-left"
@@ -125,7 +146,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
           >
             <th
               class="column"
-              colspan="6"
+              colspan="7"
             />
           </tr>
         </thead>
@@ -133,7 +154,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
           <tr>
             <td
               class="text-xs-center"
-              colspan="6"
+              colspan="7"
             >
               No matching records found
             </td>
@@ -463,6 +484,27 @@ exports[`Store List component Snapshots stores set 1`] = `
               </span>
             </th>
             <th
+              aria-label="Scheduled events: Not sorted. Activate to sort ascending."
+              aria-sort="none"
+              class="column sortable text-xs-left"
+              role="columnheader"
+              scope="col"
+              tabindex="0"
+            >
+              <span>
+                
+        Scheduled events
+      
+              </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
+            </th>
+            <th
               aria-label="Hometown: Not sorted."
               aria-sort="none"
               class="column text-xs-left"
@@ -494,7 +536,7 @@ exports[`Store List component Snapshots stores set 1`] = `
           >
             <th
               class="column"
-              colspan="6"
+              colspan="7"
             />
           </tr>
         </thead>
@@ -694,8 +736,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          voluptate
+        
+              </div>
               
-        voluptate
+        
       
             </td>
              
@@ -712,6 +761,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -979,8 +1036,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          eius
+        
+              </div>
               
-        eius
+        
       
             </td>
              
@@ -997,6 +1061,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -1264,8 +1336,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          autem
+        
+              </div>
               
-        autem
+        
       
             </td>
              
@@ -1282,6 +1361,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -1549,8 +1636,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          et
+        
+              </div>
               
-        et
+        
       
             </td>
              
@@ -1567,6 +1661,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -1834,8 +1936,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          et
+        
+              </div>
               
-        et
+        
       
             </td>
              
@@ -1852,6 +1961,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -2119,8 +2236,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          natus
+        
+              </div>
               
-        natus
+        
       
             </td>
              
@@ -2137,6 +2261,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -2404,8 +2536,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          sunt
+        
+              </div>
               
-        sunt
+        
       
             </td>
              
@@ -2422,6 +2561,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -2689,8 +2836,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          voluptatem
+        
+              </div>
               
-        voluptatem
+        
       
             </td>
              
@@ -2707,6 +2861,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -2974,8 +3136,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          ipsum
+        
+              </div>
               
-        ipsum
+        
       
             </td>
              
@@ -2992,6 +3161,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>
@@ -3259,8 +3436,15 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td>
+              <div
+                class="subheading"
+              >
+                
+          suscipit
+        
+              </div>
               
-        suscipit
+        
       
             </td>
              
@@ -3277,6 +3461,14 @@ exports[`Store List component Snapshots stores set 1`] = `
         
                 </span>
               </span>
+            </td>
+             
+            <td
+              class="text-xs-center"
+            >
+              <div>
+                0
+              </div>
             </td>
              
             <td>

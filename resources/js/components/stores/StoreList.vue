@@ -106,7 +106,10 @@
           />
         </td>
         <td>
-          {{ props.item.name }}
+          <div class="subheading">
+            {{ props.item.name }}
+          </div>
+          {{ props.item.type }}
         </td>
         <td>
           <v-chip
@@ -115,6 +118,9 @@
           >
             {{ tag.name }}
           </v-chip>
+        </td>
+        <td class="text-xs-center">
+          <div>{{ props.item.events ? props.item.events.length : 0 }}</div>
         </td>
         <td>
           {{ props.item.addresses && props.item.addresses.length ? props.item.addresses[0].city : '' }}
@@ -160,6 +166,7 @@ export default {
         { text: 'Status', sortable: false, value: 'status' },
         { text: 'Name', value: 'name' },
         { text: 'Tags', value: 'tags', sortable: false },
+        { text: 'Scheduled events', sortable: true, value: 'events' },
         { text: 'Hometown', value: 'city', sortable: false },
         { text: 'Manage', sortable: false, value: 'manage' }
       ],
