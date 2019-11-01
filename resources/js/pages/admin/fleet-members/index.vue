@@ -198,7 +198,6 @@ export default {
       this.$store.dispatch('stores/getItems', { params: { include: 'tags,addresses' } })
     },
     runFilter (params) {
-      console.log(params)
       this.filterStores(params)
     },
     filterStores (params) {
