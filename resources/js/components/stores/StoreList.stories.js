@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions'
 // Components
 import StoreList from './StoreList.vue'
 
-
 let stores = [
   {
     uuid: 1,
