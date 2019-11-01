@@ -36,17 +36,9 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
     </v-flex-stub>
   </v-flex-stub>
    
-  <search-filter-sorter-stub
-    color="#f8f8f8"
-    coloraddfilterbtn=""
-    colorclearfilterbtn=""
-    icon=""
-    placeholder="Start typing to Search"
-    sortlabel="Sort by"
-    sortoptions=""
-    textfieldclass="grow"
-    withoutfilterlabel="true"
-    withoutsortby="true"
+  <filter-sorter-stub
+    sortables=""
+    statuses=""
   />
    
   <store-list-stub

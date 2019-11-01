@@ -21,10 +21,8 @@
       </v-flex>
     </v-flex>
 
-    <search-filter-sorter
-      without-filter-label
-      without-sort-by
-      @run="runFilter"
+    <filter-sorter
+      @runFilter="filterStores"
     />
 
     <store-list
@@ -93,14 +91,14 @@ import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import StoreList from '~/components/stores/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import get from 'lodash/get'
-import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
+import FilterSorter from '~/components/stores/FilterSorter.vue'
 
 export default {
   layout: 'admin',
   components: {
     StoreList,
     simpleConfirm,
-    SearchFilterSorter
+    FilterSorter
   },
   filters: {
     formatDeleteTitles (value) {
@@ -200,10 +198,8 @@ export default {
       this.$store.dispatch('stores/getItems', { params: { include: 'tags,addresses' } })
     },
     runFilter (params) {
-      this.filterStores({
-        name: params.term,
-        ...this.lastFilterParams
-      })
+      console.log(params)
+      this.filterStores(params)
     },
     filterStores (params) {
       this.lastFilterParams = params
