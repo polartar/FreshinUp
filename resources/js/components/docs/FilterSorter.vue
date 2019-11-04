@@ -1,7 +1,5 @@
 <template>
   <search-filter-sorter
-    expanded
-    without-filter-label
     :autocomplete_url="autocompleteUrl"
     sort-label="Sort by"
     :sort-options="sortables"

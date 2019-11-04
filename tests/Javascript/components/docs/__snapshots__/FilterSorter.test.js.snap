@@ -18,7 +18,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
       <div
         class="layout filter-sorter-main-layout row wrap"
       >
-        <!---->
+        <div
+          class="flex shrink"
+        >
+          <div
+            class="v-card__text"
+          >
+            Filter:
+          </div>
+        </div>
          
         <div
           class="flex grow"
@@ -176,12 +184,11 @@ exports[`FilterSorter Snapshots defaults 1`] = `
          
       </div>
        
-      <hr
-        class="v-divider theme--light"
-      />
+      <!---->
        
       <div
         class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+        style="display: none;"
       >
         <div
           class="flex"
