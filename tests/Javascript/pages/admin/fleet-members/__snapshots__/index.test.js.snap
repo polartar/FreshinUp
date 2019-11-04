@@ -37,7 +37,7 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
   </v-flex-stub>
    
   <filter-sorter-stub
-    sortables=""
+    sortables="[object Object],[object Object],[object Object],[object Object]"
     statuses=""
   />
    

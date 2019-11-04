@@ -22,6 +22,8 @@
     </v-flex>
 
     <filter-sorter
+      :statuses="statuses"
+      :sortables="sortables"
       @runFilter="filterStores"
     />
 
