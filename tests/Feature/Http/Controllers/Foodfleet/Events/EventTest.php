@@ -4,7 +4,12 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
 use App\Models\Foodfleet\Event;
 use App\User;
+use App\Models\Foodfleet\EventTag;
+use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\Location;
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Carbon;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -109,5 +114,264 @@ class EventTest extends TestCase
             'uuid' => $eventsToFind->first()->uuid,
             'name' => $eventsToFind->first()->name
         ], $data[0]);
+    }
+
+    public function testGetListWithHostUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $nonhost = factory(Company::class)->create();
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles',
+            'host_uuid' => $nonhost->uuid
+        ]);
+
+        $hosts = factory(Company::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find 1',
+            'host_uuid' => $hosts->first()->uuid
+        ]);
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find 2',
+            'host_uuid' => $hosts->last()->uuid
+        ]);
+
+        $hostUuid = $hosts->map(function ($host) {
+            return $host->uuid;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[host_uuid]=" . $hostUuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+    }
+
+    public function testGetListWithManagerUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $nonuser = factory(User::class)->create();
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles',
+            'manager_uuid' => $nonuser->uuid
+        ]);
+
+        $usersToFind = factory(User::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $usersToFind->first()->uuid
+        ]);
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $usersToFind->last()->uuid
+        ]);
+
+        $userUuid = $usersToFind->map(function ($user) {
+            return $user->uuid;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=" . $userUuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+    }
+
+    public function testGetListWithStatusIdFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $nonstatus = factory(EventStatus::class)->create();
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles',
+            'status_id' => $nonstatus->id
+        ]);
+
+        $statuses = factory(EventStatus::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find 1',
+            'status_id' => $statuses->first()->id
+        ]);
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find 2',
+            'status_id' => $statuses->last()->id
+        ]);
+
+        $statusId = $statuses->map(function ($status) {
+            return $status->id;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[status_id]=" . $statusId)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+    }
+
+    public function testGetListWithEventTagUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles'
+        ]);
+
+        $eventTags = factory(EventTag::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find 1'
+        ]);
+        $eventToFind1->eventTags()->save($eventTags->first());
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find 2'
+        ]);
+        $eventToFind2->eventTags()->save($eventTags->last());
+
+        $eventTagUuid = $eventTags->map(function ($eventTag) {
+            return $eventTag->uuid;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[event_tag_uuid]=" . $eventTagUuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+    }
+
+    public function testGetListWithStartAtFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        Carbon::setTestNow(Carbon::createFromTimeString('2019-10-01 01:03:40.930965'));
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles',
+            'start_at' => Carbon::now()->subDays(5),
+            'end_at' => Carbon::now()->subDays(10)
+        ]);
+
+        $eventToFind = factory(Event::class)->create([
+            'name' => 'To find',
+            'start_at' => Carbon::now(),
+            'end_at' => Carbon::now()->subDays(1)
+        ]);
+
+        $startAt = Carbon::now()->subDays(2)->toDateTimeString();
+        $endAt = Carbon::now()->addDays(2)->toDateTimeString();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[start_at]=" . $startAt . '&filter[end_at]='. $endAt)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+        $this->assertEquals($eventToFind->uuid, $data[0]['uuid']);
+        Carbon::setTestNow();
+    }
+
+    public function testGetListWithInclude()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $eventTag = factory(EventTag::class)->create();
+        $status = factory(EventStatus::class)->create();
+        $location = factory(Location::class)->create();
+        $host = factory(Company::class)->create();
+
+        $event = factory(Event::class)->create([
+            'manager_uuid' => $user->uuid,
+            'status_id' => $status->id,
+            'location_uuid' => $location->uuid,
+            'host_uuid' => $host->uuid
+        ]);
+
+        $event->eventTags()->save($eventTag);
+
+        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags')
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [],
+            ])
+            ->json('data');
+
+        $this->assertArraySubset([
+            'uuid' => $event->uuid,
+            'name' => $event->name,
+        ], $data[0]);
+
+        $this->assertArraySubset([
+            'uuid' => $eventTag->uuid,
+            'name' => $eventTag->name,
+        ], $data[0]['event_tags'][0]);
+
+        $this->assertArraySubset([
+            'uuid' => $location->uuid,
+            'name' => $location->name,
+        ], $data[0]['location']);
+
+        $this->assertArraySubset([
+            'uuid' => $user->uuid,
+            'name' => $user->name,
+        ], $data[0]['manager']);
+
+        $this->assertArraySubset([
+            'uuid' => $host->uuid,
+            'name' => $host->name,
+        ], $data[0]['host']);
     }
 }
