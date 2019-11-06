@@ -67,7 +67,7 @@ storiesOf('FoodFleet|event/FilterSorter', module)
       return {
         statuses: statuses,
         filters: {
-          status: statuses.map(item => item.id),
+          status_id: null,
           host_uuid: null,
           manager_uuid: null,
           event_tag_uuid: null,

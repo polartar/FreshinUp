@@ -97,11 +97,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="filter-simple-label font-weight-bold white--text nowrap"
+                    class="white--text"
                   >
-                    
+                    <strong
+                      class="no-wrap"
+                    >
+                      
               Statuses
             
+                    </strong>
                   </div>
                    
                   <button
@@ -532,11 +536,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="layout row justify-space-between mb-2"
                 >
                   <div
-                    class="filter-simple-label font-weight-bold white--text nowrap"
+                    class="white--text"
                   >
-                    
+                    <strong
+                      class="no-wrap"
+                    >
+                      
               Customers
             
+                    </strong>
                   </div>
                    
                   <!---->
@@ -721,11 +729,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="layout row justify-space-between mb-2"
                 >
                   <div
-                    class="filter-simple-label font-weight-bold white--text nowrap"
+                    class="white--text"
                   >
-                    
+                    <strong
+                      class="no-wrap"
+                    >
+                      
               Managed By
             
+                    </strong>
                   </div>
                    
                   <!---->
@@ -906,11 +918,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="layout row justify-space-between mb-2"
                 >
                   <div
-                    class="filter-simple-label font-weight-bold white--text nowrap"
+                    class="white--text"
                   >
-                    
+                    <strong
+                      class="no-wrap"
+                    >
+                      
               Scheduled Date
             
+                    </strong>
                   </div>
                    
                   <!---->
@@ -955,11 +971,15 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="layout row justify-space-between mb-2"
                 >
                   <div
-                    class="filter-simple-label font-weight-bold white--text"
+                    class="white--text"
                   >
-                    
+                    <strong
+                      class="no-wrap"
+                    >
+                      
               Tags
             
+                    </strong>
                   </div>
                    
                   <!---->

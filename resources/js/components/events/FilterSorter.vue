@@ -25,9 +25,9 @@
               align-center
               mb-2
             >
-              <div class="filter-simple-label font-weight-bold white--text nowrap">
+              <filter-label>
                 Statuses
-              </div>
+              </filter-label>
               <clear-button
                 v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
@@ -54,9 +54,9 @@
               justify-space-between
               mb-2
             >
-              <div class="filter-simple-label font-weight-bold white--text nowrap">
+              <filter-label>
                 Customers
-              </div>
+              </filter-label>
               <clear-button
                 v-if="filters.host_uuid && filters.host_uuid.length > 0"
                 color="white"
@@ -86,9 +86,9 @@
               justify-space-between
               mb-2
             >
-              <div class="filter-simple-label font-weight-bold white--text nowrap">
+              <filter-label>
                 Managed By
-              </div>
+              </filter-label>
               <clear-button
                 v-if="filters.manager_uuid && filters.manager_uuid.length > 0"
                 color="white"
@@ -116,9 +116,9 @@
               justify-space-between
               mb-2
             >
-              <div class="filter-simple-label font-weight-bold white--text nowrap">
+              <filter-label>
                 Scheduled Date
-              </div>
+              </filter-label>
               <clear-button
                 v-if="filters.start_at || filters.end_at"
                 color="white"
@@ -148,9 +148,9 @@
               justify-space-between
               mb-2
             >
-              <div class="filter-simple-label font-weight-bold white--text">
+              <filter-label>
                 Tags
-              </div>
+              </filter-label>
               <clear-button
                 v-if="filters.event_tag_uuid && filters.event_tag_uuid.length > 0"
                 color="white"
@@ -181,6 +181,7 @@
 <script>
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import ClearButton from '~/components/ClearButton'
+import FilterLabel from '~/components/FilterLabel'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
@@ -188,6 +189,7 @@ import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
 export default {
   components: {
     MultiSimple,
+    FilterLabel,
     ClearButton,
     MultiSelect,
     VueCtkDateTimePicker,
@@ -228,7 +230,6 @@ export default {
     run (params) {
       let finalParams = {
         name: params.term,
-        sort: params.orderBy,
         ...this.filters
       }
       if (this.filters.host_uuid) {
@@ -256,19 +257,10 @@ export default {
 }
 </script>
 <style lang="styl" scoped>
-  .filter-simple-label{
-    font-size: 13px;
-    line-height: 22px;
-  }
   .just-padding-top{
     padding-left: 0;
     padding-bottom: 0;
     padding-right: 0;
-  }
-  .nowrap{
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
   /deep/ .data-time-picker.no-border input.field-input{
     border: none !important;
