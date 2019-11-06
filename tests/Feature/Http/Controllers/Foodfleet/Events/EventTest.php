@@ -10,6 +10,8 @@ use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\Location;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 
+use App\Enums\EventStatus as EventStatusEnum;
+
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Carbon;
 use Laravel\Passport\Passport;
@@ -512,5 +514,57 @@ class EventTest extends TestCase
         $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);
         $this->assertEquals($eventTag2->name, $returnedEvent['event_tags'][0]['name']);
+    }
+
+    public function testDeleteItem()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(Company::class)->create();
+        $location = factory(Location::class)->create();
+        $eventTag = factory(EventTag::class)->create();
+
+        $event = factory(Event::class)->create([
+            'host_uuid' => $company->uuid,
+            'location_uuid' => $location->uuid,
+            'manager_uuid' => $user->uuid
+        ]);
+
+        $event->eventTags()->save($eventTag);
+
+        $data = $this
+            ->json('GET', 'api/foodfleet/events/' . $event->uuid)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals($event->uuid, $data['uuid']);
+        $this->assertDatabaseHas('events_event_tags', [
+            'event_uuid' => $event->uuid,
+            'event_tag_uuid' => $eventTag->uuid,
+        ]);
+
+        $this->json('DELETE', 'api/foodfleet/events/' . $event->uuid)
+            ->assertStatus(204);
+
+        $this->json('GET', 'api/foodfleet/events/' . $event->uuid)
+            ->assertStatus(404);
+    }
+
+    public function testGetNewItemRecommendation()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $data = $this->json('GET', 'api/foodfleet/events/new')
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [],
+            ])
+            ->json('data');
+
+        $this->assertEquals($data['status_id'], EventStatusEnum::DRAFT);
     }
 }

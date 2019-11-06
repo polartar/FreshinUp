@@ -11,10 +11,13 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
+use App\Enums\EventStatus as EventStatusEnum;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Filters\BelongsToWhereInIdEquals;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo;
+
+use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class Events extends Controller
 {
@@ -58,7 +61,11 @@ class Events extends Controller
     public function showNewRecommendation()
     {
         return new EventResource(
-            Event::make()
+            Event::make(
+                ([
+                'status_id' => EventStatusEnum::DRAFT
+                ])
+            )
         );
     }
 
@@ -100,7 +107,7 @@ class Events extends Controller
         $event = QueryBuilder::for(Event::class, $request)
             ->where('uuid', $uuid)
             ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags' ])
-            ->first();
+            ->firstOrFail();
 
         return new EventResource($event);
     }
@@ -144,7 +151,7 @@ class Events extends Controller
      */
     public function destroy($uuid)
     {
-        $event = Event::where('uuid', $uuid)->first();
+        $event = Event::where('uuid', $uuid)->firstOrFail();
         $event->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
     }
