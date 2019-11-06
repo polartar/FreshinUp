@@ -2,7 +2,7 @@
   <search-filter-sorter
     expanded
     without-filter-label
-    withoutSortBy
+    without-sort-by
     :autocomplete_url="autocompleteUrl"
     sort-label="Sort by"
     :filters="filters"
@@ -68,11 +68,9 @@
 
 <script>
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
-import AssignedSearch from '~/components/docs/AssignedSearch'
 
 export default {
   components: {
-    AssignedSearch,
     SearchFilterSorter
   },
   props: {
