@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateTimePicker Snapshots defaults 1`] = `
+<div
+  class="picker-wrap"
+>
+  <div
+    class="date-time-picker no-border"
+    id="DateTimePicker"
+  >
+    <div
+      class="field flex align-center"
+      data-v-a0144ed0=""
+    >
+      <input
+        class="field-input no-clear-button"
+        data-v-a0144ed0=""
+        id="DateTimePicker"
+        placeholder="Select date & time"
+        readonly="readonly"
+        type="text"
+      />
+      <label
+        class="field-label"
+        data-v-a0144ed0=""
+        for="DateTimePicker"
+      >
+        
+    Select date & time
+  
+      </label>
+      <!---->
+    </div>
+    <!---->
+    <!---->
+  </div>
+   
+  <div
+    class="picker-icon"
+  >
+    <i
+      aria-hidden="true"
+      class="v-icon far fa-calendar-alt theme--light"
+    />
+  </div>
+</div>
+`;

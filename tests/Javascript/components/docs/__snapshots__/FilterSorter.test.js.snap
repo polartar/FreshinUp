@@ -18,15 +18,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
       <div
         class="layout filter-sorter-main-layout row wrap"
       >
-        <div
-          class="flex shrink"
-        >
-          <div
-            class="v-card__text"
-          >
-            Filter:
-          </div>
-        </div>
+        <!---->
          
         <div
           class="flex grow"
@@ -203,34 +195,55 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                 class="flex"
               >
                 <div
-                  class="date-time-picker"
-                  id="DateTimePicker"
+                  button-color="#1976D2"
+                  class="picker-wrap"
+                  color="#1976D2"
+                  format="YYYY-MM-DD"
+                  formatted="MM-DD-YYYY"
+                  input-size="lg"
+                  label="Expiration"
+                  only-date=""
+                  range=""
                 >
                   <div
-                    class="field flex align-center lg"
-                    data-v-a0144ed0=""
+                    class="date-time-picker no-border"
+                    id="DateTimePicker"
                   >
-                    <input
-                      class="field-input"
+                    <div
+                      class="field flex align-center lg"
                       data-v-a0144ed0=""
-                      id="DateTimePicker"
-                      placeholder="Expiration date range"
-                      readonly="readonly"
-                      type="text"
-                    />
-                    <label
-                      class="field-label"
-                      data-v-a0144ed0=""
-                      for="DateTimePicker"
                     >
-                      
-    Expiration date range
+                      <input
+                        class="field-input no-clear-button"
+                        data-v-a0144ed0=""
+                        id="DateTimePicker"
+                        placeholder="Expiration"
+                        readonly="readonly"
+                        type="text"
+                      />
+                      <label
+                        class="field-label"
+                        data-v-a0144ed0=""
+                        for="DateTimePicker"
+                      >
+                        
+    Expiration
   
-                    </label>
+                      </label>
+                      <!---->
+                    </div>
+                    <!---->
                     <!---->
                   </div>
-                  <!---->
-                  <!---->
+                   
+                  <div
+                    class="picker-icon"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon far fa-calendar-alt theme--light"
+                    />
+                  </div>
                 </div>
               </div>
                

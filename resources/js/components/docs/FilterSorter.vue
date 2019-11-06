@@ -1,5 +1,6 @@
 <template>
   <search-filter-sorter
+    without-filter-label
     :autocomplete_url="autocompleteUrl"
     sort-label="Sort by"
     :sort-options="sortables"
@@ -20,14 +21,14 @@
           justify-space-between
         >
           <v-flex>
-            <vue-ctk-date-time-picker
+            <date-time-picker
               v-model="expireDate"
               range
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
-              label="Expiration date range"
+              label="Expiration"
               :color="$vuetify.theme.primary"
               :button-color="$vuetify.theme.primary"
               @input="slotProps.run"
@@ -76,7 +77,7 @@
 
 <script>
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import DateTimePicker from '~/components/DateTimePicker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 import AssignedSearch from '~/components/docs/AssignedSearch'
 
@@ -84,7 +85,7 @@ export default {
   components: {
     AssignedSearch,
     SearchFilterSorter,
-    VueCtkDateTimePicker
+    DateTimePicker
   },
   props: {
     autocompleteUrl: {
