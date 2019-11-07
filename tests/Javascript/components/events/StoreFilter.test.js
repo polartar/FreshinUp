@@ -10,7 +10,7 @@ describe('event Store Filter Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: {  },
+          filters: {},
           types: FIXTURE_EVENTS_STORE['types']
         }
       })
@@ -23,7 +23,7 @@ describe('event Store Filter Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: {  },
+          filters: {},
           types: FIXTURE_EVENTS_STORE['types']
         }
       })
@@ -39,7 +39,7 @@ describe('event Store Filter Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: {  },
+          filters: {},
           types: FIXTURE_EVENTS_STORE['types']
         }
       })
@@ -64,8 +64,7 @@ describe('event Store Filter Sorter component', () => {
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
-      console.log(runParams)
-      expect(runParams['location']).toEqual("South Abagail")
+      expect(runParams['location']).toEqual('South Abagail')
       expect(runParams['type']).toEqual(1)
       expect(runParams['tags']).toEqual([ 3 ])
     })
