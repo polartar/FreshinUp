@@ -68,11 +68,8 @@ storiesOf('FoodFleet|event/EventCalendar', module)
       clickEvent (params) {
         action('Click Event')(params)
       },
-      changeMonth (params) {
-        action('Change Month')(params)
-      },
-      changeYear (params) {
-        action('Change Year')(params)
+      changeDate (params) {
+        action('Change Date')(params)
       }
     },
     template: `
@@ -82,8 +79,7 @@ storiesOf('FoodFleet|event/EventCalendar', module)
         :yearRange="yearRange"
         :date="date"
         @click-event="clickEvent"
-        @change-year="changeYear"
-        @change-month="changeMonth"
+        @change-date="changeDate"
       />
     `
   }))

@@ -193,12 +193,11 @@ export default {
       let months = 0
       if (date.year) {
         years = date.year - currentDate.year()
-        this.$emit('change-year', date.year)
       }
       if (date.month) {
         months = date.month - (currentDate.month() + 1)
-        this.$emit('change-month', date.month)
       }
+      this.$emit('change-date', date)
       this.$refs.calendar.move(years * 12 + months)
     },
     clickEvent (evt) {
