@@ -124,7 +124,7 @@ export default {
   },
   filters: {
     formatDeleteTitles (value) {
-      return value.map(item => item.title).join(', ')
+      return value.map(item => item.name).join(', ')
     }
   },
   mixins: [deletables],
@@ -186,7 +186,7 @@ export default {
     },
     changeStatusMultiple (statusId, events) {
       events.forEach((event) => {
-        this.changeStatus(statusId, event)
+        this.changeStatusSingle(statusId, event)
       })
     },
     async onSubmitDelete () {
@@ -210,7 +210,7 @@ export default {
         await this.sleep(this.deletablesSleepTime)
       }
 
-      this.filterDocs(this.lastFilterParams)
+      this.filterEvents(this.lastFilterParams)
       await this.sleep(500)
       this.deletablesProcessing = false
       this.deleteDialog = false
@@ -225,7 +225,6 @@ export default {
     },
     filterEvents (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('events/setSort', params.sort)
       this.$store.dispatch('events/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams

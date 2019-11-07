@@ -121,12 +121,12 @@
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.host && props.item.host.name }}
+          {{ props.item.manager && props.item.manager.name }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.manager && props.item.manager.name }}
+          {{ props.item.host && props.item.host.name }}
         </div>
       </td>
       <td>
@@ -174,7 +174,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
+        { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
         { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
         { text: 'Tags', value: 'event_tags', align: 'left' },

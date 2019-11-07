@@ -44,7 +44,7 @@ class Events extends Controller
             ->allowedIncludes([
                 'status',
                 'host',
-                'location',
+                'location.venue',
                 'manager',
                 'event_tags'
             ]);
