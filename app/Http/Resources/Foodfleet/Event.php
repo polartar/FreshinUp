@@ -30,6 +30,10 @@ class Event extends JsonResource
             "stores" => Store::collection($this->whenLoaded('stores')),
             "start_at" => $this->start_at,
             "end_at" => $this->end_at,
+            'budget' => $this->budget,
+            'atendees' => $this->atendees,
+            'commission_rate' => $this->commission_rate,
+            'commission_type' => $this->commission_type,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at
         ];
