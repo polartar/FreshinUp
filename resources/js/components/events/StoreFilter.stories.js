@@ -1,14 +1,29 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios/index'
 
 // Components
 import StoreFilter from './StoreFilter.vue'
 
-let types = [
-  { value: 1, text: 'PC' },
-  { value: 2, text: 'IOS' },
-  { value: 3, text: 'ANDROID' }
-]
+const mock = new MockAdapter(axios)
+mock.onGet('foodfleet/store-tags').reply(200, {
+  data: [
+    { uuid: 1, name: 'aperiam' },
+    { uuid: 2, name: 'iure' },
+    { uuid: 3, name: 'dicta' },
+    { uuid: 4, name: 'voluptate' }
+  ]
+})
+
+mock.onGet('foodfleet/locations').reply(200, {
+  data: [
+    { uuid: 1, name: 'South Abagail' },
+    { uuid: 2, name: 'Lindseymouth' },
+    { uuid: 3, name: 'Fredrickstad' },
+    { uuid: 4, name: 'Zanderstad' }
+  ]
+})
 
 storiesOf('FoodFleet|event/StoreFilter', module)
   .addParameters({
@@ -20,9 +35,12 @@ storiesOf('FoodFleet|event/StoreFilter', module)
     components: { StoreFilter },
     data () {
       return {
-        filters: {
-          types: types
-        }
+        filters: {},
+        types: [
+          { uuid: 1, name: 'modi' },
+          { uuid: 2, text: 'ipsum' },
+          { uuid: 3, text: 'architecto' }
+        ]
       }
     },
     methods: {
@@ -34,6 +52,7 @@ storiesOf('FoodFleet|event/StoreFilter', module)
       <v-container>
         <store-filter
           :filters="filters"
+          :types="types"
           @runFilter="filterMember"
         />
       </v-container>

@@ -38,11 +38,11 @@
                 @clear="filters.location = null; $refs.location.resetTerm()"
               />
             </v-layout>
-            <multi-simple
+            <simple
               ref="location"
               v-model="filters.location"
-              url="companies?filter[type_key]=host"
-              term-param="filter[name]"
+              url="foodfleet/locations"
+              term-param="filter[location]"
               results-id-key="uuid"
               placeholder="Select"
               background-color="white"
@@ -76,7 +76,7 @@
             <v-select
               ref="type"
               v-model="filters.type"
-              :items="filters.types"
+              :items="types"
               placeholder="All types"
               solo
               flat
@@ -107,8 +107,8 @@
             <multi-simple
               ref="tags"
               v-model="filters.tags"
-              url="foodfleet/event-tags"
-              term-param="filter[name]"
+              url="foodfleet/store-tags"
+              term-param="filter[tags]"
               results-id-key="uuid"
               placeholder="Search Tag"
               background-color="white"
@@ -128,11 +128,13 @@
 <script>
 import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
+import Simple from 'fresh-bus/components/search/simple'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 
 export default {
   components: {
+    Simple,
     MultiSimple,
     ClearButton,
     FilterLabel,
@@ -147,17 +149,17 @@ export default {
         tags: []
       })
     },
+    types: {
+      type: Array,
+      default: () => []
+    },
     autocompleteUrl: {
       type: String,
       default: ''
     }
   },
   data () {
-    return {
-      location: null,
-      type: null,
-      tag: null
-    }
+    return {}
   },
   watch: {
     // Get filters from inputs
@@ -176,13 +178,17 @@ export default {
         ...this.filters
       }
 
+      if (this.filters.tags) {
+        finalParams.tags = this.filters.tags.map(item => item.uuid)
+      }
+
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
       this.$refs.location.resetTerm()
       this.$refs.tags.resetTerm()
 
-      this.filters.location = this.filters.type = this.filters.tags = null
+      this.filters.location = this.filters.type = this.filters.tag = null
       this.run(params)
     }
   }
