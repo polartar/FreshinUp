@@ -1,8 +1,8 @@
-import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Component from '~/components/events/StoreFilter.vue'
 import { FIXTURE_EVENTS_FLEET_MEMBER } from 'tests/__data__/eventsStore'
 
-describe('event Fleet Member Sorter component', () => {
+describe('event Store Filter Sorter component', () => {
   let localVue
   describe('Snapshots', () => {
     test('types set', () => {
@@ -10,7 +10,7 @@ describe('event Fleet Member Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: { filters: { tags: FIXTURE_EVENTS_FLEET_MEMBER['types'] } }
+          filters: { tags: FIXTURE_EVENTS_FLEET_MEMBER['types'] }
         }
       })
 
@@ -22,7 +22,7 @@ describe('event Fleet Member Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: { filters: { tags: [] } }
+          filters: { tags: [] }
         }
       })
 
@@ -37,7 +37,7 @@ describe('event Fleet Member Sorter component', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          filters: { filters: { tags: FIXTURE_EVENTS_FLEET_MEMBER['types'] } }
+          filters: { tags: FIXTURE_EVENTS_FLEET_MEMBER['types'] }
         }
       })
       wrapper.vm.clearFilters({})

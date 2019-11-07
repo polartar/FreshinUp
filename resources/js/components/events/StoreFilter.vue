@@ -70,7 +70,7 @@
               <clear-button
                 v-if="filters.type && filters.type.length > 0"
                 color="inherit"
-                @clear="filters.type = null; $refs.type.resetTerm()"
+                @clear="filters.type = null;"
               />
             </v-layout>
             <v-select
@@ -180,7 +180,6 @@ export default {
     },
     clearFilters (params) {
       this.$refs.location.resetTerm()
-      this.$refs.type.resetTerm()
       this.$refs.tags.resetTerm()
 
       this.filters.location = this.filters.type = this.filters.tags = null

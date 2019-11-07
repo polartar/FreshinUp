@@ -32,7 +32,7 @@ storiesOf('FoodFleet|event/StoreFilter', module)
     },
     template: `
       <v-container>
-        <fleet-member-filter
+        <store-filter
           :filters="filters"
           @runFilter="filterMember"
         />
