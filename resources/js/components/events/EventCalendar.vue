@@ -160,9 +160,13 @@ export default {
       this.events.forEach(evt => {
         const startMoment = moment(evt.start_at, DATE_FORMAT)
         const endMoment = moment(evt.end_at, DATE_FORMAT)
-        const startDate = startMoment.format('YYYY-MM-DD')
-        map[startDate] = map[startDate] || []
-        map[startDate].push(evt)
+        let startDate = startMoment.format(DATE_FORMAT)
+        const endDate = endMoment.format(DATE_FORMAT)
+        while (startDate <= endDate) {
+          map[startDate] = map[startDate] || []
+          map[startDate].push(evt)
+          startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
+        }
       })
       return map
     }

@@ -106,5 +106,17 @@ describe('EventCalendar', () => {
 
       expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
     })
+
+    test('eventsMap computed for multiple days event', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          events: FIXTURE_EVENTS
+        }
+      })
+
+      expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
+      expect(wrapper.vm.eventsMap['2019-10-11'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
+      expect(wrapper.vm.eventsMap['2019-10-12'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
+    })
   })
 })
