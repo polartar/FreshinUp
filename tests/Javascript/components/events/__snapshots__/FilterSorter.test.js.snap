@@ -85,7 +85,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
           class="flex"
         >
           <div
-            class="v-card__text just-padding-top"
+            class="v-card__text px-0 pb-0"
           >
             <div
               class="layout row justify-space-between"

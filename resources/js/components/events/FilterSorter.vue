@@ -13,7 +13,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-card-text class="just-padding-top">
+      <v-card-text class="px-0 pb-0">
         <v-layout
           row
           justify-space-between
@@ -257,11 +257,6 @@ export default {
 }
 </script>
 <style lang="styl" scoped>
-  .just-padding-top{
-    padding-left: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-  }
   /deep/ .data-time-picker.no-border input.field-input{
     border: none !important;
   }
