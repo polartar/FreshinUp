@@ -75,7 +75,6 @@
             <template v-slot:day="{ date }">
               <template v-for="event in eventsMap[date]">
                 <div
-                  v-if="!event.time"
                   :key="event.name"
                   full-width
                   offset-x
@@ -147,11 +146,11 @@ export default {
       currentYear: currentDate.year(),
       currentDate: currentDate.format(DATE_FORMAT),
       statusColorMaps: {
-        'draft': 'accent',
-        'pending': 'warning',
-        'confirmed': 'success',
-        'past': 'secondary',
-        'cancelled': 'accent'
+        1: 'accent',
+        2: 'warning',
+        3: 'success',
+        4: 'secondary',
+        5: 'accent'
       }
     }
   },
@@ -163,7 +162,6 @@ export default {
         const endMoment = moment(evt.end_at, DATE_FORMAT)
         const startDate = startMoment.format('YYYY-MM-DD')
         map[startDate] = map[startDate] || []
-        evt.periods = endMoment.diff(startMoment, 'days')
         map[startDate].push(evt)
       })
       return map

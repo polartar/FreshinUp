@@ -1,5 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/EventCalendar.vue'
+import { FIXTURE_EVENTS } from 'tests/__data__/events'
 
 describe('EventCalendar', () => {
   // Component instance "under test"
@@ -18,32 +19,7 @@ describe('EventCalendar', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          events: [{
-            name: 'Meeting A',
-            start_at: '2019-12-27 13:15:01',
-            end_at: '2019-12-27 05:33:29',
-            status: 'draft'
-          }, {
-            name: 'Meeting B',
-            start_at: '2019-12-23 13:15:02',
-            end_at: '2019-12-24 05:33:28',
-            status: 'pending'
-          }, {
-            name: 'Meeting C',
-            start_at: '2019-12-24 13:15:03',
-            end_at: '2019-12-24 05:33:27',
-            status: 'confirmed'
-          }, {
-            name: 'Meeting D',
-            start_at: '2019-12-12 13:15:04',
-            end_at: '2019-12-15 05:33:26',
-            status: 'past'
-          }, {
-            name: 'Meeting E',
-            start_at: '2019-12-23 13:15:05',
-            end_at: '2019-12-23 05:33:25',
-            status: 'cancelled'
-          }]
+          events: FIXTURE_EVENTS
         }
       })
       expect(wrapper.element).toMatchSnapshot()
@@ -124,26 +100,11 @@ describe('EventCalendar', () => {
     test('eventsMap computed for mapping events', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          events: [
-            {
-              name: 'Meeting A',
-              start_at: '2019-12-27 13:15:04',
-              end_at: '2019-12-28 05:33:28',
-              status: 'draft'
-            }
-          ]
+          events: FIXTURE_EVENTS
         }
       })
 
-      expect(wrapper.vm.eventsMap).toEqual({
-        '2019-12-27': [{
-          name: 'Meeting A',
-          start_at: '2019-12-27 13:15:04',
-          end_at: '2019-12-28 05:33:28',
-          status: 'draft',
-          periods: 1
-        }]
-      })
+      expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
     })
   })
 })
