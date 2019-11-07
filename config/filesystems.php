@@ -80,11 +80,11 @@ return [
         'cms' => [
             'driver' => 's3',
             'key' => env('FS_FF_KEY'),
-            'secret' => env('FS_FF__SECRET'),
+            'secret' => env('FS_FF_SECRET'),
             'region' => env('FS_FF_REGION', 'nyc3'),
             'bucket' => env('FS_FF_BUCKET'),
             'endpoint' => env('FS_FF_ENDPOINT'),
-            'root' => env('FS_FF_ROOT', '/cms'),
+            'root' => env('FS_FF_ROOT', ''),
             'visibility' => env('FS_FF_VISIBILITY', 'public'),
             'bucket_endpoint' => env('FS_FF_BUCKET_ENDPOINT', false),
             'use_path_style_endpoint' => env('FS_FF_PATH_STYLE_ENDPOINT', true),
