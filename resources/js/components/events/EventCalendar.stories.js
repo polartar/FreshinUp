@@ -151,14 +151,6 @@ const events = [
   }
 ]
 
-const statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
-]
-
 storiesOf('FoodFleet|event/EventCalendar', module)
   .addParameters({
     backgrounds: [
