@@ -1,7 +1,8 @@
-import App from 'foodfleet/app'
+import App from '~/app'
 
 describe('App', () => {
-  test('appInstance is created', async () => {
-    expect(App).toHaveProperty('_router')
+  test('has getBUSVersion', () => {
+    expect(App.getBUSVersion).toBeInstanceOf(Function)
+    expect(App.getBUSVersion()).toMatch(new RegExp('^\\d.\\d{1,2}.\\d$'))
   })
 })

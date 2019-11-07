@@ -6,6 +6,22 @@
   >
     <v-layout
       row
+      align-center
+      pt-3
+    >
+      <v-btn
+        flat
+        small
+        @click="backToList"
+      >
+        <div class="back-btn-inner">
+          <v-icon>fas fa-arrow-left</v-icon>
+          <span>Return to Document list</span>
+        </div>
+      </v-btn>
+    </v-layout>
+    <v-layout
+      row
       justify-space-between
       ma-2
     >
@@ -118,7 +134,8 @@ export default {
       'description',
       'assigned_type',
       'notes',
-      'assigned'
+      'assigned',
+      'event_store_uuid'
     ]),
     pageTitle () {
       return (this.isNew ? 'New Document' : 'Document Details')
@@ -140,6 +157,7 @@ export default {
       this.assigned_type = data.assigned_type
       this.assigned_uuid = data.assigned_uuid
       this.expiration_at = data.expiration_at
+      this.event_store_uuid = data.event_store_uuid
     },
     async validator () {
       const valids = await Promise.all([
@@ -167,6 +185,9 @@ export default {
           }
         }
       })
+    },
+    backToList () {
+      this.$router.push({ path: '/admin/docs' })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -186,5 +207,19 @@ export default {
 <style scoped>
   .doc-new-wrap{
     background-color: #fff;
+  }
+  .back-btn-inner{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  .back-btn-inner span{
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: initial;
+  }
+  .back-btn-inner .v-icon{
+    font-size: 16px;
   }
 </style>

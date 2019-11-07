@@ -1,35 +1,27 @@
-const JestConfig = require('./vendor/freshinup/fresh-bus-forms/tests/Javascript/jest.config.core')
+const JestConfig = require('vue-cli-plugin-freshinup/utils/testing/jest.config.core')
 
 module.exports = {
   ...JestConfig,
-  collectCoverageFrom: [
-    'resources/js/**/*.{js,vue}',
-    '!resources/js/bootstrap.js',
-    '!resources/js/main.js',
-    '!**/node_modules/**',
-    '!**/vendor/**',
-    '!**/*.stories.js',
-    '!**/stories.js'
-  ],
+  collectCoverageFrom: JestConfig.collectCoverageFrom.concat([
+    'resources/js/**/*.{js,vue}'
+  ]),
   coverageThreshold: {
     global: {
-      'branches': 54,
-      'functions': 59,
-      'lines': 63
+      branches: 54,
+      functions: 59,
+      lines: 63
     }
   },
   setupFiles: JestConfig.setupFiles.concat([
-    '<rootDir>/tests/Javascript/.jest/require-context',
-    '<rootDir>/tests/Javascript/mockDate.js',
-    '<rootDir>/tests/Javascript/envTest.js'
+    '<rootDir>/tests/Javascript/mockDate.js'
   ]),
   moduleNameMapper: {
     ...JestConfig.moduleNameMapper,
     '^foodfleet/(.*)$': '<rootDir>/resources/js/$1',
     '~/(.*)$': '<rootDir>/resources/js/$1',
-    '^fresh-bus$': '<rootDir>/vendor/freshinup/fresh-bus-forms/resources/assets/js/index.js'
+    '@/(.*)$': '<rootDir>/resources/js/$1'
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@storybook/.*\\.vue$))'
+    '/node_modules/(?!(@storybook/.*\\.vue$|vue-cli-plugin-freshinup/.*\\.js))'
   ]
 }

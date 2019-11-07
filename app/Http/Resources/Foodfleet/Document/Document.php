@@ -18,7 +18,7 @@ class Document extends JsonResource
      */
     public function toArray($request)
     {
-        $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type);
+        $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type, $this->event_store_uuid);
         $assignedResource = DocumentAssignedEnum::getResource($assignedType);
         $data = [
             'uuid' => $this->uuid,
@@ -30,6 +30,7 @@ class Document extends JsonResource
             'owner' => new UserResource($this->whenLoaded('owner')),
             'assigned' => new $assignedResource($this->whenLoaded('assigned')),
             'assigned_type' => $assignedType,
+            'event_store_uuid' => $this->event_store_uuid,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
