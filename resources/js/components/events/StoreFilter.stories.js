@@ -4,12 +4,6 @@ import { action } from '@storybook/addon-actions'
 // Components
 import StoreFilter from './StoreFilter.vue'
 
-let types = [
-  { value: 1, text: 'PC' },
-  { value: 2, text: 'IOS' },
-  { value: 3, text: 'ANDROID' }
-]
-
 storiesOf('FoodFleet|event/StoreFilter', module)
   .addParameters({
     backgrounds: [
@@ -20,9 +14,12 @@ storiesOf('FoodFleet|event/StoreFilter', module)
     components: { StoreFilter },
     data () {
       return {
-        filters: {
-          types: types
-        }
+        filters: { },
+        types:[
+          { uuid: 1, name: 'modi' },
+          { uuid: 2, text: 'ipsum' },
+          { uuid: 3, text: 'architecto' }
+        ]
       }
     },
     methods: {
@@ -34,6 +31,7 @@ storiesOf('FoodFleet|event/StoreFilter', module)
       <v-container>
         <store-filter
           :filters="filters"
+          :types="types"
           @runFilter="filterMember"
         />
       </v-container>

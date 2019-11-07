@@ -1,7 +1,7 @@
-export const FIXTURE_EVENTS_FLEET_MEMBER = {
+export const FIXTURE_EVENTS_STORE = {
   types: [
-    { value: 1, text: 'PC' },
-    { value: 2, text: 'IOS' },
-    { value: 3, text: 'ANDROID' }
+    { uuid: 1, name: 'modi' },
+    { uuid: 2, text: 'ipsum' },
+    { uuid: 3, text: 'architecto' }
   ]
 }

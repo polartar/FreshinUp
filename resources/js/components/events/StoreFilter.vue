@@ -38,10 +38,10 @@
                 @clear="filters.location = null; $refs.location.resetTerm()"
               />
             </v-layout>
-            <multi-simple
+            <simple
               ref="location"
               v-model="filters.location"
-              url="companies?filter[type_key]=host"
+              url=""
               term-param="filter[name]"
               results-id-key="uuid"
               placeholder="Select"
@@ -76,7 +76,7 @@
             <v-select
               ref="type"
               v-model="filters.type"
-              :items="filters.types"
+              :items="types"
               placeholder="All types"
               solo
               flat
@@ -107,7 +107,7 @@
             <multi-simple
               ref="tags"
               v-model="filters.tags"
-              url="foodfleet/event-tags"
+              url=""
               term-param="filter[name]"
               results-id-key="uuid"
               placeholder="Search Tag"
@@ -128,11 +128,13 @@
 <script>
 import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
+import Simple from 'fresh-bus/components/search/simple'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 
 export default {
   components: {
+    Simple,
     MultiSimple,
     ClearButton,
     FilterLabel,
@@ -146,6 +148,10 @@ export default {
         type: null,
         tags: []
       })
+    },
+    types: {
+      type: Array,
+      default: () => []
     },
     autocompleteUrl: {
       type: String,
@@ -176,13 +182,17 @@ export default {
         ...this.filters
       }
 
+      if (this.filters.tags) {
+        finalParams.tags = this.filters.tags.map(item => item.uuid)
+      }
+
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
       this.$refs.location.resetTerm()
       this.$refs.tags.resetTerm()
 
-      this.filters.location = this.filters.type = this.filters.tags = null
+      this.filters.location = this.filters.type = this.filters.tag = null
       this.run(params)
     }
   }
