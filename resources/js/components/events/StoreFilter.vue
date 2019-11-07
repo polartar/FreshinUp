@@ -188,7 +188,7 @@ export default {
       this.$refs.location.resetTerm()
       this.$refs.tags.resetTerm()
 
-      this.filters.location = this.filters.type = this.filters.tags = null
+      this.filters.location = this.filters.type = this.filters.tag = null
       this.run(params)
     }
   }
