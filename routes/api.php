@@ -23,16 +23,18 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('tmp-media', 'Foodfleet\TmpMedia');
 
-    Route::get('categories', 'Foodfleet\Categories@index');
-    Route::get('customers', 'Foodfleet\Customers@index');
-    Route::get('events', 'Foodfleet\Events@index');
+    Route::get('events/new', 'Foodfleet\Events@showNewRecommendation');
+    Route::apiResource('events', 'Foodfleet\Events');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     
     Route::apiResource('stores', 'Foodfleet\Stores');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
-    
+
+    Route::get('categories', 'Foodfleet\Categories@index');
+    Route::get('customers', 'Foodfleet\Customers@index');
+    Route::get('stores', 'Foodfleet\Stores@index');
     Route::get('items', 'Foodfleet\Items@index');
     Route::get('locations', 'Foodfleet\Locations@index');
     Route::get('payments', 'Foodfleet\Payments@index');
