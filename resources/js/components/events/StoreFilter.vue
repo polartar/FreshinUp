@@ -159,11 +159,7 @@ export default {
     }
   },
   data () {
-    return {
-      location: null,
-      type: null,
-      tag: null
-    }
+    return {}
   },
   watch: {
     // Get filters from inputs
