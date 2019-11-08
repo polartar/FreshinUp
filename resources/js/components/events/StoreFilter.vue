@@ -29,7 +29,7 @@
                 Location
               </filter-label>
               <clear-button
-                v-if="filters.location && filters.location.length > 0"
+                v-if="filters.location"
                 color="inherit"
                 @clear="filters.location = null; $refs.location.resetTerm()"
               />
@@ -140,9 +140,9 @@ export default {
     filters: {
       type: Object,
       default: () => ({
-        location: null,
+        location_uuid: null,
         type: null,
-        tags: []
+        tags_uuid: []
       })
     },
     types: {
@@ -184,7 +184,7 @@ export default {
       this.$refs.location.resetTerm()
       this.$refs.tags.resetTerm()
 
-      this.filters.location = this.filters.type = this.filters.tag = null
+      this.filters.location_uuid = this.filters.type = this.filters.tags_uuid = null
       this.run(params)
     }
   }

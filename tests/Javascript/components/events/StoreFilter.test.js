@@ -44,9 +44,9 @@ describe('event Store Filter Sorter component', () => {
         }
       })
       wrapper.vm.clearFilters({})
-      expect(wrapper.vm.filters.location).toBeNull()
+      expect(wrapper.vm.filters.location_uuid).toBeNull()
       expect(wrapper.vm.filters.type).toBeNull()
-      expect(wrapper.vm.filters.tag).toBeNull()
+      expect(wrapper.vm.filters.tags_uuid).toBeNull()
     })
 
     test('run function emitted runFilter', () => {
@@ -54,9 +54,9 @@ describe('event Store Filter Sorter component', () => {
         localVue: localVue,
         propsData: {
           filters: {
-            location: 'South Abagail',
+            location_uuid: 1,
             type: 1,
-            tags: [ { uuid: 3 } ]
+            tags_uuid: [ { uuid: 3 } ]
           },
           types: STORE_TYPES
         }
@@ -64,9 +64,9 @@ describe('event Store Filter Sorter component', () => {
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
-      expect(runParams['location']).toEqual('South Abagail')
+      expect(runParams['location_uuid']).toEqual(1)
       expect(runParams['type']).toEqual(1)
-      expect(runParams['tags']).toEqual([ 3 ])
+      expect(runParams['tags_uuid']).toEqual([{ uuid: 3 }])
     })
   })
 })
