@@ -87,7 +87,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
           class="flex"
         >
           <div
-            class="container pr-0 pt-1 pb-0"
+            class="v-card__text px-0 pb-0"
           >
             <div
               class="layout row justify-space-between"
@@ -631,7 +631,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
           class="flex"
         >
           <div
-            class="container pr-0 pt-1 pb-0"
+            class="v-card__text px-0 pb-0"
           >
             <div
               class="layout row justify-space-between"

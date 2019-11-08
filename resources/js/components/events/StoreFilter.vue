@@ -11,11 +11,7 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-container
-        pr-0
-        pt-1
-        pb-0
-      >
+      <v-card-text class="px-0 pb-0">
         <v-layout
           row
           justify-space-between
@@ -120,7 +116,7 @@
             />
           </v-flex>
         </v-layout>
-      </v-container>
+      </v-card-text>
     </template>
   </search-filter-sorter>
 </template>
@@ -194,3 +190,12 @@ export default {
   }
 }
 </script>
+<style lang="styl" scoped>
+  /deep/ .filter-sorter-expanded-layout{
+    align-items: flex-end;
+  }
+  /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
+    margin: 0;
+    height: 48px;
+  }
+</style>
