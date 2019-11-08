@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import Component from '~/components/events/StoreFilter.vue'
-import { FIXTURE_EVENTS_STORE } from 'tests/__data__/eventsStore'
+import { STORE_TYPES } from 'tests/__data__/storeTypes'
 
 describe('event Store Filter Sorter component', () => {
   let localVue
@@ -11,7 +11,7 @@ describe('event Store Filter Sorter component', () => {
         localVue: localVue,
         propsData: {
           filters: {},
-          types: FIXTURE_EVENTS_STORE['types']
+          types: STORE_TYPES
         }
       })
 
@@ -24,7 +24,7 @@ describe('event Store Filter Sorter component', () => {
         localVue: localVue,
         propsData: {
           filters: {},
-          types: FIXTURE_EVENTS_STORE['types']
+          types: STORE_TYPES
         }
       })
 
@@ -40,7 +40,7 @@ describe('event Store Filter Sorter component', () => {
         localVue: localVue,
         propsData: {
           filters: {},
-          types: FIXTURE_EVENTS_STORE['types']
+          types: STORE_TYPES
         }
       })
       wrapper.vm.clearFilters({})
@@ -58,7 +58,7 @@ describe('event Store Filter Sorter component', () => {
             type: 1,
             tags: [ { uuid: 3 } ]
           },
-          types: FIXTURE_EVENTS_STORE['types']
+          types: STORE_TYPES
         }
       })
       wrapper.vm.run({})
