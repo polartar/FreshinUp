@@ -357,7 +357,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                   results-id-key="uuid"
                   solo=""
                   term-param="filter[name]"
-                  url="foodfleet/event-tags"
+                  url=""
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -379,7 +379,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                             results-id-key="uuid"
                             term-param="filter[name]"
                             type="text"
-                            url="foodfleet/event-tags"
+                            url=""
                           />
                         </div>
                         <div
@@ -901,7 +901,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                   results-id-key="uuid"
                   solo=""
                   term-param="filter[name]"
-                  url="foodfleet/event-tags"
+                  url=""
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -923,7 +923,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                             results-id-key="uuid"
                             term-param="filter[name]"
                             type="text"
-                            url="foodfleet/event-tags"
+                            url=""
                           />
                         </div>
                         <div
