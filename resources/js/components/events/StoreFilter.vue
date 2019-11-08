@@ -194,3 +194,12 @@ export default {
   }
 }
 </script>
+<style lang="styl" scoped>
+  /deep/ .filter-sorter-expanded-layout{
+    align-items: flex-end;
+  }
+  /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
+    margin: 0;
+    height: 48px;
+  }
+</style>
