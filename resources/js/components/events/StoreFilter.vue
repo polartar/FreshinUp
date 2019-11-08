@@ -41,8 +41,8 @@
             <simple
               ref="location"
               v-model="filters.location"
-              url=""
-              term-param="filter[name]"
+              url="foodfleet/locations"
+              term-param="filter[location]"
               results-id-key="uuid"
               placeholder="Select"
               background-color="white"
@@ -107,8 +107,8 @@
             <multi-simple
               ref="tags"
               v-model="filters.tags"
-              url=""
-              term-param="filter[name]"
+              url="foodfleet/store-tags"
+              term-param="filter[tags]"
               results-id-key="uuid"
               placeholder="Search Tag"
               background-color="white"

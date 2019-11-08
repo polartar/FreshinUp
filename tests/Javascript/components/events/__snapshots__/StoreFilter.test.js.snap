@@ -356,8 +356,8 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                   placeholder="Search Tag"
                   results-id-key="uuid"
                   solo=""
-                  term-param="filter[name]"
-                  url=""
+                  term-param="filter[tags]"
+                  url="foodfleet/store-tags"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -377,9 +377,9 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                             placeholder="Search Tag"
                             readonly="readonly"
                             results-id-key="uuid"
-                            term-param="filter[name]"
+                            term-param="filter[tags]"
                             type="text"
-                            url=""
+                            url="foodfleet/store-tags"
                           />
                         </div>
                         <div
@@ -900,8 +900,8 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                   placeholder="Search Tag"
                   results-id-key="uuid"
                   solo=""
-                  term-param="filter[name]"
-                  url=""
+                  term-param="filter[tags]"
+                  url="foodfleet/store-tags"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -921,9 +921,9 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                             placeholder="Search Tag"
                             readonly="readonly"
                             results-id-key="uuid"
-                            term-param="filter[name]"
+                            term-param="filter[tags]"
                             type="text"
-                            url=""
+                            url="foodfleet/store-tags"
                           />
                         </div>
                         <div
