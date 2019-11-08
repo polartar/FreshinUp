@@ -278,7 +278,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      [object Object]
+                                      modi
                                     </div>
                                   </div>
                                 </a>
@@ -822,7 +822,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      [object Object]
+                                      modi
                                     </div>
                                   </div>
                                 </a>
