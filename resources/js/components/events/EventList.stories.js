@@ -173,10 +173,10 @@ storiesOf('FoodFleet|event/EventList', module)
       }
     },
     methods: {
-      edit (params) {
+      assign (params) {
         action('manage-edit')(params)
       },
-      del (params) {
+      cancelAssign (params) {
         action('manage-delete')(params)
       },
       multipleDelete (params) {

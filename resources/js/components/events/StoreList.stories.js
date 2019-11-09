@@ -4,13 +4,10 @@ import { action } from '@storybook/addon-actions'
 // Components
 import StoreList from './StoreList.vue'
 
-let events = [
+let stores = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'accusantium',
-    status: 1,
-    start_at: '2019-10-10 11:04:19',
-    end_at: '2019-10-12 11:04:19',
     manager: {
       id: 1,
       uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',
@@ -30,18 +27,11 @@ let events = [
         name: 'hic'
       }
     ],
-    host: {
-      id: 89,
-      uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
-      name: 'Swift-Wehner'
-    }
+    assigned: false
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
     name: 'saepe',
-    status: 1,
-    start_at: '2019-10-10 11:04:19',
-    end_at: '2019-10-12 11:04:19',
     manager: {
       id: 3,
       uuid: '2ccdd232-c73a-4398-a2dc-342de7d43bf1',
@@ -65,18 +55,11 @@ let events = [
         name: 'hicsdfsdf'
       }
     ],
-    host: {
-      id: 96,
-      uuid: '5d3e79a3-81aa-4645-b1fd-c6173026e01f',
-      name: 'Goodwin-Carroll'
-    }
+    assigned: true
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
     name: 'quibusdam',
-    status: 1,
-    start_at: '2019-10-10 11:04:19',
-    end_at: '2019-10-12 11:04:19',
     manager: {
       id: 2,
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
@@ -104,20 +87,8 @@ let events = [
         name: 'fsdf'
       }
     ],
-    host: {
-      id: 94,
-      uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
-      name: 'Carter-Green'
-    }
+    assigned: true
   }
-]
-
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
 ]
 
 storiesOf('FoodFleet|event/StoreList', module)
@@ -130,8 +101,7 @@ storiesOf('FoodFleet|event/StoreList', module)
     components: { StoreList },
     data () {
       return {
-        events: [],
-        statuses: statuses,
+        stores: [],
         pagination: {
           page: 5,
           rowsPerPage: 10,
@@ -145,8 +115,7 @@ storiesOf('FoodFleet|event/StoreList', module)
     },
     template: `
       <store-list
-        :events="events"
-        :statuses="statuses"
+        :stores="stores"
         :rows-per-page="pagination.rowsPerPage"
         :page="pagination.page"
         :total-items="pagination.totalItems"
@@ -159,8 +128,7 @@ storiesOf('FoodFleet|event/StoreList', module)
     components: { StoreList },
     data () {
       return {
-        events: events,
-        statuses: statuses,
+        stores: stores,
         pagination: {
           page: 5,
           rowsPerPage: 10,
@@ -173,36 +141,27 @@ storiesOf('FoodFleet|event/StoreList', module)
       }
     },
     methods: {
-      edit (params) {
-        action('manage-edit')(params)
+      assign (params) {
+        action('manage-assign')(params)
       },
-      del (params) {
-        action('manage-delete')(params)
+      cancelAssign (params) {
+        action('manage-cancel-assign')(params)
       },
-      multipleDelete (params) {
-        action('manage-multiple-delete')(params)
-      },
-      changeStatus (status, event) {
-        action('change-status')(status, event)
-      },
-      changeStatusMultiple (status, events) {
-        action('change-status-multiple')(status, events)
+      multipleAssign (params) {
+        action('manage-multiple-assign')(params)
       }
     },
     template: `
       <store-list
-        :events="events"
-        :statuses="statuses"
+        :stores="stores"
         :rows-per-page="pagination.rowsPerPage"
         :page="pagination.page"
         :total-items="pagination.totalItems"
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
-        @manage-edit="edit"
-        @manage-delete="del"
-        @manage-multiple-delete="multipleDelete"
-        @change-status="changeStatus"
-        @change-status-multiple="changeStatusMultiple"
+        @manage-assign="assign"
+        @manage-cancel-assign="cancelAssign"
+        @manage-multiple-assign="multipleAssign"
       />
     `
   }))

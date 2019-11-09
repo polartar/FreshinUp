@@ -3,7 +3,7 @@
     v-model="selected"
     class="event-list-table"
     :headers="headers"
-    :items="events"
+    :items="stores"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
     :pagination.sync="pagination"
     :loading="isLoading"
@@ -34,31 +34,10 @@
             <v-list-tile
               v-for="(item, index) in selectedActions"
               :key="index"
-              @click="manageMultiple(item.action)"
+              @click="assignMultiple(item.action)"
             >
               <v-list-tile-title>
                 {{ item.text }}
-              </v-list-tile-title>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-      </span>
-      <span v-else-if="selected.length > 1 && props.header.value === 'status'">
-        <v-menu offset-y>
-          <v-btn
-            slot="activator"
-            light
-          >
-            Change Statuses
-          </v-btn>
-          <v-list>
-            <v-list-tile
-              v-for="(item, index) in statuses"
-              :key="index"
-              @click="changeStatusMultiple(item.id)"
-            >
-              <v-list-tile-title>
-                {{ item.name }}
               </v-list-tile-title>
             </v-list-tile>
           </v-list>
@@ -112,9 +91,20 @@
           {{ tag.name }}
         </f-chip>
       </td>
-      <td>
-        <f-btn>
-          Manage
+      <td v-if="props.item.assigned">
+        <f-btn
+          color="#508c85"
+          class="white--text"
+          @click="assign('assign', props.item)"
+        >
+          Assigned
+        </f-btn>
+      </td>
+      <td v-else>
+        <f-btn
+          @click="assign('assign', props.item)"
+        >
+          Assign
         </f-btn>
       </td>
     </template>
@@ -125,20 +115,15 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtn from 'fresh-bus/components/ui/FBtn'
 import FChip from 'fresh-bus/components/ui/FChip'
-import StatusSelect from '~/components/events/StatusSelect'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
-  components: { FBtn, StatusSelect, FChip },
+  components: { FBtn, FChip },
   mixins: [
     Pagination,
     FormatRangeDate
   ],
   props: {
-    events: {
-      type: Array,
-      default: () => []
-    },
-    statuses: {
+    stores: {
       type: Array,
       default: () => []
     },
@@ -162,28 +147,26 @@ export default {
     }
   },
   computed: {
-    itemActions () {
-      let actions = [
-        { action: 'edit', text: 'Edit' }
-      ]
-      actions = this.generateActions(actions)
-      return actions
-    },
     selectedActions () {
       if (!this.selected.length) return []
       return this.generateActions()
     }
   },
   methods: {
-    manageMultiple (action) {
+    assign (action, event) {
+      this.$emit('manage-' + action, event)
+      this.$emit('manage', action, event)
+    },
+    assignMultiple (action) {
       this.$emit('manage-multiple-' + action, this.selected)
       this.$emit('manage-multiple', action, this.selected)
     },
-    changeStatus (value, event) {
-      this.$emit('change-status', value, event)
-    },
-    changeStatusMultiple (value) {
-      this.$emit('change-status-multiple', value, this.selected)
+    generateActions (actions) {
+      if (!(actions instanceof Array)) {
+        actions = []
+      }
+      actions.push({ action: 'assign', text: 'Assgin' })
+      return actions
     }
   }
 }
