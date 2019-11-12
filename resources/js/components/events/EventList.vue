@@ -198,6 +198,12 @@ export default {
       return this.generateActions()
     }
   },
+  watch: {
+    events () {
+      const eventUuids = this.events.map(item => item.uuid)
+      this.selected = this.selected.filter(item => eventUuids.includes(item.uuid))
+    }
+  },
   methods: {
     manage (item, event) {
       this.$emit('manage-' + item.action, event)

@@ -168,7 +168,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
               class="v-btn__content"
             >
               
-            More Filters
+            Less Filters
           
             </div>
           </button>

@@ -148,6 +148,7 @@ export default {
     isLoadingList () {
       return get(this.$store, 'state.events.pending.items', true)
     },
+    ...mapGetters(['currentUser']),
     ...mapGetters('events', {
       events: 'items',
       pagination: 'pagination',
@@ -159,6 +160,12 @@ export default {
     ...mapState('events', ['sortables']),
     deleteDialogTitle () {
       return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this event?' : 'Are you sure you want to delete the following events?'
+    },
+    role () {
+      if (this.currentUser.isAdmin) return 'admin'
+      if (this.currentUser.type === 1) return 'supplier'
+      if (this.currentUser.type === 2) return 'host'
+      return 'admin'
     }
   },
   methods: {
