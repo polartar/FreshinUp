@@ -29,17 +29,17 @@
                 Location
               </filter-label>
               <clear-button
-                v-if="filters.location"
+                v-if="filters.location_uuid"
                 color="inherit"
-                @clear="filters.location = null; $refs.location.resetTerm()"
+                @clear="filters.location_uuid = null; $refs.location.resetTerm()"
               />
             </v-layout>
             <simple
               ref="location"
-              v-model="filters.location"
               url="foodfleet/locations"
-              term-param="filter[location]"
+              term-param="filter[name]"
               results-id-key="uuid"
+              :value="filters.location_uuid"
               placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
@@ -47,6 +47,7 @@
               not-clearable
               solo
               flat
+              @input="selectLocation"
             />
           </v-flex>
           <v-flex
@@ -73,6 +74,8 @@
               ref="type"
               v-model="filters.type"
               :items="types"
+              item-value="uuid"
+              item-text="name"
               placeholder="All types"
               solo
               flat
@@ -95,16 +98,16 @@
                 Tag
               </filter-label>
               <clear-button
-                v-if="filters.tags && filters.tags.length > 0"
+                v-if="filters.tag_uuid && filters.tag_uuid.length > 0"
                 color="inherit"
-                @clear="filters.tags = []; $refs.tags.resetTerm()"
+                @clear="filters.tag_uuid = null; $refs.tags.resetTerm()"
               />
             </v-layout>
             <multi-simple
               ref="tags"
-              v-model="filters.tags"
+              v-model="filters.tag_uuid"
               url="foodfleet/store-tags"
-              term-param="filter[tags]"
+              term-param="filter[name]"
               results-id-key="uuid"
               placeholder="Search Tag"
               background-color="white"
@@ -142,7 +145,7 @@ export default {
       default: () => ({
         location_uuid: null,
         type: null,
-        tags_uuid: []
+        tag_uuid: null
       })
     },
     types: {
@@ -168,14 +171,17 @@ export default {
     }
   },
   methods: {
+    selectLocation (location) {
+      this.filters.location_uuid = location ? location.uuid : null
+    },
     run (params) {
       let finalParams = {
         title: params.term,
         ...this.filters
       }
 
-      if (this.filters.tags) {
-        finalParams.tags = this.filters.tags.map(item => item.uuid)
+      if (this.filters.tag_uuid) {
+        finalParams.tag_uuid = this.filters.tag_uuid.map(item => item.uuid)
       }
 
       this.$emit('runFilter', finalParams)
@@ -184,7 +190,7 @@ export default {
       this.$refs.location.resetTerm()
       this.$refs.tags.resetTerm()
 
-      this.filters.location_uuid = this.filters.type = this.filters.tags_uuid = null
+      this.filters.location_uuid = this.filters.type = this.filters.tag_uuid = null
       this.run(params)
     }
   }

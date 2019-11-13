@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
+exports[`event Add Store Filter Sorter component Snapshots types empty 1`] = `
 <div
   autocomplete_url=""
   class="v-card v-sheet theme--light"
@@ -356,7 +356,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                   placeholder="Search Tag"
                   results-id-key="uuid"
                   solo=""
-                  term-param="filter[tags]"
+                  term-param="filter[name]"
                   url="foodfleet/store-tags"
                 >
                   <div
@@ -377,7 +377,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
                             placeholder="Search Tag"
                             readonly="readonly"
                             results-id-key="uuid"
-                            term-param="filter[tags]"
+                            term-param="filter[name]"
                             type="text"
                             url="foodfleet/store-tags"
                           />
@@ -544,7 +544,7 @@ exports[`event Store Filter Sorter component Snapshots types empty 1`] = `
 </div>
 `;
 
-exports[`event Store Filter Sorter component Snapshots types set 1`] = `
+exports[`event Add Store Filter Sorter component Snapshots types set 1`] = `
 <div
   autocomplete_url=""
   class="v-card v-sheet theme--light"
@@ -900,7 +900,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                   placeholder="Search Tag"
                   results-id-key="uuid"
                   solo=""
-                  term-param="filter[tags]"
+                  term-param="filter[name]"
                   url="foodfleet/store-tags"
                 >
                   <div
@@ -921,7 +921,7 @@ exports[`event Store Filter Sorter component Snapshots types set 1`] = `
                             placeholder="Search Tag"
                             readonly="readonly"
                             results-id-key="uuid"
-                            term-param="filter[tags]"
+                            term-param="filter[name]"
                             type="text"
                             url="foodfleet/store-tags"
                           />

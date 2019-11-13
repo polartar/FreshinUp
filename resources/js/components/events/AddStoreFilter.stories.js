@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios/index'
 
 // Components
-import StoreFilter from './StoreFilter.vue'
+import AddStoreFilter from './AddStoreFilter.vue'
 
 const mock = new MockAdapter(axios)
 mock.onGet('foodfleet/store-tags').reply(200, {
@@ -25,21 +25,20 @@ mock.onGet('foodfleet/locations').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/StoreFilter', module)
+storiesOf('FoodFleet|event/AddStoreFilter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('default', () => ({
-    components: { StoreFilter },
+    components: { AddStoreFilter },
     data () {
       return {
-        filters: {},
         types: [
-          { uuid: 1, text: 'modi' },
-          { uuid: 2, text: 'ipsum' },
-          { uuid: 3, text: 'architecto' }
+          { uuid: 1, name: 'modi' },
+          { uuid: 2, name: 'ipsum' },
+          { uuid: 3, name: 'architecto' }
         ]
       }
     },
@@ -50,8 +49,7 @@ storiesOf('FoodFleet|event/StoreFilter', module)
     },
     template: `
       <v-container>
-        <store-filter
-          :filters="filters"
+        <add-store-filter
           :types="types"
           @runFilter="filterMember"
         />

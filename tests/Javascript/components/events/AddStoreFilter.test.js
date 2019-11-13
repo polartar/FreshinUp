@@ -1,8 +1,8 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-import Component from '~/components/events/StoreFilter.vue'
+import Component from '~/components/events/AddStoreFilter.vue'
 import { STORE_TYPES } from 'tests/__data__/storeTypes'
 
-describe('event Store Filter Sorter component', () => {
+describe('event Add Store Filter Sorter component', () => {
   let localVue
   describe('Snapshots', () => {
     test('types set', () => {
@@ -46,7 +46,7 @@ describe('event Store Filter Sorter component', () => {
       wrapper.vm.clearFilters({})
       expect(wrapper.vm.filters.location_uuid).toBeNull()
       expect(wrapper.vm.filters.type).toBeNull()
-      expect(wrapper.vm.filters.tags_uuid).toBeNull()
+      expect(wrapper.vm.filters.tag_uuid).toBeNull()
     })
 
     test('run function emitted runFilter', () => {
@@ -56,7 +56,7 @@ describe('event Store Filter Sorter component', () => {
           filters: {
             location_uuid: 1,
             type: 1,
-            tags_uuid: [ { uuid: 3 } ]
+            tag_uuid: [ { uuid: 3 } ]
           },
           types: STORE_TYPES
         }
@@ -66,7 +66,7 @@ describe('event Store Filter Sorter component', () => {
       const runParams = wrapper.emitted().runFilter[0][0]
       expect(runParams['location_uuid']).toEqual(1)
       expect(runParams['type']).toEqual(1)
-      expect(runParams['tags_uuid']).toEqual([{ uuid: 3 }])
+      expect(runParams['tag_uuid']).toEqual([3])
     })
   })
 })
