@@ -11,6 +11,9 @@ use Tests\TestCase;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Testing\File;
 
 class DocumentTest extends TestCase
 {
@@ -119,5 +122,36 @@ class DocumentTest extends TestCase
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))
             ], $data[$idx]);
         }
+    }
+
+    public function testEditFile()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $document = factory(Document::class)->create([
+            'title' => 'To find',
+            'created_by_uuid' => $user->uuid,
+            'type' => 1,
+            'status' => 1
+        ]);
+
+        Storage::fake('cms');
+        $file = File::create('document.pdf', 100);
+
+        $document
+            ->addMediaFromUrl($file->getRealPath())
+            ->usingFileName('document.pdf')
+            ->toMediaCollection('attachment');
+        $attachment = $document->getFirstMedia('attachment');
+
+        $url = 'api/foodfleet/documents/' . $document->uuid;
+        $returnedDocument = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals('document.pdf', $returnedDocument['file']['name']);
+        $this->assertEquals($attachment->getPath(), $returnedDocument['file']['src']);
     }
 }

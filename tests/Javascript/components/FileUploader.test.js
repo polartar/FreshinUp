@@ -1,4 +1,5 @@
-import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
+import { createLocalVue } from 'fresh-bus/tests/utils'
 import Component from '~/components/FileUploader.vue'
 
 function MockFile (name, size, mimeType) {
@@ -23,10 +24,11 @@ function MockFile (name, size, mimeType) {
 
 describe('FileUploader', () => {
   // Component instance "under test"
-  let localVue
+  let localVue, mock
   describe('Snapshots', () => {
     test('defaults', () => {
-      localVue = createLocalVue()
+      const vue = createLocalVue()
+      localVue = vue.localVue
       const wrapper = mount(Component, {
         localVue: localVue
       })
@@ -35,11 +37,18 @@ describe('FileUploader', () => {
   })
   describe('Methods', () => {
     beforeEach(() => {
-      localVue = createLocalVue()
+      const vue = createLocalVue()
+      localVue = vue.localVue
+      mock = vue.mock
+      mock
+        .onPost('foodfleet/tmp-media').reply(200, 'mock url')
+        .onAny().reply(config => {
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
     })
 
     test('remove() clear file name and src', () => {
-      global.URL.createObjectURL = jest.fn()
       const wrapper = shallowMount(Component, {
         propsData: {
           value: { name: 'test_name', src: '' }
@@ -52,20 +61,31 @@ describe('FileUploader', () => {
       expect(changeValue[0].src).toEqual('')
     })
 
-    test('onFileChange() change file name and src', () => {
-      global.URL.createObjectURL = jest.fn()
+    test('submitFile() return file src', async () => {
       const wrapper = shallowMount(Component, {
         propsData: {
           value: { name: '', src: '' }
         }
       })
       const file = new MockFile()
-      wrapper.vm.onFileChange([ file ])
+      const src = await wrapper.vm.submitFile([ file ])
+      expect(src).toEqual('mock url')
+    })
+
+    test('onFileChange() change file name and src', async () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          value: { name: '', src: '' }
+        }
+      })
+      const file = new MockFile()
+      await wrapper.vm.onFileChange([ file ])
       expect(wrapper.emitted().onValueChange).toBeTruthy()
+      expect(wrapper.emitted().onValueChange[0][0].name).toEqual('mock.txt')
+      expect(wrapper.emitted().onValueChange[0][0].src).toEqual('mock url')
     })
 
     test('more than max file size display error', () => {
-      global.URL.createObjectURL = jest.fn()
       const wrapper = shallowMount(Component, {
         propsData: {
           value: { name: '', src: '' },
