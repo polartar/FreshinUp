@@ -174,12 +174,14 @@ export default {
   watch: {
     currentYear (yearValue) {
       this.moveDate({
+        month: this.currentMonth,
         year: yearValue
       })
     },
     currentMonth (monthValue) {
       this.moveDate({
-        month: monthValue
+        month: monthValue,
+        year: this.currentYear
       })
     }
   },
