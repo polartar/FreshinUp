@@ -25,11 +25,12 @@ class TmpMediaTest extends TestCase
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
+        Storage::fake('tmp');
 
         $data = $this
             ->json('post', "/api/foodfleet/tmp-media", [
                 'file' => UploadedFile::fake()->create('document.pdf', 100)
             ])
-            ->assertStatus(500);
+            ->assertStatus(200);
     }
 }
