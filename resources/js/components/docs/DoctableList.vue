@@ -153,7 +153,7 @@
                 <div class="subheading">
                   {{ props.item.title }}
                 </div>
-                {{ props.item.owner.name }}
+                {{ props.item.owner && props.item.owner.name }}
               </slot>
             </td>
           </slot>
