@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
-import Component from '~/components/events/StoreList.vue'
+import Component from '~/components/events/AddStoreList.vue'
 import { FIXTURE_STORES } from 'tests/__data__/stores'
 
 describe('Store List component', () => {
@@ -32,16 +32,15 @@ describe('Store List component', () => {
       localVue = createLocalVue()
     })
 
-    test('assign function emitted single manage action', () => {
+    test('assign function emitted single action', () => {
       const wrapper = shallowMount(Component, {
         localVue
       })
 
-      const mockEvent = { id: 1, title: 'mock title', status: 1 }
-
-      wrapper.vm.assign('assign', mockEvent)
+      wrapper.vm.assign('assign', FIXTURE_STORES[0])
 
       expect(wrapper.emitted()['manage-assign']).toBeTruthy()
+      expect(wrapper.emitted()['manage-assign'][0][0]).toEqual(FIXTURE_STORES[0])
     })
 
     test('assignMultiple function emitted multiple manage action', () => {

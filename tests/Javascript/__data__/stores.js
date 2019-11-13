@@ -1,17 +1,17 @@
 export const FIXTURE_STORES = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
-    name: 'accusantium',
-    manager: {
+    name: 'Burger Babes',
+    type: {
       id: 1,
-      uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',
-      name: 'Demo Admin'
+      name: 'Mobil'
     },
-    venue: {
-      uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
-      name: 'New Hattie'
+    location: {
+      id: 1,
+      uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
+      name: 'Port Gerald'
     },
-    event_tags: [
+    store_tags: [
       {
         uuid: '1',
         name: 'minus'
@@ -25,17 +25,17 @@ export const FIXTURE_STORES = [
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
-    name: 'saepe',
-    manager: {
-      id: 3,
-      uuid: '2ccdd232-c73a-4398-a2dc-342de7d43bf1',
-      name: 'Level 2 User'
+    name: 'Holy Canoli',
+    type: {
+      id: 1,
+      name: 'Mobil'
     },
-    venue: {
-      uuid: '4d6ace0e-5f3f-423a-ab47-648a142ba450',
-      name: 'Baronhaven'
+    location: {
+      id: 2,
+      uuid: '00aabd70-aa77-42de-87fd-96449bbd5439',
+      name: 'Carminestad'
     },
-    event_tags: [
+    store_tags: [
       {
         uuid: '1',
         name: 'minus'
@@ -53,17 +53,17 @@ export const FIXTURE_STORES = [
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
-    name: 'quibusdam',
-    manager: {
+    name: 'Da Lobsta',
+    type: {
+      id: 1,
+      name: 'Mobil'
+    },
+    location: {
       id: 2,
-      uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
-      name: 'Level 1 User'
+      uuid: 'dfb4bd02-c298-4dd4-ab49-2c3f156f2894',
+      name: 'New Charlenebury'
     },
-    venue: {
-      uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
-      name: 'Lake Lavernehaven'
-    },
-    event_tags: [
+    store_tags: [
       {
         uuid: '1',
         name: 'minus'

@@ -2,7 +2,7 @@
 
 exports[`Store List component Snapshots stores empty 1`] = `
 <div
-  class="event-list-table"
+  class="store-list-table"
 >
   <div
     class="v-table__overflow"
@@ -364,7 +364,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
 
 exports[`Store List component Snapshots stores set 1`] = `
 <div
-  class="event-list-table"
+  class="store-list-table"
 >
   <div
     class="v-table__overflow"
@@ -528,7 +528,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="subheading primary--text"
             >
               
-        accusantium
+        Burger Babes
       
             </div>
              
@@ -536,7 +536,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="grey--text"
             >
               
-        @New Hattie
+        @Mobil
       
             </div>
           </td>
@@ -546,7 +546,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="grey--text"
             >
               
-        Demo Admin
+        Port Gerald
       
             </div>
           </td>
@@ -575,6 +575,128 @@ exports[`Store List component Snapshots stores set 1`] = `
               >
                 
         hic
+      
+              </span>
+            </span>
+          </td>
+           
+          <td>
+            <button
+              class="white--text v-btn theme--light #508c85-text--text"
+              style="background-color: rgb(80, 140, 133); border-color: #508c85;"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+        Assigned
+      
+              </div>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div
+              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+              primary=""
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-input--selection-controls__input"
+                  >
+                    <input
+                      aria-checked="false"
+                      primary=""
+                      role="checkbox"
+                      type="checkbox"
+                      value=""
+                    />
+                    <div
+                      class="v-input--selection-controls__ripple"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      check_box_outline_blank
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+           
+          <td>
+            <div
+              class="subheading primary--text"
+            >
+              
+        Holy Canoli
+      
+            </div>
+             
+            <div
+              class="grey--text"
+            >
+              
+        @Mobil
+      
+            </div>
+          </td>
+           
+          <td>
+            <div
+              class="grey--text"
+            >
+              
+        Carminestad
+      
+            </div>
+          </td>
+           
+          <td
+            class="tag-td"
+          >
+            <span
+              class="v-chip theme--light secondary secondary-text--text"
+              tabindex="0"
+            >
+              <span
+                class="v-chip__content"
+              >
+                
+        minus
+      
+              </span>
+            </span>
+            <span
+              class="v-chip theme--light secondary secondary-text--text"
+              tabindex="0"
+            >
+              <span
+                class="v-chip__content"
+              >
+                
+        sit
+      
+              </span>
+            </span>
+            <span
+              class="v-chip theme--light secondary secondary-text--text"
+              tabindex="0"
+            >
+              <span
+                class="v-chip__content"
+              >
+                
+        hicsdfsdf
       
               </span>
             </span>
@@ -637,7 +759,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="subheading primary--text"
             >
               
-        saepe
+        Da Lobsta
       
             </div>
              
@@ -645,7 +767,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="grey--text"
             >
               
-        @Baronhaven
+        @Mobil
       
             </div>
           </td>
@@ -655,129 +777,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="grey--text"
             >
               
-        Level 2 User
-      
-            </div>
-          </td>
-           
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        sit
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        hicsdfsdf
-      
-              </span>
-            </span>
-          </td>
-           
-          <td>
-            <button
-              class="white--text v-btn theme--light #508c85-text--text"
-              style="background-color: rgb(80, 140, 133); border-color: #508c85;"
-              type="button"
-            >
-              <div
-                class="v-btn__content"
-              >
-                
-        Assigned
-      
-              </div>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div
-              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
-              primary=""
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-input--selection-controls__input"
-                  >
-                    <input
-                      aria-checked="false"
-                      primary=""
-                      role="checkbox"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="v-input--selection-controls__ripple"
-                    />
-                    <i
-                      aria-hidden="true"
-                      class="v-icon material-icons theme--light"
-                    >
-                      check_box_outline_blank
-                    </i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </td>
-           
-          <td>
-            <div
-              class="subheading primary--text"
-            >
-              
-        quibusdam
-      
-            </div>
-             
-            <div
-              class="grey--text"
-            >
-              
-        @Lake Lavernehaven
-      
-            </div>
-          </td>
-           
-          <td>
-            <div
-              class="grey--text"
-            >
-              
-        Level 1 User
+        New Charlenebury
       
             </div>
           </td>
@@ -837,15 +837,14 @@ exports[`Store List component Snapshots stores set 1`] = `
            
           <td>
             <button
-              class="white--text v-btn theme--light #508c85-text--text"
-              style="background-color: rgb(80, 140, 133); border-color: #508c85;"
+              class="v-btn theme--light undefined-text--text"
               type="button"
             >
               <div
                 class="v-btn__content"
               >
                 
-        Assigned
+        Assign
       
               </div>
             </button>

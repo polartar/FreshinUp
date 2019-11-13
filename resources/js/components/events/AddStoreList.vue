@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     v-model="selected"
-    class="event-list-table"
+    class="store-list-table"
     :headers="headers"
     :items="stores"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
@@ -74,17 +74,17 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ props.item.venue && props.item.venue.name }}
+          @{{ props.item.type && props.item.type.name }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.manager.name }}
+          {{ props.item.location.name }}
         </div>
       </td>
       <td class="tag-td">
         <f-chip
-          v-for="tag in props.item.event_tags"
+          v-for="tag in props.item.store_tags"
           :key="tag.uuid"
           color="secondary"
         >
@@ -92,19 +92,17 @@
         </f-chip>
       </td>
       <td v-if="props.item.assigned">
+        <f-btn>
+          Assign
+        </f-btn>
+      </td>
+      <td v-else>
         <f-btn
           color="#508c85"
           class="white--text"
           @click="assign('assign', props.item)"
         >
           Assigned
-        </f-btn>
-      </td>
-      <td v-else>
-        <f-btn
-          @click="assign('assign', props.item)"
-        >
-          Assign
         </f-btn>
       </td>
     </template>
@@ -126,24 +124,17 @@ export default {
     stores: {
       type: Array,
       default: () => []
-    },
-    role: {
-      default: 'admin',
-      validator: value => {
-        return ['admin', 'host', 'supplier'].indexOf(value) !== -1
-      }
     }
   },
   data () {
     return {
       selected: [],
       headers: [
-        { text: 'FLEET MEMBER', value: 'name,venue', align: 'left' },
-        { text: 'LOCATION', value: 'manager', align: 'left' },
-        { text: 'TAGS', sortable: false, value: 'event_tags', align: 'left' },
+        { text: 'FLEET MEMBER', value: 'name,type', align: 'left' },
+        { text: 'LOCATION', value: 'location', align: 'left' },
+        { text: 'TAGS', sortable: false, value: 'store_tags', align: 'left' },
         { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
-      ],
-      actionBtnTitle: 'Manage'
+      ]
     }
   },
   computed: {
@@ -153,19 +144,17 @@ export default {
     }
   },
   methods: {
-    assign (action, event) {
-      this.$emit('manage-' + action, event)
-      this.$emit('manage', action, event)
+    assign (action, store) {
+      this.$emit('manage-' + action, store)
     },
     assignMultiple (action) {
       this.$emit('manage-multiple-' + action, this.selected)
-      this.$emit('manage-multiple', action, this.selected)
     },
     generateActions (actions) {
       if (!(actions instanceof Array)) {
         actions = []
       }
-      actions.push({ action: 'assign', text: 'Assgin' })
+      actions.push({ action: 'assign', text: 'Assign' })
       return actions
     }
   }
