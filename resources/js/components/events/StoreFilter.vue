@@ -152,7 +152,9 @@
               @input="selectOwner"
             />
           </v-flex>
-          <v-flex>
+          <v-flex
+            ml-4
+          >
             <v-layout
               row
               justify-space-between

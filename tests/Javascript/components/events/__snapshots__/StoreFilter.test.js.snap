@@ -654,7 +654,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
               </div>
                
               <div
-                class="flex"
+                class="flex ml-4"
               >
                 <div
                   class="layout row justify-space-between align-center mb-2"

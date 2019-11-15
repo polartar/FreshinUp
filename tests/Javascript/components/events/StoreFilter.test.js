@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/StoreFilter.vue'
 import { STORE_STATUSES } from 'tests/__data__/storeStatuses'
 import { STORE_CATEGORY } from 'tests/__data__/storeCategories'
@@ -28,9 +28,30 @@ describe('event Store Filter Sorter component', () => {
   })
 
   describe('Methods', () => {
-    test('clearFilters function clear filters', () => {
+    test('select functions change filters', () => {
       const localVue = createLocalVue()
+      const wrapper = shallowMount(Component, {
+        localVue: localVue,
+        propsData: {
+          filters: {
+            status: null,
+            store_type: null,
+            tag_uuid: null,
+            owner_id: null,
+            location_uuid: null
+          },
+          statuses: STORE_STATUSES,
+          types: STORE_CATEGORY
+        }
+      })
 
+      wrapper.vm.selectOwner({ id: 1, name: 'Level1 User' })
+      expect(wrapper.props().filters.owner_id).toBe(1)
+      wrapper.vm.selectLocation({ uuid: 3, name: 'Fredrickstad' })
+      expect(wrapper.props().filters.location_uuid).toBe(3)
+    })
+
+    test('clearFilters function clear filters', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
