@@ -14,7 +14,7 @@ class UpdateEvent implements Action
         $event = Event::where('uuid', $data['uuid'])->first();
 
         $collection = collect($data);
-        $updateData = $collection->except(['event_tags', 'uuid'])->all();
+        $updateData = $collection->except(['event_tags', 'store_uuids', 'uuid'])->all();
         $event->update($updateData);
 
         $tags = $collection->get('event_tags');
@@ -27,6 +27,9 @@ class UpdateEvent implements Action
 
             $event->eventTags()->sync($tagUuids);
         }
+
+        $storeUuids = $collection->get('store_uuids');
+        $event->stores()->sync($storeUuids);
         return $event->refresh();
     }
 }
