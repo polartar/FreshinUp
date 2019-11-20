@@ -151,7 +151,9 @@ export default {
     clearFilters (params) {
       this.expireDate = null
       this.assignedType = defaultAssignedType
-      this.$refs.assignedSearcher.resetTerm()
+      if (this.$refs.assignedSearcher && this.$refs.assignedSearcher.resetTerm) {
+        this.$refs.assignedSearcher.resetTerm()
+      }
       this.type = this.status = this.assigned_uuid = null
       this.userSearchKey++
       this.run(params)
