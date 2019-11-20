@@ -127,6 +127,8 @@ class Events extends Controller
             'manager_uuid' => 'string|exists:users,uuid',
             'host_uuid' => 'string|exists:companies,uuid',
             'location_uuid' => 'string|exists:locations,uuid',
+            'store_uuids' => 'array',
+            'store_uuids.*' => 'string|exists:stores,uuid',
             'status_id' => 'integer',
             'start_at' => 'date',
             'end_at' => 'date',
