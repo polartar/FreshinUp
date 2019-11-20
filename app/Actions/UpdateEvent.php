@@ -29,7 +29,7 @@ class UpdateEvent implements Action
         }
 
         $storeUuids = $collection->get('store_uuids');
-        if ($storeUuids === array() || $storeUuids) {
+        if (empty($storeUuids) || $storeUuids) {
             $event->stores()->sync($storeUuids);
         }
         return $event->refresh();
