@@ -23,10 +23,11 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string $deleted_at
  *
  */
-class Document extends Model
+class Document extends Model implements HasMedia
 {
     use SoftDeletes;
     use GeneratesUuid;
+    use HasMediaTrait;
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
@@ -39,6 +40,19 @@ class Document extends Model
     public function getRouteKeyName()
     {
         return 'uuid';
+    }
+
+    /**
+     * When adding a file to attachment it will be stored on the cms disk.
+     *
+     * @return void
+     */
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('attachment')
+            ->useDisk('cms')
+            ->singleFile();
     }
 
     public function owner()

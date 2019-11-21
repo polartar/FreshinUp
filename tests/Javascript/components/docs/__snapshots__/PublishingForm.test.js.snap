@@ -38,7 +38,7 @@ exports[`PublishingForm Snapshots defaults 1`] = `
       value="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
     >
       <div
-        class="flex"
+        class="flex md6 sm12"
       >
         <div
           class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
@@ -195,7 +195,7 @@ exports[`PublishingForm Snapshots defaults 1`] = `
       </div>
        
       <div
-        class="flex md6 sm12"
+        class="flex md6 sm12 ml-4"
       >
         <div
           background-color="white"
