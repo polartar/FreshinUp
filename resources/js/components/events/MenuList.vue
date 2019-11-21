@@ -4,6 +4,8 @@
     class="event-list-table"
     :headers="headers"
     :items="menus"
+    :hide-headers="$vuetify.breakpoint.xsOnly"
+    :hide-actions="$vuetify.breakpoint.xsOnly"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
     :pagination.sync="pagination"
     :loading="isLoading"
@@ -64,27 +66,44 @@
       slot="items"
       slot-scope="props"
     >
-      <td class="py-4">
+      <td
+        v-if="!$vuetify.breakpoint.xsOnly"
+        class="py-4"
+      >
         <v-checkbox
           v-model="props.selected"
           primary
           hide-details
         />
       </td>
-      <td>
+      <td class="full-width">
         <div class="subheading primary--text">
           {{ props.item.title }}
         </div>
-        <div class="grey--text">
+        <div
+          :class="`grey--text ${ $vuetify.breakpoint.xsOnly ? 'pt-2': '' }`"
+        >
           {{ props.item.description }}
         </div>
       </td>
       <td>
+        <div
+          v-if="$vuetify.breakpoint.xsOnly"
+          class="font-weight-bold"
+        >
+          Servings
+        </div>
         <div class="grey--text">
           {{ props.item.servings }}
         </div>
       </td>
       <td>
+        <div
+          v-if="$vuetify.breakpoint.xsOnly"
+          class="font-weight-bold"
+        >
+          Cost
+        </div>
         <div class="grey--text">
           {{ formatMoney(props.item.cost) }}
         </div>
@@ -158,4 +177,22 @@ export default {
 </script>
 
 <style lang="styl" scoped>
+@media (max-width: 600px) {
+  .full-width{
+    width: 100%;
+  }
+  /deep/ table.v-table tbody tr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  /deep/ table.v-table tbody tr td{
+    padding: 10px 0;
+    box-sizing: content-box;
+    flex-shrink: 1;
+    flex-grow: 0;
+    height: auto;
+  }
+}
 </style>

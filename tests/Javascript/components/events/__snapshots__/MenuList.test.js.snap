@@ -557,7 +557,9 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
           </td>
            
-          <td>
+          <td
+            class="full-width"
+          >
             <div
               class="subheading primary--text"
             >
@@ -567,7 +569,7 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
              
             <div
-              class="grey--text"
+              class="grey--text "
             >
               
         description 1
@@ -576,6 +578,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
@@ -586,6 +590,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
@@ -696,7 +702,9 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
           </td>
            
-          <td>
+          <td
+            class="full-width"
+          >
             <div
               class="subheading primary--text"
             >
@@ -706,7 +714,7 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
              
             <div
-              class="grey--text"
+              class="grey--text "
             >
               
         description 2
@@ -715,6 +723,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
@@ -725,6 +735,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
@@ -835,7 +847,9 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
           </td>
            
-          <td>
+          <td
+            class="full-width"
+          >
             <div
               class="subheading primary--text"
             >
@@ -845,7 +859,7 @@ exports[`Menu List component Snapshots menus set 1`] = `
             </div>
              
             <div
-              class="grey--text"
+              class="grey--text "
             >
               
         description 3
@@ -854,6 +868,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
@@ -864,6 +880,8 @@ exports[`Menu List component Snapshots menus set 1`] = `
           </td>
            
           <td>
+            <!---->
+             
             <div
               class="grey--text"
             >
