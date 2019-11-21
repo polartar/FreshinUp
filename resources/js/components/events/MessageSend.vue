@@ -6,7 +6,6 @@
     justify-space-between
   >
     <v-flex
-      md7
       sm12
     >
       <v-textarea
