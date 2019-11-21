@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageSend Snapshots defaults 1`] = `
+<div
+  class="layout row wrap pa-3 justify-space-between"
+>
+  <div
+    class="flex md7 sm12"
+  >
+    <div
+      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+    >
+      <div
+        class="v-input__control"
+      >
+        <div
+          class="v-input__slot"
+        >
+          <div
+            class="v-text-field__slot"
+          >
+            <textarea
+              data-vv-name="message"
+              placeholder="Type Message"
+              rows="5"
+            />
+          </div>
+        </div>
+        <div
+          class="v-text-field__details"
+        >
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <button
+      class="mr-0 right primary v-btn theme--light"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        
+      Send
+    
+      </div>
+    </button>
+  </div>
+</div>
+`;
