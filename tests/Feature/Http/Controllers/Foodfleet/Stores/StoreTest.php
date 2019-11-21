@@ -220,4 +220,103 @@ class StoresTest extends TestCase
             'name' => $storesToFind->first()->name
         ], $data[0]);
     }
+
+    /**
+     * test for the sort options
+     */
+    public function testGetListBySorts()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $store1 = factory(Store::class)->create([
+            'name' => 'A',
+            'status' => 3,
+            'created_at' => '2019-11-11 07:59:48'
+        ]);
+        $store2 = factory(Store::class)->create([
+            'name' => 'B',
+            'status' => 2,
+            'created_at' => '2019-11-10 07:59:48'
+        ]);
+        $store3 = factory(Store::class)->create([
+            'name' => 'C',
+            'status' => 1,
+            'created_at' => '2019-11-12 07:59:48'
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=name")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store1->uuid);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=-name")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store3->uuid);
+
+        
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=status")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store3->uuid);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=-status")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store1->uuid);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=created_at")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store2->uuid);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?sort=-created_at")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($data[0]['uuid'], $store3->uuid);
+    }
 }
