@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/StoreFilter.vue'
-import { STORE_STATUSES } from 'tests/__data__/storeStatuses'
+import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 import { STORE_CATEGORY } from 'tests/__data__/storeCategories'
 
 describe('event Store Filter Sorter component', () => {
@@ -18,7 +18,7 @@ describe('event Store Filter Sorter component', () => {
             owner_id: null,
             location_uuid: null
           },
-          statuses: STORE_STATUSES,
+          statuses: FIXTURE_STORE_STATUSES,
           types: STORE_CATEGORY
         }
       })
@@ -40,7 +40,7 @@ describe('event Store Filter Sorter component', () => {
             owner_id: null,
             location_uuid: null
           },
-          statuses: STORE_STATUSES,
+          statuses: FIXTURE_STORE_STATUSES,
           types: STORE_CATEGORY
         }
       })
@@ -56,7 +56,7 @@ describe('event Store Filter Sorter component', () => {
         localVue: localVue,
         propsData: {
           filters: {},
-          statuses: STORE_STATUSES,
+          statuses: FIXTURE_STORE_STATUSES,
           types: STORE_CATEGORY
         }
       })
@@ -79,7 +79,7 @@ describe('event Store Filter Sorter component', () => {
             owner_id: 2,
             location_uuid: 1
           },
-          statuses: STORE_STATUSES,
+          statuses: FIXTURE_STORE_STATUSES,
           types: STORE_CATEGORY
         }
       })
