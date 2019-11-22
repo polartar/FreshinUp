@@ -3,7 +3,10 @@
     row
     justify-space-between
   >
-    <v-flex>
+    <v-flex
+      md6
+      sm12
+    >
       <v-select
         v-model="typeValue"
         single-line
@@ -18,6 +21,7 @@
     <v-flex
       md6
       sm12
+      ml-4
     >
       <DocSimple
         ref="assigned"

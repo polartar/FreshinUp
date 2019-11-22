@@ -1,0 +1,1931 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventCalendar Snapshots defaults 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout wrap row"
+  >
+    <div
+      class="flex text-xs-left xs8"
+    >
+      <div
+        class="layout wrap row"
+      >
+        <button
+          class="ml-0 mt-0 v-btn v-btn--large theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+          Today
+        
+          </div>
+        </button>
+         
+        <div
+          class="flex text-xs-left xs4 ml-2"
+        >
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      January
+                    </div>
+                    <input
+                      aria-label="Month"
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          class="primary--text"
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                January
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                February
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                March
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                April
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                May
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                June
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                July
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                August
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                September
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                October
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                November
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                December
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex text-xs-left xs2 ml-3"
+        >
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      2019
+                    </div>
+                    <input
+                      aria-label="Year"
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2017
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2018
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="primary--text"
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2019
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex text-xs-right xs3 offset-xs1"
+    >
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <div
+                class="v-select__selections"
+              >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  Month
+                </div>
+                <input
+                  aria-label="Type"
+                  aria-readonly="false"
+                  autocomplete="on"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Day
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            4 Day
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Week
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="primary--text"
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Month
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex xs12 mb-3 mt-3"
+    >
+      <div
+        class="v-sheet theme--light"
+        style="height: 431px;"
+      >
+        <div
+          class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+        >
+          <div
+            class="v-calendar-weekly__head"
+          >
+            <div
+              class="v-calendar-weekly__head-weekday v-past v-outside"
+            >
+              Sun
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past v-outside"
+            >
+              Mon
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past"
+            >
+              Tue
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past"
+            >
+              Wed
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-present primary--text"
+            >
+              Thu
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-future"
+            >
+              Fri
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-future"
+            >
+              Sat
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                30
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                31
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                1
+              </div>
+              <div
+                class="v-calendar-weekly__day-month"
+              >
+                Jan
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                2
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                3
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                4
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                5
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                6
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                7
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                8
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                9
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                10
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                11
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                12
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                13
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                14
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                15
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                16
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                17
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                18
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                19
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                20
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                21
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                22
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                23
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                24
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                25
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                26
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                27
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                28
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                29
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                30
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                31
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                1
+              </div>
+              <div
+                class="v-calendar-weekly__day-month"
+              >
+                Feb
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EventCalendar Snapshots with events data 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout wrap row"
+  >
+    <div
+      class="flex text-xs-left xs8"
+    >
+      <div
+        class="layout wrap row"
+      >
+        <button
+          class="ml-0 mt-0 v-btn v-btn--large theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+          Today
+        
+          </div>
+        </button>
+         
+        <div
+          class="flex text-xs-left xs4 ml-2"
+        >
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      January
+                    </div>
+                    <input
+                      aria-label="Month"
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          class="primary--text"
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                January
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                February
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                March
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                April
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                May
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                June
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                July
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                August
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                September
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                October
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                November
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                December
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex text-xs-left xs2 ml-3"
+        >
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      2019
+                    </div>
+                    <input
+                      aria-label="Year"
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2017
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2018
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="primary--text"
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                2019
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex text-xs-right xs3 offset-xs1"
+    >
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <div
+                class="v-select__selections"
+              >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  Month
+                </div>
+                <input
+                  aria-label="Type"
+                  aria-readonly="false"
+                  autocomplete="on"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Day
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            4 Day
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Week
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="primary--text"
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Month
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex xs12 mb-3 mt-3"
+    >
+      <div
+        class="v-sheet theme--light"
+        style="height: 431px;"
+      >
+        <div
+          class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+        >
+          <div
+            class="v-calendar-weekly__head"
+          >
+            <div
+              class="v-calendar-weekly__head-weekday v-past v-outside"
+            >
+              Sun
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past v-outside"
+            >
+              Mon
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past"
+            >
+              Tue
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-past"
+            >
+              Wed
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-present primary--text"
+            >
+              Thu
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-future"
+            >
+              Fri
+            </div>
+            <div
+              class="v-calendar-weekly__head-weekday v-future"
+            >
+              Sat
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                30
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                31
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                1
+              </div>
+              <div
+                class="v-calendar-weekly__day-month"
+              >
+                Jan
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                2
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                3
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                4
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                5
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                6
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                7
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                8
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                9
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                10
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                11
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                12
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                13
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                14
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                15
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                16
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                17
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                18
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                19
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                20
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                21
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                22
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                23
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                24
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                25
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                26
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__week"
+          >
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                27
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                28
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                29
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                30
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                31
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                1
+              </div>
+              <div
+                class="v-calendar-weekly__day-month"
+              >
+                Feb
+              </div>
+            </div>
+            <div
+              class="v-calendar-weekly__day v-past v-outside"
+            >
+              <div
+                class="v-calendar-weekly__day-label"
+              >
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
