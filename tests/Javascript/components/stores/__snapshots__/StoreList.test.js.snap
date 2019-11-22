@@ -81,17 +81,25 @@ exports[`Store List component Snapshots stores empty 1`] = `
               </i>
             </th>
             <th
-              aria-label="Tags: Not sorted."
+              aria-label="Tags: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Tags
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
               aria-label="Scheduled events: Not sorted. Activate to sort ascending."
@@ -115,30 +123,46 @@ exports[`Store List component Snapshots stores empty 1`] = `
               </i>
             </th>
             <th
-              aria-label="Hometown: Not sorted."
+              aria-label="Hometown: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Hometown
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
-              aria-label="Manage: Not sorted."
+              aria-label="Manage: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Manage
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
           </tr>
           <tr
@@ -471,17 +495,25 @@ exports[`Store List component Snapshots stores set 1`] = `
               </i>
             </th>
             <th
-              aria-label="Tags: Not sorted."
+              aria-label="Tags: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Tags
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
               aria-label="Scheduled events: Not sorted. Activate to sort ascending."
@@ -505,30 +537,46 @@ exports[`Store List component Snapshots stores set 1`] = `
               </i>
             </th>
             <th
-              aria-label="Hometown: Not sorted."
+              aria-label="Hometown: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Hometown
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
-              aria-label="Manage: Not sorted."
+              aria-label="Manage: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Manage
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
           </tr>
           <tr
@@ -582,7 +630,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -594,16 +642,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Cancelled
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -653,7 +699,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -670,7 +716,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -687,7 +733,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -704,16 +750,17 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
                             </div>
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -721,7 +768,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -953,7 +1000,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -970,7 +1017,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -987,7 +1034,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -1004,7 +1051,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -1021,7 +1068,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -1182,7 +1229,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -1194,16 +1241,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1242,10 +1287,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1253,7 +1299,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -1270,7 +1316,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -1287,7 +1333,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -1304,7 +1350,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -1321,7 +1367,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -1482,7 +1528,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -1494,16 +1540,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1542,10 +1586,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1553,7 +1598,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -1570,7 +1615,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -1587,7 +1632,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -1604,7 +1649,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -1621,7 +1666,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -1782,7 +1827,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -1794,16 +1839,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1842,10 +1885,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1853,7 +1897,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -1870,7 +1914,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -1887,7 +1931,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -1904,7 +1948,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -1921,7 +1965,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -2082,7 +2126,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -2094,16 +2138,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2142,10 +2184,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2153,7 +2196,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -2170,7 +2213,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -2187,7 +2230,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -2204,7 +2247,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -2221,7 +2264,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -2382,7 +2425,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -2394,16 +2437,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2442,10 +2483,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2453,7 +2495,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -2470,7 +2512,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -2487,7 +2529,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -2504,7 +2546,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -2521,7 +2563,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -2682,7 +2724,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -2694,16 +2736,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2742,10 +2782,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2753,7 +2794,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -2770,7 +2811,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -2787,7 +2828,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -2804,7 +2845,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -2821,7 +2862,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -2982,7 +3023,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -2994,16 +3035,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -3042,10 +3081,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -3053,7 +3093,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -3070,7 +3110,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -3087,7 +3127,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -3104,7 +3144,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -3121,7 +3161,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -3282,7 +3322,7 @@ exports[`Store List component Snapshots stores set 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                 role="combobox"
               >
                 <div
@@ -3294,16 +3334,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                     <div
                       class="v-select__slot"
                     >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Status
-                      </label>
                       <div
                         class="v-select__selections"
                       >
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          Draft
+                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -3342,10 +3380,11 @@ exports[`Store List component Snapshots stores set 1`] = `
                             role="list"
                           >
                             <div
+                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link theme--light"
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -3353,7 +3392,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Draft
                                   </div>
                                 </div>
                               </a>
@@ -3370,7 +3409,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Pending
                                   </div>
                                 </div>
                               </a>
@@ -3387,7 +3426,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Confirmed
                                   </div>
                                 </div>
                               </a>
@@ -3404,7 +3443,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Past
                                   </div>
                                 </div>
                               </a>
@@ -3421,7 +3460,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    [object Object]
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
