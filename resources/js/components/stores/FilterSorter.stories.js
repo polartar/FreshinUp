@@ -7,12 +7,12 @@ import axios from 'axios/index'
 import FilterSorter from './FilterSorter.vue'
 
 let statuses = [
-  { value: 1, text: 'Draft' },
-  { value: 2, text: 'Pending' },
-  { value: 3, text: 'Revision' },
-  { value: 4, text: 'Rejected' },
-  { value: 5, text: 'Approved' },
-  { value: 6, text: 'On hold' }
+  { id: 1, name: 'Draft' },
+  { id: 2, name: 'Pending' },
+  { id: 3, name: 'Revision' },
+  { id: 4, name: 'Rejected' },
+  { id: 5, name: 'Approved' },
+  { id: 6, name: 'On hold' }
 ]
 
 let sortables = [
@@ -25,18 +25,26 @@ let sortables = [
 const mock = new MockAdapter(axios)
 mock.onGet('foodfleet/store-tags').reply(200, {
   data: [
-    { uuid: 1, name: 'Store Tag 1' },
-    { uuid: 2, name: 'Store Tag 2' },
-    { uuid: 3, name: 'Store Tag 3' },
-    { uuid: 4, name: 'Store Tag 4' }
+    { uuid: '1', name: 'Store Tag 1' },
+    { uuid: '2', name: 'Store Tag 2' },
+    { uuid: '3', name: 'Store Tag 3' },
+    { uuid: '4', name: 'Store Tag 4' }
   ]
 })
 mock.onGet('foodfleet/locations').reply(200, {
   data: [
-    { uuid: 1, name: 'Location 1' },
-    { uuid: 2, name: 'Location 2' },
-    { uuid: 3, name: 'Location 3' },
-    { uuid: 4, name: 'Location 4' }
+    { uuid: '1', name: 'Location 1' },
+    { uuid: '2', name: 'Location 2' },
+    { uuid: '3', name: 'Location 3' },
+    { uuid: '4', name: 'Location 4' }
+  ]
+})
+mock.onGet('/companies?filter[type_key]=supplier').reply(200, {
+  data: [
+    { uuid: '1', name: 'Supplier 1' },
+    { uuid: '2', name: 'Supplier 2' },
+    { uuid: '3', name: 'Supplier 3' },
+    { uuid: '4', name: 'Supplier 4' }
   ]
 })
 
@@ -54,7 +62,7 @@ storiesOf('FoodFleet|stores/FilterSorter', module)
       }
     },
     template: `
-      <v-container>
+      <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-sorter
           @runFilter="filterStores"
         />
@@ -74,7 +82,7 @@ storiesOf('FoodFleet|stores/FilterSorter', module)
       }
     },
     template: `
-      <v-container>
+      <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-sorter
           :statuses="statuses"
           @runFilter="filterStores"
@@ -95,7 +103,7 @@ storiesOf('FoodFleet|stores/FilterSorter', module)
       }
     },
     template: `
-      <v-container>
+      <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-sorter
           :sortables="sortables"
           @runFilter="filterStores"
