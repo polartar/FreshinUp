@@ -2,20 +2,22 @@
   <search-filter-sorter
     ref="filter"
     class="filter-transparent"
-    expanded
     without-filter-label
     without-sort-by
-    placeholder="Filter by event name"
+    without-term
     color="transparent"
     v-bind="$attrs"
     v-on="$listeners"
     @run="run"
-    @clear="clearFilters"
   >
-    <template v-slot:expanded="slotProps">
+    <template v-slot:title>
+      <h3 class="headline">Filter events</h3>
+      <hr/>
+    </template>
+    <template v-slot:filters="slotProps">
       <v-card-text class="px-0 pb-0">
-        <v-layout
-          row
+        <div
+          class="mr-2 ml-2"
           justify-space-between
         >
           <v-flex>
@@ -26,7 +28,7 @@
               mb-2
             >
               <filter-label>
-                Statuses
+                EVENT NAME
               </filter-label>
               <clear-button
                 v-if="filters.status_id && filters.status_id.length > 0"
@@ -46,16 +48,70 @@
               hide-details
             />
           </v-flex>
-          <v-flex
-            ml-2
-          >
+          <v-flex>
+            <v-layout
+              row
+              justify-space-between
+              align-center
+              mb-2
+            >
+              <filter-label>
+                STATUSES
+              </filter-label>
+              <clear-button
+                v-if="filters.status_id && filters.status_id.length > 0"
+                color="white"
+                @clear="filters.status_id = null;"
+              />
+            </v-layout>
+            <multi-select
+              v-model="filters.status_id"
+              placeholder="Select Status"
+              :items="statuses"
+              item-value="id"
+              item-text="name"
+              select-all-name="All Status"
+              solo
+              flat
+              hide-details
+            />
+          </v-flex>
+          <v-flex>
             <v-layout
               row
               justify-space-between
               mb-2
             >
               <filter-label>
-                Customers
+                MANAGED BY
+              </filter-label>
+              <clear-button
+                v-if="filters.manager_uuid && filters.manager_uuid.length > 0"
+                color="white"
+                @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
+              />
+            </v-layout>
+            <multi-simple
+              ref="manager"
+              v-model="filters.manager_uuid"
+              url="users?filter[type]=1"
+              placeholder="Select"
+              background-color="white"
+              class="mt-0 pt-0"
+              height="48"
+              not-clearable
+              solo
+              flat
+            />
+          </v-flex>
+          <v-flex>
+            <v-layout
+              row
+              justify-space-between
+              mb-2
+            >
+              <filter-label>
+                CUSTOMERS
               </filter-label>
               <clear-button
                 v-if="filters.host_uuid && filters.host_uuid.length > 0"
@@ -78,101 +134,7 @@
               flat
             />
           </v-flex>
-          <v-flex
-            ml-2
-          >
-            <v-layout
-              row
-              justify-space-between
-              mb-2
-            >
-              <filter-label>
-                Managed By
-              </filter-label>
-              <clear-button
-                v-if="filters.manager_uuid && filters.manager_uuid.length > 0"
-                color="white"
-                @clear="filters.manager_uuid = null; $refs.manager.resetTerm()"
-              />
-            </v-layout>
-            <multi-simple
-              ref="manager"
-              v-model="filters.manager_uuid"
-              url="users?filter[type]=1"
-              placeholder="Select"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              not-clearable
-              solo
-              flat
-            />
-          </v-flex>
-          <v-flex
-            ml-2
-          >
-            <v-layout
-              row
-              justify-space-between
-              mb-2
-            >
-              <filter-label>
-                Scheduled Date
-              </filter-label>
-              <clear-button
-                v-if="filters.start_at || filters.end_at"
-                color="white"
-                @clear="filters.start_at = filters.end_at = rangeDate = null"
-              />
-            </v-layout>
-            <vue-ctk-date-time-picker
-              v-model="rangeDate"
-              class="data-time-picker no-border"
-              range
-              only-date
-              no-clear-button
-              format="YYYY-MM-DD"
-              formatted="MM-DD-YYYY"
-              input-size="lg"
-              label="Select Date"
-              :color="$vuetify.theme.primary"
-              :button-color="$vuetify.theme.primary"
-              @input="changeDate"
-            />
-          </v-flex>
-          <v-flex
-            ml-2
-          >
-            <v-layout
-              row
-              justify-space-between
-              mb-2
-            >
-              <filter-label>
-                Tags
-              </filter-label>
-              <clear-button
-                v-if="filters.event_tag_uuid && filters.event_tag_uuid.length > 0"
-                color="white"
-                @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
-              />
-            </v-layout>
-            <multi-simple
-              ref="tag"
-              v-model="filters.event_tag_uuid"
-              url="foodfleet/event-tags"
-              term-param="filter[name]"
-              results-id-key="uuid"
-              placeholder="Search Tag"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              not-clearable
-              solo
-              flat
-            />
-          </v-flex>
-        </v-layout>
+        </div>
       </v-card-text>
     </template>
   </search-filter-sorter>
