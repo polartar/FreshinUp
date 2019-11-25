@@ -6,6 +6,7 @@ namespace App\Http\Resources\Foodfleet;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
 
 class Store extends JsonResource
 {
@@ -20,6 +21,9 @@ class Store extends JsonResource
         return [
             "uuid" => $this->uuid,
             "name" => $this->name,
+            "status" => $this->status,
+            "addresses" => Address::collection($this->addresses),
+            "tags" => StoreTag::collection($this->whenLoaded('tags')),
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier'))
         ];
