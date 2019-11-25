@@ -43,7 +43,7 @@
           </v-list>
         </v-menu>
       </span>
-      <span v-else-if="selected.length > 1 && props.header.value === 'status'">
+      <span v-else-if="selected.length > 1 && props.header.value === 'status_id'">
         <v-menu offset-y>
           <v-btn
             slot="activator"
@@ -92,7 +92,7 @@
       </td>
       <td class="select-td">
         <status-select
-          v-model="props.item.status"
+          v-model="props.item.status_id"
           :options="statuses"
           @input="changeStatus($event, props.item)"
         />
@@ -102,7 +102,7 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ props.item.venue && props.item.venue.name }}
+          @{{ props.item.location && props.item.location.venue && props.item.location.venue.name }}
         </div>
       </td>
       <td>
@@ -121,12 +121,12 @@
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.host.name }}
+          {{ props.item.manager && props.item.manager.name }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.manager.name }}
+          {{ props.item.host && props.item.host.name }}
         </div>
       </td>
       <td>
@@ -174,7 +174,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status', align: 'left' },
+        { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
         { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
         { text: 'Tags', value: 'event_tags', align: 'left' },
@@ -196,6 +196,12 @@ export default {
     selectedActions () {
       if (!this.selected.length) return []
       return this.generateActions()
+    }
+  },
+  watch: {
+    events () {
+      const eventUuids = this.events.map(item => item.uuid)
+      this.selected = this.selected.filter(item => eventUuids.includes(item.uuid))
     }
   },
   methods: {
