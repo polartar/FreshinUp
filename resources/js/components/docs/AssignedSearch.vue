@@ -55,16 +55,18 @@ export default {
     }
   },
   data () {
-    const formatEventStore = (list) => {
+    const formatEventStore = list => {
       let result = []
       list.forEach(event => {
-        result = result.concat(event.stores.map(store => {
-          return {
-            uuid: event.uuid,
-            event_store_uuid: store.uuid,
-            event_store_name: `${event.name}/${store.name}`
-          }
-        }))
+        result = result.concat(
+          event.stores.map(store => {
+            return {
+              uuid: event.uuid,
+              event_store_uuid: store.uuid,
+              event_store_name: `${event.name}/${store.name}`
+            }
+          })
+        )
       })
       return result
     }
@@ -130,14 +132,17 @@ export default {
         if (value !== this.typeValue) {
           this.$emit('type-change', value)
           this.$emit('assign-change', '')
-          if (this.$refs.assigned.resetTerm) {
-            this.$refs.assigned.resetTerm()
-          }
+          this.resetTerm()
         }
       }
     }
   },
   methods: {
+    resetTerm () {
+      if (this.$refs.assigned.resetTerm) {
+        this.$refs.assigned.resetTerm()
+      }
+    },
     selectAssigned (assigned) {
       let changeDate = {
         uuid: '',
