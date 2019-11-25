@@ -37,13 +37,21 @@ class Events extends Controller
         $isAdmin = $user->isAdmin();
         $requestFilters = $request->get('filter', []);
         if (!$isAdmin && $user->type == 1) {
-            $requestFilters['manager_uuid'] = $user->uuid;
-            $request->merge(['filter' => $requestFilters]);
+            if (array_key_exists('manager_uuid', $requestFilters)) {
+                $requestFilters['manager_uuid'] = $requestFilters['manager_uuid'] . ',' . $user->uuid;
+            } else {
+                $requestFilters['manager_uuid'] = $user->uuid;
+            }
+            $request->query->add(['filter' => $requestFilters]);
         }
 
         if (!$isAdmin && $user->type == 2) {
-            $requestFilters['host_uuid'] = $user->uuid;
-            $request->merge(['filter' => $requestFilters]);
+            if (array_key_exists('host_uuid', $requestFilters)) {
+                $requestFilters['host_uuid'] = $requestFilters['host_uuid'] . ',' . $user->uuid;
+            } else {
+                $requestFilters['host_uuid'] = $user->uuid;
+            }
+            $request->query->add(['filter' => $requestFilters]);
         }
 
         $events = QueryBuilder::for(Event::class, $request)
