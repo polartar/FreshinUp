@@ -9,6 +9,7 @@ use App\Actions\UpdateEvent;
 use App\Models\Foodfleet\Event;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
+use Spatie\QueryBuilder\Sort;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
 use App\Enums\EventStatus as EventStatusEnum;
@@ -16,6 +17,9 @@ use App\Filters\BelongsToWhereInUuidEquals;
 use App\Filters\BelongsToWhereInIdEquals;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo;
+use App\Sorts\Events\HostNameSort;
+use App\Sorts\Events\ManagerNameSort;
+use App\Sorts\Events\EventTagNameSort;
 
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
@@ -29,8 +33,43 @@ class Events extends Controller
      */
     public function index(Request $request)
     {
+        $user = $request->user();
+        $isAdmin = $user->isAdmin();
+        $requestFilters = $request->get('filter', []);
+        if (!$isAdmin && $user->type == 1) {
+            if (array_key_exists('manager_uuid', $requestFilters)) {
+                $requestFilters['manager_uuid'] = $requestFilters['manager_uuid'] . ',' . $user->uuid;
+            } else {
+                $requestFilters['manager_uuid'] = $user->uuid;
+            }
+            $request->query->add(['filter' => $requestFilters]);
+        }
+
+        if (!$isAdmin && $user->type == 2) {
+            if (array_key_exists('host_uuid', $requestFilters)) {
+                $requestFilters['host_uuid'] = $requestFilters['host_uuid'] . ',' . $user->uuid;
+            } else {
+                $requestFilters['host_uuid'] = $user->uuid;
+            }
+            $request->query->add(['filter' => $requestFilters]);
+        }
+
         $events = QueryBuilder::for(Event::class, $request)
             ->with('stores')
+            ->allowedIncludes([
+                'status',
+                'host',
+                'location.venue',
+                'manager',
+                'event_tags'
+            ])
+            ->allowedSorts([
+                'name',
+                'start_at',
+                Sort::custom('host', new HostNameSort()),
+                Sort::custom('manager', new ManagerNameSort()),
+                Sort::custom('event_tags', new EventTagNameSort())
+            ])
             ->allowedFilters([
                 'name',
                 Filter::exact('uuid'),
@@ -40,15 +79,7 @@ class Events extends Controller
                 Filter::custom('manager_uuid', BelongsToWhereInUuidEquals::class, 'manager'),
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
-            ])
-            ->allowedIncludes([
-                'status',
-                'host',
-                'location',
-                'manager',
-                'event_tags'
             ]);
-
         return EventResource::collection($events->jsonPaginate());
     }
 
