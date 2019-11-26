@@ -17,7 +17,7 @@ mock.onGet('/companies?filter[type_key]=host').reply(200, {
   ]
 })
 
-mock.onGet('/users?filter[level]=1,2').reply(200, {
+mock.onGet('/users?filter[level]=2').reply(200, {
   data: [
     { uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54', name: 'John Smith' },
     { uuid: 2, name: 'Bob Dylan' },
@@ -55,7 +55,8 @@ const event = {
   attendees: 10,
   budget: 1000,
   commission_rate: 12,
-  commission_type: 2
+  commission_type: 2,
+  event_type: 1
 }
 
 storiesOf('FoodFleet|events/BasicInformation', module)

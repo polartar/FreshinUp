@@ -25,6 +25,8 @@
             >
               <v-flex
                 xs12
+                md9
+                :pr-3="$vuetify.breakpoint.mdAndUp"
               >
                 Event Name
                 <v-text-field
@@ -35,6 +37,20 @@
                   data-vv-name="name"
                   required
                   :error-messages="errors.collect('name')"
+                  :disabled="readOnly"
+                />
+              </v-flex>
+              <v-flex
+                xs12
+                md3
+              >
+                Event type
+                <v-select
+                  v-model="eventData.event_type"
+                  :items="eventTypes"
+                  item-value="id"
+                  item-text="label"
+                  solo
                   :disabled="readOnly"
                 />
               </v-flex>
@@ -50,7 +66,7 @@
               >
                 Manager
                 <simple
-                  url="users?filter[level]=1,2"
+                  url="users?filter[level]=2"
                   term-param="term"
                   results-id-key="uuid"
                   :value="eventData.manager_uuid"
@@ -58,6 +74,9 @@
                   background-color="white"
                   class="mt-0 pt-0"
                   height="48"
+                  not-clearable
+                  solo
+                  flat
                   :disabled="readOnly"
                   @input="selectManager"
                 />
@@ -76,6 +95,9 @@
                   background-color="white"
                   class="mt-0 pt-0"
                   height="48"
+                  not-clearable
+                  solo
+                  flat
                   :disabled="readOnly"
                   @input="selectHost"
                 />
@@ -269,6 +291,7 @@ export default {
         attendees: edit ? this.event.attendees : null,
         commission_rate: edit ? this.event.commission_rate : 5,
         commission_type: edit ? this.event.commission_type : 1,
+        event_type: edit ? this.event.event_type : 1,
         event_tags: edit ? this.event.event_tags : [],
         start_at: edit ? this.event.start_at : null,
         end_at: edit ? this.event.end_at : null
@@ -277,6 +300,10 @@ export default {
       commissionTypes: [
         { id: 1, label: 'Percentage(%)' },
         { id: 2, label: 'Flat ($)' }
+      ],
+      eventTypes: [
+        { id: 1, label: 'Catering' },
+        { id: 2, label: 'Cash and Carry' }
       ]
     }
   },
