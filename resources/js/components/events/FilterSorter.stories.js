@@ -15,6 +15,14 @@ let statuses = [
 ]
 
 const mock = new MockAdapter(axios)
+mock.onGet('/foodfleet/event-tags').reply(200, {
+  data: [
+    { uuid: 1, name: 'Event Tag 1' },
+    { uuid: 2, name: 'Event Tag 2' },
+    { uuid: 3, name: 'Event Tag 3' },
+    { uuid: 4, name: 'Event Tag 4' }
+  ]
+})
 mock.onGet('/companies?filter[type_key]=host').reply(200, {
   data: [
     { uuid: 1, name: 'company 1' },
