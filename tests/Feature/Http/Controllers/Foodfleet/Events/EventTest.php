@@ -129,7 +129,7 @@ class EventTest extends TestCase
         $nonhost = factory(Company::class)->create();
 
         factory(Event::class, 5)->create([
-            'name' => 'Not visibles',
+            'name' => 'Not Visibles',
             'host_uuid' => $nonhost->uuid
         ]);
 
@@ -157,14 +157,17 @@ class EventTest extends TestCase
             ])
             ->json('data');
         $this->assertNotEmpty($data);
-        $this->assertEquals(2, count($data));
+        $this->assertCount(2, $data);
         $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
         $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
     }
 
     public function testGetListWithManagerUuidFilter()
     {
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'type' => 1,
+            'level' => 5
+        ]);
 
         Passport::actingAs($user);
 
@@ -187,6 +190,11 @@ class EventTest extends TestCase
             'manager_uuid' => $usersToFind->last()->uuid
         ]);
 
+        $eventToFind3 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $user->uuid
+        ]);
+
         $userUuid = $usersToFind->map(function ($user) {
             return $user->uuid;
         })->join(',');
@@ -200,9 +208,10 @@ class EventTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(2, count($data));
+        $this->assertCount(3, $data);
         $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
         $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+        $this->assertEquals($eventToFind3->uuid, $data[2]['uuid']);
     }
 
     public function testGetListWithStatusIdFilter()
@@ -376,6 +385,100 @@ class EventTest extends TestCase
             'uuid' => $host->uuid,
             'name' => $host->name,
         ], $data[0]['host']);
+    }
+
+    public function testGetListWithAllowedSorts()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $event1 = factory(Event::class)->create([
+            'name' => 'A event1',
+            'start_at' => Carbon::now(),
+            'host_uuid' => factory(Company::class)->create(['name' => 'A host1'])->uuid,
+            'manager_uuid' => factory(User::class)->create(['first_name' => 'A manager1'])->uuid
+        ]);
+        $event2 = factory(Event::class)->create([
+            'name' => 'Z event2',
+            'start_at' => Carbon::now()->subDays(1),
+            'host_uuid' => factory(Company::class)->create(['name' => 'Z host1'])->uuid,
+            'manager_uuid' => factory(User::class)->create(['first_name' => 'Z manager2'])->uuid
+        ]);
+
+        $eventTags1 = factory(EventTag::class)->create([
+            'name' => 'A tag1'
+        ]);
+        $eventTags2 = factory(EventTag::class)->create([
+            'name' => 'Z tag2'
+        ]);
+        $event1->eventTags()->save($eventTags1);
+        $event2->eventTags()->save($eventTags2);
+
+        // 1. sort by name
+        $response = $this->json('get', '/api/foodfleet/events?sort=name');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event1->uuid, $data[0]['uuid']);
+
+        $response = $this->json('get', '/api/foodfleet/events?sort=-name');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event2->uuid, $data[0]['uuid']);
+
+        // 2. sort by start_at
+        $response = $this->json('get', '/api/foodfleet/events?sort=start_at');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event2->uuid, $data[0]['uuid']);
+
+        $response = $this->json('get', '/api/foodfleet/events?sort=-start_at');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event1->uuid, $data[0]['uuid']);
+
+        // 3. sort by host
+        $response = $this->json('get', '/api/foodfleet/events?sort=host');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event1->uuid, $data[0]['uuid']);
+
+        $response = $this->json('get', '/api/foodfleet/events?sort=-host');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event2->uuid, $data[0]['uuid']);
+
+        // // 4. sort by manager
+        $response = $this->json('get', '/api/foodfleet/events?sort=manager');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event1->uuid, $data[0]['uuid']);
+
+        $response = $this->json('get', '/api/foodfleet/events?sort=-manager');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event2->uuid, $data[0]['uuid']);
+
+        // 5. sort by event_tags
+        $response = $this->json('get', '/api/foodfleet/events?sort=event_tags');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event1->uuid, $data[0]['uuid']);
+
+        $response = $this->json('get', '/api/foodfleet/events?sort=-event_tags');
+        $data = $response->assertStatus(200)->json('data');
+
+        $this->assertCount(2, $data);
+        $this->assertEquals($event2->uuid, $data[0]['uuid']);
     }
   
     public function testGetItem()
