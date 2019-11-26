@@ -37,28 +37,43 @@
       </v-flex>
     </v-flex>
     <v-divider />
-    <filter-sorter
-      v-if="!isLoading"
-      :statuses="statuses"
-      @runFilter="filterEvents"
-    />
-    <event-list
-      v-if="!isLoading"
-      :events="events"
-      :statuses="statuses"
-      :is-loading="isLoading || isLoadingList"
-      :rows-per-page="pagination.rowsPerPage"
-      :page="pagination.page"
-      :total-items="pagination.totalItems"
-      :sort-by="sorting.sortBy"
-      :descending="sorting.descending"
-      @paginate="onPaginate"
-      @manage-edit="eventEdit"
-      @manage-delete="deleteSingle"
-      @manage-multiple-delete="multipleDelete"
-      @change-status="changeStatusSingle"
-      @change-status-multiple="changeStatusMultiple"
-    />
+    <template v-if="view === 1">
+      <filter-sorter
+        v-if="!isLoading"
+        :statuses="statuses"
+        @runFilter="filterEvents"
+      />
+      <event-list
+        v-if="!isLoading"
+        :events="events"
+        :statuses="statuses"
+        :is-loading="isLoading || isLoadingList"
+        :rows-per-page="pagination.rowsPerPage"
+        :page="pagination.page"
+        :total-items="pagination.totalItems"
+        :sort-by="sorting.sortBy"
+        :descending="sorting.descending"
+        @paginate="onPaginate"
+        @manage-edit="eventEdit"
+        @manage-delete="deleteSingle"
+        @manage-multiple-delete="multipleDelete"
+        @change-status="changeStatusSingle"
+        @change-status-multiple="changeStatusMultiple"
+      />
+    </template>
+    <template v-else-if="view === 2">
+      <filter-sorter-for-calendar
+        v-if="!isLoading"
+        :statuses="statuses"
+        @runFilter="filterEvents"
+      />
+      <event-calendar
+        v-if="!isLoading"
+        :events="events"
+        @change-date="changeDate"
+        @click-event="clickEvent"
+      />
+    </template>
     <v-dialog
       v-model="deleteDialog"
       max-width="500"
@@ -105,7 +120,9 @@ import get from 'lodash/get'
 import { mapGetters, mapActions, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import FilterSorter from '~/components/events/FilterSorter.vue'
+import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar.vue'
 import EventList from '~/components/events/EventList.vue'
+import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 const include = [
   'status',
@@ -119,7 +136,9 @@ export default {
   layout: 'admin',
   components: {
     EventList,
+    EventCalendar,
     FilterSorter,
+    FilterSorterForCalendar,
     SimpleConfirm
   },
   filters: {
