@@ -37,7 +37,9 @@
       </v-flex>
     </v-flex>
     <v-divider />
-    <template v-if="view === 1">
+    <template
+      v-if="view === 1"
+    >
       <filter-sorter
         v-if="!isLoading"
         :statuses="statuses"
@@ -61,19 +63,35 @@
         @change-status-multiple="changeStatusMultiple"
       />
     </template>
-    <template v-else-if="view === 2">
-      <filter-sorter-for-calendar
-        v-if="!isLoading"
-        :statuses="statuses"
-        @runFilter="filterEvents"
-      />
-      <event-calendar
-        v-if="!isLoading"
-        :events="events"
-        @change-date="changeDate"
-        @click-event="clickEvent"
-      />
-    </template>
+    <v-layout
+      v-else-if="view === 2"
+      row
+      flex
+    >
+      <v-flex
+        sm4
+        xs12
+      >
+        <v-card>
+          <filter-sorter-for-calendar
+            v-if="!isLoading"
+            :statuses="statuses"
+            @runFilter="filterEvents"
+          />
+        </v-card>
+      </v-flex>
+      <v-flex
+        sm8
+        xs12
+      >
+        <v-card>
+          <event-calendar
+            v-if="!isLoading"
+            :events="events"
+          />
+        </v-card>
+      </v-flex>
+    </v-layout>
     <v-dialog
       v-model="deleteDialog"
       max-width="500"
