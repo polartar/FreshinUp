@@ -4,6 +4,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Documents;
 
 use App\User;
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\Event;
 
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -14,6 +15,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Testing\File;
+use Illuminate\Support\Str;
 
 class DocumentTest extends TestCase
 {
@@ -153,5 +155,40 @@ class DocumentTest extends TestCase
 
         $this->assertEquals('document.pdf', $returnedDocument['file']['name']);
         $this->assertEquals($attachment->getPath(), $returnedDocument['file']['src']);
+    }
+
+    public function testGetDocumentsByAssignedUUIDAndEventStoreUUID()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $event = factory(Event::class)->create();
+        $anotherEvent = factory(Event::class)->create();
+
+        $eventStoreUUID = (string) Str::uuid();
+        $anotherEventStoreUUID = (string) Str::uuid();
+
+        $document = factory(Document::class)->create([
+            'assigned_uuid' => $event->uuid,
+            'event_store_uuid' => $eventStoreUUID
+        ]);
+        $anotherDocument = factory(Document::class)->create([
+            'assigned_uuid' => $anotherEvent->uuid,
+            'event_store_uuid' => $anotherEventStoreUUID
+        ]);
+
+        // ensure only the document belongs to given event will be returned
+        $response = $this->get('/api/foodfleet/documents?'
+            . 'filter[assigned_uuid]=' . $event->uuid
+            . '&filter[event_store_uuid]=' . $eventStoreUUID);
+
+        $this->assertEquals(1, count($response->json('data')));
+        $response->assertStatus(200);
+
+        // ensure return all documents when assigned_uuid and event_store_uuid were not provided
+        $anotherResponse = $this->get('/api/foodfleet/documents');
+        $anotherResponse->assertStatus(200);
+        $this->assertEquals(2, count($anotherResponse->json('data')));
     }
 }
