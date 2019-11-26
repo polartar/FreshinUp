@@ -189,17 +189,16 @@ class DocumentTest extends TestCase
             . '&filter[event_store_uuid]=' . $eventStoreUUID);
 
         $this->assertEquals(1, count($response->json('data')));
-        $response
-            ->assertStatus(200)
+        $response->assertStatus(200)
             ->assertJson([
-            'data' => [
-                [
-                    'event_store_uuid' => $eventStoreUUID,
-                    'assigned' => [
-                        'uuid' => $event->uuid
+                'data' => [
+                    [
+                        'event_store_uuid' => $eventStoreUUID,
+                        'assigned' => [
+                            'uuid' => $event->uuid
+                        ]
                     ]
                 ]
-            ]
-        ]);
+            ]);
     }
 }
