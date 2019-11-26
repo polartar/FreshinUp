@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Documents;
 use App\User;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Store;
 
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -163,32 +164,41 @@ class DocumentTest extends TestCase
 
         Passport::actingAs($user);
 
+        $store = factory(Store::class)->create();
+        $anotherStore = factory(Store::class)->create();
+
         $event = factory(Event::class)->create();
         $anotherEvent = factory(Event::class)->create();
 
-        $eventStoreUUID = (string) Str::uuid();
-        $anotherEventStoreUUID = (string) Str::uuid();
+        $eventStoreUUID = $store->uuid;
+        $anotherEventStoreUUID = $anotherStore->uuid;
 
         $document = factory(Document::class)->create([
             'assigned_uuid' => $event->uuid,
-            'event_store_uuid' => $eventStoreUUID
+            'event_store_uuid' => $eventStoreUUID,
+            'assigned_type' => 'App\Models\Foodfleet\Event'
         ]);
         $anotherDocument = factory(Document::class)->create([
             'assigned_uuid' => $anotherEvent->uuid,
-            'event_store_uuid' => $anotherEventStoreUUID
+            'event_store_uuid' => $anotherEventStoreUUID,
+            'assigned_type' => 'App\Models\Foodfleet\Event'
         ]);
 
-        // ensure only the document belongs to given event will be returned
         $response = $this->get('/api/foodfleet/documents?'
             . 'filter[assigned_uuid]=' . $event->uuid
             . '&filter[event_store_uuid]=' . $eventStoreUUID);
 
         $this->assertEquals(1, count($response->json('data')));
         $response->assertStatus(200);
-
-        // ensure return all documents when assigned_uuid and event_store_uuid were not provided
-        $anotherResponse = $this->get('/api/foodfleet/documents');
-        $anotherResponse->assertStatus(200);
-        $this->assertEquals(2, count($anotherResponse->json('data')));
+        $response->assertJson([
+            'data' => [
+                [
+                    'event_store_uuid' => $eventStoreUUID,
+                    'assigned' => [
+                        'uuid' => $event->uuid
+                    ]
+                ]
+            ]
+        ]);
     }
 }
