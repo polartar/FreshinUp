@@ -11,10 +11,8 @@
     @run="run"
   >
     <template v-slot:title>
-      <h3 class="headline">
-        Filter events
-      </h3>
-      <hr>
+      <h3 class="headline">Filter events</h3>
+      <hr/>
     </template>
     <template v-slot:filters="slotProps">
       <v-card-text class="px-0 pb-0">
@@ -146,6 +144,7 @@
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
@@ -155,6 +154,7 @@ export default {
     FilterLabel,
     ClearButton,
     MultiSelect,
+    VueCtkDateTimePicker,
     SearchFilterSorter
   },
   props: {
