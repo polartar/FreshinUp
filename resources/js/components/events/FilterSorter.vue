@@ -210,6 +210,7 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
+      this.$refs.tag.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
       this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
