@@ -56,7 +56,7 @@
               <v-list-tile
                 v-for="(item, index) in statuses"
                 :key="index"
-                @click="changeStatusMultiple(item.value)"
+                @click="changeStatusMultiple(item.id)"
               >
                 <v-list-tile-title>
                   {{ item.name }}
@@ -163,7 +163,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: false, value: 'status' },
+        { text: 'Status', sortable: true, value: 'status' },
         { text: 'Name', sortable: true, value: 'name' },
         { text: 'Tags', sortable: true, value: 'tags' },
         { text: 'Scheduled events', sortable: true, value: 'events' },
