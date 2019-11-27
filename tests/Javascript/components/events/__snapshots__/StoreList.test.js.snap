@@ -284,7 +284,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Declined
+                        Past
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -548,7 +561,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Declined
+                        Past
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -824,7 +850,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Declined
+                        Past
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Cancelled
                       </div>
                     </a>
                   </div>
