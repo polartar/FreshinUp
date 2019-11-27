@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import FleetMemberSummary from './FleetMemberSummary'
+import FleetSummary from './FleetSummary'
 
 storiesOf('FoodFleet|events/FleetMemberSummary', module)
   .add(
     'default',
     () => ({
-      components: { FleetMemberSummary },
+      components: { FleetSummary },
       methods: {
         onOk () {
           action('ok')('Ok clicked')
@@ -26,7 +26,7 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
       template: `        
         <v-container fluid>
           <v-layout row>
-            <fleet-member-summary
+            <fleet-summary
              @ok="onOk"
              :title="title"
              :fleet="fleet"
