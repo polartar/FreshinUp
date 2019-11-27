@@ -229,7 +229,24 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Declined
+                                      Past
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Cancelled
                                     </div>
                                   </div>
                                 </a>
