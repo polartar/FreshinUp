@@ -10,7 +10,7 @@ let statuses = [
   { id: 5, name: 'Cancelled' }
 ]
 
-storiesOf('FoodFleet|event/StatusSelect', module)
+storiesOf('FoodFleet|events/StatusSelect', module)
   .add('defaults', () => {
     return {
       components: { StatusSelect },
