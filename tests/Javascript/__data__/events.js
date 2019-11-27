@@ -28,7 +28,11 @@ export const FIXTURE_EVENTS = [
       id: 89,
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
       name: 'Swift-Wehner'
-    }
+    },
+    attendees: 10,
+    budget: 1000,
+    commission_rate: 12,
+    commission_type: 2
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
