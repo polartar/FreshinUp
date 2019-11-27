@@ -38,7 +38,7 @@
 
           <v-btn
             class="button-grey mt-4"
-            @click="$emit('view_profile')"
+            @click="$emit('view')"
           >
             {{button_text}}
           </v-btn>
@@ -133,7 +133,7 @@ export default {
     },
 
     view () {
-      this.$emit('view_profile')
+      this.$emit('view')
     }
   }
 }

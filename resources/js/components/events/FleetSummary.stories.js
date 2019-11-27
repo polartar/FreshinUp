@@ -8,8 +8,8 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
     () => ({
       components: { FleetSummary },
       methods: {
-        onOk () {
-          action('ok')('Ok clicked')
+        view () {
+          action('view')('view clicked')
         }
       },
       data () {
@@ -27,7 +27,7 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
         <v-container fluid>
           <v-layout row>
             <fleet-summary
-             @ok="onOk"
+             @view="view"
              :title="title"
              :fleet="fleet"
              :tags="tags"
