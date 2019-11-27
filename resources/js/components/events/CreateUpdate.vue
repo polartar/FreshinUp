@@ -34,12 +34,8 @@
         xs12
       >
         <status-select
-          v-model="status_id"
+          :value="status_id"
           :options="statuses"
-          single-line
-          solo
-          flat
-          hide-details
         />
       </v-flex>
     </v-layout>

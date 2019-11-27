@@ -2,7 +2,7 @@ export const FIXTURE_EVENTS = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'accusantium',
-    status: 1,
+    status_id: 1,
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -29,15 +29,16 @@ export const FIXTURE_EVENTS = [
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
       name: 'Swift-Wehner'
     },
-    attendees: 10,
+    atendees: 10,
     budget: 1000,
     commission_rate: 12,
-    commission_type: 2
+    commission_type: 2,
+    type: 1
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
     name: 'saepe',
-    status: 2,
+    status_id: 2,
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -63,12 +64,17 @@ export const FIXTURE_EVENTS = [
       id: 96,
       uuid: '5d3e79a3-81aa-4645-b1fd-c6173026e01f',
       name: 'Goodwin-Carroll'
-    }
+    },
+    atendees: 10,
+    budget: 1000,
+    commission_rate: 12,
+    commission_type: 2,
+    type: 1
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
     name: 'quibusdam',
-    status: 3,
+    status_id: 3,
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -94,6 +100,11 @@ export const FIXTURE_EVENTS = [
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
       name: 'Carter-Green'
-    }
+    },
+    atendees: 10,
+    budget: 1000,
+    commission_rate: 12,
+    commission_type: 2,
+    type: 1
   }
 ]

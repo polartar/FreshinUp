@@ -48,6 +48,7 @@
                 <v-select
                   v-model="eventData.type"
                   :items="eventTypes"
+                  data-vv-name="name"
                   v-validate="'required'"
                   :error-messages="errors.collect('type')"
                   item-value="id"
@@ -292,20 +293,20 @@ export default {
     }
   },
   data () {
-    let edit = this.event.uuid !== null
+    let edit = get(this.event, 'uuid') !== null
     return {
       eventData: {
-        name: edit ? this.event.name : null,
+        name: edit ? get(this.event, 'name') : null,
         manager_uuid: edit ? get(this.event, 'manager.uuid') : null,
         host_uuid: edit ? get(this.event, 'host.uuid') : null,
-        budget: edit ? this.event.budget : null,
-        atendees: edit ? this.event.atendees : null,
-        commission_rate: edit ? this.event.commission_rate : 5,
-        commission_type: edit ? this.event.commission_type : 1,
-        type: edit ? this.event.type : 1,
-        event_tags: edit ? this.event.event_tags : [],
-        start_at: edit ? this.event.start_at : null,
-        end_at: edit ? this.event.end_at : null
+        budget: edit ? get(this.event, 'budget') : null,
+        atendees: edit ? get(this.event, 'atendees') : null,
+        commission_rate: edit ? get(this.event, 'commission_rate') : 5,
+        commission_type: edit ? get(this.event, 'commission_type') : 1,
+        type: edit ? get(this.event, 'type') : 1,
+        event_tags: edit ? get(this.event, 'event_tags') : [],
+        start_at: edit ? get(this.event, 'start_at') : null,
+        end_at: edit ? get(this.event, 'end_at') : null
       },
       edit: edit,
       commissionTypes: [
