@@ -117,6 +117,5 @@ describe('Event CreateUpdate Component', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.event.name).toBe('mock event name')
     })
-
   })
 })

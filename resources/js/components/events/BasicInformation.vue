@@ -47,9 +47,9 @@
                 Event type
                 <v-select
                   v-model="eventData.type"
+                  v-validate="'required'"
                   :items="eventTypes"
                   data-vv-name="name"
-                  v-validate="'required'"
                   :error-messages="errors.collect('type')"
                   item-value="id"
                   item-text="label"
@@ -118,12 +118,12 @@
               >
                 Budget
                 <v-text-field
-                  type="number"
                   v-model="eventData.budget"
+                  v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
                   data-vv-name="budget"
-                  v-validate="'required'"
                   :error-messages="errors.collect('budget')"
                 />
               </v-flex>
@@ -134,12 +134,12 @@
               >
                 Attendees
                 <v-text-field
-                  type="number"
                   v-model="eventData.atendees"
+                  v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
                   data-vv-name="atendees"
-                  v-validate="'required'"
                   :error-messages="errors.collect('atendees')"
                 />
               </v-flex>
@@ -150,9 +150,9 @@
               >
                 Commission Rate
                 <v-text-field
-                  type="number"
                   v-model="eventData.commission_rate"
                   v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
                   data-vv-name="commission_rate"
