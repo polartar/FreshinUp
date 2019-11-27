@@ -14,15 +14,18 @@ class UpdateEvent implements Action
         $event = Event::where('uuid', $data['uuid'])->first();
 
         $collection = collect($data);
-        $updateData = $collection->except(['event_tags', 'uuid'])->all();
+        $updateData = $collection->except(['event_tags', 'uuid', 'host', 'manager'])->all();
         $event->update($updateData);
 
         $tags = $collection->get('event_tags');
         if ($tags) {
-            $tagIds =[];
             foreach ($tags as $tag) {
-                $record = EventTag::firstOrCreate(['name' => $tag]);
-                $tagUuids[] = $record->uuid;
+                if (!empty($tag['uuid'])) {
+                    $tagUuids[] = $tag['uuid'];
+                } else {
+                    $record = EventTag::firstOrCreate(['name' => $tag]);
+                    $tagUuids[] = $record->uuid;
+                }
             }
 
             $event->eventTags()->sync($tagUuids);

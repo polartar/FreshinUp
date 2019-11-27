@@ -17,7 +17,7 @@ mock.onGet('/companies?filter[type_key]=host').reply(200, {
   ]
 })
 
-mock.onGet('/users?filter[level]=2').reply(200, {
+mock.onGet('/users?filter[type]=1').reply(200, {
   data: [
     { uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54', name: 'John Smith' },
     { uuid: 2, name: 'Bob Dylan' },
@@ -52,11 +52,11 @@ const event = {
     uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
     name: 'Swift-Wehner'
   },
-  attendees: 10,
+  atendees: 10,
   budget: 1000,
   commission_rate: 12,
   commission_type: 2,
-  event_type: 1
+  type: 1
 }
 
 storiesOf('FoodFleet|events/BasicInformation', module)

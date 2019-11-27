@@ -33,14 +33,6 @@
         sm2
         xs12
       >
-        <!-- <v-select
-          v-model="status_id"
-          :items="statuses"
-          single-line
-          solo
-          flat
-          hide-details
-        /> -->
         <status-select
           v-model="status_id"
           :options="statuses"
@@ -68,6 +60,7 @@
           ref="basicInfo"
           :event="event"
           :errors="errors"
+          @data-change="changeBasicInfo"
           @cancel="onCancel"
           @save="onSave"
           @delete="onDelete"
@@ -117,6 +110,19 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    changeBasicInfo (data) {
+      this.event.atendees = data.atendees
+      this.event.budget = data.budget
+      this.event.commission_rate = data.commission_rate
+      this.event.commission_type = data.commission_type
+      this.event.type = data.type
+      this.event.start_at = data.start_at
+      this.event.end_at = data.end_at
+      this.event.event_tags = data.event_tags
+      this.event.host_uuid = data.host_uuid
+      this.event.manager_uuid = data.manager_uuid
+      this.event.name = data.name
+    },
     async validator () {
       const valids = await Promise.all([
         this.$validator.validateAll(),
@@ -134,11 +140,11 @@ export default {
           if (this.isNew) {
             data.id = 'new'
             await this.$store.dispatch('events/createItem', { data })
-            await this.$store.dispatch('events/getItems')
+            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
             this.$router.push('/admin/events/')
           } else {
             await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
+            await this.$store.dispatch('generalMessage/setMessage', 'Modified')
           }
         }
       })
@@ -146,8 +152,10 @@ export default {
     onCancel () {
       this.$router.push({ path: '/admin/events' })
     },
-    onDelete () {
-      console.log('onDelete')
+    async onDelete () {
+      await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
+      await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
+      this.$router.push('/admin/events/')
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
@@ -156,8 +164,15 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
     const id = to.params.id || 'new'
+    let params = { id }
+    if (id !== 'new') {
+      params = {
+        id,
+        include: 'manager,host,event_tags'
+      }
+    }
     Promise.all([
-      vm.$store.dispatch('events/getItem', { params: { id } }),
+      vm.$store.dispatch('events/getItem', { params }),
       vm.$store.dispatch('eventStatuses/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
