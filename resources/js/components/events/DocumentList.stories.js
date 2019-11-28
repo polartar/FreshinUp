@@ -9,19 +9,22 @@ let documents = [
     title: 'Document Title',
     owner: 'document owner',
     status: 1,
-    updated_at: '2019-10-10 11:04:19'
+    updated_at: '2019-10-10 11:04:19',
+    uuid: 'f5777e5d-4ee4-4df3-abca-2dae0fb90b42'
   },
   {
     title: 'Employee IDs',
     owner: 'employee info center',
     status: 1,
-    updated_at: '2019-10-10 11:04:19'
+    updated_at: '2019-10-10 11:04:19',
+    uuid: 'f5777e5d-4ee4-4df3-abca-2dae0fb90b42'
   },
   {
     title: 'Title',
     owner: 'document center',
     status: 1,
-    updated_at: '2019-10-12 11:04:19'
+    updated_at: '2019-10-12 11:04:19',
+    uuid: 'f5777e5d-4ee4-4df3-abca-2dae0fb90b42'
   }
 ]
 

@@ -3,7 +3,6 @@
     class="document-list-table"
     :headers="headers"
     :items="documents"
-    :loading="isLoading"
     hide-actions
     disable-initial-sort
   >
@@ -44,7 +43,7 @@
       <td class="text-xs-right">
         <v-btn
           class="primary view-details-btn"
-          @click="viewDetails"
+          @click="viewDetails(props.item.uuid)"
         >
           View Details
         </v-btn>
