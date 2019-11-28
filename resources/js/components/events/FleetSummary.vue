@@ -18,6 +18,17 @@
             </v-layout>
             <v-divider/>
           </v-layout>
+          <v-layout v-for="(item) in editable_items" :key="item.key" column>
+            <v-layout row align-center primary--text>
+              <v-flex xs6 title >
+                <v-card-text>{{item.key}}</v-card-text>
+              </v-flex>
+              <v-flex xs6 text-right >
+                <v-card-text class="with-icon" >{{item.value}}{{item.unit}}<v-icon class="icon right" >edit</v-icon></v-card-text>
+              </v-flex>
+            </v-layout>
+            <v-divider/>
+          </v-layout>
           <v-layout v-if="tags" xs6 title grey--text>
             <v-card-text>TAGS</v-card-text>
           </v-layout>
@@ -43,9 +54,9 @@
               class="button-remove grey--text mt-3"
               @click="$emit('remove')"
             >
-              <v-icon class="remove-text-icon" >{{button_remove.icon}}</v-icon>
-             <v-text>{{button_remove.text}}</v-text>
-          </v-btn>
+              <v-icon class="icon left" >{{button_remove.icon}}</v-icon>
+              <v-text>{{button_remove.text}}</v-text>
+            </v-btn>
           </v-layout>
         </v-container>
       </v-card>
@@ -67,6 +78,10 @@ export default {
     },
     items: {
       type: Object,
+      required: true
+    },
+    editable_items: {
+      type: Array,
       required: true
     },
     tags: {
@@ -109,7 +124,14 @@ export default {
   .text-right {
     text-align: end;
     font-size: 17px;
+    .with-icon {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
+
   .v-chip {
     margin: 6px 12px 6px 0px;
   }
@@ -122,16 +144,27 @@ export default {
   }
 
   .button-remove {
-    background: none!important;
-    box-shadow: none!important;
+    background: none !important;
+    box-shadow: none !important;
     width: 100%;
     margin: 0;
     text-transform: none;
     font-size: 12px;
   }
 
-  .remove-text-icon {
-    padding-right: 9px;
+  .icon {
     font-size: 1em;
+    padding-left: 9px;
+    color: inherit;
+    align-self: center;
+    justify-self: center;
+
+    &.left {
+      padding-right: 9px;
+    }
+    &.right {
+      padding-left: 9px;
+    }
   }
+
 </style>
