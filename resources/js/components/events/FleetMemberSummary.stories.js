@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import FleetSummary from './FleetMemberSummary'
+import FleetMemberSummary from './FleetMemberSummary'
 
 storiesOf('FoodFleet|events/FleetMemberSummary', module)
   .add(
-    'member summary required',
+    'data set',
     () => ({
-      components: { FleetSummary },
+      components: { FleetMemberSummary },
       methods: {
         onButtonClick () {
           action('onButtonClick')('button clicked')
@@ -27,15 +27,17 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
         }
       },
       template: `        
-    <v-container fluid>
-      <v-layout row>
-        <fleet-summary
-         @onButtonClick="onButtonClick"
-         @remove="remove"
-         :member="member"
+  <v-container fluid>
+    <v-layout>
+      <v-flex md4>
+        <fleet-member-summary
+          @onButtonClick="onButtonClick"
+          @remove="remove"
+          :member="member"
         />
-        </v-layout>
-    </v-container>
+      </v-flex>
+    </v-layout>
+  </v-container>
   `
     })
   )

@@ -2,300 +2,292 @@
 
 exports[`Event FleetSummary component Snapshots required set 1`] = `
 <div
-  class="layout"
+  class="v-card v-sheet theme--light"
 >
   <div
-    class="flex md4"
+    class="container header grey--text"
+  >
+    
+    Fleet Member Summary
+  
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="container pt-0"
   >
     <div
-      class="v-card v-sheet theme--light"
+      class="layout row align-center"
     >
       <div
-        class="container header grey--text"
+        class="flex xs6 title grey--text"
       >
-        
-        Fleet Member Summary
-      
+        <div
+          class="v-card__text"
+        >
+          owner
+        </div>
       </div>
-       
-      <hr
-        class="v-divider theme--light"
-      />
        
       <div
-        class="container pt-0"
+        class="flex xs6 text-right grey--text"
       >
         <div
-          class="layout row align-center"
+          class="v-card__text"
         >
-          <div
-            class="flex xs6 title grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              owner
-            </div>
-          </div>
-           
-          <div
-            class="flex xs6 text-right grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              Dan Smith
-            </div>
-          </div>
+          Dan Smith
         </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
-         
-        <div
-          class="layout row align-center"
-        >
-          <div
-            class="flex xs6 title grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              lisence due
-            </div>
-          </div>
-           
-          <div
-            class="flex xs6 text-right grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              Dec, 30 2020
-            </div>
-          </div>
-        </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
-         
-        <div
-          class="layout row align-center"
-        >
-          <div
-            class="flex xs6 title grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              contact phone
-            </div>
-          </div>
-           
-          <div
-            class="flex xs6 text-right grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              938 374822
-            </div>
-          </div>
-        </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
-         
-        <div
-          class="layout row align-center"
-        >
-          <div
-            class="flex xs6 title grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              contact email
-            </div>
-          </div>
-           
-          <div
-            class="flex xs6 text-right grey--text"
-          >
-            <div
-              class="v-card__text"
-            >
-              dan.simth@gmail.com
-            </div>
-          </div>
-        </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
-         
-        <div
-          class="layout xs6 title grey--text mt-2"
-        >
-          <div
-            class="v-card__text"
-          >
-            TAGS
-          </div>
-        </div>
-         
-        <div
-          class="layout row wrap"
-        >
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            SEAFOOD
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            SMOKED
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            DESSERT
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            BAY AREA
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            VEGAN OPTIONS
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            SMOKED
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            DESSERT
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            SEAFOOD
-          
-            </span>
-          </span>
-          <span
-            class="v-chip theme--light primary primary-text--text"
-            tabindex="0"
-          >
-            <span
-              class="v-chip__content"
-            >
-              
-            SMOKED
-          
-            </span>
-          </span>
-        </div>
-         
-        <hr
-          class="mt-3 v-divider theme--light"
-        />
-         
-        <button
-          class="button-grey grey mt-4 v-btn theme--light"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            
-          View Fleet Member Profile
-        
-          </div>
-        </button>
-         
-        <button
-          class="button-remove grey--text mt-3 v-btn theme--light"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            <i
-              aria-hidden="true"
-              class="v-icon icon left far fa-trash-alt theme--light"
-            />
-             
-            <v-text>
-              Remove fleet member from this event
-            </v-text>
-          </div>
-        </button>
       </div>
     </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout row align-center"
+    >
+      <div
+        class="flex xs6 title grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          lisence due
+        </div>
+      </div>
+       
+      <div
+        class="flex xs6 text-right grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          Dec, 30 2020
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout row align-center"
+    >
+      <div
+        class="flex xs6 title grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          contact phone
+        </div>
+      </div>
+       
+      <div
+        class="flex xs6 text-right grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          938 374822
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout row align-center"
+    >
+      <div
+        class="flex xs6 title grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          contact email
+        </div>
+      </div>
+       
+      <div
+        class="flex xs6 text-right grey--text"
+      >
+        <div
+          class="v-card__text"
+        >
+          dan.simth@gmail.com
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout xs6 title grey--text mt-2"
+    >
+      <div
+        class="v-card__text"
+      >
+        TAGS
+      </div>
+    </div>
+     
+    <div
+      class="layout row wrap"
+    >
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        SEAFOOD
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        SMOKED
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        DESSERT
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        BAY AREA
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        VEGAN OPTIONS
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        SMOKED
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        DESSERT
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        SEAFOOD
+      
+        </span>
+      </span>
+      <span
+        class="v-chip theme--light primary primary-text--text"
+        tabindex="0"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        SMOKED
+      
+        </span>
+      </span>
+    </div>
+     
+    <hr
+      class="mt-3 v-divider theme--light"
+    />
+     
+    <button
+      class="button-grey grey mt-4 v-btn theme--light"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        
+      View Fleet Member Profile
+    
+      </div>
+    </button>
+     
+    <button
+      class="button-remove grey--text mt-3 v-btn theme--light"
+      type="button"
+    >
+      <div
+        class="v-btn__content"
+      >
+        <i
+          aria-hidden="true"
+          class="v-icon icon left far fa-trash-alt theme--light"
+        />
+         
+        <v-text>
+          Remove fleet member from this event
+        </v-text>
+      </div>
+    </button>
   </div>
 </div>
 `;
