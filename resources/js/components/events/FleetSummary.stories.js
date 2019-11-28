@@ -4,7 +4,7 @@ import FleetSummary from './FleetSummary'
 
 storiesOf('FoodFleet|events/FleetMemberSummary', module)
   .add(
-    'items only',
+    'title and items only',
     () => ({
       components: { FleetSummary },
       data () {
