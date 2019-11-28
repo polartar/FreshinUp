@@ -4,40 +4,124 @@ import FleetSummary from './FleetSummary'
 
 storiesOf('FoodFleet|events/FleetMemberSummary', module)
   .add(
-    'default',
+    'items only',
+    () => ({
+      components: { FleetSummary },
+      data () {
+        return {
+          title: 'Fleet Member Summary',
+          items: { owner: 'Dan Smith', 'lisence due': 'Dec, 30 2020', 'contact phone': '938 374822', 'contact email': 'dan.simth@gmail.com' },
+        }
+      },
+      template: `
+        <v-container fluid>
+          <v-layout row>
+            <fleet-summary
+             :title="title"
+             :items="items"
+            />
+            </v-layout>
+        </v-container>
+      `
+    })
+  )
+  .add(
+    'with button set',
     () => ({
       components: { FleetSummary },
       methods: {
-        view () {
-          action('view')('view clicked')
+        onButtonClick () {
+          action('onButtonClick')('button clicked')
         }
       },
       data () {
         return {
           title: 'Fleet Member Summary',
-          button_text: 'View Fleet Member Profile',
-          fleet: { owner: 'Dan Smith', 'lisence due': 'Dec, 30 2020', 'contact phone': '938 374822', 'contact email': 'dan.simth@gmail.com' },
-          show_remove: true,
-          button_remove_text: 'Remove fleet member from this event',
-          tags: [ { id: 1, name: 'SEAFOOD' }, { id: 2, name: 'SMOKED' }, { id: 3, name: 'DESSERT' }, { id: 4, name: 'BAY AREA' }, { id: 5, name: 'VEGAN OPTIONS' }, { id: 6, name: 'SMOKED' }, { id: 7, name: 'DESSERT' }, { id: 8, name: 'SEAFOOD' }, { id: 9, name: 'SMOKED' } ],
-          selected: [ { id: 1, name: 'SEAFOOD' }, { id: 2, name: 'SMOKED' }, { id: 3, name: 'DESSERT' }, { id: 4, name: 'BAY AREA' }, { id: 5, name: 'VEGAN OPTIONS' }, { id: 6, name: 'SMOKED' }, { id: 7, name: 'DESSERT' }, { id: 8, name: 'SEAFOOD' }, { id: 9, name: 'SMOKED' } ]
+          items: { owner: 'Dan Smith', 'lisence due': 'Dec, 30 2020', 'contact phone': '938 374822', 'contact email': 'dan.simth@gmail.com' },
+          button_text: 'View Fleet Member Profile'
         }
       },
       template: `        
         <v-container fluid>
           <v-layout row>
             <fleet-summary
-             @view="view"
+             @onButtonClick="onButtonClick"
              :title="title"
-             :fleet="fleet"
-             :tags="tags"
-             :selected="selected"
+             :items="items"
              :button_text="button_text"
-             :show_remove="show_remove"
-             :button_remove_text="button_remove_text"
             />
             </v-layout>
         </v-container>
       `
+    })
+  )
+  .add(
+    'with tags set',
+    () => ({
+      components: { FleetSummary },
+      methods: {
+        onButtonClick () {
+          action('onButtonClick')('button clicked')
+        }
+      },
+      data () {
+        return {
+          title: 'Fleet Member Summary',
+          items: { owner: 'Dan Smith', 'lisence due': 'Dec, 30 2020', 'contact phone': '938 374822', 'contact email': 'dan.simth@gmail.com' },
+          tags: [ { id: 1, name: 'SEAFOOD' }, { id: 2, name: 'SMOKED' }, { id: 3, name: 'DESSERT' }, { id: 4, name: 'BAY AREA' }, { id: 5, name: 'VEGAN OPTIONS' }, { id: 6, name: 'SMOKED' }, { id: 7, name: 'DESSERT' }, { id: 8, name: 'SEAFOOD' }, { id: 9, name: 'SMOKED' } ],
+          button_text: 'View Fleet Member Profile'
+        }
+      },
+      template: `        
+    <v-container fluid>
+      <v-layout row>
+        <fleet-summary
+         @onButtonClick="onButtonClick"
+         :title="title"
+         :items="items"
+         :tags="tags"
+         :button_text="button_text"
+        />
+        </v-layout>
+    </v-container>
+  `
+    })
+  )
+  .add(
+    'with remove button set',
+    () => ({
+      components: { FleetSummary },
+      methods: {
+        onButtonClick () {
+          action('onButtonClick')('button clicked')
+        },
+        remove () {
+          action('remove')('remove clicked')
+        }
+      },
+      data () {
+        return {
+          title: 'Fleet Member Summary',
+          items: { owner: 'Dan Smith', 'lisence due': 'Dec, 30 2020', 'contact phone': '938 374822', 'contact email': 'dan.simth@gmail.com' },
+          tags: [ { id: 1, name: 'SEAFOOD' }, { id: 2, name: 'SMOKED' }, { id: 3, name: 'DESSERT' }, { id: 4, name: 'BAY AREA' }, { id: 5, name: 'VEGAN OPTIONS' }, { id: 6, name: 'SMOKED' }, { id: 7, name: 'DESSERT' }, { id: 8, name: 'SEAFOOD' }, { id: 9, name: 'SMOKED' } ],
+          button_text: 'View Fleet Member Profile',
+          button_remove_text: 'Remove fleet member from this event'
+        }
+      },
+      template: `        
+    <v-container fluid>
+      <v-layout row>
+        <fleet-summary
+         @onButtonClick="onButtonClick"
+         @remove="remove"
+         :title="title"
+         :items="items"
+         :tags="tags"
+         :button_text="button_text"
+         :button_remove_text="button_remove_text"
+        />
+        </v-layout>
+    </v-container>
+  `
     })
   )

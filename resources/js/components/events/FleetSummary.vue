@@ -1,48 +1,44 @@
 <template>
   <v-layout>
-    <v-flex xs12 sm12 md4>
-      <v-card class="pt-2">
-        <v-card-title
-          class="px-2 ml-2"
-        >
-          <div class="font-weight-bold grey--text header">
-            {{ title }}
-          </div>
+    <v-flex md4>
+      <v-card>
+        <v-card-title class="header grey--text">
+          {{ title }}
         </v-card-title>
         <v-divider/>
         <v-container pt-0>
-          <v-layout v-for="(value, key) in fleet" :key="key" column>
+          <v-layout v-for="(value, key) in items" :key="key" column>
             <v-layout row align-center>
-              <v-flex xs6 title grey--text class="ma-0 pa-0">
+              <v-flex xs6 title grey--text>
                 <v-card-text>{{key}}</v-card-text>
               </v-flex>
               <v-flex xs6 text-right>
-                <v-card-text text-align-end>{{value}}</v-card-text>
+                <v-card-text>{{value}}</v-card-text>
               </v-flex>
             </v-layout>
             <v-divider/>
           </v-layout>
-          <v-layout xs6 title grey--text class="ma-0 pa-0">
+          <v-layout v-if="tags" xs6 title grey--text>
             <v-card-text>TAGS</v-card-text>
           </v-layout>
-          <v-layout row wrap>
+          <v-layout v-if="tags" row wrap>
             <f-chip
-              v-for="item in tagsComputed"
+              v-for="item in tags"
               :key="item.id"
-              :color="isSelected(item.id) ? 'primary' : 'accent'"
-              @click.prevent="changeTags(item)"
+              :color="'primary'"
             >
               {{ item.name }}
             </f-chip>
           </v-layout>
 
           <v-btn
+            v-if="button_text"
             class="button-grey mt-4"
-            @click="$emit('view')"
+            @click="$emit('onButtonClick')"
           >
             {{button_text}}
           </v-btn>
-          <v-layout flex row>
+          <v-layout v-if="button_remove_text" flex row>
             <v-btn
               class="button-remove mt-3"
               @click="$emit('remove')"
@@ -58,7 +54,6 @@
 </template>
 
 <script>
-import remove from 'lodash/remove'
 import FChip from 'fresh-bus/components/ui/FChip.vue'
 import '../../../../resources/fonts/css/fontello.css'
 
@@ -70,6 +65,13 @@ export default {
       default: null,
       required: true
     },
+    items: {
+      type: Object,
+      required: true
+    },
+    tags: {
+      type: Array
+    },
     button_text: {
       type: String,
       default: null,
@@ -79,68 +81,14 @@ export default {
       type: String,
       default: null,
       required: true
-    },
-    show_remove: {
-      type: Boolean,
-      default: true,
-      required: true
-    },
-    fleet: {
-      type: Object,
-      required: true
-    },
-    tags: {
-      type: Array
-    },
-    selected: {
-      type: Array,
-      default: () => []
-    }
-  },
-
-  data () {
-    return {
-      selectedTagsData: [...this.selected]
-    }
-  },
-  computed: {
-    hasTitle () {
-      return this.title.length > 0
-    },
-    tagsComputed () {
-      return this.tags
-    }
-  },
-  watch: {
-    selected (val) {
-      this.selectedTagsData = val
-    }
-  },
-  methods: {
-    changeTags (tag) {
-      event.stopPropagation()
-      if (!this.isSelected(tag.id)) {
-        this.selectedTagsData.push(tag)
-      } else {
-        this.selectedTagsData = remove(this.selectedTagsData, function (item) {
-          return !(item.id === tag.id)
-        })
-      }
-      this.$emit('input', this.selectedTagsData)
-    },
-    isSelected (id) {
-      return this.selectedTagsData.some(element => element.id === id)
-    },
-
-    view () {
-      this.$emit('view')
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .header {
+    font-weight: 600;
     font-size: 17px;
   }
 
