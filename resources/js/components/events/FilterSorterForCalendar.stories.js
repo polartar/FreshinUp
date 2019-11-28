@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios/index'
 
 // Components
-import FilterSorter from './FilterSorter.vue'
+import FilterSorterForCalendar from './FilterSorterForCalendar.vue'
 
 let statuses = [
   { id: 1, name: 'Draft' },
@@ -32,14 +32,14 @@ mock.onGet('/users?filter[type]=1').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/FilterSorter', module)
+storiesOf('FoodFleet|event/FilterSorterForCalendar', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('default', () => ({
-    components: { FilterSorter },
+    components: { FilterSorterForCalendar },
     methods: {
       filterEvents (params) {
         action('Run')(params)
@@ -47,24 +47,22 @@ storiesOf('FoodFleet|event/FilterSorter', module)
     },
     template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
-        <filter-sorter
+        <filter-sorter-for-calendar
           @runFilter="filterEvents"
         />
       </v-container>
     `
   }))
   .add('with statuses', () => ({
-    components: { FilterSorter },
+    components: { FilterSorterForCalendar },
     data () {
       return {
         statuses: statuses,
         filters: {
+          name: '',
           status_id: null,
           host_uuid: null,
-          manager_uuid: null,
-          event_tag_uuid: null,
-          start_at: null,
-          end_at: null
+          manager_uuid: null
         }
       }
     },
@@ -75,7 +73,7 @@ storiesOf('FoodFleet|event/FilterSorter', module)
     },
     template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
-        <filter-sorter
+        <filter-sorter-for-calendar
           :filters="filters"
           :statuses="statuses"
           @runFilter="filterEvents"

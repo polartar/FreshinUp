@@ -69,8 +69,10 @@
       flex
     >
       <v-flex
-        sm4
+        sm3
         xs12
+        ml-3
+        mt-3
       >
         <v-card>
           <filter-sorter-for-calendar
@@ -81,8 +83,9 @@
         </v-card>
       </v-flex>
       <v-flex
-        sm8
+        sm9
         xs12
+        ma-3
       >
         <v-card>
           <event-calendar

@@ -11,10 +11,10 @@
     @run="run"
   >
     <template v-slot:title>
-      <h3 class="headline">
+      <h3 class="headline grey--text">
         Filter events
       </h3>
-      <hr>
+      <v-divider light></v-divider>
     </template>
     <template v-slot:filters="slotProps">
       <v-card-text class="px-0 pb-0">
@@ -29,35 +29,32 @@
               align-center
               mb-2
             >
-              <filter-label>
+              <filter-label
+                class="grey--text"
+              >
                 EVENT NAME
               </filter-label>
-              <clear-button
-                v-if="filters.status_id && filters.status_id.length > 0"
-                color="white"
-                @clear="filters.status_id = null;"
-              />
             </v-layout>
-            <multi-select
-              v-model="filters.status_id"
-              placeholder="Select Status"
-              :items="statuses"
-              item-value="id"
-              item-text="name"
-              select-all-name="All Status"
+            <v-text-field
+              v-model="filters.name"
+              placeholder=""
               solo
-              flat
+              single-line
               hide-details
             />
           </v-flex>
-          <v-flex>
+          <v-flex
+            mt-3
+          >
             <v-layout
               row
               justify-space-between
               align-center
               mb-2
             >
-              <filter-label>
+              <filter-label
+                class="grey--text"
+              >
                 STATUSES
               </filter-label>
               <clear-button
@@ -74,17 +71,20 @@
               item-text="name"
               select-all-name="All Status"
               solo
-              flat
               hide-details
             />
           </v-flex>
-          <v-flex>
+          <v-flex
+            mt-3
+          >
             <v-layout
               row
               justify-space-between
               mb-2
             >
-              <filter-label>
+              <filter-label
+                class="grey--text"
+              >
                 MANAGED BY
               </filter-label>
               <clear-button
@@ -103,16 +103,19 @@
               height="48"
               not-clearable
               solo
-              flat
             />
           </v-flex>
-          <v-flex>
+          <v-flex
+            mt-3
+          >
             <v-layout
               row
               justify-space-between
               mb-2
             >
-              <filter-label>
+              <filter-label
+                class="grey--text"
+              >
                 CUSTOMERS
               </filter-label>
               <clear-button
@@ -133,9 +136,20 @@
               height="48"
               not-clearable
               solo
-              flat
             />
           </v-flex>
+        </div>
+        <div
+          class="ma-2 mt-5"
+        >
+          <v-btn
+            color="grey"
+            class="white--text"
+            block
+            @click="clearFilters"
+          >
+            Clear all Filters
+          </v-btn>
         </div>
       </v-card-text>
     </template>
@@ -161,12 +175,10 @@ export default {
     filters: {
       type: Object,
       default: () => ({
+        name: '',
         status_id: null,
         host_uuid: null,
-        manager_uuid: null,
-        event_tag_uuid: null,
-        start_at: null,
-        end_at: null
+        manager_uuid: null
       })
     },
     statuses: {
@@ -200,19 +212,13 @@ export default {
       if (this.filters.manager_uuid) {
         finalParams.manager_uuid = this.filters.manager_uuid.map(item => item.uuid)
       }
-      if (this.filters.event_tag_uuid) {
-        finalParams.event_tag_uuid = this.filters.event_tag_uuid.map(item => item.uuid)
-      }
       this.$emit('runFilter', finalParams)
-    },
-    changeDate () {
-      this.filters.start_at = this.rangeDate ? this.rangeDate.start : null
-      this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
-      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.name = ''
+      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = null
     }
   }
 }
