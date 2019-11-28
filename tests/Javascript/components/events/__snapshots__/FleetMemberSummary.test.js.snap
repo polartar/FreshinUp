@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event FleetSummary component Snapshots data set 1`] = `
+exports[`Event FleetSummary component Snapshots required set 1`] = `
 <div
   class="layout"
 >
@@ -26,132 +26,119 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
         class="container pt-0"
       >
         <div
-          class="layout column"
+          class="layout row align-center"
         >
           <div
-            class="layout row align-center"
+            class="flex xs6 title grey--text"
           >
             <div
-              class="flex xs6 title grey--text"
+              class="v-card__text"
             >
-              <div
-                class="v-card__text"
-              >
-                owner
-              </div>
-            </div>
-             
-            <div
-              class="flex xs6 text-right grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                Dan Smith
-              </div>
+              owner
             </div>
           </div>
            
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-        <div
-          class="layout column"
-        >
           <div
-            class="layout row align-center"
+            class="flex xs6 text-right grey--text"
           >
             <div
-              class="flex xs6 title grey--text"
+              class="v-card__text"
             >
-              <div
-                class="v-card__text"
-              >
-                lisence due
-              </div>
-            </div>
-             
-            <div
-              class="flex xs6 text-right grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                Dec, 30 2020
-              </div>
+              Dan Smith
             </div>
           </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-        <div
-          class="layout column"
-        >
-          <div
-            class="layout row align-center"
-          >
-            <div
-              class="flex xs6 title grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                contact phone
-              </div>
-            </div>
-             
-            <div
-              class="flex xs6 text-right grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                938 374822
-              </div>
-            </div>
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-        <div
-          class="layout column"
-        >
-          <div
-            class="layout row align-center"
-          >
-            <div
-              class="flex xs6 title grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                contact email
-              </div>
-            </div>
-             
-            <div
-              class="flex xs6 text-right grey--text"
-            >
-              <div
-                class="v-card__text"
-              >
-                dan.simth@gmail.com
-              </div>
-            </div>
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
         </div>
          
+        <hr
+          class="v-divider theme--light"
+        />
+         
         <div
-          class="layout xs6 title grey--text"
+          class="layout row align-center"
+        >
+          <div
+            class="flex xs6 title grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              lisence due
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 text-right grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              Dec, 30 2020
+            </div>
+          </div>
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="layout row align-center"
+        >
+          <div
+            class="flex xs6 title grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              contact phone
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 text-right grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              938 374822
+            </div>
+          </div>
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="layout row align-center"
+        >
+          <div
+            class="flex xs6 title grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              contact email
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 text-right grey--text"
+          >
+            <div
+              class="v-card__text"
+            >
+              dan.simth@gmail.com
+            </div>
+          </div>
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="layout xs6 title grey--text mt-2"
         >
           <div
             class="v-card__text"
@@ -273,6 +260,10 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
           </span>
         </div>
          
+        <hr
+          class="mt-3 v-divider theme--light"
+        />
+         
         <button
           class="button-grey grey mt-4 v-btn theme--light"
           type="button"
@@ -286,66 +277,23 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
           </div>
         </button>
          
-        <div
-          class="layout flex row"
+        <button
+          class="button-remove grey--text mt-3 v-btn theme--light"
+          type="button"
         >
-          <button
-            class="button-remove grey--text mt-3 v-btn theme--light"
-            type="button"
+          <div
+            class="v-btn__content"
           >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon remove-text-icon far fa-trash-alt theme--light"
-              />
-               
-              <v-text>
-                Remove fleet member from this event
-              </v-text>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Event FleetSummary component Snapshots default 1`] = `
-<div
-  class="layout"
->
-  <div
-    class="flex md4"
-  >
-    <div
-      class="v-card v-sheet theme--light"
-    >
-      <div
-        class="container header grey--text"
-      >
-        
-        
-      
-      </div>
-       
-      <hr
-        class="v-divider theme--light"
-      />
-       
-      <div
-        class="container pt-0"
-      >
-         
-        <!---->
-         
-        <!---->
-         
-        <!---->
-         
-        <!---->
+            <i
+              aria-hidden="true"
+              class="v-icon icon left far fa-trash-alt theme--light"
+            />
+             
+            <v-text>
+              Remove fleet member from this event
+            </v-text>
+          </div>
+        </button>
       </div>
     </div>
   </div>
