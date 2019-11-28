@@ -134,13 +134,13 @@
               >
                 Attendees
                 <v-text-field
-                  v-model="eventData.atendees"
+                  v-model="eventData.attendees"
                   v-validate="'required'"
                   type="number"
                   :disabled="readOnly"
                   solo
-                  data-vv-name="atendees"
-                  :error-messages="errors.collect('atendees')"
+                  data-vv-name="attendees"
+                  :error-messages="errors.collect('attendees')"
                 />
               </v-flex>
               <v-flex
@@ -300,7 +300,7 @@ export default {
         manager_uuid: edit ? get(this.event, 'manager.uuid') : null,
         host_uuid: edit ? get(this.event, 'host.uuid') : null,
         budget: edit ? get(this.event, 'budget') : null,
-        atendees: edit ? get(this.event, 'atendees') : null,
+        attendees: edit ? get(this.event, 'attendees') : null,
         commission_rate: edit ? get(this.event, 'commission_rate') : 5,
         commission_type: edit ? get(this.event, 'commission_type') : 1,
         type: edit ? get(this.event, 'type') : 1,

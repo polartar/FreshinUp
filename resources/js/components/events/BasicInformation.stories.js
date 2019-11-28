@@ -52,7 +52,7 @@ const event = {
     uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
     name: 'Swift-Wehner'
   },
-  atendees: 10,
+  attendees: 10,
   budget: 1000,
   commission_rate: 12,
   commission_type: 2,

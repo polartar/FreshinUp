@@ -14,7 +14,7 @@ class UpdateEvent implements Action
         $event = Event::where('uuid', $data['uuid'])->first();
 
         $collection = collect($data);
-        $updateData = $collection->except(['event_tags', 'uuid', 'host', 'manager'])->all();
+        $updateData = $collection->except(['event_tags', 'uuid'])->all();
         $event->update($updateData);
 
         $tags = $collection->get('event_tags');

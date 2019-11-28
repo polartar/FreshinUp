@@ -29,7 +29,7 @@ export const FIXTURE_EVENTS = [
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
       name: 'Swift-Wehner'
     },
-    atendees: 10,
+    attendees: 10,
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
@@ -65,7 +65,7 @@ export const FIXTURE_EVENTS = [
       uuid: '5d3e79a3-81aa-4645-b1fd-c6173026e01f',
       name: 'Goodwin-Carroll'
     },
-    atendees: 10,
+    attendees: 10,
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
@@ -101,7 +101,7 @@ export const FIXTURE_EVENTS = [
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
       name: 'Carter-Green'
     },
-    atendees: 10,
+    attendees: 10,
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,

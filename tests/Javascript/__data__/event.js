@@ -4,7 +4,7 @@ export const EMPTY_EVENT = {
   status_id: null,
   start_at: null,
   end_at: null,
-  atendees: null,
+  attendees: null,
   budget: null,
   commission_rate: null,
   commission_type: null,
@@ -40,7 +40,7 @@ export const FIXTURE_EVENT = {
     uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
     name: 'Swift-Wehner'
   },
-  atendees: 10,
+  attendees: 10,
   budget: 1000,
   commission_rate: 12,
   commission_type: 2,

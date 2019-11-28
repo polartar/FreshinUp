@@ -491,7 +491,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                             class="v-text-field__slot"
                           >
                             <input
-                              data-vv-name="atendees"
+                              data-vv-name="attendees"
                               type="number"
                             />
                           </div>
@@ -7082,7 +7082,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                             class="v-text-field__slot"
                           >
                             <input
-                              data-vv-name="atendees"
+                              data-vv-name="attendees"
                               type="number"
                             />
                           </div>

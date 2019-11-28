@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { omitBy, isNull } from 'lodash'
+import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
@@ -107,7 +107,7 @@ export default {
       setPageLoading: 'setLoading'
     }),
     changeBasicInfo (data) {
-      this.event.atendees = data.atendees
+      this.event.attendees = data.attendees
       this.event.budget = data.budget
       this.event.commission_rate = data.commission_rate
       this.event.commission_type = data.commission_type
@@ -128,8 +128,13 @@ export default {
     },
     onSave () {
       this.validator().then(async valid => {
-        let data = omitBy(this.event, (value, key) => {
-          const extra = ['created_at', 'updated_at']
+        let data = {
+          ...this.event,
+          host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
+          manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+        }
+        data = omitBy(data, (value, key) => {
+          const extra = ['created_at', 'updated_at', 'host', 'manager']
           return extra.includes(key) || isNull(value)
         })
         if (valid) {

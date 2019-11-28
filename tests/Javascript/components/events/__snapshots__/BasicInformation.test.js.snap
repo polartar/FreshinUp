@@ -424,7 +424,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        data-vv-name="atendees"
+                        data-vv-name="attendees"
                         type="number"
                       />
                     </div>
@@ -1281,7 +1281,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        data-vv-name="atendees"
+                        data-vv-name="attendees"
                         type="number"
                       />
                     </div>
@@ -2138,7 +2138,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        data-vv-name="atendees"
+                        data-vv-name="attendees"
                         type="number"
                       />
                     </div>
