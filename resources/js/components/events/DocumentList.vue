@@ -64,39 +64,39 @@
 </template>
 
 <script>
-  import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
-  export default {
-    mixins: [ FormatDate ],
-    props: {
-      documents: {
-        type: Array,
-        default: () => []
-      },
-      statuses: {
-        type: Array,
-        default: () => []
-      }
+export default {
+  mixins: [ FormatDate ],
+  props: {
+    documents: {
+      type: Array,
+      default: () => []
     },
-    data () {
-      return {
-        headers: [
-          { text: 'ITEMS', sortable: true, value: 'items', align: 'left' },
-          { text: '', sortable: false, value: 'document', align: 'left' },
-          { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
-          { text: '', sortable: false, value: 'manage', align: 'left' }
-        ]
-      }
+    statuses: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data () {
+    return {
+      headers: [
+        { text: 'ITEMS', sortable: true, value: 'items', align: 'left' },
+        { text: '', sortable: false, value: 'document', align: 'left' },
+        { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
+        { text: '', sortable: false, value: 'manage', align: 'left' }
+      ]
+    }
+  },
+  methods: {
+    changeStatus (value, doc) {
+      this.$emit('change-status', value, doc)
     },
-    methods: {
-      changeStatus (value, doc) {
-        this.$emit('change-status', value, doc)
-      },
-      viewDetails (value) {
-        this.$emit('view-details', value)
-      }
+    viewDetails (value) {
+      this.$emit('view-details', value)
     }
   }
+}
 </script>
 
 <style lang="styl" scoped>
