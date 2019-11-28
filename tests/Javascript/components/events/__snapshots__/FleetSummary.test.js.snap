@@ -11,7 +11,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
       class="v-card v-sheet theme--light"
     >
       <div
-        class="v-card__title header grey--text"
+        class="container header grey--text"
       >
         
         Fleet Member Summary
@@ -42,7 +42,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
             </div>
              
             <div
-              class="flex xs6 text-right"
+              class="flex xs6 text-right grey--text"
             >
               <div
                 class="v-card__text"
@@ -73,7 +73,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
             </div>
              
             <div
-              class="flex xs6 text-right"
+              class="flex xs6 text-right grey--text"
             >
               <div
                 class="v-card__text"
@@ -104,7 +104,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
             </div>
              
             <div
-              class="flex xs6 text-right"
+              class="flex xs6 text-right grey--text"
             >
               <div
                 class="v-card__text"
@@ -135,7 +135,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
             </div>
              
             <div
-              class="flex xs6 text-right"
+              class="flex xs6 text-right grey--text"
             >
               <div
                 class="v-card__text"
@@ -274,7 +274,7 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
         </div>
          
         <button
-          class="button-grey mt-4 v-btn theme--light"
+          class="button-grey grey mt-4 v-btn theme--light"
           type="button"
         >
           <div
@@ -290,15 +290,18 @@ exports[`Event FleetSummary component Snapshots data set 1`] = `
           class="layout flex row"
         >
           <button
-            class="button-remove mt-3 v-btn theme--light"
+            class="button-remove grey--text mt-3 v-btn theme--light"
             type="button"
           >
             <div
               class="v-btn__content"
             >
-              <v-text
-                class="remove-text"
-              >
+              <i
+                aria-hidden="true"
+                class="v-icon remove-text-icon far fa-trash-alt theme--light"
+              />
+               
+              <v-text>
                 Remove fleet member from this event
               </v-text>
             </div>
@@ -321,7 +324,7 @@ exports[`Event FleetSummary component Snapshots default 1`] = `
       class="v-card v-sheet theme--light"
     >
       <div
-        class="v-card__title header grey--text"
+        class="container header grey--text"
       >
         
         

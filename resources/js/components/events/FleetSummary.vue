@@ -1,10 +1,10 @@
 <template>
-  <v-layout>
+  <v-layout >
     <v-flex md4>
       <v-card>
-        <v-card-title class="header grey--text">
+        <v-container class="header grey--text">
           {{ title }}
-        </v-card-title>
+        </v-container>
         <v-divider/>
         <v-container pt-0>
           <v-layout v-for="(value, key) in items" :key="key" column>
@@ -12,7 +12,7 @@
               <v-flex xs6 title grey--text>
                 <v-card-text>{{key}}</v-card-text>
               </v-flex>
-              <v-flex xs6 text-right>
+              <v-flex xs6 text-right grey--text>
                 <v-card-text>{{value}}</v-card-text>
               </v-flex>
             </v-layout>
@@ -33,18 +33,18 @@
 
           <v-btn
             v-if="button_text"
-            class="button-grey mt-4"
+            class="button-grey grey mt-4"
             @click="$emit('onButtonClick')"
           >
             {{button_text}}
           </v-btn>
-          <v-layout v-if="button_remove_text" flex row>
+          <v-layout v-if="button_remove" flex row >
             <v-btn
-              class="button-remove mt-3"
+              class="button-remove grey--text mt-3"
               @click="$emit('remove')"
             >
-             <v-text
-               class="remove-text">{{button_remove_text}}</v-text>
+              <v-icon class="remove-text-icon" >{{button_remove.icon}}</v-icon>
+             <v-text>{{button_remove.text}}</v-text>
           </v-btn>
           </v-layout>
         </v-container>
@@ -55,10 +55,10 @@
 
 <script>
 import FChip from 'fresh-bus/components/ui/FChip.vue'
-import '../../../../resources/fonts/css/fontello.css'
 
 export default {
   components: { FChip },
+
   props: {
     title: {
       type: String,
@@ -77,8 +77,8 @@ export default {
       default: null,
       required: true
     },
-    button_remove_text: {
-      type: String,
+    button_remove: {
+      type: Object,
       default: null,
       required: true
     }
@@ -98,10 +98,6 @@ export default {
     font-size: 11px;
   }
 
-  .theme--light.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
-    background-color: #a0a9ba;
-  }
-
   .v-card__text {
     padding: 12px 0px;
     width: 100%;
@@ -112,12 +108,13 @@ export default {
 
   .text-right {
     text-align: end;
-    color: grey;
     font-size: 17px;
+  }
+  .v-chip {
+    margin: 6px 12px 6px 0px;
   }
 
   .button-grey {
-    background-color: #a0a9ba;
     color: white;
     width: 100%;
     margin: 0;
@@ -127,21 +124,14 @@ export default {
   .button-remove {
     background: none!important;
     box-shadow: none!important;
-    color: grey;
     width: 100%;
     margin: 0;
     text-transform: none;
     font-size: 12px;
   }
 
-  .remove-text:before {
-    font-family: 'fontello';
-    content: '\e807';
-    color: gray;
-    opacity: 1;
-    font-size: 1.2em;
-    position: relative;
+  .remove-text-icon {
     padding-right: 9px;
+    font-size: 1em;
   }
-
 </style>

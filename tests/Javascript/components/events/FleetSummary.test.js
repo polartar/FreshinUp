@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import Component from '~/components/events/FleetSummary.vue'
-import { FIXTURE_EVENT_FLEET_MEMBER_SUMMARY } from 'tests/__data__/fleet_summary'
+import { FIXTURE_EVENT_FLEET_MEMBER_SUMMARY } from 'tests/__data__/fleetSummary'
 
 describe('Event FleetSummary component', () => {
   // Component instance "under test"
