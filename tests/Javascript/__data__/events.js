@@ -2,7 +2,11 @@ export const FIXTURE_EVENTS = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'accusantium',
-    status: 1,
+    status_id: 1,
+    status: {
+      id: 1,
+      name: 'Draft'
+    },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -37,7 +41,11 @@ export const FIXTURE_EVENTS = [
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
     name: 'saepe',
-    status: 2,
+    status_id: 2,
+    status: {
+      id: 2,
+      name: 'Pending'
+    },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -67,8 +75,12 @@ export const FIXTURE_EVENTS = [
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
-    name: 'quibusdam',
-    status: 3,
+    name: 'ipsum',
+    status_id: 3,
+    status: {
+      id: 3,
+      name: 'Confirmed'
+    },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
     manager: {
@@ -88,6 +100,92 @@ export const FIXTURE_EVENTS = [
       {
         uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
         name: 'hic'
+      }
+    ],
+    host: {
+      id: 94,
+      uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
+      name: 'Carter-Green'
+    }
+  },
+  {
+    uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
+    name: 'quibusdam',
+    status_id: 4,
+    status: {
+      id: 4,
+      name: 'Past'
+    },
+    start_at: '2019-10-10 11:04:19',
+    end_at: '2019-10-12 11:04:19',
+    manager: {
+      id: 2,
+      uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
+      name: 'Level 1 User'
+    },
+    venue: {
+      uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
+      name: 'Lake Lavernehaven'
+    },
+    event_tags: [
+      {
+        uuid: '1',
+        name: 'minus'
+      },
+      {
+        uuid: '2',
+        name: 'hic'
+      },
+      {
+        uuid: '3',
+        name: 'acsfdd'
+      },
+      {
+        uuid: '4',
+        name: 'fsdf'
+      }
+    ],
+    host: {
+      id: 94,
+      uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
+      name: 'Carter-Green'
+    }
+  },
+  {
+    uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
+    name: 'lorem',
+    status_id: 5,
+    status: {
+      id: 5,
+      name: 'Cancelled'
+    },
+    start_at: '2019-10-10 11:04:19',
+    end_at: '2019-10-12 11:04:19',
+    manager: {
+      id: 2,
+      uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
+      name: 'Level 1 User'
+    },
+    venue: {
+      uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
+      name: 'Lake Lavernehaven'
+    },
+    event_tags: [
+      {
+        uuid: '1',
+        name: 'minus'
+      },
+      {
+        uuid: '2',
+        name: 'hic'
+      },
+      {
+        uuid: '3',
+        name: 'acsfdd'
+      },
+      {
+        uuid: '4',
+        name: 'fsdf'
       }
     ],
     host: {
