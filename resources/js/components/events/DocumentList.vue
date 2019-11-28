@@ -1,9 +1,7 @@
 <template>
   <v-data-table
-    class="document-list-table"
     :headers="headers"
     :items="documents"
-    :loading="isLoading"
     hide-actions
     disable-initial-sort
   >
@@ -13,6 +11,7 @@
     >
       {{ props.header.text }}
     </template>
+
     <template slot="no-data">
       <v-alert
         :value="true"
@@ -27,22 +26,36 @@
       slot="items"
       slot-scope="props"
     >
-      <td class="change-status-btn">
-        <status-select
-          v-model="props.item.status_id"
-          :options="statuses"
-          @input="changeStatus($event, props.item)"
+      <td class="py-3">
+        <v-select
+          :items="statuses"
+          :value="props.item.status"
+          item-text="text"
+          item-value="value"
+          menu-props="auto"
+          label="Status"
+          hide-details
+          single-line
+          solo
+          @change="changeStatus($event, props.item)"
         />
       </td>
-      <td class="event-doc">
-        <div>{{ props.item.title }}</div>
-        <div>{{ props.item.owner }}</div>
+      <td class="py-3">
+        <div class="primary--text font-weight-bold title">
+          {{ props.item.title }}
+        </div>
+        <div class="gray--text">
+          {{ props.item.owner.first_name + props.item.owner.last_name }}
+        </div>
       </td>
-      <td class="text-xs-left date">
+      <td class="text-xs-left py-3">
         {{ formatDate(props.item.updated_at) }}
       </td>
-      <td class="text-xs-right">
-        <v-btn class="primary view-details-btn">
+      <td class="text-xs-right py-3">
+        <v-btn
+          class="primary"
+          @click="viewDetails(props.item.uuid)"
+        >
           View Details
         </v-btn>
       </td>
@@ -51,71 +64,47 @@
 </template>
 
 <script>
-import StatusSelect from '~/components/events/StatusSelect'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
-export default {
-  components: { StatusSelect },
-  mixins: [ FormatDate ],
-  props: {
-    documents: {
-      type: Array,
-      default: () => []
+  import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+
+  export default {
+    mixins: [ FormatDate ],
+    props: {
+      documents: {
+        type: Array,
+        default: () => []
+      },
+      statuses: {
+        type: Array,
+        default: () => []
+      }
     },
-    statuses: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data () {
-    return {
-      headers: [
-        { text: 'ITEMS', sortable: true, value: 'items', align: 'left' },
-        { text: '', sortable: false, value: 'document', align: 'left' },
-        { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
-        { text: '', sortable: false, value: 'manage', align: 'left' }
-      ]
-    }
-  },
-  methods: {
-    changeStatus (value, event) {
-      this.$emit('change-status', value, event)
+    data () {
+      return {
+        headers: [
+          { text: 'ITEMS', sortable: true, value: 'items', align: 'left' },
+          { text: '', sortable: false, value: 'document', align: 'left' },
+          { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
+          { text: '', sortable: false, value: 'manage', align: 'left' }
+        ]
+      }
+    },
+    methods: {
+      changeStatus (value, doc) {
+        this.$emit('change-status', value, doc)
+      },
+      viewDetails (value) {
+        this.$emit('view-details', value)
+      }
     }
   }
-}
 </script>
 
 <style lang="styl" scoped>
-  /deep/ table.v-table tbody td {
-    height: 80px;
-    padding: 0 10px;
-    margin: 0;
-  }
-  .event-doc div:first-child {
-    font-size: 17px;
-    color: #508c85;
-  }
-  .event-doc div:nth-child(2) {
-    color: #a0a9ba;
-    max-width: 150px;
-  }
   /deep/ table.v-table thead th {
     font-weight: bolder;
   }
-  .change-status-btn {
-    width: 200px;
-  }
-  .document-list-table {
-    max-width: 740px;
-    max-height: 748px;
-  }
-  .view-details-btn {
-    width: 115px;
-    height: 36px;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: capitalize;
-  }
-  .date {
-    min-width: 190px;
+  /deep/ table.v-table {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
   }
 </style>
