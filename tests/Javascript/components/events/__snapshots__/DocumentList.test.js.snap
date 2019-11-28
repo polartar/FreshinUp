@@ -88,7 +88,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -100,16 +100,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Approved
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -159,7 +157,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -176,7 +192,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -193,7 +209,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -210,24 +226,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -291,7 +290,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -303,16 +302,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Pending
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -351,10 +348,11 @@ exports[`Document list component Snapshots 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -362,7 +360,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -379,7 +377,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -396,7 +394,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -413,7 +411,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -430,7 +428,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -494,7 +492,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -506,16 +504,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Rejected
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -565,7 +561,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -582,7 +578,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -599,7 +613,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -616,24 +630,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -697,7 +694,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -709,16 +706,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Pending
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -757,10 +752,11 @@ exports[`Document list component Snapshots 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -768,7 +764,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -785,7 +781,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -802,7 +798,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -819,7 +815,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -836,7 +832,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -900,7 +896,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -912,16 +908,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Expiring
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -971,7 +965,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -988,7 +982,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -1005,7 +999,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -1022,24 +1034,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -1103,7 +1098,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -1115,16 +1110,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Approved
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -1174,7 +1167,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -1191,7 +1202,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -1208,7 +1219,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -1225,24 +1236,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -1306,7 +1300,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -1318,16 +1312,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Expiring
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -1377,7 +1369,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -1394,7 +1386,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -1411,7 +1403,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -1428,24 +1438,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -1509,7 +1502,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -1521,16 +1514,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Rejected
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -1580,7 +1571,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -1597,7 +1588,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -1614,7 +1623,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -1631,24 +1640,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -1712,7 +1704,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -1724,16 +1716,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Expired
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -1783,7 +1773,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -1800,7 +1790,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
                                 </div>
                               </div>
                             </a>
@@ -1817,7 +1807,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -1834,16 +1824,17 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
                           </div>
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -1851,7 +1842,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>
@@ -1915,7 +1906,7 @@ exports[`Document list component Snapshots 1`] = `
             class="py-3"
           >
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -1927,16 +1918,14 @@ exports[`Document list component Snapshots 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Status
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Rejected
+                      </div>
                       <input
                         aria-label="Status"
                         aria-readonly="false"
@@ -1986,7 +1975,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Pending
                                 </div>
                               </div>
                             </a>
@@ -2003,7 +1992,25 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Approved
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Rejected
                                 </div>
                               </div>
                             </a>
@@ -2020,7 +2027,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
+                                  Expiring
                                 </div>
                               </div>
                             </a>
@@ -2037,24 +2044,7 @@ exports[`Document list component Snapshots 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  [object Object]
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  [object Object]
+                                  Expired
                                 </div>
                               </div>
                             </a>

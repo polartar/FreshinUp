@@ -1,7 +1,7 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/DocumentList'
 import { FIXTURE_DOCUMENTS } from 'tests/__data__/documents'
-import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
+import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
 
 describe('Document list component', () => {
   let localVue
@@ -11,7 +11,7 @@ describe('Document list component', () => {
     const wrapper = mount(Component, {
       localVue: localVue,
       propsData: {
-        statuses: FIXTURE_EVENT_STATUSES,
+        statuses: FIXTURE_DOCUMENT_STATUSES,
         documents: FIXTURE_DOCUMENTS
       }
     })
@@ -23,7 +23,7 @@ describe('Document list component', () => {
     const wrapper = mount(Component, {
       localVue: localVue,
       propsData: {
-        statuses: FIXTURE_EVENT_STATUSES,
+        statuses: FIXTURE_DOCUMENT_STATUSES,
         documents: []
       }
     })
