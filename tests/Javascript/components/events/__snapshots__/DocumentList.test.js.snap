@@ -85,102 +85,156 @@ exports[`Document list component Snapshots 1`] = `
       <tbody>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -188,69 +242,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              aliasa
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        aliasa
+      
             </div>
              
-            <div>
-              {
-  "id": 7,
-  "uuid": "8c708253-1da5-4ab1-b149-bedb93e48fa8",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 6,
-  "level_name": "Company Director",
-  "first_name": "Level 6",
-  "last_name": "User",
-  "name": "Level 6 User",
-  "email": "level6@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": false,
-  "joined_at": "2019-09-16 06:26:03",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Level 6User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -258,10 +270,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -276,102 +288,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -379,69 +445,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              eius
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        eius
+      
             </div>
              
-            <div>
-              {
-  "id": 11,
-  "uuid": "2b03f5e2-8e1a-4e2a-8c0c-d17fb1f16ae3",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 2,
-  "level_name": "Platform Director",
-  "first_name": "Colleague 2",
-  "last_name": "User",
-  "name": "Colleague 2 User",
-  "email": "colleague2@example.com",
-  "mobile_phone": "(522) 223-1234",
-  "office_phone": "(520) 256-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": true,
-  "joined_at": "2019-09-16 06:26:03",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Colleague 2User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -449,10 +473,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -467,102 +491,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -570,69 +648,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              voluptas
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        voluptas
+      
             </div>
              
-            <div>
-              {
-  "id": 1,
-  "uuid": "c0eec683-dba9-4338-8f11-2fdce17e3432",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 1,
-  "level_name": "Platform Admin",
-  "first_name": "Demo",
-  "last_name": "Admin",
-  "name": "Demo Admin",
-  "email": "demoAdmin@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "2019-09-23 11:03:57",
-  "has_admin_access": true,
-  "joined_at": "2019-09-16 06:26:02",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        DemoAdmin
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -640,10 +676,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -658,102 +694,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -761,69 +851,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              est
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        est
+      
             </div>
              
-            <div>
-              {
-  "id": 2,
-  "uuid": "4acc2e97-1d4c-4e4a-961b-6e1d358e4456",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 1,
-  "level_name": "Platform Admin",
-  "first_name": "Level 1",
-  "last_name": "User",
-  "name": "Level 1 User",
-  "email": "level1@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": true,
-  "joined_at": "2019-09-16 06:26:03",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Level 1User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -831,10 +879,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -849,102 +897,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -952,69 +1054,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              quidem
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        quidem
+      
             </div>
              
-            <div>
-              {
-  "id": 6,
-  "uuid": "001be769-cc70-4c52-8b1a-0bbc4bf6a093",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 5,
-  "level_name": "Company Admin",
-  "first_name": "Level 5",
-  "last_name": "User",
-  "name": "Level 5 User",
-  "email": "level5@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": false,
-  "joined_at": "2019-09-16 06:26:03",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Level 5User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1022,10 +1082,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -1040,102 +1100,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1143,69 +1257,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              beatae
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        beatae
+      
             </div>
              
-            <div>
-              {
-  "id": 17,
-  "uuid": "4f1236e6-1227-4cff-a353-19c144399ed2",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 8,
-  "level_name": "Company Member",
-  "first_name": "Colleague 8",
-  "last_name": "User",
-  "name": "Colleague 8 User",
-  "email": "colleague8@example.com",
-  "mobile_phone": "(522) 223-1234",
-  "office_phone": "(520) 256-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": false,
-  "joined_at": "2019-09-16 06:26:04",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Colleague 8User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1213,10 +1285,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -1231,102 +1303,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1334,69 +1460,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              vel
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        vel
+      
             </div>
              
-            <div>
-              {
-  "id": 3,
-  "uuid": "f80dd12c-98b2-4a20-891a-79e080d57f4b",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 2,
-  "level_name": "Platform Director",
-  "first_name": "Level 2",
-  "last_name": "User",
-  "name": "Level 2 User",
-  "email": "level2@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": true,
-  "joined_at": "2019-09-16 06:26:03",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Level 2User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1404,10 +1488,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -1422,102 +1506,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1525,69 +1663,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              est
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        est
+      
             </div>
              
-            <div>
-              {
-  "id": 14,
-  "uuid": "173813b6-4971-4bbe-80f7-b69c4b45f078",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 5,
-  "level_name": "Company Admin",
-  "first_name": "Colleague 5",
-  "last_name": "User",
-  "name": "Colleague 5 User",
-  "email": "colleague5@example.com",
-  "mobile_phone": "(522) 223-1234",
-  "office_phone": "(520) 256-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": false,
-  "joined_at": "2019-09-16 06:26:04",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Colleague 5User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1595,10 +1691,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -1613,102 +1709,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1716,69 +1866,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              sunt
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        sunt
+      
             </div>
              
-            <div>
-              {
-  "id": 17,
-  "uuid": "4f1236e6-1227-4cff-a353-19c144399ed2",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 8,
-  "level_name": "Company Member",
-  "first_name": "Colleague 8",
-  "last_name": "User",
-  "name": "Colleague 8 User",
-  "email": "colleague8@example.com",
-  "mobile_phone": "(522) 223-1234",
-  "office_phone": "(520) 256-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "",
-  "has_admin_access": false,
-  "joined_at": "2019-09-16 06:26:04",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        Colleague 8User
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1786,10 +1894,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
@@ -1804,102 +1912,156 @@ exports[`Document list component Snapshots 1`] = `
         </tr>
         <tr>
           <td
-            class="change-status-btn"
+            class="py-3"
           >
             <div
-              class="v-menu"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
+              role="combobox"
             >
-              <button
-                class="v-btn theme--dark grey grey-text--text"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-  Draft
- 
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
-                </div>
-              </button>
               <div
-                class="v-menu__content theme--light "
-                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                class="v-input__control"
               >
-                 
                 <div
-                  class="v-list theme--light"
-                  role="list"
+                  class="v-input__slot"
                 >
                   <div
-                    role="listitem"
+                    class="v-select__slot"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Status
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Status"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-input__icon v-input__icon--append"
                       >
-                        Draft
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div
-                    role="listitem"
+                    class="v-menu"
                   >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
                     >
                       <div
-                        class="v-list__tile__title"
+                        class="v-select-list v-card theme--light"
                       >
-                        Pending
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  [object Object]
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1907,69 +2069,27 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="event-doc"
+            class="py-3"
           >
-            <div>
-              est
+            <div
+              class="primary--text font-weight-bold title"
+            >
+              
+        est
+      
             </div>
              
-            <div>
-              {
-  "id": 1,
-  "uuid": "c0eec683-dba9-4338-8f11-2fdce17e3432",
-  "company_id": 1,
-  "company_name": "Laravel",
-  "status": 1,
-  "type": 1,
-  "level": 1,
-  "level_name": "Platform Admin",
-  "first_name": "Demo",
-  "last_name": "Admin",
-  "name": "Demo Admin",
-  "email": "demoAdmin@example.com",
-  "mobile_phone": "(520) 223-1234",
-  "office_phone": "(522) 456-7890",
-  "notes": null,
-  "title": null,
-  "avatar": "https://via.placeholder.com/800x600.png",
-  "requested_company": null,
-  "company": {
-    "id": 1,
-    "uuid": "12d6c339-4825-482b-8f1a-c85a1dfddf5f",
-    "created_at": "2019-09-16 06:26:02",
-    "status": 1,
-    "name": "Laravel",
-    "address": "9858 Test Ave",
-    "address2": "unit 10",
-    "city": "Chicago",
-    "state": "IL",
-    "zip": "60606",
-    "country": "US",
-    "website": null,
-    "notes": null,
-    "members_count": null,
-    "teams_count": null,
-    "tags": [],
-    "logo": "https://via.placeholder.com/800x600.png",
-    "company_types": [
-      {
-        "id": 9,
-        "name": "Supplier",
-        "key_id": "supplier"
-      }
-    ]
-  },
-  "last_login": "2019-09-23 11:03:57",
-  "has_admin_access": true,
-  "joined_at": "2019-09-16 06:26:02",
-  "industry_roles": [],
-  "addresses": []
-}
+            <div
+              class="gray--text"
+            >
+              
+        DemoAdmin
+      
             </div>
           </td>
            
           <td
-            class="text-xs-left date"
+            class="text-xs-left py-3"
           >
             
       Sep 30, 2019 • 3:51 AM
@@ -1977,10 +2097,10 @@ exports[`Document list component Snapshots 1`] = `
           </td>
            
           <td
-            class="text-xs-right"
+            class="text-xs-right py-3"
           >
             <button
-              class="primary view-details-btn v-btn theme--light"
+              class="primary v-btn theme--light"
               type="button"
             >
               <div
