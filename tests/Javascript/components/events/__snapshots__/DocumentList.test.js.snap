@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Document list component Snapshots 1`] = `
-<div
-  class="document-list-table"
->
+<div>
   <div
     class="v-table__overflow"
   >
@@ -2110,9 +2108,7 @@ exports[`Document list component Snapshots 1`] = `
 `;
 
 exports[`Document list component document list is empty 1`] = `
-<div
-  class="document-list-table"
->
+<div>
   <div
     class="v-table__overflow"
   >

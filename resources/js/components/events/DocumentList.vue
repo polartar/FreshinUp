@@ -1,6 +1,5 @@
 <template>
   <v-data-table
-    class="document-list-table"
     :headers="headers"
     :items="documents"
     hide-actions
@@ -103,5 +102,9 @@ export default {
 <style lang="styl" scoped>
   /deep/ table.v-table thead th {
     font-weight: bolder;
+  }
+  /deep/ table.v-table {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
   }
 </style>
