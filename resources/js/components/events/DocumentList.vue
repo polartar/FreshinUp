@@ -79,8 +79,8 @@ export default {
     }
   },
   methods: {
-    changeStatus (value, event) {
-      this.$emit('change-status', value, event)
+    changeStatus (value, doc) {
+      this.$emit('change-status', value, doc)
     },
     viewDetails (value) {
       this.$emit('view-details', value)
