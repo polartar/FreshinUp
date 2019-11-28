@@ -49,5 +49,16 @@ describe('Document list component', () => {
       expect(wrapper.emitted()['change-status']).toBeTruthy()
       expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)
     })
+
+    test('viewDetails function emitted view-details action', () => {
+      const wrapper = shallowMount(Component, {
+        localVue
+      })
+
+      wrapper.vm.viewDetails('view-details-url')
+
+      expect(wrapper.emitted()['view-details']).toBeTruthy()
+      expect(wrapper.emitted()['view-details'][0][0]).toEqual('view-details-url')
+    })
   })
 })

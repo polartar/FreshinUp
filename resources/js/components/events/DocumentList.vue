@@ -42,7 +42,10 @@
         {{ formatDate(props.item.updated_at) }}
       </td>
       <td class="text-xs-right">
-        <v-btn class="primary view-details-btn">
+        <v-btn
+          class="primary view-details-btn"
+          @click="viewDetails"
+        >
           View Details
         </v-btn>
       </td>
@@ -79,6 +82,9 @@ export default {
   methods: {
     changeStatus (value, event) {
       this.$emit('change-status', value, event)
+    },
+    viewDetails (value) {
+      this.$emit('view-details', value)
     }
   }
 }

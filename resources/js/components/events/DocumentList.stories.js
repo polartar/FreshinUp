@@ -54,7 +54,7 @@ storiesOf('FoodFleet|event/DocumentList', module)
       />
     `
   }))
-  .add('with document examples', () => ({
+  .add('with documents', () => ({
     components: { DocumentList },
     data () {
       return {
@@ -65,6 +65,9 @@ storiesOf('FoodFleet|event/DocumentList', module)
     methods: {
       changeStatus (status, event) {
         action('change-status')(status, event)
+      },
+      viewDetails (value) {
+        action('view-details')(value)
       }
     },
     template: `
@@ -72,5 +75,6 @@ storiesOf('FoodFleet|event/DocumentList', module)
         :documents="documents"
         :statuses="statuses"
         @change-status="changeStatus"
+        @view-details="viewDetails"
       />`
   }))
