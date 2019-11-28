@@ -14,7 +14,7 @@
       <h3 class="headline grey--text">
         Filter events
       </h3>
-      <v-divider light></v-divider>
+      <v-divider light />
     </template>
     <template v-slot:filters="slotProps">
       <v-card-text class="px-0 pb-0">

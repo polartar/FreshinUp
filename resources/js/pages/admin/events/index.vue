@@ -91,6 +91,8 @@
           <event-calendar
             v-if="!isLoading"
             :events="events"
+            :date="calendarDefaultDate"
+            :year-range="calendarYearRange"
           />
         </v-card>
       </v-flex>
@@ -138,6 +140,7 @@
 </template>
 <script>
 import get from 'lodash/get'
+import moment from 'moment'
 import { mapGetters, mapActions, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import FilterSorter from '~/components/events/FilterSorter.vue'
@@ -169,6 +172,7 @@ export default {
   },
   mixins: [deletables],
   data () {
+    const currentMoment = moment()
     return {
       pageTitle: 'Events',
       deleteDialog: false,
@@ -177,6 +181,8 @@ export default {
       deletablesProgress: 0,
       deletablesStatus: '',
       lastFilterParams: {},
+      calendarDefaultDate: currentMoment.format('YYYY-MM-DD'),
+      calendarYearRange: [currentMoment.year() - 2, currentMoment.year() + 2],
       view: 1,
       views: [
         { value: 1, text: 'List view' },
