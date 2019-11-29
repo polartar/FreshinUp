@@ -2,6 +2,7 @@
   <v-btn
     flat
     icon
+    v-bind="$attrs"
     depressed
     class="mr-0"
     @click="clickButton"

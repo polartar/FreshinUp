@@ -21,6 +21,11 @@ describe('Document CreateUpdate Component', () => {
         .onGet('api/foodfleet/documents/new').reply(200, { data: EMPTY_DOCUMENT })
         .onGet('api/foodfleet/document-types').reply(200, { data: FIXTURE_DOCUMENT_TYPES })
         .onGet('api/foodfleet/document-statuses').reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
+        .onGet('foodfleet/stores').reply(200, {
+          data: [
+            { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
+          ]
+        })
         .onAny().reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
@@ -94,6 +99,11 @@ describe('Document CreateUpdate Component', () => {
         .onGet('api/foodfleet/documents/new').reply(200, { data: EMPTY_DOCUMENT })
         .onGet('api/foodfleet/document-types').reply(200, { data: FIXTURE_DOCUMENT_TYPES })
         .onGet('api/foodfleet/document-statuses').reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
+        .onGet('foodfleet/stores').reply(200, {
+          data: [
+            { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
+          ]
+        })
         .onAny().reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]

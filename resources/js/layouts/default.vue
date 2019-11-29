@@ -260,7 +260,7 @@ export default {
   }
   /deep/ .main-page-container .v-content__wrap {
     background: url('/images/bg-header.jpg') no-repeat top left;
-    background-size: contain;
+    background-size: auto 350px;
   }
 
   .page-title {

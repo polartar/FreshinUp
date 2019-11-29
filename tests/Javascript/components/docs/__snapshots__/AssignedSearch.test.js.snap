@@ -2,15 +2,15 @@
 
 exports[`AssignedSearch Snapshots defaults 1`] = `
 <div
-  class="layout row wrap justify-space-between"
+  class="layout row justify-space-between"
   onassignchange="() => {}"
   ontypechange="() => {}"
 >
   <div
-    class="flex md5 sm12"
+    class="flex md6 sm12"
   >
     <div
-      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
       role="combobox"
     >
       <div
@@ -18,6 +18,7 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
       >
         <div
           class="v-input__slot"
+          style="height: 48px;"
         >
           <div
             class="v-select__slot"
@@ -153,37 +154,9 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
                       </div>
                     </a>
                   </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__content"
-                      >
-                        <div
-                          class="v-list__tile__title"
-                        >
-                          Event/Venue
-                        </div>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="v-text-field__details"
-        >
-          <div
-            class="v-messages theme--light"
-          >
-            <div
-              class="v-messages__wrapper"
-            />
           </div>
         </div>
       </div>
@@ -191,7 +164,7 @@ exports[`AssignedSearch Snapshots defaults 1`] = `
   </div>
    
   <div
-    class="flex md6 sm12"
+    class="flex md6 sm12 ml-4"
   >
     <div
       background-color="white"

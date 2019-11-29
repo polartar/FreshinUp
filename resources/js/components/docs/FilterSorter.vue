@@ -1,6 +1,5 @@
 <template>
   <search-filter-sorter
-    expanded
     without-filter-label
     :autocomplete_url="autocompleteUrl"
     sort-label="Sort by"
@@ -12,28 +11,30 @@
     @clear="clearFilters"
   >
     <template v-slot:expanded="slotProps">
-      <v-card-text>
+      <v-container
+        pr-0
+        pt-1
+        pb-0
+      >
         <v-layout
           row
           justify-space-between
         >
           <v-flex>
-            <vue-ctk-date-time-picker
+            <date-time-picker
               v-model="expireDate"
               range
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
-              label="Expiration date range"
+              label="Expiration"
               :color="$vuetify.theme.primary"
               :button-color="$vuetify.theme.primary"
               @input="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-2
-          >
+          <v-flex ml-4>
             <v-select
               v-model="type"
               :items="types"
@@ -44,9 +45,7 @@
               @change="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-2
-          >
+          <v-flex ml-4>
             <v-select
               v-model="status"
               :items="statuses"
@@ -57,36 +56,33 @@
               @change="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-2
-          >
-            <simple
-              :key="userSearchKey"
-              url="users"
-              placeholder="Search Users"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              @input="(user) => { selectUsers(user, slotProps.run) }"
+          <v-flex ml-4>
+            <AssignedSearch
+              ref="assignedSearcher"
+              :type="assignedType"
+              @type-change="selectAssignedType"
+              @assign-change="(assigned) => selectAssigned(assigned, slotProps.run)"
             />
           </v-flex>
         </v-layout>
-      </v-card-text>
+      </v-container>
     </template>
   </search-filter-sorter>
 </template>
 
 <script>
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import DateTimePicker from '~/components/DateTimePicker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
-import Simple from 'fresh-bus/components/search/simple'
+import AssignedSearch from '~/components/docs/AssignedSearch'
+
+const defaultAssignedType = 1
 
 export default {
   components: {
-    Simple,
+    AssignedSearch,
     SearchFilterSorter,
-    VueCtkDateTimePicker
+    DateTimePicker
   },
   props: {
     autocompleteUrl: {
@@ -108,7 +104,7 @@ export default {
   },
   data () {
     return {
-      userSearchKey: +new Date(),
+      assignedType: defaultAssignedType,
       type: null,
       status: null,
       assigned_uuid: null,
@@ -145,11 +141,19 @@ export default {
 
       this.$emit('runFilter', finalParams)
     },
-    selectUsers (user, run) {
-      this.assigned_uuid = user ? user.uuid : ''
+    selectAssignedType (assignedType) {
+      this.assignedType = assignedType
+    },
+    selectAssigned (assigned, run) {
+      this.assigned_uuid = assigned ? assigned.uuid : ''
       run()
     },
     clearFilters (params) {
+      this.expireDate = null
+      this.assignedType = defaultAssignedType
+      if (this.$refs.assignedSearcher && this.$refs.assignedSearcher.resetTerm) {
+        this.$refs.assignedSearcher.resetTerm()
+      }
       this.type = this.status = this.assigned_uuid = null
       this.userSearchKey++
       this.run(params)
