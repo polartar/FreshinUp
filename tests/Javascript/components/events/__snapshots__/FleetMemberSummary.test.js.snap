@@ -1,261 +1,269 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Event FleetSummary component Snapshots required set 1`] = `
-<div
-  class="v-card v-sheet theme--light"
+<v-card-stub
+  tag="div"
 >
-  <div
-    class="container font-weight-bold grey--text header"
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    py-3=""
+    subheading=""
+    tag="div"
   >
     
     Fleet Member Summary
   
-  </div>
+  </v-container-stub>
    
-  <hr
-    class="v-divider theme--light"
-  />
+  <v-divider-stub />
    
-  <div
-    class="container pt-0 font-weight-bold grey--text"
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    pt-0=""
+    tag="div"
   >
-    <div
-      class="layout line align-center"
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
     >
-      <div
-        class="v-card__text left"
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
       >
         OWNER
-      </div>
+      </v-flex-stub>
        
-      <div
-        class="v-card__text right"
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
       >
         Dan Smith
-      </div>
-    </div>
+      </v-flex-stub>
+    </v-layout-stub>
      
-    <hr
-      class="v-divider theme--light"
-    />
+    <v-divider-stub />
      
-    <div
-      class="layout line align-center"
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
     >
-      <div
-        class="v-card__text left"
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
       >
         LISENCE DUE
-      </div>
+      </v-flex-stub>
        
-      <div
-        class="v-card__text right"
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
       >
         Dec, 30 2020
-      </div>
-    </div>
+      </v-flex-stub>
+    </v-layout-stub>
      
-    <hr
-      class="v-divider theme--light"
-    />
+    <v-divider-stub />
      
-    <div
-      class="layout line align-center"
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
     >
-      <div
-        class="v-card__text left"
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
       >
         CONTACT PHONE
-      </div>
+      </v-flex-stub>
        
-      <div
-        class="v-card__text right"
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
       >
         938 374822
-      </div>
-    </div>
+      </v-flex-stub>
+    </v-layout-stub>
      
-    <hr
-      class="v-divider theme--light"
-    />
+    <v-divider-stub />
      
-    <div
-      class="layout line align-center"
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
     >
-      <div
-        class="v-card__text left"
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
       >
         CONTACT EMAIL
-      </div>
+      </v-flex-stub>
        
-      <div
-        class="v-card__text right"
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
       >
         dan.simth@gmail.com
-      </div>
-    </div>
+      </v-flex-stub>
+    </v-layout-stub>
      
-    <hr
-      class="v-divider theme--light"
-    />
+    <v-divider-stub />
      
-    <div
-      class="layout tags_title font-weight-bold grey--text mt-2"
+    <v-layout-stub
+      font-weight-bold=""
+      grey--text=""
+      mt-2=""
+      pa-1=""
+      tag="div"
+      tags_title=""
     >
-      <div
-        class="v-card__text"
+      <v-flex-stub
+        tag="div"
       >
         TAGS
-      </div>
-    </div>
+      </v-flex-stub>
+    </v-layout-stub>
      
-    <div
-      class="layout row wrap"
+    <v-layout-stub
+      row=""
+      tag="div"
+      wrap=""
     >
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        SEAFOOD
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        SMOKED
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        DESSERT
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        BAY AREA
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        VEGAN OPTIONS
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        SMOKED
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        DESSERT
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        SEAFOOD
-      
-        </span>
-      </span>
-      <span
-        class="v-chip theme--light primary primary-text--text"
-        tabindex="0"
-      >
-        <span
-          class="v-chip__content"
-        >
-          
-        SMOKED
-      
-        </span>
-      </span>
-    </div>
-     
-    <hr
-      class="mt-3 v-divider theme--light"
-    />
-     
-    <button
-      class="button-grey grey mt-4 white--text ma-0 v-btn theme--light"
-      type="button"
-    >
-      <div
-        class="v-btn__content"
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
       >
         
-      View Fleet Member Profile
-    
-      </div>
-    </button>
+        SEAFOOD
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        DESSERT
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        BAY AREA
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        VEGAN OPTIONS
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        DESSERT
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SEAFOOD
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+    </v-layout-stub>
      
-    <button
-      class="transparent elevation-0 ma-0 pr-0  grey--text mt-3 button-remove v-btn theme--light"
+    <v-divider-stub
+      class="mt-3"
+    />
+     
+    <v-btn-stub
+      activeclass="v-btn--active"
+      block="true"
+      class="grey ma-0 mt-4 white--text text-none"
+      tag="button"
       type="button"
     >
-      <div
-        class="v-btn__content"
+      
+      View Fleet Member Profile
+    
+    </v-btn-stub>
+     
+    <v-btn-stub
+      activeclass="v-btn--active"
+      block="true"
+      class="transparent elevation-0 ma-0 pr-0 caption  grey--text mt-3 button-remove text-none"
+      tag="button"
+      type="button"
+    >
+      <v-icon-stub
+        class="pr-2 caption"
       >
-        <i
-          aria-hidden="true"
-          class="v-icon icon pr-2 far fa-trash-alt theme--light"
-        />
-         
-        <v-text>
-          Remove fleet member from this event
-        </v-text>
-      </div>
-    </button>
-  </div>
-</div>
+        far fa-trash-alt
+      </v-icon-stub>
+       
+      <v-text>
+        Remove fleet member from this event
+      </v-text>
+    </v-btn-stub>
+  </v-container-stub>
+</v-card-stub>
 `;

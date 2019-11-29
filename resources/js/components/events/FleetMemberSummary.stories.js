@@ -11,8 +11,8 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
         onButtonClick () {
           action('onButtonClick')('button clicked')
         },
-        remove () {
-          action('remove')('remove clicked')
+        onRemoveClick () {
+          action('onRemoveClick')('remove clicked')
         }
       },
       data () {
@@ -31,9 +31,9 @@ storiesOf('FoodFleet|events/FleetMemberSummary', module)
     <v-layout>
       <v-flex md4>
         <fleet-member-summary
-          @onButtonClick="onButtonClick"
-          @remove="remove"
           :member="member"
+          @onButtonClick="onButtonClick"
+          @onRemoveClick="onRemoveClick"
         />
       </v-flex>
     </v-layout>
