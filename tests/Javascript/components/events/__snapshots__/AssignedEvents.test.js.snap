@@ -7,7 +7,9 @@ exports[`Assigned Events component Snapshots events empty 1`] = `
   <div
     class="v-card__title px-3"
   >
-    <h3>
+    <h3
+      class="primary--text"
+    >
       Assigned Events
     </h3>
   </div>
@@ -15,7 +17,7 @@ exports[`Assigned Events component Snapshots events empty 1`] = `
   <hr />
    
   <div
-    class="v-card__text text-xs-center ma-5"
+    class="v-card__text text-xs-center pa-5 primary--text"
   >
     
     Event data will populate once your restaurant is assigned.
@@ -31,7 +33,9 @@ exports[`Assigned Events component Snapshots events set 1`] = `
   <div
     class="v-card__title px-3"
   >
-    <h3>
+    <h3
+      class="primary--text"
+    >
       Assigned Events
     </h3>
   </div>

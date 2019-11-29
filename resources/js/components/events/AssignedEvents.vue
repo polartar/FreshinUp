@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-card-title class="px-3">
-      <h3 class="primary--text">Assigned Events</h3>
+      <h3 class="primary--text">
+        Assigned Events
+      </h3>
     </v-card-title>
     <hr>
 
