@@ -46,25 +46,17 @@ exports[`Event List component Snapshots events empty 1`] = `
             </div>
           </th>
           <th
-            aria-label="Status: Not sorted. Activate to sort ascending."
+            aria-label="Status: Not sorted."
             aria-sort="none"
-            class="column sortable text-xs-left"
+            class="column text-xs-left"
             role="columnheader"
             scope="col"
-            tabindex="0"
           >
             <span>
               
       Status
     
             </span>
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-              style="font-size: 16px;"
-            >
-              arrow_upward
-            </i>
           </th>
           <th
             aria-label="Title / Venue: Not sorted. Activate to sort ascending."
@@ -479,25 +471,17 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </th>
           <th
-            aria-label="Status: Not sorted. Activate to sort ascending."
+            aria-label="Status: Not sorted."
             aria-sort="none"
-            class="column sortable text-xs-left"
+            class="column text-xs-left"
             role="columnheader"
             scope="col"
-            tabindex="0"
           >
             <span>
               
       Status
     
             </span>
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-              style="font-size: 16px;"
-            >
-              arrow_upward
-            </i>
           </th>
           <th
             aria-label="Title / Venue: Not sorted. Activate to sort ascending."
@@ -781,7 +765,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @New Hattie
+        @
       
             </div>
           </td>
@@ -830,7 +814,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Swift-Wehner
+        Demo Admin
       
             </div>
           </td>
@@ -840,7 +824,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Demo Admin
+        Swift-Wehner
       
             </div>
           </td>
@@ -1060,7 +1044,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @Baronhaven
+        @
       
             </div>
           </td>
@@ -1109,7 +1093,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Goodwin-Carroll
+        Level 2 User
       
             </div>
           </td>
@@ -1119,7 +1103,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Level 2 User
+        Goodwin-Carroll
       
             </div>
           </td>
@@ -1339,7 +1323,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        @Lake Lavernehaven
+        @
       
             </div>
           </td>
@@ -1388,7 +1372,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Carter-Green
+        Level 1 User
       
             </div>
           </td>
@@ -1398,7 +1382,7 @@ exports[`Event List component Snapshots events set 1`] = `
               class="grey--text"
             >
               
-        Level 1 User
+        Carter-Green
       
             </div>
           </td>

@@ -674,11 +674,9 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
              
             <div
               class="layout row justify-space-between"
-              init-items=""
-              init-val=""
             >
               <div
-                class="flex"
+                class="flex md6 sm12"
               >
                 <div
                   class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
@@ -835,14 +833,12 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               </div>
                
               <div
-                class="flex ml-4"
+                class="flex md6 sm12 ml-4"
               >
                 <div
                   background-color="white"
                   class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                   height="48"
-                  init-items=""
-                  init-val=""
                 >
                   <div
                     class="v-input__control"
@@ -857,8 +853,6 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                         <input
                           aria-label=""
                           autocomplete="off"
-                          init-items=""
-                          init-val=""
                           placeholder="Search User"
                           role="combobox"
                           type="text"
@@ -2703,11 +2697,10 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
              
             <div
               class="layout row justify-space-between"
-              init-items="[object Object]"
-              init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
+              value="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
             >
               <div
-                class="flex"
+                class="flex md6 sm12"
               >
                 <div
                   class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
@@ -2864,14 +2857,12 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               </div>
                
               <div
-                class="flex ml-4"
+                class="flex md6 sm12 ml-4"
               >
                 <div
                   background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--is-loading theme--light"
                   height="48"
-                  init-items="[object Object]"
-                  init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
                 >
                   <div
                     class="v-input__control"
@@ -2886,8 +2877,6 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                         <input
                           aria-label=""
                           autocomplete="off"
-                          init-items="[object Object]"
-                          init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
                           placeholder="Search Fleet Member"
                           role="combobox"
                           type="text"
@@ -2955,6 +2944,33 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                               </div>
                             </div>
                           </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        class="v-progress-linear"
+                        role="progressbar"
+                        style="height: 2px;"
+                      >
+                        <div
+                          class="v-progress-linear__background primary"
+                          style="height: 2px; opacity: 0.3; width: 100%;"
+                        />
+                        <div
+                          class="v-progress-linear__bar"
+                        >
+                          <div
+                            class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                          >
+                            <div
+                              class="v-progress-linear__bar__indeterminate long primary"
+                            />
+                            <div
+                              class="v-progress-linear__bar__indeterminate short primary"
+                            />
+                          </div>
+                          <!---->
                         </div>
                       </div>
                     </div>

@@ -43,6 +43,7 @@ class Documents extends Controller
                 Filter::exact('type'),
                 Filter::exact('status'),
                 Filter::exact('assigned_uuid'),
+                Filter::exact('event_store_uuid'),
                 Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
                 Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at')
             ]);

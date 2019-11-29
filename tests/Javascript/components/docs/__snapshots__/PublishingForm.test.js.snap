@@ -35,11 +35,10 @@ exports[`PublishingForm Snapshots defaults 1`] = `
      
     <div
       class="layout row justify-space-between"
-      init-items="[object Object]"
-      init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
+      value="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
     >
       <div
-        class="flex"
+        class="flex md6 sm12"
       >
         <div
           class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
@@ -196,14 +195,12 @@ exports[`PublishingForm Snapshots defaults 1`] = `
       </div>
        
       <div
-        class="flex ml-4"
+        class="flex md6 sm12 ml-4"
       >
         <div
           background-color="white"
-          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+          class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
           height="48"
-          init-items="[object Object]"
-          init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
         >
           <div
             class="v-input__control"
@@ -218,8 +215,6 @@ exports[`PublishingForm Snapshots defaults 1`] = `
                 <input
                   aria-label=""
                   autocomplete="off"
-                  init-items="[object Object]"
-                  init-val="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
                   placeholder="Search Fleet Member"
                   role="combobox"
                   type="text"
@@ -228,14 +223,12 @@ exports[`PublishingForm Snapshots defaults 1`] = `
                   class="v-input__append-inner"
                 >
                   <div
-                    class="v-input__icon v-input__icon--clear"
+                    class="v-input__icon v-input__icon--"
                   >
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--link material-icons theme--light"
-                    >
-                      clear
-                    </i>
+                    />
                   </div>
                 </div>
                 <div
@@ -268,11 +261,10 @@ exports[`PublishingForm Snapshots defaults 1`] = `
                       role="list"
                     >
                       <div
-                        class="primary--text"
                         role="listitem"
                       >
-                        <a
-                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        <div
+                          class="v-list__tile theme--light"
                         >
                           <div
                             class="v-list__tile__content"
@@ -280,13 +272,40 @@ exports[`PublishingForm Snapshots defaults 1`] = `
                             <div
                               class="v-list__tile__title"
                             >
-                              eligendi
+                              No data available
                             </div>
                           </div>
-                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                class="v-progress-linear"
+                role="progressbar"
+                style="height: 2px;"
+              >
+                <div
+                  class="v-progress-linear__background primary"
+                  style="height: 2px; opacity: 0.3; width: 100%;"
+                />
+                <div
+                  class="v-progress-linear__bar"
+                >
+                  <div
+                    class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                  >
+                    <div
+                      class="v-progress-linear__bar__indeterminate long primary"
+                    />
+                    <div
+                      class="v-progress-linear__bar__indeterminate short primary"
+                    />
+                  </div>
+                  <!---->
                 </div>
               </div>
             </div>
