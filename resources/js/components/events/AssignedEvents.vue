@@ -102,7 +102,7 @@
               {{ props.item.name }}
             </div>
             <div
-              v-if="props.item.event_tags.length"
+              v-if="props.item.event_tags && props.item.event_tags.length"
               class="text-no-wrap"
             >
               <f-chip color="secondary">

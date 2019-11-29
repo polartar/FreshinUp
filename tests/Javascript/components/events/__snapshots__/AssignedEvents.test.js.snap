@@ -10,7 +10,9 @@ exports[`Assigned Events component Snapshots events empty 1`] = `
     <h3
       class="primary--text"
     >
+      
       Assigned Events
+    
     </h3>
   </div>
    
@@ -36,7 +38,9 @@ exports[`Assigned Events component Snapshots events set 1`] = `
     <h3
       class="primary--text"
     >
+      
       Assigned Events
+    
     </h3>
   </div>
    
