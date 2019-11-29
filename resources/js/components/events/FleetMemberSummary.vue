@@ -47,7 +47,7 @@
         View Fleet Member Profile
       </v-btn>
       <v-btn block
-             class="transparent elevation-0 ma-0 pr-0 caption  grey--text mt-3 button-remove text-none"
+             class="transparent elevation-0 ma-0 pa-0 caption  grey--text mt-3 button-remove text-none"
              @click="onRemoveClick"
       >
         <v-icon class="pr-2 caption">far fa-trash-alt</v-icon>
