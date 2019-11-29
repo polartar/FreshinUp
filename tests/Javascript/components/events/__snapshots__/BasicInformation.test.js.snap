@@ -82,7 +82,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Event type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -97,14 +97,10 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Catering
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
+                          data-vv-name="name"
                           readonly="readonly"
                           type="text"
                         />
@@ -139,11 +135,10 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -390,7 +385,8 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="budget"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -428,7 +424,8 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="attendees"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -454,7 +451,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Commission Rate
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
               >
                 <div
                   class="v-input__control"
@@ -468,7 +465,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       <input
                         data-vv-name="commission_rate"
                         required="required"
-                        type="text"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -494,7 +491,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Commission type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -509,11 +506,6 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Percentage(%)
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
@@ -551,11 +543,10 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -850,8 +841,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled theme--light"
-        disabled="disabled"
+        class="v-btn theme--light"
         type="button"
       >
         <div
@@ -949,7 +939,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Event type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -964,14 +954,10 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Catering
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
+                          data-vv-name="name"
                           readonly="readonly"
                           type="text"
                         />
@@ -1006,11 +992,10 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1257,7 +1242,8 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="budget"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -1295,7 +1281,8 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="attendees"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -1321,7 +1308,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Commission Rate
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
               >
                 <div
                   class="v-input__control"
@@ -1335,7 +1322,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       <input
                         data-vv-name="commission_rate"
                         required="required"
-                        type="text"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -1361,7 +1348,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Commission type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -1376,11 +1363,6 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Percentage(%)
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
@@ -1418,11 +1400,10 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1717,8 +1698,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled theme--light"
-        disabled="disabled"
+        class="v-btn theme--light"
         type="button"
       >
         <div
@@ -1816,7 +1796,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Event type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -1831,14 +1811,10 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Catering
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
+                          data-vv-name="name"
                           readonly="readonly"
                           type="text"
                         />
@@ -1873,11 +1849,10 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2124,7 +2099,8 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="budget"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -2162,7 +2138,8 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        type="text"
+                        data-vv-name="attendees"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -2188,7 +2165,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Commission Rate
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
               >
                 <div
                   class="v-input__control"
@@ -2202,7 +2179,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       <input
                         data-vv-name="commission_rate"
                         required="required"
-                        type="text"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -2228,7 +2205,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Commission type
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                 role="combobox"
               >
                 <div
@@ -2243,11 +2220,6 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Percentage(%)
-                        </div>
                         <input
                           aria-readonly="false"
                           autocomplete="on"
@@ -2285,11 +2257,10 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2584,8 +2555,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled theme--light"
-        disabled="disabled"
+        class="v-btn theme--light"
         type="button"
       >
         <div
