@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event FleetSummary component Snapshots required set 1`] = `
+exports[`Event StoreSummary component Snapshots required set 1`] = `
 <v-card-stub
   tag="div"
 >
@@ -250,7 +250,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     <v-btn-stub
       activeclass="v-btn--active"
       block="true"
-      class="transparent elevation-0 ma-0 pr-0 caption  grey--text mt-3 button-remove text-none"
+      class="transparent elevation-0 ma-0 pa-0 caption  grey--text mt-3 button-remove text-none"
       tag="button"
       type="button"
     >

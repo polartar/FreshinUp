@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
-import Component from '~/components/events/FleetMemberSummary.vue'
-import { FIXTURE_EVENT_FLEET_MEMBER_SUMMARY } from 'tests/__data__/fleetMemberSummary'
+import Component from '~/components/events/StoreSummary.vue'
+import { FIXTURE_EVENT_STORE_SUMMARY } from 'tests/__data__/storeSummary'
 
-describe('Event FleetSummary component', () => {
+describe('Event StoreSummary component', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
@@ -15,7 +15,7 @@ describe('Event FleetSummary component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          member: FIXTURE_EVENT_FLEET_MEMBER_SUMMARY
+          store: FIXTURE_EVENT_STORE_SUMMARY
         }
       })
       expect(wrapper.element).toMatchSnapshot()
@@ -31,7 +31,7 @@ describe('Event FleetSummary component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          member: FIXTURE_EVENT_FLEET_MEMBER_SUMMARY
+          store: FIXTURE_EVENT_STORE_SUMMARY
         }
       })
       wrapper.vm.onButtonClick()
@@ -41,7 +41,7 @@ describe('Event FleetSummary component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          member: FIXTURE_EVENT_FLEET_MEMBER_SUMMARY
+          store: FIXTURE_EVENT_STORE_SUMMARY
         }
       })
       wrapper.vm.onRemoveClick()

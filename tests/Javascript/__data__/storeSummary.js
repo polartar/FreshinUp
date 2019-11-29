@@ -1,4 +1,4 @@
-export const FIXTURE_EVENT_FLEET_MEMBER_SUMMARY =
+export const FIXTURE_EVENT_STORE_SUMMARY =
   {
     owner: 'Dan Smith',
     lisence_due: 'Dec, 30 2020',

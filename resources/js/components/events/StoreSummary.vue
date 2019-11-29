@@ -7,30 +7,30 @@
     <v-container pt-0 font-weight-bold grey--text>
       <v-layout align-center line>
         <v-flex caption font-weight-bold>OWNER</v-flex>
-        <v-flex text-xs-right subheading xs6 text-truncate>{{member.owner}}</v-flex>
+        <v-flex text-xs-right subheading xs6 text-truncate>{{store.owner}}</v-flex>
       </v-layout>
       <v-divider/>
       <v-layout align-center line>
         <v-flex caption font-weight-bold>LISENCE DUE</v-flex>
-        <v-flex text-xs-right subheading xs6 text-truncate>{{member.lisence_due}}</v-flex>
+        <v-flex text-xs-right subheading xs6 text-truncate>{{store.lisence_due}}</v-flex>
       </v-layout>
       <v-divider/>
       <v-layout align-center line>
         <v-flex caption font-weight-bold>CONTACT PHONE</v-flex>
-        <v-flex text-xs-right subheading xs6 text-truncate>{{member.phone}}</v-flex>
+        <v-flex text-xs-right subheading xs6 text-truncate>{{store.phone}}</v-flex>
       </v-layout>
       <v-divider/>
       <v-layout align-center line>
         <v-flex caption font-weight-bold>CONTACT EMAIL</v-flex>
-        <v-flex text-xs-right subheading xs6 text-truncate>{{member.email}}</v-flex>
+        <v-flex text-xs-right subheading xs6 text-truncate>{{store.email}}</v-flex>
       </v-layout>
       <v-divider/>
-      <v-layout v-if="member.tags" tags_title font-weight-bold grey--text mt-2 pa-1>
+      <v-layout v-if="store.tags" tags_title font-weight-bold grey--text mt-2 pa-1>
         <v-flex>TAGS</v-flex>
       </v-layout>
-      <v-layout v-if="member.tags" row wrap>
+      <v-layout v-if="store.tags" row wrap>
         <f-chip
-          v-for="(tag, index) in member.tags"
+          v-for="(tag, index) in store.tags"
           :key="index"
           :color="'primary'"
           class="my-1 ml-0 mr-2"
@@ -64,7 +64,7 @@ export default {
   components: { FChip },
 
   props: {
-    member: {
+    store: {
       type: Object,
       required: true
     }
