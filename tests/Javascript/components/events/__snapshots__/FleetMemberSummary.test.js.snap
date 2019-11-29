@@ -5,7 +5,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="container header grey--text"
+    class="container font-weight-bold grey--text header"
   >
     
     Fleet Member Summary
@@ -17,29 +17,21 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
   />
    
   <div
-    class="container pt-0"
+    class="container pt-0 font-weight-bold grey--text"
   >
     <div
-      class="layout row align-center"
+      class="layout line align-center"
     >
       <div
-        class="flex xs6 title grey--text"
+        class="v-card__text left"
       >
-        <div
-          class="v-card__text"
-        >
-          owner
-        </div>
+        OWNER
       </div>
        
       <div
-        class="flex xs6 text-right grey--text"
+        class="v-card__text right"
       >
-        <div
-          class="v-card__text"
-        >
-          Dan Smith
-        </div>
+        Dan Smith
       </div>
     </div>
      
@@ -48,26 +40,18 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     />
      
     <div
-      class="layout row align-center"
+      class="layout line align-center"
     >
       <div
-        class="flex xs6 title grey--text"
+        class="v-card__text left"
       >
-        <div
-          class="v-card__text"
-        >
-          lisence due
-        </div>
+        LISENCE DUE
       </div>
        
       <div
-        class="flex xs6 text-right grey--text"
+        class="v-card__text right"
       >
-        <div
-          class="v-card__text"
-        >
-          Dec, 30 2020
-        </div>
+        Dec, 30 2020
       </div>
     </div>
      
@@ -76,26 +60,18 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     />
      
     <div
-      class="layout row align-center"
+      class="layout line align-center"
     >
       <div
-        class="flex xs6 title grey--text"
+        class="v-card__text left"
       >
-        <div
-          class="v-card__text"
-        >
-          contact phone
-        </div>
+        CONTACT PHONE
       </div>
        
       <div
-        class="flex xs6 text-right grey--text"
+        class="v-card__text right"
       >
-        <div
-          class="v-card__text"
-        >
-          938 374822
-        </div>
+        938 374822
       </div>
     </div>
      
@@ -104,26 +80,18 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     />
      
     <div
-      class="layout row align-center"
+      class="layout line align-center"
     >
       <div
-        class="flex xs6 title grey--text"
+        class="v-card__text left"
       >
-        <div
-          class="v-card__text"
-        >
-          contact email
-        </div>
+        CONTACT EMAIL
       </div>
        
       <div
-        class="flex xs6 text-right grey--text"
+        class="v-card__text right"
       >
-        <div
-          class="v-card__text"
-        >
-          dan.simth@gmail.com
-        </div>
+        dan.simth@gmail.com
       </div>
     </div>
      
@@ -132,7 +100,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     />
      
     <div
-      class="layout xs6 title grey--text mt-2"
+      class="layout tags_title font-weight-bold grey--text mt-2"
     >
       <div
         class="v-card__text"
@@ -259,7 +227,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     />
      
     <button
-      class="button-grey grey mt-4 v-btn theme--light"
+      class="button-grey grey mt-4 white--text ma-0 v-btn theme--light"
       type="button"
     >
       <div
@@ -272,7 +240,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
     </button>
      
     <button
-      class="button-remove grey--text mt-3 v-btn theme--light"
+      class="transparent elevation-0 ma-0 pr-0  grey--text mt-3 button-remove v-btn theme--light"
       type="button"
     >
       <div
@@ -280,7 +248,7 @@ exports[`Event FleetSummary component Snapshots required set 1`] = `
       >
         <i
           aria-hidden="true"
-          class="v-icon icon left far fa-trash-alt theme--light"
+          class="v-icon icon pr-2 far fa-trash-alt theme--light"
         />
          
         <v-text>

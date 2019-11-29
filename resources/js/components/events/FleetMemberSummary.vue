@@ -1,47 +1,31 @@
 <template>
   <v-card>
-    <v-container class="header grey--text">
+    <v-container font-weight-bold grey--text header>
       Fleet Member Summary
     </v-container>
     <v-divider/>
-    <v-container pt-0>
-      <v-layout row align-center>
-        <v-flex xs6 title grey--text>
-          <v-card-text>owner</v-card-text>
-        </v-flex>
-        <v-flex xs6 text-right grey--text>
-          <v-card-text>{{member.owner}}</v-card-text>
-        </v-flex>
+    <v-container pt-0 font-weight-bold grey--text>
+      <v-layout line align-center>
+        <v-card-text class="left ">OWNER</v-card-text>
+        <v-card-text class="right">{{member.owner}}</v-card-text>
       </v-layout>
       <v-divider/>
-      <v-layout row align-center>
-        <v-flex xs6 title grey--text>
-          <v-card-text>lisence due</v-card-text>
-        </v-flex>
-        <v-flex xs6 text-right grey--text>
-          <v-card-text>{{member.lisence_due}}</v-card-text>
-        </v-flex>
+      <v-layout line align-center>
+        <v-card-text class="left ">LISENCE DUE</v-card-text>
+        <v-card-text class="right">{{member.lisence_due}}</v-card-text>
       </v-layout>
       <v-divider/>
-      <v-layout row align-center>
-        <v-flex xs6 title grey--text>
-          <v-card-text>contact phone</v-card-text>
-        </v-flex>
-        <v-flex xs6 text-right grey--text>
-          <v-card-text>{{member.phone}}</v-card-text>
-        </v-flex>
+      <v-layout line align-center >
+        <v-card-text class="left ">CONTACT PHONE</v-card-text>
+        <v-card-text class="right">{{member.phone}}</v-card-text>
       </v-layout>
       <v-divider/>
-      <v-layout row align-center>
-        <v-flex xs6 title grey--text>
-          <v-card-text>contact email</v-card-text>
-        </v-flex>
-        <v-flex xs6 text-right grey--text>
-          <v-card-text>{{member.email}}</v-card-text>
-        </v-flex>
+      <v-layout line align-center>
+        <v-card-text class="left ">CONTACT EMAIL</v-card-text>
+        <v-card-text class="right">{{member.email}}</v-card-text>
       </v-layout>
       <v-divider/>
-      <v-layout v-if="member.tags" xs6 title grey--text mt-2>
+      <v-layout v-if="member.tags" tags_title font-weight-bold grey--text mt-2>
         <v-card-text>TAGS</v-card-text>
       </v-layout>
       <v-layout v-if="member.tags" row wrap>
@@ -56,16 +40,16 @@
 
       <v-divider class="mt-3"/>
       <v-btn
-        class="button-grey grey mt-4"
+        class="button-grey grey mt-4 white--text ma-0"
         @click="$emit('onButtonClick')"
       >
         View Fleet Member Profile
       </v-btn>
       <v-btn
-        class="button-remove grey--text mt-3"
+        class="transparent elevation-0 ma-0 pr-0  grey--text mt-3 button-remove"
         @click="$emit('remove')"
       >
-        <v-icon class="icon left">far fa-trash-alt</v-icon>
+        <v-icon class="icon pr-2">far fa-trash-alt</v-icon>
         <v-text>Remove fleet member from this event</v-text>
       </v-btn>
     </v-container>
@@ -89,13 +73,24 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    font-weight: 600;
     font-size: 17px;
   }
+  .line {
+    .left {
+      font-size: 11px;
+    }
+    .right {
+      font-size: 17px;
+      text-align: end;
+    }
+  }
 
-  .title {
-    text-transform: uppercase;
-    font-weight: bold;
+  .button-grey {
+    width: 100%;
+    text-transform: none;
+  }
+
+  .tags_title {
     font-size: 11px;
   }
 
@@ -107,50 +102,21 @@ export default {
     text-overflow: ellipsis;
   }
 
-  .text-right {
-    text-align: end;
-    font-size: 17px;
-    .with-icon {
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-end;
-      align-items: center;
-    }
-  }
-
   .v-chip {
     margin: 6px 12px 6px 0px;
   }
 
-  .button-grey {
-    color: white;
-    width: 100%;
-    margin: 0;
-    text-transform: none;
-  }
-
   .button-remove {
-    background: none !important;
-    box-shadow: none !important;
+    font-size: 11px;
     width: 100%;
-    margin: 0;
     text-transform: none;
-    font-size: 12px;
   }
 
   .icon {
     font-size: 1em;
-    padding-left: 9px;
     color: inherit;
     align-self: center;
     justify-self: center;
-
-    &.left {
-      padding-right: 9px;
-    }
-    &.right {
-      padding-left: 9px;
-    }
   }
 
 </style>
