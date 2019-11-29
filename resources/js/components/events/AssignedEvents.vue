@@ -1,13 +1,13 @@
 <template>
   <v-card>
     <v-card-title class="px-3">
-      <h3>Assigned Events</h3>
+      <h3 class="primary--text">Assigned Events</h3>
     </v-card-title>
     <hr>
 
     <v-card-text
       v-if="!events.length"
-      class="text-xs-center ma-5"
+      class="text-xs-center pa-5 primary--text"
     >
       Event data will populate once your restaurant is assigned.
     </v-card-text>
