@@ -32,7 +32,6 @@ class CreateMessage implements Action
         $user = User::where('uuid', $message->created_by_uuid)->first();
 
         if (!empty($user->email) && !empty($manager->email)) {
-
             $name = $manager->first_name . ' ' . $manager->last_name;
 
             Mail::to($manager->email, $name)
