@@ -35,15 +35,20 @@ describe('Assigned Events component', () => {
       localVue = createLocalVue()
     })
 
-    test('view event emits action', () => {
+    test('emit actions', () => {
       const wrapper = shallowMount(Component, {
         localVue
       })
+
       const mockEvent = { id: 1, title: 'mock title', status: 1 }
-
       wrapper.vm.viewEvent(mockEvent)
-
       expect(wrapper.emitted()['viewEvent']).toBeTruthy()
+
+      wrapper.vm.sort({ id: 'name', label: 'Name' })
+      expect(wrapper.emitted()['sort']).toBeTruthy()
+
+      wrapper.vm.searchInput('test')
+      expect(wrapper.emitted()['searchInput']).toBeTruthy()
     })
   })
 })

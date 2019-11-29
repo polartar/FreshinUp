@@ -109,7 +109,7 @@ export const FIXTURE_EVENTS = [
     }
   },
   {
-    uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
+    uuid: '790aba97-1eb6-5630-82d9-7bd561256c67',
     name: 'quibusdam',
     status_id: 4,
     status: {
@@ -152,7 +152,7 @@ export const FIXTURE_EVENTS = [
     }
   },
   {
-    uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
+    uuid: '790aba97-1eb6-4630-82d9-7bd561256c22',
     name: 'lorem',
     status_id: 5,
     status: {

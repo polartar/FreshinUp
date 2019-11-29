@@ -65,6 +65,12 @@ storiesOf('FoodFleet|events/AssignedEvents', module)
     methods: {
       viewEvent (params) {
         action('view')(params)
+      },
+      sort (params) {
+        action('sort')(params)
+      },
+      searchInput (params) {
+        action('searchInput')(params)
       }
     },
     template: `
@@ -77,6 +83,8 @@ storiesOf('FoodFleet|events/AssignedEvents', module)
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
         @viewEvent="viewEvent"
+        @sort="sort"
+        @searchInput="searchInput"
       />
     `
   }))

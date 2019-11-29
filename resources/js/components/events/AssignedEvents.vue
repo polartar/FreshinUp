@@ -30,6 +30,7 @@
             prepend-inner-icon="search"
             solo
             hide-details
+            @input="searchInput"
           />
         </v-flex>
         <v-flex
@@ -170,10 +171,10 @@ export default {
       selected: [],
       headers: [
         { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
-        { text: 'Name / Category', value: 'name,event_tags', align: 'left' },
-        { text: 'Date / Venue', value: 'start_at,venue', align: 'left' },
-        { text: 'Managed By', value: 'manager', align: 'left' },
-        { text: 'Customer', value: 'host', align: 'left' },
+        { text: 'Name / Category', sortable: false, value: 'name,event_tags', align: 'left' },
+        { text: 'Date / Venue', sortable: false, value: 'start_at,venue', align: 'left' },
+        { text: 'Managed By', sortable: false, value: 'manager', align: 'left' },
+        { text: 'Customer', sortable: false, value: 'host', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
       ],
       sortables: [{
@@ -193,7 +194,10 @@ export default {
       this.$emit('viewEvent', item)
     },
     sort (item) {
-
+      this.$emit('sort', item.id)
+    },
+    searchInput (val) {
+      this.$emit('searchInput', val)
     }
   }
 }
