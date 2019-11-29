@@ -57,10 +57,10 @@ export default {
   },
   methods: {
     createNewDoc () {
-      this.$emit('create-new-doc')
+      this.$router.push({ path: '/admin/docs/new' })
     },
-    viewDetails (value) {
-      this.$emit('view-details', value)
+    viewDetails (docUUID) {
+      this.$router.push({ path: `/admin/docs/${docUUID}` })
     },
     changeStatus (value, doc) {
       this.$emit('change-status', value, doc)

@@ -50,26 +50,34 @@ describe('Document list component', () => {
       expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)
     })
 
-    test('viewDetails function emitted view-details action', () => {
+    test('createNewDoc function will redirect to the create new doc page', () => {
       const wrapper = shallowMount(Component, {
         localVue
       })
 
-      wrapper.vm.viewDetails('view-details-url')
+      wrapper.vm.$router = {
+        push: jest.fn()
+      }
 
-      expect(wrapper.emitted()['view-details']).toBeTruthy()
-      expect(wrapper.emitted()['view-details'][0][0]).toEqual('view-details-url')
+      wrapper.vm.createNewDoc()
+
+      expect(wrapper.vm.$router.push).toHaveBeenCalledWith({ 'path': '/admin/docs/new' })
     })
 
-    test('createNewDoc function emitted create-new-doc action', () => {
+    test('viewDetails function will redirect to the document details page', () => {
       const wrapper = shallowMount(Component, {
         localVue
       })
 
-      wrapper.vm.viewDetails('create-new-doc')
+      wrapper.vm.$router = {
+        push: jest.fn()
+      }
 
-      expect(wrapper.emitted()['view-details']).toBeTruthy()
-      expect(wrapper.emitted()['view-details'][0][0]).toEqual('create-new-doc')
+      const mockDocUUID = 'f5777e5d-4ee4-4df3-abca-2dae0fb90b42'
+
+      wrapper.vm.viewDetails(mockDocUUID)
+
+      expect(wrapper.vm.$router.push).toHaveBeenCalledWith({ 'path': `/admin/docs/${mockDocUUID}` })
     })
   })
 })
