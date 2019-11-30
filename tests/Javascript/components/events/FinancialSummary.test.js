@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { createLocalVue } from 'fresh-bus/tests/utils'
-import Component from '~/components/events/CustomerSummary.vue'
-import { FIXTURE_EVENT_CUSTOMER_SUMMARY } from 'tests/__data__/customerSummary'
+import Component from '~/components/events/FinancialSummary.vue'
+import { FIXTURE_EVENT_FINANCIAL_SUMMARY } from 'tests/__data__/eventFinancialSummary'
 
 describe('Event CustomerSummary component', () => {
   // Component instance "under test"
@@ -15,7 +15,7 @@ describe('Event CustomerSummary component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          customer: FIXTURE_EVENT_CUSTOMER_SUMMARY
+          financial: FIXTURE_EVENT_FINANCIAL_SUMMARY
         }
       })
       expect(wrapper.element).toMatchSnapshot()
@@ -31,7 +31,7 @@ describe('Event CustomerSummary component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          customer: FIXTURE_EVENT_CUSTOMER_SUMMARY
+          financial: FIXTURE_EVENT_FINANCIAL_SUMMARY
         }
       })
       wrapper.vm.onButtonClick()

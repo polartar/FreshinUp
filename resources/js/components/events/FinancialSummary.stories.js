@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import CustomerSummary from './CustomerSummary'
+import FinancialSummary from './FinancialSummary'
 
-storiesOf('FoodFleet|events/CustomerSummary', module)
+storiesOf('FoodFleet|events/FinancialSummary', module)
   .add(
     'data set',
     () => ({
-      components: { CustomerSummary },
+      components: { FinancialSummary },
       methods: {
         onButtonClick () {
           action('onButtonClick')('button clicked')
@@ -14,11 +14,10 @@ storiesOf('FoodFleet|events/CustomerSummary', module)
       },
       data () {
         return {
-          customer: {
-            owner: 'Joan Smith',
-            signed_contracts: 37,
-            phone: '938 374822',
-            email: 'joan.simth@gmail.com'
+          financial: {
+            total_fleet: 27,
+            total_cost: '$24,000.00',
+            amount_due: '$824,000.00'
           }
         }
       },
@@ -26,8 +25,8 @@ storiesOf('FoodFleet|events/CustomerSummary', module)
         <v-container fluid>
           <v-layout>
             <v-flex md4>
-              <customer-summary
-                :customer="customer"
+              <financial-summary
+                :financial="financial"
                 @onButtonClick="onButtonClick"
               />
             </v-flex>
