@@ -13,6 +13,7 @@ import documentStatuses from '~/store/modules/documentStatuses.js'
 import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
 import companyOwners from '~/store/modules/companyOwners.js'
+import companyDetails from '~/store/modules/companyDetails.js'
 import events from '~/store/modules/events.js'
 import eventStatuses from '~/store/modules/eventStatuses.js'
 
@@ -142,6 +143,7 @@ const appInstance = new App({
       documentTypes: documentTypes({}),
       companyOwners: companyOwners({}),
       transactions: transactions({}),
+      companyDetails: companyDetails({}),
       events: events({}),
       eventStatuses: eventStatuses({})
     }
