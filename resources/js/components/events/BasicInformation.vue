@@ -46,8 +46,11 @@
               >
                 Event type
                 <v-select
-                  v-model="eventData.event_type"
+                  v-model="eventData.type"
+                  v-validate="'required'"
                   :items="eventTypes"
+                  data-vv-name="name"
+                  :error-messages="errors.collect('type')"
                   item-value="id"
                   item-text="label"
                   solo
@@ -66,7 +69,7 @@
               >
                 Manager
                 <simple
-                  url="users?filter[level]=2"
+                  url="users?filter[type]=1"
                   term-param="term"
                   results-id-key="uuid"
                   :value="eventData.manager_uuid"
@@ -116,8 +119,12 @@
                 Budget
                 <v-text-field
                   v-model="eventData.budget"
+                  v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
+                  data-vv-name="budget"
+                  :error-messages="errors.collect('budget')"
                 />
               </v-flex>
               <v-flex
@@ -128,8 +135,12 @@
                 Attendees
                 <v-text-field
                   v-model="eventData.attendees"
+                  v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
+                  data-vv-name="attendees"
+                  :error-messages="errors.collect('attendees')"
                 />
               </v-flex>
               <v-flex
@@ -141,6 +152,7 @@
                 <v-text-field
                   v-model="eventData.commission_rate"
                   v-validate="'required'"
+                  type="number"
                   :disabled="readOnly"
                   solo
                   data-vv-name="commission_rate"
@@ -235,7 +247,6 @@
       <hr>
       <v-card-actions class="px-3 py-4">
         <v-btn
-          :disabled="edit"
           @click="cancel"
         >
           Cancel
@@ -245,7 +256,7 @@
           :disabled="readOnly || !isValid"
           @click="whenValid(save)"
         >
-          Save changes
+          {{ edit ? 'Save changes' : 'Submit' }}
         </v-btn>
         <v-spacer />
         <v-btn
@@ -260,6 +271,7 @@
 </template>
 
 <script>
+import { get } from 'lodash'
 import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
@@ -281,20 +293,20 @@ export default {
     }
   },
   data () {
-    let edit = this.event !== null
+    let edit = get(this.event, 'uuid') !== null
     return {
       eventData: {
-        name: edit ? this.event.name : null,
-        manager_uuid: edit ? this.event.manager_uuid : null,
-        host_uuid: edit ? this.event.host_uuid : null,
-        budget: edit ? this.event.budget : null,
-        attendees: edit ? this.event.attendees : null,
-        commission_rate: edit ? this.event.commission_rate : 5,
-        commission_type: edit ? this.event.commission_type : 1,
-        event_type: edit ? this.event.event_type : 1,
-        event_tags: edit ? this.event.event_tags : [],
-        start_at: edit ? this.event.start_at : null,
-        end_at: edit ? this.event.end_at : null
+        name: edit ? get(this.event, 'name') : null,
+        manager_uuid: edit ? get(this.event, 'manager.uuid') : null,
+        host_uuid: edit ? get(this.event, 'host.uuid') : null,
+        budget: edit ? get(this.event, 'budget') : null,
+        attendees: edit ? get(this.event, 'attendees') : null,
+        commission_rate: edit ? get(this.event, 'commission_rate') : 5,
+        commission_type: edit ? get(this.event, 'commission_type') : 1,
+        type: edit ? get(this.event, 'type') : 1,
+        event_tags: edit ? get(this.event, 'event_tags') : [],
+        start_at: edit ? get(this.event, 'start_at') : null,
+        end_at: edit ? get(this.event, 'end_at') : null
       },
       edit: edit,
       commissionTypes: [
@@ -305,6 +317,14 @@ export default {
         { id: 1, label: 'Catering' },
         { id: 2, label: 'Cash and Carry' }
       ]
+    }
+  },
+  watch: {
+    eventData: {
+      handler (val) {
+        this.$emit('data-change', val)
+      },
+      deep: true
     }
   },
   methods: {
