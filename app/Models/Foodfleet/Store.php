@@ -82,4 +82,9 @@ class Store extends Model
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
+
+    public function menuItems()
+    {
+        return $this->hasMany(EventMenuItem::class, 'store_uuid', 'uuid');
+    }
 }
