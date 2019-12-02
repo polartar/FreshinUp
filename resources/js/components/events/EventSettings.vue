@@ -141,6 +141,7 @@
             hide-details
             :error-messages="errors.collect('selectedEndsOn')"
             data-vv-name="selectedEndsOn"
+            class="pb-3"
           >
             <span>
               <v-radio
@@ -148,13 +149,13 @@
                 value="never"
               />
             </span>
-            <span class="mt-1">
+            <span class="mt-3">
               <v-radio
                 label="On"
                 value="on"
               />
             </span>
-            <span class="mt-1 mb-1">
+            <span class="mt-3">
               <v-radio
                 label="After"
                 value="after"
@@ -163,7 +164,7 @@
           </v-radio-group>
           <div
             v-if="selectedEndsOn === 'after'"
-            class="py-3 mr-5 pr-5 d-flex align-center"
+            class="mr-5 pr-5"
           >
             <v-text-field
               v-model="selectedOccurrences"
@@ -266,7 +267,7 @@ export default {
     max-width: 150px;
   }
   .compact {
-    transform: scale(0.7);
+    transform: scale(0.6);
     transform-origin: left;
   }
 </style>
