@@ -19,10 +19,13 @@ class UpdateEvent implements Action
 
         $tags = $collection->get('event_tags');
         if ($tags) {
-            $tagIds =[];
             foreach ($tags as $tag) {
-                $record = EventTag::firstOrCreate(['name' => $tag]);
-                $tagUuids[] = $record->uuid;
+                if (!empty($tag['uuid'])) {
+                    $tagUuids[] = $tag['uuid'];
+                } else {
+                    $record = EventTag::firstOrCreate(['name' => $tag]);
+                    $tagUuids[] = $record->uuid;
+                }
             }
 
             $event->eventTags()->sync($tagUuids);
