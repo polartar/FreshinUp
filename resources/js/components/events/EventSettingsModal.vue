@@ -12,18 +12,10 @@
         REPEAT EVERY
       </div>
       <a
-        v-if="!selectedDate"
         class="caption"
         @click="selectDate"
       >
-        Select date
-      </a>
-      <a
-        v-else
-        class="caption"
-        @click="selectDate"
-      >
-        {{ selectedDate }}
+        {{ selectedDate ? selectedDate : 'Select Date' }}
       </a>
     </div>
 
@@ -74,17 +66,14 @@ export default {
           break
 
         case 'Month(s)':
-          let description
-          if (formData.repeatOn.length >= 0) {
-            description = formData.repeatOn[0].text
-          }
+          const description = formData.repeatOn[0].text
           if (formData.endsOn === 'after') {
             const monthsLeft = formData.occurrences * formData.intervalValue
             const endDate = currentDate.add(monthsLeft, 'M')
 
             this.selectedDate = `${description}, util ${endDate.format('MMMM Do, YYYY')}`
           } else {
-            this.selectedDate = `${description}`
+            this.selectedDate = description
           }
           break
 
