@@ -40,11 +40,11 @@ describe('Document list component', () => {
         localVue
       })
 
-      const mockEvent = {
+      const mockDoc = {
         id: 1, title: 'mock title', status: 1
       }
 
-      wrapper.vm.changeStatus(2, mockEvent)
+      wrapper.vm.changeStatus(2, mockDoc)
 
       expect(wrapper.emitted()['change-status']).toBeTruthy()
       expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)

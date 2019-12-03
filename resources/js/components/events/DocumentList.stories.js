@@ -87,8 +87,8 @@ storiesOf('FoodFleet|event/DocumentList', module)
       }
     },
     methods: {
-      changeStatus (status, event) {
-        action('change-status')(status, event)
+      changeStatus (status, doc) {
+        action('change-status')(status, doc)
       },
       viewDetails (value) {
         action('view-details')(value)

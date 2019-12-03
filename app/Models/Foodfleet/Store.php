@@ -61,6 +61,11 @@ class Store extends Model
         );
     }
 
+    public function menus()
+    {
+        return $this->hasMany(Menu::class, 'store_uuid', 'uuid');
+    }
+
     public function transactions()
     {
         return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
@@ -81,5 +86,10 @@ class Store extends Model
     public function documents()
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'store_uuid', 'uuid');
     }
 }
