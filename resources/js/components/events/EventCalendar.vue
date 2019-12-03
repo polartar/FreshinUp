@@ -14,7 +14,8 @@
         >
           <v-btn
             large
-            class="ml-0 mt-0"
+            color="grey"
+            class="ml-0 mt-0 white--text"
             @click="moveToToday"
           >
             Today
