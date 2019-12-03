@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
-// Components
-import DocumentList from './DocumentList'
+import DocumentSection from './DocumentSection'
 
 let documents = [
   {
@@ -15,7 +14,7 @@ let documents = [
       id: 11, first_name: 'Colleague 2', last_name: 'User'
     },
     status: 1,
-    title: 'sint1233',
+    title: 'Document Title',
     type: 1,
     updated_at: '2019-09-24T11:14:21.000000Z'
   },
@@ -57,14 +56,14 @@ let statuses = [
   { value: 5, text: 'Expired' }
 ]
 
-storiesOf('FoodFleet|event/DocumentList', module)
+storiesOf('FoodFleet|event/DocumentSection', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('without documents', () => ({
-    components: { DocumentList },
+  .add('documents are not set', () => ({
+    components: { DocumentSection },
     data () {
       return {
         documents: [],
@@ -72,14 +71,14 @@ storiesOf('FoodFleet|event/DocumentList', module)
       }
     },
     template: `
-      <document-list
-        :documents="documents"
-        :statuses="statuses"
+      <document-section 
+        :statuses="statuses" 
+        :documents="[]" 
       />
     `
   }))
-  .add('with documents', () => ({
-    components: { DocumentList },
+  .add('documents are set', () => ({
+    components: { DocumentSection },
     data () {
       return {
         documents: documents,
@@ -87,18 +86,23 @@ storiesOf('FoodFleet|event/DocumentList', module)
       }
     },
     methods: {
-      changeStatus (status, doc) {
-        action('change-status')(status, doc)
+      changeStatus (status, event) {
+        action('change-status')(status, event)
       },
       viewDetails (value) {
         action('view-details')(value)
+      },
+      createNewDoc () {
+        action('create-new-doc')()
       }
     },
     template: `
-      <document-list
-        :documents="documents"
-        :statuses="statuses"
+      <document-section 
+        :statuses="statuses" 
+        :documents="documents" 
         @change-status="changeStatus"
         @view-details="viewDetails"
-      />`
+        @create-new-doc="createNewDoc"
+      />
+    `
   }))
