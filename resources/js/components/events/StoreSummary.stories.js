@@ -29,8 +29,8 @@ storiesOf('FoodFleet|events/StoreSummary', module)
       template: `        
         <store-summary
           :store="store"
-          @onButtonClick="onButtonClick"
-          @onRemoveClick="onRemoveClick"
+          @viewMemberProfile="viewMemberProfile"
+          @removeMemberProfile="removeMemberProfile"
         />
       `
     })
