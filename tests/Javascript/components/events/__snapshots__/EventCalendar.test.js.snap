@@ -14,7 +14,7 @@ exports[`EventCalendar Snapshots defaults 1`] = `
         class="layout wrap row"
       >
         <button
-          class="ml-0 mt-0 v-btn v-btn--large theme--light"
+          class="ml-0 mt-0 white--text v-btn v-btn--large theme--light grey"
           type="button"
         >
           <div
@@ -979,7 +979,7 @@ exports[`EventCalendar Snapshots with events data 1`] = `
         class="layout wrap row"
       >
         <button
-          class="ml-0 mt-0 v-btn v-btn--large theme--light"
+          class="ml-0 mt-0 white--text v-btn v-btn--large theme--light grey"
           type="button"
         >
           <div
