@@ -1,0 +1,2186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Companies CreateUpdate Component Snapshots mocked company admin 1`] = `
+<div
+  class="container fluid fill-height justify-space-between"
+>
+  <div
+    class="layout column"
+  >
+    <h3
+      class="f-page__title f-page__title--admin"
+    >
+      <span>
+        Edit Company
+      </span>
+    </h3>
+     
+    <div
+      class="layout row align-center fill-height justify-space-between"
+    >
+      <div
+        class="flex d-flex"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="layout wrap"
+            >
+              <div
+                class="flex md8"
+              >
+                <div
+                  class="container grid-list-md"
+                >
+                  <form
+                    class="v-form"
+                    novalidate="novalidate"
+                  >
+                    <div
+                      class="layout row wrap"
+                    >
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field v-select theme--light"
+                          role="combobox"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-select__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Status
+                                </label>
+                                <div
+                                  class="v-select__selections"
+                                >
+                                  <input
+                                    aria-label="Status"
+                                    aria-readonly="false"
+                                    autocomplete="on"
+                                    readonly="readonly"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  class="v-input__append-inner"
+                                >
+                                  <div
+                                    class="v-input__icon v-input__icon--append"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      arrow_drop_down
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="v-menu"
+                              >
+                                <div
+                                  class="v-menu__content theme--light "
+                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                >
+                                  <div
+                                    class="v-select-list v-card theme--light"
+                                  >
+                                    <div
+                                      class="v-list theme--light"
+                                      role="list"
+                                    >
+                                      <div
+                                        role="listitem"
+                                      >
+                                        <div
+                                          class="v-list__tile theme--light"
+                                        >
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              No data available
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 hidden-sm-and-down"
+                      >
+                        <div
+                          class="spacer"
+                        />
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Name
+                                </label>
+                                <input
+                                  aria-label="Name"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div>
+                          
+                          Member Since: 
+                          <code>
+                            
+                          </code>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="text-lg-right text-md-right"
+                        >
+                          
+                          Members: 
+                        
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field v-select v-select--chips theme--light"
+                          role="combobox"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-select__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Types
+                                </label>
+                                <div
+                                  class="v-select__selections"
+                                >
+                                  <input
+                                    aria-label="Types"
+                                    aria-readonly="false"
+                                    autocomplete="on"
+                                    readonly="readonly"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  class="v-input__append-inner"
+                                >
+                                  <div
+                                    class="v-input__icon v-input__icon--append"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      arrow_drop_down
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="v-menu"
+                              >
+                                <div
+                                  class="v-menu__content theme--light "
+                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                >
+                                  <div
+                                    class="v-select-list v-card theme--light"
+                                  >
+                                    <div
+                                      class="v-list theme--light"
+                                      role="list"
+                                    >
+                                      <div
+                                        role="listitem"
+                                      >
+                                        <div
+                                          class="v-list__tile theme--light"
+                                        >
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              No data available
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Address Line 1
+                                </label>
+                                <input
+                                  aria-label="Address Line 1"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Address Line 2
+                                </label>
+                                <input
+                                  aria-label="Address Line 2"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  City
+                                </label>
+                                <input
+                                  aria-label="City"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  State / Province
+                                </label>
+                                <input
+                                  aria-label="State / Province"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  ZIP Code
+                                </label>
+                                <input
+                                  aria-label="ZIP Code"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Website
+                                </label>
+                                <input
+                                  aria-label="Website"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-textarea v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Notes
+                                </label>
+                                <textarea
+                                  aria-label="Notes"
+                                  rows="5"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <span
+                                  class="v-messages__wrapper"
+                                  name="message-transition"
+                                  tag="div"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+               
+              <div
+                class="flex lg4 xl4 md4"
+              >
+                <div
+                  class="layout column fluid grid-list-lg"
+                >
+                  <div
+                    class="layout column justify-center fill-height"
+                  >
+                    <div
+                      class="layout row justify-center align-end"
+                    >
+                      <div
+                        class="v-avatar v-avatar--tile"
+                        style="height: 256px; width: 256px;"
+                      >
+                        <img
+                          src="https://via.placeholder.com/800x600.png"
+                        />
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="layout row justify-center"
+                    >
+                      <button
+                        class="v-btn theme--light primary"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
+      Change
+    
+                        </div>
+                      </button>
+                       
+                      <!---->
+                    </div>
+                     
+                    <input
+                      name="file"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </div>
+                   
+                  <div
+                    class="layout pt-4 justify-center align-center pl-4 column"
+                  >
+                    <div
+                      class="text-uppercase caption font-weight-bold align-self-start text-left"
+                    >
+                      
+                      Managed by
+                    
+                    </div>
+                     
+                    <div
+                      class="container grid-list-xs fluid pa-2"
+                    >
+                      <div
+                        class="layout row wrap justify-space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div
+                            class="layout row align-start"
+                          >
+                            <div
+                              class="flex mr-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar"
+                                style="height: 48px; width: 48px;"
+                              >
+                                <img
+                                  src="https://cdn.vuetifyjs.com/images/lists/2.jpg"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="flex grow"
+                            >
+                              <div
+                                class="caption font-weight-bold secondary--text"
+                              >
+                                
+            
+          
+                              </div>
+                               
+                              <span
+                                class="v-chip ma-0 font-weight-bold text-uppercase small-caption v-chip--small theme--dark secondary"
+                                depressed=""
+                                tabindex="0"
+                              >
+                                <span
+                                  class="v-chip__content"
+                                >
+                                  
+            
+          
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-envelope theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="font-weight-bold new-grey--text small-caption mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-phone theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="text-uppercase new-grey--text small-caption font-weight-bold mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-mobile-alt theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="text-uppercase new-grey--text small-caption font-weight-bold mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <button
+                      class="v-btn theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+                      Change
+                    
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <hr
+            class="mb-2 v-divider theme--light"
+          />
+           
+          <div
+            class="v-card__actions mb-2"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--flat v-btn--small theme--light error--text"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+              Delete
+            
+              </div>
+            </button>
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+              Save
+            
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 400px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title headline"
+            >
+              
+          Select new Administrator
+        
+            </div>
+             
+            <div
+              class="v-card__text"
+            >
+              <div
+                class="v-input v-text-field v-select theme--light"
+                role="combobox"
+                style="width: 100%;"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 300px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title headline"
+            >
+              
+          Are you sure you want to delete this company?
+        
+            </div>
+             
+            <div
+              class="v-card__text"
+            >
+              
+          Company: 
+        
+            </div>
+             
+            <div
+              class="v-card__actions"
+            >
+              <div
+                class="spacer"
+              />
+               
+              <button
+                class="v-btn v-btn--flat theme--light success--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            No
+          
+                </div>
+              </button>
+               
+              <button
+                class="v-btn v-btn--flat theme--light error--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            DELETE
+          
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Companies CreateUpdate Component Snapshots mocked company non admin 1`] = `
+<div
+  class="container fluid fill-height justify-space-between"
+>
+  <div
+    class="layout column"
+  >
+    <h3
+      class="f-page__title f-page__title--admin"
+    >
+      <span>
+        Edit Company
+      </span>
+    </h3>
+     
+    <div
+      class="layout row align-center fill-height justify-space-between"
+    >
+      <div
+        class="flex d-flex"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="layout wrap"
+            >
+              <div
+                class="flex md8"
+              >
+                <div
+                  class="container grid-list-md"
+                >
+                  <form
+                    class="v-form"
+                    novalidate="novalidate"
+                  >
+                    <div
+                      class="layout row wrap"
+                    >
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field v-select v-input--is-disabled theme--light"
+                          role="combobox"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-select__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label v-label--is-disabled theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Status
+                                </label>
+                                <div
+                                  class="v-select__selections"
+                                >
+                                  <input
+                                    aria-label="Status"
+                                    aria-readonly="false"
+                                    autocomplete="on"
+                                    disabled="disabled"
+                                    readonly="readonly"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  class="v-input__append-inner"
+                                >
+                                  <div
+                                    class="v-input__icon v-input__icon--append"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon v-icon--disabled material-icons theme--light"
+                                    >
+                                      arrow_drop_down
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="v-menu"
+                              >
+                                <div
+                                  class="v-menu__content theme--light "
+                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                >
+                                  <div
+                                    class="v-select-list v-card theme--light"
+                                  >
+                                    <div
+                                      class="v-list theme--light"
+                                      role="list"
+                                    >
+                                      <div
+                                        role="listitem"
+                                      >
+                                        <div
+                                          class="v-list__tile theme--light"
+                                        >
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              No data available
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 hidden-sm-and-down"
+                      >
+                        <div
+                          class="spacer"
+                        />
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Name
+                                </label>
+                                <input
+                                  aria-label="Name"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div>
+                          
+                          Member Since: 
+                          <code>
+                            
+                          </code>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="text-lg-right text-md-right"
+                        >
+                          
+                          Members: 
+                        
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field v-select v-select--chips theme--light"
+                          role="combobox"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-select__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Types
+                                </label>
+                                <div
+                                  class="v-select__selections"
+                                >
+                                  <input
+                                    aria-label="Types"
+                                    aria-readonly="false"
+                                    autocomplete="on"
+                                    readonly="readonly"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  class="v-input__append-inner"
+                                >
+                                  <div
+                                    class="v-input__icon v-input__icon--append"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      arrow_drop_down
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="v-menu"
+                              >
+                                <div
+                                  class="v-menu__content theme--light "
+                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                >
+                                  <div
+                                    class="v-select-list v-card theme--light"
+                                  >
+                                    <div
+                                      class="v-list theme--light"
+                                      role="list"
+                                    >
+                                      <div
+                                        role="listitem"
+                                      >
+                                        <div
+                                          class="v-list__tile theme--light"
+                                        >
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              No data available
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Address Line 1
+                                </label>
+                                <input
+                                  aria-label="Address Line 1"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Address Line 2
+                                </label>
+                                <input
+                                  aria-label="Address Line 2"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  City
+                                </label>
+                                <input
+                                  aria-label="City"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  State / Province
+                                </label>
+                                <input
+                                  aria-label="State / Province"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md6 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  ZIP Code
+                                </label>
+                                <input
+                                  aria-label="ZIP Code"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Website
+                                </label>
+                                <input
+                                  aria-label="Website"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="flex md12 sm12"
+                      >
+                        <div
+                          class="v-input v-textarea v-text-field theme--light"
+                        >
+                          <div
+                            class="v-input__control"
+                          >
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  Notes
+                                </label>
+                                <textarea
+                                  aria-label="Notes"
+                                  rows="5"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <span
+                                  class="v-messages__wrapper"
+                                  name="message-transition"
+                                  tag="div"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+               
+              <div
+                class="flex lg4 xl4 md4"
+              >
+                <div
+                  class="layout column fluid grid-list-lg"
+                >
+                  <div
+                    class="layout column justify-center fill-height"
+                  >
+                    <div
+                      class="layout row justify-center align-end"
+                    >
+                      <div
+                        class="v-avatar v-avatar--tile"
+                        style="height: 256px; width: 256px;"
+                      >
+                        <img
+                          src="https://via.placeholder.com/800x600.png"
+                        />
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="layout row justify-center"
+                    >
+                      <button
+                        class="v-btn theme--light primary"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
+      Change
+    
+                        </div>
+                      </button>
+                       
+                      <!---->
+                    </div>
+                     
+                    <input
+                      name="file"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </div>
+                   
+                  <div
+                    class="layout pt-4 justify-center align-center pl-4 column"
+                  >
+                    <div
+                      class="text-uppercase caption font-weight-bold align-self-start text-left"
+                    >
+                      
+                      Managed by
+                    
+                    </div>
+                     
+                    <div
+                      class="container grid-list-xs fluid pa-2"
+                    >
+                      <div
+                        class="layout row wrap justify-space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div
+                            class="layout row align-start"
+                          >
+                            <div
+                              class="flex mr-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar"
+                                style="height: 48px; width: 48px;"
+                              >
+                                <img
+                                  src="https://cdn.vuetifyjs.com/images/lists/2.jpg"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="flex grow"
+                            >
+                              <div
+                                class="caption font-weight-bold secondary--text"
+                              >
+                                
+            
+          
+                              </div>
+                               
+                              <span
+                                class="v-chip ma-0 font-weight-bold text-uppercase small-caption v-chip--small theme--dark secondary"
+                                depressed=""
+                                tabindex="0"
+                              >
+                                <span
+                                  class="v-chip__content"
+                                >
+                                  
+            
+          
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-envelope theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="font-weight-bold new-grey--text small-caption mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-phone theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="text-uppercase new-grey--text small-caption font-weight-bold mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="flex fresh-contact-item fill-height pl-2"
+                        >
+                          <div
+                            class="layout row justify-start align-center"
+                          >
+                            <!---->
+                             
+                            <div
+                              class="flex pt-2"
+                              style="max-width: 48px;"
+                            >
+                              <div
+                                class="v-avatar secondary"
+                                style="height: 28px; width: 28px;"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon white--text icon-caption fa fa fa fa-mobile-alt theme--light"
+                                />
+                              </div>
+                            </div>
+                             
+                            <div
+                              class="text-uppercase new-grey--text small-caption font-weight-bold mt-2 ml-2"
+                            >
+                              
+          
+        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <button
+                      class="v-btn theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+                      Change
+                    
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <hr
+            class="mb-2 v-divider theme--light"
+          />
+           
+          <div
+            class="v-card__actions mb-2"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--flat v-btn--small theme--light error--text"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+              Delete
+            
+              </div>
+            </button>
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+              Save
+            
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 400px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title headline"
+            >
+              
+          Select new Administrator
+        
+            </div>
+             
+            <div
+              class="v-card__text"
+            >
+              <div
+                class="v-input v-text-field v-select theme--light"
+                role="combobox"
+                style="width: 100%;"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 300px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title headline"
+            >
+              
+          Are you sure you want to delete this company?
+        
+            </div>
+             
+            <div
+              class="v-card__text"
+            >
+              
+          Company: 
+        
+            </div>
+             
+            <div
+              class="v-card__actions"
+            >
+              <div
+                class="spacer"
+              />
+               
+              <button
+                class="v-btn v-btn--flat theme--light success--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            No
+          
+                </div>
+              </button>
+               
+              <button
+                class="v-btn v-btn--flat theme--light error--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            DELETE
+          
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
