@@ -3,6 +3,7 @@ export default {
   'primary-text': '#ffffff',
   secondary: '#d0883d',
   'secondary-text': '#ffffff',
+  grey: '#a0a9ba',
   accent: '#888888',
   inputaccent: '#E4EDEC',
   error: '#d94545',

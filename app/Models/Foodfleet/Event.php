@@ -83,4 +83,9 @@ class Event extends Model
     {
         return $this->belongsTo(EventStatus::class, 'status_id', 'id');
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'event_uuid', 'uuid');
+    }
 }
