@@ -20,6 +20,8 @@ class EventMenuItem extends JsonResource
             "servings" => $this->servings,
             "cost" => $this->cost,
             "description" => $this->description,
+            "flag" => $this->flag,
+            "menu" => new Menu($this->whenLoaded('menu')),
             "store" => new Store($this->whenLoaded('store')),
             "event" => new Event($this->whenLoaded('event'))
         ];

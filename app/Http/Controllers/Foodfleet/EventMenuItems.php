@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Foodfleet;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Foodfleet\Menu;
 use App\Models\Foodfleet\EventMenuItem;
+use App\Enums\EventMenuItemFlags as MenuItemFlagsEnum;
 use App\Http\Resources\Foodfleet\EventMenuItem as MenuItemResource;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -20,7 +22,7 @@ class EventMenuItems extends Controller
     public function index(Request $request)
     {
         $items = QueryBuilder::for(EventMenuItem::class, $request)
-            ->allowedIncludes(['store', 'event'])
+            ->allowedIncludes(['menu', 'store', 'event'])
             ->allowedFilters([
                 'item',
                 Filter::exact('uuid'),
@@ -53,6 +55,7 @@ class EventMenuItems extends Controller
         $this->validate($request, [
             'store_uuid' => 'string|required|exists:stores,uuid',
             'event_uuid' => 'string|required|exists:events,uuid',
+            'menu_uuid' => 'string|exists:menus,uuid',
             'item' => 'string|required',
             'servings' => 'integer|required',
             'cost' => 'integer|required',
@@ -60,6 +63,13 @@ class EventMenuItems extends Controller
         ]);
 
         $inputs = $request->input();
+        if (!empty($inputs['menu_uuid'])) {
+            $inputs['flag'] = MenuItemFlagsEnum::SAME_STORE_MENU;
+            $menu = Menu::where('uuid', $inputs['menu_uuid']).first();
+            if ($menu->item != $inputs['item'] || $menu->description != $inputs['description'] ) {
+                $inputs['flag'] = MenuItemFlagsEnum::EDIT_STORE_MENU;
+            }
+        }
 
         $menuItem = EventMenuItem::create($inputs);
 
@@ -100,6 +110,13 @@ class EventMenuItems extends Controller
 
         $inputs = $request->input();
         $menuItem = EventMenuItem::where('uuid', $uuid)->first();
+        if (!empty($menuItem->menu_uuid)) {
+            $inputs['flag'] = MenuItemFlagsEnum::SAME_STORE_MENU;
+            $menu = Menu::where('uuid', $menuItem->menu_uuid).first();
+            if ($menu->item != $inputs['item'] || $menu->description != $inputs['description'] ) {
+                $inputs['flag'] = MenuItemFlagsEnum::EDIT_STORE_MENU;
+            }
+        }
         if ($menuItem) {
             $menuItem->update($inputs);
         }

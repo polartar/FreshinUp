@@ -18,10 +18,12 @@ class CreateEventMenuItemsTable extends Migration
             $table->uuid('uuid')->index();
             $table->uuid('event_uuid');
             $table->uuid('store_uuid');
+            $table->uuid('menu_uuid');
             $table->string('item');
             $table->integer('servings')->nullable();            
             $table->integer('cost')->nullable();
             $table->text('description')->nullable();
+            $table->integer('flag')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

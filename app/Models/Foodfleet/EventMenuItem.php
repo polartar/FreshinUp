@@ -22,4 +22,9 @@ class EventMenuItem extends Model
     {
         return $this->belongsTo(Store::class, 'store_uuid', 'uuid');
     }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_uuid', 'uuid');
+    }
 }
