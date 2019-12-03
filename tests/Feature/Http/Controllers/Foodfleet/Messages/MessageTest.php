@@ -6,7 +6,7 @@ use App\User;
 use App\Models\Foodfleet\Message;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
-
+use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
@@ -106,6 +106,7 @@ class MessageTest extends TestCase
     public function testGetListWithIncludes()
     {
         $user = factory(User::class)->create();
+        $user1 = factory(User::class)->create();
 
         Passport::actingAs($user);
 
@@ -117,6 +118,7 @@ class MessageTest extends TestCase
             'content' => 'message',
             'event_uuid' => $event->uuid,
             'store_uuid' => $store->uuid,
+            'recipient_uuid' => $user1->uuid,
             'created_by_uuid' => $user->uuid
         ]);
 
@@ -129,6 +131,16 @@ class MessageTest extends TestCase
         $this->assertNotEmpty($result[0]['created_at']);
         $this->assertEquals('message', $result[0]['content']);
         $this->assertEquals($user->uuid, $result[0]['owner']['uuid']);
+
+        $url = 'api/foodfleet/messages?include=recipient';
+        $result = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertCount(1, $result);
+        $this->assertNotEmpty($result[0]['created_at']);
+        $this->assertEquals('message', $result[0]['content']);
+        $this->assertEquals($user1->uuid, $result[0]['recipient']['uuid']);
     }
 
     public function testGetNewItemRecommendation()
@@ -153,8 +165,18 @@ class MessageTest extends TestCase
 
         Passport::actingAs($user);
 
-        $event = factory(Event::class)->create();
-        $store = factory(Store::class)->create();
+        $event = factory(Event::class)->create([
+            'manager_uuid' => $user->uuid
+        ]);
+        
+        $user1 = factory(User::class)->create();
+        $supplier = factory(Company::class)->create([
+            'users_id' => $user1->id
+        ]);
+        $store = factory(Store::class)->create([
+            'supplier_uuid' => $supplier->uuid
+        ]);
+        
         $event->stores()->sync([$store->uuid]);
 
         $data = $this
@@ -166,7 +188,7 @@ class MessageTest extends TestCase
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/messages?filter[event_uuid]=' . $event->uuid . '&include=owner';
+        $url = 'api/foodfleet/messages?filter[event_uuid]=' . $event->uuid . '&include=owner,recipient';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -174,8 +196,9 @@ class MessageTest extends TestCase
         $this->assertNotEmpty($result[0]['created_at']);
         $this->assertEquals('create message test', $result[0]['content']);
         $this->assertEquals($user->uuid, $result[0]['owner']['uuid']);
+        $this->assertEquals($user1->uuid, $result[0]['recipient']['uuid']);
 
-        $url = 'api/foodfleet/messages?filter[store_uuid]=' . $store->uuid . '&include=owner';
+        $url = 'api/foodfleet/messages?filter[store_uuid]=' . $store->uuid . '&include=owner,recipient';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -183,5 +206,6 @@ class MessageTest extends TestCase
         $this->assertNotEmpty($result[0]['created_at']);
         $this->assertEquals('create message test', $result[0]['content']);
         $this->assertEquals($user->uuid, $result[0]['owner']['uuid']);
+        $this->assertEquals($user1->uuid, $result[0]['recipient']['uuid']);
     }
 }

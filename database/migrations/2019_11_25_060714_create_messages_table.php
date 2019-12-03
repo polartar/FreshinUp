@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->uuid('uuid')->index();
             $table->uuid('event_uuid');
             $table->uuid('store_uuid');
+            $table->uuid('recipient_uuid')->nullable();
             $table->text('content');
             $table->integer('status')->default(1);
             $table->uuid('created_by_uuid');

@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use App\User;
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Store;
 use App\Helpers\SquareHelper;
 use FreshinUp\FreshBusForms\Actions\Action;
 use App\Models\Foodfleet\Message;
@@ -15,27 +16,34 @@ class CreateMessage implements Action
 {
     public function execute(array $data)
     {
+        $user = User::where('uuid', $data['created_by_uuid'])->first();
+        $manager = Event::with('manager')->where('uuid', $data['event_uuid'])->first()->manager;
+        $supplier = Store::with('supplier')->where('uuid', $data['store_uuid'])->first()->supplier;
+
+        $recipient;
+        if ($user->id == $supplier->users_id) {
+            $data['recipient_uuid'] = $manager->uuid;
+            $recipient = $manager;
+        } elseif (!empty($supplier->users_id) && $user->id == $manager->id) {
+            $supplierOwner = User::where('id', $supplier->users_id)->first();
+            $data['recipient_uuid'] = $supplierOwner->uuid;
+            $recipient = $supplierOwner;
+        }
+
         $collection = collect($data);
         $createData = $collection->all();
-
         $message = Message::create($createData);
-        
-        // need to mailtrap account config info
-        // $this->sendMessage($message);
-        
+
+        $this->sendMessage($message, $user, $recipient);
+
         return $message->refresh();
     }
 
-    private function sendMessage(Message $message)
+    private function sendMessage(Message $message, User $user, User $recipient)
     {
-        $manager = Event::with('manager')->where('uuid', $message->event_uuid)->first()->manager;
-        $user = User::where('uuid', $message->created_by_uuid)->first();
-
-        if (!empty($user->email) && !empty($manager->email)) {
-            $name = $manager->first_name . ' ' . $manager->last_name;
-
-            Mail::to($manager->email, $name)
-                    ->send(new MessageShipped($user, $message));
+        if (!empty($user->email) && !empty($recipient->email)) {
+            $name = $recipient->first_name . ' ' . $recipient->last_name;
+            Mail::to($recipient->email)->send(new MessageShipped($user, $message));
         }
     }
 }

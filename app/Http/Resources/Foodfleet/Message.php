@@ -20,6 +20,7 @@ class Message extends JsonResource
             "uuid" => $this->uuid,
             "content" => $this->content,
             "owner" => new User($this->whenLoaded('owner')),
+            "recipient" => new User($this->whenLoaded('recipient')),
             "created_at" => $this->created_at
         ];
     }

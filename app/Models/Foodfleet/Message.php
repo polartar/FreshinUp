@@ -31,4 +31,9 @@ class Message extends Model
     {
         return $this->belongsTo(User::class, 'created_by_uuid', 'uuid');
     }
+
+    public function recipient()
+    {
+        return $this->belongsTo(User::class, 'recipient_uuid', 'uuid');
+    }
 }

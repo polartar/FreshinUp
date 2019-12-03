@@ -22,7 +22,7 @@ class Messages extends Controller
     public function index(Request $request)
     {
         $messages = QueryBuilder::for(Message::class, $request)
-            ->allowedIncludes(['owner'])
+            ->allowedIncludes(['owner', 'recipient'])
             ->allowedFilters([
                 Filter::exact('uuid'),
                 Filter::exact('event_uuid'),
