@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     v-model="isDialogOpened"
-    width="400px"
+    width="100%"
   >
     <div class="white mb-2">
       <div class="pa-2 p-md-2">
@@ -33,7 +33,7 @@
         <div class="px-4 f-flex align-center no-wrap d-flex compact">
           <v-text-field
             v-model="selectedIntervalValue"
-            v-validate="'required'"
+            v-validate="{ required: true, regex: /^\d+$/ }"
             single-line
             outline
             hide-details
@@ -52,7 +52,7 @@
             dense
             data-vv-name="selectedIntervalUnit"
             class="d-inline-flex mr-5"
-            @change="() => selectedRepeatOn.length !== 0 ? selectedRepeatOn = [] : null"
+            @change="() => resetRepeatOnSelections()"
           />
         </div>
       </div>
@@ -65,17 +65,17 @@
           REPEAT ON
         </span>
         <span
-          v-if="errors.collect('selectedRepeatOn').length !== 0"
+          v-if="errors.collect('selectedRepeatOnWeek').length !== 0"
           class="red--text pl-1"
         >
-          {{ errors.collect('selectedRepeatOn')[0] }}
+          {{ errors.collect('selectedRepeatOnWeek')[0] }}
         </span>
         <v-item-group
-          v-model="selectedRepeatOn"
+          v-model="selectedRepeatOnWeek"
           v-validate="'required'"
           multiple
-          :error-messages="errors.collect('selectedRepeatOn')"
-          data-vv-name="selectedRepeatOn"
+          :error-messages="errors.collect('selectedRepeatOnWeek')"
+          data-vv-name="selectedRepeatOnWeek"
         >
           <v-item
             v-for="option in repeatOnWeekOptions"
@@ -103,22 +103,22 @@
       >
         REPEAT ON
         <span
-          v-if="errors.collect('selectedRepeatOn').length !== 0"
+          v-if="errors.collect('selectedRepeatOnMonth').length !== 0"
           class="red--text pl-1"
         >
-          {{ errors.collect('selectedRepeatOn')[0] }}
+          {{ errors.collect('selectedRepeatOnMonth')[0] }}
         </span>
         <v-radio-group
-          v-model="selectedRepeatOn"
+          v-model="selectedRepeatOnMonth"
           v-validate="'required'"
           hide-details
-          :error-messages="errors.collect('selectedRepeatOn')"
-          data-vv-name="selectedRepeatOn"
+          :error-messages="errors.collect('selectedRepeatOnMonth')"
+          data-vv-name="selectedRepeatOnMonth"
         >
           <v-radio
             v-for="option in repeatOnMonthOptions"
             :key="option.id"
-            :label="option.label"
+            :label="option.text"
             :value="option.id"
           />
         </v-radio-group>
@@ -141,15 +141,9 @@
             hide-details
             :error-messages="errors.collect('selectedEndsOn')"
             data-vv-name="selectedEndsOn"
-            class="pb-3"
+            class="pb-3 ends-on-selection"
           >
             <span>
-              <v-radio
-                label="Never"
-                value="never"
-              />
-            </span>
-            <span class="mt-3">
               <v-radio
                 label="On"
                 value="on"
@@ -164,18 +158,17 @@
           </v-radio-group>
           <div
             v-if="selectedEndsOn === 'after'"
-            class="mr-5 pr-5"
           >
             <v-text-field
               v-model="selectedOccurrences"
-              v-validate="'required'"
+              v-validate="{ required: true, regex: /^\d+$/ }"
               single-line
               outline
               label="occurrences"
               hide-details
               required
               :error-messages="errors.collect('occurrences')"
-              data-vv-name="occurrences"
+              data-vv-name="selectedEndsOn"
               class="input-text-field compact"
             />
           </div>
@@ -225,49 +218,76 @@ export default {
         { id: 7, text: 'Saturday' }
       ],
       repeatOnMonthOptions: [
-        { id: 1, label: 'First Monday on each following month' },
-        { id: 2, label: 'Day 2 on each following month' }
+        { id: 1, text: 'First Monday on each following month' },
+        { id: 2, text: 'Day 2 on each following month' }
       ],
-      intervalUnits: ['Day(s)', 'Week(s)', 'Month(s)', 'Year(s)'],
-      endsOnOptions: ['Never', 'On', 'After'],
+      intervalUnits: ['Week(s)', 'Month(s)', 'Year(s)'],
+      endsOnOptions: ['On', 'After'],
 
-      selectedIntervalUnit: 'Day(s)',
+      selectedIntervalUnit: 'Week(s)',
       selectedIntervalValue: '',
-      selectedRepeatOn: [],
+      selectedRepeatOnWeek: [],
+      selectedRepeatOnMonth: '',
       selectedEndsOn: '',
       selectedOccurrences: '',
 
       isValid: true,
-      isDialogOpened: true
+      isDialogOpened: false
     }
   },
   methods: {
     cancel () {
       this.$emit('cancel', false)
       this.isDialogOpened = false
-      this.formData = {}
+    },
+    resetRepeatOnSelections () {
+      this.selectedRepeatOnWeek = []
+      this.selectedRepeatOnMonth = ''
     },
     save () {
+      let selectedRepeatOn
+
+      switch (this.selectedIntervalUnit) {
+        case 'Week(s)':
+          selectedRepeatOn = this.repeatOnWeekOptions.filter(day => {
+            return this.selectedRepeatOnWeek.find(dayId => {
+              return dayId === day.id
+            })
+          })
+          break
+        case 'Month(s)':
+          selectedRepeatOn = this.repeatOnMonthOptions.filter(option => {
+            return this.selectedRepeatOnMonth === option.id
+          })
+          break
+        default:
+          break
+      }
+
       const formData = {
-        interval: this.selectedIntervalUnit,
+        intervalUnit: this.selectedIntervalUnit,
         intervalValue: this.selectedIntervalValue,
-        repeatOn: this.selectedRepeatOn,
+        repeatOn: selectedRepeatOn,
         endsOn: this.selectedEndsOn,
         occurrences: this.selectedOccurrences
       }
 
       this.$emit('save', formData)
+      this.isDialogOpened = false
     }
   }
 }
 </script>
 
 <style scoped>
-  .input-text-field {
-    max-width: 150px;
-  }
   .compact {
     transform: scale(0.6);
     transform-origin: left;
+  }
+  .ends-on-selection {
+    max-width: 90px;
+  }
+  .input-text-field {
+    max-width: 200px;
   }
 </style>
