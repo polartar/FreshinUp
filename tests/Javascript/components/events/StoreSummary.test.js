@@ -27,25 +27,26 @@ describe('Event StoreSummary component', () => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
     })
-    test('onButtonClick() emits onButtonClick', () => {
+    test('viewMemberProfile() emits viewMemberProfile', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
           store: FIXTURE_EVENT_STORE_SUMMARY
         }
       })
-      wrapper.vm.onButtonClick()
-      expect(wrapper.emitted()['onButtonClick']).toBeTruthy()
+      wrapper.vm.viewMemberProfile()
+      expect(wrapper.emitted()['viewMemberProfile']).toBeTruthy()
     })
-    test('onRemoveClick() emits onRemoveClick', () => {
+
+    test('removeMemberProfile() emits removeMemberProfile', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
           store: FIXTURE_EVENT_STORE_SUMMARY
         }
       })
-      wrapper.vm.onRemoveClick()
-      expect(wrapper.emitted()['onRemoveClick']).toBeTruthy()
+      wrapper.vm.removeMemberProfile()
+      expect(wrapper.emitted()['removeMemberProfile']).toBeTruthy()
     })
   })
 })

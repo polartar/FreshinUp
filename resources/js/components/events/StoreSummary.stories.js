@@ -8,11 +8,11 @@ storiesOf('FoodFleet|events/StoreSummary', module)
     () => ({
       components: { StoreSummary },
       methods: {
-        onButtonClick () {
-          action('onButtonClick')('button clicked')
+        viewMemberProfile () {
+          action('viewMemberProfile')()
         },
-        onRemoveClick () {
-          action('onRemoveClick')('remove clicked')
+        removeMemberProfile () {
+          action('removeMemberProfile')()
         }
       },
       data () {
@@ -27,17 +27,11 @@ storiesOf('FoodFleet|events/StoreSummary', module)
         }
       },
       template: `        
-  <v-container fluid>
-    <v-layout>
-      <v-flex md4>
         <store-summary
           :store="store"
           @onButtonClick="onButtonClick"
           @onRemoveClick="onRemoveClick"
         />
-      </v-flex>
-    </v-layout>
-  </v-container>
-  `
+      `
     })
   )

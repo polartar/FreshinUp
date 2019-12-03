@@ -26,7 +26,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
   >
     <v-layout-stub
       align-center=""
-      line=""
+      py-2=""
       tag="div"
     >
       <v-flex-stub
@@ -34,7 +34,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         OWNER
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -44,7 +46,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         Dan Smith
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -52,7 +56,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
      
     <v-layout-stub
       align-center=""
-      line=""
+      py-2=""
       tag="div"
     >
       <v-flex-stub
@@ -60,7 +64,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         LISENCE DUE
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -70,7 +76,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         Dec, 30 2020
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -78,7 +86,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
      
     <v-layout-stub
       align-center=""
-      line=""
+      py-2=""
       tag="div"
     >
       <v-flex-stub
@@ -86,7 +94,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         CONTACT PHONE
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -96,7 +106,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         938 374822
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -104,7 +116,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
      
     <v-layout-stub
       align-center=""
-      line=""
+      class="py-2"
       tag="div"
     >
       <v-flex-stub
@@ -112,7 +124,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         CONTACT EMAIL
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -122,7 +136,9 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         dan.simth@gmail.com
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -257,12 +273,14 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
       <v-icon-stub
         class="pr-2 caption"
       >
+        
         far fa-trash-alt
+      
       </v-icon-stub>
        
-      <v-text>
+      <span>
         Remove fleet member from this event
-      </v-text>
+      </span>
     </v-btn-stub>
   </v-container-stub>
 </v-card-stub>
