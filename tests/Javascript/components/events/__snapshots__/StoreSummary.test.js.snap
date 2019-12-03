@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event StoreSummary component Snapshots required set 1`] = `
+<v-card-stub
+  tag="div"
+>
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    py-3=""
+    subheading=""
+    tag="div"
+  >
+    
+    Fleet Member Summary
+  
+  </v-container-stub>
+   
+  <v-divider-stub />
+   
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    pt-0=""
+    tag="div"
+  >
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        OWNER
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        Dan Smith
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        LISENCE DUE
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        Dec, 30 2020
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        CONTACT PHONE
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        938 374822
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        CONTACT EMAIL
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        dan.simth@gmail.com
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      font-weight-bold=""
+      grey--text=""
+      mt-2=""
+      pa-1=""
+      tag="div"
+      tags_title=""
+    >
+      <v-flex-stub
+        tag="div"
+      >
+        TAGS
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-layout-stub
+      row=""
+      tag="div"
+      wrap=""
+    >
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SEAFOOD
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        DESSERT
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        BAY AREA
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        VEGAN OPTIONS
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        DESSERT
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SEAFOOD
+      
+      </f-chip-stub>
+      <f-chip-stub
+        class="my-1 ml-0 mr-2"
+        color="primary"
+        value="true"
+      >
+        
+        SMOKED
+      
+      </f-chip-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub
+      class="mt-3"
+    />
+     
+    <v-btn-stub
+      activeclass="v-btn--active"
+      block="true"
+      class="grey ma-0 mt-4 white--text text-none"
+      tag="button"
+      type="button"
+    >
+      
+      View Fleet Member Profile
+    
+    </v-btn-stub>
+     
+    <v-btn-stub
+      activeclass="v-btn--active"
+      block="true"
+      class="transparent elevation-0 ma-0 pa-0 caption  grey--text mt-3 button-remove text-none"
+      tag="button"
+      type="button"
+    >
+      <v-icon-stub
+        class="pr-2 caption"
+      >
+        far fa-trash-alt
+      </v-icon-stub>
+       
+      <v-text>
+        Remove fleet member from this event
+      </v-text>
+    </v-btn-stub>
+  </v-container-stub>
+</v-card-stub>
+`;
