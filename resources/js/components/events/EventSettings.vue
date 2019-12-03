@@ -206,6 +206,12 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 export default {
   name: 'EventSettings',
   mixins: [Validate],
+  props: {
+    isDialogOpened: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       repeatOnWeekOptions: [
@@ -231,8 +237,7 @@ export default {
       selectedEndsOn: '',
       selectedOccurrences: '',
 
-      isValid: true,
-      isDialogOpened: false
+      isValid: true
     }
   },
   methods: {

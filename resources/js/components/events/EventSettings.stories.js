@@ -11,6 +11,11 @@ storiesOf('FoodFleet|event/EventSettings', module)
   })
   .add('default', () => ({
     components: { EventSettings },
+    data () {
+      return {
+        isDialogOpened: true
+      }
+    },
     methods: {
       save () {
         action('save')()
@@ -20,7 +25,8 @@ storiesOf('FoodFleet|event/EventSettings', module)
       }
     },
     template: `
-      <event-settings
+       <event-settings
+        isDialogOpened="true"
         @save="save"
         @cancel="cancel"
       />
