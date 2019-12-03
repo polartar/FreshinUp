@@ -61,6 +61,11 @@ class Store extends Model
         );
     }
 
+    public function menus()
+    {
+        return $this->hasMany(Menu::class, 'store_uuid', 'uuid');
+    }
+
     public function transactions()
     {
         return $this->hasMany(Transaction::class, 'store_uuid', 'uuid');
