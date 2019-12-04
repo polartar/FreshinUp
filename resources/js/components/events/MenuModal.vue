@@ -3,7 +3,7 @@
     v-model="dialog"
     max-width="700px"
   >
-    <v-card>
+    <v-card class="pa-2">
       <v-card-title>
         <span class="title font-weight-bold">{{ title }}</span>
       </v-card-title>
