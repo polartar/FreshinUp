@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageList Snapshots defaults 1`] = `
+<div>
+  <hr
+    class="v-divider theme--light"
+  />
+   
+</div>
+`;
