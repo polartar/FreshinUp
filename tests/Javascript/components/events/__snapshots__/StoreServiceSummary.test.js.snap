@@ -112,7 +112,7 @@ exports[`Event StoreServiceSummary component Snapshots cancel state  1`] = `
             class="pa-0"
           >
             
-            30%
+            30 %
           
           </v-card-text-stub>
            
@@ -367,7 +367,7 @@ exports[`Event StoreServiceSummary component Snapshots edit state  1`] = `
             class="pa-0"
           >
             
-            30%
+            30 %
           
           </v-card-text-stub>
            
@@ -622,7 +622,7 @@ exports[`Event StoreServiceSummary component Snapshots required set 1`] = `
             class="pa-0"
           >
             
-            30%
+            30 %
           
           </v-card-text-stub>
            

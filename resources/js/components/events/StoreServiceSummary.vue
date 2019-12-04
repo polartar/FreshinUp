@@ -72,7 +72,7 @@
             @click="edit"
           >
             <v-card-text class="pa-0">
-              {{ formValue.commission_rate }}{{ computedCommissionType }}
+              {{ getCommissionValue() }}
             </v-card-text>
             <v-icon>edit</v-icon>
           </v-btn>
@@ -199,11 +199,6 @@ export default {
       showEdit: false
     }
   },
-  computed: {
-    computedCommissionType: function () {
-      return this.commissionTypes[this.service.commission_type - 1].unit
-    }
-  },
   watch: {
     service: {
       handler () {
@@ -215,6 +210,18 @@ export default {
   methods: {
     viewContract () {
       this.$emit('viewContract')
+    },
+    getCommissionValue () {
+      const commissionRate = this.formValue.commission_rate
+      const unit = this.commissionTypes[this.formValue.commission_type - 1].unit
+
+      if (unit === '$') {
+        return `${unit} ${commissionRate}`
+      } else if (unit === '%') {
+        return `${commissionRate} ${unit}`
+      } else {
+        return ''
+      }
     },
     edit () {
       this.showEdit = true
