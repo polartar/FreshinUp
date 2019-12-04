@@ -63,10 +63,11 @@ class EventMenuItems extends Controller
         ]);
 
         $inputs = $request->input();
+        $inputs['flag'] = MenuItemFlagsEnum::SELF_DEFAULT_MENU;
         if (!empty($inputs['menu_uuid'])) {
             $inputs['flag'] = MenuItemFlagsEnum::SAME_STORE_MENU;
-            $menu = Menu::where('uuid', $inputs['menu_uuid']).first();
-            if ($menu->item != $inputs['item'] || $menu->description != $inputs['description'] ) {
+            $menu = Menu::where('uuid', $inputs['menu_uuid'])->first();
+            if (!empty($menu) && ($menu->item != $inputs['item'] || $menu->description != $inputs['description'])) {
                 $inputs['flag'] = MenuItemFlagsEnum::EDIT_STORE_MENU;
             }
         }
@@ -109,11 +110,12 @@ class EventMenuItems extends Controller
         ]);
 
         $inputs = $request->input();
+        $inputs['flag'] = MenuItemFlagsEnum::SELF_DEFAULT_MENU;
         $menuItem = EventMenuItem::where('uuid', $uuid)->first();
         if (!empty($menuItem->menu_uuid)) {
             $inputs['flag'] = MenuItemFlagsEnum::SAME_STORE_MENU;
-            $menu = Menu::where('uuid', $menuItem->menu_uuid).first();
-            if ($menu->item != $inputs['item'] || $menu->description != $inputs['description'] ) {
+            $menu = Menu::where('uuid', $menuItem->menu_uuid)->first();
+            if (!empty($menu) && ($menu->item != $inputs['item'] || $menu->description != $inputs['description'])) {
                 $inputs['flag'] = MenuItemFlagsEnum::EDIT_STORE_MENU;
             }
         }

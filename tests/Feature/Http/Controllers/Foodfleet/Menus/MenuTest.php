@@ -82,6 +82,32 @@ class MenuTest extends TestCase
         $this->assertEquals('item2', $result[0]['item']);
     }
 
+    public function testGetListWithTerm()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $store1 = factory(Store::class)->create();
+        factory(Menu::class, 2)->create([
+            'item' => 'qwertyui item1',
+            'store_uuid' => $store1->uuid
+        ]);
+
+        $store2 = factory(Store::class)->create();
+        $menus = factory(Menu::class, 3)->create([
+            'item' => 'jdhf item2',
+            'store_uuid' => $store2->uuid
+        ]);
+
+        $data = $this
+            ->json('get', 'api/foodfleet/menus?q=item2')
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+    }
+
     public function testGetNewItemRecommendation()
     {
         $user = factory(User::class)->create();
