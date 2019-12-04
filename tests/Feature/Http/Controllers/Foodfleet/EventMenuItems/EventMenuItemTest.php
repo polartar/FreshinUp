@@ -1,17 +1,18 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet\Menus;
+namespace Tests\Feature\Http\Controllers\Foodfleet\EventMenuItems;
 
 use App\User;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
-use App\Models\Foodfleet\Menu;
+use App\Models\Foodfleet\EventMenuItem;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class MenuTest extends TestCase
+class EventMenuItemTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -26,13 +27,15 @@ class MenuTest extends TestCase
 
         Passport::actingAs($user);
 
+        $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
-        $menus = factory(Menu::class, 3)->create([
+        $items = factory(EventMenuItem::class, 3)->create([
+            'event_uuid' => $event->uuid,
             'store_uuid' => $store->uuid
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/menus")
+            ->json('get', "/api/foodfleet/event-menu-items")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -41,10 +44,10 @@ class MenuTest extends TestCase
 
         $this->assertNotEmpty($data);
         $this->assertCount(3, $data);
-        foreach ($menus as $idx => $menu) {
+        foreach ($items as $idx => $item) {
             $this->assertArraySubset([
-                'uuid' => $menu->uuid,
-                'item' => $menu->item
+                'uuid' => $item->uuid,
+                'item' => $item->item
             ], $data[$idx]);
         }
     }
@@ -55,57 +58,42 @@ class MenuTest extends TestCase
 
         Passport::actingAs($user);
 
+        $event1 = factory(Event::class)->create();
         $store1 = factory(Store::class)->create();
-        factory(Menu::class, 2)->create([
+        factory(EventMenuItem::class, 3)->create([
             'item' => 'item1',
+            'event_uuid' => $event1->uuid,
             'store_uuid' => $store1->uuid
         ]);
 
+        $event2 = factory(Event::class)->create();
         $store2 = factory(Store::class)->create();
-        factory(Menu::class, 3)->create([
+        factory(EventMenuItem::class, 2)->create([
             'item' => 'item2',
+            'event_uuid' => $event2->uuid,
             'store_uuid' => $store2->uuid
         ]);
 
-        $url = 'api/foodfleet/menus?filter[store_uuid]=' . $store1->uuid;
-        $result = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
-        $this->assertCount(2, $result);
-        $this->assertEquals('item1', $result[0]['item']);
-
-        $url = 'api/foodfleet/menus?filter[item]=item2';
+        $url = 'api/foodfleet/event-menu-items?filter[event_uuid]=' . $event1->uuid;
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
         $this->assertCount(3, $result);
-        $this->assertEquals('item2', $result[0]['item']);
-    }
+        $this->assertEquals('item1', $result[0]['item']);
 
-    public function testGetListWithTerm()
-    {
-        $user = factory(User::class)->create();
-        Passport::actingAs($user);
-
-        $store1 = factory(Store::class)->create();
-        factory(Menu::class, 2)->create([
-            'item' => 'qwertyui item1',
-            'store_uuid' => $store1->uuid
-        ]);
-
-        $store2 = factory(Store::class)->create();
-        $menus = factory(Menu::class, 3)->create([
-            'item' => 'jdhf item2',
-            'store_uuid' => $store2->uuid
-        ]);
-
-        $data = $this
-            ->json('get', 'api/foodfleet/menus?q=item2')
+        $url = 'api/foodfleet/event-menu-items?filter[store_uuid]=' . $store2->uuid;
+        $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
+        $this->assertCount(2, $result);
+        $this->assertEquals('item2', $result[0]['item']);
 
-        $this->assertNotEmpty($data);
-        $this->assertCount(3, $data);
+        $url = 'api/foodfleet/event-menu-items?filter[item]=item2';
+        $result = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+        $this->assertCount(2, $result);
+        $this->assertEquals('item2', $result[0]['item']);
     }
 
     public function testGetNewItemRecommendation()
@@ -114,7 +102,7 @@ class MenuTest extends TestCase
 
         Passport::actingAs($user);
         
-        $data = $this->json('GET', 'api/foodfleet/menus/new')
+        $data = $this->json('GET', 'api/foodfleet/event-menu-items/new')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [],
@@ -129,25 +117,28 @@ class MenuTest extends TestCase
 
         Passport::actingAs($user);
 
+        $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
 
         $data = $this
-            ->json('POST', 'api/foodfleet/menus', [
-                'item' => 'create menu test',
-                'category' => 'Salad',
+            ->json('POST', 'api/foodfleet/event-menu-items', [
+                'item' => 'create menu item test',
+                'servings' => 5,
+                'cost' => 123,
                 'description' => 'This is special food for you',
-                'street_price' => 123,
+                'event_uuid' => $event->uuid,
                 'store_uuid' => $store->uuid
             ])
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/menus?filter[uuid]=' . $data['uuid'] . '&include=store';
+        $url = 'api/foodfleet/event-menu-items?filter[uuid]=' . $data['uuid'] . '&include=event,store';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
-        $this->assertEquals('create menu test', $result[0]['item']);
+        $this->assertEquals('create menu item test', $result[0]['item']);
+        $this->assertEquals($event->uuid, $result[0]['event']['uuid']);
         $this->assertEquals($store->uuid, $result[0]['store']['uuid']);
     }
 
@@ -157,31 +148,34 @@ class MenuTest extends TestCase
         
         Passport::actingAs($user);
 
+        $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
-        $menu = factory(Menu::class)->create([
+        $item = factory(EventMenuItem::class)->create([
             'item' => 'item1',
+            'event_uuid' => $event->uuid,
             'store_uuid' => $store->uuid
         ]);
 
         $data = $this
-            ->json('PUT', 'api/foodfleet/menus/' . $menu->uuid, [
-                'item' => 'create menu test',
-                'category' => 'Salad',
-                'description' => 'This is special food for you',
-                'street_price' => 1234
+            ->json('PUT', 'api/foodfleet/event-menu-items/' . $item->uuid, [
+                'item' => 'create menu item test',
+                'servings' => 5,
+                'cost' => 123,
+                'description' => 'This is special food for you'
             ])
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/menus/' . $menu->uuid . '?include=store';
+        $url = 'api/foodfleet/event-menu-items/' . $item->uuid . '?include=event,store';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
-        $this->assertEquals('create menu test', $result['item']);
-        $this->assertEquals('Salad', $result['category']);
+        $this->assertEquals('create menu item test', $result['item']);
         $this->assertEquals('This is special food for you', $result['description']);
-        $this->assertEquals(1234, $result['street_price']);
+        $this->assertEquals(5, $result['servings']);
+        $this->assertEquals(123, $result['cost']);
+        $this->assertEquals($event->uuid, $result['event']['uuid']);
         $this->assertEquals($store->uuid, $result['store']['uuid']);
     }
 
@@ -191,23 +185,25 @@ class MenuTest extends TestCase
 
         Passport::actingAs($user);
 
+        $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
-        $menu = factory(Menu::class)->create([
+        $item = factory(EventMenuItem::class)->create([
             'item' => 'item1',
+            'event_uuid' => $event->uuid,
             'store_uuid' => $store->uuid
         ]);
 
         $data = $this
-            ->json('GET', 'api/foodfleet/menus/' . $menu->uuid)
+            ->json('GET', 'api/foodfleet/event-menu-items/' . $item->uuid)
             ->assertStatus(200)
             ->json('data');
 
-        $this->assertEquals($menu->uuid, $data['uuid']);
+        $this->assertEquals($item->uuid, $data['uuid']);
 
-        $this->json('DELETE', 'api/foodfleet/menus/' . $menu->uuid)
+        $this->json('DELETE', 'api/foodfleet/event-menu-items/' . $item->uuid)
             ->assertStatus(204);
 
-        $this->json('GET', 'api/foodfleet/menus/' . $menu->uuid)
+        $this->json('GET', 'api/foodfleet/event-menu-items/' . $item->uuid)
             ->assertStatus(404);
     }
 }

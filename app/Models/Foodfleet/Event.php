@@ -84,6 +84,11 @@ class Event extends Model
         return $this->belongsTo(EventStatus::class, 'status_id', 'id');
     }
 
+    public function menuItems()
+    {
+        return $this->hasMany(EventMenuItem::class, 'event_uuid', 'uuid');
+    }
+
     public function messages()
     {
         return $this->hasMany(Message::class, 'event_uuid', 'uuid');
