@@ -41,6 +41,9 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('event-menu-items/new', 'Foodfleet\EventMenuItems@showNewRecommendation');
     Route::apiResource('event-menu-items', 'Foodfleet\EventMenuItems');
 
+    Route::get('menus/new', 'Foodfleet\Menus@showNewRecommendation');
+    Route::apiResource('menus', 'Foodfleet\Menus');
+
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('items', 'Foodfleet\Items@index');
@@ -57,4 +60,8 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');
 
     Route::get('venues', 'Foodfleet\Venues@index');
+
+    Route::get('messages/new', 'Foodfleet\Messages@showNewRecommendation');
+    Route::get('messages', 'Foodfleet\Messages@index');
+    Route::post('messages', 'Foodfleet\Messages@store');
 });

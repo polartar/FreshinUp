@@ -88,4 +88,9 @@ class Event extends Model
     {
         return $this->hasMany(EventMenuItem::class, 'event_uuid', 'uuid');
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'event_uuid', 'uuid');
+    }
 }
