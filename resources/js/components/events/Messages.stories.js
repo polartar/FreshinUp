@@ -40,6 +40,7 @@ storiesOf('FoodFleet|event/Messages', module)
       components: { Messages },
       data () {
         return {
+          activists: 'William D and John Smith',
           messages: messages
         }
       },
@@ -51,6 +52,7 @@ storiesOf('FoodFleet|event/Messages', module)
       template: `
           <v-container>
             <messages
+              :activists="activists"
               :messages="messages"
               @send-message="onSendMessage"
             />

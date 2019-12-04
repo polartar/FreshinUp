@@ -9,20 +9,18 @@ exports[`Messages component test Snapshots messages 1`] = `
     style="width: 100%;"
   >
     <div
-      class="v-card__title justify-space-between px-4"
-    >
-      <span
-        class="black--text font-weight-bold title text-uppercase"
-      >
-        Event Activity
-      </span>
-    </div>
-     
-    <hr />
-     
-    <div
       class="pa-4"
     >
+      <div
+        class="layout message-title row"
+      >
+        <span
+          class="grey--text font-weight-bold title text-uppercase"
+        >
+          Activists' Name
+        </span>
+      </div>
+       
       <div
         class="layout row"
       >
@@ -220,20 +218,18 @@ exports[`Messages component test Snapshots messages empty 1`] = `
     style="width: 100%;"
   >
     <div
-      class="v-card__title justify-space-between px-4"
-    >
-      <span
-        class="black--text font-weight-bold title text-uppercase"
-      >
-        Event Activity
-      </span>
-    </div>
-     
-    <hr />
-     
-    <div
       class="pa-4"
     >
+      <div
+        class="layout message-title row"
+      >
+        <span
+          class="grey--text font-weight-bold title text-uppercase"
+        >
+          Activists' Name
+        </span>
+      </div>
+       
       <div
         class="layout row"
       >

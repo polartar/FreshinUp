@@ -1,11 +1,13 @@
 <template>
   <v-layout>
     <v-card width="100%">
-      <v-card-title class="justify-space-between px-4">
-        <span class="black--text font-weight-bold title text-uppercase">Event Activity</span>
-      </v-card-title>
-      <hr>
       <div class="pa-4">
+        <v-layout
+          row
+          class="message-title"
+        >
+          <span class="grey--text font-weight-bold title text-uppercase">{{ activists }}</span>
+        </v-layout>
         <v-layout
           row
         >
@@ -39,6 +41,10 @@ export default {
     MessageSend
   },
   props: {
+    activists: {
+      type: String,
+      default: () => "Activists' Name"
+    },
     messages: {
       type: Array,
       default: () => []
@@ -53,4 +59,7 @@ export default {
 </script>
 
 <style scoped>
+.message-title {
+  padding-bottom: 15px;
+}
 </style>
