@@ -9,6 +9,7 @@ use App\Http\Resources\Foodfleet\Menu as MenuResource;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Illuminate\Support\Facades\DB;
 
 class Menus extends Controller
 {
@@ -19,14 +20,26 @@ class Menus extends Controller
      */
     public function index(Request $request)
     {
-        $menus = QueryBuilder::for(Menu::class, $request)
+        $query = QueryBuilder::for(Menu::class, $request)
             ->allowedIncludes(['store'])
             ->allowedFilters([
                 'item',
                 Filter::exact('uuid'),
                 Filter::exact('store_uuid')
             ]);
-        return MenuResource::collection($menus->jsonPaginate());
+        
+        $searchTerm = null;
+        if ($request->has('q')) {
+            $searchTerm = $request->get('q');
+        }
+        if ($request->has('term')) {
+            $searchTerm = $request->get('term');
+        }
+        if ($searchTerm) {
+            $query->where(DB::raw('item'), 'LIKE', '%' . $searchTerm . '%');
+        }
+
+        return MenuResource::collection($query->jsonPaginate());
     }
 
     /**
