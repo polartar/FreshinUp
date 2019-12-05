@@ -8,7 +8,7 @@ const events = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'accusantium',
-    status: 1,
+    status_id: 1,
     start_at: '2019-12-10 11:04:19',
     end_at: '2019-12-10 11:04:19',
     manager: {
@@ -39,7 +39,7 @@ const events = [
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
     name: 'saepe',
-    status: 2,
+    status_id: 2,
     start_at: '2019-12-10 11:04:19',
     end_at: '2019-12-12 11:04:19',
     manager: {
@@ -74,7 +74,7 @@ const events = [
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
     name: 'quibusdam',
-    status: 3,
+    status_id: 3,
     start_at: '2019-12-05 11:04:19',
     end_at: '2019-12-06 11:04:19',
     manager: {
@@ -113,7 +113,7 @@ const events = [
   {
     uuid: '395aga97-13b6-4430-86d2-7td46155dc67',
     name: 'quibusa',
-    status: 4,
+    status_id: 4,
     start_at: '2019-12-25 11:04:19',
     end_at: '2019-12-25 11:05:19',
     manager: {

@@ -8,6 +8,7 @@ use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Store;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 
 use App\Enums\EventStatus as EventStatusEnum;
@@ -617,6 +618,51 @@ class EventTest extends TestCase
         $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);
         $this->assertEquals($eventTag2->name, $returnedEvent['event_tags'][0]['name']);
+    }
+
+    public function testAssignStores()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(Company::class)->create();
+        $location = factory(Location::class)->create();
+        $eventTag = factory(EventTag::class)->create();
+        $stores = factory(Store::class, 3)->create();
+        $storeUuids = $stores->map(function ($item) {
+            return $item->uuid;
+        });
+
+        $event = factory(Event::class)->create([
+            'status_id' => 1,
+            'manager_uuid' => $user->uuid,
+            'host_uuid' => $company->uuid,
+            'location_uuid' => $location->uuid
+        ]);
+        $event->eventTags()->save($eventTag);
+
+        $data = $this
+            ->json('PUT', 'api/foodfleet/events/' . $event->uuid, [
+                'store_uuids' => $storeUuids
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $url = 'api/foodfleet/events/' . $event->uuid . '?include=stores';
+        $returnedEvent = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertNotEmpty($returnedEvent);
+        $this->assertEquals(3, count($returnedEvent['stores']));
+        foreach ($stores as $idx => $store) {
+            $this->assertArraySubset([
+                'uuid' => $store->uuid,
+                'name' => $store->name,
+                'square_id' => $store->square_id
+            ], $returnedEvent['stores'][$idx]);
+        }
     }
 
     public function testDeleteItem()

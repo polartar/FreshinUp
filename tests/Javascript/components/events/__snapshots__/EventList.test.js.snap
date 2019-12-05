@@ -935,14 +935,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Draft
+  Pending
  
                   <i
                     aria-hidden="true"
@@ -1214,14 +1214,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn theme--dark success success-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Draft
+  Confirmed
  
                   <i
                     aria-hidden="true"
