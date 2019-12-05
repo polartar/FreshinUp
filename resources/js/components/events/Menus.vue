@@ -11,7 +11,7 @@
               mb-6
               class="menu-title"
             >
-              <span class="black--text font-weight-bold title text-uppercase">{{ menuTitle }}</span>
+              <span class="grey--text font-weight-bold title text-uppercase">{{ menuTitle }}</span>
             </v-layout>
           </v-flex>
           <v-flex
@@ -73,7 +73,7 @@ export default {
   props: {
     menuTitle: {
       type: String,
-      default: () => ''
+      default: () => 'Fleet Member Name'
     },
     menus: {
       type: Array,

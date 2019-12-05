@@ -1,9 +1,9 @@
 import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
 
-export default (initialState = {}) => {
+export default ({ items, item }) => {
   const store = makeRestStore(
     'events',
-    { item: initialState.item, items: initialState.items },
+    { items, item },
     {
       itemsPath: () => `/foodfleet/events`,
       itemPath: ({ id }) => `/foodfleet/events/${id}`
@@ -12,6 +12,16 @@ export default (initialState = {}) => {
 
   return {
     namespaced: true,
-    ...store
+    ...store,
+    modules: {
+      stores: makeRestStore(
+        'stores',
+        { items, item },
+        {
+          itemsPath: ({ eventId }) => `/foodfleet/events/${eventId}/stores`,
+          itemPath: ({ eventId, id }) => `/foodfleet/events/${eventId}/stores/${id}`
+        }
+      )
+    }
   }
 }

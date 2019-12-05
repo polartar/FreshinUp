@@ -1,69 +1,86 @@
 <template>
-  <v-form
-    v-if="!isLoading"
-    ref="form"
-    v-model="isValid"
-  >
+  <div>
+    <v-form
+      v-if="!isLoading"
+      ref="form"
+      v-model="isValid"
+    >
+      <v-layout
+        row
+        align-center
+        pt-3
+      >
+        <v-btn
+          flat
+          small
+          @click="backToList"
+        >
+          <div class="back-btn-inner">
+            <v-icon>fas fa-arrow-left</v-icon>
+            <span>Return to Events list</span>
+          </div>
+        </v-btn>
+      </v-layout>
+      <v-layout
+        row
+        justify-space-between
+        ma-2
+      >
+        <h2 class="white--text">
+          {{ pageTitle }}
+        </h2>
+        <v-flex
+          text-xs-right
+          sm2
+          xs12
+        >
+          <status-select
+            :value="status_id"
+            :options="statuses"
+          />
+        </v-flex>
+      </v-layout>
+      <v-divider />
+      <br>
+      <v-layout
+        row
+        wrap
+        pa-2
+        justify-space-between
+        class="event-new-wrap"
+      >
+        <v-flex
+          md12
+          sm12
+        >
+          <BasicInfoformation
+            ref="basicInfo"
+            :event="event"
+            :errors="errors"
+            @data-change="changeBasicInfo"
+            @cancel="onCancel"
+            @save="onSave"
+            @delete="onDelete"
+          />
+        </v-flex>
+      </v-layout>
+    </v-form>
+
     <v-layout
       row
-      align-center
-      pt-3
+      px-2
+      py-4
     >
-      <v-btn
-        flat
-        small
-        @click="backToList"
-      >
-        <div class="back-btn-inner">
-          <v-icon>fas fa-arrow-left</v-icon>
-          <span>Return to Events list</span>
-        </div>
-      </v-btn>
-    </v-layout>
-    <v-layout
-      row
-      justify-space-between
-      ma-2
-    >
-      <h2 class="white--text">
-        {{ pageTitle }}
-      </h2>
-      <v-flex
-        text-xs-right
-        sm2
-        xs12
-      >
-        <status-select
-          :value="status_id"
-          :options="statuses"
+      <v-flex>
+        <stores
+          :types="types"
+          :statuses="storeStatues"
+          :stores="stores"
+          @manage-view-details="viewDetails"
         />
       </v-flex>
     </v-layout>
-    <v-divider />
-    <br>
-    <v-layout
-      row
-      wrap
-      pa-2
-      justify-space-between
-      class="event-new-wrap"
-    >
-      <v-flex
-        md12
-        sm12
-      >
-        <BasicInfoformation
-          ref="basicInfo"
-          :event="event"
-          :errors="errors"
-          @data-change="changeBasicInfo"
-          @cancel="onCancel"
-          @save="onSave"
-          @delete="onDelete"
-        />
-      </v-flex>
-    </v-layout>
-  </v-form>
+  </div>
 </template>
 
 <script>
@@ -73,6 +90,7 @@ import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
 import BasicInfoformation from '~/components/events/BasicInformation.vue'
+import Stores from '~/components/events/Stores.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -82,13 +100,52 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
+    Stores,
     StatusSelect,
     BasicInfoformation
   },
   mixins: [Validate],
   data () {
     return {
-      isNew: false
+      isNew: false,
+      types: [],
+      storeStatues: [
+        { id: 1, name: 'Draft' },
+        { id: 2, name: 'Pending' },
+        { id: 3, name: 'Confirmed' },
+        { id: 4, name: 'Declined' }
+      ],
+      stores: [
+        {
+          uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
+          name: 'Burger Babes',
+          status: 1,
+          type: {
+            id: 1,
+            name: 'Mobil'
+          },
+          store_tags: [
+            {
+              uuid: '1',
+              name: 'minus'
+            },
+            {
+              uuid: '2',
+              name: 'hic'
+            }
+          ],
+          owner: {
+            id: 1,
+            name: 'Level1 User',
+            company: 'Laravel'
+          },
+          location: {
+            id: 1,
+            uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
+            name: 'Port Gerald'
+          }
+        }
+      ]
     }
   },
   computed: {
@@ -157,6 +214,9 @@ export default {
       await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
       this.$router.push('/admin/events/')
+    },
+    viewDetails (store) {
+      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
