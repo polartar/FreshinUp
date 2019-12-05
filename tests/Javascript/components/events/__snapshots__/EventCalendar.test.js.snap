@@ -4,6 +4,8 @@ exports[`EventCalendar Snapshots defaults 1`] = `
 <div
   class="container"
 >
+  <!---->
+   
   <div
     class="layout wrap row"
   >
@@ -569,7 +571,6 @@ exports[`EventCalendar Snapshots defaults 1`] = `
     >
       <div
         class="v-sheet theme--light"
-        style="height: 431px;"
       >
         <div
           class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
@@ -969,6 +970,8 @@ exports[`EventCalendar Snapshots with events data 1`] = `
 <div
   class="container"
 >
+  <!---->
+   
   <div
     class="layout wrap row"
   >
@@ -1534,7 +1537,6 @@ exports[`EventCalendar Snapshots with events data 1`] = `
     >
       <div
         class="v-sheet theme--light"
-        style="height: 431px;"
       >
         <div
           class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
