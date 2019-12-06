@@ -241,4 +241,18 @@ export default {
 </script>
 
 <style scoped>
+.back-btn-inner{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.back-btn-inner span{
+  margin-left: 10px;
+  font-weight: bold;
+  text-transform: initial;
+}
+.back-btn-inner .v-icon{
+  font-size: 16px;
+}
 </style>

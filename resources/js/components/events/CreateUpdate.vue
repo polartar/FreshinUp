@@ -74,7 +74,7 @@
       <v-flex>
         <stores
           :types="types"
-          :statuses="storeStatues"
+          :statuses="storeStatuses"
           :stores="stores"
           @manage-view-details="viewDetails"
         />
@@ -108,49 +108,14 @@ export default {
   data () {
     return {
       isNew: false,
-      types: [],
-      storeStatues: [
-        { id: 1, name: 'Draft' },
-        { id: 2, name: 'Pending' },
-        { id: 3, name: 'Confirmed' },
-        { id: 4, name: 'Declined' }
-      ],
-      stores: [
-        {
-          uuid: 'a46e7268-a2d5-469a-92c2-6cb9e8406f8e',
-          name: 'Burger Babes',
-          status: 1,
-          type: {
-            id: 1,
-            name: 'Mobil'
-          },
-          store_tags: [
-            {
-              uuid: '1',
-              name: 'minus'
-            },
-            {
-              uuid: '2',
-              name: 'hic'
-            }
-          ],
-          owner: {
-            id: 1,
-            name: 'Level1 User',
-            company: 'Laravel'
-          },
-          location: {
-            id: 1,
-            uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
-            name: 'Port Gerald'
-          }
-        }
-      ]
+      types: []
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
+    ...mapGetters('events/stores', { stores: 'items' }),
+    ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapFields('events', [
       'status_id'
@@ -226,16 +191,21 @@ export default {
     vm.setPageLoading(true)
     const id = to.params.id || 'new'
     let params = { id }
+    let promise = []
     if (id !== 'new') {
       params = {
         id,
         include: 'manager,host,event_tags'
       }
+      promise.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promise.push(vm.$store.dispatch('events/stores/getItems', {
+        params: { eventId: id }
+      }))
     }
-    Promise.all([
-      vm.$store.dispatch('events/getItem', { params }),
-      vm.$store.dispatch('eventStatuses/getItems')
-    ]).then(() => {
+    promise.push(vm.$store.dispatch('events/getItem', { params }))
+    promise.push(vm.$store.dispatch('eventStatuses/getItems'))
+
+    Promise.all(promise).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })

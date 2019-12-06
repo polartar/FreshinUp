@@ -93,15 +93,15 @@
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.owner.name }}
+          {{ props.item.owner && props.item.owner.name }}
         </div>
         <div class="grey--text">
-          {{ props.item.owner.company }}
+          {{ props.item.owner && props.item.owner.company }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.location.name }}
+          {{ props.item.location && props.item.location.name }}
         </div>
       </td>
       <td>

@@ -24,8 +24,8 @@ class Stores extends Controller
     {
         $event = Event::where('uuid', $uuid)->firstOrFail();
         $stores = QueryBuilder::for(Store::whereIn('uuid', $event->stores()->pluck('stores.uuid')->toArray()), $request)
+            ->with('tags')
             ->allowedIncludes([
-                'tags',
                 'addresses'
             ])
             ->allowedSorts([
