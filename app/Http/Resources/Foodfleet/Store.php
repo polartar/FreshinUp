@@ -24,6 +24,9 @@ class Store extends JsonResource
             "status" => $this->status,
             "addresses" => Address::collection($this->addresses),
             "tags" => StoreTag::collection($this->whenLoaded('tags')),
+            "menuItems" => EventMenuItem::collection($this->whenLoaded('menuItems')),
+            "documents" => Document\Document::collection($this->whenLoaded('documents')),
+            "messages" => Message::collection($this->whenLoaded('messages')),
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier'))
         ];

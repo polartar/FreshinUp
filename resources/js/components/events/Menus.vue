@@ -84,7 +84,8 @@ export default {
     return {
       dialog: false,
       menu: {
-        title: null,
+        uuid: null,
+        item: null,
         servings: null,
         cost: null,
         description: null
@@ -94,7 +95,8 @@ export default {
   methods: {
     edit (params) {
       this.dialog = true
-      this.menu.title = params.title
+      this.menu.uuid = params.uuid
+      this.menu.item = params.item
       this.menu.servings = params.servings
       this.menu.cost = params.cost
       this.menu.description = params.description

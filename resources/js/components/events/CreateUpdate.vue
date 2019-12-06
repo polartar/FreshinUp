@@ -117,7 +117,7 @@ export default {
       ],
       stores: [
         {
-          uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
+          uuid: 'a46e7268-a2d5-469a-92c2-6cb9e8406f8e',
           name: 'Burger Babes',
           status: 1,
           type: {

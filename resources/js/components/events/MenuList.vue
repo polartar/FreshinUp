@@ -78,7 +78,7 @@
       </td>
       <td class="full-width">
         <div class="subheading primary--text">
-          {{ props.item.title }}
+          {{ props.item.item }}
         </div>
         <div
           :class="`grey--text ${ $vuetify.breakpoint.xsOnly ? 'pt-2': '' }`"
@@ -143,7 +143,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Item', sortable: true, value: 'title', align: 'left' },
+        { text: 'Item', sortable: true, value: 'item', align: 'left' },
         { text: 'Servings', sortable: true, value: 'servings', align: 'left' },
         { text: 'Cost', value: 'cost', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }

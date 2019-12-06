@@ -68,6 +68,22 @@ class Stores extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param $uuid
+     * @return EventResource
+     */
+    public function show(Request $request, $uuid)
+    {
+        $event = QueryBuilder::for(Store::class, $request)
+            ->where('uuid', $uuid)
+            ->allowedIncludes([ 'menus', 'tags', 'menu_items', 'documents', 'messages' ])
+            ->firstOrFail();
+
+        return new StoreResource($event);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param $uuid

@@ -22,11 +22,11 @@
               <span class="grey--text font-weight-bold">Item Title</span>
             </v-layout>
             <v-text-field
-              v-model="formValue.title"
+              v-model="formValue.item"
               v-validate="'required'"
-              :error-messages="errors.collect('title')"
-              data-vv-name="title"
-              placeholder="Enter menu item title"
+              :error-messages="errors.collect('item')"
+              data-vv-name="item"
+              placeholder="Enter menu item"
               solo
               single-line
             />
@@ -143,7 +143,7 @@ export default {
       }
     },
     title () {
-      return this.menu.id ? 'Edit menu item' : 'Add new menu item'
+      return this.menu.uuid ? 'Edit menu item' : 'Add new menu item'
     }
   },
   watch: {
