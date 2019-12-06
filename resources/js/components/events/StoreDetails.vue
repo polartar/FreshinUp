@@ -22,7 +22,7 @@
       ma-2
     >
       <h2 class="white--text">
-        Fleet Member Name
+        {{ store.name }}
       </h2>
       <v-flex
         text-xs-right
@@ -62,18 +62,23 @@
 
           <v-tabs-items v-model="tab">
             <v-tab-item>
-              <v-card flat color="basil">
+              <v-card
+                flat
+                color="basil"
+              >
                 <menus
-                  :menuTitle="store.name"
                   :menus="menuItems"
+                  :menu-title="store.name"
                   @save="menuItemSave"
                   @manage-delete="menuItemDelete"
-                  @manage-multiple-delete="menuItemMultipleDelete"
                 />
               </v-card>
             </v-tab-item>
             <v-tab-item>
-              <v-card flat color="basil">
+              <v-card
+                flat
+                color="basil"
+              >
                 <document-section
                   :statuses="documentStatuses"
                   :documents="store.documents"
@@ -81,7 +86,10 @@
               </v-card>
             </v-tab-item>
             <v-tab-item>
-              <v-card flat color="basil">
+              <v-card
+                flat
+                color="basil"
+              >
                 <messages
                   :activists="activists"
                   :messages="messages"
@@ -108,7 +116,7 @@
 </template>
 
 <script>
-import { omitBy, isNull, get } from 'lodash'
+import { omitBy, isNull } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import StatusSelect from '~/components/events/StatusSelect'
@@ -123,7 +131,7 @@ const { mapFields } = createHelpers({
 })
 
 export default {
-  name: 'storeDetails',
+  name: 'StoreDetails',
   layout: 'admin',
   components: {
     StatusSelect,
@@ -136,7 +144,7 @@ export default {
     return {
       tab: null,
       tabItems: [
-        'Event Menu', 'Event Documents', 'Event Activity',
+        'Event Menu', 'Event Documents', 'Event Activity'
       ],
       activists: 'William D and John Smith',
       store1: {
@@ -190,9 +198,6 @@ export default {
       await this.$store.dispatch('eventMenuItems/getItems')
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
     },
-    async menuItemMultipleDelete () {
-      console.log('menuItemMultipleDelete')
-    },
     async messageSave (message) {
       let data = {
         content: message,
@@ -213,18 +218,18 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    const event_uuid = to.path.split('/')[3]
-    const store_uuid = to.params.id
+    const eventUuid = to.path.split('/')[3]
+    const storeUuid = to.params.id
 
-    let event_params = { id: event_uuid }
+    let eventParams = { id: eventUuid }
     let params = {
-      id: store_uuid,
+      id: storeUuid,
       include: 'documents'
     }
-    let filter = { store_uuid: store_uuid }
-    
+    let filter = { store_uuid: storeUuid }
+
     Promise.all([
-      vm.$store.dispatch('events/getItem', { params: event_params }),
+      vm.$store.dispatch('events/getItem', { params: eventParams }),
       vm.$store.dispatch('stores/getItem', { params }),
       vm.$store.dispatch('eventMenuItems/setFilters', filter),
       vm.$store.dispatch('eventMenuItems/getItems'),
