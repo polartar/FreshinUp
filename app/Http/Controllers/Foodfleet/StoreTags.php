@@ -8,7 +8,7 @@ use App\Models\Foodfleet\StoreTag;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\StoreTag as StoreTagResource;
+use App\Http\Resources\Foodfleet\Store\Tag as StoreTagResource;
 
 class StoreTags extends Controller
 {

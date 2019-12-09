@@ -7,6 +7,7 @@ use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Foodfleet\Store\Store;
 
 class Event extends JsonResource
 {
