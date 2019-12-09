@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Store as StoreResource;
+use App\Http\Resources\Foodfleet\StoreSummary as StoreSummaryResource;
+use App\Http\Resources\Foodfleet\StoreServiceSummary as StoreServiceSummaryResource;
 use App\Filters\Store\TagUuid as FilterTagUuid;
 
 class Stores extends Controller
@@ -75,12 +77,31 @@ class Stores extends Controller
      */
     public function show(Request $request, $uuid)
     {
-        $event = QueryBuilder::for(Store::class, $request)
+        $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
             ->allowedIncludes([ 'menus', 'tags', 'menu_items', 'documents', 'messages' ])
             ->firstOrFail();
 
-        return new StoreResource($event);
+        return new StoreResource($store);
+    }
+
+    public function summary(Request $request, $uuid)
+    {
+        $store = QueryBuilder::for(Store::class, $request)
+            ->with('tags')
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        return new StoreSummaryResource($store);
+    }
+
+    public function serviceSummary(Request $request, $uuid)
+    {
+        $store = QueryBuilder::for(Store::class, $request)
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        return new StoreServiceSummaryResource($store);
     }
 
     /**
