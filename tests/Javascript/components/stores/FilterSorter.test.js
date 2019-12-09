@@ -1,5 +1,8 @@
-import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
+import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 import Component from '~/components/stores/FilterSorter.vue'
+
+const allSelected = FIXTURE_STORE_STATUSES.map(item => item.id)
 
 describe('FilterSorter', () => {
   // Component instance "under test"
@@ -8,7 +11,15 @@ describe('FilterSorter', () => {
     test('defaults', () => {
       localVue = createLocalVue()
       const wrapper = mount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        propsData: {
+          filters: {
+            status: allSelected,
+            store_tag_uuid: null,
+            location_uuid: null,
+            supplier_uuid: null
+          }
+        }
       })
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -19,60 +30,53 @@ describe('FilterSorter', () => {
       localVue = createLocalVue()
     })
 
-    test('selectLocation function change filters', () => {
-      const wrapper = shallowMount(Component)
-      wrapper.vm.selectLocation({ uuid: 1 }, () => {})
-      expect(wrapper.vm.location_uuid).toBe(1)
-      wrapper.vm.selectLocation(null, () => {})
-      expect(wrapper.vm.location_uuid).toBe('')
-    })
-
-    test('selectTag function change filters', () => {
-      const wrapper = shallowMount(Component)
-      wrapper.vm.selectTag({ uuid: 1 }, () => {})
-      expect(wrapper.vm.tag).toBe(1)
-      wrapper.vm.selectTag(null, () => {})
-      expect(wrapper.vm.tag).toBe('')
-    })
-
     test('clearFilters function clear filters', () => {
-      const wrapper = shallowMount(Component)
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_STORE_STATUSES
+        }
+      })
       wrapper.vm.clearFilters({})
-      expect(wrapper.vm.status).toBeNull()
-      expect(wrapper.vm.tag).toBeNull()
-      expect(wrapper.vm.location_uuid).toBeNull()
+      expect(wrapper.vm.filters.status).toBeNull()
+      expect(wrapper.vm.filters.store_tag_uuid).toBeNull()
+      expect(wrapper.vm.filters.location_uuid).toBeNull()
+      expect(wrapper.vm.filters.supplier_uuid).toBeNull()
     })
 
     test('run function emitted runFilter', () => {
-      const wrapper = shallowMount(Component)
-      wrapper.setData({
-        status: 2,
-        tag: '2',
-        location_uuid: '3'
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_STORE_STATUSES,
+          filters: {
+            status: [ 1, 2 ],
+            store_tag_uuid: [ { uuid: 1 } ],
+            location_uuid: 2,
+            supplier_uuid: [ { uuid: 3 } ]
+          }
+        }
       })
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
-      expect(runParams['status']).toEqual(2)
-      expect(runParams['tag']).toEqual('2')
-      expect(runParams['location_uuid']).toEqual('3')
+      expect(runParams['status']).toEqual([ 1, 2 ])
+      expect(runParams['store_tag_uuid']).toEqual([ 1 ])
+      expect(runParams['location_uuid']).toEqual(2)
+      expect(runParams['supplier_uuid']).toEqual([ 3 ])
     })
-  })
 
-  describe('Computed', () => {
-    beforeEach(() => {
-      localVue = createLocalVue()
-    })
-    test('filters', () => {
-      const wrapper = shallowMount(Component)
-      wrapper.setData({
-        status: 2,
-        tag: '2',
-        location_uuid: '3'
+    test('selectLocation function change filters.location_uuid', () => {
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_STORE_STATUSES
+        }
       })
-      expect(wrapper.vm.filters.status).toBe(2)
-      expect(wrapper.vm.filters.tag).toBe('2')
-      expect(wrapper.vm.filters.location_uuid).toBe('3')
+      wrapper.vm.selectLocation({ uuid: 1 })
+      expect(wrapper.vm.filters.location_uuid).toEqual(1)
+      wrapper.vm.selectLocation()
+      expect(wrapper.vm.filters.location_uuid).toBeNull()
     })
   })
 })

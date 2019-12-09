@@ -123,8 +123,8 @@ storiesOf('FoodFleet|store/StoreList', module)
       }
     },
     methods: {
-      edit (params) {
-        action('manage-edit')(params)
+      view (params) {
+        action('manage-view')(params)
       },
       del (params) {
         action('manage-delete')(params)
@@ -148,7 +148,7 @@ storiesOf('FoodFleet|store/StoreList', module)
         :total-items="pagination.totalItems"
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
-        @manage-edit="edit"
+        @manage-view="view"
         @manage-delete="del"
         @manage-multiple-delete="multipleDelete"
         @change-status="changeStatus"

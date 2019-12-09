@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuModal Snapshots defaults 1`] = `
+<div
+  class="v-dialog__container"
+  style="display: block;"
+>
+  <div
+    class="v-dialog__content"
+    style="z-index: 0;"
+    tabindex="-1"
+  >
+    <div
+      class="v-dialog"
+      style="max-width: 700px; display: none;"
+    >
+      <div
+        class="pa-2 v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title"
+        >
+          <span
+            class="title font-weight-bold"
+          >
+            Add new menu item
+          </span>
+        </div>
+         
+        <div
+          class="v-card__text"
+        >
+          <div
+            class="layout wrap justify-space-between"
+          >
+            <div
+              class="flex sm5"
+            >
+              <div
+                class="layout row mb-2"
+              >
+                <span
+                  class="grey--text font-weight-bold"
+                >
+                  Item Title
+                </span>
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        data-vv-name="title"
+                        placeholder="Enter menu item title"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm3"
+            >
+              <div
+                class="layout row mb-2"
+              >
+                <span
+                  class="grey--text font-weight-bold"
+                >
+                  Servings
+                </span>
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        data-vv-name="servings"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm3"
+            >
+              <div
+                class="layout row mb-2"
+              >
+                <span
+                  class="grey--text font-weight-bold"
+                >
+                  Cost
+                </span>
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        data-vv-name="cost"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              <div
+                class="layout row mb-2"
+              >
+                <span
+                  class="grey--text font-weight-bold"
+                >
+                  Item Description 
+                </span>
+              </div>
+               
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        data-vv-name="cost"
+                        placeholder="Enter menu item description"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <button
+            class="v-btn v-btn--block theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Cancel
+      
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--block theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Save
+      
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

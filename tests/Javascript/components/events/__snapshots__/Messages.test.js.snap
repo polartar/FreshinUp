@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Messages component test Snapshots messages 1`] = `
+<div
+  class="layout"
+>
+  <div
+    class="v-card v-sheet theme--light"
+    style="width: 100%;"
+  >
+    <div
+      class="pa-4"
+    >
+      <div
+        class="layout message-title row"
+      >
+        <span
+          class="grey--text font-weight-bold title text-uppercase"
+        >
+          Activists' Name
+        </span>
+      </div>
+       
+      <div
+        class="layout row"
+      >
+        <div
+          class="flex"
+        >
+          <div>
+            <hr
+              class="v-divider theme--light"
+            />
+             
+            <div>
+              <div
+                class="layout flex px-3"
+              >
+                <div
+                  class="flex py-3"
+                >
+                  <div
+                    class="v-avatar primary"
+                    style="height: 56px; width: 56px;"
+                  >
+                    <img
+                      alt="Avatar"
+                      src="https://via.placeholder.com/100x100.png"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex grey--text ml-4 py-3"
+                >
+                  <div
+                    class="subheading font-weight-bold"
+                  >
+                    
+          William D
+        
+                  </div>
+                   
+                  <div
+                    class="caption mb-4"
+                  >
+                    
+          Posted on 09/24/2019 | 06:33 am
+        
+                  </div>
+                   
+                  <div
+                    class="subheading"
+                  >
+                    
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
+        
+                  </div>
+                </div>
+              </div>
+               
+              <hr
+                class="v-divider theme--light"
+              />
+            </div>
+            <div>
+              <div
+                class="layout flex px-3"
+              >
+                <div
+                  class="flex py-3"
+                >
+                  <div
+                    class="v-avatar primary"
+                    style="height: 56px; width: 56px;"
+                  >
+                    <span
+                      class="white--text"
+                    >
+                      
+            JS
+          
+                    </span>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex grey--text ml-4 py-3"
+                >
+                  <div
+                    class="subheading font-weight-bold"
+                  >
+                    
+          John Smith
+        
+                  </div>
+                   
+                  <div
+                    class="caption mb-4"
+                  >
+                    
+          Posted on 09/24/2019 | 06:33 am
+        
+                  </div>
+                   
+                  <div
+                    class="subheading"
+                  >
+                    
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
+        
+                  </div>
+                </div>
+              </div>
+               
+              <hr
+                class="v-divider theme--light"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="layout row"
+      >
+        <div
+          class="flex"
+        >
+          <div
+            class="layout row wrap pa-3 justify-space-between"
+          >
+            <div
+              class="flex sm12"
+            >
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        data-vv-name="message"
+                        placeholder="Type Message"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <button
+                class="mr-0 right primary v-btn theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+      Send
+    
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Messages component test Snapshots messages empty 1`] = `
+<div
+  class="layout"
+>
+  <div
+    class="v-card v-sheet theme--light"
+    style="width: 100%;"
+  >
+    <div
+      class="pa-4"
+    >
+      <div
+        class="layout message-title row"
+      >
+        <span
+          class="grey--text font-weight-bold title text-uppercase"
+        >
+          Activists' Name
+        </span>
+      </div>
+       
+      <div
+        class="layout row"
+      >
+        <div
+          class="flex"
+        >
+          <div>
+            <hr
+              class="v-divider theme--light"
+            />
+             
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="layout row"
+      >
+        <div
+          class="flex"
+        >
+          <div
+            class="layout row wrap pa-3 justify-space-between"
+          >
+            <div
+              class="flex sm12"
+            >
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        data-vv-name="message"
+                        placeholder="Type Message"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <button
+                class="mr-0 right primary v-btn theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+      Send
+    
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

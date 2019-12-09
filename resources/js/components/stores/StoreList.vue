@@ -56,10 +56,10 @@
               <v-list-tile
                 v-for="(item, index) in statuses"
                 :key="index"
-                @click="changeStatusMultiple(item.value)"
+                @click="changeStatusMultiple(item.id)"
               >
                 <v-list-tile-title>
-                  {{ item.text }}
+                  {{ item.name }}
                 </v-list-tile-title>
               </v-list-tile>
             </v-list>
@@ -95,8 +95,8 @@
           <v-select
             :items="statuses"
             :value="props.item.status"
-            item-text="text"
-            item-value="value"
+            item-text="name"
+            item-value="id"
             menu-props="auto"
             label="Status"
             hide-details
@@ -156,19 +156,19 @@ export default {
     },
     statuses: {
       type: Array,
-      default: () => [] // { text: '', value: 0 }
+      default: () => []
     }
   },
   data () {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: false, value: 'status' },
-        { text: 'Name', value: 'name' },
-        { text: 'Tags', value: 'tags', sortable: false },
+        { text: 'Status', sortable: true, value: 'status' },
+        { text: 'Name', sortable: true, value: 'name' },
+        { text: 'Tags', sortable: true, value: 'tags' },
         { text: 'Scheduled events', sortable: true, value: 'events' },
-        { text: 'Hometown', value: 'city', sortable: false },
-        { text: 'Manage', sortable: false, value: 'manage' }
+        { text: 'Hometown', sortable: true, value: 'city' },
+        { text: 'Manage', sortable: true, value: 'manage' }
       ],
       itemActions: [
         { action: 'view', text: 'View / Edit' },

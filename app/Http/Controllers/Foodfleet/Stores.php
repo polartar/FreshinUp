@@ -26,7 +26,8 @@ class Stores extends Controller
         $stores = QueryBuilder::for(Store::class, $request)
             ->allowedIncludes([
                 'tags',
-                'addresses'
+                'addresses',
+                'events'
             ])
             ->allowedSorts([
                 'name',
@@ -52,13 +53,32 @@ class Stores extends Controller
      * @return StoreResource
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, $uuid, UpdateStore $action)
+    public function update(Request $request, $uuid)
     {
+        $this->validate($request, [
+            'status' => 'integer'
+        ]);
+
         $inputs = $request->input();
-        $inputs['uuid'] = $uuid;
+        $store = Store::where('uuid', $uuid)->first();
+        if ($store) {
+            $store->update($inputs);
+        }
 
-        $document = $action->execute($inputs);
+        return new StoreResource($store);
+    }
 
-        return new StoreResource($document);
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param $uuid
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
+     */
+    public function destroy($uuid)
+    {
+        $store = Store::where('uuid', $uuid)->firstOrFail();
+        $store->delete();
+        return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
     }
 }

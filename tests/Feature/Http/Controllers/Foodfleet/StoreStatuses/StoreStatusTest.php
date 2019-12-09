@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
+namespace Tests\Feature\Http\Controllers\Foodfleet\StoreStatuses;
 
 use App\User;
 use App\Models\Foodfleet\StoreStatus;
-
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
@@ -41,8 +40,8 @@ class StoreStatusTest extends TestCase
         $this->assertEquals(5, count($data));
         foreach ($storeStatuses as $idx => $storeStatus) {
             $this->assertArraySubset([
-                'value' => $storeStatus->id,
-                'text' => $storeStatus->name,
+                'id' => $storeStatus->id,
+                'name' => $storeStatus->name,
             ], $data[$idx]);
         }
     }
@@ -91,8 +90,8 @@ class StoreStatusTest extends TestCase
 
         foreach ($storeStatusesToFind as $idx => $storeStatus) {
             $this->assertArraySubset([
-                'value' => $storeStatus->id,
-                'text' => $storeStatus->name,
+                'id' => $storeStatus->id,
+                'name' => $storeStatus->name,
             ], $data[$idx]);
         }
     }

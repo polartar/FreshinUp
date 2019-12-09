@@ -1,6 +1,5 @@
 <template>
   <search-filter-sorter
-    expanded
     without-filter-label
     :autocomplete_url="autocompleteUrl"
     sort-label="Sort by"
@@ -22,22 +21,20 @@
           justify-space-between
         >
           <v-flex>
-            <vue-ctk-date-time-picker
+            <date-time-picker
               v-model="expireDate"
               range
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
               input-size="lg"
-              label="Expiration date range"
+              label="Expiration"
               :color="$vuetify.theme.primary"
               :button-color="$vuetify.theme.primary"
               @input="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-4
-          >
+          <v-flex ml-4>
             <v-select
               v-model="type"
               :items="types"
@@ -48,9 +45,7 @@
               @change="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-4
-          >
+          <v-flex ml-4>
             <v-select
               v-model="status"
               :items="statuses"
@@ -61,10 +56,9 @@
               @change="slotProps.run"
             />
           </v-flex>
-          <v-flex
-            ml-4
-          >
+          <v-flex ml-4>
             <AssignedSearch
+              ref="assignedSearcher"
               :type="assignedType"
               @type-change="selectAssignedType"
               @assign-change="(assigned) => selectAssigned(assigned, slotProps.run)"
@@ -78,15 +72,17 @@
 
 <script>
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import DateTimePicker from '~/components/DateTimePicker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
 import AssignedSearch from '~/components/docs/AssignedSearch'
+
+const defaultAssignedType = 1
 
 export default {
   components: {
     AssignedSearch,
     SearchFilterSorter,
-    VueCtkDateTimePicker
+    DateTimePicker
   },
   props: {
     autocompleteUrl: {
@@ -108,7 +104,7 @@ export default {
   },
   data () {
     return {
-      assignedType: 1,
+      assignedType: defaultAssignedType,
       type: null,
       status: null,
       assigned_uuid: null,
@@ -153,6 +149,11 @@ export default {
       run()
     },
     clearFilters (params) {
+      this.expireDate = null
+      this.assignedType = defaultAssignedType
+      if (this.$refs.assignedSearcher && this.$refs.assignedSearcher.resetTerm) {
+        this.$refs.assignedSearcher.resetTerm()
+      }
       this.type = this.status = this.assigned_uuid = null
       this.userSearchKey++
       this.run(params)

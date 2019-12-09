@@ -1,0 +1,766 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event StoreServiceSummary component Snapshots cancel state  1`] = `
+<div>
+  <v-card-stub
+    tag="div"
+  >
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      py-3=""
+      subheading=""
+      tag="div"
+    >
+      
+      Fleet Member Service Summary
+    
+    </v-container-stub>
+     
+    <v-divider-stub />
+     
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      pt-0=""
+      tag="div"
+    >
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL SERVICES
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          300
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL COST
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          $24,000.00
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        font-weight-bold=""
+        my-2=""
+        primary--text=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          COMMISSION RATE
+        
+        </v-flex-stub>
+         
+        <v-btn-stub
+          activeclass="v-btn--active"
+          class="transparent elevation-0 ma-0 pr-0 primary--text "
+          tag="button"
+          type="button"
+        >
+          <v-card-text-stub
+            class="pa-0"
+          >
+            
+            30 %
+          
+          </v-card-text-stub>
+           
+          <v-icon-stub>
+            edit
+          </v-icon-stub>
+        </v-btn-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-btn-stub
+        activeclass="v-btn--active"
+        block="true"
+        class="grey ma-0 mt-4 white--text text-none"
+        tag="button"
+        type="button"
+      >
+        
+        View Contract
+      
+      </v-btn-stub>
+    </v-container-stub>
+  </v-card-stub>
+   
+  <v-card-stub
+    class="mx-3 ml-5 modal float"
+    style="display: none;"
+    tag="div"
+  >
+    <v-form-stub
+      lazyvalidation="true"
+      value="true"
+    >
+      <v-container-stub
+        font-weight-bold=""
+        grey--text=""
+        mt-1=""
+        py-2=""
+        subheading=""
+        tag="div"
+      >
+        <v-layout-stub
+          tag="div"
+        >
+          <v-layout-stub
+            column=""
+            mr-2=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE RATE
+            
+            </v-flex-stub>
+             
+            <v-text-field-stub
+              caption=""
+              data-vv-name="rate"
+              error-messages=""
+              single-line=""
+              solo=""
+              value="30"
+            />
+          </v-layout-stub>
+           
+          <v-layout-stub
+            column=""
+            d-flex=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE TYPE
+            
+            </v-flex-stub>
+             
+            <v-select-stub
+              item-text="label"
+              item-value="id"
+              items="[object Object],[object Object]"
+              solo=""
+              value="1"
+            />
+          </v-layout-stub>
+        </v-layout-stub>
+         
+        <v-layout-stub
+          tag="div"
+        >
+          <v-flex-stub
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="ml-0 text-none"
+              tag="button"
+              text-none=""
+              type="button"
+            >
+              
+              Cancel
+            
+            </v-btn-stub>
+          </v-flex-stub>
+           
+          <v-flex-stub
+            class="text-xs-right"
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="mr-0 right primary text-none"
+              tag="button"
+              type="button"
+            >
+              
+              Save
+            
+            </v-btn-stub>
+          </v-flex-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-form-stub>
+  </v-card-stub>
+</div>
+`;
+
+exports[`Event StoreServiceSummary component Snapshots edit state  1`] = `
+<div>
+  <v-card-stub
+    tag="div"
+  >
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      py-3=""
+      subheading=""
+      tag="div"
+    >
+      
+      Fleet Member Service Summary
+    
+    </v-container-stub>
+     
+    <v-divider-stub />
+     
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      pt-0=""
+      tag="div"
+    >
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL SERVICES
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          300
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL COST
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          $24,000.00
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        font-weight-bold=""
+        my-2=""
+        primary--text=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          COMMISSION RATE
+        
+        </v-flex-stub>
+         
+        <v-btn-stub
+          activeclass="v-btn--active"
+          class="transparent elevation-0 ma-0 pr-0 primary--text "
+          tag="button"
+          type="button"
+        >
+          <v-card-text-stub
+            class="pa-0"
+          >
+            
+            30 %
+          
+          </v-card-text-stub>
+           
+          <v-icon-stub>
+            edit
+          </v-icon-stub>
+        </v-btn-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-btn-stub
+        activeclass="v-btn--active"
+        block="true"
+        class="grey ma-0 mt-4 white--text text-none"
+        tag="button"
+        type="button"
+      >
+        
+        View Contract
+      
+      </v-btn-stub>
+    </v-container-stub>
+  </v-card-stub>
+   
+  <v-card-stub
+    class="mx-3 ml-5 modal float"
+    style="display: none;"
+    tag="div"
+  >
+    <v-form-stub
+      lazyvalidation="true"
+      value="true"
+    >
+      <v-container-stub
+        font-weight-bold=""
+        grey--text=""
+        mt-1=""
+        py-2=""
+        subheading=""
+        tag="div"
+      >
+        <v-layout-stub
+          tag="div"
+        >
+          <v-layout-stub
+            column=""
+            mr-2=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE RATE
+            
+            </v-flex-stub>
+             
+            <v-text-field-stub
+              caption=""
+              data-vv-name="rate"
+              error-messages=""
+              single-line=""
+              solo=""
+              value="30"
+            />
+          </v-layout-stub>
+           
+          <v-layout-stub
+            column=""
+            d-flex=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE TYPE
+            
+            </v-flex-stub>
+             
+            <v-select-stub
+              item-text="label"
+              item-value="id"
+              items="[object Object],[object Object]"
+              solo=""
+              value="1"
+            />
+          </v-layout-stub>
+        </v-layout-stub>
+         
+        <v-layout-stub
+          tag="div"
+        >
+          <v-flex-stub
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="ml-0 text-none"
+              tag="button"
+              text-none=""
+              type="button"
+            >
+              
+              Cancel
+            
+            </v-btn-stub>
+          </v-flex-stub>
+           
+          <v-flex-stub
+            class="text-xs-right"
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="mr-0 right primary text-none"
+              tag="button"
+              type="button"
+            >
+              
+              Save
+            
+            </v-btn-stub>
+          </v-flex-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-form-stub>
+  </v-card-stub>
+</div>
+`;
+
+exports[`Event StoreServiceSummary component Snapshots required set 1`] = `
+<div>
+  <v-card-stub
+    tag="div"
+  >
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      py-3=""
+      subheading=""
+      tag="div"
+    >
+      
+      Fleet Member Service Summary
+    
+    </v-container-stub>
+     
+    <v-divider-stub />
+     
+    <v-container-stub
+      font-weight-bold=""
+      grey--text=""
+      pt-0=""
+      tag="div"
+    >
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL SERVICES
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          300
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        my-2=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          TOTAL COST
+        
+        </v-flex-stub>
+         
+        <v-flex-stub
+          subheading=""
+          tag="div"
+          text-truncate=""
+          text-xs-right=""
+          xs6=""
+        >
+          
+          $24,000.00
+        
+        </v-flex-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-layout-stub
+        align-center=""
+        font-weight-bold=""
+        my-2=""
+        primary--text=""
+        tag="div"
+      >
+        <v-flex-stub
+          caption=""
+          font-weight-bold=""
+          tag="div"
+        >
+          
+          COMMISSION RATE
+        
+        </v-flex-stub>
+         
+        <v-btn-stub
+          activeclass="v-btn--active"
+          class="transparent elevation-0 ma-0 pr-0 primary--text "
+          tag="button"
+          type="button"
+        >
+          <v-card-text-stub
+            class="pa-0"
+          >
+            
+            30 %
+          
+          </v-card-text-stub>
+           
+          <v-icon-stub>
+            edit
+          </v-icon-stub>
+        </v-btn-stub>
+      </v-layout-stub>
+       
+      <v-divider-stub />
+       
+      <v-btn-stub
+        activeclass="v-btn--active"
+        block="true"
+        class="grey ma-0 mt-4 white--text text-none"
+        tag="button"
+        type="button"
+      >
+        
+        View Contract
+      
+      </v-btn-stub>
+    </v-container-stub>
+  </v-card-stub>
+   
+  <v-card-stub
+    class="mx-3 ml-5 modal float"
+    style="display: none;"
+    tag="div"
+  >
+    <v-form-stub
+      lazyvalidation="true"
+      value="true"
+    >
+      <v-container-stub
+        font-weight-bold=""
+        grey--text=""
+        mt-1=""
+        py-2=""
+        subheading=""
+        tag="div"
+      >
+        <v-layout-stub
+          tag="div"
+        >
+          <v-layout-stub
+            column=""
+            mr-2=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE RATE
+            
+            </v-flex-stub>
+             
+            <v-text-field-stub
+              caption=""
+              data-vv-name="rate"
+              error-messages=""
+              single-line=""
+              solo=""
+              value="30"
+            />
+          </v-layout-stub>
+           
+          <v-layout-stub
+            column=""
+            d-flex=""
+            mt-3=""
+            tag="div"
+            xs6=""
+          >
+            <v-flex-stub
+              caption=""
+              font-weight-bold=""
+              mb-2=""
+              tag="div"
+            >
+              
+              OVERRIDE TYPE
+            
+            </v-flex-stub>
+             
+            <v-select-stub
+              item-text="label"
+              item-value="id"
+              items="[object Object],[object Object]"
+              solo=""
+              value="1"
+            />
+          </v-layout-stub>
+        </v-layout-stub>
+         
+        <v-layout-stub
+          tag="div"
+        >
+          <v-flex-stub
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="ml-0 text-none"
+              tag="button"
+              text-none=""
+              type="button"
+            >
+              
+              Cancel
+            
+            </v-btn-stub>
+          </v-flex-stub>
+           
+          <v-flex-stub
+            class="text-xs-right"
+            tag="div"
+          >
+            <v-btn-stub
+              activeclass="v-btn--active"
+              class="mr-0 right primary text-none"
+              tag="button"
+              type="button"
+            >
+              
+              Save
+            
+            </v-btn-stub>
+          </v-flex-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-form-stub>
+  </v-card-stub>
+</div>
+`;

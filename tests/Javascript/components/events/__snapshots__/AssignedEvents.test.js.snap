@@ -1,0 +1,975 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Assigned Events component Snapshots events empty 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title px-3"
+  >
+    <h3
+      class="primary--text"
+    >
+      
+      Assigned Events
+    
+    </h3>
+  </div>
+   
+  <hr />
+   
+  <div
+    class="v-card__text text-xs-center pa-5 primary--text"
+  >
+    
+    Event data will populate once your restaurant is assigned.
+  
+  </div>
+</div>
+`;
+
+exports[`Assigned Events component Snapshots events set 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title px-3"
+  >
+    <h3
+      class="primary--text"
+    >
+      
+      Assigned Events
+    
+    </h3>
+  </div>
+   
+  <hr />
+   
+  <div
+    class="v-card__text ma-2"
+  >
+    <div
+      class="layout align-center justify-center row fill-height"
+    >
+      <div
+        class="flex grow pa-1"
+      >
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--hide-details theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-input__prepend-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--prepend-inner"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    search
+                  </i>
+                </div>
+              </div>
+              <div
+                class="v-text-field__slot"
+              >
+                <label
+                  aria-hidden="true"
+                  class="v-label theme--light"
+                  style="left: 0px; position: absolute;"
+                >
+                  Search
+                </label>
+                <input
+                  aria-label="Search"
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex shrink pl-3"
+      >
+        
+        Sort by
+      
+      </div>
+       
+      <div
+        class="flex shrink pa-1"
+      >
+        <div
+          class="v-menu"
+        >
+          <button
+            class="v-btn theme--dark primary primary-text--text"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Sort
+         
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--right material-icons theme--dark"
+              >
+                arrow_drop_down
+              </i>
+            </div>
+          </button>
+          <div
+            class="v-menu__content theme--light "
+            style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+          >
+             
+            <div
+              class="v-list theme--light"
+              role="list"
+            >
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Status
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Name
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Date
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="event-list-table mt-4"
+    >
+      <div
+        class="v-table__overflow"
+      >
+        <table
+          class="v-datatable v-table theme--light"
+        >
+          <thead>
+            <tr>
+              <th
+                aria-label="Status: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Status
+                </span>
+              </th>
+              <th
+                aria-label="Name / Category: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Name / Category
+                </span>
+              </th>
+              <th
+                aria-label="Date / Venue: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Date / Venue
+                </span>
+              </th>
+              <th
+                aria-label="Managed By: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Managed By
+                </span>
+              </th>
+              <th
+                aria-label="Customer: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Customer
+                </span>
+              </th>
+              <th
+                aria-label="Manage: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  Manage
+                </span>
+              </th>
+            </tr>
+            <tr
+              class="v-datatable__progress"
+            >
+              <th
+                class="column"
+                colspan="6"
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="select-td"
+              >
+                <span
+                  class="v-btn v-btn--disabled accent accenttext--text"
+                >
+                  Draft
+                </span>
+              </td>
+               
+              <td>
+                <div
+                  class="subheading primary--text"
+                >
+                  
+            accusantium
+          
+                </div>
+                 
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              minus
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Oct 10 - 12 / 2019 11:04 AM
+          
+                </div>
+                 
+                <div
+                  class="grey--text"
+                >
+                  
+            @New Hattie
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Demo Admin
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Swift-Wehner
+          
+                </div>
+              </td>
+               
+              <td>
+                <button
+                  class="v-btn theme--light success success-text--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            View
+          
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="select-td"
+              >
+                <span
+                  class="v-btn v-btn--disabled warning warningtext--text"
+                >
+                  Pending
+                </span>
+              </td>
+               
+              <td>
+                <div
+                  class="subheading primary--text"
+                >
+                  
+            saepe
+          
+                </div>
+                 
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              minus
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Oct 10 - 12 / 2019 11:04 AM
+          
+                </div>
+                 
+                <div
+                  class="grey--text"
+                >
+                  
+            @Baronhaven
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Level 2 User
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Goodwin-Carroll
+          
+                </div>
+              </td>
+               
+              <td>
+                <button
+                  class="v-btn theme--light success success-text--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            View
+          
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="select-td"
+              >
+                <span
+                  class="v-btn v-btn--disabled success successtext--text"
+                >
+                  Confirmed
+                </span>
+              </td>
+               
+              <td>
+                <div
+                  class="subheading primary--text"
+                >
+                  
+            ipsum
+          
+                </div>
+                 
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              minus
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Oct 10 - 12 / 2019 11:04 AM
+          
+                </div>
+                 
+                <div
+                  class="grey--text"
+                >
+                  
+            @Lake Lavernehaven
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Level 1 User
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Carter-Green
+          
+                </div>
+              </td>
+               
+              <td>
+                <button
+                  class="v-btn theme--light success success-text--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            View
+          
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="select-td"
+              >
+                <span
+                  class="v-btn v-btn--disabled secondary secondarytext--text"
+                >
+                  Past
+                </span>
+              </td>
+               
+              <td>
+                <div
+                  class="subheading primary--text"
+                >
+                  
+            quibusdam
+          
+                </div>
+                 
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              minus
+            
+                    </span>
+                  </span>
+                   
+              + 3 More
+            
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Oct 10 - 12 / 2019 11:04 AM
+          
+                </div>
+                 
+                <div
+                  class="grey--text"
+                >
+                  
+            @Lake Lavernehaven
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Level 1 User
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Carter-Green
+          
+                </div>
+              </td>
+               
+              <td>
+                <button
+                  class="v-btn theme--light success success-text--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            View
+          
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="select-td"
+              >
+                <span
+                  class="v-btn v-btn--disabled accent accenttext--text"
+                >
+                  Cancelled
+                </span>
+              </td>
+               
+              <td>
+                <div
+                  class="subheading primary--text"
+                >
+                  
+            lorem
+          
+                </div>
+                 
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              minus
+            
+                    </span>
+                  </span>
+                   
+              + 3 More
+            
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Oct 10 - 12 / 2019 11:04 AM
+          
+                </div>
+                 
+                <div
+                  class="grey--text"
+                >
+                  
+            @Lake Lavernehaven
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Level 1 User
+          
+                </div>
+              </td>
+               
+              <td>
+                <div
+                  class="grey--text"
+                >
+                  
+            Carter-Green
+          
+                </div>
+              </td>
+               
+              <td>
+                <button
+                  class="v-btn theme--light success success-text--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            View
+          
+                  </div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="v-datatable v-table theme--light"
+      >
+        <div
+          class="v-datatable__actions"
+        >
+          <div
+            class="v-datatable__actions__select"
+          >
+            Rows per page:
+            <div
+              class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Rows per page:"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-datatable__actions__range-controls"
+          >
+            <div
+              class="v-datatable__actions__pagination"
+            >
+              1-10 of 10
+            </div>
+            <button
+              aria-label="Previous page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_left
+                </i>
+              </div>
+            </button>
+            <button
+              aria-label="Next page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_right
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
