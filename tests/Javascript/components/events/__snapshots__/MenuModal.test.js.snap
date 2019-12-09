@@ -59,8 +59,8 @@ exports[`MenuModal Snapshots defaults 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        data-vv-name="title"
-                        placeholder="Enter menu item title"
+                        data-vv-name="item"
+                        placeholder="Enter menu item"
                         type="text"
                       />
                     </div>

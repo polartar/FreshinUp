@@ -2136,32 +2136,6 @@ exports[`Document list component Snapshots 1`] = `
       </div>
     </div>
   </div>
-   
-  <div
-    class="right py-3 px-4"
-  >
-    <button
-      class="v-btn theme--light primary"
-      type="button"
-    >
-      <div
-        class="v-btn__content"
-      >
-        <i
-          aria-hidden="true"
-          class="v-icon material-icons theme--light"
-        >
-          add_circle
-        </i>
-         
-        <span>
-          
-        Add New Document
-      
-        </span>
-      </div>
-    </button>
-  </div>
 </div>
 `;
 
@@ -2302,32 +2276,6 @@ exports[`Document list component document list is empty 1`] = `
         </table>
       </div>
     </div>
-  </div>
-   
-  <div
-    class="right py-3 px-4"
-  >
-    <button
-      class="v-btn theme--light primary"
-      type="button"
-    >
-      <div
-        class="v-btn__content"
-      >
-        <i
-          aria-hidden="true"
-          class="v-icon material-icons theme--light"
-        >
-          add_circle
-        </i>
-         
-        <span>
-          
-        Add New Document
-      
-        </span>
-      </div>
-    </button>
   </div>
 </div>
 `;

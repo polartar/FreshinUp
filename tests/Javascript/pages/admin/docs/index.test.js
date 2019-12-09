@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_DOCUMENTS_RESPONSE, FIXTURE_DOCUMENTS_SORTED_BY_FIRSTNAME } from 'tests/__data__/documents'
 import Component from '~/pages/admin/docs/index.vue'
 import documents from '~/store/modules/documents'

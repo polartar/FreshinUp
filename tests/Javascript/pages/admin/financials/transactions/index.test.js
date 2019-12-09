@@ -1,6 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/pages/admin/financials/transactions/index.vue'
 import devices from '~/store/modules/devices'
 import paymentTypes from '~/store/modules/paymentTypes'

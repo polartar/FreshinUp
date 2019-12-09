@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import createStore from '~/store'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import { FIXTURE_USERS_RESPONSE } from 'tests/__data__/users'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Page from '~/pages/admin/companies/_id/edit.vue'
 
 describe('Edit Company Page', () => {
