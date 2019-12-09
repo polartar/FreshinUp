@@ -22,7 +22,7 @@
       ma-2
     >
       <h2 class="white--text">
-        {{ store.name }}
+        {{ store && store.name }}
       </h2>
       <v-flex
         text-xs-right
@@ -30,8 +30,8 @@
         xs12
       >
         <status-select
-          :value="status"
-          :options="storeStatuses"
+          :value="status_id"
+          :options="storeStatusesOptions"
         />
       </v-flex>
     </v-layout>
@@ -60,7 +60,10 @@
             </v-tab>
           </v-tabs>
 
-          <v-tabs-items v-model="tab">
+          <v-tabs-items
+            v-model="tab"
+            color="basil"
+          >
             <v-tab-item>
               <v-card
                 flat
@@ -68,7 +71,7 @@
               >
                 <menus
                   :menus="menuItems"
-                  :menu-title="store.name"
+                  :menu-title="store && store.name"
                   @save="menuItemSave"
                   @manage-delete="menuItemDelete"
                 />
@@ -81,7 +84,7 @@
               >
                 <document-section
                   :statuses="documentStatuses"
-                  :documents="store.documents"
+                  :documents="documents"
                 />
               </v-card>
             </v-tab-item>
@@ -141,7 +144,6 @@
 <script>
 import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
-import { createHelpers } from 'vuex-map-fields'
 import StatusSelect from '~/components/events/StatusSelect'
 import Menus from '~/components/events/Menus.vue'
 import DocumentSection from '~/components/events/DocumentSection.vue'
@@ -149,13 +151,7 @@ import Messages from '~/components/events/Messages.vue'
 import StoreSummary from '~/components/events/StoreSummary.vue'
 import StoreServiceSummary from '~/components/events/StoreServiceSummary.vue'
 
-const { mapFields } = createHelpers({
-  getterType: 'getField',
-  mutationType: 'updateField'
-})
-
 export default {
-  name: 'StoreDetails',
   layout: 'admin',
   components: {
     StatusSelect,
@@ -171,7 +167,13 @@ export default {
       tabItems: [
         'Event Menu', 'Event Documents', 'Event Activity'
       ],
-      activists: 'William D and John Smith'
+      activists: 'William D and John Smith',
+      storeStatusesOptions: [
+        { id: 1, name: 'Draft' },
+        { id: 2, name: 'Pending' },
+        { id: 3, name: 'Confirmed' },
+        { id: 4, name: 'Declined' }
+      ]
     }
   },
   computed: {
@@ -184,12 +186,15 @@ export default {
     ...mapGetters('eventMenuItems', { menuItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
-    ...mapFields('stores', [
-      'status'
-    ]),
+    status_id() {
+      return get(this.store, 'status', 1)
+    },
+    documents() {
+      return get(this.store, 'documents') || []
+    },
     summary () {
       return {
-        status: this.store.status,
+        status: get(this.store, 'status'),
         owner: get(this.storeSummary, 'owner.first_name') + get(this.storeSummary, 'owner.last_name'),
         lisence_due: 'Dec, 30 2020',
         phone: get(this.storeSummary, 'owner.mobile_phone'),
