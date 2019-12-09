@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
@@ -57,14 +58,27 @@ class Stores extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
-            'status' => 'integer'
+            'status' => 'integer',
+            'commission_rate' => 'integer',
+            'commission_type' => 'integer',
+            'event_uuid' => 'string|exists:events,uuid'
         ]);
 
         $inputs = $request->input();
+        $collection = collect($inputs);
+        $updateData = $collection->except(['event_uuid', 'commission_rate', 'commission_type'])->all();
         $store = Store::where('uuid', $uuid)->first();
         if ($store) {
-            $store->update($inputs);
+            $store->update($updateData);
         }
+
+        $event_uuid = $collection->get('event_uuid');
+        $commission_rate = $collection->get('commission_rate');
+        $commission_type = $collection->get('commission_type');
+        if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
+            $event = Event::where('uuid', $event_uuid)->first();
+            $store->events()->updateExistingPivot($event, ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]);
+        }       
 
         return new StoreResource($store);
     }
@@ -79,7 +93,7 @@ class Stores extends Controller
     {
         $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'menus', 'tags', 'menu_items', 'documents', 'messages' ])
+            ->allowedIncludes([ 'menus', 'tags', 'documents', 'events' ])
             ->firstOrFail();
 
         return new StoreResource($store);
@@ -98,6 +112,7 @@ class Stores extends Controller
     public function serviceSummary(Request $request, $uuid)
     {
         $store = QueryBuilder::for(Store::class, $request)
+            ->with('events')
             ->where('uuid', $uuid)
             ->firstOrFail();
 

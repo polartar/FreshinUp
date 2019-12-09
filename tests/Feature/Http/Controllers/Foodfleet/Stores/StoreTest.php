@@ -322,6 +322,33 @@ class StoresTest extends TestCase
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
     }
 
+    public function testUpdateItem()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $store->events()->sync([$event->uuid]);
+
+        $data = $this
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
+                'name' => 'test store',
+                'event_uuid' => $event->uuid,
+                'commission_rate' => 12,
+                'commission_type' => 1
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $result = $this->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=events")
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals('test store', $result['name']);
+    }
+
     public function testStoreSummary()
     {
         $user = factory(User::class)->create();
@@ -356,6 +383,7 @@ class StoresTest extends TestCase
     {
         $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
+        $store->events()->sync([$event->uuid]);
         $items = factory(EventMenuItem::class, 3)->create([
             'servings' => 2,
             'cost' => 70,
@@ -364,7 +392,17 @@ class StoresTest extends TestCase
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/store-service-summary/" . $store->uuid)
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
+                'name' => 'test store',
+                'event_uuid' => $event->uuid,
+                'commission_rate' => 12,
+                'commission_type' => 1
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/store-service-summary/" . $store->uuid . "?event_uuid=" . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

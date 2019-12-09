@@ -22,7 +22,8 @@ class StoreServiceSummary extends JsonResource
         $total_cost = $menuItems->sum('cost');
         return [
             "total_services" => $total_services,
-            "total_cost" => $total_cost
+            "total_cost" => $total_cost,
+            "event_stores" => EventStore::collection($this->whenLoaded('events')),
         ];
     }
 }

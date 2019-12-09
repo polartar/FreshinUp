@@ -129,6 +129,7 @@
           <v-divider />
           <store-service-summary
             :service="service"
+            @save="commissionSave"
           />
         </v-card>
       </v-flex>
@@ -197,10 +198,18 @@ export default {
       }
     },
     service () {
+      let commission_rate = get(this.event, 'commission_rate') || 0
+      let commission_type = get(this.event, 'commission_type') || 1
+      const event_stores = get(this.serviceSummary, 'event_stores')
+      if (event_stores) {
+        const event_store = event_stores.filter(ele => ele.event_uuid === this.event.uuid)
+        commission_rate = get(event_store, 'commission_rate', this.event.commission_rate) || 0
+        commission_type = get(event_store, 'commission_type', this.event.commission_type) || 1
+      }
       return {
         ...this.serviceSummary,
-        commission_rate: get(this.event, 'commission_rate') || 0,
-        commission_type: get(this.event, 'commission_type') || 1
+        commission_rate,
+        commission_type
       }
     }    
   },
@@ -252,6 +261,14 @@ export default {
     },
     backToEventDetails () {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/edit' })
+    },
+    async commissionSave (params) {
+      let data = {
+        ...params,
+        event_uuid: this.event.uuid
+      }
+      await this.$store.dispatch('stores/updateItem', { data, params: { id: this.store.uuid } })
+      await this.$store.dispatch('stores/serviceSummary/getItem', { params: { id: this.store.uuid } })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
