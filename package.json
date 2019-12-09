@@ -113,6 +113,7 @@
         "webpack-laravel-mix-manifest": "^1.0.6"
     },
     "dependencies": {
-        "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git"
+        "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git",
+        "vue-cli-plugin-freshinup-ui": "git+ssh://git@github.com/freshinup/vue-cli-plugin-freshinup-ui.git"
     }
 }
