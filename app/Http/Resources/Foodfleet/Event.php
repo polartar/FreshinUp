@@ -31,9 +31,10 @@ class Event extends JsonResource
             "start_at" => $this->start_at,
             "end_at" => $this->end_at,
             'budget' => $this->budget,
-            'atendees' => $this->atendees,
+            'attendees' => $this->attendees,
             'commission_rate' => $this->commission_rate,
             'commission_type' => $this->commission_type,
+            'type' => $this->type,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at
         ];
