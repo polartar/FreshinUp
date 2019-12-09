@@ -17,8 +17,10 @@ class Status extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'value' => $this->id,
-            'text' => $this->name,
+            'name' => $this->name,
+            'text' => $this->name
         ];
     }
 }

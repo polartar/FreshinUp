@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Foodfleet;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Foodfleet\Store\Store;
 
 class EventMenuItem extends JsonResource
 {
