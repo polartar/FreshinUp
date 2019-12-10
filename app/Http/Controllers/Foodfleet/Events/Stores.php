@@ -10,7 +10,7 @@ use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\Store as StoreResource;
+use App\Http\Resources\Foodfleet\Store\Store as StoreResource;
 
 class Stores extends Controller
 {
