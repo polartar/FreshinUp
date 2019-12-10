@@ -11,6 +11,7 @@ storiesOf('FoodFleet|event/MenuModal', module)
       return {
         dialog: true,
         menu: {
+          uuid: null,
           item: null,
           servings: null,
           cost: null,
@@ -37,7 +38,7 @@ storiesOf('FoodFleet|event/MenuModal', module)
       return {
         dialog: true,
         menu: {
-          id: 1,
+          uuid: 1,
           item: 'title 1',
           servings: 10,
           cost: 123,

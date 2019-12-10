@@ -122,8 +122,7 @@
       <v-flex
         md8
         sm8
-      >
-      </v-flex>
+      />
       <v-flex
         md4
         sm4
@@ -136,7 +135,6 @@
           />
         </v-card>
       </v-flex>
-
     </v-layout>
   </div>
 </template>
@@ -186,10 +184,10 @@ export default {
     ...mapGetters('eventMenuItems', { menuItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
-    status_id() {
+    status_id () {
       return get(this.store, 'status', 1)
     },
-    documents() {
+    documents () {
       return get(this.store, 'documents') || []
     },
     summary () {
@@ -203,20 +201,20 @@ export default {
       }
     },
     service () {
-      let commission_rate = get(this.event, 'commission_rate') || 0
-      let commission_type = get(this.event, 'commission_type') || 1
-      const event_stores = get(this.serviceSummary, 'event_stores')
-      if (event_stores) {
-        const event_store = event_stores.filter(ele => ele.event_uuid === this.event.uuid)
-        commission_rate = get(event_store, 'commission_rate', this.event.commission_rate) || 0
-        commission_type = get(event_store, 'commission_type', this.event.commission_type) || 1
+      let commissionRate = get(this.event, 'commission_rate') || 0
+      let commissionType = get(this.event, 'commission_type') || 1
+      const eventStores = get(this.serviceSummary, 'event_stores')
+      if (eventStores) {
+        const eventStore = eventStores.filter(ele => ele.event_uuid === this.event.uuid)
+        commissionRate = get(eventStore, 'commission_rate', this.event.commission_rate) || 0
+        commissionType = get(eventStore, 'commission_type', this.event.commission_type) || 1
       }
       return {
         ...this.serviceSummary,
-        commission_rate,
-        commission_type
+        commission_rate: commissionRate,
+        commission_type: commissionType
       }
-    }    
+    }
   },
   methods: {
     ...mapActions('page', {
@@ -225,8 +223,8 @@ export default {
     async menuItemSave (params) {
       let data = {
         ...params,
-        event_uuid: this.event.uuid,
-        store_uuid: this.store.uuid
+        event_uuid: get(this.event, 'uuid'),
+        store_uuid: get(this.store, 'uuid')
       }
       data = omitBy(data, (value, key) => {
         const extra = ['created_at', 'updated_at']
@@ -253,8 +251,8 @@ export default {
     async messageSave (message) {
       let data = {
         content: message,
-        event_uuid: this.event.uuid,
-        store_uuid: this.store.uuid
+        event_uuid: get(this.event, 'uuid'),
+        store_uuid: get(this.store, 'uuid')
       }
       data = omitBy(data, (value, key) => {
         const extra = ['created_at', 'updated_at']
@@ -270,7 +268,7 @@ export default {
     async commissionSave (params) {
       let data = {
         ...params,
-        event_uuid: this.event.uuid
+        event_uuid: get(this.event, 'uuid')
       }
       await this.$store.dispatch('stores/updateItem', { data, params: { id: this.store.uuid } })
       await this.$store.dispatch('stores/serviceSummary/getItem', { params: { id: this.store.uuid } })
