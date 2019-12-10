@@ -3,14 +3,15 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Actions\UpdateStore;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Store;
+use App\Actions\UpdateDocument;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\Store as StoreResource;
-use App\Filters\Store\TagUuid as FilterTagUuid;
+use App\Http\Resources\Foodfleet\Store\Store as StoreResource;
 
 class Stores extends Controller
 {

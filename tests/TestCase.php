@@ -27,4 +27,10 @@ abstract class TestCase extends BaseTestCase
 
         return $method->invokeArgs($object, $parameters);
     }
+
+    protected function assertNotExceptionResponse($response)
+    {
+        $message = is_a($response->exception, \Exception::class) ? $response->exception->getMessage() : '';
+        $this->assertEmpty($response->exception, $message);
+    }
 }

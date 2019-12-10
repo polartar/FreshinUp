@@ -4,7 +4,6 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\StoreStatuses;
 
 use App\User;
 use App\Models\Foodfleet\StoreStatus;
-
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;

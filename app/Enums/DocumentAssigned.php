@@ -85,7 +85,7 @@ final class DocumentAssigned extends Enum
         }
 
         if ($value === self::STORE) {
-            return 'App\Http\Resources\Foodfleet\Store';
+            return 'App\Http\Resources\Foodfleet\Store\Store';
         }
 
         if ($value === self::VENUE) {
