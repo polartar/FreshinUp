@@ -22,20 +22,6 @@
         @change-status="changeStatus"
       />
     </div>
-
-    <div class="right py-3 px-4">
-      <v-btn
-        color="primary"
-        @click="createNewDoc"
-      >
-        <v-icon>
-          add_circle
-        </v-icon>
-        <span>
-          Add New Document
-        </span>
-      </v-btn>
-    </div>
   </div>
 </template>
 

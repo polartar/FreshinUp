@@ -16,6 +16,7 @@ class Message extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $with = array('owner');
 
     public function event()
     {

@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/financials/DataVisibility.vue'
 
 jest.useFakeTimers()

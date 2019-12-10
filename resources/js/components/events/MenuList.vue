@@ -3,7 +3,7 @@
     v-model="selected"
     class="event-list-table"
     :headers="headers"
-    :items="menus"
+    :items="formatMenus"
     :hide-headers="$vuetify.breakpoint.xsOnly"
     :hide-actions="$vuetify.breakpoint.xsOnly"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
@@ -78,7 +78,7 @@
       </td>
       <td class="full-width">
         <div class="subheading primary--text">
-          {{ props.item.title }}
+          {{ props.item.item }}
         </div>
         <div
           :class="`grey--text ${ $vuetify.breakpoint.xsOnly ? 'pt-2': '' }`"
@@ -135,7 +135,7 @@ export default {
   ],
   props: {
     menus: {
-      type: Array,
+      type: [Array, Object],
       default: () => []
     }
   },
@@ -143,7 +143,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Item', sortable: true, value: 'title', align: 'left' },
+        { text: 'Item', sortable: true, value: 'item', align: 'left' },
         { text: 'Servings', sortable: true, value: 'servings', align: 'left' },
         { text: 'Cost', value: 'cost', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
@@ -151,6 +151,13 @@ export default {
     }
   },
   computed: {
+    formatMenus () {
+      if (this.menus instanceof Array) {
+        return this.menus
+      } else {
+        return []
+      }
+    },
     itemActions () {
       let actions = [
         { action: 'edit', text: 'Edit' },

@@ -21,7 +21,7 @@ exports[`Store List component Snapshots menus 1`] = `
             class="layout menu-title row mb-6"
           >
             <span
-              class="black--text font-weight-bold title text-uppercase"
+              class="grey--text font-weight-bold title text-uppercase"
             >
               Kevin's Truck
             </span>
@@ -254,7 +254,7 @@ exports[`Store List component Snapshots menus 1`] = `
                         class="subheading primary--text"
                       >
                         
-        menu item 1
+        
       
                       </div>
                        
@@ -399,7 +399,7 @@ exports[`Store List component Snapshots menus 1`] = `
                         class="subheading primary--text"
                       >
                         
-        menu item 2
+        
       
                       </div>
                        
@@ -544,7 +544,7 @@ exports[`Store List component Snapshots menus 1`] = `
                         class="subheading primary--text"
                       >
                         
-        menu item 3
+        
       
                       </div>
                        
@@ -938,8 +938,8 @@ exports[`Store List component Snapshots menus 1`] = `
                                 class="v-text-field__slot"
                               >
                                 <input
-                                  data-vv-name="title"
-                                  placeholder="Enter menu item title"
+                                  data-vv-name="item"
+                                  placeholder="Enter menu item"
                                   type="text"
                                 />
                               </div>
@@ -1163,7 +1163,7 @@ exports[`Store List component Snapshots menus empty 1`] = `
             class="layout menu-title row mb-6"
           >
             <span
-              class="black--text font-weight-bold title text-uppercase"
+              class="grey--text font-weight-bold title text-uppercase"
             >
               
             </span>
@@ -1653,8 +1653,8 @@ exports[`Store List component Snapshots menus empty 1`] = `
                                 class="v-text-field__slot"
                               >
                                 <input
-                                  data-vv-name="title"
-                                  placeholder="Enter menu item title"
+                                  data-vv-name="item"
+                                  placeholder="Enter menu item"
                                   type="text"
                                 />
                               </div>

@@ -46,7 +46,7 @@ export default {
       default: () => "Activists' Name"
     },
     messages: {
-      type: Array,
+      type: [Array, Object],
       default: () => []
     }
   },

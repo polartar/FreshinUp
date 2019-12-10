@@ -3,8 +3,10 @@
 namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 
 use App\Models\Foodfleet\Company;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\StoreTag;
+use App\Models\Foodfleet\EventMenuItem;
 use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
@@ -340,5 +342,97 @@ class StoresTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertCount(3, $data);
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
+    }
+
+    public function testUpdateCommission()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $store->events()->sync([$event->uuid]);
+
+        $data = $this
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
+                'name' => 'test store',
+                'event_uuid' => $event->uuid,
+                'commission_rate' => 12,
+                'commission_type' => 1
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $result = $this->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=events")
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals('test store', $result['name']);
+    }
+
+    public function testStoreSummary()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create([
+            'users_id' => $user->id
+        ]);
+        $store = factory(Store::class)->create([
+            'supplier_uuid' => $company->uuid
+        ]);
+
+        $tags = factory(StoreTag::class, 3)->create();
+        $store->tags()->sync($tags->map(function ($tag) {
+            return $tag->uuid;
+        }));
+
+        $data = $this
+            ->json('get', "/api/foodfleet/store-summary/" . $store->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals($data['owner']['uuid'], $user->uuid);
+    }
+
+    public function testStoreServiceSummary()
+    {
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $store->events()->sync([$event->uuid]);
+        $items = factory(EventMenuItem::class, 3)->create([
+            'servings' => 2,
+            'cost' => 70,
+            'event_uuid' => $event->uuid,
+            'store_uuid' => $store->uuid
+        ]);
+
+        $data = $this
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
+                'name' => 'test store',
+                'event_uuid' => $event->uuid,
+                'commission_rate' => 12,
+                'commission_type' => 1
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/store-service-summary/" . $store->uuid . "?event_uuid=" . $event->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals($data['total_services'], 6);
+        $this->assertEquals($data['total_cost'], 210);
     }
 }

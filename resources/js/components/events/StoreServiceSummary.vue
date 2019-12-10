@@ -123,6 +123,7 @@
               <v-text-field
                 v-model="inputValue.commission_rate"
                 v-validate="'required'"
+                type="number"
                 :error-messages="errors.collect('rate')"
                 data-vv-name="rate"
                 caption
@@ -224,6 +225,7 @@ export default {
       }
     },
     edit () {
+      this.inputValue = { ...this.formValue }
       this.showEdit = true
     },
     save () {

@@ -1,69 +1,86 @@
 <template>
-  <v-form
-    v-if="!isLoading"
-    ref="form"
-    v-model="isValid"
-  >
+  <div>
+    <v-form
+      v-if="!isLoading"
+      ref="form"
+      v-model="isValid"
+    >
+      <v-layout
+        row
+        align-center
+        pt-3
+      >
+        <v-btn
+          flat
+          small
+          @click="backToList"
+        >
+          <div class="back-btn-inner">
+            <v-icon>fas fa-arrow-left</v-icon>
+            <span>Return to Events list</span>
+          </div>
+        </v-btn>
+      </v-layout>
+      <v-layout
+        row
+        justify-space-between
+        ma-2
+      >
+        <h2 class="white--text">
+          {{ pageTitle }}
+        </h2>
+        <v-flex
+          text-xs-right
+          sm2
+          xs12
+        >
+          <status-select
+            :value="status_id"
+            :options="statuses"
+          />
+        </v-flex>
+      </v-layout>
+      <v-divider />
+      <br>
+      <v-layout
+        row
+        wrap
+        pa-2
+        justify-space-between
+        class="event-new-wrap"
+      >
+        <v-flex
+          md12
+          sm12
+        >
+          <BasicInfoformation
+            ref="basicInfo"
+            :event="event"
+            :errors="errors"
+            @data-change="changeBasicInfo"
+            @cancel="onCancel"
+            @save="onSave"
+            @delete="onDelete"
+          />
+        </v-flex>
+      </v-layout>
+    </v-form>
+
     <v-layout
       row
-      align-center
-      pt-3
+      px-2
+      py-4
     >
-      <v-btn
-        flat
-        small
-        @click="backToList"
-      >
-        <div class="back-btn-inner">
-          <v-icon>fas fa-arrow-left</v-icon>
-          <span>Return to Events list</span>
-        </div>
-      </v-btn>
-    </v-layout>
-    <v-layout
-      row
-      justify-space-between
-      ma-2
-    >
-      <h2 class="white--text">
-        {{ pageTitle }}
-      </h2>
-      <v-flex
-        text-xs-right
-        sm2
-        xs12
-      >
-        <status-select
-          :value="status_id"
-          :options="statuses"
+      <v-flex>
+        <stores
+          :types="types"
+          :statuses="storeStatuses"
+          :stores="stores"
+          @manage-view-details="viewDetails"
         />
       </v-flex>
     </v-layout>
-    <v-divider />
-    <br>
-    <v-layout
-      row
-      wrap
-      pa-2
-      justify-space-between
-      class="event-new-wrap"
-    >
-      <v-flex
-        md12
-        sm12
-      >
-        <BasicInfoformation
-          ref="basicInfo"
-          :event="event"
-          :errors="errors"
-          @data-change="changeBasicInfo"
-          @cancel="onCancel"
-          @save="onSave"
-          @delete="onDelete"
-        />
-      </v-flex>
-    </v-layout>
-  </v-form>
+  </div>
 </template>
 
 <script>
@@ -73,6 +90,7 @@ import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
 import BasicInfoformation from '~/components/events/BasicInformation.vue'
+import Stores from '~/components/events/Stores.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -82,18 +100,22 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
+    Stores,
     StatusSelect,
     BasicInfoformation
   },
   mixins: [Validate],
   data () {
     return {
-      isNew: false
+      isNew: false,
+      types: []
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
+    ...mapGetters('events/stores', { stores: 'items' }),
+    ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapFields('events', [
       'status_id'
@@ -158,6 +180,9 @@ export default {
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
       this.$router.push('/admin/events/')
     },
+    viewDetails (store) {
+      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
+    },
     backToList () {
       this.$router.push({ path: '/admin/events' })
     }
@@ -166,16 +191,21 @@ export default {
     vm.setPageLoading(true)
     const id = to.params.id || 'new'
     let params = { id }
+    let promise = []
     if (id !== 'new') {
       params = {
         id,
         include: 'manager,host,event_tags'
       }
+      promise.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promise.push(vm.$store.dispatch('events/stores/getItems', {
+        params: { eventId: id }
+      }))
     }
-    Promise.all([
-      vm.$store.dispatch('events/getItem', { params }),
-      vm.$store.dispatch('eventStatuses/getItems')
-    ]).then(() => {
+    promise.push(vm.$store.dispatch('events/getItem', { params }))
+    promise.push(vm.$store.dispatch('eventStatuses/getItems'))
+
+    Promise.all(promise).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })

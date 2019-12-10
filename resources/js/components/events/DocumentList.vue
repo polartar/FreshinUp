@@ -81,10 +81,10 @@ export default {
   data () {
     return {
       headers: [
-        { text: 'ITEMS', sortable: true, value: 'items', align: 'left' },
-        { text: '', sortable: false, value: 'document', align: 'left' },
+        { text: 'ITEMS', sortable: true, value: 'title', align: 'left' },
+        { text: 'NAME', sortable: false, value: 'document', align: 'left' },
         { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
-        { text: '', sortable: false, value: 'manage', align: 'left' }
+        { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
       ]
     }
   },
