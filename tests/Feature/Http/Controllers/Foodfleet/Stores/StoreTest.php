@@ -223,6 +223,28 @@ class StoresTest extends TestCase
         ], $data[0]);
     }
 
+    public function testUpdate()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $store = factory(Store::class)->create([
+            'status' => 1
+        ]);
+
+        $data = $this
+            ->json('patch', "/api/foodfleet/stores/{$store->uuid}", [
+                'status' => 2
+            ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('stores', [
+            'uuid' => $store->uuid,
+            'status' => 2
+        ]);
+    }
+
     /**
      * test for the sort options
      */

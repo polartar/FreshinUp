@@ -68,16 +68,16 @@ class MenuTest extends TestCase
         ]);
 
         $url = 'api/foodfleet/menus?filter[store_uuid]=' . $store1->uuid;
-        $result = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
+        $response = $this->json('GET', $url);
+        $this->assertNotExceptionResponse($response);
+        $result = $response->json('data');
         $this->assertCount(2, $result);
         $this->assertEquals('item1', $result[0]['item']);
 
         $url = 'api/foodfleet/menus?filter[item]=item2';
-        $result = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
+        $response = $this->json('GET', $url);
+        $this->assertNotExceptionResponse($response);
+        $result = $response->json('data');
         $this->assertCount(3, $result);
         $this->assertEquals('item2', $result[0]['item']);
     }
@@ -99,10 +99,9 @@ class MenuTest extends TestCase
             'store_uuid' => $store2->uuid
         ]);
 
-        $data = $this
-            ->json('get', 'api/foodfleet/menus?q=item2')
-            ->assertStatus(200)
-            ->json('data');
+        $response = $this->json('GET', 'api/foodfleet/menus?q=item2');
+        $this->assertNotExceptionResponse($response);
+        $data = $response->json('data');
 
         $this->assertNotEmpty($data);
         $this->assertCount(3, $data);
@@ -174,9 +173,10 @@ class MenuTest extends TestCase
             ->json('data');
 
         $url = 'api/foodfleet/menus/' . $menu->uuid . '?include=store';
-        $result = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
+
+        $response = $this->json('GET', $url);
+        $this->assertNotExceptionResponse($response);
+        $result = $response->json('data');
 
         $this->assertEquals('create menu test', $result['item']);
         $this->assertEquals('Salad', $result['category']);
@@ -197,10 +197,9 @@ class MenuTest extends TestCase
             'store_uuid' => $store->uuid
         ]);
 
-        $data = $this
-            ->json('GET', 'api/foodfleet/menus/' . $menu->uuid)
-            ->assertStatus(200)
-            ->json('data');
+        $response = $this->json('GET', 'api/foodfleet/menus/' . $menu->uuid);
+        $this->assertNotExceptionResponse($response);
+        $data = $response->json('data');
 
         $this->assertEquals($menu->uuid, $data['uuid']);
 
