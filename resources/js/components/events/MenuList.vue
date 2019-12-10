@@ -3,7 +3,7 @@
     v-model="selected"
     class="event-list-table"
     :headers="headers"
-    :items="menus"
+    :items="formatMenus"
     :hide-headers="$vuetify.breakpoint.xsOnly"
     :hide-actions="$vuetify.breakpoint.xsOnly"
     :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
@@ -135,7 +135,7 @@ export default {
   ],
   props: {
     menus: {
-      type: Array,
+      type: [Array, Object],
       default: () => []
     }
   },
@@ -151,6 +151,13 @@ export default {
     }
   },
   computed: {
+    formatMenus () {
+      if (this.menus instanceof Array) {
+        return this.menus
+      } else {
+        return []
+      }
+    },
     itemActions () {
       let actions = [
         { action: 'edit', text: 'Edit' },

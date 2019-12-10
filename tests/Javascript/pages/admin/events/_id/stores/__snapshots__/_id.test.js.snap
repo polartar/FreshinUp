@@ -1734,651 +1734,655 @@ exports[`Event StoreDetails Component Mount mount store detail page 1`] = `
       class="flex md4 sm4"
     >
       <div
-        class="mx-2 v-card v-sheet theme--light"
+        class="layout row"
       >
-        <hr
-          class="v-divider theme--light"
-        />
-         
         <div
-          class="v-card v-sheet theme--light"
+          class="flex"
         >
           <div
-            class="container font-weight-bold grey--text subheading py-3"
+            class="mx-2 v-card v-sheet theme--light"
           >
-            
+            <hr
+              class="v-divider theme--light"
+            />
+             
+            <div
+              class="v-card v-sheet theme--light"
+            >
+              <div
+                class="container font-weight-bold grey--text subheading py-3"
+              >
+                
     Fleet Member Summary
   
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-           
-          <div
-            class="container pt-0 font-weight-bold grey--text"
-          >
-            <div
-              class="layout align-center py-2"
-            >
+              </div>
+               
+              <hr
+                class="v-divider theme--light"
+              />
+               
               <div
-                class="flex caption font-weight-bold"
+                class="container pt-0 font-weight-bold grey--text"
               >
-                
+                <div
+                  class="layout align-center py-2"
+                >
+                  <div
+                    class="flex caption font-weight-bold"
+                  >
+                    
         OWNER
       
-              </div>
-               
-              <div
-                class="flex text-xs-right subheading xs6 text-truncate"
-              >
-                
+                  </div>
+                   
+                  <div
+                    class="flex text-xs-right subheading xs6 text-truncate"
+                  >
+                    
         NaN
       
-              </div>
-            </div>
-             
-            <hr
-              class="v-divider theme--light"
-            />
-             
-            <div
-              class="layout align-center py-2"
-            >
-              <div
-                class="flex caption font-weight-bold"
-              >
-                
-        LISENCE DUE
-      
-              </div>
-               
-              <div
-                class="flex text-xs-right subheading xs6 text-truncate"
-              >
-                
-        Dec, 30 2020
-      
-              </div>
-            </div>
-             
-            <hr
-              class="v-divider theme--light"
-            />
-             
-            <div
-              class="layout align-center py-2"
-            >
-              <div
-                class="flex caption font-weight-bold"
-              >
-                
-        CONTACT PHONE
-      
-              </div>
-               
-              <div
-                class="flex text-xs-right subheading xs6 text-truncate"
-              >
-                
-        
-      
-              </div>
-            </div>
-             
-            <hr
-              class="v-divider theme--light"
-            />
-             
-            <div
-              class="layout py-2 align-center"
-            >
-              <div
-                class="flex caption font-weight-bold"
-              >
-                
-        CONTACT EMAIL
-      
-              </div>
-               
-              <div
-                class="flex text-xs-right subheading xs6 text-truncate"
-              >
-                
-        
-      
-              </div>
-            </div>
-             
-            <hr
-              class="v-divider theme--light"
-            />
-             
-            <div
-              class="layout tags_title font-weight-bold grey--text mt-2 pa-1"
-            >
-              <div
-                class="flex"
-              >
-                TAGS
-              </div>
-            </div>
-             
-            <div
-              class="layout row wrap"
-            >
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        SEAFOOD
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        SMOKED
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        DESSERT
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        BAY AREA
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        VEGAN OPTIONS
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        SMOKED
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        DESSERT
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        SEAFOOD
-      
-                </span>
-              </span>
-              <span
-                class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
-                tabindex="0"
-              >
-                <span
-                  class="v-chip__content"
-                >
-                  
-        SMOKED
-      
-                </span>
-              </span>
-            </div>
-             
-            <hr
-              class="mt-3 v-divider theme--light"
-            />
-             
-            <button
-              class="grey ma-0 mt-4 white--text text-none v-btn v-btn--block theme--light"
-              type="button"
-            >
-              <div
-                class="v-btn__content"
-              >
-                
-      View Fleet Member Profile
-    
-              </div>
-            </button>
-             
-            <button
-              class="transparent elevation-0 ma-0 pa-0 caption  grey--text mt-3 button-remove text-none v-btn v-btn--block theme--light"
-              type="button"
-            >
-              <div
-                class="v-btn__content"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon pr-2 caption far fa-trash-alt theme--light"
+                  </div>
+                </div>
+                 
+                <hr
+                  class="v-divider theme--light"
                 />
                  
-                <span>
-                  Remove fleet member from this event
-                </span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div
-    class="layout row pa-2"
-  >
-    <div
-      class="flex md8 sm8"
-    />
-     
-    <div
-      class="flex md4 sm4"
-    >
-      <div
-        class="mx-2 v-card v-sheet theme--light"
-      >
-        <hr
-          class="v-divider theme--light"
-        />
-         
-        <div>
-          <div
-            class="v-card v-sheet theme--light"
-          >
-            <div
-              class="container font-weight-bold grey--text subheading py-3"
-            >
-              
-      Fleet Member Service Summary
-    
-            </div>
-             
-            <hr
-              class="v-divider theme--light"
-            />
-             
-            <div
-              class="container pt-0 font-weight-bold grey--text"
-            >
-              <div
-                class="layout align-center my-2"
-              >
                 <div
-                  class="flex caption font-weight-bold"
+                  class="layout align-center py-2"
                 >
-                  
-          TOTAL SERVICES
+                  <div
+                    class="flex caption font-weight-bold"
+                  >
+                    
+        LISENCE DUE
+      
+                  </div>
+                   
+                  <div
+                    class="flex text-xs-right subheading xs6 text-truncate"
+                  >
+                    
+        Dec, 30 2020
+      
+                  </div>
+                </div>
+                 
+                <hr
+                  class="v-divider theme--light"
+                />
+                 
+                <div
+                  class="layout align-center py-2"
+                >
+                  <div
+                    class="flex caption font-weight-bold"
+                  >
+                    
+        CONTACT PHONE
+      
+                  </div>
+                   
+                  <div
+                    class="flex text-xs-right subheading xs6 text-truncate"
+                  >
+                    
         
+      
+                  </div>
+                </div>
+                 
+                <hr
+                  class="v-divider theme--light"
+                />
+                 
+                <div
+                  class="layout py-2 align-center"
+                >
+                  <div
+                    class="flex caption font-weight-bold"
+                  >
+                    
+        CONTACT EMAIL
+      
+                  </div>
+                   
+                  <div
+                    class="flex text-xs-right subheading xs6 text-truncate"
+                  >
+                    
+        
+      
+                  </div>
+                </div>
+                 
+                <hr
+                  class="v-divider theme--light"
+                />
+                 
+                <div
+                  class="layout tags_title font-weight-bold grey--text mt-2 pa-1"
+                >
+                  <div
+                    class="flex"
+                  >
+                    TAGS
+                  </div>
                 </div>
                  
                 <div
-                  class="flex text-xs-right subheading xs6 text-truncate"
+                  class="layout row wrap"
                 >
-                  
-          
-        
-                </div>
-              </div>
-               
-              <hr
-                class="v-divider theme--light"
-              />
-               
-              <div
-                class="layout align-center my-2"
-              >
-                <div
-                  class="flex caption font-weight-bold"
-                >
-                  
-          TOTAL COST
-        
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        SEAFOOD
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        SMOKED
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        DESSERT
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        BAY AREA
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        VEGAN OPTIONS
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        SMOKED
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        DESSERT
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        SEAFOOD
+      
+                    </span>
+                  </span>
+                  <span
+                    class="v-chip my-1 ml-0 mr-2 theme--light primary primary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+        SMOKED
+      
+                    </span>
+                  </span>
                 </div>
                  
-                <div
-                  class="flex text-xs-right subheading xs6 text-truncate"
-                >
-                  
-          
-        
-                </div>
-              </div>
-               
-              <hr
-                class="v-divider theme--light"
-              />
-               
-              <div
-                class="layout align-center primary--text font-weight-bold my-2"
-              >
-                <div
-                  class="flex caption font-weight-bold"
-                >
-                  
-          COMMISSION RATE
-        
-                </div>
+                <hr
+                  class="mt-3 v-divider theme--light"
+                />
                  
                 <button
-                  class="transparent elevation-0 ma-0 pr-0 primary--text  v-btn theme--light"
+                  class="grey ma-0 mt-4 white--text text-none v-btn v-btn--block theme--light"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
-                    <div
-                      class="v-card__text pa-0"
-                    >
-                      
-            $ 12
-          
-                    </div>
-                     
+                    
+      View Fleet Member Profile
+    
+                  </div>
+                </button>
+                 
+                <button
+                  class="transparent elevation-0 ma-0 pa-0 caption  grey--text mt-3 button-remove text-none v-btn v-btn--block theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
                     <i
                       aria-hidden="true"
-                      class="v-icon material-icons theme--light"
-                    >
-                      edit
-                    </i>
+                      class="v-icon pr-2 caption far fa-trash-alt theme--light"
+                    />
+                     
+                    <span>
+                      Remove fleet member from this event
+                    </span>
                   </div>
                 </button>
               </div>
-               
-              <hr
-                class="v-divider theme--light"
-              />
-               
-              <button
-                class="grey ma-0 mt-4 white--text text-none v-btn v-btn--block theme--light"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-        View Contract
-      
-                </div>
-              </button>
             </div>
           </div>
-           
+        </div>
+      </div>
+       
+      <div
+        class="layout service-summary row"
+      >
+        <div
+          class="flex"
+        >
           <div
-            class="mx-3 ml-5 modal v-card v-sheet theme--light float"
-            style="display: none;"
+            class="mx-2 v-card v-sheet theme--light"
           >
-            <form
-              class="v-form"
-              novalidate="novalidate"
-            >
+            <hr
+              class="v-divider theme--light"
+            />
+             
+            <div>
               <div
-                class="container font-weight-bold grey--text subheading py-2 mt-1"
+                class="v-card v-sheet theme--light"
               >
                 <div
-                  class="layout"
+                  class="container font-weight-bold grey--text subheading py-3"
+                >
+                  
+      Fleet Member Service Summary
+    
+                </div>
+                 
+                <hr
+                  class="v-divider theme--light"
+                />
+                 
+                <div
+                  class="container pt-0 font-weight-bold grey--text"
                 >
                   <div
-                    class="layout mt-3 xs6 mr-2 column"
+                    class="layout align-center my-2"
                   >
                     <div
-                      class="flex caption font-weight-bold mb-2"
+                      class="flex caption font-weight-bold"
                     >
                       
-              OVERRIDE RATE
-            
+          TOTAL SERVICES
+        
                     </div>
                      
                     <div
-                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
+                      class="flex text-xs-right subheading xs6 text-truncate"
                     >
-                      <div
-                        class="v-input__control"
-                      >
-                        <div
-                          class="v-input__slot"
-                        >
-                          <div
-                            class="v-text-field__slot"
-                          >
-                            <input
-                              caption=""
-                              data-vv-name="rate"
-                              type="number"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="v-text-field__details"
-                        >
-                          <div
-                            class="v-messages theme--light"
-                          >
-                            <div
-                              class="v-messages__wrapper"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                      
+          
+        
                     </div>
                   </div>
                    
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                   
                   <div
-                    class="layout xs6 d-flex mt-3 column"
+                    class="layout align-center my-2"
                   >
                     <div
-                      class="flex caption font-weight-bold mb-2"
+                      class="flex caption font-weight-bold"
                     >
                       
-              OVERRIDE TYPE
-            
+          TOTAL COST
+        
                     </div>
                      
                     <div
-                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
-                      role="combobox"
+                      class="flex text-xs-right subheading xs6 text-truncate"
+                    >
+                      
+          
+        
+                    </div>
+                  </div>
+                   
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                   
+                  <div
+                    class="layout align-center primary--text font-weight-bold my-2"
+                  >
+                    <div
+                      class="flex caption font-weight-bold"
+                    >
+                      
+          COMMISSION RATE
+        
+                    </div>
+                     
+                    <button
+                      class="transparent elevation-0 ma-0 pr-0 primary--text  v-btn theme--light"
+                      type="button"
                     >
                       <div
-                        class="v-input__control"
+                        class="v-btn__content"
                       >
                         <div
-                          class="v-input__slot"
+                          class="v-card__text pa-0"
+                        >
+                          
+            $ 12
+          
+                        </div>
+                         
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          edit
+                        </i>
+                      </div>
+                    </button>
+                  </div>
+                   
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                   
+                  <button
+                    class="grey ma-0 mt-4 white--text text-none v-btn v-btn--block theme--light"
+                    type="button"
+                  >
+                    <div
+                      class="v-btn__content"
+                    >
+                      
+        View Contract
+      
+                    </div>
+                  </button>
+                </div>
+              </div>
+               
+              <div
+                class="mx-3 ml-5 modal v-card v-sheet theme--light float"
+                style="display: none;"
+              >
+                <form
+                  class="v-form"
+                  novalidate="novalidate"
+                >
+                  <div
+                    class="container font-weight-bold grey--text subheading py-2 mt-1"
+                  >
+                    <div
+                      class="layout"
+                    >
+                      <div
+                        class="layout mt-3 xs6 mr-2 column"
+                      >
+                        <div
+                          class="flex caption font-weight-bold mb-2"
+                        >
+                          
+              OVERRIDE RATE
+            
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
                         >
                           <div
-                            class="v-select__slot"
+                            class="v-input__control"
                           >
                             <div
-                              class="v-select__selections"
+                              class="v-input__slot"
                             >
                               <div
-                                class="v-select__selection v-select__selection--comma"
+                                class="v-text-field__slot"
                               >
-                                Percentage(%)
+                                <input
+                                  caption=""
+                                  data-vv-name="rate"
+                                  type="number"
+                                />
                               </div>
-                              <input
-                                aria-readonly="false"
-                                autocomplete="on"
-                                readonly="readonly"
-                                type="text"
-                              />
                             </div>
                             <div
-                              class="v-input__append-inner"
+                              class="v-text-field__details"
                             >
                               <div
-                                class="v-input__icon v-input__icon--append"
+                                class="v-messages theme--light"
                               >
-                                <i
-                                  aria-hidden="true"
-                                  class="v-icon material-icons theme--light"
-                                >
-                                  arrow_drop_down
-                                </i>
+                                <div
+                                  class="v-messages__wrapper"
+                                />
                               </div>
                             </div>
                           </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="layout xs6 d-flex mt-3 column"
+                      >
+                        <div
+                          class="flex caption font-weight-bold mb-2"
+                        >
+                          
+              OVERRIDE TYPE
+            
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                          role="combobox"
+                        >
                           <div
-                            class="v-menu"
+                            class="v-input__control"
                           >
                             <div
-                              class="v-menu__content theme--light "
-                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              class="v-input__slot"
                             >
                               <div
-                                class="v-select-list v-card theme--light"
+                                class="v-select__slot"
                               >
                                 <div
-                                  class="v-list theme--light"
-                                  role="list"
+                                  class="v-select__selections"
                                 >
                                   <div
-                                    class="primary--text"
-                                    role="listitem"
+                                    class="v-select__selection v-select__selection--comma"
                                   >
-                                    <a
-                                      class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                    >
-                                      <div
-                                        class="v-list__tile__content"
-                                      >
-                                        <div
-                                          class="v-list__tile__title"
-                                        >
-                                          Percentage(%)
-                                        </div>
-                                      </div>
-                                    </a>
+                                    Percentage(%)
                                   </div>
+                                  <input
+                                    aria-readonly="false"
+                                    autocomplete="on"
+                                    readonly="readonly"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  class="v-input__append-inner"
+                                >
                                   <div
-                                    role="listitem"
+                                    class="v-input__icon v-input__icon--append"
                                   >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      arrow_drop_down
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="v-menu"
+                              >
+                                <div
+                                  class="v-menu__content theme--light "
+                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                >
+                                  <div
+                                    class="v-select-list v-card theme--light"
+                                  >
+                                    <div
+                                      class="v-list theme--light"
+                                      role="list"
                                     >
                                       <div
-                                        class="v-list__tile__content"
+                                        class="primary--text"
+                                        role="listitem"
                                       >
-                                        <div
-                                          class="v-list__tile__title"
+                                        <a
+                                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                         >
-                                          Flat ($)
-                                        </div>
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              Percentage(%)
+                                            </div>
+                                          </div>
+                                        </a>
                                       </div>
-                                    </a>
+                                      <div
+                                        role="listitem"
+                                      >
+                                        <a
+                                          class="v-list__tile v-list__tile--link theme--light"
+                                        >
+                                          <div
+                                            class="v-list__tile__content"
+                                          >
+                                            <div
+                                              class="v-list__tile__title"
+                                            >
+                                              Flat ($)
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <div
-                          class="v-text-field__details"
-                        >
-                          <div
-                            class="v-messages theme--light"
-                          >
                             <div
-                              class="v-messages__wrapper"
-                            />
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                 
-                <div
-                  class="layout"
-                >
-                  <div
-                    class="flex"
-                  >
-                    <button
-                      class="ml-0 text-none v-btn theme--light"
-                      text-none=""
-                      type="button"
+                     
+                    <div
+                      class="layout"
                     >
                       <div
-                        class="v-btn__content"
+                        class="flex"
                       >
-                        
+                        <button
+                          class="ml-0 text-none v-btn theme--light"
+                          text-none=""
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
               Cancel
             
+                          </div>
+                        </button>
                       </div>
-                    </button>
-                  </div>
-                   
-                  <div
-                    class="flex text-xs-right"
-                  >
-                    <button
-                      class="mr-0 right primary text-none v-btn theme--light"
-                      type="button"
-                    >
+                       
                       <div
-                        class="v-btn__content"
+                        class="flex text-xs-right"
                       >
-                        
+                        <button
+                          class="mr-0 right primary text-none v-btn theme--light"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
               Save
             
+                          </div>
+                        </button>
                       </div>
-                    </button>
+                    </div>
                   </div>
-                </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

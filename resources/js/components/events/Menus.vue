@@ -76,7 +76,7 @@ export default {
       default: () => 'Fleet Member Name'
     },
     menus: {
-      type: Array,
+      type: [Array, Object],
       default: () => []
     }
   },

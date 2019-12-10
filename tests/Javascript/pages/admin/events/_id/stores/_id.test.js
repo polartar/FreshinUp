@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_EVENT } from 'tests/__data__/event'
@@ -9,7 +9,7 @@ import { FIXTURE_MENUS } from 'tests/__data__/menus'
 import { FIXTURE_MESSAGES } from 'tests/__data__/messages'
 import { FIXTURE_EVENT_STORE_SUMMARY } from 'tests/__data__/storeSummary'
 import { FIXTURE_STORE_SERVICES } from 'tests/__data__/storeServiceSummary'
-import BaseComponent from '~/components/events/StoreDetails.vue'
+import Component from '~/pages/admin/events/_id/stores/_id.vue'
 import events from '~/store/modules/events.js'
 import stores from '~/store/modules/stores.js'
 import storeStatuses from '~/store/modules/storeStatuses.js'
@@ -54,11 +54,6 @@ describe('Event StoreDetails Component', () => {
     })
 
     it('mount store detail page', async () => {
-      const Component = {
-        extends: BaseComponent,
-        layout: BaseComponent.layout,
-        beforeRouteEnterOrUpdate: BaseComponent.beforeRouteEnterOrUpdate
-      }
       const wrapper = mount(Component, {
         localVue,
         store
@@ -94,6 +89,7 @@ describe('Event StoreDetails Component', () => {
         .onGet('api/foodfleet/document-statuses').reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
         .onGet('api/foodfleet/event-menu-items').reply(200, { data: FIXTURE_MENUS })
         .onGet('api/foodfleet/messages').reply(200, { data: FIXTURE_MESSAGES })
+        .onPost('api/foodfleet/messages').reply(201, FIXTURE_MESSAGES[0])
         .onAny().reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
@@ -115,25 +111,18 @@ describe('Event StoreDetails Component', () => {
     })
 
     test('messageSave function test', async () => {
-      const wrapper = shallowMount(BaseComponent, {
+      const wrapper = mount(Component, {
         localVue: localVue,
         store
       })
       await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 2 } })
       await wrapper.vm.$store.dispatch('stores/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('stores/summary/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('eventMenuItems/getItems')
-      await wrapper.vm.$store.dispatch('messages/getItems')
-      await wrapper.vm.$store.dispatch('storeStatuses/getItems')
-      await wrapper.vm.$store.dispatch('documentStatuses/getItems')
 
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
 
-      // await wrapper.vm.messageSave('send message test')
-      // await wrapper.vm.$nextTick()
-      // expect(wrapper.vm.messages[2].content).toBe('send message test')
+      await wrapper.vm.messageSave('send message test')
+      expect(wrapper.vm.messages[0]).toEqual(FIXTURE_MESSAGES[0])
     })
   })
 })

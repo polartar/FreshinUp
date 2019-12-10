@@ -161,9 +161,12 @@ export default {
     cancel () {
       this.$emit('change', false)
       this.formValue = {}
+      this.$validator.reset()
     },
     save () {
       this.$emit('save', this.formValue)
+      this.formValue = {}
+      this.$validator.reset()
     }
   }
 }
