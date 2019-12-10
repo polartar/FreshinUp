@@ -225,6 +225,7 @@ export default {
       }
     },
     edit () {
+      this.inputValue = { ...this.formValue }
       this.showEdit = true
     },
     save () {

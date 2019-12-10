@@ -204,10 +204,12 @@ export default {
       let commissionRate = get(this.event, 'commission_rate') || 0
       let commissionType = get(this.event, 'commission_type') || 1
       const eventStores = get(this.serviceSummary, 'event_stores')
-      if (eventStores) {
+      if (eventStores && eventStores.length) {
         const eventStore = eventStores.filter(ele => ele.event_uuid === this.event.uuid)
-        commissionRate = get(eventStore, 'commission_rate', this.event.commission_rate) || 0
-        commissionType = get(eventStore, 'commission_type', this.event.commission_type) || 1
+        if (eventStore.length) {
+          commissionRate = get(eventStore[0], 'commission_rate', this.event.commission_rate) || 0
+          commissionType = get(eventStore[0], 'commission_type', this.event.commission_type) || 1
+        }
       }
       return {
         ...this.serviceSummary,
@@ -270,6 +272,10 @@ export default {
         ...params,
         event_uuid: get(this.event, 'uuid')
       }
+      data = omitBy(data, (value, key) => {
+        const extra = ['event_stores', 'total_cost', 'total_services']
+        return extra.includes(key) || isNull(value)
+      })
       await this.$store.dispatch('stores/updateItem', { data, params: { id: this.store.uuid } })
       await this.$store.dispatch('stores/serviceSummary/getItem', { params: { id: this.store.uuid } })
     }
