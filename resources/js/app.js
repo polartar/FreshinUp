@@ -18,8 +18,6 @@ import companyOwners from '~/store/modules/companyOwners.js'
 import companyDetails from '~/store/modules/companyDetails.js'
 import events from '~/store/modules/events.js'
 import eventStatuses from '~/store/modules/eventStatuses.js'
-import stores from '~/store/modules/stores.js'
-import storeStatuses from '~/store/modules/storeStatuses.js'
 import eventMenuItems from '~/store/modules/eventMenuItems.js'
 import messages from '~/store/modules/messages.js'
 
@@ -154,8 +152,6 @@ const appInstance = new App({
       companyDetails: companyDetails({}),
       events: events({}),
       eventStatuses: eventStatuses({}),
-      stores: stores({}),
-      storeStatuses: storeStatuses({}),
       eventMenuItems: eventMenuItems({}),
       messages: messages({})
 
