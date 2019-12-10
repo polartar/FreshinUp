@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Store;
 
 use App\Models\Foodfleet\EventMenuItem;
 use Illuminate\Http\Request;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Store;
 use App\User;
 use App\Models\Foodfleet\Company;
 use Illuminate\Http\Request;
