@@ -344,7 +344,7 @@ class StoresTest extends TestCase
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
     }
 
-    public function testUpdateItem()
+    public function testUpdateCommission()
     {
         $user = factory(User::class)->create();
 

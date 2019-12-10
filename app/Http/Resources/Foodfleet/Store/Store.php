@@ -7,6 +7,9 @@ use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
+use App\Http\Resources\Foodfleet\EventMenuItem;
+use App\Http\Resources\Foodfleet\Message;
+use App\Http\Resources\Foodfleet\Document\Document;
 
 class Store extends JsonResource
 {
@@ -23,10 +26,10 @@ class Store extends JsonResource
             "name" => $this->name,
             "status" => $this->status,
             "addresses" => Address::collection($this->addresses),
-            "tags" => StoreTag::collection($this->whenLoaded('tags')),
+            "tags" => Tag::collection($this->whenLoaded('tags')),
             "event_stores" => EventStore::collection($this->whenLoaded('events')),
             "menuItems" => EventMenuItem::collection($this->whenLoaded('menuItems')),
-            "documents" => Document\Document::collection($this->whenLoaded('documents')),
+            "documents" => Document::collection($this->whenLoaded('documents')),
             "messages" => Message::collection($this->whenLoaded('messages')),
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier'))

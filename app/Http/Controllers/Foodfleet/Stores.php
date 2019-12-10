@@ -79,8 +79,11 @@ class Stores extends Controller
         $commission_type = $collection->get('commission_type');
         if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
             $event = Event::where('uuid', $event_uuid)->first();
-            $store->events()->updateExistingPivot($event, ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]);
-        }       
+            $store->events()->updateExistingPivot(
+                $event,
+                ['commission_rate' => $commission_rate,'commission_type' => $commission_type]
+            );
+        }
 
         return new StoreResource($store);
     }

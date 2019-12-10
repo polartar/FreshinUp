@@ -29,7 +29,7 @@ class StoreSummary extends JsonResource
             "name" => $this->name,
             "status" => $this->status,
             "owner" => $owner,
-            "tags" => StoreTag::collection($this->whenLoaded('tags'))
+            "tags" => Tag::collection($this->whenLoaded('tags'))
         ];
     }
 }
