@@ -12,8 +12,8 @@ storiesOf('FoodFleet|event/EventSettingsModal', module)
   .add('default', () => ({
     components: { EventSettingsModal },
     methods: {
-      save () {
-        action('save')()
+      save (params) {
+        action('save')(params)
       },
       cancel () {
         action('cancel')()

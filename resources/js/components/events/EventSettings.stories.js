@@ -17,8 +17,8 @@ storiesOf('FoodFleet|event/EventSettings', module)
       }
     },
     methods: {
-      save () {
-        action('save')()
+      save (params) {
+        action('save')(params)
       },
       cancel () {
         action('cancel')()
@@ -26,7 +26,7 @@ storiesOf('FoodFleet|event/EventSettings', module)
     },
     template: `
        <event-settings
-        isDialogOpened="true"
+        :isDialogOpened="isDialogOpened"
         @save="save"
         @cancel="cancel"
       />

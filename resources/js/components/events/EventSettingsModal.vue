@@ -20,7 +20,7 @@
     </div>
 
     <EventSettings
-      ref="form"
+      :is-dialog-opened="isDialogOpened"
       @save="save"
       @cancel="cancel"
     />
@@ -38,6 +38,7 @@ export default {
   },
   data () {
     return {
+      isDialogOpened: false,
       isChecked: false,
       selectedDate: '',
       formData: []
@@ -45,7 +46,7 @@ export default {
   },
   methods: {
     selectDate () {
-      this.$refs.form.isDialogOpened = true
+      this.isDialogOpened = true
     },
     save (formData) {
       this.formData = formData
@@ -92,10 +93,16 @@ export default {
         default:
           break
       }
+      this.$emit('save', {
+        ...formData,
+        description: this.selectedDate
+      })
+      this.isDialogOpened = false
     },
     cancel () {
       this.formData = []
       this.selectedDate = ''
+      this.isDialogOpened = false
     }
   }
 }
