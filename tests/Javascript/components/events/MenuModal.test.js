@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/events/MenuModal.vue'
 
 describe('MenuModal', () => {
@@ -40,7 +40,7 @@ describe('MenuModal', () => {
         }
       })
       expect(wrapper.vm.title).toEqual('Add new menu item')
-      wrapper.vm.menu = { id: 2, title: 'title 2' }
+      wrapper.vm.menu = { uuid: 2, title: 'title 2' }
       expect(wrapper.vm.title).toEqual('Edit menu item')
     })
   })
@@ -63,12 +63,12 @@ describe('MenuModal', () => {
         localVue: localVue,
         propsData: {
           value: true,
-          menu: { id: 1 }
+          menu: { uuid: 1 }
         }
       })
       wrapper.vm.save()
       expect(wrapper.emitted()['save']).toBeTruthy()
-      expect(wrapper.emitted()['save'][0][0]).toEqual({ id: 1 })
+      expect(wrapper.emitted()['save'][0][0]).toEqual({ uuid: 1 })
     })
   })
 

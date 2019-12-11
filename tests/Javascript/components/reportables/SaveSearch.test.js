@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/reportables/SaveSearch.vue'
 import { FIXTURE_MODIFIER_AUTOCOMPLETE, FIXTURE_MODIFIER_SELECT, FIXTURE_MODIFIER_DATE, FIXTURE_MODIFIER_TEXT } from 'tests/__data__/modifiers'
 

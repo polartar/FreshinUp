@@ -46,7 +46,10 @@ class Store extends Model
             'event_uuid',
             'uuid',
             'uuid'
-        );
+        )->withPivot([
+            'commission_rate',
+            'commission_type'
+        ]);
     }
 
     public function staffs()

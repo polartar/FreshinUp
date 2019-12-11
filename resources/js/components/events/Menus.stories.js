@@ -5,9 +5,9 @@ import { action } from '@storybook/addon-actions'
 import Menus from './Menus.vue'
 
 const menus = [
-  { uuid: 1, title: 'menu item 1', description: 'Loosely based on the world-famous shrimp burgers of the South Carolina Lowcountry.', servings: 12, cost: 200 },
-  { uuid: 2, title: 'menu item 2', description: 'description 2', servings: 12, cost: 200 },
-  { uuid: 3, title: 'menu item 3', description: 'description 3', servings: 12, cost: 2100 }
+  { uuid: 1, item: 'menu item 1', description: 'Loosely based on the world-famous shrimp burgers of the South Carolina Lowcountry.', servings: 12, cost: 200 },
+  { uuid: 2, item: 'menu item 2', description: 'description 2', servings: 12, cost: 200 },
+  { uuid: 3, item: 'menu item 3', description: 'description 3', servings: 12, cost: 2100 }
 ]
 
 storiesOf('FoodFleet|event/Menus', module)

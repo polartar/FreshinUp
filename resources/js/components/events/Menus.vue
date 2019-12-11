@@ -11,7 +11,7 @@
               mb-6
               class="menu-title"
             >
-              <span class="black--text font-weight-bold title text-uppercase">{{ menuTitle }}</span>
+              <span class="grey--text font-weight-bold title text-uppercase">{{ menuTitle }}</span>
             </v-layout>
           </v-flex>
           <v-flex
@@ -73,10 +73,10 @@ export default {
   props: {
     menuTitle: {
       type: String,
-      default: () => ''
+      default: () => 'Fleet Member Name'
     },
     menus: {
-      type: Array,
+      type: [Array, Object],
       default: () => []
     }
   },
@@ -84,7 +84,8 @@ export default {
     return {
       dialog: false,
       menu: {
-        title: null,
+        uuid: null,
+        item: null,
         servings: null,
         cost: null,
         description: null
@@ -94,7 +95,8 @@ export default {
   methods: {
     edit (params) {
       this.dialog = true
-      this.menu.title = params.title
+      this.menu.uuid = params.uuid
+      this.menu.item = params.item
       this.menu.servings = params.servings
       this.menu.cost = params.cost
       this.menu.description = params.description

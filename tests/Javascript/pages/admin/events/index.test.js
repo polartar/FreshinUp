@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_EVENTS } from 'tests/__data__/events'
 import Component from '~/pages/admin/events/index.vue'
 import events from '~/store/modules/events'

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Page from '~/pages/admin/companies/index.vue'
 

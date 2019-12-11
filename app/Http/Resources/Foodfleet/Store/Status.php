@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Foodfleet;
+namespace App\Http\Resources\Foodfleet\Store;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class StoreStatus extends JsonResource
+class Status extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,9 @@ class StoreStatus extends JsonResource
     {
         return [
             'id' => $this->id,
+            'value' => $this->id,
             'name' => $this->name,
+            'text' => $this->name
         ];
     }
 }
