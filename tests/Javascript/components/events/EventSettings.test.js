@@ -27,7 +27,7 @@ describe('Document list component', () => {
 
       wrapper.vm.selectedIntervalUnit = 'Week(s)'
       wrapper.vm.selectedIntervalValue = 2
-      wrapper.vm.selectedRepeatOnWeek = [1, 3]
+      wrapper.vm.selectedRepeatOnWeek = [0, 2]
       wrapper.vm.selectedEndsOn = 'on'
 
       wrapper.vm.save()
@@ -90,7 +90,7 @@ describe('Document list component', () => {
 
       wrapper.vm.selectedIntervalUnit = 'Week(s)'
       wrapper.vm.selectedIntervalValue = 2
-      wrapper.vm.selectedRepeatOnWeek = [1, 3]
+      wrapper.vm.selectedRepeatOnWeek = [0, 2]
       wrapper.vm.selectedEndsOn = 'after'
       wrapper.vm.selectedOccurrences = 2
 
@@ -108,28 +108,14 @@ describe('Document list component', () => {
       expect(formData['occurrences']).toBe(2)
     })
 
-    test('save function emitted save action close modal', () => {
-      const wrapper = shallowMount(Component, {
-        localVue
-      })
-
-      wrapper.vm.isDialogOpened = true
-      wrapper.vm.save()
-
-      expect(wrapper.emitted()['save']).toBeTruthy()
-      expect(wrapper.vm.isDialogOpened).toBe(false)
-    })
-
     test('cancel function emitted cancel action and close modal', () => {
       const wrapper = shallowMount(Component, {
         localVue
       })
 
-      wrapper.vm.isDialogOpened = true
       wrapper.vm.cancel()
 
       expect(wrapper.emitted()['cancel']).toBeTruthy()
-      expect(wrapper.vm.isDialogOpened).toBe(false)
     })
   })
 })
