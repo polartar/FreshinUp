@@ -67,4 +67,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('messages/new', 'Foodfleet\Messages@showNewRecommendation');
     Route::get('messages', 'Foodfleet\Messages@index');
     Route::post('messages', 'Foodfleet\Messages@store');
+
+    Route::get('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@index');
 });
