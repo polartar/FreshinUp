@@ -1,21 +1,16 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
-import EventSettings from './EventSettings'
+import EventSettingsModal from './EventSettingsModal'
 
-storiesOf('FoodFleet|event/EventSettings', module)
+storiesOf('FoodFleet|event/EventSettingsModal', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('default', () => ({
-    components: { EventSettings },
-    data () {
-      return {
-        isDialogOpened: true
-      }
-    },
+    components: { EventSettingsModal },
     methods: {
       save (params) {
         action('save')(params)
@@ -25,8 +20,7 @@ storiesOf('FoodFleet|event/EventSettings', module)
       }
     },
     template: `
-       <event-settings
-        :isDialogOpened="isDialogOpened"
+      <event-settings-modal
         @save="save"
         @cancel="cancel"
       />
