@@ -271,7 +271,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Confirmed
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -284,7 +284,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -297,7 +297,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Approved
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        On Hold
                       </div>
                     </a>
                   </div>
@@ -548,7 +561,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Confirmed
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -561,7 +574,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -574,7 +587,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Approved
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        On Hold
                       </div>
                     </a>
                   </div>
@@ -783,7 +809,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                   class="v-btn__content"
                 >
                   
-  Confirmed
+  Revision
  
                   <i
                     aria-hidden="true"
@@ -837,7 +863,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Confirmed
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -850,7 +876,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -863,7 +889,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Approved
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        On Hold
                       </div>
                     </a>
                   </div>

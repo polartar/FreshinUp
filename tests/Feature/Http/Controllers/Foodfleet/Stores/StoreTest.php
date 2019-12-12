@@ -48,6 +48,26 @@ class StoresTest extends TestCase
         }
     }
 
+    public function testGetItem()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $store = factory(Store::class)->create();
+
+        $data = $this
+            ->json('GET', 'api/foodfleet/stores/' . $store->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertEquals($store->uuid, $data['uuid']);
+        $this->assertEquals($store->name, $data['name']);
+    }
+
     private function createStoreWithTags($tags)
     {
         $store = factory(Store::class)->create();
@@ -64,7 +84,7 @@ class StoresTest extends TestCase
         Passport::actingAs($user);
 
         $tags = factory(StoreTag::class, 3)->create();
-        
+
         $stores = [];
         $stores[] = $this->createStoreWithTags([$tags[0], $tags[1]]);
         $stores[] = $this->createStoreWithTags([$tags[0], $tags[2]]);
@@ -84,13 +104,13 @@ class StoresTest extends TestCase
         $this->assertArraySubset([
             'uuid' => $stores[0]->uuid,
             'name' => $stores[0]->name,
-            'tags' => [ [ 'name' => $tags[0]->name ] ]
+            'tags' => [['name' => $tags[0]->name]]
         ], $data[0]);
-        
+
         $this->assertArraySubset([
             'uuid' => $stores[1]->uuid,
             'name' => $stores[1]->name,
-            'tags' => [ [ 'name' => $tags[0]->name ] ]
+            'tags' => [['name' => $tags[0]->name]]
         ], $data[1]);
     }
 
@@ -103,9 +123,9 @@ class StoresTest extends TestCase
         $stores = factory(Store::class, 2)->create([
             'status' => 1
         ]);
-            
+
         $addresses = factory(Address::class, 2)->create();
-        
+
         foreach ($stores as $key => $store) {
             $store->addresses()->save($addresses[$key]);
         }
@@ -129,7 +149,7 @@ class StoresTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $stores[$key]->uuid,
                 'name' => $stores[$key]->name,
-                'addresses' => [ [ 'id' => $addresses[$key]->id ] ]
+                'addresses' => [['id' => $addresses[$key]->id]]
             ], $value);
         }
     }
@@ -292,7 +312,7 @@ class StoresTest extends TestCase
         $this->assertCount(3, $data);
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
 
-        
+
         $data = $this
             ->json('get', "/api/foodfleet/stores?sort=status")
             ->assertStatus(200)

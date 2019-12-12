@@ -3,11 +3,9 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Actions\UpdateStore;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Store;
-use App\Actions\UpdateDocument;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -43,6 +41,25 @@ class Stores extends Controller
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param $uuid
+     * @return StoreResource
+     */
+    public function show(Request $request, $uuid)
+    {
+        $model = QueryBuilder::for(Store::class, $request)
+            ->where('uuid', $uuid);
+
+        // Include eventsCount in the query if needed
+        if ($request->has('provide') && $request->get('provide') == 'events-count') {
+            $model->withCount('events');
+        }
+
+        return new StoreResource($model->firstOrFail());
     }
 
     /**

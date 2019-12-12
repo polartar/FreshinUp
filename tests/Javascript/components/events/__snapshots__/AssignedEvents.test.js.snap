@@ -50,138 +50,108 @@ exports[`Assigned Events component Snapshots events set 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="layout align-center justify-center row fill-height"
+      class="filter-transparent v-card v-sheet theme--light transparent"
+      icon="search"
     >
-      <div
-        class="flex grow pa-1"
+      <form
+        class="v-form"
+        novalidate="novalidate"
       >
         <div
-          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--hide-details theme--light"
+          class="container filter-sorter-container fluid"
         >
+           
           <div
-            class="v-input__control"
+            class="layout filter-sorter-main-layout row wrap"
           >
-            <div
-              class="v-input__slot"
-            >
-              <div
-                class="v-input__prepend-inner"
-              >
-                <div
-                  class="v-input__icon v-input__icon--prepend-inner"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon material-icons theme--light"
-                  >
-                    search
-                  </i>
-                </div>
-              </div>
-              <div
-                class="v-text-field__slot"
-              >
-                <label
-                  aria-hidden="true"
-                  class="v-label theme--light"
-                  style="left: 0px; position: absolute;"
-                >
-                  Search
-                </label>
-                <input
-                  aria-label="Search"
-                  type="text"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="flex shrink pl-3"
-      >
-        
-        Sort by
-      
-      </div>
-       
-      <div
-        class="flex shrink pa-1"
-      >
-        <div
-          class="v-menu"
-        >
-          <button
-            class="v-btn theme--dark primary primary-text--text"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              
-          Sort
-         
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--right material-icons theme--dark"
-              >
-                arrow_drop_down
-              </i>
-            </div>
-          </button>
-          <div
-            class="v-menu__content theme--light "
-            style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-          >
+            <!---->
              
             <div
-              class="v-list theme--light"
-              role="list"
+              class="flex grow"
             >
               <div
-                role="listitem"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder theme--light"
               >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
+                <div
+                  class="v-input__control"
                 >
                   <div
-                    class="v-list__tile__title"
+                    class="v-input__slot"
                   >
-                    Status
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Filter by event name"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          search
+                        </i>
+                      </div>
+                    </div>
                   </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
                   <div
-                    class="v-list__tile__title"
+                    class="v-text-field__details"
                   >
-                    Name
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
                   </div>
-                </a>
+                </div>
               </div>
-              <div
-                role="listitem"
+            </div>
+             
+            <!---->
+             
+            <!---->
+             
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          >
+            <div
+              class="flex"
+            />
+             
+            <div
+              class="flex text-no-wrap"
+            >
+              <button
+                class="v-btn v-btn--large theme--light"
+                type="button"
               >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
+                <div
+                  class="v-btn__content"
                 >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Date
-                  </div>
-                </a>
-              </div>
+                  
+            Clear Filters
+          
+                </div>
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
      
     <div
@@ -196,37 +166,61 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           <thead>
             <tr>
               <th
-                aria-label="Status: Not sorted."
+                aria-label="Status: Not sorted. Activate to sort ascending."
                 aria-sort="none"
-                class="column text-xs-left"
+                class="column sortable text-xs-left"
                 role="columnheader"
                 scope="col"
+                tabindex="0"
               >
                 <span>
                   Status
                 </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
               </th>
               <th
-                aria-label="Name / Category: Not sorted."
+                aria-label="Name / Category: Not sorted. Activate to sort ascending."
                 aria-sort="none"
-                class="column text-xs-left"
+                class="column sortable text-xs-left"
                 role="columnheader"
                 scope="col"
+                tabindex="0"
               >
                 <span>
                   Name / Category
                 </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
               </th>
               <th
-                aria-label="Date / Venue: Not sorted."
+                aria-label="Date / Venue: Not sorted. Activate to sort ascending."
                 aria-sort="none"
-                class="column text-xs-left"
+                class="column sortable text-xs-left"
                 role="columnheader"
                 scope="col"
+                tabindex="0"
               >
                 <span>
                   Date / Venue
                 </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
               </th>
               <th
                 aria-label="Managed By: Not sorted."

@@ -1,4 +1,4 @@
-export const FIXTURE_STORES = [
+const stores = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'Burger Babes',
@@ -21,7 +21,8 @@ export const FIXTURE_STORES = [
         name: 'hic'
       }
     ],
-    assigned: false
+    assigned: false,
+    events_count: 10
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
@@ -49,7 +50,8 @@ export const FIXTURE_STORES = [
         name: 'hicsdfsdf'
       }
     ],
-    assigned: true
+    assigned: true,
+    events_count: 2
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
@@ -81,6 +83,11 @@ export const FIXTURE_STORES = [
         name: 'fsdf'
       }
     ],
-    assigned: true
+    assigned: true,
+    events_count: 0
   }
 ]
+const store = stores[0]
+
+export const FIXTURE_STORE = store
+export const FIXTURE_STORES = stores

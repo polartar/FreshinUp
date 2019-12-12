@@ -12,7 +12,10 @@
     @run="run"
     @clear="clearFilters"
   >
-    <template v-slot:expanded="slotProps">
+    <template
+      v-if="!withoutExpansion"
+      v-slot:expanded="slotProps"
+    >
       <v-card-text class="px-0 pb-0">
         <v-layout
           row
@@ -210,6 +213,10 @@ export default {
     statuses: {
       type: Array,
       default: () => []
+    },
+    withoutExpansion: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

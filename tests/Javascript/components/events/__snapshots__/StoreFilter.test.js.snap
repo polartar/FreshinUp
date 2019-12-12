@@ -212,7 +212,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Confirmed
+                                      Revision
                                     </div>
                                   </div>
                                 </a>
@@ -229,7 +229,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Past
+                                      Rejected
                                     </div>
                                   </div>
                                 </a>
@@ -246,7 +246,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Cancelled
+                                      Approved
                                     </div>
                                   </div>
                                 </a>
