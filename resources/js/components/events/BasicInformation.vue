@@ -241,6 +241,19 @@
                 />
               </v-flex>
             </v-layout>
+            <v-layout
+              row
+              wrap
+            >
+              <v-flex
+                :pr-3="$vuetify.breakpoint.mdAndUp"
+              >
+                <event-settings-modal
+                  :schedule="eventData.schedule"
+                  @save="eventSettingsSave"
+                />
+              </v-flex>
+            </v-layout>
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -276,9 +289,10 @@ import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import Validate from 'fresh-bus/components/mixins/Validate'
+import EventSettingsModal from '~/components/events/EventSettingsModal.vue'
 
 export default {
-  components: { Simple, VueCtkDateTimePicker },
+  components: { Simple, VueCtkDateTimePicker, EventSettingsModal },
   mixins: [
     Validate
   ],
@@ -306,7 +320,8 @@ export default {
         type: edit ? get(this.event, 'type') : 1,
         event_tags: edit ? get(this.event, 'event_tags') : [],
         start_at: edit ? get(this.event, 'start_at') : null,
-        end_at: edit ? get(this.event, 'end_at') : null
+        end_at: edit ? get(this.event, 'end_at') : null,
+        schedule: edit ? get(this.event, 'schedule') : null
       },
       edit: edit,
       commissionTypes: [
@@ -330,6 +345,9 @@ export default {
   methods: {
     cancel () {
       this.$emit('cancel')
+    },
+    eventSettingsSave (params) {
+      this.eventData.schedule = params
     },
     save () {
       this.$emit('save', this.eventData)

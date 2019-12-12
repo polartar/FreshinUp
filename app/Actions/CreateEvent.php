@@ -15,12 +15,7 @@ class CreateEvent implements Action
     public function execute(array $data)
     {
         $collection = collect($data);
-        $createData = $collection->except([
-            'event_tags',
-            'interval_unit', 'interval_value', 'occurrences',
-            'ends_on', 'repeat_on', 'description'
-            ])->all();
-
+        $createData = $collection->except(['event_tags', 'schedule'])->all();
         $event = Event::create($createData);
 
         $tags = $collection->get('event_tags');
@@ -42,15 +37,15 @@ class CreateEvent implements Action
 
     private function handleSchedule(Event $event, $collection)
     {
-        $interval_unit = $collection->get('interval_unit');
-        $interval_value = $collection->get('interval_value');
-        $occurrences = $collection->get('occurrences');
-        $ends_on = $collection->get('ends_on');
-        $repeat_on = $collection->get('repeat_on');
-        $description = $collection->get('description');
-        if ((empty($interval_unit) || empty($interval_value) || empty($occurrences) || 
-            empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)')
-        {
+        $schedule = collect($collection->get('schedule'));
+        $interval_unit = $schedule->get('interval_unit');
+        $interval_value = $schedule->get('interval_value');
+        $occurrences = $schedule->get('occurrences');
+        $ends_on = $schedule->get('ends_on');
+        $repeat_on = $schedule->get('repeat_on');
+        $description = $schedule->get('description');
+        if ((empty($interval_unit) || empty($interval_value) || empty($occurrences) ||
+            empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
         }
         
@@ -60,7 +55,7 @@ class CreateEvent implements Action
         $schedule->interval_value = $interval_value;
         $schedule->occurrences = $occurrences;
         $schedule->ends_on = $ends_on;
-        $schedule->repeat_on = $repeat_on;
+        $schedule->repeat_on = json_encode($repeat_on);
         $schedule->description = $description;
         $schedule->save();
 

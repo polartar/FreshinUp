@@ -20,7 +20,7 @@ class EventSchedule extends JsonResource
             "interval_value" => $this->interval_value,
             "occurrences" => $this->occurrences,
             "ends_on" => $this->ends_on,
-            "repeat_on" => $this->repeat_on,
+            "repeat_on" => json_decode($this->repeat_on),
             "description" => $this->description,
             "event" => new Event($this->whenLoaded('event')),
             "schedule_occurrences" => EventOccurrence::collection($this->whenLoaded('scheduleOccurrences'))

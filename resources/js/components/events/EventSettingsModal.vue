@@ -21,6 +21,7 @@
 
     <EventSettings
       :is-dialog-opened="isDialogOpened"
+      :schedule="schedule"
       @save="save"
       @cancel="cancel"
     />
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+import { get } from 'lodash'
 import moment from 'moment'
 import EventSettings from './EventSettings'
 
@@ -36,28 +38,32 @@ export default {
   components: {
     EventSettings
   },
+  props: {
+    schedule: {
+      type: Object,
+      default: null
+    }
+  },
   data () {
+    let edit = get(this, 'schedule.uuid', null) !== null
     return {
       isDialogOpened: false,
-      isChecked: false,
-      selectedDate: '',
-      formData: []
+      isChecked: edit ? true : false,
+      selectedDate: edit ? get(this.schedule, 'description') : '',
     }
   },
   methods: {
     selectDate () {
       this.isDialogOpened = true
     },
-    save (formData) {
-      this.formData = formData
-
+    save (params) {
       const currentDate = moment()
 
-      switch (formData.intervalUnit) {
+      switch (params.interval_unit) {
         case 'Week(s)':
-          const weekDays = formData.repeatOn.map(v => v.text)
-          if (formData.endsOn === 'after') {
-            const daysLeft = formData.occurrences * formData.intervalValue
+          const weekDays = params.repeat_on.map(v => v.text)
+          if (params.ends_on === 'after') {
+            const daysLeft = params.occurrences * params.interval_value * 7
             const endDate = currentDate.add(daysLeft, 'd')
 
             this.selectedDate = `${weekDays.join(', ')}, until ${endDate.format('MMMM Do, YYYY')}`
@@ -67,9 +73,9 @@ export default {
           break
 
         case 'Month(s)':
-          const description = formData.repeatOn[0].text
-          if (formData.endsOn === 'after') {
-            const monthsLeft = formData.occurrences * formData.intervalValue
+          const description = params.repeat_on[0].text
+          if (params.ends_on === 'after') {
+            const monthsLeft = params.occurrences * params.interval_value
             const endDate = currentDate.add(monthsLeft, 'M')
 
             this.selectedDate = `${description}, util ${endDate.format('MMMM Do, YYYY')}`
@@ -79,14 +85,14 @@ export default {
           break
 
         case 'Year(s)':
-          if (formData.endsOn === 'after') {
-            const yearsLeft = formData.occurrences * formData.intervalValue
+          if (params.ends_on === 'after') {
+            const yearsLeft = params.occurrences * params.interval_value
             const endDate = currentDate.add(yearsLeft, 'Y')
 
-            this.selectedDate = `Every ${formData.intervalValue} year(s),
+            this.selectedDate = `Every ${params.interval_value} year(s),
               until ${endDate.format('MMMM Do, YYYY')}`
           } else {
-            this.selectedDate = `Every ${formData.intervalValue} year(s)`
+            this.selectedDate = `Every ${params.interval_value} year(s)`
           }
           break
 
@@ -94,14 +100,12 @@ export default {
           break
       }
       this.$emit('save', {
-        ...formData,
+        ...params,
         description: this.selectedDate
       })
       this.isDialogOpened = false
     },
     cancel () {
-      this.formData = []
-      this.selectedDate = ''
       this.isDialogOpened = false
     }
   }

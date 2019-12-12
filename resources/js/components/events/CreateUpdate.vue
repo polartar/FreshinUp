@@ -140,6 +140,7 @@ export default {
       this.event.host_uuid = data.host_uuid
       this.event.manager_uuid = data.manager_uuid
       this.event.name = data.name
+      this.event.schedule = data.schedule
     },
     async validator () {
       const valids = await Promise.all([
