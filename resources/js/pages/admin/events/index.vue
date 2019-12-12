@@ -222,7 +222,7 @@ export default {
       this.$router.push({ path: '/admin/events/new' })
     },
     eventEdit (event) {
-      this.$router.push({ path: '/admin/events/' + event.uuid })
+      this.$router.push({ path: '/admin/events/' + event.uuid + '/edit' })
     },
     deleteSingle (event) {
       this.deleteTemp = [event]

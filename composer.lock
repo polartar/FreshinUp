@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c772bb96ae5a1f975a007dc56723cf9e",
+    "content-hash": "1697d6276f48d53e5f2029afc977b6c4",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.128.3",
+            "version": "3.128.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9e46eae4974542b8e3e6107de857668b6968081d"
+                "reference": "eea8dbe60b23cbefdb3de7b635a0971a12067c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e46eae4974542b8e3e6107de857668b6968081d",
-                "reference": "9e46eae4974542b8e3e6107de857668b6968081d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eea8dbe60b23cbefdb3de7b635a0971a12067c6f",
+                "reference": "eea8dbe60b23cbefdb3de7b635a0971a12067c6f",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-12-11T19:13:12+00:00"
+            "time": "2019-12-12T19:15:28+00:00"
         },
         {
             "name": "bensampo/laravel-enum",
@@ -1006,16 +1006,16 @@
         },
         {
             "name": "freshinup/fresh-bus-forms",
-            "version": "2.17.0",
+            "version": "2.20.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:FreshinUp/fresh-bus-forms.git",
-                "reference": "1cb55b43038d086798d672ce76785da1f871c19e"
+                "reference": "a1b33e3bd783cf3180956775a5e3442e3ea97991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/1cb55b43038d086798d672ce76785da1f871c19e",
-                "reference": "1cb55b43038d086798d672ce76785da1f871c19e",
+                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/a1b33e3bd783cf3180956775a5e3442e3ea97991",
+                "reference": "a1b33e3bd783cf3180956775a5e3442e3ea97991",
                 "shasum": ""
             },
             "require": {
@@ -1124,10 +1124,10 @@
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.17.0",
+                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.20.1",
                 "issues": "https://github.com/FreshinUp/fresh-bus-forms/issues"
             },
-            "time": "2019-11-29T03:11:37+00:00"
+            "time": "2019-12-06T01:12:17+00:00"
         },
         {
             "name": "fzaninotto/faker",

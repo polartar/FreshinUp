@@ -182,6 +182,7 @@ exports[`Event StoreServiceSummary component Snapshots cancel state  1`] = `
               error-messages=""
               single-line=""
               solo=""
+              type="number"
               value="30"
             />
           </v-layout-stub>
@@ -437,6 +438,7 @@ exports[`Event StoreServiceSummary component Snapshots edit state  1`] = `
               error-messages=""
               single-line=""
               solo=""
+              type="number"
               value="30"
             />
           </v-layout-stub>
@@ -692,6 +694,7 @@ exports[`Event StoreServiceSummary component Snapshots required set 1`] = `
               error-messages=""
               single-line=""
               solo=""
+              type="number"
               value="30"
             />
           </v-layout-stub>

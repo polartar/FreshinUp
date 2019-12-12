@@ -243,7 +243,6 @@ export default {
   methods: {
     cancel () {
       this.$emit('cancel', false)
-      this.isDialogOpened = false
     },
     resetRepeatOnSelections () {
       this.selectedRepeatOnWeek = []
@@ -255,9 +254,9 @@ export default {
       switch (this.selectedIntervalUnit) {
         case 'Week(s)':
           selectedRepeatOn = this.repeatOnWeekOptions.filter(day => {
-            return this.selectedRepeatOnWeek.find(dayId => {
-              return dayId === day.id
-            })
+            return this.selectedRepeatOnWeek.find(value => {
+              return (value + 1) === day.id
+            }) >= 0
           })
           break
         case 'Month(s)':
@@ -276,9 +275,7 @@ export default {
         endsOn: this.selectedEndsOn,
         occurrences: this.selectedOccurrences
       }
-
       this.$emit('save', formData)
-      this.isDialogOpened = false
     }
   }
 }

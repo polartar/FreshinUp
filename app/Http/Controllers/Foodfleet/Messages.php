@@ -56,9 +56,9 @@ class Messages extends Controller
         $user = $request->user();
 
         $this->validate($request, [
-            'content' => 'required',
-            'event_uuid' => 'string|exists:events,uuid',
-            'store_uuid' => 'string|exists:stores,uuid'
+            'content' => 'string|required',
+            'event_uuid' => 'string|required|exists:events,uuid',
+            'store_uuid' => 'string|required|exists:stores,uuid'
         ]);
 
         $inputs = $request->input();

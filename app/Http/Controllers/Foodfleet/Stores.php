@@ -5,11 +5,15 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Store\Store as StoreResource;
+use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
+use App\Http\Resources\Foodfleet\Store\StoreServiceSummary as StoreServiceSummaryResource;
+use App\Filters\Store\TagUuid as FilterTagUuid;
 
 class Stores extends Controller
 {
@@ -73,16 +77,68 @@ class Stores extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
-            'status' => 'integer'
+            'status' => 'integer',
+            'commission_rate' => 'integer',
+            'commission_type' => 'integer',
+            'event_uuid' => 'string|exists:events,uuid'
         ]);
 
         $inputs = $request->input();
+        $collection = collect($inputs);
+        $updateData = $collection->except(['event_uuid', 'commission_rate', 'commission_type'])->all();
         $store = Store::where('uuid', $uuid)->first();
         if ($store) {
-            $store->update($inputs);
+            $store->update($updateData);
+        }
+
+        $event_uuid = $collection->get('event_uuid');
+        $commission_rate = $collection->get('commission_rate');
+        $commission_type = $collection->get('commission_type');
+        if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
+            $event = Event::where('uuid', $event_uuid)->first();
+            $store->events()->updateExistingPivot(
+                $event,
+                ['commission_rate' => $commission_rate,'commission_type' => $commission_type]
+            );
         }
 
         return new StoreResource($store);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param $uuid
+     * @return EventResource
+     */
+    public function show(Request $request, $uuid)
+    {
+        $store = QueryBuilder::for(Store::class, $request)
+            ->where('uuid', $uuid)
+            ->allowedIncludes([ 'menus', 'tags', 'documents', 'events' ])
+            ->firstOrFail();
+
+        return new StoreResource($store);
+    }
+
+    public function summary(Request $request, $uuid)
+    {
+        $store = QueryBuilder::for(Store::class, $request)
+            ->with('tags')
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        return new StoreSummaryResource($store);
+    }
+
+    public function serviceSummary(Request $request, $uuid)
+    {
+        $store = QueryBuilder::for(Store::class, $request)
+            ->with('events')
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        return new StoreServiceSummaryResource($store);
     }
 
     /**

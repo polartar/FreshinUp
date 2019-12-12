@@ -28,8 +28,9 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
 
-    Route::get('events/new', 'Foodfleet\Events@showNewRecommendation');
-    Route::apiResource('events', 'Foodfleet\Events');
+    Route::get('events/new', 'Foodfleet\Events\Events@showNewRecommendation');
+    Route::get('events/{event}/stores', 'Foodfleet\Events\Stores@index');
+    Route::apiResource('events', 'Foodfleet\Events\Events');
 
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
@@ -37,10 +38,8 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('stores', 'Foodfleet\Stores');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
-
-    Route::apiResource('stores', 'Foodfleet\Stores');
-    Route::get('store-tags', 'Foodfleet\StoreTags@index');
-    Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
+    Route::get('store-summary/{uuid}', 'Foodfleet\Stores@summary');
+    Route::get('store-service-summary/{uuid}', 'Foodfleet\Stores@serviceSummary');
     
     Route::get('event-menu-items/new', 'Foodfleet\EventMenuItems@showNewRecommendation');
     Route::apiResource('event-menu-items', 'Foodfleet\EventMenuItems');

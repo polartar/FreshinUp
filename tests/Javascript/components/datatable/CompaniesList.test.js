@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Component from '~/components/datatable/CompaniesList.vue'
 

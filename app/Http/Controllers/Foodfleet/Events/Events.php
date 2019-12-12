@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Foodfleet;
+namespace App\Http\Controllers\Foodfleet\Events;
 
 use App\Http\Controllers\Controller;
 use App\Actions\CreateEvent;

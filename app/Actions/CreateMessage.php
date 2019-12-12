@@ -34,7 +34,9 @@ class CreateMessage implements Action
         $createData = $collection->all();
         $message = Message::create($createData);
 
-        $this->sendMessage($message, $user, $recipient);
+        if (!empty($recipient)) {
+            $this->sendMessage($message, $user, $recipient);
+        }
 
         return $message->refresh();
     }

@@ -21,8 +21,13 @@ const stores = [
         name: 'hic'
       }
     ],
-    assigned: false,
-    events_count: 10
+    events_count: 10,
+    owner: {
+      id: 1,
+      name: 'Level1 User',
+      company: 'Laravel'
+    },
+    assigned: false
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
@@ -50,8 +55,13 @@ const stores = [
         name: 'hicsdfsdf'
       }
     ],
-    assigned: true,
-    events_count: 2
+    events_count: 2,
+    owner: {
+      id: 2,
+      name: 'Level2 User',
+      company: 'Bogisich LLC'
+    },
+    assigned: true
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
@@ -83,8 +93,13 @@ const stores = [
         name: 'fsdf'
       }
     ],
-    assigned: true,
-    events_count: 0
+    events_count: 0,
+    owner: {
+      id: 3,
+      name: 'Level3 User',
+      company: 'Rempel LLC'
+    },
+    assigned: true
   }
 ]
 const store = stores[0]
