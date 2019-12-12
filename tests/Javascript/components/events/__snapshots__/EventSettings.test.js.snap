@@ -12,7 +12,7 @@ exports[`Document list component Snapshots 1`] = `
   >
     <div
       class="v-dialog"
-      style="width: 100%; display: none;"
+      style="width: 80%; display: none;"
     >
       <div
         class="white mb-2"
@@ -83,7 +83,7 @@ exports[`Document list component Snapshots 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
-                      data-vv-name="intervalValue"
+                      data-vv-name="interval_value"
                       type="text"
                     />
                   </div>
@@ -115,7 +115,7 @@ exports[`Document list component Snapshots 1`] = `
                       <input
                         aria-readonly="false"
                         autocomplete="on"
-                        data-vv-name="selectedIntervalUnit"
+                        data-vv-name="interval_unit"
                         readonly="readonly"
                         type="text"
                       />
@@ -329,7 +329,7 @@ exports[`Document list component Snapshots 1`] = `
           >
             <div
               class="v-input pb-3 ends-on-selection v-input--selection-controls v-input--radio-group v-input--radio-group--column v-input--hide-details theme--light"
-              data-vv-name="selectedEndsOn"
+              data-vv-name="ends_on"
             >
               <div
                 class="v-input__control"

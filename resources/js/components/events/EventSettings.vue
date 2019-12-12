@@ -219,19 +219,19 @@ export default {
   },
   data () {
     let edit = get(this, 'schedule.uuid', null) !== null
-    let interval_unit = get(this.schedule, 'interval_unit', 'Week(s)')
-    let repeat_on = get(this.schedule, 'repeat_on', [])
+    let intervalUnit = get(this.schedule, 'interval_unit', 'Week(s)')
+    let repeatOn = get(this.schedule, 'repeat_on', [])
 
     let selectedRepeatOnWeek = []
-    if (edit && interval_unit === 'Week(s)') {
-      selectedRepeatOnWeek = repeat_on.map(ele => {
+    if (edit && intervalUnit === 'Week(s)') {
+      selectedRepeatOnWeek = repeatOn.map(ele => {
         return ele.id - 1
       })
     }
 
     let selectedRepeatOnMonth = ''
-    if (edit && interval_unit === 'Month(s)') {
-      selectedRepeatOnMonth = repeat_on.map(ele => {
+    if (edit && intervalUnit === 'Month(s)') {
+      selectedRepeatOnMonth = repeatOn.map(ele => {
         return ele.id
       })[0]
     }
@@ -255,9 +255,9 @@ export default {
       selectedRepeatOnWeek: selectedRepeatOnWeek,
       selectedRepeatOnMonth: selectedRepeatOnMonth,
       scheduleData: {
-        interval_unit: interval_unit,
+        interval_unit: intervalUnit,
         interval_value: get(this.schedule, 'interval_value', ''),
-        repeat_on: repeat_on,
+        repeat_on: repeatOn,
         ends_on: get(this.schedule, 'ends_on'),
         occurrences: get(this.schedule, 'occurrences')
       },

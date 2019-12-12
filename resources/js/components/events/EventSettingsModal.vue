@@ -48,8 +48,8 @@ export default {
     let edit = get(this, 'schedule.uuid', null) !== null
     return {
       isDialogOpened: false,
-      isChecked: edit ? true : false,
-      selectedDate: edit ? get(this.schedule, 'description') : '',
+      isChecked: edit,
+      selectedDate: edit ? get(this.schedule, 'description') : ''
     }
   },
   methods: {
