@@ -48,25 +48,6 @@ class Stores extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param $uuid
-     * @return StoreResource
-     */
-    public function show(Request $request, $uuid)
-    {
-        $model = QueryBuilder::for(Store::class, $request)
-            ->where('uuid', $uuid);
-
-        // Include eventsCount in the query if needed
-        if ($request->has('provide') && $request->get('provide') == 'events-count') {
-            $model->withCount('events');
-        }
-
-        return new StoreResource($model->firstOrFail());
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param Request $request
@@ -98,7 +79,7 @@ class Stores extends Controller
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
                 $event,
-                ['commission_rate' => $commission_rate,'commission_type' => $commission_type]
+                ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]
             );
         }
 
@@ -115,10 +96,14 @@ class Stores extends Controller
     {
         $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'menus', 'tags', 'documents', 'events' ])
-            ->firstOrFail();
+            ->allowedIncludes(['menus', 'tags', 'documents', 'events']);
 
-        return new StoreResource($store);
+        // Include eventsCount in the query if needed
+        if ($request->has('provide') && $request->get('provide') == 'events-count') {
+            $store->withCount('events');
+        }
+
+        return new StoreResource($store->firstOrFail());
     }
 
     public function summary(Request $request, $uuid)
