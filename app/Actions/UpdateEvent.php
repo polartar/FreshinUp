@@ -46,13 +46,14 @@ class UpdateEvent implements Action
 
     private function handleSchedule(Event $event, $collection)
     {
-        $schedule = collect($collection->get('schedule'));
-        $interval_unit = $schedule->get('interval_unit');
-        $interval_value = $schedule->get('interval_value');
-        $occurrences = $schedule->get('occurrences');
-        $ends_on = $schedule->get('ends_on');
-        $repeat_on = $schedule->get('repeat_on');
-        $description = $schedule->get('description');
+        $request = collect($collection->get('schedule'));
+        
+        $interval_unit = $request->get('interval_unit');
+        $interval_value = $request->get('interval_value');
+        $occurrences = $request->get('occurrences');
+        $ends_on = $request->get('ends_on');
+        $repeat_on = $request->get('repeat_on');
+        $description = $request->get('description');
         if ((empty($interval_unit) || empty($interval_value) || empty($occurrences) ||
             empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
@@ -62,7 +63,7 @@ class UpdateEvent implements Action
         if (empty($schedule)) {
             $schedule = new EventSchedule;
         } else {
-            $schedule->scheduleOccurrences()->forceDelete();
+            $schedule->scheduleOccurrences()->delete();
         }
         $schedule->event_uuid = $event->uuid;
         $schedule->interval_unit = $interval_unit;
@@ -73,7 +74,11 @@ class UpdateEvent implements Action
         $schedule->description = $description;
         $schedule->save();
 
-        $schedule_periods = EventScheduleHelper::fakeAnalyzeSchedule($schedule);
+        $schedule_periods = EventScheduleHelper::analyzeSchedule(
+            $schedule,
+            $event->start_at,
+            $event->end_at
+        );
         foreach ($schedule_periods as $value) {
             $occurrence = new EventOccurrence;
             $occurrence->event_schedule_uuid = $schedule->uuid;

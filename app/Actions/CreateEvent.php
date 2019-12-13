@@ -59,7 +59,11 @@ class CreateEvent implements Action
         $schedule->description = $description;
         $schedule->save();
 
-        $schedule_periods = EventScheduleHelper::fakeAnalyzeSchedule($schedule);
+        $schedule_periods = EventScheduleHelper::analyzeSchedule(
+            $schedule,
+            $event->start_at,
+            $event->end_at
+        );
         foreach ($schedule_periods as $value) {
             $occurrence = new EventOccurrence;
             $occurrence->event_schedule_uuid = $schedule->uuid;

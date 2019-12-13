@@ -9,6 +9,7 @@ use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\EventSchedule;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 
 use App\Enums\EventStatus as EventStatusEnum;
@@ -570,6 +571,53 @@ class EventTest extends TestCase
         }), $returnedEvent['event_tags']);
     }
 
+    public function testCreatedItemWithSchedule()
+    {
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+
+        Passport::actingAs($admin);
+
+        $company = factory(Company::class)->create();
+        $repeatOn = array();
+        $repeatOn[] = (object) ["id" => 1, "text" => "First Monday on each following month"];
+        $data = $this
+            ->json('POST', 'api/foodfleet/events', [
+                'name' => 'test event',
+                'manager_uuid' => $admin->uuid,
+                'host_uuid' => $company->uuid,
+                'status_id' => 1,
+                'start_at' => '2019-09-18',
+                'end_at' => '2019-09-20',
+                'commission_rate' => 30,
+                'commission_type' => 1,
+                'schedule' => [
+                    'interval_unit' => 'Month(s)',
+                    'interval_value' => 3,
+                    'occurrences' => 4,
+                    'ends_on' => 'after',
+                    'repeat_on' => $repeatOn,
+                    'description' => 'First Monday on each following month, util December 13th, 2020'
+                ]
+            ])
+            ->assertStatus(201)
+            ->json('data');
+
+        $returnedEvent = $this->json('GET', 'api/foodfleet/events/' . $data['uuid'])
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals('Month(s)', $returnedEvent['schedule']['interval_unit']);
+        $this->assertEquals(3, $returnedEvent['schedule']['interval_value']);
+        $this->assertEquals(4, $returnedEvent['schedule']['occurrences']);
+        $this->assertEquals('after', $returnedEvent['schedule']['ends_on']);
+        $this->assertEquals(
+            'First Monday on each following month, util December 13th, 2020',
+            $returnedEvent['schedule']['description']
+        );
+    }
+
     public function testUpdateItem()
     {
         $user = factory(User::class)->create();
@@ -618,6 +666,59 @@ class EventTest extends TestCase
         $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);
         $this->assertEquals($eventTag2->name, $returnedEvent['event_tags'][0]['name']);
+    }
+
+    public function testUpdateItemWithSchedule()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(Company::class)->create();
+        $event = factory(Event::class)->create([
+            'manager_uuid' => $user->uuid,
+            'host_uuid' => $company->uuid
+        ]);
+
+        $schedule = factory(EventSchedule::class)->create([
+            'event_uuid' => $event->uuid,
+            'interval_unit' => 'Week(s)',
+            'interval_value' => 1,
+            'occurrences' => 1,
+            'ends_on' => 'on',
+            'description' => 'testing'
+        ]);
+
+        $repeatOn = array();
+        $repeatOn[] = (object) ["id" => 1, "text" => "First Monday on each following month"];
+        $data = $this
+            ->json('PUT', 'api/foodfleet/events/' . $event->uuid, [
+                'name' => 'test event',
+                'schedule' => [
+                    'interval_unit' => 'Month(s)',
+                    'interval_value' => 3,
+                    'occurrences' => 4,
+                    'ends_on' => 'after',
+                    'repeat_on' => $repeatOn,
+                    'description' => 'First Monday on each following month, util December 13th, 2020'
+                ]
+            ])
+            ->assertStatus(200)
+            ->json('data');
+
+        $returnedEvent = $this->json('GET', 'api/foodfleet/events/' . $event->uuid)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals('test event', $returnedEvent['name']);
+        $this->assertEquals('Month(s)', $returnedEvent['schedule']['interval_unit']);
+        $this->assertEquals(3, $returnedEvent['schedule']['interval_value']);
+        $this->assertEquals(4, $returnedEvent['schedule']['occurrences']);
+        $this->assertEquals('after', $returnedEvent['schedule']['ends_on']);
+        $this->assertEquals(
+            'First Monday on each following month, util December 13th, 2020',
+            $returnedEvent['schedule']['description']
+        );
     }
 
     public function testAssignStores()
