@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\EventOccurrence;
 use Faker\Generator as Faker;
 
-$factory->define(EventOccurrence::class, function (Faker $faker) {
+$factory->define(\App\Models\Foodfleet\EventOccurrence::class, function (Faker $faker) {
     return [
-        //
+        "start_at" => $faker->dateTime('now'),
+        "end_at" => $faker->dateTimeBetween('+1 days', '+2 days')
     ];
 });

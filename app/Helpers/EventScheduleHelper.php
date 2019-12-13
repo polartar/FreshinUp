@@ -24,160 +24,165 @@ class EventScheduleHelper
         return $periods;
     }
 
-    public static function analyzeSchedule(EventSchedule $schedule)
+    public static function analyzeSchedule(EventSchedule $schedule, $event_start_at, $event_end_at)
     {
         $interval_unit = $schedule->interval_unit;
         $interval_value = $schedule->interval_value;
         $occurrences = $schedule->occurrences;
         $ends_on = $schedule->ends_on;
-        $repeat_on = $schedule->repeat_on;
+        $repeat_on = json_decode($schedule->repeat_on, true);
+
+        $event_start_at = date('Y-m-d H:i:s', strtotime($event_start_at));
+        $event_end_at = date('Y-m-d H:i:s', strtotime($event_end_at));
 
         $periods = array();
+        $temp_occurrences = 0;
+        $ends_on_times = 100;
+        $one_day_offset = '+23 hours 59 minutes 59 seconds';
+        $first_monday_of_next_month = 'first monday of next month';
+        $first_day_of_next_month = 'first day of next month';
+
         if ($interval_unit == 'Year(s)') {
             if ($ends_on == 'on') {
-                $end_offset_index = 1 * $interval_value;
-                $end_offset = $end_offset_index . ' year';
-                if ($end_offset_index > 1) {
-                    $end_offset = $end_offset_index . ' years';
-                }
-                $periods[] = (object) [
-                    'start_at' => date('Y-m-d H:i:s'),
-                    'end_at' => date('Y-m-d H:i:s', strtotime($end_offset))
-                ];
+                $temp_occurrences = $ends_on_times;
             } else {
-                foreach (range(0, $occurrences - 1) as $number) {
-                    $start_offset_index = $number * $interval_value;
-                    $end_offset_index = ($number + 1) * $interval_value;
-                    $start_offset = $start_offset_index . ' year';
-                    $end_offset = $end_offset_index . ' year';
-                    if ($start_offset_index == 0) {
-                        $start_offset = 'now';
-                    } elseif ($start_offset_index > 1) {
-                        $start_offset = $start_offset_index . ' years';
-                    }
-                    if ($end_offset_index > 1) {
-                        $end_offset = $end_offset_index . ' years';
-                    }
-                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset));
-                    $end_at = date('Y-m-d H:i:s', strtotime($end_offset));
-                    $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
+                $temp_occurrences = $occurrences;
+            }
+
+            foreach (range(0, $temp_occurrences - 1) as $number) {
+                $start_offset_index = $number * $interval_value;
+                $start_offset = $start_offset_index . ' year';
+                if ($start_offset_index == 0) {
+                    $start_offset = 'now';
                 }
+
+                $start_at = date(
+                    'Y-m-d H:i:s',
+                    strtotime($start_offset, strtotime($event_start_at))
+                );
+
+                if ($start_at > $event_end_at) {
+                    break;
+                }
+                $end_at = date(
+                    'Y-m-d H:i:s',
+                    strtotime($one_day_offset, strtotime($start_at))
+                );
+                $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
             }
         } elseif ($interval_unit == 'Month(s)') {
             if ($ends_on == 'on') {
-                $start_at = date('Y-m-d H:i:s', strtotime('first monday of next month'));
-                if ($repeat_on[0]['id'] == 2) {
-                    $start_at = date('Y-m-d H:i:s', strtotime('second day of next month'));
-                }
-                $end_offset_index = 1 * $interval_value;
-                $end_offset = $end_offset_index . ' month';
-                if ($end_offset_index > 1) {
-                    $end_offset = $end_offset_index . ' months';
-                }
-                $end_at = date('Y-m-d H:i:s', strtotime($end_offset, strtotime($start_at)));
-                $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
+                $temp_occurrences = $ends_on_times;
             } else {
-                $temp_end_at = date('Y-m-d H:i:s');
-                foreach (range(0, $occurrences - 1) as $number) {
-                    $start_offset = 'first monday of next month';
-                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset));
-                    
-                    $start_offset_index = $number * $interval_value;
-                    $end_offset_index = ($number + 1) * $interval_value;
-                    $start_offset = $start_offset_index . ' month';
-                    $end_offset = $end_offset_index . ' month';
+                $temp_occurrences = $occurrences;
+            }
 
-                    if ($start_offset_index == 0 && $repeat_on[0]['id'] == 2) {
-                        $start_offset = 'second day of next month';
-                        $start_at = date('Y-m-d H:i:s', strtotime($start_offset));
-                    } elseif ($start_offset_index > 1) {
-                        $start_offset = $start_offset_index . ' months';
-                    }
+            foreach (range(0, $temp_occurrences - 1) as $number) {
+                $start_offset_index = $number * $interval_value;
+                $start_offset = $start_offset_index . ' month';
 
-                    if ($end_offset_index > 1) {
-                        $end_offset = $end_offset_index . ' months';
-                    }
+                $start_at = $event_start_at;
+                if ($start_offset_index == 0) {
+                    if ($repeat_on[0]['id'] == 1) {
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($first_monday_of_next_month, strtotime($event_start_at))
+                        );
+                    } else {
+                        $first_day_of_next_month_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($first_day_of_next_month, strtotime($event_start_at))
+                        );
 
-                    if ($start_offset_index >= 1) {
-                        $start_at = date('Y-m-d H:i:s', strtotime($start_offset, strtotime($temp_end_at)));
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime('+1 day', strtotime($first_day_of_next_month_at))
+                        );
                     }
-                    $end_at = date('Y-m-d H:i:s', strtotime($end_offset, strtotime($start_at)));
-                    $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
-                    $temp_end_at = $end_at;
                 }
+
+                if ($start_offset_index >= 1) {
+                    if ($repeat_on[0]['id'] == 1) {
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($start_offset, strtotime($event_start_at))
+                        );
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($first_monday_of_next_month, strtotime($start_at))
+                        );
+                    } else {
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($start_offset, strtotime($event_start_at))
+                        );
+                        $first_day_of_next_month_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime($first_day_of_next_month, strtotime($start_at))
+                        );
+                        $start_at = date(
+                            'Y-m-d H:i:s',
+                            strtotime('+1 day', strtotime($first_day_of_next_month_at))
+                        );
+                    }
+                }
+
+                if ($start_at > $event_end_at) {
+                    break;
+                }
+                $end_at = date('Y-m-d H:i:s', strtotime($one_day_offset, strtotime($start_at)));
+                $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
             }
         } else {
             if ($ends_on == 'on') {
+                $temp_occurrences = $ends_on_times;
+            } else {
+                $temp_occurrences = $occurrences;
+            }
+
+            foreach (range(0, $temp_occurrences - 1) as $number) {
+                $start_offset_index = $number * $interval_value;
                 foreach ($repeat_on as $value) {
                     $start_offset = 'now';
-                    $end_offset = '+23 hours 59 minutes 59 seconds';
-                    switch ($value->id) {
+                    switch ($value['id']) {
                         case 1:
-                            $start_offset = 'this sunday';
+                            $start_offset = 'this sunday ';
                             break;
                         case 2:
-                            $start_offset = 'next monday';
+                            $start_offset = 'next monday ';
                             break;
                         case 3:
-                            $start_offset = 'next tuesday';
+                            $start_offset = 'next tuesday ';
                             break;
                         case 4:
-                            $start_offset = 'next wednesday';
+                            $start_offset = 'next wednesday ';
                             break;
                         case 5:
-                            $start_offset = 'next thursday';
+                            $start_offset = 'next thursday ';
                             break;
                         case 6:
-                            $start_offset = 'next friday';
+                            $start_offset = 'next friday ';
                             break;
                         case 7:
-                            $start_offset = 'next saturday';
+                            $start_offset = 'next friday '; // bug: strtotime always return last saturday date
                             break;
                         default:
                             break;
                     }
-                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset));
-                    $end_at = date('Y-m-d H:i:s', strtotime($end_offset, strtotime($start_at)));
-                    $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
-                }
-            } else {
-                foreach (range(0, $occurrences - 1) as $number) {
-                    $start_offset_index = $number * $interval_value * 7;
-                    foreach ($repeat_on as $value) {
-                        $start_offset = 'now';
-                        $end_offset = '+23 hours 59 minutes 59 seconds';
-                        switch ($value->id) {
-                            case 1:
-                                $start_offset = 'this sunday ';
-                                break;
-                            case 2:
-                                $start_offset = 'next monday ';
-                                break;
-                            case 3:
-                                $start_offset = 'next tuesday ';
-                                break;
-                            case 4:
-                                $start_offset = 'next wednesday ';
-                                break;
-                            case 5:
-                                $start_offset = 'next thursday ';
-                                break;
-                            case 6:
-                                $start_offset = 'next friday ';
-                                break;
-                            case 7:
-                                $start_offset = 'next saturday ';
-                                break;
-                            default:
-                                break;
-                        }
-                        if ($start_offset_index > 0) {
-                            $start_offset = $start_offset . $start_offset_index . ' day';
-                        }
-                        $start_at = date('Y-m-d H:i:s', strtotime($start_offset));
-                        $end_at = date('Y-m-d H:i:s', strtotime($end_offset, strtotime($start_at)));
-                        $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
+                    if ($start_offset_index > 0) {
+                        $start_offset = $start_offset . $start_offset_index . ' week';
                     }
+
+                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset, strtotime($event_start_at)));
+                    if ($value['id'] == 7) {
+                        $start_at = date('Y-m-d H:i:s', strtotime('+1 day', strtotime($start_at)));
+                    }
+
+                    if ($start_at > $event_end_at) {
+                        break 2;
+                    }
+                    $end_at = date('Y-m-d H:i:s', strtotime($one_day_offset, strtotime($start_at)));
+                    $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
                 }
             }
         }
