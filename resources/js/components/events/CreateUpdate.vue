@@ -141,6 +141,7 @@ export default {
       this.event.manager_uuid = data.manager_uuid
       this.event.name = data.name
       this.event.schedule = data.schedule
+      this.event.event_recurring_checked = data.event_recurring_checked
     },
     async validator () {
       const valids = await Promise.all([
@@ -157,9 +158,12 @@ export default {
           manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
         }
         data = omitBy(data, (value, key) => {
-          const extra = ['created_at', 'updated_at', 'host', 'manager']
+          const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
           return extra.includes(key) || isNull(value)
         })
+        if (this.event.event_recurring_checked === 'no') {
+          data['schedule'] = null
+        }
         if (valid) {
           if (this.isNew) {
             data.id = 'new'

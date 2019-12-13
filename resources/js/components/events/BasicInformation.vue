@@ -250,6 +250,7 @@
               >
                 <event-settings-modal
                   :schedule="eventData.schedule"
+                  @is-checked="isCheckRecurringEvent"
                   @save="eventSettingsSave"
                 />
               </v-flex>
@@ -321,7 +322,8 @@ export default {
         event_tags: edit ? get(this.event, 'event_tags') : [],
         start_at: edit ? get(this.event, 'start_at') : null,
         end_at: edit ? get(this.event, 'end_at') : null,
-        schedule: edit ? get(this.event, 'schedule') : null
+        schedule: edit ? get(this.event, 'schedule') : null,
+        event_recurring_checked: null
       },
       edit: edit,
       commissionTypes: [
@@ -345,6 +347,13 @@ export default {
   methods: {
     cancel () {
       this.$emit('cancel')
+    },
+    isCheckRecurringEvent (checked) {
+      this.eventData.event_recurring_checked = 'yes'
+      if (!checked) {
+        this.eventData.event_recurring_checked = 'no'
+        this.eventData.schedule = null
+      }
     },
     eventSettingsSave (params) {
       this.eventData.schedule = params

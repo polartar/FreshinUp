@@ -4,6 +4,7 @@
       <v-checkbox
         v-model="isChecked"
         label="Recurring Event"
+        @change="isCheckRecurringEvent"
       />
     </div>
 
@@ -104,6 +105,12 @@ export default {
         description: this.selectedDate
       })
       this.isDialogOpened = false
+    },
+    isCheckRecurringEvent () {
+      if (!this.isChecked) {
+        this.selectedDate = ''
+      }
+      this.$emit('is-checked', this.isChecked)
     },
     cancel () {
       this.isDialogOpened = false
