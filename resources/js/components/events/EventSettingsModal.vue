@@ -24,6 +24,7 @@
       :is-dialog-opened="isDialogOpened"
       :schedule="schedule"
       @save="save"
+      @close="close"
       @cancel="cancel"
     />
   </div>
@@ -113,6 +114,9 @@ export default {
       this.$emit('is-checked', this.isChecked)
     },
     cancel () {
+      this.isDialogOpened = false
+    },
+    close () {
       this.isDialogOpened = false
     }
   }

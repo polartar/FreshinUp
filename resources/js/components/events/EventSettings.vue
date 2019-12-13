@@ -1,6 +1,6 @@
 <template>
   <v-dialog
-    v-model="isDialogOpened"
+    v-model="openDialog"
     width="80%"
   >
     <div class="white mb-2">
@@ -12,7 +12,7 @@
           close
           x-small
           class="right"
-          @click="() => isDialogOpened = false"
+          @click="close"
         >
           Close
         </v-chip>
@@ -264,9 +264,23 @@ export default {
       isValid: true
     }
   },
+  computed: {
+    openDialog: {
+      get () {
+        return this.isDialogOpened
+      },
+      set (value) {
+        this.isDialogOpened = value
+        return value
+      }
+    }
+  },
   methods: {
     cancel () {
-      this.$emit('cancel', false)
+      this.$emit('cancel')
+    },
+    close () {
+      this.$emit('close')
     },
     resetRepeatOnSelections () {
       this.selectedRepeatOnWeek = []
