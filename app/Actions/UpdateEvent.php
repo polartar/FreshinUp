@@ -47,7 +47,13 @@ class UpdateEvent implements Action
     private function handleSchedule(Event $event, $collection)
     {
         $request = collect($collection->get('schedule'));
-        
+        $schedule = EventSchedule::where('event_uuid', $event->uuid)->first();
+        if (count($request) == 0 && !empty($schedule)) {
+            $schedule->scheduleOccurrences()->delete();
+            $schedule->delete();
+            return;
+        }
+
         $interval_unit = $request->get('interval_unit');
         $interval_value = $request->get('interval_value');
         $occurrences = $request->get('occurrences');
@@ -59,7 +65,6 @@ class UpdateEvent implements Action
             return;
         }
         
-        $schedule = EventSchedule::where('event_uuid', $event->uuid)->first();
         if (empty($schedule)) {
             $schedule = new EventSchedule;
         } else {
