@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\MenuItems;
+
 use App\User;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\MenuItem;

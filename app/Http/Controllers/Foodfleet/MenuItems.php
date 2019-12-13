@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Foodfleet;
+
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\MenuItem;
 use App\Models\Foodfleet\Store;
@@ -53,7 +54,7 @@ class MenuItems extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$store_uuid, $uuid)
+    public function show(Request $request, $store_uuid, $uuid)
     {
         $menu = QueryBuilder::for(MenuItem::class, $request)
             ->where('uuid', $uuid)
@@ -93,7 +94,7 @@ class MenuItems extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($store_uuid,$uuid)
+    public function destroy($store_uuid, $uuid)
     {
         $menuItem = MenuItem::where('uuid', $uuid)->firstOrFail();
         $menuItem->delete();
