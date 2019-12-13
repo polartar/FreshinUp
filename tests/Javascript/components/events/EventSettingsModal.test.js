@@ -26,8 +26,7 @@ describe('EventSettingsModal', () => {
         localVue: localVue
       })
       wrapper.vm.cancel()
-      expect(wrapper.vm.formData).toEqual([])
-      expect(wrapper.vm.selectedDate).toBe('')
+      expect(wrapper.vm.isDialogOpened).toBe(false)
     })
 
     test('save() emits save with formData', () => {
@@ -43,7 +42,6 @@ describe('EventSettingsModal', () => {
       }
       wrapper.vm.save(formData)
       expect(wrapper.emitted()['save']).toBeTruthy()
-      expect(wrapper.vm.formData).toBe(formData)
       expect(wrapper.emitted()['save'][0][0]).toEqual({
         ...formData,
         description: wrapper.vm.selectedDate

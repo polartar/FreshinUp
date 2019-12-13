@@ -29,6 +29,7 @@ class Event extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $with = array('schedule');
 
     public function stores()
     {
@@ -92,5 +93,10 @@ class Event extends Model
     public function messages()
     {
         return $this->hasMany(Message::class, 'event_uuid', 'uuid');
+    }
+
+    public function schedule()
+    {
+        return $this->hasOne(EventSchedule::class, 'event_uuid', 'uuid');
     }
 }
