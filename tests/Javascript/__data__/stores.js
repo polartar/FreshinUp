@@ -21,6 +21,11 @@ export const FIXTURE_STORES = [
         name: 'hic'
       }
     ],
+    owner: {
+      id: 1,
+      name: 'Level1 User',
+      company: 'Laravel'
+    },
     assigned: false
   },
   {
@@ -49,6 +54,11 @@ export const FIXTURE_STORES = [
         name: 'hicsdfsdf'
       }
     ],
+    owner: {
+      id: 2,
+      name: 'Level2 User',
+      company: 'Bogisich LLC'
+    },
     assigned: true
   },
   {
@@ -81,6 +91,11 @@ export const FIXTURE_STORES = [
         name: 'fsdf'
       }
     ],
+    owner: {
+      id: 3,
+      name: 'Level3 User',
+      company: 'Rempel LLC'
+    },
     assigned: true
   }
 ]

@@ -37,28 +37,66 @@
       </v-flex>
     </v-flex>
     <v-divider />
-    <filter-sorter
-      v-if="!isLoading"
-      :statuses="statuses"
-      @runFilter="filterEvents"
-    />
-    <event-list
-      v-if="!isLoading"
-      :events="events"
-      :statuses="statuses"
-      :is-loading="isLoading || isLoadingList"
-      :rows-per-page="pagination.rowsPerPage"
-      :page="pagination.page"
-      :total-items="pagination.totalItems"
-      :sort-by="sorting.sortBy"
-      :descending="sorting.descending"
-      @paginate="onPaginate"
-      @manage-edit="eventEdit"
-      @manage-delete="deleteSingle"
-      @manage-multiple-delete="multipleDelete"
-      @change-status="changeStatusSingle"
-      @change-status-multiple="changeStatusMultiple"
-    />
+    <template
+      v-if="view === 1"
+    >
+      <filter-sorter
+        v-if="!isLoading"
+        :statuses="statuses"
+        @runFilter="filterEvents"
+      />
+      <event-list
+        v-if="!isLoading"
+        :events="events"
+        :statuses="statuses"
+        :is-loading="isLoading || isLoadingList"
+        :rows-per-page="pagination.rowsPerPage"
+        :page="pagination.page"
+        :total-items="pagination.totalItems"
+        :sort-by="sorting.sortBy"
+        :descending="sorting.descending"
+        @paginate="onPaginate"
+        @manage-edit="eventEdit"
+        @manage-delete="deleteSingle"
+        @manage-multiple-delete="multipleDelete"
+        @change-status="changeStatusSingle"
+        @change-status-multiple="changeStatusMultiple"
+      />
+    </template>
+    <v-layout
+      v-else-if="view === 2"
+      row
+      flex
+    >
+      <v-flex
+        sm3
+        xs12
+        ml-3
+        mt-3
+      >
+        <v-card>
+          <filter-sorter-for-calendar
+            v-if="!isLoading"
+            :statuses="statuses"
+            @runFilter="filterEvents"
+          />
+        </v-card>
+      </v-flex>
+      <v-flex
+        sm9
+        xs12
+        ma-3
+      >
+        <v-card>
+          <event-calendar
+            v-if="!isLoading"
+            :events="events"
+            :date="calendarDefaultDate"
+            :year-range="calendarYearRange"
+          />
+        </v-card>
+      </v-flex>
+    </v-layout>
     <v-dialog
       v-model="deleteDialog"
       max-width="500"
@@ -102,10 +140,13 @@
 </template>
 <script>
 import get from 'lodash/get'
+import moment from 'moment'
 import { mapGetters, mapActions, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import FilterSorter from '~/components/events/FilterSorter.vue'
+import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar.vue'
 import EventList from '~/components/events/EventList.vue'
+import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 const include = [
   'status',
@@ -119,7 +160,9 @@ export default {
   layout: 'admin',
   components: {
     EventList,
+    EventCalendar,
     FilterSorter,
+    FilterSorterForCalendar,
     SimpleConfirm
   },
   filters: {
@@ -129,6 +172,7 @@ export default {
   },
   mixins: [deletables],
   data () {
+    const currentMoment = moment()
     return {
       pageTitle: 'Events',
       deleteDialog: false,
@@ -137,6 +181,8 @@ export default {
       deletablesProgress: 0,
       deletablesStatus: '',
       lastFilterParams: {},
+      calendarDefaultDate: currentMoment.format('YYYY-MM-DD'),
+      calendarYearRange: [currentMoment.year() - 2, currentMoment.year() + 2],
       view: 1,
       views: [
         { value: 1, text: 'List view' },
@@ -176,7 +222,7 @@ export default {
       this.$router.push({ path: '/admin/events/new' })
     },
     eventEdit (event) {
-      this.$router.push({ path: '/admin/events/' + event.uuid })
+      this.$router.push({ path: '/admin/events/' + event.uuid + '/edit' })
     },
     deleteSingle (event) {
       this.deleteTemp = [event]

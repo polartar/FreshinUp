@@ -7,6 +7,7 @@ use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Foodfleet\Store\Store;
 
 class Event extends JsonResource
 {
@@ -28,6 +29,7 @@ class Event extends JsonResource
             "event_tags" => EventTag::collection($this->whenLoaded('eventTags')),
             "host" => new Company($this->whenLoaded('host')),
             "stores" => Store::collection($this->whenLoaded('stores')),
+            "schedule" => new EventSchedule($this->whenLoaded('schedule')),
             "start_at" => $this->start_at,
             "end_at" => $this->end_at,
             'budget' => $this->budget,

@@ -1,6 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_DOCUMENT, EMPTY_DOCUMENT } from 'tests/__data__/document'
 import { FIXTURE_DOCUMENT_TYPES } from 'tests/__data__/documentTypes'
 import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'

@@ -31,6 +31,7 @@ class Document extends Model implements HasMedia
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $with = array('owner');
 
     /**
      * Get the route key for the model.

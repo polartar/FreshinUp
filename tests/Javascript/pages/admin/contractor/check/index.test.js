@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { createStore } from 'fresh-bus/store'
 import find from 'lodash/find'
 import Component from '~/pages/admin/contractor/check/index.vue'
