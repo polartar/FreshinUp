@@ -1,4 +1,4 @@
-export const FIXTURE_STORES = [
+const stores = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
     name: 'Burger Babes',
@@ -21,6 +21,7 @@ export const FIXTURE_STORES = [
         name: 'hic'
       }
     ],
+    events_count: 10,
     owner: {
       id: 1,
       name: 'Level1 User',
@@ -54,6 +55,7 @@ export const FIXTURE_STORES = [
         name: 'hicsdfsdf'
       }
     ],
+    events_count: 2,
     owner: {
       id: 2,
       name: 'Level2 User',
@@ -91,6 +93,7 @@ export const FIXTURE_STORES = [
         name: 'fsdf'
       }
     ],
+    events_count: 0,
     owner: {
       id: 3,
       name: 'Level3 User',
@@ -99,3 +102,7 @@ export const FIXTURE_STORES = [
     assigned: true
   }
 ]
+const store = stores[0]
+
+export const FIXTURE_STORE = store
+export const FIXTURE_STORES = stores

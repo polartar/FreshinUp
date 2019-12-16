@@ -25,6 +25,7 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
         activeclass="v-btn--active"
         color="primary"
         dark="true"
+        href="/admin/fleet-members/new"
         slot="activator"
         tag="button"
         type="button"

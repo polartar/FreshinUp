@@ -3,6 +3,14 @@ import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 import Component from '~/components/events/FilterSorter.vue'
 
 const allSelected = FIXTURE_EVENT_STATUSES.map(item => item.id)
+const defaultFilters = {
+  status_id: allSelected,
+  host_uuid: null,
+  manager_uuid: null,
+  event_tag_uuid: null,
+  start_at: null,
+  end_at: null
+}
 
 describe('FilterSorter', () => {
   // Component instance "under test"
@@ -11,17 +19,30 @@ describe('FilterSorter', () => {
     test('defaults', () => {
       localVue = createLocalVue()
       const wrapper = mount(Component, {
+        localVue: localVue
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('with props', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
           statuses: FIXTURE_EVENT_STATUSES,
-          filters: {
-            status_id: allSelected,
-            host_uuid: null,
-            manager_uuid: null,
-            event_tag_uuid: null,
-            start_at: null,
-            end_at: null
-          }
+          withoutExpansion: true,
+          filters: defaultFilters
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('without-expansion', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_EVENT_STATUSES,
+          withoutExpansion: true,
+          filters: defaultFilters
         }
       })
       expect(wrapper.element).toMatchSnapshot()
