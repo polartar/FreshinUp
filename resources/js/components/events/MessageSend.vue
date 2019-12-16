@@ -39,6 +39,8 @@ export default {
   methods: {
     send () {
       this.$emit('send-message', this.message)
+      this.message = ''
+      this.$validator.reset()
     }
   }
 }

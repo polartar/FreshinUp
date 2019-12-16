@@ -46,7 +46,10 @@ class Store extends Model
             'event_uuid',
             'uuid',
             'uuid'
-        );
+        )->withPivot([
+            'commission_rate',
+            'commission_type'
+        ]);
     }
 
     public function staffs()
@@ -59,6 +62,11 @@ class Store extends Model
             'uuid',
             'uuid'
         );
+    }
+
+    public function menus()
+    {
+        return $this->hasMany(Menu::class, 'store_uuid', 'uuid');
     }
 
     public function transactions()
@@ -81,5 +89,15 @@ class Store extends Model
     public function documents()
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+
+    public function menuItems()
+    {
+        return $this->hasMany(EventMenuItem::class, 'store_uuid', 'uuid');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'store_uuid', 'uuid');
     }
 }

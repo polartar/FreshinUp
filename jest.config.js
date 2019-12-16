@@ -22,6 +22,6 @@ module.exports = {
     '@/(.*)$': '<rootDir>/resources/js/$1'
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@storybook/.*\\.vue$|vue-cli-plugin-freshinup/.*\\.js))'
+    '/node_modules/(?!(@storybook/.*\\.vue$|@freshinup/.*\\.js|@freshinup/.*\\.vue|vue-cli-plugin-freshinup-ui/.*\\.js|vue-cli-plugin-freshinup/.*\\.js))'
   ]
 }

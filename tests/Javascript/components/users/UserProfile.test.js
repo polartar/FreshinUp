@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USER } from 'tests/__data__/user'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import Component from '~/components/users/UserProfile.vue'

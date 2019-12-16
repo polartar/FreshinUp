@@ -1,19 +1,19 @@
 {
     "private": true,
     "scripts": {
-      "test": "yarn test:unit",
-      "lint": "eslint --ext .js,.vue resources/js tests/Javascript .storybook webpack.mix.js",
-      "dev": "npm run development",
-      "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "prod": "npm run production",
-      "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "storybook": "yarn storybook:serve",
-      "storybook:build": "cross-env STORYBOOK=true vue-cli-service storybook:build -c .storybook/config -o ./public/styleguide",
-      "storybook:serve": "cross-env STORYBOOK=true vue-cli-service storybook:serve -p 6006 -c .storybook/config -s ./public",
-      "test:unit": "cross-env TZ=UTC vue-cli-service test:unit --verbose",
-      "watch": "npm run development -- --watch",
-      "watch-poll": "npm run watch -- --watch-poll"
+        "test": "yarn test:unit",
+        "lint": "eslint --ext .js,.vue resources/js tests/Javascript .storybook webpack.mix.js",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "storybook": "yarn storybook:serve",
+        "storybook:build": "cross-env STORYBOOK=true vue-cli-service storybook:build -c .storybook/config -o ./public/styleguide",
+        "storybook:serve": "cross-env STORYBOOK=true vue-cli-service storybook:serve -p 6006 -c .storybook/config -s ./public",
+        "test:unit": "cross-env TZ=UTC vue-cli-service test:unit --verbose",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll"
     },
     "devDependencies": {
         "@babel/core": "^7.4.5",
@@ -112,5 +112,8 @@
         "webpack-cli": "^3.3.6",
         "webpack-laravel-mix-manifest": "^1.0.6"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git",
+        "vue-cli-plugin-freshinup-ui": "git+ssh://git@github.com/freshinup/vue-cli-plugin-freshinup-ui.git"
+    }
 }

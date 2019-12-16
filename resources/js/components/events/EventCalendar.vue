@@ -1,5 +1,10 @@
 <template>
   <v-container>
+    <v-progress-linear
+      v-if="isLoading"
+      indeterminate
+      height="10"
+    />
     <v-layout
       wrap
       row
@@ -14,7 +19,8 @@
         >
           <v-btn
             large
-            class="ml-0 mt-0"
+            color="grey"
+            class="ml-0 mt-0 white--text"
             @click="moveToToday"
           >
             Today
@@ -65,7 +71,7 @@
         mb-3
         mt-3
       >
-        <v-sheet height="431">
+        <v-sheet>
           <v-calendar
             ref="calendar"
             v-model="currentDate"
@@ -79,7 +85,7 @@
                   full-width
                   offset-x
                   class="white--text"
-                  :class="statusColorMaps[event.status]"
+                  :class="statusColorMaps[event.status_id]"
                   @click="clickEvent(event)"
                   v-text="event.name"
                 />

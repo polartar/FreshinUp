@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { createStore } from 'fresh-bus/store'
 import { FIXTURE_USER } from 'tests/__data__/user'
 import Component from '~/pages/admin/users/new.vue'
