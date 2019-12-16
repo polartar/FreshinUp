@@ -121,7 +121,13 @@ class Events extends Controller
             'start_at' => 'date|required',
             'end_at' => 'date|required|after:start_date',
             'commission_rate' => 'integer|required',
-            'commission_type' => 'integer|required'
+            'commission_type' => 'integer|required',
+            'schedule.interval_unit' => 'string',
+            'schedule.interval_value' => 'integer',
+            'schedule.occurrences' => 'integer',
+            'schedule.ends_on' => 'string',
+            'schedule.repeat_on' => 'array',
+            'schedule.description' => 'string'
         ]);
 
         $inputs = $request->input();
@@ -167,7 +173,13 @@ class Events extends Controller
             'start_at' => 'date',
             'end_at' => 'date',
             'commission_rate' => 'integer',
-            'commission_type' => 'integer'
+            'commission_type' => 'integer',
+            'schedule.interval_unit' => 'string',
+            'schedule.interval_value' => 'integer',
+            'schedule.occurrences' => 'integer',
+            'schedule.ends_on' => 'string',
+            'schedule.repeat_on' => 'array',
+            'schedule.description' => 'string'
         ]);
 
         $inputs = $request->input();

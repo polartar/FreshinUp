@@ -34,6 +34,7 @@ class UserLevelTypeSeeder extends Seeder
                 [
                     'name' => $name,
                     'enabled' => 1,
+                    'default' => 1,
                     'forPlatform' => $forPlatform,
                     'forCompany' => $forCompany,
                 ]
