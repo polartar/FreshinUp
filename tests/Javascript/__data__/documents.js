@@ -1,4 +1,4 @@
-import sortBy from 'lodash/sortBy'
+import sortBy from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/lodash/sortBy'
 
 export const FIXTURE_DOCUMENTS = [{
   uuid: 'f38af949-678f-42d3-8908-f2527306c1d8',
