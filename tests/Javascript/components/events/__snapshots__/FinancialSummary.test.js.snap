@@ -12,7 +12,7 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
     tag="div"
   >
     
-    Customer Summary
+    Event Financial Summary
   
   </v-container-stub>
    
@@ -34,7 +34,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
-        OWNER
+        
+        TOTAL FLEET
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -44,7 +46,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
-        Joan Smith
+        
+        27
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -60,7 +64,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
-        SIGNED CONTRACTS
+        
+        TOTAL COST
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -70,7 +76,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
-        31
+        
+        $24,000.00
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -86,7 +94,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
-        CONTACT PHONE
+        
+        AMOUNT DUE
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -96,33 +106,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
-        938 374822
-      </v-flex-stub>
-    </v-layout-stub>
-     
-    <v-divider-stub />
-     
-    <v-layout-stub
-      align-center=""
-      line=""
-      tag="div"
-    >
-      <v-flex-stub
-        caption=""
-        font-weight-bold=""
-        tag="div"
-      >
-        CONTACT EMAIL
-      </v-flex-stub>
-       
-      <v-flex-stub
-        subheading=""
-        tag="div"
-        text-truncate=""
-        text-xs-right=""
-        xs6=""
-      >
-        joan.simth@gmail.com
+        
+        $824,000.00
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -136,7 +122,7 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
       type="button"
     >
       
-      View Customer Profile
+      View Contract
     
     </v-btn-stub>
   </v-container-stub>
