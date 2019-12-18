@@ -8,7 +8,7 @@
     <hr>
 
     <v-card-text
-      v-if="!events.length"
+      v-if="!eventsCount"
       class="text-xs-center pa-5 primary--text"
     >
       Event data will populate once your restaurant is assigned.
@@ -17,42 +17,13 @@
       v-else
       class="ma-2"
     >
-      <v-layout
-        align-center
-        justify-center
-        row
-        fill-height
-      >
-        <v-flex
-          grow
-          pa-1
-        >
-          <v-text-field
-            label="Search"
-            prepend-inner-icon="search"
-            solo
-            hide-details
-            @input="searchInput"
-          />
-        </v-flex>
-        <v-flex
-          shrink
-          pl-3
-        >
-          Sort by
-        </v-flex>
-        <v-flex
-          shrink
-          pa-1
-        >
-          <f-btn-menu
-            :items="sortables"
-            @item="sort"
-          >
-            Sort
-          </f-btn-menu>
-        </v-flex>
-      </v-layout>
+      <filter-sorter
+        v-if="!isLoading"
+        :statuses="statuses"
+        without-expansion
+        icon="search"
+        @runFilter="$emit('runFilter', $event)"
+      />
 
       <v-data-table
         v-model="selected"
@@ -151,17 +122,21 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FStaticStatus from 'fresh-bus/components/ui/FStaticStatus'
 import FBtn from 'fresh-bus/components/ui/FBtn'
-import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FChip from 'fresh-bus/components/ui/FChip'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
+import FilterSorter from '~/components/events/FilterSorter.vue'
 
 export default {
-  components: { FBtn, FBtnMenu, FChip, FStaticStatus },
+  components: { FBtn, FChip, FStaticStatus, FilterSorter },
   mixins: [Pagination, FormatRangeDate],
   props: {
     events: {
       type: Array,
       default: () => []
+    },
+    allEventsCount: {
+      type: [Number, null],
+      default: null
     },
     statuses: {
       type: Array,
@@ -172,23 +147,47 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
-        { text: 'Name / Category', sortable: false, value: 'name,event_tags', align: 'left' },
-        { text: 'Date / Venue', sortable: false, value: 'start_at,venue', align: 'left' },
-        { text: 'Managed By', sortable: false, value: 'manager', align: 'left' },
+        { text: 'Status', value: 'status_id', align: 'left' },
+        {
+          text: 'Name / Category',
+          value: 'name,event_tags',
+          align: 'left'
+        },
+        {
+          text: 'Date / Venue',
+          value: 'start_at',
+          align: 'left'
+        },
+        {
+          text: 'Managed By',
+          sortable: false,
+          value: 'manager',
+          align: 'left'
+        },
         { text: 'Customer', sortable: false, value: 'host', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
       ],
-      sortables: [{
-        id: 'status',
-        label: 'Status'
-      }, {
-        id: 'name',
-        label: 'Name'
-      }, {
-        id: 'date',
-        label: 'Date'
-      }]
+      sortables: [
+        {
+          id: 'status',
+          label: 'Status'
+        },
+        {
+          id: 'name',
+          label: 'Name'
+        },
+        {
+          id: 'date',
+          label: 'Date'
+        }
+      ]
+    }
+  },
+  computed: {
+    eventsCount () {
+      // If allEventsCount is passed in as a prop, use it, otherwise use the events array length
+      if (this.allEventsCount === null) return this.events.length
+      return this.allEventsCount
     }
   },
   methods: {
@@ -205,7 +204,21 @@ export default {
 }
 </script>
 
-<style lang="styl" scoped>
+<style scoped>
+/deep/ .filter-sorter-container .v-text-field .v-input__slot {
+  border: 1px solid #ccc;
+  margin-bottom: 0;
+}
+/deep/ .filter-sorter-container .v-text-field__details {
+  display: none;
+}
+/deep/ .filter-sorter-container .v-divider {
+  display: none;
+}
+/deep/ .filter-sorter-expanded-layout {
+  display: none;
+}
+
 .highlight {
   background: #ffa;
 }

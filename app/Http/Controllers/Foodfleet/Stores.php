@@ -3,12 +3,10 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Actions\UpdateStore;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
-use App\Actions\UpdateDocument;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -81,7 +79,7 @@ class Stores extends Controller
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
                 $event,
-                ['commission_rate' => $commission_rate,'commission_type' => $commission_type]
+                ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]
             );
         }
 
@@ -98,10 +96,14 @@ class Stores extends Controller
     {
         $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'menus', 'tags', 'documents', 'events' ])
-            ->firstOrFail();
+            ->allowedIncludes(['menus', 'tags', 'documents', 'events']);
 
-        return new StoreResource($store);
+        // Include eventsCount in the query if needed
+        if ($request->has('provide') && $request->get('provide') == 'events-count') {
+            $store->withCount('events');
+        }
+
+        return new StoreResource($store->firstOrFail());
     }
 
     public function summary(Request $request, $uuid)

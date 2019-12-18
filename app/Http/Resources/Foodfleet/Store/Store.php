@@ -32,7 +32,8 @@ class Store extends JsonResource
             "documents" => Document::collection($this->whenLoaded('documents')),
             "messages" => Message::collection($this->whenLoaded('messages')),
             "square_id" => $this->square_id,
-            "supplier" => new Company($this->whenLoaded('supplier'))
+            "supplier" => new Company($this->whenLoaded('supplier')),
+            "events_count" => $this->when($this->events_count, $this->events_count),
         ];
     }
 }

@@ -299,6 +299,46 @@ class EventTest extends TestCase
         $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
     }
 
+    public function testGetListWithStoreUuidFilter()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles'
+        ]);
+
+        $stores = factory(Store::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find 1'
+        ]);
+        $eventToFind1->stores()->save($stores->first());
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find 2'
+        ]);
+        $eventToFind2->stores()->save($stores->last());
+
+        $storeUuid = $stores->map(function ($store) {
+            return $store->uuid;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[store_uuid]=" . $storeUuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+    }
+
     public function testGetListWithStartAtFilter()
     {
         $user = factory(User::class)->create();
@@ -323,7 +363,7 @@ class EventTest extends TestCase
         $endAt = Carbon::now()->addDays(2)->toDateTimeString();
 
         $data = $this
-            ->json('get', "/api/foodfleet/events?filter[start_at]=" . $startAt . '&filter[end_at]='. $endAt)
+            ->json('get', "/api/foodfleet/events?filter[start_at]=" . $startAt . '&filter[end_at]=' . $endAt)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -482,7 +522,7 @@ class EventTest extends TestCase
         $this->assertCount(2, $data);
         $this->assertEquals($event2->uuid, $data[0]['uuid']);
     }
-  
+
     public function testGetItem()
     {
         $user = factory(User::class)->create();
