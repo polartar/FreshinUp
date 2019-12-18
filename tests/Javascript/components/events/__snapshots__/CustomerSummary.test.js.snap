@@ -34,7 +34,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         OWNER
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -44,7 +46,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         Joan Smith
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -60,7 +64,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         SIGNED CONTRACTS
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -70,7 +76,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         31
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -86,7 +94,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         CONTACT PHONE
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -96,7 +106,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         938 374822
+      
       </v-flex-stub>
     </v-layout-stub>
      
@@ -112,7 +124,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         font-weight-bold=""
         tag="div"
       >
+        
         CONTACT EMAIL
+      
       </v-flex-stub>
        
       <v-flex-stub
@@ -122,7 +136,9 @@ exports[`Event CustomerSummary component Snapshots required set 1`] = `
         text-xs-right=""
         xs6=""
       >
+        
         joan.simth@gmail.com
+      
       </v-flex-stub>
     </v-layout-stub>
      
