@@ -6,6 +6,7 @@ use App\User;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\EventMenuItem;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 use App\Enums\DocumentStatus as DocumentStatusEnum;
 use App\Enums\DocumentTypes as DocumentTypeEnum;
@@ -45,11 +46,10 @@ class EventSummary extends JsonResource
             ];
         }
 
-        
-        $stores = Store::whereIn('uuid', $this->stores()->pluck('stores.uuid')->toArray())->get();
+        $stores = $this->stores;
         $total_fleet = sizeof($stores);
         $total_cost = 0;
-        $amount_due = 0;
+        $total_commission = 0;
         foreach ($stores as $store) {
             $menuItems = EventMenuItem::where('store_uuid', $store->uuid)->get();
             $cost = $menuItems->sum('cost');
@@ -64,12 +64,12 @@ class EventSummary extends JsonResource
                 $commissions = $cost * $commission_rate / 100;
             }
             $total_cost = $total_cost + $cost;
-            $amount_due = $amount_due + $commissions;
+            $total_commission = $total_commission + $commissions;
         }
         $financial = (object) [
             "total_fleet" => $total_fleet,
             "total_cost" => $total_cost,
-            "amount_due" => $amount_due
+            "amount_due" => $total_commission + $total_cost
         ];
         
         return [
