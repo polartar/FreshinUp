@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USERS_RESPONSE, FIXTURE_USERS_SORTED_BY_FIRSTNAME } from 'tests/__data__/users'
@@ -34,7 +34,7 @@ describe('Admin Users Page', () => {
           items: FIXTURE_USERS_RESPONSE // Start with listed sorted by id
         }
       })
-      const wrapper = shallowMount(Component, {
+      const wrapper = mount(Component, {
         localVue: localVue,
         store
       })

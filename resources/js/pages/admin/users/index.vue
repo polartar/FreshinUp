@@ -134,7 +134,7 @@ export default {
         { text: 'Name / Email', value: 'name,email', align: 'left' },
         { text: 'User Type', sortable: true, value: 'user_type', align: 'center' },
         { text: 'Company', value: 'company_name', align: 'left' },
-        { text: 'Level', sortable: true, value: 'level', align: 'center' },
+        { text: 'BUS Role', sortable: true, value: 'level', align: 'center' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
       ],
       itemActions: [
