@@ -15,7 +15,7 @@
         wrap
       >
         <v-avatar
-          color="primary"
+          :color="iconColor"
           :size="cycleSize"
         >
           <v-icon
@@ -40,6 +40,14 @@
         mb-2
       >
         <v-btn
+          v-if="disabled"
+          round
+          disabled
+        >
+          {{buttonText}}
+        </v-btn>
+        <v-btn
+          v-else
           round
           color="primary"
           :to="{name: buttonTo}"
@@ -80,7 +88,7 @@ export default {
       default: ''
     }
   },
-  data: function () {
+  data () {
     return {
       title: this.content.title,
       description: this.content.description,
@@ -88,7 +96,13 @@ export default {
       buttonTo: this.navTo,
       iconName: this.icon.name,
       iconSize: (this.icon.size * 0.7) + 'px',
-      cycleSize: this.icon.size + 'px'
+      cycleSize: this.icon.size + 'px',
+      disabledNav: this.disabled
+    }
+  },
+  computed: {
+    iconColor () {
+      return this.disabled ? 'rgba(0, 0, 0, 0.12)' : 'primary'
     }
   }
 }
