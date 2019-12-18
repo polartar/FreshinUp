@@ -14,7 +14,7 @@
           slot="activator"
           color="primary"
           dark
-          @click="storeNew"
+          href="/admin/fleet-members/new"
         >
           Add New Fleet Member
         </v-btn>
@@ -77,7 +77,7 @@
           <template v-else>
             <p class="subheading">
               <span v-if="deletables.length < 2">Store</span>
-              <span v-else> Stores</span>
+              <span v-else>Stores</span>
               : {{ deleteTemp | formatDeleteTitles }}
             </p>
           </template>
@@ -130,18 +130,17 @@ export default {
     }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('stores', ['sortables']),
-    ...mapGetters('storeStatuses', { 'statuses': 'items' }),
+    ...mapGetters('storeStatuses', { statuses: 'items' }),
     deleteDialogTitle () {
-      return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this store?' : 'Are you sure you want to delete the following stores?'
+      return this.deleteTemp.length < 2
+        ? 'Are you sure you want to delete this store?'
+        : 'Are you sure you want to delete the following stores?'
     }
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    storeNew () {
-      alert('coming soon')
-    },
     storeView (store) {
       alert('coming soon')
     },
@@ -161,8 +160,13 @@ export default {
       this.deletablesStatus = ''
       let dispatcheables = []
 
-      this.deleteTemp.forEach((store) => {
-        dispatcheables.push(this.$store.dispatch('stores/deleteItem', { getItems: false, params: { id: store.uuid } }))
+      this.deleteTemp.forEach(store => {
+        dispatcheables.push(
+          this.$store.dispatch('stores/deleteItem', {
+            getItems: false,
+            params: { id: store.uuid }
+          })
+        )
       })
 
       let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
@@ -171,8 +175,9 @@ export default {
       for (let i in chunks) {
         await Promise.all(chunks[i])
         doneCount += chunks[i].length
-        this.deleteTempStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
-        this.deleteTempProgress = doneCount / this.deleteTemp.length * 100
+        this.deleteTempStatus =
+          doneCount + ' / ' + this.deleteTemp.length + ' Done'
+        this.deleteTempProgress = (doneCount / this.deleteTemp.length) * 100
         await this.sleep(this.deletablesSleepTime)
       }
 
@@ -186,18 +191,25 @@ export default {
       this.deleteTemp = []
     },
     changeStatus (status, store) {
-      this.$store.dispatch('stores/patchItem', { data: { status }, params: { id: store.uuid } }).then(() => {
-        this.filterStores(this.lastFilterParams)
-      })
+      this.$store
+        .dispatch('stores/patchItem', {
+          data: { status },
+          params: { id: store.uuid }
+        })
+        .then(() => {
+          this.filterStores(this.lastFilterParams)
+        })
     },
     changeStatusMultiple (status, stores) {
-      stores.forEach((store) => {
+      stores.forEach(store => {
         this.changeStatus(status, store)
       })
     },
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
-      this.$store.dispatch('stores/getItems', { params: { include: 'tags,addresses' } })
+      this.$store.dispatch('stores/getItems', {
+        params: { include: 'tags,addresses' }
+      })
     },
     runFilter (params) {
       this.filterStores(params)
@@ -209,7 +221,9 @@ export default {
         ...this.$route.query,
         ...this.lastFilterParams
       })
-      this.$store.dispatch('stores/getItems', { params: { include: 'tags,addresses' } })
+      this.$store.dispatch('stores/getItems', {
+        params: { include: 'tags,addresses' }
+      })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -219,12 +233,13 @@ export default {
       vm.$store.dispatch('stores/setFilters', {
         ...vm.$route.query
       }),
-      vm.$store.dispatch('storeStatuses/getItems', { params: { include: 'tags,addresses' } })
-    ])
-      .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
-        if (next) next()
+      vm.$store.dispatch('storeStatuses/getItems', {
+        params: { include: 'tags,addresses' }
       })
+    ]).then(() => {
+      vm.$store.dispatch('page/setLoading', false)
+      if (next) next()
+    })
   }
 }
 </script>

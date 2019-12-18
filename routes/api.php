@@ -34,13 +34,13 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
-    
+
     Route::apiResource('stores', 'Foodfleet\Stores');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
     Route::get('store-summary/{uuid}', 'Foodfleet\Stores@summary');
     Route::get('store-service-summary/{uuid}', 'Foodfleet\Stores@serviceSummary');
-    
+
     Route::get('event-menu-items/new', 'Foodfleet\EventMenuItems@showNewRecommendation');
     Route::apiResource('event-menu-items', 'Foodfleet\EventMenuItems');
 
@@ -67,4 +67,10 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('messages/new', 'Foodfleet\Messages@showNewRecommendation');
     Route::get('messages', 'Foodfleet\Messages@index');
     Route::post('messages', 'Foodfleet\Messages@store');
+
+    Route::get('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@index');
+    Route::post('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@store');
+    Route::put('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@update');
+    Route::get('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@show');
+    Route::delete('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@destroy');
 });

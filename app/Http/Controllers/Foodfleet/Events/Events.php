@@ -15,6 +15,7 @@ use App\Http\Resources\Foodfleet\Event as EventResource;
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Filters\BelongsToWhereInIdEquals;
+use App\Filters\BelongsToManyWhereInUuidEquals;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo;
 use App\Sorts\Events\HostNameSort;
@@ -66,6 +67,7 @@ class Events extends Controller
             ->allowedSorts([
                 'name',
                 'start_at',
+                'status_id',
                 Sort::custom('host', new HostNameSort()),
                 Sort::custom('manager', new ManagerNameSort()),
                 Sort::custom('event_tags', new EventTagNameSort())
@@ -77,6 +79,7 @@ class Events extends Controller
                 Filter::custom('end_at', LessThanOrEqualTo::class, 'end_at'),
                 Filter::custom('host_uuid', BelongsToWhereInUuidEquals::class, 'host'),
                 Filter::custom('manager_uuid', BelongsToWhereInUuidEquals::class, 'manager'),
+                Filter::custom('store_uuid', BelongsToManyWhereInUuidEquals::class, 'stores'),
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
             ]);
