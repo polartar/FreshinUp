@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/vue'
-import { action } from '@storybook/addon-actions'
 
 // Components
 import Bootstrap from './Bootstrap.vue'

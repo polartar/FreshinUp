@@ -22,13 +22,13 @@
             :size="iconSize"
             color="white"
           >
-            {{iconName}}
+            {{ iconName }}
           </v-icon>
         </v-avatar>
         <span
           class="text-xs-center mt-3 grey--text"
         >
-          {{description}}
+          {{ description }}
         </span>
       </v-layout>
     </v-card-text>
@@ -44,7 +44,7 @@
           round
           disabled
         >
-          {{buttonText}}
+          {{ buttonText }}
         </v-btn>
         <v-btn
           v-else
@@ -52,7 +52,7 @@
           color="primary"
           :to="{name: buttonTo}"
         >
-          {{buttonText}}
+          {{ buttonText }}
         </v-btn>
       </v-layout>
     </v-card-actions>
@@ -70,17 +70,21 @@ export default {
     },
     content: {
       type: Object,
-      default: {
-        title: '',
-        description: '',
-        button: ''
+      default: () => {
+        return {
+          title: '',
+          description: '',
+          button: ''
+        }
       }
     },
     icon: {
       type: Object,
-      default: {
-        size: 0,
-        name: ''
+      default: () => {
+        return {
+          size: 0,
+          name: ''
+        }
       }
     },
     navTo: {
