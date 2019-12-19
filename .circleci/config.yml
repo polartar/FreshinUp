@@ -103,17 +103,11 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: JS Lint
+          name: JS Test and Lint
           command: |
             nvm install
             npm i -g yarn
             yarn lint
-
-      - run:
-          name: JS Test
-          command: |
-            nvm install
-            npm i -g yarn
             yarn test --maxWorkers=4
           no_output_timeout: 20m
 

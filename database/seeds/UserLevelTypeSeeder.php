@@ -22,7 +22,8 @@ class UserLevelTypeSeeder extends Seeder
 
         $types = [
             1 => 'Food Fleet Staff',
-            2 => 'Consumer'
+            2 => 'Customer',
+            3 => 'Food Fleet Member'
         ];
 
         $displayIds = [];
@@ -57,9 +58,9 @@ class UserLevelTypeSeeder extends Seeder
             $displayIds[] = $displayId;
         }
 
-        $userLevels = UserType::whereNotIn('display_id', $displayIds)->get();
-        foreach ($userLevels as $userLevel) {
-            $userLevel->delete();
+        $userTypes = UserType::whereNotIn('display_id', $displayIds)->get();
+        foreach ($userTypes as $userType) {
+            $userType->delete();
         }
     }
 }
