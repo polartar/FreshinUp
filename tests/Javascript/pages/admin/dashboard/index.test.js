@@ -45,7 +45,7 @@ describe('Admin Dashboard Steps Page', () => {
       beforeEach(() => {
         const vue = createLocalVue({ validation: true })
         localVue = vue.localVue
-        store = createStore({currentUser: FIXTURE_USER})
+        store = createStore({ currentUser: FIXTURE_USER })
         mock = vue.mock
       })
 
@@ -77,7 +77,7 @@ describe('Admin Dashboard Steps Page', () => {
         const vue = createLocalVue({ validation: true })
         const wrapper = shallowMount(Component, {
           localVue: localVue,
-          store: createStore({currentUser: {}})
+          store: createStore({ currentUser: {} })
         })
 
         mock = vue.mock
@@ -98,7 +98,7 @@ describe('Admin Dashboard Steps Page', () => {
       beforeEach(() => {
         const vue = createLocalVue({ validation: true })
         localVue = vue.localVue
-        store = createStore({currentUser: FIXTURE_USER})
+        store = createStore({ currentUser: FIXTURE_USER })
         mock = vue.mock
       })
 
@@ -130,7 +130,7 @@ describe('Admin Dashboard Steps Page', () => {
         const vue = createLocalVue({ validation: true })
         const wrapper = shallowMount(Component, {
           localVue: localVue,
-          store: createStore({currentUser: {}})
+          store: createStore({ currentUser: {} })
         })
 
         mock = vue.mock
