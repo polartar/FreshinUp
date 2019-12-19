@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard StepsCard Component Snapshots should match snapshots for common 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title"
+  >
+    <h3
+      class="grey--text"
+    >
+      
+      a title
+    
+    </h3>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-card__text"
+  >
+    <div
+      class="layout align-center justify-space-around wrap"
+    >
+      <div
+        class="v-avatar primary"
+        style="height: 100px; width: 100px;"
+      >
+        <i
+          aria-hidden="true"
+          class="v-icon icon icon-users theme--light white--text"
+          style="font-size: 70px;"
+        />
+      </div>
+       
+      <span
+        class="text-xs-center mt-3 grey--text"
+      >
+        
+        a description
+      
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="v-card__actions"
+  >
+    <div
+      class="layout align-center justify-space-around wrap mb-2"
+    >
+      <a
+        class="v-btn v-btn--round theme--light primary"
+        href="myprofile"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        a button
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard StepsCard Component Snapshots should match snapshots for disabled 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title"
+  >
+    <h3
+      class="grey--text"
+    >
+      
+      a title
+    
+    </h3>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-card__text"
+  >
+    <div
+      class="layout align-center justify-space-around wrap"
+    >
+      <div
+        class="v-avatar"
+        style="height: 100px; width: 100px; background-color: rgba(0, 0, 0, 0.12);"
+      >
+        <i
+          aria-hidden="true"
+          class="v-icon icon icon-users theme--light white--text"
+          style="font-size: 70px;"
+        />
+      </div>
+       
+      <span
+        class="text-xs-center mt-3 grey--text"
+      >
+        
+        a description
+      
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="v-card__actions"
+  >
+    <div
+      class="layout align-center justify-space-around wrap mb-2"
+    >
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light"
+        disabled="disabled"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+        a button
+      
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
