@@ -40,7 +40,7 @@ class Event extends Model
             'store_uuid',
             'uuid',
             'uuid'
-        );
+        )->withPivot('commission_type', 'commission_rate');
     }
 
     public function host()

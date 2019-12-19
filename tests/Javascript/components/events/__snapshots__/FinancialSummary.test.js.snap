@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event CustomerSummary component Snapshots required set 1`] = `
+<v-card-stub
+  tag="div"
+>
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    py-3=""
+    subheading=""
+    tag="div"
+  >
+    
+    Event Financial Summary
+  
+  </v-container-stub>
+   
+  <v-divider-stub />
+   
+  <v-container-stub
+    font-weight-bold=""
+    grey--text=""
+    pt-0=""
+    tag="div"
+  >
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        
+        TOTAL FLEET
+      
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        
+        27
+      
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        
+        TOTAL COST
+      
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        
+        $24,000.00
+      
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-layout-stub
+      align-center=""
+      line=""
+      tag="div"
+    >
+      <v-flex-stub
+        caption=""
+        font-weight-bold=""
+        tag="div"
+      >
+        
+        AMOUNT DUE
+      
+      </v-flex-stub>
+       
+      <v-flex-stub
+        subheading=""
+        tag="div"
+        text-truncate=""
+        text-xs-right=""
+        xs6=""
+      >
+        
+        $824,000.00
+      
+      </v-flex-stub>
+    </v-layout-stub>
+     
+    <v-divider-stub />
+     
+    <v-btn-stub
+      activeclass="v-btn--active"
+      block="true"
+      class="grey ma-0 mt-4 white--text text-none"
+      tag="button"
+      type="button"
+    >
+      
+      View Contract
+    
+    </v-btn-stub>
+  </v-container-stub>
+</v-card-stub>
+`;
