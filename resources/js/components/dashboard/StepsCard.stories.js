@@ -1,21 +1,21 @@
 import { storiesOf } from '@storybook/vue'
 
 // Components
-import Bootstrap from './Bootstrap.vue'
+import StepsCard from './StepsCard.vue'
 
-storiesOf('FoodFleet|dashboard/Bootstrap', module)
+storiesOf('FoodFleet|dashboard/StepsCard', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#ede8e2', default: true }
     ]
   })
   .add('default', () => ({
-    components: { Bootstrap },
+    components: { StepsCard },
     data () {
       return {
         content: {
-          title: '1. Bootstrap title',
-          description: 'Bootstrap description',
+          title: '1. StepsCard title',
+          description: 'StepsCard description',
           button: 'Take me there!'
         },
         icon: {
@@ -31,7 +31,7 @@ storiesOf('FoodFleet|dashboard/Bootstrap', module)
       >
         <v-layout>
           <v-flex xs4>
-            <bootstrap
+            <steps-card
               :content="content"
               :nav-to="navTo"
               :icon="icon"
@@ -42,17 +42,17 @@ storiesOf('FoodFleet|dashboard/Bootstrap', module)
     `
   }))
   .add('more with disabled', () => ({
-    components: { Bootstrap },
+    components: { StepsCard },
     data () {
       return {
         content1: {
-          title: '1. Bootstrap title',
-          description: 'Bootstrap description',
+          title: '1. StepsCard title',
+          description: 'StepsCard description',
           button: 'Take me there!'
         },
         content2: {
-          title: '2. Disabled bootstrap',
-          description: 'Bootstrap description2',
+          title: '2. Disabled stepscard',
+          description: 'StepsCard description2',
           button: 'Take me there!'
         },
         icon1: {
@@ -73,14 +73,14 @@ storiesOf('FoodFleet|dashboard/Bootstrap', module)
       >
         <v-layout>
           <v-flex xs4>
-            <bootstrap
+            <steps-card
               :content="content1"
               :nav-to="navTo1"
               :icon="icon1"
             />
           </v-flex>
           <v-flex xs4 ml-2>
-            <bootstrap
+            <steps-card
               :content="content2"
               :nav-to="navTo2"
               :icon="icon2"

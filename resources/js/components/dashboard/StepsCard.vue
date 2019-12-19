@@ -50,7 +50,7 @@
           v-else
           round
           color="primary"
-          :to="{name: buttonTo}"
+          :href="buttonTo"
         >
           {{ buttonText }}
         </v-btn>
@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .v-btn__content {
     font-size: 12px;
     text-transform: none;

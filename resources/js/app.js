@@ -22,7 +22,7 @@ import eventMenuItems from '~/store/modules/eventMenuItems.js'
 import messages from '~/store/modules/messages.js'
 
 const initialState = {
-  loginSuccessRedirectPath: '/admin',
+  loginSuccessRedirectPath: '/admin/dashboard',
   ...window.__INITIAL_STATE__
 }
 const appInstance = new App({

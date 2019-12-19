@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard Bootstrap Component Snapshots should match snapshots for common 1`] = `
+exports[`Dashboard StepsCard Component Snapshots should match snapshots for common 1`] = `
 <div
   class="v-card v-sheet theme--light"
 >
@@ -53,8 +53,9 @@ exports[`Dashboard Bootstrap Component Snapshots should match snapshots for comm
     <div
       class="layout align-center justify-space-around wrap mb-2"
     >
-      <router-link
-        class="v-btn v-btn--round v-btn--router theme--light primary"
+      <a
+        class="v-btn v-btn--round theme--light primary"
+        href="myprofile"
       >
         <div
           class="v-btn__content"
@@ -63,13 +64,13 @@ exports[`Dashboard Bootstrap Component Snapshots should match snapshots for comm
         a button
       
         </div>
-      </router-link>
+      </a>
     </div>
   </div>
 </div>
 `;
 
-exports[`Dashboard Bootstrap Component Snapshots should match snapshots for disabled 1`] = `
+exports[`Dashboard StepsCard Component Snapshots should match snapshots for disabled 1`] = `
 <div
   class="v-card v-sheet theme--light"
 >
