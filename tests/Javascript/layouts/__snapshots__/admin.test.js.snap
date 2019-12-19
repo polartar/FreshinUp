@@ -439,7 +439,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 </h4>
                  
                 <span
-                  class="v-chip mx-0 pl-3 pr-3 v-chip--disabled v-chip--small theme--light secondary white--text"
+                  class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light secondary white--text"
                   tabindex="-1"
                 >
                   <span
@@ -454,8 +454,8 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 <div>
                   <!---->
                   
+          
         
-      
                 </div>
               </div>
             </div>
