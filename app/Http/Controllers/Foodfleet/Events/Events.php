@@ -12,6 +12,7 @@ use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\Sort;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
+use App\Http\Resources\Foodfleet\EventSummary as EventSummaryResource;
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Filters\BelongsToWhereInIdEquals;
@@ -188,6 +189,15 @@ class Events extends Controller
         $event = $action->execute($inputs);
 
         return new EventResource($event);
+    }
+
+    public function summary(Request $request, $uuid)
+    {
+        $event = QueryBuilder::for(Event::class, $request)
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        return new EventSummaryResource($event);
     }
 
     /**
