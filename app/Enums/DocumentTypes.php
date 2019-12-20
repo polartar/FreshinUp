@@ -8,6 +8,7 @@ final class DocumentTypes extends Enum
 {
     const FROM_TEMPLATE = 1;
     const DOWNLOADABLE = 2;
+    const CONTRACT = 3;
 
     public static function toKeyedSelectArray()
     {

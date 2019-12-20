@@ -7,9 +7,11 @@ use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\EventMenuItem;
 use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\EventSchedule;
+use App\Models\Foodfleet\Document;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 
 use App\Enums\EventStatus as EventStatusEnum;
@@ -856,5 +858,131 @@ class EventTest extends TestCase
             ->json('data');
 
         $this->assertEquals($data['status_id'], EventStatusEnum::DRAFT);
+    }
+
+    public function testEventSummaryWithEventCommissionRate()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create([
+            'users_id' => $user->id
+        ]);
+
+        $event = factory(Event::class)->create([
+            'host_uuid' => $company->uuid,
+            'commission_rate' => 12,
+            'commission_type' => 1
+        ]);
+
+        $stores = factory(Store::class, 2)->create();
+        $storeUuids = $stores->map(function ($store) {
+            return $store->uuid;
+        });
+        $event->stores()->sync($storeUuids);
+
+        factory(EventMenuItem::class, 2)->create([
+            'cost' => 5,
+            'event_uuid' => $event->uuid,
+            'store_uuid' => $storeUuids[0]
+        ]);
+
+        factory(EventMenuItem::class, 3)->create([
+            'cost' => 10,
+            'event_uuid' => $event->uuid,
+            'store_uuid' => $storeUuids[1]
+        ]);
+
+        factory(Document::class, 5)->create([
+            'type' => 3,
+            'status' => 2,
+            'assigned_uuid' => $user->uuid,
+            'assigned_type' => 'App\User'
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/event-summary/" . $event->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals($data['customer']['owner'], $user->first_name . ' ' . $user->last_name);
+        $this->assertEquals($data['customer']['signed_contracts'], 5);
+        $this->assertEquals($data['customer']['phone'], $user->mobile_phone);
+        $this->assertEquals($data['customer']['email'], $user->email);
+        $this->assertEquals($data['financial']['total_fleet'], 2);
+        $this->assertEquals($data['financial']['total_cost'], 40);
+        $this->assertEquals($data['financial']['amount_due'], 64); //10*3+12 + 2*5+12
+    }
+
+    public function testEventSummaryWithOneOfOverrideCommissionRate()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create([
+            'users_id' => $user->id
+        ]);
+
+        $event = factory(Event::class)->create([
+            'host_uuid' => $company->uuid,
+            'commission_rate' => 12,
+            'commission_type' => 1
+        ]);
+
+        $stores = factory(Store::class, 2)->create();
+        $storeUuids = $stores->map(function ($store) {
+            return $store->uuid;
+        });
+        $event->stores()->sync($storeUuids);
+
+        factory(EventMenuItem::class, 2)->create([
+            'cost' => 5,
+            'event_uuid' => $event->uuid,
+            'store_uuid' => $storeUuids[0]
+        ]);
+
+        factory(EventMenuItem::class, 3)->create([
+            'cost' => 10,
+            'event_uuid' => $event->uuid,
+            'store_uuid' => $storeUuids[1]
+        ]);
+
+        factory(Document::class, 5)->create([
+            'type' => 3,
+            'status' => 2,
+            'assigned_uuid' => $user->uuid,
+            'assigned_type' => 'App\User'
+        ]);
+
+        $this->json('PUT', 'api/foodfleet/stores/' . $storeUuids[0], [
+            'event_uuid' => $event->uuid,
+            'commission_rate' => 2,
+            'commission_type' => 2
+        ])
+        ->assertStatus(200)
+        ->json('data');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/event-summary/" . $event->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals($data['customer']['owner'], $user->first_name . ' ' . $user->last_name);
+        $this->assertEquals($data['customer']['signed_contracts'], 5);
+        $this->assertEquals($data['customer']['phone'], $user->mobile_phone);
+        $this->assertEquals($data['customer']['email'], $user->email);
+        $this->assertEquals($data['financial']['total_fleet'], 2);
+        $this->assertEquals($data['financial']['total_cost'], 40);
+        $this->assertEquals($data['financial']['amount_due'], 52.2); // 10*3+12 + 2*5+(2*5*2/100)
     }
 }
