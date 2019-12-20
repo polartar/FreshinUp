@@ -14,10 +14,10 @@ let customers = [
 ]
 
 let statuses = [
-  { id: 1, name: 'Required' },
-  { id: 2, name: 'Draft' },
-  { id: 3, name: 'Pending' },
-  { id: 4, name: 'Approved' },
+  { id: 1, name: 'Draft' },
+  { id: 2, name: 'Pending' },
+  { id: 3, name: 'Approved' },
+  { id: 4, name: 'Required' },
   { id: 5, name: 'Rejected' }
 ]
 
