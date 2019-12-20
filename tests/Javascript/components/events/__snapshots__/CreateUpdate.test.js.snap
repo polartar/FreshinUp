@@ -6811,7 +6811,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-205"
+                                                    name="v-radio-213"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -6848,7 +6848,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-205"
+                                                    name="v-radio-213"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -8129,6 +8129,172 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row px-2 py-4"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="layout"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+          style="width: 100%;"
+        >
+          <div
+            class="v-card__title justify-space-between px-4"
+          >
+            <span
+              class="black--text font-weight-bold title text-uppercase"
+            >
+              Customer
+            </span>
+          </div>
+           
+          <hr />
+           
+          <div
+            class="pa-4"
+          >
+            <div
+              class="layout row"
+            >
+              <div
+                class="flex"
+              >
+                <div>
+                  <div
+                    class="v-table__overflow"
+                  >
+                    <table
+                      class="v-datatable v-table theme--light"
+                    >
+                      <thead>
+                        <tr>
+                          <th
+                            aria-label="CONTRACT STATUS: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            
+    CONTRACT STATUS
+  
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="LAST UPDATED ON: Not sorted."
+                            aria-sort="none"
+                            class="column text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                          >
+                            
+    LAST UPDATED ON
+  
+                          </th>
+                          <th
+                            aria-label="SUBMITTED ON: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            
+    SUBMITTED ON
+  
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="MANAGE: Not sorted."
+                            aria-sort="none"
+                            class="column text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                          >
+                            
+    MANAGE
+  
+                          </th>
+                        </tr>
+                        <tr
+                          class="v-datatable__progress"
+                        >
+                          <th
+                            class="column"
+                            colspan="4"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="py-3"
+                          >
+                            <!---->
+                          </td>
+                           
+                          <td
+                            class="py-3"
+                          >
+                            
+      
+    
+                          </td>
+                           
+                          <td
+                            class="text-xs-left py-3"
+                          >
+                            
+      
+    
+                          </td>
+                           
+                          <td
+                            class="text-xs-right py-3"
+                          >
+                            <button
+                              class="primary v-btn theme--light"
+                              type="button"
+                            >
+                              <div
+                                class="v-btn__content"
+                              >
+                                
+        View Details
+      
+                              </div>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -15194,7 +15360,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-469"
+                                                    name="v-radio-497"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -15231,7 +15397,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-469"
+                                                    name="v-radio-497"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -16511,6 +16677,269 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="layout row px-2 py-4"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="layout"
+      >
+        <div
+          class="v-card v-sheet theme--light"
+          style="width: 100%;"
+        >
+          <div
+            class="v-card__title justify-space-between px-4"
+          >
+            <span
+              class="black--text font-weight-bold title text-uppercase"
+            >
+              Customer
+            </span>
+          </div>
+           
+          <hr />
+           
+          <div
+            class="pa-4"
+          >
+            <div
+              class="layout row"
+            >
+              <div
+                class="flex"
+              >
+                <div>
+                  <div
+                    class="v-table__overflow"
+                  >
+                    <table
+                      class="v-datatable v-table theme--light"
+                    >
+                      <thead>
+                        <tr>
+                          <th
+                            aria-label="CONTRACT STATUS: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            
+    CONTRACT STATUS
+  
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="LAST UPDATED ON: Not sorted."
+                            aria-sort="none"
+                            class="column text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                          >
+                            
+    LAST UPDATED ON
+  
+                          </th>
+                          <th
+                            aria-label="SUBMITTED ON: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            
+    SUBMITTED ON
+  
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="MANAGE: Not sorted."
+                            aria-sort="none"
+                            class="column text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                          >
+                            
+    MANAGE
+  
+                          </th>
+                        </tr>
+                        <tr
+                          class="v-datatable__progress"
+                        >
+                          <th
+                            class="column"
+                            colspan="4"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="py-3"
+                          >
+                            <button
+                              class="v-btn theme--dark grey grey-text--text"
+                              type="button"
+                            >
+                              <div
+                                class="v-btn__content"
+                              >
+                                
+  Draft
+ 
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon v-icon--right material-icons theme--dark"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </button>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                 
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Draft
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Pending
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Confirmed
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Past
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Cancelled
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                           
+                          <td
+                            class="py-3"
+                          >
+                            
+      
+    
+                          </td>
+                           
+                          <td
+                            class="text-xs-left py-3"
+                          >
+                            
+      
+    
+                          </td>
+                           
+                          <td
+                            class="text-xs-right py-3"
+                          >
+                            <button
+                              class="primary v-btn theme--light"
+                              type="button"
+                            >
+                              <div
+                                class="v-btn__content"
+                              >
+                                
+        View Details
+      
+                              </div>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>

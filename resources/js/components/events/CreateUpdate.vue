@@ -80,6 +80,20 @@
         />
       </v-flex>
     </v-layout>
+
+    <v-layout
+      row
+      px-2
+      py-4
+    >
+      <v-flex>
+        <customers
+          :customers="customers"
+          :statuses="statuses"
+          @manage-view-details="viewDocuments"
+        />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -91,6 +105,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
 import BasicInfoformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
+import Customers from '~/components/events/Customers.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -102,7 +117,8 @@ export default {
   components: {
     Stores,
     StatusSelect,
-    BasicInfoformation
+    BasicInfoformation,
+    Customers
   },
   mixins: [Validate],
   data () {
@@ -122,6 +138,16 @@ export default {
     ]),
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
+    },
+    customers () {
+      return this.event ? [
+        {
+          uuid: this.event.uuid,
+          status: this.status_id,
+          updated_at: this.event.updated_at,
+          created_at: this.event.created_at
+        }
+      ] : []
     }
   },
   methods: {
@@ -188,8 +214,14 @@ export default {
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
     },
+    viewDocuments () {
+      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/documents' })
+    },
     backToList () {
       this.$router.push({ path: '/admin/events' })
+    },
+    changeStatus () {
+
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
