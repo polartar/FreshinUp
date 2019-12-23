@@ -6811,7 +6811,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-213"
+                                                    name="v-radio-225"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -6848,7 +6848,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-213"
+                                                    name="v-radio-225"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -8257,7 +8257,104 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                           <td
                             class="py-3"
                           >
-                            <!---->
+                            <button
+                              class="v-btn theme--dark grey grey-text--text"
+                              type="button"
+                            >
+                              <div
+                                class="v-btn__content"
+                              >
+                                
+  Draft
+ 
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon v-icon--right material-icons theme--dark"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </button>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                 
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Draft
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Pending
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Confirmed
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Past
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Cancelled
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </td>
                            
                           <td
@@ -15360,7 +15457,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-497"
+                                                    name="v-radio-509"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -15397,7 +15494,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-497"
+                                                    name="v-radio-509"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"

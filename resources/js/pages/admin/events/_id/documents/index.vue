@@ -25,10 +25,10 @@
         {{ pageTitle }}
       </h2>
       <v-flex
+        v-if="statuses.length"
         text-xs-right
         sm2
         xs12
-        v-if="statuses.length"
       >
         <status-select
           :value="status"
@@ -39,37 +39,68 @@
     <v-divider />
     <br>
     <v-layout
-        row
-        wrap
-        pa-2
-        justify-space-between
-        class="event-new-wrap"
+      row
+      wrap
+      pa-2
+      justify-space-between
+      class="event-new-wrap"
+    >
+      <v-flex
+        md9
+        sm8
       >
-        <v-flex
-          md9
-          sm8
+        <v-tabs
+          v-model="active"
+          slider-color="primary"
         >
-        </v-flex>
-        <v-flex
-          md3
-          sm4
-        >
-          <div
-            class="mb-4"
+          <v-tab
+            key="0"
+            ripple
           >
-            <customer-summary
-              :customer="customer"
-              @onButtonClick="viewCustomerProfile"
+            Event Document
+          </v-tab>
+          <v-tab
+            key="1"
+            ripple
+          >
+            Event Activity
+          </v-tab>
+          <v-tab-item
+            key="0"
+          >
+            <document-section
+              :statuses="documentStatuses"
+              :documents="[]"
             />
-          </div>
-          <div>
-            <financial-summary
-              :financial="financial"
-              @onButtonClick="viewContact"
-            />
-          </div>
-        </v-flex>
-      </v-layout>
+          </v-tab-item>
+          <v-tab-item
+            key="1"
+          >
+            <message-list />
+          </v-tab-item>
+        </v-tabs>
+      </v-flex>
+      <v-flex
+        md3
+        sm4
+        pl-3
+      >
+        <div
+          class="mb-4"
+        >
+          <customer-summary
+            :customer="customer"
+            @onButtonClick="viewCustomerProfile"
+          />
+        </div>
+        <div>
+          <financial-summary
+            :financial="financial"
+            @onButtonClick="viewContact"
+          />
+        </div>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -78,23 +109,29 @@ import { mapGetters, mapActions } from 'vuex'
 import StatusSelect from '~/components/events/StatusSelect'
 import CustomerSummary from '~/components/events/CustomerSummary'
 import FinancialSummary from '~/components/events/FinancialSummary'
+import DocumentSection from '~/components/events/DocumentSection'
+import MessageList from '~/components/events/MessageList'
 
 export default {
   layout: 'admin',
   components: {
     StatusSelect,
     CustomerSummary,
-    FinancialSummary
+    FinancialSummary,
+    DocumentSection,
+    MessageList
   },
   data () {
     return {
-      financial: {}
+      financial: {},
+      active: 0
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('documentStatuses', { 'documentStatuses': 'items' }),
     pageTitle () {
       return this.event && this.event.name
     },
@@ -133,7 +170,8 @@ export default {
 
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
-      vm.$store.dispatch('eventStatuses/getItems')
+      vm.$store.dispatch('eventStatuses/getItems'),
+      vm.$store.dispatch('documentStatuses/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
