@@ -28,6 +28,7 @@ class Event extends JsonResource
             "location" => new Location($this->whenLoaded('location')),
             "event_tags" => EventTag::collection($this->whenLoaded('eventTags')),
             "host" => new Company($this->whenLoaded('host')),
+            'host_status' => $this->host_status,
             "stores" => Store::collection($this->whenLoaded('stores')),
             "schedule" => new EventSchedule($this->whenLoaded('schedule')),
             "start_at" => $this->start_at,

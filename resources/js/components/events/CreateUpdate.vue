@@ -143,7 +143,7 @@ export default {
       return this.event ? [
         {
           uuid: this.event.uuid,
-          status: this.status_id,
+          status: this.event.host_status,
           updated_at: this.event.updated_at,
           created_at: this.event.created_at
         }

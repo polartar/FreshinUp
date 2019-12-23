@@ -22,8 +22,19 @@
       ma-2
     >
       <h2 class="white--text">
-        Coming soon
+        {{ pageTitle }}
       </h2>
+      <v-flex
+        text-xs-right
+        sm2
+        xs12
+        v-if="statuses.length"
+      >
+        <status-select
+          :value="status"
+          :options="statuses"
+        />
+      </v-flex>
     </v-layout>
     <v-divider />
     <br>
@@ -36,16 +47,27 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import StatusSelect from '~/components/events/StatusSelect'
 
 export default {
   layout: 'admin',
+  components: {
+    StatusSelect
+  },
   data () {
     return {
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
-    ...mapGetters('events', { event: 'item' })
+    ...mapGetters('events', { event: 'item' }),
+    ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    pageTitle () {
+      return this.event && this.event.name
+    },
+    status () {
+      return this.event && this.event.host_status
+    }
   },
   methods: {
     ...mapActions('page', {
@@ -62,7 +84,8 @@ export default {
     let eventParams = { id: eventUuid }
 
     Promise.all([
-      vm.$store.dispatch('events/getItem', { params: eventParams })
+      vm.$store.dispatch('events/getItem', { params: eventParams }),
+      vm.$store.dispatch('eventStatuses/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
