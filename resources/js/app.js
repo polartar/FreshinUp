@@ -23,6 +23,7 @@ import messages from '~/store/modules/messages.js'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
+  requiredCompanyForRegister: false,
   ...window.__INITIAL_STATE__
 }
 const appInstance = new App({
