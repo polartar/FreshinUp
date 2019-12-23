@@ -39,23 +39,56 @@
     <v-divider />
     <br>
     <v-layout
-      row
-      pa-2
-    />
+        row
+        wrap
+        pa-2
+        justify-space-between
+        class="event-new-wrap"
+      >
+        <v-flex
+          md9
+          sm8
+        >
+        </v-flex>
+        <v-flex
+          md3
+          sm4
+        >
+          <div
+            class="mb-4"
+          >
+            <customer-summary
+              :customer="customer"
+              @onButtonClick="viewCustomerProfile"
+            />
+          </div>
+          <div>
+            <financial-summary
+              :financial="financial"
+              @onButtonClick="viewContact"
+            />
+          </div>
+        </v-flex>
+      </v-layout>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import StatusSelect from '~/components/events/StatusSelect'
+import CustomerSummary from '~/components/events/CustomerSummary'
+import FinancialSummary from '~/components/events/FinancialSummary'
 
 export default {
   layout: 'admin',
   components: {
-    StatusSelect
+    StatusSelect,
+    CustomerSummary,
+    FinancialSummary
   },
   data () {
     return {
+      financial: {}
     }
   },
   computed: {
@@ -67,6 +100,14 @@ export default {
     },
     status () {
       return this.event && this.event.host_status
+    },
+    customer () {
+      return this.event ? {
+        uuid: this.event.uuid,
+        status: this.event.host_status,
+        updated_at: this.event.updated_at,
+        created_at: this.event.created_at
+      } : {}
     }
   },
   methods: {
@@ -75,6 +116,13 @@ export default {
     }),
     backToEventDetails () {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/edit' })
+    },
+    viewCustomerProfile () {
+      if (this.event && this.event.host) {
+        this.$router.push({ path: '/admin/companies/' + this.event.host.id })
+      }
+    },
+    viewContact () {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
