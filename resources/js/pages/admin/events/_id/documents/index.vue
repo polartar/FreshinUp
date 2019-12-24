@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div
+    v-if="!isLoading"
+  >
     <v-layout
       row
       align-center
@@ -25,7 +27,6 @@
         {{ pageTitle }}
       </h2>
       <v-flex
-        v-if="statuses.length"
         text-xs-right
         sm2
         xs12
@@ -50,7 +51,7 @@
         sm8
       >
         <v-tabs
-          v-model="active"
+          v-model="activeTab"
           slider-color="primary"
         >
           <v-tab
@@ -89,13 +90,13 @@
           class="mb-4"
         >
           <customer-summary
-            :customer="customer"
+            :customer="summary.customer"
             @onButtonClick="viewCustomerProfile"
           />
         </div>
         <div>
           <financial-summary
-            :financial="financial"
+            :financial="summary.financial"
             @onButtonClick="viewContact"
           />
         </div>
@@ -123,13 +124,13 @@ export default {
   },
   data () {
     return {
-      financial: {},
-      active: 0
+      activeTab: 0
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
+    ...mapGetters('eventSummary', { 'summary': 'item' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('documentStatuses', { 'documentStatuses': 'items' }),
     pageTitle () {
@@ -171,7 +172,8 @@ export default {
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
       vm.$store.dispatch('eventStatuses/getItems'),
-      vm.$store.dispatch('documentStatuses/getItems')
+      vm.$store.dispatch('documentStatuses/getItems'),
+      vm.$store.dispatch('eventSummary/getItem', { params: eventParams })
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
