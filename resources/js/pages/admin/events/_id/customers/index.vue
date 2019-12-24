@@ -91,8 +91,8 @@
         pl-3
       >
         <div
-          class="mb-4"
           v-if="summary"
+          class="mb-4"
         >
           <customer-summary
             :customer="summary.customer"
@@ -111,6 +111,7 @@
 </template>
 
 <script>
+import { get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import StatusSelect from '~/components/events/StatusSelect'
 import CustomerSummary from '~/components/events/CustomerSummary'
@@ -129,7 +130,8 @@ export default {
   },
   data () {
     return {
-      activeTab: 0
+      activeTab: 0,
+      eventUuid: ''
     }
   },
   computed: {
@@ -141,13 +143,17 @@ export default {
     ...mapGetters('documents', { 'documents': 'items' }),
     ...mapGetters('messages', { 'messages': 'items' }),
     pageTitle () {
-      return this.summary && this.summary.customer && this.summary.customer.owner
+      return get(this.summary, 'customer.owner')
     },
     status () {
-      return this.event && this.event.host_status
+      return get(this.event, 'host_status')
     },
     activists () {
-      return 'Messages between FoodFleet and ' + this.pageTitle+ ' will be displayed here.'
+      if (this.pageTitle) {
+        return 'Messages between FoodFleet and ' + this.pageTitle + ' will be displayed here.'
+      } else {
+        return ''
+      }
     }
   },
   methods: {
@@ -155,26 +161,31 @@ export default {
       setPageLoading: 'setLoading'
     }),
     backToEventDetails () {
-      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/edit' })
+      this.$router.push({ path: '/admin/events/' + get(this.event, 'uuid') + '/edit' })
     },
     viewCustomerProfile () {
-      if (this.event && this.event.host) {
-        this.$router.push({ path: '/admin/companies/' + this.event.host.id })
-      }
+      this.$router.push({ path: '/admin/companies/' + get(this.event, 'host.id') })
     },
     viewContact () {
     },
-    postMessage (message) {
+    async postMessage (message) {
+      const data = {
+        content: message,
+        event_uuid: get(this.event, 'uuid')
+      }
 
+      await this.$store.dispatch('messages/createItem', { data })
+      await this.$store.dispatch('messages/getItems')
+      await this.$store.dispatch('generalMessage/setMessage', 'Saved')
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-    const eventUuid = to.path.split('/')[3]
+    this.eventUuid = to.path.split('/')[3]
 
-    const eventParams = { id: eventUuid }
-    const documentFilters = { assigned_uuid: eventUuid }
-    const messageFilters = { event_uuid: eventUuid }
+    const eventParams = { id: this.eventUuid }
+    const documentFilters = { assigned_uuid: this.eventUuid }
+    const messageFilters = { event_uuid: this.eventUuid }
 
     vm.$store.dispatch('documents/setFilters', documentFilters)
     vm.$store.dispatch('messages/setFilters', messageFilters)

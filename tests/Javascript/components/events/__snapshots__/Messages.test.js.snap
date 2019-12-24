@@ -15,7 +15,7 @@ exports[`Messages component test Snapshots messages 1`] = `
         class="layout message-title row"
       >
         <span
-          class="grey--text font-weight-bold title text-uppercase"
+          class="grey--text"
         >
           Activists' Name
         </span>
@@ -224,7 +224,7 @@ exports[`Messages component test Snapshots messages empty 1`] = `
         class="layout message-title row"
       >
         <span
-          class="grey--text font-weight-bold title text-uppercase"
+          class="grey--text"
         >
           Activists' Name
         </span>
