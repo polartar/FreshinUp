@@ -88,6 +88,7 @@
       >
         <div
           class="mb-4"
+          v-if="summary"
         >
           <customer-summary
             :customer="summary.customer"
@@ -138,14 +139,6 @@ export default {
     },
     status () {
       return this.event && this.event.host_status
-    },
-    customer () {
-      return this.event ? {
-        uuid: this.event.uuid,
-        status: this.event.host_status,
-        updated_at: this.event.updated_at,
-        created_at: this.event.created_at
-      } : {}
     }
   },
   methods: {

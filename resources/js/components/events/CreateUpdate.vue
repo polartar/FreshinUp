@@ -215,7 +215,7 @@ export default {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
     },
     viewDocuments () {
-      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/documents' })
+      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/customers' })
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
