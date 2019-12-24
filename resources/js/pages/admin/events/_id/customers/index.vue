@@ -77,7 +77,11 @@
           <v-tab-item
             key="1"
           >
-            <message-list />
+            <messages
+              :messages="messages"
+              :activists="activists"
+              @send-message="postMessage"
+            />
           </v-tab-item>
         </v-tabs>
       </v-flex>
@@ -112,7 +116,7 @@ import StatusSelect from '~/components/events/StatusSelect'
 import CustomerSummary from '~/components/events/CustomerSummary'
 import FinancialSummary from '~/components/events/FinancialSummary'
 import DocumentSection from '~/components/events/DocumentSection'
-import MessageList from '~/components/events/MessageList'
+import Messages from '~/components/events/Messages'
 
 export default {
   layout: 'admin',
@@ -121,7 +125,7 @@ export default {
     CustomerSummary,
     FinancialSummary,
     DocumentSection,
-    MessageList
+    Messages
   },
   data () {
     return {
@@ -135,11 +139,15 @@ export default {
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('documentStatuses', { 'documentStatuses': 'items' }),
     ...mapGetters('documents', { 'documents': 'items' }),
+    ...mapGetters('messages', { 'messages': 'items' }),
     pageTitle () {
-      return this.event && this.event.name
+      return this.summary && this.summary.customer && this.summary.customer.owner
     },
     status () {
       return this.event && this.event.host_status
+    },
+    activists () {
+      return 'Messages between FoodFleet and ' + this.pageTitle+ ' will be displayed here.'
     }
   },
   methods: {
@@ -155,20 +163,29 @@ export default {
       }
     },
     viewContact () {
+    },
+    postMessage (message) {
+
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
     const eventUuid = to.path.split('/')[3]
 
-    let eventParams = { id: eventUuid }
+    const eventParams = { id: eventUuid }
+    const documentFilters = { assigned_uuid: eventUuid }
+    const messageFilters = { event_uuid: eventUuid }
+
+    vm.$store.dispatch('documents/setFilters', documentFilters)
+    vm.$store.dispatch('messages/setFilters', messageFilters)
 
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
+      vm.$store.dispatch('eventSummary/getItem', { params: eventParams }),
       vm.$store.dispatch('eventStatuses/getItems'),
       vm.$store.dispatch('documentStatuses/getItems'),
-      vm.$store.dispatch('eventSummary/getItem', { params: eventParams }),
-      vm.$store.dispatch('documents/getItems', { params: eventParams })
+      vm.$store.dispatch('documents/getItems'),
+      vm.$store.dispatch('messages/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
