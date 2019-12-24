@@ -71,7 +71,7 @@
           >
             <document-section
               :statuses="documentStatuses"
-              :documents="[]"
+              :documents="documents"
             />
           </v-tab-item>
           <v-tab-item
@@ -134,6 +134,7 @@ export default {
     ...mapGetters('eventSummary', { 'summary': 'item' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('documentStatuses', { 'documentStatuses': 'items' }),
+    ...mapGetters('documents', { 'documents': 'items' }),
     pageTitle () {
       return this.event && this.event.name
     },
@@ -166,7 +167,8 @@ export default {
       vm.$store.dispatch('events/getItem', { params: eventParams }),
       vm.$store.dispatch('eventStatuses/getItems'),
       vm.$store.dispatch('documentStatuses/getItems'),
-      vm.$store.dispatch('eventSummary/getItem', { params: eventParams })
+      vm.$store.dispatch('eventSummary/getItem', { params: eventParams }),
+      vm.$store.dispatch('documents/getItems', { params: eventParams })
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
