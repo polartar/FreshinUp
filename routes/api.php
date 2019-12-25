@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => ['auth:api']], function () {
+
     Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
@@ -41,6 +42,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
     Route::get('store-summary/{uuid}', 'Foodfleet\Stores@summary');
     Route::get('store-service-summary/{uuid}', 'Foodfleet\Stores@serviceSummary');
+    Route::get('store-types', 'Foodfleet\StoreTypes@index');
 
     Route::get('event-menu-items/new', 'Foodfleet\EventMenuItems@showNewRecommendation');
     Route::apiResource('event-menu-items', 'Foodfleet\EventMenuItems');

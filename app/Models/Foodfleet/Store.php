@@ -10,6 +10,8 @@ use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use FreshinUp\FreshBusForms\Traits\HasAddresses;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class PaymentType
@@ -23,14 +25,32 @@ use FreshinUp\FreshBusForms\Traits\HasAddresses;
  * @property string $deleted_at
  *
  */
-class Store extends Model
+class Store extends Model implements HasMedia
 {
     use SoftDeletes;
     use GeneratesUuid;
     use HasAddresses;
+    use HasMediaTrait;
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('image')
+            ->useDisk('bus')
+            ->singleFile();
+    }
+
+    public function getImageAttribute()
+    {
+        $media = $this->getFirstMedia('image');
+
+        return null !== $media
+            ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
+            : 'https://via.placeholder.com/800x600.png';
+    }
 
     public function supplier()
     {

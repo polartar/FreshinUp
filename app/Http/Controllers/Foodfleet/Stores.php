@@ -96,7 +96,7 @@ class Stores extends Controller
     {
         $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes(['menus', 'tags', 'documents', 'events']);
+            ->allowedIncludes(['menus', 'tags', 'documents', 'events', 'supplier.admin']);
 
         // Include eventsCount in the query if needed
         if ($request->has('provide') && $request->get('provide') == 'events-count') {
