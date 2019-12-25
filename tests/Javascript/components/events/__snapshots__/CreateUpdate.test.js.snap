@@ -16903,14 +16903,14 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                             class="py-3"
                           >
                             <button
-                              class="v-btn theme--dark grey grey-text--text"
+                              class="v-btn theme--dark warning warning-text--text"
                               type="button"
                             >
                               <div
                                 class="v-btn__content"
                               >
                                 
-  Draft
+  Pending
  
                                 <i
                                   aria-hidden="true"
