@@ -142,6 +142,7 @@ export default {
     ...mapGetters('documentStatuses', { 'documentStatuses': 'items' }),
     ...mapGetters('documents', { 'documents': 'items' }),
     ...mapGetters('messages', { 'messages': 'items' }),
+    ...mapGetters('stores', { 'stores': 'items' }),
     pageTitle () {
       return get(this.summary, 'customer.owner')
     },
@@ -169,9 +170,12 @@ export default {
     viewContact () {
     },
     async postMessage (message) {
+      const eventUuid = get(this.event, 'uuid')
       const data = {
         content: message,
-        event_uuid: get(this.event, 'uuid')
+        event_uuid: eventUuid,
+        store_uuid: get(this.stores, '[0].uuid'),
+        recipient_uuid: get(this.event, 'host.id')
       }
 
       await this.$store.dispatch('messages/createItem', { data })
@@ -183,20 +187,24 @@ export default {
     vm.setPageLoading(true)
     this.eventUuid = to.path.split('/')[3]
 
-    const eventParams = { id: this.eventUuid }
+    const eventParams = {
+      id: this.eventUuid,
+      include: 'host'
+    }
     const documentFilters = { assigned_uuid: this.eventUuid }
-    const messageFilters = { event_uuid: this.eventUuid }
-
     vm.$store.dispatch('documents/setFilters', documentFilters)
+
+    const messageFilters = { event_uuid: this.eventUuid }
     vm.$store.dispatch('messages/setFilters', messageFilters)
 
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
-      vm.$store.dispatch('eventSummary/getItem', { params: eventParams }),
+      vm.$store.dispatch('eventSummary/getItem', { params: { id: this.eventUuid } }),
       vm.$store.dispatch('eventStatuses/getItems'),
       vm.$store.dispatch('documentStatuses/getItems'),
       vm.$store.dispatch('documents/getItems'),
-      vm.$store.dispatch('messages/getItems')
+      vm.$store.dispatch('messages/getItems'),
+      vm.$store.dispatch('stores/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
