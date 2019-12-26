@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
             \CategoriesTableSeeder::class,
             \StaffsTableSeeder::class,
             \StoreTagsTableSeeder::class,
-            \StoresTableSeeder::class,
             \StoreStatusesSeeder::class,
             \StoreTypesSeeder::class,
             \StoresTableSeeder::class,
