@@ -15,7 +15,7 @@ class AddFieldsToStoresTable extends Migration
     public function up()
     {
         Schema::table('stores', function (Blueprint $table) {
-            $table->integer('type_id')->unsigned();
+            $table->integer('type_id')->unsigned()->nullable();
             $table->string('website')->nullable();
             $table->string('contact_phone')->nullable();
             $table->string('size')->nullable();

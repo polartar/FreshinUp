@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\StoreType;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\EventMenuItem;
 use App\User;
@@ -114,6 +115,46 @@ class StoresTest extends TestCase
             'name' => $stores[1]->name,
             'tags' => [['name' => $tags[0]->name]]
         ], $data[1]);
+    }
+
+
+    public function testTypeAndContacts()
+    {
+
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $type = factory(StoreType::class)->create();
+
+        $stores = factory(Store::class,1)->create([
+            'status' => 1,
+            'type_id' => $type->id,
+            'size' => 'A',
+            'website' => 'a@a.com',
+            'contact_phone' => '1234657890',
+            'image' => 'a.png',
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+
+        foreach ($data as $key => $value) {
+            $this->assertArraySubset([
+                'uuid' => $stores[$key]->uuid,
+                'name' => $stores[$key]->name,
+                'size' => $stores[$key]->size,
+                'website' => $stores[$key]->website,
+                'contact_phone' => $stores[$key]->contact_phone,
+                'image' => $stores[$key]->image,
+            ], $value);
+        }
     }
 
     public function testStatusAndAddress()
