@@ -50,7 +50,7 @@ class CompanyTest extends TestCase
                 $data[] = ['square_id' => $location->getId(), 'name' => $location->getName()];
             }
 
-            $response = $this->json('get', "http://foodfleet.test/api/foodfleet/companies/{$company->id}/square-locations");
+            $response = $this->json('get', "/api/foodfleet/companies/{$company->id}/square-locations");
             $response = json_decode($response->content());
             $this->assertNotEmpty($data);
             $this->assertEquals(count($response->data), count($data));
