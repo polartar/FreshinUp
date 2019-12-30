@@ -41,6 +41,8 @@ class SquareLocation extends Controller
         }
         // $data = SquareLocationResource::collection($data);
 
-        return json_encode($data);
+        $dataobj = array();
+        $dataobj['data'] = $data;
+        return json_encode($dataobj);
     }
 }
