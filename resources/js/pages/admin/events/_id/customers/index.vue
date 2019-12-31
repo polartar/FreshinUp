@@ -86,12 +86,12 @@
         </v-tabs>
       </v-flex>
       <v-flex
+        v-if="summary"
         md3
         sm4
         pl-3
       >
         <div
-          v-if="summary"
           class="mb-4"
         >
           <customer-summary

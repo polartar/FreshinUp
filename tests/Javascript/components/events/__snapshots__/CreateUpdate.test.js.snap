@@ -8374,10 +8374,10 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                           </td>
                            
                           <td
-                            class="text-xs-right py-3"
+                            class="text-xs-left py-3"
                           >
                             <button
-                              class="primary v-btn theme--light"
+                              class="primary ml-0 v-btn theme--light"
                               type="button"
                             >
                               <div
@@ -17019,10 +17019,10 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                           </td>
                            
                           <td
-                            class="text-xs-right py-3"
+                            class="text-xs-left py-3"
                           >
                             <button
-                              class="primary v-btn theme--light"
+                              class="primary ml-0 v-btn theme--light"
                               type="button"
                             >
                               <div
