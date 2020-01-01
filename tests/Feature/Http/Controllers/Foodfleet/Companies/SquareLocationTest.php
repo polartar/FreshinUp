@@ -60,10 +60,7 @@ class CompanyTest extends TestCase
                     'name' => $location->name,
                 ], $data[$idx]);
             }
-
         } catch (\SquareConnect\ApiException $e) {
-
         }
     }
 }
-

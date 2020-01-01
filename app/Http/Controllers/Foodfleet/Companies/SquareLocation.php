@@ -11,7 +11,6 @@ use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Company\SquareLocation as SquareLocationResource;
 use Illuminate\Support\Facades\DB;
 
-
 class SquareLocation extends Controller
 {
     /**
@@ -35,9 +34,7 @@ class SquareLocation extends Controller
             foreach ($locations->getLocations() as $idx => $location) {
                 $data[] = ['square_id' => $location->getId(), 'name' => $location->getName()];
             }
-
         } catch (\SquareConnect\ApiException $e) {
-
         }
         // $data = SquareLocationResource::collection($data);
 
