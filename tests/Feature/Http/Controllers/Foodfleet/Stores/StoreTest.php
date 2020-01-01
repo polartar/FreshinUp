@@ -126,7 +126,7 @@ class StoresTest extends TestCase
 
         $type = factory(StoreType::class)->create();
 
-        $stores = factory(Store::class,1)->create([
+        $stores = factory(Store::class, 1)->create([
             'status' => 1,
             'type_id' => $type->id,
             'size' => 'A',
