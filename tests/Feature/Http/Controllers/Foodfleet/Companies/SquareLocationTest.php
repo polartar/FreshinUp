@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CompanyTest extends TestCase
+class SquareLocationTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
