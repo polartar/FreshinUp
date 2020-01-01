@@ -36,8 +36,6 @@ class SquareLocation extends Controller
             }
         } catch (\SquareConnect\ApiException $e) {
         }
-        // $data = SquareLocationResource::collection($data);
-
         $dataobj = array();
         $dataobj['data'] = $data;
         return json_encode($dataobj);
