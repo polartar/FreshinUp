@@ -5,11 +5,17 @@ import { FIXTURE_STORE } from 'tests/__data__/stores'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 import { FIXTURE_EVENTS } from 'tests/__data__/events'
 import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
+import { FIXTURE_DOCS } from 'tests/__data__/documents'
+import { FIXTURE_DOC_STATUSES } from 'tests/__data__/documentStatuses'
+
 import Component from '~/pages/admin/fleet-members/_id/index.vue'
 import events from '~/store/modules/events'
 import eventStatuses from '~/store/modules/eventStatuses'
 import stores from '~/store/modules/stores'
 import storeStatuses from '~/store/modules/storeStatuses'
+import documents from '~/store/modules/documents'
+import documentStatuses from '~/store/modules/documentStatuses'
+import { docMethodsTests } from 'tests/shared/doc_management_tests.js'
 
 describe('Fleet Members Page', () => {
   let localVue, mock, store, actions
@@ -36,6 +42,10 @@ describe('Fleet Members Page', () => {
         .reply(200, { data: FIXTURE_STORE_STATUSES })
         .onGet('api/foodfleet/events')
         .reply(200, { data: FIXTURE_EVENTS })
+        .onGet('api/foodfleet/documents')
+        .reply(200, { data: FIXTURE_DOCS })
+        .onGet('api/foodfleet/document-statuses')
+        .reply(200, { data: FIXTURE_DOC_STATUSES })
         .onAny()
         .reply(config => {
           console.warn('No mock match for ' + config.url, config)
@@ -48,7 +58,9 @@ describe('Fleet Members Page', () => {
             events: events({}),
             eventStatuses: eventStatuses({}),
             stores: stores({}),
-            storeStatuses: storeStatuses({})
+            storeStatuses: storeStatuses({}),
+            docs: documents({}),
+            docStatuses: documentStatuses({})
           }
         }
       )
@@ -66,6 +78,8 @@ describe('Fleet Members Page', () => {
       await wrapper.vm.$store.dispatch('events/getItems')
       await wrapper.vm.$store.dispatch('storeStatuses/getItems')
       await wrapper.vm.$store.dispatch('eventStatuses/getItems')
+      await wrapper.vm.$store.dispatch('documents/getItems')
+      await wrapper.vm.$store.dispatch('documentStatuses/getItems')
       await wrapper.vm.$nextTick()
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
@@ -155,5 +169,9 @@ describe('Fleet Members Page', () => {
       })
       expect(wrapper.vm.eventsPagination.rowsPerPage).toBe(2)
     })
+  })
+
+  describe('Doc Methods', () => {
+    docMethodsTests(Component)
   })
 })

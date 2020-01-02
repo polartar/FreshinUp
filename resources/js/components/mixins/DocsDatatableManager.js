@@ -28,7 +28,8 @@ export default {
     }),
 
     docsActiveStoreUuid () {
-      return this.$route.params.id
+      if (this.$route && this.$route.params) return this.$route.params.id
+      return null
     },
 
     docsStatusesWithColors () {
@@ -120,7 +121,7 @@ export default {
     },
     docsChangeStatusMultiple (status, docs) {
       docs.forEach(doc => {
-        this.changeStatus(status, doc)
+        this.docsChangeStatus(status, doc)
       })
     },
 
