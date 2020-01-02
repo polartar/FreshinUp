@@ -28,23 +28,30 @@ describe('Fleet Members Page', () => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
       mock = vue.mock
-        .onGet('api/foodfleet/stores/' + FIXTURE_STORE.uuid).reply(200, { data: FIXTURE_STORE })
-        .onGet('api/foodfleet/event-statuses').reply(200, { data: FIXTURE_EVENT_STATUSES })
-        .onGet('api/foodfleet/store-statuses').reply(200, { data: FIXTURE_STORE_STATUSES })
-        .onGet('api/foodfleet/events').reply(200, { data: FIXTURE_EVENTS })
+        .onGet('api/foodfleet/stores/' + FIXTURE_STORE.uuid)
+        .reply(200, { data: FIXTURE_STORE })
+        .onGet('api/foodfleet/event-statuses')
+        .reply(200, { data: FIXTURE_EVENT_STATUSES })
+        .onGet('api/foodfleet/store-statuses')
+        .reply(200, { data: FIXTURE_STORE_STATUSES })
+        .onGet('api/foodfleet/events')
+        .reply(200, { data: FIXTURE_EVENTS })
         .onAny()
         .reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      const store = createStore({}, {
-        modules: {
-          events: events({}),
-          eventStatuses: eventStatuses({}),
-          stores: stores({}),
-          storeStatuses: storeStatuses({})
+      const store = createStore(
+        {},
+        {
+          modules: {
+            events: events({}),
+            eventStatuses: eventStatuses({}),
+            stores: stores({}),
+            storeStatuses: storeStatuses({})
+          }
         }
-      })
+      )
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         store
@@ -52,7 +59,9 @@ describe('Fleet Members Page', () => {
       // Action: change State Machine's state
       await wrapper.vm.$store.dispatch('page/setLoading', true)
       await wrapper.vm.$nextTick()
-      await wrapper.vm.$store.dispatch('stores/getItem', { params: { id: FIXTURE_STORE.uuid } })
+      await wrapper.vm.$store.dispatch('stores/getItem', {
+        params: { id: FIXTURE_STORE.uuid }
+      })
       await wrapper.vm.$nextTick()
       await wrapper.vm.$store.dispatch('events/getItems')
       await wrapper.vm.$store.dispatch('storeStatuses/getItems')
@@ -73,24 +82,30 @@ describe('Fleet Members Page', () => {
         getItems: jest.fn(),
         setFilters: jest.fn()
       }
-      store = createStore({
-        stores: {
-          item: FIXTURE_STORE
+      store = createStore(
+        {
+          stores: {
+            item: FIXTURE_STORE
+          },
+          storeStatuses: {
+            items: FIXTURE_STORE_STATUSES
+          },
+          events: {
+            items: FIXTURE_EVENTS
+          },
+          eventStatuses: {
+            items: FIXTURE_EVENT_STATUSES
+          }
         },
-        storeStatuses: {
-          items: FIXTURE_STORE_STATUSES
-        },
-        events: {
-          items: FIXTURE_EVENTS
-        },
-        eventStatuses: {
-          items: FIXTURE_EVENT_STATUSES
+        {
+          modules: {
+            events: {
+              ...eventModule,
+              actions: { ...eventModule.actions, ...actions }
+            }
+          }
         }
-      }, {
-        modules: {
-          events: { ...eventModule, actions: { ...eventModule.actions, ...actions } }
-        }
-      })
+      )
     })
 
     afterEach(() => {
@@ -120,7 +135,7 @@ describe('Fleet Members Page', () => {
       expect(actions.getItems.mock.calls).toHaveLength(1)
     })
 
-    test('onPaginate function change paginate', () => {
+    test('onPaginateEvents function', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         store,
@@ -133,12 +148,12 @@ describe('Fleet Members Page', () => {
         }
       })
 
-      wrapper.vm.onPaginate({
+      wrapper.vm.onPaginateEvents({
         rowsPerPage: 2,
         totalItems: 5,
         page: 2
       })
-      expect(wrapper.vm.pagination.rowsPerPage).toBe(2)
+      expect(wrapper.vm.eventsPagination.rowsPerPage).toBe(2)
     })
   })
 })
