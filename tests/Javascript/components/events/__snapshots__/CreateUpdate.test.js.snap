@@ -6811,7 +6811,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-225"
+                                                    name="v-radio-213"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -6848,7 +6848,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-225"
+                                                    name="v-radio-213"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -8255,139 +8255,24 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="py-3"
+                            class=""
+                            colspan="4"
                           >
-                            <button
-                              class="v-btn theme--dark grey grey-text--text"
-                              type="button"
-                            >
-                              <div
-                                class="v-btn__content"
-                              >
-                                
-  Draft
- 
-                                <i
-                                  aria-hidden="true"
-                                  class="v-icon v-icon--right material-icons theme--dark"
-                                >
-                                  arrow_drop_down
-                                </i>
-                              </div>
-                            </button>
                             <div
-                              class="v-menu"
+                              class="v-alert error"
                             >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light v-alert__icon"
                               >
-                                 
-                                <div
-                                  class="v-list theme--light"
-                                  role="list"
-                                >
-                                  <div
-                                    role="listitem"
-                                  >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        Draft
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div
-                                    role="listitem"
-                                  >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        Pending
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div
-                                    role="listitem"
-                                  >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        Confirmed
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div
-                                    role="listitem"
-                                  >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        Past
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div
-                                    role="listitem"
-                                  >
-                                    <a
-                                      class="v-list__tile v-list__tile--link theme--light"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        Cancelled
-                                      </div>
-                                    </a>
-                                  </div>
-                                </div>
+                                warning
+                              </i>
+                              <div>
+                                
+      Sorry, nothing to display here :(
+    
                               </div>
                             </div>
-                          </td>
-                           
-                          <td
-                            class="py-3"
-                          >
-                            
-      
-    
-                          </td>
-                           
-                          <td
-                            class="text-xs-left py-3"
-                          >
-                            
-      
-    
-                          </td>
-                           
-                          <td
-                            class="text-xs-left py-3"
-                          >
-                            <button
-                              class="primary ml-0 v-btn theme--light"
-                              type="button"
-                            >
-                              <div
-                                class="v-btn__content"
-                              >
-                                
-        View Details
-      
-                              </div>
-                            </button>
                           </td>
                         </tr>
                       </tbody>
@@ -15457,7 +15342,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-509"
+                                                    name="v-radio-497"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -15494,7 +15379,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-509"
+                                                    name="v-radio-497"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
