@@ -140,7 +140,7 @@ export default {
       return (this.isNew ? 'New Event' : 'Event Details')
     },
     customers () {
-      return this.event ? [
+      return (this.event && !this.isNew) ? [
         {
           uuid: this.event.uuid,
           status: this.event.host_status,
