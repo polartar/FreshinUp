@@ -62,7 +62,8 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::post('squares', 'Foodfleet\Squares@store');
 
     Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');
-
+    Route::get('companies/{company}/square-locations', 'Foodfleet\Companies\SquareLocation@index');
+    
     Route::get('venues', 'Foodfleet\Venues@index');
 
     Route::get('messages/new', 'Foodfleet\Messages@showNewRecommendation');

@@ -34,6 +34,13 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'square' => [
+        'sq_token' => env('SQ_TOKEN'),
+        'sq_app_id' => env('SQ_APP_ID'),
+        'sq_app_secret' => env('SQ_APP_SECRET'),
+        'sq_domain' => env('SQ_DOMAIN')
+    ],
+
     'stripe' => [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
