@@ -3,11 +3,7 @@ import { action } from '@storybook/addon-actions'
 import StatusSelect from './StatusSelect'
 import { FIXTURE_DOCUMENT_STATUSES } from '../../../../tests/Javascript/__data__/documentStatuses'
 
-let statuses = FIXTURE_DOCUMENT_STATUSES.map(i => ({
-  id: i.value,
-  name: i.text,
-  color: i.color
-}))
+let statuses = FIXTURE_DOCUMENT_STATUSES
 
 storiesOf('FoodFleet|doc/StatusSelect', module)
   .add('defaults', () => {
