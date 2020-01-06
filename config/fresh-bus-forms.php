@@ -1,7 +1,7 @@
 <?php
 
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\LoginController;
-use Freshinup\FreshBusForms\Http\Controllers\Auth\PasswordsController;
+use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
 use FreshinUp\FreshBusForms\Http\Controllers\ConsumerController;
 use FreshinUp\FreshBusForms\Http\Controllers\SPAController;
 
