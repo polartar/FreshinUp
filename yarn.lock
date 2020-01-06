@@ -1012,9 +1012,9 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git":
-  version "1.3.0"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#a5cd6dc99ac5deeba2d6084ba8abfd27100c8eea"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.7.0":
+  version "1.7.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#393a2288d2fbfbd1928a9fadc70a49b6f95e4e36"
   dependencies:
     dinero.js "^1.6.0"
     pluralize "^8.0.0"
