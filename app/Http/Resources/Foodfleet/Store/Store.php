@@ -3,6 +3,7 @@
 
 namespace App\Http\Resources\Foodfleet\Store;
 
+use App\Http\Resources\Foodfleet\Store\Type;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -34,6 +35,12 @@ class Store extends JsonResource
             "square_id" => $this->square_id,
             "supplier" => new Company($this->whenLoaded('supplier')),
             "events_count" => $this->when($this->events_count, $this->events_count),
+            "type" => new Type($this->whenLoaded('type')),
+            "website" => $this->website,
+            "contact_phone" => $this->contact_phone,
+            "size" => $this->size,
+            "image" => $this->image,
+
         ];
     }
 }
