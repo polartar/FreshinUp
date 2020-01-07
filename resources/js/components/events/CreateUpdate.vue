@@ -143,7 +143,7 @@ export default {
       return (this.event && !this.isNew) ? [
         {
           uuid: this.event.uuid,
-          status: this.event.host_status,
+          status: this.event.host_status || 1,
           updated_at: this.event.updated_at,
           created_at: this.event.created_at
         }
