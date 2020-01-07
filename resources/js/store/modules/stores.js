@@ -1,4 +1,7 @@
-import makeRestStore, { buildApi, makeModule } from '@freshinup/core-ui/src/store/utils/makeRestStore'
+import makeRestStore, {
+  buildApi,
+  makeModule
+} from 'fresh-bus/store/utils/makeRestStore'
 
 export default ({ items, item }) => {
   const storesApi = buildApi('foodfleet/stores', { items, item })

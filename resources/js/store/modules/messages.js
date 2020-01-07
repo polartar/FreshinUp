@@ -1,4 +1,4 @@
-import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
+import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
 
 export default ({ items, item }) => {
   const store = makeRestStore(
