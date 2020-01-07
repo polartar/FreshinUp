@@ -27,26 +27,55 @@
     </v-flex>
     <v-divider />
 
+    <fleet-member-docs
+      :docs="docs"
+      :statuses="docsStatusesWithColors"
+      :sortables="docsSortables"
+      :rows-per-page="docsPagination.rowsPerPage"
+      :page="docsPagination.page"
+      :total-items="docsPagination.totalItems"
+      :sort-by="docsSorting.sortBy"
+      :descending="docsSorting.descending"
+      @paginate="docsOnPaginate"
+      @change-status="docsChangeStatus"
+      @manage-view="docsView"
+      @manage-edit="docsEdit"
+      @manage-delete="docsDelete"
+      @manage-multiple-delete="docsDelete"
+      @change_status_multiple="docsChangeStatusMultiple"
+      @runFilter="docsFilter"
+    />
+
     <assigned-events
       :events="events"
       :all-events-count="store.events_count"
       :statuses="eventStatusesWithColors"
-      :rows-per-page="pagination.rowsPerPage"
-      :page="pagination.page"
-      :total-items="pagination.totalItems"
-      :sort-by="sorting.sortBy"
-      :descending="sorting.descending"
-      @paginate="onPaginate"
+      :rows-per-page="eventsPagination.rowsPerPage"
+      :page="eventsPagination.page"
+      :total-items="eventsPagination.totalItems"
+      :sort-by="eventsSorting.eventsSortBy"
+      :descending="eventsSorting.descending"
+      @paginate="onPaginateEvents"
       @viewEvent="viewEvent"
       @runFilter="filterEvents"
+    />
+
+    <docs-delete-dialog
+      v-model="docsDeleteDialog"
+      :delete-temp="docsDeleteTemp"
+      :on-submit-delete="docsOnSubmitDelete"
+      :on-cancel-delete="docsOnCancelDelete"
     />
   </v-container>
 </template>
 
 <script>
 import AssignedEvents from '~/components/events/AssignedEvents.vue'
+import FleetMemberDocs from '~/components/docs/FleetMemberDocs.vue'
+import DocsDeleteDialog from '~/components/docs/DeleteDialog.vue'
 import { mapActions, mapGetters, mapState } from 'vuex'
 import FStaticStatus from 'fresh-bus/components/ui/FStaticStatus'
+import DocsDatatableManager from '~/components/mixins/DocsDatatableManager'
 const eventsParams = {
   include: ['status', 'host', 'location.venue', 'manager', 'event_tags']
 }
@@ -63,19 +92,22 @@ export default {
   layout: 'admin',
   components: {
     AssignedEvents,
+    FleetMemberDocs,
+    DocsDeleteDialog,
     FStaticStatus
   },
+  mixins: [DocsDatatableManager],
   computed: {
     ...mapGetters('stores', { store: 'item' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { eventStatuses: 'items' }),
     ...mapGetters('page', ['isLoading']),
-    ...mapState('events', ['sortables']),
+    ...mapState('events', { eventsSortables: 'sortables' }),
     ...mapGetters('events', {
       events: 'items',
-      pagination: 'pagination',
-      sorting: 'sorting',
-      sortBy: 'sortBy'
+      eventsPagination: 'pagination',
+      eventsSorting: 'sorting',
+      eventsSortBy: 'sortBy'
     }),
 
     storeStatusesWithColors () {
@@ -103,7 +135,7 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    onPaginate (value) {
+    onPaginateEvents (value) {
       this.$store.dispatch('events/setPagination', value)
       this.$store.dispatch('events/getItems', {
         params: {
@@ -136,8 +168,12 @@ export default {
       vm.$store.dispatch('stores/getItem', {
         params: { id, provide: 'events-count' }
       }),
+      vm.$store.dispatch('documents/getItems', {
+        params: { 'filter[assigned_uuid]': id }
+      }),
       vm.$store.dispatch('eventStatuses/getItems'),
-      vm.$store.dispatch('storeStatuses/getItems')
+      vm.$store.dispatch('storeStatuses/getItems'),
+      vm.$store.dispatch('documentStatuses/getItems')
     ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()

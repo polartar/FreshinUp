@@ -10,7 +10,10 @@
     @run="run"
     @clear="clearFilters"
   >
-    <template v-slot:expanded="slotProps">
+    <template
+      v-if="!withoutExpansion"
+      v-slot:expanded="slotProps"
+    >
       <v-container
         pr-0
         pt-1
@@ -100,6 +103,10 @@ export default {
     sortables: {
       type: Array,
       default: () => []
+    },
+    withoutExpansion: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -151,7 +158,10 @@ export default {
     clearFilters (params) {
       this.expireDate = null
       this.assignedType = defaultAssignedType
-      if (this.$refs.assignedSearcher && this.$refs.assignedSearcher.resetTerm) {
+      if (
+        this.$refs.assignedSearcher &&
+        this.$refs.assignedSearcher.resetTerm
+      ) {
         this.$refs.assignedSearcher.resetTerm()
       }
       this.type = this.status = this.assigned_uuid = null
@@ -161,3 +171,19 @@ export default {
   }
 }
 </script>
+
+<style lang="styl" scoped>
+/deep/ .data-time-picker.no-border input.field-input {
+  border: none !important;
+}
+/deep/ .filter-sorter-expanded-layout {
+  align-items: flex-end;
+}
+/deep/ .filter-sorter-expanded-layout > .flex.text-no-wrap > .v-btn {
+  margin: 0;
+  height: 48px;
+}
+.filter-transparent {
+  box-shadow: none;
+}
+</style>
