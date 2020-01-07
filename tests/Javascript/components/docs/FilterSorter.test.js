@@ -3,6 +3,16 @@ import { FIXTURE_DOCUMENT_TYPES } from 'tests/__data__/documentTypes'
 import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
 import Component from '~/components/docs/FilterSorter.vue'
 
+const allSelected = FIXTURE_DOCUMENT_STATUSES.map(item => item.id)
+const defaultFilters = {
+  status_id: allSelected,
+  host_uuid: null,
+  manager_uuid: null,
+  event_tag_uuid: null,
+  start_at: null,
+  end_at: null
+}
+
 describe('FilterSorter', () => {
   // Component instance "under test"
   let localVue
@@ -14,6 +24,30 @@ describe('FilterSorter', () => {
         propsData: {
           types: FIXTURE_DOCUMENT_TYPES,
           statuses: FIXTURE_DOCUMENT_STATUSES
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('with props', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_DOCUMENT_STATUSES,
+          withoutExpansion: true,
+          filters: defaultFilters
+        }
+      })
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('without-expansion', () => {
+      localVue = createLocalVue()
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          statuses: FIXTURE_DOCUMENT_STATUSES,
+          withoutExpansion: true,
+          filters: defaultFilters
         }
       })
       expect(wrapper.element).toMatchSnapshot()
