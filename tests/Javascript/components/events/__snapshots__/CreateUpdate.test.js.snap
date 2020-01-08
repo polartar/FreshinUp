@@ -167,7 +167,7 @@ exports[`Event CreateUpdate Component Mount mount create page 1`] = `
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
-                                  data-vv-name="name"
+                                  data-vv-name="type"
                                   readonly="readonly"
                                   type="text"
                                 />
@@ -8405,7 +8405,7 @@ exports[`Event CreateUpdate Component Mount mount edit page 1`] = `
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
-                                  data-vv-name="name"
+                                  data-vv-name="type"
                                   readonly="readonly"
                                   type="text"
                                 />

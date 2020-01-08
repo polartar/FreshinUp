@@ -49,8 +49,8 @@ class EventScheduleHelper
                 $temp_occurrences = $occurrences;
             }
 
-            foreach (range(0, $temp_occurrences - 1) as $number) {
-                $start_offset_index = $number * $interval_value;
+            for ($i = 0; $i < $temp_occurrences; $i++) {
+                $start_offset_index = $i * $interval_value;
                 $start_offset = $start_offset_index . ' year';
                 if ($start_offset_index == 0) {
                     $start_offset = 'now';
@@ -77,8 +77,8 @@ class EventScheduleHelper
                 $temp_occurrences = $occurrences;
             }
 
-            foreach (range(0, $temp_occurrences - 1) as $number) {
-                $start_offset_index = $number * $interval_value;
+            for ($i = 0; $i < $temp_occurrences; $i++) {
+                $start_offset_index = $i * $interval_value;
                 $start_offset = $start_offset_index . ' month';
 
                 $start_at = $event_start_at;
@@ -140,8 +140,8 @@ class EventScheduleHelper
                 $temp_occurrences = $occurrences;
             }
 
-            foreach (range(0, $temp_occurrences - 1) as $number) {
-                $start_offset_index = $number * $interval_value;
+            for ($i = 0; $i < $temp_occurrences; $i++) {
+                $start_offset_index = $i * $interval_value;
                 foreach ($repeat_on as $value) {
                     $start_offset = 'now';
                     switch ($value['id']) {
@@ -164,25 +164,30 @@ class EventScheduleHelper
                             $start_offset = 'next friday ';
                             break;
                         case 7:
-                            $start_offset = 'next friday '; // bug: strtotime always return last saturday date
+                            $start_offset = 'next saturday ';
                             break;
                         default:
                             break;
                     }
+
                     if ($start_offset_index > 0) {
                         $start_offset = $start_offset . $start_offset_index . ' week';
                     }
 
-                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset, strtotime($event_start_at)));
-                    if ($value['id'] == 7) {
-                        $start_at = date('Y-m-d H:i:s', strtotime('+1 day', strtotime($start_at)));
+                    $start_at_based = date('Y-m-d H:i:s', strtotime('last sunday', strtotime($event_start_at)));
+                    $start_at = date('Y-m-d H:i:s', strtotime($start_offset, strtotime($start_at_based)));
+                    if ($start_at < $event_start_at) {
+                        continue;
                     }
-
                     if ($start_at > $event_end_at) {
                         break 2;
                     }
                     $end_at = date('Y-m-d H:i:s', strtotime($one_day_offset, strtotime($start_at)));
                     $periods[] = (object) ['start_at' => $start_at, 'end_at' => $end_at];
+                }
+
+                if ($start_offset_index == 0 && sizeof($periods) == 0) {
+                    $temp_occurrences++;
                 }
             }
         }

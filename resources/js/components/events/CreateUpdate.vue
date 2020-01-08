@@ -159,6 +159,9 @@ export default {
         }
         data = omitBy(data, (value, key) => {
           const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
+          if (key === 'schedule' && value.ends_on === 'on') {
+            delete value.occurrences
+          }
           return extra.includes(key) || isNull(value)
         })
         if (this.event.event_recurring_checked === 'no') {
