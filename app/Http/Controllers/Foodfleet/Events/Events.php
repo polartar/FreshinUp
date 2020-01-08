@@ -171,7 +171,7 @@ class Events extends Controller
             'store_uuids' => 'array',
             'store_uuids.*' => 'string|exists:stores,uuid',
             'status_id' => 'integer',
-            'start_at' => 'date|after:now',
+            'start_at' => 'date',
             'end_at' => 'date|after:start_at',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
