@@ -57,34 +57,11 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
     totalitems="50"
   />
    
-  <v-dialog-stub
-    contentclass=""
-    maxwidth="500"
-    origin="center center"
-    transition="dialog-transition"
-    width="auto"
-  >
-    <simple-confirm-stub
-      cancellabel="No"
-      class=""
-      oklabel="Yes"
-      title="Are you sure you want to delete this document?"
-    >
-      <div
-        class="py-5 px-2"
-      >
-        <p
-          class="subheading"
-        >
-          <span>
-            Document
-          </span>
-          
-            : 
-          
-        </p>
-      </div>
-    </simple-confirm-stub>
-  </v-dialog-stub>
+  <docs-delete-dialog-stub
+    deletetemp=""
+    dialogtitle="Are you sure you want to delete this document?"
+    oncanceldelete="function () { [native code] }"
+    onsubmitdelete="function () { [native code] }"
+  />
 </div>
 `;
