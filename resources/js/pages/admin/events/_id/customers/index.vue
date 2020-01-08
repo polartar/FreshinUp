@@ -168,6 +168,7 @@ export default {
       this.$router.push({ path: '/admin/companies/' + get(this.event, 'host.id') })
     },
     viewContact () {
+      alert('coming soon')
     },
     async postMessage (message) {
       const eventUuid = get(this.event, 'uuid')

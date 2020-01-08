@@ -130,7 +130,7 @@ export default {
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
-    ...mapGetters('events/stores', { stores: 'items' }),
+    ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapFields('events', [
@@ -138,6 +138,9 @@ export default {
     ]),
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
+    },
+    stores () {
+      return this.isNew ? [] : this.storeItems
     },
     customers () {
       return (this.event && !this.isNew) ? [
