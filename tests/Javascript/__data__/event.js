@@ -16,6 +16,7 @@ export const FIXTURE_EVENT = {
   status_id: 1,
   start_at: '2019-10-10 11:04:19',
   end_at: '2019-10-12 11:04:19',
+  host_status: 2,
   manager: {
     id: 1,
     uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',

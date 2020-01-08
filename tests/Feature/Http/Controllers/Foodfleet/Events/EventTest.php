@@ -582,6 +582,7 @@ class EventTest extends TestCase
                 'host_uuid' => $company->uuid,
                 'location_uuid' => $location->uuid,
                 'event_tags' => $eventTagNames,
+                'host_status' => 1,
                 'status_id' => 1,
                 'start_at' => '2050-09-18',
                 'end_at' => '2050-09-20',
@@ -605,6 +606,7 @@ class EventTest extends TestCase
         $this->assertEquals($admin->uuid, $returnedEvent['manager']['uuid']);
         $this->assertEquals($company->uuid, $returnedEvent['host']['uuid']);
         $this->assertEquals($location->uuid, $returnedEvent['location']['uuid']);
+        $this->assertEquals(1, $returnedEvent['host_status']);
         $this->assertArraySubset($eventTags->map(function ($item) {
             return [
                 'uuid' => $item->uuid,
