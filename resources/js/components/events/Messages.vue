@@ -6,7 +6,7 @@
           row
           class="message-title"
         >
-          <span class="grey--text font-weight-bold title text-uppercase">{{ activists }}</span>
+          <span class="grey--text">{{ activists }}</span>
         </v-layout>
         <v-layout
           row

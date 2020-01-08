@@ -12,6 +12,7 @@ import documentStatuses from './modules/documentStatuses'
 import documentTypes from './modules/documentTypes'
 import transactions from './modules/transactions'
 import companyDetails from './modules/companyDetails'
+import eventSummary from './modules/eventSummary'
 
 export default (initialState = {}) => {
   return createStore(
@@ -29,7 +30,8 @@ export default (initialState = {}) => {
         documentStatuses: documentStatuses({}),
         documentTypes: documentTypes({}),
         transactions: transactions({}),
-        companyDetails: companyDetails({})
+        companyDetails: companyDetails({}),
+        eventSummary: eventSummary({})
       }
     }
   )
