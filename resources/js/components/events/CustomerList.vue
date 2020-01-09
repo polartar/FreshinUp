@@ -39,9 +39,9 @@
       <td class="text-xs-left py-3">
         {{ formatDate(props.item.created_at) }}
       </td>
-      <td class="text-xs-right py-3">
+      <td class="text-xs-left py-3">
         <v-btn
-          class="primary"
+          class="primary ml-0"
           @click="viewDetails(props.item.uuid)"
         >
           View Details

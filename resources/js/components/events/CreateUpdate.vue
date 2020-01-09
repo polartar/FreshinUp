@@ -80,6 +80,20 @@
         />
       </v-flex>
     </v-layout>
+
+    <v-layout
+      row
+      px-2
+      py-4
+    >
+      <v-flex>
+        <customers
+          :customers="customers"
+          :statuses="statuses"
+          @manage-view-details="viewDocuments"
+        />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -91,6 +105,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
 import BasicInfoformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
+import Customers from '~/components/events/Customers.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -102,7 +117,8 @@ export default {
   components: {
     Stores,
     StatusSelect,
-    BasicInfoformation
+    BasicInfoformation,
+    Customers
   },
   mixins: [Validate],
   data () {
@@ -114,7 +130,7 @@ export default {
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
-    ...mapGetters('events/stores', { stores: 'items' }),
+    ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapFields('events', [
@@ -122,6 +138,19 @@ export default {
     ]),
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
+    },
+    stores () {
+      return this.isNew ? [] : this.storeItems
+    },
+    customers () {
+      return (this.event && !this.isNew) ? [
+        {
+          uuid: this.event.uuid,
+          status: this.event.host_status || 1,
+          updated_at: this.event.updated_at,
+          created_at: this.event.created_at
+        }
+      ] : []
     }
   },
   methods: {
@@ -188,8 +217,14 @@ export default {
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
     },
+    viewDocuments () {
+      this.$router.push({ path: '/admin/events/' + this.event.uuid + '/customers' })
+    },
     backToList () {
       this.$router.push({ path: '/admin/events' })
+    },
+    changeStatus () {
+
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

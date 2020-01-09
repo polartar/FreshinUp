@@ -1531,7 +1531,7 @@ exports[`Event StoreDetails Component Mount mount store detail page 1`] = `
                         class="layout message-title row"
                       >
                         <span
-                          class="grey--text font-weight-bold title text-uppercase"
+                          class="grey--text"
                         >
                           William D and John Smith
                         </span>
