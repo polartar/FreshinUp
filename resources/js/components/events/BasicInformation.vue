@@ -49,7 +49,7 @@
                   v-model="eventData.type"
                   v-validate="'required'"
                   :items="eventTypes"
-                  data-vv-name="name"
+                  data-vv-name="type"
                   :error-messages="errors.collect('type')"
                   item-value="id"
                   item-text="label"
