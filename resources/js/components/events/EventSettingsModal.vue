@@ -68,14 +68,14 @@ export default {
             const daysLeft = params.occurrences * params.interval_value * 7
             const endDate = currentDate.add(daysLeft, 'd')
 
-            this.selectedDate = `${weekDays.join(', ')}, until ${endDate.format('MMMM Do, YYYY')}`
+            this.selectedDate = `Every ${params.interval_value} week(s) on ${weekDays.join(', ')}, until ${endDate.format('MMMM Do, YYYY')}`
           } else {
-            this.selectedDate = `Every ${weekDays.join(', ')}`
+            this.selectedDate = `Every ${params.interval_value} week(s) on ${weekDays.join(', ')}`
           }
           break
 
         case 'Month(s)':
-          const description = params.repeat_on[0].text
+          const description = params.repeat_on[0].text.replace('month', `${params.interval_value} month(s)`)
           if (params.ends_on === 'after') {
             const monthsLeft = params.occurrences * params.interval_value
             const endDate = currentDate.add(monthsLeft, 'M')
