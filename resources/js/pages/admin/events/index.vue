@@ -93,6 +93,7 @@
             :events="events"
             :date="calendarDefaultDate"
             :year-range="calendarYearRange"
+            @click-event="eventEdit"
           />
         </v-card>
       </v-flex>

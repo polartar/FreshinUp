@@ -84,7 +84,7 @@
                   :key="event.name"
                   full-width
                   offset-x
-                  class="white--text"
+                  class="white--text clickable"
                   :class="statusColorMaps[event.status_id]"
                   @click="clickEvent(event)"
                   v-text="event.name"
@@ -162,19 +162,7 @@ export default {
   },
   computed: {
     eventsMap () {
-      const map = {}
-      this.events.forEach(evt => {
-        const startMoment = moment(evt.start_at, DATE_FORMAT)
-        const endMoment = moment(evt.end_at, DATE_FORMAT)
-        let startDate = startMoment.format(DATE_FORMAT)
-        const endDate = endMoment.format(DATE_FORMAT)
-        while (startDate <= endDate) {
-          map[startDate] = map[startDate] || []
-          map[startDate].push(evt)
-          startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
-        }
-      })
-      return map
+      return this.scheduleHandle()
     }
   },
   watch: {
@@ -196,6 +184,30 @@ export default {
       const calendarToday = this.$refs.calendar.times.today
       this.currentYear = calendarToday.year
       this.currentMonth = calendarToday.month
+    },
+    scheduleHandle () {
+      const map = {}
+      this.events.forEach(evt => {
+        const occurrences = _.get(evt, 'schedule.schedule_occurrences', null)
+        if (_.isEmpty(occurrences)) {
+          const startMoment = moment(evt.start_at, DATE_FORMAT)
+          const endMoment = moment(evt.end_at, DATE_FORMAT)
+          let startDate = startMoment.format(DATE_FORMAT)
+          const endDate = endMoment.format(DATE_FORMAT)
+          while (startDate <= endDate) {
+            map[startDate] = map[startDate] || []
+            map[startDate].push(evt)
+            startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
+          }
+        } else {
+          occurrences.forEach(occurrence => {
+            const startAt = moment(occurrence.start_at, DATE_FORMAT).format(DATE_FORMAT)
+            map[startAt] = map[startAt] || []
+            map[startAt].push(evt)
+          })
+        }
+      })
+      return map
     },
     moveDate (date) {
       const currentDate = moment(this.currentDate)
@@ -221,5 +233,8 @@ export default {
 <style>
   .v-calendar-weekly__day {
     overflow: visible;
+  }
+  .clickable {
+    cursor: pointer;
   }
 </style>

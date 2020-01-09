@@ -100,7 +100,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="name"
+                          data-vv-name="type"
                           readonly="readonly"
                           type="text"
                         />
@@ -1497,7 +1497,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="name"
+                          data-vv-name="type"
                           readonly="readonly"
                           type="text"
                         />
@@ -2894,7 +2894,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="name"
+                          data-vv-name="type"
                           readonly="readonly"
                           type="text"
                         />
