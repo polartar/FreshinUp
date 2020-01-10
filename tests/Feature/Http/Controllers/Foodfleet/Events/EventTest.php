@@ -584,8 +584,8 @@ class EventTest extends TestCase
                 'event_tags' => $eventTagNames,
                 'host_status' => 1,
                 'status_id' => 1,
-                'start_at' => '2019-09-18',
-                'end_at' => '2019-09-20',
+                'start_at' => '2050-09-18',
+                'end_at' => '2050-09-20',
                 'commission_rate' => 30,
                 'commission_type' => 1
             ])
@@ -599,8 +599,8 @@ class EventTest extends TestCase
 
         $this->assertEquals('test event', $returnedEvent['name']);
         $this->assertEquals(1, $returnedEvent['status_id']);
-        $this->assertEquals('2019-09-18', $returnedEvent['start_at']);
-        $this->assertEquals('2019-09-20', $returnedEvent['end_at']);
+        $this->assertEquals('2050-09-18', $returnedEvent['start_at']);
+        $this->assertEquals('2050-09-20', $returnedEvent['end_at']);
         $this->assertEquals(30, $returnedEvent['commission_rate']);
         $this->assertEquals(1, $returnedEvent['commission_type']);
         $this->assertEquals($admin->uuid, $returnedEvent['manager']['uuid']);
@@ -632,8 +632,8 @@ class EventTest extends TestCase
                 'manager_uuid' => $admin->uuid,
                 'host_uuid' => $company->uuid,
                 'status_id' => 1,
-                'start_at' => '2019-09-18',
-                'end_at' => '2019-09-20',
+                'start_at' => '2050-09-18',
+                'end_at' => '2050-09-20',
                 'commission_rate' => 30,
                 'commission_type' => 1,
                 'schedule' => [

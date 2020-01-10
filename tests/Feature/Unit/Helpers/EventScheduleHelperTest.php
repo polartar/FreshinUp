@@ -203,20 +203,17 @@ class EventScheduleHelperTest extends TestCase
 
         $periods = EventScheduleHelper::analyzeSchedule($schedule, $event_start_at, $event_end_at);
 
-        $this->assertEquals('2019-07-14 00:00:00', $periods[0]->start_at);
-        $this->assertEquals('2019-07-14 23:59:59', $periods[0]->end_at);
+        $this->assertEquals('2019-07-13 00:00:00', $periods[0]->start_at);
+        $this->assertEquals('2019-07-13 23:59:59', $periods[0]->end_at);
 
-        $this->assertEquals('2019-07-16 00:00:00', $periods[1]->start_at);
-        $this->assertEquals('2019-07-16 23:59:59', $periods[1]->end_at);
+        $this->assertEquals('2019-07-21 00:00:00', $periods[1]->start_at);
+        $this->assertEquals('2019-07-21 23:59:59', $periods[1]->end_at);
 
-        $this->assertEquals('2019-07-20 00:00:00', $periods[2]->start_at);
-        $this->assertEquals('2019-07-20 23:59:59', $periods[2]->end_at);
+        $this->assertEquals('2019-07-23 00:00:00', $periods[2]->start_at);
+        $this->assertEquals('2019-07-23 23:59:59', $periods[2]->end_at);
 
-        $this->assertEquals('2019-07-28 00:00:00', $periods[3]->start_at);
-        $this->assertEquals('2019-07-28 23:59:59', $periods[3]->end_at);
-
-        $this->assertEquals('2019-07-30 00:00:00', $periods[4]->start_at);
-        $this->assertEquals('2019-07-30 23:59:59', $periods[4]->end_at);
+        $this->assertEquals('2019-07-27 00:00:00', $periods[3]->start_at);
+        $this->assertEquals('2019-07-27 23:59:59', $periods[3]->end_at);
     }
 
     public function testAnalyzeScheduleWithAfterWeeks()

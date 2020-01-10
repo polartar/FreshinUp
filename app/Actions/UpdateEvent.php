@@ -60,7 +60,7 @@ class UpdateEvent implements Action
         $ends_on = $request->get('ends_on');
         $repeat_on = $request->get('repeat_on');
         $description = $request->get('description');
-        if ((empty($interval_unit) || empty($interval_value) || empty($occurrences) ||
+        if ((empty($interval_unit) || empty($interval_value) || empty($occurrences) && $ends_on == 'after' ||
             empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
         }
