@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event StatusSelect component Snapshots options set 1`] = `
+exports[`Event StatusSelect component Visuals options set 1`] = `
 <div
   class="v-menu"
 >
