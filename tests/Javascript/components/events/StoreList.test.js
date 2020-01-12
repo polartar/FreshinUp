@@ -1,4 +1,5 @@
-import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/events/StoreList.vue'
 import { FIXTURE_ASSIGNED_STORES } from 'tests/__data__/assignedStores'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
@@ -7,10 +8,12 @@ describe('Store List component', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
+    beforeEach(() => {
+      localVue = createLocalVue().vue
+    })
     test('stores assigned', () => {
-      localVue = createLocalVue()
       const wrapper = mount(Component, {
-        localVue: localVue,
+        localVue,
         propsData: {
           statuses: FIXTURE_STORE_STATUSES,
           stores: FIXTURE_ASSIGNED_STORES
@@ -19,9 +22,8 @@ describe('Store List component', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
     test('stores empty', () => {
-      localVue = createLocalVue()
       const wrapper = mount(Component, {
-        localVue: localVue,
+        localVue,
         propsData: {
           statuses: FIXTURE_STORE_STATUSES,
           stores: []
@@ -33,7 +35,7 @@ describe('Store List component', () => {
 
   describe('Methods', () => {
     beforeEach(() => {
-      localVue = createLocalVue()
+      localVue = createLocalVue().vue
     })
 
     test('manage function emitted single action', () => {
@@ -69,7 +71,7 @@ describe('Store List component', () => {
 
   describe('Computed', () => {
     beforeEach(() => {
-      localVue = createLocalVue()
+      localVue = createLocalVue().vue
     })
     test('selectedActions', () => {
       const wrapper = shallowMount(Component)

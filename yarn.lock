@@ -1012,13 +1012,27 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.7.0":
-  version "1.7.0"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#393a2288d2fbfbd1928a9fadc70a49b6f95e4e36"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.9.0":
+  version "1.8.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#0f6fd4815b6b8744ebe23c8d5ae78c88c701de25"
   dependencies:
+    "@mdi/font" "^4.4.95"
+    awesome-phonenumber "^2.22.0"
+    axios "^0.19.0"
     dinero.js "^1.6.0"
+    lodash "^4.17.5"
+    moment "^2.24.0"
     pluralize "^8.0.0"
+    vee-validate "^2.2.2"
+    vue "^2.6.10"
+    vue-analytics "^5.16.4"
+    vue-axios "^2.1.4"
+    vue-router "^3.0.3"
     vuedraggable "^2.23.2"
+    vuetify "^1.5.16"
+    vuex "^3.1.0"
+    vuex-map-fields "^1.3.2"
+    vuex-rest-api "^2.10.0"
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -2811,6 +2825,11 @@ awesome-phonenumber@^2.12.0:
   resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.16.0.tgz#16e436a2c4b21b957d3876a9a3ade07aec177560"
   integrity sha512-JMPXjOg5EIKr2rCekXIpnpVAsQSNneZV5OtZ0Ofn1owfpXYNVX9jA9za04tf1m3Ert/y3T1oP+PbdWlXTpT28Q==
 
+awesome-phonenumber@^2.22.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.24.0.tgz#4f9f236cb86c53b8a76ea1ae090680da4bbb3770"
+  integrity sha512-0zrNsYYFywSTLR3RcwgpokESiDH9bEuiEzlEqg9LFbno7F6x86ES8EZA9roLb2jfNdqjK5rCvmxw5/mjdoKkQQ==
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -2835,6 +2854,13 @@ axios@^0.18:
   dependencies:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
+
+axios@^0.19.0:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.1.tgz#8a6a04eed23dfe72747e1dd43c604b8f1677b5aa"
+  integrity sha512-Yl+7nfreYKaLRvAvjNPkvfjnQHJM1yLBY3zhqAwcJSwR/6ETkanUgylgtIvkvz0xJ+p/vZuNw8X7Hnb7Whsbpw==
+  dependencies:
+    follow-redirects "1.5.10"
 
 babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
   version "6.26.0"
