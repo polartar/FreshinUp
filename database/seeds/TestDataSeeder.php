@@ -20,8 +20,6 @@ class TestDataSeeder extends Seeder
             \CategoriesTableSeeder::class,
             \StaffsTableSeeder::class,
             \StoreTagsTableSeeder::class,
-            \StoreStatusesSeeder::class,
-            \StoreTypesSeeder::class,
             \StoresTableSeeder::class,
             \EventTagsTableSeeder::class,
             \VenuesTableSeeder::class,
@@ -32,8 +30,6 @@ class TestDataSeeder extends Seeder
             \TransactionsTableSeeder::class,
             \PaymentsTableSeeder::class,
             \FinancialReportsTableSeeder::class,
-            \DocumentTypesSeeder::class,
-            \DocumentStatusesSeeder::class,
             \DocumentsTableSeeder::class,
         ]);
     }

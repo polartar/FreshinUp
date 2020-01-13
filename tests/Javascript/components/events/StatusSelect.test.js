@@ -3,9 +3,8 @@ import Component from '~/components/events/StatusSelect.vue'
 import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 
 describe('Event StatusSelect component', () => {
-  // Component instance "under test"
   let localVue
-  describe('Snapshots', () => {
+  describe('Visuals', () => {
     test('options set', () => {
       localVue = createLocalVue()
       const wrapper = mount(Component, {
@@ -22,15 +21,53 @@ describe('Event StatusSelect component', () => {
     beforeEach(() => {
       localVue = createLocalVue()
     })
-    test('activeItem', () => {
-      const wrapper = shallowMount(Component, {
-        localVue: localVue,
-        propsData: {
-          value: 2,
-          options: FIXTURE_EVENT_STATUSES
-        }
+    describe('items', () => {
+      test('returns expected order', () => {
+        const wrapper = shallowMount(Component, {
+          localVue: localVue,
+          propsData: {
+            value: 2,
+            options: FIXTURE_EVENT_STATUSES
+          }
+        })
+        expect(wrapper.vm.items).toHaveLength(5)
+        const expectedLabels = [
+          'Draft',
+          'Pending',
+          'Confirmed',
+          'Past',
+          'Cancelled'
+        ]
+        expectedLabels.forEach((value, index) => {
+          expect(wrapper.vm.items[index]).toHaveProperty('label', value)
+        })
       })
-      expect(wrapper.vm.activeItem.id).toEqual(2)
+    })
+    describe('activeItem', () => {
+      test('returns the matching value', () => {
+        const wrapper = shallowMount(Component, {
+          localVue: localVue,
+          propsData: {
+            value: 2,
+            options: FIXTURE_EVENT_STATUSES
+          }
+        })
+        expect(wrapper.vm.activeItem).toHaveProperty('label', 'Pending')
+        expect(wrapper.vm.activeItem).toHaveProperty('id', 2)
+        expect(wrapper.vm.activeItem).toHaveProperty('color', 'warning')
+      })
+      test('returns null ', () => {
+        const wrapper = shallowMount(Component, {
+          localVue: localVue,
+          propsData: {
+            value: 2,
+            options: FIXTURE_EVENT_STATUSES
+          }
+        })
+        expect(wrapper.vm.activeItem).toHaveProperty('label', 'Pending')
+        expect(wrapper.vm.activeItem).toHaveProperty('id', 2)
+        expect(wrapper.vm.activeItem).toHaveProperty('color', 'warning')
+      })
     })
   })
 })

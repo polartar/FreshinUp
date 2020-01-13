@@ -232,9 +232,8 @@ class ImportSquareTest extends TestCase
             $method->invokeArgs($importJob, ['lineItem' => $lineItem]);
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                '{"errors":[{"category":"API_ERROR",' .
-                '"code":"INTERNAL_SERVER_ERROR","detail":"We were unable to authorize this request due' .
-                ' to an internal error."}]}',
+                '{"errors":[{"category":"AUTHENTICATION_ERROR",' .
+                '"code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}',
                 $e->getMessage()
             );
         }
