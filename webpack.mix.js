@@ -24,7 +24,7 @@ mix.webpackConfig({
     new WebpackLaravelMixManifestConstructor()
   ],
   resolve: {
-    /* Path Shortcuts */
+    modules: [path.resolve(__dirname, 'node_modules')],
     alias: {
       /* root */
       '~': path.resolve(__dirname, 'resources/js'),

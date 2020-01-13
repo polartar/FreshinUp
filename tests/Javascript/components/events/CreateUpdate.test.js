@@ -9,12 +9,13 @@ import eventStatuses from '~/store/modules/eventStatuses'
 
 describe('Event CreateUpdate Component', () => {
   let localVue, mock, store
-  describe('Mount', () => {
+  describe('Visuals', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
       mock = vue.mock
       mock
+        .onGet(/(companies|users)(.*)/).reply(200, { data: [] })
         .onGet('api/foodfleet/events/1').reply(200, { data: FIXTURE_EVENT })
         .onGet('api/foodfleet/events/new').reply(200, { data: EMPTY_EVENT })
         .onGet('api/foodfleet/event-statuses').reply(200, { data: FIXTURE_EVENT_STATUSES })

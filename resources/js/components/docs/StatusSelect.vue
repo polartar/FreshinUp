@@ -12,23 +12,16 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      items: this.options.map(item => {
+  computed: {
+    items () {
+      // Why don't we just use FBtnStatus' ability to change the "options" data via the props
+      return this.options.map(item => {
         return {
           id: item.value,
           label: item.text,
           color: item.color
         }
       })
-    }
-  },
-  computed: {
-    activeItem () {
-      for (let i in this.items) {
-        if (this.items[i].id === this.value) return this.items[i]
-      }
-      return null
     }
   }
 }

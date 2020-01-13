@@ -1012,13 +1012,27 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git":
-  version "1.3.0"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#a5cd6dc99ac5deeba2d6084ba8abfd27100c8eea"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.9.0":
+  version "1.8.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#0f6fd4815b6b8744ebe23c8d5ae78c88c701de25"
   dependencies:
+    "@mdi/font" "^4.4.95"
+    awesome-phonenumber "^2.22.0"
+    axios "^0.19.0"
     dinero.js "^1.6.0"
+    lodash "^4.17.5"
+    moment "^2.24.0"
     pluralize "^8.0.0"
+    vee-validate "^2.2.2"
+    vue "^2.6.10"
+    vue-analytics "^5.16.4"
+    vue-axios "^2.1.4"
+    vue-router "^3.0.3"
     vuedraggable "^2.23.2"
+    vuetify "^1.5.16"
+    vuex "^3.1.0"
+    vuex-map-fields "^1.3.2"
+    vuex-rest-api "^2.10.0"
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -2811,6 +2825,11 @@ awesome-phonenumber@^2.12.0:
   resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.16.0.tgz#16e436a2c4b21b957d3876a9a3ade07aec177560"
   integrity sha512-JMPXjOg5EIKr2rCekXIpnpVAsQSNneZV5OtZ0Ofn1owfpXYNVX9jA9za04tf1m3Ert/y3T1oP+PbdWlXTpT28Q==
 
+awesome-phonenumber@^2.22.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.24.0.tgz#4f9f236cb86c53b8a76ea1ae090680da4bbb3770"
+  integrity sha512-0zrNsYYFywSTLR3RcwgpokESiDH9bEuiEzlEqg9LFbno7F6x86ES8EZA9roLb2jfNdqjK5rCvmxw5/mjdoKkQQ==
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -2835,6 +2854,13 @@ axios@^0.18:
   dependencies:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
+
+axios@^0.19.0:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.1.tgz#8a6a04eed23dfe72747e1dd43c604b8f1677b5aa"
+  integrity sha512-Yl+7nfreYKaLRvAvjNPkvfjnQHJM1yLBY3zhqAwcJSwR/6ETkanUgylgtIvkvz0xJ+p/vZuNw8X7Hnb7Whsbpw==
+  dependencies:
+    follow-redirects "1.5.10"
 
 babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -13149,11 +13175,6 @@ sort-keys@^2.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.0.tgz#0ebc054acff2486569194a2f975b2b145dd5e7d6"
-  integrity sha512-+e0YakK1BxgEZpf9l9UiFaiQ8ZOBn1p/4qkkXr8QDVmYyCrUDTyDRRGm0AgW4E4cD0wtgxJ6yzIRkSPUwqhuhg==
-
 sortablejs@^1.10.1:
   version "1.10.1"
   resolved "https://registry.npm.taobao.org/sortablejs/download/sortablejs-1.10.1.tgz?cache=0&sync_timestamp=1573226665707&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsortablejs%2Fdownload%2Fsortablejs-1.10.1.tgz#3d52b00f871be00f00f84d99a60d120bf3dfe52c"
@@ -14371,9 +14392,10 @@ vue-chartjs@^3.4.2:
     vue-router "^3.1.3"
 
 "vue-cli-plugin-freshinup@git+ssh://git@github.com:freshinup/vue-cli-plugin-freshinup.git":
-  version "0.4.1"
-  resolved "git+ssh://git@github.com:freshinup/vue-cli-plugin-freshinup.git#8fbdbb160f7392bbda75d29984465ce1ebf607b6"
+  version "0.8.0"
+  resolved "git+ssh://git@github.com:freshinup/vue-cli-plugin-freshinup.git#4ad8f4522bcab64376e16cd4a36a22554f37e8e2"
   dependencies:
+    jest-date-mock "^1.0.7"
     lodash "^4.17.15"
 
 vue-cli-plugin-storybook@^0.6.1:
@@ -14487,17 +14509,10 @@ vue@^2.5.17, vue@^2.5.22, vue@^2.6.10:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
-vuedraggable@^2.21.0:
-  version "2.23.1"
-  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.23.1.tgz#6af3a17110793e3154fb8a52ce9df5109726d2ab"
-  integrity sha512-YgWnG7RC/V+nPksueT9cUGzvj7gBYqpEomazuAK5bBcImuPAeLsq0hwE5kSGItbHQpVnYdT/QX1kRR1XsjNeqw==
-  dependencies:
-    sortablejs "^1.10.0"
-
 vuedraggable@^2.23.2:
   version "2.23.2"
-  resolved "https://registry.npm.taobao.org/vuedraggable/download/vuedraggable-2.23.2.tgz#0d95d7fdf4f02f56755a26b3c9dca5c7ca9cfa72"
-  integrity sha1-DZXX/fTwL1Z1Wiazydylx8qc+nI=
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.23.2.tgz#0d95d7fdf4f02f56755a26b3c9dca5c7ca9cfa72"
+  integrity sha512-PgHCjUpxEAEZJq36ys49HfQmXglattf/7ofOzUrW2/rRdG7tu6fK84ir14t1jYv4kdXewTEa2ieKEAhhEMdwkQ==
   dependencies:
     sortablejs "^1.10.1"
 

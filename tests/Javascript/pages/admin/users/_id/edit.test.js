@@ -16,6 +16,7 @@ describe('Admin Edit User Page', () => {
       mock = vue.mock
         .onGet('api/currentUser').reply(200, FIXTURE_USER)
         .onGet('api/users/1').reply(200, { data: FIXTURE_USER })
+        .onGet(/(companies|users)$/).reply(200, { data: [] })
         .onAny().reply(config => {
           console.error('No mock match for ' + config.url, config)
           return [404, {}]
