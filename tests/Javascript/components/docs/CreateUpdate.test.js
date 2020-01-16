@@ -17,26 +17,35 @@ describe('Document CreateUpdate Component', () => {
       localVue = vue.localVue
       mock = vue.mock
       mock
-        .onGet('api/foodfleet/documents/1').reply(200, { data: FIXTURE_DOCUMENT })
-        .onGet('api/foodfleet/documents/new').reply(200, { data: EMPTY_DOCUMENT })
-        .onGet('api/foodfleet/document-types').reply(200, { data: FIXTURE_DOCUMENT_TYPES })
-        .onGet('api/foodfleet/document-statuses').reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
-        .onGet('foodfleet/stores').reply(200, {
+        .onGet('api/foodfleet/documents/1')
+        .reply(200, { data: FIXTURE_DOCUMENT })
+        .onGet('api/foodfleet/documents/new')
+        .reply(200, { data: EMPTY_DOCUMENT })
+        .onGet('api/foodfleet/document-types')
+        .reply(200, { data: FIXTURE_DOCUMENT_TYPES })
+        .onGet('api/foodfleet/document-statuses')
+        .reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
+        .onGet('foodfleet/stores')
+        .reply(200, {
           data: [
             { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
           ]
         })
-        .onAny().reply(config => {
+        .onAny()
+        .reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          documents: documents({}),
-          documentStatuses: documentStatuses({}),
-          documentTypes: documentTypes({})
+      store = createStore(
+        {},
+        {
+          modules: {
+            documents: documents({}),
+            documentStatuses: documentStatuses({}),
+            documentTypes: documentTypes({})
+          }
         }
-      })
+      )
     })
 
     afterEach(() => {
@@ -58,7 +67,9 @@ describe('Document CreateUpdate Component', () => {
         localVue,
         store
       })
-      await wrapper.vm.$store.dispatch('documents/getItem', { params: { id: 'new' } })
+      await wrapper.vm.$store.dispatch('documents/getItem', {
+        params: { id: 'new' }
+      })
       await wrapper.vm.$store.dispatch('documentStatuses/getItems')
       await wrapper.vm.$store.dispatch('documentTypes/getItems')
       await wrapper.vm.$store.dispatch('page/setLoading', false)
@@ -78,7 +89,9 @@ describe('Document CreateUpdate Component', () => {
         localVue,
         store
       })
-      await wrapper.vm.$store.dispatch('documents/getItem', { params: { id: 1 } })
+      await wrapper.vm.$store.dispatch('documents/getItem', {
+        params: { id: 1 }
+      })
       await wrapper.vm.$store.dispatch('documentStatuses/getItems')
       await wrapper.vm.$store.dispatch('documentTypes/getItems')
       await wrapper.vm.$store.dispatch('page/setLoading', false)
@@ -95,26 +108,35 @@ describe('Document CreateUpdate Component', () => {
       localVue = vue.localVue
       mock = vue.mock
       mock
-        .onGet('api/foodfleet/documents/1').reply(200, { data: FIXTURE_DOCUMENT })
-        .onGet('api/foodfleet/documents/new').reply(200, { data: EMPTY_DOCUMENT })
-        .onGet('api/foodfleet/document-types').reply(200, { data: FIXTURE_DOCUMENT_TYPES })
-        .onGet('api/foodfleet/document-statuses').reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
-        .onGet('foodfleet/stores').reply(200, {
+        .onGet('api/foodfleet/documents/1')
+        .reply(200, { data: FIXTURE_DOCUMENT })
+        .onGet('api/foodfleet/documents/new')
+        .reply(200, { data: EMPTY_DOCUMENT })
+        .onGet('api/foodfleet/document-types')
+        .reply(200, { data: FIXTURE_DOCUMENT_TYPES })
+        .onGet('api/foodfleet/document-statuses')
+        .reply(200, { data: FIXTURE_DOCUMENT_STATUSES })
+        .onGet('foodfleet/stores')
+        .reply(200, {
           data: [
             { name: 'eligendi', uuid: '0623e163-d229-4fe9-b54f-6bbfd5b559e0' }
           ]
         })
-        .onAny().reply(config => {
+        .onAny()
+        .reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          documents: documents({}),
-          documentStatuses: documentStatuses({}),
-          documentTypes: documentTypes({})
+      store = createStore(
+        {},
+        {
+          modules: {
+            documents: documents({}),
+            documentStatuses: documentStatuses({}),
+            documentTypes: documentTypes({})
+          }
         }
-      })
+      )
     })
 
     afterEach(() => {
@@ -127,7 +149,9 @@ describe('Document CreateUpdate Component', () => {
         store
       })
 
-      await wrapper.vm.$store.dispatch('documents/getItem', { params: { id: 1 } })
+      await wrapper.vm.$store.dispatch('documents/getItem', {
+        params: { id: 1 }
+      })
 
       wrapper.vm.changeBasicInfo({
         title: 'mock title123'
@@ -142,15 +166,17 @@ describe('Document CreateUpdate Component', () => {
         store
       })
 
-      await wrapper.vm.$store.dispatch('documents/getItem', { params: { id: 1 } })
+      await wrapper.vm.$store.dispatch('documents/getItem', {
+        params: { id: 1 }
+      })
 
       wrapper.vm.changePublishing({
         assigned_type: 3,
         assigned_uuid: 'mock-uuid'
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.assigned_type).toBe(3)
-      expect(wrapper.vm.assigned_uuid).toBe('mock-uuid')
+      expect(wrapper.vm.doc.assigned_type).toBe(3)
+      expect(wrapper.vm.doc.assigned_uuid).toBe('mock-uuid')
     })
   })
 })

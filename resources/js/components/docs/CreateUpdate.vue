@@ -124,8 +124,8 @@ export default {
   computed: {
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('documents', { doc: 'item' }),
-    ...mapGetters('documentTypes', { 'types': 'items' }),
-    ...mapGetters('documentStatuses', { 'statuses': 'items' }),
+    ...mapGetters('documentTypes', { types: 'items' }),
+    ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapFields('documents', [
       'title',
       'type',
@@ -138,7 +138,7 @@ export default {
       'event_store_uuid'
     ]),
     pageTitle () {
-      return (this.isNew ? 'New Document' : 'Document Details')
+      return this.isNew ? 'New Document' : 'Document Details'
     }
   },
   methods: {
@@ -154,10 +154,10 @@ export default {
       this.file = data.file
     },
     changePublishing (data) {
-      this.assigned_type = data.assigned_type
-      this.assigned_uuid = data.assigned_uuid
-      this.expiration_at = data.expiration_at
-      this.event_store_uuid = data.event_store_uuid
+      this.doc.assigned_type = data.assigned_type
+      this.doc.assigned_uuid = data.assigned_uuid
+      this.doc.expiration_at = data.expiration_at
+      this.doc.event_store_uuid = data.event_store_uuid
     },
     async validator () {
       const valids = await Promise.all([
@@ -180,7 +180,10 @@ export default {
             await this.$store.dispatch('documents/getItems')
             this.$router.push('/admin/docs/')
           } else {
-            await this.$store.dispatch('documents/updateItem', { data, params: { id: data.uuid } })
+            await this.$store.dispatch('documents/updateItem', {
+              data,
+              params: { id: data.uuid }
+            })
             await this.$store.dispatch('generalMessage/setMessage', 'Saved')
           }
         }
@@ -205,21 +208,21 @@ export default {
 }
 </script>
 <style scoped>
-  .doc-new-wrap{
-    background-color: #fff;
-  }
-  .back-btn-inner{
-    color: #fff;
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-  }
-  .back-btn-inner span{
-    margin-left: 10px;
-    font-weight: bold;
-    text-transform: initial;
-  }
-  .back-btn-inner .v-icon{
-    font-size: 16px;
-  }
+.doc-new-wrap {
+  background-color: #fff;
+}
+.back-btn-inner {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.back-btn-inner span {
+  margin-left: 10px;
+  font-weight: bold;
+  text-transform: initial;
+}
+.back-btn-inner .v-icon {
+  font-size: 16px;
+}
 </style>
