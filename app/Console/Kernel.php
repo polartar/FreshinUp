@@ -15,8 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ImportSquare::class,
-        RevokeTokens::class
+        ImportSquare::class
     ];
 
     /**
@@ -28,7 +27,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(ImportSquare::class)->cron('0 */4 * * *')->withoutOverlapping();
-        $schedule->command(RevokeTokens::class)->dailyAt('00:00')->withoutOverlapping();
     }
 
     /**
