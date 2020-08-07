@@ -205,14 +205,13 @@ class ImportSquareTest extends TestCase
             $method->invokeArgs($importJob, ['lineItem' => $lineItem]);
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                '{"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail"'.
-                ':"The `Authorization` http header of your request was malformed.'.
-                'The header value is expected to be of the format \"Bearer TOKEN\"'
-                .' (without quotation marks), where TOKEN is to be replaced with your access'
-                .' token (e.g. \"Bearer ABC123def456GHI789jkl0\"). For more information, '.
-                'see https://developer.squareup.com/docs/build-basics/using-rest-api#__set-the-headers__.'
-                .' If you are seeing this error message while using one of our officially supported'.
-                'SDKs, please report this to developers@squareup.com."}]}',
+                '{"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":'
+                .'"The `Authorization` http header of your request was malformed. The header'
+                .' value is expected to be of the format \"Bearer TOKEN\" (without quotation marks),'
+                .' where TOKEN is to be replaced with your access token (e.g. \"Bearer ABC123def456GHI789jkl0\").'
+                .' For more information, see https://developer.squareup.com/docs/build-basics/using-rest-api#__set-the-headers__.'
+                .' If you are seeing this error message while using one of our officially'
+                .' supported SDKs, please report this to developers@squareup.com."}]}',
                 $e->getMessage()
             );
         }
