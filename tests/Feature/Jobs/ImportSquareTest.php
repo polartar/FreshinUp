@@ -10,9 +10,11 @@ use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Staff;
-use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Square\Transaction;
+use App\Models\Foodfleet\Store;
 use FreshinUp\FreshBusForms\Models\Company\Company;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use SquareConnect\Model\Card;
 use SquareConnect\Model\Employee;
@@ -21,18 +23,11 @@ use SquareConnect\Model\OrderLineItem;
 use SquareConnect\Model\Tender;
 use SquareConnect\Model\TenderCardDetails;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ImportSquareTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testImportWithoutStoresWithSquareId()
     {
         $event = factory(Event::class)->create(['name' => 'test']);
@@ -55,11 +50,6 @@ class ImportSquareTest extends TestCase
         );
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testImportWithStoresWithSquareIdButSquareTokenNotSet()
     {
         $company = factory(Company::class)->create();
@@ -90,14 +80,8 @@ class ImportSquareTest extends TestCase
         );
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testImportWithStoresWithSquareIdButSquareTokenNotValid()
     {
-
         $company = factory(Company::class)->create(['square_access_token' => 'not_valid']);
         $supplier = \App\Models\Foodfleet\Company::find($company->id);
         $event = factory(Event::class)->create(['name' => 'test']);
@@ -130,18 +114,18 @@ class ImportSquareTest extends TestCase
             $records[2]['message']
         );
         $this->assertStringContainsString(
-            '{"errors": [{"code": "UNAUTHORIZED","detail": ' .
-            '"This request could not be authorized.","category": "AUTHENTICATION_ERROR"}]}',
+            'Error importing square data for event test with id 1 on line 236 for fleet member test'
+            .' with id 1. Message: [HTTP/2 401] {"errors": [{"code": "UNAUTHORIZED","detail": '
+            .'"The `Authorization` http header of your request was malformed. The header value is '
+            .'expected to be of the format \"Bearer TOKEN\" (without quotation marks), where TOKEN is to be'
+            .' replaced with your access token (e.g. \"Bearer ABC123def456GHI789jkl0\"). For more information,'
+            .' see https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders. If you are'
+            .' seeing this error message while using one of our officially supported SDKs, please report this'
+            .' to developers@squareup.com.","category": "AUTHENTICATION_ERROR"}]}',
             $records[3]['message']
         );
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     * @throws \ReflectionException
-     */
     public function testGetOrdersMethod()
     {
         $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
@@ -165,19 +149,13 @@ class ImportSquareTest extends TestCase
             $method->invokeArgs($importJob, ['event' => $event, 'store' => $store]);
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                '{"errors": [{"code": "UNAUTHORIZED","detail": ' .
-                '"This request could not be authorized.","category": "AUTHENTICATION_ERROR"}]}',
+                '{"errors": [{"code": "UNAUTHORIZED","detail": "This request could'
+                .' not be authorized.","category": "AUTHENTICATION_ERROR"}]}',
                 $e->getMessage()
             );
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     * @throws \ReflectionException
-     */
     public function testGetCustomerMethod()
     {
         $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
@@ -197,8 +175,8 @@ class ImportSquareTest extends TestCase
             $method->invokeArgs($importJob, ['order' => $order]);
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                '{"errors":[{"category":"AUTHENTICATION_ERROR",' .
-                '"code":"UNAUTHORIZED","detail":' .
+                '{"errors":[{"category":"AUTHENTICATION_ERROR",'.
+                '"code":"UNAUTHORIZED","detail":'.
                 '"This request could not be authorized."}]}',
                 $e->getMessage()
             );
@@ -208,11 +186,6 @@ class ImportSquareTest extends TestCase
         $this->assertNull($method->invokeArgs($importJob, ['order' => $order]));
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetCategoryMethod()
     {
         $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
@@ -232,8 +205,14 @@ class ImportSquareTest extends TestCase
             $method->invokeArgs($importJob, ['lineItem' => $lineItem]);
         } catch (\Exception $e) {
             $this->assertStringContainsString(
-                '{"errors":[{"category":"AUTHENTICATION_ERROR",' .
-                '"code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}',
+                '{"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":'
+                .'"The `Authorization` http header of your request was malformed. The header'
+                .' value is expected to be of the format \"Bearer TOKEN\" (without quotation marks),'
+                .' where TOKEN is to be replaced with your access token (e.g. \"Bearer ABC123def456GHI789jkl0\").'
+                .' For more information, see https://developer.squareup'
+                .'.com/docs/build-basics/using-rest-api#__set-the-headers__.'
+                .' If you are seeing this error message while using one of our officially'
+                .' supported SDKs, please report this to developers@squareup.com."}]}',
                 $e->getMessage()
             );
         }
@@ -242,11 +221,6 @@ class ImportSquareTest extends TestCase
         $this->assertNull($method->invokeArgs($importJob, ['lineItem' => $lineItem]));
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetPaymentType()
     {
         $tender = new Tender();
@@ -273,11 +247,6 @@ class ImportSquareTest extends TestCase
         $this->assertEquals('VISA', $paymentType->name);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetDevice()
     {
         $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
@@ -311,11 +280,6 @@ class ImportSquareTest extends TestCase
         $this->assertNull($method->invokeArgs($importJob, ['tender' => $tender, 'store' => $store]));
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testUpdateOrCreateStaffs()
     {
         $company = factory(Company::class)->create(['name' => 'test', 'square_access_token' => 'test']);
@@ -371,11 +335,6 @@ class ImportSquareTest extends TestCase
         ]);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetTransaction()
     {
         $order = new Order();
@@ -418,11 +377,6 @@ class ImportSquareTest extends TestCase
         ]);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetItem()
     {
         $orderLineItem = new OrderLineItem();
@@ -457,11 +411,6 @@ class ImportSquareTest extends TestCase
         ]);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testCreatePayment()
     {
         $tender = new Tender();
@@ -504,11 +453,6 @@ class ImportSquareTest extends TestCase
         ]);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testAttachItem()
     {
         $orderLineItem = new OrderLineItem();

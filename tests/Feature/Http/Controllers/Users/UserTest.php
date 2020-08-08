@@ -27,11 +27,9 @@ class UserTest extends TestCase
 
         Passport::actingAs($user);
 
-        $data = $this
-            ->json(
-                'get',
-                "/api/currentUser"
-            )
+        $response = $this->json('get', "/api/currentUser");
+        $this->assertNotExceptionResponse($response);
+        $data = $response
             ->assertStatus(200)
             ->json();
 
