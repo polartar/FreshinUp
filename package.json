@@ -114,10 +114,5 @@
   "dependencies": {
     "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.9.0",
     "vue-cli-plugin-freshinup-ui": "git+ssh://git@github.com/freshinup/vue-cli-plugin-freshinup-ui.git"
-  },
-  "engines": {
-    "yarn": "1.x",
-    "node": "10.x",
-    "npm": "6.x"
   }
 }
