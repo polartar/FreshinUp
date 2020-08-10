@@ -14,9 +14,9 @@ class AddNotesFieldsToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->dateTime('staff_notes')->nullable();
-            $table->dateTime('member_notes')->nullable();
-            $table->dateTime('customer_notes')->nullable();
+            $table->text('staff_notes')->nullable();
+            $table->text('member_notes')->nullable();
+            $table->text('customer_notes')->nullable();
         });
     }
 
