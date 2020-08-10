@@ -53,7 +53,7 @@
           md12
           sm12
         >
-          <BasicInfoformation
+          <BasicInformation
             ref="basicInfo"
             :event="event"
             :errors="errors"
@@ -98,12 +98,14 @@
 </template>
 
 <script>
-import { omitBy, isNull, get } from 'lodash'
+import omitBy from 'lodash/omitBy'
+import isNull from 'lodash/isNull'
+import get from 'lodash/get'
 import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
-import BasicInfoformation from '~/components/events/BasicInformation.vue'
+import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 
@@ -117,7 +119,7 @@ export default {
   components: {
     Stores,
     StatusSelect,
-    BasicInfoformation,
+    BasicInformation,
     Customers
   },
   mixins: [Validate],
@@ -179,35 +181,34 @@ export default {
       ])
       return valids.every(valid => valid)
     },
-    onSave () {
-      this.validator().then(async valid => {
-        let data = {
-          ...this.event,
-          host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
-          manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+    async onSave () {
+      const valid = await this.validator()
+      let data = {
+        ...this.event,
+        host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
+        manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+      }
+      data = omitBy(data, (value, key) => {
+        const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
+        if (key === 'schedule' && get(value, 'ends_on') === 'on') {
+          delete value.occurrences
         }
-        data = omitBy(data, (value, key) => {
-          const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
-          if (key === 'schedule' && value.ends_on === 'on') {
-            delete value.occurrences
-          }
-          return extra.includes(key) || isNull(value)
-        })
-        if (this.event.event_recurring_checked === 'no') {
-          data['schedule'] = null
-        }
-        if (valid) {
-          if (this.isNew) {
-            data.id = 'new'
-            await this.$store.dispatch('events/createItem', { data })
-            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-            this.$router.push('/admin/events/')
-          } else {
-            await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-            await this.$store.dispatch('generalMessage/setMessage', 'Modified')
-          }
-        }
+        return extra.includes(key) || isNull(value)
       })
+      if (this.event.event_recurring_checked === 'no') {
+        data['schedule'] = null
+      }
+      if (valid) {
+        if (this.isNew) {
+          data.id = 'new'
+          await this.$store.dispatch('events/createItem', { data })
+          await this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          this.$router.push('/admin/events/')
+        } else {
+          await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
+          await this.$store.dispatch('generalMessage/setMessage', 'Modified')
+        }
+      }
     },
     onCancel () {
       this.$router.push({ path: '/admin/events' })
