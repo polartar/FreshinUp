@@ -17,7 +17,7 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "end_at" => $faker->dateTimeBetween('+1 days', '+2 days'),
         "staff_notes" => $faker->text,
         "member_notes" => $faker->text,
-        "customer_notes" => $faker->text
+        "customer_notes" => $faker->text,
         "host_uuid" => factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create()->uuid,
         "host_status" => $faker->randomNumber(),
         "manager_uuid" => factory(User::class)->create()->uuid,

@@ -247,6 +247,7 @@
                 Food fleet staff notes
                 <v-textarea
                   v-model="eventData.staff_notes"
+                  outline
                   placeholder="Only visible for Food fleet staff"
                   :disabled="readOnly"
                 />
@@ -257,6 +258,7 @@
                 Fleet member notes
                 <v-textarea
                   v-model="eventData.member_notes"
+                  outline
                   placeholder="Only visible for Fleet members"
                   :disabled="readOnly"
                 />
@@ -267,6 +269,7 @@
                 Customer notes
                 <v-textarea
                   v-model="eventData.customer_notes"
+                  outline
                   placeholder="Only visible the customer"
                   :disabled="readOnly"
                 />
