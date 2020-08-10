@@ -183,13 +183,14 @@ export default {
     },
     async onSave () {
       const valid = await this.validator()
+      // TODO: this heavy logic should be done on the state machine.
       let data = {
         ...this.event,
         host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
         manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
       }
+      const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
       data = omitBy(data, (value, key) => {
-        const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
         if (key === 'schedule' && get(value, 'ends_on') === 'on') {
           delete value.occurrences
         }
@@ -198,16 +199,19 @@ export default {
       if (this.event.event_recurring_checked === 'no') {
         data['schedule'] = null
       }
-      if (valid) {
-        if (this.isNew) {
-          data.id = 'new'
-          await this.$store.dispatch('events/createItem', { data })
-          await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-          this.$router.push('/admin/events/')
-        } else {
-          await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-          await this.$store.dispatch('generalMessage/setMessage', 'Modified')
-        }
+      // end TODO
+
+      if (!valid) {
+        return false
+      }
+      if (this.isNew) {
+        data.id = 'new'
+        await this.$store.dispatch('events/createItem', { data })
+        await this.$store.dispatch('generalMessage/setMessage', 'Saved')
+        this.$router.push('/admin/events/')
+      } else {
+        await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
+        await this.$store.dispatch('generalMessage/setMessage', 'Modified')
       }
     },
     onCancel () {
@@ -227,9 +231,7 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {
-
-    }
+    changeStatus () {}
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)

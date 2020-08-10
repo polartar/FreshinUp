@@ -15,11 +15,6 @@ class FinancialReportTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -51,11 +46,6 @@ class FinancialReportTest extends TestCase
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();
@@ -106,11 +96,6 @@ class FinancialReportTest extends TestCase
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetSingle()
     {
         $user = factory(User::class)->create();
@@ -170,12 +155,6 @@ class FinancialReportTest extends TestCase
         ], $data);
     }
 
-
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testPost()
     {
         $user = factory(User::class)->create();
@@ -235,11 +214,6 @@ class FinancialReportTest extends TestCase
         ], $data);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testUpdate()
     {
         $user = factory(User::class)->create();
@@ -309,11 +283,6 @@ class FinancialReportTest extends TestCase
         ], $data);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testDestroy()
     {
         $user = factory(User::class)->create();
