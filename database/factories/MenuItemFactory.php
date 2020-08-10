@@ -1,10 +1,8 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-
-use App\MenuItem;
 use Faker\Generator as Faker;
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(\App\Models\Foodfleet\MenuItem::class, function (Faker $faker) {
     return [
         'title' => $faker->word,

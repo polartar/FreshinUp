@@ -13,7 +13,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company;
 | model instances for testing / seeding your application's database.
 |
 */
-
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Company::class, function (Faker $faker) {
     return [
         'name' => $faker->word

@@ -3,7 +3,6 @@
 namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
 use App\User;
-
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
 use App\Models\Foodfleet\EventStatus;
@@ -13,9 +12,7 @@ use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\EventSchedule;
 use App\Models\Foodfleet\Document;
 use FreshinUp\FreshBusForms\Models\Company\Company;
-
 use App\Enums\EventStatus as EventStatusEnum;
-
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Carbon;
 use Laravel\Passport\Passport;
@@ -27,11 +24,6 @@ class EventTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * test get event list.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -58,11 +50,6 @@ class EventTest extends TestCase
         }
     }
 
-    /**
-     * test get event list with filters.
-     *
-     * @return void
-     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();
@@ -107,8 +94,9 @@ class EventTest extends TestCase
             ], $data[$idx]);
         }
 
+        $event = $eventsToFind->first();
         $data = $this
-            ->json('GET', "/api/foodfleet/events?filter[uuid]=" . $eventsToFind->first()->uuid)
+            ->json('GET', "/api/foodfleet/events?filter[uuid]=" . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -119,8 +107,8 @@ class EventTest extends TestCase
         $this->assertEquals(1, count($data));
 
         $this->assertArraySubset([
-            'uuid' => $eventsToFind->first()->uuid,
-            'name' => $eventsToFind->first()->name
+            'uuid' => $event->uuid,
+            'name' => $event->name
         ], $data[0]);
     }
 

@@ -1,6 +1,5 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use App\Models\Foodfleet\Document;
@@ -16,6 +15,7 @@ use App\Models\Foodfleet\Document;
 |
 */
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Document::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
