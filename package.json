@@ -17,7 +17,7 @@
     "watch-poll": "npm run watch -- --watch-poll"
   },
   "dependencies": {
-    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.53.0",
+    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.9.0",
     "@fortawesome/fontawesome-free": "^5.8.2",
     "@mdi/font": "^4.4.95",
     "@tinymce/tinymce-vue": "^1.1.2",
