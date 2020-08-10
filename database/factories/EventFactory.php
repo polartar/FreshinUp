@@ -17,6 +17,9 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
     return [
         "name" => $faker->word,
         "start_at" => $faker->dateTime('now +1 hour'),
-        "end_at" => $faker->dateTimeBetween('+1 days', '+2 days')
+        "end_at" => $faker->dateTimeBetween('+1 days', '+2 days'),
+        "staff_notes" => $faker->text,
+        "member_notes" => $faker->text,
+        "customer_notes" => $faker->text
     ];
 });

@@ -586,6 +586,9 @@ class EventTest extends TestCase
                 'status_id' => 1,
                 'start_at' => '2050-09-18',
                 'end_at' => '2050-09-20',
+                'staff_notes' => 'test staff notes',
+                'member_notes' => 'test member notes',
+                'customer_notes' => 'test customer notes',
                 'commission_rate' => 30,
                 'commission_type' => 1
             ])
@@ -601,6 +604,9 @@ class EventTest extends TestCase
         $this->assertEquals(1, $returnedEvent['status_id']);
         $this->assertEquals('2050-09-18', $returnedEvent['start_at']);
         $this->assertEquals('2050-09-20', $returnedEvent['end_at']);
+        $this->assertEquals('test staff notes', $returnedEvent['staff_notes']);
+        $this->assertEquals('test member notes', $returnedEvent['member_notes']);
+        $this->assertEquals('test customer notes', $returnedEvent['customer_notes']);
         $this->assertEquals(30, $returnedEvent['commission_rate']);
         $this->assertEquals(1, $returnedEvent['commission_type']);
         $this->assertEquals($admin->uuid, $returnedEvent['manager']['uuid']);
@@ -634,6 +640,9 @@ class EventTest extends TestCase
                 'status_id' => 1,
                 'start_at' => '2050-09-18',
                 'end_at' => '2050-09-20',
+                'staff_notes' => 'test staff notes',
+                'member_notes' => 'test member notes',
+                'customer_notes' => 'test customer notes',
                 'commission_rate' => 30,
                 'commission_type' => 1,
                 'schedule' => [
