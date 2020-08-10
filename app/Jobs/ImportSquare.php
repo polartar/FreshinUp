@@ -28,10 +28,15 @@ class ImportSquare implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $event;
+    /** @var \SquareConnect\Api\EmployeesApi */
     protected $employeesApi;
+    /** @var \SquareConnect\Api\OrdersApi */
     protected $ordersApi;
+    /** @var \SquareConnect\Api\CustomersApi */
     protected $customersApi;
+    /** @var \SquareConnect\Api\CatalogApi */
     protected $catalogsApi;
+    /** @var \SquareConnect\Api\V1TransactionsApi */
     protected $v1TransactionApi;
 
     /**
