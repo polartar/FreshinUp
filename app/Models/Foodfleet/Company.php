@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: giuseppe
- * Date: 16/09/19
- * Time: 18.35
- */
 
 namespace App\Models\Foodfleet;
 
