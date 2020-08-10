@@ -12,15 +12,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Event
- *
  * @property int $id
  * @property string $uuid
  * @property string $name
- *
+ * @property string type
+ * @property string $location_uuid
+ * @property \Datetime $start_at
+ * @property \Datetime $end_at
+ * @property string $host_uuid
+ * @property string $host_status
+ * @property string $manager_uuid
+ * @property int $status_id
+ * @property int $budget
+ * @property int $attendees
+ * @property int $commission_rate
+ * @property int $commission_type
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
- *
  */
 class Event extends Model
 {
@@ -29,7 +38,7 @@ class Event extends Model
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
-    protected $with = array('schedule');
+    protected $with = ['schedule'];
 
     public function stores()
     {

@@ -13,7 +13,7 @@ use FreshinUp\FreshBusForms\Models\Address\Address;
 | model instances for testing / seeding your application's database.
 |
 */
-
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Address::class, function (Faker $faker) {
     return [
         'street' => $faker->streetAddress,
