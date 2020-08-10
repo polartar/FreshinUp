@@ -13,6 +13,7 @@ use App\Models\Foodfleet\FinancialReport;
 | model instances for testing / seeding your application's database.
 |
 */
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(FinancialReport::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
