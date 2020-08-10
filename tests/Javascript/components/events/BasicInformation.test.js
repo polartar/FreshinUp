@@ -70,9 +70,9 @@ describe('event/BasicInformation', () => {
         event_tags: ['tag 1', 'tag 2'],
         start_at: '2019-10-10 11:04',
         end_at: '2019-10-12 11:04',
-        staff_notes: 'test staff notes',
-        member_notes: 'test member notes',
-        customer_notes: 'test customer notes'
+        staff_notes: 'Example food fleet staff notes',
+        member_notes: 'Example fleet member notes',
+        customer_notes: 'Example customer notes'
       }
       wrapper.vm.save()
       expect(wrapper.emitted().save).toBeTruthy()
@@ -88,9 +88,9 @@ describe('event/BasicInformation', () => {
         event_tags: ['tag 1', 'tag 2'],
         start_at: '2019-10-10 11:04',
         end_at: '2019-10-12 11:04',
-        staff_notes: 'test staff notes',
-        member_notes: 'test member notes',
-        customer_notes: 'test customer notes'
+        staff_notes: 'Example food fleet staff notes',
+        member_notes: 'Example fleet member notes',
+        customer_notes: 'Example customer notes'
       }])
     })
     test('selectManager() set manager_uuid', () => {

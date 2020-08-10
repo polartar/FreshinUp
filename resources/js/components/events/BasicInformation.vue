@@ -254,7 +254,7 @@
               <v-flex
                 sm12
               >
-                Fleet member staff notes
+                Fleet member notes
                 <v-textarea
                   v-model="eventData.member_notes"
                   placeholder="Only visible for Fleet members"

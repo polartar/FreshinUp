@@ -800,6 +800,129 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                 <!---->
               </div>
             </div>
+             
+            <div
+              class="flex sm12 pt-4"
+            >
+              
+              Food fleet staff notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Food fleet staff"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Fleet member notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Fleet members"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Customer notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible the customer"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
            
           <div
@@ -1231,7 +1354,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="On"
-                                            name="v-radio-108"
+                                            name="v-radio-117"
                                             role="radio"
                                             type="radio"
                                             value="on"
@@ -1268,7 +1391,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="After"
-                                            name="v-radio-108"
+                                            name="v-radio-117"
                                             role="radio"
                                             type="radio"
                                             value="after"
@@ -2197,6 +2320,129 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                 <!---->
               </div>
             </div>
+             
+            <div
+              class="flex sm12 pt-4"
+            >
+              
+              Food fleet staff notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Food fleet staff"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Fleet member notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Fleet members"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Customer notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible the customer"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
            
           <div
@@ -2628,7 +2874,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="On"
-                                            name="v-radio-253"
+                                            name="v-radio-271"
                                             role="radio"
                                             type="radio"
                                             value="on"
@@ -2665,7 +2911,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="After"
-                                            name="v-radio-253"
+                                            name="v-radio-271"
                                             role="radio"
                                             type="radio"
                                             value="after"
@@ -3594,6 +3840,129 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                 <!---->
               </div>
             </div>
+             
+            <div
+              class="flex sm12 pt-4"
+            >
+              
+              Food fleet staff notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Food fleet staff"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Fleet member notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible for Fleet members"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm12"
+            >
+              
+              Customer notes
+              
+              <div
+                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Only visible the customer"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
            
           <div
@@ -4025,7 +4394,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="On"
-                                            name="v-radio-398"
+                                            name="v-radio-425"
                                             role="radio"
                                             type="radio"
                                             value="on"
@@ -4062,7 +4431,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                                           <input
                                             aria-checked="false"
                                             aria-label="After"
-                                            name="v-radio-398"
+                                            name="v-radio-425"
                                             role="radio"
                                             type="radio"
                                             value="after"

@@ -32,7 +32,7 @@ const event = {
   status: 1,
   start_at: '2019-10-10 11:04:19',
   end_at: '2019-10-12 11:04:19',
-  staff_notes: 'Example foodfleet staff notes',
+  staff_notes: 'Example food fleet staff notes',
   member_notes: 'Example fleet member notes',
   customer_notes: 'Example customer notes',
   manager: {
