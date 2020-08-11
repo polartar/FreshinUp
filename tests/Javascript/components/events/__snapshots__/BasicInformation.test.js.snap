@@ -808,7 +808,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Food fleet staff notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -849,7 +849,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Fleet member notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -890,7 +890,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
               Customer notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -2328,7 +2328,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Food fleet staff notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -2369,7 +2369,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Fleet member notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -2410,7 +2410,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               Customer notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -3848,7 +3848,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Food fleet staff notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -3889,7 +3889,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Fleet member notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"
@@ -3930,7 +3930,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               Customer notes
               
               <div
-                class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
                   class="v-input__control"

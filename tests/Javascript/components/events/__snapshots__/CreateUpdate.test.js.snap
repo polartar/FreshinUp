@@ -6485,7 +6485,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               Food fleet staff notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -6526,7 +6526,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               Fleet member notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -6567,7 +6567,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               Customer notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -15139,7 +15139,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Food fleet staff notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -15180,7 +15180,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Fleet member notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -15221,7 +15221,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Customer notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
