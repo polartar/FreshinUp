@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/StatusSelect.vue'
-import {FIXTURE_EVENT_STATUSES} from "../../__data__/eventStatuses";
+import { FIXTURE_EVENT_STATUSES } from '../../__data__/eventStatuses'
 
 describe('Event StatusSelect component', () => {
   let localVue

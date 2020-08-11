@@ -37,7 +37,6 @@
           <status-select
             :value="status_id"
             :options="statuses"
-
           />
         </v-flex>
       </v-layout>
@@ -235,7 +234,7 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {},
+    changeStatus () {}
 
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

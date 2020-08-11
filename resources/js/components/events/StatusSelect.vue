@@ -15,7 +15,7 @@ export default {
   computed: {
     items () {
       // Why don't we just use FBtnStatus' ability to change the "options" data via the props
-      const color = ['grey', 'warning','warning','warning','warning','warning', 'success', 'error', 'grey']
+      const color = ['grey', 'warning', 'warning', 'warning', 'warning', 'warning', 'success', 'error', 'grey']
       return this.options.map(item => {
         return {
           id: item.id,
