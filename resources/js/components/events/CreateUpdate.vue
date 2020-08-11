@@ -167,6 +167,9 @@ export default {
       this.event.type = data.type
       this.event.start_at = data.start_at
       this.event.end_at = data.end_at
+      this.event.staff_notes = data.staff_notes
+      this.event.member_notes = data.member_notes
+      this.event.customer_notes = data.customer_notes
       this.event.event_tags = data.event_tags
       this.event.host_uuid = data.host_uuid
       this.event.manager_uuid = data.manager_uuid
