@@ -9,13 +9,93 @@ exports[`Store List component Snapshots stores assigned 1`] = `
     style="width: 100%;"
   >
     <div
-      class="v-card__title justify-space-between px-4"
+      class="v-card__title justify-space-between px-4 py-2"
     >
       <span
         class="black--text font-weight-bold title text-uppercase"
       >
         Event Fleet
       </span>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon v-icon--left material-icons theme--light"
+          >
+            add_circle
+          </i>
+          
+        Add new fleet member
+      
+        </div>
+      </button>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 700px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title justify-space-between px-4 py-2"
+            >
+              <span
+                class="subheading font-weight-bold grey--text text--darken-1"
+              >
+                
+            Add fleet member
+          
+              </span>
+               
+              <button
+                class="v-btn v-btn--depressed v-btn--round v-btn--small theme--light blue-grey lighten-3 white--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon white--text v-icon--left material-icons theme--light"
+                  >
+                    close
+                  </i>
+                  
+            Close
+          
+                </div>
+              </button>
+            </div>
+             
+            <hr />
+             
+            <div
+              class="pa-5"
+            >
+              
+          Coming soon
+        
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
      
     <hr />
@@ -2162,13 +2242,93 @@ exports[`Store List component Snapshots stores empty 1`] = `
     style="width: 100%;"
   >
     <div
-      class="v-card__title justify-space-between px-4"
+      class="v-card__title justify-space-between px-4 py-2"
     >
       <span
         class="black--text font-weight-bold title text-uppercase"
       >
         Event Fleet
       </span>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon v-icon--left material-icons theme--light"
+          >
+            add_circle
+          </i>
+          
+        Add new fleet member
+      
+        </div>
+      </button>
+    </div>
+     
+    <div
+      class="v-dialog__container"
+      style="display: block;"
+    >
+      <div
+        class="v-dialog__content"
+        style="z-index: 0;"
+        tabindex="-1"
+      >
+        <div
+          class="v-dialog"
+          style="max-width: 700px; display: none;"
+        >
+          <div
+            class="v-card v-sheet theme--light"
+          >
+            <div
+              class="v-card__title justify-space-between px-4 py-2"
+            >
+              <span
+                class="subheading font-weight-bold grey--text text--darken-1"
+              >
+                
+            Add fleet member
+          
+              </span>
+               
+              <button
+                class="v-btn v-btn--depressed v-btn--round v-btn--small theme--light blue-grey lighten-3 white--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon white--text v-icon--left material-icons theme--light"
+                  >
+                    close
+                  </i>
+                  
+            Close
+          
+                </div>
+              </button>
+            </div>
+             
+            <hr />
+             
+            <div
+              class="pa-5"
+            >
+              
+          Coming soon
+        
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
      
     <hr />
