@@ -14,7 +14,7 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
- * Class PaymentType
+ * Class Store
  *
  * @property int $id
  * @property string $uuid

@@ -50,7 +50,11 @@
             </template>
             <v-card>
               <v-card-title>
-                <v-layout row space-between align-center>
+                <v-layout
+                  row
+                  space-between
+                  align-center
+                >
                   <v-flex>
                     <h3>Duplicate Event</h3>
                   </v-flex>
@@ -59,9 +63,13 @@
                     round
                     color="grey"
                     class="white--text"
-                    @click="duplicateDialog = false">
+                    @click="duplicateDialog = false"
+                  >
                     <v-flex>
-                      <v-icon small class="white--text">
+                      <v-icon
+                        small
+                        class="white--text"
+                      >
                         fa fa-times
                       </v-icon>
                     </v-flex>
@@ -76,23 +84,23 @@
                 <small class="font-weight-bold">SELECT</small>
                 <p>Choose what will be carried over to the duplicate event</p>
                 <v-checkbox
-                  class="mt-0 mb-0 p-0"
                   v-model="duplicate.basicInformation"
+                  class="mt-0 mb-0 p-0"
                   label="Basic Information"
                 />
                 <v-checkbox
-                  class="mt-0 mb-0 p-0"
                   v-model="duplicate.venue"
+                  class="mt-0 mb-0 p-0"
                   label="Venue/lovation"
                 />
                 <v-checkbox
-                  class="mt-0 mb-0 p-0"
                   v-model="duplicate.fleetMember"
+                  class="mt-0 mb-0 p-0"
                   label="Fleet Member"
                 />
                 <v-checkbox
-                  class="mt-0 mb-0 p-0"
                   v-model="duplicate.customer"
+                  class="mt-0 mb-0 p-0"
                   label="Customer"
                 />
               </v-card-text>
@@ -109,7 +117,7 @@
                   </v-btn>
                   <v-btn
                     color="primary"
-                    @click="duplicateDialog = false"
+                    @click="onDuplicate"
                   >
                     Duplicate
                   </v-btn>
@@ -161,7 +169,7 @@
       py-4
     >
       <v-flex>
-        <stores
+        <Stores
           :types="types"
           :statuses="storeStatuses"
           :stores="stores"
@@ -176,7 +184,7 @@
       py-4
     >
       <v-flex>
-        <customers
+        <Customers
           :customers="customers"
           :statuses="statuses"
           @manage-view-details="viewDocuments"
@@ -203,6 +211,13 @@ const { mapFields } = createHelpers({
   mutationType: 'updateField'
 })
 
+export const getFileNameCopy = (name) => {
+  const regex = /\s*\(([0-9]+)\)$/gm
+  const [matches] = Array.from(name.matchAll(regex))
+  const count = parseInt(get(matches, '[1]', 0)) + 1
+  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
+}
+
 export default {
   layout: 'admin',
   components: {
@@ -216,10 +231,10 @@ export default {
     return {
       duplicateDialog: false,
       duplicate: {
-        basicInformation: false,
+        basicInformation: true,
         venue: false,
-        fleetMember: false,
-        customer: false
+        fleetMember: true,
+        customer: true
       },
       isNew: false,
       types: []
@@ -256,6 +271,71 @@ export default {
       setPageLoading: 'setLoading'
     }),
     onDuplicate () {
+      // $location_uuid
+      // $host_status
+      // $status_id
+      const toDuplicate = [
+        {
+          condition: this.duplicate.basicInformation,
+          action: (payload) => {
+            return {
+              ...payload,
+              ...this.$refs.basicInfo.eventData
+            }
+          }
+        },
+        // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
+        {
+          condition: this.duplicate.venue,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+          }
+        },
+        {
+          condition: this.duplicate.fleetMember,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+            // this.types
+            // this.storeStatuses
+            // this.stores
+          }
+        },
+        {
+          condition: this.duplicate.customer,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+            // this.customers
+            // this.statuses
+          }
+        }
+      ]
+      const data = toDuplicate.reduce((payload, strategy) => {
+        if (strategy.condition) {
+          payload = Object.assign({}, payload, strategy.action(payload))
+        }
+        return payload
+      }, {})
+      if (data.name) {
+        data.name = getFileNameCopy(data.name)
+      }
+      this.$store.dispatch('events/createItem', {
+        data
+      })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+        .then(() => {
+          this.duplicateDialog = false
+        })
     },
     changeBasicInfo (data) {
       this.event.attendees = data.attendees

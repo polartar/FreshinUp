@@ -323,7 +323,7 @@ export default {
         start_at: edit ? get(this.event, 'start_at') : null,
         end_at: edit ? get(this.event, 'end_at') : null,
         schedule: edit ? get(this.event, 'schedule') : null,
-        event_recurring_checked: null
+        event_recurring_checked: null // TODO: should be a simple boolean
       },
       edit: edit,
       commissionTypes: [
@@ -349,6 +349,7 @@ export default {
       this.$emit('cancel')
     },
     isCheckRecurringEvent (checked) {
+      // TODO should be a simple boolean
       this.eventData.event_recurring_checked = 'yes'
       if (!checked) {
         this.eventData.event_recurring_checked = 'no'
