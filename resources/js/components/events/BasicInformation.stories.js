@@ -32,6 +32,9 @@ const event = {
   status: 1,
   start_at: '2019-10-10 11:04:19',
   end_at: '2019-10-12 11:04:19',
+  staff_notes: 'Example food fleet staff notes',
+  member_notes: 'Example fleet member notes',
+  customer_notes: 'Example customer notes',
   manager: {
     id: 1,
     uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',

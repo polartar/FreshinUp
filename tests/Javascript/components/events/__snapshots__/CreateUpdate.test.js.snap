@@ -6477,6 +6477,129 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                         </div>
                       </div>
                     </div>
+                     
+                    <div
+                      class="flex sm12 pt-4"
+                    >
+                      
+              Food fleet staff notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible for Food fleet staff"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm12"
+                    >
+                      
+              Fleet member notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible for Fleet members"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm12"
+                    >
+                      
+              Customer notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible the customer"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                    
                   <div
@@ -6908,7 +7031,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-233"
+                                                    name="v-radio-242"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -6945,7 +7068,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-233"
+                                                    name="v-radio-242"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -15088,6 +15211,129 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         </div>
                       </div>
                     </div>
+                     
+                    <div
+                      class="flex sm12 pt-4"
+                    >
+                      
+              Food fleet staff notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible for Food fleet staff"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm12"
+                    >
+                      
+              Fleet member notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible for Fleet members"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex sm12"
+                    >
+                      
+              Customer notes
+              
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                placeholder="Only visible the customer"
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                    
                   <div
@@ -15519,7 +15765,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-525"
+                                                    name="v-radio-543"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -15556,7 +15802,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-525"
+                                                    name="v-radio-543"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
