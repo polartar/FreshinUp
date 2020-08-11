@@ -802,7 +802,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark success success-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
