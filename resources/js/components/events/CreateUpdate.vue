@@ -37,6 +37,7 @@
           <status-select
             :value="status_id"
             :options="statuses"
+
           />
         </v-flex>
       </v-layout>
@@ -104,10 +105,10 @@ import get from 'lodash/get'
 import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import StatusSelect from '~/components/events/StatusSelect'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',

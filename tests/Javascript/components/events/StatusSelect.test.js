@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/StatusSelect.vue'
-import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
+import {FIXTURE_EVENT_STATUSES} from "../../__data__/eventStatuses";
 
 describe('Event StatusSelect component', () => {
   let localVue
@@ -30,14 +30,19 @@ describe('Event StatusSelect component', () => {
             options: FIXTURE_EVENT_STATUSES
           }
         })
-        expect(wrapper.vm.items).toHaveLength(5)
+        expect(wrapper.vm.items).toHaveLength(9)
         const expectedLabels = [
           'Draft',
-          'Pending',
+          'FF Initial Review',
+          'Customer Agreement',
+          'Fleet Member Selection',
+          'Customer Review',
+          'Fleet Member Contracts',
           'Confirmed',
-          'Past',
-          'Cancelled'
+          'Cancelled',
+          'Past'
         ]
+
         expectedLabels.forEach((value, index) => {
           expect(wrapper.vm.items[index]).toHaveProperty('label', value)
         })
@@ -52,7 +57,7 @@ describe('Event StatusSelect component', () => {
             options: FIXTURE_EVENT_STATUSES
           }
         })
-        expect(wrapper.vm.activeItem).toHaveProperty('label', 'Pending')
+        expect(wrapper.vm.activeItem).toHaveProperty('label', 'FF Initial Review')
         expect(wrapper.vm.activeItem).toHaveProperty('id', 2)
         expect(wrapper.vm.activeItem).toHaveProperty('color', 'warning')
       })
@@ -60,13 +65,13 @@ describe('Event StatusSelect component', () => {
         const wrapper = shallowMount(Component, {
           localVue: localVue,
           propsData: {
-            value: 2,
+            value: 7,
             options: FIXTURE_EVENT_STATUSES
           }
         })
-        expect(wrapper.vm.activeItem).toHaveProperty('label', 'Pending')
-        expect(wrapper.vm.activeItem).toHaveProperty('id', 2)
-        expect(wrapper.vm.activeItem).toHaveProperty('color', 'warning')
+        expect(wrapper.vm.activeItem).toHaveProperty('label', 'Confirmed')
+        expect(wrapper.vm.activeItem).toHaveProperty('id', 7)
+        expect(wrapper.vm.activeItem).toHaveProperty('color', 'success')
       })
     })
   })
