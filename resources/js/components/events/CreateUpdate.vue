@@ -231,7 +231,8 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {}
+    changeStatus () {},
+
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)

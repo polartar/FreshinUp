@@ -20,7 +20,7 @@ export default {
         return {
           id: item.id,
           label: item.name,
-          color: color[item.id - 1]
+          color: item.color
         }
       })
     }
