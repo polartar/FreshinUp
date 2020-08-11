@@ -21,14 +21,103 @@
           </div>
         </v-btn>
       </v-layout>
-      <v-layout
-        row
+      <v-flex
+        d-flex
+        align-center
         justify-space-between
         ma-2
       >
-        <h2 class="white--text">
-          {{ pageTitle }}
-        </h2>
+        <v-layout
+          row
+          align-center
+        >
+          <h2 class="white--text">
+            {{ pageTitle }}
+          </h2>
+          <v-dialog
+            v-model="duplicateDialog"
+            max-width="500"
+          >
+            <template v-slot:activator="{ on }">
+              <v-btn
+                slot="activator"
+                color="white"
+                v-on="on"
+                @click="duplicateDialog = true"
+              >
+                <span class="primary--text">Duplicate</span>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>
+                <v-layout row space-between align-center>
+                  <v-flex>
+                    <h3>Duplicate Event</h3>
+                  </v-flex>
+                  <v-btn
+                    small
+                    round
+                    color="grey"
+                    class="white--text"
+                    @click="duplicateDialog = false">
+                    <v-flex>
+                      <v-icon small class="white--text">
+                        fa fa-times
+                      </v-icon>
+                    </v-flex>
+                    <v-flex>
+                      Close
+                    </v-flex>
+                  </v-btn>
+                </v-layout>
+              </v-card-title>
+              <v-divider />
+              <v-card-text class="grey--text">
+                <small class="font-weight-bold">SELECT</small>
+                <p>Choose what will be carried over to the duplicate event</p>
+                <v-checkbox
+                  class="mt-0 mb-0 p-0"
+                  v-model="duplicate.basicInformation"
+                  label="Basic Information"
+                />
+                <v-checkbox
+                  class="mt-0 mb-0 p-0"
+                  v-model="duplicate.venue"
+                  label="Venue/lovation"
+                />
+                <v-checkbox
+                  class="mt-0 mb-0 p-0"
+                  v-model="duplicate.fleetMember"
+                  label="Fleet Member"
+                />
+                <v-checkbox
+                  class="mt-0 mb-0 p-0"
+                  v-model="duplicate.customer"
+                  label="Customer"
+                />
+              </v-card-text>
+              <v-divider />
+              <v-card-actions>
+                <v-layout
+                  row
+                  justify-end
+                >
+                  <v-btn
+                    @click="duplicateDialog = false"
+                  >
+                    Cancel
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    @click="duplicateDialog = false"
+                  >
+                    Duplicate
+                  </v-btn>
+                </v-layout>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-layout>
         <v-flex
           text-xs-right
           sm2
@@ -39,7 +128,7 @@
             :options="statuses"
           />
         </v-flex>
-      </v-layout>
+      </v-flex>
       <v-divider />
       <br>
       <v-layout
@@ -101,7 +190,7 @@
 import omitBy from 'lodash/omitBy'
 import isNull from 'lodash/isNull'
 import get from 'lodash/get'
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import StatusSelect from '~/components/events/StatusSelect'
@@ -125,6 +214,13 @@ export default {
   mixins: [Validate],
   data () {
     return {
+      duplicateDialog: false,
+      duplicate: {
+        basicInformation: false,
+        venue: false,
+        fleetMember: false,
+        customer: false
+      },
       isNew: false,
       types: []
     }
@@ -159,6 +255,8 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    onDuplicate () {
+    },
     changeBasicInfo (data) {
       this.event.attendees = data.attendees
       this.event.budget = data.budget
@@ -259,21 +357,24 @@ export default {
 }
 </script>
 <style scoped>
-  .event-new-wrap{
+  .event-new-wrap {
     background-color: #fff;
   }
-  .back-btn-inner{
+
+  .back-btn-inner {
     color: #fff;
     display: flex;
     align-items: center;
     font-size: 13px;
   }
-  .back-btn-inner span{
+
+  .back-btn-inner span {
     margin-left: 10px;
     font-weight: bold;
     text-transform: initial;
   }
-  .back-btn-inner .v-icon{
+
+  .back-btn-inner .v-icon {
     font-size: 16px;
   }
 </style>
