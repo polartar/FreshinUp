@@ -91,7 +91,7 @@
         />
       </td>
       <td class="select-td">
-        <status-select
+        <f-btn-status
           v-model="props.item.status_id"
           :options="statuses"
           @input="changeStatus($event, props.item)"
@@ -146,10 +146,10 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FChip from 'fresh-bus/components/ui/FChip'
-import StatusSelect from '~/components/events/StatusSelect'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
-  components: { FBtnMenu, StatusSelect, FChip },
+  components: { FBtnMenu, FBtnStatus, FChip },
   mixins: [
     Pagination,
     FormatRangeDate

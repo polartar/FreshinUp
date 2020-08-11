@@ -31,7 +31,7 @@
         sm2
         xs12
       >
-        <status-select
+        <f-btn-status
           :value="status"
           :options="statuses"
         />
@@ -113,7 +113,6 @@
 <script>
 import { get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
-import StatusSelect from '~/components/events/StatusSelect'
 import CustomerSummary from '~/components/events/CustomerSummary'
 import FinancialSummary from '~/components/events/FinancialSummary'
 import DocumentSection from '~/components/events/DocumentSection'
@@ -122,7 +121,7 @@ import Messages from '~/components/events/Messages'
 export default {
   layout: 'admin',
   components: {
-    StatusSelect,
+    FBtnStatus,
     CustomerSummary,
     FinancialSummary,
     DocumentSection,

@@ -27,7 +27,7 @@
       slot-scope="props"
     >
       <td class="py-3">
-        <status-select
+        <f-btn-status
           v-model="props.item.status"
           :options="statuses"
           @input="changeStatus(props.item.status, props.item)"
@@ -53,10 +53,9 @@
 
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
-import StatusSelect from '~/components/events/StatusSelect'
 
 export default {
-  components: { StatusSelect },
+  components: { FBtnStatus },
   mixins: [ FormatDate ],
   props: {
     customers: {
