@@ -39,19 +39,11 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
    
   <filter-sorter-stub
     filters="[object Object]"
-    sortables="[object Object],[object Object],[object Object],[object Object]"
+    sortables=""
     statuses=""
   />
    
-  <store-list-stub
-    page="1"
-    rowsperpage="10"
-    rowsperpageitems="5,10,15,25,30,50"
-    sortby=""
-    statuses=""
-    stores=""
-    totalitems="0"
-  />
+  <!---->
    
   <v-dialog-stub
     contentclass=""

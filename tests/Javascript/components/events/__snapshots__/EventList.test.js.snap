@@ -654,7 +654,6 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark grey grey-text--text"
@@ -692,7 +691,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -705,7 +704,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        FF Initial Review
                       </div>
                     </a>
                   </div>
@@ -718,7 +717,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Agreement
                       </div>
                     </a>
                   </div>
@@ -731,7 +730,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Selection
                       </div>
                     </a>
                   </div>
@@ -744,7 +743,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Review
                       </div>
                     </a>
                   </div>
@@ -757,7 +756,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -770,7 +769,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Confirmed
                       </div>
                     </a>
                   </div>
@@ -783,7 +782,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -796,7 +795,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Past
                       </div>
                     </a>
                   </div>
@@ -986,7 +985,6 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -1024,7 +1022,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -1037,7 +1035,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        FF Initial Review
                       </div>
                     </a>
                   </div>
@@ -1050,7 +1048,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Agreement
                       </div>
                     </a>
                   </div>
@@ -1063,7 +1061,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Selection
                       </div>
                     </a>
                   </div>
@@ -1076,7 +1074,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Review
                       </div>
                     </a>
                   </div>
@@ -1089,7 +1087,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1102,7 +1100,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Confirmed
                       </div>
                     </a>
                   </div>
@@ -1115,7 +1113,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1128,7 +1126,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Past
                       </div>
                     </a>
                   </div>
@@ -1318,7 +1316,6 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -1356,7 +1353,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -1369,7 +1366,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        FF Initial Review
                       </div>
                     </a>
                   </div>
@@ -1382,7 +1379,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Agreement
                       </div>
                     </a>
                   </div>
@@ -1395,7 +1392,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Selection
                       </div>
                     </a>
                   </div>
@@ -1408,7 +1405,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Review
                       </div>
                     </a>
                   </div>
@@ -1421,7 +1418,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1434,7 +1431,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Confirmed
                       </div>
                     </a>
                   </div>
@@ -1447,7 +1444,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1460,7 +1457,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Past
                       </div>
                     </a>
                   </div>
@@ -1650,7 +1647,6 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -1688,7 +1684,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -1701,7 +1697,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        FF Initial Review
                       </div>
                     </a>
                   </div>
@@ -1714,7 +1710,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Agreement
                       </div>
                     </a>
                   </div>
@@ -1727,7 +1723,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Selection
                       </div>
                     </a>
                   </div>
@@ -1740,7 +1736,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Review
                       </div>
                     </a>
                   </div>
@@ -1753,7 +1749,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1766,7 +1762,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Confirmed
                       </div>
                     </a>
                   </div>
@@ -1779,7 +1775,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1792,7 +1788,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Past
                       </div>
                     </a>
                   </div>
@@ -2006,7 +2002,6 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -2044,7 +2039,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -2057,7 +2052,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        FF Initial Review
                       </div>
                     </a>
                   </div>
@@ -2070,7 +2065,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Agreement
                       </div>
                     </a>
                   </div>
@@ -2083,7 +2078,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Selection
                       </div>
                     </a>
                   </div>
@@ -2096,7 +2091,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Customer Review
                       </div>
                     </a>
                   </div>
@@ -2109,7 +2104,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -2122,7 +2117,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Confirmed
                       </div>
                     </a>
                   </div>
@@ -2135,7 +2130,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -2148,7 +2143,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Past
                       </div>
                     </a>
                   </div>

@@ -156,7 +156,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                         class="flex md6 sm12"
                       >
                         <div
-                          class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field theme--light"
                         >
                           <div
                             class="v-input__control"
@@ -169,7 +169,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                               >
                                 <label
                                   aria-hidden="true"
-                                  class="v-label v-label--active theme--light"
+                                  class="v-label theme--light"
                                   style="left: 0px; position: absolute;"
                                 >
                                   First Name
@@ -200,7 +200,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                         class="flex md6 sm12"
                       >
                         <div
-                          class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field theme--light"
                         >
                           <div
                             class="v-input__control"
@@ -213,7 +213,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                               >
                                 <label
                                   aria-hidden="true"
-                                  class="v-label v-label--active theme--light"
+                                  class="v-label theme--light"
                                   style="left: 0px; position: absolute;"
                                 >
                                   Last Name
@@ -392,7 +392,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                         class="flex md6 sm12"
                       >
                         <div
-                          class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field theme--light"
                         >
                           <div
                             class="v-input__control"
@@ -405,7 +405,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                               >
                                 <label
                                   aria-hidden="true"
-                                  class="v-label v-label--active theme--light"
+                                  class="v-label theme--light"
                                   style="left: 0px; position: absolute;"
                                 >
                                   Email
@@ -643,7 +643,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                         class="flex md6 sm12"
                       >
                         <div
-                          class="v-input v-text-field v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field v-text-field--placeholder theme--light"
                         >
                           <div
                             class="v-input__control"
@@ -688,7 +688,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
                         class="flex md6 sm12"
                       >
                         <div
-                          class="v-input v-text-field v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field v-text-field--placeholder theme--light"
                         >
                           <div
                             class="v-input__control"
@@ -1177,7 +1177,7 @@ exports[`Admin Edit User Page mount enabledFields for foodfleet 1`] = `
               class="v-card__text"
             >
               
-          User: Demo Admin
+          User: 
         
             </div>
              

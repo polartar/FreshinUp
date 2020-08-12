@@ -1012,27 +1012,33 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.9.0":
-  version "1.8.0"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#0f6fd4815b6b8744ebe23c8d5ae78c88c701de25"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.54.0":
+  version "1.54.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#8828ae86f442cbb32772eca2200f863836f7ddea"
   dependencies:
     "@mdi/font" "^4.4.95"
     awesome-phonenumber "^2.22.0"
     axios "^0.19.0"
+    chart.js "^2.9.3"
     dinero.js "^1.6.0"
+    jspdf "^1.5.3"
+    jspdf-autotable "^3.2.13"
     lodash "^4.17.5"
     moment "^2.24.0"
+    moment-timezone "^0.5.31"
     pluralize "^8.0.0"
     vee-validate "^2.2.2"
     vue "^2.6.10"
     vue-analytics "^5.16.4"
     vue-axios "^2.1.4"
+    vue-chartjs "^3.5.0"
+    vue-ctk-date-time-picker "^2.4.0"
     vue-router "^3.0.3"
     vuedraggable "^2.23.2"
     vuetify "^1.5.16"
     vuex "^3.1.0"
     vuex-map-fields "^1.3.2"
-    vuex-rest-api "^2.10.0"
+    vuex-rest-api "2.12.0"
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -4027,6 +4033,14 @@ chart.js@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.8.0.tgz#b703b10d0f4ec5079eaefdcd6ca32dc8f826e0e9"
   integrity sha512-Di3wUL4BFvqI5FB5K26aQ+hvWh8wnP9A3DWGvXHVkO13D3DSnaSsdZx29cXlEsYKVkn1E2az+ZYFS4t0zi8x0w==
+  dependencies:
+    chartjs-color "^2.1.0"
+    moment "^2.10.2"
+
+chart.js@^2.9.3:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.9.3.tgz#ae3884114dafd381bc600f5b35a189138aac1ef7"
+  integrity sha512-+2jlOobSk52c1VU6fzkh3UwqHMdSlgH1xFv9FKMqHiNCpXsGPQa/+81AFa+i3jZ253Mq9aAycPwDjnn1XbRNNw==
   dependencies:
     chartjs-color "^2.1.0"
     moment "^2.10.2"
@@ -9155,6 +9169,11 @@ jspdf-autotable@^3.1.1:
   resolved "https://registry.yarnpkg.com/jspdf-autotable/-/jspdf-autotable-3.2.4.tgz#cf56b4ca191432b25e841fa2d38dc2163fd5b22e"
   integrity sha512-tnrfVyk9CmB2nDnTGcj+adV87viefYNng2FDR0rNvI6ZXj4DjpN4Ja8mqSQ3gav07QXIP9W1klw/PzEXZkwR3g==
 
+jspdf-autotable@^3.2.13:
+  version "3.5.9"
+  resolved "https://registry.yarnpkg.com/jspdf-autotable/-/jspdf-autotable-3.5.9.tgz#8a625ef2aead44271da95e9f649843c401536925"
+  integrity sha512-ZRfiI5P7leJuWmvC0jGVXu227m68C2Jfz1dkDckshmDYDeVFCGxwIBYdCUXJ8Eb2CyFQC2ok82fEWO+xRDovDQ==
+
 jspdf@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/jspdf/-/jspdf-1.5.3.tgz#5a12c011479defabef5735de55c913060ed219f2"
@@ -9488,7 +9507,7 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
-lodash.clonedeep@4.5.x, lodash.clonedeep@^4.5.0:
+lodash.clonedeep@4.5.x, lodash.clonedeep@^4.5, lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
@@ -10070,6 +10089,18 @@ moment-range@^4.0.1:
   integrity sha512-n8sceWwSTjmz++nFHzeNEUsYtDqjgXgcOBzsHi+BoXQU2FW+eU92LUaK8gqOiSu5PG57Q9sYj1Fz4LRDj4FtKA==
   dependencies:
     es6-symbol "^3.1.0"
+
+moment-timezone@^0.5.31:
+  version "0.5.31"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.31.tgz#9c40d8c5026f0c7ab46eda3d63e49c155148de05"
+  integrity sha512-+GgHNg8xRhMXfEbv81iDtrVeTcWt0kWmTEY1XQK14dICTXnWJnT0dxdlPspwqF3keKMVPXwayEsk1DI0AA/jdA==
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0":
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
 
 moment@^2.10.2, moment@^2.24.0:
   version "2.24.0"
@@ -14383,6 +14414,11 @@ vue-chartjs@^3.4.2:
   resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.4.2.tgz#0323e6a99a10a68f38d426899c3994f48596fd23"
   integrity sha512-EhoXUJ17+9isMLhJpOliS++xE5z5FM8iAVytIqnKofByVMr8AISRL/SCy3zvWbvzhjgQPStd9y6adMF5bnWQdg==
 
+vue-chartjs@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.5.0.tgz#edd0c2be94c521bcbc5357c24afb9f3560855f84"
+  integrity sha512-yWNhG3B6g6lvYqNInP0WaDWNZG/SNb6XnltkjR0wYC5pmLm6jvdiotj8er7Mui8qkJGfLZe6ULjrZdHWjegAUg==
+
 "vue-cli-plugin-freshinup-ui@git+ssh://git@github.com/freshinup/vue-cli-plugin-freshinup-ui.git":
   version "1.0.0"
   resolved "git+ssh://git@github.com/freshinup/vue-cli-plugin-freshinup-ui.git#52add81be8412d996545e9809d2726e08a69bbb2"
@@ -14421,6 +14457,16 @@ vue-ctk-date-time-picker@^2.1.1:
     moment-range "^4.0.1"
     v-click-outside "^2.0.2"
     vue "^2.5.22"
+
+vue-ctk-date-time-picker@^2.4.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/vue-ctk-date-time-picker/-/vue-ctk-date-time-picker-2.5.0.tgz#22d6e4b4199326bfb0bf0b869e7450f4c16a6239"
+  integrity sha512-s4AO+5xnPlX+LD5UPQcjLBnv8MwcEJKlKUnkTLQeXRV0xqpH9pWRe6aJ8N2+506mEN6b7iwhlFox6uKKdtK+gw==
+  dependencies:
+    moment "^2.24.0"
+    moment-range "^4.0.1"
+    v-click-outside "^2.0.2"
+    vue "^2.6.9"
 
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
@@ -14509,6 +14555,11 @@ vue@^2.5.17, vue@^2.5.22, vue@^2.6.10:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
+vue@^2.6.9:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
+  integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+
 vuedraggable@^2.23.2:
   version "2.23.2"
   resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.23.2.tgz#0d95d7fdf4f02f56755a26b3c9dca5c7ca9cfa72"
@@ -14532,6 +14583,13 @@ vuex-map-fields@^1.3.2:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/vuex-map-fields/-/vuex-map-fields-1.3.5.tgz#af4c389e6a843758d99915c17daee49d6af6644d"
   integrity sha512-Yt4XeVZRrgBda5JslfIlLKbOtpODYUw1jvBexpon3vYm28dYQoqirMoy6lcpWbMO042nhLjrzaKZ5yW55DBh+g==
+
+vuex-rest-api@2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/vuex-rest-api/-/vuex-rest-api-2.12.0.tgz#727ab5270ac4c4487f4539985071ad9395efbbd6"
+  integrity sha512-Pg+ysrrklCR+rpwLLPw4rwHCTqqxHlS1iw+D28dREhN/mSFJJsLC4Sv6IbNWzuCqITCyeWQWNshIEIvhIy6k+A==
+  dependencies:
+    lodash.clonedeep "^4.5"
 
 vuex-rest-api@^2.10.0:
   version "2.10.0"

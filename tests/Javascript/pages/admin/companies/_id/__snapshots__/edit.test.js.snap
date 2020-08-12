@@ -2078,7 +2078,7 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                 class="flex shrink"
               >
                 <div
-                  class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                  class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
                   role="combobox"
                 >
                   <div
@@ -2090,14 +2090,16 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                       <div
                         class="v-select__slot"
                       >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Sort by
+                        </label>
                         <div
                           class="v-select__selections"
                         >
-                          <div
-                            class="v-select__selection v-select__selection--comma"
-                          >
-                            Oldest
-                          </div>
                           <input
                             aria-label="Sort by"
                             aria-readonly="false"
@@ -2139,8 +2141,8 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                               <div
                                 role="listitem"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  class="v-list__tile theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -2148,198 +2150,10 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Newest
+                                      No data available
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Oldest
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      First Name (A - Z)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      First Name (Z - A)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Last Name (A - Z)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Last Name (Z - A)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Level (High - Low)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Level (Low - High)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Company (High - Low)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Company (Low - High)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      User Type (High - Low)
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      User Type (Low - High)
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>

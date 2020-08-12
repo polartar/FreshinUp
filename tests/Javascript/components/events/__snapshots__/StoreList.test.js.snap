@@ -208,7 +208,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark accent accent-text--text"
@@ -246,7 +245,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -259,7 +258,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Pending
                       </div>
                     </a>
                   </div>
@@ -272,7 +271,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -285,7 +284,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -298,7 +297,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Approved
                       </div>
                     </a>
                   </div>
@@ -311,7 +310,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        On Hold
                       </div>
                     </a>
                   </div>
@@ -499,7 +498,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -537,7 +535,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -550,7 +548,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Pending
                       </div>
                     </a>
                   </div>
@@ -563,7 +561,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -576,7 +574,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -589,7 +587,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Approved
                       </div>
                     </a>
                   </div>
@@ -602,7 +600,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        On Hold
                       </div>
                     </a>
                   </div>
@@ -802,7 +800,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark success success-text--text"
@@ -840,7 +837,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -853,7 +850,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Pending
                       </div>
                     </a>
                   </div>
@@ -866,7 +863,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Revision
                       </div>
                     </a>
                   </div>
@@ -879,7 +876,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Rejected
                       </div>
                     </a>
                   </div>
@@ -892,7 +889,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Approved
                       </div>
                     </a>
                   </div>
@@ -905,7 +902,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        On Hold
                       </div>
                     </a>
                   </div>

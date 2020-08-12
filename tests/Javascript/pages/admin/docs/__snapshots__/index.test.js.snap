@@ -40,22 +40,9 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
    
   <br />
    
-  <doc-filter-stub
-    autocompleteurl=""
-    sortables="[object Object],[object Object],[object Object],[object Object]"
-    statuses=""
-    types=""
-  />
+  <!---->
    
-  <doctable-list-stub
-    docs="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-    page="1"
-    rowsperpage="10"
-    rowsperpageitems="5,10,15,25,30,50"
-    sortby=""
-    statuses=""
-    totalitems="50"
-  />
+  <!---->
    
   <docs-delete-dialog-stub
     deletetemp=""

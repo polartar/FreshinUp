@@ -196,7 +196,6 @@ exports[`Customer list component Snapshots 1`] = `
           >
             <div
               class="v-menu"
-              label-prop="name"
             >
               <button
                 class="v-btn theme--dark warning warning-text--text"
@@ -234,7 +233,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Required
                       </div>
                     </a>
                   </div>
@@ -247,7 +246,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Draft
                       </div>
                     </a>
                   </div>
@@ -260,7 +259,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Pending
                       </div>
                     </a>
                   </div>
@@ -273,7 +272,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Approved
                       </div>
                     </a>
                   </div>
@@ -286,7 +285,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        
+                        Rejected
                       </div>
                     </a>
                   </div>
