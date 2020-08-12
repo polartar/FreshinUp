@@ -49,6 +49,7 @@
               </v-btn>
             </template>
             <v-card>
+              <v-progress-linear indeterminate v-if="duplicating"/>
               <v-card-title>
                 <v-layout
                   row
@@ -205,6 +206,7 @@ import StatusSelect from '~/components/events/StatusSelect'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
+import moment from 'moment'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -229,6 +231,7 @@ export default {
   mixins: [Validate],
   data () {
     return {
+      duplicating: false,
       duplicateDialog: false,
       duplicate: {
         basicInformation: true,
@@ -271,9 +274,8 @@ export default {
       setPageLoading: 'setLoading'
     }),
     onDuplicate () {
-      // $location_uuid
-      // $host_status
-      // $status_id
+      // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
+      // Fields remaining/not found: $location_uuid
       const toDuplicate = [
         {
           condition: this.duplicate.basicInformation,
@@ -296,22 +298,19 @@ export default {
         {
           condition: this.duplicate.fleetMember,
           action: (payload) => {
+            // fields to consider: this.types,this.storeStatuses,this.stores
             return {
               ...payload
             }
-            // this.types
-            // this.storeStatuses
-            // this.stores
           }
         },
         {
           condition: this.duplicate.customer,
           action: (payload) => {
+            // fields to consider: this.customers,this.statuses
             return {
               ...payload
             }
-            // this.customers
-            // this.statuses
           }
         }
       ]
@@ -324,16 +323,33 @@ export default {
       if (data.name) {
         data.name = getFileNameCopy(data.name)
       }
+      const today = moment()
+      const tomorrow = moment().add(1, 'day')
+      const startsInTheFuture = moment(data.start_at).diff(today) > 0
+      const endsInTheFuture = moment(data.end_at).diff(today) > 0
+      if (!startsInTheFuture) {
+        data.start_at = `${tomorrow.format('YYYY-MM-DD')} 00:00`
+      }
+      if (!endsInTheFuture) {
+        data.end_at = `${tomorrow.format('YYYY-MM-DD')} 23:59`
+      }
+      this.duplicating = true
       this.$store.dispatch('events/createItem', {
         data
       })
         .then(response => {
-          console.log(response)
+          const eventUuid = get(response, 'data.data.uuid')
+          if (eventUuid) {
+            const path = `/admin/events/${eventUuid}/edit`
+            window.location = path
+            // TODO: Replace this with the proper route for an event item this.$router.push({ path })
+          }
         })
         .catch(error => {
           console.error(error)
         })
         .then(() => {
+          this.duplicating = false
           this.duplicateDialog = false
         })
     },
