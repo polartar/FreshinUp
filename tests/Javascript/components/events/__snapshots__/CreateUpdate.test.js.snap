@@ -66,6 +66,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
         </button>
         <div
           class="v-menu"
+          label-prop="name"
         >
           <div
             class="v-menu__content theme--light "
@@ -85,7 +86,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Draft
+                    
                   </div>
                 </a>
               </div>
@@ -98,7 +99,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    FF Initial Review
+                    
                   </div>
                 </a>
               </div>
@@ -111,7 +112,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Customer Agreement
+                    
                   </div>
                 </a>
               </div>
@@ -124,7 +125,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Fleet Member Selection
+                    
                   </div>
                 </a>
               </div>
@@ -137,7 +138,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Customer Review
+                    
                   </div>
                 </a>
               </div>
@@ -150,7 +151,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Fleet Member Contracts
+                    
                   </div>
                 </a>
               </div>
@@ -163,7 +164,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Confirmed
+                    
                   </div>
                 </a>
               </div>
@@ -176,7 +177,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Cancelled
+                    
                   </div>
                 </a>
               </div>
@@ -189,7 +190,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Past
+                    
                   </div>
                 </a>
               </div>
@@ -7083,7 +7084,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-238"
+                                                    name="v-radio-246"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -7120,7 +7121,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-238"
+                                                    name="v-radio-246"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -7266,13 +7267,93 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           style="width: 100%;"
         >
           <div
-            class="v-card__title justify-space-between px-4"
+            class="v-card__title justify-space-between px-4 py-2"
           >
             <span
               class="black--text font-weight-bold title text-uppercase"
             >
               Event Fleet
             </span>
+             
+            <button
+              class="v-btn v-btn--depressed theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon v-icon--left material-icons theme--light"
+                >
+                  add_circle
+                </i>
+                
+        Add new fleet member
+      
+              </div>
+            </button>
+          </div>
+           
+          <div
+            class="v-dialog__container"
+            style="display: block;"
+          >
+            <div
+              class="v-dialog__content"
+              style="z-index: 0;"
+              tabindex="-1"
+            >
+              <div
+                class="v-dialog"
+                style="max-width: 700px; display: none;"
+              >
+                <div
+                  class="v-card v-sheet theme--light"
+                >
+                  <div
+                    class="v-card__title justify-space-between px-4 py-2"
+                  >
+                    <span
+                      class="subheading font-weight-bold grey--text text--darken-1"
+                    >
+                      
+            Add fleet member
+          
+                    </span>
+                     
+                    <button
+                      class="v-btn v-btn--depressed v-btn--round v-btn--small theme--light blue-grey lighten-3 white--text"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon white--text v-icon--left material-icons theme--light"
+                        >
+                          close
+                        </i>
+                        
+            Close
+          
+                      </div>
+                    </button>
+                  </div>
+                   
+                  <hr />
+                   
+                  <div
+                    class="pa-5"
+                  >
+                    
+          Coming soon
+        
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
            
           <hr />
@@ -8615,7 +8696,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
             class="v-btn__content"
           >
             
-  Draft
+  Pending
  
             <i
               aria-hidden="true"
@@ -8627,6 +8708,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
         </button>
         <div
           class="v-menu"
+          label-prop="name"
         >
           <div
             class="v-menu__content theme--light "
@@ -8646,7 +8728,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Draft
+                    
                   </div>
                 </a>
               </div>
@@ -8659,7 +8741,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    FF Initial Review
+                    
                   </div>
                 </a>
               </div>
@@ -8672,7 +8754,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Customer Agreement
+                    
                   </div>
                 </a>
               </div>
@@ -8685,7 +8767,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Fleet Member Selection
+                    
                   </div>
                 </a>
               </div>
@@ -8698,7 +8780,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Customer Review
+                    
                   </div>
                 </a>
               </div>
@@ -8711,7 +8793,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Fleet Member Contracts
+                    
                   </div>
                 </a>
               </div>
@@ -8724,7 +8806,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Confirmed
+                    
                   </div>
                 </a>
               </div>
@@ -8737,7 +8819,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Cancelled
+                    
                   </div>
                 </a>
               </div>
@@ -8750,7 +8832,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Past
+                    
                   </div>
                 </a>
               </div>
@@ -15789,7 +15871,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-539"
+                                                    name="v-radio-555"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -15826,7 +15908,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-539"
+                                                    name="v-radio-555"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -15971,13 +16053,93 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           style="width: 100%;"
         >
           <div
-            class="v-card__title justify-space-between px-4"
+            class="v-card__title justify-space-between px-4 py-2"
           >
             <span
               class="black--text font-weight-bold title text-uppercase"
             >
               Event Fleet
             </span>
+             
+            <button
+              class="v-btn v-btn--depressed theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon v-icon--left material-icons theme--light"
+                >
+                  add_circle
+                </i>
+                
+        Add new fleet member
+      
+              </div>
+            </button>
+          </div>
+           
+          <div
+            class="v-dialog__container"
+            style="display: block;"
+          >
+            <div
+              class="v-dialog__content"
+              style="z-index: 0;"
+              tabindex="-1"
+            >
+              <div
+                class="v-dialog"
+                style="max-width: 700px; display: none;"
+              >
+                <div
+                  class="v-card v-sheet theme--light"
+                >
+                  <div
+                    class="v-card__title justify-space-between px-4 py-2"
+                  >
+                    <span
+                      class="subheading font-weight-bold grey--text text--darken-1"
+                    >
+                      
+            Add fleet member
+          
+                    </span>
+                     
+                    <button
+                      class="v-btn v-btn--depressed v-btn--round v-btn--small theme--light blue-grey lighten-3 white--text"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon white--text v-icon--left material-icons theme--light"
+                        >
+                          close
+                        </i>
+                        
+            Close
+          
+                      </div>
+                    </button>
+                  </div>
+                   
+                  <hr />
+                   
+                  <div
+                    class="pa-5"
+                  >
+                    
+          Coming soon
+        
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
            
           <hr />
@@ -17242,7 +17404,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 class="v-btn__content"
                               >
                                 
-  FF Initial Review
+  Pending
  
                                 <i
                                   aria-hidden="true"
@@ -17254,6 +17416,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             </button>
                             <div
                               class="v-menu"
+                              label-prop="name"
                             >
                               <div
                                 class="v-menu__content theme--light "
@@ -17273,7 +17436,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Draft
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17286,7 +17449,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        FF Initial Review
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17299,7 +17462,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Customer Agreement
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17312,7 +17475,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Fleet Member Selection
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17325,7 +17488,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Customer Review
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17338,7 +17501,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Fleet Member Contracts
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17351,7 +17514,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Confirmed
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17364,7 +17527,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Cancelled
+                                        
                                       </div>
                                     </a>
                                   </div>
@@ -17377,7 +17540,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Past
+                                        
                                       </div>
                                     </a>
                                   </div>

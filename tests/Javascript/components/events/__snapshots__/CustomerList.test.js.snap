@@ -196,16 +196,17 @@ exports[`Customer list component Snapshots 1`] = `
           >
             <div
               class="v-menu"
+              label-prop="name"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Required
+  Pending
  
                   <i
                     aria-hidden="true"
@@ -233,7 +234,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Required
+                        
                       </div>
                     </a>
                   </div>
@@ -246,7 +247,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Draft
+                        
                       </div>
                     </a>
                   </div>
@@ -259,7 +260,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        
                       </div>
                     </a>
                   </div>
@@ -272,7 +273,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Approved
+                        
                       </div>
                     </a>
                   </div>
@@ -285,7 +286,7 @@ exports[`Customer list component Snapshots 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Rejected
+                        
                       </div>
                     </a>
                   </div>
@@ -298,7 +299,7 @@ exports[`Customer list component Snapshots 1`] = `
             class="py-3"
           >
             
-      Sep 24, 2019 • 7:14 AM
+      Sep 24, 2019 • 11:14 AM
     
           </td>
            
@@ -306,7 +307,7 @@ exports[`Customer list component Snapshots 1`] = `
             class="text-xs-left py-3"
           >
             
-      Sep 24, 2019 • 2:33 AM
+      Sep 24, 2019 • 6:33 AM
     
           </td>
            
