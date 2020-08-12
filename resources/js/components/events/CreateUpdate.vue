@@ -35,8 +35,9 @@
           xs12
         >
           <f-btn-status
+            label-prop="name"
             :value="status_id"
-            :options="statuses"
+            :items="statuses"
           />
         </v-flex>
       </v-layout>

@@ -30,8 +30,9 @@
         xs12
       >
         <f-btn-status
+          label-prop="name"
           :value="status_id"
-          :options="storeStatusesOptions"
+          :items="storeStatusesOptions"
         />
       </v-flex>
     </v-layout>
@@ -147,6 +148,7 @@ import DocumentSection from '~/components/events/DocumentSection.vue'
 import Messages from '~/components/events/Messages.vue'
 import StoreSummary from '~/components/events/StoreSummary.vue'
 import StoreServiceSummary from '~/components/events/StoreServiceSummary.vue'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 
 export default {
   layout: 'admin',

@@ -28,8 +28,9 @@
     >
       <td class="py-3">
         <f-btn-status
+          label-prop="name"
           v-model="props.item.status"
-          :options="statuses"
+          :items="statuses"
           @input="changeStatus(props.item.status, props.item)"
         />
       </td>
@@ -53,6 +54,7 @@
 
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 
 export default {
   components: { FBtnStatus },

@@ -93,7 +93,8 @@
       <td class="select-td">
         <f-btn-status
           v-model="props.item.status_id"
-          :options="statuses"
+          :items="statuses"
+          label-prop="name"
           @input="changeStatus($event, props.item)"
         />
       </td>

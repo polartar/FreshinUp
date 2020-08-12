@@ -32,8 +32,9 @@
         xs12
       >
         <f-btn-status
+          label-prop="name"
           :value="status"
-          :options="statuses"
+          :items="statuses"
         />
       </v-flex>
     </v-layout>
@@ -117,6 +118,7 @@ import CustomerSummary from '~/components/events/CustomerSummary'
 import FinancialSummary from '~/components/events/FinancialSummary'
 import DocumentSection from '~/components/events/DocumentSection'
 import Messages from '~/components/events/Messages'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 
 export default {
   layout: 'admin',
