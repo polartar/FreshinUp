@@ -117,22 +117,22 @@
       class="px-4"
       style="border-top: 1px solid gainsboro;"
     >
-      <table style="width: 100%;">
+      <table>
         <thead>
           <tr>
-            <th style="border-bottom: 1px solid gainsboro;">
+            <th style="padding: unset;">
               <input type="checkbox">
             </th>
-            <th style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;">
+            <th>
               Fleet member
             </th>
-            <th style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;">
+            <th>
               State of incorporation
             </th>
-            <th style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;">
+            <th>
               Tags
             </th>
-            <th style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;">
+            <th>
               Manage
             </th>
           </tr>
@@ -142,19 +142,19 @@
             v-for="(member, index) in members"
             :key="index"
           >
-            <td style="border-bottom: 1px solid gainsboro;">
+            <td style="padding: unset;">
               <input type="checkbox">
             </td>
-            <td style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;">
+            <td>
               {{ member.name }}
             </td>
-            <td style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;">
+            <td>
               {{ member.state }}
             </td>
-            <td style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;">
+            <td>
               {{ member.tags }}
             </td>
-            <td style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;">
+            <td>
               <button
                 class="py-1 px-3"
                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -205,3 +205,23 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  & th, & td {
+    border-bottom: 1px solid gainsboro;
+    padding: 15px;
+    text-align: left;
+  }
+
+  & th {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+  }
+}
+</style>

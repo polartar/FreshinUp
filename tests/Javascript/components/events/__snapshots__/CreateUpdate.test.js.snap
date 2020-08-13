@@ -7464,46 +7464,36 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                       class="px-4"
                       style="border-top: 1px solid gainsboro;"
                     >
-                      <table
-                        style="width: 100%;"
-                      >
+                      <table>
                         <thead>
                           <tr>
                             <th
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Fleet member
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             State of incorporation
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Tags
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Manage
           
@@ -7514,32 +7504,26 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                         <tbody>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 1
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 1
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -7548,9 +7532,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -7563,32 +7545,26 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 2
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 2
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -7597,9 +7573,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -7612,32 +7586,26 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 3
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 3
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -7646,9 +7614,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -7661,32 +7627,26 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 4
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 4
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -7695,9 +7655,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -16677,46 +16635,36 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                       class="px-4"
                       style="border-top: 1px solid gainsboro;"
                     >
-                      <table
-                        style="width: 100%;"
-                      >
+                      <table>
                         <thead>
                           <tr>
                             <th
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Fleet member
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             State of incorporation
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Tags
           
                             </th>
                              
-                            <th
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
-                            >
+                            <th>
                               
             Manage
           
@@ -16727,32 +16675,26 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         <tbody>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 1
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 1
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -16761,9 +16703,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -16776,32 +16716,26 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 2
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 2
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -16810,9 +16744,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -16825,32 +16757,26 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 3
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 3
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -16859,9 +16785,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
@@ -16874,32 +16798,26 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           </tr>
                           <tr>
                             <td
-                              style="border-bottom: 1px solid gainsboro;"
+                              style="padding: unset;"
                             >
                               <input
                                 type="checkbox"
                               />
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test 4
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             Test state 4
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               
             [
   "Tag 1",
@@ -16908,9 +16826,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           
                             </td>
                              
-                            <td
-                              style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
-                            >
+                            <td>
                               <button
                                 class="py-1 px-3"
                                 style="color: white; background: seagreen; border-radius: 5px;"
