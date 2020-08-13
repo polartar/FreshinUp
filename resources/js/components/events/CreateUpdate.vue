@@ -130,6 +130,12 @@ export default {
     }
   },
   computed: {
+    // ...mapGetters('stores', {
+    //   members: 'items',
+    //   memberPagination: 'pagination',
+    //   memberSorting: 'sorting',
+    //   memberSortBy: 'sortBy'
+    // }),
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('events/stores', { storeItems: 'items' }),

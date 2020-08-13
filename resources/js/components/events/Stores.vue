@@ -44,9 +44,7 @@
             </v-btn>
           </v-card-title>
           <hr>
-          <div class="pa-5">
-            Coming soon
-          </div>
+          <add-store></add-store>
         </v-card>
       </v-dialog>
       <hr>
@@ -83,10 +81,13 @@
 <script>
 import StoreList from './StoreList.vue'
 import StoreFilter from './StoreFilter.vue'
+import AddStore from './AddStore'
+
 export default {
   components: {
     StoreList,
-    StoreFilter
+    StoreFilter,
+    AddStore
   },
   props: {
     types: {

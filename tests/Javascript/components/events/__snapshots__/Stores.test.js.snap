@@ -86,12 +86,492 @@ exports[`Store List component Snapshots stores assigned 1`] = `
              
             <hr />
              
-            <div
-              class="pa-5"
-            >
-              
-          Coming soon
+            <div>
+              <div
+                class="px-4 pt-4"
+              >
+                <label
+                  class="d-block"
+                >
+                  <input
+                    class="py-2 px-3"
+                    placeholder="Search by Fleet Member name"
+                    style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                    type="text"
+                  />
+                </label>
+                 
+                <div
+                  class="my-2 py-2"
+                >
+                  <div>
+                    <button>
+                      
+          Show Filters
         
+                    </button>
+                  </div>
+                   
+                  <div
+                    style="display: none;"
+                  >
+                    <div
+                      class="d-flex align-end justify-space-between pt-2"
+                    >
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="state"
+                        >
+                          
+              state of incorporation
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="state"
+                          name="state"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                Select state
+              
+                          </option>
+                           
+                          <option
+                            value="illinois"
+                          >
+                            
+                Illinois
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="type"
+                        >
+                          
+              type
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="type"
+                          name="type"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                All types
+              
+                          </option>
+                           
+                          <option
+                            value="mobile"
+                          >
+                            
+                Mobile
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="tags"
+                        >
+                          
+              tags
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="tags"
+                          name="tags"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                Select tags
+              
+                          </option>
+                           
+                          <option
+                            value="tag1"
+                          >
+                            
+                Tag 1
+              
+                          </option>
+                           
+                          <option
+                            value="tag2"
+                          >
+                            
+                Tag 2
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div>
+                        <button
+                          class="px-3 py-2"
+                          style="background-color: lightgrey; border-radius: 5px; color: white; width: 100%;"
+                        >
+                          
+              Clear all filters
+            
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="px-4"
+                style="border-top: 1px solid gainsboro;"
+              >
+                <table
+                  style="width: 100%;"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Fleet member
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            State of incorporation
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Tags
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Manage
+          
+                      </th>
+                    </tr>
+                  </thead>
+                   
+                  <tbody>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 1
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 1
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 2
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 2
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 3
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 3
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 4
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 4
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                 
+                <div
+                  class="py-4"
+                  style="text-align: center;"
+                >
+                  <ul
+                    class="v-pagination theme--light"
+                  >
+                    <li>
+                      <button
+                        class="v-pagination__navigation v-pagination__navigation--disabled"
+                        type="button"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          chevron_left
+                        </i>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__item v-pagination__item--active primary"
+                        type="button"
+                      >
+                        1
+                      </button>
+                    </li>
+                    <li>
+                      <span
+                        class="v-pagination__more"
+                      >
+                        ...
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        class="v-pagination__more"
+                      >
+                        ...
+                      </span>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__item"
+                        type="button"
+                      >
+                        6
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__navigation"
+                        type="button"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          chevron_right
+                        </i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2319,12 +2799,492 @@ exports[`Store List component Snapshots stores empty 1`] = `
              
             <hr />
              
-            <div
-              class="pa-5"
-            >
-              
-          Coming soon
+            <div>
+              <div
+                class="px-4 pt-4"
+              >
+                <label
+                  class="d-block"
+                >
+                  <input
+                    class="py-2 px-3"
+                    placeholder="Search by Fleet Member name"
+                    style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                    type="text"
+                  />
+                </label>
+                 
+                <div
+                  class="my-2 py-2"
+                >
+                  <div>
+                    <button>
+                      
+          Show Filters
         
+                    </button>
+                  </div>
+                   
+                  <div
+                    style="display: none;"
+                  >
+                    <div
+                      class="d-flex align-end justify-space-between pt-2"
+                    >
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="state"
+                        >
+                          
+              state of incorporation
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="state"
+                          name="state"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                Select state
+              
+                          </option>
+                           
+                          <option
+                            value="illinois"
+                          >
+                            
+                Illinois
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="type"
+                        >
+                          
+              type
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="type"
+                          name="type"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                All types
+              
+                          </option>
+                           
+                          <option
+                            value="mobile"
+                          >
+                            
+                Mobile
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div
+                        class="pr-2"
+                      >
+                        <label
+                          class="d-block text-uppercase"
+                          for="tags"
+                        >
+                          
+              tags
+            
+                        </label>
+                         
+                        <select
+                          class="py-2 px-3"
+                          id="tags"
+                          name="tags"
+                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                        >
+                          <option
+                            hidden="hidden"
+                            selected="selected"
+                            value=""
+                          >
+                            
+                Select tags
+              
+                          </option>
+                           
+                          <option
+                            value="tag1"
+                          >
+                            
+                Tag 1
+              
+                          </option>
+                           
+                          <option
+                            value="tag2"
+                          >
+                            
+                Tag 2
+              
+                          </option>
+                        </select>
+                      </div>
+                       
+                      <div>
+                        <button
+                          class="px-3 py-2"
+                          style="background-color: lightgrey; border-radius: 5px; color: white; width: 100%;"
+                        >
+                          
+              Clear all filters
+            
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="px-4"
+                style="border-top: 1px solid gainsboro;"
+              >
+                <table
+                  style="width: 100%;"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Fleet member
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            State of incorporation
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Tags
+          
+                      </th>
+                       
+                      <th
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro; text-transform: uppercase; font-size: 12px; font-weight: 600; color: gray;"
+                      >
+                        
+            Manage
+          
+                      </th>
+                    </tr>
+                  </thead>
+                   
+                  <tbody>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 1
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 1
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 2
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 2
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 3
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 3
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="border-bottom: 1px solid gainsboro;"
+                      >
+                        <input
+                          type="checkbox"
+                        />
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test 4
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            Test state 4
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        
+            [
+  "Tag 1",
+  "Tag 2"
+]
+          
+                      </td>
+                       
+                      <td
+                        style="padding: 15px; text-align: left; border-bottom: 1px solid gainsboro;"
+                      >
+                        <button
+                          class="py-1 px-3"
+                          style="color: white; background: seagreen; border-radius: 5px;"
+                        >
+                          
+              Assign
+            
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                 
+                <div
+                  class="py-4"
+                  style="text-align: center;"
+                >
+                  <ul
+                    class="v-pagination theme--light"
+                  >
+                    <li>
+                      <button
+                        class="v-pagination__navigation v-pagination__navigation--disabled"
+                        type="button"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          chevron_left
+                        </i>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__item v-pagination__item--active primary"
+                        type="button"
+                      >
+                        1
+                      </button>
+                    </li>
+                    <li>
+                      <span
+                        class="v-pagination__more"
+                      >
+                        ...
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        class="v-pagination__more"
+                      >
+                        ...
+                      </span>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__item"
+                        type="button"
+                      >
+                        6
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="v-pagination__navigation"
+                        type="button"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          chevron_right
+                        </i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
