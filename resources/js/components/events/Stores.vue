@@ -1,9 +1,54 @@
 <template>
   <v-layout>
     <v-card width="100%">
-      <v-card-title class="justify-space-between px-4">
+      <v-card-title class="justify-space-between px-4 py-2">
         <span class="black--text font-weight-bold title text-uppercase">Event Fleet</span>
+        <v-btn
+          depressed
+          color="primary"
+          @click.stop="showNewMemberDialog = true"
+        >
+          <v-icon
+            left
+          >
+            add_circle
+          </v-icon>
+          Add new fleet member
+        </v-btn>
       </v-card-title>
+      <v-dialog
+        v-model="showNewMemberDialog"
+        max-width="700"
+      >
+        <v-card>
+          <v-card-title class="justify-space-between px-4 py-2">
+            <span
+              class="subheading font-weight-bold grey--text text--darken-1"
+            >
+              Add fleet member
+            </span>
+            <v-btn
+              small
+              round
+              depressed
+              color="blue-grey lighten-3 white--text"
+              @click="showNewMemberDialog = false"
+            >
+              <v-icon
+                left
+                class="white--text"
+              >
+                close
+              </v-icon>
+              Close
+            </v-btn>
+          </v-card-title>
+          <hr>
+          <div class="pa-5">
+            Coming soon
+          </div>
+        </v-card>
+      </v-dialog>
       <hr>
       <div class="pa-4">
         <v-layout
@@ -55,6 +100,11 @@ export default {
     stores: {
       type: Array,
       default: () => []
+    }
+  },
+  data () {
+    return {
+      showNewMemberDialog: false
     }
   },
   methods: {

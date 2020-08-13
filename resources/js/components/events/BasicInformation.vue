@@ -240,6 +240,40 @@
                   :disabled="readOnly"
                 />
               </v-flex>
+              <v-flex
+                sm12
+                pt-4
+              >
+                Food fleet staff notes
+                <v-textarea
+                  v-model="eventData.staff_notes"
+                  outline
+                  placeholder="Only visible for Food fleet staff"
+                  :disabled="readOnly"
+                />
+              </v-flex>
+              <v-flex
+                sm12
+              >
+                Fleet member notes
+                <v-textarea
+                  v-model="eventData.member_notes"
+                  outline
+                  placeholder="Only visible for Fleet members"
+                  :disabled="readOnly"
+                />
+              </v-flex>
+              <v-flex
+                sm12
+              >
+                Customer notes
+                <v-textarea
+                  v-model="eventData.customer_notes"
+                  outline
+                  placeholder="Only visible the customer"
+                  :disabled="readOnly"
+                />
+              </v-flex>
             </v-layout>
             <v-layout
               row
@@ -324,6 +358,9 @@ export default {
         end_at: edit ? get(this.event, 'end_at') : null,
         schedule: edit ? get(this.event, 'schedule') : null,
         event_recurring_checked: null, // TODO: should be a simple boolean
+        staff_notes: edit ? get(this.event, 'staff_notes') : null,
+        member_notes: edit ? get(this.event, 'member_notes') : null,
+        customer_notes: edit ? get(this.event, 'customer_notes') : null,
         status_id: edit ? get(this.event, 'status_id') : null,
         host_status: edit ? get(this.event, 'host_status') : null
       },

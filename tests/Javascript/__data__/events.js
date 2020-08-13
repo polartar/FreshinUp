@@ -9,6 +9,9 @@ export const FIXTURE_EVENTS = [
     },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
+    staff_notes: 'Example food fleet staff notes',
+    member_notes: 'Example fleet member notes',
+    customer_notes: 'Example customer notes',
     manager: {
       id: 1,
       uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',
@@ -49,6 +52,9 @@ export const FIXTURE_EVENTS = [
     },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
+    staff_notes: 'Example food fleet staff notes',
+    member_notes: 'Example fleet member notes',
+    customer_notes: 'Example customer notes',
     manager: {
       id: 3,
       uuid: '2ccdd232-c73a-4398-a2dc-342de7d43bf1',
@@ -89,6 +95,9 @@ export const FIXTURE_EVENTS = [
     },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
+    staff_notes: 'Example food fleet staff notes',
+    member_notes: 'Example fleet member notes',
+    customer_notes: 'Example customer notes',
     manager: {
       id: 2,
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
@@ -129,6 +138,9 @@ export const FIXTURE_EVENTS = [
     },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
+    staff_notes: 'Example food fleet staff notes',
+    member_notes: 'Example fleet member notes',
+    customer_notes: 'Example customer notes',
     manager: {
       id: 2,
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
@@ -172,6 +184,9 @@ export const FIXTURE_EVENTS = [
     },
     start_at: '2019-10-10 11:04:19',
     end_at: '2019-10-12 11:04:19',
+    staff_notes: 'Example food fleet staff notes',
+    member_notes: 'Example fleet member notes',
+    customer_notes: 'Example customer notes',
     manager: {
       id: 2,
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
