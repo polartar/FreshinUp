@@ -12,9 +12,10 @@
       <div class="my-2 py-2">
         <div>
           <button
+            style="font-weight: bold; color: lightslategray; outline: 0;"
             @click="toggleShowFilter"
           >
-            Show Filters
+            {{ showFilters ? 'Hide' : 'Show' }} Filters
           </button>
         </div>
         <div
@@ -25,7 +26,7 @@
           >
             <div class="pr-2">
               <label
-                class="d-block text-uppercase"
+                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                 for="state"
               >
                 state of incorporation
@@ -50,7 +51,7 @@
             </div>
             <div class="pr-2">
               <label
-                class="d-block text-uppercase"
+                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                 for="type"
               >
                 type
@@ -75,7 +76,7 @@
             </div>
             <div class="pr-2">
               <label
-                class="d-block text-uppercase"
+                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                 for="tags"
               >
                 tags
@@ -120,19 +121,19 @@
       <table>
         <thead>
           <tr>
-            <th style="padding: unset;">
+            <th class="font-weight-bold grey--text text--darken-1" style="padding: unset;">
               <input type="checkbox">
             </th>
-            <th>
+            <th class="font-weight-bold grey--text text--darken-1">
               Fleet member
             </th>
-            <th>
+            <th class="font-weight-bold grey--text text--darken-1">
               State of incorporation
             </th>
-            <th>
+            <th class="font-weight-bold grey--text text--darken-1">
               Tags
             </th>
-            <th>
+            <th class="font-weight-bold grey--text text--darken-1">
               Manage
             </th>
           </tr>
@@ -146,7 +147,8 @@
               <input type="checkbox">
             </td>
             <td>
-              {{ member.name }}
+              <div class="teal--text teal--darken-4" style="font-size: 20px;">{{ member.name }}</div>
+              <div class="grey--text text--darken-2">{{ member.type }}</div>
             </td>
             <td>
               {{ member.state }}
@@ -191,10 +193,10 @@ export default {
         { text: 'Manage', value: 'manage' }
       ],
       members: [
-        { name: 'Test 1', state: 'Test state 1', tags: ['Tag 1', 'Tag 2'], manage: 'Assign' },
-        { name: 'Test 2', state: 'Test state 2', tags: ['Tag 1', 'Tag 2'], manage: 'Assign' },
-        { name: 'Test 3', state: 'Test state 3', tags: ['Tag 1', 'Tag 2'], manage: 'Assign' },
-        { name: 'Test 4', state: 'Test state 4', tags: ['Tag 1', 'Tag 2'], manage: 'Assign' }
+        { name: 'Test 1', state: 'Test state 1', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
+        { name: 'Test 2', state: 'Test state 2', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
+        { name: 'Test 3', state: 'Test state 3', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
+        { name: 'Test 4', state: 'Test state 4', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' }
       ]
     }
   },
@@ -219,9 +221,6 @@ table {
 
   & th {
     text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-    color: gray;
   }
 }
 </style>
