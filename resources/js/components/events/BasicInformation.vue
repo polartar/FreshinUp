@@ -47,7 +47,7 @@
                 Event type
                 <v-select
                   v-model="eventData.type"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   :items="eventTypes"
                   data-vv-name="type"
                   :error-messages="errors.collect('type')"
@@ -119,7 +119,7 @@
                 Budget
                 <v-text-field
                   v-model="eventData.budget"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -135,7 +135,7 @@
                 Attendees
                 <v-text-field
                   v-model="eventData.attendees"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -151,7 +151,7 @@
                 Commission Rate
                 <v-text-field
                   v-model="eventData.commission_rate"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -207,7 +207,7 @@
                 Start Date and Time
                 <vue-ctk-date-time-picker
                   v-model="eventData.start_at"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   data-vv-name="start_at"
                   required
                   :error-messages="errors.collect('start_at')"
@@ -227,7 +227,7 @@
                 End Date and Time
                 <vue-ctk-date-time-picker
                   v-model="eventData.end_at"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   data-vv-name="end_at"
                   required
                   :error-messages="errors.collect('end_at')"
@@ -339,6 +339,10 @@ export default {
     readOnly: {
       type: Boolean,
       default: false
+    },
+    status_id: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -379,6 +383,14 @@ export default {
         this.$emit('data-change', val)
       },
       deep: true
+    }
+  },
+  computed: {
+    isDraft: function () {
+      return this.status_id === '1';
+    },
+    allRequired: function () {
+      return this.isDraft()? '' : 'required';
     }
   },
   methods: {
