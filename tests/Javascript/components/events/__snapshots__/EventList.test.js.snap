@@ -656,7 +656,8 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn v-btn--disabled theme--light warning--text"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -665,12 +666,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   
   Pending
  
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
+                  <!---->
                 </div>
               </button>
               <div
@@ -681,125 +677,7 @@ exports[`Event List component Snapshots events set 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Draft
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        FF Initial Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Agreement
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Selection
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Contracts
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </td>
@@ -987,7 +865,8 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn v-btn--disabled theme--light warning--text"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -996,12 +875,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   
   Pending
  
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
+                  <!---->
                 </div>
               </button>
               <div
@@ -1012,125 +886,7 @@ exports[`Event List component Snapshots events set 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Draft
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        FF Initial Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Agreement
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Selection
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Contracts
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </td>
@@ -1318,7 +1074,8 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn v-btn--disabled theme--light warning--text"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -1327,12 +1084,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   
   Pending
  
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
+                  <!---->
                 </div>
               </button>
               <div
@@ -1343,125 +1095,7 @@ exports[`Event List component Snapshots events set 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Draft
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        FF Initial Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Agreement
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Selection
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Contracts
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </td>
@@ -1649,7 +1283,8 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn v-btn--disabled theme--light warning--text"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -1658,12 +1293,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   
   Pending
  
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
+                  <!---->
                 </div>
               </button>
               <div
@@ -1674,125 +1304,7 @@ exports[`Event List component Snapshots events set 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Draft
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        FF Initial Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Agreement
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Selection
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Contracts
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </td>
@@ -2004,7 +1516,8 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn v-btn--disabled theme--light warning--text"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -2013,12 +1526,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   
   Pending
  
-                  <i
-                    aria-hidden="true"
-                    class="v-icon v-icon--right material-icons theme--dark"
-                  >
-                    arrow_drop_down
-                  </i>
+                  <!---->
                 </div>
               </button>
               <div
@@ -2029,125 +1537,7 @@ exports[`Event List component Snapshots events set 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                >
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Draft
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        FF Initial Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Agreement
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Selection
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Customer Review
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Fleet Member Contracts
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Confirmed
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Cancelled
-                      </div>
-                    </a>
-                  </div>
-                  <div
-                    role="listitem"
-                  >
-                    <a
-                      class="v-list__tile v-list__tile--link theme--light"
-                    >
-                      <div
-                        class="v-list__tile__title"
-                      >
-                        Past
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </td>

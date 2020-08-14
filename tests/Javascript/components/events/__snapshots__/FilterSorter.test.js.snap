@@ -181,7 +181,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                   >
                                     <i
                                       aria-hidden="true"
-                                      class="v-icon fa fa-check-square theme--light"
+                                      class="v-icon far fa-square theme--light"
                                     />
                                   </div>
                                    
