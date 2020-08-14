@@ -49,7 +49,10 @@
               </v-btn>
             </template>
             <v-card>
-              <v-progress-linear indeterminate v-if="duplicating"/>
+              <v-progress-linear
+                v-if="duplicating"
+                indeterminate
+              />
               <v-card-title>
                 <v-layout
                   row

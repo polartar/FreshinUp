@@ -278,8 +278,7 @@
             <v-layout
               row
               wrap
-            >
-            </v-layout>
+            />
           </v-flex>
         </v-layout>
       </v-card-text>
