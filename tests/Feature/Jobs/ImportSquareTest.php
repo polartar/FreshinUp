@@ -16,6 +16,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Mockery;
 use SquareConnect\Model\Card;
 use SquareConnect\Model\Employee;
 use SquareConnect\Model\Order;
@@ -24,14 +25,58 @@ use SquareConnect\Model\Tender;
 use SquareConnect\Model\TenderCardDetails;
 use Tests\TestCase;
 
+
 class ImportSquareTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
+    use \phpmock\phpunit\PHPMock;
+
+    public function testTime()
+    {
+        $time = $this->getFunctionMock(__NAMESPACE__, "time");
+        $time->expects($this->once())->willReturn(3);
+
+        $this->assertEquals(3, time());
+    }
+
+    public function testExec()
+    {
+        $exec = $this->getFunctionMock(__NAMESPACE__, "exec");
+        $exec->expects($this->once())->willReturnCallback(
+            function ($command, &$output, &$return_var) {
+                $this->assertEquals("foo", $command);
+                $output = ["failure"];
+                $return_var = 1;
+            }
+        );
+
+        exec("foo", $output, $return_var);
+        $this->assertEquals(["failure"], $output);
+        $this->assertEquals(1, $return_var);
+    }
+
+    private function mockSquare () {
+        // baseUrl = "https://connect.squareup.com"
+        // /v2/employees
+        $curl_exec = Mockery::mock(__NAMESPACE__, "curl_exec");
+        $curl_exec->expects($this->once())->willReturn("body");
+//        Http::fake([
+//            // Stub a JSON response for GitHub endpoints...
+//            'github.com/*' => Http::response(['foo' => 'bar'], 200, ['Headers']),
+//
+//            // Stub a string response for Google endpoints...
+//            'google.com/*' => Http::response('Hello World', 200, ['Headers']),
+//        ]);
+    }
+
     public function testImportWithoutStoresWithSquareId()
     {
-        $event = factory(Event::class)->create(['name' => 'test']);
+        $curl_exec = $this->getFunctionMock('SquareConnect', "curl_exec");
+        $curl_exec->expects($this->once())->willReturn([]);
 
+
+        $event = factory(Event::class)->create(['name' => 'test']);
         $importJob = new ImportSquare(\App\Models\Foodfleet\Event::find($event->id));
         $importJob->handle();
 
