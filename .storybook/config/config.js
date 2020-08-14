@@ -1,7 +1,10 @@
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import { addDecorator, addParameters, configure } from '@storybook/vue'
+/* eslint-disable import/no-extraneous-dependencies */
+import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { configure, addDecorator, addParameters } from '@storybook/vue'
 import storybookTheme from './theme'
-import './installVuePlugins'
+import './vuetify'
+import filter from 'lodash/filter'
+
 import '@mdi/font/css/materialdesignicons.css'
 
 // Vuetify has a 12 point grid system. Built using flex-box, the grid is used to layout an application's content. It
@@ -10,69 +13,52 @@ const vuetifyViewports = {
   VuetifyLg: {
     name: 'Vuetify LG',
     styles: {
-      height: '100%',
-      width: '1903px'
+      width: '1904px'
     },
     type: 'desktop'
   },
   VuetifyXs: {
     name: 'Vuetify XS',
     styles: {
-      height: '100%',
-      width: '599px'
+      width: '600px'
     },
     type: 'mobile'
   },
   VuetifySm: {
     name: 'Vuetify SM',
     styles: {
-      height: '100%',
-      width: '959px'
+      width: '960px'
     },
     type: 'mobile'
   },
   VuetifyMd: {
     name: 'Vuetify MD',
     styles: {
-      height: '100%',
-      width: '1263px'
+      width: '1264px'
     },
     type: 'tablet'
   },
   VuetifyXl: {
     name: 'Vuetify XL',
     styles: {
-      height: '100%',
       width: '4096px'
     },
     type: 'desktop'
   }
 }
 
+configureViewport({
+  defaultViewport: 'VuetifyMd',
+  viewports: {
+    ...INITIAL_VIEWPORTS,
+    ...vuetifyViewports
+  }
+})
+
 addParameters({
-  viewport: {
-    viewports: {
-      ...INITIAL_VIEWPORTS,
-      ...vuetifyViewports
-    }
-  },
   options: {
     hierarchyRootSeparator: /\|/,
-    theme: storybookTheme,
-    storySort: (a, b) => {
-      if (a[1].id.indexOf('foodfleet') === 0) {
-        return -1
-      } else if (b[1].kind.indexOf('Foodfleet') === 0) {
-        return 1
-      }
-      if (a[1].kind === b[1].kind) {
-        return 0
-      }
-      if (b[1].kind.indexOf('/') !== -1 && a[1].kind.indexOf('/') === -1) {
-        return 1
-      }
-      return a[1].id.localeCompare(b[1].id, undefined, { numeric: true })
-    }
+    theme: storybookTheme
   }
 })
 
@@ -84,8 +70,16 @@ addDecorator(() => ({
   style: '.theme--light.application { background-color: transparent; }'
 }))
 
+const projectComponents = require.context('../../resources/js/components', true, /.stories.js$/)
+const busComponents = require.context('../../vendor/freshinup/fresh-bus-forms/resources/assets/js/components/ui', true, /.stories.js$/)
+
+function loadStoriesFrom (components) {
+  components.keys().forEach(filename => components(filename))
+}
 function loadStories () {
-  require('../resources/js/components/_Intro.stories')
+  require('../../resources/js/components/_Intro.stories')
+  filter(projectComponents.keys(), value => value.indexOf('_Intro') === -1).forEach(filename => projectComponents(filename))
+  loadStoriesFrom(busComponents)
 }
 
 configure(loadStories, module)
