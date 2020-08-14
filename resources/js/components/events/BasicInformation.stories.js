@@ -132,3 +132,24 @@ storiesOf('FoodFleet|events/BasicInformation', module)
       </v-container>
     `
   }))
+  .add('event set as draft', () => ({
+    components: { BasicInformation },
+    data () {
+      return {
+        event: {...event, status_id: 1}
+      }
+    },
+    methods: {
+      onSave (params) {
+        action('Save')(params)
+      }
+    },
+    template: `
+      <v-container>
+           <basic-information
+                  :event="event"
+                  @save="onSave"
+              />
+      </v-container>
+    `
+  }))
