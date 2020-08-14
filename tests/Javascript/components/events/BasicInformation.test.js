@@ -35,14 +35,14 @@ describe('event/BasicInformation', () => {
     test('event as draft', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
-        event: {...FIXTURE_EVENTS[0], status_id: 1}
+        event: { ...FIXTURE_EVENTS[0], status_id: 1 }
       })
       expect(wrapper.element).toMatchSnapshot()
     })
     test('event as no draft', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
-        event: {...FIXTURE_EVENTS[0], status_id: 2}
+        event: { ...FIXTURE_EVENTS[0], status_id: 2 }
       })
       expect(wrapper.element).toMatchSnapshot()
     })

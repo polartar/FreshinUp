@@ -136,7 +136,7 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     components: { BasicInformation },
     data () {
       return {
-        event: {...event, status_id: 1}
+        event: { ...event, status_id: 1 }
       }
     },
     methods: {

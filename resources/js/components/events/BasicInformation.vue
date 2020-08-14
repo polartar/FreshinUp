@@ -373,20 +373,20 @@ export default {
       ]
     }
   },
+  computed: {
+    isDraft: function () {
+      return get(this.event, 'status_id') === 1
+    },
+    allRequired: function () {
+      return this.isDraft ? '' : 'required'
+    }
+  },
   watch: {
     eventData: {
       handler (val) {
         this.$emit('data-change', val)
       },
       deep: true
-    }
-  },
-  computed: {
-    isDraft: function () {
-      return get(this.event, 'status_id') === 1;
-    },
-    allRequired: function () {
-      return this.isDraft? '' : 'required';
     }
   },
   methods: {
