@@ -7164,7 +7164,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               </button>
                
               <button
-                class="v-btn theme--light primary"
+                class="ff-basicInformation__submit-btn v-btn theme--light primary"
                 type="button"
               >
                 <div
@@ -8798,7 +8798,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             >
                               <input
                                 data-vv-name="name"
-                                required="required"
                                 type="text"
                               />
                             </div>
@@ -9559,7 +9558,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         data-vv-name="start_at"
                         error-messages=""
                         id="DateTimePicker"
-                        required="required"
                       >
                         <div
                           class="field flex align-center has-value lg"
@@ -12391,7 +12389,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         data-vv-name="end_at"
                         error-messages=""
                         id="DateTimePicker"
-                        required="required"
                       >
                         <div
                           class="field flex align-center has-value lg"
@@ -15898,7 +15895,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               </button>
                
               <button
-                class="v-btn theme--light primary"
+                class="ff-basicInformation__submit-btn v-btn theme--light primary"
                 type="button"
               >
                 <div

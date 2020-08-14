@@ -31,7 +31,7 @@
                 Event Name
                 <v-text-field
                   v-model="eventData.name"
-                  v-validate="'required|max:255'"
+                  v-validate="isDraft ? '' : 'required|max:255'"
                   solo
                   :counter="255"
                   data-vv-name="name"
@@ -209,7 +209,7 @@
                   v-model="eventData.start_at"
                   v-validate="allRequired"
                   data-vv-name="start_at"
-                  required
+                  :required="!isDraft"
                   :error-messages="errors.collect('start_at')"
                   format="YYYY-MM-DD hh:mm"
                   formatted="dddd, MMMM D YYYY • h:mma"
@@ -229,7 +229,7 @@
                   v-model="eventData.end_at"
                   v-validate="allRequired"
                   data-vv-name="end_at"
-                  required
+                  :required="!isDraft"
                   :error-messages="errors.collect('end_at')"
                   format="YYYY-MM-DD hh:mm"
                   formatted="dddd, MMMM D YYYY • h:mma"
@@ -300,6 +300,7 @@
           Cancel
         </v-btn>
         <v-btn
+          class="ff-basicInformation__submit-btn"
           color="primary"
           :disabled="readOnly || !isValid"
           @click="whenValid(save)"

@@ -2,7 +2,6 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
-
 // Components
 import BasicInformation from './BasicInformation.vue'
 
@@ -80,10 +79,10 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     },
     template: `
       <v-container>
-           <basic-information
-                @cancel="onCancel"
-                @save="onSave"
-            />
+        <basic-information
+          @cancel="onCancel"
+          @save="onSave"
+        />
       </v-container>
     `
   }))
@@ -107,12 +106,12 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     },
     template: `
       <v-container>
-          <basic-information
-                  :event="event"
-                   @cancel="onCancel"
-                   @save="onSave"
-                   @delete="onDelete"
-              />
+        <basic-information
+          :event="event"
+          @cancel="onCancel"
+          @save="onSave"
+          @delete="onDelete"
+        />
       </v-container>
     `
   }))
@@ -125,10 +124,10 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     },
     template: `
       <v-container>
-           <basic-information
-                  :event="event"
-                  read-only
-              />
+        <basic-information
+          :event="event"
+          read-only
+        />
       </v-container>
     `
   }))
@@ -136,7 +135,7 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     components: { BasicInformation },
     data () {
       return {
-        event: { ...event, status_id: 1 }
+        event: { status_id: 1 }
       }
     },
     methods: {
@@ -146,10 +145,10 @@ storiesOf('FoodFleet|events/BasicInformation', module)
     },
     template: `
       <v-container>
-           <basic-information
-                  :event="event"
-                  @save="onSave"
-              />
+        <basic-information
+          :event="event"
+          @save="onSave"
+        />
       </v-container>
     `
   }))

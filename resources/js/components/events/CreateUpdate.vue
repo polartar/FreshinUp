@@ -35,7 +35,7 @@
           xs12
         >
           <status-select
-            :value="status_id"
+            v-model="status_id"
             :options="statuses"
           />
         </v-flex>
