@@ -69,9 +69,8 @@
         />
       </td>
       <td class="select-td">
-        <f-btn-status
+        <status-select
           :value="props.item.status"
-          label-prop="name"
           :items="statuses"
         />
       </td>
@@ -123,9 +122,9 @@ import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FChip from 'fresh-bus/components/ui/FChip'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
-import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 export default {
-  components: { FChip, FBtnMenu, FBtnStatus },
+  components: { FChip, FBtnMenu, StatusSelect },
   mixins: [
     Pagination,
     FormatRangeDate

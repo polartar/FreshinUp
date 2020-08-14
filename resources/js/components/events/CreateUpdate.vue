@@ -34,8 +34,7 @@
           sm2
           xs12
         >
-          <f-btn-status
-            label-prop="name"
+          <status-select
             :value="status_id"
             :items="statuses"
           />
@@ -108,7 +107,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
-import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -119,7 +118,7 @@ export default {
   layout: 'admin',
   components: {
     Stores,
-    FBtnStatus,
+    StatusSelect,
     BasicInformation,
     Customers
   },

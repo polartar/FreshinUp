@@ -91,10 +91,9 @@
         />
       </td>
       <td class="select-td">
-        <f-btn-status
+        <status-select
           v-model="props.item.status_id"
           :items="statuses"
-          label-prop="name"
           @input="changeStatus($event, props.item)"
         />
       </td>
@@ -147,10 +146,10 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FChip from 'fresh-bus/components/ui/FChip'
-import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
-  components: { FBtnMenu, FBtnStatus, FChip },
+  components: { FBtnMenu, StatusSelect, FChip },
   mixins: [
     Pagination,
     FormatRangeDate
