@@ -8798,6 +8798,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             >
                               <input
                                 data-vv-name="name"
+                                required="required"
                                 type="text"
                               />
                             </div>

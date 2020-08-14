@@ -1557,7 +1557,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
               Event Name
               
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
               >
                 <div
                   class="v-input__control"
@@ -1570,6 +1570,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
                     >
                       <input
                         data-vv-name="name"
+                        required="required"
                         type="text"
                       />
                     </div>
@@ -1587,7 +1588,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
                     <div
                       class="v-counter theme--light"
                     >
-                      0 / 255
+                      16 / 255
                     </div>
                   </div>
                 </div>
@@ -15776,6 +15777,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                     >
                       <input
                         data-vv-name="name"
+                        required="required"
                         type="text"
                       />
                     </div>
@@ -17429,6 +17431,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                       <input
                         data-vv-name="name"
                         disabled="disabled"
+                        required="required"
                         type="text"
                       />
                     </div>
