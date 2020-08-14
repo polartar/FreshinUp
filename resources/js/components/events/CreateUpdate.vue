@@ -92,17 +92,17 @@
                 <v-checkbox
                   v-model="duplicate.venue"
                   class="mt-0 mb-0 p-0"
-                  label="Venue/lovation"
+                  label="Venue/lovation (coming soon)"
                 />
                 <v-checkbox
                   v-model="duplicate.fleetMember"
                   class="mt-0 mb-0 p-0"
-                  label="Fleet Member"
+                  label="Fleet Member (coming soon)"
                 />
                 <v-checkbox
                   v-model="duplicate.customer"
                   class="mt-0 mb-0 p-0"
-                  label="Customer"
+                  label="Customer (coming soon)"
                 />
               </v-card-text>
               <v-divider />

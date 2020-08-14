@@ -203,7 +203,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                         >
                           <input
                             aria-checked="false"
-                            aria-label="Venue/lovation"
+                            aria-label="Venue/lovation (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -223,7 +223,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Venue/lovation
+                          Venue/lovation (coming soon)
                         </label>
                       </div>
                       <div
@@ -252,7 +252,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                         >
                           <input
                             aria-checked="true"
-                            aria-label="Fleet Member"
+                            aria-label="Fleet Member (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -272,7 +272,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Fleet Member
+                          Fleet Member (coming soon)
                         </label>
                       </div>
                       <div
@@ -301,7 +301,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                         >
                           <input
                             aria-checked="true"
-                            aria-label="Customer"
+                            aria-label="Customer (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -321,7 +321,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Customer
+                          Customer (coming soon)
                         </label>
                       </div>
                       <div
@@ -9129,7 +9129,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         >
                           <input
                             aria-checked="false"
-                            aria-label="Venue/lovation"
+                            aria-label="Venue/lovation (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -9149,7 +9149,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Venue/lovation
+                          Venue/lovation (coming soon)
                         </label>
                       </div>
                       <div
@@ -9178,7 +9178,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         >
                           <input
                             aria-checked="true"
-                            aria-label="Fleet Member"
+                            aria-label="Fleet Member (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -9198,7 +9198,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Fleet Member
+                          Fleet Member (coming soon)
                         </label>
                       </div>
                       <div
@@ -9227,7 +9227,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         >
                           <input
                             aria-checked="true"
-                            aria-label="Customer"
+                            aria-label="Customer (coming soon)"
                             role="checkbox"
                             type="checkbox"
                             value=""
@@ -9247,7 +9247,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           class="v-label theme--light"
                           style="left: 0px; position: relative;"
                         >
-                          Customer
+                          Customer (coming soon)
                         </label>
                       </div>
                       <div
