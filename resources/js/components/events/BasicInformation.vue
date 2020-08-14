@@ -279,15 +279,6 @@
               row
               wrap
             >
-              <v-flex
-                :pr-3="$vuetify.breakpoint.mdAndUp"
-              >
-                <event-settings-modal
-                  :schedule="eventData.schedule"
-                  @is-checked="isCheckRecurringEvent"
-                  @save="eventSettingsSave"
-                />
-              </v-flex>
             </v-layout>
           </v-flex>
         </v-layout>
@@ -324,10 +315,9 @@ import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import EventSettingsModal from '~/components/events/EventSettingsModal.vue'
 
 export default {
-  components: { Simple, VueCtkDateTimePicker, EventSettingsModal },
+  components: { Simple, VueCtkDateTimePicker },
   mixins: [
     Validate
   ],
