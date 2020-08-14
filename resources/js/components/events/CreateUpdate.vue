@@ -37,7 +37,6 @@
           <status-select
             :value="status_id"
             :options="statuses"
-            @input="status_id = $event;"
           />
         </v-flex>
       </v-layout>
@@ -235,12 +234,7 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {
-
-    },
-    statusChanged() {
-
-    }
+    changeStatus () {}
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)

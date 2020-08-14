@@ -339,10 +339,6 @@ export default {
     readOnly: {
       type: Boolean,
       default: false
-    },
-    status_id: {
-      type: String,
-      default: ''
     }
   },
   data () {
@@ -387,10 +383,10 @@ export default {
   },
   computed: {
     isDraft: function () {
-      return this.status_id === '1';
+      return get(this.event, 'status_id') === 1;
     },
     allRequired: function () {
-      return this.isDraft()? '' : 'required';
+      return this.isDraft? '' : 'required';
     }
   },
   methods: {
