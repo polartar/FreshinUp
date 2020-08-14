@@ -105,7 +105,9 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                   class="my-2 py-2"
                 >
                   <div>
-                    <button>
+                    <button
+                      style="font-weight: bold; color: lightslategray; outline: 0;"
+                    >
                       
           Show Filters
         
@@ -122,7 +124,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="state"
                         >
                           
@@ -131,10 +133,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="state"
                           name="state"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -160,7 +162,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="type"
                         >
                           
@@ -169,10 +171,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="type"
                           name="type"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -198,7 +200,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="tags"
                         >
                           
@@ -207,10 +209,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="tags"
                           name="tags"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -242,8 +244,8 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                        
                       <div>
                         <button
-                          class="px-3 py-2"
-                          style="background-color: lightgrey; border-radius: 5px; color: white; width: 100%;"
+                          class="px-3 py-2 rounded"
+                          style="background-color: lightgrey; color: white; width: 100%;"
                         >
                           
               Clear all filters
@@ -259,214 +261,142 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                 class="px-4"
                 style="border-top: 1px solid gainsboro;"
               >
-                <table>
-                  <thead>
-                    <tr>
-                      <th
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </th>
-                       
-                      <th>
-                        
-            Fleet member
-          
-                      </th>
-                       
-                      <th>
-                        
-            State of incorporation
-          
-                      </th>
-                       
-                      <th>
-                        
-            Tags
-          
-                      </th>
-                       
-                      <th>
-                        
-            Manage
-          
-                      </th>
-                    </tr>
-                  </thead>
-                   
-                  <tbody>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 1
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 1
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
+                <div>
+                  <div
+                    class="v-table__overflow"
+                  >
+                    <table
+                      class="v-datatable v-table v-datatable--select-all theme--light"
+                    >
+                      <thead>
+                        <tr>
+                          <th>
+                            <div
+                              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                            >
+                              <div
+                                class="v-input__control"
+                              >
+                                <div
+                                  class="v-input__slot"
+                                >
+                                  <div
+                                    class="v-input--selection-controls__input"
+                                  >
+                                    <input
+                                      aria-checked="false"
+                                      role="checkbox"
+                                      type="checkbox"
+                                      value=""
+                                    />
+                                    <div
+                                      class="v-input--selection-controls__ripple"
+                                    />
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      check_box_outline_blank
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th
+                            aria-label="Fleet member: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Fleet member
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="State of incorporation: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            State of incorporation
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="Tags: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Tags
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="Manage: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Manage
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                        </tr>
+                        <tr
+                          class="v-datatable__progress"
                         >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 2
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 2
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 3
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 3
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 4
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 4
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                          <th
+                            class="column"
+                            colspan="5"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-xs-center"
+                            colspan="5"
+                          >
+                            No data available
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                  
                 <div
-                  class="py-4"
-                  style="text-align: center;"
+                  class="text-xs-center pt-2"
                 >
                   <ul
                     class="v-pagination theme--light"
@@ -486,37 +416,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                     </li>
                     <li>
                       <button
-                        class="v-pagination__item v-pagination__item--active primary"
-                        type="button"
-                      >
-                        1
-                      </button>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__item"
-                        type="button"
-                      >
-                        6
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__navigation"
+                        class="v-pagination__navigation v-pagination__navigation--disabled"
                         type="button"
                       >
                         <i
@@ -2776,7 +2676,9 @@ exports[`Store List component Snapshots stores empty 1`] = `
                   class="my-2 py-2"
                 >
                   <div>
-                    <button>
+                    <button
+                      style="font-weight: bold; color: lightslategray; outline: 0;"
+                    >
                       
           Show Filters
         
@@ -2793,7 +2695,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="state"
                         >
                           
@@ -2802,10 +2704,10 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="state"
                           name="state"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -2831,7 +2733,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="type"
                         >
                           
@@ -2840,10 +2742,10 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="type"
                           name="type"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -2869,7 +2771,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         class="pr-2"
                       >
                         <label
-                          class="d-block text-uppercase"
+                          class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
                           for="tags"
                         >
                           
@@ -2878,10 +2780,10 @@ exports[`Store List component Snapshots stores empty 1`] = `
                         </label>
                          
                         <select
-                          class="py-2 px-3"
+                          class="py-2 px-3 rounded"
                           id="tags"
                           name="tags"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                          style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
                             hidden="hidden"
@@ -2913,8 +2815,8 @@ exports[`Store List component Snapshots stores empty 1`] = `
                        
                       <div>
                         <button
-                          class="px-3 py-2"
-                          style="background-color: lightgrey; border-radius: 5px; color: white; width: 100%;"
+                          class="px-3 py-2 rounded"
+                          style="background-color: lightgrey; color: white; width: 100%;"
                         >
                           
               Clear all filters
@@ -2930,214 +2832,142 @@ exports[`Store List component Snapshots stores empty 1`] = `
                 class="px-4"
                 style="border-top: 1px solid gainsboro;"
               >
-                <table>
-                  <thead>
-                    <tr>
-                      <th
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </th>
-                       
-                      <th>
-                        
-            Fleet member
-          
-                      </th>
-                       
-                      <th>
-                        
-            State of incorporation
-          
-                      </th>
-                       
-                      <th>
-                        
-            Tags
-          
-                      </th>
-                       
-                      <th>
-                        
-            Manage
-          
-                      </th>
-                    </tr>
-                  </thead>
-                   
-                  <tbody>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 1
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 1
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
+                <div>
+                  <div
+                    class="v-table__overflow"
+                  >
+                    <table
+                      class="v-datatable v-table v-datatable--select-all theme--light"
+                    >
+                      <thead>
+                        <tr>
+                          <th>
+                            <div
+                              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                            >
+                              <div
+                                class="v-input__control"
+                              >
+                                <div
+                                  class="v-input__slot"
+                                >
+                                  <div
+                                    class="v-input--selection-controls__input"
+                                  >
+                                    <input
+                                      aria-checked="false"
+                                      role="checkbox"
+                                      type="checkbox"
+                                      value=""
+                                    />
+                                    <div
+                                      class="v-input--selection-controls__ripple"
+                                    />
+                                    <i
+                                      aria-hidden="true"
+                                      class="v-icon material-icons theme--light"
+                                    >
+                                      check_box_outline_blank
+                                    </i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th
+                            aria-label="Fleet member: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Fleet member
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="State of incorporation: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            State of incorporation
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="Tags: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Tags
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                          <th
+                            aria-label="Manage: Not sorted. Activate to sort ascending."
+                            aria-sort="none"
+                            class="column sortable text-xs-left"
+                            role="columnheader"
+                            scope="col"
+                            tabindex="0"
+                          >
+                            Manage
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                              style="font-size: 16px;"
+                            >
+                              arrow_upward
+                            </i>
+                          </th>
+                        </tr>
+                        <tr
+                          class="v-datatable__progress"
                         >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 2
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 2
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 3
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 3
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="padding: unset;"
-                      >
-                        <input
-                          type="checkbox"
-                        />
-                      </td>
-                       
-                      <td>
-                        
-            Test 4
-          
-                      </td>
-                       
-                      <td>
-                        
-            Test state 4
-          
-                      </td>
-                       
-                      <td>
-                        
-            [
-  "Tag 1",
-  "Tag 2"
-]
-          
-                      </td>
-                       
-                      <td>
-                        <button
-                          class="py-1 px-3"
-                          style="color: white; background: seagreen; border-radius: 5px;"
-                        >
-                          
-              Assign
-            
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                          <th
+                            class="column"
+                            colspan="5"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-xs-center"
+                            colspan="5"
+                          >
+                            No data available
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                  
                 <div
-                  class="py-4"
-                  style="text-align: center;"
+                  class="text-xs-center pt-2"
                 >
                   <ul
                     class="v-pagination theme--light"
@@ -3157,37 +2987,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
                     </li>
                     <li>
                       <button
-                        class="v-pagination__item v-pagination__item--active primary"
-                        type="button"
-                      >
-                        1
-                      </button>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__item"
-                        type="button"
-                      >
-                        6
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__navigation"
+                        class="v-pagination__navigation v-pagination__navigation--disabled"
                         type="button"
                       >
                         <i

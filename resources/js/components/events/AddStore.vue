@@ -34,8 +34,8 @@
               <select
                 id="state"
                 name="state"
-                class="py-2 px-3"
-                style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                class="py-2 px-3 rounded"
+                style="width: 100%; border: 1px solid #dee2e6;"
               >
                 <option
                   value=""
@@ -59,8 +59,8 @@
               <select
                 id="type"
                 name="type"
-                class="py-2 px-3"
-                style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                class="py-2 px-3 rounded"
+                style="width: 100%; border: 1px solid #dee2e6;"
               >
                 <option
                   value=""
@@ -84,8 +84,8 @@
               <select
                 id="tags"
                 name="tags"
-                class="py-2 px-3"
-                style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
+                class="py-2 px-3 rounded"
+                style="width: 100%; border: 1px solid #dee2e6;"
               >
                 <option
                   value=""
@@ -104,8 +104,8 @@
             </div>
             <div>
               <button
-                class="px-3 py-2"
-                style="background-color: lightgrey; border-radius: 5px; color: white; width: 100%;"
+                class="px-3 py-2 rounded"
+                style="background-color: lightgrey; color: white; width: 100%;"
               >
                 Clear all filters
               </button>
@@ -118,109 +118,148 @@
       class="px-4"
       style="border-top: 1px solid gainsboro;"
     >
-      <table>
-        <thead>
-          <tr>
-            <th class="font-weight-bold grey--text text--darken-1" style="padding: unset;">
-              <input type="checkbox">
-            </th>
-            <th class="font-weight-bold grey--text text--darken-1">
-              Fleet member
-            </th>
-            <th class="font-weight-bold grey--text text--darken-1">
-              State of incorporation
-            </th>
-            <th class="font-weight-bold grey--text text--darken-1">
-              Tags
-            </th>
-            <th class="font-weight-bold grey--text text--darken-1">
-              Manage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="(member, index) in members"
-            :key="index"
-          >
-            <td style="padding: unset;">
-              <input type="checkbox">
-            </td>
-            <td>
-              <div class="teal--text teal--darken-4" style="font-size: 20px;">{{ member.name }}</div>
-              <div class="grey--text text--darken-2">{{ member.type }}</div>
-            </td>
-            <td>
-              {{ member.state }}
-            </td>
-            <td>
-              {{ member.tags }}
-            </td>
-            <td>
-              <button
-                class="py-1 px-3"
-                style="color: white; background: seagreen; border-radius: 5px;"
-              >
-                {{ member.manage }}
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div
-        class="py-4"
-        style="text-align: center;"
+      <v-data-table
+        v-model="selected"
+        :headers="headers"
+        :items="members"
+        item-key="uuid"
+        hide-actions
+        select-all
+        :pagination.sync="pagination"
       >
+        <template v-slot:items="props">
+          <td>
+            <v-checkbox
+              v-model="props.selected"
+              primary
+              hide-details
+            />
+          </td>
+          <td
+            class="py-2"
+            nowrap
+          >
+            <div
+              class="primary--text"
+              style="font-size: 18px;"
+            >
+              {{ props.item.name }}
+            </div>
+            <div
+              class="grey--text text--darken-2"
+            >
+              {{ props.item.type.name }}
+            </div>
+          </td>
+          <td class="py-2">
+            {{ props.item.location.name }}
+          </td>
+          <td class="py-2">
+            <div>
+              <v-chip
+                v-for="(tag, index) of props.item.store_tags"
+                :key="index"
+                color="secondary"
+                text-color="white"
+              >
+                {{ tag.name }}
+              </v-chip>
+            </div>
+          </td>
+          <td class="py-2">
+            <v-btn
+              depressed
+              :class="manageButtonClass(props.item)"
+              @click="onManageClicked(props.item)"
+            >
+              {{ manageButtonLabel(props.item) }}
+            </v-btn>
+          </td>
+        </template>
+      </v-data-table>
+      <div class="text-xs-center pt-2">
         <v-pagination
-          v-model="page"
-          :length="6"
+          v-model="pagination.page"
+          :length="pages"
         />
       </div>
     </div>
   </div>
 </template>
 <script>
+/* TODO
+  It remains:
+  - Searching and filtering
+  - Hover on fleet member name
+  - Redirect on fleet member name click
+  - Tooltip on fleet member name hovered
+   */
 export default {
+  props: {
+    members: {
+      type: Array,
+      default: () => []
+    }
+  },
   data () {
     return {
+      pagination: {
+        rowsPerPage: 5,
+        page: 1
+      },
       page: 1,
       showFilters: false,
       selected: [],
       headers: [
         { text: 'Fleet member', value: 'name' },
-        { text: 'State of incorporation', value: 'state' },
-        { text: 'Tags', value: 'tags' },
-        { text: 'Manage', value: 'manage' }
-      ],
-      members: [
-        { name: 'Test 1', state: 'Test state 1', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
-        { name: 'Test 2', state: 'Test state 2', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
-        { name: 'Test 3', state: 'Test state 3', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' },
-        { name: 'Test 4', state: 'Test state 4', tags: ['Tag 1', 'Tag 2'], manage: 'Assign', type: 'Mobile' }
+        { text: 'State of incorporation', value: 'location' },
+        { text: 'Tags', value: 'store_tags' },
+        { text: 'Manage', value: 'assigned' }
       ]
+    }
+  },
+  computed: {
+    pages () {
+      if (this.pagination.rowsPerPage == null ||
+        this.totalItems == null
+      ) return 0
+
+      return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
+    },
+
+    totalItems () {
+      return this.members.length
     }
   },
   methods: {
     toggleShowFilter () {
       this.showFilters = !this.showFilters
+    },
+
+    manageButtonLabel (item) {
+      /* TODO
+      - 'Assign' = Is eligible, but not yet assigned to current event
+      - 'Assigned' = Is eligible, and was assigned to current event
+      - 'Declined' = Is eligible, but have declined the assignment
+      - 'Booked' = Is not eligible: Already booked for another event at same time / date
+      - 'Expired' = Is not eligible: Has expired license or document
+       */
+      return 'Declined'
+    },
+
+    onManageClicked (item) {
+      /* TODO
+      Handle the action only if the item is assignable
+       */
+    },
+
+    manageButtonClass (item) {
+      return {
+        'primary': this.manageButtonLabel(item) === 'Assign',
+        'blue-grey lighten-5': ['Expired', 'Booked'].includes(this.manageButtonLabel(item)),
+        'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(this.manageButtonLabel(item))
+      }
     }
   }
 }
 </script>
-<style scoped lang="scss">
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-
-  & th, & td {
-    border-bottom: 1px solid gainsboro;
-    padding: 15px;
-    text-align: left;
-  }
-
-  & th {
-    text-transform: uppercase;
-  }
-}
-</style>
