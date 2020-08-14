@@ -3,6 +3,7 @@
     <div class="px-4 pt-4">
       <label class="d-block">
         <input
+          v-model="searchText"
           type="text"
           class="py-2 px-3"
           style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
@@ -33,6 +34,7 @@
               </label>
               <select
                 id="state"
+                v-model="selectedState"
                 name="state"
                 class="py-2 px-3 rounded"
                 style="width: 100%; border: 1px solid #dee2e6;"
@@ -40,12 +42,15 @@
                 <option
                   value=""
                   selected
-                  hidden
                 >
-                  Select state
+                  All states
                 </option>
-                <option value="illinois">
-                  Illinois
+                <option
+                  v-for="location of locations"
+                  :key="location.uuid"
+                  :value="location.uuid"
+                >
+                  {{ location.name }}
                 </option>
               </select>
             </div>
@@ -58,6 +63,7 @@
               </label>
               <select
                 id="type"
+                v-model="selectedType"
                 name="type"
                 class="py-2 px-3 rounded"
                 style="width: 100%; border: 1px solid #dee2e6;"
@@ -65,12 +71,15 @@
                 <option
                   value=""
                   selected
-                  hidden
                 >
                   All types
                 </option>
-                <option value="mobile">
-                  Mobile
+                <option
+                  v-for="type of types"
+                  :key="type.id"
+                  :value="type.id"
+                >
+                  {{ type.name }}
                 </option>
               </select>
             </div>
@@ -83,6 +92,7 @@
               </label>
               <select
                 id="tags"
+                v-model="selectedTag"
                 name="tags"
                 class="py-2 px-3 rounded"
                 style="width: 100%; border: 1px solid #dee2e6;"
@@ -90,15 +100,15 @@
                 <option
                   value=""
                   selected
-                  hidden
                 >
-                  Select tags
+                  All tags
                 </option>
-                <option value="tag1">
-                  Tag 1
-                </option>
-                <option value="tag2">
-                  Tag 2
+                <option
+                  v-for="tag of tags"
+                  :key="tag.uuid"
+                  :value="tag.uuid"
+                >
+                  {{ tag.name }}
                 </option>
               </select>
             </div>
@@ -121,7 +131,8 @@
       <v-data-table
         v-model="selected"
         :headers="headers"
-        :items="members"
+        :items="filteredMembers"
+        :search="searchText"
         item-key="uuid"
         hide-actions
         select-all
@@ -189,11 +200,12 @@
 <script>
 /* TODO
   It remains:
-  - Searching and filtering
-  - Hover on fleet member name
   - Redirect on fleet member name click
   - Tooltip on fleet member name hovered
    */
+import _unionBy from 'lodash/unionBy'
+import _uniqBy from 'lodash/uniqBy'
+
 export default {
   props: {
     members: {
@@ -203,6 +215,10 @@ export default {
   },
   data () {
     return {
+      searchText: '',
+      selectedState: '',
+      selectedType: '',
+      selectedTag: '',
       pagination: {
         rowsPerPage: 5,
         page: 1
@@ -227,8 +243,38 @@ export default {
       return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
     },
 
+    filteredMembers () {
+      let items = this.members
+
+      if (this.selectedState) {
+        items = items.filter(i => i['location']['uuid'] === this.selectedState)
+      }
+
+      if (this.selectedType) {
+        items = items.filter(i => i['type']['id'] === this.selectedType)
+      }
+
+      if (this.selectedTag) {
+        items = items.filter(i => i['store_tags'].map(t => t['uuid']).includes(this.selectedTag))
+      }
+
+      return items
+    },
+
     totalItems () {
-      return this.members.length
+      return this.filteredMembers.length
+    },
+
+    locations () {
+      return _uniqBy([...this.filteredMembers.map(m => m.location)], 'uuid')
+    },
+
+    tags () {
+      return _unionBy(...this.filteredMembers.map(m => m['store_tags']), 'uuid')
+    },
+
+    types () {
+      return _uniqBy([...this.filteredMembers.map(m => m.type)], 'id')
     }
   },
   methods: {

@@ -7344,22 +7344,14 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
                                   
-                Select state
+                All states
               
                                 </option>
                                  
-                                <option
-                                  value="illinois"
-                                >
-                                  
-                Illinois
-              
-                                </option>
                               </select>
                             </div>
                              
@@ -7382,7 +7374,6 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
@@ -7391,13 +7382,6 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               
                                 </option>
                                  
-                                <option
-                                  value="mobile"
-                                >
-                                  
-                Mobile
-              
-                                </option>
                               </select>
                             </div>
                              
@@ -7420,30 +7404,14 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
                                   
-                Select tags
+                All tags
               
                                 </option>
                                  
-                                <option
-                                  value="tag1"
-                                >
-                                  
-                Tag 1
-              
-                                </option>
-                                 
-                                <option
-                                  value="tag2"
-                                >
-                                  
-                Tag 2
-              
-                                </option>
                               </select>
                             </div>
                              
@@ -16445,22 +16413,14 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
                                   
-                Select state
+                All states
               
                                 </option>
                                  
-                                <option
-                                  value="illinois"
-                                >
-                                  
-                Illinois
-              
-                                </option>
                               </select>
                             </div>
                              
@@ -16483,7 +16443,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
@@ -16492,13 +16451,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               
                                 </option>
                                  
-                                <option
-                                  value="mobile"
-                                >
-                                  
-                Mobile
-              
-                                </option>
                               </select>
                             </div>
                              
@@ -16521,30 +16473,14 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 style="width: 100%; border: 1px solid #dee2e6;"
                               >
                                 <option
-                                  hidden="hidden"
                                   selected="selected"
                                   value=""
                                 >
                                   
-                Select tags
+                All tags
               
                                 </option>
                                  
-                                <option
-                                  value="tag1"
-                                >
-                                  
-                Tag 1
-              
-                                </option>
-                                 
-                                <option
-                                  value="tag2"
-                                >
-                                  
-                Tag 2
-              
-                                </option>
                               </select>
                             </div>
                              

@@ -139,22 +139,14 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
                             
-                Select state
+                All states
               
                           </option>
                            
-                          <option
-                            value="illinois"
-                          >
-                            
-                Illinois
-              
-                          </option>
                         </select>
                       </div>
                        
@@ -177,7 +169,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
@@ -186,13 +177,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
               
                           </option>
                            
-                          <option
-                            value="mobile"
-                          >
-                            
-                Mobile
-              
-                          </option>
                         </select>
                       </div>
                        
@@ -215,30 +199,14 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
                             
-                Select tags
+                All tags
               
                           </option>
                            
-                          <option
-                            value="tag1"
-                          >
-                            
-                Tag 1
-              
-                          </option>
-                           
-                          <option
-                            value="tag2"
-                          >
-                            
-                Tag 2
-              
-                          </option>
                         </select>
                       </div>
                        
@@ -2710,22 +2678,14 @@ exports[`Store List component Snapshots stores empty 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
                             
-                Select state
+                All states
               
                           </option>
                            
-                          <option
-                            value="illinois"
-                          >
-                            
-                Illinois
-              
-                          </option>
                         </select>
                       </div>
                        
@@ -2748,7 +2708,6 @@ exports[`Store List component Snapshots stores empty 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
@@ -2757,13 +2716,6 @@ exports[`Store List component Snapshots stores empty 1`] = `
               
                           </option>
                            
-                          <option
-                            value="mobile"
-                          >
-                            
-                Mobile
-              
-                          </option>
                         </select>
                       </div>
                        
@@ -2786,30 +2738,14 @@ exports[`Store List component Snapshots stores empty 1`] = `
                           style="width: 100%; border: 1px solid #dee2e6;"
                         >
                           <option
-                            hidden="hidden"
                             selected="selected"
                             value=""
                           >
                             
-                Select tags
+                All tags
               
                           </option>
                            
-                          <option
-                            value="tag1"
-                          >
-                            
-                Tag 1
-              
-                          </option>
-                           
-                          <option
-                            value="tag2"
-                          >
-                            
-                Tag 2
-              
-                          </option>
                         </select>
                       </div>
                        
