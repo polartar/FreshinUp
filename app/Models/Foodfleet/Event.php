@@ -108,4 +108,9 @@ class Event extends Model
     {
         return $this->hasOne(EventSchedule::class, 'event_uuid', 'uuid');
     }
+
+    public function type()
+    {
+        return $this->belongsTo(EventType::class, 'type_id', 'id');
+    }
 }

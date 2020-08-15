@@ -86,7 +86,7 @@ class EventTypeTest extends TestCase
                 'data'
             ])
             ->json('data');
-
+        echo $data;
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
 
