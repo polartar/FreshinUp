@@ -278,8 +278,7 @@
             <v-layout
               row
               wrap
-            >
-            </v-layout>
+            />
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -347,10 +346,12 @@ export default {
         start_at: edit ? get(this.event, 'start_at') : null,
         end_at: edit ? get(this.event, 'end_at') : null,
         schedule: edit ? get(this.event, 'schedule') : null,
-        event_recurring_checked: null,
+        event_recurring_checked: null, // TODO: should be a simple boolean
         staff_notes: edit ? get(this.event, 'staff_notes') : null,
         member_notes: edit ? get(this.event, 'member_notes') : null,
-        customer_notes: edit ? get(this.event, 'customer_notes') : null
+        customer_notes: edit ? get(this.event, 'customer_notes') : null,
+        status_id: edit ? get(this.event, 'status_id') : null,
+        host_status: edit ? get(this.event, 'host_status') : null
       },
       edit: edit,
       commissionTypes: [
@@ -376,6 +377,7 @@ export default {
       this.$emit('cancel')
     },
     isCheckRecurringEvent (checked) {
+      // TODO should be a simple boolean
       this.eventData.event_recurring_checked = 'yes'
       if (!checked) {
         this.eventData.event_recurring_checked = 'no'

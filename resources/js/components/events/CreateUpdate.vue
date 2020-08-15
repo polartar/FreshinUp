@@ -21,14 +21,115 @@
           </div>
         </v-btn>
       </v-layout>
-      <v-layout
-        row
+      <v-flex
+        d-flex
+        align-center
         justify-space-between
         ma-2
       >
-        <h2 class="white--text">
-          {{ pageTitle }}
-        </h2>
+        <v-layout
+          row
+          align-center
+        >
+          <h2 class="white--text">
+            {{ pageTitle }}
+          </h2>
+          <v-dialog
+            v-model="duplicateDialog"
+            max-width="500"
+          >
+            <template v-slot:activator="{ on }">
+              <v-btn
+                slot="activator"
+                color="white"
+                v-on="on"
+                @click="duplicateDialog = true"
+              >
+                <span class="primary--text">Duplicate</span>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-progress-linear
+                v-if="duplicating"
+                indeterminate
+              />
+              <v-card-title>
+                <v-layout
+                  row
+                  space-between
+                  align-center
+                >
+                  <v-flex>
+                    <h3>Duplicate Event</h3>
+                  </v-flex>
+                  <v-btn
+                    small
+                    round
+                    color="grey"
+                    class="white--text"
+                    @click="duplicateDialog = false"
+                  >
+                    <v-flex>
+                      <v-icon
+                        small
+                        class="white--text"
+                      >
+                        fa fa-times
+                      </v-icon>
+                    </v-flex>
+                    <v-flex>
+                      Close
+                    </v-flex>
+                  </v-btn>
+                </v-layout>
+              </v-card-title>
+              <v-divider />
+              <v-card-text class="grey--text">
+                <small class="font-weight-bold">SELECT</small>
+                <p>Choose what will be carried over to the duplicate event</p>
+                <v-checkbox
+                  v-model="duplicate.basicInformation"
+                  class="mt-0 mb-0 p-0"
+                  label="Basic Information"
+                />
+                <v-checkbox
+                  v-model="duplicate.venue"
+                  class="mt-0 mb-0 p-0"
+                  label="Venue/lovation (coming soon)"
+                />
+                <v-checkbox
+                  v-model="duplicate.fleetMember"
+                  class="mt-0 mb-0 p-0"
+                  label="Fleet Member (coming soon)"
+                />
+                <v-checkbox
+                  v-model="duplicate.customer"
+                  class="mt-0 mb-0 p-0"
+                  label="Customer (coming soon)"
+                />
+              </v-card-text>
+              <v-divider />
+              <v-card-actions>
+                <v-layout
+                  row
+                  justify-end
+                >
+                  <v-btn
+                    @click="duplicateDialog = false"
+                  >
+                    Cancel
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    @click="onDuplicate"
+                  >
+                    Duplicate
+                  </v-btn>
+                </v-layout>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-layout>
         <v-flex
           text-xs-right
           sm2
@@ -39,7 +140,7 @@
             :items="statuses"
           />
         </v-flex>
-      </v-layout>
+      </v-flex>
       <v-divider />
       <br>
       <v-layout
@@ -101,18 +202,32 @@
 import omitBy from 'lodash/omitBy'
 import isNull from 'lodash/isNull'
 import get from 'lodash/get'
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import moment from 'moment'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
   mutationType: 'updateField'
 })
+
+export const getFileNameCopy = (name) => {
+  const regex = /\s*\(([0-9]+)\)$/gm
+  const matches = name.match(regex) || []
+  const count = (
+    parseInt(
+      get(matches, '[0]', '')
+        .replace('(', '')
+        .replace(')', '')
+    ) || 0
+  ) + 1
+  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
+}
 
 export default {
   layout: 'admin',
@@ -125,6 +240,14 @@ export default {
   mixins: [Validate],
   data () {
     return {
+      duplicating: false,
+      duplicateDialog: false,
+      duplicate: {
+        basicInformation: true,
+        venue: false,
+        fleetMember: true,
+        customer: true
+      },
       isNew: false,
       types: []
     }
@@ -159,6 +282,86 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    onDuplicate () {
+      // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
+      // Fields remaining/not found: $location_uuid
+      const toDuplicate = [
+        {
+          condition: this.duplicate.basicInformation,
+          action: (payload) => {
+            return {
+              ...payload,
+              ...this.$refs.basicInfo.eventData
+            }
+          }
+        },
+        // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
+        {
+          condition: this.duplicate.venue,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+          }
+        },
+        {
+          condition: this.duplicate.fleetMember,
+          action: (payload) => {
+            // fields to consider: this.types,this.storeStatuses,this.stores
+            return {
+              ...payload
+            }
+          }
+        },
+        {
+          condition: this.duplicate.customer,
+          action: (payload) => {
+            // fields to consider: this.customers,this.statuses
+            return {
+              ...payload
+            }
+          }
+        }
+      ]
+      const data = toDuplicate.reduce((payload, strategy) => {
+        if (strategy.condition) {
+          payload = Object.assign({}, payload, strategy.action(payload))
+        }
+        return payload
+      }, {})
+      if (data.name) {
+        data.name = getFileNameCopy(data.name)
+      }
+      const today = moment()
+      const tomorrow = moment().add(1, 'day')
+      const startsInTheFuture = moment(data.start_at).diff(today) > 0
+      const endsInTheFuture = moment(data.end_at).diff(today) > 0
+      if (!startsInTheFuture) {
+        data.start_at = `${tomorrow.format('YYYY-MM-DD')} 00:00`
+      }
+      if (!endsInTheFuture) {
+        data.end_at = `${tomorrow.format('YYYY-MM-DD')} 23:59`
+      }
+      this.duplicating = true
+      this.$store.dispatch('events/createItem', {
+        data
+      })
+        .then(response => {
+          const eventUuid = get(response, 'data.data.uuid')
+          if (eventUuid) {
+            const path = `/admin/events/${eventUuid}/edit`
+            window.location = path
+            // TODO: Replace this with the proper route for an event item this.$router.push({ path })
+          }
+        })
+        .catch(error => {
+          console.error(error)
+        })
+        .then(() => {
+          this.duplicating = false
+          this.duplicateDialog = false
+        })
+    },
     changeBasicInfo (data) {
       this.event.attendees = data.attendees
       this.event.budget = data.budget
@@ -235,7 +438,6 @@ export default {
       this.$router.push({ path: '/admin/events' })
     },
     changeStatus () {}
-
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
