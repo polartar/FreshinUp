@@ -8968,7 +8968,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Event type
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
                         role="combobox"
                       >
                         <div
@@ -8983,11 +8983,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                               <div
                                 class="v-select__selections"
                               >
-                                <div
-                                  class="v-select__selection v-select__selection--comma"
-                                >
-                                  Catering
-                                </div>
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
@@ -9026,11 +9021,10 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     role="list"
                                   >
                                     <div
-                                      class="primary--text"
                                       role="listitem"
                                     >
                                       <a
-                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                        class="v-list__tile v-list__tile--link theme--light"
                                       >
                                         <div
                                           class="v-list__tile__content"

@@ -11,7 +11,7 @@ final class EventType extends Enum
 
     public static function toKeyedSelectArray()
     {
-        return json_encode(json_encode(static::toSelectArray()));
+        return json_decode(json_encode(static::toSelectArray()));
     }
 
     public static function toKeyedArray()

@@ -152,21 +152,19 @@
               mb-2
             >
               <filter-label>
-                Tags
+                Type
               </filter-label>
               <clear-button
-                v-if="filters.event_tag_uuid && filters.event_tag_uuid.length > 0"
+                v-if="filters.type_id && filters.type_id.length > 0"
                 color="white"
-                @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
+                @clear="filters.type_id = null; $refs.type.resetTerm()"
               />
             </v-layout>
             <multi-simple
-              ref="tag"
-              v-model="filters.event_tag_uuid"
-              url="foodfleet/event-tags"
-              term-param="filter[name]"
-              results-id-key="uuid"
-              placeholder="Search Tag"
+              ref="type"
+              v-model="filters.type_id"
+              url="foodfleet/event-types"
+              placeholder="Select"
               background-color="white"
               class="mt-0 pt-0"
               height="48"
@@ -205,7 +203,7 @@ export default {
         status_id: null,
         host_uuid: null,
         manager_uuid: null,
-        event_tag_uuid: null,
+        type_id: null,
         start_at: null,
         end_at: null
       })
@@ -255,10 +253,10 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.$refs.tag.resetTerm()
+      this.$refs.type.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
-      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.type_id = this.filters.start_at = this.filters.end_at = this.rangeDate = null
     }
   }
 }

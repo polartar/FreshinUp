@@ -674,7 +674,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                       class="no-wrap"
                     >
                       
-              Tags
+              Type
             
                     </strong>
                   </div>
@@ -688,11 +688,9 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   flat=""
                   height="48"
                   not-clearable=""
-                  placeholder="Search Tag"
-                  results-id-key="uuid"
+                  placeholder="Select"
                   solo=""
-                  term-param="filter[name]"
-                  url="foodfleet/event-tags"
+                  url="foodfleet/event-types"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -709,12 +707,10 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                         >
                           <input
                             not-clearable=""
-                            placeholder="Search Tag"
+                            placeholder="Select"
                             readonly="readonly"
-                            results-id-key="uuid"
-                            term-param="filter[name]"
                             type="text"
-                            url="foodfleet/event-tags"
+                            url="foodfleet/event-types"
                           />
                         </div>
                         <div
@@ -763,7 +759,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                                 aria-label=""
                                 autocomplete="off"
                                 autofocus="autofocus"
-                                placeholder="Search Tag"
+                                placeholder="Select"
                                 role="combobox"
                                 type="text"
                               />
