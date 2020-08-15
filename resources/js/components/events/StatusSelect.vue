@@ -16,7 +16,11 @@ export default {
   },
   computed: {
     items () {
-      return this.options
+      return this.options.map(option => ({
+        label: option.name,
+        id: option.id,
+        color: option.color
+      }))
     }
   }
 }

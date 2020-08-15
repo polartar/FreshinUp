@@ -29,7 +29,7 @@
       <td class="py-3">
         <status-select
           v-model="props.item.status"
-          :items="statuses"
+          :options="statuses"
           @input="changeStatus(props.item.status, props.item)"
         />
       </td>

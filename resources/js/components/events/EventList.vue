@@ -93,7 +93,7 @@
       <td class="select-td">
         <status-select
           v-model="props.item.status_id"
-          :items="statuses"
+          :options="statuses"
           @input="changeStatus($event, props.item)"
         />
       </td>

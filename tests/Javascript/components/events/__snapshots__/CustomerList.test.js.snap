@@ -198,17 +198,21 @@ exports[`Customer list component Snapshots 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn v-btn--disabled theme--light warning--text"
-                disabled="disabled"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Pending
+  Required
  
-                  <!---->
+                  <i
+                    aria-hidden="true"
+                    class="v-icon v-icon--right material-icons theme--dark"
+                  >
+                    arrow_drop_down
+                  </i>
                 </div>
               </button>
               <div
@@ -219,7 +223,73 @@ exports[`Customer list component Snapshots 1`] = `
                 <div
                   class="v-list theme--light"
                   role="list"
-                />
+                >
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Required
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Draft
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Pending
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Approved
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Rejected
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </td>

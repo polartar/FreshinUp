@@ -136,8 +136,8 @@
           xs12
         >
           <status-select
-            :value="status_id"
-            :items="statuses"
+            v-model="status_id"
+            :options="statuses"
           />
         </v-flex>
       </v-flex>
