@@ -440,17 +440,19 @@ class EventTest extends TestCase
         $status = factory(EventStatus::class)->create();
         $location = factory(Location::class)->create();
         $host = factory(Company::class)->create();
+        $eventType = factory(EventType::class)->create();
 
         $event = factory(Event::class)->create([
             'manager_uuid' => $user->uuid,
             'status_id' => $status->id,
             'location_uuid' => $location->uuid,
-            'host_uuid' => $host->uuid
+            'host_uuid' => $host->uuid,
+            'type_id' => $eventType->id
         ]);
 
         $event->eventTags()->save($eventTag);
 
-        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags')
+        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,type')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [],
@@ -463,9 +465,9 @@ class EventTest extends TestCase
         ], $data[0]);
 
         $this->assertArraySubset([
-            'uuid' => $eventTag->uuid,
-            'name' => $eventTag->name,
-        ], $data[0]['event_tags'][0]);
+            'id' => $eventType->id,
+            'name' => $eventType->name,
+        ], $data[0]['type']);
 
         $this->assertArraySubset([
             'uuid' => $location->uuid,
