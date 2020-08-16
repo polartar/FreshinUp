@@ -1,17 +1,14 @@
 <template>
   <div>
     <div class="px-4 pt-4">
-      <label class="d-block">
-        <input
-          v-model="searchText"
-          type="text"
-          class="py-2 px-3"
-          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
-          placeholder="Search by Fleet Member name"
-        >
-      </label>
-      <div class="my-2 py-2">
-        <div>
+      <v-text-field
+        v-model="searchText"
+        label="Search by Fleet Member name"
+        single-line
+        outline
+      />
+      <div>
+        <div class="pb-4">
           <button
             style="font-weight: bold; color: lightslategray; outline: 0;"
             @click="toggleShowFilter"
@@ -22,105 +19,65 @@
         <div
           v-show="showFilters"
         >
-          <div
-            class="d-flex align-end justify-space-between pt-2"
+          <v-layout
+            row
+            wrap
           >
-            <div class="pr-2">
-              <label
-                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                for="state"
-              >
-                state of incorporation
-              </label>
-              <select
-                id="state"
+            <v-flex
+              sm3
+              pr-2
+            >
+              <v-select
                 v-model="selectedState"
-                name="state"
-                class="py-2 px-3 rounded"
-                style="width: 100%; border: 1px solid #dee2e6;"
-              >
-                <option
-                  value=""
-                  selected
-                >
-                  All states
-                </option>
-                <option
-                  v-for="location of locations"
-                  :key="location.uuid"
-                  :value="location.uuid"
-                >
-                  {{ location.name }}
-                </option>
-              </select>
-            </div>
-            <div class="pr-2">
-              <label
-                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                for="type"
-              >
-                type
-              </label>
-              <select
-                id="type"
+                :items="locations"
+                item-value="uuid"
+                item-text="name"
+                label="State of incorporation"
+                outline
+                single-line
+              />
+            </v-flex>
+            <v-flex
+              sm3
+              pr-2
+            >
+              <v-select
                 v-model="selectedType"
-                name="type"
-                class="py-2 px-3 rounded"
-                style="width: 100%; border: 1px solid #dee2e6;"
-              >
-                <option
-                  value=""
-                  selected
-                >
-                  All types
-                </option>
-                <option
-                  v-for="type of types"
-                  :key="type.id"
-                  :value="type.id"
-                >
-                  {{ type.name }}
-                </option>
-              </select>
-            </div>
-            <div class="pr-2">
-              <label
-                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                for="tags"
-              >
-                tags
-              </label>
-              <select
-                id="tags"
+                :items="types"
+                item-value="id"
+                item-text="name"
+                label="Type"
+                outline
+                single-line
+              />
+            </v-flex>
+            <v-flex
+              sm3
+              pr-2
+            >
+              <v-select
                 v-model="selectedTag"
-                name="tags"
-                class="py-2 px-3 rounded"
-                style="width: 100%; border: 1px solid #dee2e6;"
-              >
-                <option
-                  value=""
-                  selected
-                >
-                  All tags
-                </option>
-                <option
-                  v-for="tag of tags"
-                  :key="tag.uuid"
-                  :value="tag.uuid"
-                >
-                  {{ tag.name }}
-                </option>
-              </select>
-            </div>
-            <div>
-              <button
-                class="px-3 py-2 rounded"
-                style="background-color: lightgrey; color: white; width: 100%;"
+                :items="tags"
+                item-value="uuid"
+                item-text="name"
+                label="Tags"
+                outline
+                single-line
+                multiple
+              />
+            </v-flex>
+            <v-flex
+              sm3
+            >
+              <v-btn
+                large
+                depressed
+                @click="clearAllFilters"
               >
                 Clear all filters
-              </button>
-            </div>
-          </div>
+              </v-btn>
+            </v-flex>
+          </v-layout>
         </div>
       </div>
     </div>
@@ -201,7 +158,6 @@
 /* TODO
   It remains:
   - Redirect on fleet member name click
-  - Tooltip on fleet member name hovered
    */
 import _unionBy from 'lodash/unionBy'
 import _uniqBy from 'lodash/uniqBy'
@@ -218,13 +174,13 @@ export default {
       searchText: '',
       selectedState: '',
       selectedType: '',
-      selectedTag: '',
+      selectedTag: [],
       pagination: {
         rowsPerPage: 5,
         page: 1
       },
       page: 1,
-      showFilters: false,
+      showFilters: true,
       selected: [],
       headers: [
         { text: 'Fleet member', value: 'name' },
@@ -254,8 +210,12 @@ export default {
         items = items.filter(i => i['type']['id'] === this.selectedType)
       }
 
-      if (this.selectedTag) {
-        items = items.filter(i => i['store_tags'].map(t => t['uuid']).includes(this.selectedTag))
+      if (this.selectedTag.length) {
+        items = items.filter(
+          i => i['store_tags']
+            .map(t => t['uuid'])
+            .some(id => this.selectedTag.includes(id))
+        )
       }
 
       return items
@@ -266,20 +226,39 @@ export default {
     },
 
     locations () {
-      return _uniqBy([...this.filteredMembers.map(m => m.location)], 'uuid')
+      const def = {
+        id: 0,
+        uuid: '',
+        name: 'All locations'
+      }
+      return _uniqBy([def, ...this.filteredMembers.map(m => m.location)], 'uuid')
     },
 
     tags () {
-      return _unionBy(...this.filteredMembers.map(m => m['store_tags']), 'uuid')
+      const def = {
+        uuid: '',
+        name: 'All tags'
+      }
+      return _unionBy(def, ...this.filteredMembers.map(m => m['store_tags']), 'uuid')
     },
 
     types () {
-      return _uniqBy([...this.filteredMembers.map(m => m.type)], 'id')
+      const def = {
+        id: 0,
+        name: 'All types'
+      }
+      return _uniqBy([def, ...this.filteredMembers.map(m => m.type)], 'id')
     }
   },
   methods: {
     toggleShowFilter () {
       this.showFilters = !this.showFilters
+    },
+
+    clearAllFilters () {
+      this.selectedState = ''
+      this.selectedType = ''
+      this.selectedTag = []
     },
 
     manageButtonLabel (item) {

@@ -7031,7 +7031,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-253"
+                                                    name="v-radio-287"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -7068,7 +7068,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-253"
+                                                    name="v-radio-287"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -7295,134 +7295,375 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                     <div
                       class="px-4 pt-4"
                     >
-                      <label
-                        class="d-block"
-                      >
-                        <input
-                          class="py-2 px-3"
-                          placeholder="Search by Fleet Member name"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
-                          type="text"
-                        />
-                      </label>
-                       
                       <div
-                        class="my-2 py-2"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                       >
-                        <div>
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: absolute;"
+                              >
+                                Search by Fleet Member name
+                              </label>
+                              <input
+                                aria-label="Search by Fleet Member name"
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <div
+                                class="v-messages__wrapper"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div>
+                        <div
+                          class="pb-4"
+                        >
                           <button
                             style="font-weight: bold; color: lightslategray; outline: 0;"
                           >
                             
-          Show Filters
+          Hide Filters
         
                           </button>
                         </div>
                          
-                        <div
-                          style="display: none;"
-                        >
+                        <div>
                           <div
-                            class="d-flex align-end justify-space-between pt-2"
+                            class="layout row wrap"
                           >
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="state"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                                role="combobox"
                               >
-                                
-              state of incorporation
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="state"
-                                name="state"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All states
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <div
+                                          class="v-select__selection v-select__selection--comma"
+                                        >
+                                          All locations
+                                        </div>
+                                        <input
+                                          aria-label="State of incorporation"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              class="primary--text"
+                                              role="listitem"
+                                            >
+                                              <a
+                                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    All locations
+                                                  </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="type"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                                role="combobox"
                               >
-                                
-              type
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="type"
-                                name="type"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All types
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        Type
+                                      </label>
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <input
+                                          aria-label="Type"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              role="listitem"
+                                            >
+                                              <a
+                                                class="v-list__tile v-list__tile--link theme--light"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    All types
+                                                  </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="tags"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                                role="combobox"
                               >
-                                
-              tags
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="tags"
-                                name="tags"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All tags
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        Tags
+                                      </label>
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <input
+                                          aria-label="Tags"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              role="listitem"
+                                            >
+                                              <div
+                                                class="v-list__tile theme--light"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    No data available
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
-                            <div>
+                            <div
+                              class="flex sm3"
+                            >
                               <button
-                                class="px-3 py-2 rounded"
-                                style="background-color: lightgrey; color: white; width: 100%;"
+                                class="v-btn v-btn--large v-btn--depressed theme--light"
+                                type="button"
                               >
-                                
+                                <div
+                                  class="v-btn__content"
+                                >
+                                  
               Clear all filters
             
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -16101,7 +16342,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-565"
+                                                    name="v-radio-633"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -16138,7 +16379,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-565"
+                                                    name="v-radio-633"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -16364,134 +16605,375 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                     <div
                       class="px-4 pt-4"
                     >
-                      <label
-                        class="d-block"
-                      >
-                        <input
-                          class="py-2 px-3"
-                          placeholder="Search by Fleet Member name"
-                          style="width: 100%; border: 1px solid #dee2e6; border-radius: 5px;"
-                          type="text"
-                        />
-                      </label>
-                       
                       <div
-                        class="my-2 py-2"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                       >
-                        <div>
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: absolute;"
+                              >
+                                Search by Fleet Member name
+                              </label>
+                              <input
+                                aria-label="Search by Fleet Member name"
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <div
+                                class="v-messages__wrapper"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div>
+                        <div
+                          class="pb-4"
+                        >
                           <button
                             style="font-weight: bold; color: lightslategray; outline: 0;"
                           >
                             
-          Show Filters
+          Hide Filters
         
                           </button>
                         </div>
                          
-                        <div
-                          style="display: none;"
-                        >
+                        <div>
                           <div
-                            class="d-flex align-end justify-space-between pt-2"
+                            class="layout row wrap"
                           >
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="state"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                                role="combobox"
                               >
-                                
-              state of incorporation
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="state"
-                                name="state"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All states
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <div
+                                          class="v-select__selection v-select__selection--comma"
+                                        >
+                                          All locations
+                                        </div>
+                                        <input
+                                          aria-label="State of incorporation"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              class="primary--text"
+                                              role="listitem"
+                                            >
+                                              <a
+                                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    All locations
+                                                  </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="type"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                                role="combobox"
                               >
-                                
-              type
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="type"
-                                name="type"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All types
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        Type
+                                      </label>
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <input
+                                          aria-label="Type"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              role="listitem"
+                                            >
+                                              <a
+                                                class="v-list__tile v-list__tile--link theme--light"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    All types
+                                                  </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
                             <div
-                              class="pr-2"
+                              class="flex sm3 pr-2"
                             >
-                              <label
-                                class="d-block text-uppercase font-weight-bold py-2 grey--text text--darken-1"
-                                for="tags"
+                              <div
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                                role="combobox"
                               >
-                                
-              tags
-            
-                              </label>
-                               
-                              <select
-                                class="py-2 px-3 rounded"
-                                id="tags"
-                                name="tags"
-                                style="width: 100%; border: 1px solid #dee2e6;"
-                              >
-                                <option
-                                  selected="selected"
-                                  value=""
+                                <div
+                                  class="v-input__control"
                                 >
-                                  
-                All tags
-              
-                                </option>
-                                 
-                              </select>
+                                  <div
+                                    class="v-input__slot"
+                                  >
+                                    <div
+                                      class="v-select__slot"
+                                    >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        Tags
+                                      </label>
+                                      <div
+                                        class="v-select__selections"
+                                      >
+                                        <input
+                                          aria-label="Tags"
+                                          aria-readonly="false"
+                                          autocomplete="on"
+                                          readonly="readonly"
+                                          type="text"
+                                        />
+                                      </div>
+                                      <div
+                                        class="v-input__append-inner"
+                                      >
+                                        <div
+                                          class="v-input__icon v-input__icon--append"
+                                        >
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light"
+                                          >
+                                            arrow_drop_down
+                                          </i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-menu"
+                                    >
+                                      <div
+                                        class="v-menu__content theme--light "
+                                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                      >
+                                        <div
+                                          class="v-select-list v-card theme--light"
+                                        >
+                                          <div
+                                            class="v-list theme--light"
+                                            role="list"
+                                          >
+                                            <div
+                                              role="listitem"
+                                            >
+                                              <div
+                                                class="v-list__tile theme--light"
+                                              >
+                                                <div
+                                                  class="v-list__tile__content"
+                                                >
+                                                  <div
+                                                    class="v-list__tile__title"
+                                                  >
+                                                    No data available
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="v-text-field__details"
+                                  >
+                                    <div
+                                      class="v-messages theme--light"
+                                    >
+                                      <div
+                                        class="v-messages__wrapper"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                              
-                            <div>
+                            <div
+                              class="flex sm3"
+                            >
                               <button
-                                class="px-3 py-2 rounded"
-                                style="background-color: lightgrey; color: white; width: 100%;"
+                                class="v-btn v-btn--large v-btn--depressed theme--light"
+                                type="button"
                               >
-                                
+                                <div
+                                  class="v-btn__content"
+                                >
+                                  
               Clear all filters
             
+                                </div>
                               </button>
                             </div>
                           </div>
