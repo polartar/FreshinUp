@@ -161,7 +161,7 @@ describe('Add member (store) in event component', () => {
 
       wrapper.setProps({ members: FIXTURE_STORES })
 
-      expect(wrapper.vm.tags.length).toBe(4)
+      expect(wrapper.vm.tags).toHaveLength(4)
     })
   })
 
