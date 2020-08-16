@@ -18,7 +18,7 @@
       </v-card-title>
       <v-dialog
         v-model="showNewMemberDialog"
-        max-width="700"
+        max-width="900"
       >
         <v-card>
           <v-card-title class="justify-space-between px-4 py-2">
@@ -44,7 +44,11 @@
             </v-btn>
           </v-card-title>
           <hr>
-          <add-store></add-store>
+          <add-store
+            :members="stores"
+            :event="event"
+            class="mb-2"
+          />
         </v-card>
       </v-dialog>
       <hr>
@@ -101,6 +105,10 @@ export default {
     stores: {
       type: Array,
       default: () => []
+    },
+    event: {
+      type: Object,
+      default: null
     }
   },
   data () {

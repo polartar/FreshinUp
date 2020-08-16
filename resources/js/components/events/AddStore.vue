@@ -107,12 +107,14 @@
             class="py-2"
             nowrap
           >
-            <div
+            <router-link
               class="primary--text"
               style="font-size: 18px;"
+              :to="{ path: '/admin/fleet-members/'}"
+              target="_blank"
             >
               {{ props.item.name }}
-            </div>
+            </router-link>
             <div
               class="grey--text text--darken-2"
             >
@@ -136,7 +138,8 @@
           </td>
           <td class="py-2">
             <v-btn
-              depressed
+              :depressed="manageButtonLabel(props.item) !== 'Assign'"
+              :disabled="!itemIsEligible(props.item)"
               :class="manageButtonClass(props.item)"
               @click="onManageClicked(props.item)"
             >
@@ -155,16 +158,29 @@
   </div>
 </template>
 <script>
-/* TODO
-  It remains:
-  - Redirect on fleet member name click
-   */
+
 import _unionBy from 'lodash/unionBy'
 import _uniqBy from 'lodash/uniqBy'
 
 export default {
   props: {
     members: {
+      type: Array,
+      default: () => []
+    },
+    event: {
+      type: Object,
+      default: null
+    },
+    assignedEvents: {
+      type: Array,
+      default: () => []
+    },
+    docStatuses: {
+      type: Array,
+      default: () => []
+    },
+    docs: {
       type: Array,
       default: () => []
     }
@@ -180,7 +196,7 @@ export default {
         page: 1
       },
       page: 1,
-      showFilters: true,
+      showFilters: false,
       selected: [],
       headers: [
         { text: 'Fleet member', value: 'name' },
@@ -248,6 +264,13 @@ export default {
         name: 'All types'
       }
       return _uniqBy([def, ...this.filteredMembers.map(m => m.type)], 'id')
+    },
+
+    /*
+    expired status is : { value: 5, text: 'Expired' }
+    * */
+    expiredDocs () {
+      return this.docs.filter(d => d['status'] === 5)
     }
   },
   methods: {
@@ -262,14 +285,45 @@ export default {
     },
 
     manageButtonLabel (item) {
-      /* TODO
-      - 'Assign' = Is eligible, but not yet assigned to current event
-      - 'Assigned' = Is eligible, and was assigned to current event
-      - 'Declined' = Is eligible, but have declined the assignment
-      - 'Booked' = Is not eligible: Already booked for another event at same time / date
-      - 'Expired' = Is not eligible: Has expired license or document
-       */
-      return 'Declined'
+      if (this.itemIsEligible(item)) {
+        if (this.itemIsDeclined(item)) { return 'Declined' }
+        if (!this.itemIsAssignedToEvent(item, this.event)) { return 'Assign' } else { return 'Assigned' }
+      }
+
+      if (this.itemIsBooked(item)) { return 'Booked' }
+
+      if (this.itemHasExpired(item)) { return 'Expired' }
+
+      return ''
+    },
+
+    itemIsEligible (item) {
+      return !this.itemIsBooked(item) && !this.itemHasExpired(item)
+    },
+
+    /* TODO:
+      */
+    itemIsAssignedToEvent (item, event) {
+      return false
+    },
+
+    itemIsBooked (item) {
+      const otherEvents = this.event
+        ? this.assignedEvents.filter(e => e['uuid'] !== this.event['uuid'])
+        : this.assignedEvents
+      return otherEvents.some(evt => this.itemIsAssignedToEvent(item, evt))
+    },
+
+    itemHasExpired (item) {
+      /* TODO: Remains expired licenses
+      */
+      return this.expiredDocs.some(d => d['assigned']['uuid'] === item['uuid'])
+    },
+
+    /* TODO:
+      */
+    itemIsDeclined (item) {
+      return true
     },
 
     onManageClicked (item) {

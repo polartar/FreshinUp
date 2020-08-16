@@ -20,12 +20,14 @@ exports[`Add member (store) in event component Snapshot defaults 1`] = `
           style="font-weight: bold; color: lightslategray; outline: 0;"
         >
           
-          Hide Filters
+          Show Filters
         
         </button>
       </div>
        
-      <div>
+      <div
+        style="display: none;"
+      >
         <v-layout-stub
           row=""
           tag="div"
