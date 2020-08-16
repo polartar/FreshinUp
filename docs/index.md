@@ -1,6 +1,6 @@
 # Changes
 
-## August 15, 2020
+## August 16, 2020
 - **MOD** Tag filter changes to Type on Event Page [#389] (https://github.com/FreshinUp/foodfleet/issues/389)
 
 ## August 11, 2020

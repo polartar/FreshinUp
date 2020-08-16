@@ -8,14 +8,10 @@ use App\Models\Foodfleet\EventType as EventTypeModel;
 use Illuminate\Http\Request;
 use Tests\TestCase;
 
-class EventStatusTest extends TestCase {
+class EventTypeTest extends TestCase {
 
-
-
-    public function testResource ($typeId) {
-        $eventType = factory(EventTypeModel::class)->make([
-            'id' => $typeId
-        ]);
+    public function testResource () {
+        $eventType = factory(EventTypeModel::class)->make();
         $resource = new EventTypeResource($eventType);
         $expected = [
             'id' => $eventType->id,

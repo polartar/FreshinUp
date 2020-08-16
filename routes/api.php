@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => ['auth:api']], function () {
     Route::apiResource('financial-reports', 'Foodfleet\FinancialReports');
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
+
     Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
     Route::apiResource('documents', 'Foodfleet\Documents');
     Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
@@ -24,13 +25,15 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('company-owners', 'Foodfleet\CompanyOwners');
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
+
     Route::get('events/new', 'Foodfleet\Events\Events@showNewRecommendation');
     Route::get('events/{event}/stores', 'Foodfleet\Events\Stores@index');
     Route::get('event-summary/{uuid}', 'Foodfleet\Events\Events@summary');
     Route::apiResource('events', 'Foodfleet\Events\Events');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
-    Route::get('event-types', 'Foodfleet\EventTypes@index');
+    Route::get('event/types', 'Foodfleet\EventType@index');
+
     Route::apiResource('stores', 'Foodfleet\Stores');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
@@ -55,10 +58,13 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::post('squares', 'Foodfleet\Squares@store');
     Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');
     Route::get('companies/{company}/square-locations', 'Foodfleet\Companies\SquareLocation@index');
+
     Route::get('venues', 'Foodfleet\Venues@index');
+
     Route::get('messages/new', 'Foodfleet\Messages@showNewRecommendation');
     Route::get('messages', 'Foodfleet\Messages@index');
     Route::post('messages', 'Foodfleet\Messages@store');
+
     Route::get('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@index');
     Route::post('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@store');
     Route::put('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@update');

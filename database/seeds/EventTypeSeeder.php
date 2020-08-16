@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Enums\EventType as EventTypeEnums;
 use App\Models\Foodfleet\EventType;
 
-class EventTypesSeeder extends Seeder
+class EventTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,6 @@ class EventTypesSeeder extends Seeder
     public function run()
     {
         $types = EventTypeEnums::toKeyedSelectArray();
-
         foreach($types as $id => $name) {
             EventType::updateOrCreate(
                 ['id' => $id],

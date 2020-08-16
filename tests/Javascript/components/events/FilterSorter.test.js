@@ -86,6 +86,7 @@ describe('FilterSorter', () => {
       expect(wrapper.vm.filters.start_at).toBeNull()
       expect(wrapper.vm.filters.end_at).toBeNull()
       expect(wrapper.vm.filters.status_id).toBeNull()
+      expect(wrapper.vm.filters.type_id).toBeNull()
     })
 
     test('run function emitted runFilter', () => {

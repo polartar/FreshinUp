@@ -43,6 +43,7 @@
       <filter-sorter
         v-if="!isLoading"
         :statuses="statuses"
+        :types="eventTypes"
         @runFilter="filterEvents"
       />
       <event-list
@@ -142,19 +143,20 @@
 <script>
 import get from 'lodash/get'
 import moment from 'moment'
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import FilterSorter from '~/components/events/FilterSorter.vue'
 import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar.vue'
 import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-const include = [
+
+const INCLUDE = [
   'status',
   'host',
   'location.venue',
   'manager',
-  'event_tags'
+  'type'
 ]
 
 export default {
@@ -203,6 +205,7 @@ export default {
       sortBy: 'sortBy'
     }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('eventTypes', { 'eventTypes': 'items' }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('events', ['sortables']),
     deleteDialogTitle () {
@@ -234,7 +237,10 @@ export default {
       this.deleteDialog = true
     },
     changeStatusSingle (statusId, event) {
-      this.$store.dispatch('events/patchItem', { data: { status_id: statusId }, params: { id: event.uuid } }).then(() => {
+      this.$store.dispatch('events/patchItem', {
+        data: { status_id: statusId },
+        params: { id: event.uuid }
+      }).then(() => {
         this.filterEvents(this.lastFilterParams)
       })
     },
@@ -250,7 +256,10 @@ export default {
       let dispatcheables = []
 
       this.deleteTemp.forEach((event) => {
-        dispatcheables.push(this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: event.uuid } }))
+        dispatcheables.push(this.$store.dispatch('events/deleteItem', {
+          getItems: false,
+          params: { id: event.uuid }
+        }))
       })
 
       let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
@@ -275,7 +284,7 @@ export default {
     },
     onPaginate (value) {
       this.$store.dispatch('events/setPagination', value)
-      this.$store.dispatch('events/getItems', { params: { include: include } })
+      this.$store.dispatch('events/getItems', { params: { include: INCLUDE } })
     },
     filterEvents (params) {
       this.lastFilterParams = params
@@ -283,21 +292,26 @@ export default {
         ...this.$route.query,
         ...this.lastFilterParams
       })
-      this.$store.dispatch('events/getItems', { params: { include: include } })
+      this.$store.dispatch('events/getItems', { params: { include: INCLUDE } })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
     vm.$store.dispatch('events/setFilters', {
       ...vm.$route.query,
       ...this.lastFilterParams
     })
+    vm.setPageLoading(true)
     Promise.all([
-      vm.$store.dispatch('eventStatuses/getItems')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+      vm.$store.dispatch('eventStatuses/getItems'),
+      vm.$store.dispatch('eventTypes/getItems')
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => {
+        vm.setPageLoading(false)
+      })
   }
 }
 </script>

@@ -1,5 +1,5 @@
-import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
+import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
 
 export default ({ items, item }) => {
-  return makeRestStore('foodfleet/event-types', { items, item })
+  return makeRestStore('foodfleet/event/types', { items, item })
 }

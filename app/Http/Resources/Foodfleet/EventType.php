@@ -15,8 +15,8 @@ class EventType extends JsonResource {
     public function toArray($request)
     {
         return [
-            'id' => $request->id,
-            'name' => $request->name
+            'id' => $this->id,
+            'name' => $this->name
         ];
     }
 }

@@ -34,7 +34,7 @@
               <clear-button
                 v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="filters.status_id = null;"
+                @clear="filters.status_id = null"
               />
             </v-layout>
             <multi-select
@@ -149,28 +149,28 @@
             <v-layout
               row
               justify-space-between
+              align-center
               mb-2
             >
               <filter-label>
-                Type
+                Types
               </filter-label>
               <clear-button
                 v-if="filters.type_id && filters.type_id.length > 0"
                 color="white"
-                @clear="filters.type_id = null; $refs.type.resetTerm()"
+                @clear="filters.type_id = null"
               />
             </v-layout>
-            <multi-simple
-              ref="type"
+            <multi-select
               v-model="filters.type_id"
-              url="foodfleet/event-types"
-              placeholder="Select"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              not-clearable
+              placeholder="Select Type"
+              :items="types"
+              item-value="id"
+              item-text="name"
+              select-all-name="All Types"
               solo
               flat
+              hide-details
             />
           </v-flex>
         </v-layout>
@@ -187,6 +187,7 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
+
 export default {
   components: {
     MultiSimple,
@@ -209,6 +210,10 @@ export default {
       })
     },
     statuses: {
+      type: Array,
+      default: () => []
+    },
+    types: {
       type: Array,
       default: () => []
     },
@@ -243,9 +248,6 @@ export default {
       if (this.filters.manager_uuid) {
         finalParams.manager_uuid = this.filters.manager_uuid.map(item => item.uuid)
       }
-      if (this.filters.event_tag_uuid) {
-        finalParams.event_tag_uuid = this.filters.event_tag_uuid.map(item => item.uuid)
-      }
       this.$emit('runFilter', finalParams)
     },
     changeDate () {
@@ -253,10 +255,15 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.$refs.type.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
-      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.type_id = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.status_id = null
+      this.filters.host_uuid = null
+      this.filters.manager_uuid = null
+      this.filters.type_id = null
+      this.filters.start_at = null
+      this.filters.end_at = null
+      this.rangeDate = null
     }
   }
 }
