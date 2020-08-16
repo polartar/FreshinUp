@@ -20,16 +20,11 @@ let events = [
       uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
       name: 'New Hattie'
     },
-    event_tags: [
+    type:
       {
-        uuid: '1',
-        name: 'minus'
+        id: 1,
+        name: 'Catering'
       },
-      {
-        uuid: '2',
-        name: 'hic'
-      }
-    ],
     host: {
       id: 89,
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
@@ -51,20 +46,10 @@ let events = [
       uuid: '4d6ace0e-5f3f-423a-ab47-648a142ba450',
       name: 'Baronhaven'
     },
-    event_tags: [
-      {
-        uuid: '1',
-        name: 'minus'
-      },
-      {
-        uuid: '2',
-        name: 'sit'
-      },
-      {
-        uuid: '3',
-        name: 'hicsdfsdf'
-      }
-    ],
+    type: {
+      id: 2,
+      name: 'Cash and Carry'
+    },
     host: {
       id: 96,
       uuid: '5d3e79a3-81aa-4645-b1fd-c6173026e01f',
@@ -86,24 +71,10 @@ let events = [
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
     },
-    event_tags: [
-      {
-        uuid: '1',
-        name: 'minus'
-      },
-      {
-        uuid: '2',
-        name: 'hic'
-      },
-      {
-        uuid: '3',
-        name: 'acsfdd'
-      },
-      {
-        uuid: '4',
-        name: 'fsdf'
-      }
-    ],
+    type: {
+      id: 1,
+      name: 'Catering'
+    },
     host: {
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',

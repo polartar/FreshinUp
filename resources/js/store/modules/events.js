@@ -14,7 +14,7 @@ export default ({ items, item }) => {
   store.actions = {
     ...store.actions,
     createItem (context, payload) {
-      payload.data = omit(payload.data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status'])
+      payload.data = omit(payload.data, ['event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status'])
       return __createItem(context, payload)
     }
   }

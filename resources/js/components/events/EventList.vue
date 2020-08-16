@@ -110,14 +110,9 @@
           {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
         </div>
       </td>
-      <td class="tag-td">
-        <f-chip
-          v-for="tag in props.item.event_tags"
-          :key="tag.uuid"
-          color="secondary"
-        >
-          {{ tag.name }}
-        </f-chip>
+
+      <td>
+        {{ props.item.type && props.item.type.name }}
       </td>
       <td>
         <div class="grey--text">
@@ -145,11 +140,10 @@
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
-import FChip from 'fresh-bus/components/ui/FChip'
 import StatusSelect from '~/components/events/StatusSelect'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
-  components: { FBtnMenu, StatusSelect, FChip },
+  components: { FBtnMenu, StatusSelect },
   mixins: [
     Pagination,
     FormatRangeDate

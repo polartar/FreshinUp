@@ -64,16 +64,16 @@ class Events extends Controller
                 'host',
                 'location.venue',
                 'manager',
-                'event_tags',
                 'type'
             ])
             ->allowedSorts([
                 'name',
                 'start_at',
                 'status_id',
+                'type_id',
                 Sort::custom('host', new HostNameSort()),
                 Sort::custom('manager', new ManagerNameSort()),
-                Sort::custom('event_tags', new EventTagNameSort())
+                Sort::custom('event_tags', new EventTagNameSort()),
             ])
             ->allowedFilters([
                 'name',

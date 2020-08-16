@@ -29,16 +29,6 @@ describe('store/modules/events', () => {
             name: 'New Hattie'
           },
           event_recurring_checked: 'yes',
-          event_tags: [
-            {
-              uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
-              name: 'minus'
-            },
-            {
-              uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
-              name: 'hic'
-            }
-          ],
           host: {
             id: 89,
             uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
@@ -48,11 +38,14 @@ describe('store/modules/events', () => {
           budget: 1000,
           commission_rate: 12,
           commission_type: 2,
-          type: 1
+          type: {
+            id: 2,
+            name: 'Cash and Carry'
+          }
         }
         store.actions.createItem({ commit }, { data })
         expect(commit).toHaveBeenCalledWith('CREATE_ITEM', {
-          data: omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status']),
+          data: omit(data, ['event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status']),
           params: {}
         })
       })
