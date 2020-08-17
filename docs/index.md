@@ -1,5 +1,5 @@
 # Changes
-## August 12, 2020
+## August 17, 2020
 - **MOD** Event status options are change to new list of possible statuses. [#380](https://github.com/FreshinUp/foodfleet/issues/380)
 
 <br/>
