@@ -681,6 +681,7 @@ class EventTest extends TestCase
             ->json('data');
 
         $this->assertEquals($data['name'], $returnedEvent['name']);
+        $this->assertNotNull($returnedEvent['uuid'], "uuid cannot be null");
         $this->assertEquals($data['status_id'], $returnedEvent['status_id']);
         $this->assertNull($returnedEvent['start_at'], "Field start_at must be null");
         $this->assertNull($returnedEvent['end_at'], "Field end_at must be null");
@@ -688,12 +689,11 @@ class EventTest extends TestCase
         $this->assertNull($returnedEvent['member_notes'], "Field member_notes must be null");
         $this->assertNull($returnedEvent['customer_notes'], "Field customer_notes must be null");
         $this->assertNull($returnedEvent['commission_rate'], "Field commission_rate must be null");
-        $this->assertNull($returnedEvent['commission_type'], "Field commission_type must be null");
-        $this->assertNull($returnedEvent['manager'], "Field manager must be null");
-        $this->assertNull($returnedEvent['host'], "Field host must be null");
-        $this->assertNull($returnedEvent['location'], "Field location must be null");
-        $this->assertNull($returnedEvent['host_status'], "Field host_status must be null");
-        $this->assertNull($returnedEvent['event_tags'], "Field event_tags must be null");
+        $this->assertEquals($returnedEvent['commission_type'], 1, "Field commission_type must be equal to 1");
+        $this->assertNull($returnedEvent['manager_uuid'], "Field manager_uuid must be null");
+        $this->assertNull($returnedEvent['host_uuid'], "Field host_uuid must be null");
+        $this->assertNull($returnedEvent['location_uuid'], "Field location_uuid must be null");
+        $this->assertEquals($returnedEvent['host_status'], 1, "Field host_status must be equal to 1");
     }
 
     public function testUpdateItem()
