@@ -146,7 +146,7 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FChip from 'fresh-bus/components/ui/FChip'
-import StatusSelect from '~/components/events/StatusSelect'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 export default {
   components: { FBtnMenu, StatusSelect, FChip },
