@@ -679,21 +679,26 @@ class EventTest extends TestCase
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
-
-        $this->assertEquals($data['name'], $returnedEvent['name']);
-        $this->assertNotNull($returnedEvent['uuid'], "uuid cannot be null");
-        $this->assertEquals($data['status_id'], $returnedEvent['status_id']);
-        $this->assertNull($returnedEvent['start_at'], "Field start_at must be null");
-        $this->assertNull($returnedEvent['end_at'], "Field end_at must be null");
-        $this->assertNull($returnedEvent['staff_notes'], "Field staff_notes must be null");
-        $this->assertNull($returnedEvent['member_notes'], "Field member_notes must be null");
-        $this->assertNull($returnedEvent['customer_notes'], "Field customer_notes must be null");
-        $this->assertNull($returnedEvent['commission_rate'], "Field commission_rate must be null");
-        $this->assertEquals($returnedEvent['commission_type'], 1, "Field commission_type must be equal to 1");
-        $this->assertNull($returnedEvent['manager_uuid'], "Field manager_uuid must be null");
-        $this->assertNull($returnedEvent['host_uuid'], "Field host_uuid must be null");
-        $this->assertNull($returnedEvent['location_uuid'], "Field location_uuid must be null");
-        $this->assertEquals($returnedEvent['host_status'], 1, "Field host_status must be equal to 1");
+        $expectations = $data;
+        $this->assertArraySubset([
+            'uuid' => $returnedEvent['uuid'],
+            'status_id' => $returnedEvent['status_id'],
+            'name' => $returnedEvent['name'],
+            'host_status' => 1,
+            'start_at' => null,
+            'end_at' => null,
+            'staff_notes' => null,
+            'member_notes' => null,
+            'customer_notes' => null,
+            'budget' => null,
+            'attendees' => null,
+            'commission_rate' => null,
+            'commission_type' => 1,
+            'type' => null,
+            'manager_uuid' => null,
+            'host_uuid' => null,
+            'location_uuid' => null
+        ], $expectations);
     }
 
     public function testUpdateItem()
