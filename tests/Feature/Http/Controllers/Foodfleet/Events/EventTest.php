@@ -659,6 +659,43 @@ class EventTest extends TestCase
         );
     }
 
+    public function testCreatedDraftItem()
+    {
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+
+        Passport::actingAs($admin);
+
+        $data = $this
+            ->json('POST', 'api/foodfleet/events', [
+                'name' => 'test event',
+                'status_id' => 1
+            ])
+            ->assertStatus(201)
+            ->json('data');
+
+        $url = 'api/foodfleet/events/' . $data['uuid'];
+        $returnedEvent = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals($data['name'], $returnedEvent['name']);
+        $this->assertEquals($data['status_id'], $returnedEvent['status_id']);
+        $this->assertNull($returnedEvent['start_at'], "Field start_at must be null");
+        $this->assertNull($returnedEvent['end_at'], "Field end_at must be null");
+        $this->assertNull($returnedEvent['staff_notes'], "Field staff_notes must be null");
+        $this->assertNull($returnedEvent['member_notes'], "Field member_notes must be null");
+        $this->assertNull($returnedEvent['customer_notes'], "Field customer_notes must be null");
+        $this->assertNull($returnedEvent['commission_rate'], "Field commission_rate must be null");
+        $this->assertNull($returnedEvent['commission_type'], "Field commission_type must be null");
+        $this->assertNull($returnedEvent['manager'], "Field manager must be null");
+        $this->assertNull($returnedEvent['host'], "Field host must be null");
+        $this->assertNull($returnedEvent['location'], "Field location must be null");
+        $this->assertNull($returnedEvent['host_status'], "Field host_status must be null");
+        $this->assertNull($returnedEvent['event_tags'], "Field event_tags must be null");
+    }
+
     public function testUpdateItem()
     {
         $user = factory(User::class)->create();
