@@ -429,7 +429,6 @@ export default {
       vm.$store.dispatch('transactions/setFilters', filters),
       vm.$store.dispatch('transactions/getTransactions', { params: { include: include } })
     ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
       .catch((error) => { console.error(error) })

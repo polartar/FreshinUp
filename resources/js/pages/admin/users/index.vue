@@ -259,7 +259,6 @@ export default {
       vm.$store.dispatch('userTypes/getItems'),
       vm.$store.dispatch('userStatuses/getUserstatuses')
     ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
       .catch((error) => { console.error(error) })

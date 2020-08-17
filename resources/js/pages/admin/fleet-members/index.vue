@@ -237,7 +237,6 @@ export default {
         params: { include: 'tags,addresses' }
       })
     ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
       .catch((error) => { console.error(error) })

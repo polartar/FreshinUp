@@ -201,7 +201,6 @@ export default {
       vm.$store.dispatch('documentStatuses/getItems'),
       vm.$store.dispatch('documentTypes/getItems')
     ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
       .catch((error) => { console.error(error) })
