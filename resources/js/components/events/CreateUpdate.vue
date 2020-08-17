@@ -457,10 +457,14 @@ export default {
     promise.push(vm.$store.dispatch('events/getItem', { params }))
     promise.push(vm.$store.dispatch('eventStatuses/getItems'))
 
-    Promise.all(promise).finally(() => {
+    Promise.all(promise).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
+      .catch((error) => { console.error(error) })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>

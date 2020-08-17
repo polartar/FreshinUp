@@ -32,11 +32,15 @@ export default {
     vm.$store.dispatch('currentUser/getCurrentUser', { params: { include: 'teams.users' } }).then(() => {
       Promise.all([
         vm.$store.dispatch('users/getItem', { params: { id: vm.currentUser.id, include: 'teams.users,company.users' } })
-      ]).finally(() => {
+      ]).then(() => {
         vm.$store.dispatch('page/setTitle', vm.currentUser.name)
         vm.$store.dispatch('page/setLoading', false)
         if (next) next()
       })
+        .catch((error) => { console.error(error) })
+        .then(() => {
+          vm.$store.dispatch('page/setLoading', false)
+        })
     })
   }
 }

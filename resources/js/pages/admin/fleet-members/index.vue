@@ -236,10 +236,14 @@ export default {
       vm.$store.dispatch('storeStatuses/getItems', {
         params: { include: 'tags,addresses' }
       })
-    ]).finally(() => {
+    ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
+      .catch((error) => { console.error(error) })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>

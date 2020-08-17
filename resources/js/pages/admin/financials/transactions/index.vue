@@ -428,10 +428,14 @@ export default {
       vm.$store.dispatch('financialsummary/getItems'),
       vm.$store.dispatch('transactions/setFilters', filters),
       vm.$store.dispatch('transactions/getTransactions', { params: { include: include } })
-    ]).finally(() => {
+    ]).then(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
+      .catch((error) => { console.error(error) })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>
