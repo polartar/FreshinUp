@@ -20,6 +20,7 @@ class Event extends JsonResource
     public function toArray($request)
     {
         return [
+            "id" => $this->id,
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status_id" => $this->status_id,
