@@ -200,14 +200,10 @@ export default {
       vm.$store.dispatch('documents/getItem', { params: { id } }),
       vm.$store.dispatch('documentStatuses/getItems'),
       vm.$store.dispatch('documentTypes/getItems')
-    ]).then(() => {
+    ]).finally(() => {
       vm.$store.dispatch('page/setLoading', false)
       if (next) next()
     })
-      .catch((error) => {console.log(error)})
-      .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
-      })
   }
 }
 </script>
