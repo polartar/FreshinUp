@@ -452,7 +452,7 @@ class EventTest extends TestCase
 
         $event->eventTags()->save($eventTag);
 
-        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,type')
+        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags,type')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [],
@@ -463,6 +463,11 @@ class EventTest extends TestCase
             'uuid' => $event->uuid,
             'name' => $event->name,
         ], $data[0]);
+
+        $this->assertArraySubset([
+            'uuid' => $eventTag->uuid,
+            'name' => $eventTag->name,
+        ], $data[0]['event_tags'][0]);
 
         $this->assertArraySubset([
             'id' => $eventType->id,

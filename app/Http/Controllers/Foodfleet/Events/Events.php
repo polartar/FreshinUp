@@ -64,6 +64,7 @@ class Events extends Controller
                 'host',
                 'location.venue',
                 'manager',
+                'event_tags',
                 'type'
             ])
             ->allowedSorts([
