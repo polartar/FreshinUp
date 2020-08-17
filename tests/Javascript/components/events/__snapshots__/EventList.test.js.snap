@@ -101,7 +101,7 @@ exports[`Event List component Snapshots events empty 1`] = `
             </i>
           </th>
           <th
-            aria-label="Tags: Not sorted. Activate to sort ascending."
+            aria-label="Type: Not sorted. Activate to sort ascending."
             aria-sort="none"
             class="column sortable text-xs-left"
             role="columnheader"
@@ -110,7 +110,7 @@ exports[`Event List component Snapshots events empty 1`] = `
           >
             <span>
               
-      Tags
+      Type
     
             </span>
             <i
@@ -526,7 +526,7 @@ exports[`Event List component Snapshots events set 1`] = `
             </i>
           </th>
           <th
-            aria-label="Tags: Not sorted. Activate to sort ascending."
+            aria-label="Type: Not sorted. Activate to sort ascending."
             aria-sort="none"
             class="column sortable text-xs-left"
             role="columnheader"
@@ -535,7 +535,7 @@ exports[`Event List component Snapshots events set 1`] = `
           >
             <span>
               
-      Tags
+      Type
     
             </span>
             <i

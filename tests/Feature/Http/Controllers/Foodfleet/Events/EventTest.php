@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
+use App\Enums\EventType as EventTypeEnum;
+use App\Models\Foodfleet\EventType;
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
@@ -110,6 +112,68 @@ class EventTest extends TestCase
             'uuid' => $event->uuid,
             'name' => $event->name
         ], $data[0]);
+    }
+
+    public function testGetListFilteredByType()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        factory(Event::class, 5)->create([
+            'type_id' => EventTypeEnum::CASH_AND_CARRY
+        ]);
+        $eventsToFind = factory(Event::class, 3)->create([
+            'type_id' => EventTypeEnum::CATERING
+        ]);
+
+        $response = $this
+            ->json('GET', "/api/foodfleet/events?filter[type_id]=" . EventTypeEnum::CATERING)
+            ->assertStatus(200);
+        $this->assertNotExceptionResponse($response);
+        $data = $response
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(3, count($data));
+        foreach ($eventsToFind as $index => $event) {
+            $this->assertArraySubset([
+                'uuid' => $event->uuid,
+                'name' => $event->name
+            ], $data[$index]);
+        }
+    }
+
+    public function testGetListIncludingType()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $events = factory(Event::class, 5)->create();
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/events?include=type")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+        foreach ($events as $index => $event) {
+            $e = EventType::find($event->type_id);
+            $this->assertArraySubset([
+                'uuid' => $event->uuid,
+                'name' => $event->name,
+                'type' => [
+                    'id' => $e->id,
+                    'name' => $e->name
+                ]
+            ], $data[$index]);
+        }
     }
 
     public function testGetListWithHostUuidFilter()

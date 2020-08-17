@@ -177,7 +177,7 @@ export default {
         { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
         { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
-        { text: 'Tags', value: 'event_tags', align: 'left' },
+        { text: 'Type', value: 'type_id', align: 'left' },
         { text: 'Managed By', value: 'manager', align: 'left' },
         { text: 'Customer', value: 'host', align: 'left' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'left' }

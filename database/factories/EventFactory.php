@@ -2,6 +2,7 @@
 
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\EventType;
 use App\Models\Foodfleet\Location;
 use App\User;
 use Faker\Generator as Faker;
@@ -11,7 +12,7 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "name" => $faker->word,
-        "type" => $faker->randomNumber(),
+        "type_id" => factory(EventType::class)->create()->id,
         "location_uuid" => factory(Location::class)->create()->uuid,
         "start_at" => $faker->dateTime('now +1 hour'),
         "end_at" => $faker->dateTimeBetween('+1 days', '+2 days'),
