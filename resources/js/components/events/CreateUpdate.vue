@@ -135,10 +135,36 @@
           sm2
           xs12
         >
-          <status-select
-            v-model="status_id"
-            :options="statuses"
-          />
+          <v-layout
+            align-center
+          >
+            <status-select
+              v-model="status_id"
+              :options="statuses"
+            />
+            <v-dialog
+              v-model="questDialog"
+              max-width="500"
+            >
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  depressed
+                  fab
+                  color="primary"
+                  @click="questDialog = true"
+                >
+                  <v-icon>far fa-question-circle</v-icon>
+                </v-btn>
+              </template>
+              <v-card>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <p>Coming Soon</p>
+                </v-card-text>
+                <v-divider />
+              </v-card>
+            </v-dialog>
+          </v-layout>
         </v-flex>
       </v-flex>
       <v-divider />
@@ -242,6 +268,7 @@ export default {
       eventLoading: false,
       duplicating: false,
       duplicateDialog: false,
+      questDialog: false,
       duplicate: {
         basicInformation: true,
         venue: false,
@@ -429,7 +456,10 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {}
+    changeStatus () {},
+    onHelper () {
+      alert('Coming Soon')
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
@@ -488,4 +518,5 @@ export default {
   .back-btn-inner .v-icon{
     font-size: 16px;
   }
+
 </style>
