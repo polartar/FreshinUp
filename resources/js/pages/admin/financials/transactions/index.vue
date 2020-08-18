@@ -414,7 +414,6 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
     let filters = {}
     forEach(vm.$route.query, function (value, key) {
       filters[key] = value
@@ -428,13 +427,12 @@ export default {
       vm.$store.dispatch('financialsummary/getItems'),
       vm.$store.dispatch('transactions/setFilters', filters),
       vm.$store.dispatch('transactions/getTransactions', { params: { include: include } })
-    ]).then(() => {
-      if (next) next()
-    })
-      .catch((error) => { console.error(error) })
+    ])
       .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
       })
+      .catch((error) => console.error(error))
+      .then(() => vm.setPageLoading(false))
   }
 }
 </script>

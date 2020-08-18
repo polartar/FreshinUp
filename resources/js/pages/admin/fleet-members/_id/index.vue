@@ -159,7 +159,7 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
+    vm.$store.dispatch('page/setLoading', true)
     vm.$store.dispatch('events/setFilters', {
       ...vm.$route.query
     })
@@ -174,10 +174,12 @@ export default {
       vm.$store.dispatch('eventStatuses/getItems'),
       vm.$store.dispatch('storeStatuses/getItems'),
       vm.$store.dispatch('documentStatuses/getItems')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => vm.$store.dispatch('page/setLoading', false))
   }
 }
 </script>
