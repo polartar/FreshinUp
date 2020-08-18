@@ -140,6 +140,63 @@
             :options="statuses"
           />
         </v-flex>
+        <v-layout
+          row
+          align-center
+        >
+          <v-dialog
+            v-model="questDialog"
+            max-width="500"
+          >
+            <template v-slot:activator="{ on }">
+              <v-btn
+                depressed
+                fab
+                color="primary"
+                @click="questDialog = true"
+              >
+                <v-icon>far fa-question-circle</v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>
+                <v-layout
+                  row
+                  space-between
+                  align-center
+                >
+                  <v-flex>
+                    <h3></h3>
+                  </v-flex>
+                  <v-btn
+                    small
+                    round
+                    color="grey"
+                    class="white--text"
+                    @click="questDialog = false"
+                  >
+                    <v-flex>
+                      <v-icon
+                        small
+                        class="white--text"
+                      >
+                        fa fa-times
+                      </v-icon>
+                    </v-flex>
+                    <v-flex>
+                      Close
+                    </v-flex>
+                  </v-btn>
+                </v-layout>
+              </v-card-title>
+              <v-divider />
+              <v-card-text class="grey--text">
+                <p>Coming Soon</p>
+              </v-card-text>
+              <v-divider />
+            </v-card>
+          </v-dialog>
+        </v-layout>
       </v-flex>
       <v-divider />
       <br>
@@ -241,6 +298,7 @@ export default {
     return {
       duplicating: false,
       duplicateDialog: false,
+      questDialog: false,
       duplicate: {
         basicInformation: true,
         venue: false,
@@ -426,7 +484,10 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {}
+    changeStatus () {},
+    onHelper () {
+      alert('Coming Soon')
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
@@ -471,4 +532,5 @@ export default {
   .back-btn-inner .v-icon{
     font-size: 16px;
   }
+
 </style>
