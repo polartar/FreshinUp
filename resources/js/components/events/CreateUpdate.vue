@@ -265,6 +265,7 @@ export default {
   mixins: [Validate],
   data () {
     return {
+      eventLoading: false,
       duplicating: false,
       duplicateDialog: false,
       questDialog: false,
@@ -279,7 +280,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
@@ -287,6 +287,9 @@ export default {
     ...mapFields('events', [
       'status_id'
     ]),
+    isLoading () {
+      return this.$store.getters['page/isLoading'] || this.eventLoading
+    },
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
     },
@@ -459,27 +462,41 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
     const id = to.params.id || 'new'
     let params = { id }
-    let promise = []
+    let promises = []
     if (id !== 'new') {
       params = {
         id,
         include: 'manager,host,event_tags'
       }
-      promise.push(vm.$store.dispatch('storeStatuses/getItems'))
-      promise.push(vm.$store.dispatch('events/stores/getItems', {
+      promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
     }
-    promise.push(vm.$store.dispatch('events/getItem', { params }))
-    promise.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('eventStatuses/getItems'))
 
-    Promise.all(promise).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
+    vm.$store.dispatch('page/setLoading', true)
+    vm.eventLoading = true
+    vm.$store.dispatch('events/getItem', { params })
+      .then()
+      .catch(error => {
+        console.error(error)
+        vm.$router.push({ path: '/admin/events' })
+      })
+      .then(() => {
+        vm.eventLoading = false
+      })
+    Promise.all(promises).then(() => {
       if (next) next()
     })
+      .catch((error) => {
+        console.error(error)
+      })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>

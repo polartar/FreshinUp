@@ -250,7 +250,7 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
+    vm.$store.dispatch('page/setLoading', true)
     vm.$store.dispatch('users/setFilters', {
       ...vm.$route.query
     })
@@ -258,10 +258,12 @@ export default {
       vm.$store.dispatch('userLevels/getUserlevels'),
       vm.$store.dispatch('userTypes/getItems'),
       vm.$store.dispatch('userStatuses/getUserstatuses')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch((error) => console.error(error))
+      .then(() => vm.$store.dispatch('page/setLoading', false))
   }
 }
 </script>
