@@ -383,152 +383,206 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       <div
         class="flex text-xs-right sm2 xs12"
       >
-        <button
-          class="v-btn theme--dark warning warning-text--text"
-          type="button"
+        <div
+          class="layout align-center"
         >
-          <div
-            class="v-btn__content"
+          <button
+            class="v-btn theme--dark warning warning-text--text"
+            type="button"
           >
-            
+            <div
+              class="v-btn__content"
+            >
+              
   Pending
  
-            <i
-              aria-hidden="true"
-              class="v-icon v-icon--right material-icons theme--dark"
-            >
-              arrow_drop_down
-            </i>
-          </div>
-        </button>
-        <div
-          class="v-menu"
-        >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--right material-icons theme--dark"
+              >
+                arrow_drop_down
+              </i>
+            </div>
+          </button>
           <div
-            class="v-menu__content theme--light "
-            style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+            class="v-menu"
           >
-             
             <div
-              class="v-list theme--light"
-              role="list"
+              class="v-menu__content theme--light "
+              style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+            >
+               
+              <div
+                class="v-list theme--light"
+                role="list"
+              >
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Draft
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      FF Initial Review
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Customer Agreement
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Fleet Member Selection
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Customer Review
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Fleet Member Contracts
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Confirmed
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Cancelled
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Past
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <button
+            class="v-btn v-btn--floating v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon far fa-question-circle theme--light"
+              />
+            </div>
+          </button>
+          <div
+            class="v-dialog__container"
+            style="display: inline-block;"
+          >
+            <div
+              class="v-dialog__content"
+              style="z-index: 0;"
+              tabindex="-1"
             >
               <div
-                role="listitem"
+                class="v-dialog"
+                style="max-width: 500px; display: none;"
               >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
+                 
+                <div
+                  class="v-card v-sheet theme--light"
                 >
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                   
                   <div
-                    class="v-list__tile__title"
+                    class="v-card__text grey--text"
                   >
-                    Draft
+                    <p>
+                      Coming Soon
+                    </p>
                   </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    FF Initial Review
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Customer Agreement
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Fleet Member Selection
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Customer Review
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Fleet Member Contracts
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Confirmed
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Cancelled
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Past
-                  </div>
-                </a>
+                   
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -8825,152 +8879,206 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       <div
         class="flex text-xs-right sm2 xs12"
       >
-        <button
-          class="v-btn theme--dark grey grey-text--text"
-          type="button"
+        <div
+          class="layout align-center"
         >
-          <div
-            class="v-btn__content"
+          <button
+            class="v-btn theme--dark grey grey-text--text"
+            type="button"
           >
-            
+            <div
+              class="v-btn__content"
+            >
+              
   Draft
  
-            <i
-              aria-hidden="true"
-              class="v-icon v-icon--right material-icons theme--dark"
-            >
-              arrow_drop_down
-            </i>
-          </div>
-        </button>
-        <div
-          class="v-menu"
-        >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--right material-icons theme--dark"
+              >
+                arrow_drop_down
+              </i>
+            </div>
+          </button>
           <div
-            class="v-menu__content theme--light "
-            style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+            class="v-menu"
           >
-             
             <div
-              class="v-list theme--light"
-              role="list"
+              class="v-menu__content theme--light "
+              style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+            >
+               
+              <div
+                class="v-list theme--light"
+                role="list"
+              >
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Draft
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      FF Initial Review
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Customer Agreement
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Fleet Member Selection
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Customer Review
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Fleet Member Contracts
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Confirmed
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Cancelled
+                    </div>
+                  </a>
+                </div>
+                <div
+                  role="listitem"
+                >
+                  <a
+                    class="v-list__tile v-list__tile--link theme--light"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Past
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <button
+            class="v-btn v-btn--floating v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon far fa-question-circle theme--light"
+              />
+            </div>
+          </button>
+          <div
+            class="v-dialog__container"
+            style="display: inline-block;"
+          >
+            <div
+              class="v-dialog__content"
+              style="z-index: 0;"
+              tabindex="-1"
             >
               <div
-                role="listitem"
+                class="v-dialog"
+                style="max-width: 500px; display: none;"
               >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
+                 
+                <div
+                  class="v-card v-sheet theme--light"
                 >
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                   
                   <div
-                    class="v-list__tile__title"
+                    class="v-card__text grey--text"
                   >
-                    Draft
+                    <p>
+                      Coming Soon
+                    </p>
                   </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    FF Initial Review
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Customer Agreement
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Fleet Member Selection
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Customer Review
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Fleet Member Contracts
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Confirmed
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Cancelled
-                  </div>
-                </a>
-              </div>
-              <div
-                role="listitem"
-              >
-                <a
-                  class="v-list__tile v-list__tile--link theme--light"
-                >
-                  <div
-                    class="v-list__tile__title"
-                  >
-                    Past
-                  </div>
-                </a>
+                   
+                  <hr
+                    class="v-divider theme--light"
+                  />
+                </div>
               </div>
             </div>
           </div>
