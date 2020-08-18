@@ -17,6 +17,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company;
 use App\Enums\EventStatus as EventStatusEnum;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Artisan;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -116,6 +117,7 @@ class EventTest extends TestCase
 
     public function testGetListFilteredByType()
     {
+        Artisan::call('db:seed');
         $user = factory(User::class)->create();
         Passport::actingAs($user);
 
@@ -440,17 +442,19 @@ class EventTest extends TestCase
         $status = factory(EventStatus::class)->create();
         $location = factory(Location::class)->create();
         $host = factory(Company::class)->create();
+        $eventType = factory(EventType::class)->create();
 
         $event = factory(Event::class)->create([
             'manager_uuid' => $user->uuid,
             'status_id' => $status->id,
             'location_uuid' => $location->uuid,
-            'host_uuid' => $host->uuid
+            'host_uuid' => $host->uuid,
+            'type_id' => $eventType->id
         ]);
 
         $event->eventTags()->save($eventTag);
 
-        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags')
+        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags,type')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [],
@@ -466,6 +470,11 @@ class EventTest extends TestCase
             'uuid' => $eventTag->uuid,
             'name' => $eventTag->name,
         ], $data[0]['event_tags'][0]);
+
+        $this->assertArraySubset([
+            'id' => $eventType->id,
+            'name' => $eventType->name,
+        ], $data[0]['type']);
 
         $this->assertArraySubset([
             'uuid' => $location->uuid,

@@ -71,9 +71,10 @@ class Events extends Controller
                 'name',
                 'start_at',
                 'status_id',
+                'type_id',
                 Sort::custom('host', new HostNameSort()),
                 Sort::custom('manager', new ManagerNameSort()),
-                Sort::custom('event_tags', new EventTagNameSort())
+                Sort::custom('event_tags', new EventTagNameSort()),
             ])
             ->allowedFilters([
                 'name',
