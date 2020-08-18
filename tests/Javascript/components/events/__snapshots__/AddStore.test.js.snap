@@ -19,9 +19,20 @@ exports[`Add member (store) in event component Snapshot defaults 1`] = `
         <button
           style="font-weight: bold; color: lightslategray; outline: 0;"
         >
-          
-          Show Filters
-        
+          <span>
+            <v-flex-stub
+              tag="div"
+            >
+              <v-icon-stub
+                small=""
+              >
+                fa-caret-right
+              </v-icon-stub>
+              
+              Show Filters
+            
+            </v-flex-stub>
+          </span>
         </button>
       </div>
        

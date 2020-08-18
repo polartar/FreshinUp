@@ -7031,7 +7031,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-287"
+                                                    name="v-radio-288"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -7068,7 +7068,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-287"
+                                                    name="v-radio-288"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -7293,6 +7293,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                    
                   <div
                     class="mb-2"
+                    statuses=""
                   >
                     <div
                       class="px-4 pt-4"
@@ -7343,9 +7344,20 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                           <button
                             style="font-weight: bold; color: lightslategray; outline: 0;"
                           >
-                            
-          Show Filters
-        
+                            <span>
+                              <div
+                                class="flex"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon fa fa-caret-right theme--light"
+                                  style="font-size: 16px;"
+                                />
+                                
+              Show Filters
+            
+                              </div>
+                            </span>
                           </button>
                         </div>
                          
@@ -16346,7 +16358,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="On"
-                                                    name="v-radio-633"
+                                                    name="v-radio-635"
                                                     role="radio"
                                                     type="radio"
                                                     value="on"
@@ -16383,7 +16395,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <input
                                                     aria-checked="false"
                                                     aria-label="After"
-                                                    name="v-radio-633"
+                                                    name="v-radio-635"
                                                     role="radio"
                                                     type="radio"
                                                     value="after"
@@ -16607,6 +16619,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                    
                   <div
                     class="mb-2"
+                    statuses=""
                   >
                     <div
                       class="px-4 pt-4"
@@ -16657,9 +16670,20 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           <button
                             style="font-weight: bold; color: lightslategray; outline: 0;"
                           >
-                            
-          Show Filters
-        
+                            <span>
+                              <div
+                                class="flex"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon fa fa-caret-right theme--light"
+                                  style="font-size: 16px;"
+                                />
+                                
+              Show Filters
+            
+                              </div>
+                            </span>
                           </button>
                         </div>
                          

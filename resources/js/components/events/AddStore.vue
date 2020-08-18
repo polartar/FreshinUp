@@ -100,7 +100,7 @@
       <v-data-table
         v-model="selected"
         :headers="headers"
-        :items="members"
+        :items="filteredMembers"
         :search="searchText"
         item-key="uuid"
         hide-actions
@@ -263,7 +263,6 @@ export default {
         uuid: '',
         name: 'All locations'
       }
-      return [ def ]
       return _uniqBy([def, ...this.filteredMembers.map(m => m.location)], 'uuid')
     },
 
@@ -272,7 +271,6 @@ export default {
         uuid: '',
         name: 'All tags'
       }
-      return [ def ]
       return _unionBy(def, ...this.filteredMembers.map(m => m['store_tags']), 'uuid')
     },
 
@@ -281,7 +279,6 @@ export default {
         id: 0,
         name: 'All types'
       }
-      return [ def ]
       return _uniqBy([def, ...this.filteredMembers.map(m => m.type)], 'id')
     },
 

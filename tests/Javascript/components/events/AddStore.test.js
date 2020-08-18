@@ -56,7 +56,7 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: '',
         selectedType: '',
-        selectedTag: []
+        selectedTags: []
       })
 
       expect(wrapper.vm.filteredMembers).toHaveLength(3)
@@ -65,7 +65,7 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: '00aabd70-aa77-42de-87fd-96449bbd5439',
         selectedType: '',
-        selectedTag: []
+        selectedTags: []
       })
 
       expect(wrapper.vm.filteredMembers).toHaveLength(1)
@@ -74,7 +74,7 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: '',
         selectedType: 1,
-        selectedTag: []
+        selectedTags: []
       })
 
       expect(wrapper.vm.filteredMembers).toHaveLength(3)
@@ -83,7 +83,7 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: '',
         selectedType: '',
-        selectedTag: ['4']
+        selectedTags: ['4']
       })
 
       expect(wrapper.vm.filteredMembers).toHaveLength(1)
@@ -196,13 +196,13 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: 'aaa',
         selectedType: 'ttt',
-        selectedTag: ['a', 'b']
+        selectedTags: ['a', 'b']
       })
 
       wrapper.vm.clearAllFilters()
       expect(wrapper.vm.selectedState).toBe('')
       expect(wrapper.vm.selectedType).toBe('')
-      expect(wrapper.vm.selectedTag).toEqual([])
+      expect(wrapper.vm.selectedTags).toEqual([])
     })
 
     test('Manage button label', () => {

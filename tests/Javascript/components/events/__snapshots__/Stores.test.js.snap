@@ -88,6 +88,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
              
             <div
               class="mb-2"
+              statuses="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
             >
               <div
                 class="px-4 pt-4"
@@ -138,9 +139,20 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                     <button
                       style="font-weight: bold; color: lightslategray; outline: 0;"
                     >
-                      
-          Show Filters
-        
+                      <span>
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon fa fa-caret-right theme--light"
+                            style="font-size: 16px;"
+                          />
+                          
+              Show Filters
+            
+                        </div>
+                      </span>
                     </button>
                   </div>
                    
@@ -925,7 +937,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           >
                             <router-link
                               class="primary--text"
-                              style="font-size: 18px;"
                               target="_blank"
                               to="[object Object]"
                             >
@@ -1042,7 +1053,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           >
                             <router-link
                               class="primary--text"
-                              style="font-size: 18px;"
                               target="_blank"
                               to="[object Object]"
                             >
@@ -1171,7 +1181,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                           >
                             <router-link
                               class="primary--text"
-                              style="font-size: 18px;"
                               target="_blank"
                               to="[object Object]"
                             >
@@ -3568,6 +3577,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
              
             <div
               class="mb-2"
+              statuses="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
             >
               <div
                 class="px-4 pt-4"
@@ -3618,9 +3628,20 @@ exports[`Store List component Snapshots stores empty 1`] = `
                     <button
                       style="font-weight: bold; color: lightslategray; outline: 0;"
                     >
-                      
-          Show Filters
-        
+                      <span>
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon fa fa-caret-right theme--light"
+                            style="font-size: 16px;"
+                          />
+                          
+              Show Filters
+            
+                        </div>
+                      </span>
                     </button>
                   </div>
                    
