@@ -14,12 +14,14 @@ export default ({ items, item }) => {
     }
   )
   const __createItem = store.actions.createItem
+  const stripeUnwantedObject = (data) => {
+    return omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type'])
+  }
   store.actions = {
     ...store.actions,
     createItem (context, payload) {
-      payload.data = omit(payload.data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status'])
+      payload.data = stripeUnwantedObject(payload.data)
 
-      debugger
       const today = moment()
       const tomorrow = moment().add(1, 'day')
       const startsInTheFuture = moment(payload.data.start_at).diff(today) > 0
@@ -38,6 +40,7 @@ export default ({ items, item }) => {
   store.actions = {
     ...store.actions,
     updateItem (context, payload) {
+      payload.data = stripeUnwantedObject(payload.data)
       payload.data = omitBy(payload.data, (value) => String(value).length === 0 || isNull(value))
       return _updateItem(context, payload)
     }

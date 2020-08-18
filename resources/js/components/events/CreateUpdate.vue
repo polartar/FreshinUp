@@ -209,7 +209,6 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
-import moment from 'moment'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',

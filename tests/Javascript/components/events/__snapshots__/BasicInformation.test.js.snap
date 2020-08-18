@@ -100,7 +100,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="type"
+                          data-vv-name="type_id"
                           readonly="readonly"
                           type="text"
                         />
@@ -1084,7 +1084,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="type"
+                          data-vv-name="type_id"
                           readonly="readonly"
                           type="text"
                         />
@@ -7577,7 +7577,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="type"
+                          data-vv-name="type_id"
                           readonly="readonly"
                           type="text"
                         />
@@ -14224,7 +14224,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="type"
+                          data-vv-name="type_id"
                           readonly="readonly"
                           type="text"
                         />
@@ -15342,7 +15342,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                         <input
                           aria-readonly="false"
                           autocomplete="on"
-                          data-vv-name="type"
+                          data-vv-name="type_id"
                           disabled="disabled"
                           readonly="readonly"
                           type="text"
