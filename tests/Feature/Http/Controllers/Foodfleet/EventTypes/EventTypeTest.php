@@ -46,7 +46,9 @@ class EventTypeTest extends TestCase
         Passport::actingAs($user);
 
         factory(EventType::class, 5)->create();
-        $eventTypeToFind = factory(EventType::class)->create();
+        $eventTypeToFind = factory(EventType::class)->create([
+            'name' => 'some random name'
+        ]);
         $data = $this
             ->json('get', "/api/foodfleet/event/types")
             ->assertStatus(200)

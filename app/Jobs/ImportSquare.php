@@ -27,17 +27,17 @@ class ImportSquare implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $event;
+    public $event;
     /** @var \SquareConnect\Api\EmployeesApi */
-    protected $employeesApi;
+    public $employeesApi;
     /** @var \SquareConnect\Api\OrdersApi */
-    protected $ordersApi;
+    public $ordersApi;
     /** @var \SquareConnect\Api\CustomersApi */
-    protected $customersApi;
+    public $customersApi;
     /** @var \SquareConnect\Api\CatalogApi */
-    protected $catalogsApi;
+    public $catalogsApi;
     /** @var \SquareConnect\Api\V1TransactionsApi */
-    protected $v1TransactionApi;
+    public $v1TransactionApi;
 
     /**
      * Create a new job instance.
