@@ -19,7 +19,7 @@ export default ({ items, item }) => {
   }
   store.actions = {
     ...store.actions,
-    createItem (context, payload) {*
+    createItem (context, payload) {
       payload.data = stripeUnwantedObject(payload.data)
 
       const today = moment()
