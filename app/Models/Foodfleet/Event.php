@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $id
  * @property string $uuid
  * @property string $name
- * @property int type
+ * @property int type_id
  * @property string $location_uuid
  * @property \Datetime $start_at
  * @property \Datetime $end_at
@@ -107,5 +107,10 @@ class Event extends Model
     public function schedule()
     {
         return $this->hasOne(EventSchedule::class, 'event_uuid', 'uuid');
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(EventType::class, 'type_id', 'id');
     }
 }

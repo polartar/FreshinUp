@@ -2,6 +2,7 @@ import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
 import omitBy from 'lodash/omitBy'
 import isNull from 'lodash/isNull'
 import omit from 'lodash/omit'
+import moment from 'moment'
 
 export default ({ items, item }) => {
   const store = makeRestStore(
@@ -17,6 +18,18 @@ export default ({ items, item }) => {
     ...store.actions,
     createItem (context, payload) {
       payload.data = omit(payload.data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status'])
+
+      debugger
+      const today = moment()
+      const tomorrow = moment().add(1, 'day')
+      const startsInTheFuture = moment(payload.data.start_at).diff(today) > 0
+      const endsInTheFuture = moment(payload.data.end_at).diff(today) > 0
+      if (!startsInTheFuture) {
+        payload.data.start_at = `${tomorrow.format('YYYY-MM-DD')} 00:00`
+      }
+      if (!endsInTheFuture) {
+        payload.data.end_at = `${tomorrow.format('YYYY-MM-DD')} 23:59`
+      }
       return __createItem(context, payload)
     }
   }

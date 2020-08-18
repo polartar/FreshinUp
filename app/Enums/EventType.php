@@ -4,17 +4,10 @@ namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 
-final class EventStatus extends Enum
+final class EventType extends Enum
 {
-    const DRAFT = 1;
-    const FF_INITIAL_REVIEW = 2;
-    const CUSTOMER_AGREEMENT = 3;
-    const FLEET_MEMBER_SELECTION = 4;
-    const CUSTOMER_REVIEW = 5;
-    const FLEET_MEMBER_CONTRACTS = 6;
-    const CONFIRMED = 7;
-    const CANCELLED = 8;
-    const PAST = 9;
+    const CATERING = 1;
+    const CASH_AND_CARRY = 2;
 
     public static function toKeyedSelectArray()
     {
@@ -23,6 +16,7 @@ final class EventStatus extends Enum
 
     public static function toKeyedArray()
     {
+
         $array = self::toArray();
         $selectArray = [];
 
@@ -30,10 +24,8 @@ final class EventStatus extends Enum
             array_push($selectArray, [
                 'value' => $value,
                 'key' => $key,
-                'label' => static::getDescription($value),
+                'label' => static::getDescription($value)
             ]);
         }
-
-        return $selectArray;
     }
 }

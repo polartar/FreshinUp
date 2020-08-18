@@ -46,11 +46,11 @@
               >
                 Event type
                 <v-select
-                  v-model="eventData.type"
+                  v-model="eventData.type_id"
                   v-validate="allRequired"
                   :items="eventTypes"
-                  data-vv-name="type"
-                  :error-messages="errors.collect('type')"
+                  data-vv-name="type_id"
+                  :error-messages="errors.collect('type_id')"
                   item-value="id"
                   item-text="label"
                   solo
@@ -342,7 +342,7 @@ export default {
         attendees: edit ? get(this.event, 'attendees') : null,
         commission_rate: edit ? get(this.event, 'commission_rate') : 5,
         commission_type: edit ? get(this.event, 'commission_type') : 1,
-        type: edit ? get(this.event, 'type') : 1,
+        type_id: edit ? get(this.event, 'type_id') : 1,
         event_tags: edit ? get(this.event, 'event_tags') : [],
         start_at: edit ? get(this.event, 'start_at') : null,
         end_at: edit ? get(this.event, 'end_at') : null,

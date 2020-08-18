@@ -62,6 +62,7 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
       </button>
       <div
         class="v-menu"
+        label-prop="name"
       >
         <div
           class="v-menu__content theme--light "
@@ -81,7 +82,7 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
                 <div
                   class="v-list__tile__title"
                 >
-                  Draft
+                  
                 </div>
               </a>
             </div>
@@ -94,7 +95,7 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
                 <div
                   class="v-list__tile__title"
                 >
-                  Pending
+                  
                 </div>
               </a>
             </div>
@@ -107,7 +108,7 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
                 <div
                   class="v-list__tile__title"
                 >
-                  Confirmed
+                  
                 </div>
               </a>
             </div>
@@ -120,7 +121,7 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
                 <div
                   class="v-list__tile__title"
                 >
-                  Past
+                  
                 </div>
               </a>
             </div>
@@ -133,7 +134,59 @@ exports[`Event Customers page Mount mount customer detail page 1`] = `
                 <div
                   class="v-list__tile__title"
                 >
-                  Cancelled
+                  
+                </div>
+              </a>
+            </div>
+            <div
+              role="listitem"
+            >
+              <a
+                class="v-list__tile v-list__tile--link theme--light"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  
+                </div>
+              </a>
+            </div>
+            <div
+              role="listitem"
+            >
+              <a
+                class="v-list__tile v-list__tile--link theme--light"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  
+                </div>
+              </a>
+            </div>
+            <div
+              role="listitem"
+            >
+              <a
+                class="v-list__tile v-list__tile--link theme--light"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  
+                </div>
+              </a>
+            </div>
+            <div
+              role="listitem"
+            >
+              <a
+                class="v-list__tile v-list__tile--link theme--light"
+              >
+                <div
+                  class="v-list__tile__title"
+                >
+                  
                 </div>
               </a>
             </div>

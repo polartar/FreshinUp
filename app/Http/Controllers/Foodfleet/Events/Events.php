@@ -12,6 +12,7 @@ use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\Sort;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
+use App\Enums\EventType as EventTypeEnum;
 use App\Http\Resources\Foodfleet\EventSummary as EventSummaryResource;
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Filters\BelongsToWhereInUuidEquals;
@@ -38,7 +39,7 @@ class Events extends Controller
         $user = $request->user();
         $isAdmin = $user->isAdmin();
         $requestFilters = $request->get('filter', []);
-        if (!$isAdmin && $user->type == 1) {
+        if (!$isAdmin && $user->type == EventTypeEnum::CATERING) {
             if (array_key_exists('manager_uuid', $requestFilters)) {
                 $requestFilters['manager_uuid'] = $requestFilters['manager_uuid'] . ',' . $user->uuid;
             } else {
@@ -47,7 +48,7 @@ class Events extends Controller
             $request->query->add(['filter' => $requestFilters]);
         }
 
-        if (!$isAdmin && $user->type == 2) {
+        if (!$isAdmin && $user->type == EventTypeEnum::CASH_AND_CARRY) {
             if (array_key_exists('host_uuid', $requestFilters)) {
                 $requestFilters['host_uuid'] = $requestFilters['host_uuid'] . ',' . $user->uuid;
             } else {
@@ -63,7 +64,8 @@ class Events extends Controller
                 'host',
                 'location.venue',
                 'manager',
-                'event_tags'
+                'event_tags',
+                'type'
             ])
             ->allowedSorts([
                 'name',
@@ -83,6 +85,7 @@ class Events extends Controller
                 Filter::custom('store_uuid', BelongsToManyWhereInUuidEquals::class, 'stores'),
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
+                Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
             ]);
         return EventResource::collection($events->jsonPaginate());
     }

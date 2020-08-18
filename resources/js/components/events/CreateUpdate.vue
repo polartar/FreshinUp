@@ -173,7 +173,7 @@
       py-4
     >
       <v-flex>
-        <Stores
+        <stores
           :types="types"
           :statuses="storeStatuses"
           :stores="stores"
@@ -188,7 +188,7 @@
       py-4
     >
       <v-flex>
-        <Customers
+        <customers
           :customers="customers"
           :statuses="statuses"
           @manage-view-details="viewDocuments"
@@ -205,10 +205,10 @@ import get from 'lodash/get'
 import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import StatusSelect from '~/components/events/StatusSelect'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 import moment from 'moment'
 
 const { mapFields } = createHelpers({
@@ -332,16 +332,6 @@ export default {
       if (data.name) {
         data.name = getFileNameCopy(data.name)
       }
-      const today = moment()
-      const tomorrow = moment().add(1, 'day')
-      const startsInTheFuture = moment(data.start_at).diff(today) > 0
-      const endsInTheFuture = moment(data.end_at).diff(today) > 0
-      if (!startsInTheFuture) {
-        data.start_at = `${tomorrow.format('YYYY-MM-DD')} 00:00`
-      }
-      if (!endsInTheFuture) {
-        data.end_at = `${tomorrow.format('YYYY-MM-DD')} 23:59`
-      }
       this.duplicating = true
       this.$store.dispatch('events/createItem', {
         data
@@ -367,7 +357,7 @@ export default {
       this.event.budget = data.budget
       this.event.commission_rate = data.commission_rate
       this.event.commission_type = data.commission_type
-      this.event.type = data.type
+      this.event.type_id = data.type_id
       this.event.start_at = data.start_at
       this.event.end_at = data.end_at
       this.event.staff_notes = data.staff_notes
@@ -465,24 +455,21 @@ export default {
 }
 </script>
 <style scoped>
-  .event-new-wrap {
+  .event-new-wrap{
     background-color: #fff;
   }
-
-  .back-btn-inner {
+  .back-btn-inner{
     color: #fff;
     display: flex;
     align-items: center;
     font-size: 13px;
   }
-
-  .back-btn-inner span {
+  .back-btn-inner span{
     margin-left: 10px;
     font-weight: bold;
     text-transform: initial;
   }
-
-  .back-btn-inner .v-icon {
+  .back-btn-inner .v-icon{
     font-size: 16px;
   }
 </style>

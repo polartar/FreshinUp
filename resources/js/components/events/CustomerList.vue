@@ -53,7 +53,7 @@
 
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
-import StatusSelect from '~/components/events/StatusSelect'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 
 export default {
   components: { StatusSelect },

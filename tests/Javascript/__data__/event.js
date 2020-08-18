@@ -11,7 +11,7 @@ export const EMPTY_EVENT = {
   budget: null,
   commission_rate: null,
   commission_type: null,
-  type: null
+  type_id: null
 }
 export const FIXTURE_EVENT = {
   uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
@@ -51,5 +51,5 @@ export const FIXTURE_EVENT = {
   budget: 1000,
   commission_rate: 12,
   commission_type: 2,
-  type: 1
+  type_id: 1
 }
