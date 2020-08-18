@@ -704,7 +704,59 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -730,7 +782,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -743,7 +795,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Past
                       </div>
                     </a>
                   </div>
@@ -919,7 +971,7 @@ exports[`Event List component Snapshots events set 1`] = `
                   class="v-btn__content"
                 >
                   
-  Pending
+  FF Initial Review
  
                   <i
                     aria-hidden="true"
@@ -960,7 +1012,59 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -986,7 +1090,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -999,7 +1103,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Past
                       </div>
                     </a>
                   </div>
@@ -1168,14 +1272,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark success success-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Confirmed
+  Customer Agreement
  
                   <i
                     aria-hidden="true"
@@ -1216,7 +1320,59 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1242,7 +1398,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1255,7 +1411,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Past
                       </div>
                     </a>
                   </div>
@@ -1424,14 +1580,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark secondary secondary-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Past
+  Fleet Member Selection
  
                   <i
                     aria-hidden="true"
@@ -1472,7 +1628,59 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1498,7 +1706,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1511,7 +1719,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Past
                       </div>
                     </a>
                   </div>
@@ -1680,14 +1888,14 @@ exports[`Event List component Snapshots events set 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Cancelled
+  Customer Review
  
                   <i
                     aria-hidden="true"
@@ -1728,7 +1936,59 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Pending
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
                       </div>
                     </a>
                   </div>
@@ -1754,7 +2014,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Past
+                        Cancelled
                       </div>
                     </a>
                   </div>
@@ -1767,7 +2027,7 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
-                        Cancelled
+                        Past
                       </div>
                     </a>
                   </div>

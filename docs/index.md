@@ -1,7 +1,10 @@
 # Changes
-
-## August 16, 2020
+## August 17, 2020
+- **MOD** Event status options are change to new list of possible statuses. [#380](https://github.com/FreshinUp/foodfleet/issues/380)
 - **MOD** Tag filter changes to Type on Event Page [#389] (https://github.com/FreshinUp/foodfleet/issues/389)
+
+<br/>
+
 
 ## August 11, 2020
 - **ADD** As a Super Admin, I can duplicate an Event from the edit Event page [#371](https://github.com/FreshinUp/foodfleet/issues/371)

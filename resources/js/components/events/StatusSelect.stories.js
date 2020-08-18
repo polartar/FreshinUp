@@ -1,13 +1,16 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import StatusSelect from './StatusSelect'
-
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
+const FIXTURE_EVENT_STATUSES = [
+  { id: 1, name: 'Draft', color: 'grey' },
+  { id: 2, name: 'FF Initial Review', color: 'warning' },
+  { id: 3, name: 'Customer Agreement', color: 'warning' },
+  { id: 4, name: 'Fleet Member Selection', color: 'warning' },
+  { id: 5, name: 'Customer Review', color: 'warning' },
+  { id: 6, name: 'Fleet Member Contracts', color: 'warning' },
+  { id: 7, name: 'Confirmed', color: 'success' },
+  { id: 8, name: 'Cancelled', color: 'error' },
+  { id: 9, name: 'Past', color: 'grey' }
 ]
 
 storiesOf('FoodFleet|events/StatusSelect', module)
@@ -16,7 +19,7 @@ storiesOf('FoodFleet|events/StatusSelect', module)
       components: { StatusSelect },
       data () {
         return {
-          statuses: statuses
+          statuses: FIXTURE_EVENT_STATUSES
         }
       },
       template: `
@@ -37,12 +40,12 @@ storiesOf('FoodFleet|events/StatusSelect', module)
     return {
       components: { StatusSelect },
       data: () => ({
-        statuses: statuses,
+        statuses: FIXTURE_EVENT_STATUSES,
         val: 1
       }),
       template: `
           <v-container>
-            <status-select 
+            <status-select
               v-model="val"
               :options="statuses"
               @input="input"

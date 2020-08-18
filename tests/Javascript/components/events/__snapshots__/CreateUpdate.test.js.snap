@@ -435,7 +435,59 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Pending
+                    FF Initial Review
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Customer Agreement
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Fleet Member Selection
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Customer Review
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Fleet Member Contracts
                   </div>
                 </a>
               </div>
@@ -461,7 +513,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Past
+                    Cancelled
                   </div>
                 </a>
               </div>
@@ -474,7 +526,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Cancelled
+                    Past
                   </div>
                 </a>
               </div>
@@ -8825,7 +8877,59 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Pending
+                    FF Initial Review
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Customer Agreement
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Fleet Member Selection
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Customer Review
+                  </div>
+                </a>
+              </div>
+              <div
+                role="listitem"
+              >
+                <a
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__title"
+                  >
+                    Fleet Member Contracts
                   </div>
                 </a>
               </div>
@@ -8851,7 +8955,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Past
+                    Cancelled
                   </div>
                 </a>
               </div>
@@ -8864,7 +8968,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-list__tile__title"
                   >
-                    Cancelled
+                    Past
                   </div>
                 </a>
               </div>
@@ -16894,7 +16998,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 class="v-btn__content"
                               >
                                 
-  Pending
+  FF Initial Review
  
                                 <i
                                   aria-hidden="true"
@@ -16938,7 +17042,59 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Pending
+                                        FF Initial Review
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Customer Agreement
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Fleet Member Selection
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Customer Review
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <a
+                                      class="v-list__tile v-list__tile--link theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        Fleet Member Contracts
                                       </div>
                                     </a>
                                   </div>
@@ -16964,7 +17120,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Past
+                                        Cancelled
                                       </div>
                                     </a>
                                   </div>
@@ -16977,7 +17133,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       <div
                                         class="v-list__tile__title"
                                       >
-                                        Cancelled
+                                        Past
                                       </div>
                                     </a>
                                   </div>

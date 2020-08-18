@@ -140,8 +140,9 @@
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
-import StatusSelect from '~/components/events/StatusSelect'
+import StatusSelect from '~/components/events/StatusSelect.vue'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
+
 export default {
   components: { FBtnMenu, StatusSelect },
   mixins: [
@@ -238,12 +239,14 @@ export default {
   .highlight {
     background: #ffa;
   }
-  /deep/ table.v-table tbody td.select-td{
+
+  /deep/ table.v-table tbody td.select-td {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 16px;
   }
-  /deep/ table.v-table tbody td.tag-td{
+
+  /deep/ table.v-table tbody td.tag-td {
     width: 15%;
   }
 </style>

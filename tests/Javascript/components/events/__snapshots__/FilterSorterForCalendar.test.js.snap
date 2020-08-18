@@ -325,7 +325,247 @@ exports[`FilterSorterForCalendar Snapshots defaults 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    Pending
+                                    FF Initial Review
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              class="primary--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              >
+                                <div
+                                  class="v-list__tile__action"
+                                >
+                                  <div
+                                    class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                  >
+                                    <div
+                                      class="v-input__control"
+                                    >
+                                      <div
+                                        class="v-input__slot"
+                                      >
+                                        <div
+                                          class="v-input--selection-controls__input"
+                                        >
+                                          <input
+                                            aria-checked="true"
+                                            role="checkbox"
+                                            type="checkbox"
+                                            value=""
+                                          />
+                                          <div
+                                            class="v-input--selection-controls__ripple primary--text"
+                                          />
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light primary--text"
+                                          >
+                                            check_box
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="v-messages theme--light"
+                                      >
+                                        <div
+                                          class="v-messages__wrapper"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Customer Agreement
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              class="primary--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              >
+                                <div
+                                  class="v-list__tile__action"
+                                >
+                                  <div
+                                    class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                  >
+                                    <div
+                                      class="v-input__control"
+                                    >
+                                      <div
+                                        class="v-input__slot"
+                                      >
+                                        <div
+                                          class="v-input--selection-controls__input"
+                                        >
+                                          <input
+                                            aria-checked="true"
+                                            role="checkbox"
+                                            type="checkbox"
+                                            value=""
+                                          />
+                                          <div
+                                            class="v-input--selection-controls__ripple primary--text"
+                                          />
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light primary--text"
+                                          >
+                                            check_box
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="v-messages theme--light"
+                                      >
+                                        <div
+                                          class="v-messages__wrapper"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Fleet Member Selection
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              class="primary--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              >
+                                <div
+                                  class="v-list__tile__action"
+                                >
+                                  <div
+                                    class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                  >
+                                    <div
+                                      class="v-input__control"
+                                    >
+                                      <div
+                                        class="v-input__slot"
+                                      >
+                                        <div
+                                          class="v-input--selection-controls__input"
+                                        >
+                                          <input
+                                            aria-checked="true"
+                                            role="checkbox"
+                                            type="checkbox"
+                                            value=""
+                                          />
+                                          <div
+                                            class="v-input--selection-controls__ripple primary--text"
+                                          />
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light primary--text"
+                                          >
+                                            check_box
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="v-messages theme--light"
+                                      >
+                                        <div
+                                          class="v-messages__wrapper"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Customer Review
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              class="primary--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              >
+                                <div
+                                  class="v-list__tile__action"
+                                >
+                                  <div
+                                    class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                  >
+                                    <div
+                                      class="v-input__control"
+                                    >
+                                      <div
+                                        class="v-input__slot"
+                                      >
+                                        <div
+                                          class="v-input--selection-controls__input"
+                                        >
+                                          <input
+                                            aria-checked="true"
+                                            role="checkbox"
+                                            type="checkbox"
+                                            value=""
+                                          />
+                                          <div
+                                            class="v-input--selection-controls__ripple primary--text"
+                                          />
+                                          <i
+                                            aria-hidden="true"
+                                            class="v-icon material-icons theme--light primary--text"
+                                          >
+                                            check_box
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="v-messages theme--light"
+                                      >
+                                        <div
+                                          class="v-messages__wrapper"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Fleet Member Contracts
                                   </div>
                                 </div>
                               </a>
@@ -445,7 +685,7 @@ exports[`FilterSorterForCalendar Snapshots defaults 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    Past
+                                    Cancelled
                                   </div>
                                 </div>
                               </a>
@@ -505,7 +745,7 @@ exports[`FilterSorterForCalendar Snapshots defaults 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    Cancelled
+                                    Past
                                   </div>
                                 </div>
                               </a>

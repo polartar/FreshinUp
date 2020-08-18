@@ -271,7 +271,7 @@ exports[`Assigned Events component Snapshots events set 1`] = `
                 class="select-td"
               >
                 <span
-                  class="v-btn v-btn--disabled accent accenttext--text"
+                  class="v-btn v-btn--disabled grey greytext--text"
                 >
                   Draft
                 </span>
@@ -349,7 +349,7 @@ exports[`Assigned Events component Snapshots events set 1`] = `
                 <span
                   class="v-btn v-btn--disabled warning warningtext--text"
                 >
-                  Pending
+                  FF Initial Review
                 </span>
               </td>
                
@@ -423,9 +423,9 @@ exports[`Assigned Events component Snapshots events set 1`] = `
                 class="select-td"
               >
                 <span
-                  class="v-btn v-btn--disabled success successtext--text"
+                  class="v-btn v-btn--disabled warning warningtext--text"
                 >
-                  Confirmed
+                  Customer Agreement
                 </span>
               </td>
                
@@ -499,9 +499,9 @@ exports[`Assigned Events component Snapshots events set 1`] = `
                 class="select-td"
               >
                 <span
-                  class="v-btn v-btn--disabled secondary secondarytext--text"
+                  class="v-btn v-btn--disabled warning warningtext--text"
                 >
-                  Past
+                  Fleet Member Selection
                 </span>
               </td>
                
@@ -575,9 +575,9 @@ exports[`Assigned Events component Snapshots events set 1`] = `
                 class="select-td"
               >
                 <span
-                  class="v-btn v-btn--disabled accent accenttext--text"
+                  class="v-btn v-btn--disabled warning warningtext--text"
                 >
-                  Cancelled
+                  Customer Review
                 </span>
               </td>
                

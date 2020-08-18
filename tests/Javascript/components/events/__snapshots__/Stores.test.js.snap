@@ -1136,7 +1136,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="v-menu"
                       >
                         <button
-                          class="v-btn theme--dark grey grey-text--text"
+                          class="v-btn theme--dark accent accent-text--text"
                           type="button"
                         >
                           <div
@@ -1426,7 +1426,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="v-menu"
                       >
                         <button
-                          class="v-btn theme--dark grey grey-text--text"
+                          class="v-btn theme--dark accent accent-text--text"
                           type="button"
                         >
                           <div
@@ -1728,7 +1728,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="v-menu"
                       >
                         <button
-                          class="v-btn theme--dark grey grey-text--text"
+                          class="v-btn theme--dark accent accent-text--text"
                           type="button"
                         >
                           <div
