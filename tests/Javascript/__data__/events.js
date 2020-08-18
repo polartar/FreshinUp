@@ -21,16 +21,7 @@ export const FIXTURE_EVENTS = [
       uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
       name: 'New Hattie'
     },
-    event_tags: [
-      {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
-        name: 'minus'
-      },
-      {
-        uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
-        name: 'hic'
-      }
-    ],
+
     host: {
       id: 89,
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
@@ -65,16 +56,6 @@ export const FIXTURE_EVENTS = [
       uuid: '4d6ace0e-5f3f-423a-ab47-648a142ba450',
       name: 'Baronhaven'
     },
-    event_tags: [
-      {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
-        name: 'minus'
-      },
-      {
-        uuid: 'dd6dccb2-424e-4f0c-8c36-3bf75b5f7cb0',
-        name: 'sit'
-      }
-    ],
     host: {
       id: 96,
       uuid: '5d3e79a3-81aa-4645-b1fd-c6173026e01f',
@@ -84,8 +65,11 @@ export const FIXTURE_EVENTS = [
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
-    type_id: 1,
-    type: { id: 1, name: 'Catering' }
+    type_id: 2,
+    type: {
+      id: 2,
+      name: 'Cash and Carry'
+    }
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
@@ -109,16 +93,6 @@ export const FIXTURE_EVENTS = [
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
     },
-    event_tags: [
-      {
-        uuid: 'ff4b2b90-ad3a-41a5-aeaf-6cade3854674',
-        name: 'minus'
-      },
-      {
-        uuid: 'f05ef6a0-b149-40d1-a571-bc725ea9cf7a',
-        name: 'hic'
-      }
-    ],
     host: {
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
@@ -153,28 +127,14 @@ export const FIXTURE_EVENTS = [
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
     },
-    event_tags: [
-      {
-        uuid: '1',
-        name: 'minus'
-      },
-      {
-        uuid: '2',
-        name: 'hic'
-      },
-      {
-        uuid: '3',
-        name: 'acsfdd'
-      },
-      {
-        uuid: '4',
-        name: 'fsdf'
-      }
-    ],
     host: {
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
       name: 'Carter-Green'
+    },
+    type: {
+      id: 2,
+      name: 'Cash and Carry'
     }
   },
   {
@@ -199,24 +159,7 @@ export const FIXTURE_EVENTS = [
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
     },
-    event_tags: [
-      {
-        uuid: '1',
-        name: 'minus'
-      },
-      {
-        uuid: '2',
-        name: 'hic'
-      },
-      {
-        uuid: '3',
-        name: 'acsfdd'
-      },
-      {
-        uuid: '4',
-        name: 'fsdf'
-      }
-    ],
+
     host: {
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',

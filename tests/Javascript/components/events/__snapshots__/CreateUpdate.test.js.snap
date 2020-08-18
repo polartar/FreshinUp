@@ -9771,7 +9771,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Tags
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-select--chips v-autocomplete v-input--is-label-active v-input--is-dirty theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-select--chips v-autocomplete theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -9782,29 +9782,16 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="v-select__slot"
                             >
+                              <label
+                                aria-hidden="true"
+                                class="v-label theme--light"
+                                style="left: 0px; position: absolute;"
+                              >
+                                Enter a tag and hit enter
+                              </label>
                               <div
                                 class="v-select__selections"
                               >
-                                <span
-                                  class="v-chip v-chip--select-multi theme--light"
-                                  tabindex="-1"
-                                >
-                                  <span
-                                    class="v-chip__content"
-                                  >
-                                    minus
-                                  </span>
-                                </span>
-                                <span
-                                  class="v-chip v-chip--select-multi theme--light"
-                                  tabindex="-1"
-                                >
-                                  <span
-                                    class="v-chip__content"
-                                  >
-                                    hic
-                                  </span>
-                                </span>
                                 <input
                                   aria-label="Enter a tag and hit enter"
                                   autocomplete="off"
@@ -9816,14 +9803,12 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 class="v-input__append-inner"
                               >
                                 <div
-                                  class="v-input__icon v-input__icon--clear"
+                                  class="v-input__icon v-input__icon--"
                                 >
                                   <i
                                     aria-hidden="true"
                                     class="v-icon v-icon--link material-icons theme--light"
-                                  >
-                                    clear
-                                  </i>
+                                  />
                                 </div>
                               </div>
                               <div

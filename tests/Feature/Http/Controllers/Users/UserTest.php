@@ -1,16 +1,13 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\CSM\Users;
+namespace Tests\Feature\Http\Controllers\Users;
 
-use App\Models\CSM\Branch;
-use App\Models\CSM\Company;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Carbon;
 
 class UserTest extends TestCase
 {
@@ -59,7 +56,7 @@ class UserTest extends TestCase
         $this
             ->json(
                 'put',
-                'api/users/' . $user2->id,
+                'api/users/'.$user2->id,
                 $data
             )
             ->assertStatus(200)

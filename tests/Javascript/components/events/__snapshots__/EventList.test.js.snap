@@ -832,33 +832,10 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </td>
            
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        hic
-      
-              </span>
-            </span>
+          <td>
+            
+      Catering
+    
           </td>
            
           <td>
@@ -1163,33 +1140,10 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </td>
            
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        sit
-      
-              </span>
-            </span>
+          <td>
+            
+      Cash and Carry
+    
           </td>
            
           <td>
@@ -1494,33 +1448,10 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </td>
            
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        hic
-      
-              </span>
-            </span>
+          <td>
+            
+      Catering
+    
           </td>
            
           <td>
@@ -1825,57 +1756,10 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </td>
            
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        hic
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        acsfdd
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        fsdf
-      
-              </span>
-            </span>
+          <td>
+            
+      Cash and Carry
+    
           </td>
            
           <td>
@@ -2180,57 +2064,10 @@ exports[`Event List component Snapshots events set 1`] = `
             </div>
           </td>
            
-          <td
-            class="tag-td"
-          >
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        minus
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        hic
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        acsfdd
-      
-              </span>
-            </span>
-            <span
-              class="v-chip theme--light secondary secondary-text--text"
-              tabindex="0"
-            >
-              <span
-                class="v-chip__content"
-              >
-                
-        fsdf
-      
-              </span>
-            </span>
+          <td>
+            
+      Cash and carry
+    
           </td>
            
           <td>
