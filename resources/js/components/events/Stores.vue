@@ -45,6 +45,7 @@
           </v-card-title>
           <hr>
           <add-store
+            :statuses="statuses"
             :members="stores"
             :event="event"
             class="mb-2"

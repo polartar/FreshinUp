@@ -13,7 +13,19 @@
             style="font-weight: bold; color: lightslategray; outline: 0;"
             @click="toggleShowFilter"
           >
-            {{ showFilters ? 'Hide' : 'Show' }} Filters
+            <span v-if="showFilters">
+              <v-flex>
+                <v-icon small>fa-caret-down</v-icon>
+                Hide Filters
+              </v-flex>
+            </span>
+            <span v-else>
+              <v-flex>
+                <v-icon small>fa-caret-right</v-icon>
+                Show Filters
+              </v-flex>
+            </span>
+
           </button>
         </div>
         <div
@@ -56,7 +68,7 @@
               pr-2
             >
               <v-select
-                v-model="selectedTag"
+                v-model="selectedTags"
                 :items="tags"
                 item-value="uuid"
                 item-text="name"
@@ -88,7 +100,7 @@
       <v-data-table
         v-model="selected"
         :headers="headers"
-        :items="filteredMembers"
+        :items="members"
         :search="searchText"
         item-key="uuid"
         hide-actions
@@ -109,25 +121,24 @@
           >
             <router-link
               class="primary--text"
-              style="font-size: 18px;"
               :to="{ path: '/admin/fleet-members/'}"
               target="_blank"
             >
-              {{ props.item.name }}
+              {{ get(props, 'item.name') }}
             </router-link>
             <div
               class="grey--text text--darken-2"
             >
-              {{ props.item.type.name }}
+              {{ get(props, 'item.type.name') }}
             </div>
           </td>
           <td class="py-2">
-            {{ props.item.location.name }}
+            {{ get(props, 'item.location.name') }}
           </td>
           <td class="py-2">
             <div>
               <v-chip
-                v-for="(tag, index) of props.item.store_tags"
+                v-for="(tag, index) of get(props, 'item.store_tags', [])"
                 :key="index"
                 color="secondary"
                 text-color="white"
@@ -161,6 +172,11 @@
 
 import _unionBy from 'lodash/unionBy'
 import _uniqBy from 'lodash/uniqBy'
+import get from 'lodash/get'
+
+export const DocumentStatus = {
+  EXPIRED: 5
+}
 
 export default {
   props: {
@@ -190,7 +206,7 @@ export default {
       searchText: '',
       selectedState: '',
       selectedType: '',
-      selectedTag: [],
+      selectedTags: [],
       pagination: {
         rowsPerPage: 5,
         page: 1
@@ -226,11 +242,11 @@ export default {
         items = items.filter(i => i['type']['id'] === this.selectedType)
       }
 
-      if (this.selectedTag.length) {
+      if (this.selectedTags.length) {
         items = items.filter(
           i => i['store_tags']
             .map(t => t['uuid'])
-            .some(id => this.selectedTag.includes(id))
+            .some(id => this.selectedTags.includes(id))
         )
       }
 
@@ -247,6 +263,7 @@ export default {
         uuid: '',
         name: 'All locations'
       }
+      return [ def ]
       return _uniqBy([def, ...this.filteredMembers.map(m => m.location)], 'uuid')
     },
 
@@ -255,6 +272,7 @@ export default {
         uuid: '',
         name: 'All tags'
       }
+      return [ def ]
       return _unionBy(def, ...this.filteredMembers.map(m => m['store_tags']), 'uuid')
     },
 
@@ -263,6 +281,7 @@ export default {
         id: 0,
         name: 'All types'
       }
+      return [ def ]
       return _uniqBy([def, ...this.filteredMembers.map(m => m.type)], 'id')
     },
 
@@ -270,10 +289,11 @@ export default {
     expired status is : { value: 5, text: 'Expired' }
     * */
     expiredDocs () {
-      return this.docs.filter(d => d['status'] === 5)
+      return this.docs.filter(d => d['status'] === DocumentStatus.EXPIRED)
     }
   },
   methods: {
+    get,
     toggleShowFilter () {
       this.showFilters = !this.showFilters
     },
@@ -281,7 +301,7 @@ export default {
     clearAllFilters () {
       this.selectedState = ''
       this.selectedType = ''
-      this.selectedTag = []
+      this.selectedTags = []
     },
 
     manageButtonLabel (item) {

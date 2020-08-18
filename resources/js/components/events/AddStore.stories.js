@@ -92,10 +92,6 @@ const stores = [
 storiesOf('FoodFleet|event/AddStore', module)
   .add('empty', () => ({
     components: { AddStore },
-    data () {
-      return {}
-    },
-    methods: {},
     template: `
       <v-container>
         <add-store />
@@ -109,7 +105,6 @@ storiesOf('FoodFleet|event/AddStore', module)
         stores: stores
       }
     },
-    methods: {},
     template: `
       <v-container>
         <add-store :members="stores"/>
