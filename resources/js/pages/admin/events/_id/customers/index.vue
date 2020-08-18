@@ -31,9 +31,10 @@
         sm2
         xs12
       >
-        <status-select
+        <f-btn-status
+          label-prop="name"
           :value="status"
-          :options="statuses"
+          :items="statuses"
         />
       </v-flex>
     </v-layout>
@@ -113,16 +114,16 @@
 <script>
 import { get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
-import StatusSelect from '~/components/events/StatusSelect'
 import CustomerSummary from '~/components/events/CustomerSummary'
 import FinancialSummary from '~/components/events/FinancialSummary'
 import DocumentSection from '~/components/events/DocumentSection'
 import Messages from '~/components/events/Messages'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 
 export default {
   layout: 'admin',
   components: {
-    StatusSelect,
+    FBtnStatus,
     CustomerSummary,
     FinancialSummary,
     DocumentSection,

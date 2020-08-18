@@ -12,6 +12,7 @@ use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\Sort;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Foodfleet\Event as EventResource;
+use App\Enums\EventType as EventTypeEnum;
 use App\Http\Resources\Foodfleet\EventSummary as EventSummaryResource;
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Filters\BelongsToWhereInUuidEquals;
@@ -38,7 +39,7 @@ class Events extends Controller
         $user = $request->user();
         $isAdmin = $user->isAdmin();
         $requestFilters = $request->get('filter', []);
-        if (!$isAdmin && $user->type == 1) {
+        if (!$isAdmin && $user->type == EventTypeEnum::CATERING) {
             if (array_key_exists('manager_uuid', $requestFilters)) {
                 $requestFilters['manager_uuid'] = $requestFilters['manager_uuid'] . ',' . $user->uuid;
             } else {
@@ -47,7 +48,7 @@ class Events extends Controller
             $request->query->add(['filter' => $requestFilters]);
         }
 
-        if (!$isAdmin && $user->type == 2) {
+        if (!$isAdmin && $user->type == EventTypeEnum::CASH_AND_CARRY) {
             if (array_key_exists('host_uuid', $requestFilters)) {
                 $requestFilters['host_uuid'] = $requestFilters['host_uuid'] . ',' . $user->uuid;
             } else {
@@ -63,7 +64,8 @@ class Events extends Controller
                 'host',
                 'location.venue',
                 'manager',
-                'event_tags'
+                'event_tags',
+                'type'
             ])
             ->allowedSorts([
                 'name',
@@ -83,6 +85,7 @@ class Events extends Controller
                 Filter::custom('store_uuid', BelongsToManyWhereInUuidEquals::class, 'stores'),
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
+                Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
             ]);
         return EventResource::collection($events->jsonPaginate());
     }
@@ -113,26 +116,31 @@ class Events extends Controller
      */
     public function store(Request $request, CreateEvent $action)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'manager_uuid' => 'string|required|exists:users,uuid',
-            'host_uuid' => 'string|required|exists:companies,uuid',
-            'location_uuid' => 'string|exists:locations,uuid',
-            'status_id' => 'integer|required',
-            'start_at' => 'date|required|after:now',
-            'end_at' => 'date|required|after:start_at',
-            'staff_notes' => 'string',
-            'member_notes' => 'string',
-            'customer_notes' => 'string',
-            'commission_rate' => 'integer|required',
-            'commission_type' => 'integer|required',
-            'schedule.interval_unit' => 'string',
-            'schedule.interval_value' => 'integer',
-            'schedule.occurrences' => 'integer',
-            'schedule.ends_on' => 'string',
-            'schedule.repeat_on' => 'array',
-            'schedule.description' => 'string'
-        ]);
+        if ($request->get('status_id') == EventStatusEnum::DRAFT) {
+            $validationRules = ['name' => 'required'];
+        } else {
+            $validationRules = [
+                'name' => 'required',
+                'manager_uuid' => 'string|required|exists:users,uuid',
+                'host_uuid' => 'string|required|exists:companies,uuid',
+                'location_uuid' => 'string|exists:locations,uuid',
+                'status_id' => 'integer|required',
+                'start_at' => 'date|required|after:now',
+                'end_at' => 'date|required|after:start_at',
+                'staff_notes' => 'string',
+                'member_notes' => 'string',
+                'customer_notes' => 'string',
+                'commission_rate' => 'integer|required',
+                'commission_type' => 'integer|required',
+                'schedule.interval_unit' => 'string',
+                'schedule.interval_value' => 'integer',
+                'schedule.occurrences' => 'integer',
+                'schedule.ends_on' => 'string',
+                'schedule.repeat_on' => 'array',
+                'schedule.description' => 'string'
+            ];
+        }
+        $this->validate($request, $validationRules);
 
         $inputs = $request->input();
         $event = $action->execute($inputs);

@@ -7,10 +7,14 @@ use BenSampo\Enum\Enum;
 final class EventStatus extends Enum
 {
     const DRAFT = 1;
-    const PENDING = 2;
-    const CONFIRMED = 3;
-    const PAST = 4;
-    const CANCELLED = 5;
+    const FF_INITIAL_REVIEW = 2;
+    const CUSTOMER_AGREEMENT = 3;
+    const FLEET_MEMBER_SELECTION = 4;
+    const CUSTOMER_REVIEW = 5;
+    const FLEET_MEMBER_CONTRACTS = 6;
+    const CONFIRMED = 7;
+    const CANCELLED = 8;
+    const PAST = 9;
 
     public static function toKeyedSelectArray()
     {

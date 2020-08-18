@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
+use App\Enums\EventType as EventTypeEnum;
+use App\Models\Foodfleet\EventType;
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
@@ -110,6 +112,68 @@ class EventTest extends TestCase
             'uuid' => $event->uuid,
             'name' => $event->name
         ], $data[0]);
+    }
+
+    public function testGetListFilteredByType()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        factory(Event::class, 5)->create([
+            'type_id' => EventTypeEnum::CASH_AND_CARRY
+        ]);
+        $eventsToFind = factory(Event::class, 3)->create([
+            'type_id' => EventTypeEnum::CATERING
+        ]);
+
+        $response = $this
+            ->json('GET', "/api/foodfleet/events?filter[type_id]=" . EventTypeEnum::CATERING)
+            ->assertStatus(200);
+        $this->assertNotExceptionResponse($response);
+        $data = $response
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(3, count($data));
+        foreach ($eventsToFind as $index => $event) {
+            $this->assertArraySubset([
+                'uuid' => $event->uuid,
+                'name' => $event->name
+            ], $data[$index]);
+        }
+    }
+
+    public function testGetListIncludingType()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $events = factory(Event::class, 5)->create();
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/events?include=type")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+        foreach ($events as $index => $event) {
+            $e = EventType::find($event->type_id);
+            $this->assertArraySubset([
+                'uuid' => $event->uuid,
+                'name' => $event->name,
+                'type' => [
+                    'id' => $e->id,
+                    'name' => $e->name
+                ]
+            ], $data[$index]);
+        }
     }
 
     public function testGetListWithHostUuidFilter()
@@ -657,6 +721,48 @@ class EventTest extends TestCase
             'First Monday on each following month, util December 13th, 2020',
             $returnedEvent['schedule']['description']
         );
+    }
+
+    public function testCreatedDraftItem()
+    {
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+
+        Passport::actingAs($admin);
+
+        $data = $this
+            ->json('POST', 'api/foodfleet/events', [
+                'name' => 'test event',
+                'status_id' => 1
+            ])
+            ->assertStatus(201)
+            ->json('data');
+
+        $url = 'api/foodfleet/events/' . $data['uuid'];
+        $returnedEvent = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+        $expectations = $data;
+        $this->assertArraySubset([
+            'uuid' => $returnedEvent['uuid'],
+            'status_id' => $returnedEvent['status_id'],
+            'name' => $returnedEvent['name'],
+            'host_status' => 1,
+            'start_at' => null,
+            'end_at' => null,
+            'staff_notes' => null,
+            'member_notes' => null,
+            'customer_notes' => null,
+            'budget' => null,
+            'attendees' => null,
+            'commission_rate' => null,
+            'commission_type' => 1,
+            'type' => null,
+            'manager_uuid' => null,
+            'host_uuid' => null,
+            'location_uuid' => null
+        ], $expectations);
     }
 
     public function testUpdateItem()

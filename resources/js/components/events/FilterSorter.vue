@@ -34,7 +34,7 @@
               <clear-button
                 v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="filters.status_id = null;"
+                @clear="filters.status_id = null"
               />
             </v-layout>
             <multi-select
@@ -149,30 +149,28 @@
             <v-layout
               row
               justify-space-between
+              align-center
               mb-2
             >
               <filter-label>
-                Tags
+                Types
               </filter-label>
               <clear-button
-                v-if="filters.event_tag_uuid && filters.event_tag_uuid.length > 0"
+                v-if="filters.type_id && filters.type_id.length > 0"
                 color="white"
-                @clear="filters.event_tag_uuid = null; $refs.tag.resetTerm()"
+                @clear="filters.type_id = null"
               />
             </v-layout>
-            <multi-simple
-              ref="tag"
-              v-model="filters.event_tag_uuid"
-              url="foodfleet/event-tags"
-              term-param="filter[name]"
-              results-id-key="uuid"
-              placeholder="Search Tag"
-              background-color="white"
-              class="mt-0 pt-0"
-              height="48"
-              not-clearable
+            <multi-select
+              v-model="filters.type_id"
+              placeholder="Select Type"
+              :items="types"
+              item-value="id"
+              item-text="name"
+              select-all-name="All Types"
               solo
               flat
+              hide-details
             />
           </v-flex>
         </v-layout>
@@ -189,6 +187,7 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
+
 export default {
   components: {
     MultiSimple,
@@ -205,12 +204,16 @@ export default {
         status_id: null,
         host_uuid: null,
         manager_uuid: null,
-        event_tag_uuid: null,
+        type_id: null,
         start_at: null,
         end_at: null
       })
     },
     statuses: {
+      type: Array,
+      default: () => []
+    },
+    types: {
       type: Array,
       default: () => []
     },
@@ -245,9 +248,6 @@ export default {
       if (this.filters.manager_uuid) {
         finalParams.manager_uuid = this.filters.manager_uuid.map(item => item.uuid)
       }
-      if (this.filters.event_tag_uuid) {
-        finalParams.event_tag_uuid = this.filters.event_tag_uuid.map(item => item.uuid)
-      }
       this.$emit('runFilter', finalParams)
     },
     changeDate () {
@@ -255,10 +255,15 @@ export default {
       this.filters.end_at = this.rangeDate ? this.rangeDate.end : null
     },
     clearFilters (params) {
-      this.$refs.tag.resetTerm()
       this.$refs.host.resetTerm()
       this.$refs.manager.resetTerm()
-      this.filters.status_id = this.filters.host_uuid = this.filters.manager_uuid = this.filters.event_tag_uuid = this.filters.start_at = this.filters.end_at = this.rangeDate = null
+      this.filters.status_id = null
+      this.filters.host_uuid = null
+      this.filters.manager_uuid = null
+      this.filters.type_id = null
+      this.filters.start_at = null
+      this.filters.end_at = null
+      this.rangeDate = null
     }
   }
 }

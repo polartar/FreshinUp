@@ -20,17 +20,50 @@ describe('event/BasicInformation', () => {
     test('event set', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
-        event: FIXTURE_EVENTS[0]
+        propsData: {
+          event: FIXTURE_EVENTS[0]
+        }
       })
       expect(wrapper.element).toMatchSnapshot()
     })
     test('event set and read-only', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
-        event: FIXTURE_EVENTS[0],
-        readOnly: true
+        propsData: {
+          event: FIXTURE_EVENTS[0],
+          readOnly: true
+        }
       })
       expect(wrapper.element).toMatchSnapshot()
+    })
+    test('event as draft', async (done) => {
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          event: { name: 'Some random name', status_id: 1 }
+        }
+      })
+      await wrapper.vm.$nextTick()
+      expect(await wrapper.vm.$validator.validateAll()).toBe(true)
+      expect(wrapper.element).toMatchSnapshot()
+
+      wrapper.setProps({
+        event: { status_id: 2 }
+      })
+      await wrapper.vm.$nextTick()
+      expect(await wrapper.vm.$validator.validateAll()).toBe(false)
+      done()
+    })
+    test('event as no draft', async (done) => {
+      const wrapper = mount(Component, {
+        localVue: localVue,
+        propsData: {
+          event: { ...FIXTURE_EVENTS[0], status_id: 2 }
+        }
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+      done()
     })
   })
   describe('Methods', () => {

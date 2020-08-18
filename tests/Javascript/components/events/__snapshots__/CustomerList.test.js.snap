@@ -198,7 +198,7 @@ exports[`Customer list component Snapshots 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark grey grey-text--text"
+                class="v-btn theme--dark warning warning-text--text"
                 type="button"
               >
                 <div

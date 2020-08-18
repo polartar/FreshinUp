@@ -7,7 +7,6 @@ import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/ev
 import AssignedEvents from './AssignedEvents.vue'
 
 const events = FIXTURE_EVENTS
-
 const statuses = FIXTURE_EVENT_STATUSES
 
 storiesOf('FoodFleet|events/AssignedEvents', module)

@@ -40,7 +40,8 @@ export const FIXTURE_EVENTS = [
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
-    type: 1
+    type_id: 1,
+    type: { id: 1, name: 'Catering' }
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
@@ -83,7 +84,8 @@ export const FIXTURE_EVENTS = [
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
-    type: 1
+    type_id: 1,
+    type: { id: 1, name: 'Catering' }
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
@@ -126,7 +128,8 @@ export const FIXTURE_EVENTS = [
     budget: 1000,
     commission_rate: 12,
     commission_type: 2,
-    type: 1
+    type_id: 1,
+    type: { id: 1, name: 'Catering' }
   },
   {
     uuid: '790aba97-1eb6-5630-82d9-7bd561256c67',
@@ -218,6 +221,8 @@ export const FIXTURE_EVENTS = [
       id: 94,
       uuid: '77f3a8af-450f-4505-889f-a705cf720b3a',
       name: 'Carter-Green'
-    }
+    },
+    type_id: 2,
+    type: { id: 2, name: 'Cash and carry' }
   }
 ]
