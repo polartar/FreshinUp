@@ -1,4 +1,5 @@
 <script>
+// TODO: should be replace with @freshinup/core-ui/src/components/FBtnStatus on version >= 1.54.0
 import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 export default {
   extends: FBtnStatus,
@@ -9,20 +10,17 @@ export default {
     },
     options: {
       type: Array,
-      required: true
+      required: true,
+      default: () => ([])
     }
   },
   computed: {
     items () {
-      // Why don't we just use FBtnStatus' ability to change the "options" data via the props
-      const color = ['grey', 'warning', 'success', 'secondary', 'grey']
-      return this.options.map(item => {
-        return {
-          id: item.id,
-          label: item.name,
-          color: color[item.id - 1]
-        }
-      })
+      return this.options.map(option => ({
+        label: option.name,
+        id: option.id,
+        color: option.color
+      }))
     }
   }
 }

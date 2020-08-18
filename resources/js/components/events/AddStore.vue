@@ -25,7 +25,6 @@
                 Show Filters
               </v-flex>
             </span>
-
           </button>
         </div>
         <div

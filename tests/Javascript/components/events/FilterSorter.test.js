@@ -82,10 +82,11 @@ describe('FilterSorter', () => {
       wrapper.vm.clearFilters({})
       expect(wrapper.vm.filters.host_uuid).toBeNull()
       expect(wrapper.vm.filters.manager_uuid).toBeNull()
-      expect(wrapper.vm.filters.event_tag_uuid).toBeNull()
+      expect(wrapper.vm.filters.type_id).toBeNull()
       expect(wrapper.vm.filters.start_at).toBeNull()
       expect(wrapper.vm.filters.end_at).toBeNull()
       expect(wrapper.vm.filters.status_id).toBeNull()
+      expect(wrapper.vm.filters.type_id).toBeNull()
     })
 
     test('run function emitted runFilter', () => {
@@ -97,7 +98,7 @@ describe('FilterSorter', () => {
             status_id: [ 1, 2 ],
             host_uuid: [ { uuid: 1 } ],
             manager_uuid: [ { uuid: 2 } ],
-            event_tag_uuid: [ { uuid: 3 } ],
+            type_id: [ 2 ],
             start_at: '2020-09-18',
             end_at: '2020-09-20'
           }
@@ -109,7 +110,7 @@ describe('FilterSorter', () => {
       expect(runParams['status_id']).toEqual([ 1, 2 ])
       expect(runParams['host_uuid']).toEqual([ 1 ])
       expect(runParams['manager_uuid']).toEqual([ 2 ])
-      expect(runParams['event_tag_uuid']).toEqual([ 3 ])
+      expect(runParams['type_id']).toEqual([ 2 ])
       expect(runParams['start_at']).toEqual('2020-09-18')
       expect(runParams['end_at']).toEqual('2020-09-20')
     })

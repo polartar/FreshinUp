@@ -20,6 +20,7 @@ class Event extends JsonResource
     public function toArray($request)
     {
         return [
+            "id" => $this->id,
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status_id" => $this->status_id,
@@ -42,7 +43,10 @@ class Event extends JsonResource
             'commission_type' => $this->commission_type,
             'type' => $this->type,
             "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at
+            "updated_at" => $this->updated_at,
+            'location_uuid' => $this->location_uuid,
+            'host_uuid' => $this->host_uuid,
+            'manager_uuid' => $this->manager_uuid,
         ];
     }
 }

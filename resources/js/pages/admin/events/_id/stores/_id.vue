@@ -29,9 +29,10 @@
         sm2
         xs12
       >
-        <status-select
+        <f-btn-status
+          label-prop="name"
           :value="status_id"
-          :options="storeStatusesOptions"
+          :items="storeStatusesOptions"
         />
       </v-flex>
     </v-layout>
@@ -142,17 +143,17 @@
 <script>
 import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
-import StatusSelect from '~/components/events/StatusSelect'
 import Menus from '~/components/events/Menus.vue'
 import DocumentSection from '~/components/events/DocumentSection.vue'
 import Messages from '~/components/events/Messages.vue'
 import StoreSummary from '~/components/events/StoreSummary.vue'
 import StoreServiceSummary from '~/components/events/StoreServiceSummary.vue'
+import FBtnStatus from 'fresh-bus/components/ui/FBtnStatus'
 
 export default {
   layout: 'admin',
   components: {
-    StatusSelect,
+    FBtnStatus,
     Menus,
     DocumentSection,
     Messages,

@@ -59,6 +59,7 @@ exports[`Admin Events Page Mount snapshot 1`] = `
   <filter-sorter-stub
     filters="[object Object]"
     statuses=""
+    types=""
   />
    
   <event-list-stub

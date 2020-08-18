@@ -31,7 +31,7 @@
                 Event Name
                 <v-text-field
                   v-model="eventData.name"
-                  v-validate="'required|max:255'"
+                  v-validate="isDraft ? '' : 'required|max:255'"
                   solo
                   :counter="255"
                   data-vv-name="name"
@@ -46,11 +46,11 @@
               >
                 Event type
                 <v-select
-                  v-model="eventData.type"
-                  v-validate="'required'"
+                  v-model="eventData.type_id"
+                  v-validate="allRequired"
                   :items="eventTypes"
-                  data-vv-name="type"
-                  :error-messages="errors.collect('type')"
+                  data-vv-name="type_id"
+                  :error-messages="errors.collect('type_id')"
                   item-value="id"
                   item-text="label"
                   solo
@@ -119,7 +119,7 @@
                 Budget
                 <v-text-field
                   v-model="eventData.budget"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -135,7 +135,7 @@
                 Attendees
                 <v-text-field
                   v-model="eventData.attendees"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -151,7 +151,7 @@
                 Commission Rate
                 <v-text-field
                   v-model="eventData.commission_rate"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   type="number"
                   :disabled="readOnly"
                   solo
@@ -207,9 +207,9 @@
                 Start Date and Time
                 <vue-ctk-date-time-picker
                   v-model="eventData.start_at"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   data-vv-name="start_at"
-                  required
+                  :required="!isDraft"
                   :error-messages="errors.collect('start_at')"
                   format="YYYY-MM-DD hh:mm"
                   formatted="dddd, MMMM D YYYY • h:mma"
@@ -227,9 +227,9 @@
                 End Date and Time
                 <vue-ctk-date-time-picker
                   v-model="eventData.end_at"
-                  v-validate="'required'"
+                  v-validate="allRequired"
                   data-vv-name="end_at"
-                  required
+                  :required="!isDraft"
                   :error-messages="errors.collect('end_at')"
                   format="YYYY-MM-DD hh:mm"
                   formatted="dddd, MMMM D YYYY • h:mma"
@@ -278,17 +278,7 @@
             <v-layout
               row
               wrap
-            >
-              <v-flex
-                :pr-3="$vuetify.breakpoint.mdAndUp"
-              >
-                <event-settings-modal
-                  :schedule="eventData.schedule"
-                  @is-checked="isCheckRecurringEvent"
-                  @save="eventSettingsSave"
-                />
-              </v-flex>
-            </v-layout>
+            />
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -300,6 +290,7 @@
           Cancel
         </v-btn>
         <v-btn
+          class="ff-basicInformation__submit-btn"
           color="primary"
           :disabled="readOnly || !isValid"
           @click="whenValid(save)"
@@ -324,10 +315,9 @@ import Simple from 'fresh-bus/components/search/simple'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import EventSettingsModal from '~/components/events/EventSettingsModal.vue'
 
 export default {
-  components: { Simple, VueCtkDateTimePicker, EventSettingsModal },
+  components: { Simple, VueCtkDateTimePicker },
   mixins: [
     Validate
   ],
@@ -352,15 +342,17 @@ export default {
         attendees: edit ? get(this.event, 'attendees') : null,
         commission_rate: edit ? get(this.event, 'commission_rate') : 5,
         commission_type: edit ? get(this.event, 'commission_type') : 1,
-        type: edit ? get(this.event, 'type') : 1,
+        type_id: edit ? get(this.event, 'type_id') : 1,
         event_tags: edit ? get(this.event, 'event_tags') : [],
         start_at: edit ? get(this.event, 'start_at') : null,
         end_at: edit ? get(this.event, 'end_at') : null,
         schedule: edit ? get(this.event, 'schedule') : null,
-        event_recurring_checked: null,
+        event_recurring_checked: null, // TODO: should be a simple boolean
         staff_notes: edit ? get(this.event, 'staff_notes') : null,
         member_notes: edit ? get(this.event, 'member_notes') : null,
-        customer_notes: edit ? get(this.event, 'customer_notes') : null
+        customer_notes: edit ? get(this.event, 'customer_notes') : null,
+        status_id: edit ? get(this.event, 'status_id') : null,
+        host_status: edit ? get(this.event, 'host_status') : null
       },
       edit: edit,
       commissionTypes: [
@@ -371,6 +363,14 @@ export default {
         { id: 1, label: 'Catering' },
         { id: 2, label: 'Cash and Carry' }
       ]
+    }
+  },
+  computed: {
+    isDraft: function () {
+      return get(this.event, 'status_id') === 1
+    },
+    allRequired: function () {
+      return this.isDraft ? '' : 'required'
     }
   },
   watch: {
@@ -386,6 +386,7 @@ export default {
       this.$emit('cancel')
     },
     isCheckRecurringEvent (checked) {
+      // TODO should be a simple boolean
       this.eventData.event_recurring_checked = 'yes'
       if (!checked) {
         this.eventData.event_recurring_checked = 'no'

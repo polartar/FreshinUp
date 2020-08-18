@@ -6,6 +6,7 @@ import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 import BaseComponent from '~/components/events/CreateUpdate.vue'
 import events from '~/store/modules/events'
 import eventStatuses from '~/store/modules/eventStatuses'
+import { getFileNameCopy } from '../../../../resources/js/components/events/CreateUpdate'
 
 describe('Event CreateUpdate Component', () => {
   let localVue, mock, store
@@ -102,6 +103,12 @@ describe('Event CreateUpdate Component', () => {
 
     afterEach(() => {
       mock.restore()
+    })
+
+    test('getFileNameCopy ', async () => {
+      expect(getFileNameCopy('aliquam')).toEqual('Copy of aliquam (1)')
+      expect(getFileNameCopy('aliquam (1)')).toEqual('Copy of aliquam (2)')
+      expect(getFileNameCopy('aliquam (2)')).toEqual('Copy of aliquam (3)')
     })
 
     test('changeBasicInfo function change event', async () => {
