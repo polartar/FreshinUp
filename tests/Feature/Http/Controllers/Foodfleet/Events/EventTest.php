@@ -17,6 +17,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company;
 use App\Enums\EventStatus as EventStatusEnum;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Artisan;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -116,6 +117,7 @@ class EventTest extends TestCase
 
     public function testGetListFilteredByType()
     {
+        Artisan::call('db:seed');
         $user = factory(User::class)->create();
         Passport::actingAs($user);
 
