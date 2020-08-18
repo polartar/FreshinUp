@@ -12,7 +12,12 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "name" => $faker->word,
-        "type_id" => factory(EventType::class)->create()->id,
+        "type_id" => function () {
+            return factory(EventType::class)->create();
+        },
+        "status_id" => function () {
+            return factory(EventStatus::class)->create();
+        },
         "location_uuid" => factory(Location::class)->create()->uuid,
         "start_at" => $faker->dateTime('now +1 hour'),
         "end_at" => $faker->dateTimeBetween('+1 days', '+2 days'),
@@ -22,7 +27,6 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "host_uuid" => factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create()->uuid,
         "host_status" => $faker->randomNumber(),
         "manager_uuid" => factory(User::class)->create()->uuid,
-        "status_id" => factory(EventStatus::class)->create()->id,
         "budget" => $faker->numberBetween(1000, 100000),
         "attendees" => $faker->numberBetween(),
         "commission_rate" => $faker->randomFloat(0.1, .5),
