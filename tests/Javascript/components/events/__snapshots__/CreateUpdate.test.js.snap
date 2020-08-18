@@ -653,7 +653,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
-                                  data-vv-name="type"
+                                  data-vv-name="type_id"
                                   readonly="readonly"
                                   type="text"
                                 />
@@ -7017,7 +7017,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               </button>
                
               <button
-                class="v-btn theme--light primary"
+                class="ff-basicInformation__submit-btn v-btn theme--light primary"
                 type="button"
               >
                 <div
@@ -9072,7 +9072,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Event type
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
                         role="combobox"
                       >
                         <div
@@ -9087,10 +9087,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                               <div
                                 class="v-select__selections"
                               >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  Catering
+                                </div>
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
-                                  data-vv-name="type"
+                                  data-vv-name="type_id"
                                   readonly="readonly"
                                   type="text"
                                 />
@@ -9125,10 +9130,11 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     role="list"
                                   >
                                     <div
+                                      class="primary--text"
                                       role="listitem"
                                     >
                                       <a
-                                        class="v-list__tile v-list__tile--link theme--light"
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                       >
                                         <div
                                           class="v-list__tile__content"
@@ -9795,7 +9801,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         data-vv-name="start_at"
                         error-messages=""
                         id="DateTimePicker"
-                        required="required"
                       >
                         <div
                           class="field flex align-center has-value lg"
@@ -12627,7 +12632,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         data-vv-name="end_at"
                         error-messages=""
                         id="DateTimePicker"
-                        required="required"
                       >
                         <div
                           class="field flex align-center has-value lg"
@@ -15598,7 +15602,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               </button>
                
               <button
-                class="v-btn theme--light primary"
+                class="ff-basicInformation__submit-btn v-btn theme--light primary"
                 type="button"
               >
                 <div
@@ -16991,14 +16995,14 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="py-3"
                           >
                             <button
-                              class="v-btn theme--dark warning warning-text--text"
+                              class="v-btn theme--dark grey grey-text--text"
                               type="button"
                             >
                               <div
                                 class="v-btn__content"
                               >
                                 
-  FF Initial Review
+  Draft
  
                                 <i
                                   aria-hidden="true"

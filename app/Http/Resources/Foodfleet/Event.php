@@ -43,7 +43,10 @@ class Event extends JsonResource
             'commission_type' => $this->commission_type,
             'type' => $this->type,
             "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at
+            "updated_at" => $this->updated_at,
+            'location_uuid' => $this->location_uuid,
+            'host_uuid' => $this->host_uuid,
+            'manager_uuid' => $this->manager_uuid,
         ];
     }
 }

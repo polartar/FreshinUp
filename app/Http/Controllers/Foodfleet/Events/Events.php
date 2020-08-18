@@ -116,26 +116,31 @@ class Events extends Controller
      */
     public function store(Request $request, CreateEvent $action)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'manager_uuid' => 'string|required|exists:users,uuid',
-            'host_uuid' => 'string|required|exists:companies,uuid',
-            'location_uuid' => 'string|exists:locations,uuid',
-            'status_id' => 'integer|required',
-            'start_at' => 'date|required|after:now',
-            'end_at' => 'date|required|after:start_at',
-            'staff_notes' => 'string',
-            'member_notes' => 'string',
-            'customer_notes' => 'string',
-            'commission_rate' => 'integer|required',
-            'commission_type' => 'integer|required',
-            'schedule.interval_unit' => 'string',
-            'schedule.interval_value' => 'integer',
-            'schedule.occurrences' => 'integer',
-            'schedule.ends_on' => 'string',
-            'schedule.repeat_on' => 'array',
-            'schedule.description' => 'string'
-        ]);
+        if ($request->get('status_id') == EventStatusEnum::DRAFT) {
+            $validationRules = ['name' => 'required'];
+        } else {
+            $validationRules = [
+                'name' => 'required',
+                'manager_uuid' => 'string|required|exists:users,uuid',
+                'host_uuid' => 'string|required|exists:companies,uuid',
+                'location_uuid' => 'string|exists:locations,uuid',
+                'status_id' => 'integer|required',
+                'start_at' => 'date|required|after:now',
+                'end_at' => 'date|required|after:start_at',
+                'staff_notes' => 'string',
+                'member_notes' => 'string',
+                'customer_notes' => 'string',
+                'commission_rate' => 'integer|required',
+                'commission_type' => 'integer|required',
+                'schedule.interval_unit' => 'string',
+                'schedule.interval_value' => 'integer',
+                'schedule.occurrences' => 'integer',
+                'schedule.ends_on' => 'string',
+                'schedule.repeat_on' => 'array',
+                'schedule.description' => 'string'
+            ];
+        }
+        $this->validate($request, $validationRules);
 
         $inputs = $request->input();
         $event = $action->execute($inputs);

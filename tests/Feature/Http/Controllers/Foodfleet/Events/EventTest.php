@@ -723,6 +723,48 @@ class EventTest extends TestCase
         );
     }
 
+    public function testCreatedDraftItem()
+    {
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+
+        Passport::actingAs($admin);
+
+        $data = $this
+            ->json('POST', 'api/foodfleet/events', [
+                'name' => 'test event',
+                'status_id' => 1
+            ])
+            ->assertStatus(201)
+            ->json('data');
+
+        $url = 'api/foodfleet/events/' . $data['uuid'];
+        $returnedEvent = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+        $expectations = $data;
+        $this->assertArraySubset([
+            'uuid' => $returnedEvent['uuid'],
+            'status_id' => $returnedEvent['status_id'],
+            'name' => $returnedEvent['name'],
+            'host_status' => 1,
+            'start_at' => null,
+            'end_at' => null,
+            'staff_notes' => null,
+            'member_notes' => null,
+            'customer_notes' => null,
+            'budget' => null,
+            'attendees' => null,
+            'commission_rate' => null,
+            'commission_type' => 1,
+            'type' => null,
+            'manager_uuid' => null,
+            'host_uuid' => null,
+            'location_uuid' => null
+        ], $expectations);
+    }
+
     public function testUpdateItem()
     {
         $user = factory(User::class)->create();
