@@ -18,7 +18,7 @@
       </v-card-title>
       <v-dialog
         v-model="showNewMemberDialog"
-        max-width="700"
+        max-width="900"
       >
         <v-card>
           <v-card-title class="justify-space-between px-4 py-2">
@@ -44,9 +44,12 @@
             </v-btn>
           </v-card-title>
           <hr>
-          <div class="pa-5">
-            Coming soon
-          </div>
+          <add-store
+            :statuses="statuses"
+            :members="stores"
+            :event="event"
+            class="mb-2"
+          />
         </v-card>
       </v-dialog>
       <hr>
@@ -83,10 +86,13 @@
 <script>
 import StoreList from './StoreList.vue'
 import StoreFilter from './StoreFilter.vue'
+import AddStore from './AddStore'
+
 export default {
   components: {
     StoreList,
-    StoreFilter
+    StoreFilter,
+    AddStore
   },
   props: {
     types: {
@@ -100,6 +106,10 @@ export default {
     stores: {
       type: Array,
       default: () => []
+    },
+    event: {
+      type: Object,
+      default: null
     }
   },
   data () {
