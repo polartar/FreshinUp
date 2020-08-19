@@ -1,4 +1,7 @@
 # Changes
+## August 19, 2020
+- **ADD** Add new fleet member dialog with search feature. [#384](https://github.com/FreshinUp/foodfleet/issues/384)
+
 ## August 18, 2020
 - **FIX** Event page loading indefinitely when event does not exist (404) [#375](https://github.com/FreshinUp/foodfleet/issues/375)
 
