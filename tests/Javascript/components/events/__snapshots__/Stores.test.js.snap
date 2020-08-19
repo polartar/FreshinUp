@@ -935,15 +935,31 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                             class="py-2"
                             nowrap="nowrap"
                           >
-                            <router-link
-                              class="primary--text"
-                              target="_blank"
-                              to="[object Object]"
+                            <div
+                              style="position: relative;"
                             >
-                              
-            Burger Babes
-          
-                            </router-link>
+                              <span
+                                class="v-tooltip v-tooltip--top"
+                              >
+                                <div
+                                  class="v-tooltip__content"
+                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                                >
+                                  
+              View fleet member details (new tab)
+            
+                                </div>
+                                <router-link
+                                  class="primary--text"
+                                  target="_blank"
+                                  to="[object Object]"
+                                >
+                                  
+                  Burger Babes
+                
+                                </router-link>
+                              </span>
+                            </div>
                              
                             <div
                               class="grey--text text--darken-2"
@@ -1051,15 +1067,31 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                             class="py-2"
                             nowrap="nowrap"
                           >
-                            <router-link
-                              class="primary--text"
-                              target="_blank"
-                              to="[object Object]"
+                            <div
+                              style="position: relative;"
                             >
-                              
-            Holy Canoli
-          
-                            </router-link>
+                              <span
+                                class="v-tooltip v-tooltip--top"
+                              >
+                                <div
+                                  class="v-tooltip__content"
+                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                                >
+                                  
+              View fleet member details (new tab)
+            
+                                </div>
+                                <router-link
+                                  class="primary--text"
+                                  target="_blank"
+                                  to="[object Object]"
+                                >
+                                  
+                  Holy Canoli
+                
+                                </router-link>
+                              </span>
+                            </div>
                              
                             <div
                               class="grey--text text--darken-2"
@@ -1179,15 +1211,31 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                             class="py-2"
                             nowrap="nowrap"
                           >
-                            <router-link
-                              class="primary--text"
-                              target="_blank"
-                              to="[object Object]"
+                            <div
+                              style="position: relative;"
                             >
-                              
-            Da Lobsta
-          
-                            </router-link>
+                              <span
+                                class="v-tooltip v-tooltip--top"
+                              >
+                                <div
+                                  class="v-tooltip__content"
+                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                                >
+                                  
+              View fleet member details (new tab)
+            
+                                </div>
+                                <router-link
+                                  class="primary--text"
+                                  target="_blank"
+                                  to="[object Object]"
+                                >
+                                  
+                  Da Lobsta
+                
+                                </router-link>
+                              </span>
+                            </div>
                              
                             <div
                               class="grey--text text--darken-2"
