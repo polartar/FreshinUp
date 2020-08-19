@@ -157,9 +157,150 @@
                 </v-btn>
               </template>
               <v-card>
+                <v-card-title>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h3>Event Status</h3>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="questDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
+                </v-card-title>
                 <v-divider />
                 <v-card-text class="grey--text">
-                  <p>Coming Soon</p>
+                  <v-timeline
+                    align-top
+                    dense
+                  >
+                    <v-timeline-item
+                      color="success"
+                      medium
+                      icon="check_circle"
+                    >
+                      <v-row justify="space-between">
+                        <v-col cols="4">
+                          <strong>Aug. 21</strong>
+                          <div class="caption mb-2">
+                            10:42 AM
+                          </div>
+                        </v-col>
+                        <v-col cols="8">
+                          <strong>Draft: Completed</strong>
+                          <div class="caption">
+                            Event was created in the system and submitted for approval
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+
+                    <v-timeline-item
+                      color="success"
+                      medium
+                      icon="check_circle"
+                    >
+                      <v-row class="pt-1">
+                        <v-col cols="3">
+                          <strong>Aug. 21</strong>
+                          <div class="caption mb-2">
+                            10:57 AM
+                          </div>
+                        </v-col>
+                        <v-col>
+                          <strong>FoodFleet Initial Review: Completed</strong>
+                          <div class="caption">
+                            Food Fleet Staff will review the event request
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                    <v-timeline-item
+                      color="warning lighten-2"
+                      medium
+                    >
+                      <v-row class="pt-1">
+                        <v-col>
+                          <strong>Customer Agreement</strong>
+                          <div class="caption">
+                            Customer will review / sign event agreement and terms
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                    <v-timeline-item
+                      color="grey lighten-2"
+                      medium
+                    >
+                      <v-row class="pt-1">
+                        <v-col>
+                          <strong>Fleet Member Selection</strong>
+                          <div class="caption">
+                            FoodFleet will define event menu and identify interested Fleet
+                            Members and authorize work order
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                    <v-timeline-item
+                      color="grey lighten-2"
+                      medium
+                    >
+                      <v-row class="pt-1">
+                        <v-col>
+                          <strong>Customer Review</strong>
+                          <div class="caption">
+                            Customer will review interested Fleet Members and authorize work order
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                    <v-timeline-item
+                      color="grey lighten-2"
+                      medium
+                    >
+                      <v-row class="pt-1">
+                        <v-col>
+                          <strong>Fleet Member Contracts</strong>
+                          <div class="caption">
+                            Approved Fleet Members will review and sign event contracts
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                    <v-timeline-item
+                      color="grey lighten-2"
+                      medium
+                    >
+                      <v-row class="pt-1">
+                        <v-col>
+                          <strong>Event Confirmation</strong>
+                          <div class="caption">
+                            Customer will review and sign the final event contract
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-timeline-item>
+                  </v-timeline>
                 </v-card-text>
                 <v-divider />
               </v-card>
