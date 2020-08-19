@@ -115,17 +115,19 @@ export default {
     })
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
     vm.$store.dispatch('documents/setFilters', {
       ...vm.$route.query
     })
+    vm.setPageLoading(true)
     Promise.all([
       vm.$store.dispatch('documentStatuses/getItems'),
       vm.$store.dispatch('documentTypes/getItems')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => vm.setPageLoading(false))
   }
 }
 </script>

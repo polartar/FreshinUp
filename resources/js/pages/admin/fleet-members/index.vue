@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import StoreList from '~/components/stores/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
@@ -176,7 +176,7 @@ export default {
         await Promise.all(chunks[i])
         doneCount += chunks[i].length
         this.deleteTempStatus =
-          doneCount + ' / ' + this.deleteTemp.length + ' Done'
+            doneCount + ' / ' + this.deleteTemp.length + ' Done'
         this.deleteTempProgress = (doneCount / this.deleteTemp.length) * 100
         await this.sleep(this.deletablesSleepTime)
       }
@@ -228,7 +228,6 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
-
     Promise.all([
       vm.$store.dispatch('stores/setFilters', {
         ...vm.$route.query
@@ -236,10 +235,12 @@ export default {
       vm.$store.dispatch('storeStatuses/getItems', {
         params: { include: 'tags,addresses' }
       })
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch((error) => console.error(error))
+      .then(() => vm.setPageLoading(false))
   }
 }
 </script>

@@ -135,10 +135,36 @@
           sm2
           xs12
         >
-          <status-select
-            v-model="status_id"
-            :options="statuses"
-          />
+          <v-layout
+            align-center
+          >
+            <status-select
+              v-model="status_id"
+              :options="statuses"
+            />
+            <v-dialog
+              v-model="questDialog"
+              max-width="500"
+            >
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  depressed
+                  fab
+                  color="primary"
+                  @click="questDialog = true"
+                >
+                  <v-icon>far fa-question-circle</v-icon>
+                </v-btn>
+              </template>
+              <v-card>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <p>Coming Soon</p>
+                </v-card-text>
+                <v-divider />
+              </v-card>
+            </v-dialog>
+          </v-layout>
         </v-flex>
       </v-flex>
       <v-divider />
@@ -239,8 +265,10 @@ export default {
   mixins: [Validate],
   data () {
     return {
+      eventLoading: false,
       duplicating: false,
       duplicateDialog: false,
+      questDialog: false,
       duplicate: {
         basicInformation: true,
         venue: false,
@@ -252,13 +280,6 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters('stores', {
-    //   members: 'items',
-    //   memberPagination: 'pagination',
-    //   memberSorting: 'sorting',
-    //   memberSortBy: 'sortBy'
-    // }),
-    ...mapGetters('page', ['isLoading']),
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
@@ -266,6 +287,9 @@ export default {
     ...mapFields('events', [
       'status_id'
     ]),
+    isLoading () {
+      return this.$store.getters['page/isLoading'] || this.eventLoading
+    },
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
     },
@@ -432,30 +456,47 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/events' })
     },
-    changeStatus () {}
+    changeStatus () {},
+    onHelper () {
+      alert('Coming Soon')
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
     const id = to.params.id || 'new'
     let params = { id }
-    let promise = []
+    let promises = []
     if (id !== 'new') {
       params = {
         id,
         include: 'manager,host,event_tags'
       }
-      promise.push(vm.$store.dispatch('storeStatuses/getItems'))
-      promise.push(vm.$store.dispatch('events/stores/getItems', {
+      promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
     }
-    promise.push(vm.$store.dispatch('events/getItem', { params }))
-    promise.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('eventStatuses/getItems'))
 
-    Promise.all(promise).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
+    vm.$store.dispatch('page/setLoading', true)
+    vm.eventLoading = true
+    vm.$store.dispatch('events/getItem', { params })
+      .then()
+      .catch(error => {
+        console.error(error)
+        vm.$router.push({ path: '/admin/events' })
+      })
+      .then(() => {
+        vm.eventLoading = false
+      })
+    Promise.all(promises).then(() => {
       if (next) next()
     })
+      .catch((error) => {
+        console.error(error)
+      })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>
@@ -477,4 +518,5 @@ export default {
   .back-btn-inner .v-icon{
     font-size: 16px;
   }
+
 </style>

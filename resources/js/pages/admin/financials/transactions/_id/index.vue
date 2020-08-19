@@ -106,10 +106,12 @@ export default {
     const uuid = to.params.id
     Promise.all([
       vm.$store.dispatch('transactions/getItem', { params: { id: uuid, include: include } })
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => vm.$store.dispatch('page/setLoading', false))
   }
 }
 </script>
