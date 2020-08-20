@@ -118,13 +118,22 @@
             class="py-2"
             nowrap
           >
-            <router-link
-              class="primary--text"
-              :to="{ path: '/admin/fleet-members/'}"
-              target="_blank"
-            >
-              {{ get(props, 'item.name') }}
-            </router-link>
+            <div style="position: relative;">
+              <v-tooltip top>
+                <template v-slot:activator="{ on, attrs }">
+                  <router-link
+                    class="primary--text"
+                    :to="{ path: '/admin/fleet-members/'}"
+                    target="_blank"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    {{ get(props, 'item.name') }}
+                  </router-link>
+                </template>
+                View fleet member details (new tab)
+              </v-tooltip>
+            </div>
             <div
               class="grey--text text--darken-2"
             >
