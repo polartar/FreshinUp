@@ -194,108 +194,26 @@
                     dense
                   >
                     <v-timeline-item
-                      color="success"
+                      v-for="even in eventStats"
+                      :key="even.id"
+                      :color="even.status ==='Completed' ? 'success' : 'grey lighten-2'"
                       medium
-                      icon="check_circle"
+                      :icon="even.status ==='Completed' ? 'check_circle_outline' : ''"
                     >
                       <v-row justify="space-between">
-                        <v-col cols="4">
-                          <strong>Aug. 21</strong>
+                        <v-col
+                          v-if="even.status === 'Completed' "
+                          cols="4"
+                        >
+                          <strong>{{ formatDate(even.date, 'MMM. DD') }}</strong>
                           <div class="caption mb-2">
-                            10:42 AM
+                            {{ formatDate(even.date, 'hh:mm A') }}
                           </div>
                         </v-col>
                         <v-col cols="8">
-                          <strong>Draft: Completed</strong>
+                          <strong>{{ even.name }}{{ even.status ? ': Completed': '' }}</strong>
                           <div class="caption">
-                            Event was created in the system and submitted for approval
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-
-                    <v-timeline-item
-                      color="success"
-                      medium
-                      icon="check_circle"
-                    >
-                      <v-row class="pt-1">
-                        <v-col cols="3">
-                          <strong>Aug. 21</strong>
-                          <div class="caption mb-2">
-                            10:57 AM
-                          </div>
-                        </v-col>
-                        <v-col>
-                          <strong>FoodFleet Initial Review: Completed</strong>
-                          <div class="caption">
-                            Food Fleet Staff will review the event request
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-                    <v-timeline-item
-                      color="warning lighten-2"
-                      medium
-                    >
-                      <v-row class="pt-1">
-                        <v-col>
-                          <strong>Customer Agreement</strong>
-                          <div class="caption">
-                            Customer will review / sign event agreement and terms
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-                    <v-timeline-item
-                      color="grey lighten-2"
-                      medium
-                    >
-                      <v-row class="pt-1">
-                        <v-col>
-                          <strong>Fleet Member Selection</strong>
-                          <div class="caption">
-                            FoodFleet will define event menu and identify interested Fleet
-                            Members and authorize work order
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-                    <v-timeline-item
-                      color="grey lighten-2"
-                      medium
-                    >
-                      <v-row class="pt-1">
-                        <v-col>
-                          <strong>Customer Review</strong>
-                          <div class="caption">
-                            Customer will review interested Fleet Members and authorize work order
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-                    <v-timeline-item
-                      color="grey lighten-2"
-                      medium
-                    >
-                      <v-row class="pt-1">
-                        <v-col>
-                          <strong>Fleet Member Contracts</strong>
-                          <div class="caption">
-                            Approved Fleet Members will review and sign event contracts
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-timeline-item>
-                    <v-timeline-item
-                      color="grey lighten-2"
-                      medium
-                    >
-                      <v-row class="pt-1">
-                        <v-col>
-                          <strong>Event Confirmation</strong>
-                          <div class="caption">
-                            Customer will review and sign the final event contract
+                            {{ even.description }}
                           </div>
                         </v-col>
                       </v-row>
@@ -376,6 +294,7 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -403,7 +322,7 @@ export default {
     BasicInformation,
     Customers
   },
-  mixins: [Validate],
+  mixins: [Validate, FormatDate],
   data () {
     return {
       eventLoading: false,
@@ -417,7 +336,16 @@ export default {
         customer: true
       },
       isNew: false,
-      types: []
+      types: [],
+      eventStats: [
+        { id: 1, name: 'Draft', status: 'Completed', date: '2020-08-18T21:54:43', description: 'Event was created in the system and submitted for approval' },
+        { id: 2, name: 'FoodFleet Initial Review', status: 'Completed', date: '2020-08-19T21:58:43', description: 'Food Fleet Staff will review the event request' },
+        { id: 3, name: 'Customer Agreement', status: '', date: '', description: 'Customer will review / sign event agreement and terms' },
+        { id: 4, name: 'Fleet Member Selection', status: '', date: '', description: 'FoodFleet will define event menu and identify interested Fleet Members and authorize work order' },
+        { id: 5, name: 'Customer Review', status: '', date: '', description: 'Customer will review interested Fleet Members and authorize work order' },
+        { id: 6, name: 'Fleet Member Contracts', status: '', date: '', description: 'Approved Fleet Members will review and sign event contracts' },
+        { id: 7, name: 'Event Confirmation', status: '', date: '', description: 'Customer will review and sign the final event contract' }
+      ]
     }
   },
   computed: {
