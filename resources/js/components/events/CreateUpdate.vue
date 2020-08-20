@@ -144,7 +144,7 @@
             />
             <v-dialog
               v-model="questDialog"
-              max-width="500"
+              max-width="700"
             >
               <template v-slot:activator="{ on }">
                 <v-btn
@@ -200,23 +200,22 @@
                       medium
                       :icon="even.status ==='Completed' ? 'check_circle_outline' : ''"
                     >
-                      <v-row justify="space-between">
-                        <v-col
-                          v-if="even.status === 'Completed' "
-                          cols="4"
-                        >
-                          <strong>{{ formatDate(even.date, 'MMM. DD') }}</strong>
-                          <div class="caption mb-2">
-                            {{ formatDate(even.date, 'hh:mm A') }}
+                      <div class="d-flex">
+                        <div style="max-width: 100px; min-width: 100px;">
+                          <div v-if="even.status === 'Completed' ">
+                            <strong>{{ formatDate(even.date, 'MMM. DD') }}</strong>
+                            <div class="caption mb-2">
+                              {{ formatDate(even.date, 'hh:mm A') }}
+                            </div>
                           </div>
-                        </v-col>
-                        <v-col cols="8">
+                        </div>
+                        <div>
                           <strong>{{ even.name }}{{ even.status ? ': Completed': '' }}</strong>
                           <div class="caption">
                             {{ even.description }}
                           </div>
-                        </v-col>
-                      </v-row>
+                        </div>
+                      </div>
                     </v-timeline-item>
                   </v-timeline>
                 </v-card-text>
