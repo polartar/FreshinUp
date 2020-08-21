@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 // Components
 import MenuModal from './MenuModal.vue'
 
-storiesOf('FoodFleet|event/MenuModal', module)
+storiesOf('FoodFleet|components/event/MenuModal', module)
   .add('default', () => ({
     components: { MenuModal },
     data () {

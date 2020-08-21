@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import FinancialSummary from './FinancialSummary'
 
-storiesOf('FoodFleet|events/FinancialSummary', module)
+storiesOf('FoodFleet|components/events/FinancialSummary', module)
   .add(
     'data set',
     () => ({

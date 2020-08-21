@@ -151,7 +151,7 @@ const events = [
   }
 ]
 
-storiesOf('FoodFleet|event/EventCalendar', module)
+storiesOf('FoodFleet|components/event/EventCalendar', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

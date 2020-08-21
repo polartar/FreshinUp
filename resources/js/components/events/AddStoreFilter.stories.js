@@ -25,7 +25,7 @@ mock.onGet('foodfleet/locations').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/AddStoreFilter', module)
+storiesOf('FoodFleet|components/event/AddStoreFilter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

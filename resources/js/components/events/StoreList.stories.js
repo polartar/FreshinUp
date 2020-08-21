@@ -113,7 +113,7 @@ let statuses = [
   { id: 4, name: 'Declined' }
 ]
 
-storiesOf('FoodFleet|event/StoreList', module)
+storiesOf('FoodFleet|components/event/StoreList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

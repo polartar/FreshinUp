@@ -89,7 +89,7 @@ const stores = [
   }
 ]
 
-storiesOf('FoodFleet|event/AddStore', module)
+storiesOf('FoodFleet|components/event/AddStore', module)
   .add('empty', () => ({
     components: { AddStore },
     template: `

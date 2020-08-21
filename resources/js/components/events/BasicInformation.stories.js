@@ -61,7 +61,7 @@ const event = {
   type: 1
 }
 
-storiesOf('FoodFleet|events/BasicInformation', module)
+storiesOf('FoodFleet|components/events/BasicInformation', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

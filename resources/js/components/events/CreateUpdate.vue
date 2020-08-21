@@ -156,71 +156,7 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <v-card>
-                <v-card-title>
-                  <v-layout
-                    row
-                    space-between
-                    align-center
-                  >
-                    <v-flex>
-                      <h3>Event Status</h3>
-                    </v-flex>
-                    <v-btn
-                      small
-                      round
-                      color="grey"
-                      class="white--text"
-                      @click="questDialog = false"
-                    >
-                      <v-flex>
-                        <v-icon
-                          small
-                          class="white--text"
-                        >
-                          fa fa-times
-                        </v-icon>
-                      </v-flex>
-                      <v-flex>
-                        Close
-                      </v-flex>
-                    </v-btn>
-                  </v-layout>
-                </v-card-title>
-                <v-divider />
-                <v-card-text class="grey--text">
-                  <v-timeline
-                    align-top
-                    dense
-                  >
-                    <v-timeline-item
-                      v-for="even in eventStats"
-                      :key="even.id"
-                      :color="even.status ==='Completed' ? 'success' : 'grey lighten-2'"
-                      medium
-                      :icon="even.status ==='Completed' ? 'check_circle_outline' : ''"
-                    >
-                      <div class="d-flex">
-                        <div style="max-width: 100px; min-width: 100px;">
-                          <div v-if="even.status === 'Completed' ">
-                            <strong>{{ formatDate(even.date, 'MMM. DD') }}</strong>
-                            <div class="caption mb-2">
-                              {{ formatDate(even.date, 'hh:mm A') }}
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <strong>{{ even.name }}{{ even.status ? ': Completed': '' }}</strong>
-                          <div class="caption">
-                            {{ even.description }}
-                          </div>
-                        </div>
-                      </div>
-                    </v-timeline-item>
-                  </v-timeline>
-                </v-card-text>
-                <v-divider />
-              </v-card>
+              <EventStatusTimeline />
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -294,6 +230,7 @@ import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -319,7 +256,8 @@ export default {
     Stores,
     StatusSelect,
     BasicInformation,
-    Customers
+    Customers,
+    EventStatusTimeline
   },
   mixins: [Validate, FormatDate],
   data () {
@@ -335,16 +273,7 @@ export default {
         customer: true
       },
       isNew: false,
-      types: [],
-      eventStats: [
-        { id: 1, name: 'Draft', status: 'Completed', date: '2020-08-18T21:54:43', description: 'Event was created in the system and submitted for approval' },
-        { id: 2, name: 'FoodFleet Initial Review', status: 'Completed', date: '2020-08-19T21:58:43', description: 'Food Fleet Staff will review the event request' },
-        { id: 3, name: 'Customer Agreement', status: '', date: '', description: 'Customer will review / sign event agreement and terms' },
-        { id: 4, name: 'Fleet Member Selection', status: '', date: '', description: 'FoodFleet will define event menu and identify interested Fleet Members and authorize work order' },
-        { id: 5, name: 'Customer Review', status: '', date: '', description: 'Customer will review interested Fleet Members and authorize work order' },
-        { id: 6, name: 'Fleet Member Contracts', status: '', date: '', description: 'Approved Fleet Members will review and sign event contracts' },
-        { id: 7, name: 'Event Confirmation', status: '', date: '', description: 'Customer will review and sign the final event contract' }
-      ]
+      types: []
     }
   },
   computed: {

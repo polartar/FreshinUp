@@ -40,7 +40,7 @@ mock.onGet('/users?filter[type]=1').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/FilterSorter', module)
+storiesOf('FoodFleet|components/event/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

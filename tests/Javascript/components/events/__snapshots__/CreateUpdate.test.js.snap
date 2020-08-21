@@ -561,12 +561,55 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
             >
               <div
                 class="v-dialog"
-                style="max-width: 500px; display: none;"
+                style="max-width: 700px; display: none;"
               >
                  
                 <div
                   class="v-card v-sheet theme--light"
                 >
+                  <div
+                    class="v-card__title"
+                  >
+                    <div
+                      class="layout row space-between align-center"
+                    >
+                      <div
+                        class="flex"
+                      >
+                        <h3>
+                          Event Status
+                        </h3>
+                      </div>
+                       
+                      <button
+                        class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          <div
+                            class="flex"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon white--text fa fa fa fa-times theme--light"
+                              style="font-size: 16px;"
+                            />
+                          </div>
+                           
+                          <div
+                            class="flex"
+                          >
+                            
+          Close
+        
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                   
                   <hr
                     class="v-divider theme--light"
                   />
@@ -574,9 +617,9 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="v-card__text grey--text"
                   >
-                    <p>
-                      Coming Soon
-                    </p>
+                    <div
+                      class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                    />
                   </div>
                    
                   <hr
@@ -9650,12 +9693,55 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
             >
               <div
                 class="v-dialog"
-                style="max-width: 500px; display: none;"
+                style="max-width: 700px; display: none;"
               >
                  
                 <div
                   class="v-card v-sheet theme--light"
                 >
+                  <div
+                    class="v-card__title"
+                  >
+                    <div
+                      class="layout row space-between align-center"
+                    >
+                      <div
+                        class="flex"
+                      >
+                        <h3>
+                          Event Status
+                        </h3>
+                      </div>
+                       
+                      <button
+                        class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          <div
+                            class="flex"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon white--text fa fa fa fa-times theme--light"
+                              style="font-size: 16px;"
+                            />
+                          </div>
+                           
+                          <div
+                            class="flex"
+                          >
+                            
+          Close
+        
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                   
                   <hr
                     class="v-divider theme--light"
                   />
@@ -9663,9 +9749,9 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="v-card__text grey--text"
                   >
-                    <p>
-                      Coming Soon
-                    </p>
+                    <div
+                      class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                    />
                   </div>
                    
                   <hr
