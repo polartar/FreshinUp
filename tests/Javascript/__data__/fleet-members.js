@@ -1,0 +1,5 @@
+export const FIXTURE_FLEET_MEMBERS = [
+  {}
+]
+
+export const FIXTURE_FLEET_MEMBER = FIXTURE_FLEET_MEMBERS[0]

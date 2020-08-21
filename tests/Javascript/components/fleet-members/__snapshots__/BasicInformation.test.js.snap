@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flee-members/BasicInformation Snapshots default 1`] = `
+<div>
+  Fleet member basic information component
+</div>
+`;
+
+exports[`flee-members/BasicInformation Snapshots member set 1`] = `
+<div>
+  Fleet member basic information component
+</div>
+`;
