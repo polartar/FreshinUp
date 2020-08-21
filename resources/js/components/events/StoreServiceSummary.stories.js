@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import StoreServiceSummary from './StoreServiceSummary'
 
-storiesOf('FoodFleet|events/StoreServiceSummary', module)
+storiesOf('FoodFleet|components/events/StoreServiceSummary', module)
   .add(
     'data set',
     () => ({
@@ -25,7 +25,7 @@ storiesOf('FoodFleet|events/StoreServiceSummary', module)
           }
         }
       },
-      template: `   
+      template: `
         <store-service-summary
           @viewContract="viewContract"
           @save="save"

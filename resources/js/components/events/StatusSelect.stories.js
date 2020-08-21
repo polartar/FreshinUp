@@ -13,7 +13,7 @@ const FIXTURE_EVENT_STATUSES = [
   { id: 9, name: 'Past', color: 'grey' }
 ]
 
-storiesOf('FoodFleet|events/StatusSelect', module)
+storiesOf('FoodFleet|components/events/StatusSelect', module)
   .add('defaults', () => {
     return {
       components: { StatusSelect },

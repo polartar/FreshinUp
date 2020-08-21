@@ -91,7 +91,7 @@ let stores = [
   }
 ]
 
-storiesOf('FoodFleet|event/AddStoreList', module)
+storiesOf('FoodFleet|components/event/AddStoreList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

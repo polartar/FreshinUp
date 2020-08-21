@@ -21,7 +21,7 @@ let statuses = [
   { id: 5, name: 'Rejected' }
 ]
 
-storiesOf('FoodFleet|event/CustomerList', module)
+storiesOf('FoodFleet|components/event/CustomerList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

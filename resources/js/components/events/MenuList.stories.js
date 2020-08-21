@@ -8,7 +8,7 @@ const menus = [
   { uuid: 3, title: 'menu item 3', description: 'description 3', servings: 12, cost: 2100 }
 ]
 
-storiesOf('FoodFleet|event/MenuList', module)
+storiesOf('FoodFleet|components/event/MenuList', module)
   .add('default', () => {
     return {
       components: { MenuList },

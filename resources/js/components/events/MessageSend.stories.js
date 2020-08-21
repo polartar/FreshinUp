@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import MessageSend from './MessageSend.vue'
 
 // Components
-storiesOf('FoodFleet|event/MessageSend', module)
+storiesOf('FoodFleet|components/event/MessageSend', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

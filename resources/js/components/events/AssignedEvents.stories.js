@@ -9,7 +9,7 @@ import AssignedEvents from './AssignedEvents.vue'
 const events = FIXTURE_EVENTS
 const statuses = FIXTURE_EVENT_STATUSES
 
-storiesOf('FoodFleet|events/AssignedEvents', module)
+storiesOf('FoodFleet|components/events/AssignedEvents', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

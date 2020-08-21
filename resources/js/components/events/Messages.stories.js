@@ -17,7 +17,7 @@ const messages = [
   }
 ]
 
-storiesOf('FoodFleet|event/Messages', module)
+storiesOf('FoodFleet|components/event/Messages', module)
   .add('default', () => {
     return {
       components: { Messages },
@@ -28,7 +28,7 @@ storiesOf('FoodFleet|event/Messages', module)
       },
       template: `
           <v-container>
-            <messages 
+            <messages
               @send-message="onSendMessage"
             />
           </v-container>

@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 import EventSettingsModal from './EventSettingsModal'
 
-storiesOf('FoodFleet|event/EventSettingsModal', module)
+storiesOf('FoodFleet|components/event/EventSettingsModal', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import CustomerSummary from './CustomerSummary'
 
-storiesOf('FoodFleet|events/CustomerSummary', module)
+storiesOf('FoodFleet|components/events/CustomerSummary', module)
   .add(
     'data set',
     () => ({
