@@ -3,6 +3,7 @@
     <basic-information
       @save="saveMember"
       @delete="deleteMember"
+      @cancel="onCancel"
     />
   </div>
 </template>
@@ -17,7 +18,11 @@ export default {
   methods: {
     saveMember (item) {},
 
-    deleteMember (item) {}
+    deleteMember (item) {},
+
+    onCancel () {
+      this.$router.push('/admin/fleet-members')
+    }
   },
 
   beforeRouteEnterOrUpdate (vm, to, from, next) {

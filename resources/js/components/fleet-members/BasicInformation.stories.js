@@ -1,35 +1,13 @@
 import { storiesOf } from '@storybook/vue'
-
-import BasicInformation from './BasicInformation'
 import { action } from '@storybook/addon-actions'
 
-// TODO fixture
-const junkMember = {
-  uuid: 'abc123',
-  name: 'Da Lobster',
-  type_id: 2,
-  tags: ['ASIAN', 'VEGAN'],
-  pos_system: 'Square',
-  business_name: '',
-  size_of_truck_trailer: '',
-  owner: 'Josh Smith @ Restaurant Inc',
-  phone: '938 374822',
-  state_of_incorporation: 'California',
-  website: 'www.restaurantinc.com',
-  twitter: 'www.twitter.com/restaurantinc',
-  facebook: 'www.facebook.com/restaurantinc',
-  instagram: 'www.instagram.com/restaurantinc',
-  staff_notes: 'Only visible for Food Fleet Staff'
-}
+import BasicInformation from './BasicInformation'
 
-const junkLocations = ['Square']
-
-const junkTypes = [
-  {
-    id: 2,
-    name: 'Mobile'
-  }
-]
+import {
+  FIXTURE_FLEET_MEMBER,
+  FIXTURE_MEMBER_LOCATIONS,
+  FIXTURE_MEMBER_TYPE
+} from '../../../../tests/Javascript/__data__/fleet-members'
 
 export const Default = () => ({
   components: { BasicInformation },
@@ -44,20 +22,27 @@ export const WithData = () => ({
   components: { BasicInformation },
   data () {
     return {
-      member: junkMember,
-      types: junkTypes,
-      locations: junkLocations
+      member: FIXTURE_FLEET_MEMBER,
+      types: FIXTURE_MEMBER_TYPE,
+      locations: FIXTURE_MEMBER_LOCATIONS
     }
   },
   template: `
       <v-container>
-        <basic-information :member="member" :locations="locations" :types="types" @save="onSave"/>
+        <basic-information :member="member" :locations="locations" :types="types" @save="onSave" @cancel="onCancel" @delete="onDelete"/>
       </v-container>
     `,
   methods: {
-    // other events
     onSave (payload) {
       action('onSave')(payload)
+    },
+
+    onCancel () {
+      action('onCancel')()
+    },
+
+    onDelete (payload) {
+      action('onDelete')(payload)
     }
   }
 })
@@ -69,4 +54,4 @@ storiesOf('FoodFleet|fleet-member/BasicInformation', module)
     ]
   })
   .add('Default', Default)
-  .add('with data', WithData)
+  .add('With data', WithData)
