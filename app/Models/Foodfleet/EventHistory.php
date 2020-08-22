@@ -15,6 +15,6 @@ class EventHistory extends Model
 
     public function status()
     {
-        return $this->hasOne(EventStatus::class, 'status_id');
+        return $this->hasOne(EventStatus::class, 'id');
     }
 }

@@ -7,12 +7,14 @@ use App\Http\Resources\Foodfleet\EventStatus;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
 use App\User;
+use DateTime;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Foodfleet\EventStatus as EventStatusModel;
 
 class EventHistoryTest extends TestCase
 {
@@ -37,16 +39,21 @@ class EventHistoryTest extends TestCase
                 'data'
             ])
             ->json('data');
-
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
         foreach ($eventHistories as $idx => $eventHistory) {
+            $eventStatus = EventStatusModel::find($eventHistory->status_id);
             $this->assertArraySubset([
                 'id' => $eventHistory->id,
                 'status_id' => $eventHistory->status_id,
+                'status' => [
+                    'id' => $eventStatus->id,
+                    'name' => $eventStatus->name,
+                    'color' => $eventStatus->color
+                ],
                 'event_uuid' => $eventHistory->event_uuid,
                 'description' => $eventHistory->description,
-                'date' => $eventHistory->date,
+                'date' =>  $eventHistory->date,
                 'completed' => $eventHistory->completed
             ], $data[$idx]);
         }
@@ -101,7 +108,7 @@ class EventHistoryTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(1, count($data));
+        $this->assertEquals(5, count($data));
         $request = app()->make(Request::class);
         foreach ($eventHistories as $idx => $eventHistory) {
             $this->assertArraySubset([

@@ -189,10 +189,7 @@
                 </v-card-title>
                 <v-divider />
                 <v-card-text class="grey--text">
-                  <event-status-timeline
-                    :statuses="eventHistories"
-                    :status="2"
-                  />
+                  <event-status-timeline/>
                 </v-card-text>
                 <v-divider />
               </v-card>
@@ -320,7 +317,6 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
-    ...mapGetters('eventHistories', { eventHistories: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -513,7 +509,6 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
-    promises.push(vm.$store.dispatch('eventHistories/getItems', { params: {event_uuid: id}}))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true
@@ -526,7 +521,6 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
-    //vm.$store.dispatch('eventHistories/getItem', {params: {event_uuid: id}})
     Promise.all(promises).then(() => {
       if (next) next()
     })
