@@ -236,7 +236,7 @@
         xs4
         pl-3
       >
-        <div>
+        <div class="px-2">
           <div class="mb-2 text-uppercase grey--text font-weight-bold">
             Truck / Trailer image
           </div>

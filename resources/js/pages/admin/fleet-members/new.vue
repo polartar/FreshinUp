@@ -1,5 +1,5 @@
 <script>
-import CreateUpdate from '../../../components/fleet-members/CreateUpdate'
+import CreateUpdate from '~/components/fleet-members/CreateUpdate'
 
 export default {
   extends: CreateUpdate,

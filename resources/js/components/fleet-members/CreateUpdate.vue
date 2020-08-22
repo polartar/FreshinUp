@@ -15,11 +15,13 @@ export default {
     BasicInformation
   },
   methods: {
-    beforeRouteEnterOrUpdate (vm, to, from, next) {},
-
     saveMember (item) {},
 
     deleteMember (item) {}
+  },
+
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    if (next) next()
   }
 }
 </script>

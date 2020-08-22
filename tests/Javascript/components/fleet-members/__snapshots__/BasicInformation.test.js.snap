@@ -846,7 +846,9 @@ exports[`flee-members/BasicInformation Snapshots default 1`] = `
     <div
       class="flex xs4 pl-3"
     >
-      <div>
+      <div
+        class="px-2"
+      >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
         >
@@ -1807,7 +1809,9 @@ exports[`flee-members/BasicInformation Snapshots member set 1`] = `
     <div
       class="flex xs4 pl-3"
     >
-      <div>
+      <div
+        class="px-2"
+      >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
         >
