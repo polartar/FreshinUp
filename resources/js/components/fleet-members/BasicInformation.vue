@@ -338,7 +338,7 @@ export default {
 
   methods: {
     onCancel () {
-      this.$router.push('/admin/fleet-members')
+      this.$emit('cancel')
     },
 
     onSaveChanges () {

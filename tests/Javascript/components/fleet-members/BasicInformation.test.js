@@ -1,30 +1,22 @@
 import { mount } from '@vue/test-utils'
-import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/fleet-members/BasicInformation.vue'
-import { FIXTURE_FLEET_MEMBER } from 'tests/__data__/fleet-members'
+import * as Stories from '~/components/fleet-members/BasicInformation.stories'
 
 describe('flee-members/BasicInformation', () => {
-  let localVue
-
   describe('Snapshots', () => {
-    beforeEach(() => {
-      const vue = createLocalVue({ validation: true })
-      localVue = vue.localVue
-    })
-    test('default', () => {
-      const wrapper = mount(Component, {
-        localVue: localVue
-      })
+    test('Default', async () => {
+      const wrapper = mount(Stories.Default())
+      await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('member set', () => {
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          member: FIXTURE_FLEET_MEMBER
-        }
-      })
+    test('WithData', async () => {
+      const wrapper = mount(Stories.WithData())
+      await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
+  })
+
+  describe('methods', () => {
+    // TODO
   })
 })
