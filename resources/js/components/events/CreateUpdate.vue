@@ -156,7 +156,12 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <EventStatusTimeline />
+              {{hello}}
+              {{items}}
+              <EventStatusTimeline
+                :statuses="items"
+                :status="2"
+              />
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -281,6 +286,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('event/status/history', { items: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -473,6 +479,7 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('event/status/history/getItems'))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true
@@ -485,6 +492,7 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
+    vm.$store.dispatch('event/status/history/getItem', { id: id })
     Promise.all(promises).then(() => {
       if (next) next()
     })

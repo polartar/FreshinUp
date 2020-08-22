@@ -33,6 +33,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('event/types', 'Foodfleet\EventType@index');
+    Route::get('event/status/history', 'Foodfleet\EventHistory@index');
 
     Route::apiResource('stores', 'Foodfleet\Stores');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');

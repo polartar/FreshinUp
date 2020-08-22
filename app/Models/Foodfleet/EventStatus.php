@@ -10,4 +10,9 @@ class EventStatus extends Model
     {
         return $this->hasMany(Event::class, 'status_id');
     }
+
+    public function history()
+    {
+        return $this->hasOne(EventHistory::class, 'status_id');
+    }
 }

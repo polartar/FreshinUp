@@ -1,4 +1,7 @@
 # Changes
+## August 20, 2020
+- **ADD** Status helper function is not created on Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
+
 ## August 19, 2020
 - **ADD** Add new fleet member dialog with search feature. [#384](https://github.com/FreshinUp/foodfleet/issues/384)
 
