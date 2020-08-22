@@ -56,7 +56,7 @@ let statuses = [
   { value: 5, text: 'Expired' }
 ]
 
-storiesOf('FoodFleet|event/DocumentSection', module)
+storiesOf('FoodFleet|components/event/DocumentSection', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
@@ -71,9 +71,9 @@ storiesOf('FoodFleet|event/DocumentSection', module)
       }
     },
     template: `
-      <document-section 
-        :statuses="statuses" 
-        :documents="[]" 
+      <document-section
+        :statuses="statuses"
+        :documents="[]"
       />
     `
   }))
@@ -97,9 +97,9 @@ storiesOf('FoodFleet|event/DocumentSection', module)
       }
     },
     template: `
-      <document-section 
-        :statuses="statuses" 
-        :documents="documents" 
+      <document-section
+        :statuses="statuses"
+        :documents="documents"
         @change-status="changeStatus"
         @view-details="viewDetails"
         @create-new-doc="createNewDoc"

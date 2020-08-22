@@ -91,7 +91,7 @@ let statuses = [
   { id: 5, name: 'Cancelled' }
 ]
 
-storiesOf('FoodFleet|events/EventList', module)
+storiesOf('FoodFleet|components/events/EventList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

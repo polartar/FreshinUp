@@ -144,7 +144,7 @@
             />
             <v-dialog
               v-model="questDialog"
-              max-width="500"
+              max-width="700"
             >
               <template v-slot:activator="{ on }">
                 <v-btn
@@ -156,13 +156,7 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <v-card>
-                <v-divider />
-                <v-card-text class="grey--text">
-                  <p>Coming Soon</p>
-                </v-card-text>
-                <v-divider />
-              </v-card>
+              <EventStatusTimeline />
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -235,6 +229,8 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -260,9 +256,10 @@ export default {
     Stores,
     StatusSelect,
     BasicInformation,
-    Customers
+    Customers,
+    EventStatusTimeline
   },
-  mixins: [Validate],
+  mixins: [Validate, FormatDate],
   data () {
     return {
       eventLoading: false,

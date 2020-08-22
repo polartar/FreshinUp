@@ -16,7 +16,7 @@ const messages = [
   }
 ]
 
-storiesOf('FoodFleet|event/MessageList', module)
+storiesOf('FoodFleet|components/event/MessageList', module)
   .add('default', () => {
     return {
       components: { MessageList },

@@ -32,7 +32,7 @@ mock.onGet('/users?filter[type]=1').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|event/FilterSorterForCalendar', module)
+storiesOf('FoodFleet|components/event/FilterSorterForCalendar', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
