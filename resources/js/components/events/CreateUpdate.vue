@@ -189,7 +189,7 @@
                 </v-card-title>
                 <v-divider />
                 <v-card-text class="grey--text">
-                  <event-status-timeline/>
+                  <event-status-timeline />
                 </v-card-text>
                 <v-divider />
               </v-card>
