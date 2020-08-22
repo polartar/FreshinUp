@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventHistory extends Model
 {
-    use GeneratesUuid;
-
-    protected $guarded = ['id', 'uuid'];
+    public $timestamps = false;
 
     public function event()
     {
-        return $this->belongsTo(Events::class, 'event_uuid', 'uuid');
+        return $this->belongsTo(Events::class, 'event_uuid');
     }
 
     public function status()

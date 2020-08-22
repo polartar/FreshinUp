@@ -3,7 +3,6 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\EventHistories;
 
-
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
 use App\User;
@@ -13,7 +12,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class LocationTest extends TestCase
+class EventHistoryTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -31,7 +30,7 @@ class LocationTest extends TestCase
         $eventHistories = factory(EventHistory::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/event/status/history")
+            ->json('get', "/api/foodfleet/event/status/histories")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -70,7 +69,7 @@ class LocationTest extends TestCase
         ]);
 
         $data = $this
-            ->json('get', '/api/foodfleet/event/status/history?'
+            ->json('get', '/api/foodfleet/event/status/histories?'
             . 'filter[event_uuid]=' . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([

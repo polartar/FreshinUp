@@ -156,12 +156,46 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              {{hello}}
-              {{items}}
-              <EventStatusTimeline
-                :statuses="items"
-                :status="2"
-              />
+              <v-card>
+                <v-card-title>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h3>Event Status</h3>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="questDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
+                </v-card-title>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <event-status-timeline
+                    :statuses="eventHistories"
+                    :status="2"
+                  />
+                </v-card-text>
+                <v-divider />
+              </v-card>
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -286,7 +320,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
-    ...mapGetters('event/status/history', { items: 'items' }),
+    ...mapGetters('eventHistories', { eventHistories: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -479,7 +513,7 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
-    promises.push(vm.$store.dispatch('event/status/history/getItems'))
+    promises.push(vm.$store.dispatch('eventHistories/getItems', { params: {event_uuid: id}}))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true
@@ -492,7 +526,7 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
-    vm.$store.dispatch('event/status/history/getItem', { id: id })
+    //vm.$store.dispatch('eventHistories/getItem', {params: {event_uuid: id}})
     Promise.all(promises).then(() => {
       if (next) next()
     })

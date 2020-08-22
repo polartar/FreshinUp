@@ -21,6 +21,7 @@ import eventStatuses from '~/store/modules/eventStatuses.js'
 import eventMenuItems from '~/store/modules/eventMenuItems.js'
 import eventSummary from '~/store/modules/eventSummary.js'
 import eventTypes from '~/store/modules/eventTypes.js'
+import eventHistories from '~/store/modules/eventHistories.js'
 import messages from '~/store/modules/messages.js'
 
 const initialState = {
@@ -158,6 +159,7 @@ const appInstance = new App({
       eventMenuItems: eventMenuItems({}),
       eventSummary: eventSummary({}),
       eventTypes: eventTypes({}),
+      eventHistories: eventHistories({}),
       messages: messages({})
     }
   }),

@@ -16,14 +16,14 @@ class EventHistory extends Controller
      */
     public function index(Request $request)
     {
-        $eventHistories = QueryBuilder::for(EventHistory::class, $request)
+        $eventHistories = QueryBuilder::for(\App\Models\Foodfleet\EventHistory::class, $request)
             ->allowedSorts([
                 'id',
                 'completed'
             ])
             ->allowedFilters([
                 Filter::exact('event_uuid')
-            ]);
+            ])->get();
 
         return EventHistoryResource::collection($eventHistories);
     }

@@ -19,11 +19,11 @@ class EventHistory extends JsonResource
     {
         return [
             "id" => $this->id,
-            "status_id" => $this->status_id,
+            "status" => EventStatus::collection($this->whenLoaded('status')),
             "date" => $this->date,
             "description" => $this->description,
             "completed" => $this->completed,
-            "event_uuid" => $this->event_uuid
+            "event_uuid" => $this->event_uuid,
         ];
     }
 }
