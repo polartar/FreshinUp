@@ -2,8 +2,6 @@
 
 namespace App\Http\Resources\Foodfleet;
 
-use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\EventStatus;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +17,8 @@ class EventHistory extends JsonResource
     {
         return [
             "id" => $this->id,
-            "status" => EventStatus::collection($this->whenLoaded('status')),
+            "status" => (new EventStatus($this->status))->toArray($request),
+            'status_id' => $this->status_id,
             "date" => $this->date,
             "description" => $this->description,
             "completed" => $this->completed,

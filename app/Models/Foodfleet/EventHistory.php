@@ -2,8 +2,6 @@
 
 namespace App\Models\Foodfleet;
 
-use App\Http\Controllers\Foodfleet\Events\Events;
-use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 class EventHistory extends Model
@@ -12,7 +10,7 @@ class EventHistory extends Model
 
     public function event()
     {
-        return $this->belongsTo(Events::class, 'event_uuid');
+        return $this->hasOne(Event::class, 'event_uuid');
     }
 
     public function status()

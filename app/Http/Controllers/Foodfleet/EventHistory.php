@@ -21,6 +21,9 @@ class EventHistory extends Controller
                 'id',
                 'completed'
             ])
+            ->allowedIncludes([
+                'status',
+            ])
             ->allowedFilters([
                 Filter::exact('event_uuid')
             ])->get();

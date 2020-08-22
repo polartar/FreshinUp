@@ -9,15 +9,14 @@ use Faker\Generator as Faker;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(EventHistory::class, function (Faker $faker) {
     return [
-        "id" => $faker->randomNumber(2),
         "status_id" => function () {
-            return factory(EventStatus::class)->create()->id;
+            return factory(EventStatus::class)->create();
         },
         "description" => $faker->word,
         "completed" => $faker->boolean,
         "date" => $faker->dateTime,
         "event_uuid" => function () {
-            return factory(Event::class)->create()->uuid;
+            return factory(Event::class)->create();
         }
     ];
 });
