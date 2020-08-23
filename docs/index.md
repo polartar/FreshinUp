@@ -1,4 +1,7 @@
 # Changes
+## August 23, 2020
+- **ADD** Missing venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
+
 ## August 19, 2020
 - **ADD** Add new fleet member dialog with search feature. [#384](https://github.com/FreshinUp/foodfleet/issues/384)
 
