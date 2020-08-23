@@ -6,7 +6,9 @@ import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 import BaseComponent from '~/components/events/CreateUpdate.vue'
 import events from '~/store/modules/events'
 import eventStatuses from '~/store/modules/eventStatuses'
+import eventHistories from '~/store/modules/eventHistories'
 import { getFileNameCopy } from '../../../../resources/js/components/events/CreateUpdate'
+import { FIXTURE_EVENT_HISTORY } from '../../__data__/eventHistory'
 
 describe('Event CreateUpdate Component', () => {
   let localVue, mock, store
@@ -72,6 +74,7 @@ describe('Event CreateUpdate Component', () => {
       })
       await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 1 } })
       await wrapper.vm.$store.dispatch('eventStatuses/getItems')
+      await wrapper.vm.$store.dispatch('eventHistories/getItems', { params: { events_uuid: wrapper.vm.event.uuid } })
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
       expect(wrapper.html()).toContain('Event Details')
@@ -89,6 +92,7 @@ describe('Event CreateUpdate Component', () => {
         .onGet('api/foodfleet/events/1').reply(200, { data: FIXTURE_EVENT })
         .onGet('api/foodfleet/events/new').reply(200, { data: EMPTY_EVENT })
         .onGet('api/foodfleet/event-statuses').reply(200, { data: FIXTURE_EVENT_STATUSES })
+        .onGet('api/foodfleet/event/status/histories').reply(200, { data: FIXTURE_EVENT_HISTORY })
         .onAny().reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
@@ -96,7 +100,8 @@ describe('Event CreateUpdate Component', () => {
       store = createStore({}, {
         modules: {
           events: events({}),
-          eventStatuses: eventStatuses({})
+          eventStatuses: eventStatuses({}),
+          eventHistories: eventHistories({})
         }
       })
     })

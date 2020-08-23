@@ -143,6 +143,7 @@
               :options="statuses"
             />
             <v-dialog
+              v-if="!isNew"
               v-model="questDialog"
               max-width="700"
             >
@@ -156,7 +157,10 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <EventStatusTimeline />
+              <event-status-timeline
+                :statuses="eventHistories"
+                :status="getStatus(eventHistories)"
+              />
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -281,6 +285,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('eventHistories', { 'eventHistories': 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -454,8 +459,9 @@ export default {
       this.$router.push({ path: '/admin/events' })
     },
     changeStatus () {},
-    onHelper () {
-      alert('Coming Soon')
+    getStatus (statuses) {
+      const statusesNotCompleted = statuses.filter((status) => !status.completed)
+      return statusesNotCompleted.length > 0 ? statusesNotCompleted[0].id : 0
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -471,6 +477,7 @@ export default {
       promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
+      promises.push(vm.$store.dispatch('eventHistories/getItems', { params: { event_uuid: id } }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
 
