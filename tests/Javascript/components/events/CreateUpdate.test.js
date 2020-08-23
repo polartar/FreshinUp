@@ -8,7 +8,7 @@ import events from '~/store/modules/events'
 import eventStatuses from '~/store/modules/eventStatuses'
 import eventHistories from '~/store/modules/eventHistories'
 import { getFileNameCopy } from '../../../../resources/js/components/events/CreateUpdate'
-import { FIXTURE_EVENT_HISTORY } from '../../__data__/eventHistory'
+import {FIXTURE_EVENT_HISTORY} from "../../__data__/eventHistory";
 
 describe('Event CreateUpdate Component', () => {
   let localVue, mock, store
@@ -22,6 +22,7 @@ describe('Event CreateUpdate Component', () => {
         .onGet('api/foodfleet/events/1').reply(200, { data: FIXTURE_EVENT })
         .onGet('api/foodfleet/events/new').reply(200, { data: EMPTY_EVENT })
         .onGet('api/foodfleet/event-statuses').reply(200, { data: FIXTURE_EVENT_STATUSES })
+        .onGet('api/foodfleet/event-statuses').reply(200, { data: FIXTURE_EVENT_HISTORY })
         .onAny().reply(config => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
@@ -29,7 +30,8 @@ describe('Event CreateUpdate Component', () => {
       store = createStore({}, {
         modules: {
           events: events({}),
-          eventStatuses: eventStatuses({})
+          eventStatuses: eventStatuses({}),
+          eventHistories: eventHistories({})
         }
       })
     })
