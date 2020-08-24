@@ -1,5 +1,5 @@
 # Changes
-## August 21, 2020
+## August 24, 2020
 - **ADD** Create or update fleet member component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
 
 ## August 19, 2020

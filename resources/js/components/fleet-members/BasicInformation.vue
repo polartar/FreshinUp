@@ -85,14 +85,13 @@
             pl-2
           >
             <div
-              class="mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-              style="position: relative;"
+              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
             >
               <span>Business name</span>
               <v-tooltip top>
                 <template v-slot:activator="{ on, attrs }">
                   <v-icon
-                    style="position: absolute; right: 0;"
+                    class="ff-fleet-members__tooltip-icon"
                     small
                     v-bind="attrs"
                     v-on="on"
@@ -351,3 +350,13 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.ff-fleet-members__basic_information {
+  position: relative;
+
+  .ff-fleet-members__tooltip-icon {
+    position: absolute;
+    right: 0;
+  }
+}
+</style>

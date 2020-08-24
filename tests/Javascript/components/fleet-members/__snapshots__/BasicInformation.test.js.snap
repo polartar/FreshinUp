@@ -322,8 +322,7 @@ exports[`flee-members/BasicInformation Snapshots Default 1`] = `
             class="flex xs4 pr-2 pl-2"
           >
             <div
-              class="mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-              style="position: relative;"
+              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
             >
               <span>
                 Business name
@@ -331,8 +330,8 @@ exports[`flee-members/BasicInformation Snapshots Default 1`] = `
                
               <i
                 aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px; position: absolute; right: 0px;"
+                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
+                style="font-size: 16px;"
               >
                 info
               </i>
@@ -1348,8 +1347,7 @@ exports[`flee-members/BasicInformation Snapshots WithData 1`] = `
             class="flex xs4 pr-2 pl-2"
           >
             <div
-              class="mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-              style="position: relative;"
+              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
             >
               <span>
                 Business name
@@ -1357,8 +1355,8 @@ exports[`flee-members/BasicInformation Snapshots WithData 1`] = `
                
               <i
                 aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px; position: absolute; right: 0px;"
+                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
+                style="font-size: 16px;"
               >
                 info
               </i>
