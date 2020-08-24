@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 
 import VenueDetails from './VenueDetails'
 
-import { FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUES, FIXTURE_VENUE_ADDITIONAL_DATA } from '../../../../tests/Javascript/__data__/venues'
 
 export const Default = () => ({
   components: { VenueDetails },
@@ -17,12 +17,13 @@ export const WithData = () => ({
   components: { VenueDetails },
   data () {
     return {
-      venues: FIXTURE_VENUE
+      venues: FIXTURE_VENUES,
+      additionalData: FIXTURE_VENUE_ADDITIONAL_DATA
     }
   },
   template: `
     <v-container>
-      <venue-details :venues="venues"/>
+      <venue-details :venues="venues" :venue="additionalData"/>
     </v-container>
   `,
   methods: {

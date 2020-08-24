@@ -20,6 +20,7 @@
           Venue
         </div>
         <v-select
+          v-model="venueData.venue"
           :items="venues"
           item-text="name"
           item-value="uuid"
@@ -35,7 +36,9 @@
           Location
         </div>
         <v-select
-          :items="venues"
+          v-model="venueData.location"
+          :disabled="!venueData.venue"
+          :items="locations"
           item-text="name"
           item-value="uuid"
           single-line
@@ -50,8 +53,17 @@
         <div class="text-uppercase grey--text font-weight-bold">
           Address
         </div>
-        <div class="grey--text text-xs-right">
-          12345 LA Stadium Way Los Angeles, CA 90210
+        <div
+          v-if="venueData.address"
+          class="grey--text text-xs-right"
+        >
+          {{ venueData.address }}
+        </div>
+        <div
+          v-else
+          class="text-xs-center"
+        >
+          -
         </div>
       </v-flex>
       <v-flex xs12>
@@ -66,9 +78,16 @@
           Capacity
         </div>
         <div
+          v-if="venueData.capacity"
           class="grey--text text-xs-right"
         >
-          300 People
+          {{ venueData.capacity }} People
+        </div>
+        <div
+          v-else
+          class="text-xs-center"
+        >
+          -
         </div>
       </v-flex>
       <v-flex xs12>
@@ -83,9 +102,16 @@
           Spots
         </div>
         <div
+          v-if="venueData.spots"
           class="grey--text text-xs-right"
         >
-          30
+          {{ venueData.spots }}
+        </div>
+        <div
+          v-else
+          class="text-xs-center"
+        >
+          -
         </div>
       </v-flex>
       <v-flex xs12>
@@ -98,8 +124,24 @@
         <div class="pb-2 text-uppercase grey--text font-weight-bold">
           Location details
         </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum...
+        <div v-if="hasLongText && !showMoreActivated">
+          {{ minLocationDetail }}...
+        </div>
+        <div v-else>
+          {{ venueData.locationDetail }}
+        </div>
+        <div
+          v-if="hasLongText"
+          class="text-xs-center"
+        >
+          <a
+            href="#"
+            class="grey--text font-weight-bold"
+            style="text-decoration: none;"
+            @click.prevent="toggleShowMore"
+          >
+            Show <span v-if="showMoreActivated">less</span><span v-else>more</span>
+          </a>
         </div>
       </v-flex>
       <v-flex
@@ -117,11 +159,54 @@
   </v-card>
 </template>
 <script>
+import { get } from 'lodash'
+
 export default {
   props: {
     venues: {
       type: Array,
       default: () => []
+    },
+
+    venue: {
+      type: Object,
+      default: null
+    }
+  },
+
+  data () {
+    return {
+      venueData: {
+        venue: get(this.venue, 'venue', ''),
+        location: get(this.venue, 'location', ''),
+        address: get(this.venue, 'address', ''),
+        capacity: get(this.venue, 'capacity', 0),
+        spots: get(this.venue, 'spots', 0),
+        locationDetail: get(this.venue, 'location_details', '')
+      },
+      showMoreActivated: false,
+      locationDetailMaxChar: 300
+    }
+  },
+
+  computed: {
+    hasLongText () {
+      return this.venueData.locationDetail.length > this.locationDetailMaxChar
+    },
+
+    minLocationDetail () {
+      return this.venueData.locationDetail.slice(0, this.locationDetailMaxChar)
+    },
+
+    locations () {
+      const selectedVenue = this.venues.find(v => v.uuid === this.venueData.venue)
+      return selectedVenue ? selectedVenue.locations : []
+    }
+  },
+
+  methods: {
+    toggleShowMore () {
+      this.showMoreActivated = !this.showMoreActivated
     }
   }
 }
