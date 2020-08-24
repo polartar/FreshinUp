@@ -157,10 +157,46 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <event-status-timeline
-                :statuses="eventHistories"
-                :status="getStatus(eventHistories)"
-              />
+              <v-card>
+                <v-card-title>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h3>Event Status</h3>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="questDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
+                </v-card-title>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <EventStatusTimeline
+                    :statuses="eventHistories"
+                    :status="event.status_id"
+                  />
+                </v-card-text>
+                <v-divider />
+              </v-card>
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -435,7 +471,7 @@ export default {
         data.id = 'new'
         await this.$store.dispatch('events/createItem', { data })
         await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-        this.$router.push('/admin/events/')
+        this.$router.push({ path: '/admin/events/' })
       } else {
         await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
         await this.$store.dispatch('generalMessage/setMessage', 'Modified')
@@ -447,7 +483,7 @@ export default {
     async onDelete () {
       await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
-      this.$router.push('/admin/events/')
+      this.$router.push({ path: '/admin/events/' })
     },
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
@@ -457,11 +493,6 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
-    },
-    changeStatus () {},
-    getStatus (statuses) {
-      const statusesNotCompleted = statuses.filter((status) => !status.completed)
-      return statusesNotCompleted.length > 0 ? statusesNotCompleted[0].id : 0
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -492,14 +523,14 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
-    Promise.all(promises).then(() => {
-      if (next) next()
-    })
+    Promise.all(promises)
+      .then(() => {})
       .catch((error) => {
         console.error(error)
       })
       .then(() => {
         vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
       })
   }
 }

@@ -1,7 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Resources;
-
+namespace Tests\Feature\Http\Resources\Foodfleet;
 
 use App\Http\Resources\Foodfleet\EventType as EventTypeResource;
 use App\Models\Foodfleet\EventType as EventTypeModel;
