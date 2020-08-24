@@ -3,7 +3,7 @@ import * as Stories from '~/components/fleet-members/BasicInformation.stories'
 import Component from '~/components/fleet-members/BasicInformation.vue'
 import { FIXTURE_FLEET_MEMBER } from '../../__data__/fleet-members'
 
-describe('flee-members/BasicInformation', () => {
+describe('fleet-members/BasicInformation', () => {
   describe('Snapshots', () => {
     test('Default', async () => {
       const wrapper = mount(Stories.Default())
