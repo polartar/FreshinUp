@@ -1,6 +1,7 @@
 # Changes
 ## August 24, 2020
-- **ADD** Create or update fleet member component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
+- **ADD** Fleet Member Basic Information component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
+- **ADD** Status History helper function for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 
 ## August 19, 2020
 - **ADD** Add new fleet member dialog with search feature. [#384](https://github.com/FreshinUp/foodfleet/issues/384)
