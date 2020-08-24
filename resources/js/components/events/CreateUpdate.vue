@@ -184,6 +184,12 @@
             @delete="onDelete"
           />
         </v-flex>
+        <v-flex
+          md12
+          sm12
+        >
+          <venue-details />
+        </v-flex>
       </v-layout>
     </v-form>
 
@@ -229,6 +235,7 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
@@ -257,7 +264,8 @@ export default {
     StatusSelect,
     BasicInformation,
     Customers,
-    EventStatusTimeline
+    EventStatusTimeline,
+    VenueDetails
   },
   mixins: [Validate, FormatDate],
   data () {
