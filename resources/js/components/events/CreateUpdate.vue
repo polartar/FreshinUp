@@ -191,7 +191,8 @@
                 <v-divider />
                 <v-card-text class="grey--text">
                   <EventStatusTimeline
-                    :statuses="eventHistories"
+                    :statuses="statuses"
+                    :histories="eventHistories"
                     :status="event.status_id"
                   />
                 </v-card-text>

@@ -4,24 +4,24 @@
     dense
   >
     <v-timeline-item
-      v-for="event in statuses"
-      :key="event.id"
-      :color="getColorFor(event)"
+      v-for="history in histories"
+      :key="history.id"
+      :color="getColorFor(history)"
       medium
-      :icon="getIconFor(event)"
+      :icon="getIconFor(history)"
     >
       <div class="ff-event_status_timeline__item">
-        <div v-if="event.completed">
-          <strong>{{ formatDate(event.date, 'MMM. DD') }}</strong>
+        <div v-if="history.completed">
+          <strong>{{ formatDate(history.date, 'MMM. DD') }}</strong>
           <p class="caption mb-2">
-            {{ formatDate(event.date, 'hh:mm A') }}
+            {{ formatDate(history.date, 'hh:mm A') }}
           </p>
         </div>
         <div v-else />
         <div>
-          <strong>{{ event.name }}{{ event.completed ? ': Completed': '' }}</strong>
+          <strong>{{ history.name }} {{ history.completed ? ': Completed': '' }}</strong>
           <div class="caption">
-            {{ event.description }}
+            {{ history.description }}
           </div>
         </div>
       </div>
@@ -36,7 +36,8 @@ import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 export default {
   mixins: [FormatDate],
   props: {
-    statuses: { type: Array, default: () => [] },
+    histories: { type: Array, default: () => [] },
+    histories: { type: Array, default: () => [] },
     status: { type: Number, default: 0 }
   },
   methods: {
