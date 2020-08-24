@@ -37,5 +37,7 @@ class EventHistoryTest extends TestCase
             'status_id' => $eventStatus->id,
             'event_uuid' => $event->uuid
         ]);
+        $this->assertEquals($event->uuid, $eventHistory->event->uuid);
+        $this->assertEquals($eventStatus->id, $eventHistory->status->id);
     }
 }

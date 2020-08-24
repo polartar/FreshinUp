@@ -3,28 +3,22 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\EventHistories;
 
-use App\Http\Resources\Foodfleet\EventStatus;
+use App\Http\Resources\Foodfleet\EventStatus as EventStatusResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
+use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\EventStatus as EventStatusModel;
 use App\User;
-use DateTime;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\Foodfleet\EventStatus as EventStatusModel;
 
 class EventHistoryTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -42,18 +36,12 @@ class EventHistoryTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
         foreach ($eventHistories as $idx => $eventHistory) {
-            $eventStatus = EventStatusModel::find($eventHistory->status_id);
             $this->assertArraySubset([
                 'id' => $eventHistory->id,
                 'status_id' => $eventHistory->status_id,
-                'status' => [
-                    'id' => $eventStatus->id,
-                    'name' => $eventStatus->name,
-                    'color' => $eventStatus->color
-                ],
                 'event_uuid' => $eventHistory->event_uuid,
                 'description' => $eventHistory->description,
-                'date' =>  $eventHistory->date,
+                'date' => $eventHistory->date->format('Y-m-d H:i:s'),
                 'completed' => $eventHistory->completed
             ], $data[$idx]);
         }
@@ -65,13 +53,13 @@ class EventHistoryTest extends TestCase
         Passport::actingAs($user);
         $event = factory(Event::class)->create();
         factory(EventHistory::class, 5)->create();
-        $eventHistoryToFind = factory(EventHistory::class)->create([
+        $eventHistoriesToFind = factory(EventHistory::class, 3)->create([
             'event_uuid' => $event->uuid
         ]);
 
         $data = $this
             ->json('get', '/api/foodfleet/event/status/histories?'
-            . 'filter[event_uuid]=' . $event->uuid)
+                . 'filter[event_uuid]=' . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -79,26 +67,29 @@ class EventHistoryTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(1, count($data));
-        $this->assertArraySubset([
-            'id' => $eventHistoryToFind->id,
-            'status_id' => $eventHistoryToFind->status_id,
-            'event_uuid' => $eventHistoryToFind->event_uuid,
-            'description' => $eventHistoryToFind->description,
-            'date' => $eventHistoryToFind->date,
-            'completed' => $eventHistoryToFind->completed
-        ], $data[0]);
+        $this->assertEquals(3, count($data));
+        foreach ($eventHistoriesToFind as $index => $history) {
+            $this->assertArraySubset([
+                'id' => $history->id,
+                'status_id' => $history->status_id,
+                'event_uuid' => $history->event_uuid,
+                'description' => $history->description,
+                'date' => $history->date,
+                'completed' => $history->completed
+            ], $data[$index]);
+        }
     }
 
     public function testGetListWithInclude()
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
+        /** @var EventHistory[] $eventHistories */
         $eventHistories = factory(EventHistory::class, 5)->create();
 
         $response = $this
             ->json('get', '/api/foodfleet/event/status/histories?'
-            . 'include=status');
+                . 'include=status');
         $this->assertNotExceptionResponse($response);
         $data = $response
             ->assertStatus(200)
@@ -109,15 +100,20 @@ class EventHistoryTest extends TestCase
 
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
-        $request = app()->make(Request::class);
         foreach ($eventHistories as $idx => $eventHistory) {
+            /** @var EventStatus $status */
+            $status = $eventHistory->status;
             $this->assertArraySubset([
                 'id' => $eventHistory->id,
                 'status_id' => $eventHistory->status_id,
-                'status' => (new EventStatus($eventHistory->status))->toArray($request),
+                'status' => [
+                    'id' => $status->id,
+                    'name' => $status->name,
+                    'color' => EventStatusResource::getColorFor($status->id)
+                ],
                 'event_uuid' => $eventHistory->event_uuid,
                 'description' => $eventHistory->description,
-                'date' => $eventHistory->date,
+                'date' => $eventHistory->date->format('Y-m-d H:i:s'),
                 'completed' => $eventHistory->completed
             ], $data[$idx]);
         }

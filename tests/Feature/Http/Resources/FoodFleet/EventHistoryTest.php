@@ -14,18 +14,22 @@ use Tests\TestCase;
 class EventHistoryTest extends TestCase
 {
     public function testResource () {
-        $event = factory(Event::class)->make();
         $eventHistory = factory(EventHistoryModel::class)->make();
-        $resource = new EventHistoryResource($event);
-        $request = app()->make(Request::class);
+        $resource = new EventHistoryResource($eventHistory);
         $status = EventStatusModel::find($eventHistory->status_id);
+        $event = Event::whereUuid($eventHistory->event_uuid)->first();
+        $request = app()->make(Request::class);
         $expected = [
             'id' => $eventHistory->id,
             'status_id' => $eventHistory->status_id,
-            'status' => (new EventStatusResource($status))->toArray($request),
+            'status' => [
+                'id' => $status->id,
+                'name' => $status->name,
+                'color' => EventStatusResource::getColorFor($status->id)
+            ],
             'event_uuid' => $event->uuid,
             'description' => $eventHistory->description,
-            'date' => $eventHistory->date,
+            'date' => $eventHistory->date->format('Y-m-d H:i:s'),
             'completed' => $eventHistory->completed
         ];
         $this->assertEquals($expected, $resource->toArray($request));

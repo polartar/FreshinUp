@@ -20,10 +20,13 @@ class EventStatusTest extends TestCase
      */
     public function testModel()
     {
-        $event = factory(Event::class)->create();
 
+        /** @var EventStatus $eventStatus */
         $eventStatus = factory(EventStatus::class)->create();
-        $eventStatus->events()->save($event);
+        $event = factory(Event::class)->create([
+            'status_id' => $eventStatus->id
+        ]);
+
 
         $this->assertDatabaseHas('event_statuses', [
             'id' => $eventStatus->id

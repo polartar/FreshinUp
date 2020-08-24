@@ -15,8 +15,8 @@ class CreateEventHistoriesTable extends Migration
     {
         Schema::create('event_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('event_uuid');
-            $table->integer('status_id');
+            $table->string('event_uuid')->index();
+            $table->integer('status_id')->index();
             $table->string('description');
             $table->dateTime('date');
             $table->boolean('completed');
