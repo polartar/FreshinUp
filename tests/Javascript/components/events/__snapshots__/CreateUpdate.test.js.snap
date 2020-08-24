@@ -602,8 +602,8 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                             class="flex"
                           >
                             
-          Close
-        
+                      Close
+                    
                           </div>
                         </div>
                       </button>
@@ -9734,8 +9734,8 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="flex"
                           >
                             
-          Close
-        
+                      Close
+                    
                           </div>
                         </div>
                       </button>

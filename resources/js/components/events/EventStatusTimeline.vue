@@ -32,6 +32,7 @@
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
+// TODO: extract this component to core-ui to FTimeline
 export default {
   mixins: [FormatDate],
   props: {
@@ -56,8 +57,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .v-timeline::before {
+    height: calc(100% - 36px);
+    top: 12px;
+  }
   .ff-event_status_timeline__item {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .ff-event_status_timeline__item {
+      grid-template-columns: 1fr 5fr;
+    }
   }
 </style>
