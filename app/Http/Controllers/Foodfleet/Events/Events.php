@@ -159,7 +159,7 @@ class Events extends Controller
     {
         $event = QueryBuilder::for(Event::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags', 'stores' ])
+            ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags', 'stores', 'type' ])
             ->firstOrFail();
 
         return new EventResource($event);

@@ -643,21 +643,23 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       class="layout event-new-wrap row wrap pa-2 justify-space-between"
     >
       <div
-        class="flex md12 sm12"
+        class="flex md8 sm12"
       >
         <div
           class="v-card v-sheet theme--light"
           errors="[object Object]"
         >
           <div
-            class="v-card__title px-3"
+            class="v-card__title grey--text font-weight-bold"
           >
             <h3>
               Basic Information
             </h3>
           </div>
            
-          <hr />
+          <hr
+            class="v-divider theme--light"
+          />
            
           <form
             class="v-form"
@@ -670,7 +672,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                 class="layout row wrap pr-3"
               >
                 <div
-                  class="flex xs12 md8"
+                  class="flex xs12"
                 >
                   <div
                     class="layout row wrap"
@@ -1017,44 +1019,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="layout row wrap pt-4"
                   >
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Budget
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="budget"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
                     <div
                       class="flex xs12 md3 pr-3"
@@ -1095,163 +1060,9 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                       </div>
                     </div>
                      
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Commission Rate
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="commission_rate"
-                                required="required"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
-                    <div
-                      class="flex xs12 md3"
-                    >
-                      
-              Commission type
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
-                        role="combobox"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-select__slot"
-                            >
-                              <div
-                                class="v-select__selections"
-                              >
-                                <div
-                                  class="v-select__selection v-select__selection--comma"
-                                >
-                                  Percentage(%)
-                                </div>
-                                <input
-                                  aria-readonly="false"
-                                  autocomplete="on"
-                                  readonly="readonly"
-                                  type="text"
-                                />
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--append"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon material-icons theme--light"
-                                  >
-                                    arrow_drop_down
-                                  </i>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="v-menu"
-                            >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                              >
-                                <div
-                                  class="v-select-list v-card theme--light"
-                                >
-                                  <div
-                                    class="v-list theme--light"
-                                    role="list"
-                                  >
-                                    <div
-                                      class="primary--text"
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Percentage(%)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Flat ($)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                   </div>
                    
                   <div
@@ -7147,6 +6958,377 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           </form>
         </div>
       </div>
+       
+      <div
+        class="flex md4 sm12"
+      >
+        <div
+          class="ff-venue_details ml-4 v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title font-weight-bold"
+          >
+            
+    Venue Details
+  
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="layout align-center row wrap"
+            >
+              <div
+                class="flex xs6 pr-2"
+              >
+                <div
+                  class="layout justify-content-between align-center mb-2 row"
+                >
+                  <h4
+                    class="text-uppercase grey--text font-weight-bold"
+                  >
+                    
+            Venue
+          
+                  </h4>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <div
+                                  class="v-list__tile theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      No data available
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex xs6 pl-2"
+              >
+                <div
+                  class="layout justify-content-between align-center mb-2 row"
+                >
+                  <h4
+                    class="text-uppercase grey--text font-weight-bold"
+                  >
+                    
+            Location
+          
+                  </h4>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-readonly="false"
+                            autocomplete="on"
+                            disabled="disabled"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--disabled material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <div
+                                  class="v-list__tile theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      No data available
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex d-flex xs12 pb-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Address
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex d-flex xs12 py-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Capacity
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex d-flex xs12 py-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Spots
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex xs12 py-3"
+              >
+                <h4
+                  class="pb-2 text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Location details
+        
+                </h4>
+                 
+                <p>
+                  
+          
+        
+                </p>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="layout align-center justify-space-around"
+            >
+              <div
+                class="flex xs12 sm8 md6 lg4"
+              >
+                <button
+                  class="v-btn v-btn--block v-btn--disabled v-btn--depressed theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+          Get Directions
+        
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </form>
    
@@ -9775,21 +9957,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       class="layout event-new-wrap row wrap pa-2 justify-space-between"
     >
       <div
-        class="flex md12 sm12"
+        class="flex md8 sm12"
       >
         <div
           class="v-card v-sheet theme--light"
           errors="[object Object]"
         >
           <div
-            class="v-card__title px-3"
+            class="v-card__title grey--text font-weight-bold"
           >
             <h3>
               Basic Information
             </h3>
           </div>
            
-          <hr />
+          <hr
+            class="v-divider theme--light"
+          />
            
           <form
             class="v-form"
@@ -9802,7 +9986,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                 class="layout row wrap pr-3"
               >
                 <div
-                  class="flex xs12 md8"
+                  class="flex xs12"
                 >
                   <div
                     class="layout row wrap"
@@ -10203,44 +10387,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="layout row wrap pt-4"
                   >
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Budget
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="budget"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
                     <div
                       class="flex xs12 md3 pr-3"
@@ -10281,163 +10428,9 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                       </div>
                     </div>
                      
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Commission Rate
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="commission_rate"
-                                required="required"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
-                    <div
-                      class="flex xs12 md3"
-                    >
-                      
-              Commission type
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
-                        role="combobox"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-select__slot"
-                            >
-                              <div
-                                class="v-select__selections"
-                              >
-                                <div
-                                  class="v-select__selection v-select__selection--comma"
-                                >
-                                  Flat ($)
-                                </div>
-                                <input
-                                  aria-readonly="false"
-                                  autocomplete="on"
-                                  readonly="readonly"
-                                  type="text"
-                                />
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--append"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon material-icons theme--light"
-                                  >
-                                    arrow_drop_down
-                                  </i>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="v-menu"
-                            >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                              >
-                                <div
-                                  class="v-select-list v-card theme--light"
-                                >
-                                  <div
-                                    class="v-list theme--light"
-                                    role="list"
-                                  >
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Percentage(%)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      class="primary--text"
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Flat ($)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                   </div>
                    
                   <div
@@ -16404,6 +16397,377 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               </button>
             </div>
           </form>
+        </div>
+      </div>
+       
+      <div
+        class="flex md4 sm12"
+      >
+        <div
+          class="ff-venue_details ml-4 v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title font-weight-bold"
+          >
+            
+    Venue Details
+  
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="layout align-center row wrap"
+            >
+              <div
+                class="flex xs6 pr-2"
+              >
+                <div
+                  class="layout justify-content-between align-center mb-2 row"
+                >
+                  <h4
+                    class="text-uppercase grey--text font-weight-bold"
+                  >
+                    
+            Venue
+          
+                  </h4>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <div
+                                  class="v-list__tile theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      No data available
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex xs6 pl-2"
+              >
+                <div
+                  class="layout justify-content-between align-center mb-2 row"
+                >
+                  <h4
+                    class="text-uppercase grey--text font-weight-bold"
+                  >
+                    
+            Location
+          
+                  </h4>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-readonly="false"
+                            autocomplete="on"
+                            disabled="disabled"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--disabled material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <div
+                                  class="v-list__tile theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      No data available
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex d-flex xs12 pb-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Address
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex d-flex xs12 py-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Capacity
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex d-flex xs12 py-3"
+              >
+                <h4
+                  class="text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Spots
+        
+                </h4>
+                 
+                <span
+                  class="text-xs-center"
+                >
+                  
+          -
+        
+                </span>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <hr
+                  class="v-divider theme--light"
+                />
+              </div>
+               
+              <div
+                class="flex xs12 py-3"
+              >
+                <h4
+                  class="pb-2 text-uppercase grey--text font-weight-bold"
+                >
+                  
+          Location details
+        
+                </h4>
+                 
+                <p>
+                  
+          
+        
+                </p>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="layout align-center justify-space-around"
+            >
+              <div
+                class="flex xs12 sm8 md6 lg4"
+              >
+                <button
+                  class="v-btn v-btn--block v-btn--disabled v-btn--depressed theme--light"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+          Get Directions
+        
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

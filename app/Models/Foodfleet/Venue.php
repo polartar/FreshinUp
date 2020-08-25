@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $id
  * @property string $uuid
  * @property string $name
+ * @property string $address
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at

@@ -14,6 +14,7 @@ import transactions from './modules/transactions'
 import companyDetails from './modules/companyDetails'
 import eventSummary from './modules/eventSummary'
 import eventTypes from './modules/eventTypes'
+import venues from './modules/venues'
 
 export default (initialState = {}) => {
   return createStore(
@@ -33,7 +34,8 @@ export default (initialState = {}) => {
         transactions: transactions({}),
         companyDetails: companyDetails({}),
         eventSummary: eventSummary({}),
-        eventTypes: eventTypes({})
+        eventTypes: eventTypes({}),
+        venues: venues({})
       }
     }
   )

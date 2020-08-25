@@ -1,6 +1,11 @@
 # Changes
-## August 20, 2020
-- **ADD** Status helper function is not created on Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
+## August 25, 2020
+- **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
+- **ADD** Fleet Member Basic Information component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
+- **FIX** Basic Information displays Event Type [#423](https://github.com/FreshinUp/foodfleet/issues/423)
+
+## August 24, 2020
+- **ADD** Status History helper function for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 
 ## August 19, 2020
 - **ADD** Add new fleet member dialog with search feature. [#384](https://github.com/FreshinUp/foodfleet/issues/384)
