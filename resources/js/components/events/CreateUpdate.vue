@@ -156,7 +156,43 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <EventStatusTimeline />
+              <v-card>
+                <v-card-title>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h3>Event Status</h3>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="questDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
+                </v-card-title>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <event-status-timeline />
+                </v-card-text>
+                <v-divider />
+              </v-card>
             </v-dialog>
           </v-layout>
         </v-flex>
