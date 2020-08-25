@@ -1,9 +1,9 @@
 # Changes
 ## August 25, 2020
+- **ADD** Fleet Member Basic Information component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
 - **FIX** Basic Information displays Event Type [#423](https://github.com/FreshinUp/foodfleet/issues/423)
 
 ## August 24, 2020
-- **ADD** Fleet Member Basic Information component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
 - **ADD** Status History helper function for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 
 ## August 19, 2020
