@@ -614,14 +614,30 @@ class EventTest extends TestCase
             ])
             ->json('data');
 
-        $this->assertEquals($event->uuid, $data['uuid']);
-        $this->assertEquals($event->name, $data['name']);
-        $this->assertEquals($user->uuid, $data['manager']['uuid']);
-        $this->assertEquals($company->uuid, $data['host']['uuid']);
-        $this->assertEquals($location->uuid, $data['location']['uuid']);
-        $this->assertEquals($eventTag->uuid, $data['event_tags'][0]['uuid']);
-        $this->assertEquals($eventTag->name, $data['event_tags'][0]['name']);
-        $this->assertEquals($eventType->id, $data['type']['id']);
+        $this->assertArraySubset([
+            'uuid' => $event->uuid,
+            'name' => $event->name,
+            'manager' => [
+                'uuid' => $user->uuid
+            ],
+            'host' => [
+                'uuid' => $company->uuid
+            ],
+            'location' => [
+                'uuid' => $location->uuid
+            ],
+            'event_tags' => [
+                [
+                    'uuid' => $eventTag->uuid,
+                    'name' => $eventTag->name
+                ]
+            ],
+            'type_id' => $eventType->id,
+            'type' => [
+                'id' => $eventType->id,
+                'name' => $eventType->name
+            ]
+        ], $data);
     }
 
     public function testCreatedItem()
@@ -638,48 +654,50 @@ class EventTest extends TestCase
         $eventTagNames = $eventTags->map(function ($item) {
             return $item->name;
         });
-        $eventType = factory(EventType::class)->create();
 
+        $payload = [
+            'name' => 'test event',
+            'manager_uuid' => $admin->uuid,
+            'host_uuid' => $company->uuid,
+            'location_uuid' => $location->uuid,
+            'event_tags' => $eventTagNames,
+            'host_status' => 1,
+            'status_id' => 1,
+            'start_at' => '2050-09-18',
+            'end_at' => '2050-09-20',
+            'staff_notes' => 'test staff notes',
+            'member_notes' => 'test member notes',
+            'customer_notes' => 'test customer notes',
+            'commission_rate' => 30,
+            'commission_type' => 1,
+            'type_id' => 1
+        ];
         $data = $this
-            ->json('POST', 'api/foodfleet/events', [
-                'name' => 'test event',
-                'manager_uuid' => $admin->uuid,
-                'host_uuid' => $company->uuid,
-                'location_uuid' => $location->uuid,
-                'event_tags' => $eventTagNames,
-                'host_status' => 1,
-                'status_id' => 1,
-                'start_at' => '2050-09-18',
-                'end_at' => '2050-09-20',
-                'staff_notes' => 'test staff notes',
-                'member_notes' => 'test member notes',
-                'customer_notes' => 'test customer notes',
-                'commission_rate' => 30,
-                'commission_type' => 1,
-                'type_id' => 1
-            ])
+            ->json('POST', 'api/foodfleet/events', $payload)
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=manager,host,location,event_tags,type';
+        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=manager,host,location,event_tags';
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
 
-        $this->assertEquals('test event', $returnedEvent['name']);
-        $this->assertEquals(1, $returnedEvent['status_id']);
-        $this->assertEquals('2050-09-18', $returnedEvent['start_at']);
-        $this->assertEquals('2050-09-20', $returnedEvent['end_at']);
-        $this->assertEquals('test staff notes', $returnedEvent['staff_notes']);
-        $this->assertEquals('test member notes', $returnedEvent['member_notes']);
-        $this->assertEquals('test customer notes', $returnedEvent['customer_notes']);
-        $this->assertEquals(30, $returnedEvent['commission_rate']);
-        $this->assertEquals(1, $returnedEvent['commission_type']);
-        $this->assertEquals($admin->uuid, $returnedEvent['manager']['uuid']);
-        $this->assertEquals($company->uuid, $returnedEvent['host']['uuid']);
-        $this->assertEquals($location->uuid, $returnedEvent['location']['uuid']);
-        $this->assertEquals(1, $returnedEvent['host_status']);
-        $this->assertEquals($eventType->id, $returnedEvent['type']['id']);
+        $this->assertArraySubset([
+            'name' => $payload['name'],
+            'manager_uuid' => $payload['manager_uuid'],
+            'host_uuid' => $payload['host_uuid'],
+            'location_uuid' => $payload['location_uuid'],
+            'host_status' => $payload['host_status'],
+            'status_id' => $payload['status_id'],
+            'start_at' => $payload['start_at'],
+            'end_at' => $payload['end_at'],
+            'staff_notes' => $payload['staff_notes'],
+            'member_notes' => $payload['member_notes'],
+            'customer_notes' => $payload['customer_notes'],
+            'commission_rate' => $payload['commission_rate'],
+            'commission_type' => $payload['commission_type'],
+            'type_id' => $payload['type_id'],
+        ], $returnedEvent);
         $this->assertArraySubset($eventTags->map(function ($item) {
             return [
                 'uuid' => $item->uuid,
@@ -770,10 +788,10 @@ class EventTest extends TestCase
             'member_notes' => null,
             'customer_notes' => null,
             'budget' => null,
-            'attendees' => null,
-            'commission_rate' => null,
+            'attendees' => 0,
+            'commission_rate' => 0,
             'commission_type' => 1,
-            'type' => null,
+            'type_id' => null,
             'manager_uuid' => null,
             'host_uuid' => null,
             'location_uuid' => null

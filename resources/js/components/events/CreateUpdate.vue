@@ -501,7 +501,7 @@ export default {
     if (id !== 'new') {
       params = {
         id,
-        include: 'manager,host,event_tags,type'
+        include: 'manager,host,event_tags'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
