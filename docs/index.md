@@ -1,4 +1,7 @@
 # Changes
+## August 25, 2020
+- **FIX** Basic Information displays Event Type [#423](https://github.com/FreshinUp/foodfleet/issues/423)
+
 ## August 20, 2020
 - **ADD** Status helper function is not created on Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 
