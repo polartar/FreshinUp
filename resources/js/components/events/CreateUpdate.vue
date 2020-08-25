@@ -209,6 +209,7 @@
         <v-flex
           md12
           sm12
+          lg8
         >
           <BasicInformation
             ref="basicInfo"
@@ -223,8 +224,12 @@
         <v-flex
           md12
           sm12
+          lg4
         >
-          <venue-details />
+          <VenueDetails
+            class="ml-4"
+            :venues="venues"
+          />
         </v-flex>
       </v-layout>
     </v-form>
@@ -325,6 +330,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('venues', { venues: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -496,10 +502,6 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
-    },
-    changeStatus () {},
-    onHelper () {
-      alert('Coming Soon')
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -529,22 +531,19 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
-    Promise.all(promises).then(() => {
-      if (next) next()
-    })
+    Promise.all(promises)
+      .then(() => {})
       .catch((error) => {
         console.error(error)
       })
       .then(() => {
         vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
       })
   }
 }
 </script>
 <style scoped>
-  .event-new-wrap{
-    background-color: #fff;
-  }
   .back-btn-inner{
     color: #fff;
     display: flex;

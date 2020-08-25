@@ -2,13 +2,14 @@ import { storiesOf } from '@storybook/vue'
 
 import VenueDetails from './VenueDetails'
 
-import { FIXTURE_VENUES, FIXTURE_VENUE_ADDITIONAL_DATA } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUES } from '../../../../tests/Javascript/__data__/venues'
+import { action } from '@storybook/addon-actions'
 
 export const Default = () => ({
   components: { VenueDetails },
   template: `
     <v-container>
-      <venue-details />
+      <VenueDetails />
     </v-container>
   `
 })
@@ -18,24 +19,31 @@ export const WithData = () => ({
   data () {
     return {
       venues: FIXTURE_VENUES,
-      additionalData: FIXTURE_VENUE_ADDITIONAL_DATA
+      locationUuid: FIXTURE_VENUES[0].locations[0].uuid,
+      venueUuid: FIXTURE_VENUES[0].uuid
     }
   },
   template: `
     <v-container>
-      <venue-details :venues="venues" :venue="additionalData"/>
+      <VenueDetails
+        :venues="venues"
+        :location-uuid="locationUuid"
+        :venue-uuid="venueUuid"
+        @get-directions="getDirections"/>
     </v-container>
   `,
   methods: {
-    getDirections () {}
+    getDirections (payload) {
+      action('getDirections')(payload)
+    }
   }
 })
 
-storiesOf('FoodFleet|components/event/VenueDetails', module)
+storiesOf('FoodFleet|components/events/VenueDetails', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('Default', Default)
-  .add('With data', WithData)
+  .add('WithData', WithData)

@@ -1,5 +1,5 @@
 # Changes
-## August 24, 2020
+## August 25, 2020
 - **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
 
 ## August 20, 2020
