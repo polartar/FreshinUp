@@ -207,9 +207,8 @@
         class="event-new-wrap"
       >
         <v-flex
-          md12
+          md8
           sm12
-          lg8
         >
           <BasicInformation
             ref="basicInfo"
@@ -222,9 +221,8 @@
           />
         </v-flex>
         <v-flex
-          md12
+          md4
           sm12
-          lg4
         >
           <VenueDetails
             class="ml-4"
@@ -330,7 +328,6 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
-    ...mapGetters('venues', { venues: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
