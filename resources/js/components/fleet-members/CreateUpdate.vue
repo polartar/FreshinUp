@@ -26,7 +26,20 @@ export default {
   },
 
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    if (next) next()
+    const id = to.params.id || 'new'
+    const promises = []
+    if (id !== 'new') {
+    }
+    vm.$store.dispatch('page/setLoading', true)
+    Promise.all(promises)
+      .then(() => {})
+      .catch((error) => {
+        console.error(error)
+      })
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
+      })
   }
 }
 </script>
