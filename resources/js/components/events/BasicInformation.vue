@@ -112,6 +112,7 @@
               pt-4
             >
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
                 :pr-3="$vuetify.breakpoint.mdAndUp"
@@ -144,6 +145,7 @@
                 />
               </v-flex>
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
                 :pr-3="$vuetify.breakpoint.mdAndUp"
@@ -161,6 +163,7 @@
                 />
               </v-flex>
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
               >
