@@ -24,7 +24,7 @@ export default {
 </script>
 <style lang="styl" scoped>
   .clear-button-icon {
-    font-size: 10px;
+    font-size: var(--clear-button-size, 10px);
   }
   .v-btn--icon {
     width: 10px !important;
