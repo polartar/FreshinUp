@@ -1,6 +1,6 @@
 # Changes
 ## August 24, 2020
-- **ADD** Missing venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
+- **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
 
 ## August 20, 2020
 - **ADD** Status helper function is not created on Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
