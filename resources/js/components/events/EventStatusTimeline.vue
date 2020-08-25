@@ -37,7 +37,8 @@ export default {
   mixins: [FormatDate],
   props: {
     histories: { type: Array, default: () => [] },
-    histories: { type: Array, default: () => [] },
+    // TODO: timeline should display all statuses. Then from histories computed what's completed or not
+    statuses: { type: Array, default: () => [] },
     status: { type: Number, default: 0 }
   },
   methods: {

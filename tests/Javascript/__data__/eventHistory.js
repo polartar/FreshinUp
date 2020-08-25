@@ -64,5 +64,4 @@ export const FIXTURE_EVENT_HISTORIES = [
   }
 ]
 
-
 export const FIXTURE_EVENT_HISTORY = FIXTURE_EVENT_HISTORIES[0]
