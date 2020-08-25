@@ -41,12 +41,13 @@ class Event extends JsonResource
             'attendees' => $this->attendees,
             'commission_rate' => $this->commission_rate,
             'commission_type' => $this->commission_type,
+            'type_id' => $this->type_id,
             'type' => $this->type,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
             'location_uuid' => $this->location_uuid,
             'host_uuid' => $this->host_uuid,
-            'manager_uuid' => $this->manager_uuid,
+            'manager_uuid' => $this->manager_uuid
         ];
     }
 }

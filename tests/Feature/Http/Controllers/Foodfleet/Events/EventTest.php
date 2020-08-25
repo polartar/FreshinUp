@@ -595,17 +595,19 @@ class EventTest extends TestCase
         $company = factory(Company::class)->create();
         $location = factory(Location::class)->create();
         $eventTag = factory(EventTag::class)->create();
+        $eventType = factory(EventType::class)->create();
 
         $event = factory(Event::class)->create([
             'host_uuid' => $company->uuid,
             'location_uuid' => $location->uuid,
-            'manager_uuid' => $user->uuid
+            'manager_uuid' => $user->uuid,
+            'type_id' => $eventType->id
         ]);
 
         $event->eventTags()->save($eventTag);
 
         $data = $this
-            ->json('GET', 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags')
+            ->json('GET', 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags,type')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -619,6 +621,7 @@ class EventTest extends TestCase
         $this->assertEquals($location->uuid, $data['location']['uuid']);
         $this->assertEquals($eventTag->uuid, $data['event_tags'][0]['uuid']);
         $this->assertEquals($eventTag->name, $data['event_tags'][0]['name']);
+        $this->assertEquals($eventType->id, $data['type']['id']);
     }
 
     public function testCreatedItem()
@@ -635,6 +638,7 @@ class EventTest extends TestCase
         $eventTagNames = $eventTags->map(function ($item) {
             return $item->name;
         });
+        $eventType = factory(EventType::class)->create();
 
         $data = $this
             ->json('POST', 'api/foodfleet/events', [
@@ -651,12 +655,13 @@ class EventTest extends TestCase
                 'member_notes' => 'test member notes',
                 'customer_notes' => 'test customer notes',
                 'commission_rate' => 30,
-                'commission_type' => 1
+                'commission_type' => 1,
+                'type_id' => 1
             ])
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=manager,host,location,event_tags';
+        $url = 'api/foodfleet/events/' . $data['uuid'] . '?include=manager,host,location,event_tags,type';
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -674,6 +679,7 @@ class EventTest extends TestCase
         $this->assertEquals($company->uuid, $returnedEvent['host']['uuid']);
         $this->assertEquals($location->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals(1, $returnedEvent['host_status']);
+        $this->assertEquals($eventType->id, $returnedEvent['type']['id']);
         $this->assertArraySubset($eventTags->map(function ($item) {
             return [
                 'uuid' => $item->uuid,
