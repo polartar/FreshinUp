@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title class="grey--text font-weight-bold">
-      Venue Details
+      <h3>Venue Details</h3>
     </v-card-title>
     <v-divider />
     <div>

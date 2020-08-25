@@ -643,21 +643,23 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       class="layout event-new-wrap row wrap pa-2 justify-space-between"
     >
       <div
-        class="flex md12 sm12"
+        class="flex md8 sm12 pr-2"
       >
         <div
           class="v-card v-sheet theme--light"
           errors="[object Object]"
         >
           <div
-            class="v-card__title px-3"
+            class="v-card__title grey--text font-weight-bold"
           >
             <h3>
               Basic Information
             </h3>
           </div>
            
-          <hr />
+          <hr
+            class="v-divider theme--light"
+          />
            
           <form
             class="v-form"
@@ -670,7 +672,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                 class="layout row wrap pr-3"
               >
                 <div
-                  class="flex xs12 md8"
+                  class="flex xs12"
                 >
                   <div
                     class="layout row wrap"
@@ -7149,7 +7151,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       </div>
        
       <div
-        class="flex md12 sm12"
+        class="flex md4 sm12 pl-2"
       >
         <div
           class="v-card v-sheet theme--light"
@@ -7157,9 +7159,9 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           <div
             class="v-card__title grey--text font-weight-bold"
           >
-            
-    Venue Details
-  
+            <h3>
+              Venue Details
+            </h3>
           </div>
            
           <hr
@@ -10127,21 +10129,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       class="layout event-new-wrap row wrap pa-2 justify-space-between"
     >
       <div
-        class="flex md12 sm12"
+        class="flex md8 sm12 pr-2"
       >
         <div
           class="v-card v-sheet theme--light"
           errors="[object Object]"
         >
           <div
-            class="v-card__title px-3"
+            class="v-card__title grey--text font-weight-bold"
           >
             <h3>
               Basic Information
             </h3>
           </div>
            
-          <hr />
+          <hr
+            class="v-divider theme--light"
+          />
            
           <form
             class="v-form"
@@ -10154,7 +10158,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                 class="layout row wrap pr-3"
               >
                 <div
-                  class="flex xs12 md8"
+                  class="flex xs12"
                 >
                   <div
                     class="layout row wrap"
@@ -16760,7 +16764,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       </div>
        
       <div
-        class="flex md12 sm12"
+        class="flex md4 sm12 pl-2"
       >
         <div
           class="v-card v-sheet theme--light"
@@ -16768,9 +16772,9 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           <div
             class="v-card__title grey--text font-weight-bold"
           >
-            
-    Venue Details
-  
+            <h3>
+              Venue Details
+            </h3>
           </div>
            
           <hr

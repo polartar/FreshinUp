@@ -5,14 +5,16 @@ exports[`event/BasicInformation Snapshots default 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title px-3"
+    class="v-card__title grey--text font-weight-bold"
   >
     <h3>
       Basic Information
     </h3>
   </div>
    
-  <hr />
+  <hr
+    class="v-divider theme--light"
+  />
    
   <form
     class="v-form"
@@ -25,7 +27,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
         class="layout row wrap pr-3"
       >
         <div
-          class="flex xs12 md8"
+          class="flex xs12"
         >
           <div
             class="layout row wrap"
@@ -989,14 +991,16 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title px-3"
+    class="v-card__title grey--text font-weight-bold"
   >
     <h3>
       Basic Information
     </h3>
   </div>
    
-  <hr />
+  <hr
+    class="v-divider theme--light"
+  />
    
   <form
     class="v-form"
@@ -1009,7 +1013,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
         class="layout row wrap pr-3"
       >
         <div
-          class="flex xs12 md8"
+          class="flex xs12"
         >
           <div
             class="layout row wrap"
@@ -7477,14 +7481,16 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title px-3"
+    class="v-card__title grey--text font-weight-bold"
   >
     <h3>
       Basic Information
     </h3>
   </div>
    
-  <hr />
+  <hr
+    class="v-divider theme--light"
+  />
    
   <form
     class="v-form"
@@ -7497,7 +7503,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
         class="layout row wrap pr-3"
       >
         <div
-          class="flex xs12 md8"
+          class="flex xs12"
         >
           <div
             class="layout row wrap"
@@ -14109,14 +14115,16 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title px-3"
+    class="v-card__title grey--text font-weight-bold"
   >
     <h3>
       Basic Information
     </h3>
   </div>
    
-  <hr />
+  <hr
+    class="v-divider theme--light"
+  />
    
   <form
     class="v-form"
@@ -14129,7 +14137,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
         class="layout row wrap pr-3"
       >
         <div
-          class="flex xs12 md8"
+          class="flex xs12"
         >
           <div
             class="layout row wrap"
@@ -15211,14 +15219,16 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title px-3"
+    class="v-card__title grey--text font-weight-bold"
   >
     <h3>
       Basic Information
     </h3>
   </div>
    
-  <hr />
+  <hr
+    class="v-divider theme--light"
+  />
    
   <form
     class="v-form"
@@ -15231,7 +15241,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
         class="layout row wrap pr-3"
       >
         <div
-          class="flex xs12 md8"
+          class="flex xs12"
         >
           <div
             class="layout row wrap"

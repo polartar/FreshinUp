@@ -207,8 +207,9 @@
         class="event-new-wrap"
       >
         <v-flex
-          md12
+          md8
           sm12
+          pr-2
         >
           <BasicInformation
             ref="basicInfo"
@@ -221,8 +222,9 @@
           />
         </v-flex>
         <v-flex
-          md12
+          md4
           sm12
+          pl-2
         >
           <venue-details />
         </v-flex>
@@ -542,9 +544,6 @@ export default {
 }
 </script>
 <style scoped>
-  .event-new-wrap{
-    background-color: #fff;
-  }
   .back-btn-inner{
     color: #fff;
     display: flex;

@@ -1,9 +1,9 @@
 <template>
   <v-card>
-    <v-card-title class="px-3">
+    <v-card-title class="grey--text font-weight-bold">
       <h3>Basic Information</h3>
     </v-card-title>
-    <hr>
+    <v-divider />
     <v-form
       ref="form"
       v-model="isValid"
@@ -17,7 +17,6 @@
         >
           <v-flex
             xs12
-            md8
           >
             <v-layout
               row
@@ -411,8 +410,3 @@ export default {
   }
 }
 </script>
-<style lang="styl" scoped>
-  .v-card {
-    border-radius: 6px;
-  }
-</style>

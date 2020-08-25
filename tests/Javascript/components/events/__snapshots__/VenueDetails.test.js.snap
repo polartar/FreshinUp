@@ -10,9 +10,9 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
     <div
       class="v-card__title grey--text font-weight-bold"
     >
-      
-    Venue Details
-  
+      <h3>
+        Venue Details
+      </h3>
     </div>
      
     <hr
@@ -364,9 +364,9 @@ exports[`events/VenueDetails Snapshots With data 1`] = `
     <div
       class="v-card__title grey--text font-weight-bold"
     >
-      
-    Venue Details
-  
+      <h3>
+        Venue Details
+      </h3>
     </div>
      
     <hr
