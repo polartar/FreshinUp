@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fleet-members/Events Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title grey--text"
+    >
+      <div
+        class="layout row space-between align-center"
+      >
+        <div
+          class="flex"
+        >
+          <h3>
+            Assigned Events
+          </h3>
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text green--text"
+    >
+      <div
+        class="ff-fleet-members__events-text"
+      >
+         
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+  </div>
+</div>
+`;
+
+exports[`fleet-members/Events Snapshots WithData 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title grey--text"
+    >
+      <div
+        class="layout row space-between align-center"
+      >
+        <div
+          class="flex"
+        >
+          <h3>
+            Assigned Events
+          </h3>
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text green--text"
+    >
+      <div
+        class="ff-fleet-members__events-text"
+      >
+         Event will populate once your restaurant is assigned
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+  </div>
+</div>
+`;

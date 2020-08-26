@@ -1,19 +1,39 @@
 <template>
   <div>
-    <basic-information
-      @save="saveMember"
-      @delete="deleteMember"
-      @cancel="onCancel"
-    />
+    <div>
+      <basic-information
+        @save="saveMember"
+        @delete="deleteMember"
+        @cancel="onCancel"
+      />
+    </div>
+    <v-layout
+      row
+      px-2
+      py-4
+    >
+      <v-flex>
+        <Events
+          :events="events"
+        />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
 import BasicInformation from './BasicInformation'
+import Events from './Events'
 
 export default {
   layout: 'admin',
   components: {
-    BasicInformation
+    BasicInformation,
+    Events
+  },
+  data () {
+    return {
+      events: ['Event will populate once your restaurant is assigned.']
+    }
   },
   methods: {
     saveMember (item) {},
