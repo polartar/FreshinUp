@@ -12,7 +12,7 @@
       </v-layout>
     </v-card-title>
     <v-divider />
-    <v-card-text class="green--text">
+    <v-card-text class="primary--text">
       <div
         v-for="(event, index) in events"
         :key="index"
