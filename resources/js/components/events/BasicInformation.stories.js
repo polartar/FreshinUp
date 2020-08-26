@@ -58,7 +58,7 @@ const event = {
   budget: 1000,
   commission_rate: 12,
   commission_type: 2,
-  type: 1
+  type_id: 1
 }
 
 storiesOf('FoodFleet|components/events/BasicInformation', module)

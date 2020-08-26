@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             \StoreStatusesSeeder::class,
             \StoreTypesSeeder::class,
             \DocumentTypesSeeder::class,
-            \DocumentStatusesSeeder::class,
+            \DocumentStatusesSeeder::class
         ]);
     }
 }

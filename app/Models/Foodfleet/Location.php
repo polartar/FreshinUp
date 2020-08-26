@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $id
  * @property string $uuid
  * @property string $name
- *
+ * @property string $venue_uuid
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
@@ -37,7 +37,7 @@ class Location extends Model
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
-  
+
     public function venue()
     {
         return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Resources;
+namespace Tests\Feature\Http\Resources\Foodfleet;
 
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Http\Resources\Foodfleet\EventStatus as EventStatusResource;
