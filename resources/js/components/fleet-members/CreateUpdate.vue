@@ -1,19 +1,26 @@
 <template>
   <div>
-    <basic-information
-      @save="saveMember"
-      @delete="deleteMember"
-      @cancel="onCancel"
-    />
+    <div>
+      <basic-information
+        @save="saveMember"
+        @delete="deleteMember"
+        @cancel="onCancel"
+      />
+    </div>
+    <div>
+      <payments />
+    </div>
   </div>
 </template>
 <script>
 import BasicInformation from './BasicInformation'
+import Payments from './Payments'
 
 export default {
   layout: 'admin',
   components: {
-    BasicInformation
+    BasicInformation,
+    Payments
   },
   methods: {
     saveMember (item) {},
