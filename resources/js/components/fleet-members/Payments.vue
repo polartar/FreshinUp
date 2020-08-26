@@ -11,6 +11,7 @@
           <v-btn
             depressed
             color="primary"
+            @click="newDialogShown = true"
           >
             <v-icon
               left
@@ -23,6 +24,12 @@
       </v-layout>
     </v-card-title>
     <v-divider />
+    <v-dialog
+      v-model="newDialogShown"
+      max-width="300"
+    >
+      Coming soon
+    </v-dialog>
     <v-layout>
       <v-flex xs12>
         <v-data-table
@@ -80,61 +87,31 @@ import get from 'lodash/get'
 import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
+const statuses = [
+  {
+    id: 1,
+    text: 'Pending'
+  },
+  {
+    id: 2,
+    text: 'Paid'
+  },
+  {
+    id: 3,
+    text: 'Failed'
+  },
+  {
+    id: 4,
+    text: 'Refunded'
+  }
+]
+
 export default {
   mixins: [FormatMoney, FormatDate],
   props: {
     payments: {
       type: Array,
-      default: () => [
-        {
-          status: 1,
-          event_name: 'Random event name',
-          payment_name: 'Event venue fee',
-          due_date: '2020-07-08',
-          amount_money: 300,
-          venue: 'Convention center',
-          venue_due_date: '2020-09-09'
-        },
-        {
-          status: 2,
-          event_name: 'Random event name',
-          payment_name: 'Event venue fee',
-          due_date: '2020-07-08',
-          amount_money: 300,
-          venue: 'Convention center',
-          venue_due_date: '2020-09-09'
-        },
-        {
-          status: 3,
-          event_name: 'Random event name',
-          payment_name: 'Event venue fee',
-          due_date: '2020-07-08',
-          amount_money: 300,
-          venue: 'Convention center',
-          venue_due_date: '2020-09-09'
-        }
-      ]
-    },
-    paymentStatuses: {
-      type: Array,
-      default: () => [
-        {
-          id: 1,
-          text: 'Pending'
-        },
-        {
-          id: 2,
-          text: 'Paid'
-        },
-        {
-          id: 3,
-          text: 'Failed'
-        },
-        {
-          id: 4,
-          text: 'Refunded'
-        }
-      ]
+      default: () => []
     }
   },
   data () {
@@ -146,7 +123,9 @@ export default {
         { text: 'Due date', value: 'due_date' },
         { text: 'Amount', value: 'amount_money' },
         { text: 'Manage', value: 'manage' }
-      ]
+      ],
+      statuses,
+      newDialogShown: false
     }
   },
 
@@ -154,7 +133,7 @@ export default {
     get,
 
     getStatus (item) {
-      let status = this.paymentStatuses.find(s => item.status === s.id)
+      let status = this.statuses.find(s => item.status === s.id)
 
       if (!status) { return }
 

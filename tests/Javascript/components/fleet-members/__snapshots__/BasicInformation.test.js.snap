@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`flee-members/BasicInformation Snapshots Default 1`] = `
+exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
 <div
   class="container"
 >
@@ -966,7 +966,7 @@ exports[`flee-members/BasicInformation Snapshots Default 1`] = `
 </div>
 `;
 
-exports[`flee-members/BasicInformation Snapshots WithData 1`] = `
+exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
 <div
   class="container"
 >

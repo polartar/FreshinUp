@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/vue'
 // import { action } from '@storybook/addon-actions'
 
 import Payments from './Payments'
+import { FIXTURE_PAYMENTS } from '../../../../tests/Javascript/__data__/Payments'
 
 export const Default = () => ({
   components: { Payments },
@@ -16,7 +17,7 @@ export const WithData = () => ({
   components: { Payments },
   data () {
     return {
-      paymentList: []
+      paymentList: FIXTURE_PAYMENTS
     }
   },
   template: `
