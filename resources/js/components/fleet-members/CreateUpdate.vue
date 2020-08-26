@@ -1,18 +1,25 @@
 <template>
   <div>
-    <div>
-      <basic-information
-        @save="saveMember"
-        @delete="deleteMember"
-        @cancel="onCancel"
-      />
-    </div>
     <v-layout
-      row
+      justify-space-around
+      column
       px-2
       py-4
     >
-      <v-flex>
+      <v-flex
+        xs12
+        py-2
+      >
+        <basic-information
+          @save="saveMember"
+          @delete="deleteMember"
+          @cancel="onCancel"
+        />
+      </v-flex>
+      <v-flex
+        xs12
+        py-2
+      >
         <DocumentList
           :docs="docs"
           :statuses="statuses"
@@ -24,6 +31,12 @@
           :sort-by="sorting.sortBy"
           :descending="sorting.descending"
         />
+      </v-flex>
+      <v-flex
+        xs12
+        py-2
+      >
+        <payments />
       </v-flex>
     </v-layout>
     <v-layout
@@ -41,6 +54,7 @@
 </template>
 <script>
 import BasicInformation from './BasicInformation'
+import Payments from './Payments'
 import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
 import Events from './Events'
@@ -50,6 +64,7 @@ export default {
   components: {
     BasicInformation,
     DocumentList,
+    Payments,
     Events
   },
   data () {
@@ -85,7 +100,6 @@ export default {
     onCancel () {
       this.$router.push('/admin/fleet-members')
     }
-
   },
 
   beforeRouteEnterOrUpdate (vm, to, from, next) {
