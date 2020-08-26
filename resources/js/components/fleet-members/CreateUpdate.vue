@@ -26,18 +26,31 @@
         />
       </v-flex>
     </v-layout>
+    <v-layout
+      row
+      px-2
+      py-4
+    >
+      <v-flex>
+        <Events
+          :events="events"
+        />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
 import BasicInformation from './BasicInformation'
 import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
+import Events from './Events'
 
 export default {
   layout: 'admin',
   components: {
     BasicInformation,
-    DocumentList
+    DocumentList,
+    Events
   },
   data () {
     return {
@@ -55,7 +68,8 @@ export default {
         { value: 'created_at', text: 'Oldest' },
         { value: 'title', text: 'Title (A - Z)' },
         { value: '-title', text: 'Title (Z - A)' }
-      ]
+      ],
+      events: ['Event will populate once your restaurant is assigned.']
     }
   },
   computed: {
