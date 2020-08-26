@@ -156,7 +156,43 @@
                   <v-icon>far fa-question-circle</v-icon>
                 </v-btn>
               </template>
-              <EventStatusTimeline />
+              <v-card>
+                <v-card-title>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h3>Event Status</h3>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="questDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
+                </v-card-title>
+                <v-divider />
+                <v-card-text class="grey--text">
+                  <event-status-timeline />
+                </v-card-text>
+                <v-divider />
+              </v-card>
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -171,7 +207,7 @@
         class="event-new-wrap"
       >
         <v-flex
-          md12
+          md8
           sm12
         >
           <BasicInformation
@@ -182,6 +218,15 @@
             @cancel="onCancel"
             @save="onSave"
             @delete="onDelete"
+          />
+        </v-flex>
+        <v-flex
+          md4
+          sm12
+        >
+          <VenueDetails
+            class="ml-4"
+            :venues="venues"
           />
         </v-flex>
       </v-layout>
@@ -229,6 +274,7 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
@@ -257,7 +303,8 @@ export default {
     StatusSelect,
     BasicInformation,
     Customers,
-    EventStatusTimeline
+    EventStatusTimeline,
+    VenueDetails
   },
   mixins: [Validate, FormatDate],
   data () {
@@ -452,10 +499,6 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
-    },
-    changeStatus () {},
-    onHelper () {
-      alert('Coming Soon')
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -485,22 +528,19 @@ export default {
       .then(() => {
         vm.eventLoading = false
       })
-    Promise.all(promises).then(() => {
-      if (next) next()
-    })
+    Promise.all(promises)
+      .then(() => {})
       .catch((error) => {
         console.error(error)
       })
       .then(() => {
         vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
       })
   }
 }
 </script>
 <style scoped>
-  .event-new-wrap{
-    background-color: #fff;
-  }
   .back-btn-inner{
     color: #fff;
     display: flex;

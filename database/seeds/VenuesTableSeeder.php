@@ -11,6 +11,6 @@ class VenuesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Foodfleet\Venue::class, 50)->create();
+        factory(\App\Models\Foodfleet\Venue::class, 10)->create();
     }
 }

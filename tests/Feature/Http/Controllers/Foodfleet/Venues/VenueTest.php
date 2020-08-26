@@ -14,11 +14,6 @@ class VenueTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -46,11 +41,6 @@ class VenueTest extends TestCase
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();

@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class EventStatus extends JsonResource
 {
-    public function getColorFor ($id) {
+    public static function getColorFor ($id) {
         $statusColors = [
             EventStatusEnum::DRAFT => 'grey',
             EventStatusEnum::FF_INITIAL_REVIEW => 'warning',

@@ -113,4 +113,9 @@ class Event extends Model
     {
         return $this->belongsTo(EventType::class, 'type_id', 'id');
     }
+
+    public function histories()
+    {
+        return $this->hasMany(EventHistory::class, 'event_uuid', 'uuid');
+    }
 }

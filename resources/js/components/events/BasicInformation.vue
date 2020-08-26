@@ -1,9 +1,9 @@
 <template>
   <v-card>
-    <v-card-title class="px-3">
+    <v-card-title class="grey--text font-weight-bold">
       <h3>Basic Information</h3>
     </v-card-title>
-    <hr>
+    <v-divider />
     <v-form
       ref="form"
       v-model="isValid"
@@ -17,7 +17,6 @@
         >
           <v-flex
             xs12
-            md8
           >
             <v-layout
               row
@@ -112,6 +111,7 @@
               pt-4
             >
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
                 :pr-3="$vuetify.breakpoint.mdAndUp"
@@ -144,6 +144,7 @@
                 />
               </v-flex>
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
                 :pr-3="$vuetify.breakpoint.mdAndUp"
@@ -161,6 +162,7 @@
                 />
               </v-flex>
               <v-flex
+                v-if="eventData.type_id !== 1"
                 xs12
                 md3
               >
@@ -411,8 +413,3 @@ export default {
   }
 }
 </script>
-<style lang="styl" scoped>
-  .v-card {
-    border-radius: 6px;
-  }
-</style>
