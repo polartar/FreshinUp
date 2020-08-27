@@ -51,6 +51,7 @@
         py-2
       >
         <AreasOfOperation />
+        <Menu />
       </v-flex>
     </v-layout>
   </div>
@@ -62,6 +63,7 @@ import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
 import Events from './Events'
 import AreasOfOperation from './AreasOfOperation'
+import Menu from './Menu'
 
 export default {
   layout: 'admin',
@@ -70,7 +72,8 @@ export default {
     DocumentList,
     Payments,
     Events,
-    AreasOfOperation
+    AreasOfOperation,
+    Menu
   },
   data () {
     return {
