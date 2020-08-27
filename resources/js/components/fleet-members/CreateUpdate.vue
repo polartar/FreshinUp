@@ -50,6 +50,7 @@
         xs12
         py-2
       >
+        <AreasOfOperation />
         <Menu />
       </v-flex>
     </v-layout>
@@ -61,6 +62,7 @@ import Payments from './Payments'
 import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
 import Events from './Events'
+import AreasOfOperation from './AreasOfOperation'
 import Menu from './Menu'
 
 export default {
@@ -70,6 +72,7 @@ export default {
     DocumentList,
     Payments,
     Events,
+    AreasOfOperation,
     Menu
   },
   data () {
