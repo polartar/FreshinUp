@@ -38,16 +38,19 @@
       >
         <payments />
       </v-flex>
-    </v-layout>
-    <v-layout
-      row
-      px-2
-      py-4
-    >
-      <v-flex>
+      <v-flex
+        xs12
+        py-2
+      >
         <Events
           :events="events"
         />
+      </v-flex>
+      <v-flex
+        xs12
+        py-2
+      >
+        <Menu />
       </v-flex>
     </v-layout>
   </div>
@@ -58,6 +61,7 @@ import Payments from './Payments'
 import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
 import Events from './Events'
+import Menu from './Menu'
 
 export default {
   layout: 'admin',
@@ -65,7 +69,8 @@ export default {
     BasicInformation,
     DocumentList,
     Payments,
-    Events
+    Events,
+    Menu
   },
   data () {
     return {
