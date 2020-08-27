@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import EventStatusTimeline from './EventStatusTimeline'
-import { FIXTURE_EVENT_HISTORY } from '../../../../tests/Javascript/__data__/eventHistory'
+import { FIXTURE_EVENT_HISTORIES } from '../../../../tests/Javascript/__data__/eventHistory'
 
 export const Default = () => ({
   components: { EventStatusTimeline },
@@ -15,7 +15,7 @@ export const Populated = () => ({
   components: { EventStatusTimeline },
   data () {
     return {
-      statuses: FIXTURE_EVENT_HISTORY
+      statuses: FIXTURE_EVENT_HISTORIES
     }
   },
   template: `
