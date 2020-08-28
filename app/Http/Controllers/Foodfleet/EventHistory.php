@@ -50,17 +50,26 @@ class EventHistory extends Controller
         $histories = [];
         $statuses = QueryBuilder::for(EventStatus::class, $request)->get();
         foreach ($statuses as $status) {
+            $completed = false;
+            $date = '';
+            $description = $this->getEventStatusDescription($status->id);
+            foreach ($eventHistories as $history){
+                $completed = $history->status_id == $status->id ? $history->completed: $completed;
+                $date = $history->status_id == $status->id ? $history->date->format('Y-m-d H:i:s') : $date;
+                $description = $history->status_id == $status->id ? $history->description: $description;
+            }
             array_push($histories,
-            [
-                'id' => 1,
-                'event_uuid' => $event_uuid,
-                'status_id' => $status->id,
-                'name' => $status->name,
-                'completed' => $eventHistories->first()->completed ?? false,// depend on whether or not the status has been found and completed,
-                'date' => $eventHistories->first()->date->format('Y-m-d H:i:s')  ?? '',
-                'description' => $eventHistories->first()->description ?? $this->getEventStatusDescription($status->id)
-            ]
+                [
+                    'id' => 1,
+                    'event_uuid' => $event_uuid,
+                    'status_id' => $status->id,
+                    'name' => $status->name,
+                    'completed' =>  $completed,
+                    'date' =>  $date,
+                    'description' =>  $description
+                ]
             );
+
         }
         return JsonResource::make($histories);
     }
