@@ -20,6 +20,7 @@ class Location extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "venue" => new Venue($this->whenLoaded('venue')),
+            "venue_uuid" => $this->venue_uuid,
             "spot" => $this->spots,
             "capacity" => $this->capacity,
             "details" => $this->details
