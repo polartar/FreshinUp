@@ -14,7 +14,7 @@ class AddVenueUuidToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->string('venue_uuid')->nullable();
+            $table->string('venue_uuid')->nullable()->index();
         });
     }
 
