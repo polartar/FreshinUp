@@ -1135,7 +1135,7 @@ class EventTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $venues = factory(Venue::class, 5)->create();
+        $events = factory(Event::class, 5)->create();
         $data = $this->json('get', "/api/foodfleet/events?include=venue")
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -1146,21 +1146,17 @@ class EventTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
 
-        foreach ($venues as $idx => $venue) {
+        foreach ($events as $idx => $event) {
+            $venue = $event->venue;
             $this->assertArraySubset([
-                'uuid' => $venue->uuid,
-                'name' => $venue->name,
-                'address' => $venue->address,
+                'uuid' => $event->uuid,
+                'name' => $event->name,
+                'venue' => [
+                    'uuid' => $venue->uuid,
+                    'name' => $venue->name,
+                    'address' => $venue->address,
+                ]
             ], $data[$idx]);
-            foreach ($venue->locations as $location) {
-                $this->assertArraySubset([
-                    'uuid' => $location->uuid,
-                    'name' => $location->name,
-                    'spots' => $location->spots,
-                    'capacity' => $location->capacity,
-                    'details' => $location->details
-                ], $location);
-            }
         }
     }
     public function testGetListWithLocationsIncluded()

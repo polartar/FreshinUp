@@ -22,6 +22,7 @@ import eventMenuItems from '~/store/modules/eventMenuItems.js'
 import eventSummary from '~/store/modules/eventSummary.js'
 import eventTypes from '~/store/modules/eventTypes.js'
 import messages from '~/store/modules/messages.js'
+import venues from './store/modules/venues'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
@@ -158,7 +159,8 @@ const appInstance = new App({
       eventMenuItems: eventMenuItems({}),
       eventSummary: eventSummary({}),
       eventTypes: eventTypes({}),
-      messages: messages({})
+      messages: messages({}),
+      venues: venues({})
     }
   }),
   theme,

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Foodfleet\Company;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\EventType;
 use App\Models\Foodfleet\Location;
@@ -9,7 +10,7 @@ use App\User;
 use Faker\Generator as Faker;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
+$factory->define(Event::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "name" => $faker->word,

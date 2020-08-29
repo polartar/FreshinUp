@@ -328,6 +328,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('venues', { venues: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -508,7 +509,7 @@ export default {
     if (id !== 'new') {
       params = {
         id,
-        include: 'manager,host,event_tags'
+        include: 'manager,host,event_tags,venue,location'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
@@ -516,6 +517,7 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

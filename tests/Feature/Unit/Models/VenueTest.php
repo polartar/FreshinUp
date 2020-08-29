@@ -32,7 +32,10 @@ class VenueTest extends TestCase
         $this->assertDatabaseHas('locations', [
             'uuid' => $location->uuid,
             'venue_uuid' => $venue->uuid,
-            'event_uuid' => $event->uuid,
+            'name' => $location->name,
+            'spots' => $location->spots,
+            'capacity' => $location->capacity,
+            'details' => $location->details,
         ]);
     }
 }
