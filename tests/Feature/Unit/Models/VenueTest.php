@@ -20,10 +20,11 @@ class VenueTest extends TestCase
      */
     public function testModel()
     {
-        $location = factory(Location::class)->create();
-        $venue = factory(Venue::class)->create();
 
-        $venue->locations()->save($location);
+        $venue = factory(Venue::class)->create();
+        $location = factory(Location::class)->create([
+            'venue_uuid' => $venue->uuid
+        ]);
         $venue->save();
 
         $this->assertDatabaseHas('locations', [

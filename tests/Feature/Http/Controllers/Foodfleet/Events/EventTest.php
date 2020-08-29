@@ -1151,14 +1151,14 @@ class EventTest extends TestCase
                 'uuid' => $venue->uuid,
                 'name' => $venue->name,
                 'address' => $venue->address,
-                'spots' => $venue->spots,
-                'capacity' => $venue->capacity,
-                'details' => $venue->details
             ], $data[$idx]);
             foreach ($venue->locations as $location) {
                 $this->assertArraySubset([
                     'uuid' => $location->uuid,
                     'name' => $location->name,
+                    'spots' => $location->spots,
+                    'capacity' => $location->capacity,
+                    'details' => $location->details
                 ], $location);
             }
         }

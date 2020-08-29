@@ -21,9 +21,9 @@ class LocationTest extends TestCase
     public function testModel()
     {
         $location = factory(Location::class)->create();
-        $event = factory(Event::class)->create();
-
-        $location->events()->save($event);
+        $event = factory(Event::class)->create([
+            'location_uuid' => $location->uuid
+        ]);
 
         $this->assertDatabaseHas('locations', [
             'uuid' => $location->uuid,

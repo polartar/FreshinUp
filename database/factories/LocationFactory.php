@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Foodfleet\Location;
 use Faker\Generator as Faker;
 
 /*
@@ -14,8 +15,12 @@ use Faker\Generator as Faker;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\App\Models\Foodfleet\Location::class, function (Faker $faker) {
+$factory->define(Location::class, function (Faker $faker) {
     return [
-        "name" => $faker->city
+        "uuid" => $faker->uuid,
+        "name" => $faker->word,
+        "spots" => $faker->randomNumber(2),
+        "capacity" => $faker->randomNumber(3),
+        "details" => $faker->paragraph
     ];
 });
