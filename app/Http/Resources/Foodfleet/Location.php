@@ -24,7 +24,6 @@ class Location extends JsonResource
             "spot" => $this->spots,
             "capacity" => $this->capacity,
             "details" => $this->details
-
         ];
     }
 }

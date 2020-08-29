@@ -21,17 +21,13 @@ class LocationTest extends TestCase
     public function testModel()
     {
         $location = factory(Location::class)->create();
-        $event = factory(Event::class)->create();
-
-        $location->events()->save($event);
 
         $this->assertDatabaseHas('locations', [
             'uuid' => $location->uuid,
-        ]);
-
-        $this->assertDatabaseHas('events', [
-            'uuid' => $event->uuid,
-            'location_uuid' => $location->uuid
+            'spots' => $location->spots,
+            'capacity' => $location->capacity,
+            'details' => $location->details,
+            'venue_uuid' => $location->venue_uuid
         ]);
     }
 }
