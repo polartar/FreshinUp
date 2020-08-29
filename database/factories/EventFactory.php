@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\Foodfleet\Venue;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\EventType;
@@ -32,6 +33,7 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "commission_rate" => $faker->randomFloat(0.1, .5),
         "commission_type" => $faker->numberBetween(),
         "created_at" => $faker->dateTimeBetween('-30days', '+30days'),
-        "updated_at" => $faker->dateTimeBetween('-30days', '+30days')
+        "updated_at" => $faker->dateTimeBetween('-30days', '+30days'),
+        "venue_uuid" => factory(Venue::class)->create()->uuid
     ];
 });

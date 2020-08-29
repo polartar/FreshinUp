@@ -154,9 +154,10 @@ import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 const INCLUDE = [
   'status',
   'host',
-  'location.venue',
+  'location',
   'manager',
-  'type'
+  'type',
+  'venue'
 ]
 
 export default {
@@ -303,7 +304,8 @@ export default {
     vm.setPageLoading(true)
     Promise.all([
       vm.$store.dispatch('eventStatuses/getItems'),
-      vm.$store.dispatch('eventTypes/getItems')
+      vm.$store.dispatch('eventTypes/getItems'),
+      vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } })
     ])
       .then(() => {
         if (next) next()

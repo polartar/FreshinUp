@@ -62,10 +62,11 @@ class Events extends Controller
             ->allowedIncludes([
                 'status',
                 'host',
-                'location.venue',
+                'location',
                 'manager',
                 'event_tags',
-                'type'
+                'type',
+                'venue'
             ])
             ->allowedSorts([
                 'name',
@@ -87,6 +88,8 @@ class Events extends Controller
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('event_tag_uuid', BelongsToWhereInUuidEquals::class, 'eventTags'),
                 Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
+                Filter::custom('venue_uuid', BelongsToWhereInUuidEquals::class, 'venue'),
+                Filter::custom('location_uuid', BelongsToWhereInUuidEquals::class, 'location'),
             ]);
         return EventResource::collection($events->jsonPaginate());
     }
@@ -159,7 +162,7 @@ class Events extends Controller
     {
         $event = QueryBuilder::for(Event::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags', 'stores', 'type' ])
+            ->allowedIncludes([ 'manager', 'host', 'location', 'event_tags', 'stores', 'type', 'venue' ])
             ->firstOrFail();
 
         return new EventResource($event);

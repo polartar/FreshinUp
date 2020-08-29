@@ -4,6 +4,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
 use App\Enums\EventType as EventTypeEnum;
 use App\Models\Foodfleet\EventType;
+use App\Models\Foodfleet\Venue;
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
@@ -443,18 +444,19 @@ class EventTest extends TestCase
         $location = factory(Location::class)->create();
         $host = factory(Company::class)->create();
         $eventType = factory(EventType::class)->create();
+        $venue = factory(Venue::class)->create();
 
         $event = factory(Event::class)->create([
             'manager_uuid' => $user->uuid,
             'status_id' => $status->id,
             'location_uuid' => $location->uuid,
             'host_uuid' => $host->uuid,
-            'type_id' => $eventType->id
+            'type_id' => $eventType->id,
+            'venue_uuid' => $venue->uuid
         ]);
 
         $event->eventTags()->save($eventTag);
-
-        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags,type')
+        $data = $this->json('GET', '/api/foodfleet/events?include=status,host,location,manager,event_tags,type,venue')
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [],
@@ -490,6 +492,11 @@ class EventTest extends TestCase
             'uuid' => $host->uuid,
             'name' => $host->name,
         ], $data[0]['host']);
+
+        $this->assertArraySubset([
+            'uuid' => $venue->uuid,
+            'name' => $venue->name,
+        ], $data[0]['venue']);
     }
 
     public function testGetListWithAllowedSorts()
@@ -1122,5 +1129,61 @@ class EventTest extends TestCase
         $this->assertEquals($data['financial']['total_fleet'], 2);
         $this->assertEquals($data['financial']['total_cost'], 40);
         $this->assertEquals($data['financial']['amount_due'], 52.2); // 10*3+12 + 2*5+(2*5*2/100)
+    }
+
+    public function testGetListWithVenueIncluded()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $venues = factory(Venue::class, 5)->create();
+        $data = $this->json('get', "/api/foodfleet/events?include=venue")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+
+        foreach ($venues as $idx => $venue) {
+            $this->assertArraySubset([
+                'uuid' => $venue->uuid,
+                'name' => $venue->name,
+                'address' => $venue->address,
+                'spots' => $venue->spots,
+                'capacity' => $venue->capacity,
+                'details' => $venue->details
+            ], $data[$idx]);
+            foreach ($venue->locations as $location) {
+                $this->assertArraySubset([
+                    'uuid' => $location->uuid,
+                    'name' => $location->name,
+                ], $location);
+            }
+        }
+    }
+    public function testGetListWithLocationsIncluded()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $locations = factory(Location::class, 5)->create();
+        $data = $this
+            ->json('get', "/api/foodfleet/events?include=location")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+
+        foreach ($locations as $idx => $location) {
+            $this->assertArraySubset([
+                'uuid' => $locations->uuid,
+                'name' => $locations->name
+            ], $data[$idx]);
+        }
     }
 }

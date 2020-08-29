@@ -15,7 +15,7 @@ export default ({ items, item }) => {
   )
   const __createItem = store.actions.createItem
   const stripeUnwantedObject = (data) => {
-    return omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type'])
+    return omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type', 'location'])
   }
   store.actions = {
     ...store.actions,
