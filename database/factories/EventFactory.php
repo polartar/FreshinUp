@@ -34,6 +34,8 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "commission_type" => $faker->numberBetween(),
         "created_at" => $faker->dateTimeBetween('-30days', '+30days'),
         "updated_at" => $faker->dateTimeBetween('-30days', '+30days'),
-        "venue_uuid" => factory(Venue::class)->create()->uuid
+        "venue_uuid" => function () {
+          return factory(Venue::class)->create()->uuid;
+        }
     ];
 });
