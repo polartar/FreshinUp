@@ -7503,7 +7503,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                               class="flex sm3 pr-2"
                             >
                               <div
-                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
                                 role="combobox"
                               >
                                 <div
@@ -7515,14 +7515,16 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                     <div
                                       class="v-select__slot"
                                     >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        State of incorporation
+                                      </label>
                                       <div
                                         class="v-select__selections"
                                       >
-                                        <div
-                                          class="v-select__selection v-select__selection--comma"
-                                        >
-                                          All locations
-                                        </div>
                                         <input
                                           aria-label="State of incorporation"
                                           aria-readonly="false"
@@ -7561,11 +7563,10 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                             role="list"
                                           >
                                             <div
-                                              class="primary--text"
                                               role="listitem"
                                             >
-                                              <a
-                                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                              <div
+                                                class="v-list__tile theme--light"
                                               >
                                                 <div
                                                   class="v-list__tile__content"
@@ -7573,10 +7574,10 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <div
                                                     class="v-list__tile__title"
                                                   >
-                                                    All locations
+                                                    No data available
                                                   </div>
                                                 </div>
-                                              </a>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
@@ -7664,8 +7665,8 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                             <div
                                               role="listitem"
                                             >
-                                              <a
-                                                class="v-list__tile v-list__tile--link theme--light"
+                                              <div
+                                                class="v-list__tile theme--light"
                                               >
                                                 <div
                                                   class="v-list__tile__content"
@@ -7673,10 +7674,10 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                                   <div
                                                     class="v-list__tile__title"
                                                   >
-                                                    All types
+                                                    No data available
                                                   </div>
                                                 </div>
-                                              </a>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
@@ -16944,7 +16945,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                               class="flex sm3 pr-2"
                             >
                               <div
-                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
                                 role="combobox"
                               >
                                 <div
@@ -16956,14 +16957,16 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     <div
                                       class="v-select__slot"
                                     >
+                                      <label
+                                        aria-hidden="true"
+                                        class="v-label theme--light"
+                                        style="left: 0px; position: absolute;"
+                                      >
+                                        State of incorporation
+                                      </label>
                                       <div
                                         class="v-select__selections"
                                       >
-                                        <div
-                                          class="v-select__selection v-select__selection--comma"
-                                        >
-                                          All locations
-                                        </div>
                                         <input
                                           aria-label="State of incorporation"
                                           aria-readonly="false"
@@ -17002,11 +17005,10 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                             role="list"
                                           >
                                             <div
-                                              class="primary--text"
                                               role="listitem"
                                             >
-                                              <a
-                                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                              <div
+                                                class="v-list__tile theme--light"
                                               >
                                                 <div
                                                   class="v-list__tile__content"
@@ -17014,10 +17016,10 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <div
                                                     class="v-list__tile__title"
                                                   >
-                                                    All locations
+                                                    No data available
                                                   </div>
                                                 </div>
-                                              </a>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
@@ -17105,8 +17107,8 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                             <div
                                               role="listitem"
                                             >
-                                              <a
-                                                class="v-list__tile v-list__tile--link theme--light"
+                                              <div
+                                                class="v-list__tile theme--light"
                                               >
                                                 <div
                                                   class="v-list__tile__content"
@@ -17114,10 +17116,10 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                                   <div
                                                     class="v-list__tile__title"
                                                   >
-                                                    All types
+                                                    No data available
                                                   </div>
                                                 </div>
-                                              </a>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
