@@ -553,5 +553,4 @@ class StoresTest extends TestCase
         $this->assertEquals($data['total_services'], 6);
         $this->assertEquals($data['total_cost'], 210);
     }
-
 }
