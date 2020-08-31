@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Filters\BelongsToWhereInIdEquals;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Event;
@@ -31,16 +32,17 @@ class Stores extends Controller
                 'addresses',
                 'events',
                 'supplier',
-                'supplier.admin'
+                'supplier.admin',
+                'status'
             ])
             ->allowedSorts([
                 'name',
-                'status',
+                'status_id',
                 'created_at',
             ])
             ->allowedFilters([
                 'name',
-                Filter::exact('status'),
+                Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
@@ -60,7 +62,7 @@ class Stores extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
-            'status' => 'integer',
+            'status_id' => 'integer',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
             'event_uuid' => 'string|exists:events,uuid'
@@ -98,7 +100,7 @@ class Stores extends Controller
     {
         $store = QueryBuilder::for(Store::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes(['menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin']);
+            ->allowedIncludes(['menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin', 'status']);
 
         // Include eventsCount in the query if needed
         if ($request->has('provide') && $request->get('provide') == 'events-count') {
