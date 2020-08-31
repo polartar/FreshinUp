@@ -3,9 +3,11 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Enums\StoreStatus as StoreStatusEnum;
 use App\Filters\BelongsToWhereInIdEquals;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Foodfleet\Event as EventResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
 use Illuminate\Http\Request;
@@ -142,5 +144,19 @@ class Stores extends Controller
         $store = Store::where('uuid', $uuid)->firstOrFail();
         $store->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
+    }
+
+    /**
+     * @return StoreResource
+     */
+    public function showNewRecommendation()
+    {
+        return new StoreResource(
+            Store::make(
+                ([
+                    'status_id' => StoreStatusEnum::DRAFT
+                ])
+            )
+        );
     }
 }

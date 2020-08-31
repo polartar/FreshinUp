@@ -190,13 +190,25 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []
+    let params = { id }
     if (id !== 'new') {
+      promises.push(vm.$store.dispatch('documents/getItem', { params: params }))
     }
     vm.$store.dispatch('page/setLoading', true)
-    promises.push(vm.$store.dispatch('documents/getItem', { params: { id } }))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+    vm.$store.dispatch('page/setLoading', true)
+    vm.eventLoading = true
+    vm.$store.dispatch('stores/getItem', { params })
+      .then()
+      .catch(error => {
+        console.error(error)
+        vm.$router.push({ path: '/admin/fleet-members' })
+      })
+      .then(() => {
+        vm.fleetMemberLoading = false
+      })
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {
