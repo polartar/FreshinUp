@@ -19,8 +19,8 @@
 ## Event Page
 
 ## Event Edit Page
-- Manager can be modified and saved
-- Customer can be modified and saved
+- **Manager** can be modified and saved
+- **Customer** can be modified and saved
 
 <br/>
 
@@ -28,7 +28,7 @@
 - Fleet Members can be created and viewed in Fleet List
 - Clicking `Manage` and then `View/Edit` will route you to the edit page of that Fleet Member
 - Fleet Members can be searched by Fleet Member name
-- Fleet Members can be filtered (there are filters created, but they do not work)
+- Fleet Members can be filtered (filters created, but they do not work)
 
 <br/>
 
