@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import StatusSelect from './StatusSelect'
-import { FIXTURE_FLEET_MEMBERS_STATUSES } from 'tests/__data__/fleet-members'
+import { FIXTURE_FLEET_MEMBERS_STATUSES } from '../../../../tests/Javascript/__data__/fleet-members.js'
 
 export const ReadOnly = () => {
   return {
