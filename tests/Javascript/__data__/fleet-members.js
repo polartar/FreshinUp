@@ -133,3 +133,11 @@ export const FIXTURE_FLEET_MEMBER_EVENT = {
 }
 
 export const FIXTURE_FLEET_MEMBER = FIXTURE_FLEET_MEMBERS[0]
+
+export const FIXTURE_FLEET_MEMBERS_STATUSES = [
+  { id: 1, name: 'Draft' },
+  { id: 2, name: 'Pending' },
+  { id: 3, name: 'Revision' },
+  { id: 4, name: 'Rejected' },
+  { id: 5, name: 'Approved' }
+]
