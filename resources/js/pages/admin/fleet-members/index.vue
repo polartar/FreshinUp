@@ -208,7 +208,7 @@ export default {
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses' }
+        params: { include: 'tags,addresses,status' }
       })
     },
     runFilter (params) {
@@ -222,7 +222,7 @@ export default {
         ...this.lastFilterParams
       })
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses' }
+        params: { include: 'tags,addresses,status' }
       })
     }
   },
@@ -233,7 +233,7 @@ export default {
         ...vm.$route.query
       }),
       vm.$store.dispatch('storeStatuses/getItems', {
-        params: { include: 'tags,addresses' }
+        params: { include: 'tags,addresses,status' }
       })
     ])
       .then(() => {
