@@ -7425,7 +7425,6 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                    
                   <div
                     class="mb-2"
-                    statuses=""
                   >
                     <div
                       class="px-4 pt-4"
@@ -16867,7 +16866,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                    
                   <div
                     class="mb-2"
-                    statuses=""
                   >
                     <div
                       class="px-4 pt-4"

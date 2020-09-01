@@ -88,7 +88,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
              
             <div
               class="mb-2"
-              statuses="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
             >
               <div
                 class="px-4 pt-4"
@@ -166,7 +165,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="flex sm3 pr-2"
                       >
                         <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
                           role="combobox"
                         >
                           <div
@@ -178,14 +177,16 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                               <div
                                 class="v-select__slot"
                               >
+                                <label
+                                  aria-hidden="true"
+                                  class="v-label theme--light"
+                                  style="left: 0px; position: absolute;"
+                                >
+                                  State of incorporation
+                                </label>
                                 <div
                                   class="v-select__selections"
                                 >
-                                  <div
-                                    class="v-select__selection v-select__selection--comma"
-                                  >
-                                    All locations
-                                  </div>
                                   <input
                                     aria-label="State of incorporation"
                                     aria-readonly="false"
@@ -224,11 +225,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                       role="list"
                                     >
                                       <div
-                                        class="primary--text"
                                         role="listitem"
                                       >
-                                        <a
-                                          class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                        <div
+                                          class="v-list__tile theme--light"
                                         >
                                           <div
                                             class="v-list__tile__content"
@@ -236,61 +236,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                             <div
                                               class="v-list__tile__title"
                                             >
-                                              All locations
+                                              No data available
                                             </div>
                                           </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              Port Gerald
-                                            </div>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              Carminestad
-                                            </div>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              New Charlenebury
-                                            </div>
-                                          </div>
-                                        </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -378,8 +327,8 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                       <div
                                         role="listitem"
                                       >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
+                                        <div
+                                          class="v-list__tile theme--light"
                                         >
                                           <div
                                             class="v-list__tile__content"
@@ -387,27 +336,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                             <div
                                               class="v-list__tile__title"
                                             >
-                                              All types
+                                              No data available
                                             </div>
                                           </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              Mobil
-                                            </div>
-                                          </div>
-                                        </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -495,238 +427,19 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                       <div
                                         role="listitem"
                                       >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
+                                        <div
+                                          class="v-list__tile theme--light"
                                         >
-                                          <div
-                                            class="v-list__tile__action"
-                                          >
-                                            <div
-                                              class="v-input v-input--selection-controls v-input--checkbox theme--light"
-                                            >
-                                              <div
-                                                class="v-input__control"
-                                              >
-                                                <div
-                                                  class="v-input__slot"
-                                                >
-                                                  <div
-                                                    class="v-input--selection-controls__input"
-                                                  >
-                                                    <input
-                                                      aria-checked="false"
-                                                      role="checkbox"
-                                                      type="checkbox"
-                                                      value=""
-                                                    />
-                                                    <div
-                                                      class="v-input--selection-controls__ripple"
-                                                    />
-                                                    <i
-                                                      aria-hidden="true"
-                                                      class="v-icon material-icons theme--light"
-                                                    >
-                                                      check_box_outline_blank
-                                                    </i>
-                                                  </div>
-                                                </div>
-                                                <div
-                                                  class="v-messages theme--light"
-                                                >
-                                                  <div
-                                                    class="v-messages__wrapper"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
                                           <div
                                             class="v-list__tile__content"
                                           >
                                             <div
                                               class="v-list__tile__title"
                                             >
-                                              minus
+                                              No data available
                                             </div>
                                           </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__action"
-                                          >
-                                            <div
-                                              class="v-input v-input--selection-controls v-input--checkbox theme--light"
-                                            >
-                                              <div
-                                                class="v-input__control"
-                                              >
-                                                <div
-                                                  class="v-input__slot"
-                                                >
-                                                  <div
-                                                    class="v-input--selection-controls__input"
-                                                  >
-                                                    <input
-                                                      aria-checked="false"
-                                                      role="checkbox"
-                                                      type="checkbox"
-                                                      value=""
-                                                    />
-                                                    <div
-                                                      class="v-input--selection-controls__ripple"
-                                                    />
-                                                    <i
-                                                      aria-hidden="true"
-                                                      class="v-icon material-icons theme--light"
-                                                    >
-                                                      check_box_outline_blank
-                                                    </i>
-                                                  </div>
-                                                </div>
-                                                <div
-                                                  class="v-messages theme--light"
-                                                >
-                                                  <div
-                                                    class="v-messages__wrapper"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              hic
-                                            </div>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__action"
-                                          >
-                                            <div
-                                              class="v-input v-input--selection-controls v-input--checkbox theme--light"
-                                            >
-                                              <div
-                                                class="v-input__control"
-                                              >
-                                                <div
-                                                  class="v-input__slot"
-                                                >
-                                                  <div
-                                                    class="v-input--selection-controls__input"
-                                                  >
-                                                    <input
-                                                      aria-checked="false"
-                                                      role="checkbox"
-                                                      type="checkbox"
-                                                      value=""
-                                                    />
-                                                    <div
-                                                      class="v-input--selection-controls__ripple"
-                                                    />
-                                                    <i
-                                                      aria-hidden="true"
-                                                      class="v-icon material-icons theme--light"
-                                                    >
-                                                      check_box_outline_blank
-                                                    </i>
-                                                  </div>
-                                                </div>
-                                                <div
-                                                  class="v-messages theme--light"
-                                                >
-                                                  <div
-                                                    class="v-messages__wrapper"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              hicsdfsdf
-                                            </div>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        role="listitem"
-                                      >
-                                        <a
-                                          class="v-list__tile v-list__tile--link theme--light"
-                                        >
-                                          <div
-                                            class="v-list__tile__action"
-                                          >
-                                            <div
-                                              class="v-input v-input--selection-controls v-input--checkbox theme--light"
-                                            >
-                                              <div
-                                                class="v-input__control"
-                                              >
-                                                <div
-                                                  class="v-input__slot"
-                                                >
-                                                  <div
-                                                    class="v-input--selection-controls__input"
-                                                  >
-                                                    <input
-                                                      aria-checked="false"
-                                                      role="checkbox"
-                                                      type="checkbox"
-                                                      value=""
-                                                    />
-                                                    <div
-                                                      class="v-input--selection-controls__ripple"
-                                                    />
-                                                    <i
-                                                      aria-hidden="true"
-                                                      class="v-icon material-icons theme--light"
-                                                    >
-                                                      check_box_outline_blank
-                                                    </i>
-                                                  </div>
-                                                </div>
-                                                <div
-                                                  class="v-messages theme--light"
-                                                >
-                                                  <div
-                                                    class="v-messages__wrapper"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              fsdf
-                                            </div>
-                                          </div>
-                                        </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -867,9 +580,9 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                             </i>
                           </th>
                           <th
-                            aria-label="Manage: Not sorted. Activate to sort ascending."
-                            aria-sort="none"
-                            class="column sortable text-xs-left"
+                            aria-label="Manage: Sorted ascending. Activate to sort descending."
+                            aria-sort="ascending"
+                            class="column sortable active asc text-xs-left"
                             role="columnheader"
                             scope="col"
                             tabindex="0"
@@ -895,435 +608,11 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                       </thead>
                       <tbody>
                         <tr>
-                          <td>
-                            <div
-                              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
-                              primary=""
-                            >
-                              <div
-                                class="v-input__control"
-                              >
-                                <div
-                                  class="v-input__slot"
-                                >
-                                  <div
-                                    class="v-input--selection-controls__input"
-                                  >
-                                    <input
-                                      aria-checked="false"
-                                      primary=""
-                                      role="checkbox"
-                                      type="checkbox"
-                                      value=""
-                                    />
-                                    <div
-                                      class="v-input--selection-controls__ripple"
-                                    />
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      check_box_outline_blank
-                                    </i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                           
                           <td
-                            class="py-2"
-                            nowrap="nowrap"
+                            class="text-xs-center"
+                            colspan="5"
                           >
-                            <div
-                              style="position: relative;"
-                            >
-                              <span
-                                class="v-tooltip v-tooltip--top"
-                              >
-                                <div
-                                  class="v-tooltip__content"
-                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
-                                >
-                                  
-              View fleet member details (new tab)
-            
-                                </div>
-                                <router-link
-                                  class="primary--text"
-                                  target="_blank"
-                                  to="[object Object]"
-                                >
-                                  
-                  Burger Babes
-                
-                                </router-link>
-                              </span>
-                            </div>
-                             
-                            <div
-                              class="grey--text text--darken-2"
-                            >
-                              
-            Mobil
-          
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            
-          Port Gerald
-        
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <div>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              minus
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              hic
-            
-                                </span>
-                              </span>
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <button
-                              class="v-btn v-btn--depressed theme--light blue-grey lighten-3 white--text"
-                              type="button"
-                            >
-                              <div
-                                class="v-btn__content"
-                              >
-                                
-            Declined
-          
-                              </div>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div
-                              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
-                              primary=""
-                            >
-                              <div
-                                class="v-input__control"
-                              >
-                                <div
-                                  class="v-input__slot"
-                                >
-                                  <div
-                                    class="v-input--selection-controls__input"
-                                  >
-                                    <input
-                                      aria-checked="false"
-                                      primary=""
-                                      role="checkbox"
-                                      type="checkbox"
-                                      value=""
-                                    />
-                                    <div
-                                      class="v-input--selection-controls__ripple"
-                                    />
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      check_box_outline_blank
-                                    </i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                            nowrap="nowrap"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <span
-                                class="v-tooltip v-tooltip--top"
-                              >
-                                <div
-                                  class="v-tooltip__content"
-                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
-                                >
-                                  
-              View fleet member details (new tab)
-            
-                                </div>
-                                <router-link
-                                  class="primary--text"
-                                  target="_blank"
-                                  to="[object Object]"
-                                >
-                                  
-                  Holy Canoli
-                
-                                </router-link>
-                              </span>
-                            </div>
-                             
-                            <div
-                              class="grey--text text--darken-2"
-                            >
-                              
-            Mobil
-          
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            
-          Carminestad
-        
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <div>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              minus
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              sit
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              hicsdfsdf
-            
-                                </span>
-                              </span>
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <button
-                              class="v-btn v-btn--depressed theme--light blue-grey lighten-3 white--text"
-                              type="button"
-                            >
-                              <div
-                                class="v-btn__content"
-                              >
-                                
-            Declined
-          
-                              </div>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div
-                              class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
-                              primary=""
-                            >
-                              <div
-                                class="v-input__control"
-                              >
-                                <div
-                                  class="v-input__slot"
-                                >
-                                  <div
-                                    class="v-input--selection-controls__input"
-                                  >
-                                    <input
-                                      aria-checked="false"
-                                      primary=""
-                                      role="checkbox"
-                                      type="checkbox"
-                                      value=""
-                                    />
-                                    <div
-                                      class="v-input--selection-controls__ripple"
-                                    />
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      check_box_outline_blank
-                                    </i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                            nowrap="nowrap"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <span
-                                class="v-tooltip v-tooltip--top"
-                              >
-                                <div
-                                  class="v-tooltip__content"
-                                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
-                                >
-                                  
-              View fleet member details (new tab)
-            
-                                </div>
-                                <router-link
-                                  class="primary--text"
-                                  target="_blank"
-                                  to="[object Object]"
-                                >
-                                  
-                  Da Lobsta
-                
-                                </router-link>
-                              </span>
-                            </div>
-                             
-                            <div
-                              class="grey--text text--darken-2"
-                            >
-                              
-            Mobil
-          
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            
-          New Charlenebury
-        
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <div>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              minus
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              hic
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              acsfdd
-            
-                                </span>
-                              </span>
-                              <span
-                                class="v-chip theme--light secondary white--text"
-                                tabindex="0"
-                              >
-                                <span
-                                  class="v-chip__content"
-                                >
-                                  
-              fsdf
-            
-                                </span>
-                              </span>
-                            </div>
-                          </td>
-                           
-                          <td
-                            class="py-2"
-                          >
-                            <button
-                              class="v-btn v-btn--depressed theme--light blue-grey lighten-3 white--text"
-                              type="button"
-                            >
-                              <div
-                                class="v-btn__content"
-                              >
-                                
-            Declined
-          
-                              </div>
-                            </button>
+                            No data available
                           </td>
                         </tr>
                       </tbody>
@@ -1348,36 +637,6 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         >
                           chevron_left
                         </i>
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__item v-pagination__item--active primary"
-                        type="button"
-                      >
-                        1
-                      </button>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <span
-                        class="v-pagination__more"
-                      >
-                        ...
-                      </span>
-                    </li>
-                    <li>
-                      <button
-                        class="v-pagination__item v-pagination__item--active primary"
-                        type="button"
-                      >
-                        1
                       </button>
                     </li>
                     <li>
@@ -3625,7 +2884,6 @@ exports[`Store List component Snapshots stores empty 1`] = `
              
             <div
               class="mb-2"
-              statuses="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
             >
               <div
                 class="px-4 pt-4"
