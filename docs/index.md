@@ -1,5 +1,21 @@
 # Roadmap
 
+## Event Page
+
+## Fleet Members Page
+- Fleet Members can be created and viewed in Fleet List
+- Clicking `Manage` and then `View/Edit` will route you to the edit page of that Fleet Member
+- Fleet Members can be searched by Fleet Member name
+- Fleet Members can be filtered (there are filters created, but they do not work)
+
+## Fleet Member Edit Page
+### Functionality for these components
+- Fleet Member Documents
+- Payments
+- Assigned Events
+- Areas of Operation
+- Fleet Member Menu
+
 # Changes
 ## August 25, 2020
 - **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
