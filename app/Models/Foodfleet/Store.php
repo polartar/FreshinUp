@@ -120,4 +120,9 @@ class Store extends Model implements HasMedia
     {
         return $this->hasMany(Message::class, 'store_uuid', 'uuid');
     }
+
+    public function status()
+    {
+        return $this->belongsTo(StoreStatus::class, 'status_id', 'id');
+    }
 }

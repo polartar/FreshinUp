@@ -28,7 +28,7 @@ class StoresTableSeeder extends Seeder
         })->get();
         for ($i = 0; $i < 50; $i++) {
             $store = factory(\App\Models\Foodfleet\Store::class)->create([
-                'status' => $statuses->random()->id,
+                'status_id' => $statuses->random()->id,
                 'address_uuid' => $addresses->random()->uuid,
                 'supplier_uuid' => $suppliers->random()->uuid,
                 'type_id' => $types->random()->id
