@@ -140,7 +140,7 @@ class VenueTest extends TestCase
                     "uuid" => $location->uuid,
                     "name" => $location->name,
                     "venue_uuid" => $location->venue_uuid,
-                    "spot" => $location->spots,
+                    "spots" => $location->spots,
                     "capacity" => $location->capacity,
                     "details" => $location->details
                 ], $data[$idx]['locations'][$locationIndex]);

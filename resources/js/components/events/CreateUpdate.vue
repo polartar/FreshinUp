@@ -225,8 +225,8 @@
         >
           <VenueDetails
             class="ml-4"
-            :venue-uuid="event.venue_uuid"
-            :location-uuid="event.location_uuid"
+            :venue-uuid="get(event, 'venue_uuid')"
+            :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
           />
         </v-flex>
@@ -271,12 +271,12 @@ import get from 'lodash/get'
 import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
 const { mapFields } = createHelpers({
@@ -354,6 +354,7 @@ export default {
     }
   },
   methods: {
+    get,
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
