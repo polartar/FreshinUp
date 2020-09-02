@@ -2,6 +2,7 @@ const JestConfig = require('vue-cli-plugin-freshinup/utils/testing/jest.config.c
 
 module.exports = {
   ...JestConfig,
+  collectCoverage: false,
   collectCoverageFrom: JestConfig.collectCoverageFrom.concat([
     'resources/js/**/*.{js,vue}'
   ]),

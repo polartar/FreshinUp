@@ -27,7 +27,7 @@
             />
           </v-layout>
           <v-select
-            :value="venueUuid"
+            :value="location.venue_uuid"
             :items="venues"
             item-text="name"
             item-value="uuid"
@@ -55,7 +55,7 @@
           <v-select
             :value="location.uuid"
             :disabled="!location.venue_uuid"
-            :items="locations"
+            :items="selectedVenueLocations"
             item-text="name"
             item-value="uuid"
             single-line
@@ -72,10 +72,10 @@
             Address
           </h4>
           <p
-            v-if="location.address"
+            v-if="selectedVenue.address"
             class="grey--text text-xs-right"
           >
-            {{ location.address }}
+            {{ selectedVenue.address }}
           </p>
           <span
             v-else
@@ -189,10 +189,12 @@
 </template>
 <script>
 import ClearButton from '../ClearButton'
+import omit from 'lodash/omit'
+import get from 'lodash/get'
 export const DEFAULT_LOCATION = {
   uuid: '',
+  name: '',
   venue_uuid: '',
-  address: '',
   capacity: '',
   spots: '',
   details: ''
@@ -224,18 +226,36 @@ export default {
     minLocationDetail () {
       return this.location.details.slice(0, this.locationDetailMaxChar)
     },
-    locations () {
-      const selectedVenue = this.venues.find(v => v.uuid === this.location.venue_uuid)
-      return selectedVenue ? selectedVenue.locations : []
+    venuesByUuid () {
+      return this.venues.reduce((map, venue) => {
+        map[venue.uuid] = venue
+        return map
+      }, {})
+    },
+    selectedVenue () {
+      return this.venuesByUuid[this.location.venue_uuid] || {}
+    },
+    selectedVenueLocations () {
+      return get(this.selectedVenue, 'locations', [])
+    },
+    locationsByUuid () {
+      return this.selectedVenueLocations.reduce((map, location) => {
+        map[location.uuid] = location
+        return map
+      }, {})
     }
   },
   watch: {
     locationUuid (value) {
-      this.location.uuid = value
+      this.onLocationChanged(value)
     },
     venueUuid (value) {
-      this.location.venue_uuid = value
+      this.onVenueChanged(value)
     }
+  },
+  mounted () {
+    this.onVenueChanged(this.venueUuid)
+    this.onLocationChanged(this.locationUuid)
   },
 
   methods: {
@@ -246,19 +266,19 @@ export default {
       this.$emit('get-directions', this.location)
     },
     onVenueCleared () {
-      this.location.venue_uuid = null
+      this.location.venue_uuid = ''
       this.onLocationCleared()
     },
     onVenueChanged (value) {
-      this.location.venue_uuid = value
       this.onLocationCleared()
+      this.location.venue_uuid = value
     },
     onLocationCleared () {
-      this.location = Object.assign({}, this.location, DEFAULT_LOCATION)
+      this.location = Object.assign({}, this.location, omit(DEFAULT_LOCATION, ['venue_uuid']))
     },
     onLocationChanged (locationUuid) {
-      const location = this.locations.find(l => l.uuid === locationUuid) || DEFAULT_LOCATION
-      this.location = Object.assign({}, this.location, location)
+      const location = this.locationsByUuid[locationUuid] || DEFAULT_LOCATION
+      this.location = Object.assign({}, this.location, omit(location, ['venue_uuid']))
     }
   }
 }

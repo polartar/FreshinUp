@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-form
-      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -227,6 +226,7 @@
           <VenueDetails
             class="ml-4"
             :venue-uuid="event.venue_uuid"
+            :location-uuid="event.location_uuid"
             :venues="venues"
           />
         </v-flex>

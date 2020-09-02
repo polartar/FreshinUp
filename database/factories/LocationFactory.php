@@ -24,6 +24,6 @@ $factory->define(Location::class, function (Faker $faker) {
         },
         "spots" => $faker->randomNumber(2),
         "capacity" => $faker->randomNumber(2),
-        "details" => $faker->paragraph
+        "details" => $faker->sentences(2, true)
     ];
 });

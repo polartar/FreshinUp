@@ -20,10 +20,10 @@ class EventsTableSeeder extends Seeder
      */
     public function run()
     {
+        Event::truncate();
         $stores = Store::get();
         $eventTags = EventTag::get();
         $status = EventStatus::get();
-        $locations = Location::get();
         $venues = Venue::get();
         $users = User::where(["type" => 1])->get();
         $hosts = Company::whereHas('company_types', function ($query) {
@@ -32,13 +32,14 @@ class EventsTableSeeder extends Seeder
         $eventType = EventType::get();
 
         for ($i = 0; $i < 50; $i++) {
+            $venue = $venues->random();
             $event = factory(Event::class)->create([
                 'manager_uuid' => $users->random()->uuid,
                 'status_id' => $status->random()->id,
-                'location_uuid' => $locations->random()->uuid,
+                'location_uuid' => $venue->locations->random()->uuid,
                 'host_uuid' => $hosts->random()->uuid,
                 'type_id' => $eventType->random()->id,
-                'venue_uuid' => $venues->random()->uuid
+                'venue_uuid' => $venue->uuid
             ]);
             $eventTagRandomUuids = $eventTags->random(2)->pluck('uuid')->toArray();
             $event->eventTags()->sync($eventTagRandomUuids);
