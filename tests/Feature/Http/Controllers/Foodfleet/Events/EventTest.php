@@ -652,9 +652,7 @@ class EventTest extends TestCase
         $admin = factory(User::class)->create([
             'level' => 1
         ]);
-
         Passport::actingAs($admin);
-
         $company = factory(Company::class)->create();
         $location = factory(Location::class)->create();
         $eventTags = factory(EventTag::class, 5)->create();

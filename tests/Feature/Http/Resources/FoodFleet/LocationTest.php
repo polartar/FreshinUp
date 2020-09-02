@@ -12,21 +12,15 @@ class LocationTest extends TestCase {
     public function testResource () {
         $location = factory(Location::class)->make();
         $resource = new LocationResource($location);
-        $venue = $location->venue;
         $expected = [
             "uuid" => $location->uuid,
             "name" => $location->name,
-            "venue" => [
-                "uuid" => $venue->uuid,
-                "name" => $venue->name,
-                "address" => $venue->address
-            ],
             "venue_uuid" => $location->venue_uuid,
             "spot" => $location->spots,
             "capacity" => $location->capacity,
             "details" => $location->details
         ];
         $request = app()->make(Request::class);
-        $this->assertEquals($expected, $resource->toArray($request));
+        $this->assertArraySubset($expected, $resource->toArray($request));
     }
 }
