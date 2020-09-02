@@ -226,6 +226,7 @@
         >
           <VenueDetails
             class="ml-4"
+            :venue-uuid="event.venue_uuid"
             :venues="venues"
           />
         </v-flex>

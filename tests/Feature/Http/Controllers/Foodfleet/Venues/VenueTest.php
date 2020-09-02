@@ -145,7 +145,6 @@ class VenueTest extends TestCase
                     "details" => $location->details
                 ], $data[$idx]['locations'][$locationIndex]);
             }
-
         }
     }
 }

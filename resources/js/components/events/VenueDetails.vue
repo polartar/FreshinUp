@@ -27,7 +27,7 @@
             />
           </v-layout>
           <v-select
-            :value="location.venue_uuid"
+            :value="venueUuid"
             :items="venues"
             item-text="name"
             item-value="uuid"
