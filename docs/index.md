@@ -1,4 +1,7 @@
 # Changes
+## September 2, 2020
+- **FIX** Status Timeline displays on Event Edit page.
+
 ## August 25, 2020
 - **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)
 - **ADD** Fleet Member Basic Information component. [#404](https://github.com/FreshinUp/foodfleet/issues/404)
