@@ -1,6 +1,6 @@
 # Changes
 
-## August 28, 2020
+## September 2, 2020
 - **ADD** Populate Venue details UI. [#425](https://github.com/FreshinUp/foodfleet/issues/425)
 
 ## August 25, 2020
