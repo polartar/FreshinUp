@@ -1159,6 +1159,7 @@ class EventTest extends TestCase
             ], $data[$idx]);
         }
     }
+
     public function testGetListWithLocationsIncluded()
     {
         $user = factory(User::class)->create();

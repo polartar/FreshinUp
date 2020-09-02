@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Unit\Models\Venue;
 
+use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Venue;
 use App\Models\Foodfleet\Location;
@@ -21,21 +22,25 @@ class VenueTest extends TestCase
      */
     public function testModel()
     {
+        /** @var Venue $venue */
         $venue = factory(Venue::class)->create();
+        $this->assertDatabaseHas('venues', [
+            'uuid' => $venue->uuid,
+            'name' => $venue->name,
+            'address' => $venue->address,
+        ]);
+
+        // external table relations
         $location = factory(Location::class)->create([
             'venue_uuid' => $venue->uuid
         ]);
+        $this->assertEquals(1, $venue->locations()->where('uuid', $location->uuid)->count());
+
         $event = factory(Event::class)->create([
             'venue_uuid' => $venue->uuid
         ]);
+        $this->assertEquals(1, $venue->events()->where('uuid', $event->uuid)->count());
 
-        $this->assertDatabaseHas('locations', [
-            'uuid' => $location->uuid,
-            'venue_uuid' => $venue->uuid,
-            'name' => $location->name,
-            'spots' => $location->spots,
-            'capacity' => $location->capacity,
-            'details' => $location->details,
-        ]);
+        // TODO: test documents
     }
 }

@@ -3,64 +3,62 @@
 namespace Tests\Feature\Unit\Models\Event;
 
 use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\EventTag;
-use App\Models\Foodfleet\Store;
-use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Square\Transaction;
-use App\Models\Foodfleet\Venue;
-use FreshinUp\FreshBusForms\Models\Company\Company;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EventTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testModel()
     {
-        $eventTag = factory(EventTag::class)->create();
-        $store = factory(Store::class)->create();
-        $location = factory(Location::class)->create();
-        $transaction = factory(Transaction::class)->create();
-        $host = factory(Company::class)->create();
-        $venue = factory(Venue::class)->create();
-
         $event = factory(Event::class)->create();
-        $event->transactions()->save($transaction);
-        $event->location()->associate($location);
-        $event->host()->associate($host);
-        $event->venue()->associate($venue);
-        $event->save();
-        $event->eventTags()->sync([$eventTag->uuid]);
-        $event->stores()->sync($store->uuid);
 
         $this->assertDatabaseHas('events', [
-            'uuid' => $event->uuid,
-            'location_uuid' => $location->uuid,
-            'host_uuid' => $host->uuid,
-            'venue_uuid' => $venue->uuid
+            "uuid" => $event->uuid,
+            "name" => $event->name,
+            "type_id" => $event->type_id,
+            "status_id" => $event->status_id,
+            "location_uuid" => $event->location_uuid,
+            "start_at" => $event->start_at,
+            "end_at" => $event->end_at,
+            "staff_notes" => $event->staff_notes,
+            "member_notes" => $event->member_notes,
+            "customer_notes" => $event->customer_notes,
+            "host_uuid" => $event->host_uuid,
+            "host_status" => $event->host_status,
+            "manager_uuid" => $event->manager_uuid,
+            "budget" => $event->budget,
+            "attendees" => $event->attendees,
+            "commission_rate" => $event->commission_rate,
+            "commission_type" => $event->commission_type,
+            "created_at" => $event->created_at,
+            "updated_at" => $event->updated_at,
+            "venue_uuid" => $event->venue_uuid
         ]);
 
-        $this->assertDatabaseHas('transactions', [
-            'uuid' => $transaction->uuid,
+        // table relations
+        $this->assertEquals($event->type_id, $event->type->id);
+        $this->assertEquals($event->status_id, $event->status->id);
+        $this->assertEquals($event->location_uuid, $event->location->uuid);
+        $this->assertEquals($event->host_uuid, $event->host->uuid);
+        $this->assertEquals($event->manager_uuid, $event->manager->uuid);
+        $this->assertEquals($event->venue_uuid, $event->venue->uuid);
+
+        // external table relations
+        // TODO: transactions
+        // TODO: eventTags
+        // TODO: documents
+        // TODO: menuItems
+        // TODO: messages
+        // TODO: schedule
+        // TODO: histories
+        $transaction = factory(Transaction::class)->create([
             'event_uuid' => $event->uuid
         ]);
-
-        $this->assertDatabaseHas('events_event_tags', [
-            'event_uuid' => $event->uuid,
-            'event_tag_uuid' => $eventTag->uuid
-        ]);
-
-        $this->assertDatabaseHas('events_stores', [
-            'event_uuid' => $event->uuid,
-            'store_uuid' => $store->uuid
-        ]);
+        $this->assertEquals($transaction->uuid, $event->transactions->first()->uuid);
     }
 }
