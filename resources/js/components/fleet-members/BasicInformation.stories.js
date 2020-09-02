@@ -6,7 +6,7 @@ import BasicInformation from './BasicInformation'
 import {
   FIXTURE_FLEET_MEMBER,
   FIXTURE_MEMBER_LOCATIONS,
-  FIXTURE_MEMBER_TYPE
+  FIXTURE_MEMBER_TYPES
 } from '../../../../tests/Javascript/__data__/fleet-members'
 
 export const Default = () => ({
@@ -23,7 +23,7 @@ export const WithData = () => ({
   data () {
     return {
       member: FIXTURE_FLEET_MEMBER,
-      types: FIXTURE_MEMBER_TYPE,
+      types: FIXTURE_MEMBER_TYPES,
       locations: FIXTURE_MEMBER_LOCATIONS
     }
   },

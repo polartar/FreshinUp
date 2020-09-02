@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\StoreStatus;
 use App\Models\Foodfleet\StoreType;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\EventMenuItem;
@@ -14,7 +15,6 @@ use Laravel\Passport\Passport;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use FreshinUp\FreshBusForms\Models\Address\Address;
 
 class StoresTest extends TestCase
 {
@@ -127,7 +127,7 @@ class StoresTest extends TestCase
         $type = factory(StoreType::class)->create();
 
         $stores = factory(Store::class, 1)->create([
-            'status' => 1,
+            'status_id' => 1,
             'type_id' => $type->id,
             'size' => 'A',
             'website' => 'a@a.com',
@@ -157,28 +157,89 @@ class StoresTest extends TestCase
         }
     }
 
-    public function testStatusAndAddress()
+    public function testGetListWithManagerUuidFilter()
+    {
+        $user = factory(User::class)->create([
+            'type' => 1,
+            'level' => 5
+        ]);
+
+        Passport::actingAs($user);
+
+        $nonuser = factory(User::class)->create();
+
+        factory(Event::class, 5)->create([
+            'name' => 'Not visibles',
+            'manager_uuid' => $nonuser->uuid
+        ]);
+
+        $usersToFind = factory(User::class, 2)->create();
+
+        $eventToFind1 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $usersToFind->first()->uuid
+        ]);
+
+        $eventToFind2 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $usersToFind->last()->uuid
+        ]);
+
+        $eventToFind3 = factory(Event::class)->create([
+            'name' => 'To find',
+            'manager_uuid' => $user->uuid
+        ]);
+
+        $userUuid = $usersToFind->map(function ($user) {
+            return $user->uuid;
+        })->join(',');
+
+        $data = $this
+            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=" . $userUuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertCount(3, $data);
+        $this->assertEquals($eventToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
+        $this->assertEquals($eventToFind3->uuid, $data[2]['uuid']);
+    }
+
+    public function testGetListWithStatusIdFilter()
     {
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
 
-        $stores = factory(Store::class, 2)->create([
-            'status' => 1
+        $nonstatus = factory(StoreStatus::class)->create();
+
+        factory(Store::class, 5)->create([
+            'name' => 'Not visibles',
+            'status_id' => $nonstatus->id
         ]);
 
-        $addresses = factory(Address::class, 2)->create();
+        $statuses = factory(StoreStatus::class, 2)->create();
 
-        foreach ($stores as $key => $store) {
-            $store->addresses()->save($addresses[$key]);
-        }
-
-        factory(Store::class, 3)->create([
-            'status' => 2
+        $storeToFind1 = factory(Store::class)->create([
+            'name' => 'To find 1',
+            'status_id' => $statuses->first()->id
         ]);
+
+        $storeToFind2 = factory(Store::class)->create([
+            'name' => 'To find 2',
+            'status_id' => $statuses->last()->id
+        ]);
+
+        $statusId = $statuses->map(function ($status) {
+            return $status->id;
+        })->join(',');
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?include=addresses&filter[status]=1")
+            ->json('get', "/api/foodfleet/stores?filter[status_id]=" . $statusId)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -187,14 +248,8 @@ class StoresTest extends TestCase
 
         $this->assertNotEmpty($data);
         $this->assertEquals(2, count($data));
-
-        foreach ($data as $key => $value) {
-            $this->assertArraySubset([
-                'uuid' => $stores[$key]->uuid,
-                'name' => $stores[$key]->name,
-                'addresses' => [['id' => $addresses[$key]->id]]
-            ], $value);
-        }
+        $this->assertEquals($storeToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($storeToFind2->uuid, $data[1]['uuid']);
     }
 
     /**
@@ -291,19 +346,21 @@ class StoresTest extends TestCase
         Passport::actingAs($user);
 
         $store = factory(Store::class)->create([
-            'status' => 1
+            'status_id' => 1
         ]);
 
         $data = $this
-            ->json('patch', "/api/foodfleet/stores/{$store->uuid}", [
-                'status' => 2
+            ->json('PUT', '/api/foodfleet/stores/' . $store->uuid, [
+                'status_id' => 2
             ])
             ->assertStatus(200);
 
-        $this->assertDatabaseHas('stores', [
-            'uuid' => $store->uuid,
-            'status' => 2
-        ]);
+        $url = 'api/foodfleet/stores/' . $store->uuid;
+        $returnedStore = $this->json('GET', $url)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertEquals(2, $returnedStore['status_id']);
     }
 
     /**
@@ -317,17 +374,17 @@ class StoresTest extends TestCase
 
         $store1 = factory(Store::class)->create([
             'name' => 'A',
-            'status' => 3,
+            'status_id' => 3,
             'created_at' => '2019-11-11 07:59:48'
         ]);
         $store2 = factory(Store::class)->create([
             'name' => 'B',
-            'status' => 2,
+            'status_id' => 2,
             'created_at' => '2019-11-10 07:59:48'
         ]);
         $store3 = factory(Store::class)->create([
             'name' => 'C',
-            'status' => 1,
+            'status_id' => 1,
             'created_at' => '2019-11-12 07:59:48'
         ]);
 
@@ -357,7 +414,7 @@ class StoresTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?sort=status")
+            ->json('get', "/api/foodfleet/stores?sort=status_id")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -369,7 +426,7 @@ class StoresTest extends TestCase
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?sort=-status")
+            ->json('get', "/api/foodfleet/stores?sort=-status_id")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
