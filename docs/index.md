@@ -19,8 +19,11 @@
 ## Event Page
 
 ## Event Edit Page
+### Basic Information
 - **Manager** can be modified and saved
 - **Customer** can be modified and saved
+### Event Fleet
+- As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
 <br/>
 
