@@ -1,27 +1,26 @@
 <template>
   <v-timeline
-    align-top
     dense
   >
     <v-timeline-item
-      v-for="event in statuses"
-      :key="event.id"
-      :color="getColorFor(event)"
+      v-for="(option, optionIndex) in options"
+      :key="optionIndex"
+      :color="getColorFor(option)"
       medium
-      :icon="getIconFor(event)"
+      :icon="getIconFor(option)"
     >
       <div class="ff-event_status_timeline__item">
-        <div v-if="event.completed">
-          <strong>{{ formatDate(event.date, 'MMM. DD') }}</strong>
+        <div v-if="option.completed">
+          <strong>{{ formatDate(option.date, 'MMM. DD') }}</strong>
           <p class="caption mb-2">
-            {{ formatDate(event.date, 'hh:mm A') }}
+            {{ formatDate(option.date, 'hh:mm A') }}
           </p>
         </div>
         <div v-else />
         <div>
-          <strong>{{ event.name }}{{ event.completed ? ': Completed': '' }}</strong>
+          <strong>{{ option.name }} {{ option.completed ? ': Completed': '' }}</strong>
           <div class="caption">
-            {{ event.description }}
+            {{ option.description }}
           </div>
         </div>
       </div>
@@ -32,25 +31,52 @@
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
+export const EXCEPTION_STATUSES = [8, 9]
+
 // TODO: extract this component to core-ui to FTimeline
 export default {
   mixins: [FormatDate],
   props: {
+    histories: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] },
     status: { type: Number, default: 0 }
   },
+  computed: {
+    historiesByStatus () {
+      return this.histories.reduce((map, history) => {
+        map[history.status_id] = history
+        return map
+      }, new Map())
+    },
+    options () {
+      return this.statuses.reduce((options, status) => {
+        const history = this.historiesByStatus[status.id] || {}
+        if (EXCEPTION_STATUSES.includes(status.id) && this.status !== status.id) {
+        } else {
+          options.push({
+            status_id: status.id,
+            name: status.name,
+            description: history.description,
+            date: history.date,
+            completed: history.completed
+          })
+        }
+        return options
+      }, [])
+    }
+  },
   methods: {
-    getColorFor (event) {
-      if (event.completed) {
-        return 'success'
-      } else if (event.id === this.status) {
+    getColorFor (option) {
+      if (option.status_id === this.status) {
         return 'warning lighten-2'
+      } else if (option.completed) {
+        return 'success'
       } else {
         return 'grey lighten-2'
       }
     },
-    getIconFor (event) {
-      return event.completed ? 'check_circle_outline' : ''
+    getIconFor (option) {
+      return option.completed ? 'check_circle_outline' : ''
     }
   }
 }

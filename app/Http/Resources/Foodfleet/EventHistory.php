@@ -17,7 +17,7 @@ class EventHistory extends JsonResource
     {
         return [
             "id" => $this->id,
-            "status" => (new EventStatus($this->status))->toArray($request),
+            "status" => new EventStatus($this->whenLoaded('status')),
             'status_id' => (int) $this->status_id,
             "date" => (string) $this->date,
             "description" => $this->description,

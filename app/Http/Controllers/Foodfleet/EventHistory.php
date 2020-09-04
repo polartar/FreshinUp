@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Enums\EventStatus as EventStatusEnum;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Foodfleet\EventHistory as EventHistoryResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\Foodfleet\EventHistory as EventHistoryResource;
 
 class EventHistory extends Controller
 {
     /**
-     * @param Request $request
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @param  Request  $request
+     * @return JsonResource
      */
     public function index(Request $request)
     {
@@ -22,7 +24,8 @@ class EventHistory extends Controller
             ])
             ->allowedFilters([
                 Filter::exact('event_uuid')
-            ])->get();
+            ])
+            ->get();
 
         return EventHistoryResource::collection($eventHistories);
     }

@@ -22,6 +22,10 @@ class EventHistory extends Model
 {
     public $timestamps = false;
     protected $dates = ['date'];
+    protected $casts = [
+        'completed' => 'bool',
+        'status_id' => 'int'
+    ];
 
     public function event()
     {

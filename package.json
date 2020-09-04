@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "yarn lint && yarn test:unit",
+    "test": "yarn test:unit",
     "lint": "eslint --ext .js,.vue resources/js tests/Javascript .storybook webpack.mix.js",
     "lint:fix": "yarn lint --fix",
     "dev": "npm run development",

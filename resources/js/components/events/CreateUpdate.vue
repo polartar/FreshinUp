@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-form
+      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -149,6 +150,7 @@
             </v-flex>
             <v-flex sm2>
               <v-dialog
+                v-if="!isNew"
                 v-model="questDialog"
                 max-width="700"
               >
@@ -195,7 +197,11 @@
                   </v-card-title>
                   <v-divider />
                   <v-card-text class="grey--text">
-                    <event-status-timeline />
+                    <EventStatusTimeline
+                      :statuses="statuses"
+                      :histories="eventHistories"
+                      :status="event.status_id"
+                    />
                   </v-card-text>
                   <v-divider />
                 </v-card>
@@ -274,17 +280,17 @@
 
 <script>
 import omitBy from 'lodash/omitBy'
-import isNull from 'lodash/isNull'
 import get from 'lodash/get'
+import isNull from 'lodash/isNull'
 import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
 const { mapFields } = createHelpers({
@@ -337,7 +343,8 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
-    ...mapGetters('venues', { venues: 'items' }),
+    ...mapGetters('venues', { 'venues': 'items' }),
+    ...mapGetters('eventHistories', { 'eventHistories': 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -488,7 +495,7 @@ export default {
         data.id = 'new'
         await this.$store.dispatch('events/createItem', { data })
         await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-        this.$router.push('/admin/events/')
+        this.$router.push({ path: '/admin/events/' })
       } else {
         await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
         await this.$store.dispatch('generalMessage/setMessage', 'Modified')
@@ -500,7 +507,7 @@ export default {
     async onDelete () {
       await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
-      this.$router.push('/admin/events/')
+      this.$router.push({ path: '/admin/events/' })
     },
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
@@ -512,7 +519,7 @@ export default {
       this.$router.push({ path: '/admin/events' })
     }
   },
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
+  async beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     let params = { id }
     let promises = []
@@ -525,9 +532,12 @@ export default {
       promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
+      await vm.$store.dispatch('eventHistories/setFilters', {
+        event_uuid: id
+      })
+      promises.push(vm.$store.dispatch('eventHistories/getItems'))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
-    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

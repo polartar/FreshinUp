@@ -556,98 +556,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           <div
             class="flex sm2"
           >
-            <button
-              class="v-btn v-btn--floating v-btn--depressed theme--light primary"
-              type="button"
-            >
-              <div
-                class="v-btn__content"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon far fa-question-circle theme--light"
-                />
-              </div>
-            </button>
-            <div
-              class="v-dialog__container"
-              style="display: inline-block;"
-            >
-              <div
-                class="v-dialog__content"
-                style="z-index: 0;"
-                tabindex="-1"
-              >
-                <div
-                  class="v-dialog"
-                  style="max-width: 700px; display: none;"
-                >
-                   
-                  <div
-                    class="v-card v-sheet theme--light"
-                  >
-                    <div
-                      class="v-card__title"
-                    >
-                      <div
-                        class="layout row space-between align-center"
-                      >
-                        <div
-                          class="flex"
-                        >
-                          <h3>
-                            Event Status
-                          </h3>
-                        </div>
-                         
-                        <button
-                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                          type="button"
-                        >
-                          <div
-                            class="v-btn__content"
-                          >
-                            <div
-                              class="flex"
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon white--text fa fa fa fa-times theme--light"
-                                style="font-size: 16px;"
-                              />
-                            </div>
-                             
-                            <div
-                              class="flex"
-                            >
-                              
-                        Close
-                      
-                            </div>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                     
-                    <hr
-                      class="v-divider theme--light"
-                    />
-                     
-                    <div
-                      class="v-card__text grey--text"
-                    >
-                      <div
-                        class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
-                      />
-                    </div>
-                     
-                    <hr
-                      class="v-divider theme--light"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!---->
           </div>
         </div>
       </div>
@@ -747,7 +656,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               Event type
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
                         role="combobox"
                       >
                         <div
@@ -762,6 +671,11 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                               <div
                                 class="v-select__selections"
                               >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  Catering
+                                </div>
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
@@ -800,10 +714,11 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                                     role="list"
                                   >
                                     <div
+                                      class="primary--text"
                                       role="listitem"
                                     >
                                       <a
-                                        class="v-list__tile v-list__tile--link theme--light"
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                       >
                                         <div
                                           class="v-list__tile__content"
@@ -1031,44 +946,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   <div
                     class="layout row wrap pt-4"
                   >
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Budget
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="budget"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
                     <div
                       class="flex xs12 md3 pr-3"
@@ -1109,157 +987,9 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                       </div>
                     </div>
                      
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Commission Rate
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="commission_rate"
-                                required="required"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
-                    <div
-                      class="flex xs12 md3"
-                    >
-                      
-              Commission type
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
-                        role="combobox"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-select__slot"
-                            >
-                              <div
-                                class="v-select__selections"
-                              >
-                                <input
-                                  aria-readonly="false"
-                                  autocomplete="on"
-                                  readonly="readonly"
-                                  type="text"
-                                />
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--append"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon material-icons theme--light"
-                                  >
-                                    arrow_drop_down
-                                  </i>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="v-menu"
-                            >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                              >
-                                <div
-                                  class="v-select-list v-card theme--light"
-                                >
-                                  <div
-                                    class="v-list theme--light"
-                                    role="list"
-                                  >
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Percentage(%)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Flat ($)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                   </div>
                    
                   <div
@@ -7129,7 +6859,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
                   class="v-btn__content"
                 >
                   
-        Save changes
+        Submit
       
                 </div>
               </button>
@@ -7139,7 +6869,8 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
               />
                
               <button
-                class="v-btn theme--light"
+                class="v-btn v-btn--disabled theme--light"
+                disabled="disabled"
                 type="button"
               >
                 <div
@@ -10147,8 +9878,292 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                       class="v-card__text grey--text"
                     >
                       <div
-                        class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
-                      />
+                        class="v-timeline v-timeline--dense theme--light"
+                      >
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot warning lighten-2"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div>
+                                <strong>
+                                  Aug. 18
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:54 PM
+        
+                                </p>
+                              </div>
+                               
+                              <div>
+                                <strong>
+                                  Draft : Completed
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Event was created in the system and submitted for approval
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div>
+                                <strong>
+                                  Aug. 19
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
+                               
+                              <div>
+                                <strong>
+                                  FF Initial Review : Completed
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Food Fleet Staff will review the event request
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot grey lighten-2"
+                            />
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div />
+                               
+                              <div>
+                                <strong>
+                                  Customer Agreement 
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Customer will review / sign event agreement and terms
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot grey lighten-2"
+                            />
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div />
+                               
+                              <div>
+                                <strong>
+                                  Fleet Member Selection 
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          FoodFleet will define event menu and identify interested Fleet Members and authorize work order
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot grey lighten-2"
+                            />
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div />
+                               
+                              <div>
+                                <strong>
+                                  Customer Review 
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Customer will review interested Fleet Members and authorize work order
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot grey lighten-2"
+                            />
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div />
+                               
+                              <div>
+                                <strong>
+                                  Fleet Member Contracts 
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Approved Fleet Members will review and sign event contracts
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-timeline-item theme--light"
+                          medium=""
+                        >
+                          <div
+                            class="v-timeline-item__dot"
+                          >
+                            <div
+                              class="v-timeline-item__inner-dot grey lighten-2"
+                            />
+                          </div>
+                          <div
+                            class="v-timeline-item__body"
+                          >
+                            <div
+                              class="ff-event_status_timeline__item"
+                            >
+                              <div />
+                               
+                              <div>
+                                <strong>
+                                  Confirmed 
+                                </strong>
+                                 
+                                <div
+                                  class="caption"
+                                >
+                                  
+          Customer will review and sign the final event contract
+        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                      
                     <hr
@@ -10212,7 +10227,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Event Name
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -10243,7 +10258,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="v-counter theme--light"
                             >
-                              0 / 255
+                              11 / 255
                             </div>
                           </div>
                         </div>
@@ -10257,7 +10272,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Event type
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
                         role="combobox"
                       >
                         <div
@@ -10272,6 +10287,11 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                               <div
                                 class="v-select__selections"
                               >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  Catering
+                                </div>
                                 <input
                                   aria-readonly="false"
                                   autocomplete="on"
@@ -10310,10 +10330,11 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     role="list"
                                   >
                                     <div
+                                      class="primary--text"
                                       role="listitem"
                                     >
                                       <a
-                                        class="v-list__tile v-list__tile--link theme--light"
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                       >
                                         <div
                                           class="v-list__tile__content"
@@ -10375,7 +10396,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               
                       <div
                         background-color="white"
-                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
                         flat=""
                         height="48"
                         solo=""
@@ -10447,6 +10468,33 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 </div>
                               </div>
                             </div>
+                            <div
+                              aria-valuemax="100"
+                              aria-valuemin="0"
+                              class="v-progress-linear"
+                              role="progressbar"
+                              style="height: 2px;"
+                            >
+                              <div
+                                class="v-progress-linear__background primary"
+                                style="height: 2px; opacity: 0.3; width: 100%;"
+                              />
+                              <div
+                                class="v-progress-linear__bar"
+                              >
+                                <div
+                                  class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                                >
+                                  <div
+                                    class="v-progress-linear__bar__indeterminate long primary"
+                                  />
+                                  <div
+                                    class="v-progress-linear__bar__indeterminate short primary"
+                                  />
+                                </div>
+                                <!---->
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10460,7 +10508,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               
                       <div
                         background-color="white"
-                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
                         flat=""
                         height="48"
                         solo=""
@@ -10532,6 +10580,33 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 </div>
                               </div>
                             </div>
+                            <div
+                              aria-valuemax="100"
+                              aria-valuemin="0"
+                              class="v-progress-linear"
+                              role="progressbar"
+                              style="height: 2px;"
+                            >
+                              <div
+                                class="v-progress-linear__background primary"
+                                style="height: 2px; opacity: 0.3; width: 100%;"
+                              />
+                              <div
+                                class="v-progress-linear__bar"
+                              >
+                                <div
+                                  class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                                >
+                                  <div
+                                    class="v-progress-linear__bar__indeterminate long primary"
+                                  />
+                                  <div
+                                    class="v-progress-linear__bar__indeterminate short primary"
+                                  />
+                                </div>
+                                <!---->
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10541,44 +10616,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                   <div
                     class="layout row wrap pt-4"
                   >
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Budget
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="budget"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
                     <div
                       class="flex xs12 md3 pr-3"
@@ -10587,7 +10625,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Attendees
               
                       <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -10619,157 +10657,9 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                       </div>
                     </div>
                      
-                    <div
-                      class="flex xs12 md3 pr-3"
-                    >
-                      
-              Commission Rate
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                data-vv-name="commission_rate"
-                                required="required"
-                                type="number"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                      
-                    <div
-                      class="flex xs12 md3"
-                    >
-                      
-              Commission type
-              
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
-                        role="combobox"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-select__slot"
-                            >
-                              <div
-                                class="v-select__selections"
-                              >
-                                <input
-                                  aria-readonly="false"
-                                  autocomplete="on"
-                                  readonly="readonly"
-                                  type="text"
-                                />
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--append"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon material-icons theme--light"
-                                  >
-                                    arrow_drop_down
-                                  </i>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="v-menu"
-                            >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                              >
-                                <div
-                                  class="v-select-list v-card theme--light"
-                                >
-                                  <div
-                                    class="v-list theme--light"
-                                    role="list"
-                                  >
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Percentage(%)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            Flat ($)
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!---->
                   </div>
                    
                   <div
@@ -10907,7 +10797,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         id="DateTimePicker"
                       >
                         <div
-                          class="field flex align-center lg"
+                          class="field flex align-center has-value lg"
                           data-v-a0144ed0=""
                         >
                           <input
@@ -10927,7 +10817,34 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
     Select date
   
                           </label>
-                          <!---->
+                          <button
+                            class="custom-button flex align-center justify-content-center field-clear-button round"
+                            data-v-02b1f8d2=""
+                            data-v-a0144ed0=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="custom-button-effect"
+                              data-v-02b1f8d2=""
+                              style="background-color: rgba(0, 0, 0, 0.54);"
+                            />
+                            <span
+                              class="custom-button-content flex align-center justify-content-center flex-1"
+                              data-v-02b1f8d2=""
+                              style="color: rgba(0, 0, 0, 0.54); fill: rgba(0, 0, 0, 0.54);"
+                            >
+                              <span
+                                class="fs-16"
+                                data-v-02b1f8d2=""
+                                data-v-a0144ed0=""
+                              >
+                                
+      ✕
+    
+                              </span>
+                            </span>
+                          </button>
                         </div>
                         <!---->
                         <div
@@ -10974,19 +10891,43 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     data-v-17cb1efe=""
                                   >
                                     
-        ...
+        Thu 10 Oct
       
                                   </span>
                                 </span>
                                 <div
-                                  class="header-picker-time flex flex-fixed pl-10"
+                                  class="header-picker-time flex pl-10"
                                   data-v-17cb1efe=""
                                   style="flex: 0 0 160px; width: 160px; min-width: 160px; max-width: 160px;"
                                 >
                                   <span
+                                    class="dots-text time-number header-picker-hour flex justify-content-right"
                                     data-v-17cb1efe=""
                                   >
-                                    ...
+                                    <span
+                                      data-v-17cb1efe=""
+                                    >
+                                      
+          11
+        
+                                    </span>
+                                  </span>
+                                  <span
+                                    data-v-17cb1efe=""
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    class="dots-text time-number header-picker-minute flex justify-content-left"
+                                    data-v-17cb1efe=""
+                                  >
+                                    <span
+                                      data-v-17cb1efe=""
+                                    >
+                                      
+          04
+        
+                                    </span>
                                   </span>
                                 </div>
                               </div>
@@ -11057,7 +10998,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                             style="color: rgb(25, 118, 210); fill: #1976D2;"
                                           >
                                             
-            June
+            October
           
                                           </span>
                                         </button>
@@ -11177,7 +11118,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                   <div
                                     class="month-container"
                                     data-v-0da13aa6=""
-                                    style="height: 250px;"
+                                    style="height: 210px;"
                                   >
                                     <span
                                       data-v-0da13aa6=""
@@ -11186,22 +11127,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                         class="datepicker-days flex"
                                         data-v-0da13aa6=""
                                       >
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
                                         <div
                                           class="datepicker-day align-center justify-content-center"
                                           data-v-0da13aa6=""
@@ -11409,7 +11334,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                           </span>
                                         </button>
                                         <button
-                                          class="datepicker-day flex align-center justify-content-center enable"
+                                          class="datepicker-day flex align-center justify-content-center selected enable"
                                           data-v-0da13aa6=""
                                           tabindex="-1"
                                           type="button"
@@ -11788,10 +11713,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                           tabindex="-1"
                                           type="button"
                                         >
-                                          <span
-                                            class="datepicker-today"
-                                            data-v-0da13aa6=""
-                                          />
+                                          <!---->
                                           <span
                                             class="datepicker-day-effect"
                                             data-v-0da13aa6=""
@@ -11873,22 +11795,28 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
             
                                           </span>
                                         </button>
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
+                                        <button
+                                          class="datepicker-day flex align-center justify-content-center enable"
                                           data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
+                                          tabindex="-1"
+                                          type="button"
+                                        >
+                                          <!---->
+                                          <span
+                                            class="datepicker-day-effect"
+                                            data-v-0da13aa6=""
+                                            style="background-color: rgb(25, 118, 210);"
+                                          />
+                                          <!---->
+                                          <span
+                                            class="datepicker-day-text flex-1"
+                                            data-v-0da13aa6=""
+                                          >
+                                            
+              31
+            
+                                          </span>
+                                        </button>
                                         <div
                                           class="datepicker-day flex align-center justify-content-center"
                                           data-v-0da13aa6=""
@@ -11907,7 +11835,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 class="time-picker flex flex-fixed flex-1 with-border"
                                 data-v-1dc7d483=""
                                 data-v-56d9fd76=""
-                                style="height: 347px;"
+                                style="height: 307px;"
                               >
                                 <div
                                   class="time-picker-column flex-1 flex flex-direction-column text-center"
@@ -12141,7 +12069,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       </span>
                                     </button>
                                     <button
-                                      class="time-picker-column-item flex align-center justify-content-center"
+                                      class="time-picker-column-item flex align-center justify-content-center active"
                                       data-v-56d9fd76=""
                                       tabindex="-1"
                                       type="button"
@@ -12498,7 +12426,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       </span>
                                     </button>
                                     <button
-                                      class="time-picker-column-item flex align-center justify-content-center"
+                                      class="time-picker-column-item flex align-center justify-content-center active"
                                       data-v-56d9fd76=""
                                       tabindex="-1"
                                       type="button"
@@ -13700,7 +13628,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                         id="DateTimePicker"
                       >
                         <div
-                          class="field flex align-center lg"
+                          class="field flex align-center has-value lg"
                           data-v-a0144ed0=""
                         >
                           <input
@@ -13720,7 +13648,34 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
     Select date
   
                           </label>
-                          <!---->
+                          <button
+                            class="custom-button flex align-center justify-content-center field-clear-button round"
+                            data-v-02b1f8d2=""
+                            data-v-a0144ed0=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="custom-button-effect"
+                              data-v-02b1f8d2=""
+                              style="background-color: rgba(0, 0, 0, 0.54);"
+                            />
+                            <span
+                              class="custom-button-content flex align-center justify-content-center flex-1"
+                              data-v-02b1f8d2=""
+                              style="color: rgba(0, 0, 0, 0.54); fill: rgba(0, 0, 0, 0.54);"
+                            >
+                              <span
+                                class="fs-16"
+                                data-v-02b1f8d2=""
+                                data-v-a0144ed0=""
+                              >
+                                
+      ✕
+    
+                              </span>
+                            </span>
+                          </button>
                         </div>
                         <!---->
                         <div
@@ -13767,19 +13722,43 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                     data-v-17cb1efe=""
                                   >
                                     
-        ...
+        Sat 12 Oct
       
                                   </span>
                                 </span>
                                 <div
-                                  class="header-picker-time flex flex-fixed pl-10"
+                                  class="header-picker-time flex pl-10"
                                   data-v-17cb1efe=""
                                   style="flex: 0 0 160px; width: 160px; min-width: 160px; max-width: 160px;"
                                 >
                                   <span
+                                    class="dots-text time-number header-picker-hour flex justify-content-right"
                                     data-v-17cb1efe=""
                                   >
-                                    ...
+                                    <span
+                                      data-v-17cb1efe=""
+                                    >
+                                      
+          11
+        
+                                    </span>
+                                  </span>
+                                  <span
+                                    data-v-17cb1efe=""
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    class="dots-text time-number header-picker-minute flex justify-content-left"
+                                    data-v-17cb1efe=""
+                                  >
+                                    <span
+                                      data-v-17cb1efe=""
+                                    >
+                                      
+          04
+        
+                                    </span>
                                   </span>
                                 </div>
                               </div>
@@ -13850,7 +13829,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                             style="color: rgb(25, 118, 210); fill: #1976D2;"
                                           >
                                             
-            June
+            October
           
                                           </span>
                                         </button>
@@ -13970,7 +13949,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                   <div
                                     class="month-container"
                                     data-v-0da13aa6=""
-                                    style="height: 250px;"
+                                    style="height: 210px;"
                                   >
                                     <span
                                       data-v-0da13aa6=""
@@ -13979,22 +13958,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                         class="datepicker-days flex"
                                         data-v-0da13aa6=""
                                       >
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
                                         <div
                                           class="datepicker-day align-center justify-content-center"
                                           data-v-0da13aa6=""
@@ -14246,7 +14209,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                           </span>
                                         </button>
                                         <button
-                                          class="datepicker-day flex align-center justify-content-center enable"
+                                          class="datepicker-day flex align-center justify-content-center selected enable"
                                           data-v-0da13aa6=""
                                           tabindex="-1"
                                           type="button"
@@ -14581,10 +14544,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                           tabindex="-1"
                                           type="button"
                                         >
-                                          <span
-                                            class="datepicker-today"
-                                            data-v-0da13aa6=""
-                                          />
+                                          <!---->
                                           <span
                                             class="datepicker-day-effect"
                                             data-v-0da13aa6=""
@@ -14666,22 +14626,28 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
             
                                           </span>
                                         </button>
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
+                                        <button
+                                          class="datepicker-day flex align-center justify-content-center enable"
                                           data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
-                                        <div
-                                          class="datepicker-day flex align-center justify-content-center"
-                                          data-v-0da13aa6=""
-                                        />
+                                          tabindex="-1"
+                                          type="button"
+                                        >
+                                          <!---->
+                                          <span
+                                            class="datepicker-day-effect"
+                                            data-v-0da13aa6=""
+                                            style="background-color: rgb(25, 118, 210);"
+                                          />
+                                          <!---->
+                                          <span
+                                            class="datepicker-day-text flex-1"
+                                            data-v-0da13aa6=""
+                                          >
+                                            
+              31
+            
+                                          </span>
+                                        </button>
                                         <div
                                           class="datepicker-day flex align-center justify-content-center"
                                           data-v-0da13aa6=""
@@ -14700,7 +14666,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                 class="time-picker flex flex-fixed flex-1 with-border"
                                 data-v-1dc7d483=""
                                 data-v-56d9fd76=""
-                                style="height: 347px;"
+                                style="height: 307px;"
                               >
                                 <div
                                   class="time-picker-column flex-1 flex flex-direction-column text-center"
@@ -14934,7 +14900,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       </span>
                                     </button>
                                     <button
-                                      class="time-picker-column-item flex align-center justify-content-center"
+                                      class="time-picker-column-item flex align-center justify-content-center active"
                                       data-v-56d9fd76=""
                                       tabindex="-1"
                                       type="button"
@@ -15291,7 +15257,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                       </span>
                                     </button>
                                     <button
-                                      class="time-picker-column-item flex align-center justify-content-center"
+                                      class="time-picker-column-item flex align-center justify-content-center active"
                                       data-v-56d9fd76=""
                                       tabindex="-1"
                                       type="button"
@@ -16487,7 +16453,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Food fleet staff notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -16528,7 +16494,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Fleet member notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"
@@ -16569,7 +16535,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
               Customer notes
               
                       <div
-                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                        class="v-input v-textarea v-text-field v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                       >
                         <div
                           class="v-input__control"

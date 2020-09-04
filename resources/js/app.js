@@ -21,6 +21,7 @@ import eventStatuses from '~/store/modules/eventStatuses.js'
 import eventMenuItems from '~/store/modules/eventMenuItems.js'
 import eventSummary from '~/store/modules/eventSummary.js'
 import eventTypes from '~/store/modules/eventTypes.js'
+import eventHistories from '~/store/modules/eventHistories.js'
 import messages from '~/store/modules/messages.js'
 import venues from './store/modules/venues'
 
@@ -160,7 +161,8 @@ const appInstance = new App({
       eventSummary: eventSummary({}),
       eventTypes: eventTypes({}),
       messages: messages({}),
-      venues: venues({})
+      venues: venues({}),
+      eventHistories: eventHistories({})
     }
   }),
   theme,

@@ -14,6 +14,7 @@ import transactions from './modules/transactions'
 import companyDetails from './modules/companyDetails'
 import eventSummary from './modules/eventSummary'
 import eventTypes from './modules/eventTypes'
+// import eventHistories from './modules/eventHistories'
 import venues from './modules/venues'
 import stores from './modules/stores'
 
@@ -36,6 +37,7 @@ export default (initialState = {}) => {
         companyDetails: companyDetails({}),
         eventSummary: eventSummary({}),
         eventTypes: eventTypes({}),
+        // eventHistories: eventHistories({}),
         venues: venues({}),
         stores: stores({})
       }

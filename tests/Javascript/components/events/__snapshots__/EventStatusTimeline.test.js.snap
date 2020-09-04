@@ -1,21 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventStatusTimeline Snapshots Default 1`] = `
+exports[`EventStatusTimeline Snapshots AllChecked 1`] = `
 <div
-  class="container"
+  class="container white"
 >
   <div
-    class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
-  />
-</div>
-`;
-
-exports[`EventStatusTimeline Snapshots Populated 1`] = `
-<div
-  class="container"
->
-  <div
-    class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+    class="v-timeline v-timeline--dense theme--light"
   >
     <div
       class="v-timeline-item theme--light"
@@ -57,7 +47,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Draft: Completed
+              Draft : Completed
             </strong>
              
             <div
@@ -111,7 +101,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              FoodFleet Initial Review: Completed
+              FF Initial Review : Completed
             </strong>
              
             <div
@@ -134,6 +124,395 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
       >
         <div
           class="v-timeline-item__inner-dot warning lighten-2"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 20
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Customer Agreement : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review / sign event agreement and terms
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 21
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Fleet Member Selection : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          FoodFleet will define event menu and identify interested Fleet Members and authorize work order
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 22
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Customer Review : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review interested Fleet Members and authorize work order
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 23
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Fleet Member Contracts : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Approved Fleet Members will review and sign event contracts
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 24
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Confirmed : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review and sign the final event contract
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EventStatusTimeline Snapshots Cancelled 1`] = `
+<div
+  class="container white"
+>
+  <div
+    class="v-timeline v-timeline--dense theme--light"
+  >
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 18
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:54 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Draft : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Event was created in the system and submitted for approval
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 19
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              FF Initial Review : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Food Fleet Staff will review the event request
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot grey lighten-2"
         />
       </div>
       <div
@@ -146,7 +525,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Customer Agreement
+              Customer Agreement 
             </strong>
              
             <div
@@ -181,7 +560,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Fleet Member Selection
+              Fleet Member Selection 
             </strong>
              
             <div
@@ -216,7 +595,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Customer Review
+              Customer Review 
             </strong>
              
             <div
@@ -251,7 +630,7 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Fleet Member Contracts
+              Fleet Member Contracts 
             </strong>
              
             <div
@@ -286,7 +665,346 @@ exports[`EventStatusTimeline Snapshots Populated 1`] = `
            
           <div>
             <strong>
-              Event Confirmation
+              Confirmed 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review and sign the final event contract
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot warning lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Cancelled 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review and sign the final event contract
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EventStatusTimeline Snapshots Default 1`] = `
+<div
+  class="container white"
+>
+  <div
+    class="v-timeline v-timeline--dense theme--light"
+  />
+</div>
+`;
+
+exports[`EventStatusTimeline Snapshots Populated 1`] = `
+<div
+  class="container white"
+>
+  <div
+    class="v-timeline v-timeline--dense theme--light"
+  >
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 18
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:54 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              Draft : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Event was created in the system and submitted for approval
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot success"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--dark"
+          >
+            check_circle_outline
+          </i>
+        </div>
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div>
+            <strong>
+              Aug. 19
+            </strong>
+             
+            <p
+              class="caption mb-2"
+            >
+              
+          09:58 PM
+        
+            </p>
+          </div>
+           
+          <div>
+            <strong>
+              FF Initial Review : Completed
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Food Fleet Staff will review the event request
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot warning lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Customer Agreement 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review / sign event agreement and terms
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot grey lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Fleet Member Selection 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          FoodFleet will define event menu and identify interested Fleet Members and authorize work order
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot grey lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Customer Review 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Customer will review interested Fleet Members and authorize work order
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot grey lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Fleet Member Contracts 
+            </strong>
+             
+            <div
+              class="caption"
+            >
+              
+          Approved Fleet Members will review and sign event contracts
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="v-timeline-item theme--light"
+      medium=""
+    >
+      <div
+        class="v-timeline-item__dot"
+      >
+        <div
+          class="v-timeline-item__inner-dot grey lighten-2"
+        />
+      </div>
+      <div
+        class="v-timeline-item__body"
+      >
+        <div
+          class="ff-event_status_timeline__item"
+        >
+          <div />
+           
+          <div>
+            <strong>
+              Confirmed 
             </strong>
              
             <div
