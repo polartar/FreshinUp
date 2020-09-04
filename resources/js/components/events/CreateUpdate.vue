@@ -24,10 +24,9 @@
       <v-layout
         row
         align-center
-        justify-space-between
         ma-2
       >
-        <v-flex>
+        <v-flex sm6>
           <v-layout
             row
             align-center
@@ -37,7 +36,7 @@
                 {{ pageTitle }}
               </div>
             </v-flex>
-            <v-flex sm4>
+            <v-flex>
               <v-dialog
                 v-model="duplicateDialog"
                 max-width="500"
@@ -136,14 +135,14 @@
             </v-flex>
           </v-layout>
         </v-flex>
-        <v-flex>
+        <v-flex sm6>
           <v-layout
             row
             align-center
             justify-end
             text-xs-right
           >
-            <v-flex sm4>
+            <v-flex>
               <status-select
                 v-model="status_id"
                 :options="statuses"

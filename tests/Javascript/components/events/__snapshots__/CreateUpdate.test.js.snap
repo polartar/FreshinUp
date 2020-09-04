@@ -33,10 +33,10 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
     </div>
      
     <div
-      class="layout row align-center justify-space-between ma-2"
+      class="layout row align-center ma-2"
     >
       <div
-        class="flex"
+        class="flex sm6"
       >
         <div
           class="layout row align-center"
@@ -54,7 +54,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
           </div>
            
           <div
-            class="flex sm4"
+            class="flex"
           >
             <button
               class="v-btn theme--light white"
@@ -393,13 +393,13 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       </div>
        
       <div
-        class="flex"
+        class="flex sm6"
       >
         <div
           class="layout row align-center justify-end text-xs-right"
         >
           <div
-            class="flex sm4"
+            class="flex"
           >
             <button
               class="v-btn theme--dark warning warning-text--text"
@@ -9365,10 +9365,10 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
     </div>
      
     <div
-      class="layout row align-center justify-space-between ma-2"
+      class="layout row align-center ma-2"
     >
       <div
-        class="flex"
+        class="flex sm6"
       >
         <div
           class="layout row align-center"
@@ -9386,7 +9386,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           </div>
            
           <div
-            class="flex sm4"
+            class="flex"
           >
             <button
               class="v-btn theme--light white"
@@ -9725,13 +9725,13 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       </div>
        
       <div
-        class="flex"
+        class="flex sm6"
       >
         <div
           class="layout row align-center justify-end text-xs-right"
         >
           <div
-            class="flex sm4"
+            class="flex"
           >
             <button
               class="v-btn theme--dark grey grey-text--text"
