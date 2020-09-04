@@ -7,7 +7,6 @@ use App\Http\Resources\Foodfleet\EventStatus as EventStatusResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
 use App\Models\Foodfleet\EventStatus;
-use App\Models\Foodfleet\EventStatus as EventStatusModel;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -59,7 +58,7 @@ class EventHistoryTest extends TestCase
 
         $data = $this
             ->json('get', '/api/foodfleet/event/status/histories?'
-                . 'filter[event_uuid]=' . $event->uuid)
+                .'filter[event_uuid]='.$event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -89,7 +88,7 @@ class EventHistoryTest extends TestCase
 
         $response = $this
             ->json('get', '/api/foodfleet/event/status/histories?'
-                . 'include=status');
+                .'include=status');
         $this->assertNotExceptionResponse($response);
         $data = $response
             ->assertStatus(200)
@@ -105,17 +104,18 @@ class EventHistoryTest extends TestCase
             $status = $eventHistory->status;
             $this->assertArraySubset([
                 'id' => $eventHistory->id,
-                'status_id' => $eventHistory->status_id,
-                'status' => [
-                    'id' => $status->id,
-                    'name' => $status->name,
-                    'color' => EventStatusResource::getColorFor($status->id)
-                ],
+                'status_id' => (int) $eventHistory->status_id,
                 'event_uuid' => $eventHistory->event_uuid,
                 'description' => $eventHistory->description,
                 'date' => $eventHistory->date->format('Y-m-d H:i:s'),
-                'completed' => $eventHistory->completed
+                'completed' => (bool) $eventHistory->completed
             ], $data[$idx]);
+            $this->assertArrayHasKey('status', $data[$idx]);
+            $this->assertArraySubset([
+                'id' => $status->id,
+                'name' => $status->name,
+                'color' => EventStatusResource::getColorFor($status->id)
+            ], $data[$idx]['status']);
         }
     }
 }
