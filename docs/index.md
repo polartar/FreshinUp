@@ -46,6 +46,7 @@
 
 ## September 2, 2020
 - **ADD** Populate Venue details UI. [#425](https://github.com/FreshinUp/foodfleet/issues/425)
+- **FIX** Status Timeline displays on Event Edit page.
 
 ## August 25, 2020
 - **ADD** Venues selector on Event Details. [#385](https://github.com/FreshinUp/foodfleet/issues/385)

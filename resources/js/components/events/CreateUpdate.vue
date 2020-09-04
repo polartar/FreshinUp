@@ -20,188 +20,196 @@
           </div>
         </v-btn>
       </v-layout>
-      <v-flex
-        d-flex
+      <v-layout
+        row
         align-center
-        justify-space-between
         ma-2
       >
-        <v-layout
-          row
-          align-center
-        >
-          <h2 class="white--text">
-            {{ pageTitle }}
-          </h2>
-          <v-dialog
-            v-model="duplicateDialog"
-            max-width="500"
-          >
-            <template v-slot:activator="{ on }">
-              <v-btn
-                slot="activator"
-                color="white"
-                v-on="on"
-                @click="duplicateDialog = true"
-              >
-                <span class="primary--text">Duplicate</span>
-              </v-btn>
-            </template>
-            <v-card>
-              <v-progress-linear
-                v-if="duplicating"
-                indeterminate
-              />
-              <v-card-title>
-                <v-layout
-                  row
-                  space-between
-                  align-center
-                >
-                  <v-flex>
-                    <h3>Duplicate Event</h3>
-                  </v-flex>
-                  <v-btn
-                    small
-                    round
-                    color="grey"
-                    class="white--text"
-                    @click="duplicateDialog = false"
-                  >
-                    <v-flex>
-                      <v-icon
-                        small
-                        class="white--text"
-                      >
-                        fa fa-times
-                      </v-icon>
-                    </v-flex>
-                    <v-flex>
-                      Close
-                    </v-flex>
-                  </v-btn>
-                </v-layout>
-              </v-card-title>
-              <v-divider />
-              <v-card-text class="grey--text">
-                <small class="font-weight-bold">SELECT</small>
-                <p>Choose what will be carried over to the duplicate event</p>
-                <v-checkbox
-                  v-model="duplicate.basicInformation"
-                  class="mt-0 mb-0 p-0"
-                  label="Basic Information"
-                />
-                <v-checkbox
-                  v-model="duplicate.venue"
-                  class="mt-0 mb-0 p-0"
-                  label="Venue/lovation (coming soon)"
-                />
-                <v-checkbox
-                  v-model="duplicate.fleetMember"
-                  class="mt-0 mb-0 p-0"
-                  label="Fleet Member (coming soon)"
-                />
-                <v-checkbox
-                  v-model="duplicate.customer"
-                  class="mt-0 mb-0 p-0"
-                  label="Customer (coming soon)"
-                />
-              </v-card-text>
-              <v-divider />
-              <v-card-actions>
-                <v-layout
-                  row
-                  justify-end
-                >
-                  <v-btn
-                    @click="duplicateDialog = false"
-                  >
-                    Cancel
-                  </v-btn>
-                  <v-btn
-                    color="primary"
-                    @click="onDuplicate"
-                  >
-                    Duplicate
-                  </v-btn>
-                </v-layout>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
-        </v-layout>
-        <v-flex
-          text-xs-right
-          sm2
-          xs12
-        >
+        <v-flex sm6>
           <v-layout
+            row
             align-center
           >
-            <status-select
-              v-model="status_id"
-              :options="statuses"
-            />
-            <v-dialog
-              v-model="questDialog"
-              max-width="700"
-            >
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  depressed
-                  fab
-                  color="primary"
-                  @click="questDialog = true"
-                >
-                  <v-icon>far fa-question-circle</v-icon>
-                </v-btn>
-              </template>
-              <v-card>
-                <v-card-title>
-                  <v-layout
-                    row
-                    space-between
-                    align-center
+            <v-flex sm4>
+              <div class="headline white--text">
+                {{ pageTitle }}
+              </div>
+            </v-flex>
+            <v-flex>
+              <v-dialog
+                v-model="duplicateDialog"
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-btn
+                    slot="activator"
+                    color="white"
+                    v-on="on"
+                    @click="duplicateDialog = true"
                   >
-                    <v-flex>
-                      <h3>Event Status</h3>
-                    </v-flex>
-                    <v-btn
-                      small
-                      round
-                      color="grey"
-                      class="white--text"
-                      @click="questDialog = false"
+                    <span class="primary--text">Duplicate</span>
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-progress-linear
+                    v-if="duplicating"
+                    indeterminate
+                  />
+                  <v-card-title>
+                    <v-layout
+                      row
+                      space-between
+                      align-center
                     >
                       <v-flex>
-                        <v-icon
-                          small
-                          class="white--text"
-                        >
-                          fa fa-times
-                        </v-icon>
+                        <h3>Duplicate Event</h3>
                       </v-flex>
-                      <v-flex>
-                        Close
-                      </v-flex>
-                    </v-btn>
-                  </v-layout>
-                </v-card-title>
-                <v-divider />
-                <v-card-text class="grey--text">
-                  <event-status-timeline />
-                </v-card-text>
-                <v-divider />
-              </v-card>
-            </v-dialog>
+                      <v-btn
+                        small
+                        round
+                        color="grey"
+                        class="white--text"
+                        @click="duplicateDialog = false"
+                      >
+                        <v-flex>
+                          <v-icon
+                            small
+                            class="white--text"
+                          >
+                            fa fa-times
+                          </v-icon>
+                        </v-flex>
+                        <v-flex>
+                          Close
+                        </v-flex>
+                      </v-btn>
+                    </v-layout>
+                  </v-card-title>
+                  <v-divider />
+                  <v-card-text class="grey--text">
+                    <small class="font-weight-bold">SELECT</small>
+                    <p>Choose what will be carried over to the duplicate event</p>
+                    <v-checkbox
+                      v-model="duplicate.basicInformation"
+                      class="mt-0 mb-0 p-0"
+                      label="Basic Information"
+                    />
+                    <v-checkbox
+                      v-model="duplicate.venue"
+                      class="mt-0 mb-0 p-0"
+                      label="Venue/lovation (coming soon)"
+                    />
+                    <v-checkbox
+                      v-model="duplicate.fleetMember"
+                      class="mt-0 mb-0 p-0"
+                      label="Fleet Member (coming soon)"
+                    />
+                    <v-checkbox
+                      v-model="duplicate.customer"
+                      class="mt-0 mb-0 p-0"
+                      label="Customer (coming soon)"
+                    />
+                  </v-card-text>
+                  <v-divider />
+                  <v-card-actions>
+                    <v-layout
+                      row
+                      justify-end
+                    >
+                      <v-btn
+                        @click="duplicateDialog = false"
+                      >
+                        Cancel
+                      </v-btn>
+                      <v-btn
+                        color="primary"
+                        @click="onDuplicate"
+                      >
+                        Duplicate
+                      </v-btn>
+                    </v-layout>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-flex>
           </v-layout>
         </v-flex>
-      </v-flex>
+        <v-flex sm6>
+          <v-layout
+            row
+            align-center
+            justify-end
+            text-xs-right
+          >
+            <v-flex>
+              <status-select
+                v-model="status_id"
+                :options="statuses"
+              />
+            </v-flex>
+            <v-flex sm2>
+              <v-dialog
+                v-model="questDialog"
+                max-width="700"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-btn
+                    depressed
+                    fab
+                    color="primary"
+                    @click="questDialog = true"
+                  >
+                    <v-icon>far fa-question-circle</v-icon>
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <v-layout
+                      row
+                      space-between
+                      align-center
+                    >
+                      <v-flex>
+                        <h3>Event Status</h3>
+                      </v-flex>
+                      <v-btn
+                        small
+                        round
+                        color="grey"
+                        class="white--text"
+                        @click="questDialog = false"
+                      >
+                        <v-flex>
+                          <v-icon
+                            small
+                            class="white--text"
+                          >
+                            fa fa-times
+                          </v-icon>
+                        </v-flex>
+                        <v-flex>
+                          Close
+                        </v-flex>
+                      </v-btn>
+                    </v-layout>
+                  </v-card-title>
+                  <v-divider />
+                  <v-card-text class="grey--text">
+                    <event-status-timeline />
+                  </v-card-text>
+                  <v-divider />
+                </v-card>
+              </v-dialog>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
       <v-divider />
-      <br>
       <v-layout
         row
         wrap
-        pa-2
+        py-4
+        px-2
         justify-space-between
         class="event-new-wrap"
       >
