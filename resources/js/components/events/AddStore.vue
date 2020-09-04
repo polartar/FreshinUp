@@ -41,8 +41,6 @@
               <v-select
                 v-model="selectedState"
                 :items="locations"
-                item-value="uuid"
-                item-text="name"
                 label="State of incorporation"
                 outline
                 single-line
@@ -54,7 +52,7 @@
             >
               <v-select
                 v-model="selectedType"
-                :items="types"
+                :items="memberTypes"
                 item-value="id"
                 item-text="name"
                 label="Type"
@@ -69,8 +67,6 @@
               <v-select
                 v-model="selectedTags"
                 :items="tags"
-                item-value="uuid"
-                item-text="name"
                 label="Tags"
                 outline
                 single-line
@@ -137,28 +133,28 @@
             <div
               class="grey--text text--darken-2"
             >
-              {{ get(props, 'item.type.name') }}
+              {{ typeName(get(props, 'item.type_id', 0)) }}
             </div>
           </td>
           <td class="py-2">
-            {{ get(props, 'item.location.name') }}
+            {{ get(props, 'item.state_of_incorporation') }}
           </td>
           <td class="py-2">
             <div>
               <v-chip
-                v-for="(tag, index) of get(props, 'item.store_tags', [])"
+                v-for="(tag, index) of get(props, 'item.tags', [])"
                 :key="index"
                 color="secondary"
                 text-color="white"
               >
-                {{ tag.name }}
+                {{ tag }}
               </v-chip>
             </div>
           </td>
           <td class="py-2">
             <v-btn
               :depressed="manageButtonLabel(props.item) !== 'Assign'"
-              :disabled="!itemIsEligible(props.item)"
+              :disabled="!isEligible(props.item)"
               :class="manageButtonClass(props.item)"
               @click="onManageClicked(props.item)"
             >
@@ -177,14 +173,8 @@
   </div>
 </template>
 <script>
-
-import _unionBy from 'lodash/unionBy'
-import _uniqBy from 'lodash/uniqBy'
 import get from 'lodash/get'
-
-export const DocumentStatus = {
-  EXPIRED: 5
-}
+import _uniq from 'lodash/uniq'
 
 export default {
   props: {
@@ -194,17 +184,9 @@ export default {
     },
     event: {
       type: Object,
-      default: null
+      required: true
     },
-    assignedEvents: {
-      type: Array,
-      default: () => []
-    },
-    docStatuses: {
-      type: Array,
-      default: () => []
-    },
-    docs: {
+    memberTypes: {
       type: Array,
       default: () => []
     }
@@ -224,9 +206,9 @@ export default {
       selected: [],
       headers: [
         { text: 'Fleet member', value: 'name' },
-        { text: 'State of incorporation', value: 'location' },
-        { text: 'Tags', value: 'store_tags' },
-        { text: 'Manage', value: 'assigned' }
+        { text: 'State of incorporation', value: 'state_of_incorporation' },
+        { text: 'Tags', value: 'tags' },
+        { text: 'Manage' }
       ]
     }
   },
@@ -243,19 +225,15 @@ export default {
       let items = this.members
 
       if (this.selectedState) {
-        items = items.filter(i => i['location']['uuid'] === this.selectedState)
+        items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
       }
 
       if (this.selectedType) {
-        items = items.filter(i => i['type']['id'] === this.selectedType)
+        items = items.filter(i => i['type_id'] === this.selectedType)
       }
 
       if (this.selectedTags.length) {
-        items = items.filter(
-          i => i['store_tags']
-            .map(t => t['uuid'])
-            .some(id => this.selectedTags.includes(id))
-        )
+        items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
       }
 
       return items
@@ -266,35 +244,15 @@ export default {
     },
 
     locations () {
-      const def = {
-        id: 0,
-        uuid: '',
-        name: 'All locations'
-      }
-      return _uniqBy([def, ...this.filteredMembers.map(m => m.location)], 'uuid')
+      return _uniq(this.members.map(m => m['state_of_incorporation']))
     },
 
     tags () {
-      const def = {
-        uuid: '',
-        name: 'All tags'
-      }
-      return _unionBy(def, ...this.filteredMembers.map(m => m['store_tags']), 'uuid')
-    },
+      const ts = []
 
-    types () {
-      const def = {
-        id: 0,
-        name: 'All types'
-      }
-      return _uniqBy([def, ...this.filteredMembers.map(m => m.type)], 'id')
-    },
+      this.members.forEach(m => ts.push(...m['tags']))
 
-    /*
-    expired status is : { value: 5, text: 'Expired' }
-    * */
-    expiredDocs () {
-      return this.docs.filter(d => d['status'] === DocumentStatus.EXPIRED)
+      return _uniq(ts)
     }
   },
   methods: {
@@ -309,52 +267,39 @@ export default {
       this.selectedTags = []
     },
 
+    hasBookedAnEvent (member) {
+      return !!member.events.find(e => e.start_at === this.event.start_at && e.uuid !== this.event.uuid)
+    },
+
+    isEligible (member) {
+      return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
+    },
+
+    isAssignedToThisEvent (member) {
+      return !!member.events.find(e => e.uuid === this.event.uuid)
+    },
+
+    isDeclined (member) {
+      return !!member.events.find(e => e.uuid === this.event.uuid && e.declined)
+    },
+
     manageButtonLabel (item) {
-      if (this.itemIsEligible(item)) {
-        if (this.itemIsDeclined(item)) { return 'Declined' }
-        if (!this.itemIsAssignedToEvent(item, this.event)) { return 'Assign' } else { return 'Assigned' }
+      if (this.isEligible(item)) {
+        if (this.isDeclined(item)) { return 'Declined' }
+        if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
       }
 
-      if (this.itemIsBooked(item)) { return 'Booked' }
+      if (this.hasBookedAnEvent(item)) { return 'Booked' }
 
-      if (this.itemHasExpired(item)) { return 'Expired' }
+      if (item['has_expired_licences_docs']) { return 'Expired' }
 
       return ''
     },
 
-    itemIsEligible (item) {
-      return !this.itemIsBooked(item) && !this.itemHasExpired(item)
-    },
-
-    /* TODO:
-      */
-    itemIsAssignedToEvent (item, event) {
-      return false
-    },
-
-    itemIsBooked (item) {
-      const otherEvents = this.event
-        ? this.assignedEvents.filter(e => e['uuid'] !== this.event['uuid'])
-        : this.assignedEvents
-      return otherEvents.some(evt => this.itemIsAssignedToEvent(item, evt))
-    },
-
-    itemHasExpired (item) {
-      /* TODO: Remains expired licenses
-      */
-      return this.expiredDocs.some(d => d['assigned']['uuid'] === item['uuid'])
-    },
-
-    /* TODO:
-      */
-    itemIsDeclined (item) {
-      return true
-    },
-
     onManageClicked (item) {
-      /* TODO
-      Handle the action only if the item is assignable
-       */
+      if (this.manageButtonLabel(item) === 'Assign') {
+        this.$emit('assign', item)
+      }
     },
 
     manageButtonClass (item) {
@@ -363,6 +308,12 @@ export default {
         'blue-grey lighten-5': ['Expired', 'Booked'].includes(this.manageButtonLabel(item)),
         'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(this.manageButtonLabel(item))
       }
+    },
+
+    typeName (id) {
+      const type = this.memberTypes.find(t => t.id === id)
+
+      return type ? type['name'] : ''
     }
   }
 }

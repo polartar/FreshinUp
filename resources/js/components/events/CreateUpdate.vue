@@ -212,7 +212,7 @@
         class="event-new-wrap"
       >
         <v-flex
-          md12
+          md8
           sm12
         >
           <BasicInformation
@@ -223,6 +223,15 @@
             @cancel="onCancel"
             @save="onSave"
             @delete="onDelete"
+          />
+        </v-flex>
+        <v-flex
+          md4
+          sm12
+        >
+          <VenueDetails
+            class="ml-4"
+            :venues="venues"
           />
         </v-flex>
       </v-layout>
@@ -261,7 +270,6 @@
 
 <script>
 import omitBy from 'lodash/omitBy'
-import isNull from 'lodash/isNull'
 import get from 'lodash/get'
 import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
@@ -270,6 +278,7 @@ import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
@@ -298,7 +307,8 @@ export default {
     StatusSelect,
     BasicInformation,
     Customers,
-    EventStatusTimeline
+    EventStatusTimeline,
+    VenueDetails
   },
   mixins: [Validate, FormatDate],
   data () {
@@ -322,6 +332,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('venues', { 'venues': 'items' }),
     ...mapGetters('eventHistories', { 'eventHistories': 'items' }),
     ...mapFields('events', [
       'status_id'
@@ -453,12 +464,12 @@ export default {
         host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
         manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
       }
-      const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
+      // const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
       data = omitBy(data, (value, key) => {
         if (key === 'schedule' && get(value, 'ends_on') === 'on') {
           delete value.occurrences
         }
-        return extra.includes(key) || isNull(value)
+        // return extra.includes(key) || isNull(value)
       })
       if (this.event.event_recurring_checked === 'no') {
         data['schedule'] = null
@@ -496,7 +507,7 @@ export default {
       this.$router.push({ path: '/admin/events' })
     }
   },
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
+  async beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     let params = { id }
     let promises = []
@@ -509,7 +520,10 @@ export default {
       promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
-      promises.push(vm.$store.dispatch('eventHistories/getItems', { params: { event_uuid: id } }))
+      await vm.$store.dispatch('eventHistories/setFilters', {
+        event_uuid: id
+      })
+      promises.push(vm.$store.dispatch('eventHistories/getItems'))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
 
@@ -537,9 +551,6 @@ export default {
 }
 </script>
 <style scoped>
-  .event-new-wrap{
-    background-color: #fff;
-  }
   .back-btn-inner{
     color: #fff;
     display: flex;

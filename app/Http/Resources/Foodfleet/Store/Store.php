@@ -23,9 +23,11 @@ class Store extends JsonResource
     public function toArray($request)
     {
         return [
+            "id" => $this->id,
             "uuid" => $this->uuid,
             "name" => $this->name,
-            "status" => $this->status,
+            "status_id" => (int)$this->status_id,
+            "status" => new Status($this->whenLoaded('status')),
             "addresses" => Address::collection($this->addresses),
             "tags" => Tag::collection($this->whenLoaded('tags')),
             "event_stores" => EventStore::collection($this->whenLoaded('events')),

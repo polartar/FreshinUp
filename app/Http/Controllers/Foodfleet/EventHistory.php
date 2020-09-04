@@ -43,34 +43,6 @@ class EventHistory extends Controller
             ])
             ->get();
 
-        // TODO: should return a list of all statuses, not just the current status changes
-        // if filter event_uuid is detected then apply this logic
-         $event_uuid = $request->query('event_uuid');
-         //for status in statuses
-        $histories = [];
-        $statuses = QueryBuilder::for(EventStatus::class, $request)->get();
-        foreach ($statuses as $status) {
-            $completed = false;
-            $date = '';
-            $description = $this->getEventStatusDescription($status->id);
-            foreach ($eventHistories as $history){
-                $completed = $history->status_id == $status->id ? $history->completed: $completed;
-                $date = $history->status_id == $status->id ? $history->date->format('Y-m-d H:i:s') : $date;
-                $description = $history->status_id == $status->id ? $history->description: $description;
-            }
-            array_push($histories,
-                [
-                    'id' => 1,
-                    'event_uuid' => $event_uuid,
-                    'status_id' => $status->id,
-                    'name' => $status->name,
-                    'completed' =>  $completed,
-                    'date' =>  $date,
-                    'description' =>  $description
-                ]
-            );
-
-        }
-        return JsonResource::make($histories);
+        return JsonResource::make($eventHistories);
     }
 }
