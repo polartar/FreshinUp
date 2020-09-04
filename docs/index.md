@@ -43,8 +43,8 @@
 <br/>
 
 # Changes
-## September 3, 2020
-- **ADD** Status helper function is not created on Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
+## September 4, 2020
+- **ADD** Status helper function is created for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 
 <br/>
 
