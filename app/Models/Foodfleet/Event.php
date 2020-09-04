@@ -118,4 +118,9 @@ class Event extends Model
     {
         return $this->hasMany(EventHistory::class, 'event_uuid', 'uuid');
     }
+
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');
+    }
 }

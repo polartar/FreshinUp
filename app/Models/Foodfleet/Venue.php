@@ -36,4 +36,9 @@ class Venue extends Model
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class, 'venue_uuid', 'uuid');
+    }
 }

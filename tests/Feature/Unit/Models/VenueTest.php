@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Unit\Models\Venue;
 
+use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Venue;
 use App\Models\Foodfleet\Location;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -20,15 +22,25 @@ class VenueTest extends TestCase
      */
     public function testModel()
     {
-        $location = factory(Location::class)->create();
+        /** @var Venue $venue */
         $venue = factory(Venue::class)->create();
+        $this->assertDatabaseHas('venues', [
+            'uuid' => $venue->uuid,
+            'name' => $venue->name,
+            'address' => $venue->address,
+        ]);
 
-        $venue->locations()->save($location);
-        $venue->save();
-
-        $this->assertDatabaseHas('locations', [
-            'uuid' => $location->uuid,
+        // external table relations
+        $location = factory(Location::class)->create([
             'venue_uuid' => $venue->uuid
         ]);
+        $this->assertEquals(1, $venue->locations()->where('uuid', $location->uuid)->count());
+
+        $event = factory(Event::class)->create([
+            'venue_uuid' => $venue->uuid
+        ]);
+        $this->assertEquals(1, $venue->events()->where('uuid', $event->uuid)->count());
+
+        // TODO: test documents
     }
 }

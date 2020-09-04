@@ -14,11 +14,6 @@ class LocationTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -45,11 +40,36 @@ class LocationTest extends TestCase
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+    public function testGetListIncludingVenue()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $locations = factory(Location::class, 5)->create();
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/locations?include=venue")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+        foreach ($locations as $idx => $location) {
+            $this->assertArraySubset([
+                'uuid' => $location->uuid,
+                'name' => $location->name
+            ], $data[$idx]);
+            $venue = $location->venue;
+            $this->assertArraySubset([
+                'uuid' => $venue->uuid,
+                'name' => $venue->name,
+                'address' => $venue->address
+            ], $data[$idx]['venue']);
+        }
+    }
+
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();

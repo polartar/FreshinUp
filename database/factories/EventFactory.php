@@ -1,14 +1,16 @@
 <?php
 
 use App\Models\Foodfleet\Company;
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\EventType;
 use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Venue;
 use App\User;
 use Faker\Generator as Faker;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
+$factory->define(Event::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "name" => $faker->word,
@@ -18,7 +20,9 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "status_id" => function () {
             return factory(EventStatus::class)->create();
         },
-        "location_uuid" => factory(Location::class)->create()->uuid,
+        "location_uuid" =>  function () {
+            return factory(Location::class)->create()->uuid;
+        },
         "start_at" => $faker->dateTime('now +1 hour'),
         "end_at" => $faker->dateTimeBetween('+1 days', '+2 days'),
         "staff_notes" => $faker->text,
@@ -32,6 +36,9 @@ $factory->define(\App\Models\Foodfleet\Event::class, function (Faker $faker) {
         "commission_rate" => $faker->randomFloat(0.1, .5),
         "commission_type" => $faker->numberBetween(),
         "created_at" => $faker->dateTimeBetween('-30days', '+30days'),
-        "updated_at" => $faker->dateTimeBetween('-30days', '+30days')
+        "updated_at" => $faker->dateTimeBetween('-30days', '+30days'),
+        "venue_uuid" => function () {
+            return factory(Venue::class)->create()->uuid;
+        }
     ];
 });

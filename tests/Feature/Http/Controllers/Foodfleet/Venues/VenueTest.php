@@ -2,13 +2,14 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Venues;
 
+use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Venue;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class VenueTest extends TestCase
 {
@@ -87,7 +88,7 @@ class VenueTest extends TestCase
         }
 
         $data = $this
-            ->json('get', "/api/foodfleet/venues?filter[uuid]=" . $venuesToFind->first()->uuid)
+            ->json('get', "/api/foodfleet/venues?filter[uuid]=".$venuesToFind->first()->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -102,5 +103,48 @@ class VenueTest extends TestCase
             'name' => $venuesToFind->first()->name,
             'address' => $venuesToFind->first()->address
         ], $data[0]);
+    }
+
+    public function testGetListIncludingLocations()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $venues = factory(Venue::class, 5)->create();
+        $venueLocations = [];
+        foreach ($venues as $venue) {
+            $venueLocations[$venue->uuid] = factory(Location::class, mt_rand(1, 3))
+                ->create([
+                    'venue_uuid' => $venue->uuid
+                ]);
+        }
+        $data = $this
+            ->json('get', "/api/foodfleet/venues?include=locations")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+
+        foreach ($venues as $idx => $venue) {
+            $this->assertArraySubset([
+                'uuid' => $venue->uuid,
+                'name' => $venue->name,
+                'address' => $venue->address
+            ], $data[$idx]);
+            $this->assertArrayHasKey('locations', $data[$idx]);
+            foreach ($venueLocations[$venue->uuid] as $locationIndex => $location) {
+                $this->assertArraySubset([
+                    "uuid" => $location->uuid,
+                    "name" => $location->name,
+                    "venue_uuid" => $location->venue_uuid,
+                    "spots" => $location->spots,
+                    "capacity" => $location->capacity,
+                    "details" => $location->details
+                ], $data[$idx]['locations'][$locationIndex]);
+            }
+        }
     }
 }

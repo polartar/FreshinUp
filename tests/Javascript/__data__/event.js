@@ -13,6 +13,7 @@ export const EMPTY_EVENT = {
   budget: null,
   commission_rate: null,
   commission_type: null,
-  type_id: null
+  type_id: null,
+  venue_uuid: null
 }
 export const FIXTURE_EVENT = FIXTURE_EVENTS[0]

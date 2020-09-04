@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-form
-      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -234,6 +233,8 @@
         >
           <VenueDetails
             class="ml-4"
+            :venue-uuid="get(event, 'venue_uuid')"
+            :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
           />
         </v-flex>
@@ -278,12 +279,12 @@ import get from 'lodash/get'
 import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
+import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
 import Customers from '~/components/events/Customers.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 
 const { mapFields } = createHelpers({
@@ -336,6 +337,7 @@ export default {
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('venues', { venues: 'items' }),
     ...mapFields('events', [
       'status_id'
     ]),
@@ -360,6 +362,7 @@ export default {
     }
   },
   methods: {
+    get,
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
@@ -516,7 +519,7 @@ export default {
     if (id !== 'new') {
       params = {
         id,
-        include: 'manager,host,event_tags'
+        include: 'manager,host,event_tags,venue,location'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
@@ -524,6 +527,7 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

@@ -17,6 +17,7 @@ export const FIXTURE_EVENTS = [
       uuid: 'c6be43eb-461f-4654-82b5-7dd6a6f11e54',
       name: 'Demo Admin'
     },
+    venue_uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
     venue: {
       uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
       name: 'New Hattie'
@@ -52,6 +53,7 @@ export const FIXTURE_EVENTS = [
       uuid: '2ccdd232-c73a-4398-a2dc-342de7d43bf1',
       name: 'Level 2 User'
     },
+    venue_uuid: '4d6ace0e-5f3f-423a-ab47-648a142ba450',
     venue: {
       uuid: '4d6ace0e-5f3f-423a-ab47-648a142ba450',
       name: 'Baronhaven'
@@ -89,6 +91,7 @@ export const FIXTURE_EVENTS = [
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
       name: 'Level 1 User'
     },
+    venue_uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
     venue: {
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
@@ -123,6 +126,7 @@ export const FIXTURE_EVENTS = [
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
       name: 'Level 1 User'
     },
+    venue_uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
     venue: {
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
@@ -155,6 +159,7 @@ export const FIXTURE_EVENTS = [
       uuid: '16527881-c80f-42d8-850f-594b6d5ec4a0',
       name: 'Level 1 User'
     },
+    venue_uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
     venue: {
       uuid: 'cfc8c89e-000b-4adb-8f1a-9cec5aecc6ef',
       name: 'Lake Lavernehaven'
