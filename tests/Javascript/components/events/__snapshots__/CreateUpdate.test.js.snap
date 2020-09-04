@@ -16667,7 +16667,19 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
           
                   </h4>
                    
-                  <!---->
+                  <button
+                    class="mr-0 v-btn v-btn--flat v-btn--icon theme--light"
+                    type="button"
+                  >
+                    <div
+                      class="v-btn__content"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon clear-button-icon fa fa fa fa-times theme--light"
+                      />
+                    </div>
+                  </button>
                 </div>
                  
                 <div
@@ -16777,7 +16789,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                 </div>
                  
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
                   role="combobox"
                 >
                   <div
@@ -16795,7 +16807,6 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           <input
                             aria-readonly="false"
                             autocomplete="on"
-                            disabled="disabled"
                             readonly="readonly"
                             type="text"
                           />
@@ -16808,7 +16819,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           >
                             <i
                               aria-hidden="true"
-                              class="v-icon v-icon--disabled material-icons theme--light"
+                              class="v-icon material-icons theme--light"
                             >
                               arrow_drop_down
                             </i>

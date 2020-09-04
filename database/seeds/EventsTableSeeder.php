@@ -2,6 +2,7 @@
 
 use App\Models\Foodfleet\EventHistory;
 use App\Models\Foodfleet\EventType;
+use App\Models\Foodfleet\Venue;
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
@@ -24,20 +25,22 @@ class EventsTableSeeder extends Seeder
         $eventTags = EventTag::get();
         $statuses = EventStatus::get();
         $locations = Location::get();
+        $venues = Venue::get();
         $users = User::where(["type" => 1])->get();
         $hosts = Company::whereHas('company_types', function ($query) {
             $query->where('key_id', 'host');
         })->get();
         $eventType = EventType::get();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $status_id = $statuses->random()->id;
             $event = factory(Event::class)->create([
                 'manager_uuid' => $users->random()->uuid,
                 'status_id' => $status_id,
                 'location_uuid' => $locations->random()->uuid,
                 'host_uuid' => $hosts->random()->uuid,
-                'type_id' => $eventType->random()->id
+                'type_id' => $eventType->random()->id,
+                'venue_uuid' => $venue->uuid
             ]);
             for ($j = 1; $j <= $status_id; $j++) {
                 factory(EventHistory::class)->create([

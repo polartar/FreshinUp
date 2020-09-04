@@ -18,6 +18,50 @@ export const WithData = () => ({
   components: { VenueDetails },
   data () {
     return {
+      venues: FIXTURE_VENUES
+    }
+  },
+  template: `
+    <v-container>
+      <VenueDetails
+        :venues="venues"
+        @get-directions="getDirections"/>
+    </v-container>
+  `,
+  methods: {
+    getDirections (payload) {
+      action('getDirections')(payload)
+    }
+  }
+})
+
+export const SelectedVenue = () => ({
+  components: { VenueDetails },
+  data () {
+    return {
+      venues: FIXTURE_VENUES,
+      venueUuid: FIXTURE_VENUES[0].uuid
+    }
+  },
+  template: `
+    <v-container>
+      <VenueDetails
+        :venues="venues"
+        :venue-uuid="venueUuid"
+        @get-directions="getDirections"/>
+    </v-container>
+  `,
+  methods: {
+    getDirections (payload) {
+      action('getDirections')(payload)
+    }
+  }
+})
+
+export const SelectedVenueAndLocation = () => ({
+  components: { VenueDetails },
+  data () {
+    return {
       venues: FIXTURE_VENUES,
       locationUuid: FIXTURE_VENUES[0].locations[0].uuid,
       venueUuid: FIXTURE_VENUES[0].uuid
@@ -47,3 +91,5 @@ storiesOf('FoodFleet|components/events/VenueDetails', module)
   })
   .add('Default', Default)
   .add('WithData', WithData)
+  .add('SelectedVenue', SelectedVenue)
+  .add('SelectedVenueAndLocation', SelectedVenueAndLocation)

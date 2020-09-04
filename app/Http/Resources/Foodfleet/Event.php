@@ -27,6 +27,7 @@ class Event extends JsonResource
             "status" => new EventStatus($this->whenLoaded('status')),
             "manager" => new User($this->whenLoaded('manager')),
             "location" => new Location($this->whenLoaded('location')),
+            "venue" => new Venue($this->whenLoaded('venue')),
             "event_tags" => EventTag::collection($this->whenLoaded('eventTags')),
             "host" => new Company($this->whenLoaded('host')),
             'host_status' => (int) $this->host_status,
@@ -47,7 +48,8 @@ class Event extends JsonResource
             "updated_at" => $this->updated_at,
             'location_uuid' => $this->location_uuid,
             'host_uuid' => $this->host_uuid,
-            'manager_uuid' => $this->manager_uuid
+            'manager_uuid' => $this->manager_uuid,
+            'venue_uuid' => $this->venue_uuid
         ];
     }
 }

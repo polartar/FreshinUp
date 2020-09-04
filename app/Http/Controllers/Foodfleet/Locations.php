@@ -24,7 +24,8 @@ class Locations extends Controller
             ->allowedFilters([
                 Filter::exact('uuid'),
                 'name'
-            ]);
+            ])
+            ->allowedIncludes(['venue']);
 
         return LocationResource::collection($locations->jsonPaginate());
     }

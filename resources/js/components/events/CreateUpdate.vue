@@ -239,6 +239,8 @@
         >
           <VenueDetails
             class="ml-4"
+            :venue-uuid="get(event, 'venue_uuid')"
+            :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
           />
         </v-flex>
@@ -367,6 +369,7 @@ export default {
     }
   },
   methods: {
+    get,
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
@@ -523,7 +526,7 @@ export default {
     if (id !== 'new') {
       params = {
         id,
-        include: 'manager,host,event_tags'
+        include: 'manager,host,event_tags,venue,location'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {

@@ -9,15 +9,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
+ * Class Location
  *
  * @property int $id
  * @property string $uuid
  * @property string $name
+ * @property string $spots
+ * @property string $capacity
+ * @property string $details
  * @property string $venue_uuid
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
+ *
+ *
+ * @property Venue $venue
  *
  */
 class Location extends Model

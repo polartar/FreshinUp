@@ -14,8 +14,19 @@ describe('events/VenueDetails', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
 
-    test('With data', async () => {
+    test('WithData', async () => {
       const wrapper = mount(Stories.WithData())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+
+    test('SelectedVenue', async () => {
+      const wrapper = mount(Stories.SelectedVenue())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('SelectedVenueAndLocation', async () => {
+      const wrapper = mount(Stories.SelectedVenueAndLocation())
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -74,12 +85,12 @@ describe('events/VenueDetails', () => {
       expect(wrapper.vm.minLocationDetail).toHaveLength(50)
     })
 
-    test('locations', async () => {
+    test('selectedVenueLocations', async () => {
       const wrapper = shallowMount(Component)
       wrapper.setProps({
         venues: []
       })
-      expect(wrapper.vm.locations).toHaveLength(0)
+      expect(wrapper.vm.selectedVenueLocations).toHaveLength(0)
 
       wrapper.setProps({
         venues: FIXTURE_VENUES
@@ -88,7 +99,76 @@ describe('events/VenueDetails', () => {
         venueUuid: FIXTURE_VENUES[1].uuid
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.locations).toHaveLength(FIXTURE_VENUES[1].locations.length)
+      expect(wrapper.vm.selectedVenueLocations).toHaveLength(FIXTURE_VENUES[1].locations.length)
+    })
+
+    describe('venuesByUuid', () => {
+      test('with empty venues', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: []
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.venuesByUuid).toMatchObject({})
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: FIXTURE_VENUES
+        })
+        await wrapper.vm.$nextTick()
+        const expectations = FIXTURE_VENUES.reduce((map, venue) => {
+          map[venue.uuid] = venue
+          return map
+        }, {})
+        expect(wrapper.vm.venuesByUuid).toMatchObject(expectations)
+      })
+    })
+
+    describe('selectedVenue', () => {
+      test('with empty venues', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: []
+        })
+        expect(wrapper.vm.selectedVenue).toMatchObject({})
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: FIXTURE_VENUES
+        })
+        wrapper.setData({
+          venueUuid: FIXTURE_VENUES[1].uuid
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.selectedVenue).toMatchObject(FIXTURE_VENUES[1])
+      })
+    })
+
+    describe('locationsByUuid', () => {
+      test('with empty venues', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: []
+        })
+        expect(wrapper.vm.locationsByUuid).toMatchObject({})
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          venues: FIXTURE_VENUES
+        })
+        wrapper.setData({
+          venueUuid: FIXTURE_VENUES[1].uuid
+        })
+        await wrapper.vm.$nextTick()
+        const expectations = wrapper.vm.selectedVenueLocations.reduce((map, location) => {
+          map[location.uuid] = location
+          return map
+        }, {})
+        expect(wrapper.vm.locationsByUuid).toMatchObject(expectations)
+      })
     })
   })
 
@@ -102,11 +182,12 @@ describe('events/VenueDetails', () => {
       const wrapper = shallowMount(Component)
       wrapper.setData({
         location: {
-          uuid: 'abc123'
+          uuid: 'location123',
+          venue_uuid: 'venue123'
         }
       })
       wrapper.vm.onLocationCleared()
-      expect(wrapper.vm.location).toMatchObject(DEFAULT_LOCATION)
+      expect(wrapper.vm.location).toMatchObject({ ...DEFAULT_LOCATION, venue_uuid: 'venue123' })
     })
 
     test('onVenueCleared()', () => {
@@ -118,7 +199,6 @@ describe('events/VenueDetails', () => {
         }
       })
       wrapper.vm.onVenueCleared()
-      expect(wrapper.vm.location.venue_uuid).toBeNull()
       expect(wrapper.vm.location).toMatchObject(DEFAULT_LOCATION)
     })
 

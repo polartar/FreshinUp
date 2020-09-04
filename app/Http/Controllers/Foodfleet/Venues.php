@@ -24,7 +24,8 @@ class Venues extends Controller
             ->allowedFilters([
                 Filter::exact('uuid'),
                 'name'
-            ]);
+            ])
+            ->allowedIncludes(['locations']);
         return VenueResource::collection($venues->jsonPaginate());
     }
 }
