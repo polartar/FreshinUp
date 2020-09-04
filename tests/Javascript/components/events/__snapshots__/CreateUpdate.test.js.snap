@@ -33,345 +33,357 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
     </div>
      
     <div
-      class="flex d-flex align-center justify-space-between ma-2"
+      class="layout row align-center ma-2"
     >
       <div
-        class="layout row align-center"
+        class="flex sm6"
       >
-        <h2
-          class="white--text"
-        >
-          
-          New Event
-        
-        </h2>
-         
-        <button
-          class="v-btn theme--light white"
-          slot="activator"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            <span
-              class="primary--text"
-            >
-              Duplicate
-            </span>
-          </div>
-        </button>
         <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+          class="layout row align-center"
         >
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="flex sm4"
           >
             <div
-              class="v-dialog"
-              style="max-width: 500px; display: none;"
+              class="headline white--text"
             >
-               
+              
+              New Event
+            
+            </div>
+          </div>
+           
+          <div
+            class="flex"
+          >
+            <button
+              class="v-btn theme--light white"
+              slot="activator"
+              type="button"
+            >
               <div
-                class="v-card v-sheet theme--light"
+                class="v-btn__content"
               >
-                <!---->
-                 
-                <div
-                  class="v-card__title"
+                <span
+                  class="primary--text"
                 >
+                  Duplicate
+                </span>
+              </div>
+            </button>
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
                   <div
-                    class="layout row space-between align-center"
+                    class="v-card v-sheet theme--light"
                   >
-                    <div
-                      class="flex"
-                    >
-                      <h3>
-                        Duplicate Event
-                      </h3>
-                    </div>
+                    <!---->
                      
-                    <button
-                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                      type="button"
+                    <div
+                      class="v-card__title"
                     >
                       <div
-                        class="v-btn__content"
+                        class="layout row space-between align-center"
                       >
                         <div
                           class="flex"
                         >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon white--text fa fa fa fa-times theme--light"
-                            style="font-size: 16px;"
-                          />
+                          <h3>
+                            Duplicate Event
+                          </h3>
                         </div>
                          
-                        <div
-                          class="flex"
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
                         >
-                          
-                    Close
-                  
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__text grey--text"
-                >
-                  <small
-                    class="font-weight-bold"
-                  >
-                    SELECT
-                  </small>
-                   
-                  <p>
-                    Choose what will be carried over to the duplicate event
-                  </p>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Basic Information"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
                           <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
+                            class="v-btn__content"
                           >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Basic Information
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                        Close
+                      
+                            </div>
+                          </div>
+                        </button>
                       </div>
                     </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="false"
-                            aria-label="Venue/lovation (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light"
-                          >
-                            check_box_outline_blank
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Venue/lovation (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Fleet Member (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
-                          >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Fleet Member (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Customer (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
-                          >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Customer (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__actions"
-                >
-                  <div
-                    class="layout row justify-end"
-                  >
-                    <button
-                      class="v-btn theme--light"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        
-                  Cancel
-                
-                      </div>
-                    </button>
                      
-                    <button
-                      class="v-btn theme--light primary"
-                      type="button"
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text grey--text"
+                    >
+                      <small
+                        class="font-weight-bold"
+                      >
+                        SELECT
+                      </small>
+                       
+                      <p>
+                        Choose what will be carried over to the duplicate event
+                      </p>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Basic Information"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Basic Information
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Venue/lovation (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Venue/lovation (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Fleet Member (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Fleet Member (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Customer (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Customer (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__actions"
                     >
                       <div
-                        class="v-btn__content"
+                        class="layout row justify-end"
                       >
-                        
-                  Duplicate
-                
+                        <button
+                          class="v-btn theme--light"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+                      Cancel
+                    
+                          </div>
+                        </button>
+                         
+                        <button
+                          class="v-btn theme--light primary"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+                      Duplicate
+                    
+                          </div>
+                        </button>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -381,250 +393,258 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       </div>
        
       <div
-        class="flex text-xs-right sm2 xs12"
+        class="flex sm6"
       >
         <div
-          class="layout align-center"
+          class="layout row align-center justify-end text-xs-right"
         >
-          <button
-            class="v-btn theme--dark warning warning-text--text"
-            type="button"
+          <div
+            class="flex"
           >
-            <div
-              class="v-btn__content"
+            <button
+              class="v-btn theme--dark warning warning-text--text"
+              type="button"
             >
-              
+              <div
+                class="v-btn__content"
+              >
+                
   Pending
  
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--right material-icons theme--dark"
-              >
-                arrow_drop_down
-              </i>
-            </div>
-          </button>
-          <div
-            class="v-menu"
-          >
+                <i
+                  aria-hidden="true"
+                  class="v-icon v-icon--right material-icons theme--dark"
+                >
+                  arrow_drop_down
+                </i>
+              </div>
+            </button>
             <div
-              class="v-menu__content theme--light "
-              style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              class="v-menu"
             >
-               
               <div
-                class="v-list theme--light"
-                role="list"
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
               >
+                 
                 <div
-                  role="listitem"
+                  class="v-list theme--light"
+                  role="list"
                 >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Draft
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Draft
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      FF Initial Review
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Customer Agreement
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Fleet Member Selection
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Customer Review
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Fleet Member Contracts
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Confirmed
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Confirmed
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Cancelled
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Cancelled
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Past
-                    </div>
-                  </a>
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Past
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
            
-          <button
-            class="v-btn v-btn--floating v-btn--depressed theme--light primary"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon far fa-question-circle theme--light"
-              />
-            </div>
-          </button>
           <div
-            class="v-dialog__container"
-            style="display: inline-block;"
+            class="flex sm2"
           >
-            <div
-              class="v-dialog__content"
-              style="z-index: 0;"
-              tabindex="-1"
+            <button
+              class="v-btn v-btn--floating v-btn--depressed theme--light primary"
+              type="button"
             >
               <div
-                class="v-dialog"
-                style="max-width: 700px; display: none;"
+                class="v-btn__content"
               >
-                 
+                <i
+                  aria-hidden="true"
+                  class="v-icon far fa-question-circle theme--light"
+                />
+              </div>
+            </button>
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
                 <div
-                  class="v-card v-sheet theme--light"
+                  class="v-dialog"
+                  style="max-width: 700px; display: none;"
                 >
+                   
                   <div
-                    class="v-card__title"
+                    class="v-card v-sheet theme--light"
                   >
                     <div
-                      class="layout row space-between align-center"
+                      class="v-card__title"
                     >
                       <div
-                        class="flex"
-                      >
-                        <h3>
-                          Event Status
-                        </h3>
-                      </div>
-                       
-                      <button
-                        class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                        type="button"
+                        class="layout row space-between align-center"
                       >
                         <div
-                          class="v-btn__content"
+                          class="flex"
+                        >
+                          <h3>
+                            Event Status
+                          </h3>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
                         >
                           <div
-                            class="flex"
+                            class="v-btn__content"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon white--text fa fa fa fa-times theme--light"
-                              style="font-size: 16px;"
-                            />
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                        Close
+                      
+                            </div>
                           </div>
-                           
-                          <div
-                            class="flex"
-                          >
-                            
-                      Close
-                    
-                          </div>
-                        </div>
-                      </button>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
-                  <div
-                    class="v-card__text grey--text"
-                  >
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                      class="v-card__text grey--text"
+                    >
+                      <div
+                        class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                      />
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
                     />
                   </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
                 </div>
               </div>
             </div>
@@ -637,10 +657,8 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
       class="v-divider theme--light"
     />
      
-    <br />
-     
     <div
-      class="layout event-new-wrap row wrap pa-2 justify-space-between"
+      class="layout event-new-wrap row wrap py-4 px-2 justify-space-between"
     >
       <div
         class="flex md8 sm12"
@@ -9347,345 +9365,357 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
     </div>
      
     <div
-      class="flex d-flex align-center justify-space-between ma-2"
+      class="layout row align-center ma-2"
     >
       <div
-        class="layout row align-center"
+        class="flex sm6"
       >
-        <h2
-          class="white--text"
-        >
-          
-          Event Details
-        
-        </h2>
-         
-        <button
-          class="v-btn theme--light white"
-          slot="activator"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            <span
-              class="primary--text"
-            >
-              Duplicate
-            </span>
-          </div>
-        </button>
         <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+          class="layout row align-center"
         >
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="flex sm4"
           >
             <div
-              class="v-dialog"
-              style="max-width: 500px; display: none;"
+              class="headline white--text"
             >
-               
+              
+              Event Details
+            
+            </div>
+          </div>
+           
+          <div
+            class="flex"
+          >
+            <button
+              class="v-btn theme--light white"
+              slot="activator"
+              type="button"
+            >
               <div
-                class="v-card v-sheet theme--light"
+                class="v-btn__content"
               >
-                <!---->
-                 
-                <div
-                  class="v-card__title"
+                <span
+                  class="primary--text"
                 >
+                  Duplicate
+                </span>
+              </div>
+            </button>
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
                   <div
-                    class="layout row space-between align-center"
+                    class="v-card v-sheet theme--light"
                   >
-                    <div
-                      class="flex"
-                    >
-                      <h3>
-                        Duplicate Event
-                      </h3>
-                    </div>
+                    <!---->
                      
-                    <button
-                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                      type="button"
+                    <div
+                      class="v-card__title"
                     >
                       <div
-                        class="v-btn__content"
+                        class="layout row space-between align-center"
                       >
                         <div
                           class="flex"
                         >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon white--text fa fa fa fa-times theme--light"
-                            style="font-size: 16px;"
-                          />
+                          <h3>
+                            Duplicate Event
+                          </h3>
                         </div>
                          
-                        <div
-                          class="flex"
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
                         >
-                          
-                    Close
-                  
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__text grey--text"
-                >
-                  <small
-                    class="font-weight-bold"
-                  >
-                    SELECT
-                  </small>
-                   
-                  <p>
-                    Choose what will be carried over to the duplicate event
-                  </p>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Basic Information"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
                           <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
+                            class="v-btn__content"
                           >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Basic Information
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                        Close
+                      
+                            </div>
+                          </div>
+                        </button>
                       </div>
                     </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="false"
-                            aria-label="Venue/lovation (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light"
-                          >
-                            check_box_outline_blank
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Venue/lovation (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Fleet Member (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
-                          >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Fleet Member (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot"
-                      >
-                        <div
-                          class="v-input--selection-controls__input"
-                        >
-                          <input
-                            aria-checked="true"
-                            aria-label="Customer (coming soon)"
-                            role="checkbox"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="v-input--selection-controls__ripple accent--text"
-                          />
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light accent--text"
-                          >
-                            check_box
-                          </i>
-                        </div>
-                        <label
-                          aria-hidden="true"
-                          class="v-label theme--light"
-                          style="left: 0px; position: relative;"
-                        >
-                          Customer (coming soon)
-                        </label>
-                      </div>
-                      <div
-                        class="v-messages theme--light"
-                      >
-                        <span
-                          class="v-messages__wrapper"
-                          name="message-transition"
-                          tag="div"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__actions"
-                >
-                  <div
-                    class="layout row justify-end"
-                  >
-                    <button
-                      class="v-btn theme--light"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        
-                  Cancel
-                
-                      </div>
-                    </button>
                      
-                    <button
-                      class="v-btn theme--light primary"
-                      type="button"
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text grey--text"
+                    >
+                      <small
+                        class="font-weight-bold"
+                      >
+                        SELECT
+                      </small>
+                       
+                      <p>
+                        Choose what will be carried over to the duplicate event
+                      </p>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Basic Information"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Basic Information
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                aria-label="Venue/lovation (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Venue/lovation (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Fleet Member (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Fleet Member (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="true"
+                                aria-label="Customer (coming soon)"
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple accent--text"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light accent--text"
+                              >
+                                check_box
+                              </i>
+                            </div>
+                            <label
+                              aria-hidden="true"
+                              class="v-label theme--light"
+                              style="left: 0px; position: relative;"
+                            >
+                              Customer (coming soon)
+                            </label>
+                          </div>
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__actions"
                     >
                       <div
-                        class="v-btn__content"
+                        class="layout row justify-end"
                       >
-                        
-                  Duplicate
-                
+                        <button
+                          class="v-btn theme--light"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+                      Cancel
+                    
+                          </div>
+                        </button>
+                         
+                        <button
+                          class="v-btn theme--light primary"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+                      Duplicate
+                    
+                          </div>
+                        </button>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9695,250 +9725,258 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       </div>
        
       <div
-        class="flex text-xs-right sm2 xs12"
+        class="flex sm6"
       >
         <div
-          class="layout align-center"
+          class="layout row align-center justify-end text-xs-right"
         >
-          <button
-            class="v-btn theme--dark grey grey-text--text"
-            type="button"
+          <div
+            class="flex"
           >
-            <div
-              class="v-btn__content"
+            <button
+              class="v-btn theme--dark grey grey-text--text"
+              type="button"
             >
-              
+              <div
+                class="v-btn__content"
+              >
+                
   Draft
  
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--right material-icons theme--dark"
-              >
-                arrow_drop_down
-              </i>
-            </div>
-          </button>
-          <div
-            class="v-menu"
-          >
+                <i
+                  aria-hidden="true"
+                  class="v-icon v-icon--right material-icons theme--dark"
+                >
+                  arrow_drop_down
+                </i>
+              </div>
+            </button>
             <div
-              class="v-menu__content theme--light "
-              style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              class="v-menu"
             >
-               
               <div
-                class="v-list theme--light"
-                role="list"
+                class="v-menu__content theme--light "
+                style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
               >
+                 
                 <div
-                  role="listitem"
+                  class="v-list theme--light"
+                  role="list"
                 >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Draft
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Draft
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      FF Initial Review
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        FF Initial Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Customer Agreement
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Agreement
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Fleet Member Selection
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Selection
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Customer Review
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Customer Review
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Fleet Member Contracts
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Fleet Member Contracts
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Confirmed
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Confirmed
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Cancelled
-                    </div>
-                  </a>
-                </div>
-                <div
-                  role="listitem"
-                >
-                  <a
-                    class="v-list__tile v-list__tile--link theme--light"
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Cancelled
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
                   >
-                    <div
-                      class="v-list__tile__title"
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
                     >
-                      Past
-                    </div>
-                  </a>
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Past
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
            
-          <button
-            class="v-btn v-btn--floating v-btn--depressed theme--light primary"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon far fa-question-circle theme--light"
-              />
-            </div>
-          </button>
           <div
-            class="v-dialog__container"
-            style="display: inline-block;"
+            class="flex sm2"
           >
-            <div
-              class="v-dialog__content"
-              style="z-index: 0;"
-              tabindex="-1"
+            <button
+              class="v-btn v-btn--floating v-btn--depressed theme--light primary"
+              type="button"
             >
               <div
-                class="v-dialog"
-                style="max-width: 700px; display: none;"
+                class="v-btn__content"
               >
-                 
+                <i
+                  aria-hidden="true"
+                  class="v-icon far fa-question-circle theme--light"
+                />
+              </div>
+            </button>
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
                 <div
-                  class="v-card v-sheet theme--light"
+                  class="v-dialog"
+                  style="max-width: 700px; display: none;"
                 >
+                   
                   <div
-                    class="v-card__title"
+                    class="v-card v-sheet theme--light"
                   >
                     <div
-                      class="layout row space-between align-center"
+                      class="v-card__title"
                     >
                       <div
-                        class="flex"
-                      >
-                        <h3>
-                          Event Status
-                        </h3>
-                      </div>
-                       
-                      <button
-                        class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                        type="button"
+                        class="layout row space-between align-center"
                       >
                         <div
-                          class="v-btn__content"
+                          class="flex"
+                        >
+                          <h3>
+                            Event Status
+                          </h3>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
                         >
                           <div
-                            class="flex"
+                            class="v-btn__content"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon white--text fa fa fa fa-times theme--light"
-                              style="font-size: 16px;"
-                            />
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                        Close
+                      
+                            </div>
                           </div>
-                           
-                          <div
-                            class="flex"
-                          >
-                            
-                      Close
-                    
-                          </div>
-                        </div>
-                      </button>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
-                  <div
-                    class="v-card__text grey--text"
-                  >
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                      class="v-card__text grey--text"
+                    >
+                      <div
+                        class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
+                      />
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
                     />
                   </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
                 </div>
               </div>
             </div>
@@ -9951,10 +9989,8 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
       class="v-divider theme--light"
     />
      
-    <br />
-     
     <div
-      class="layout event-new-wrap row wrap pa-2 justify-space-between"
+      class="layout event-new-wrap row wrap py-4 px-2 justify-space-between"
     >
       <div
         class="flex md8 sm12"
