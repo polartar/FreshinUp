@@ -242,6 +242,7 @@
             :venue-uuid="get(event, 'venue_uuid')"
             :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
+            :venue-data="selectedVenue"
           />
         </v-flex>
       </v-layout>
@@ -335,7 +336,11 @@ export default {
         customer: true
       },
       isNew: false,
-      types: []
+      types: [],
+      selectedVenue: {
+        venue_uuid: null,
+        location_uuid: null
+      }
     }
   },
   computed: {
@@ -474,7 +479,9 @@ export default {
       let data = {
         ...this.event,
         host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
-        manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+        manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid),
+        location_uuid: get(this.event, 'location.uuid', this.selectedVenue.location_uuid),
+        venue_uuid: get(this.event, 'venue.uuid', this.selectedVenue.venue_uuid)
       }
       const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
       data = omitBy(data, (value, key) => {

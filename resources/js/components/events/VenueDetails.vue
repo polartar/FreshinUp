@@ -209,13 +209,23 @@ export default {
       default: () => []
     },
     locationUuid: { type: String, default: '' },
-    venueUuid: { type: String, default: '' }
+    venueUuid: { type: String, default: '' },
+    venueData: {
+      type: Object,
+      default: () => {
+        return {
+          venue_uuid: null,
+          location_uuid: null
+        }
+      }
+    }
   },
   data () {
     return {
       location: DEFAULT_LOCATION,
       showMoreActivated: false,
-      locationDetailMaxChar: 300
+      locationDetailMaxChar: 300,
+      venue: this.venueData
     }
   },
 
@@ -233,6 +243,7 @@ export default {
       }, {})
     },
     selectedVenue () {
+      this.currentVenue()
       return this.venuesByUuid[this.location.venue_uuid] || {}
     },
     selectedVenueLocations () {
@@ -279,6 +290,10 @@ export default {
     onLocationChanged (locationUuid) {
       const location = this.locationsByUuid[locationUuid] || DEFAULT_LOCATION
       this.location = Object.assign({}, this.location, omit(location, ['venue_uuid']))
+    },
+    currentVenue () {
+      this.venue.venue_uuid = this.location.venue_uuid
+      this.venue.location_uuid = this.location.uuid
     }
   }
 }
