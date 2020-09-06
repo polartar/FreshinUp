@@ -304,8 +304,7 @@ export default {
     vm.setPageLoading(true)
     Promise.all([
       vm.$store.dispatch('eventStatuses/getItems'),
-      vm.$store.dispatch('eventTypes/getItems'),
-      vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } })
+      vm.$store.dispatch('eventTypes/getItems')
     ])
       .then(() => {
         if (next) next()

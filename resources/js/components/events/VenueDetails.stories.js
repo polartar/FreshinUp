@@ -14,7 +14,7 @@ export const Default = () => ({
   `
 })
 
-export const WithData = () => ({
+export const NotSelected = () => ({
   components: { VenueDetails },
   data () {
     return {
@@ -25,12 +25,16 @@ export const WithData = () => ({
     <v-container>
       <VenueDetails
         :venues="venues"
+        @input="onInput"
         @get-directions="getDirections"/>
     </v-container>
   `,
   methods: {
     getDirections (payload) {
       action('getDirections')(payload)
+    },
+    onInput (payload) {
+      action('onInput')(payload)
     }
   }
 })
@@ -40,7 +44,7 @@ export const SelectedVenue = () => ({
   data () {
     return {
       venues: FIXTURE_VENUES,
-      venueUuid: FIXTURE_VENUES[0].uuid
+      venueUuid: FIXTURE_VENUES[0].uuid,
     }
   },
   template: `
@@ -48,12 +52,16 @@ export const SelectedVenue = () => ({
       <VenueDetails
         :venues="venues"
         :venue-uuid="venueUuid"
+        @input="onInput"
         @get-directions="getDirections"/>
     </v-container>
   `,
   methods: {
     getDirections (payload) {
       action('getDirections')(payload)
+    },
+    onInput (payload) {
+      action('input')(payload)
     }
   }
 })
@@ -73,12 +81,16 @@ export const SelectedVenueAndLocation = () => ({
         :venues="venues"
         :location-uuid="locationUuid"
         :venue-uuid="venueUuid"
+        @input="onInput"
         @get-directions="getDirections"/>
     </v-container>
   `,
   methods: {
     getDirections (payload) {
       action('getDirections')(payload)
+    },
+    onInput (payload) {
+      action('onInput')(payload)
     }
   }
 })
@@ -90,6 +102,6 @@ storiesOf('FoodFleet|components/events/VenueDetails', module)
     ]
   })
   .add('Default', Default)
-  .add('WithData', WithData)
+  .add('NotSelected', NotSelected)
   .add('SelectedVenue', SelectedVenue)
   .add('SelectedVenueAndLocation', SelectedVenueAndLocation)

@@ -14,8 +14,8 @@ describe('events/VenueDetails', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
 
-    test('WithData', async () => {
-      const wrapper = mount(Stories.WithData())
+    test('NotSelected', async () => {
+      const wrapper = mount(Stories.NotSelected())
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -262,6 +262,26 @@ describe('events/VenueDetails', () => {
         const emitted = wrapper.emitted()
         expect(emitted['get-directions']).toHaveLength(1)
         expect(emitted['get-directions'][0][0]).toEqual(location)
+      })
+    })
+  })
+
+  describe('watch', () => {
+    test('location', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.setData({
+        location: FIXTURE_VENUES[0].locations[0]
+      })
+      const newLocation = FIXTURE_VENUES[0].locations[1]
+      wrapper.setData({
+        location: newLocation
+      })
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted()
+      expect(emitted.input).toBeTruthy()
+      expect(emitted.input[0][0]).toMatchObject({
+        uuid: newLocation.uuid,
+        venue_uuid: newLocation.venue_uuid,
       })
     })
   })
