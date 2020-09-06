@@ -373,6 +373,396 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
 </div>
 `;
 
+exports[`events/VenueDetails Snapshots NotSelected 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="ff-venue_details v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title font-weight-bold"
+    >
+      
+    Venue Details
+  
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        class="layout align-center row wrap"
+      >
+        <div
+          class="flex xs6 pr-2"
+        >
+          <div
+            class="layout justify-content-between align-center mb-2 row"
+          >
+            <h4
+              class="text-uppercase grey--text font-weight-bold"
+            >
+              
+            Venue
+          
+            </h4>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <input
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                LA Stadium
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                ATL Stadium
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs6 pl-2"
+        >
+          <div
+            class="layout justify-content-between align-center mb-2 row"
+          >
+            <h4
+              class="text-uppercase grey--text font-weight-bold"
+            >
+              
+            Location
+          
+            </h4>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <input
+                      aria-readonly="false"
+                      autocomplete="on"
+                      disabled="disabled"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--disabled material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex d-flex xs12 pb-3"
+        >
+          <h4
+            class="text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address
+        
+          </h4>
+           
+          <span
+            class="text-xs-center"
+          >
+            
+          -
+        
+          </span>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <hr
+            class="v-divider theme--light"
+          />
+        </div>
+         
+        <div
+          class="flex d-flex xs12 py-3"
+        >
+          <h4
+            class="text-uppercase grey--text font-weight-bold"
+          >
+            
+          Capacity
+        
+          </h4>
+           
+          <span
+            class="text-xs-center"
+          >
+            
+          -
+        
+          </span>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <hr
+            class="v-divider theme--light"
+          />
+        </div>
+         
+        <div
+          class="flex d-flex xs12 py-3"
+        >
+          <h4
+            class="text-uppercase grey--text font-weight-bold"
+          >
+            
+          Spots
+        
+          </h4>
+           
+          <span
+            class="text-xs-center"
+          >
+            
+          -
+        
+          </span>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <hr
+            class="v-divider theme--light"
+          />
+        </div>
+         
+        <div
+          class="flex xs12 py-3"
+        >
+          <h4
+            class="pb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Location details
+        
+          </h4>
+           
+          <p>
+            
+          
+        
+          </p>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-card__actions"
+    >
+      <div
+        class="layout align-center justify-space-around"
+      >
+        <div
+          class="flex xs12 sm8 md6 lg4"
+        >
+          <button
+            class="v-btn v-btn--block v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Get Directions
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
 <div
   class="container"
@@ -1202,396 +1592,6 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
           <p>
             
           Lorem North Velmaville dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum
-        
-          </p>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="v-card__actions"
-    >
-      <div
-        class="layout align-center justify-space-around"
-      >
-        <div
-          class="flex xs12 sm8 md6 lg4"
-        >
-          <button
-            class="v-btn v-btn--block v-btn--disabled v-btn--depressed theme--light"
-            disabled="disabled"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              
-          Get Directions
-        
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`events/VenueDetails Snapshots WithData 1`] = `
-<div
-  class="container"
->
-  <div
-    class="ff-venue_details v-card v-sheet theme--light"
-  >
-    <div
-      class="v-card__title font-weight-bold"
-    >
-      
-    Venue Details
-  
-    </div>
-     
-    <hr
-      class="v-divider theme--light"
-    />
-     
-    <div
-      class="v-card__text"
-    >
-      <div
-        class="layout align-center row wrap"
-      >
-        <div
-          class="flex xs6 pr-2"
-        >
-          <div
-            class="layout justify-content-between align-center mb-2 row"
-          >
-            <h4
-              class="text-uppercase grey--text font-weight-bold"
-            >
-              
-            Venue
-          
-            </h4>
-             
-            <!---->
-          </div>
-           
-          <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-            role="combobox"
-          >
-            <div
-              class="v-input__control"
-            >
-              <div
-                class="v-input__slot"
-              >
-                <div
-                  class="v-select__slot"
-                >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
-                  <div
-                    class="v-input__append-inner"
-                  >
-                    <div
-                      class="v-input__icon v-input__icon--append"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                      >
-                        arrow_drop_down
-                      </i>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-menu"
-                >
-                  <div
-                    class="v-menu__content theme--light "
-                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                  >
-                    <div
-                      class="v-select-list v-card theme--light"
-                    >
-                      <div
-                        class="v-list theme--light"
-                        role="list"
-                      >
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                LA Stadium
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                ATL Stadium
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="v-text-field__details"
-              >
-                <div
-                  class="v-messages theme--light"
-                >
-                  <div
-                    class="v-messages__wrapper"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="flex xs6 pl-2"
-        >
-          <div
-            class="layout justify-content-between align-center mb-2 row"
-          >
-            <h4
-              class="text-uppercase grey--text font-weight-bold"
-            >
-              
-            Location
-          
-            </h4>
-             
-            <!---->
-          </div>
-           
-          <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
-            role="combobox"
-          >
-            <div
-              class="v-input__control"
-            >
-              <div
-                class="v-input__slot"
-              >
-                <div
-                  class="v-select__slot"
-                >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      disabled="disabled"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
-                  <div
-                    class="v-input__append-inner"
-                  >
-                    <div
-                      class="v-input__icon v-input__icon--append"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="v-icon v-icon--disabled material-icons theme--light"
-                      >
-                        arrow_drop_down
-                      </i>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-menu"
-                >
-                  <div
-                    class="v-menu__content theme--light "
-                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                  >
-                    <div
-                      class="v-select-list v-card theme--light"
-                    >
-                      <div
-                        class="v-list theme--light"
-                        role="list"
-                      >
-                        <div
-                          role="listitem"
-                        >
-                          <div
-                            class="v-list__tile theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                No data available
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="v-text-field__details"
-              >
-                <div
-                  class="v-messages theme--light"
-                >
-                  <div
-                    class="v-messages__wrapper"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="flex d-flex xs12 pb-3"
-        >
-          <h4
-            class="text-uppercase grey--text font-weight-bold"
-          >
-            
-          Address
-        
-          </h4>
-           
-          <span
-            class="text-xs-center"
-          >
-            
-          -
-        
-          </span>
-        </div>
-         
-        <div
-          class="flex xs12"
-        >
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-         
-        <div
-          class="flex d-flex xs12 py-3"
-        >
-          <h4
-            class="text-uppercase grey--text font-weight-bold"
-          >
-            
-          Capacity
-        
-          </h4>
-           
-          <span
-            class="text-xs-center"
-          >
-            
-          -
-        
-          </span>
-        </div>
-         
-        <div
-          class="flex xs12"
-        >
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-         
-        <div
-          class="flex d-flex xs12 py-3"
-        >
-          <h4
-            class="text-uppercase grey--text font-weight-bold"
-          >
-            
-          Spots
-        
-          </h4>
-           
-          <span
-            class="text-xs-center"
-          >
-            
-          -
-        
-          </span>
-        </div>
-         
-        <div
-          class="flex xs12"
-        >
-          <hr
-            class="v-divider theme--light"
-          />
-        </div>
-         
-        <div
-          class="flex xs12 py-3"
-        >
-          <h4
-            class="pb-2 text-uppercase grey--text font-weight-bold"
-          >
-            
-          Location details
-        
-          </h4>
-           
-          <p>
-            
-          
         
           </p>
            

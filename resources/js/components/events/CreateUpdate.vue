@@ -242,6 +242,7 @@
             :venue-uuid="get(event, 'venue_uuid')"
             :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
+            @input="onLocationOrVenueChanged"
           />
         </v-flex>
       </v-layout>
@@ -517,6 +518,10 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
+    },
+    onLocationOrVenueChanged (location) {
+      this.event.location_uuid = location.uuid
+      this.event.venue_uuid = location.venue_uuid
     }
   },
   async beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -538,6 +543,7 @@ export default {
       promises.push(vm.$store.dispatch('eventHistories/getItems'))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true
