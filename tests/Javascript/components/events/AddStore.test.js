@@ -2,7 +2,9 @@ import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import Component from '~/components/events/AddStore.vue'
 
 import * as Stories from '~/components/events/AddStore.stories'
-import { FIXTURE_FLEET_MEMBER_EVENT, FIXTURE_FLEET_MEMBERS } from '../../__data__/fleet-members'
+import { FIXTURE_STORES } from '../../__data__/stores'
+import { FIXTURE_EVENT } from '../../__data__/event'
+import { FIXTURE_STORE_TYPES } from '../../__data__/storeTypes'
 
 describe('Add member (store) in event component', () => {
   let localVue
@@ -28,16 +30,13 @@ describe('Add member (store) in event component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
-
-      wrapper.setProps({ members: FIXTURE_FLEET_MEMBERS })
-
+      wrapper.setProps({ stores: FIXTURE_STORES })
       wrapper.setData({
         pagination: {
           rowsPerPage: 5,
           page: 1
         }
       })
-
       expect(wrapper.vm.pages).toBe(1)
 
       wrapper.setData({
@@ -46,25 +45,23 @@ describe('Add member (store) in event component', () => {
           page: 1
         }
       })
-
       expect(wrapper.vm.pages).toBe(2)
     })
 
-    test('filteredMembers', () => {
+    test('filteredStores', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
 
-      wrapper.setProps({ members: FIXTURE_FLEET_MEMBERS })
-
+      wrapper.setProps({ stores: FIXTURE_STORES })
       wrapper.setData({
         selectedState: '',
         selectedType: '',
         selectedTags: []
       })
 
-      expect(wrapper.vm.filteredMembers).toHaveLength(5)
-      expect(wrapper.vm.filteredMembers).toEqual(FIXTURE_FLEET_MEMBERS)
+      expect(wrapper.vm.filteredStores).toHaveLength(5)
+      expect(wrapper.vm.filteredStores).toEqual(FIXTURE_STORES)
 
       wrapper.setData({
         selectedState: 'New York',
@@ -72,8 +69,8 @@ describe('Add member (store) in event component', () => {
         selectedTags: []
       })
 
-      expect(wrapper.vm.filteredMembers).toHaveLength(1)
-      expect(wrapper.vm.filteredMembers).toEqual([FIXTURE_FLEET_MEMBERS[1]])
+      expect(wrapper.vm.filteredStores).toHaveLength(1)
+      expect(wrapper.vm.filteredStores).toEqual([FIXTURE_STORES[1]])
 
       wrapper.setData({
         selectedState: '',
@@ -81,8 +78,8 @@ describe('Add member (store) in event component', () => {
         selectedTags: []
       })
 
-      expect(wrapper.vm.filteredMembers).toHaveLength(5)
-      expect(wrapper.vm.filteredMembers).toEqual(FIXTURE_FLEET_MEMBERS)
+      expect(wrapper.vm.filteredStores).toHaveLength(4)
+      expect(wrapper.vm.filteredStores).toEqual(FIXTURE_STORES.filter(s => s.type_id === 2))
 
       wrapper.setData({
         selectedState: '',
@@ -90,7 +87,7 @@ describe('Add member (store) in event component', () => {
         selectedTags: ['ASIAN']
       })
 
-      expect(wrapper.vm.filteredMembers).toHaveLength(3)
+      expect(wrapper.vm.filteredStores).toHaveLength(3)
     })
 
     test('totalItems', () => {
@@ -98,7 +95,7 @@ describe('Add member (store) in event component', () => {
         localVue: localVue
       })
 
-      wrapper.setProps({ members: FIXTURE_FLEET_MEMBERS })
+      wrapper.setProps({ stores: FIXTURE_STORES })
 
       expect(wrapper.vm.totalItems).toBe(5)
     })
@@ -108,7 +105,7 @@ describe('Add member (store) in event component', () => {
         localVue: localVue
       })
 
-      wrapper.setProps({ members: FIXTURE_FLEET_MEMBERS })
+      wrapper.setProps({ stores: FIXTURE_STORES })
 
       const expectedLocations = ['California', 'New York']
 
@@ -120,9 +117,25 @@ describe('Add member (store) in event component', () => {
         localVue: localVue
       })
 
-      wrapper.setProps({ members: FIXTURE_FLEET_MEMBERS })
+      wrapper.setProps({ stores: FIXTURE_STORES })
 
       expect(wrapper.vm.tags).toHaveLength(2)
+    })
+
+    test('storeTypesById', async () => {
+      const wrapper = shallowMount(Component, {
+        localVue: localVue
+      })
+
+      wrapper.setProps({
+        storeTypes: FIXTURE_STORE_TYPES
+      })
+      await wrapper.vm.$nextTick()
+      const expected = FIXTURE_STORE_TYPES.reduce((map, type) => {
+        map[type.id] = type
+        return map
+      }, {})
+      expect(wrapper.vm.storeTypesById).toMatchObject(expected)
     })
   })
 
@@ -131,7 +144,7 @@ describe('Add member (store) in event component', () => {
       localVue = createLocalVue()
     })
 
-    test('Toggle show filter', () => {
+    test('showFilters()', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
@@ -149,7 +162,7 @@ describe('Add member (store) in event component', () => {
       expect(wrapper.vm.showFilters).toBeFalsy()
     })
 
-    test('Clear all filters', () => {
+    test('clearAllFilters()', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
@@ -166,83 +179,81 @@ describe('Add member (store) in event component', () => {
       expect(wrapper.vm.selectedTags).toEqual([])
     })
 
-    test('Member has booked an event', () => {
+    test('hasBookedAnEvent(store)', () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        propsData: {
+          event: FIXTURE_STORES[0].events[0]
+        }
       })
 
-      wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
-      })
-
-      expect(wrapper.vm.hasBookedAnEvent(FIXTURE_FLEET_MEMBERS[3])).toBeTruthy()
-      expect(wrapper.vm.hasBookedAnEvent(FIXTURE_FLEET_MEMBERS[2])).toBeFalsy()
+      expect(wrapper.vm.hasBookedAnEvent(FIXTURE_STORES[3])).toBeTruthy()
+      expect(wrapper.vm.hasBookedAnEvent(FIXTURE_STORES[2])).toBeFalsy()
     })
 
-    test('Member is eligible', () => {
+    test('isEligible(store)', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
-
       wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
+        event: FIXTURE_STORES[0].events[0]
       })
 
-      expect(wrapper.vm.isEligible(FIXTURE_FLEET_MEMBERS[0])).toBeTruthy()
-      expect(wrapper.vm.isEligible(FIXTURE_FLEET_MEMBERS[1])).toBeTruthy()
-      expect(wrapper.vm.isEligible(FIXTURE_FLEET_MEMBERS[2])).toBeFalsy()
+      expect(wrapper.vm.isEligible(FIXTURE_STORES[0])).toBeTruthy()
+      expect(wrapper.vm.isEligible(FIXTURE_STORES[1])).toBeTruthy()
+      expect(wrapper.vm.isEligible(FIXTURE_STORES[2])).toBeFalsy()
     })
 
-    test('Member is assigned to this event', () => {
+    test('isAssignedToThisEvent(store)', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
 
       wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
+        event: FIXTURE_STORES[0].events[0]
       })
 
-      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_FLEET_MEMBERS[0])).toBeTruthy()
-      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_FLEET_MEMBERS[4])).toBeTruthy()
-      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_FLEET_MEMBERS[1])).toBeFalsy()
+      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_STORES[0])).toBeTruthy()
+      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_STORES[4])).toBeTruthy()
+      expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_STORES[1])).toBeFalsy()
     })
 
-    test('Member has declined this event', () => {
+    test('isDeclined(store)', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
 
       wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
+        event: FIXTURE_STORES[4].events[0]
       })
 
-      expect(wrapper.vm.isDeclined(FIXTURE_FLEET_MEMBERS[4])).toBeTruthy()
-      expect(wrapper.vm.isDeclined(FIXTURE_FLEET_MEMBERS[1])).toBeFalsy()
+      expect(wrapper.vm.isDeclined(FIXTURE_STORES[4])).toBeTruthy()
+      expect(wrapper.vm.isDeclined(FIXTURE_STORES[1])).toBeFalsy()
     })
 
-    test('Manage button label', () => {
+    test('manageButtonLabel(store)', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
 
       wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
+        event: FIXTURE_STORES[0].events[0]
       })
 
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_FLEET_MEMBERS[0])).toBe('Assigned')
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_FLEET_MEMBERS[1])).toBe('Assign')
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_FLEET_MEMBERS[2])).toBe('Expired')
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_FLEET_MEMBERS[3])).toBe('Booked')
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_FLEET_MEMBERS[4])).toBe('Declined')
+      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[0])).toBe('Assigned')
+      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[1])).toBe('Assign')
+      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[2])).toBe('Expired')
+      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[3])).toBe('Booked')
+      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[4])).toBe('Declined')
     })
 
-    test('Manage button class', () => {
+    test('manageButtonClass(store)', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
 
       wrapper.setProps({
-        event: FIXTURE_FLEET_MEMBER_EVENT
+        event: FIXTURE_STORES[4].events[0]
       })
 
       const expectedClassObject = {
@@ -251,7 +262,7 @@ describe('Add member (store) in event component', () => {
         'blue-grey lighten-5': false
       }
 
-      expect(wrapper.vm.manageButtonClass(FIXTURE_FLEET_MEMBERS[4])).toEqual(expectedClassObject)
+      expect(wrapper.vm.manageButtonClass(FIXTURE_STORES[4])).toMatchObject(expectedClassObject)
     })
   })
 })

@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import StatusSelect from './StatusSelect'
-import { FIXTURE_FLEET_MEMBERS_STATUSES } from '../../../../tests/Javascript/__data__/fleet-members.js'
+import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
 
 export const ReadOnly = () => {
   return {
     components: { StatusSelect },
     data: () => ({
-      statuses: FIXTURE_FLEET_MEMBERS_STATUSES
+      statuses: FIXTURE_STORE_STATUSES
     }),
     template: `
       <v-container>
@@ -23,7 +23,7 @@ export const Selected = () => {
   return {
     components: { StatusSelect },
     data: () => ({
-      statuses: FIXTURE_FLEET_MEMBERS_STATUSES,
+      statuses: FIXTURE_STORE_STATUSES,
       value: 1
     }),
     template: `

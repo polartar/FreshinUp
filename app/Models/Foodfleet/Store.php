@@ -14,16 +14,29 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
- * Class Store
- *
+ * Class Store | This is what's called fleet member
  * @property int $id
  * @property string $uuid
  * @property string $name
- *
+ * @property int square_id
+ * @property int status_id
+ * @property int type_id
+ * @property string supplier_uuid
+ * @property string address_uuid
+ * @property string website
+ * @property string contact_phone
+ * @property string size
+ * @property string image
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
  *
+ *
+ * @property StoreStatus status
+ * @property StoreType type
+ * @property Company supplier
+ * TODO: annotate the following properties:
+ * events, staffs, menus, transactions, tags, documents, menuItems, messages, status
  */
 class Store extends Model implements HasMedia
 {

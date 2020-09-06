@@ -3,35 +3,40 @@ import { action } from '@storybook/addon-actions'
 
 import BasicInformation from './BasicInformation'
 
-import {
-  FIXTURE_FLEET_MEMBER,
-  FIXTURE_MEMBER_LOCATIONS,
-  FIXTURE_MEMBER_TYPES
-} from '../../../../tests/Javascript/__data__/fleet-members'
+import { FIXTURE_STORE } from '../../../../tests/Javascript/__data__/stores'
+import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
+
+const LOCATIONS = ['square']
 
 export const Default = () => ({
   components: { BasicInformation },
   template: `
-      <v-container>
-        <basic-information />
-      </v-container>
-    `
+    <v-container>
+      <basic-information/>
+    </v-container>
+  `
 })
 
 export const WithData = () => ({
   components: { BasicInformation },
   data () {
     return {
-      member: FIXTURE_FLEET_MEMBER,
-      types: FIXTURE_MEMBER_TYPES,
-      locations: FIXTURE_MEMBER_LOCATIONS
+      store: FIXTURE_STORE,
+      types: FIXTURE_STORE_TYPES,
+      locations: LOCATIONS
     }
   },
   template: `
-      <v-container>
-        <basic-information :member="member" :locations="locations" :types="types" @save="onSave" @cancel="onCancel" @delete="onDelete"/>
-      </v-container>
-    `,
+    <v-container>
+      <basic-information
+        :store="store"
+        :locations="locations"
+        :types="types"
+        @save="onSave"
+        @cancel="onCancel"
+        @delete="onDelete"/>
+    </v-container>
+  `,
   methods: {
     onSave (payload) {
       action('onSave')(payload)
@@ -47,11 +52,11 @@ export const WithData = () => ({
   }
 })
 
-storiesOf('FoodFleet|fleet-member/BasicInformation', module)
+storiesOf('FoodFleet|components/fleet-members/BasicInformation', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('Default', Default)
-  .add('With data', WithData)
+  .add('WithData', WithData)

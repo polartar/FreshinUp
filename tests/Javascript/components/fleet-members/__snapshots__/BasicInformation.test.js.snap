@@ -882,7 +882,8 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
           class="py-3 d-flex justify-space-between"
         >
           <button
-            class="v-btn v-btn--depressed theme--light primary"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -895,7 +896,8 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--depressed theme--light"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -949,7 +951,8 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
         style="text-align: right;"
       >
         <button
-          class="v-btn v-btn--depressed theme--light"
+          class="v-btn v-btn--disabled v-btn--depressed theme--light"
+          disabled="disabled"
           type="button"
         >
           <div
@@ -1124,6 +1127,23 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                               </div>
                             </a>
                           </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Stationery
+                                </div>
+                              </div>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1249,7 +1269,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
               role="combobox"
             >
               <div
@@ -1264,11 +1284,6 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                     <div
                       class="v-select__selections"
                     >
-                      <div
-                        class="v-select__selection v-select__selection--comma"
-                      >
-                        Square
-                      </div>
                       <input
                         aria-readonly="false"
                         autocomplete="on"
@@ -1306,11 +1321,10 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                           role="list"
                         >
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -1318,7 +1332,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  Square
+                                  square
                                 </div>
                               </div>
                             </a>
@@ -1475,7 +1489,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1900,7 +1914,8 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
           class="py-3 d-flex justify-space-between"
         >
           <button
-            class="v-btn v-btn--depressed theme--light primary"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -1913,7 +1928,8 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--depressed theme--light"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -1967,7 +1983,8 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
         style="text-align: right;"
       >
         <button
-          class="v-btn v-btn--depressed theme--light"
+          class="v-btn v-btn--disabled v-btn--depressed theme--light"
+          disabled="disabled"
           type="button"
         >
           <div

@@ -52,7 +52,7 @@
             >
               <v-select
                 v-model="selectedType"
-                :items="memberTypes"
+                :items="storeTypes"
                 item-value="id"
                 item-text="name"
                 label="Type"
@@ -95,7 +95,7 @@
       <v-data-table
         v-model="selected"
         :headers="headers"
-        :items="filteredMembers"
+        :items="filteredStores"
         :search="searchText"
         item-key="uuid"
         hide-actions
@@ -133,7 +133,7 @@
             <div
               class="grey--text text--darken-2"
             >
-              {{ typeName(get(props, 'item.type_id', 0)) }}
+              {{ get(storeTypesById, 'props.item.type_id') }}
             </div>
           </td>
           <td class="py-2">
@@ -173,148 +173,138 @@
   </div>
 </template>
 <script>
-import get from 'lodash/get'
-import _uniq from 'lodash/uniq'
+  import get from 'lodash/get'
+  import _uniq from 'lodash/uniq'
 
-export default {
-  props: {
-    members: {
-      type: Array,
-      default: () => []
-    },
-    event: {
-      type: Object,
-      required: true
-    },
-    memberTypes: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data () {
-    return {
-      searchText: '',
-      selectedState: '',
-      selectedType: '',
-      selectedTags: [],
-      pagination: {
-        rowsPerPage: 5,
-        page: 1
+  export const HEADERS = [
+    { text: 'Fleet member', value: 'name' },
+    { text: 'State of incorporation', value: 'state_of_incorporation' },
+    { text: 'Tags', value: 'tags' },
+    { text: 'Manage' }
+  ]
+  export default {
+    props: {
+      stores: {
+        type: Array,
+        default: () => []
       },
-      page: 1,
-      showFilters: false,
-      selected: [],
-      headers: [
-        { text: 'Fleet member', value: 'name' },
-        { text: 'State of incorporation', value: 'state_of_incorporation' },
-        { text: 'Tags', value: 'tags' },
-        { text: 'Manage' }
-      ]
-    }
-  },
-  computed: {
-    pages () {
-      if (this.pagination.rowsPerPage == null ||
-        this.totalItems == null
-      ) return 0
-
-      return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
-    },
-
-    filteredMembers () {
-      let items = this.members
-
-      if (this.selectedState) {
-        items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
-      }
-
-      if (this.selectedType) {
-        items = items.filter(i => i['type_id'] === this.selectedType)
-      }
-
-      if (this.selectedTags.length) {
-        items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
-      }
-
-      return items
-    },
-
-    totalItems () {
-      return this.filteredMembers.length
-    },
-
-    locations () {
-      return _uniq(this.members.map(m => m['state_of_incorporation']))
-    },
-
-    tags () {
-      const ts = []
-
-      this.members.forEach(m => ts.push(...m['tags']))
-
-      return _uniq(ts)
-    }
-  },
-  methods: {
-    get,
-    toggleShowFilter () {
-      this.showFilters = !this.showFilters
-    },
-
-    clearAllFilters () {
-      this.selectedState = ''
-      this.selectedType = ''
-      this.selectedTags = []
-    },
-
-    hasBookedAnEvent (member) {
-      return !!member.events.find(e => e.start_at === this.event.start_at && e.uuid !== this.event.uuid)
-    },
-
-    isEligible (member) {
-      return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
-    },
-
-    isAssignedToThisEvent (member) {
-      return !!member.events.find(e => e.uuid === this.event.uuid)
-    },
-
-    isDeclined (member) {
-      return !!member.events.find(e => e.uuid === this.event.uuid && e.declined)
-    },
-
-    manageButtonLabel (item) {
-      if (this.isEligible(item)) {
-        if (this.isDeclined(item)) { return 'Declined' }
-        if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
-      }
-
-      if (this.hasBookedAnEvent(item)) { return 'Booked' }
-
-      if (item['has_expired_licences_docs']) { return 'Expired' }
-
-      return ''
-    },
-
-    onManageClicked (item) {
-      if (this.manageButtonLabel(item) === 'Assign') {
-        this.$emit('assign', item)
+      event: {
+        type: Object,
+        required: true
+      },
+      storeTypes: {
+        type: Array,
+        default: () => []
       }
     },
-
-    manageButtonClass (item) {
+    data () {
       return {
-        'primary': this.manageButtonLabel(item) === 'Assign',
-        'blue-grey lighten-5': ['Expired', 'Booked'].includes(this.manageButtonLabel(item)),
-        'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(this.manageButtonLabel(item))
+        searchText: '',
+        selectedState: '',
+        selectedType: '',
+        selectedTags: [],
+        pagination: {
+          rowsPerPage: 5,
+          page: 1
+        },
+        page: 1,
+        showFilters: false,
+        selected: [],
+        headers: HEADERS
       }
     },
+    computed: {
+      pages () {
+        if (this.pagination.rowsPerPage == null ||
+          this.totalItems == null
+        ) return 0
 
-    typeName (id) {
-      const type = this.memberTypes.find(t => t.id === id)
+        return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
+      },
 
-      return type ? type['name'] : ''
+      filteredStores () {
+        let items = this.stores
+
+        if (this.selectedState) {
+          items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
+        }
+
+        if (this.selectedType) {
+          items = items.filter(i => i['type_id'] === this.selectedType)
+        }
+
+        if (this.selectedTags.length) {
+          items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
+        }
+
+        return items
+      },
+      totalItems () {
+        return this.filteredStores.length
+      },
+      locations () {
+        return _uniq(this.stores.map(m => m['state_of_incorporation']))
+      },
+      tags () {
+        const ts = []
+        this.stores.forEach(m => ts.push(...m['tags']))
+        return _uniq(ts)
+      },
+      storeTypesById () {
+        return this.storeTypes.reduce((map, type) => {
+          map[type.id] = type
+          return map
+        }, {})
+      }
+    },
+    methods: {
+      get,
+      toggleShowFilter () {
+        this.showFilters = !this.showFilters
+      },
+
+      clearAllFilters () {
+        this.selectedState = ''
+        this.selectedType = ''
+        this.selectedTags = []
+      },
+      hasBookedAnEvent (member) {
+        return member.events.findIndex(e => e.uuid !== this.event.uuid) !== -1
+      },
+      isEligible (member) {
+        return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
+      },
+      isAssignedToThisEvent (member) {
+        return member.events.findIndex(e => e.uuid === this.event.uuid) !== -1
+      },
+      isDeclined (member) {
+        return member.events.findIndex(e => e.uuid === this.event.uuid && e.declined) !== -1
+      },
+      manageButtonLabel (item) {
+        if (this.isEligible(item)) {
+          if (this.isDeclined(item)) { return 'Declined' }
+          if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
+        }
+
+        if (this.hasBookedAnEvent(item)) { return 'Booked' }
+
+        if (item['has_expired_licences_docs']) { return 'Expired' }
+
+        return ''
+      },
+      onManageClicked (item) {
+        if (this.manageButtonLabel(item) === 'Assign') {
+          this.$emit('assign', item)
+        }
+      },
+      manageButtonClass (item) {
+        const label = this.manageButtonLabel(item)
+        return {
+          'primary': label === 'Assign',
+          'blue-grey lighten-5': ['Expired', 'Booked'].includes(label),
+          'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(label)
+        }
+      }
     }
   }
-}
 </script>
