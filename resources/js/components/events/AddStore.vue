@@ -173,138 +173,138 @@
   </div>
 </template>
 <script>
-  import get from 'lodash/get'
-  import _uniq from 'lodash/uniq'
+import get from 'lodash/get'
+import _uniq from 'lodash/uniq'
 
-  export const HEADERS = [
-    { text: 'Fleet member', value: 'name' },
-    { text: 'State of incorporation', value: 'state_of_incorporation' },
-    { text: 'Tags', value: 'tags' },
-    { text: 'Manage' }
-  ]
-  export default {
-    props: {
-      stores: {
-        type: Array,
-        default: () => []
-      },
-      event: {
-        type: Object,
-        required: true
-      },
-      storeTypes: {
-        type: Array,
-        default: () => []
-      }
+export const HEADERS = [
+  { text: 'Fleet member', value: 'name' },
+  { text: 'State of incorporation', value: 'state_of_incorporation' },
+  { text: 'Tags', value: 'tags' },
+  { text: 'Manage' }
+]
+export default {
+  props: {
+    stores: {
+      type: Array,
+      default: () => []
     },
-    data () {
-      return {
-        searchText: '',
-        selectedState: '',
-        selectedType: '',
-        selectedTags: [],
-        pagination: {
-          rowsPerPage: 5,
-          page: 1
-        },
-        page: 1,
-        showFilters: false,
-        selected: [],
-        headers: HEADERS
-      }
+    event: {
+      type: Object,
+      required: true
     },
-    computed: {
-      pages () {
-        if (this.pagination.rowsPerPage == null ||
+    storeTypes: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data () {
+    return {
+      searchText: '',
+      selectedState: '',
+      selectedType: '',
+      selectedTags: [],
+      pagination: {
+        rowsPerPage: 5,
+        page: 1
+      },
+      page: 1,
+      showFilters: false,
+      selected: [],
+      headers: HEADERS
+    }
+  },
+  computed: {
+    pages () {
+      if (this.pagination.rowsPerPage == null ||
           this.totalItems == null
-        ) return 0
+      ) return 0
 
-        return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
-      },
+      return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
+    },
 
-      filteredStores () {
-        let items = this.stores
+    filteredStores () {
+      let items = this.stores
 
-        if (this.selectedState) {
-          items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
-        }
+      if (this.selectedState) {
+        items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
+      }
 
-        if (this.selectedType) {
-          items = items.filter(i => i['type_id'] === this.selectedType)
-        }
+      if (this.selectedType) {
+        items = items.filter(i => i['type_id'] === this.selectedType)
+      }
 
-        if (this.selectedTags.length) {
-          items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
-        }
+      if (this.selectedTags.length) {
+        items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
+      }
 
-        return items
-      },
-      totalItems () {
-        return this.filteredStores.length
-      },
-      locations () {
-        return _uniq(this.stores.map(m => m['state_of_incorporation']))
-      },
-      tags () {
-        const ts = []
-        this.stores.forEach(m => ts.push(...m['tags']))
-        return _uniq(ts)
-      },
-      storeTypesById () {
-        return this.storeTypes.reduce((map, type) => {
-          map[type.id] = type
-          return map
-        }, {})
+      return items
+    },
+    totalItems () {
+      return this.filteredStores.length
+    },
+    locations () {
+      return _uniq(this.stores.map(m => m['state_of_incorporation']))
+    },
+    tags () {
+      const ts = []
+      this.stores.forEach(m => ts.push(...m['tags']))
+      return _uniq(ts)
+    },
+    storeTypesById () {
+      return this.storeTypes.reduce((map, type) => {
+        map[type.id] = type
+        return map
+      }, {})
+    }
+  },
+  methods: {
+    get,
+    toggleShowFilter () {
+      this.showFilters = !this.showFilters
+    },
+
+    clearAllFilters () {
+      this.selectedState = ''
+      this.selectedType = ''
+      this.selectedTags = []
+    },
+    hasBookedAnEvent (member) {
+      return member.events.findIndex(e => e.uuid !== this.event.uuid) !== -1
+    },
+    isEligible (member) {
+      return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
+    },
+    isAssignedToThisEvent (member) {
+      return member.events.findIndex(e => e.uuid === this.event.uuid) !== -1
+    },
+    isDeclined (member) {
+      return member.events.findIndex(e => e.uuid === this.event.uuid && e.declined) !== -1
+    },
+    manageButtonLabel (item) {
+      if (this.isEligible(item)) {
+        if (this.isDeclined(item)) { return 'Declined' }
+        if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
+      }
+
+      if (this.hasBookedAnEvent(item)) { return 'Booked' }
+
+      if (item['has_expired_licences_docs']) { return 'Expired' }
+
+      return ''
+    },
+    onManageClicked (item) {
+      if (this.manageButtonLabel(item) === 'Assign') {
+        this.$emit('assign', item)
       }
     },
-    methods: {
-      get,
-      toggleShowFilter () {
-        this.showFilters = !this.showFilters
-      },
-
-      clearAllFilters () {
-        this.selectedState = ''
-        this.selectedType = ''
-        this.selectedTags = []
-      },
-      hasBookedAnEvent (member) {
-        return member.events.findIndex(e => e.uuid !== this.event.uuid) !== -1
-      },
-      isEligible (member) {
-        return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
-      },
-      isAssignedToThisEvent (member) {
-        return member.events.findIndex(e => e.uuid === this.event.uuid) !== -1
-      },
-      isDeclined (member) {
-        return member.events.findIndex(e => e.uuid === this.event.uuid && e.declined) !== -1
-      },
-      manageButtonLabel (item) {
-        if (this.isEligible(item)) {
-          if (this.isDeclined(item)) { return 'Declined' }
-          if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
-        }
-
-        if (this.hasBookedAnEvent(item)) { return 'Booked' }
-
-        if (item['has_expired_licences_docs']) { return 'Expired' }
-
-        return ''
-      },
-      onManageClicked (item) {
-        if (this.manageButtonLabel(item) === 'Assign') {
-          this.$emit('assign', item)
-        }
-      },
-      manageButtonClass (item) {
-        const label = this.manageButtonLabel(item)
-        return {
-          'primary': label === 'Assign',
-          'blue-grey lighten-5': ['Expired', 'Booked'].includes(label),
-          'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(label)
-        }
+    manageButtonClass (item) {
+      const label = this.manageButtonLabel(item)
+      return {
+        'primary': label === 'Assign',
+        'blue-grey lighten-5': ['Expired', 'Booked'].includes(label),
+        'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(label)
       }
     }
   }
+}
 </script>

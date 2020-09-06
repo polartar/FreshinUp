@@ -3,7 +3,6 @@ import Component from '~/components/events/AddStore.vue'
 
 import * as Stories from '~/components/events/AddStore.stories'
 import { FIXTURE_STORES } from '../../__data__/stores'
-import { FIXTURE_EVENT } from '../../__data__/event'
 import { FIXTURE_STORE_TYPES } from '../../__data__/storeTypes'
 
 describe('Add member (store) in event component', () => {
