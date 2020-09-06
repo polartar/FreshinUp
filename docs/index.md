@@ -44,6 +44,11 @@
 
 # Changes
 
+## September 6, 2020
+- **ADD** Persisting changes on event [#445](https://github.com/FreshinUp/foodfleet/issues/445)
+
+<br/>
+
 ## September 4, 2020
 - **ADD** Status helper function is created for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
 - **ADD** Populate Venue details UI. [#425](https://github.com/FreshinUp/foodfleet/issues/425)
