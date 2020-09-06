@@ -1,7 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/fleet-members/StatusSelect.vue'
 import * as Stories from '~/components/fleet-members/StatusSelect.stories'
-import { FIXTURE_FLEET_MEMBERS_STATUSES } from 'tests/__data__/fleet-members'
+import { FIXTURE_STORE_STATUSES } from '../../__data__/storeStatuses'
 
 describe('components/fleet-members/StatusSelect', () => {
   describe('Visuals', () => {
@@ -32,18 +32,18 @@ describe('components/fleet-members/StatusSelect', () => {
       expect(wrapper.vm.options).toHaveLength(0)
 
       wrapper.setProps({
-        options: FIXTURE_FLEET_MEMBERS_STATUSES
+        options: FIXTURE_STORE_STATUSES
       })
-      expect(wrapper.vm.options).toEqual(FIXTURE_FLEET_MEMBERS_STATUSES)
+      expect(wrapper.vm.options).toEqual(FIXTURE_STORE_STATUSES)
     })
     test('items', () => {
       const wrapper = shallowMount(Component)
       expect(wrapper.vm.items).toHaveLength(0)
 
       wrapper.setProps({
-        options: FIXTURE_FLEET_MEMBERS_STATUSES
+        options: FIXTURE_STORE_STATUSES
       })
-      const expectations = FIXTURE_FLEET_MEMBERS_STATUSES.map(option => ({
+      const expectations = FIXTURE_STORE_STATUSES.map(option => ({
         label: option.name,
         id: option.id,
         color: 'warning'

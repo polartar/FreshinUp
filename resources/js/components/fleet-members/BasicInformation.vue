@@ -21,7 +21,7 @@
               Fleet member name
             </div>
             <v-text-field
-              v-model="memberData.name"
+              v-model="storeData.name"
               placeholder="Name"
               single-line
               outline
@@ -32,7 +32,7 @@
               Type
             </div>
             <v-select
-              v-model="memberData.type"
+              v-model="storeData.type_id"
               :items="types"
               item-text="name"
               item-value="id"
@@ -52,12 +52,12 @@
             />
           </v-flex>
           <v-flex
-            v-if="memberData.tags.length"
+            v-if="storeData.tags.length"
             xs12
             pb-4
           >
             <v-chip
-              v-for="(tag, index) of memberData.tags"
+              v-for="(tag, index) of storeData.tags"
               :key="index"
               close
               color="orange"
@@ -73,7 +73,7 @@
               Pos system
             </div>
             <v-select
-              v-model="memberData.pos_system"
+              v-model="storeData.pos_system"
               :items="locations"
               single-line
               outline
@@ -103,7 +103,7 @@
               </v-tooltip>
             </div>
             <v-select
-              v-model="memberData.business_name"
+              v-model="storeData.business_name"
               :items="[]"
               single-line
               outline
@@ -117,7 +117,7 @@
               Size of the truck / trailer
             </div>
             <v-text-field
-              v-model="memberData.size_of_truck_trailer"
+              v-model="storeData.size_of_truck_trailer"
               placeholder="input value"
               single-line
               outline
@@ -128,7 +128,7 @@
               Owned by
             </div>
             <v-text-field
-              v-model="memberData.owner"
+              v-model="storeData.owner"
               label="Name"
               single-line
               outline
@@ -142,7 +142,7 @@
               Contact phone
             </div>
             <v-text-field
-              v-model="memberData.phone"
+              v-model="storeData.phone"
               placeholder="Phone"
               single-line
               outline
@@ -156,7 +156,7 @@
               State of incorporation
             </div>
             <v-text-field
-              v-model="memberData.state_of_incorporation"
+              v-model="storeData.state_of_incorporation"
               placeholder="State"
               single-line
               outline
@@ -170,7 +170,7 @@
               Website
             </div>
             <v-text-field
-              v-model="memberData.website"
+              v-model="storeData.website"
               placeholder="www.example.com"
               single-line
               outline
@@ -184,7 +184,7 @@
               Facebook
             </div>
             <v-text-field
-              v-model="memberData.facebook"
+              v-model="storeData.facebook"
               placeholder="facebook account"
               single-line
               outline
@@ -198,7 +198,7 @@
               Twitter
             </div>
             <v-text-field
-              v-model="memberData.twitter"
+              v-model="storeData.twitter"
               placeholder="Twitter account"
               single-line
               outline
@@ -212,7 +212,7 @@
               Instagram
             </div>
             <v-text-field
-              v-model="memberData.instagram"
+              v-model="storeData.instagram"
               placeholder="Instagram account"
               single-line
               outline
@@ -223,7 +223,7 @@
               Food fleet staff notes
             </div>
             <v-textarea
-              v-model="memberData.staff_notes"
+              v-model="storeData.staff_notes"
               placeholder="Food fleet staff notes"
               single-line
               outline
@@ -250,10 +250,14 @@
           <v-btn
             depressed
             color="primary"
+            disabled
           >
             Upload Image
           </v-btn>
-          <v-btn depressed>
+          <v-btn
+            depressed
+            disabled
+          >
             Delete Image
           </v-btn>
         </div>
@@ -282,6 +286,7 @@
       >
         <v-btn
           depressed
+          disabled
           @click="onDeleteMember"
         >
           Delete Fleet Member
@@ -295,16 +300,14 @@ import { get } from 'lodash'
 
 export default {
   props: {
-    member: {
+    store: {
       type: Object,
       default: null
     },
-
     types: {
       type: Array,
       default: () => []
     },
-
     locations: {
       type: Array,
       default: () => []
@@ -312,23 +315,23 @@ export default {
   },
 
   data () {
-    let edit = get(this.member, 'uuid') !== null
+    let edit = get(this.store, 'uuid') !== null
     return {
-      memberData: {
-        name: edit ? get(this.member, 'name') : '',
-        type: edit ? get(this.member, 'type_id') : null,
-        tags: edit ? get(this.member, 'tags', []) : [],
-        pos_system: edit ? get(this.member, 'pos_system') : '',
-        business_name: edit ? get(this.member, 'business_name') : '',
-        size_of_truck_trailer: edit ? get(this.member, 'size_of_truck_trailer') : '',
-        owner: edit ? get(this.member, 'owner') : '',
-        phone: edit ? get(this.member, 'phone') : '',
-        state_of_incorporation: edit ? get(this.member, 'state_of_incorporation') : '',
-        website: edit ? get(this.member, 'website') : '',
-        twitter: edit ? get(this.member, 'twitter') : '',
-        facebook: edit ? get(this.member, 'facebook') : '',
-        instagram: edit ? get(this.member, 'instagram') : '',
-        staff_notes: edit ? get(this.member, 'staff_notes') : ''
+      storeData: {
+        name: edit ? get(this.store, 'name') : '',
+        type_id: edit ? get(this.store, 'type_id') : null,
+        tags: edit ? get(this.store, 'tags', []) : [],
+        pos_system: edit ? get(this.store, 'pos_system') : '',
+        business_name: edit ? get(this.store, 'business_name') : '',
+        size_of_truck_trailer: edit ? get(this.store, 'size_of_truck_trailer') : '',
+        owner: edit ? get(this.store, 'owner') : '',
+        phone: edit ? get(this.store, 'phone') : '',
+        state_of_incorporation: edit ? get(this.store, 'state_of_incorporation') : '',
+        website: edit ? get(this.store, 'website') : '',
+        twitter: edit ? get(this.store, 'twitter') : '',
+        facebook: edit ? get(this.store, 'facebook') : '',
+        instagram: edit ? get(this.store, 'instagram') : '',
+        staff_notes: edit ? get(this.store, 'staff_notes') : ''
       },
       edit: edit,
       tagText: ''
@@ -341,11 +344,11 @@ export default {
     },
 
     onSaveChanges () {
-      this.$emit('save', this.memberData)
+      this.$emit('save', this.storeData)
     },
 
     onDeleteMember () {
-      this.$emit('delete', this.memberData)
+      this.$emit('delete', this.storeData)
     }
   }
 }

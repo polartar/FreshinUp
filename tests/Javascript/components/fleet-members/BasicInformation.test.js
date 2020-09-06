@@ -1,7 +1,7 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import * as Stories from '~/components/fleet-members/BasicInformation.stories'
 import Component from '~/components/fleet-members/BasicInformation.vue'
-import { FIXTURE_FLEET_MEMBER } from '../../__data__/fleet-members'
+import { FIXTURE_STORE } from '../../__data__/stores'
 
 describe('fleet-members/BasicInformation', () => {
   describe('Snapshots', () => {
@@ -30,13 +30,13 @@ describe('fleet-members/BasicInformation', () => {
       })
 
       wrapper.setData({
-        memberData: FIXTURE_FLEET_MEMBER
+        storeData: FIXTURE_STORE
       })
 
       wrapper.vm.onSaveChanges()
       expect(wrapper.emitted().save).toBeTruthy()
       const saveData = wrapper.emitted().save[0][0]
-      expect(saveData).toEqual(FIXTURE_FLEET_MEMBER)
+      expect(saveData).toEqual(FIXTURE_STORE)
     })
 
     test('On cancel', () => {
@@ -54,13 +54,13 @@ describe('fleet-members/BasicInformation', () => {
       })
 
       wrapper.setData({
-        memberData: FIXTURE_FLEET_MEMBER
+        storeData: FIXTURE_STORE
       })
 
       wrapper.vm.onDeleteMember()
       expect(wrapper.emitted().delete).toBeTruthy()
       const deleteData = wrapper.emitted().delete[0][0]
-      expect(deleteData).toEqual(FIXTURE_FLEET_MEMBER)
+      expect(deleteData).toEqual(FIXTURE_STORE)
     })
   })
 })

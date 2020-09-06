@@ -63,6 +63,7 @@
           py-2
         >
           <basic-information
+            :types="storeTypes"
             @save="saveMember"
             @delete="deleteMember"
             @cancel="onCancel"
@@ -75,7 +76,7 @@
           <DocumentList
             :docs="docs"
             :statuses="statuses"
-            :types="types"
+            :types="documentTypes"
             :sortables="sortables"
             :rows-per-page="pagination.rowsPerPage"
             :page="pagination.page"
@@ -161,7 +162,8 @@ export default {
   computed: {
     ...mapGetters('stores', { store: 'item' }),
     ...mapGetters('documents', { docs: 'items' }),
-    ...mapGetters('documentTypes', { types: 'items' }),
+    ...mapGetters('documentTypes', { documentTypes: 'items' }),
+    ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapGetters('storeStatuses', { statuses: 'items' }),
     ...mapFields('stores', [
@@ -197,6 +199,7 @@ export default {
     vm.$store.dispatch('page/setLoading', true)
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
+    promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

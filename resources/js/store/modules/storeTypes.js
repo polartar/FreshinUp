@@ -1,5 +1,5 @@
 import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
 
 export default ({ items, item }) => {
-  return makeRestStore('foodfleet/document-statuses', { items, item })
+  return makeRestStore('foodfleet/store/types', { items, item })
 }
