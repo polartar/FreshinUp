@@ -281,7 +281,7 @@ describe('events/VenueDetails', () => {
       expect(emitted.input).toBeTruthy()
       expect(emitted.input[0][0]).toMatchObject({
         uuid: newLocation.uuid,
-        venue_uuid: newLocation.venue_uuid,
+        venue_uuid: newLocation.venue_uuid
       })
     })
   })

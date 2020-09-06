@@ -543,7 +543,7 @@ export default {
       promises.push(vm.$store.dispatch('eventHistories/getItems'))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
-    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' }}))
+    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

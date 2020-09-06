@@ -44,7 +44,7 @@ export const SelectedVenue = () => ({
   data () {
     return {
       venues: FIXTURE_VENUES,
-      venueUuid: FIXTURE_VENUES[0].uuid,
+      venueUuid: FIXTURE_VENUES[0].uuid
     }
   },
   template: `

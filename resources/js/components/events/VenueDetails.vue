@@ -212,7 +212,7 @@ export default {
     return {
       location: DEFAULT_LOCATION,
       showMoreActivated: false,
-      locationDetailMaxChar: 300,
+      locationDetailMaxChar: 300
     }
   },
 
