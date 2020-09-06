@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_EVENT } from 'tests/__data__/event'
-import { FIXTURE_STORE } from 'tests/__data__/store'
+import { FIXTURE_STORE } from 'tests/__data__/stores'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
 import { FIXTURE_MENUS } from 'tests/__data__/menus'
@@ -70,7 +70,7 @@ describe('Event StoreDetails Component', () => {
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.store.name).toContain(FIXTURE_STORE.name)
-      expect(wrapper.vm.event.uuid).toBe(FIXTURE_STORE.uuid)
+      expect(wrapper.vm.event.uuid).toBe(FIXTURE_EVENT.uuid)
       expect(wrapper.element).toMatchSnapshot()
     })
   })

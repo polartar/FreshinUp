@@ -14,9 +14,11 @@ import transactions from './modules/transactions'
 import companyDetails from './modules/companyDetails'
 import eventSummary from './modules/eventSummary'
 import eventTypes from './modules/eventTypes'
-// import eventHistories from './modules/eventHistories'
+import eventHistories from './modules/eventHistories'
 import venues from './modules/venues'
 import stores from './modules/stores'
+import storeStatuses from './modules/storeStatuses'
+import storeTypes from './modules/storeTypes'
 
 export default (initialState = {}) => {
   return createStore(
@@ -37,9 +39,11 @@ export default (initialState = {}) => {
         companyDetails: companyDetails({}),
         eventSummary: eventSummary({}),
         eventTypes: eventTypes({}),
-        // eventHistories: eventHistories({}),
+        eventHistories: eventHistories({}),
         venues: venues({}),
-        stores: stores({})
+        stores: stores({}),
+        storeStatuses: storeStatuses({}),
+        storeTypes: storeTypes({})
       }
     }
   )

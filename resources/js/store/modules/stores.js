@@ -1,7 +1,7 @@
 import makeRestStore, {
   buildApi,
   makeModule
-} from 'fresh-bus/store/utils/makeRestStore'
+} from '@freshinup/core-ui/src/store/utils/makeRestStore'
 
 export default ({ items, item }) => {
   const storesApi = buildApi('foodfleet/stores', { items, item })

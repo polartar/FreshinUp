@@ -1,29 +1,20 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/AddStoreList.vue'
+import * as Stories from '~/components/events/AddStoreList.stories'
 import { FIXTURE_STORES } from 'tests/__data__/stores'
 
 describe('Store List component', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
-    test('stores set', () => {
+    test('Set', () => {
       localVue = createLocalVue()
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          stores: FIXTURE_STORES
-        }
-      })
+      const wrapper = mount(Stories.Set())
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('stores empty', () => {
+    test('Empty', () => {
       localVue = createLocalVue()
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          stores: []
-        }
-      })
+      const wrapper = mount(Stories.Empty())
       expect(wrapper.element).toMatchSnapshot()
     })
   })

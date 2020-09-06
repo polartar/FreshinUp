@@ -52,7 +52,7 @@
             >
               <v-select
                 v-model="selectedType"
-                :items="memberTypes"
+                :items="storeTypes"
                 item-value="id"
                 item-text="name"
                 label="Type"
@@ -95,7 +95,7 @@
       <v-data-table
         v-model="selected"
         :headers="headers"
-        :items="filteredMembers"
+        :items="filteredStores"
         :search="searchText"
         item-key="uuid"
         hide-actions
@@ -133,7 +133,7 @@
             <div
               class="grey--text text--darken-2"
             >
-              {{ typeName(get(props, 'item.type_id', 0)) }}
+              {{ get(storeTypesById, 'props.item.type_id') }}
             </div>
           </td>
           <td class="py-2">
@@ -176,9 +176,15 @@
 import get from 'lodash/get'
 import _uniq from 'lodash/uniq'
 
+export const HEADERS = [
+  { text: 'Fleet member', value: 'name' },
+  { text: 'State of incorporation', value: 'state_of_incorporation' },
+  { text: 'Tags', value: 'tags' },
+  { text: 'Manage' }
+]
 export default {
   props: {
-    members: {
+    stores: {
       type: Array,
       default: () => []
     },
@@ -186,7 +192,7 @@ export default {
       type: Object,
       required: true
     },
-    memberTypes: {
+    storeTypes: {
       type: Array,
       default: () => []
     }
@@ -204,25 +210,20 @@ export default {
       page: 1,
       showFilters: false,
       selected: [],
-      headers: [
-        { text: 'Fleet member', value: 'name' },
-        { text: 'State of incorporation', value: 'state_of_incorporation' },
-        { text: 'Tags', value: 'tags' },
-        { text: 'Manage' }
-      ]
+      headers: HEADERS
     }
   },
   computed: {
     pages () {
       if (this.pagination.rowsPerPage == null ||
-        this.totalItems == null
+          this.totalItems == null
       ) return 0
 
       return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
     },
 
-    filteredMembers () {
-      let items = this.members
+    filteredStores () {
+      let items = this.stores
 
       if (this.selectedState) {
         items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
@@ -238,21 +239,22 @@ export default {
 
       return items
     },
-
     totalItems () {
-      return this.filteredMembers.length
+      return this.filteredStores.length
     },
-
     locations () {
-      return _uniq(this.members.map(m => m['state_of_incorporation']))
+      return _uniq(this.stores.map(m => m['state_of_incorporation']))
     },
-
     tags () {
       const ts = []
-
-      this.members.forEach(m => ts.push(...m['tags']))
-
+      this.stores.forEach(m => ts.push(...m['tags']))
       return _uniq(ts)
+    },
+    storeTypesById () {
+      return this.storeTypes.reduce((map, type) => {
+        map[type.id] = type
+        return map
+      }, {})
     }
   },
   methods: {
@@ -266,23 +268,18 @@ export default {
       this.selectedType = ''
       this.selectedTags = []
     },
-
     hasBookedAnEvent (member) {
-      return !!member.events.find(e => e.start_at === this.event.start_at && e.uuid !== this.event.uuid)
+      return member.events.findIndex(e => e.uuid !== this.event.uuid) !== -1
     },
-
     isEligible (member) {
       return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
     },
-
     isAssignedToThisEvent (member) {
-      return !!member.events.find(e => e.uuid === this.event.uuid)
+      return member.events.findIndex(e => e.uuid === this.event.uuid) !== -1
     },
-
     isDeclined (member) {
-      return !!member.events.find(e => e.uuid === this.event.uuid && e.declined)
+      return member.events.findIndex(e => e.uuid === this.event.uuid && e.declined) !== -1
     },
-
     manageButtonLabel (item) {
       if (this.isEligible(item)) {
         if (this.isDeclined(item)) { return 'Declined' }
@@ -295,25 +292,18 @@ export default {
 
       return ''
     },
-
     onManageClicked (item) {
       if (this.manageButtonLabel(item) === 'Assign') {
         this.$emit('assign', item)
       }
     },
-
     manageButtonClass (item) {
+      const label = this.manageButtonLabel(item)
       return {
-        'primary': this.manageButtonLabel(item) === 'Assign',
-        'blue-grey lighten-5': ['Expired', 'Booked'].includes(this.manageButtonLabel(item)),
-        'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(this.manageButtonLabel(item))
+        'primary': label === 'Assign',
+        'blue-grey lighten-5': ['Expired', 'Booked'].includes(label),
+        'blue-grey lighten-3 white--text': ['Declined', 'Assigned'].includes(label)
       }
-    },
-
-    typeName (id) {
-      const type = this.memberTypes.find(t => t.id === id)
-
-      return type ? type['name'] : ''
     }
   }
 }

@@ -1,5 +1,4 @@
-export const STORE_TYPES = [
-  { uuid: 1, name: 'modi' },
-  { uuid: 2, name: 'ipsum' },
-  { uuid: 3, name: 'architecto' }
+export const FIXTURE_STORE_TYPES = [
+  { id: 1, name: 'Mobile' },
+  { id: 2, name: 'Stationery' }
 ]

@@ -2,11 +2,13 @@
 
 namespace App\Models\Foodfleet;
 
-class Company extends \FreshinUp\FreshBusForms\Models\Company\Company
+use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
+
+class Company extends BusCompany
 {
     public function getMorphClass()
     {
-        return 'FreshinUp\FreshBusForms\Models\Company\Company';
+        return BusCompany::class;
     }
 
     public function stores()
