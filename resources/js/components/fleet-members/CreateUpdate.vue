@@ -50,7 +50,7 @@
           </v-layout>
         </v-flex>
       </v-flex>
-      <v-divider />
+      <v-divider/>
       <br>
       <v-layout
         justify-space-around
@@ -64,6 +64,7 @@
         >
           <basic-information
             :types="storeTypes"
+            :locations="locations"
             @save="saveMember"
             @delete="deleteMember"
             @cancel="onCancel"
@@ -89,7 +90,7 @@
           xs12
           py-2
         >
-          <payments />
+          <payments/>
         </v-flex>
         <v-flex
           xs12
@@ -103,129 +104,149 @@
           xs12
           py-2
         >
-          <AreasOfOperation />
-          <Menu />
+          <AreasOfOperation/>
+          <Menu/>
         </v-flex>
       </v-layout>
     </v-form>
   </div>
 </template>
 <script>
-import BasicInformation from './BasicInformation'
-import Payments from './Payments'
-import DocumentList from './DocumentList'
-import { mapGetters } from 'vuex'
-import Events from './Events'
-import AreasOfOperation from './AreasOfOperation'
-import Menu from './Menu'
-import StatusSelect from './StatusSelect'
-import { createHelpers } from 'vuex-map-fields'
+  import BasicInformation from './BasicInformation'
+  import Payments from './Payments'
+  import DocumentList from './DocumentList'
+  import { mapGetters } from 'vuex'
+  import Events from './Events'
+  import AreasOfOperation from './AreasOfOperation'
+  import Menu from './Menu'
+  import StatusSelect from './StatusSelect'
+  import { createHelpers } from 'vuex-map-fields'
+  import Validate from 'fresh-bus/components/mixins/Validate'
 
-const { mapFields } = createHelpers({
-  getterType: 'getField',
-  mutationType: 'updateField'
-})
+  const { mapFields } = createHelpers({
+    getterType: 'getField',
+    mutationType: 'updateField'
+  })
 
-export default {
-  layout: 'admin',
-  components: {
-    BasicInformation,
-    DocumentList,
-    Payments,
-    Events,
-    AreasOfOperation,
-    Menu,
-    StatusSelect
-  },
-  data () {
-    return {
-      pagination: {
-        page: 1,
-        rowsPerPage: 10,
-        totalItems: 5
-      },
-      sorting: {
-        descending: false,
-        sortBy: ''
-      },
-      sortables: [
-        { value: '-created_at', text: 'Newest' },
-        { value: 'created_at', text: 'Oldest' },
-        { value: 'title', text: 'Title (A - Z)' },
-        { value: '-title', text: 'Title (Z - A)' }
-      ],
-      events: ['Event will populate once your restaurant is assigned.'],
-      fleetMemberLoading: false,
-      isNew: false
-    }
-  },
-  computed: {
-    ...mapGetters('stores', { store: 'item' }),
-    ...mapGetters('documents', { docs: 'items' }),
-    ...mapGetters('documentTypes', { documentTypes: 'items' }),
-    ...mapGetters('storeTypes', { storeTypes: 'items' }),
-    ...mapGetters('documentStatuses', { statuses: 'items' }),
-    ...mapGetters('storeStatuses', { statuses: 'items' }),
-    ...mapFields('stores', [
-      'status_id'
-    ]),
-    isLoading () {
-      return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
+  export default {
+    layout: 'admin',
+    components: {
+      BasicInformation,
+      DocumentList,
+      Payments,
+      Events,
+      AreasOfOperation,
+      Menu,
+      StatusSelect
     },
-    pageTitle () {
-      return (this.isNew ? 'New Fleet Member' : 'Fleet Member Details')
-    }
-  },
-  methods: {
-    saveMember (item) {},
-
-    deleteMember (item) {},
-
-    onCancel () {
-      this.$router.push('/admin/fleet-members')
+    mixins: [Validate],
+    data () {
+      return {
+        locations: ['Square'], // TODO: static to Square only until we know better
+        pagination: {
+          page: 1,
+          rowsPerPage: 10,
+          totalItems: 5
+        },
+        sorting: {
+          descending: false,
+          sortBy: ''
+        },
+        sortables: [
+          { value: '-created_at', text: 'Newest' },
+          { value: 'created_at', text: 'Oldest' },
+          { value: 'title', text: 'Title (A - Z)' },
+          { value: '-title', text: 'Title (Z - A)' }
+        ],
+        events: ['Event will populate once your restaurant is assigned.'],
+        fleetMemberLoading: false,
+        isNew: false
+      }
     },
-    backToList () {
-      this.$router.push({ path: '/admin/fleet-members' })
-    }
-  },
+    computed: {
+      ...mapGetters('stores', { store: 'item' }),
+      ...mapGetters('documents', { docs: 'items' }),
+      ...mapGetters('documentTypes', { documentTypes: 'items' }),
+      ...mapGetters('storeTypes', { storeTypes: 'items' }),
+      ...mapGetters('documentStatuses', { statuses: 'items' }),
+      ...mapGetters('storeStatuses', { statuses: 'items' }),
+      ...mapFields('stores', [
+        'status_id'
+      ]),
+      isLoading () {
+        return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
+      },
+      pageTitle () {
+        return (this.isNew ? 'New Fleet Member' : 'Fleet Member Details')
+      }
+    },
+    methods: {
+      saveMember (item) {
+        this.$store.dispatch('page/setLoading', true)
+        this.$store.dispatch('store/createItem', { data: item })
+          .then(() => {
+            this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          })
+          .catch(error => {
+            const message = get(error, 'response.message', error.message)
+            this.$store.dispatch('generalErrorMessages/setErrors', message)
+          })
+          .then(() => {
+            this.$store.dispatch('page/setLoading', false)
+          })
+      },
 
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
-    const id = to.params.id || 'new'
-    const promises = []
-    let params = { id }
-    if (id !== 'new') {
-      promises.push(vm.$store.dispatch('documents/getItem', { params: params }))
+      deleteMember (item) {},
+
+      onCancel () {
+        this.$router.push('/admin/fleet-members')
+      },
+      backToList () {
+        this.$router.push({ path: '/admin/fleet-members' })
+      }
+    },
+
+    beforeRouteEnterOrUpdate (vm, to, from, next) {
+      const id = to.params.id || 'new'
+      const promises = []
+      let params = { id }
+      if (id !== 'new') {
+        promises.push(vm.$store.dispatch('documents/getItem', { params: params }))
+        vm.fleetMemberLoading = true
+        vm.$store.dispatch('stores/getItem', { params })
+          .then()
+          .catch(error => {
+            console.error(error)
+            vm.$router.push({ path: '/admin/fleet-members' })
+          })
+          .then(() => {
+            vm.fleetMemberLoading = false
+          })
+      }
+      vm.$store.dispatch('page/setLoading', true)
+      promises.push(vm.$store.dispatch('companies/squareLocations/getItems', {
+        params: {
+          id: vm.$store.getters.currentUser.company_id
+        }
+      }))
+      promises.push(vm.$store.dispatch('documentStatuses/getItems'))
+      promises.push(vm.$store.dispatch('documentTypes/getItems'))
+      promises.push(vm.$store.dispatch('storeTypes/getItems'))
+      promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      Promise.all(promises)
+        .then(() => {})
+        .catch((error) => {
+          console.error(error)
+        })
+        .then(() => {
+          vm.$store.dispatch('page/setLoading', false)
+          if (next) next()
+        })
     }
-    vm.$store.dispatch('page/setLoading', true)
-    promises.push(vm.$store.dispatch('documentStatuses/getItems'))
-    promises.push(vm.$store.dispatch('documentTypes/getItems'))
-    promises.push(vm.$store.dispatch('storeTypes/getItems'))
-    promises.push(vm.$store.dispatch('storeStatuses/getItems'))
-    vm.$store.dispatch('page/setLoading', true)
-    vm.eventLoading = true
-    vm.$store.dispatch('stores/getItem', { params })
-      .then()
-      .catch(error => {
-        console.error(error)
-        vm.$router.push({ path: '/admin/fleet-members' })
-      })
-      .then(() => {
-        vm.fleetMemberLoading = false
-      })
-    Promise.all(promises)
-      .then(() => {})
-      .catch((error) => {
-        console.error(error)
-      })
-      .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
-        if (next) next()
-      })
   }
-}
 </script>
 <style scoped>
-  .back-btn-inner{
+  .back-btn-inner {
     color: #fff;
     display: flex;
     align-items: center;
