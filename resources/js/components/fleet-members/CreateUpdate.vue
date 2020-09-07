@@ -1,5 +1,20 @@
 <template>
   <div>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="snackbarTimeout"
+      :color="snackbarColor"
+      top
+    >
+      {{ snackbarText }}
+      <v-btn
+        color="pink"
+        flat
+        @click="snackbar = false"
+      >
+        dismiss
+      </v-btn>
+    </v-snackbar>
     <v-form
       v-if="!isLoading"
       ref="form"
@@ -156,7 +171,12 @@ export default {
       ],
       events: ['Event will populate once your restaurant is assigned.'],
       fleetMemberLoading: false,
-      isNew: false
+      isNew: false,
+
+      snackbar: false,
+      snackbarTimeout: 4000,
+      snackbarText: 'Test snackbar',
+      snackbarColor: ''
     }
   },
   computed: {
@@ -177,7 +197,13 @@ export default {
     }
   },
   methods: {
-    saveMember (item) {},
+    saveMember (item) {
+      this.snackbarText = 'Changes successfully saved.'
+      // this.snackbarText = 'Please make sure you add at least one menu item.'
+      // this.snackbarColor = 'error'
+
+      this.snackbar = true
+    },
 
     deleteMember (item) {},
 
