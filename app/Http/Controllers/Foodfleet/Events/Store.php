@@ -23,7 +23,13 @@ class Store extends Controller
     public function index(Request $request, $uuid)
     {
         $event = Event::where('uuid', $uuid)->firstOrFail();
-        $stores = QueryBuilder::for(StoreModel::whereIn('uuid', $event->stores()->pluck('stores.uuid')->toArray()), $request)
+        $stores = QueryBuilder::for(
+            StoreModel::whereIn(
+                'uuid',
+                $event->stores()->pluck('stores.uuid')->toArray()
+            ),
+            $request
+        )
             ->with('tags')
             ->allowedIncludes([
                 'addresses'
