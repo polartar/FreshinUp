@@ -10,14 +10,16 @@ class EventHistorySeeder extends Seeder
 
     public function run()
     {
+        EventHistory::truncate();
         $events = Event::get();
-        $status = EventStatus::get();
-
-        for ($i = 0; $i < 10; $i++) {
-            factory(EventHistory::class)->create([
-                'status_id' => $status->random()->id,
-                'event_uuid' => $events->random()->uuid
-            ]);
+        foreach ($events as $event) {
+            for ($i = 1; $i <= $event->status_id; $i++) {
+                factory(EventHistory::class)->create([
+                    'status_id' => $i,
+                    'event_uuid' => $event->uuid
+                ]);
+            }
         }
+
     }
 }

@@ -9878,7 +9878,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                       class="v-card__text grey--text"
                     >
                       <div
-                        class="v-timeline v-timeline--dense theme--light"
+                        class="v-timeline v-timeline--align-top v-timeline--dense theme--light"
                       >
                         <div
                           class="v-timeline-item theme--light"
@@ -9889,14 +9889,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                           >
                             <div
                               class="v-timeline-item__inner-dot warning lighten-2"
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon material-icons theme--dark"
-                              >
-                                check_circle_outline
-                              </i>
-                            </div>
+                            />
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -9920,7 +9913,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                
                               <div>
                                 <strong>
-                                  Draft : Completed
+                                  Draft
                                 </strong>
                                  
                                 <div
@@ -9974,7 +9967,7 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                                
                               <div>
                                 <strong>
-                                  FF Initial Review : Completed
+                                  FF Initial Review
                                 </strong>
                                  
                                 <div
@@ -9996,8 +9989,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="v-timeline-item__dot"
                           >
                             <div
-                              class="v-timeline-item__inner-dot grey lighten-2"
-                            />
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -10005,11 +10005,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="ff-event_status_timeline__item"
                             >
-                              <div />
+                              <div>
+                                <strong>
+                                  Aug. 20
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
                                
                               <div>
                                 <strong>
-                                  Customer Agreement 
+                                  Customer Agreement
                                 </strong>
                                  
                                 <div
@@ -10031,8 +10043,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="v-timeline-item__dot"
                           >
                             <div
-                              class="v-timeline-item__inner-dot grey lighten-2"
-                            />
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -10040,11 +10059,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="ff-event_status_timeline__item"
                             >
-                              <div />
+                              <div>
+                                <strong>
+                                  Aug. 21
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
                                
                               <div>
                                 <strong>
-                                  Fleet Member Selection 
+                                  Fleet Member Selection
                                 </strong>
                                  
                                 <div
@@ -10066,8 +10097,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="v-timeline-item__dot"
                           >
                             <div
-                              class="v-timeline-item__inner-dot grey lighten-2"
-                            />
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -10075,11 +10113,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="ff-event_status_timeline__item"
                             >
-                              <div />
+                              <div>
+                                <strong>
+                                  Aug. 22
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
                                
                               <div>
                                 <strong>
-                                  Customer Review 
+                                  Customer Review
                                 </strong>
                                  
                                 <div
@@ -10101,8 +10151,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="v-timeline-item__dot"
                           >
                             <div
-                              class="v-timeline-item__inner-dot grey lighten-2"
-                            />
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -10110,11 +10167,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="ff-event_status_timeline__item"
                             >
-                              <div />
+                              <div>
+                                <strong>
+                                  Aug. 23
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
                                
                               <div>
                                 <strong>
-                                  Fleet Member Contracts 
+                                  Fleet Member Contracts
                                 </strong>
                                  
                                 <div
@@ -10136,8 +10205,15 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             class="v-timeline-item__dot"
                           >
                             <div
-                              class="v-timeline-item__inner-dot grey lighten-2"
-                            />
+                              class="v-timeline-item__inner-dot success"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--dark"
+                              >
+                                check_circle_outline
+                              </i>
+                            </div>
                           </div>
                           <div
                             class="v-timeline-item__body"
@@ -10145,11 +10221,23 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
                             <div
                               class="ff-event_status_timeline__item"
                             >
-                              <div />
+                              <div>
+                                <strong>
+                                  Aug. 24
+                                </strong>
+                                 
+                                <p
+                                  class="caption mb-2"
+                                >
+                                  
+          09:58 PM
+        
+                                </p>
+                              </div>
                                
                               <div>
                                 <strong>
-                                  Confirmed 
+                                  Confirmed
                                 </strong>
                                  
                                 <div

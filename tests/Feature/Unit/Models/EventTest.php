@@ -64,7 +64,8 @@ class EventTest extends TestCase
         $this->assertEquals($transaction->uuid, $event->transactions->first()->uuid);
     }
 
-    public function testObserverWhenEventCreated () {
+    public function testObserverWhenEventCreated()
+    {
         $event = factory(Event::class)->make([
             'status_id' => EventStatusEnum::DRAFT
         ]);
@@ -76,10 +77,11 @@ class EventTest extends TestCase
         $this->assertEquals(1, EventHistory::where([
             'event_uuid' => $event->uuid,
             'status_id' => EventStatusEnum::DRAFT
-        ])->count());
+        ])->whereNotNull('date')->count());
     }
 
-    public function testObserverWhenEventUpdatedWithSameStatus () {
+    public function testObserverWhenEventUpdatedWithSameStatus()
+    {
         $event = factory(Event::class)->create();
         $this->assertEquals(1, EventHistory::where([
             'event_uuid' => $event->uuid,
@@ -94,7 +96,8 @@ class EventTest extends TestCase
         ])->count());
     }
 
-    public function testObserverWhenEventUpdatedWithDifferentStatus () {
+    public function testObserverWhenEventUpdatedWithDifferentStatus()
+    {
         $event = factory(Event::class)->create([
             'status_id' => EventStatusEnum::FF_INITIAL_REVIEW
         ]);
@@ -109,9 +112,15 @@ class EventTest extends TestCase
         $this->assertEquals(2, EventHistory::where([
             'event_uuid' => $event->uuid,
         ])->count());
+        $history = EventHistory::where([
+            'event_uuid' => $event->uuid,
+            'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
+        ])->first();
+        $this->assertNotNull($history->date);
     }
 
-    public function testObserverWhenEventDeleted () {
+    public function testObserverWhenEventDeleted()
+    {
         $event = factory(Event::class)->create();
         for ($i = 1; $i <= 9; $i++) {
             factory(EventHistory::class)->create([

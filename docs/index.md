@@ -44,6 +44,11 @@
 
 # Changes
 
+## September 7, 2020
+- **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)
+
+<br/>
+
 ## September 6, 2020
 - **ADD** Persisting changes on event [#445](https://github.com/FreshinUp/foodfleet/issues/445)
 

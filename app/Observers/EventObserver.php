@@ -18,6 +18,7 @@ class EventObserver
         EventHistory::create([
             'event_uuid' => $event->uuid,
             'status_id' => $event->status_id,
+            'date' => now()
         ]);
     }
 
@@ -29,10 +30,13 @@ class EventObserver
      */
     public function updated(Event $event)
     {
-        EventHistory::firstOrCreate([
-            'event_uuid' => $event->uuid,
-            'status_id' => $event->status_id,
-        ]);
+        if ($event->isDirty('status_id')) {
+            EventHistory::create([
+                'event_uuid' => $event->uuid,
+                'status_id' => $event->status_id,
+                'date' => now()
+            ]);
+        }
     }
 
     /**
