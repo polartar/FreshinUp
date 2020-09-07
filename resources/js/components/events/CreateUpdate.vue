@@ -200,7 +200,7 @@
                     <EventStatusTimeline
                       :statuses="statuses"
                       :histories="eventHistories"
-                      :status="event.status_id"
+                      :status="get(event, 'status_id')"
                     />
                   </v-card-text>
                   <v-divider />
@@ -445,22 +445,27 @@ export default {
         })
     },
     changeBasicInfo (data) {
-      this.event.attendees = data.attendees
-      this.event.budget = data.budget
-      this.event.commission_rate = data.commission_rate
-      this.event.commission_type = data.commission_type
-      this.event.type_id = data.type_id
-      this.event.start_at = data.start_at
-      this.event.end_at = data.end_at
-      this.event.staff_notes = data.staff_notes
-      this.event.member_notes = data.member_notes
-      this.event.customer_notes = data.customer_notes
-      this.event.event_tags = data.event_tags
-      this.event.host_uuid = data.host_uuid
-      this.event.manager_uuid = data.manager_uuid
-      this.event.name = data.name
-      this.event.schedule = data.schedule
-      this.event.event_recurring_checked = data.event_recurring_checked
+      const fields = [
+        'attendees',
+        'budget',
+        'commission_rate',
+        'commission_type',
+        'type_id',
+        'start_at',
+        'end_at',
+        'staff_notes',
+        'member_notes',
+        'customer_notes',
+        'event_tags',
+        'host_uuid',
+        'manager_uuid',
+        'name',
+        'schedule',
+        'event_recurring_checked'
+      ]
+      fields.forEach(field => {
+        this.event[field] = data[field]
+      })
     },
     async validator () {
       const valids = await Promise.all([

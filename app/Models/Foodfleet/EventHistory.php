@@ -15,17 +15,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property int status_id
  * @property EventStatus status
  * @property Carbon date
- * @property string description
- * @property bool completed
  */
 class EventHistory extends Model
 {
     public $timestamps = false;
     protected $dates = ['date'];
     protected $casts = [
-        'completed' => 'bool',
         'status_id' => 'int'
     ];
+    protected $guarded = [];
 
     public function event()
     {

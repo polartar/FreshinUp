@@ -23,9 +23,8 @@ class EventHistoryTest extends TestCase
             'id' => $eventHistory->id,
             'status_id' => $eventHistory->status_id,
             'event_uuid' => $event->uuid,
-            'description' => $eventHistory->description,
-            'date' => $eventHistory->date->format('Y-m-d H:i:s'),
-            'completed' => $eventHistory->completed
+            'description' => EventStatusResource::getDescriptionFor($eventHistory->status_id),
+            'date' => $eventHistory->date->format('Y-m-d H:i:s')
         ];
         $result = $resource->toArray($request);
         $this->assertArraySubset($expected, $result);

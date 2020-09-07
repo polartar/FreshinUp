@@ -20,8 +20,7 @@ class EventHistory extends JsonResource
             "status" => new EventStatus($this->whenLoaded('status')),
             'status_id' => (int) $this->status_id,
             "date" => (string) $this->date,
-            "description" => $this->description,
-            "completed" => (bool) $this->completed,
+            "description" => EventStatus::getDescriptionFor($this->status_id),
             "event_uuid" => $this->event_uuid,
         ];
     }
