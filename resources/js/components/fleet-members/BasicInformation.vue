@@ -293,12 +293,12 @@
           Cancel
         </v-btn>
         <v-btn
-          :disabled="loading"
+          :loading="loading"
           depressed
           color="primary"
           @click="onSaveChanges"
         >
-          Save changes
+          {{ edit ? 'Save changes' : 'Submit' }}
         </v-btn>
       </div>
       <div
@@ -366,6 +366,7 @@ export default {
   },
 
   methods: {
+    get,
     deleteTag (tag) {
       this.storeData.tags = this.storeData.tags.filter(t => t.uuid === tag.uuid)
     },

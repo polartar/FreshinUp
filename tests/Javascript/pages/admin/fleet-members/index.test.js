@@ -73,6 +73,21 @@ describe('Admin Docs Page', () => {
       mock.restore()
     })
 
+    describe('storeViewOrEdit(store)', () => {
+      const pushMock = jest.fn()
+      const wrapper = shallowMount(Component, {
+        localVue,
+        store,
+        mocks: {
+          $router: {
+            push: pushMock
+          }
+        }
+      })
+      wrapper.vm.storeViewOrEdit({ uuid: 'abc123' })
+      expect(pushMock).toHaveBeenCalledWith({ path: `/admin/fleet-members/abc123/edit` })
+    })
+
     test('changeStatus function change doc status', async () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,

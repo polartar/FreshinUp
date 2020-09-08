@@ -5,6 +5,7 @@ namespace App\Models\Foodfleet;
 
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Square\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -25,16 +26,26 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string address_uuid
  * @property string website
  * @property string contact_phone
- * @property string size
+ * @property int size
  * @property string image
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property string $deleted_at
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property string deleted_at
+ * @property string owner_uuid
+ * @property string pos_system
+ * @property int size_of_truck_trailer
+ * @property string phone
+ * @property string state_of_incorporation
+ * @property string facebook
+ * @property string twitter
+ * @property string instagram
+ * @property string staff_notes
  *
  *
  * @property StoreStatus status
  * @property StoreType type
  * @property Company supplier
+ * @property User owner
  * TODO: annotate the following properties:
  * events, staffs, menus, transactions, tags, documents, menuItems, messages, status
  */
@@ -68,6 +79,11 @@ class Store extends Model implements HasMedia
     public function supplier()
     {
         return $this->belongsTo(Company::class, 'supplier_uuid', 'uuid');
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_uuid', 'uuid');
     }
 
     public function type () {

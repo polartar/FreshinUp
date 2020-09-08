@@ -114,7 +114,8 @@ class Events extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
+     * @param  CreateEvent  $action
      * @return EventResource
      * @throws \Illuminate\Validation\ValidationException
      */

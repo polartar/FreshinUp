@@ -1,3 +1,4 @@
+import isObject from 'lodash/isObject'
 import makeRestStore, {
   buildApi,
   makeModule
@@ -18,6 +19,19 @@ export default ({ items, item }) => {
   store.state = {
     ...store.state,
     sortables
+  }
+
+  const _createItem = store.actions.createItem
+  store.actions = {
+    ...store.actions,
+    createItem (context, payload) {
+      if (payload.data.tags) {
+        payload.data.tags = payload.data.tags.map(tag => {
+          return isObject(tag) ? tag.uuid : tag
+        })
+      }
+      return _createItem(context, payload)
+    }
   }
 
   return {

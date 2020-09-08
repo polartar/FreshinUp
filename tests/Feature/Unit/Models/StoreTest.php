@@ -28,6 +28,7 @@ class StoreTest extends TestCase
         $staff = factory(Staff::class)->create();
 
         $store = factory(Store::class)->create();
+        $this->assertEquals($store->owner_uuid, $store->owner->uuid);
         $store->events()->save($event);
         $store->supplier()->associate($supplier);
         $store->save();
@@ -35,7 +36,23 @@ class StoreTest extends TestCase
 
         $this->assertDatabaseHas('stores', [
             'uuid' => $store->uuid,
-            'supplier_uuid' => $supplier->uuid
+            'status_id' => $store->status_id,
+            'address_uuid' => $store->address_uuid,
+            'supplier_uuid' => $store->supplier_uuid,
+            'owner_uuid' => $store->owner_uuid,
+            'type_id' => $store->type_id,
+            'square_id' => $store->square_id,
+            'contact_phone' => $store->contact_phone,
+            'size' => $store->size,
+            'size_of_truck_trailer' => $store->size_of_truck_trailer,
+            'name' => $store->name,
+            'pos_system' => $store->pos_system,
+            'state_of_incorporation' => $store->state_of_incorporation,
+            'website' => $store->website,
+            'twitter' => $store->twitter,
+            'facebook' => $store->facebook,
+            'instagram' => $store->instagram,
+            'staff_notes' => $store->staff_notes,
         ]);
 
         $this->assertDatabaseHas('events_stores', [
@@ -46,6 +63,14 @@ class StoreTest extends TestCase
         $this->assertDatabaseHas('stores_staffs', [
             'staff_uuid' => $staff->uuid,
             'store_uuid' => $store->uuid
+        ]);
+
+        $this->assertDatabaseHas('users', [
+            'uuid' => $store->owner_uuid,
+        ]);
+
+        $this->assertDatabaseHas('companies', [
+            'uuid' => $store->supplier_uuid,
         ]);
     }
 }

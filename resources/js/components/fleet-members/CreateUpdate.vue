@@ -67,7 +67,7 @@
             :types="storeTypes"
             :square-locations="squareLocations"
             :locations="locations"
-            @save="saveMember"
+            @save="saveOrCreate"
             @delete="deleteMember"
             @cancel="onCancel"
           />
@@ -183,29 +183,32 @@
         return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
       },
       pageTitle () {
-        return (this.isNew ? 'New Fleet Member' : 'Fleet Member Details')
+        return this.isNew ? 'New Fleet Member' : 'Fleet Member Details'
       }
     },
     methods: {
-      saveMember (item) {
+      async saveOrCreate (data) {
         this.loading = true
-        this.$store.dispatch('stores/createItem', { data: item })
-          .then(() => {
-            this.$store.dispatch('generalMessage/setMessage', 'Saved')
-          })
-          .catch(error => {
-            const message = get(error, 'response.message', error.message)
-            this.$store.dispatch('generalErrorMessages/setErrors', message)
-          })
-          .then(() => {
-            this.loading = false
-          })
+        try {
+          if (this.isNew) {
+            data.id = 'new'
+            await this.$store.dispatch('stores/createItem', { data })
+            await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+            this.$router.push({ path: '/admin/fleet-members/' })
+          } else {
+            await this.$store.dispatch('stores/updateItem', { data, params: { id: data.uuid } })
+            await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
+          }
+        } catch (error) {
+          const message = get(error, 'response.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        } finally {
+          this.loading = false
+        }
       },
-
       deleteMember (item) {},
-
       onCancel () {
-        this.$router.push('/admin/fleet-members')
+        this.$router.push({ path: '/admin/fleet-members' })
       },
       backToList () {
         this.$router.push({ path: '/admin/fleet-members' })
@@ -216,8 +219,9 @@
       const id = to.params.id || 'new'
       const promises = []
       let params = { id }
+      debugger
       if (id !== 'new') {
-        promises.push(vm.$store.dispatch('documents/getItem', { params: params }))
+        promises.push(vm.$store.dispatch('documents/getItem', { params }))
         vm.fleetMemberLoading = true
         vm.$store.dispatch('stores/getItem', { params })
           .then()
@@ -239,7 +243,6 @@
       promises.push(vm.$store.dispatch('documentTypes/getItems'))
       promises.push(vm.$store.dispatch('storeTypes/getItems'))
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
-      promises.push(vm.$store.dispatch('companies/squareLocations/getItems'))
       Promise.all(promises)
         .then(() => {})
         .catch((error) => {

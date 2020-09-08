@@ -133,27 +133,33 @@ class Store extends Controller
     }
 
     public function store (Request $request) {
-        $this->validate($request, [
+        $rules = [
             'owner_uuid' => 'exists:users,uuid',
             'type_id' => 'exists:store_types,id',
+            'status_id' => 'exists:store_statuses,id',
+            'supplier_uuid' => 'exists:companies,uuid',
             'square_id' => 'integer',
-            'name' => 'string',
+            'name' => 'required|string',
             'tags' => 'array',
-            'pos_system' => 'integer',
+            'pos_system' => 'string',
+            'size' => 'integer',
             'size_of_truck_trailer' => 'integer',
-            'phone' => 'string',
+            'contact_phone' => 'string',
             'state_of_incorporation' => 'string',
             'website' => 'url',
             'twitter' => 'url',
             'facebook' => 'url',
             'instagram' => 'url',
             'staff_notes' => 'string',
-        ]);
-        $data = $request->validated();
+        ];
+        $this->validate($request, $rules);
+        $data = $request->only(array_diff(array_keys($rules), ['tags']));
         /** @var StoreModel $store */
         $store = StoreModel::create($data);
+        // list of tag uuid
         $tags = $request->input('tags');
         if ($tags) {
+            // TODO: validate tags
             $store->tags()->sync($tags);
         }
         return new StoreResource($store);
