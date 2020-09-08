@@ -22,6 +22,11 @@
 - **Manager** can be modified and saved
 - **Customer** can be modified and saved
 
+### Components
+- Venue Details _(requires Venues to be completed)_
+- Event Fleet _(Requires Fleet Members to be completed)_
+- Customer
+
 <br/>
 
 ## Fleet Members Page
