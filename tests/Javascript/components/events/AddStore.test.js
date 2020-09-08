@@ -83,7 +83,7 @@ describe('Add member (store) in event component', () => {
       wrapper.setData({
         selectedState: '',
         selectedType: '',
-        selectedTags: ['ASIAN']
+        selectedTags: [FIXTURE_STORES[0].tags[0]]
       })
 
       expect(wrapper.vm.filteredStores).toHaveLength(3)
@@ -117,7 +117,6 @@ describe('Add member (store) in event component', () => {
       })
 
       wrapper.setProps({ stores: FIXTURE_STORES })
-
       expect(wrapper.vm.tags).toHaveLength(2)
     })
 

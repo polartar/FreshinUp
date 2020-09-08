@@ -12,7 +12,8 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
     >
       
     Basic Information
-  
+    
+      <!---->
     </div>
      
     <hr
@@ -184,7 +185,12 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input mb-4 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              flat=""
+              hide-details=""
+              no-filter=""
+              outline=""
+              solo=""
             >
               <div
                 class="v-input__control"
@@ -193,23 +199,64 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
                   class="v-input__slot"
                 >
                   <div
-                    class="v-text-field__slot"
+                    class="v-select__slot"
                   >
                     <input
-                      placeholder="Type a tag and hit enter (autocomplete)"
+                      autocomplete="off"
+                      avatar-key="avatarKey"
+                      placeholder="Type a tag"
+                      role="combobox"
                       type="text"
                     />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
                   <div
-                    class="v-messages theme--light"
+                    class="v-menu"
                   >
                     <div
-                      class="v-messages__wrapper"
-                    />
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -483,10 +530,10 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs12"
+            class="flex mb-2 xs12"
           >
             <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
+              class="text-uppercase grey--text font-weight-bold"
             >
               
             Owned by
@@ -494,39 +541,79 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              flat=""
+              height="48"
+              label="Name"
+              outline=""
+              single-line=""
             >
               <div
                 class="v-input__control"
               >
                 <div
                   class="v-input__slot"
+                  style="height: 48px;"
                 >
                   <div
-                    class="v-text-field__slot"
+                    class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Name
-                    </label>
                     <input
-                      aria-label="Name"
+                      aria-label=""
+                      autocomplete="off"
+                      placeholder="Name"
+                      role="combobox"
                       type="text"
                     />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
                   <div
-                    class="v-messages theme--light"
+                    class="v-menu"
                   >
                     <div
-                      class="v-messages__wrapper"
-                    />
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -969,6 +1056,1089 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
 </div>
 `;
 
+exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title"
+    >
+      
+    Basic Information
+    
+      <div
+        aria-valuemax="100"
+        aria-valuemin="0"
+        class="v-progress-linear"
+        role="progressbar"
+        style="height: 7px;"
+      >
+        <div
+          class="v-progress-linear__background primary"
+          style="height: 7px; opacity: 0.3; width: 100%;"
+        />
+        <div
+          class="v-progress-linear__bar"
+        >
+          <div
+            class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+          >
+            <div
+              class="v-progress-linear__bar__indeterminate long primary"
+            />
+            <div
+              class="v-progress-linear__bar__indeterminate short primary"
+            />
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout pa-3"
+    >
+      <div
+        class="flex xs8 pr-3"
+      >
+        <div
+          class="layout row wrap"
+        >
+          <div
+            class="flex xs9 pr-4"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Fleet member name
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Name"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs3"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Type
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs12"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Tags
+          
+            </div>
+             
+            <div
+              class="v-input mb-4 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              flat=""
+              hide-details=""
+              no-filter=""
+              outline=""
+              solo=""
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <input
+                      autocomplete="off"
+                      avatar-key="avatarKey"
+                      placeholder="Type a tag"
+                      role="combobox"
+                      type="text"
+                    />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="flex xs4 pr-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Pos system
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs4 pr-2 pl-2"
+          >
+            <div
+              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+            >
+              <span>
+                Business name
+              </span>
+               
+              <i
+                aria-hidden="true"
+                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                info
+              </i>
+              <span
+                class="v-tooltip v-tooltip--top"
+              >
+                <div
+                  class="v-tooltip__content"
+                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                >
+                  
+              This is the business name you entered for your fleet member on square
+            
+                </div>
+              </span>
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs4 pl-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Size of the truck / trailer
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="input value"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex mb-2 xs12"
+          >
+            <div
+              class="text-uppercase grey--text font-weight-bold"
+            >
+              
+            Owned by
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              flat=""
+              height="48"
+              label="Name"
+              outline=""
+              single-line=""
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                  style="height: 48px;"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <input
+                      aria-label=""
+                      autocomplete="off"
+                      placeholder="Name"
+                      role="combobox"
+                      type="text"
+                    />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pr-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Contact phone
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Phone"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pl-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            State of incorporation
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="State"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pr-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Website
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="www.example.com"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pl-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Facebook
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="facebook account"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pr-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Twitter
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Twitter account"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs6 pl-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Instagram
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Instagram account"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs12"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Food fleet staff notes
+          
+            </div>
+             
+            <div
+              class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <textarea
+                      placeholder="Food fleet staff notes"
+                      rows="5"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <span
+                      class="v-messages__wrapper"
+                      name="message-transition"
+                      tag="div"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs4 pl-3"
+      >
+        <div
+          class="px-2"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Truck / Trailer image
+        
+          </div>
+           
+          <div
+            class="v-responsive v-image grey lighten-2"
+          >
+            <div
+              class="v-responsive__sizer"
+              style="padding-bottom: 58.82352941176471%;"
+            />
+            <div
+              class="v-image__image v-image__image--preload v-image__image--cover"
+              mode="in-out"
+              name="fade-transition"
+              style="background-image: url(https://picsum.photos/10/6?image=15); background-position: center center;"
+            />
+            <div
+              class="v-responsive__content"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="py-3 d-flex justify-space-between"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Upload Image
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete Image
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions pa-3 d-flex justify-space-between"
+    >
+      <div>
+        <button
+          class="v-btn v-btn--depressed theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+        Cancel
+      
+          </div>
+        </button>
+         
+        <button
+          class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+        Save changes
+      
+          </div>
+        </button>
+      </div>
+       
+      <div
+        style="text-align: right;"
+      >
+        <button
+          class="v-btn v-btn--disabled v-btn--depressed theme--light"
+          disabled="disabled"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+        Delete Fleet Member
+      
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
 <div
   class="container"
@@ -981,7 +2151,8 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
     >
       
     Basic Information
-  
+    
+      <!---->
     </div>
      
     <hr
@@ -1176,7 +2347,12 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input mb-4 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              flat=""
+              hide-details=""
+              no-filter=""
+              outline=""
+              solo=""
             >
               <div
                 class="v-input__control"
@@ -1185,23 +2361,64 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                   class="v-input__slot"
                 >
                   <div
-                    class="v-text-field__slot"
+                    class="v-select__slot"
                   >
                     <input
-                      placeholder="Type a tag and hit enter (autocomplete)"
+                      autocomplete="off"
+                      avatar-key="avatarKey"
+                      placeholder="Type a tag"
+                      role="combobox"
                       type="text"
                     />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
                   <div
-                    class="v-messages theme--light"
+                    class="v-menu"
                   >
                     <div
-                      class="v-messages__wrapper"
-                    />
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1522,10 +2739,10 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs12"
+            class="flex mb-2 xs12"
           >
             <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
+              class="text-uppercase grey--text font-weight-bold"
             >
               
             Owned by
@@ -1533,32 +2750,106 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+              flat=""
+              height="48"
+              label="Name"
+              outline=""
+              single-line=""
             >
               <div
                 class="v-input__control"
               >
                 <div
                   class="v-input__slot"
+                  style="height: 48px;"
                 >
                   <div
-                    class="v-text-field__slot"
+                    class="v-select__slot"
                   >
                     <input
-                      aria-label="Name"
+                      aria-label=""
+                      autocomplete="off"
+                      placeholder="Name"
+                      role="combobox"
                       type="text"
                     />
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
                   <div
-                    class="v-messages theme--light"
+                    class="v-menu"
                   >
                     <div
-                      class="v-messages__wrapper"
+                      class="v-menu__content theme--light v-autocomplete__content"
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="v-progress-linear"
+                    role="progressbar"
+                    style="height: 2px;"
+                  >
+                    <div
+                      class="v-progress-linear__background primary"
+                      style="height: 2px; opacity: 0.3; width: 100%;"
                     />
+                    <div
+                      class="v-progress-linear__bar"
+                    >
+                      <div
+                        class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                      >
+                        <div
+                          class="v-progress-linear__bar__indeterminate long primary"
+                        />
+                        <div
+                          class="v-progress-linear__bar__indeterminate short primary"
+                        />
+                      </div>
+                      <!---->
+                    </div>
                   </div>
                 </div>
               </div>

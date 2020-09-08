@@ -17,6 +17,16 @@ export const Default = () => ({
   `
 })
 
+
+export const Loading = () => ({
+  components: { BasicInformation },
+  template: `
+    <v-container>
+      <basic-information loading/>
+    </v-container>
+  `
+})
+
 export const WithData = () => ({
   components: { BasicInformation },
   data () {
@@ -59,4 +69,5 @@ storiesOf('FoodFleet|components/fleet-members/BasicInformation', module)
     ]
   })
   .add('Default', Default)
+  .add('Loading', Loading)
   .add('WithData', WithData)

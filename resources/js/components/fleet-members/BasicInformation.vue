@@ -2,6 +2,7 @@
   <v-card>
     <v-card-title>
       Basic Information
+      <v-progress-linear indeterminate v-if="loading"/>
     </v-card-title>
     <v-divider />
     <v-layout class="pa-3">
@@ -44,11 +45,21 @@
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Tags
             </div>
-            <v-text-field
-              v-model="tagText"
-              placeholder="Type a tag and hit enter (autocomplete)"
-              single-line
+            <f-autocomplete
+              ref="tags"
+              no-filter
+              placeholder="Type a tag"
+              value-fetch
+              item-value="uuid"
+              item-text="name"
+              url="/foodfleet/store-tags"
+              hide-details
+              class="mb-4"
+              solo
               outline
+              flat
+              not-clearable
+              @input="onTagSelected"
             />
           </v-flex>
           <v-flex
@@ -61,8 +72,9 @@
               :key="index"
               close
               color="orange"
+              @click="deleteTag(tag)"
             >
-              {{ tag }}
+              {{ tag.name }}
             </v-chip>
           </v-flex>
           <v-flex
@@ -103,8 +115,8 @@
               </v-tooltip>
             </div>
             <v-select
-              v-model="storeData.business_name"
-              :items="[]"
+              v-model="storeData.square_id"
+              :items="squareLocations"
               single-line
               outline
             />
@@ -123,15 +135,23 @@
               outline
             />
           </v-flex>
-          <v-flex xs12>
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
+          <v-flex xs12 class="mb-2">
+            <div class="text-uppercase grey--text font-weight-bold">
               Owned by
             </div>
-            <v-text-field
-              v-model="storeData.owner"
+            <simple
               label="Name"
               single-line
               outline
+              url="users?filter[type]=1"
+              term-param="term"
+              results-id-key="uuid"
+              :value="storeData.owner_uuid"
+              placeholder="Name"
+              height="48"
+              not-clearable
+              flat
+              @input="onOwnerSelected"
             />
           </v-flex>
           <v-flex
@@ -273,6 +293,7 @@
           Cancel
         </v-btn>
         <v-btn
+          :disabled="loading"
           depressed
           color="primary"
           @click="onSaveChanges"
@@ -297,9 +318,13 @@
 </template>
 <script>
 import { get } from 'lodash'
+import FAutocomplete from '../../components/FAutocomplete'
+import Simple from 'fresh-bus/components/search/simple'
 
 export default {
+  components: { FAutocomplete, Simple },
   props: {
+    loading: { type: Boolean, default: false },
     store: {
       type: Object,
       default: null
@@ -311,9 +336,12 @@ export default {
     locations: {
       type: Array,
       default: () => []
+    },
+    squareLocations: {
+      type: Array,
+      default: () => []
     }
   },
-
   data () {
     let edit = get(this.store, 'uuid') !== null
     return {
@@ -322,9 +350,9 @@ export default {
         type_id: edit ? get(this.store, 'type_id') : null,
         tags: edit ? get(this.store, 'tags', []) : [],
         pos_system: edit ? get(this.store, 'pos_system') : '',
-        business_name: edit ? get(this.store, 'business_name') : '',
+        square_id: edit ? get(this.store, 'square_id') : '',
         size_of_truck_trailer: edit ? get(this.store, 'size_of_truck_trailer') : '',
-        owner: edit ? get(this.store, 'owner') : '',
+        owner_uuid: edit ? get(this.store, 'owner_uuid') : '',
         phone: edit ? get(this.store, 'phone') : '',
         state_of_incorporation: edit ? get(this.store, 'state_of_incorporation') : '',
         website: edit ? get(this.store, 'website') : '',
@@ -333,20 +361,30 @@ export default {
         instagram: edit ? get(this.store, 'instagram') : '',
         staff_notes: edit ? get(this.store, 'staff_notes') : ''
       },
-      edit: edit,
-      tagText: ''
+      edit: edit
     }
   },
 
   methods: {
+    deleteTag (tag) {
+      this.storeData.tags = this.storeData.tags.filter(t => t.uuid === tag.uuid)
+    },
+    onOwnerSelected (owner) {
+      this.storeData.owner_uuid = owner ? owner.uuid : null
+    },
+    onTagSelected (tag) {
+      // on add if not already
+      if (this.storeData.tags.findIndex(t => t.uuid === tag.uuid) === -1) {
+        this.storeData.tags.push(tag)
+      }
+      this.$refs.tags.clear()
+    },
     onCancel () {
       this.$emit('cancel')
     },
-
     onSaveChanges () {
       this.$emit('save', this.storeData)
     },
-
     onDeleteMember () {
       this.$emit('delete', this.storeData)
     }

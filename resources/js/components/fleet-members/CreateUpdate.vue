@@ -63,7 +63,9 @@
           py-2
         >
           <basic-information
+            :loading="loading"
             :types="storeTypes"
+            :square-locations="squareLocations"
             :locations="locations"
             @save="saveMember"
             @delete="deleteMember"
@@ -142,6 +144,7 @@
     mixins: [Validate],
     data () {
       return {
+        loading: false,
         locations: ['Square'], // TODO: static to Square only until we know better
         pagination: {
           page: 1,
@@ -173,6 +176,9 @@
       ...mapFields('stores', [
         'status_id'
       ]),
+      squareLocations () {
+        return this.$store.getters['companies/squareLocations/items']
+      },
       isLoading () {
         return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
       },
@@ -182,8 +188,8 @@
     },
     methods: {
       saveMember (item) {
-        this.$store.dispatch('page/setLoading', true)
-        this.$store.dispatch('store/createItem', { data: item })
+        this.loading = true
+        this.$store.dispatch('stores/createItem', { data: item })
           .then(() => {
             this.$store.dispatch('generalMessage/setMessage', 'Saved')
           })
@@ -192,7 +198,7 @@
             this.$store.dispatch('generalErrorMessages/setErrors', message)
           })
           .then(() => {
-            this.$store.dispatch('page/setLoading', false)
+            this.loading = false
           })
       },
 
@@ -233,6 +239,7 @@
       promises.push(vm.$store.dispatch('documentTypes/getItems'))
       promises.push(vm.$store.dispatch('storeTypes/getItems'))
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promises.push(vm.$store.dispatch('companies/squareLocations/getItems'))
       Promise.all(promises)
         .then(() => {})
         .catch((error) => {

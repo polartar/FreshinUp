@@ -15,6 +15,24 @@ describe('fleet-members/BasicInformation', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
+    test('Loading', async () => {
+      const wrapper = mount(Stories.Loading())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+  })
+
+  describe('Props & Computed', () => {
+    test('loading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.loading).toBe(false)
+
+      wrapper.setProps({
+        loading: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.loading).toBe(true)
+    })
   })
 
   describe('methods', () => {

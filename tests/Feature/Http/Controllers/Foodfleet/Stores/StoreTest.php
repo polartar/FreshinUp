@@ -20,11 +20,6 @@ class StoresTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -116,7 +111,6 @@ class StoresTest extends TestCase
             'tags' => [['name' => $tags[0]->name]]
         ], $data[1]);
     }
-
 
     public function testTypeAndContacts()
     {
@@ -252,11 +246,6 @@ class StoresTest extends TestCase
         $this->assertEquals($storeToFind2->uuid, $data[1]['uuid']);
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();
@@ -363,9 +352,6 @@ class StoresTest extends TestCase
         $this->assertEquals(2, $returnedStore['status_id']);
     }
 
-    /**
-     * test for the sort options
-     */
     public function testGetListBySorts()
     {
         $user = factory(User::class)->create();
@@ -552,5 +538,81 @@ class StoresTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals($data['total_services'], 6);
         $this->assertEquals($data['total_cost'], 210);
+    }
+
+    public function testCreateWithInvalid () {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $store = [
+        ];
+        $this->json('POST', '/api/foodfleet/stores', $store)
+            ->assertStatus(422);
+    }
+
+    public function testCreate()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Store::class)->make()->toArray();
+
+        $data = $this
+            ->json('POST', '/api/foodfleet/stores', $payload)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'owner_uuid' => $payload['owner_uuid'],
+            'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
+            'name' => $payload['name'],
+            'pos_system' => $payload['pos_system'],
+            'size_of_truck_trailer' => $payload['size_of_truck_trailer'],
+            'phone' => $payload['phone'],
+            'state_of_incorporation' => $payload['state_of_incorporation'],
+            'website' => $payload['website'],
+            'twitter' => $payload['twitter'],
+            'facebook' => $payload['facebook'],
+            'instagram' => $payload['instagram'],
+            'staff_notes' => $payload['staff_notes'],
+        ], $data);
+    }
+
+    public function testCreateWithTags()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Store::class)->make()->toArray();
+        $tags = factory(StoreTag::class, 3)->create();
+        $payload['tags'] = array_map(function ($tag) {
+            return $tag->id;
+        }, $tags);
+
+        $data = $this
+            ->json('POST', '/api/foodfleet/stores', $payload)
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'owner_uuid' => $payload['owner_uuid'],
+            'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
+            'name' => $payload['name'],
+            'pos_system' => $payload['pos_system'],
+            'size_of_truck_trailer' => $payload['size_of_truck_trailer'],
+            'phone' => $payload['phone'],
+            'state_of_incorporation' => $payload['state_of_incorporation'],
+            'website' => $payload['website'],
+            'twitter' => $payload['twitter'],
+            'facebook' => $payload['facebook'],
+            'instagram' => $payload['instagram'],
+            'staff_notes' => $payload['staff_notes'],
+        ], $data);
+        $this->assertArrayHasKey('tags', $data);
+        foreach($tags as $tag) {
+            $this->assertArraySubset([
+                'uuid' => $tag->uuid,
+                'name' => $tag->name,
+            ], $data['tags']);
+        }
     }
 }

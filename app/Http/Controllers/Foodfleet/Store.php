@@ -59,6 +59,7 @@ class Store extends Controller
         $data = $request->all();
         $collection = collect($data);
         $updateData = $collection->except(['event_uuid', 'commission_rate', 'commission_type'])->all();
+        /** @var StoreModel $store */
         $store = StoreModel::where('uuid', $uuid)->first();
         if (!$store) {
             throw new ModelNotFoundException('No fleet member found to update.');
@@ -72,8 +73,7 @@ class Store extends Controller
         if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
-                $event,
-                ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]
+                $event, compact('commission_rate', 'commission_type')
             );
         }
 
@@ -130,5 +130,32 @@ class Store extends Controller
                 ])
             )
         );
+    }
+
+    public function store (Request $request) {
+        $this->validate($request, [
+            'owner_uuid' => 'exists:users,uuid',
+            'type_id' => 'exists:store_types,id',
+            'square_id' => 'integer',
+            'name' => 'string',
+            'tags' => 'array',
+            'pos_system' => 'integer',
+            'size_of_truck_trailer' => 'integer',
+            'phone' => 'string',
+            'state_of_incorporation' => 'string',
+            'website' => 'url',
+            'twitter' => 'url',
+            'facebook' => 'url',
+            'instagram' => 'url',
+            'staff_notes' => 'string',
+        ]);
+        $data = $request->validated();
+        /** @var StoreModel $store */
+        $store = StoreModel::create($data);
+        $tags = $request->input('tags');
+        if ($tags) {
+            $store->tags()->sync($tags);
+        }
+        return new StoreResource($store);
     }
 }

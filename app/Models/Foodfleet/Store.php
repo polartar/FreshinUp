@@ -70,6 +70,10 @@ class Store extends Model implements HasMedia
         return $this->belongsTo(Company::class, 'supplier_uuid', 'uuid');
     }
 
+    public function type () {
+        return $this->belongsTo(StoreType::class);
+    }
+
     public function events()
     {
         return $this->belongsToMany(

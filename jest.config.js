@@ -1,9 +1,13 @@
+const path = require('path')
 const JestConfig = require('vue-cli-plugin-freshinup/utils/testing/jest.config.core')
 
 module.exports = {
   ...JestConfig,
+  roots: ['<rootDir>/resources/js', '<rootDir>/tests'],
+  modulePaths: [path.resolve('node_modules')],
   collectCoverageFrom: JestConfig.collectCoverageFrom.concat([
-    'resources/js/**/*.{js,vue}'
+    'resources/js/**/*.{js,vue}',
+    '!**/*.test.js'
   ]),
   coverageThreshold: {
     global: {
@@ -20,6 +24,9 @@ module.exports = {
     '^foodfleet/(.*)$': '<rootDir>/resources/js/$1',
     '~/(.*)$': '<rootDir>/resources/js/$1',
     '@/(.*)$': '<rootDir>/resources/js/$1'
+  },
+  transform: {
+    ...JestConfig.transform
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(@storybook/.*\\.vue$|@freshinup/.*\\.js|@freshinup/.*\\.vue|vue-cli-plugin-freshinup-ui/.*\\.js|vue-cli-plugin-freshinup/.*\\.js))'

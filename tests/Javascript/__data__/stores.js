@@ -3,11 +3,24 @@ export const FIXTURE_STORES = [
     uuid: 'abc123',
     name: 'Da Lobster',
     type_id: 1,
-    tags: ['ASIAN', 'VEGAN'],
+    tags: [
+      {
+        uuid: 'a111',
+        name: 'ASIAN',
+      },
+      {
+        uuid: 'a222',
+        name: 'VEGAN',
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
+    square_id: 1,
     size_of_truck_trailer: 200,
-    owner: 'Josh Smith @ Restaurant Inc',
+    owner_uuid: 'o111',
+    owner: {
+      uuid: 'o111',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
     phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
@@ -29,11 +42,20 @@ export const FIXTURE_STORES = [
     uuid: 'abc345',
     name: 'Rekindler',
     type_id: 2,
-    tags: ['VEGAN'],
+    tags: [
+      {
+        uuid: 'a111',
+        name: 'VEGAN'
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Dibitery Inc',
+    square_id: 1,
+    size_of_truck_trailer: 150,
+    owner_uuid: 'o111',
+    owner: {
+      uuid: 'o111',
+      name: 'Josh Smith @ Dibitery Inc'
+    },
     phone: '938 374822',
     state_of_incorporation: 'New York',
     website: 'www.restaurantinc.com',
@@ -48,11 +70,18 @@ export const FIXTURE_STORES = [
     uuid: 'abc567',
     name: 'Fiora',
     type_id: 2,
-    tags: ['ASIAN'],
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN'
+    }],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Dibitery Inc',
+    square_id: 1,
+    size_of_truck_trailer: 340,
+    owner_uuid: 'o111',
+    owner: {
+      uuid: 'o111',
+      name: 'Josh Smith @ Dibitery Inc'
+    },
     phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
@@ -67,11 +96,21 @@ export const FIXTURE_STORES = [
     uuid: 'op123',
     name: 'Trundle',
     type_id: 2,
-    tags: ['ASIAN', 'VEGAN'],
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN',
+    },{
+      uuid: 'v111',
+      name: 'VEGAN',
+    }],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Restaurant Inc',
+    square_id: 1,
+    size_of_truck_trailer: 123,
+    owner_uuid: 'o111',
+    owner: {
+      uuid: 'o111',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
     phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
@@ -93,11 +132,20 @@ export const FIXTURE_STORES = [
     uuid: 'ddd123',
     name: 'La fourchette',
     type_id: 2,
-    tags: ['VEGAN'],
+    tags: [
+      {
+        uuid: 't1',
+        name: 'VEGAN'
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
+    square_id: 1,
     size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Restaurant Inc',
+    owner_uuid: 'owner11',
+    owner: {
+      uuid: 'owner11',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
     phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
