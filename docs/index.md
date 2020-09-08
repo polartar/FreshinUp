@@ -41,7 +41,7 @@
 ### Functionality for these components
 - Fleet Member Documents
 - Payments
-- Assigned Events
+- Assigned Events _(Requires Event Fleet component to be completed)_
 - Areas of Operation
 - Fleet Member Menu
 
