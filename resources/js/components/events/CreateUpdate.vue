@@ -495,16 +495,22 @@ export default {
       // end TODO
 
       if (!valid) {
+        this.$store.dispatch('generalErrorMessages/setErrors', 'Validation error. Please check the form.')
         return false
       }
-      if (this.isNew) {
-        data.id = 'new'
-        await this.$store.dispatch('events/createItem', { data })
-        await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-        this.$router.push({ path: '/admin/events/' })
-      } else {
-        await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-        await this.$store.dispatch('generalMessage/setMessage', 'Modified')
+      try {
+        if (this.isNew) {
+          data.id = 'new'
+          await this.$store.dispatch('events/createItem', { data })
+          await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          this.$router.push({ path: '/admin/events/' })
+        } else {
+          await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
+          await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
+        }
+      } catch (error) {
+        const message = get(error, 'response.message', error.message)
+        this.$store.dispatch('generalErrorMessages/setErrors', message)
       }
     },
     onCancel () {

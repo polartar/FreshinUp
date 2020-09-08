@@ -181,7 +181,6 @@ export default {
       // failure
       // const message = get(error, 'response.message', error.message)
       // this.$store.dispatch('generalErrorMessages/setErrors', message)
-      // this.$store.dispatch('generalErrorMessages/setErrors', 'some random message')
 
       // success
       // this.$store.dispatch('generalMessage/setMessage', 'Changes successfully saved.')
