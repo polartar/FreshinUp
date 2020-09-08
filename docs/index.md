@@ -1,8 +1,5 @@
 # Roadmap
 
-## Fleet member
-- Snackbar on save (success/error)
-
 ## Venue Page
 - Venues can be search by (this is unknown)
 - Venues can be filtered by **Statues**, **Venue/Owner**, **Locations**, and **Submitted On**
@@ -46,6 +43,10 @@
 <br/>
 
 # Changes
+
+## September 8, 2020
+`Fleet-members`, `Events`
+- **ADD** Snackbar informs user of success or failure [#413](https://github.com/FreshinUp/foodfleet/issues/413)
 
 ## September 7, 2020
 - **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)

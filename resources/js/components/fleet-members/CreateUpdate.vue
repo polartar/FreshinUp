@@ -1,20 +1,5 @@
 <template>
   <div>
-    <v-snackbar
-      v-model="snackbar"
-      :timeout="snackbarTimeout"
-      :color="snackbarColor"
-      top
-    >
-      {{ snackbarText }}
-      <v-btn
-        color="pink"
-        flat
-        @click="snackbar = false"
-      >
-        dismiss
-      </v-btn>
-    </v-snackbar>
     <v-form
       v-if="!isLoading"
       ref="form"
@@ -171,12 +156,7 @@ export default {
       ],
       events: ['Event will populate once your restaurant is assigned.'],
       fleetMemberLoading: false,
-      isNew: false,
-
-      snackbar: false,
-      snackbarTimeout: 4000,
-      snackbarText: 'Test snackbar',
-      snackbarColor: ''
+      isNew: false
     }
   },
   computed: {
@@ -198,11 +178,13 @@ export default {
   },
   methods: {
     saveMember (item) {
-      this.snackbarText = 'Changes successfully saved.'
-      // this.snackbarText = 'Please make sure you add at least one menu item.'
-      // this.snackbarColor = 'error'
+      // failure
+      // const message = get(error, 'response.message', error.message)
+      // this.$store.dispatch('generalErrorMessages/setErrors', message)
+      // this.$store.dispatch('generalErrorMessages/setErrors', 'some random message')
 
-      this.snackbar = true
+      // success
+      // this.$store.dispatch('generalMessage/setMessage', 'Changes successfully saved.')
     },
 
     deleteMember (item) {},
@@ -220,7 +202,7 @@ export default {
     const promises = []
     let params = { id }
     if (id !== 'new') {
-      promises.push(vm.$store.dispatch('documents/getItem', { params: params }))
+      promises.push(vm.$store.dispatch('documents/getItem', { params }))
     }
     vm.$store.dispatch('page/setLoading', true)
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
