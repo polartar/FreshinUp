@@ -478,9 +478,7 @@ export default {
       const valid = await this.validator()
       // TODO: this heavy logic should be done on the state machine.
       let data = {
-        ...this.event,
-        host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
-        manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+        ...this.event
       }
       const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
       data = omitBy(data, (value, key) => {
