@@ -20,7 +20,6 @@ $factory->define(Store::class, function (Faker $faker) {
         'name' => $faker->word,
         'pos_system' => 'Square',
         'size' => $faker->randomNumber(1),
-        'size_of_truck_trailer' => $faker->randomNumber(2),
         'contact_phone' => $faker->phoneNumber,
         'state_of_incorporation' => $faker->state,
         'image' => $faker->imageUrl(),

@@ -16,9 +16,9 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class Store | This is what's called fleet member
- * @property int $id
- * @property string $uuid
- * @property string $name
+ * @property int id
+ * @property string uuid
+ * @property string name
  * @property int square_id
  * @property int status_id
  * @property int type_id
@@ -33,7 +33,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string deleted_at
  * @property string owner_uuid
  * @property string pos_system
- * @property int size_of_truck_trailer
  * @property string phone
  * @property string state_of_incorporation
  * @property string facebook

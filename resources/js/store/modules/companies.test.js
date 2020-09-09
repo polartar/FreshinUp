@@ -1,5 +1,4 @@
 import module from './companies'
-import { DEFAULT_DATE } from 'vue-cli-plugin-freshinup/utils/testing/mockDate'
 
 describe('store/modules/companies', () => {
   test('the state has items', () => {

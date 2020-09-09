@@ -53,18 +53,26 @@ class Store extends Controller
             'status_id' => 'integer',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
-            'event_uuid' => 'string|exists:events,uuid'
+            'event_uuid' => 'string|exists:events,uuid',
+            'tags' => 'array'
         ]);
 
+        // TODO: avoid using all. Use only model::fillable
         $data = $request->all();
         $collection = collect($data);
-        $updateData = $collection->except(['event_uuid', 'commission_rate', 'commission_type'])->all();
+        $updateData = $collection->except(['tags', 'event_uuid', 'commission_rate', 'commission_type'])->all();
         /** @var StoreModel $store */
         $store = StoreModel::where('uuid', $uuid)->first();
         if (!$store) {
             throw new ModelNotFoundException('No fleet member found to update.');
         }
         $store->update($updateData);
+
+        // array of tag uuid
+        if ($request->has('tags')) {
+            // TODO: validate array of tag uuid
+            $store->tags()->sync($request->input('tags'));
+        }
 
 
         $event_uuid = $collection->get('event_uuid');
@@ -77,6 +85,7 @@ class Store extends Controller
             );
         }
 
+        $store->load('tags');
         return new StoreResource($store);
     }
 
@@ -84,7 +93,10 @@ class Store extends Controller
     {
         $store = QueryBuilder::for(StoreModel::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes(['menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin', 'status']);
+            ->allowedIncludes([
+                'menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin', 'status',
+                'owner'
+            ]);
 
         // Include eventsCount in the query if needed
         if ($request->has('provide') && $request->get('provide') == 'events-count') {
@@ -143,7 +155,6 @@ class Store extends Controller
             'tags' => 'array',
             'pos_system' => 'string',
             'size' => 'integer',
-            'size_of_truck_trailer' => 'integer',
             'contact_phone' => 'string',
             'state_of_incorporation' => 'string',
             'website' => 'url',
@@ -162,6 +173,7 @@ class Store extends Controller
             // TODO: validate tags
             $store->tags()->sync($tags);
         }
+        $store->load('tags');
         return new StoreResource($store);
     }
 }

@@ -10,6 +10,8 @@ exports[`event/BasicInformation Snapshots default 1`] = `
     <h3>
       Basic Information
     </h3>
+     
+    <!---->
   </div>
    
   <hr
@@ -996,6 +998,8 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
     <h3>
       Basic Information
     </h3>
+     
+    <!---->
   </div>
    
   <hr
@@ -7486,6 +7490,8 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
     <h3>
       Basic Information
     </h3>
+     
+    <!---->
   </div>
    
   <hr
@@ -7684,7 +7690,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 flat=""
                 height="48"
                 solo=""
@@ -7756,33 +7762,6 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -7796,7 +7775,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 flat=""
                 height="48"
                 solo=""
@@ -7866,33 +7845,6 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -13929,6 +13881,8 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
     <h3>
       Basic Information
     </h3>
+     
+    <!---->
   </div>
    
   <hr
@@ -14127,7 +14081,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 flat=""
                 height="48"
                 solo=""
@@ -14199,33 +14153,6 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -14239,7 +14166,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                 flat=""
                 height="48"
                 solo=""
@@ -14309,33 +14236,6 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -14842,6 +14742,8 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
     <h3>
       Basic Information
     </h3>
+     
+    <!---->
   </div>
    
   <hr
@@ -15042,7 +14944,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-disabled v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-disabled theme--light"
                 disabled="disabled"
                 flat=""
                 height="48"
@@ -15116,33 +15018,6 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -15156,7 +15031,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
               
               <div
                 background-color="white"
-                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-disabled v-input--is-loading theme--light"
+                class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-disabled theme--light"
                 disabled="disabled"
                 flat=""
                 height="48"
@@ -15228,33 +15103,6 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-valuemax="100"
-                      aria-valuemin="0"
-                      class="v-progress-linear"
-                      role="progressbar"
-                      style="height: 2px;"
-                    >
-                      <div
-                        class="v-progress-linear__background primary"
-                        style="height: 2px; opacity: 0.3; width: 100%;"
-                      />
-                      <div
-                        class="v-progress-linear__bar"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate long primary"
-                          />
-                          <div
-                            class="v-progress-linear__bar__indeterminate short primary"
-                          />
-                        </div>
-                        <!---->
                       </div>
                     </div>
                   </div>

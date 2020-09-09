@@ -16,7 +16,6 @@ class AddBasicInformationToStore extends Migration
         Schema::table('stores', function (Blueprint $table) {
             $table->string('owner_uuid')->nullable()->index();
             $table->string('pos_system')->nullable();
-            $table->unsignedInteger('size_of_truck_trailer')->nullable();
             $table->string('state_of_incorporation')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
@@ -35,7 +34,6 @@ class AddBasicInformationToStore extends Migration
         Schema::table('stores', function (Blueprint $table) {
             $table->dropColumn('owner_uuid',
                 'pos_system',
-                'size_of_truck_trailer',
                 'state_of_incorporation',
                 'facebook',
                 'twitter',

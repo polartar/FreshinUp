@@ -2,7 +2,10 @@
   <v-card>
     <v-card-title class="grey--text font-weight-bold">
       <h3>Basic Information</h3>
-      <v-progress-linear indeterminate v-if="loading"/>
+      <v-progress-linear
+        v-if="loading"
+        indeterminate
+      />
     </v-card-title>
     <v-divider />
     <v-form
@@ -340,8 +343,8 @@ export default {
     return {
       eventData: {
         name: edit ? get(this.event, 'name') : null,
-        manager_uuid: edit ? get(this.event, 'manager.uuid') : null,
-        host_uuid: edit ? get(this.event, 'host.uuid') : null,
+        manager_uuid: edit ? get(this.event, 'manager_uuid') : null,
+        host_uuid: edit ? get(this.event, 'host_uuid') : null,
         budget: edit ? get(this.event, 'budget') : null,
         attendees: edit ? get(this.event, 'attendees') : null,
         commission_rate: edit ? get(this.event, 'commission_rate') : 5,

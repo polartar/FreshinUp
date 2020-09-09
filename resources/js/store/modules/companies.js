@@ -1,8 +1,9 @@
 import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
 
-import store from 'fresh-bus/store/modules/companies'
+import busCompanies from 'fresh-bus/store/modules/companies'
 
 export default ({ items, item }) => {
+  const store = busCompanies({ items, item })
   return {
     ...store,
     namespaced: true,

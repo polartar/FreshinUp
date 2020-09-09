@@ -2,7 +2,10 @@
   <v-card>
     <v-card-title>
       Basic Information
-      <v-progress-linear indeterminate v-if="loading"/>
+      <v-progress-linear
+        v-if="loading"
+        indeterminate
+      />
     </v-card-title>
     <v-divider />
     <v-layout class="pa-3">
@@ -22,7 +25,7 @@
               Fleet member name
             </div>
             <v-text-field
-              v-model="storeData.name"
+              v-model="name"
               placeholder="Name"
               single-line
               outline
@@ -33,7 +36,7 @@
               Type
             </div>
             <v-select
-              v-model="storeData.type_id"
+              v-model="type_id"
               :items="types"
               item-text="name"
               item-value="id"
@@ -63,12 +66,12 @@
             />
           </v-flex>
           <v-flex
-            v-if="storeData.tags.length"
+            v-if="tags.length"
             xs12
             pb-4
           >
             <v-chip
-              v-for="(tag, index) of storeData.tags"
+              v-for="(tag, index) of tags"
               :key="index"
               close
               color="orange"
@@ -85,7 +88,7 @@
               Pos system
             </div>
             <v-select
-              v-model="storeData.pos_system"
+              v-model="pos_system"
               :items="locations"
               single-line
               outline
@@ -115,10 +118,12 @@
               </v-tooltip>
             </div>
             <v-select
-              v-model="storeData.square_id"
+              v-model="square_id"
               :items="squareLocations"
               single-line
               outline
+              item-text="name"
+              item-value="square_id"
             />
           </v-flex>
           <v-flex
@@ -129,13 +134,16 @@
               Size of the truck / trailer
             </div>
             <v-text-field
-              v-model="storeData.size_of_truck_trailer"
+              v-model="size"
               placeholder="input value"
               single-line
               outline
             />
           </v-flex>
-          <v-flex xs12 class="mb-2">
+          <v-flex
+            xs12
+            class="mb-2"
+          >
             <div class="text-uppercase grey--text font-weight-bold">
               Owned by
             </div>
@@ -146,7 +154,7 @@
               url="users?filter[type]=1"
               term-param="term"
               results-id-key="uuid"
-              :value="storeData.owner_uuid"
+              :value="owner_uuid"
               placeholder="Name"
               height="48"
               not-clearable
@@ -162,7 +170,7 @@
               Contact phone
             </div>
             <v-text-field
-              v-model="storeData.phone"
+              v-model="contact_phone"
               placeholder="Phone"
               single-line
               outline
@@ -176,7 +184,7 @@
               State of incorporation
             </div>
             <v-text-field
-              v-model="storeData.state_of_incorporation"
+              v-model="state_of_incorporation"
               placeholder="State"
               single-line
               outline
@@ -190,7 +198,7 @@
               Website
             </div>
             <v-text-field
-              v-model="storeData.website"
+              v-model="website"
               placeholder="www.example.com"
               single-line
               outline
@@ -204,7 +212,7 @@
               Facebook
             </div>
             <v-text-field
-              v-model="storeData.facebook"
+              v-model="facebook"
               placeholder="facebook account"
               single-line
               outline
@@ -218,7 +226,7 @@
               Twitter
             </div>
             <v-text-field
-              v-model="storeData.twitter"
+              v-model="twitter"
               placeholder="Twitter account"
               single-line
               outline
@@ -232,7 +240,7 @@
               Instagram
             </div>
             <v-text-field
-              v-model="storeData.instagram"
+              v-model="instagram"
               placeholder="Instagram account"
               single-line
               outline
@@ -243,7 +251,7 @@
               Food fleet staff notes
             </div>
             <v-textarea
-              v-model="storeData.staff_notes"
+              v-model="staff_notes"
               placeholder="Food fleet staff notes"
               single-line
               outline
@@ -296,13 +304,13 @@
           :loading="loading"
           depressed
           color="primary"
-          @click="onSaveChanges"
+          @click="save"
         >
-          {{ edit ? 'Save changes' : 'Submit' }}
+          {{ editing ? 'Save changes' : 'Submit' }}
         </v-btn>
       </div>
       <div
-        v-if="edit"
+        v-if="editing"
         style="text-align: right;"
       >
         <v-btn
@@ -317,18 +325,33 @@
   </v-card>
 </template>
 <script>
-import { get } from 'lodash'
 import FAutocomplete from '../../components/FAutocomplete'
 import Simple from 'fresh-bus/components/search/simple'
-
+import pick from 'lodash/pick'
+import keys from 'lodash/keys'
+import get from 'lodash/get'
+import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+export const DEFAULT_STORE = {
+  name: '',
+  type_id: '',
+  tags: [],
+  pos_system: '',
+  square_id: '',
+  size: '',
+  owner_uuid: '',
+  contact_phone: '',
+  state_of_incorporation: '',
+  website: '',
+  twitter: '',
+  facebook: '',
+  instagram: '',
+  staff_notes: ''
+}
 export default {
   components: { FAutocomplete, Simple },
+  mixins: [MapValueKeysToData],
   props: {
     loading: { type: Boolean, default: false },
-    store: {
-      type: Object,
-      default: null
-    },
     types: {
       type: Array,
       default: () => []
@@ -343,51 +366,32 @@ export default {
     }
   },
   data () {
-    let edit = get(this.store, 'uuid') !== null
-    return {
-      storeData: {
-        name: edit ? get(this.store, 'name') : '',
-        type_id: edit ? get(this.store, 'type_id') : null,
-        tags: edit ? get(this.store, 'tags', []) : [],
-        pos_system: edit ? get(this.store, 'pos_system') : '',
-        square_id: edit ? get(this.store, 'square_id') : '',
-        size_of_truck_trailer: edit ? get(this.store, 'size_of_truck_trailer') : '',
-        owner_uuid: edit ? get(this.store, 'owner_uuid') : '',
-        phone: edit ? get(this.store, 'phone') : '',
-        state_of_incorporation: edit ? get(this.store, 'state_of_incorporation') : '',
-        website: edit ? get(this.store, 'website') : '',
-        twitter: edit ? get(this.store, 'twitter') : '',
-        facebook: edit ? get(this.store, 'facebook') : '',
-        instagram: edit ? get(this.store, 'instagram') : '',
-        staff_notes: edit ? get(this.store, 'staff_notes') : ''
-      },
-      edit: edit
+    return DEFAULT_STORE
+  },
+  computed: {
+    editing () {
+      return !!get(this.value, 'uuid')
     }
   },
-
   methods: {
-    get,
     deleteTag (tag) {
-      this.storeData.tags = this.storeData.tags.filter(t => t.uuid === tag.uuid)
+      this.tags = this.tags.filter(t => t.uuid !== tag.uuid)
     },
     onOwnerSelected (owner) {
-      this.storeData.owner_uuid = owner ? owner.uuid : null
+      this.owner_uuid = owner ? owner.uuid : null
     },
     onTagSelected (tag) {
       // on add if not already
-      if (this.storeData.tags.findIndex(t => t.uuid === tag.uuid) === -1) {
-        this.storeData.tags.push(tag)
+      if (this.tags.findIndex(t => t.uuid === tag.uuid) === -1) {
+        this.tags.push(tag)
       }
       this.$refs.tags.clear()
     },
     onCancel () {
       this.$emit('cancel')
     },
-    onSaveChanges () {
-      this.$emit('save', this.storeData)
-    },
     onDeleteMember () {
-      this.$emit('delete', this.storeData)
+      this.$emit('delete', pick(this, keys(this.value)))
     }
   }
 }

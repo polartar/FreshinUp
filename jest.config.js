@@ -9,6 +9,7 @@ module.exports = {
     'resources/js/**/*.{js,vue}',
     '!**/*.test.js'
   ]),
+  collectCoverage: false,
   coverageThreshold: {
     global: {
       branches: 54,

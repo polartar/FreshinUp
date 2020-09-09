@@ -86,7 +86,7 @@ describe('Add member (store) in event component', () => {
         selectedTags: [FIXTURE_STORES[0].tags[0]]
       })
 
-      expect(wrapper.vm.filteredStores).toHaveLength(3)
+      expect(wrapper.vm.filteredStores).toHaveLength(4)
     })
 
     test('totalItems', () => {

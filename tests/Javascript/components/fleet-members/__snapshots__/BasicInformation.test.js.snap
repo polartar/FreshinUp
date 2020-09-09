@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
+exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
 <div
   class="container"
 >
@@ -1028,35 +1028,19 @@ exports[`fleet-members/BasicInformation Snapshots Default 1`] = `
             class="v-btn__content"
           >
             
-        Save changes
+        Submit
       
           </div>
         </button>
       </div>
        
-      <div
-        style="text-align: right;"
-      >
-        <button
-          class="v-btn v-btn--disabled v-btn--depressed theme--light"
-          disabled="disabled"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            
-        Delete Fleet Member
-      
-          </div>
-        </button>
-      </div>
+      <!---->
     </div>
   </div>
 </div>
 `;
 
-exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
+exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
 <div
   class="container"
 >
@@ -1123,7 +1107,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1345,7 +1329,54 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
           </div>
            
-          <!---->
+          <div
+            class="flex xs12 pb-4"
+          >
+            <span
+              class="v-chip v-chip--removable theme--light orange"
+              tabindex="0"
+            >
+              <span
+                class="v-chip__content"
+              >
+                
+            ASIAN
+          
+                <div
+                  class="v-chip__close"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    cancel
+                  </i>
+                </div>
+              </span>
+            </span>
+            <span
+              class="v-chip v-chip--removable theme--light orange"
+              tabindex="0"
+            >
+              <span
+                class="v-chip__content"
+              >
+                
+            VEGAN
+          
+                <div
+                  class="v-chip__close"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    cancel
+                  </i>
+                </div>
+              </span>
+            </span>
+          </div>
            
           <div
             class="flex xs4 pr-2"
@@ -1579,7 +1610,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1623,7 +1654,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
               flat=""
               height="48"
               label="Name"
@@ -1697,6 +1728,33 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
                       </div>
                     </div>
                   </div>
+                  <div
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="v-progress-linear"
+                    role="progressbar"
+                    style="height: 2px;"
+                  >
+                    <div
+                      class="v-progress-linear__background primary"
+                      style="height: 2px; opacity: 0.3; width: 100%;"
+                    />
+                    <div
+                      class="v-progress-linear__bar"
+                    >
+                      <div
+                        class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                      >
+                        <div
+                          class="v-progress-linear__bar__indeterminate long primary"
+                        />
+                        <div
+                          class="v-progress-linear__bar__indeterminate short primary"
+                        />
+                      </div>
+                      <!---->
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1714,7 +1772,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1758,7 +1816,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1802,7 +1860,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1846,7 +1904,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1890,7 +1948,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1934,7 +1992,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -1978,7 +2036,7 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
              
             <div
-              class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
             >
               <div
                 class="v-input__control"
@@ -2103,43 +2161,57 @@ exports[`fleet-members/BasicInformation Snapshots Loading 1`] = `
         </button>
          
         <button
-          class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
-          disabled="disabled"
+          class="v-btn v-btn--loader v-btn--depressed theme--light primary"
           type="button"
         >
           <div
             class="v-btn__content"
           >
             
-        Save changes
+        Submit
       
           </div>
+          <span
+            class="v-btn__loading"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              class="v-progress-circular v-progress-circular--indeterminate"
+              role="progressbar"
+              style="height: 23px; width: 23px;"
+            >
+              <svg
+                style="transform: rotate(0deg);"
+                viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="v-progress-circular__overlay"
+                  cx="43.80952380952381"
+                  cy="43.80952380952381"
+                  fill="transparent"
+                  r="20"
+                  stroke-dasharray="125.664"
+                  stroke-dashoffset="125.66370614359172px"
+                  stroke-width="3.8095238095238093"
+                />
+              </svg>
+              <div
+                class="v-progress-circular__info"
+              />
+            </div>
+          </span>
         </button>
       </div>
        
-      <div
-        style="text-align: right;"
-      >
-        <button
-          class="v-btn v-btn--disabled v-btn--depressed theme--light"
-          disabled="disabled"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            
-        Delete Fleet Member
-      
-          </div>
-        </button>
-      </div>
+      <!---->
     </div>
   </div>
 </div>
 `;
 
-exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
+exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
 <div
   class="container"
 >
@@ -2486,7 +2558,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -2501,6 +2573,11 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Square
+                      </div>
                       <input
                         aria-readonly="false"
                         autocomplete="on"
@@ -2538,10 +2615,11 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -2549,7 +2627,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  square
+                                  Square
                                 </div>
                               </div>
                             </a>
@@ -2606,7 +2684,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -2621,6 +2699,11 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        Business One
+                      </div>
                       <input
                         aria-readonly="false"
                         autocomplete="on"
@@ -2658,10 +2741,11 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
-                            <div
-                              class="v-list__tile theme--light"
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -2669,10 +2753,27 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
-                                  No data available
+                                  Business One
                                 </div>
                               </div>
-                            </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Business Two
+                                </div>
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -2750,7 +2851,7 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-loading theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
               flat=""
               height="48"
               label="Name"
@@ -2822,33 +2923,6 @@ exports[`fleet-members/BasicInformation Snapshots WithData 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    class="v-progress-linear"
-                    role="progressbar"
-                    style="height: 2px;"
-                  >
-                    <div
-                      class="v-progress-linear__background primary"
-                      style="height: 2px; opacity: 0.3; width: 100%;"
-                    />
-                    <div
-                      class="v-progress-linear__bar"
-                    >
-                      <div
-                        class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                      >
-                        <div
-                          class="v-progress-linear__bar__indeterminate long primary"
-                        />
-                        <div
-                          class="v-progress-linear__bar__indeterminate short primary"
-                        />
-                      </div>
-                      <!---->
                     </div>
                   </div>
                 </div>

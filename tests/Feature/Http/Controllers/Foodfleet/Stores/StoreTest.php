@@ -111,7 +111,7 @@ class StoresTest extends TestCase
         $stores = factory(Store::class, 1)->create([
             'status_id' => 1,
             'type_id' => $type->id,
-            'size' => 'A',
+            'size' => 123,
             'website' => 'a@a.com',
             'contact_phone' => '1234657890',
             'image' => 'a.png',
@@ -513,7 +513,6 @@ class StoresTest extends TestCase
             'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'pos_system' => $payload['pos_system'],
-            'size_of_truck_trailer' => $payload['size_of_truck_trailer'],
             'state_of_incorporation' => $payload['state_of_incorporation'],
             'website' => $payload['website'],
             'twitter' => $payload['twitter'],
@@ -545,7 +544,7 @@ class StoresTest extends TestCase
             'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'pos_system' => $payload['pos_system'],
-            'size_of_truck_trailer' => $payload['size_of_truck_trailer'],
+            'size' => $payload['size'],
             'contact_phone' => $payload['contact_phone'],
             'state_of_incorporation' => $payload['state_of_incorporation'],
             'website' => $payload['website'],
@@ -555,11 +554,52 @@ class StoresTest extends TestCase
             'staff_notes' => $payload['staff_notes'],
         ], $data);
         $this->assertArrayHasKey('tags', $data);
-        foreach ($tags as $tag) {
-            $this->assertArraySubset([
-                'uuid' => $tag->uuid,
-                'name' => $tag->name,
-            ], $data['tags']);
-        }
+        $this->assertArraySimilar(array_map(function ($tag) {
+            return [
+                'uuid' => $tag['uuid'],
+                'name' => $tag['name'],
+            ];
+        }, $tags->toArray()), $data['tags']);
+    }
+
+    public function testUpdateWithTags()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Store::class)->make()->toArray();
+        $store = factory(Store::class)->create();
+        $tags = factory(StoreTag::class, 3)->create();
+        $payload['tags'] = array_map(function ($tag) {
+            return $tag['uuid'];
+        }, $tags->toArray());
+
+        $response = $this
+            ->json('PUT', '/api/foodfleet/stores/' . $store->uuid, $payload);
+        $data = $response
+            ->assertStatus(200)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'owner_uuid' => $payload['owner_uuid'],
+            'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
+            'name' => $payload['name'],
+            'pos_system' => $payload['pos_system'],
+            'size' => $payload['size'],
+            'contact_phone' => $payload['contact_phone'],
+            'state_of_incorporation' => $payload['state_of_incorporation'],
+            'website' => $payload['website'],
+            'twitter' => $payload['twitter'],
+            'facebook' => $payload['facebook'],
+            'instagram' => $payload['instagram'],
+            'staff_notes' => $payload['staff_notes'],
+        ], $data);
+        $this->assertArrayHasKey('tags', $data);
+        $this->assertArraySimilar(array_map(function ($tag) {
+            return [
+                'uuid' => $tag['uuid'],
+                'name' => $tag['name'],
+            ];
+        }, $tags->toArray()), $data['tags']);
     }
 }

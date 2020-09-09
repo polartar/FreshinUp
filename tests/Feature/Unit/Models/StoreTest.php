@@ -44,7 +44,6 @@ class StoreTest extends TestCase
             'square_id' => $store->square_id,
             'contact_phone' => $store->contact_phone,
             'size' => $store->size,
-            'size_of_truck_trailer' => $store->size_of_truck_trailer,
             'name' => $store->name,
             'pos_system' => $store->pos_system,
             'state_of_incorporation' => $store->state_of_incorporation,
