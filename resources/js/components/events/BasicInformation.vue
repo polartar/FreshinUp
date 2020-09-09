@@ -338,8 +338,8 @@ export default {
     return {
       eventData: {
         name: edit ? get(this.event, 'name') : null,
-        manager_uuid: edit ? get(this.event, 'manager.uuid') : null,
-        host_uuid: edit ? get(this.event, 'host.uuid') : null,
+        manager_uuid: edit ? get(this.event, 'manager_uuid') : null,
+        host_uuid: edit ? get(this.event, 'host_uuid') : null,
         budget: edit ? get(this.event, 'budget') : null,
         attendees: edit ? get(this.event, 'attendees') : null,
         commission_rate: edit ? get(this.event, 'commission_rate') : 5,
