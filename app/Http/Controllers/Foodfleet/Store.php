@@ -81,7 +81,8 @@ class Store extends Controller
         if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
-                $event, compact('commission_rate', 'commission_type')
+                $event,
+                compact('commission_rate', 'commission_type')
             );
         }
 
@@ -144,7 +145,8 @@ class Store extends Controller
         );
     }
 
-    public function store (Request $request) {
+    public function store(Request $request)
+    {
         $rules = [
             'owner_uuid' => 'exists:users,uuid',
             'type_id' => 'exists:store_types,id',

@@ -85,7 +85,8 @@ class Store extends Model implements HasMedia
         return $this->belongsTo(User::class, 'owner_uuid', 'uuid');
     }
 
-    public function type () {
+    public function type()
+    {
         return $this->belongsTo(StoreType::class);
     }
 
