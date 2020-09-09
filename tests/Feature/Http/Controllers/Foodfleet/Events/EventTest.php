@@ -809,18 +809,21 @@ class EventTest extends TestCase
 
         $company = factory(Company::class)->create();
         $location = factory(Location::class)->create();
+        $venue = factory(Venue::class)->create();
         $eventTag = factory(EventTag::class)->create();
 
         $user2 = factory(User::class)->create();
         $company2 = factory(Company::class)->create();
         $location2 = factory(Location::class)->create();
+        $venue2 = factory(Venue::class)->create();
         $eventTag2 = factory(EventTag::class)->create();
 
         $event = factory(Event::class)->create([
             'status_id' => 1,
             'manager_uuid' => $user->uuid,
             'host_uuid' => $company->uuid,
-            'location_uuid' => $location->uuid
+            'location_uuid' => $location->uuid,
+            'venue_uuid' => $venue->uuid
         ]);
 
         $event->eventTags()->save($eventTag);
@@ -831,13 +834,14 @@ class EventTest extends TestCase
                 'manager_uuid' => $user2->uuid,
                 'host_uuid' => $company2->uuid,
                 'location_uuid' => $location2->uuid,
+                'venue_uuid' => $venue2->uuid,
                 'event_tags' => [$eventTag2->name],
                 'status_id' => 2
             ])
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags';
+        $url = 'api/foodfleet/events/' . $event->uuid . '?include=manager,host,location,event_tags,venue';
         $returnedEvent = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -849,6 +853,7 @@ class EventTest extends TestCase
         $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
         $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);
         $this->assertEquals($eventTag2->name, $returnedEvent['event_tags'][0]['name']);
+        $this->assertEquals($venue2->uuid, $returnedEvent['venue']['uuid']);
     }
 
     public function testUpdateItemWithSchedule()

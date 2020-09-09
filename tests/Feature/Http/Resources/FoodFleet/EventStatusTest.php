@@ -3,6 +3,7 @@
 namespace Tests\Feature\Http\Resources\Foodfleet;
 
 use App\Enums\EventStatus as EventStatusEnum;
+use App\Http\Resources\Foodfleet\EventStatus;
 use App\Http\Resources\Foodfleet\EventStatus as EventStatusResource;
 use App\Models\Foodfleet\EventStatus as EventStatusModel;
 use Illuminate\Http\Request;
@@ -41,5 +42,28 @@ class EventStatusTest extends TestCase {
         ];
         $request = app()->make(Request::class);
         $this->assertEquals($expected, $resource->toArray($request));
+    }
+
+    public function getDescriptionProvider () {
+        return [
+            [EventStatusEnum::DRAFT, 'Event was created in the system and submitted for approval'],
+            [EventStatusEnum::FF_INITIAL_REVIEW, 'Food Fleet Staff will review the event request'],
+            [EventStatusEnum::CUSTOMER_AGREEMENT, 'Customer will review / sign event agreement and terms'],
+            [EventStatusEnum::FLEET_MEMBER_SELECTION, 'FoodFleet will define event menu and identify interested Fleet Members'],
+            [EventStatusEnum::CUSTOMER_REVIEW, 'Customer will review interested Fleet Members and authorize work order'],
+            [EventStatusEnum::FLEET_MEMBER_CONTRACTS, 'Approved Fleet Members will review and sign event contracts'],
+            [EventStatusEnum::CONFIRMED, 'Customer will review and sign the final event contract'],
+            [EventStatusEnum::CANCELLED, ''],
+            [EventStatusEnum::PAST, ''],
+        ];
+    }
+
+    /**
+     * @dataProvider getDescriptionProvider
+     * @param $statusId
+     * @param $description
+     */
+    public function testDescription ($statusId, $description) {
+        $this->assertEquals(EventStatus::getDescriptionFor($statusId), $description);
     }
 }

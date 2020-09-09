@@ -44,8 +44,20 @@
 
 # Changes
 
-## September 7, 2020
+## September 9, 2020
 - **ADD** Creating new Fleet Member. [#431](https://github.com/FreshinUp/foodfleet/issues/431)
+
+<br/>
+
+## September 7, 2020
+- **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)
+
+<br/>
+
+## September 6, 2020
+- **ADD** Persisting changes on event [#445](https://github.com/FreshinUp/foodfleet/issues/445)
+
+<br/>
 
 ## September 4, 2020
 - **ADD** Status helper function is created for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)
