@@ -582,6 +582,8 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
             <h3>
               Basic Information
             </h3>
+             
+            <!---->
           </div>
            
           <hr
@@ -10286,6 +10288,8 @@ exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
             <h3>
               Basic Information
             </h3>
+             
+            <!---->
           </div>
            
           <hr

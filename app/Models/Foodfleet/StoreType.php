@@ -8,6 +8,6 @@ class StoreType extends Model
 {
     public function stores()
     {
-        return $this->hasMany('Store', 'type');
+        return $this->hasMany(Store::class, 'type');
     }
 }

@@ -224,31 +224,27 @@ export default {
 
     filteredStores () {
       let items = this.stores
-
       if (this.selectedState) {
-        items = items.filter(i => i['state_of_incorporation'] === this.selectedState)
+        items = items.filter(store => store['state_of_incorporation'] === this.selectedState)
       }
-
       if (this.selectedType) {
-        items = items.filter(i => i['type_id'] === this.selectedType)
+        items = items.filter(store => store['type_id'] === this.selectedType)
       }
-
       if (this.selectedTags.length) {
-        items = items.filter(i => i['tags'].some(tag => this.selectedTags.includes(tag)))
+        items = items.filter(store => store['tags'].some(tag => this.selectedTags.findIndex(t => t.uuid === tag.uuid) !== -1))
       }
-
       return items
     },
     totalItems () {
       return this.filteredStores.length
     },
     locations () {
-      return _uniq(this.stores.map(m => m['state_of_incorporation']))
+      return _uniq(this.stores.map(s => s['state_of_incorporation']))
     },
     tags () {
-      const ts = []
-      this.stores.forEach(m => ts.push(...m['tags']))
-      return _uniq(ts)
+      const tags = []
+      this.stores.forEach(store => tags.push(...get(store, 'tags', [])))
+      return _uniq(tags.map(tag => tag.name))
     },
     storeTypesById () {
       return this.storeTypes.reduce((map, type) => {

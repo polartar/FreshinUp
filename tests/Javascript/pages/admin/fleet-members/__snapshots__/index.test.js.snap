@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Admin Docs Page Mount snapshot 1`] = `
+exports[`pages/admin/fleet-members Mount snapshot 1`] = `
 <div>
   <v-flex-stub
     align-center=""

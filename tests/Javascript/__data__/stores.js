@@ -1,14 +1,27 @@
 export const FIXTURE_STORES = [
   {
-    uuid: 'abc123',
+    uuid: 'abc111',
     name: 'Da Lobster',
     type_id: 1,
-    tags: ['ASIAN', 'VEGAN'],
+    tags: [
+      {
+        uuid: 'a111',
+        name: 'ASIAN'
+      },
+      {
+        uuid: 'a222',
+        name: 'VEGAN'
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: 200,
-    owner: 'Josh Smith @ Restaurant Inc',
-    phone: '938 374822',
+    square_id: 1,
+    size: 200,
+    owner_uuid: 'o111',
+    owner: {
+      uuid: 'o111',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
+    contact_phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
     twitter: 'www.twitter.com/restaurantinc',
@@ -26,15 +39,24 @@ export const FIXTURE_STORES = [
     ]
   },
   {
-    uuid: 'abc345',
+    uuid: 'abc222',
     name: 'Rekindler',
     type_id: 2,
-    tags: ['VEGAN'],
+    tags: [
+      {
+        uuid: 'a111',
+        name: 'VEGAN'
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Dibitery Inc',
-    phone: '938 374822',
+    square_id: 1,
+    size: 150,
+    owner_uuid: 'o222',
+    owner: {
+      uuid: 'o222',
+      name: 'Josh Smith @ Dibitery Inc'
+    },
+    contact_phone: '938 374822',
     state_of_incorporation: 'New York',
     website: 'www.restaurantinc.com',
     twitter: 'www.twitter.com/restaurantinc',
@@ -45,15 +67,22 @@ export const FIXTURE_STORES = [
     events: []
   },
   {
-    uuid: 'abc567',
+    uuid: 'abc333',
     name: 'Fiora',
     type_id: 2,
-    tags: ['ASIAN'],
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN'
+    }],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Dibitery Inc',
-    phone: '938 374822',
+    square_id: 1,
+    size: 340,
+    owner_uuid: 'o333',
+    owner: {
+      uuid: 'o333',
+      name: 'Josh Smith @ Dibitery Inc'
+    },
+    contact_phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
     twitter: 'www.twitter.com/restaurantinc',
@@ -64,15 +93,25 @@ export const FIXTURE_STORES = [
     events: []
   },
   {
-    uuid: 'op123',
+    uuid: 'abc444',
     name: 'Trundle',
     type_id: 2,
-    tags: ['ASIAN', 'VEGAN'],
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN'
+    }, {
+      uuid: 'v111',
+      name: 'VEGAN'
+    }],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Restaurant Inc',
-    phone: '938 374822',
+    square_id: 1,
+    size: 123,
+    owner_uuid: 'o444',
+    owner: {
+      uuid: 'o444',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
+    contact_phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
     twitter: 'www.twitter.com/restaurantinc',
@@ -90,15 +129,24 @@ export const FIXTURE_STORES = [
     ]
   },
   {
-    uuid: 'ddd123',
+    uuid: 'abc555',
     name: 'La fourchette',
     type_id: 2,
-    tags: ['VEGAN'],
+    tags: [
+      {
+        uuid: 't1',
+        name: 'VEGAN'
+      }
+    ],
     pos_system: 'Square',
-    business_name: '',
-    size_of_truck_trailer: '',
-    owner: 'Josh Smith @ Restaurant Inc',
-    phone: '938 374822',
+    square_id: 1,
+    size: '',
+    owner_uuid: 'o555',
+    owner: {
+      uuid: 'o555',
+      name: 'Josh Smith @ Restaurant Inc'
+    },
+    contact_phone: '938 374822',
     state_of_incorporation: 'California',
     website: 'www.restaurantinc.com',
     twitter: 'www.twitter.com/restaurantinc',

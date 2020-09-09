@@ -44,6 +44,11 @@
 
 # Changes
 
+## September 9, 2020
+- **ADD** Creating new Fleet Member. [#431](https://github.com/FreshinUp/foodfleet/issues/431)
+
+<br/>
+
 ## September 7, 2020
 - **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)
 

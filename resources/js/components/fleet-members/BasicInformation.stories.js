@@ -6,7 +6,23 @@ import BasicInformation from './BasicInformation'
 import { FIXTURE_STORE } from '../../../../tests/Javascript/__data__/stores'
 import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
 
-const LOCATIONS = ['square']
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
+
+const LOCATIONS = ['Square']
+const mock = new MockAdapter(axios)
+
+mock
+  .onGet(/.*users.*/)
+  .reply(200, {
+    data: [
+      { uuid: 'o111', name: 'John Smith' },
+      { uuid: 'o222', name: 'Bob Loblaw' },
+      { uuid: 'o333', name: 'Mario Brother' },
+      { uuid: 'o444', name: 'Jeanette Rempel' },
+      { uuid: 'o555', name: 'Miller Ortiz' }
+    ]
+  })
 
 export const Default = () => ({
   components: { BasicInformation },
@@ -17,22 +33,42 @@ export const Default = () => ({
   `
 })
 
+export const Loading = () => ({
+  components: { BasicInformation },
+  template: `
+    <v-container>
+      <basic-information loading/>
+    </v-container>
+  `
+})
+
 export const WithData = () => ({
   components: { BasicInformation },
   data () {
     return {
       store: FIXTURE_STORE,
       types: FIXTURE_STORE_TYPES,
-      locations: LOCATIONS
+      locations: LOCATIONS,
+      squareLocations: [
+        {
+          square_id: 1,
+          name: 'Business One'
+        },
+        {
+          square_id: 2,
+          name: 'Business Two'
+        }
+      ]
     }
   },
   template: `
     <v-container>
       <basic-information
-        :store="store"
+        :value="store"
         :locations="locations"
         :types="types"
-        @save="onSave"
+        :square-locations="squareLocations"
+        @input="onSave"
         @cancel="onCancel"
         @delete="onDelete"/>
     </v-container>
@@ -59,4 +95,5 @@ storiesOf('FoodFleet|components/fleet-members/BasicInformation', module)
     ]
   })
   .add('Default', Default)
+  .add('Loading', Loading)
   .add('WithData', WithData)
