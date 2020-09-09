@@ -29,7 +29,8 @@ class Store extends Controller
                 'events',
                 'supplier',
                 'supplier.admin',
-                'status'
+                'status',
+                'owner'
             ])
             ->allowedSorts([
                 'name',
