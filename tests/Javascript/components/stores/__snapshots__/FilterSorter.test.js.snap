@@ -33,7 +33,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   class="v-text-field__slot"
                 >
                   <input
-                    placeholder="Start typing to Search"
+                    placeholder="Filter by fleet member name"
                     type="text"
                   />
                 </div>

@@ -4,6 +4,7 @@
     class="filter-transparent"
     expanded
     without-filter-label
+    placeholder="Filter by fleet member name"
     sort-label="Sort by"
     :sort-options="sortables"
     color="transparent"
@@ -29,13 +30,13 @@
                 Statuses
               </filter-label>
               <clear-button
-                v-if="filters.status && filters.status.length > 0"
+                v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="filters.status = null;"
+                @clear="filters.status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="filters.status"
+              v-model="filters.status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -123,14 +124,14 @@
                 Tags
               </filter-label>
               <clear-button
-                v-if="filters.store_tag_uuid && filters.store_tag_uuid.length > 0"
+                v-if="filters.tag && filters.tag.length > 0"
                 color="white"
-                @clear="filters.store_tag_uuid = null; $refs.tag.resetTerm()"
+                @clear="filters.tag = null; $refs.tag.resetTerm()"
               />
             </v-layout>
             <multi-simple
               ref="tag"
-              v-model="filters.store_tag_uuid"
+              v-model="filters.tag"
               url="foodfleet/store-tags"
               term-param="filter[name]"
               results-id-key="uuid"
@@ -168,8 +169,8 @@ export default {
     filters: {
       type: Object,
       default: () => ({
-        status: null,
-        store_tag_uuid: null,
+        status_id: null,
+        tag: null,
         location_uuid: null,
         supplier_uuid: null
       })
@@ -198,8 +199,8 @@ export default {
         name: params.term,
         ...this.filters
       }
-      if (this.filters.store_tag_uuid) {
-        finalParams.store_tag_uuid = this.filters.store_tag_uuid.map(item => item.uuid)
+      if (this.filters.tag) {
+        finalParams.tag = this.filters.tag.map(item => item.uuid)
       }
       if (this.filters.supplier_uuid) {
         finalParams.supplier_uuid = this.filters.supplier_uuid.map(item => item.uuid)
@@ -213,7 +214,10 @@ export default {
       this.$refs.tag.resetTerm()
       this.$refs.supplier.resetTerm()
       this.$refs.location.resetTerm()
-      this.filters.status = this.filters.store_tag_uuid = this.filters.location_uuid = this.filters.supplier_uuid = null
+      this.filters.status_id = null
+      this.filters.tag = null
+      this.filters.location_uuid = null
+      this.filters.supplier_uuid = null
     }
   }
 }
