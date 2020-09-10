@@ -18,8 +18,6 @@ export default ({ items, item }) => {
   ]
 
   const FILLABLES = [
-    'id',
-    'uuid',
     'name',
     'square_id',
     'status_id',
@@ -35,7 +33,6 @@ export default ({ items, item }) => {
     'deleted_at',
     'owner_uuid',
     'pos_system',
-    'size_of_truck_trailer',
     'phone',
     'state_of_incorporation',
     'facebook',

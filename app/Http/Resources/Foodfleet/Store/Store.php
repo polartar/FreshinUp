@@ -5,6 +5,7 @@ namespace App\Http\Resources\Foodfleet\Store;
 
 use App\Http\Resources\Foodfleet\Store\Type;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
+use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
@@ -44,9 +45,9 @@ class Store extends JsonResource
             'contact_phone' => $this->contact_phone,
             'size' => $this->size,
             'image' => $this->image,
+            "owner" => new User($this->whenLoaded('owner')),
             'owner_uuid' => $this->owner_uuid,
             'pos_system' => $this->pos_system,
-            'size_of_truck_trailer' => $this->size_of_truck_trailer,
             'state_of_incorporation' => $this->state_of_incorporation,
             "website" => $this->website,
             'facebook' => $this->facebook,
