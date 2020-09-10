@@ -44,9 +44,15 @@
 
 # Changes
 
-## September 8, 2020
+## September 10, 2020
 `Fleet-members`, `Events`
 - **ADD** Snackbar informs user of success or failure [#413](https://github.com/FreshinUp/foodfleet/issues/413)
+
+
+## September 9, 2020
+- **ADD** Creating new Fleet Member. [#431](https://github.com/FreshinUp/foodfleet/issues/431)
+
+<br/>
 
 ## September 7, 2020
 - **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)

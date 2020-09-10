@@ -1359,7 +1359,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              ASIAN
+              {
+  "uuid": "a111",
+  "name": "ASIAN"
+}
             
                       </span>
                     </span>
@@ -1371,7 +1374,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              VEGAN
+              {
+  "uuid": "a222",
+  "name": "VEGAN"
+}
             
                       </span>
                     </span>
@@ -1492,7 +1498,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              ASIAN
+              {
+  "uuid": "a111",
+  "name": "ASIAN"
+}
             
                       </span>
                     </span>
@@ -1613,7 +1622,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              VEGAN
+              {
+  "uuid": "t1",
+  "name": "VEGAN"
+}
             
                       </span>
                     </span>
@@ -1734,7 +1746,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              VEGAN
+              {
+  "uuid": "a111",
+  "name": "VEGAN"
+}
             
                       </span>
                     </span>
@@ -1854,7 +1869,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              ASIAN
+              {
+  "uuid": "a111",
+  "name": "ASIAN"
+}
             
                       </span>
                     </span>
@@ -1866,7 +1884,10 @@ exports[`Add member (store) in event component Snapshots WithData 1`] = `
                         class="v-chip__content"
                       >
                         
-              VEGAN
+              {
+  "uuid": "v111",
+  "name": "VEGAN"
+}
             
                       </span>
                     </span>

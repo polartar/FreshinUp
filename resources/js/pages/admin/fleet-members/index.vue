@@ -39,8 +39,7 @@
       :descending="sorting.descending"
       @paginate="onPaginate"
       @change-status="changeStatus"
-      @manage-view="storeView"
-      @manage-edit="storeEdit"
+      @manage-view="storeViewOrEdit"
       @manage-delete="deleteStore"
       @manage-multiple-delete="deleteStore"
       @change_status_multiple="changeStatusMultiple"
@@ -141,11 +140,8 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    storeView (store) {
-      alert('coming soon')
-    },
-    storeEdit (store) {
-      alert('coming soon')
+    storeViewOrEdit (store) {
+      this.$router.push({ path: `/admin/fleet-members/${store.uuid}/edit` })
     },
     deleteStore (stores) {
       if (!Array.isArray(stores)) {

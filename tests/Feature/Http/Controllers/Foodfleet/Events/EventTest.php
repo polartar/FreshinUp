@@ -596,9 +596,7 @@ class EventTest extends TestCase
     public function testGetItem()
     {
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
         $company = factory(Company::class)->create();
         $location = factory(Location::class)->create();
         $eventTag = factory(EventTag::class)->create();

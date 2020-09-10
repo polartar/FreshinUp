@@ -16,12 +16,13 @@ class CreateEvent implements Action
     {
         $collection = collect($data);
         $createData = $collection->except(['event_tags', 'schedule'])->all();
+        /** @var Event $event */
         $event = Event::create($createData);
 
         $tags = $collection->get('event_tags');
 
         if ($tags) {
-            $tagIds =[];
+            $tagUuids = [];
             foreach ($tags as $tag) {
                 $record = EventTag::firstOrCreate(['name' => $tag]);
                 $tagUuids[] = $record->uuid;
@@ -48,7 +49,7 @@ class CreateEvent implements Action
             empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
         }
-        
+
         $schedule = new EventSchedule;
         $schedule->event_uuid = $event->uuid;
         $schedule->interval_unit = $interval_unit;

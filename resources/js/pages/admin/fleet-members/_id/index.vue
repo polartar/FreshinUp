@@ -145,8 +145,7 @@ export default {
       })
     },
     viewEvent (event) {
-      // TODO: Replace this with the proper route for an event item
-      window.location = '/admin/events/' + event.uuid
+      this.$router.push({ path: `/admin/events/${event.uuid}` })
     },
     filterEvents (params) {
       this.$store.dispatch('events/setFilters', params)
