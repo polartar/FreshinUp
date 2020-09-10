@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-form
-      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -493,16 +492,24 @@ export default {
       // end TODO
 
       if (!valid) {
+        this.$store.dispatch('generalErrorMessages/setErrors', 'Validation error. Please check the form.')
         return false
       }
-      if (this.isNew) {
-        data.id = 'new'
-        await this.$store.dispatch('events/createItem', { data })
-        await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-        this.$router.push({ path: '/admin/events/' })
-      } else {
-        await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-        await this.$store.dispatch('generalMessage/setMessage', 'Modified')
+      try {
+        this.eventLoading = true
+        if (this.isNew) {
+          await this.$store.dispatch('events/createItem', { data })
+          await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          this.$router.push({ path: '/admin/events/' })
+        } else {
+          await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
+          await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
+        }
+      } catch (error) {
+        const message = get(error, 'response.data.message', error.message)
+        this.$store.dispatch('generalErrorMessages/setErrors', message)
+      } finally {
+        this.eventLoading = false
       }
     },
     onCancel () {
