@@ -191,8 +191,8 @@ export default {
   },
   methods: {
     async saveOrCreate (data) {
-      this.loading = true
       try {
+        this.loading = true
         if (this.isNew) {
           await this.$store.dispatch('stores/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
@@ -208,18 +208,14 @@ export default {
         this.loading = false
       }
     },
-
     deleteMember (item) {},
-
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
     },
-
     backToList () {
       this.$router.push({ path: '/admin/fleet-members' })
     }
   },
-
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []

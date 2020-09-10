@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-form
-      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -497,8 +496,8 @@ export default {
         return false
       }
       try {
+        this.eventLoading = true
         if (this.isNew) {
-          data.id = 'new'
           await this.$store.dispatch('events/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
           this.$router.push({ path: '/admin/events/' })
@@ -507,8 +506,10 @@ export default {
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
         }
       } catch (error) {
-        const message = get(error, 'response.message', error.message)
+        const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
+      } finally {
+        this.eventLoading = false
       }
     },
     onCancel () {

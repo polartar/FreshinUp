@@ -50,6 +50,7 @@ class Store extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
+            'name' => 'required',
             'status_id' => 'integer',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
