@@ -297,10 +297,12 @@ class StoresTest extends TestCase
         $store = factory(Store::class)->create([
             'status_id' => 1
         ]);
+        $payload = [
+            'status_id' => 2,
+            'name' => $store->name
+        ];
         $this
-            ->json('PUT', '/api/foodfleet/stores/'.$store->uuid, [
-                'status_id' => 2
-            ])
+            ->json('PUT', '/api/foodfleet/stores/'.$store->uuid, $payload)
             ->assertStatus(200);
 
         $url = 'api/foodfleet/stores/'.$store->uuid;

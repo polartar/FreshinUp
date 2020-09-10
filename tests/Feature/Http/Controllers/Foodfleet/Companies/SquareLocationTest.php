@@ -16,27 +16,19 @@ class SquareLocationTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
-
         $user = factory(User::class)->create();
         Passport::actingAs($user);
 
-        $company = factory(Company::class)->create();
-        factory(User::class, 2)->create([
-            'company_id' => $company->id
-        ]);
+        factory(User::class, 2)->create();
 
         $company = factory(Company::class)->create();
         $users = factory(User::class, 11)->create([
             'company_id' => $company->id
         ]);
 
+        // TODO: this should be mocked
         $api_config = new \SquareConnect\Configuration();
         $api_config->setHost(config('services.square.sq_domain'));
         $api_config->setAccessToken(config('services.square.sq_token'));
