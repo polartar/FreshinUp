@@ -24,4 +24,3 @@ class StoreTagNameSort implements Sort
             ->orderByRaw("tags_name {$direction}");
     }
 }
-

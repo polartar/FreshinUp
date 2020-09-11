@@ -16,4 +16,3 @@ class OwnerNameSort implements Sort
             ->orderByRaw("users.first_name {$direction}");
     }
 }
-
