@@ -6,16 +6,16 @@ import makeRestStore, {
 } from '@freshinup/core-ui/src/store/utils/makeRestStore'
 import pick from 'lodash/pick'
 
+export const SORTABLES = [
+  { value: '-created_at', text: 'Newest' },
+  { value: 'created_at', text: 'Oldest' },
+  { value: 'name', text: 'Name (A - Z)' },
+  { value: '-name', text: 'Name (Z - A)' }
+]
+
 export default ({ items, item }) => {
   const storesApi = buildApi('foodfleet/stores', { items, item })
   const store = makeModule(storesApi.getStore(), 'stores')
-
-  const sortables = [
-    { value: '-created_at', text: 'Newest' },
-    { value: 'created_at', text: 'Oldest' },
-    { value: 'name', text: 'Name (A - Z)' },
-    { value: '-name', text: 'Name (Z - A)' }
-  ]
 
   const FILLABLES = [
     'name',
@@ -45,7 +45,7 @@ export default ({ items, item }) => {
   // Initial State
   store.state = {
     ...store.state,
-    sortables
+    sortables: SORTABLES
   }
 
   const _createItem = store.actions.createItem

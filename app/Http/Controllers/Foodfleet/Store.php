@@ -39,10 +39,12 @@ class Store extends Controller
             ])
             ->allowedFilters([
                 'name',
+                'state_of_incorporation',
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
-                Filter::exact('supplier_uuid')
+                Filter::exact('supplier_uuid'),
+                Filter::exact('owner_uuid')
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());

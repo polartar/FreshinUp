@@ -18,12 +18,14 @@
         <v-layout
           row
           justify-space-between
+          class="mb-4"
         >
-          <v-flex>
+          <v-flex
+            ml-2
+          >
             <v-layout
               row
               justify-space-between
-              align-center
               mb-2
             >
               <filter-label>
@@ -56,27 +58,29 @@
               mb-2
             >
               <filter-label>
-                Supplier
+                Owner
               </filter-label>
               <clear-button
-                v-if="filters.supplier_uuid && filters.supplier_uuid.length > 0"
+                v-if="filters.owner_uuid"
                 color="white"
-                @clear="filters.supplier_uuid = []; $refs.host.resetTerm()"
+                @clear="filters.owner_uuid = null; $refs.owner.clearTerm()"
               />
             </v-layout>
-            <multi-simple
-              ref="supplier"
-              v-model="filters.supplier_uuid"
-              url="companies?filter[type_key]=supplier"
-              term-param="filter[name]"
-              results-id-key="uuid"
-              placeholder="Select"
+            <f-autocomplete
+              ref="owner"
+              :value="filters.owner_uuid"
+              no-filter
+              placeholder="Owned by"
+              value-fetch
+              item-value="uuid"
+              item-text="name"
+              url="/users?filter[status]=1"
               background-color="white"
-              class="mt-0 pt-0"
+              hide-details
+              class="pt-0"
               height="48"
               not-clearable
-              solo
-              flat
+              @input="selectOwner"
             />
           </v-flex>
           <v-flex
@@ -88,28 +92,22 @@
               mb-2
             >
               <filter-label>
-                Hometown
+                State
               </filter-label>
               <clear-button
-                v-if="filters.location_uuid"
+                v-if="filters.state_of_incorporation"
                 color="white"
-                @clear="filters.location_uuid = null; $refs.location.resetTerm()"
+                @clear="filters.state_of_incorporation = null"
               />
             </v-layout>
-            <simple
-              ref="location"
-              url="foodfleet/locations"
-              term-param="filter[name]"
-              results-id-key="uuid"
-              :value="filters.location_uuid"
-              placeholder="Select"
+            <v-text-field
+              class="pt-0"
               background-color="white"
-              class="mt-0 pt-0"
               height="48"
-              not-clearable
-              solo
-              flat
-              @input="selectLocation"
+              :value="filters.state_of_incorporation"
+              placeholder="State of incorporation"
+              single-line
+              @input="onStateChanged"
             />
           </v-flex>
           <v-flex
@@ -132,7 +130,7 @@
             <multi-simple
               ref="tag"
               v-model="filters.tag"
-              url="foodfleet/store-tag"
+              url="foodfleet/store-tags"
               term-param="filter[name]"
               results-id-key="uuid"
               placeholder="Search Tag"
@@ -153,23 +151,26 @@
 import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
-import Simple from 'fresh-bus/components/search/simple'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
+import FAutocomplete from '~/components/FAutocomplete'
+import debounce from 'lodash/debounce'
+
 export const DEFAULT_FILTERS = {
   status_id: null,
   tag: null,
-  location_uuid: null,
-  supplier_uuid: null
+  state_of_incorporation: null,
+  owner_uuid: null
 }
+
 export default {
   components: {
-    Simple,
     MultiSimple,
     FilterLabel,
     ClearButton,
     MultiSelect,
-    SearchFilterSorter
+    SearchFilterSorter,
+    FAutocomplete
   },
   props: {
     filters: {
@@ -195,6 +196,14 @@ export default {
     }
   },
   methods: {
+    // mutating the filter immediately would cause too much network request
+    // while the user is still typing
+    onStateChanged: debounce(function (value) {
+      this.filters.state_of_incorporation = value
+    }, 400),
+    selectOwner (user) {
+      this.filters.owner_uuid = user ? user.uuid : null
+    },
     run (params) {
       const finalParams = {
         name: params.term,
@@ -203,22 +212,15 @@ export default {
       if (this.filters.tag) {
         finalParams.tag = this.filters.tag.map(item => item.uuid)
       }
-      if (this.filters.supplier_uuid) {
-        finalParams.supplier_uuid = this.filters.supplier_uuid.map(item => item.uuid)
-      }
       this.$emit('runFilter', finalParams)
-    },
-    selectLocation (location) {
-      this.filters.location_uuid = location ? location.uuid : null
     },
     clearFilters () {
       this.$refs.tag.resetTerm()
-      this.$refs.supplier.resetTerm()
-      this.$refs.location.resetTerm()
+      this.$refs.owner.clearTerm()
       this.filters.status_id = null
       this.filters.tag = null
-      this.filters.location_uuid = null
-      this.filters.supplier_uuid = null
+      this.filters.owner_uuid = null
+      this.filters.state_of_incorporation = null
     }
   }
 }
@@ -228,7 +230,7 @@ export default {
     border: none !important;
   }
   /deep/ .filter-sorter-expanded-layout{
-    align-items: flex-end;
+    align-items: center;
   }
   /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
     margin: 0;
