@@ -12,11 +12,14 @@ use App\Http\Resources\Foodfleet\Store\StoreServiceSummary as StoreServiceSummar
 use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
+use App\Sorts\Stores\OwnerNameSort;
+use App\Sorts\Stores\StoreTagNameSort;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\Sort;
 
 class Store extends Controller
 {
@@ -30,21 +33,26 @@ class Store extends Controller
                 'supplier',
                 'supplier.admin',
                 'status',
-                'owner'
+                'owner',
+                'type'
             ])
             ->allowedSorts([
                 'name',
                 'status_id',
                 'created_at',
+                'state_of_incorporation',
+                Sort::custom('owner', new OwnerNameSort()),
+                Sort::custom('tags', new StoreTagNameSort()),
             ])
             ->allowedFilters([
                 'name',
                 'state_of_incorporation',
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
+                Filter::custom('owner_uuid', BelongsToWhereInUuidEquals::class, 'owner'),
+                Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
                 Filter::exact('uuid'),
-                Filter::exact('supplier_uuid'),
-                Filter::exact('owner_uuid')
+                Filter::exact('supplier_uuid')
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());

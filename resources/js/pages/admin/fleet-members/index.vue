@@ -94,6 +94,14 @@ import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import get from 'lodash/get'
 import FilterSorter from '~/components/stores/FilterSorter.vue'
 
+const INCLUDE = [
+  'tags',
+  'addresses',
+  'status',
+  'owner',
+  'type'
+]
+
 export default {
   layout: 'admin',
   components: {
@@ -204,7 +212,7 @@ export default {
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     },
     runFilter (params) {
@@ -217,7 +225,7 @@ export default {
         ...this.lastFilterParams
       })
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     }
   },
@@ -229,7 +237,7 @@ export default {
         ...this.lastFilterParams
       }),
       vm.$store.dispatch('storeStatuses/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     ])
       .then(() => {
