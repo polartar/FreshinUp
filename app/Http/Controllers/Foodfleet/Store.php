@@ -44,7 +44,7 @@ class Store extends Controller
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid'),
-                Filter::custom('owner_uuid', BelongsToWhereInUuidEquals::class, 'users'),
+                Filter::exact('owner_uuid')
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());
