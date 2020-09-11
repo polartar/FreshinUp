@@ -212,7 +212,6 @@ export default {
     },
     filterStores (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('stores/setSort', params.sort)
       this.$store.dispatch('stores/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams
@@ -226,7 +225,8 @@ export default {
     vm.setPageLoading(true)
     Promise.all([
       vm.$store.dispatch('stores/setFilters', {
-        ...vm.$route.query
+        ...vm.$route.query,
+        ...this.lastFilterParams
       }),
       vm.$store.dispatch('storeStatuses/getItems', {
         params: { include: 'tags,addresses,status' }
