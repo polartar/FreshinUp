@@ -49,7 +49,7 @@ class StoresTest extends TestCase
         Passport::actingAs($user);
         $store = factory(Store::class)->create();
         $data = $this
-            ->json('GET', 'api/foodfleet/stores/'.$store->uuid)
+            ->json('GET', 'api/foodfleet/stores/' . $store->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -168,7 +168,7 @@ class StoresTest extends TestCase
         })->join(',');
 
         $data = $this
-            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=".$userUuid)
+            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=" . $userUuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -205,7 +205,7 @@ class StoresTest extends TestCase
             return $status->id;
         })->join(',');
         $data = $this
-            ->json('get', "/api/foodfleet/stores?filter[status_id]=".$statusId)
+            ->json('get', "/api/foodfleet/stores?filter[status_id]=" . $statusId)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -218,27 +218,16 @@ class StoresTest extends TestCase
         $this->assertEquals($storeToFind2->uuid, $data[1]['uuid']);
     }
 
-    public function testGetListWithFilters()
+    public function testGetListWithNameFilter()
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
         factory(Store::class, 5)->create([
-            'name' => 'Not visibles'
+            'name' => 'Not visible'
         ]);
         $storesToFind = factory(Store::class, 5)->create([
             'name' => 'To find'
         ]);
-        $data = $this
-            ->json('get', "/api/foodfleet/stores")
-            ->assertStatus(200)
-            ->assertJsonStructure([
-                'data'
-            ])
-            ->json('data');
-
-        $this->assertNotEmpty($data);
-        $this->assertEquals(10, count($data));
-
 
         $data = $this
             ->json('get', "/api/foodfleet/stores?filter[name]=find")
@@ -256,10 +245,22 @@ class StoresTest extends TestCase
                 'name' => $fleetMember->name
             ], $data[$idx]);
         }
+    }
 
+    public function testGetListWithStateIncorporationFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        factory(Store::class, 2)->create([
+            'state_of_incorporation' => 'Dakar'
+        ]);
+        $storesToFind = factory(Store::class, 3)->create([
+            'state_of_incorporation' => 'Bamako'
+        ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?filter[state_of_incorporation]=find")
+            ->json('get', "/api/foodfleet/stores?filter[state_of_incorporation]=Dakar")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -267,17 +268,23 @@ class StoresTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(5, count($data));
+        $this->assertEquals(2, count($data));
         foreach ($storesToFind as $idx => $fleetMember) {
             $this->assertArraySubset([
                 'uuid' => $fleetMember->uuid,
                 'state_of_incorporation' => $fleetMember->state_of_incorporation
             ], $data[$idx]);
         }
+    }
 
+    public function testGetListWithUuidFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $stores = factory(Store::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?filter[uuid]=".$storesToFind->first()->uuid)
+            ->json('get', "/api/foodfleet/stores?filter[uuid]=" . $stores->first()->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -286,18 +293,24 @@ class StoresTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(1, count($data));
         $this->assertArraySubset([
-            'uuid' => $storesToFind->first()->uuid,
-            'name' => $storesToFind->first()->name
+            'uuid' => $stores->first()->uuid,
+            'name' => $stores->first()->name
         ], $data[0]);
+    }
 
+    public function testGetListWithSupplierUuidFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $stores = factory(Store::class, 5)->create();
 
         $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create();
-        $store = $storesToFind->first();
+        $store = $stores->first();
         $store->supplier_uuid = $company->uuid;
         $store->save();
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?filter[supplier_uuid]=".$company->uuid)
+            ->json('get', "/api/foodfleet/stores?filter[supplier_uuid]=" . $company->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -309,15 +322,21 @@ class StoresTest extends TestCase
             'uuid' => $store->uuid,
             'name' => $store->name
         ], $data[0]);
+    }
 
+    public function testGetListWithOwnerUuidFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $stores = factory(Store::class, 5)->create();
 
-        $owner = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create();
-        $store = $storesToFind->first();
+        $owner = factory(User::class)->create();
+        $store = $stores->first();
         $store->owner_uuid = $owner->uuid;
         $store->save();
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores?filter[owner_uuid]=".$owner->uuid)
+            ->json('get', "/api/foodfleet/stores?filter[owner_uuid]=" . $owner->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -343,10 +362,10 @@ class StoresTest extends TestCase
             'name' => $store->name
         ];
         $this
-            ->json('PUT', '/api/foodfleet/stores/'.$store->uuid, $payload)
+            ->json('PUT', '/api/foodfleet/stores/' . $store->uuid, $payload)
             ->assertStatus(200);
 
-        $url = 'api/foodfleet/stores/'.$store->uuid;
+        $url = 'api/foodfleet/stores/' . $store->uuid;
         $returnedStore = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -449,7 +468,7 @@ class StoresTest extends TestCase
         $store = factory(Store::class)->create();
         $store->events()->sync([$event->uuid]);
         $this
-            ->json('PUT', 'api/foodfleet/stores/'.$store->uuid, [
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
                 'name' => 'test store',
                 'event_uuid' => $event->uuid,
                 'commission_rate' => 12,
@@ -458,7 +477,7 @@ class StoresTest extends TestCase
             ->assertStatus(200)
             ->json('data');
 
-        $result = $this->json('GET', 'api/foodfleet/stores/'.$store->uuid."?include=events")
+        $result = $this->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=events")
             ->assertStatus(200)
             ->json('data');
         $this->assertEquals('test store', $result['name']);
@@ -479,7 +498,7 @@ class StoresTest extends TestCase
             return $tag->uuid;
         }));
         $data = $this
-            ->json('get', "/api/foodfleet/store-summary/".$store->uuid)
+            ->json('get', "/api/foodfleet/store-summary/" . $store->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -502,7 +521,7 @@ class StoresTest extends TestCase
             'store_uuid' => $store->uuid
         ]);
         $this
-            ->json('PUT', 'api/foodfleet/stores/'.$store->uuid, [
+            ->json('PUT', 'api/foodfleet/stores/' . $store->uuid, [
                 'name' => 'test store',
                 'event_uuid' => $event->uuid,
                 'commission_rate' => 12,
@@ -512,7 +531,7 @@ class StoresTest extends TestCase
             ->json('data');
 
         $data = $this
-            ->json('get', "/api/foodfleet/store-service-summary/".$store->uuid."?event_uuid=".$event->uuid)
+            ->json('get', "/api/foodfleet/store-service-summary/" . $store->uuid . "?event_uuid=" . $event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
