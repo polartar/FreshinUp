@@ -253,10 +253,10 @@ class StoresTest extends TestCase
         Passport::actingAs($user);
 
         factory(Store::class, 2)->create([
-            'state_of_incorporation' => 'Dakar'
+            'state_of_incorporation' => 'Bamako'
         ]);
         $storesToFind = factory(Store::class, 3)->create([
-            'state_of_incorporation' => 'Bamako'
+            'state_of_incorporation' => 'Dakar'
         ]);
 
         $data = $this
@@ -268,7 +268,7 @@ class StoresTest extends TestCase
             ->json('data');
 
         $this->assertNotEmpty($data);
-        $this->assertEquals(2, count($data));
+        $this->assertEquals(3, count($data));
         foreach ($storesToFind as $idx => $fleetMember) {
             $this->assertArraySubset([
                 'uuid' => $fleetMember->uuid,
