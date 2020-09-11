@@ -61,7 +61,7 @@
               <clear-button
                 v-if="filters.supplier_uuid && filters.supplier_uuid.length > 0"
                 color="white"
-                @clear="filters.supplier_uuid = null; $refs.host.resetTerm()"
+                @clear="filters.supplier_uuid = []; $refs.host.resetTerm()"
               />
             </v-layout>
             <multi-simple
@@ -126,13 +126,13 @@
               <clear-button
                 v-if="filters.tag && filters.tag.length > 0"
                 color="white"
-                @clear="filters.tag = null; $refs.tag.resetTerm()"
+                @clear="filters.tag = []; $refs.tag.resetTerm()"
               />
             </v-layout>
             <multi-simple
               ref="tag"
               v-model="filters.tag"
-              url="foodfleet/store-tags"
+              url="foodfleet/store-tag"
               term-param="filter[name]"
               results-id-key="uuid"
               placeholder="Search Tag"
@@ -156,6 +156,12 @@ import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import Simple from 'fresh-bus/components/search/simple'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
+export const DEFAULT_FILTERS = {
+  status_id: null,
+  tag: null,
+  location_uuid: null,
+  supplier_uuid: null
+}
 export default {
   components: {
     Simple,
@@ -168,12 +174,7 @@ export default {
   props: {
     filters: {
       type: Object,
-      default: () => ({
-        status_id: null,
-        tag: null,
-        location_uuid: null,
-        supplier_uuid: null
-      })
+      default: () => DEFAULT_FILTERS
     },
     statuses: {
       type: Array,
@@ -195,7 +196,7 @@ export default {
   },
   methods: {
     run (params) {
-      let finalParams = {
+      const finalParams = {
         name: params.term,
         ...this.filters
       }
@@ -210,7 +211,7 @@ export default {
     selectLocation (location) {
       this.filters.location_uuid = location ? location.uuid : null
     },
-    clearFilters (params) {
+    clearFilters () {
       this.$refs.tag.resetTerm()
       this.$refs.supplier.resetTerm()
       this.$refs.location.resetTerm()

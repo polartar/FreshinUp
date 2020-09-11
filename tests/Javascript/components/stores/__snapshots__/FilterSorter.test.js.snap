@@ -662,7 +662,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                   results-id-key="uuid"
                   solo=""
                   term-param="filter[name]"
-                  url="foodfleet/store-tags"
+                  url="foodfleet/store-tag"
                 >
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
@@ -684,7 +684,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                             results-id-key="uuid"
                             term-param="filter[name]"
                             type="text"
-                            url="foodfleet/store-tags"
+                            url="foodfleet/store-tag"
                           />
                         </div>
                         <div
