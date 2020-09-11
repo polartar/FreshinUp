@@ -55,6 +55,7 @@
               value-fetch
               item-value="uuid"
               item-text="name"
+              term-param="filter[name]"
               url="/foodfleet/store-tags"
               hide-details
               class="mb-4"

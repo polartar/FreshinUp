@@ -19,30 +19,6 @@ class StoresTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    public function testGetList()
-    {
-        $user = factory(User::class)->create();
-        Passport::actingAs($user);
-        $stores = factory(Store::class, 5)->create();
-
-        $data = $this
-            ->json('get', "/api/foodfleet/stores")
-            ->assertStatus(200)
-            ->assertJsonStructure([
-                'data'
-            ])
-            ->json('data');
-
-        $this->assertNotEmpty($data);
-        $this->assertEquals(5, count($data));
-        foreach ($stores as $idx => $fleetMember) {
-            $this->assertArraySubset([
-                'uuid' => $fleetMember->uuid,
-                'name' => $fleetMember->name
-            ], $data[$idx]);
-        }
-    }
-
     public function testGetItem()
     {
         $user = factory(User::class)->create();
@@ -138,6 +114,30 @@ class StoresTest extends TestCase
         }
     }
 
+    public function testGetList()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $stores = factory(Store::class, 5)->create();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+        foreach ($stores as $idx => $fleetMember) {
+            $this->assertArraySubset([
+                'uuid' => $fleetMember->uuid,
+                'name' => $fleetMember->name
+            ], $data[$idx]);
+        }
+    }
+
     public function testGetListWithManagerUuidFilter()
     {
         $user = factory(User::class)->create([
@@ -163,12 +163,12 @@ class StoresTest extends TestCase
             'name' => 'To find',
             'manager_uuid' => $user->uuid
         ]);
-        $userUuid = $usersToFind->map(function ($user) {
+        $userUuids = $usersToFind->map(function ($user) {
             return $user->uuid;
         })->join(',');
 
         $data = $this
-            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=" . $userUuid)
+            ->json('get', "/api/foodfleet/events?filter[manager_uuid]=" . $userUuids)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -181,7 +181,6 @@ class StoresTest extends TestCase
         $this->assertEquals($eventToFind2->uuid, $data[1]['uuid']);
         $this->assertEquals($eventToFind3->uuid, $data[2]['uuid']);
     }
-
 
     public function testGetListWithStatusIdFilter()
     {
@@ -328,12 +327,12 @@ class StoresTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $stores = factory(Store::class, 5)->create();
+        factory(Store::class, 4)->create();
 
         $owner = factory(User::class)->create();
-        $store = $stores->first();
-        $store->owner_uuid = $owner->uuid;
-        $store->save();
+        $store = factory(Store::class)->create([
+            'owner_uuid' => $owner->uuid
+        ]);
 
         $data = $this
             ->json('get', "/api/foodfleet/stores?filter[owner_uuid]=" . $owner->uuid)

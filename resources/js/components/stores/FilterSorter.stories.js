@@ -5,40 +5,82 @@ import axios from 'axios/index'
 
 // Components
 import FilterSorter from './FilterSorter.vue'
-
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Revision' },
-  { id: 4, name: 'Rejected' },
-  { id: 5, name: 'Approved' },
-  { id: 6, name: 'On hold' }
-]
-
-let sortables = [
-  { value: '-created_at', text: 'Newest' },
-  { value: 'created_at', text: 'Oldest' },
-  { value: 'title', text: 'Title (A - Z)' },
-  { value: '-title', text: 'Title (Z - A)' }
-]
+import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
+import { FIXTURE_STORE_TAGS } from '../../../../tests/Javascript/__data__/storeTags'
+import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
+import { SORTABLES } from '../../store/modules/stores'
 
 const mock = new MockAdapter(axios)
-mock.onGet('foodfleet/store-tags').reply(200, {
-  data: [
-    { uuid: '1', name: 'Tag 1' },
-    { uuid: '2', name: 'Tag 2' },
-    { uuid: '3', name: 'Tag 3' },
-    { uuid: '4', name: 'Tag 4' }
-  ]
+mock.onGet(/.*\/store-tags.*/).reply(200, {
+  data: FIXTURE_STORE_TAGS
 })
 
-mock.onGet('/users?filter[type]=2&filter[status]=1').reply(200, {
-  data: [
-    { uuid: '1', name: 'Owner 1' },
-    { uuid: '2', name: 'Owner 2' },
-    { uuid: '3', name: 'Owner 3' },
-    { uuid: '4', name: 'Owner 4' }
-  ]
+mock.onGet(/\/users.*/).reply(200, {
+  data: FIXTURE_USERS
+})
+
+export const Default = () => ({
+  components: { FilterSorter },
+  template: `
+      <v-container class="grey">
+        <filter-sorter />
+      </v-container>
+    `
+})
+
+export const Set = () => ({
+  components: { FilterSorter },
+  data () {
+    return {
+      statuses: FIXTURE_STORE_STATUSES,
+      sortables: SORTABLES
+    }
+  },
+  methods: {
+    filterStores (params) {
+      action('Run')(params)
+    }
+  },
+  template: `
+      <v-container class="grey">
+        <filter-sorter
+          :statuses="statuses"
+          :sortables="sortables"
+          @runFilter="filterStores"
+        />
+      </v-container>
+    `
+})
+
+export const Populated = () => ({
+  components: { FilterSorter },
+  data () {
+    return {
+      statuses: FIXTURE_STORE_STATUSES,
+      sortables: SORTABLES,
+      filters: {
+        status_id: [1, 2],
+        tag: FIXTURE_STORE_TAGS.slice(0, 2),
+        state_of_incorporation: 'Atlanta',
+        owner_uuid: FIXTURE_USERS[0].uuid
+      }
+    }
+  },
+  methods: {
+    filterStores (params) {
+      action('Run')(params)
+    }
+  },
+  template: `
+      <v-container class="grey">
+        <filter-sorter
+          :filters="filters"
+          :statuses="statuses"
+          :sortables="sortables"
+          @runFilter="filterStores"
+        />
+      </v-container>
+    `
 })
 
 storiesOf('FoodFleet|stores/FilterSorter', module)
@@ -47,60 +89,6 @@ storiesOf('FoodFleet|stores/FilterSorter', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
-    components: { FilterSorter },
-    methods: {
-      filterStores (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
-      <v-container style="background-color: rgba(0,0,0,.2)">
-        <filter-sorter
-          @runFilter="filterStores"
-        />
-      </v-container>
-    `
-  }))
-  .add('with statuses', () => ({
-    components: { FilterSorter },
-    data () {
-      return {
-        statuses: statuses
-      }
-    },
-    methods: {
-      filterStores (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
-      <v-container style="background-color: rgba(0,0,0,.2)">
-        <filter-sorter
-          :statuses="statuses"
-          @runFilter="filterStores"
-        />
-      </v-container>
-    `
-  }))
-  .add('with sortables', () => ({
-    components: { FilterSorter },
-    data () {
-      return {
-        sortables: sortables
-      }
-    },
-    methods: {
-      filterStores (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
-      <v-container style="background-color: rgba(0,0,0,.2)">
-        <filter-sorter
-          :sortables="sortables"
-          @runFilter="filterStores"
-        />
-      </v-container>
-    `
-  }))
+  .add('Default', Default)
+  .add('Set', Set)
+  .add('Populated', Populated)

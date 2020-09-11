@@ -43,8 +43,8 @@
 <br/>
 
 # Changes
-## September 10, 2020
-- **Correction** Fleet Members filter by fields
+## September 11, 2020
+- **MOD** Fleet Members filter by fields [#452](https://github.com/FreshinUp/foodfleet/issues/452)
 
 
 ## September 10, 2020
