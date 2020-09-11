@@ -14,8 +14,8 @@ describe('FilterSorter', () => {
         localVue: localVue,
         propsData: {
           filters: {
-            status: allSelected,
-            store_tag_uuid: null,
+            status_id: allSelected,
+            tag: null,
             location_uuid: null,
             supplier_uuid: null
           }
@@ -38,8 +38,8 @@ describe('FilterSorter', () => {
         }
       })
       wrapper.vm.clearFilters({})
-      expect(wrapper.vm.filters.status).toBeNull()
-      expect(wrapper.vm.filters.store_tag_uuid).toBeNull()
+      expect(wrapper.vm.filters.status_id).toBeNull()
+      expect(wrapper.vm.filters.tag).toBeNull()
       expect(wrapper.vm.filters.location_uuid).toBeNull()
       expect(wrapper.vm.filters.supplier_uuid).toBeNull()
     })
@@ -50,8 +50,8 @@ describe('FilterSorter', () => {
         propsData: {
           statuses: FIXTURE_STORE_STATUSES,
           filters: {
-            status: [ 1, 2 ],
-            store_tag_uuid: [ { uuid: 1 } ],
+            status_id: [ 1, 2 ],
+            tag: [ { uuid: 1 } ],
             location_uuid: 2,
             supplier_uuid: [ { uuid: 3 } ]
           }
@@ -60,8 +60,8 @@ describe('FilterSorter', () => {
       wrapper.vm.run({})
       expect(wrapper.emitted().runFilter).toBeTruthy()
       const runParams = wrapper.emitted().runFilter[0][0]
-      expect(runParams['status']).toEqual([ 1, 2 ])
-      expect(runParams['store_tag_uuid']).toEqual([ 1 ])
+      expect(runParams['status_id']).toEqual([ 1, 2 ])
+      expect(runParams['tag']).toEqual([ 1 ])
       expect(runParams['location_uuid']).toEqual(2)
       expect(runParams['supplier_uuid']).toEqual([ 3 ])
     })
