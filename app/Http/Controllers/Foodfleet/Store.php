@@ -43,7 +43,8 @@ class Store extends Controller
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
                 Filter::exact('uuid'),
-                Filter::exact('supplier_uuid')
+                Filter::exact('supplier_uuid'),
+                Filter::custom('owner_uuid', BelongsToWhereInUuidEquals::class, 'users'),
             ]);
 
         return StoreResource::collection($stores->jsonPaginate());
