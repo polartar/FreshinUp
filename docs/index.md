@@ -47,6 +47,7 @@
 ## September 10, 2020
 `Fleet-members`, `Events`
 - **ADD** Snackbar informs user of success or failure [#413](https://github.com/FreshinUp/foodfleet/issues/413)
+- **ADD** Fleet Members can be searched by Fleet name [#451](https://github.com/FreshinUp/foodfleet/issues/451)
 
 
 ## September 9, 2020
