@@ -182,6 +182,7 @@ class StoresTest extends TestCase
         $this->assertEquals($eventToFind3->uuid, $data[2]['uuid']);
     }
 
+
     public function testGetListWithStatusIdFilter()
     {
         $user = factory(User::class)->create();
@@ -255,6 +256,26 @@ class StoresTest extends TestCase
                 'name' => $fleetMember->name
             ], $data[$idx]);
         }
+
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?filter[state_of_incorporation]=find")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(5, count($data));
+        foreach ($storesToFind as $idx => $fleetMember) {
+            $this->assertArraySubset([
+                'uuid' => $fleetMember->uuid,
+                'state_of_incorporation' => $fleetMember->state_of_incorporation
+            ], $data[$idx]);
+        }
+
+
         $data = $this
             ->json('get', "/api/foodfleet/stores?filter[uuid]=".$storesToFind->first()->uuid)
             ->assertStatus(200)
@@ -277,6 +298,26 @@ class StoresTest extends TestCase
 
         $data = $this
             ->json('get', "/api/foodfleet/stores?filter[supplier_uuid]=".$company->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+        $this->assertArraySubset([
+            'uuid' => $store->uuid,
+            'name' => $store->name
+        ], $data[0]);
+
+
+        $owner = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create();
+        $store = $storesToFind->first();
+        $store->owner_uuid = $owner->uuid;
+        $store->save();
+
+        $data = $this
+            ->json('get', "/api/foodfleet/stores?filter[owner_uuid]=".$owner->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

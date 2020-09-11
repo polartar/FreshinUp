@@ -58,14 +58,15 @@
                 Supplier
               </filter-label>
               <clear-button
-                v-if="filters.supplier_uuid && filters.supplier_uuid.length > 0"
+                v-if="filters.owner_uuid && filters.owner_uuid.length > 0"
                 color="white"
-                @clear="filters.supplier_uuid = null; $refs.host.resetTerm()"
+                @clear="filters.owner_uuid = null; $refs.host.resetTerm()"
               />
             </v-layout>
+            <!--<f-autocomplete ref="owner" />-->
             <multi-simple
               ref="supplier"
-              v-model="filters.supplier_uuid"
+              v-model="filters.owner_uuid"
               url="companies?filter[type_key]=supplier"
               term-param="filter[name]"
               results-id-key="uuid"
@@ -155,6 +156,7 @@ import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import Simple from 'fresh-bus/components/search/simple'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import MultiSimple from 'fresh-bus/components/ui/FMultiSimple'
+import FAutocomplete from '~/components/FAutocomplete'
 export default {
   components: {
     Simple,
@@ -162,7 +164,8 @@ export default {
     FilterLabel,
     ClearButton,
     MultiSelect,
-    SearchFilterSorter
+    SearchFilterSorter,
+    FAutocomplete
   },
   props: {
     filters: {
@@ -170,8 +173,8 @@ export default {
       default: () => ({
         status: null,
         store_tag_uuid: null,
-        location_uuid: null,
-        supplier_uuid: null
+        state_of_incorporation: null,
+        owner_uuid: null
       })
     },
     statuses: {
@@ -201,8 +204,8 @@ export default {
       if (this.filters.store_tag_uuid) {
         finalParams.store_tag_uuid = this.filters.store_tag_uuid.map(item => item.uuid)
       }
-      if (this.filters.supplier_uuid) {
-        finalParams.supplier_uuid = this.filters.supplier_uuid.map(item => item.uuid)
+      if (this.filters.owner_uuid) {
+        finalParams.owner_uuid = this.filters.owner_uuid.map(item => item.uuid)
       }
       this.$emit('runFilter', finalParams)
     },
@@ -213,7 +216,7 @@ export default {
       this.$refs.tag.resetTerm()
       this.$refs.supplier.resetTerm()
       this.$refs.location.resetTerm()
-      this.filters.status = this.filters.store_tag_uuid = this.filters.location_uuid = this.filters.supplier_uuid = null
+      this.filters.status = this.filters.store_tag_uuid = this.filters.location_uuid = this.filters.owner_uuid = null
     }
   }
 }

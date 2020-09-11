@@ -25,26 +25,19 @@ let sortables = [
 const mock = new MockAdapter(axios)
 mock.onGet('foodfleet/store-tags').reply(200, {
   data: [
-    { uuid: '1', name: 'Store Tag 1' },
-    { uuid: '2', name: 'Store Tag 2' },
-    { uuid: '3', name: 'Store Tag 3' },
-    { uuid: '4', name: 'Store Tag 4' }
+    { uuid: '1', name: 'Tag 1' },
+    { uuid: '2', name: 'Tag 2' },
+    { uuid: '3', name: 'Tag 3' },
+    { uuid: '4', name: 'Tag 4' }
   ]
 })
-mock.onGet('foodfleet/locations').reply(200, {
+
+mock.onGet('/users?filter[type]=2&filter[status]=1').reply(200, {
   data: [
-    { uuid: '1', name: 'Location 1' },
-    { uuid: '2', name: 'Location 2' },
-    { uuid: '3', name: 'Location 3' },
-    { uuid: '4', name: 'Location 4' }
-  ]
-})
-mock.onGet('/companies?filter[type_key]=supplier').reply(200, {
-  data: [
-    { uuid: '1', name: 'Supplier 1' },
-    { uuid: '2', name: 'Supplier 2' },
-    { uuid: '3', name: 'Supplier 3' },
-    { uuid: '4', name: 'Supplier 4' }
+    { uuid: '1', name: 'Owner 1' },
+    { uuid: '2', name: 'Owner 2' },
+    { uuid: '3', name: 'Owner 3' },
+    { uuid: '4', name: 'Owner 4' }
   ]
 })
 
