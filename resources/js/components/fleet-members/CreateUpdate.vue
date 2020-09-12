@@ -111,6 +111,11 @@
             :value="area"
             @input="method"
           />
+        </v-flex>
+        <v-flex
+          xs12
+          py-2
+        >
           <Menu />
         </v-flex>
       </v-layout>

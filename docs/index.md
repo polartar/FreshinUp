@@ -44,6 +44,9 @@
 
 # Changes
 ## September 12, 2020
+- **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
+
+## September 12, 2020
 - **MOD** Fleet Member displays columns Owner and State [#470](https://github.com/FreshinUp/foodfleet/issues/470)
 
 <br/>
