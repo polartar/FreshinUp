@@ -14,14 +14,13 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 /**
  * Class Document
  *
- * @property int $id
- * @property string $uuid
- * @property string $title
+ * @property int id
+ * @property string uuid
+ * @property string title
  *
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property string $deleted_at
- *
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property string deleted_at
  */
 class Document extends Model implements HasMedia
 {
