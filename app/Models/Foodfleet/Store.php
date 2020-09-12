@@ -158,4 +158,9 @@ class Store extends Model implements HasMedia
     {
         return $this->belongsTo(StoreStatus::class, 'status_id', 'id');
     }
+
+    public function area()
+    {
+        return $this->hasOne(StoreArea::class, 'store_uuid', 'uuid');
+    }
 }

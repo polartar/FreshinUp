@@ -4,6 +4,15 @@ namespace App\Models\Foodfleet;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class DocumentStatus
+ * @package App\Models\Foodfleet
+ *
+ * @property int id
+ * @property string name
+ * @property \DateTime created_at
+ * @property \DateTime updated_at
+ */
 class DocumentStatus extends Model
 {
     public function documents()

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tests\Feature\Unit\Models\EventType;
+namespace Tests\Feature\Unit\Models;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventStatus;

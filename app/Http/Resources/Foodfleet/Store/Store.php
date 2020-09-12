@@ -3,7 +3,6 @@
 
 namespace App\Http\Resources\Foodfleet\Store;
 
-use App\Http\Resources\Foodfleet\Store\Type;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
 use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use Illuminate\Http\Request;
@@ -54,6 +53,7 @@ class Store extends JsonResource
             'twitter' => $this->twitter,
             'instagram' => $this->instagram,
             'staff_notes' => $this->staff_notes,
+            'area' => new StoreArea($this->whenLoaded('area')),
         ];
     }
 }

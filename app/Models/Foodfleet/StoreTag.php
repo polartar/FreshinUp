@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
- *
+ * Class StoreTag
  * @property int $id
  * @property string $uuid
  * @property string $name
- *
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
  *
+ *
+ * @property Store[] stores
  */
 class StoreTag extends Model
 {

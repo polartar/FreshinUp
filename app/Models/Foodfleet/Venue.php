@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Venue
- *
  * @property int $id
  * @property string $uuid
  * @property string $name
@@ -19,6 +18,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $updated_at
  * @property string $deleted_at
  *
+ *
+ * @property Location[] locations
+ * @property Document[] documents
+ * @property Event[] events
  */
 class Venue extends Model
 {

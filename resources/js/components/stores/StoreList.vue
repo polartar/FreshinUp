@@ -165,10 +165,10 @@ export default {
       headers: [
         { text: 'Status', sortable: true, value: 'status' },
         { text: 'Name', sortable: true, value: 'name' },
-        { text: 'Tags', sortable: true, value: 'tags' },
-        { text: 'Scheduled events', sortable: true, value: 'events' },
-        { text: 'Hometown', sortable: true, value: 'city' },
-        { text: 'Manage', sortable: true, value: 'manage' }
+        { text: 'Tags', sortable: false, value: 'tags' },
+        { text: 'Scheduled events', sortable: false, value: 'events' },
+        { text: 'Hometown', sortable: false, value: 'city' },
+        { text: 'Manage', sortable: false, value: 'manage' }
       ],
       itemActions: [
         { action: 'view', text: 'View / Edit' },
