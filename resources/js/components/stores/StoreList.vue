@@ -150,6 +150,14 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
+export const HEADERS = [
+  { text: 'Status', sortable: true, value: 'status_id' },
+  { text: 'Fleet Member Name / Type', sortable: true, value: 'name,type' },
+  { text: 'Tags', sortable: false, value: 'tags' },
+  { text: 'Owned By', sortable: true, value: 'owner' },
+  { text: 'State Of Incorporation', sortable: true, value: 'state_of_incorporation' },
+  { text: 'Manage', sortable: false, value: 'manage' }
+]
 export default {
   components: { FBtnMenu },
   mixins: [
@@ -169,14 +177,7 @@ export default {
   data () {
     return {
       selected: [],
-      headers: [
-        { text: 'Status', sortable: true, value: 'status' },
-        { text: 'Fleet Member Name / Type', sortable: true, value: 'name,type' },
-        { text: 'Tags', sortable: true, value: 'tags' },
-        { text: 'Owned By', sortable: true, value: 'owner' },
-        { text: 'State Of Incorporation', sortable: true, value: 'state_of_incorporation' },
-        { text: 'Manage', sortable: true, value: 'manage' }
-      ],
+      headers: HEADERS,
       itemActions: [
         { action: 'view', text: 'View / Edit' },
         { action: 'delete', text: 'Delete' }

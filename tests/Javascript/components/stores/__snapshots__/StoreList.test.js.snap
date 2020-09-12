@@ -89,25 +89,17 @@ exports[`Store List component Snapshots stores empty 1`] = `
               </i>
             </th>
             <th
-              aria-label="Tags: Not sorted. Activate to sort ascending."
+              aria-label="Tags: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Tags
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
             <th
               aria-label="Owned By: Not sorted. Activate to sort ascending."
@@ -152,25 +144,17 @@ exports[`Store List component Snapshots stores empty 1`] = `
               </i>
             </th>
             <th
-              aria-label="Manage: Not sorted. Activate to sort ascending."
+              aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Manage
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
           </tr>
           <tr
@@ -511,25 +495,17 @@ exports[`Store List component Snapshots stores set 1`] = `
               </i>
             </th>
             <th
-              aria-label="Tags: Not sorted. Activate to sort ascending."
+              aria-label="Tags: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Tags
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
             <th
               aria-label="Owned By: Not sorted. Activate to sort ascending."
@@ -574,25 +550,17 @@ exports[`Store List component Snapshots stores set 1`] = `
               </i>
             </th>
             <th
-              aria-label="Manage: Not sorted. Activate to sort ascending."
+              aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Manage
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
           </tr>
           <tr

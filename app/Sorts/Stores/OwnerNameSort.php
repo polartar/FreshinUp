@@ -13,6 +13,6 @@ class OwnerNameSort implements Sort
         $direction = $descending ? 'DESC' : 'ASC';
         return $query->join('users', 'stores.owner_uuid', '=', 'users.uuid')
             ->select('stores.*')
-            ->orderByRaw("users.first_name {$direction}");
+            ->orderByRaw("users.last_name {$direction}, users.first_name {$direction}");
     }
 }

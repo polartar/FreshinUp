@@ -42,7 +42,6 @@ class Store extends Controller
                 'created_at',
                 'state_of_incorporation',
                 Sort::custom('owner', new OwnerNameSort()),
-                Sort::custom('tags', new StoreTagNameSort()),
             ])
             ->allowedFilters([
                 'name',
