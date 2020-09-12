@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Staff;
+namespace Tests\Feature\Unit\Models;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Staff;

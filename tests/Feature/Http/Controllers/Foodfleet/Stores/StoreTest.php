@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Stores;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventMenuItem;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\StoreArea;
 use App\Models\Foodfleet\StoreStatus;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\StoreType;
@@ -33,6 +34,33 @@ class StoresTest extends TestCase
             ->json('data');
         $this->assertEquals($store->uuid, $data['uuid']);
         $this->assertEquals($store->name, $data['name']);
+    }
+
+    public function testGetItemIncludingArea()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $store = factory(Store::class)->create();
+        $area = factory(StoreArea::class)->create([
+            'store_uuid' => $store->uuid
+        ]);
+        $data = $this
+            ->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=area")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertEquals($store->uuid, $data['uuid']);
+        $this->assertEquals($store->name, $data['name']);
+        $this->assertArrayHasKey('area', $data);
+        $this->assertArraySubset([
+            "id" => $area->id,
+            "name" => $area->name,
+            "radius" => $area->radius,
+            "state" => $area->state,
+            "store_uuid" => $area->store_uuid,
+        ], $data['area']);
     }
 
     private function createStoreWithTags($tags)

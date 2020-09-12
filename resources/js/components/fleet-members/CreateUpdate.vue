@@ -107,7 +107,7 @@
           xs12
           py-2
         >
-          <AreasOfOperation />
+          <AreasOfOperation :value="area" @input="method" />
           <Menu />
         </v-flex>
       </v-layout>
@@ -170,6 +170,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('stores/areas', { area: 'item' }),
     ...mapGetters('documents', { docs: 'items' }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
