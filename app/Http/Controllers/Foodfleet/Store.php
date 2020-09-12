@@ -106,8 +106,15 @@ class Store extends Controller
         $store = QueryBuilder::for(StoreModel::class, $request)
             ->where('uuid', $uuid)
             ->allowedIncludes([
-                'menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin', 'status',
-                'owner'
+                'menus',
+                'tags',
+                'documents',
+                'events',
+                'supplier',
+                'supplier.admin',
+                'status',
+                'owner',
+                'area'
             ]);
 
         // Include eventsCount in the query if needed

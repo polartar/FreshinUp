@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Location;
+namespace Tests\Feature\Unit\Models;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;

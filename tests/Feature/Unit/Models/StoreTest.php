@@ -1,10 +1,11 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Store;
+namespace Tests\Feature\Unit\Models;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\StoreArea;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
@@ -15,11 +16,6 @@ class StoreTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testModel()
     {
         $company = factory(Company::class)->create();
@@ -28,6 +24,9 @@ class StoreTest extends TestCase
         $staff = factory(Staff::class)->create();
 
         $store = factory(Store::class)->create();
+        $area = factory(StoreArea::class)->create([
+            'store_uuid' => $store->uuid
+        ]);
         $this->assertEquals($store->owner_uuid, $store->owner->uuid);
         $store->events()->save($event);
         $store->supplier()->associate($supplier);
@@ -71,5 +70,12 @@ class StoreTest extends TestCase
         $this->assertDatabaseHas('companies', [
             'uuid' => $store->supplier_uuid,
         ]);
+
+        $this->assertDatabaseHas('store_areas', [
+            'id' => $area->id,
+            'store_uuid' => $area->store_uuid,
+        ]);
+
+        $this->assertEquals($area->id, $store->area->id);
     }
 }

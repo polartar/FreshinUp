@@ -6,6 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class Menu
+ * @package App\Models\Foodfleet
+ *
+ * @property int id
+ * @property string uuid
+ * @property string store_uuid
+ * @property string item
+ * @property string category
+ * @property string description
+ * @property int street_price
+ * @property \DateTime created_at
+ * @property \DateTime updated_at
+ * @property \DateTime deleted_at
+ *
+ *
+ * @property Store store
+ */
 class Menu extends Model
 {
     use SoftDeletes;

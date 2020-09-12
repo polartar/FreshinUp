@@ -11,10 +11,12 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string event_uuid
- * @property Event event
  * @property int status_id
- * @property EventStatus status
  * @property Carbon date
+ *
+ *
+ * @property Event event
+ * @property EventStatus status
  */
 class EventHistory extends Model
 {
