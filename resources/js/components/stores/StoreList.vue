@@ -106,10 +106,12 @@
           />
         </td>
         <td>
-          <div class="subheading">
+          <div class="subheading primary--text">
             {{ props.item.name }}
           </div>
-          {{ props.item.type }}
+          <div class="grey--text">
+            {{ props.item.type && props.item.type.name }}
+          </div>
         </td>
         <td>
           <v-chip
@@ -120,10 +122,15 @@
           </v-chip>
         </td>
         <td class="text-xs-center">
-          <div>{{ props.item.events ? props.item.events.length : 0 }}</div>
+          <div class="grey--text">
+            {{ props.item.owner && props.item.owner.name }}
+          </div>
+          <div class="grey--text">
+            {{ props.item.owner && props.item.owner.company_name }}
+          </div>
         </td>
         <td>
-          {{ props.item.addresses && props.item.addresses.length ? props.item.addresses[0].city : '' }}
+          {{ props.item.state_of_incorporation }}
         </td>
         <td class="justify-center text-xs-center">
           <f-btn-menu
@@ -143,6 +150,14 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
+export const HEADERS = [
+  { text: 'Status', sortable: true, value: 'status_id' },
+  { text: 'Fleet Member Name / Type', sortable: true, value: 'name,type' },
+  { text: 'Tags', sortable: false, value: 'tags' },
+  { text: 'Owned By', sortable: true, value: 'owner' },
+  { text: 'State Of Incorporation', sortable: true, value: 'state_of_incorporation' },
+  { text: 'Manage', sortable: false, value: 'manage' }
+]
 export default {
   components: { FBtnMenu },
   mixins: [
@@ -162,14 +177,7 @@ export default {
   data () {
     return {
       selected: [],
-      headers: [
-        { text: 'Status', sortable: true, value: 'status' },
-        { text: 'Name', sortable: true, value: 'name' },
-        { text: 'Tags', sortable: false, value: 'tags' },
-        { text: 'Scheduled events', sortable: false, value: 'events' },
-        { text: 'Hometown', sortable: false, value: 'city' },
-        { text: 'Manage', sortable: false, value: 'manage' }
-      ],
+      headers: HEADERS,
       itemActions: [
         { action: 'view', text: 'View / Edit' },
         { action: 'delete', text: 'Delete' }
