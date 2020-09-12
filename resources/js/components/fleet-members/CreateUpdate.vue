@@ -107,7 +107,10 @@
           xs12
           py-2
         >
-          <AreasOfOperation :value="area" @input="method" />
+          <AreasOfOperation
+            :value="area"
+            @input="method"
+          />
           <Menu />
         </v-flex>
       </v-layout>
