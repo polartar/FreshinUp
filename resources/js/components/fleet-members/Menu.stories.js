@@ -10,7 +10,7 @@ export const Default = () => ({
     `
 })
 
-storiesOf('FoodFleet|fleet-member/Menu', module)
+storiesOf('FoodFleet|components/fleet-members/Menu', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

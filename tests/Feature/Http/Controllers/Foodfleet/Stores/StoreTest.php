@@ -45,22 +45,32 @@ class StoresTest extends TestCase
             'store_uuid' => $store->uuid
         ]);
         $data = $this
-            ->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=area")
+            ->json('GET', 'api/foodfleet/stores/' . $store->uuid . "?include=areas")
             ->assertStatus(200)
             ->assertJsonStructure([
-                'data'
+                'data' => [
+                    'areas' => [
+                        '*' => [
+                            "id",
+                            "name",
+                            "radius",
+                            "state",
+                            "store_uuid",
+                        ]
+                    ]
+                ]
             ])
             ->json('data');
         $this->assertEquals($store->uuid, $data['uuid']);
         $this->assertEquals($store->name, $data['name']);
-        $this->assertArrayHasKey('area', $data);
+        $this->assertArrayHasKey('areas', $data);
         $this->assertArraySubset([
             "id" => $area->id,
             "name" => $area->name,
             "radius" => $area->radius,
             "state" => $area->state,
             "store_uuid" => $area->store_uuid,
-        ], $data['area']);
+        ], $data['areas'][0]);
     }
 
     private function createStoreWithTags($tags)
@@ -690,5 +700,15 @@ class StoresTest extends TestCase
                 'name' => $tag['name'],
             ];
         }, $tags->toArray()), $data['tags']);
+    }
+
+    public function testDeleteItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $area = factory(StoreArea::class)->create();
+        $this->json('DELETE', 'api/foodfleet/store/areas/' . $area->id)
+            ->assertStatus(204);
+        $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Store\StoreArea as StoreAreaResource;
 use App\Models\Foodfleet\StoreArea as StoreAreaModel;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -43,5 +44,12 @@ class StoreArea extends Controller
             'name', 'radius', 'state', 'store_uuid'
         ]));
         return new StoreAreaResource($area);
+    }
+
+    public function destroy($id)
+    {
+        $area = StoreAreaModel::where('id', $id)->firstOrFail();
+        $area->delete();
+        return response()->json(null, Response::HTTP_NO_CONTENT);
     }
 }

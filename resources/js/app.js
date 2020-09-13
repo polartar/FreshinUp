@@ -14,6 +14,7 @@ import documentTypes from '~/store/modules/documentTypes.js'
 import transactions from '~/store/modules/transactions.js'
 import stores from '~/store/modules/stores.js'
 import storeTypes from '~/store/modules/storeTypes.js'
+import storeAreas from '~/store/modules/storeAreas.js'
 import storeStatuses from '~/store/modules/storeStatuses.js'
 import companyOwners from '~/store/modules/companyOwners.js'
 import companyDetails from '~/store/modules/companyDetails.js'
@@ -154,6 +155,7 @@ const appInstance = new App({
       documentTypes: documentTypes({}),
       stores: stores({}),
       storeTypes: storeTypes({}),
+      storeAreas: storeAreas({}),
       storeStatuses: storeStatuses({}),
       companyOwners: companyOwners({}),
       transactions: transactions({}),

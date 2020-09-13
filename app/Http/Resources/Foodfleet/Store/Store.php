@@ -27,7 +27,7 @@ class Store extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status_id" => $this->status_id,
-            "status" => new Status($this->whenLoaded('status')),
+            "status" => new StoreStatus($this->whenLoaded('status')),
             "addresses" => Address::collection($this->addresses),
             "tags" => Tag::collection($this->whenLoaded('tags')),
             "event_stores" => EventStore::collection($this->whenLoaded('events')),
@@ -53,7 +53,7 @@ class Store extends JsonResource
             'twitter' => $this->twitter,
             'instagram' => $this->instagram,
             'staff_notes' => $this->staff_notes,
-            'area' => new StoreArea($this->whenLoaded('area')),
+            'areas' => StoreArea::collection($this->whenLoaded('areas')),
         ];
     }
 }

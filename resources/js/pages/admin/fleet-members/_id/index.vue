@@ -20,7 +20,7 @@
         xs12
       >
         <f-static-status
-          :statuses="storeStatusesWithColors"
+          :statuses="storeStatuses"
           :value="store.status"
         />
       </v-flex>
@@ -49,7 +49,7 @@
     <assigned-events
       :events="events"
       :all-events-count="store.events_count"
-      :statuses="eventStatusesWithColors"
+      :statuses="eventStatuses"
       :rows-per-page="eventsPagination.rowsPerPage"
       :page="eventsPagination.page"
       :total-items="eventsPagination.totalItems"
@@ -73,19 +73,12 @@
 import AssignedEvents from '~/components/events/AssignedEvents.vue'
 import FleetMemberDocs from '~/components/docs/FleetMemberDocs.vue'
 import DocsDeleteDialog from '~/components/docs/DeleteDialog.vue'
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import FStaticStatus from 'fresh-bus/components/ui/FStaticStatus'
 import DocsDatatableManager from '~/components/mixins/DocsDatatableManager'
+
 const eventsParams = {
   include: ['status', 'host', 'location.venue', 'manager', 'event_tags']
-}
-
-const statusesColored = (statuses, statusColorMap) => {
-  if (!statuses.length) return statuses
-  for (let i in statuses) {
-    statuses[i].color = statusColorMap[statuses[i].id]
-  }
-  return statuses
 }
 
 export default {
@@ -102,34 +95,13 @@ export default {
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { eventStatuses: 'items' }),
     ...mapGetters('page', ['isLoading']),
-    ...mapState('events', { eventsSortables: 'sortables' }),
     ...mapGetters('events', {
       events: 'items',
       eventsPagination: 'pagination',
       eventsSorting: 'sorting',
-      eventsSortBy: 'sortBy'
-    }),
-
-    storeStatusesWithColors () {
-      return statusesColored(JSON.parse(JSON.stringify(this.storeStatuses)), {
-        1: 'accent',
-        2: 'warning',
-        3: 'success',
-        4: 'danger',
-        5: 'success',
-        6: 'accent'
-      })
-    },
-
-    eventStatusesWithColors () {
-      return statusesColored(JSON.parse(JSON.stringify(this.eventStatuses)), {
-        1: 'accent',
-        2: 'warning',
-        3: 'success',
-        4: 'secondary',
-        5: 'accent'
-      })
-    }
+      eventsSortBy: 'sortBy',
+      eventsSortables: 'sortables'
+    })
   },
   methods: {
     ...mapActions('page', {

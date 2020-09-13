@@ -76,6 +76,6 @@ class StoreTest extends TestCase
             'store_uuid' => $area->store_uuid,
         ]);
 
-        $this->assertEquals($area->id, $store->area->id);
+        $this->assertEquals($area->id, $store->areas->first()->id);
     }
 }

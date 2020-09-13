@@ -42,7 +42,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('store-summary/{uuid}', 'Foodfleet\Store@summary');
     Route::get('store-service-summary/{uuid}', 'Foodfleet\Store@serviceSummary');
     Route::get('store/types', 'Foodfleet\StoreType@index');
-    Route::apiResource('store/areas', 'Foodfleet\StoreArea')->only('store', 'index');
+    Route::apiResource('store/areas', 'Foodfleet\StoreArea')->only('store', 'index', 'destroy');
 
 
     Route::get('event-menu-items/new', 'Foodfleet\EventMenuItems@showNewRecommendation');

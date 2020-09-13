@@ -89,10 +89,10 @@
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
-import StoreList from '~/components/stores/StoreList.vue'
+import StoreList from '~/components/fleet-members/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import get from 'lodash/get'
-import FilterSorter from '~/components/stores/FilterSorter.vue'
+import FilterSorter from '~/components/fleet-members/FilterSorter.vue'
 
 const INCLUDE = [
   'tags',
@@ -162,7 +162,7 @@ export default {
       this.deletablesProcessing = true
       this.deletablesProgress = 0
       this.deletablesStatus = ''
-      let dispatcheables = []
+      const dispatcheables = []
 
       this.deleteTemp.forEach(store => {
         dispatcheables.push(
