@@ -27,5 +27,4 @@ describe('Store List component', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
   })
-
 })

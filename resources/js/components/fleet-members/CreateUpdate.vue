@@ -108,6 +108,7 @@
           py-2
         >
           <AreasOfOperation
+            :operations="storeAreas"
             :value="area"
             @input="method"
           />
@@ -179,6 +180,7 @@ export default {
   },
   computed: {
     ...mapGetters('stores/areas', { area: 'item' }),
+    ...mapGetters('stores/areas', { StoreAreas: 'items' }),
     ...mapGetters('documents', { docs: 'items' }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
@@ -196,6 +198,9 @@ export default {
     },
     pageTitle () {
       return this.isNew ? 'New Fleet Member' : 'Fleet Member Details'
+    },
+    storeAreas () {
+      return this.isNew ? [] : this.StoreAreas
     }
   },
   methods: {
@@ -259,6 +264,9 @@ export default {
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+    promises.push(vm.$store.dispatch('stores/areas/getItems', {
+      params: { store_uuid: id }
+    }))
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {

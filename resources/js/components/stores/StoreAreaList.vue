@@ -22,7 +22,7 @@
         slot="headerCell"
         slot-scope="props"
       >
-        <span >
+        <span>
           {{ props.header.text }}
         </span>
       </template>
@@ -57,7 +57,7 @@
             {{ props.item.state }}
           </div>
         </td>
-        <td >
+        <td>
           <div class="grey--text">
             {{ props.item.radius }}
           </div>
@@ -77,35 +77,34 @@
 </template>
 
 <script>
-  import Pagination from 'fresh-bus/components/mixins/Pagination'
-  export const HEADERS = [
-    { text: 'Area Name', sortable: true, value: 'name' },
-    { text: 'State', sortable: true, value: 'state' },
-    { text: 'Radius', sortable: true, value: 'radius' },
-    { text: 'Manage', sortable: false, value: 'manage' }
-  ]
-  export default {
-    mixins: [
-      Pagination
-    ],
-    props: {
-      storeAreas: {
-        type: Array,
-        default: () => []
-      }
-    },
-    data () {
-      return {
-        selected: [],
-        headers: HEADERS,
-        actionBtnTitle: 'Delete'
-      }
-    },
-    methods: {
-      delete (item) {
-        this.$emit('manage', item.action, storeArea)
-      }
+import Pagination from 'fresh-bus/components/mixins/Pagination'
+export const HEADERS = [
+  { text: 'Area Name', sortable: true, value: 'name' },
+  { text: 'State', sortable: true, value: 'state' },
+  { text: 'Radius', sortable: true, value: 'radius' },
+  { text: 'Manage', sortable: false, value: 'manage' }
+]
+export default {
+  mixins: [
+    Pagination
+  ],
+  props: {
+    storeAreas: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data () {
+    return {
+      selected: [],
+      headers: HEADERS,
+      actionBtnTitle: 'Delete'
+    }
+  },
+  methods: {
+    delete (item) {
+      this.$emit('manage', item.action)
     }
   }
+}
 </script>
-

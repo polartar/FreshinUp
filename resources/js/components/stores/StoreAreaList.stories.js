@@ -3,8 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 // Components
 import StoreAreaList from './StoreAreaList'
-import {FIXTURE_STORE_AREAS} from '../../../../tests/Javascript/__data__/storeAreas'
-
+import { FIXTURE_STORE_AREAS } from '../../../../tests/Javascript/__data__/storeAreas'
 
 storiesOf('FoodFleet|store/StoreAreaList', module)
   .addParameters({
