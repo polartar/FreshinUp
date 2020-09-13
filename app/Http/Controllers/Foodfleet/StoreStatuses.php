@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Http\Resources\Foodfleet\Store\Status as StoreStatusResource;
+use App\Http\Resources\Foodfleet\Store\StoreStatus as StoreStatusResource;
 use App\Models\Foodfleet\StoreStatus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

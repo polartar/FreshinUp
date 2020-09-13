@@ -83,7 +83,7 @@ export const Populated = () => ({
     `
 })
 
-storiesOf('FoodFleet|stores/FilterSorter', module)
+storiesOf('FoodFleet|components/fleet-members/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

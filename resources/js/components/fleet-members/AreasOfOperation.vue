@@ -42,28 +42,26 @@
     </v-card-title>
     <v-divider />
     <v-card-text class="primary--text">
-      <div>
-        <store-area-list
-          :store-areas="operations"
-        />
-      </div>
+      <store-area-list
+        :is-loading="isLoading"
+        :items="items"
+        v-bind="$attrs"
+        v-on="$listeners"
+      />
     </v-card-text>
     <v-divider />
   </v-card>
 </template>
 
 <script>
-import StoreAreaList from '../stores/StoreAreaList'
+import StoreAreaList from './StoreAreaList'
 export default {
-  name: 'AreasOfOperation',
   components: {
     StoreAreaList
   },
   props: {
-    operations: {
-      type: Array,
-      default: () => []
-    }
+    isLoading: { type: Boolean, default: false },
+    items: { type: Array, default: () => [] }
   },
   data () {
     return {

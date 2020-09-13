@@ -24,7 +24,7 @@ export const WithData = () => ({
     `
 })
 
-storiesOf('FoodFleet|fleet-member/Events', module)
+storiesOf('FoodFleet|fleet-members/Events', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

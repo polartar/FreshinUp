@@ -45,6 +45,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property StoreType type
  * @property Company supplier
  * @property User owner
+ * @property StoreArea[] areas
  * TODO: annotate the following properties:
  * events, staffs, menus, transactions, tags, documents, menuItems, messages, status
  */
@@ -159,8 +160,8 @@ class Store extends Model implements HasMedia
         return $this->belongsTo(StoreStatus::class, 'status_id', 'id');
     }
 
-    public function area()
+    public function areas()
     {
-        return $this->hasOne(StoreArea::class, 'store_uuid', 'uuid');
+        return $this->hasMany(StoreArea::class, 'store_uuid', 'uuid');
     }
 }

@@ -43,7 +43,7 @@
 <br/>
 
 # Changes
-## September 12, 2020
+## September 13, 2020
 - **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
 
 ## September 12, 2020

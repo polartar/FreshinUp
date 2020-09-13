@@ -13,13 +13,13 @@ class StoreAreaSeeder extends Seeder
      */
     public function run()
     {
-
-        $store = Store::get();
-
-        for ($i = 0; $i < 10; $i++) {
-            factory(StoreArea::class)->create([
-                'store_uuid' => $store->random()->uuid,
-            ]);
+        $stores = Store::get();
+        foreach ($stores as $store) {
+            for ($i = 0; $i < mt_rand(3,7); $i++) {
+                factory(StoreArea::class)->create([
+                    'store_uuid' => $store->uuid
+                ]);
+            }
         }
     }
 }

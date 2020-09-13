@@ -13,7 +13,6 @@ use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
 use App\Sorts\Stores\OwnerNameSort;
-use App\Sorts\Stores\StoreTagNameSort;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -114,7 +113,7 @@ class Store extends Controller
                 'supplier.admin',
                 'status',
                 'owner',
-                'area'
+                'areas'
             ]);
 
         // Include eventsCount in the query if needed

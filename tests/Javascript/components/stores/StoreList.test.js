@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
-import Component from '~/components/stores/StoreList.vue'
+import Component from '~/components/fleet-members/StoreList.vue'
 import { FIXTURE_STORES } from 'tests/__data__/stores'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 

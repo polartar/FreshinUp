@@ -112,7 +112,7 @@ let statuses = [
   { id: 5, name: 'Cancelled' }
 ]
 
-storiesOf('FoodFleet|store/StoreList', module)
+storiesOf('FoodFleet|components/fleet-members/StoreList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
