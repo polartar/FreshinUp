@@ -43,6 +43,9 @@
 <br/>
 
 # Changes
+## September 14, 2020
+- **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
+
 ## September 13, 2020
 - **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
 
