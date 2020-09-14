@@ -5,9 +5,17 @@ import AreaForm from './AreaForm'
 
 export const Default = () => ({
   components: { AreaForm },
+  methods: {
+    onSave () {
+      action('save')()
+    },
+    onCancel () {
+      action('cancel')()
+    }
+  },
   template: `
     <v-container>
-      <area-form />
+      <area-form @input="onSave" @cancel="onCancel" />
     </v-container>
   `
 })
@@ -28,11 +36,14 @@ export const WithData = () => ({
   methods: {
     onSave () {
       action('save')()
+    },
+    onCancel () {
+      action('cancel')()
     }
   },
   template: `
     <v-container>
-      <area-form :value="store" @input="onSave"/>
+      <area-form :value="store" @input="onSave" @cancel="onCancel"/>
     </v-container>
   `
 })
