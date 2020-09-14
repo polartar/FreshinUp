@@ -22,6 +22,11 @@
 - **Manager** can be modified and saved
 - **Customer** can be modified and saved
 
+### Components
+- Venue Details _(requires Venues to be completed)_
+- Event Fleet _(Requires Fleet Members to be completed)_
+- Customer
+
 <br/>
 
 ## Fleet Members Page
@@ -36,7 +41,7 @@
 ### Functionality for these components
 - Fleet Member Documents
 - Payments
-- Assigned Events
+- Assigned Events _(Requires Event Fleet component to be completed)_
 - Areas of Operation
 - Fleet Member Menu
 
@@ -47,6 +52,9 @@
 - **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
 
 <br/>
+
+## September 13, 2020
+- **ADD** Add Areas of Operation
 
 ## September 13, 2020
 - **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
