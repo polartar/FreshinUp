@@ -16,7 +16,7 @@ class StoreStatusTest extends TestCase {
             [StoreStatus::DRAFT, 'accent'],
             [StoreStatus::PENDING, 'warning'],
             [StoreStatus::REVISION, 'success'],
-            [StoreStatus::REJECTED, 'danger'],
+            [StoreStatus::REJECTED, 'error'],
             [StoreStatus::APPROVED, 'success'],
             [StoreStatus::ON_HOLD, 'accent'],
         ];

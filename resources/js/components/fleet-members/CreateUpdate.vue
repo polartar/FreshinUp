@@ -170,7 +170,7 @@
   </div>
 </template>
 <script>
-import BasicInformation, { DEFAULT_STORE } from './BasicInformation'
+import BasicInformation from './BasicInformation'
 
 import Payments from './Payments'
 import DocumentList from './DocumentList'
@@ -240,6 +240,7 @@ export default {
       storeAreaPagination: 'pagination',
       storeAreaSorting: 'sorting'
     }),
+    ...mapGetters('stores', { store: 'item' }),
     ...mapGetters('documents', { docs: 'items' }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
@@ -249,9 +250,6 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
-    store () {
-      return this.$store.getters['stores/item'] || DEFAULT_STORE
-    },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
     },

@@ -58,6 +58,7 @@ class Store extends Model implements HasMedia
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $appends = ['image'];
 
     public function registerMediaCollections()
     {
@@ -71,7 +72,7 @@ class Store extends Model implements HasMedia
     {
         $media = $this->getFirstMedia('image');
 
-        return null !== $media
+        return $media !== null
             ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
             : 'https://via.placeholder.com/800x600.png';
     }
@@ -163,5 +164,14 @@ class Store extends Model implements HasMedia
     public function areas()
     {
         return $this->hasMany(StoreArea::class, 'store_uuid', 'uuid');
+    }
+
+    public function getAvatarAttribute()
+    {
+        $media = $this->getFirstMedia('avatar');
+
+        return $media !== null
+            ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
+            : '';
     }
 }
