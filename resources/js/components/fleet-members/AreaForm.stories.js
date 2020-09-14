@@ -16,7 +16,13 @@ export const WithData = () => ({
   components: { AreaForm },
   data () {
     return {
-      store: {}
+      store: {
+        id: 123,
+        name: '613 East Broadway, Glendale CA',
+        radius: 50,
+        state: 'Detroit',
+        store_uuid: 'abc123'
+      }
     }
   },
   methods: {

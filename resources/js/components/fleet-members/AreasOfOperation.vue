@@ -35,7 +35,7 @@
                 Coming Soon here
               </v-card-text>
               <v-divider />
-              <area-form class="ma-4"/>
+              <area-form class="ma-2"/>
             </v-card>
           </v-dialog>
         </v-flex>
