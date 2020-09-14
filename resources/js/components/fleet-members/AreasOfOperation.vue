@@ -12,7 +12,7 @@
         <v-flex shrink>
           <v-dialog
             v-model="newOperation"
-            max-width="400"
+            max-width="600"
           >
             <template v-slot:activator="{ on }">
               <v-btn
@@ -32,9 +32,10 @@
             <v-card>
               <v-divider />
               <v-card-text class="grey--text">
-                Coming Soon
+                Coming Soon here
               </v-card-text>
               <v-divider />
+              <area-form />
             </v-card>
           </v-dialog>
         </v-flex>
@@ -55,9 +56,12 @@
 
 <script>
 import StoreAreaList from './StoreAreaList'
+import AreaForm from './AreaForm'
+
 export default {
   components: {
-    StoreAreaList
+    StoreAreaList,
+    AreaForm
   },
   props: {
     isLoading: { type: Boolean, default: false },
