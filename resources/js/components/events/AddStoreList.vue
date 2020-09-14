@@ -74,17 +74,17 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ props.item.type && props.item.type.name }}
+          @{{ get(props, 'item.type.name') }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.location.name }}
+          {{ get(props, 'item.location.name') }}
         </div>
       </td>
       <td class="tag-td">
         <f-chip
-          v-for="tag in props.item.store_tags"
+          v-for="tag in get(props, 'item.store_tags', [])"
           :key="tag.uuid"
           color="secondary"
         >
@@ -114,6 +114,14 @@ import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtn from 'fresh-bus/components/ui/FBtn'
 import FChip from 'fresh-bus/components/ui/FChip'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
+import get from 'lodash/get'
+
+export const HEADERS = [
+  { text: 'FLEET MEMBER', value: 'name,type', align: 'left' },
+  { text: 'LOCATION', value: 'location', align: 'left' },
+  { text: 'TAGS', sortable: false, value: 'store_tags', align: 'left' },
+  { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
+]
 export default {
   components: { FBtn, FChip },
   mixins: [
@@ -129,12 +137,7 @@ export default {
   data () {
     return {
       selected: [],
-      headers: [
-        { text: 'FLEET MEMBER', value: 'name,type', align: 'left' },
-        { text: 'LOCATION', value: 'location', align: 'left' },
-        { text: 'TAGS', sortable: false, value: 'store_tags', align: 'left' },
-        { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
-      ]
+      headers: HEADERS
     }
   },
   computed: {
@@ -144,6 +147,7 @@ export default {
     }
   },
   methods: {
+    get,
     assign (action, store) {
       this.$emit('manage-' + action, store)
     },

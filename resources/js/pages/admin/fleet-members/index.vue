@@ -39,8 +39,7 @@
       :descending="sorting.descending"
       @paginate="onPaginate"
       @change-status="changeStatus"
-      @manage-view="storeView"
-      @manage-edit="storeEdit"
+      @manage-view="storeViewOrEdit"
       @manage-delete="deleteStore"
       @manage-multiple-delete="deleteStore"
       @change_status_multiple="changeStatusMultiple"
@@ -90,10 +89,18 @@
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
-import StoreList from '~/components/stores/StoreList.vue'
+import StoreList from '~/components/fleet-members/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import get from 'lodash/get'
-import FilterSorter from '~/components/stores/FilterSorter.vue'
+import FilterSorter from '~/components/fleet-members/FilterSorter.vue'
+
+const INCLUDE = [
+  'tags',
+  'addresses',
+  'status',
+  'owner',
+  'type'
+]
 
 export default {
   layout: 'admin',
@@ -141,11 +148,8 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    storeView (store) {
-      alert('coming soon')
-    },
-    storeEdit (store) {
-      alert('coming soon')
+    storeViewOrEdit (store) {
+      this.$router.push({ path: `/admin/fleet-members/${store.uuid}/edit` })
     },
     deleteStore (stores) {
       if (!Array.isArray(stores)) {
@@ -158,7 +162,7 @@ export default {
       this.deletablesProcessing = true
       this.deletablesProgress = 0
       this.deletablesStatus = ''
-      let dispatcheables = []
+      const dispatcheables = []
 
       this.deleteTemp.forEach(store => {
         dispatcheables.push(
@@ -208,7 +212,7 @@ export default {
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     },
     runFilter (params) {
@@ -216,13 +220,12 @@ export default {
     },
     filterStores (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('stores/setSort', params.sort)
       this.$store.dispatch('stores/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams
       })
       this.$store.dispatch('stores/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     }
   },
@@ -230,10 +233,11 @@ export default {
     vm.setPageLoading(true)
     Promise.all([
       vm.$store.dispatch('stores/setFilters', {
-        ...vm.$route.query
+        ...vm.$route.query,
+        ...this.lastFilterParams
       }),
       vm.$store.dispatch('storeStatuses/getItems', {
-        params: { include: 'tags,addresses,status' }
+        params: { include: INCLUDE }
       })
     ])
       .then(() => {

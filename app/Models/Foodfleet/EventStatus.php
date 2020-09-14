@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string name
+ * @property \DateTime created_at
+ * @property \DateTime updated_at
  */
 class EventStatus extends Model
 {

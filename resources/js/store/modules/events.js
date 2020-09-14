@@ -1,4 +1,4 @@
-import makeRestStore from 'fresh-bus/store/utils/makeRestStore'
+import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
 import omitBy from 'lodash/omitBy'
 import isNull from 'lodash/isNull'
 import omit from 'lodash/omit'

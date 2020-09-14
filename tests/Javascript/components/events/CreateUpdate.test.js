@@ -9,6 +9,7 @@ import eventStatuses from '~/store/modules/eventStatuses'
 import eventHistories from '~/store/modules/eventHistories'
 import { getFileNameCopy } from '../../../../resources/js/components/events/CreateUpdate'
 import { FIXTURE_EVENT_HISTORIES } from 'tests/__data__/eventHistory'
+import storeStatuses from '../../../../resources/js/store/modules/storeStatuses'
 
 describe('Event CreateUpdate Component', () => {
   let localVue, mock, store
@@ -30,6 +31,7 @@ describe('Event CreateUpdate Component', () => {
       store = createStore({}, {
         modules: {
           events: events({}),
+          storeStatuses: storeStatuses({}),
           eventStatuses: eventStatuses({}),
           eventHistories: eventHistories({})
         }
@@ -123,9 +125,7 @@ describe('Event CreateUpdate Component', () => {
         localVue: localVue,
         store
       })
-
       await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 1 } })
-
       wrapper.vm.changeBasicInfo({
         name: 'mock event name'
       })

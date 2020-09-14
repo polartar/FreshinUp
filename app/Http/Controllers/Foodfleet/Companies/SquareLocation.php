@@ -16,17 +16,19 @@ class SquareLocation extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
+     * @param $id
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request, $id)
     {
-# setup authorization
+        # setup authorization
         $api_config = new \SquareConnect\Configuration();
         $api_config->setHost(config('services.square.sq_domain'));
         $api_config->setAccessToken(config('services.square.sq_token'));
         $api_client = new \SquareConnect\ApiClient($api_config);
-# create an instance of the Location API
+
+        # create an instance of the Location API
         $locations_api = new \SquareConnect\Api\LocationsApi($api_client);
         $data = array();
         try {

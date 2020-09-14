@@ -40,13 +40,12 @@ class EventsTableSeeder extends Seeder
                 'location_uuid' => $locations->random()->uuid,
                 'host_uuid' => $hosts->random()->uuid,
                 'type_id' => $eventType->random()->id,
-                'venue_uuid' => $venue->uuid
+                'venue_uuid' => $venues->random()->uuid
             ]);
             for ($j = 1; $j <= $status_id; $j++) {
                 factory(EventHistory::class)->create([
                     'event_uuid' => $event->uuid,
-                    'status_id' => $j,
-                    'completed' => true
+                    'status_id' => $j
                 ]);
             }
             $eventTagRandomUuids = $eventTags->random(2)->pluck('uuid')->toArray();

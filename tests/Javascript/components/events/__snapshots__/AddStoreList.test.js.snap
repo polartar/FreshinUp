@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Store List component Snapshots stores empty 1`] = `
+exports[`Store List component Snapshots Empty 1`] = `
 <div
   class="store-list-table"
 >
@@ -320,12 +320,11 @@ exports[`Store List component Snapshots stores empty 1`] = `
         <div
           class="v-datatable__actions__pagination"
         >
-          1-10 of 10
+          41-5 of 5
         </div>
         <button
           aria-label="Previous page"
-          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-          disabled="disabled"
+          class="v-btn v-btn--flat v-btn--icon theme--light"
           type="button"
         >
           <div
@@ -362,7 +361,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
 </div>
 `;
 
-exports[`Store List component Snapshots stores set 1`] = `
+exports[`Store List component Snapshots Set 1`] = `
 <div
   class="store-list-table"
 >
@@ -837,14 +836,15 @@ exports[`Store List component Snapshots stores set 1`] = `
            
           <td>
             <button
-              class="v-btn theme--light undefined-text--text"
+              class="white--text v-btn theme--light #508c85-text--text"
+              style="background-color: rgb(80, 140, 133); border-color: #508c85;"
               type="button"
             >
               <div
                 class="v-btn__content"
               >
                 
-        Assign
+        Assigned
       
               </div>
             </button>
@@ -1038,12 +1038,11 @@ exports[`Store List component Snapshots stores set 1`] = `
         <div
           class="v-datatable__actions__pagination"
         >
-          1-10 of 10
+          41-5 of 5
         </div>
         <button
           aria-label="Previous page"
-          class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-          disabled="disabled"
+          class="v-btn v-btn--flat v-btn--icon theme--light"
           type="button"
         >
           <div

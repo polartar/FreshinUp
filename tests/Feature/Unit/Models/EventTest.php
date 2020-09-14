@@ -1,8 +1,10 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Event;
+namespace Tests\Feature\Unit\Models;
 
+use App\Enums\EventStatus as EventStatusEnum;
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\EventHistory;
 use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -60,5 +62,77 @@ class EventTest extends TestCase
             'event_uuid' => $event->uuid
         ]);
         $this->assertEquals($transaction->uuid, $event->transactions->first()->uuid);
+    }
+
+    public function testObserverWhenEventCreated()
+    {
+        $event = factory(Event::class)->make([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+        $this->assertEquals(0, EventHistory::where([
+            'event_uuid' => $event->uuid
+        ])->count());
+
+        $event->save();
+        $this->assertEquals(1, EventHistory::where([
+            'event_uuid' => $event->uuid,
+            'status_id' => EventStatusEnum::DRAFT
+        ])->whereNotNull('date')->count());
+    }
+
+    public function testObserverWhenEventUpdatedWithSameStatus()
+    {
+        $event = factory(Event::class)->create();
+        $this->assertEquals(1, EventHistory::where([
+            'event_uuid' => $event->uuid,
+            'status_id' => $event->status_id
+        ])->count());
+
+        $event->update(array_merge(factory(Event::class)->make()->toArray(), [
+            'status_id' => $event->status_id
+        ]));
+        $this->assertEquals(1, EventHistory::where([
+            'event_uuid' => $event->uuid,
+        ])->count());
+    }
+
+    public function testObserverWhenEventUpdatedWithDifferentStatus()
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => EventStatusEnum::FF_INITIAL_REVIEW
+        ]);
+        $this->assertEquals(1, EventHistory::where([
+            'event_uuid' => $event->uuid,
+            'status_id' => $event->status_id
+        ])->count());
+
+        $event->update([
+            'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
+        ]);
+        $this->assertEquals(2, EventHistory::where([
+            'event_uuid' => $event->uuid,
+        ])->count());
+        $history = EventHistory::where([
+            'event_uuid' => $event->uuid,
+            'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
+        ])->first();
+        $this->assertNotNull($history->date);
+    }
+
+    public function testObserverWhenEventDeleted()
+    {
+        $event = factory(Event::class)->create();
+        for ($i = 1; $i <= 9; $i++) {
+            factory(EventHistory::class)->create([
+                'event_uuid' => $event->uuid,
+                'status_id' => $i
+            ]);
+        }
+        $this->assertEquals(10, EventHistory::where([
+            'event_uuid' => $event->uuid
+        ])->count());
+
+        $event->delete();
+        $this->assertEquals(0, EventHistory::where('event_uuid', $event->uuid)->count());
     }
 }

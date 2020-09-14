@@ -18,6 +18,7 @@ use Faker\Generator as Faker;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Location::class, function (Faker $faker) {
     return [
+        "uuid" => $faker->uuid,
         "name" => $faker->city,
         "venue_uuid" => function () {
             return factory(Venue::class)->create()->uuid;

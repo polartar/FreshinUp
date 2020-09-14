@@ -11,21 +11,21 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string event_uuid
- * @property Event event
  * @property int status_id
- * @property EventStatus status
  * @property Carbon date
- * @property string description
- * @property bool completed
+ *
+ *
+ * @property Event event
+ * @property EventStatus status
  */
 class EventHistory extends Model
 {
     public $timestamps = false;
     protected $dates = ['date'];
     protected $casts = [
-        'completed' => 'bool',
         'status_id' => 'int'
     ];
+    protected $guarded = [];
 
     public function event()
     {

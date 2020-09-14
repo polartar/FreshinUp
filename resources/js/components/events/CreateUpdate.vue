@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-form
-      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >
@@ -200,7 +199,7 @@
                     <EventStatusTimeline
                       :statuses="statuses"
                       :histories="eventHistories"
-                      :status="event.status_id"
+                      :status="get(event, 'status_id')"
                     />
                   </v-card-text>
                   <v-divider />
@@ -242,6 +241,7 @@
             :venue-uuid="get(event, 'venue_uuid')"
             :location-uuid="get(event, 'location_uuid')"
             :venues="venues"
+            @input="onLocationOrVenueChanged"
           />
         </v-flex>
       </v-layout>
@@ -444,22 +444,27 @@ export default {
         })
     },
     changeBasicInfo (data) {
-      this.event.attendees = data.attendees
-      this.event.budget = data.budget
-      this.event.commission_rate = data.commission_rate
-      this.event.commission_type = data.commission_type
-      this.event.type_id = data.type_id
-      this.event.start_at = data.start_at
-      this.event.end_at = data.end_at
-      this.event.staff_notes = data.staff_notes
-      this.event.member_notes = data.member_notes
-      this.event.customer_notes = data.customer_notes
-      this.event.event_tags = data.event_tags
-      this.event.host_uuid = data.host_uuid
-      this.event.manager_uuid = data.manager_uuid
-      this.event.name = data.name
-      this.event.schedule = data.schedule
-      this.event.event_recurring_checked = data.event_recurring_checked
+      const fields = [
+        'attendees',
+        'budget',
+        'commission_rate',
+        'commission_type',
+        'type_id',
+        'start_at',
+        'end_at',
+        'staff_notes',
+        'member_notes',
+        'customer_notes',
+        'event_tags',
+        'host_uuid',
+        'manager_uuid',
+        'name',
+        'schedule',
+        'event_recurring_checked'
+      ]
+      fields.forEach(field => {
+        this.event[field] = data[field]
+      })
     },
     async validator () {
       const valids = await Promise.all([
@@ -472,9 +477,7 @@ export default {
       const valid = await this.validator()
       // TODO: this heavy logic should be done on the state machine.
       let data = {
-        ...this.event,
-        host_uuid: get(this.event, 'host.uuid', this.event.host_uuid),
-        manager_uuid: get(this.event, 'manager.uuid', this.event.manager_uuid)
+        ...this.event
       }
       const extra = ['created_at', 'updated_at', 'host', 'manager', 'event_recurring_checked']
       data = omitBy(data, (value, key) => {
@@ -489,16 +492,24 @@ export default {
       // end TODO
 
       if (!valid) {
+        this.$store.dispatch('generalErrorMessages/setErrors', 'Validation error. Please check the form.')
         return false
       }
-      if (this.isNew) {
-        data.id = 'new'
-        await this.$store.dispatch('events/createItem', { data })
-        await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-        this.$router.push({ path: '/admin/events/' })
-      } else {
-        await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-        await this.$store.dispatch('generalMessage/setMessage', 'Modified')
+      try {
+        this.eventLoading = true
+        if (this.isNew) {
+          await this.$store.dispatch('events/createItem', { data })
+          await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          this.$router.push({ path: '/admin/events/' })
+        } else {
+          await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
+          await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
+        }
+      } catch (error) {
+        const message = get(error, 'response.data.message', error.message)
+        this.$store.dispatch('generalErrorMessages/setErrors', message)
+      } finally {
+        this.eventLoading = false
       }
     },
     onCancel () {
@@ -517,6 +528,10 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/events' })
+    },
+    onLocationOrVenueChanged (location) {
+      this.event.location_uuid = location.uuid
+      this.event.venue_uuid = location.venue_uuid
     }
   },
   async beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -538,6 +553,7 @@ export default {
       promises.push(vm.$store.dispatch('eventHistories/getItems'))
     }
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
     vm.eventLoading = true

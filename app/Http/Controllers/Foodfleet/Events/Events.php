@@ -114,7 +114,8 @@ class Events extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
+     * @param  CreateEvent  $action
      * @return EventResource
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -183,6 +184,7 @@ class Events extends Controller
             'manager_uuid' => 'string|exists:users,uuid',
             'host_uuid' => 'string|exists:companies,uuid',
             'location_uuid' => 'string|exists:locations,uuid',
+            'venue_uuid' => 'string|exists:venues,uuid',
             'store_uuids' => 'array',
             'store_uuids.*' => 'string|exists:stores,uuid',
             'status_id' => 'integer',

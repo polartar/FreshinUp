@@ -1,108 +1,168 @@
-const stores = [
+export const FIXTURE_STORES = [
   {
-    uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
-    name: 'Burger Babes',
-    type: {
-      id: 1,
-      name: 'Mobil'
-    },
-    location: {
-      id: 1,
-      uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
-      name: 'Port Gerald'
-    },
-    store_tags: [
+    uuid: 'abc111',
+    name: 'Da Lobster',
+    type_id: 1,
+    tags: [
       {
-        uuid: '1',
-        name: 'minus'
+        uuid: 'a111',
+        name: 'ASIAN'
       },
       {
-        uuid: '2',
-        name: 'hic'
+        uuid: 'a222',
+        name: 'VEGAN'
       }
     ],
-    events_count: 10,
+    pos_system: 'Square',
+    square_id: 1,
+    size: 200,
+    owner_uuid: 'o111',
     owner: {
-      id: 1,
-      name: 'Level1 User',
-      company: 'Laravel'
+      uuid: 'o111',
+      name: 'Josh Smith @ Restaurant Inc'
     },
-    assigned: false
+    contact_phone: '938 374822',
+    state_of_incorporation: 'California',
+    website: 'www.restaurantinc.com',
+    twitter: 'www.twitter.com/restaurantinc',
+    facebook: 'www.facebook.com/restaurantinc',
+    instagram: 'www.instagram.com/restaurantinc',
+    staff_notes: 'Only visible for Food Fleet Staff',
+    has_expired_licences_docs: false,
+    events: [
+      {
+        uuid: 'bc',
+        start_at: '2019-07-12 08:31:00',
+        end_at: '2030-07-12 23:59:59',
+        declined: false
+      }
+    ]
   },
   {
-    uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
-    name: 'Holy Canoli',
-    type: {
-      id: 1,
-      name: 'Mobil'
-    },
-    location: {
-      id: 2,
-      uuid: '00aabd70-aa77-42de-87fd-96449bbd5439',
-      name: 'Carminestad'
-    },
-    store_tags: [
+    uuid: 'abc222',
+    name: 'Rekindler',
+    type_id: 2,
+    tags: [
       {
-        uuid: '1',
-        name: 'minus'
-      },
-      {
-        uuid: '2',
-        name: 'sit'
-      },
-      {
-        uuid: '3',
-        name: 'hicsdfsdf'
+        uuid: 'a111',
+        name: 'VEGAN'
       }
     ],
-    events_count: 2,
+    pos_system: 'Square',
+    square_id: 1,
+    size: 150,
+    owner_uuid: 'o222',
     owner: {
-      id: 2,
-      name: 'Level2 User',
-      company: 'Bogisich LLC'
+      uuid: 'o222',
+      name: 'Josh Smith @ Dibitery Inc'
     },
-    assigned: true
+    contact_phone: '938 374822',
+    state_of_incorporation: 'New York',
+    website: 'www.restaurantinc.com',
+    twitter: 'www.twitter.com/restaurantinc',
+    facebook: 'www.facebook.com/restaurantinc',
+    instagram: 'www.instagram.com/restaurantinc',
+    staff_notes: 'Only visible for Food Fleet Staff',
+    has_expired_licences_docs: false,
+    events: []
   },
   {
-    uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
-    name: 'Da Lobsta',
-    type: {
-      id: 1,
-      name: 'Mobil'
+    uuid: 'abc333',
+    name: 'Fiora',
+    type_id: 2,
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN'
+    }],
+    pos_system: 'Square',
+    square_id: 1,
+    size: 340,
+    owner_uuid: 'o333',
+    owner: {
+      uuid: 'o333',
+      name: 'Josh Smith @ Dibitery Inc'
     },
-    location: {
-      id: 2,
-      uuid: 'dfb4bd02-c298-4dd4-ab49-2c3f156f2894',
-      name: 'New Charlenebury'
+    contact_phone: '938 374822',
+    state_of_incorporation: 'California',
+    website: 'www.restaurantinc.com',
+    twitter: 'www.twitter.com/restaurantinc',
+    facebook: 'www.facebook.com/restaurantinc',
+    instagram: 'www.instagram.com/restaurantinc',
+    staff_notes: 'Only visible for Food Fleet Staff',
+    has_expired_licences_docs: true,
+    events: []
+  },
+  {
+    uuid: 'abc444',
+    name: 'Trundle',
+    type_id: 2,
+    tags: [{
+      uuid: 'a111',
+      name: 'ASIAN'
+    }, {
+      uuid: 'v111',
+      name: 'VEGAN'
+    }],
+    pos_system: 'Square',
+    square_id: 1,
+    size: 123,
+    owner_uuid: 'o444',
+    owner: {
+      uuid: 'o444',
+      name: 'Josh Smith @ Restaurant Inc'
     },
-    store_tags: [
+    contact_phone: '938 374822',
+    state_of_incorporation: 'California',
+    website: 'www.restaurantinc.com',
+    twitter: 'www.twitter.com/restaurantinc',
+    facebook: 'www.facebook.com/restaurantinc',
+    instagram: 'www.instagram.com/restaurantinc',
+    staff_notes: 'Only visible for Food Fleet Staff',
+    has_expired_licences_docs: false,
+    events: [
       {
-        uuid: '1',
-        name: 'minus'
-      },
+        uuid: 'bdsgc',
+        start_at: '2019-07-12 08:31:00',
+        end_at: '2030-07-12 23:59:59',
+        declined: false
+      }
+    ]
+  },
+  {
+    uuid: 'abc555',
+    name: 'La fourchette',
+    type_id: 2,
+    tags: [
       {
-        uuid: '2',
-        name: 'hic'
-      },
-      {
-        uuid: '3',
-        name: 'acsfdd'
-      },
-      {
-        uuid: '4',
-        name: 'fsdf'
+        uuid: 't1',
+        name: 'VEGAN'
       }
     ],
-    events_count: 0,
+    pos_system: 'Square',
+    square_id: 1,
+    size: '',
+    owner_uuid: 'o555',
     owner: {
-      id: 3,
-      name: 'Level3 User',
-      company: 'Rempel LLC'
+      uuid: 'o555',
+      name: 'Josh Smith @ Restaurant Inc'
     },
-    assigned: true
+    contact_phone: '938 374822',
+    state_of_incorporation: 'California',
+    website: 'www.restaurantinc.com',
+    twitter: 'www.twitter.com/restaurantinc',
+    facebook: 'www.facebook.com/restaurantinc',
+    instagram: 'www.instagram.com/restaurantinc',
+    staff_notes: 'Only visible for Food Fleet Staff',
+    has_expired_licences_docs: false,
+    events: [
+      {
+        uuid: 'bc',
+        start_at: '2019-07-12 08:31:00',
+        end_at: '2030-07-12 23:59:59',
+        declined: true
+      }
+    ]
   }
 ]
-const store = stores[0]
 
-export const FIXTURE_STORE = store
-export const FIXTURE_STORES = stores
+export const FIXTURE_STORE = FIXTURE_STORES[0]

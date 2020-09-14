@@ -30,6 +30,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
+ *
+ *
+ * @property Store[] stores
+ * @property Company[] host
+ * @property User manager
+ * @property Location[] location
+ * @property Transaction[] transactions
+ * @property EventTag[] eventTags
+ * @property Document[] documents
+ * @property EventStatus status
+ * @property MenuItem[] menuItems
+ * @property Message[] messages
+ * @property EventSchedule schedule
+ * @property EventType type
+ * @property EventHistory[] histories
+ * @property Venue venue
  */
 class Event extends Model
 {
@@ -106,6 +122,7 @@ class Event extends Model
 
     public function schedule()
     {
+        // TODO: rename this eventSchedule to be more concise and avoid confusion
         return $this->hasOne(EventSchedule::class, 'event_uuid', 'uuid');
     }
 

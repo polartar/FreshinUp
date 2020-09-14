@@ -1,26 +1,26 @@
 <template>
   <v-timeline
     dense
+    align-top
   >
     <v-timeline-item
-      v-for="(option, optionIndex) in options"
+      v-for="(history, optionIndex) in options"
       :key="optionIndex"
-      :color="getColorFor(option)"
+      :color="getColorFor(history)"
       medium
-      :icon="getIconFor(option)"
+      :icon="getIconFor(history)"
     >
       <div class="ff-event_status_timeline__item">
-        <div v-if="option.completed">
-          <strong>{{ formatDate(option.date, 'MMM. DD') }}</strong>
+        <div>
+          <strong>{{ formatDate(history.date, 'MMM. DD') }}</strong>
           <p class="caption mb-2">
-            {{ formatDate(option.date, 'hh:mm A') }}
+            {{ formatDate(history.date, 'hh:mm A') }}
           </p>
         </div>
-        <div v-else />
         <div>
-          <strong>{{ option.name }} {{ option.completed ? ': Completed': '' }}</strong>
+          <strong>{{ history.name }}</strong>
           <div class="caption">
-            {{ option.description }}
+            {{ history.description }}
           </div>
         </div>
       </div>
@@ -31,8 +31,6 @@
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 
-export const EXCEPTION_STATUSES = [8, 9]
-
 // TODO: extract this component to core-ui to FTimeline
 export default {
   mixins: [FormatDate],
@@ -42,41 +40,32 @@ export default {
     status: { type: Number, default: 0 }
   },
   computed: {
-    historiesByStatus () {
-      return this.histories.reduce((map, history) => {
-        map[history.status_id] = history
+    statusesById () {
+      return this.statuses.reduce((map, status) => {
+        map[status.id] = status
         return map
       }, new Map())
     },
     options () {
-      return this.statuses.reduce((options, status) => {
-        const history = this.historiesByStatus[status.id] || {}
-        if (EXCEPTION_STATUSES.includes(status.id) && this.status !== status.id) {
-        } else {
-          options.push({
-            status_id: status.id,
-            name: status.name,
-            description: history.description,
-            date: history.date,
-            completed: history.completed
-          })
+      return this.histories.map(history => {
+        const status = this.statusesById[history.status_id] || {}
+        return {
+          ...history,
+          name: status.name
         }
-        return options
-      }, [])
+      })
     }
   },
   methods: {
     getColorFor (option) {
       if (option.status_id === this.status) {
         return 'warning lighten-2'
-      } else if (option.completed) {
-        return 'success'
       } else {
-        return 'grey lighten-2'
+        return 'success'
       }
     },
     getIconFor (option) {
-      return option.completed ? 'check_circle_outline' : ''
+      return option.status_id !== this.status ? 'check_circle_outline' : ''
     }
   }
 }
@@ -84,8 +73,8 @@ export default {
 
 <style scoped lang="scss">
   .v-timeline::before {
-    height: calc(100% - 36px);
-    top: 12px;
+    height: calc(100% - 4rem);
+    top: 2rem;
   }
   .ff-event_status_timeline__item {
     display: grid;

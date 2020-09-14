@@ -204,10 +204,7 @@ export default {
     ClearButton
   },
   props: {
-    venues: {
-      type: Array,
-      default: () => []
-    },
+    venues: { type: Array, default: () => [] },
     locationUuid: { type: String, default: '' },
     venueUuid: { type: String, default: '' }
   },
@@ -251,6 +248,9 @@ export default {
     },
     venueUuid (value) {
       this.onVenueChanged(value)
+    },
+    location (value) {
+      this.$emit('input', value)
     }
   },
   mounted () {

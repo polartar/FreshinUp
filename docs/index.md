@@ -46,6 +46,43 @@
 <br/>
 
 # Changes
+## September 13, 2020
+- **ADD** Add Areas of Operation
+
+## September 13, 2020
+- **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
+
+## September 12, 2020
+- **MOD** Fleet Member displays columns Owner and State [#470](https://github.com/FreshinUp/foodfleet/issues/470)
+
+<br/>
+
+## September 11, 2020
+- **MOD** Fleet Members filter by fields [#452](https://github.com/FreshinUp/foodfleet/issues/452)
+
+<br/>
+
+## September 10, 2020
+`Fleet-members`, `Events`
+- **ADD** Snackbar informs user of success or failure [#413](https://github.com/FreshinUp/foodfleet/issues/413)
+- **ADD** Fleet Members can be searched by Fleet name [#451](https://github.com/FreshinUp/foodfleet/issues/451)
+
+<br/>
+
+## September 9, 2020
+- **ADD** Creating new Fleet Member. [#431](https://github.com/FreshinUp/foodfleet/issues/431)
+
+<br/>
+
+## September 7, 2020
+- **ADD** Status History displays Date of change [#448](https://github.com/FreshinUp/foodfleet/issues/448)
+
+<br/>
+
+## September 6, 2020
+- **ADD** Persisting changes on event [#445](https://github.com/FreshinUp/foodfleet/issues/445)
+
+<br/>
 
 ## September 4, 2020
 - **ADD** Status helper function is created for Event Detail page. [#387](https://github.com/FreshinUp/foodfleet/issues/387)

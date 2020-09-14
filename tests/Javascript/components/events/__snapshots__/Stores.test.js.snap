@@ -1008,8 +1008,8 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                         <div
                                           role="listitem"
                                         >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
+                                          <div
+                                            class="v-list__tile theme--light"
                                           >
                                             <div
                                               class="v-list__tile__content"
@@ -1017,44 +1017,10 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                               <div
                                                 class="v-list__tile__title"
                                               >
-                                                modi
+                                                No data available
                                               </div>
                                             </div>
-                                          </a>
-                                        </div>
-                                        <div
-                                          role="listitem"
-                                        >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
-                                          >
-                                            <div
-                                              class="v-list__tile__content"
-                                            >
-                                              <div
-                                                class="v-list__tile__title"
-                                              >
-                                                ipsum
-                                              </div>
-                                            </div>
-                                          </a>
-                                        </div>
-                                        <div
-                                          role="listitem"
-                                        >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
-                                          >
-                                            <div
-                                              class="v-list__tile__content"
-                                            >
-                                              <div
-                                                class="v-list__tile__title"
-                                              >
-                                                architecto
-                                              </div>
-                                            </div>
-                                          </a>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1813,7 +1779,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="subheading primary--text"
                       >
                         
-        Burger Babes
+        Da Lobster
       
                       </div>
                        
@@ -1821,46 +1787,21 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Mobil
+        
       
                       </div>
                     </td>
                      
                     <td
                       class="tag-td"
-                    >
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        minus
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        hic
-      
-                        </span>
-                      </span>
-                    </td>
+                    />
                      
                     <td>
                       <div
                         class="grey--text"
                       >
                         
-        Level1 User
+        Josh Smith @ Restaurant Inc
       
                       </div>
                        
@@ -1868,7 +1809,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Laravel
+        
       
                       </div>
                     </td>
@@ -1878,7 +1819,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Port Gerald
+        
       
                       </div>
                     </td>
@@ -2103,7 +2044,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="subheading primary--text"
                       >
                         
-        Holy Canoli
+        Rekindler
       
                       </div>
                        
@@ -2111,58 +2052,21 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Mobil
+        
       
                       </div>
                     </td>
                      
                     <td
                       class="tag-td"
-                    >
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        minus
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        sit
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        hicsdfsdf
-      
-                        </span>
-                      </span>
-                    </td>
+                    />
                      
                     <td>
                       <div
                         class="grey--text"
                       >
                         
-        Level2 User
+        Josh Smith @ Dibitery Inc
       
                       </div>
                        
@@ -2170,7 +2074,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Bogisich LLC
+        
       
                       </div>
                     </td>
@@ -2180,7 +2084,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Carminestad
+        
       
                       </div>
                     </td>
@@ -2405,7 +2309,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="subheading primary--text"
                       >
                         
-        Da Lobsta
+        Fiora
       
                       </div>
                        
@@ -2413,70 +2317,21 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Mobil
+        
       
                       </div>
                     </td>
                      
                     <td
                       class="tag-td"
-                    >
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        minus
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        hic
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        acsfdd
-      
-                        </span>
-                      </span>
-                      <span
-                        class="v-chip theme--light secondary secondary-text--text"
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-        fsdf
-      
-                        </span>
-                      </span>
-                    </td>
+                    />
                      
                     <td>
                       <div
                         class="grey--text"
                       >
                         
-        Level3 User
+        Josh Smith @ Dibitery Inc
       
                       </div>
                        
@@ -2484,7 +2339,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        Rempel LLC
+        
       
                       </div>
                     </td>
@@ -2494,7 +2349,537 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                         class="grey--text"
                       >
                         
-        New Charlenebury
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="v-menu"
+                      >
+                        <button
+                          class="v-btn theme--dark primary primary-text--text"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+        Manage
+       
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--right material-icons theme--dark"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </button>
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                           
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  View details
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Unassign
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                        primary=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                primary=""
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                     
+                    <td
+                      class="select-td"
+                    >
+                      <div
+                        class="v-menu"
+                      >
+                        <button
+                          class="v-btn theme--dark accent accent-text--text"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+  Draft
+ 
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--right material-icons theme--dark"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </button>
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                           
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Draft
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Pending
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Revision
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Rejected
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Approved
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  On Hold
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="subheading primary--text"
+                      >
+                        
+        Trundle
+      
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td
+                      class="tag-td"
+                    />
+                     
+                    <td>
+                      <div
+                        class="grey--text"
+                      >
+                        
+        Josh Smith @ Restaurant Inc
+      
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="v-menu"
+                      >
+                        <button
+                          class="v-btn theme--dark primary primary-text--text"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+        Manage
+       
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--right material-icons theme--dark"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </button>
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                           
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  View details
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Unassign
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                        primary=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                primary=""
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                     
+                    <td
+                      class="select-td"
+                    >
+                      <div
+                        class="v-menu"
+                      >
+                        <button
+                          class="v-btn theme--dark accent accent-text--text"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            
+  Draft
+ 
+                            <i
+                              aria-hidden="true"
+                              class="v-icon v-icon--right material-icons theme--dark"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </button>
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                           
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Draft
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Pending
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Revision
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Rejected
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Approved
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  On Hold
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="subheading primary--text"
+                      >
+                        
+        La fourchette
+      
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td
+                      class="tag-td"
+                    />
+                     
+                    <td>
+                      <div
+                        class="grey--text"
+                      >
+                        
+        Josh Smith @ Restaurant Inc
+      
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
+      
+                      </div>
+                    </td>
+                     
+                    <td>
+                      <div
+                        class="grey--text"
+                      >
+                        
+        
       
                       </div>
                     </td>
@@ -3804,8 +4189,8 @@ exports[`Store List component Snapshots stores empty 1`] = `
                                         <div
                                           role="listitem"
                                         >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
+                                          <div
+                                            class="v-list__tile theme--light"
                                           >
                                             <div
                                               class="v-list__tile__content"
@@ -3813,44 +4198,10 @@ exports[`Store List component Snapshots stores empty 1`] = `
                                               <div
                                                 class="v-list__tile__title"
                                               >
-                                                modi
+                                                No data available
                                               </div>
                                             </div>
-                                          </a>
-                                        </div>
-                                        <div
-                                          role="listitem"
-                                        >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
-                                          >
-                                            <div
-                                              class="v-list__tile__content"
-                                            >
-                                              <div
-                                                class="v-list__tile__title"
-                                              >
-                                                ipsum
-                                              </div>
-                                            </div>
-                                          </a>
-                                        </div>
-                                        <div
-                                          role="listitem"
-                                        >
-                                          <a
-                                            class="v-list__tile v-list__tile--link theme--light"
-                                          >
-                                            <div
-                                              class="v-list__tile__content"
-                                            >
-                                              <div
-                                                class="v-list__tile__title"
-                                              >
-                                                architecto
-                                              </div>
-                                            </div>
-                                          </a>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>

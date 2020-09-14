@@ -269,8 +269,8 @@ exports[`event Add Store Filter Sorter component Snapshots types empty 1`] = `
                               <div
                                 role="listitem"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  class="v-list__tile theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -278,44 +278,10 @@ exports[`event Add Store Filter Sorter component Snapshots types empty 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      modi
+                                      No data available
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      ipsum
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      architecto
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -813,8 +779,8 @@ exports[`event Add Store Filter Sorter component Snapshots types set 1`] = `
                               <div
                                 role="listitem"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  class="v-list__tile theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -822,44 +788,10 @@ exports[`event Add Store Filter Sorter component Snapshots types set 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      modi
+                                      No data available
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      ipsum
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      architecto
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>

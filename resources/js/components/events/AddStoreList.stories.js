@@ -91,29 +91,23 @@ let stores = [
   }
 ]
 
-storiesOf('FoodFleet|components/event/AddStoreList', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'default', value: '#f1f3f6', default: true }
-    ]
-  })
-  .add('member is empty', () => ({
-    components: { AddStoreList },
-    data () {
-      return {
-        stores: [],
-        pagination: {
-          page: 5,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
+export const Empty = () => ({
+  components: { AddStoreList },
+  data () {
+    return {
+      stores: [],
+      pagination: {
+        page: 5,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
-    },
-    template: `
+    }
+  },
+  template: `
       <add-store-list
         :stores="stores"
         :rows-per-page="pagination.rowsPerPage"
@@ -123,38 +117,39 @@ storiesOf('FoodFleet|components/event/AddStoreList', module)
         :descending="sorting.descending"
       />
     `
-  }))
-  .add('member is set', () => ({
-    components: { AddStoreList },
-    data () {
-      return {
-        stores: stores,
-        pagination: {
-          page: 5,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
-      }
-    },
-    methods: {
-      assign (params) {
-        params.assigned = true
-        action('manage-assign')(params)
+})
+
+export const Set = () => ({
+  components: { AddStoreList },
+  data () {
+    return {
+      stores: stores,
+      pagination: {
+        page: 5,
+        rowsPerPage: 10,
+        totalItems: 5
       },
-      multipleAssign (params) {
-        params.map(ele => {
-          if (!ele.assigned) {
-            ele.assigned = true
-          }
-        })
-        action('manage-multiple-assign')(params)
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
+    }
+  },
+  methods: {
+    assign (params) {
+      params.assigned = true
+      action('manage-assign')(params)
     },
-    template: `
+    multipleAssign (params) {
+      params.map(ele => {
+        if (!ele.assigned) {
+          ele.assigned = true
+        }
+      })
+      action('manage-multiple-assign')(params)
+    }
+  },
+  template: `
       <add-store-list
         :stores="stores"
         :rows-per-page="pagination.rowsPerPage"
@@ -166,4 +161,13 @@ storiesOf('FoodFleet|components/event/AddStoreList', module)
         @manage-multiple-assign="multipleAssign"
       />
     `
-  }))
+})
+
+storiesOf('FoodFleet|components/event/AddStoreList', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'default', value: '#f1f3f6', default: true }
+    ]
+  })
+  .add('Empty', Empty)
+  .add('Set', Set)

@@ -1,9 +1,9 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import * as Stories from '~/components/fleet-members/BasicInformation.stories'
 import Component from '~/components/fleet-members/BasicInformation.vue'
-import { FIXTURE_FLEET_MEMBER } from '../../__data__/fleet-members'
+import { FIXTURE_STORE } from '../../__data__/stores'
 
-describe('fleet-members/BasicInformation', () => {
+describe('components/fleet-members/BasicInformation', () => {
   describe('Snapshots', () => {
     test('Default', async () => {
       const wrapper = mount(Stories.Default())
@@ -15,6 +15,32 @@ describe('fleet-members/BasicInformation', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
+    test('Loading', async () => {
+      const wrapper = mount(Stories.Loading())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+  })
+
+  describe('Props & Computed', () => {
+    test('loading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.loading).toBe(false)
+
+      wrapper.setProps({
+        loading: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.loading).toBe(true)
+    })
+    test('value', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.setProps({
+        value: FIXTURE_STORE
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.value).toMatchObject(FIXTURE_STORE)
+    })
   })
 
   describe('methods', () => {
@@ -24,43 +50,45 @@ describe('fleet-members/BasicInformation', () => {
       localVue = createLocalVue()
     })
 
-    test('On save changes', () => {
+    test('save()', async () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
-
-      wrapper.setData({
-        memberData: FIXTURE_FLEET_MEMBER
+      wrapper.setProps({
+        value: FIXTURE_STORE
       })
-
-      wrapper.vm.onSaveChanges()
-      expect(wrapper.emitted().save).toBeTruthy()
-      const saveData = wrapper.emitted().save[0][0]
-      expect(saveData).toEqual(FIXTURE_FLEET_MEMBER)
+      await wrapper.vm.$nextTick()
+      wrapper.vm.save()
+      const emitted = wrapper.emitted().input
+      expect(emitted).toBeTruthy()
+      const saveData = emitted[0][0]
+      expect(saveData).toMatchObject(FIXTURE_STORE)
     })
 
-    test('On cancel', () => {
+    test('onCancel()', async () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
-
+      await wrapper.vm.$nextTick()
       wrapper.vm.onCancel()
+      await wrapper.vm.$nextTick()
       expect(wrapper.emitted().cancel).toBeTruthy()
     })
 
-    test('On delete member', () => {
+    test('onDeleteMember()', async () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue
       })
-
-      wrapper.setData({
-        memberData: FIXTURE_FLEET_MEMBER
+      wrapper.setProps({
+        value: FIXTURE_STORE
       })
-
+      await wrapper.vm.$nextTick()
       wrapper.vm.onDeleteMember()
-      expect(wrapper.emitted().delete).toBeTruthy()
-      const deleteData = wrapper.emitted().delete[0][0]
-      expect(deleteData).toEqual(FIXTURE_FLEET_MEMBER)
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted().delete
+      expect(emitted).toBeTruthy()
+      const deleteData = emitted[0][0]
+      expect(deleteData).toMatchObject(FIXTURE_STORE)
     })
   })
 })
