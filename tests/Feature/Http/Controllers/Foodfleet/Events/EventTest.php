@@ -596,9 +596,7 @@ class EventTest extends TestCase
     public function testGetItem()
     {
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
         $company = factory(Company::class)->create();
         $location = factory(Location::class)->create();
         $eventTag = factory(EventTag::class)->create();
@@ -1111,7 +1109,8 @@ class EventTest extends TestCase
         $this->json('PUT', 'api/foodfleet/stores/' . $storeUuids[0], [
             'event_uuid' => $event->uuid,
             'commission_rate' => 2,
-            'commission_type' => 2
+            'commission_type' => 2,
+            'name' => $stores->first()->name
         ])
         ->assertStatus(200)
         ->json('data');

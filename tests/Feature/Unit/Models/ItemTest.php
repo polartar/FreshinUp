@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models\Item;
+namespace Tests\Feature\Unit\Models;
 
 use App\Models\Foodfleet\Square\Category;
 use App\Models\Foodfleet\Square\Item;

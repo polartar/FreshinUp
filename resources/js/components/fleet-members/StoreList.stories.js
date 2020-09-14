@@ -9,7 +9,12 @@ let stores = [
     uuid: 1,
     status: 1,
     name: 'sint1233',
-    type: 'Food Truck',
+    type: {
+      id: 1,
+      value: 1,
+      name: 'Mobile',
+      text: 'Mobile'
+    },
     events: [
       { uuid: 1 },
       { uuid: 2 },
@@ -21,13 +26,27 @@ let stores = [
     ],
     addresses: [{ uuid: 1, city: 'Salvador', street: 'Rua' }],
     created_at: '2019-09-24T06:33:05.000000Z',
-    updated_at: '2019-09-24T11:14:21.000000Z'
+    updated_at: '2019-09-24T11:14:21.000000Z',
+    state_of_incorporation: 'MX',
+    owner_uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+    owner: {
+      uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+      company_name: 'Laravel',
+      name: 'Colleague 4 User',
+      first_name: 'Colleague 4',
+      last_name: 'User'
+    }
   },
   {
     uuid: 2,
     status: 2,
     name: 'sint1233',
-    type: 'Food Truck',
+    type: {
+      id: 1,
+      value: 1,
+      name: 'Stationary',
+      text: 'Stationary'
+    },
     events: [
       { uuid: 1 },
       { uuid: 2 }
@@ -39,13 +58,27 @@ let stores = [
     ],
     addresses: [{ uuid: 1, city: 'Los Angeles', street: 'Road' }],
     created_at: '2019-09-24T06:33:05.000000Z',
-    updated_at: '2019-09-24T11:14:21.000000Z'
+    updated_at: '2019-09-24T11:14:21.000000Z',
+    state_of_incorporation: 'MX',
+    owner_uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+    owner: {
+      uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+      company_name: 'Laravel',
+      name: 'Colleague 4 User',
+      first_name: 'Colleague 4',
+      last_name: 'User'
+    }
   },
   {
     uuid: 3,
     status: 3,
     name: 'sint1233',
-    type: 'Food Truck',
+    type: {
+      id: 1,
+      value: 1,
+      name: 'Stationary',
+      text: 'Stationary'
+    },
     events: [
       { uuid: 1 },
       { uuid: 2 },
@@ -58,7 +91,16 @@ let stores = [
     ],
     addresses: [{ uuid: 1, city: 'San Jose', street: 'Street' }],
     created_at: '2019-09-24T06:33:05.000000Z',
-    updated_at: '2019-09-24T11:14:21.000000Z'
+    updated_at: '2019-09-24T11:14:21.000000Z',
+    state_of_incorporation: 'MX',
+    owner_uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+    owner: {
+      uuid: '07b49e1c-e7b1-49e7-8957-9780d1ac4abe',
+      company_name: 'Laravel',
+      name: 'Colleague 4 User',
+      first_name: 'Colleague 4',
+      last_name: 'User'
+    }
   }
 ]
 
@@ -70,7 +112,7 @@ let statuses = [
   { id: 5, name: 'Cancelled' }
 ]
 
-storiesOf('FoodFleet|store/StoreList', module)
+storiesOf('FoodFleet|components/fleet-members/StoreList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

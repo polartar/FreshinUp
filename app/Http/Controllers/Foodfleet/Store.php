@@ -12,11 +12,13 @@ use App\Http\Resources\Foodfleet\Store\StoreServiceSummary as StoreServiceSummar
 use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
+use App\Sorts\Stores\OwnerNameSort;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\Sort;
 
 class Store extends Controller
 {
@@ -29,17 +31,24 @@ class Store extends Controller
                 'events',
                 'supplier',
                 'supplier.admin',
-                'status'
+                'status',
+                'owner',
+                'type'
             ])
             ->allowedSorts([
                 'name',
                 'status_id',
                 'created_at',
+                'state_of_incorporation',
+                Sort::custom('owner', new OwnerNameSort()),
             ])
             ->allowedFilters([
                 'name',
+                'state_of_incorporation',
                 Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
                 Filter::custom('tag', BelongsToWhereInUuidEquals::class, 'tags'),
+                Filter::custom('owner_uuid', BelongsToWhereInUuidEquals::class, 'owner'),
+                Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
             ]);
@@ -50,20 +59,30 @@ class Store extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
+            'name' => 'required',
             'status_id' => 'integer',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
-            'event_uuid' => 'string|exists:events,uuid'
+            'event_uuid' => 'string|exists:events,uuid',
+            'tags' => 'array'
         ]);
 
+        // TODO: avoid using all. Use only model::fillable
         $data = $request->all();
         $collection = collect($data);
-        $updateData = $collection->except(['event_uuid', 'commission_rate', 'commission_type'])->all();
+        $updateData = $collection->except(['tags', 'event_uuid', 'commission_rate', 'commission_type'])->all();
+        /** @var StoreModel $store */
         $store = StoreModel::where('uuid', $uuid)->first();
         if (!$store) {
             throw new ModelNotFoundException('No fleet member found to update.');
         }
         $store->update($updateData);
+
+        // array of tag uuid
+        if ($request->has('tags')) {
+            // TODO: validate array of tag uuid
+            $store->tags()->sync($request->input('tags'));
+        }
 
 
         $event_uuid = $collection->get('event_uuid');
@@ -73,10 +92,11 @@ class Store extends Controller
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
                 $event,
-                ['commission_rate' => $commission_rate, 'commission_type' => $commission_type]
+                compact('commission_rate', 'commission_type')
             );
         }
 
+        $store->load('tags');
         return new StoreResource($store);
     }
 
@@ -84,7 +104,17 @@ class Store extends Controller
     {
         $store = QueryBuilder::for(StoreModel::class, $request)
             ->where('uuid', $uuid)
-            ->allowedIncludes(['menus', 'tags', 'documents', 'events', 'supplier', 'supplier.admin', 'status']);
+            ->allowedIncludes([
+                'menus',
+                'tags',
+                'documents',
+                'events',
+                'supplier',
+                'supplier.admin',
+                'status',
+                'owner',
+                'areas'
+            ]);
 
         // Include eventsCount in the query if needed
         if ($request->has('provide') && $request->get('provide') == 'events-count') {
@@ -130,5 +160,39 @@ class Store extends Controller
                 ])
             )
         );
+    }
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'owner_uuid' => 'exists:users,uuid',
+            'type_id' => 'exists:store_types,id',
+            'status_id' => 'exists:store_statuses,id',
+            'supplier_uuid' => 'exists:companies,uuid',
+            'square_id' => 'integer',
+            'name' => 'required|string',
+            'tags' => 'array',
+            'pos_system' => 'string',
+            'size' => 'integer',
+            'contact_phone' => 'string',
+            'state_of_incorporation' => 'string',
+            'website' => 'url',
+            'twitter' => 'url',
+            'facebook' => 'url',
+            'instagram' => 'url',
+            'staff_notes' => 'string',
+        ];
+        $this->validate($request, $rules);
+        $data = $request->only(array_diff(array_keys($rules), ['tags']));
+        /** @var StoreModel $store */
+        $store = StoreModel::create($data);
+        // list of tag uuid
+        $tags = $request->input('tags');
+        if ($tags) {
+            // TODO: validate tags
+            $store->tags()->sync($tags);
+        }
+        $store->load('tags');
+        return new StoreResource($store);
     }
 }

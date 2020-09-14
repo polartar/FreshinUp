@@ -3,8 +3,8 @@
 
 namespace App\Http\Resources\Foodfleet\Store;
 
-use App\Http\Resources\Foodfleet\Store\Type;
 use FreshinUp\FreshBusForms\Http\Resources\Company\Company;
+use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
@@ -26,8 +26,8 @@ class Store extends JsonResource
             "id" => $this->id,
             "uuid" => $this->uuid,
             "name" => $this->name,
-            "status_id" => (int)$this->status_id,
-            "status" => new Status($this->whenLoaded('status')),
+            "status_id" => $this->status_id,
+            "status" => new StoreStatus($this->whenLoaded('status')),
             "addresses" => Address::collection($this->addresses),
             "tags" => Tag::collection($this->whenLoaded('tags')),
             "event_stores" => EventStore::collection($this->whenLoaded('events')),
@@ -35,14 +35,25 @@ class Store extends JsonResource
             "documents" => Document::collection($this->whenLoaded('documents')),
             "messages" => Message::collection($this->whenLoaded('messages')),
             "square_id" => $this->square_id,
-            "supplier" => new Company($this->whenLoaded('supplier')),
             "events_count" => $this->when($this->events_count, $this->events_count),
             "type" => new Type($this->whenLoaded('type')),
+            'type_id' => $this->type_id,
+            'supplier_uuid' => $this->supplier_uuid,
+            "supplier" => new Company($this->whenLoaded('supplier')),
+            'address_uuid' => $this->address_uuid,
+            'contact_phone' => $this->contact_phone,
+            'size' => $this->size,
+            'image' => $this->image,
+            "owner" => new User($this->whenLoaded('owner')),
+            'owner_uuid' => $this->owner_uuid,
+            'pos_system' => $this->pos_system,
+            'state_of_incorporation' => $this->state_of_incorporation,
             "website" => $this->website,
-            "contact_phone" => $this->contact_phone,
-            "size" => $this->size,
-            "image" => $this->image,
-
+            'facebook' => $this->facebook,
+            'twitter' => $this->twitter,
+            'instagram' => $this->instagram,
+            'staff_notes' => $this->staff_notes,
+            'areas' => StoreArea::collection($this->whenLoaded('areas')),
         ];
     }
 }

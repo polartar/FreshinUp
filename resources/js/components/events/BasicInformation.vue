@@ -2,6 +2,10 @@
   <v-card>
     <v-card-title class="grey--text font-weight-bold">
       <h3>Basic Information</h3>
+      <v-progress-linear
+        v-if="loading"
+        indeterminate
+      />
     </v-card-title>
     <v-divider />
     <v-form
@@ -324,6 +328,7 @@ export default {
     Validate
   ],
   props: {
+    loading: { type: Boolean, default: false },
     event: {
       type: Object,
       default: null

@@ -34,10 +34,8 @@ describe('Edit Company Page', () => {
         localVue,
         store
       })
-
       Page.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: 1 } }, null, async () => {
         await wrapper.vm.$nextTick()
-
         expect(wrapper.find('.fresh-company__edit').classes()).toContain(`fresh-company__edit--${FIXTURE_COMPANY.data.status}`)
         expect(wrapper.element).toMatchSnapshot()
         done()
