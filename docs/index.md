@@ -22,6 +22,11 @@
 ### Event Fleet
 - As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
+### Components
+- Venue Details _(requires Venues to be completed)_
+- Event Fleet _(Requires Fleet Members to be completed)_
+- Customer
+
 <br/>
 
 ## Fleet Members Page
@@ -36,7 +41,7 @@
 ### Functionality for these components
 - Fleet Member Documents
 - Payments
-- Assigned Events
+- Assigned Events _(Requires Event Fleet component to be completed)_
 - Areas of Operation
 - Fleet Member Menu
 
