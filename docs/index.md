@@ -48,6 +48,8 @@
 <br/>
 
 # Changes
+## September 16, 2020
+
 ## September 13, 2020
 - **ADD** Add Areas of Operation
 
