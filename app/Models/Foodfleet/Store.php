@@ -174,4 +174,17 @@ class Store extends Model implements HasMedia
             ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
             : '';
     }
+
+    public function setImage($image)
+    {
+        if (!empty($image)
+            && !filter_var($image, FILTER_VALIDATE_URL)) {
+            $this
+                ->addMediaFromBase64($image, 'image/*')
+                ->usingFileName(Carbon::now() . '-' . $this->id)
+                ->toMediaCollection('image');
+        } else {
+            $this->clearMediaCollection('image');
+        }
+    }
 }

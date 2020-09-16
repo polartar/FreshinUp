@@ -78,16 +78,8 @@ class Store extends Controller
         }
         $store->update($updateData);
 
-        // File upload
-        if (array_key_exists('image', $data) && !empty($data['image'])
-            && !filter_var($data['image'], FILTER_VALIDATE_URL)) {
-            $store
-                ->addMediaFromBase64($data['image'], 'image/*')
-                ->usingFileName(Carbon::now() . '-' . $store->id)
-                ->toMediaCollection('image');
-        } elseif (array_key_exists('image', $data) && empty($data['image'])) {
-            $store->clearMediaCollection('image');
-        }
+        // File upload in base 64
+        $store->setImage($data['image']);
 
         // array of tag uuid
         if ($request->has('tags')) {
@@ -197,6 +189,10 @@ class Store extends Controller
         $data = $request->only(array_diff(array_keys($rules), ['tags']));
         /** @var StoreModel $store */
         $store = StoreModel::create($data);
+
+        // File upload in base 64
+        $store->setImage($request->input('image'));
+
         // list of tag uuid
         $tags = $request->input('tags');
         if ($tags) {

@@ -1,8 +1,6 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import * as Stories from '~/components/fleet-members/AreaForm.stories'
-
 import Component from '~/components/fleet-members/AreaForm.vue'
-import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 describe('components/fleet-members/AreaForm', () => {
   describe('Snapshots', () => {
@@ -16,11 +14,6 @@ describe('components/fleet-members/AreaForm', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
-  })
-
-  test('has mixin MapValueKeysToData', async () => {
-    const wrapper = shallowMount(Component)
-    expect(wrapper.vm.mixins).toContain(MapValueKeysToData)
   })
 
   describe('methods', () => {
