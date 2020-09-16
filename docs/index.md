@@ -19,8 +19,8 @@
 ## Event Page
 
 ## Event Edit Page
-- **Manager** can be modified and saved
-- **Customer** can be modified and saved
+### Event Fleet
+- As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
 ### Components
 - Venue Details _(requires Venues to be completed)_
