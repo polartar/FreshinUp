@@ -170,7 +170,7 @@
   </div>
 </template>
 <script>
-import BasicInformation from './BasicInformation'
+import BasicInformation, { DEFAULT_STORE } from './BasicInformation'
 
 import Payments from './Payments'
 import DocumentList from './DocumentList'
@@ -231,16 +231,17 @@ export default {
       ],
       events: ['Event will populate once your restaurant is assigned.'],
       fleetMemberLoading: false,
-      isNew: false
     }
   },
   computed: {
+    isNew () {
+      return !!get(this.store, 'uuid')
+    },
     ...mapGetters('storeAreas', {
       areas: 'items',
       storeAreaPagination: 'pagination',
       storeAreaSorting: 'sorting'
     }),
-    ...mapGetters('stores', { store: 'item' }),
     ...mapGetters('documents', { docs: 'items' }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
@@ -250,6 +251,10 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
+    store () {
+      // This allow us to have the the object to have the wanted keys in case of creation
+      return Object.assign({}, DEFAULT_STORE, this.$store.getters['stores/item'])
+    },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
     },
