@@ -49,6 +49,9 @@
 
 # Changes
 
+## September 17, 2020
+- **ADD** Can route to Venue page [#455](https://github.com/FreshinUp/foodfleet/issues/455)
+
 ## September 16, 2020
 - **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
 
