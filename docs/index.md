@@ -48,6 +48,10 @@
 <br/>
 
 # Changes
+
+## September 16, 2020
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
 ## September 13, 2020
 - **ADD** Add Areas of Operation
 
