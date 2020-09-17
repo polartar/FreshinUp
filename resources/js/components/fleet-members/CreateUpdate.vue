@@ -353,14 +353,12 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []
-    const params = { id }
     if (id !== 'new') {
       promises.push(vm.$store.dispatch('documents/getItems', {
         params: {
           'filter[assigned_uuid]': id
         }
       }))
-
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
         params: {
