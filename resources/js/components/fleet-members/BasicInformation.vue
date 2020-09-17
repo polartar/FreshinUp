@@ -274,8 +274,7 @@
             @change="storeImageChange"
           >
           <v-img
-            v-if="image"
-            :src="image"
+            :src="storeImage"
             class="grey lighten-2"
           />
         </div>
@@ -384,7 +383,10 @@ export default {
       return !!get(this.value, 'uuid')
     },
     hasImage () {
-      return this.image !== DEFAULT_IMAGE
+      return !!this.image && this.image !== DEFAULT_IMAGE
+    },
+    storeImage () {
+      return this.hasImage ? this.image : '/images/default.png'
     }
   },
   methods: {
@@ -444,8 +446,8 @@ export default {
       position: absolute;
       right: 0;
     }
-    .ff-fleet-members__image_input {
-      display: none;
-    }
+  }
+  .ff-fleet-members__image_input {
+    display: none;
   }
 </style>

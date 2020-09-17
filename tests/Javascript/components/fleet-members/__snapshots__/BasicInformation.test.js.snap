@@ -951,7 +951,19 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
             type="file"
           />
            
-          <!---->
+          <div
+            class="v-responsive v-image grey lighten-2"
+          >
+            <div
+              class="v-image__image v-image__image--preload v-image__image--cover"
+              mode="in-out"
+              name="fade-transition"
+              style="background-position: center center;"
+            />
+            <div
+              class="v-responsive__content"
+            />
+          </div>
         </div>
          
         <div
@@ -971,7 +983,8 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--depressed theme--light"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -2004,7 +2017,19 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
             type="file"
           />
            
-          <!---->
+          <div
+            class="v-responsive v-image grey lighten-2"
+          >
+            <div
+              class="v-image__image v-image__image--preload v-image__image--cover"
+              mode="in-out"
+              name="fade-transition"
+              style="background-position: center center;"
+            />
+            <div
+              class="v-responsive__content"
+            />
+          </div>
         </div>
          
         <div
@@ -2024,7 +2049,8 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--depressed theme--light"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
             type="button"
           >
             <div
@@ -3161,7 +3187,19 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
             type="file"
           />
            
-          <!---->
+          <div
+            class="v-responsive v-image grey lighten-2"
+          >
+            <div
+              class="v-image__image v-image__image--preload v-image__image--cover"
+              mode="in-out"
+              name="fade-transition"
+              style="background-position: center center;"
+            />
+            <div
+              class="v-responsive__content"
+            />
+          </div>
         </div>
          
         <div
@@ -3181,7 +3219,8 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--depressed theme--light"
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
             type="button"
           >
             <div
