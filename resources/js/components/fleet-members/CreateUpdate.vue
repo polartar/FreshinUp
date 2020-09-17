@@ -341,7 +341,7 @@ export default {
     const promises = []
     const params = { id }
     if (id !== 'new') {
-      promises.push(vm.$store.dispatch('documents/getItem', { params }))
+      promises.push(vm.$store.dispatch('documents/getItems', { params }))
 
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
