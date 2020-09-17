@@ -355,7 +355,11 @@ export default {
     const promises = []
     const params = { id }
     if (id !== 'new') {
-      promises.push(vm.$store.dispatch('documents/getItems', { params }))
+      promises.push(vm.$store.dispatch('documents/getItems', {
+        params: {
+          'filter[assigned_uuid]': id
+        }
+      }))
 
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
