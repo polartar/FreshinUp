@@ -175,8 +175,21 @@ class Store extends Model implements HasMedia
             : '';
     }
 
-    public function setImage($image)
+    /**
+     * @param $image
+     * @param  bool  $hasImage
+     * @return bool
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\InvalidBase64Data
+     */
+    public function setImage($image, $hasImage = false)
     {
+        if (!$hasImage) {
+            return false;
+        }
         if (!empty($image)
             && !filter_var($image, FILTER_VALIDATE_URL)) {
             $this

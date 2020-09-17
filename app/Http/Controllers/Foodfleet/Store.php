@@ -79,7 +79,7 @@ class Store extends Controller
         $store->update($updateData);
 
         // File upload in base 64
-        $store->setImage($data['image']);
+        $store->setImage($request->input('image'), $request->has('image'));
 
         // array of tag uuid
         if ($request->has('tags')) {
@@ -191,7 +191,7 @@ class Store extends Controller
         $store = StoreModel::create($data);
 
         // File upload in base 64
-        $store->setImage($request->input('image'));
+        $store->setImage($request->input('image'), $request->has('image'));
 
         // list of tag uuid
         $tags = $request->input('tags');
