@@ -48,8 +48,9 @@
 <br/>
 
 # Changes
-## September 16, 2020
+## September 17, 2020
 - **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
 
 <br/>
 
