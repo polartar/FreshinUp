@@ -166,15 +166,6 @@ class Store extends Model implements HasMedia
         return $this->hasMany(StoreArea::class, 'store_uuid', 'uuid');
     }
 
-    public function getAvatarAttribute()
-    {
-        $media = $this->getFirstMedia('avatar');
-
-        return $media !== null
-            ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
-            : '';
-    }
-
     /**
      * @param $image
      * @param  bool  $hasImage
@@ -199,5 +190,6 @@ class Store extends Model implements HasMedia
         } else {
             $this->clearMediaCollection('image');
         }
+        return true;
     }
 }
