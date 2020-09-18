@@ -26,6 +26,7 @@ import eventTypes from '~/store/modules/eventTypes.js'
 import eventHistories from '~/store/modules/eventHistories.js'
 import messages from '~/store/modules/messages.js'
 import venues from './store/modules/venues'
+import venueStatuses from './store/modules/venueStatuses'
 import companies from './store/modules/companies'
 
 const initialState = {
@@ -167,6 +168,7 @@ const appInstance = new App({
       eventTypes: eventTypes({}),
       messages: messages({}),
       venues: venues({}),
+      venueStatuses: venueStatuses({}),
       eventHistories: eventHistories({}),
       companies: companies({})
     }

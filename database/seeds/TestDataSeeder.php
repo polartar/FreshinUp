@@ -24,6 +24,7 @@ class TestDataSeeder extends Seeder
             \EventTagsTableSeeder::class,
             \StoreAreaSeeder::class,
             \VenuesTableSeeder::class,
+            \VenueStatusesSeeder::class,
             \LocationsTableSeeder::class,
             \EventsTableSeeder::class,
             \CustomersTableSeeder::class,
