@@ -18,12 +18,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $capacity
  * @property string $details
  * @property string $venue_uuid
+ * @property int $category_id
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
  *
  *
+ * @property Event[} $events
+ * @property Document[} documents
  * @property Venue $venue
+ * @property LocationCategory $category
  *
  */
 class Location extends Model
@@ -47,5 +51,10 @@ class Location extends Model
     public function venue()
     {
         return $this->belongsTo(Venue::class, 'venue_uuid', 'uuid');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(LocationCategory::class, 'category_id', 'id');
     }
 }
