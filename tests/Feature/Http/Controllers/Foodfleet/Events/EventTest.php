@@ -3,6 +3,7 @@
 namespace Tests\Feature\Http\Controllers\Foodfleet\Events;
 
 use App\Enums\EventType as EventTypeEnum;
+use App\Enums\EventType as EventTypeEnums;
 use App\Models\Foodfleet\EventType;
 use App\Models\Foodfleet\Venue;
 use App\User;
@@ -118,19 +119,19 @@ class EventTest extends TestCase
 
     public function testGetListFilteredByType()
     {
-        Artisan::call('db:seed');
         $user = factory(User::class)->create();
+        factory(EventType::class, 2)->create();
         Passport::actingAs($user);
 
         factory(Event::class, 5)->create([
-            'type_id' => EventTypeEnum::CASH_AND_CARRY
+            'type_id' => 1
         ]);
         $eventsToFind = factory(Event::class, 3)->create([
-            'type_id' => EventTypeEnum::CATERING
+            'type_id' => 2
         ]);
 
         $response = $this
-            ->json('GET', "/api/foodfleet/events?filter[type_id]=" . EventTypeEnum::CATERING)
+            ->json('GET', "/api/foodfleet/events?filter[type_id]=" . 2)
             ->assertStatus(200);
         $this->assertNotExceptionResponse($response);
         $data = $response
