@@ -13,11 +13,6 @@ class LocationTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testModel()
     {
         $location = factory(Location::class)->create();
@@ -27,7 +22,10 @@ class LocationTest extends TestCase
             'spots' => $location->spots,
             'capacity' => $location->capacity,
             'details' => $location->details,
-            'venue_uuid' => $location->venue_uuid
+            'venue_uuid' => $location->venue_uuid,
+            'category_id' => $location->category_id,
         ]);
+
+        $this->assertEquals($location->category_id, $location->category->id);
     }
 }

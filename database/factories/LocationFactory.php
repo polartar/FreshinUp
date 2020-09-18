@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\LocationCategory;
 use App\Models\Foodfleet\Venue;
 use Faker\Generator as Faker;
 
@@ -22,6 +23,9 @@ $factory->define(Location::class, function (Faker $faker) {
         "name" => $faker->city,
         "venue_uuid" => function () {
             return factory(Venue::class)->create()->uuid;
+        },
+        "category_id" => function () {
+            return factory(LocationCategory::class)->create()->id;
         },
         "spots" => $faker->randomNumber(2),
         "capacity" => $faker->randomNumber(2),

@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 // Components
 import StoreList from './StoreList.vue'
+import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
 
 let stores = [
   {
@@ -104,38 +105,24 @@ let stores = [
   }
 ]
 
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
-]
-
-storiesOf('FoodFleet|components/fleet-members/StoreList', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'default', value: '#f1f3f6', default: true }
-    ]
-  })
-  .add('stores is empty', () => ({
-    components: { StoreList },
-    data () {
-      return {
-        stores: [],
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
+export const Empty = () => ({
+  components: { StoreList },
+  data () {
+    return {
+      stores: [],
+      statuses: FIXTURE_STORE_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
-    },
-    template: `
+    }
+  },
+  template: `
       <store-list
         :stores="stores"
         :statuses="statuses"
@@ -146,42 +133,43 @@ storiesOf('FoodFleet|components/fleet-members/StoreList', module)
         :descending="sorting.descending"
       />
     `
-  }))
-  .add('Stores is set', () => ({
-    components: { StoreList },
-    data () {
-      return {
-        stores: stores,
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
+})
+
+export const Populated = () => ({
+  components: { StoreList },
+  data () {
+    return {
+      stores: stores,
+      statuses: FIXTURE_STORE_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
+    }
+  },
+  methods: {
+    view (params) {
+      action('manage-view')(params)
     },
-    methods: {
-      view (params) {
-        action('manage-view')(params)
-      },
-      del (params) {
-        action('manage-delete')(params)
-      },
-      multipleDelete (params) {
-        action('manage-multiple-delete')(params)
-      },
-      changeStatus (status, store) {
-        action('change-status')(status, store)
-      },
-      changeStatusMultiple (status, stores) {
-        action('change-status-multiple')(status, stores)
-      }
+    del (params) {
+      action('manage-delete')(params)
     },
-    template: `
+    multipleDelete (params) {
+      action('manage-multiple-delete')(params)
+    },
+    changeStatus (status, store) {
+      action('change-status')(status, store)
+    },
+    changeStatusMultiple (status, stores) {
+      action('change-status-multiple')(status, stores)
+    }
+  },
+  template: `
       <store-list
         :stores="stores"
         :statuses="statuses"
@@ -197,4 +185,13 @@ storiesOf('FoodFleet|components/fleet-members/StoreList', module)
         @change-status-multiple="changeStatusMultiple"
       />
     `
-  }))
+})
+
+storiesOf('FoodFleet|components/fleet-members/StoreList', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'default', value: '#f1f3f6', default: true }
+    ]
+  })
+  .add('Empty', Empty)
+  .add('Populated', Populated)

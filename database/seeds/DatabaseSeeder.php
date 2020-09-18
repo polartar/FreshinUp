@@ -12,17 +12,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            \FinancialModifiersTableSeeder::class,
-            \StatusesSeeder::class,
-            \UserLevelTypeSeeder::class,
-            \CompanyTypeSeeder::class,
-            \EventStatusesSeeder::class,
-            \EventTypeSeeder::class,
-            \StoreStatusesSeeder::class,
-            \StoreTypesSeeder::class,
-            \DocumentTypesSeeder::class,
-            \DocumentStatusesSeeder::class,
-            \VenueStatusesSeeder::class,
+            FinancialModifiersTableSeeder::class,
+            StatusesSeeder::class,
+            UserLevelTypeSeeder::class,
+            CompanyTypeSeeder::class,
+            EventStatusesSeeder::class,
+            EventTypeSeeder::class,
+            StoreStatusesSeeder::class,
+            StoreTypesSeeder::class,
+            DocumentTypesSeeder::class,
+            DocumentStatusesSeeder::class,
+            LocationCategorySeeder::class,
+            VenueStatusesSeeder::class,
         ]);
     }
 }

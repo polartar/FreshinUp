@@ -52,7 +52,12 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('items', 'Foodfleet\Items@index');
+
+
+    Route::get('location/categories', 'Foodfleet\LocationCategory@index');
     Route::get('locations', 'Foodfleet\Locations@index');
+
+
     Route::get('payments', 'Foodfleet\Payments@index');
     Route::get('staffs', 'Foodfleet\Staffs@index');
     Route::get('transactions', 'Foodfleet\Transactions@index');
