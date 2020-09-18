@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Locations;
 
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -114,6 +115,41 @@ class LocationTest extends TestCase
                 'name' => $category->name,
             ], $data[$idx]['category']);
         }
+    }
+
+    public function testGetListIncludingEvents()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $location = factory(Location::class)->create();
+        $event = factory(Event::class)->create([
+            'location_uuid' => $location->uuid
+        ]);
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/locations?include=events")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+        $this->assertArraySubset([
+            'uuid' => $location->uuid,
+            'name' => $location->name,
+            "venue_uuid" => $location->venue_uuid,
+            "category_id" => $location->category_id,
+            "spots" => $location->spots,
+            "capacity" => $location->capacity,
+            "details" => $location->details
+        ], $data[0]);
+
+        $this->assertArraySubset([
+            'id' => $event->id,
+            'name' => $event->name,
+        ], $data[0]['events'][0]);
     }
 
     public function testGetListWithFilters()

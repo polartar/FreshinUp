@@ -26,7 +26,7 @@ class Locations extends Controller
                 Filter::exact('category_id'),
                 'name',
             ])
-            ->allowedIncludes(['venue', 'category']);
+            ->allowedIncludes(['venue', 'category', 'events']);
 
         return LocationResource::collection($locations->jsonPaginate());
     }

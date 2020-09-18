@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 $factory->define(Event::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
-        "name" => $faker->word,
+        "name" => $faker->text(50),
         "type_id" => function () {
             return factory(EventType::class)->create();
         },

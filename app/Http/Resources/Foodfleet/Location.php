@@ -26,6 +26,7 @@ class Location extends JsonResource
             "details" => $this->details,
             "category_id" => $this->category_id,
             "category" => new LocationCategory($this->whenLoaded('category')),
+            "events" => Event::collection($this->whenLoaded('events')),
         ];
     }
 }
