@@ -13,10 +13,10 @@ class VenueStatuses extends Controller
 {
     public function index(Request $request)
     {
-        $documentStatuses = QueryBuilder::for(VenueStatus::class, $request)
+        $venueStatuses = QueryBuilder::for(VenueStatus::class, $request)
             ->allowedFilters(['name'])
             ->get();
 
-        return VenueStatusResource::collection($documentStatuses);
+        return VenueStatusResource::collection($venueStatuses);
     }
 }
