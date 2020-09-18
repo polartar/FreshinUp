@@ -117,10 +117,6 @@ export default {
     statuses: {
       type: Array,
       default: () => []
-    },
-    sortables: {
-      type: Array,
-      default: () => []
     }
   },
   watch: {
@@ -145,9 +141,6 @@ export default {
       const finalParams = {
         name: params.term,
         ...this.filters
-      }
-      if (this.filters.tag) {
-        finalParams.tag = this.filters.tag.map(item => item.uuid)
       }
       this.$emit('runFilter', finalParams)
     },

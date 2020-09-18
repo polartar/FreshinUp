@@ -49,7 +49,7 @@
 
 # Changes
 
-## September 17, 2020
+## September 18, 2020
 - **ADD** Can route to Venue page [#455](https://github.com/FreshinUp/foodfleet/issues/455)
 
 ## September 16, 2020

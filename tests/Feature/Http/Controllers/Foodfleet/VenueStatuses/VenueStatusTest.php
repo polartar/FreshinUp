@@ -28,7 +28,7 @@ class VenueStatusTest extends TestCase
         $venueStatuses = factory(VenueStatus::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/venue-statuses")
+            ->json('get', "/api/foodfleet/venue/statuses")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -65,7 +65,7 @@ class VenueStatusTest extends TestCase
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/venue-statuses")
+            ->json('get', "/api/foodfleet/venue/statuses")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -77,7 +77,7 @@ class VenueStatusTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/venue-statuses?filter[name]=find")
+            ->json('get', "/api/foodfleet/venue/statuses?filter[name]=find")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

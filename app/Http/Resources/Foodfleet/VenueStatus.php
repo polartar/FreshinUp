@@ -30,9 +30,7 @@ class VenueStatus extends JsonResource
     {
         return [
             'id' => $this->id,
-            'value' => $this->id,
             'name' => $this->name,
-            'text' => $this->name,
             'color' => $this->getColorFor($this->id)
         ];
     }

@@ -4,6 +4,7 @@ namespace Tests\Feature\Http\Controllers\Foodfleet\Venues;
 
 use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Venue;
+use App\Models\Foodfleet\VenueStatus;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -146,5 +147,97 @@ class VenueTest extends TestCase
                 ], $data[$idx]['locations'][$locationIndex]);
             }
         }
+    }
+
+    public function testGetListWithOwnerUuidFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        factory(Venue::class, 4)->create();
+
+        $owner = factory(User::class)->create();
+        $store = factory(Venue::class)->create([
+            'owner_uuid' => $owner->uuid
+        ]);
+
+        $data = $this
+            ->json('get', "/api/foodfleet/venues?filter[owner_uuid]=" . $owner->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertNotEmpty($data);
+        $this->assertEquals(1, count($data));
+        $this->assertArraySubset([
+            'uuid' => $store->uuid,
+            'name' => $store->name
+        ], $data[0]);
+    }
+
+    public function testGetListWithStatusIdFilter()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $nonstatus = factory(VenueStatus::class)->create();
+        factory(Venue::class, 5)->create([
+            'name' => 'Not visibles',
+            'status_id' => $nonstatus->id
+        ]);
+        $statuses = factory(VenueStatus::class, 2)->create();
+        $storeToFind1 = factory(Venue::class)->create([
+            'name' => 'To find 1',
+            'status_id' => $statuses->first()->id
+        ]);
+        $storeToFind2 = factory(Venue::class)->create([
+            'name' => 'To find 2',
+            'status_id' => $statuses->last()->id
+        ]);
+        $statusId = $statuses->map(function ($status) {
+            return $status->id;
+        })->join(',');
+        $data = $this
+            ->json('get', "/api/foodfleet/venues?filter[status_id]=" . $statusId)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotEmpty($data);
+        $this->assertEquals(2, count($data));
+        $this->assertEquals($storeToFind1->uuid, $data[0]['uuid']);
+        $this->assertEquals($storeToFind2->uuid, $data[1]['uuid']);
+    }
+
+    public function testGetListWithIncludeStatusAndOwner()
+    {
+        $user = factory(User::class)->create();
+
+        Passport::actingAs($user);
+
+        $status = factory(VenueStatus::class)->create();
+
+        $venue = factory(Venue::class)->create([
+            'owner_uuid' => $user->uuid,
+            'status_id' => $status->id,
+        ]);
+
+        $data = $this->json('GET', '/api/foodfleet/venues?include=status,owner')
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [],
+            ])
+            ->json('data');
+
+        $this->assertArraySubset([
+            'uuid' => $venue->uuid,
+            'name' => $venue->name,
+        ], $data[0]);
+
+        $this->assertArraySubset([
+            'uuid' => $user->uuid,
+            'name' => $user->name,
+        ], $data[0]['owner']);
     }
 }

@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Filters\BelongsToWhereInIdEquals;
+use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Venue;
 use Illuminate\Http\Request;
@@ -23,9 +25,20 @@ class Venues extends Controller
         $venues = QueryBuilder::for(Venue::class, $request)
             ->allowedFilters([
                 Filter::exact('uuid'),
-                'name'
+                'name',
+                Filter::custom('status_id', BelongsToWhereInIdEquals::class, 'status'),
+                Filter::custom('owner_uuid', BelongsToWhereInUuidEquals::class, 'owner')
             ])
-            ->allowedIncludes(['locations']);
+            ->allowedIncludes([
+                'locations',
+                'owner',
+                'status'
+            ])
+            ->allowedSorts([
+                'name',
+                'status_id',
+                'owner_uuid'
+            ]);
         return VenueResource::collection($venues->jsonPaginate());
     }
 }

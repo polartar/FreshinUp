@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string name
  * @property \DateTime created_at
  * @property \DateTime updated_at
+ * @property Venue[] venues
  */
 class VenueStatus extends Model
 {

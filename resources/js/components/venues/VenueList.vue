@@ -147,12 +147,6 @@ export default {
     statuses: {
       type: Array,
       default: () => []
-    },
-    role: {
-      default: 'admin',
-      validator: value => {
-        return ['admin', 'host', 'supplier'].indexOf(value) !== -1
-      }
     }
   },
   data () {
@@ -202,13 +196,7 @@ export default {
       this.$emit('change-status-multiple', value, this.selected)
     },
     getLocations (locations) {
-      if (locations.length) {
-        const names = locations.map((location) => {
-          return location.name
-        })
-        return names.join(',')
-      }
-      return ''
+      return locations.map(location => location.name).join(',')
     }
 
   }

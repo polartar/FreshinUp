@@ -117,7 +117,7 @@ export default {
   mixins: [deletables],
   data () {
     return {
-      pageTitle: 'Venues',
+      pageTitle: 'Venues List',
       deleteDialog: false,
       deleteTemp: [],
       deletablesProcessing: false,
@@ -137,7 +137,7 @@ export default {
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
-    ...mapGetters('venueStatuses', { 'statuses': 'items' }),
+    ...mapGetters('venueStatuses', { statuses: 'items' }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('venues', ['sortables']),
     deleteDialogTitle () {

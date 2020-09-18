@@ -3,6 +3,7 @@
 
 namespace App\Http\Resources\Foodfleet;
 
+use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -21,6 +22,11 @@ class Venue extends JsonResource
             "name" => $this->name,
             "address" => $this->address,
             "locations" => Location::collection($this->whenLoaded('locations')),
+            "status_id" => $this->status_id,
+            "status" => new VenueStatus($this->whenLoaded('status')),
+            "owner" => new User($this->whenLoaded('owner')),
+            'owner_uuid' => $this->owner_uuid,
+            'created_at' => $this->created_at
         ];
     }
 }

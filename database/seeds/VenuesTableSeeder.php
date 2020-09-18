@@ -4,6 +4,8 @@ use App\Models\Foodfleet\Location;
 use App\Models\Foodfleet\Venue;
 use App\Models\Foodfleet\VenueStatus;
 use Illuminate\Database\Seeder;
+use App\User;
+
 
 class VenuesTableSeeder extends Seeder
 {
@@ -13,9 +15,11 @@ class VenuesTableSeeder extends Seeder
      */
     public function run()
     {
-        $status = VenueStatus::get();
+        $statuses = VenueStatus::get();
+        $users = User::get();
         $venues = factory(Venue::class, 10)->create([
-            'status_id' => $status->random()->id
+            'status_id' => $statuses->random()->id,
+            'owner_uuid' => $users->random()->uuid
         ]);
         foreach ($venues as $venue) {
             factory(Location::class, mt_rand(1, 10))->create([
