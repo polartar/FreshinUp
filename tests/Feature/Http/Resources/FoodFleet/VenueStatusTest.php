@@ -13,11 +13,11 @@ class VenueStatusTest extends TestCase {
 
     public function getDataProvider () {
         return [
-            [VenueStatusEnum::PENDING => 'warning'],
-            [VenueStatusEnum::APPROVED => 'success'],
-            [VenueStatusEnum::REJECTED => 'danger'],
-            [VenueStatusEnum::EXPIRING => 'warning'],
-            [VenueStatusEnum::EXPIRED => 'danger']
+            [VenueStatusEnum::PENDING, 'warning'],
+            [VenueStatusEnum::APPROVED, 'success'],
+            [VenueStatusEnum::REJECTED, 'danger'],
+            [VenueStatusEnum::EXPIRING, 'warning'],
+            [VenueStatusEnum::EXPIRED, 'danger']
         ];
     }
 

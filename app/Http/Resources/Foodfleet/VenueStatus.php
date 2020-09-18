@@ -13,7 +13,7 @@ class VenueStatus extends JsonResource
             VenueStatusEnum::APPROVED => 'success',
             VenueStatusEnum::REJECTED => 'danger',
             VenueStatusEnum::EXPIRING => 'warning',
-            VenueStatusEnum::EXPIRED => 'danger',
+            VenueStatusEnum::EXPIRED => 'danger'
         ];
         return $colors[$id] ?? 'grey';
     }
@@ -31,7 +31,7 @@ class VenueStatus extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'color' => $this->getColorFor($this->id)
+            'color' => VenueStatus::getColorFor($this->id)
         ];
     }
 }
