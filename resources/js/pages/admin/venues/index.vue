@@ -30,8 +30,7 @@
         @runFilter="filterVenues"
       />
       <venue-list
-        v-if="!isLoading"
-        :venues="venues"
+        :items="venues"
         :statuses="statuses"
         :is-loading="isLoading || isLoadingList"
         :rows-per-page="pagination.rowsPerPage"

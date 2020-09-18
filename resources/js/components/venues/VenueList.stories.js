@@ -1,90 +1,56 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
-// Components
-import VenueList from './VenueList.vue'
+import VenueList from './VenueList'
 import { FIXTURE_VENUE_STATUSES, FIXTURE_VENUES } from '../../../../tests/Javascript/__data__/venues'
 
 export const Empty = () => ({
   components: { VenueList },
   data () {
     return {
-      venues: [],
-      statuses: FIXTURE_VENUE_STATUSES,
-      pagination: {
-        page: 1,
-        rowsPerPage: 10,
-        totalItems: 5
-      },
-      sorting: {
-        descending: false,
-        sortBy: ''
-      }
+      items: []
     }
   },
   template: `
-    <venue-list
-      :venues="venues"
-      :statuses="statuses"
-      :rows-per-page="pagination.rowsPerPage"
-      :page="pagination.page"
-      :total-items="pagination.totalItems"
-      :sort-by="sorting.sortBy"
-      :descending="sorting.descending"
-    />
-  `
+      <venue-list
+        :items="items"
+      />
+    `
+})
+
+export const IsLoading = () => ({
+  components: { VenueList },
+  template: `
+      <venue-list
+        is-loading
+      />
+    `
 })
 
 export const Populated = () => ({
   components: { VenueList },
   data () {
     return {
-      venues: FIXTURE_VENUES,
-      statuses: FIXTURE_VENUE_STATUSES,
-      pagination: {
-        page: 1,
-        rowsPerPage: 10,
-        totalItems: 5
-      },
-      sorting: {
-        descending: false,
-        sortBy: ''
-      }
+      items: FIXTURE_VENUES,
+      statuses: FIXTURE_VENUE_STATUSES
     }
   },
   methods: {
-    edit (params) {
-      action('manage-edit')(params)
+    onManage (act, item) {
+      action('onManage')(act, item)
     },
-    del (params) {
-      action('manage-delete')(params)
-    },
-    multipleDelete (params) {
-      action('manage-multiple-delete')(params)
-    },
-    changeStatus (status, venue) {
-      action('change-status')(status, venue)
-    },
-    changeStatusMultiple (status, venues) {
-      action('change-status-multiple')(status, venues)
+    onManageMultiple (act, items) {
+      action('onManageMultiple')(act, items)
     }
   },
   template: `
-    <venue-list
-      :venues="venues"
-      :statuses="statuses"
-      :rows-per-page="pagination.rowsPerPage"
-      :page="pagination.page"
-      :total-items="pagination.totalItems"
-      :sort-by="sorting.sortBy"
-      :descending="sorting.descending"
-      @manage-edit="edit"
-      @manage-delete="del"
-      @manage-multiple-delete="multipleDelete"
-      @change-status="changeStatus"
-      @change-status-multiple="changeStatusMultiple"
-    />
-  `
+      <venue-list
+        :items="items"
+        :statuses="statuses"
+        @manage="onManage"
+        @manage-multiple="onManageMultiple"
+      />
+    `
 })
 
 storiesOf('FoodFleet|components/venues/VenueList', module)
@@ -94,4 +60,5 @@ storiesOf('FoodFleet|components/venues/VenueList', module)
     ]
   })
   .add('Empty', Empty)
+  .add('IsLoading', IsLoading)
   .add('Populated', Populated)

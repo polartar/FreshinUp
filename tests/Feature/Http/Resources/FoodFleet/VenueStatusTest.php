@@ -33,9 +33,7 @@ class VenueStatusTest extends TestCase {
         $resource = new VenueStatusResource($venueStatus);
         $expected = [
             'id' => $id,
-            'value' => $id,
             'name' => $venueStatus->name,
-            'text' => $venueStatus->name,
             'color' => $color
         ];
         $request = app()->make(Request::class);
