@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import Component from '~/components/venues/DocumentList'
-import * as Stories from '~/components/venues/DocumentList.stories'
-import { FIXTURE_DOCUMENT_STATUSES } from '../../__data__/documentStatuses'
-import { FIXTURE_DOCUMENTS } from '../../__data__/documents'
+import Component from './DocumentList.vue'
+import * as Stories from './DocumentList.stories'
+import { FIXTURE_DOCUMENTS } from '../../../../tests/Javascript/__data__/documents'
+import { FIXTURE_DOCUMENT_STATUSES } from '../../../../tests/Javascript/__data__/documentStatuses'
 
 describe('components/venues/DocumentList', () => {
   describe('Snapshots', () => {
@@ -21,6 +21,16 @@ describe('components/venues/DocumentList', () => {
   })
 
   describe('Props & Computed', () => {
+    test('isLoading', async () => {
+      const wrapper = mount(Component)
+      expect(wrapper.vm.isLoading).toBe(false)
+
+      wrapper.setProps({
+        isLoading: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.isLoading).toBe(true)
+    })
     test('items', async () => {
       const wrapper = mount(Component)
       expect(wrapper.vm.items).toHaveLength(0)
@@ -31,7 +41,6 @@ describe('components/venues/DocumentList', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.items).toMatchObject(FIXTURE_DOCUMENTS)
     })
-
     test('statuses', async () => {
       const wrapper = mount(Component)
       expect(wrapper.vm.statuses).toHaveLength(0)

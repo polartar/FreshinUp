@@ -18,8 +18,8 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
           class="primary--text"
         >
           
-          Fleet Member Documents
-        
+            Fleet Member Documents
+          
         </h3>
       </div>
        
@@ -45,7 +45,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                 add_circle_outline
               </i>
               Add New Document
-            
+              
             </div>
           </button>
           <div
@@ -69,8 +69,8 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                   class="v-card__text grey--text"
                 >
                   
-              Coming Soon
-            
+                Coming Soon
+              
                 </div>
                  
                 <hr
@@ -697,8 +697,8 @@ exports[`DocumentList component Snapshots docss set 1`] = `
           class="primary--text"
         >
           
-          Fleet Member Documents
-        
+            Fleet Member Documents
+          
         </h3>
       </div>
        
@@ -724,7 +724,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                 add_circle_outline
               </i>
               Add New Document
-            
+              
             </div>
           </button>
           <div
@@ -748,8 +748,8 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                   class="v-card__text grey--text"
                 >
                   
-              Coming Soon
-            
+                Coming Soon
+              
                 </div>
                  
                 <hr

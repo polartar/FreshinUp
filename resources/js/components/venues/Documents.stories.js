@@ -1,27 +1,35 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import DocumentList from './DocumentList'
+
+import Documents from './Documents'
 import { FIXTURE_DOCUMENTS } from '../../../../tests/Javascript/__data__/documents'
 import { FIXTURE_DOCUMENT_STATUSES } from '../../../../tests/Javascript/__data__/documentStatuses'
 
 export const Empty = () => ({
-  components: { DocumentList },
+  components: { Documents },
+  data () {
+    return {
+      items: []
+    }
+  },
   template: `
-    <document-list />
+    <documents
+      :items="items"
+    />
   `
 })
 
 export const Loading = () => ({
-  components: { DocumentList },
+  components: { Documents },
   template: `
-    <document-list
+    <documents
       is-loading
     />
   `
 })
 
 export const Populated = () => ({
-  components: { DocumentList },
+  components: { Documents },
   data () {
     return {
       items: FIXTURE_DOCUMENTS,
@@ -40,7 +48,7 @@ export const Populated = () => ({
     }
   },
   template: `
-    <document-list
+    <documents
       :items="items"
       :statuses="statuses"
       @change-status="onChangeStatus"
@@ -50,7 +58,7 @@ export const Populated = () => ({
   `
 })
 
-storiesOf('FoodFleet|components/venues/DocumentList', module)
+storiesOf('FoodFleet|components/venues/Documents', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
