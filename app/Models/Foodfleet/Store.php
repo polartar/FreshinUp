@@ -58,6 +58,7 @@ class Store extends Model implements HasMedia
 
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $appends = ['image'];
 
     public function registerMediaCollections()
     {
@@ -71,7 +72,7 @@ class Store extends Model implements HasMedia
     {
         $media = $this->getFirstMedia('image');
 
-        return null !== $media
+        return $media !== null
             ? $media->getTemporaryUrl(Carbon::now()->addMinutes(5))
             : 'https://via.placeholder.com/800x600.png';
     }
@@ -163,5 +164,32 @@ class Store extends Model implements HasMedia
     public function areas()
     {
         return $this->hasMany(StoreArea::class, 'store_uuid', 'uuid');
+    }
+
+    /**
+     * @param $image
+     * @param  bool  $hasImage
+     * @return bool
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\InvalidBase64Data
+     */
+    public function setImage($image, $hasImage = false)
+    {
+        if (!$hasImage) {
+            return false;
+        }
+        if (!empty($image)
+            && !filter_var($image, FILTER_VALIDATE_URL)) {
+            $this
+                ->addMediaFromBase64($image, 'image/*')
+                ->usingFileName(Carbon::now() . '-' . $this->id)
+                ->toMediaCollection('image');
+        } else {
+            $this->clearMediaCollection('image');
+        }
+        return true;
     }
 }

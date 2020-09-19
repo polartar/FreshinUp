@@ -606,7 +606,6 @@ class StoresTest extends TestCase
             'address_uuid' => $payload['address_uuid'],
             'contact_phone' => $payload['contact_phone'],
             'size' => $payload['size'],
-            'image' => $payload['image'],
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
             'square_id' => $payload['square_id'],

@@ -240,7 +240,7 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
       </div>
        
       <div
-        class="v-input v-input--slider v-input--slider--thumb-label v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input v-input--slider v-input--slider--thumb-label theme--light"
       >
         <div
           class="v-input__control"
@@ -255,40 +255,40 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
                 aria-readonly="false"
                 aria-valuemax="100"
                 aria-valuemin="0"
-                aria-valuenow="50"
+                aria-valuenow="0"
                 readonly="readonly"
                 role="slider"
-                value="50"
+                value="0"
               />
               <div
                 class="v-slider__track__container"
               >
                 <div
                   class="v-slider__track"
-                  style="left: 0px; width: 100%;"
+                  style="left: 7px; width: 100%;"
                 />
                 <div
                   class="v-slider__track-fill primary"
-                  style="left: 0px; width: 50%;"
+                  style="left: 0px; width: 0%;"
                 />
               </div>
               <div
-                class="v-slider__thumb-container v-slider__thumb-container--show-label primary--text"
-                style="left: 50%;"
+                class="v-slider__thumb-container v-slider__thumb-container--show-label"
+                style="left: 0%;"
               >
                 <div
-                  class="v-slider__thumb primary"
+                  class="v-slider__thumb"
                 />
                 <div
                   class="v-slider__thumb-label__container"
                   style="display: none;"
                 >
                   <div
-                    class="v-slider__thumb-label primary"
+                    class="v-slider__thumb-label"
                     style="height: 32px; width: 32px;"
                   >
                     <span>
-                      50
+                      0
                     </span>
                   </div>
                 </div>
