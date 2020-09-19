@@ -13,6 +13,7 @@ use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
 use App\Sorts\Stores\OwnerNameSort;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -59,7 +60,6 @@ class Store extends Controller
     public function update(Request $request, $uuid)
     {
         $this->validate($request, [
-            'name' => 'required',
             'status_id' => 'integer',
             'commission_rate' => 'integer',
             'commission_type' => 'integer',
@@ -70,13 +70,16 @@ class Store extends Controller
         // TODO: avoid using all. Use only model::fillable
         $data = $request->all();
         $collection = collect($data);
-        $updateData = $collection->except(['tags', 'event_uuid', 'commission_rate', 'commission_type'])->all();
+        $updateData = $collection->except(['image', 'tags', 'event_uuid', 'commission_rate', 'commission_type'])->all();
         /** @var StoreModel $store */
         $store = StoreModel::where('uuid', $uuid)->first();
         if (!$store) {
             throw new ModelNotFoundException('No fleet member found to update.');
         }
         $store->update($updateData);
+
+        // File upload in base 64
+        $store->setImage($request->input('image'), $request->has('image'));
 
         // array of tag uuid
         if ($request->has('tags')) {
@@ -186,6 +189,10 @@ class Store extends Controller
         $data = $request->only(array_diff(array_keys($rules), ['tags']));
         /** @var StoreModel $store */
         $store = StoreModel::create($data);
+
+        // File upload in base 64
+        $store->setImage($request->input('image'), $request->has('image'));
+
         // list of tag uuid
         $tags = $request->input('tags');
         if ($tags) {

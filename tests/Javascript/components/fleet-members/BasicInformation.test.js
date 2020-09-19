@@ -1,6 +1,6 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import * as Stories from '~/components/fleet-members/BasicInformation.stories'
-import Component from '~/components/fleet-members/BasicInformation.vue'
+import Component, { DEFAULT_IMAGE } from '~/components/fleet-members/BasicInformation.vue'
 import { FIXTURE_STORE } from '../../__data__/stores'
 
 describe('components/fleet-members/BasicInformation', () => {
@@ -40,6 +40,78 @@ describe('components/fleet-members/BasicInformation', () => {
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.value).toMatchObject(FIXTURE_STORE)
+    })
+    describe('editing', () => {
+      test('when set', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          value: { uuid: 'abc' }
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.editing).toBe(true)
+      })
+      test('when null', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          value: { uuid: null }
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.editing).toBe(false)
+      })
+    })
+    describe('hasImage', () => {
+      test('when image=DEFAULT_IMAGE', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setData({
+          image: DEFAULT_IMAGE
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.hasImage).toBe(false)
+      })
+      test('when image=null', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setData({
+          image: null
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.hasImage).toBe(false)
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setData({
+          image: 'https://sfo2.digitaloceanspaces.com/foodfleet-stage/bus/9/2020-09-17-18%3A24%3A01-61?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=XBMT2IFUXPF4Y6J7CSAI%2F20200917%2Fnyc%2Fs3%2Faws4_request&X-Amz-Date=20200917T182404Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=49025518742b5b11cbc40a695c869dfd29c7b00afe5553f957e933ce0e700bcb'
+
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.hasImage).toBe(true)
+      })
+    })
+    describe('storeImage', () => {
+      test('when image=DEFAULT_IMAGE', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setData({
+          image: DEFAULT_IMAGE
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.storeImage).toEqual('/images/default.png')
+      })
+      test('when image=null', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setData({
+          image: null
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.storeImage).toEqual('/images/default.png')
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        const image = 'https://sfo2.digitaloceanspaces.com/foodfleet-stage/bus/9/2020-09-17-18%3A24%3A01-61'
+        wrapper.setData({
+          image
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.storeImage).toEqual(image)
+      })
     })
   })
 
