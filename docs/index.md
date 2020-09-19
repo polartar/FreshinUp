@@ -54,8 +54,19 @@
 
 <br/>
 
+## September 17, 2020
+- **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
+<br/>
+
 ## September 16, 2020
 - **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
+<br/>
+
+## September 14, 2020
+- **ADD** Add Areas of Operation [#469](https://github.com/FreshinUp/foodfleet/issues/469)
 
 <br/>
 

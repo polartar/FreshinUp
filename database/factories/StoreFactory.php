@@ -22,7 +22,6 @@ $factory->define(Store::class, function (Faker $faker) {
         'size' => $faker->randomNumber(1),
         'contact_phone' => $faker->phoneNumber,
         'state_of_incorporation' => $faker->state,
-        'image' => $faker->imageUrl(),
         'website' => $faker->url,
         'twitter' => $faker->url,
         'facebook' => $faker->url,

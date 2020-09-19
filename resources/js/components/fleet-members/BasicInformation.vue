@@ -264,14 +264,17 @@
         xs4
         pl-3
       >
-        <div class="px-2">
+        <div class="px-2 sm-12">
           <div class="mb-2 text-uppercase grey--text font-weight-bold">
             Truck / Trailer image
           </div>
+          <input
+            class="ff-fleet-members__image_input"
+            type="file"
+            @change="storeImageChange"
+          >
           <v-img
-            :src="`https://picsum.photos/510/300?random`"
-            :lazy-src="`https://picsum.photos/10/6?image=15`"
-            aspect-ratio="1.7"
+            :src="storeImage"
             class="grey lighten-2"
           />
         </div>
@@ -279,13 +282,14 @@
           <v-btn
             depressed
             color="primary"
-            disabled
+            @click="updateStoreImage"
           >
             Upload Image
           </v-btn>
           <v-btn
             depressed
-            disabled
+            :disabled="!hasImage"
+            @click="deleteStoreImage"
           >
             Delete Image
           </v-btn>
@@ -316,7 +320,7 @@
       >
         <v-btn
           depressed
-          disabled
+          :loading="loading"
           @click="onDeleteMember"
         >
           Delete Fleet Member
@@ -332,6 +336,7 @@ import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+
 export const DEFAULT_STORE = {
   name: '',
   type_id: '',
@@ -346,8 +351,10 @@ export const DEFAULT_STORE = {
   twitter: '',
   facebook: '',
   instagram: '',
-  staff_notes: ''
+  staff_notes: '',
+  image: null
 }
+export const DEFAULT_IMAGE = 'https://via.placeholder.com/800x600.png'
 export default {
   components: { FAutocomplete, Simple },
   mixins: [MapValueKeysToData],
@@ -367,14 +374,48 @@ export default {
     }
   },
   data () {
-    return DEFAULT_STORE
+    return {
+      ...DEFAULT_STORE
+    }
   },
   computed: {
     editing () {
       return !!get(this.value, 'uuid')
+    },
+    hasImage () {
+      return !!this.image && this.image !== DEFAULT_IMAGE
+    },
+    storeImage () {
+      return this.hasImage ? this.image : '/images/default.png'
     }
   },
   methods: {
+    storeImageChange (e) {
+      const file = e.target.files[0]
+      if (!file) {
+        return false
+      }
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        this.image = event.target.result
+      }
+      reader.readAsDataURL(file)
+    },
+    updateStoreImage () {
+      const image = this.$el.querySelector('.ff-fleet-members__image_input')
+      if (!image) {
+        return false
+      }
+      image.click()
+    },
+    deleteStoreImage () {
+      const image = this.$el.querySelector('.ff-fleet-members__image_input')
+      if (!image) {
+        return false
+      }
+      image.value = null
+      this.image = null
+    },
     deleteTag (tag) {
       this.tags = this.tags.filter(t => t.uuid !== tag.uuid)
     },
@@ -398,12 +439,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.ff-fleet-members__basic_information {
-  position: relative;
+  .ff-fleet-members__basic_information {
+    position: relative;
 
-  .ff-fleet-members__tooltip-icon {
-    position: absolute;
-    right: 0;
+    .ff-fleet-members__tooltip-icon {
+      position: absolute;
+      right: 0;
+    }
   }
-}
+  .ff-fleet-members__image_input {
+    display: none;
+  }
 </style>
