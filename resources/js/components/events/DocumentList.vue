@@ -1,4 +1,5 @@
 <template>
+  <!--  TODO: use FDataTable instead-->
   <v-data-table
     :headers="headers"
     :items="documents"
@@ -73,6 +74,7 @@ export default {
       type: Array,
       default: () => []
     },
+    // ** these are document statuses **
     statuses: {
       type: Array,
       default: () => []
