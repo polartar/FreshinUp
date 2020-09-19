@@ -1,5 +1,3 @@
-import sortBy from 'lodash/sortBy'
-
 export const FIXTURE_DOCUMENTS = [{
   uuid: 'f38af949-678f-42d3-8908-f2527306c1d8',
   title: 'aliasa',
@@ -703,7 +701,7 @@ export const FIXTURE_DOCUMENTS = [{
   updated_at: '2019-09-30T03:51:14.000000Z'
 }]
 
-export const FIXTURE_DOCUMENTS_SORTED_BY_FIRSTNAME = sortBy(FIXTURE_DOCUMENTS, ['first_name'])
+export const FIXTURE_DOCUMENT = FIXTURE_DOCUMENTS[0]
 
 export const FIXTURE_DOCUMENTS_RESPONSE = {
   data: FIXTURE_DOCUMENTS,
@@ -722,4 +720,16 @@ export const FIXTURE_DOCUMENTS_RESPONSE = {
     to: 10,
     total: 50
   }
+}
+export const EMPTY_DOCUMENT = {
+  assigned_type: 1,
+  created_at: null,
+  description: null,
+  expiration_at: null,
+  notes: null,
+  status: 1,
+  title: null,
+  type: 1,
+  updated_at: null,
+  uuid: null
 }

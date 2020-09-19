@@ -49,6 +49,11 @@
 
 # Changes
 
+## September 19, 2020
+- **ADD** Venue component: Venue Documents [#459](https://github.com/FreshinUp/foodfleet/issues/459)
+
+<br/>
+
 ## September 18, 2020
 - **ADD** Venue component: Locations [#458](https://github.com/FreshinUp/foodfleet/issues/458)
 
