@@ -48,8 +48,19 @@
 <br/>
 
 # Changes
+
+## September 18, 2020
+- **ADD** Venue component: Locations [#458](https://github.com/FreshinUp/foodfleet/issues/458)
+
+<br/>
+
 ## September 17, 2020
 - **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
+<br/>
+
+## September 16, 2020
 - **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
 
 <br/>

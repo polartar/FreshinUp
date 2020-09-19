@@ -36,7 +36,22 @@ export const FIXTURE_STORES = [
         end_at: '2030-07-12 23:59:59',
         declined: false
       }
-    ]
+    ],
+    store_tags: [
+      {
+        uuid: '1',
+        name: 'minus'
+      },
+      {
+        uuid: '2',
+        name: 'hic'
+      }
+    ],
+    location_uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
+    location: {
+      uuid: 'c4fd0928-b7eb-43ee-871e-e63bfbd0ae7a',
+      name: 'Port Gerald'
+    }
   },
   {
     uuid: 'abc222',
@@ -64,7 +79,26 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: false,
-    events: []
+    events: [],
+    store_tags: [
+      {
+        uuid: '1',
+        name: 'minus'
+      },
+      {
+        uuid: '2',
+        name: 'sit'
+      },
+      {
+        uuid: '3',
+        name: 'hicsdfsdf'
+      }
+    ],
+    location_uuid: '00aabd70-aa77-42de-87fd-96449bbd5439',
+    location: {
+      uuid: '00aabd70-aa77-42de-87fd-96449bbd5439',
+      name: 'Carminestad'
+    }
   },
   {
     uuid: 'abc333',
@@ -90,7 +124,30 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: true,
-    events: []
+    events: [],
+    store_tags: [
+      {
+        uuid: '1',
+        name: 'minus'
+      },
+      {
+        uuid: '2',
+        name: 'hic'
+      },
+      {
+        uuid: '3',
+        name: 'acsfdd'
+      },
+      {
+        uuid: '4',
+        name: 'fsdf'
+      }
+    ],
+    location_uuid: 'dfb4bd02-c298-4dd4-ab49-2c3f156f2894',
+    location: {
+      uuid: 'dfb4bd02-c298-4dd4-ab49-2c3f156f2894',
+      name: 'New Charlenebury'
+    }
   },
   {
     uuid: 'abc444',
@@ -126,7 +183,22 @@ export const FIXTURE_STORES = [
         end_at: '2030-07-12 23:59:59',
         declined: false
       }
-    ]
+    ],
+    store_tags: [
+      {
+        uuid: '2',
+        name: 'hic'
+      },
+      {
+        uuid: '4',
+        name: 'fsdf'
+      }
+    ],
+    location_uuid: 'f4dad0c7-4fe7-3fa3-a387-c9c3ac90a9b3',
+    location: {
+      uuid: 'f4dad0c7-4fe7-3fa3-a387-c9c3ac90a9b3',
+      name: 'Vivienberg'
+    }
   },
   {
     uuid: 'abc555',
@@ -161,6 +233,14 @@ export const FIXTURE_STORES = [
         end_at: '2030-07-12 23:59:59',
         declined: true
       }
+    ],
+    location_uuid: 'af7eb46a-7bc1-3b00-8d56-e22a23d1fe23',
+    location: {
+      uuid: 'af7eb46a-7bc1-3b00-8d56-e22a23d1fe23',
+      name: 'O\'Konborough'
+    },
+    store_tags: [
+      { uuid: '4', name: 'Tag 4' }
     ]
   }
 ]

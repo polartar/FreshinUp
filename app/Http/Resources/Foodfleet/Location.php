@@ -23,7 +23,10 @@ class Location extends JsonResource
             "venue_uuid" => $this->venue_uuid,
             "spots" => $this->spots,
             "capacity" => $this->capacity,
-            "details" => $this->details
+            "details" => $this->details,
+            "category_id" => $this->category_id,
+            "category" => new LocationCategory($this->whenLoaded('category')),
+            "events" => Event::collection($this->whenLoaded('events')),
         ];
     }
 }

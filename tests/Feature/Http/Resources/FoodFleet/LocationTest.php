@@ -16,6 +16,7 @@ class LocationTest extends TestCase {
             "uuid" => $location->uuid,
             "name" => $location->name,
             "venue_uuid" => $location->venue_uuid,
+            "category_id" => $location->category_id,
             "spots" => $location->spots,
             "capacity" => $location->capacity,
             "details" => $location->details
