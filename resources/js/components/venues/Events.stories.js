@@ -1,35 +1,37 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
-import EventList from './EventList'
+import Events from './Events'
 import { FIXTURE_EVENTS } from '../../../../tests/Javascript/__data__/events'
 import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
 export const Empty = () => ({
-  components: { EventList },
+  components: { Events },
   data () {
     return {
-      items: []
+      items: [],
+      statuses: []
     }
   },
   template: `
-      <event-list
-        :items="items"
-      />
-    `
+    <events
+      :items="items"
+      :statuses="statuses"
+    />
+  `
 })
 
 export const Loading = () => ({
-  components: { EventList },
+  components: { Events },
   template: `
-    <event-list
+    <events
       is-loading
     />
   `
 })
 
 export const Populated = () => ({
-  components: { EventList },
+  components: { Events },
   data () {
     return {
       items: FIXTURE_EVENTS,
@@ -45,16 +47,16 @@ export const Populated = () => ({
     }
   },
   template: `
-      <event-list
-        :items="items"
-        :statuses="statuses"
-        @manage="onManage"
-        @manage-multiple="onManageMultiple"
-      />
-    `
+    <events
+      :items="items"
+      :statuses="statuses"
+      @manage="onManage"
+      @manage-multiple="onManageMultiple"
+    />
+  `
 })
 
-storiesOf('FoodFleet|components/venues/EventList', module)
+storiesOf('FoodFleet|components/venues/Events', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

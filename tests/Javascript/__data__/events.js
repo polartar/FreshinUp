@@ -35,12 +35,12 @@ export const FIXTURE_EVENTS = [
     type: { id: 1, name: 'Catering' },
     tags: [
       {
-        uuid: "a5c1e30b-de54-43a7-a501-9f0fa5255bd7",
-        name: "sit"
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
       },
       {
-        uuid: "3057a91c-ff55-496a-8471-31bf115224e2",
-        name: "reprehenderit"
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
       }
     ]
   },
@@ -83,12 +83,12 @@ export const FIXTURE_EVENTS = [
     },
     tags: [
       {
-        uuid: "82d2f1ae-41b5-4774-8456-02285397296d",
-        name: "eos"
+        uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
+        name: 'eos'
       },
       {
-        uuid: "3057a91c-ff55-496a-8471-31bf115224e2",
-        name: "reprehenderit"
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
       }
     ]
   },
@@ -128,12 +128,12 @@ export const FIXTURE_EVENTS = [
     type: { id: 1, name: 'Catering' },
     tags: [
       {
-        uuid: "82d2f1ae-41b5-4774-8456-02285397296d",
-        name: "eos"
+        uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
+        name: 'eos'
       },
       {
-        uuid: "3057a91c-ff55-496a-8471-31bf115224e2",
-        name: "reprehenderit"
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
       }
     ]
   },
@@ -171,12 +171,12 @@ export const FIXTURE_EVENTS = [
     },
     tags: [
       {
-        uuid: "a5c1e30b-de54-43a7-a501-9f0fa5255bd7",
-        name: "sit"
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
       },
       {
-        uuid: "3057a91c-ff55-496a-8471-31bf115224e2",
-        name: "reprehenderit"
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
       }
     ]
   },
@@ -213,12 +213,12 @@ export const FIXTURE_EVENTS = [
     type: { id: 2, name: 'Cash and carry' },
     tags: [
       {
-        uuid: "a5c1e30b-de54-43a7-a501-9f0fa5255bd7",
-        name: "sit"
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
       },
       {
-        uuid: "3057a91c-ff55-496a-8471-31bf115224e2",
-        name: "reprehenderit"
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
       }
     ]
   }

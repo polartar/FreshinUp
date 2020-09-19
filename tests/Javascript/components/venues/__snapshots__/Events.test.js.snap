@@ -1,0 +1,2106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/venues/Events Snapshots Empty 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title px-3"
+  >
+    <div
+      class="layout align-center justify-center row fill-height"
+    >
+      <div
+        class="flex"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+          Assigned Events
+        
+        </h3>
+      </div>
+       
+      <div
+        class="flex shrink"
+      >
+        <div
+          class="v-dialog__container"
+          style="display: inline-block;"
+        >
+          <button
+            class="v-btn theme--dark primary"
+            slot="activator"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--left material-icons theme--dark"
+              >
+                add_circle_outline
+              </i>
+              Add New Event
+            
+            </div>
+          </button>
+          <div
+            class="v-dialog__content"
+            style="z-index: 0;"
+            tabindex="-1"
+          >
+            <div
+              class="v-dialog"
+              style="max-width: 400px; display: none;"
+            >
+               
+              <div
+                class="v-card v-sheet theme--light"
+              >
+                <div
+                  class="v-card__text grey--text"
+                >
+                  
+  Coming Soon
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-card__text ma-2"
+  >
+    <div
+      class="filter-transparent v-card v-sheet theme--light transparent"
+      color="transparent"
+      icon="search"
+      sortables=""
+      without-expansion=""
+    >
+      <form
+        class="v-form"
+        novalidate="novalidate"
+      >
+        <div
+          class="container filter-sorter-container fluid"
+        >
+           
+          <div
+            class="layout filter-sorter-main-layout row wrap"
+          >
+            <!---->
+             
+            <div
+              class="flex grow"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Start typing to Search"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          search
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex shrink"
+            >
+              <div
+                class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Sort by
+                      </label>
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-label="Sort by"
+                          aria-readonly="false"
+                          autocomplete="on"
+                          data-vv-name="sort"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+             
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+            style="display: none;"
+          >
+            <div
+              class="flex"
+            />
+             
+            <div
+              class="flex text-no-wrap"
+            >
+              <button
+                class="v-btn v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            Clear Filters
+          
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+     
+    <div
+      class="event-list-table"
+      items=""
+    >
+      <div
+        class="v-table__overflow"
+      >
+        <table
+          class="v-datatable v-table v-datatable--select-all theme--light"
+        >
+          <thead>
+            <tr>
+              <th>
+                <div
+                  class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-input--selection-controls__input"
+                      >
+                        <input
+                          aria-checked="false"
+                          role="checkbox"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="v-input--selection-controls__ripple"
+                        />
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          check_box_outline_blank
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-label="Status: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Status
+    
+                </span>
+              </th>
+              <th
+                aria-label="Title / Venue: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Title / Venue
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Date: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Date
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Type: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Type
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Managed By: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Managed By
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Customer: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Customer
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Manage: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Manage
+    
+                </span>
+              </th>
+            </tr>
+            <tr
+              class="v-datatable__progress"
+            >
+              <th
+                class="column"
+                colspan="8"
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="text-xs-center"
+                colspan="8"
+              >
+                No matching records found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="v-datatable v-table v-datatable--select-all theme--light"
+      >
+        <div
+          class="v-datatable__actions"
+        >
+          <div
+            class="v-datatable__actions__select"
+          >
+            Rows per page:
+            <div
+              class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Rows per page:"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-datatable__actions__range-controls"
+          >
+            <div
+              class="v-datatable__actions__pagination"
+            >
+              1-10 of 10
+            </div>
+            <button
+              aria-label="Previous page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_left
+                </i>
+              </div>
+            </button>
+            <button
+              aria-label="Next page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_right
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/venues/Events Snapshots Loading 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title px-3"
+  >
+    <div
+      class="layout align-center justify-center row fill-height"
+    >
+      <div
+        class="flex"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+          Assigned Events
+        
+        </h3>
+      </div>
+       
+      <div
+        class="flex shrink"
+      >
+        <div
+          class="v-dialog__container"
+          style="display: inline-block;"
+        >
+          <button
+            class="v-btn theme--dark primary"
+            slot="activator"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--left material-icons theme--dark"
+              >
+                add_circle_outline
+              </i>
+              Add New Event
+            
+            </div>
+          </button>
+          <div
+            class="v-dialog__content"
+            style="z-index: 0;"
+            tabindex="-1"
+          >
+            <div
+              class="v-dialog"
+              style="max-width: 400px; display: none;"
+            >
+               
+              <div
+                class="v-card v-sheet theme--light"
+              >
+                <div
+                  class="v-card__text grey--text"
+                >
+                  
+  Coming Soon
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-card__text ma-2"
+  >
+    <!---->
+     
+    <div
+      class="event-list-table"
+      items=""
+    >
+      <div
+        class="v-table__overflow"
+      >
+        <table
+          class="v-datatable v-table v-datatable--select-all theme--light"
+        >
+          <thead>
+            <tr>
+              <th>
+                <div
+                  class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-input--selection-controls__input"
+                      >
+                        <input
+                          aria-checked="false"
+                          role="checkbox"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="v-input--selection-controls__ripple"
+                        />
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          check_box_outline_blank
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-label="Status: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Status
+    
+                </span>
+              </th>
+              <th
+                aria-label="Title / Venue: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Title / Venue
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Date: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Date
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Type: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Type
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Managed By: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Managed By
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Customer: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Customer
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Manage: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Manage
+    
+                </span>
+              </th>
+            </tr>
+            <tr
+              class="v-datatable__progress"
+            >
+              <th
+                class="column"
+                colspan="8"
+              >
+                <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  class="v-progress-linear"
+                  role="progressbar"
+                  style="height: 10px;"
+                >
+                  <div
+                    class="v-progress-linear__background primary"
+                    style="height: 10px; opacity: 0.3; width: 100%;"
+                  />
+                  <div
+                    class="v-progress-linear__bar"
+                  >
+                    <div
+                      class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                    >
+                      <div
+                        class="v-progress-linear__bar__indeterminate long primary"
+                      />
+                      <div
+                        class="v-progress-linear__bar__indeterminate short primary"
+                      />
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="text-xs-center"
+                colspan="8"
+              >
+                No matching records found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="v-datatable v-table v-datatable--select-all theme--light"
+      >
+        <div
+          class="v-datatable__actions"
+        >
+          <div
+            class="v-datatable__actions__select"
+          >
+            Rows per page:
+            <div
+              class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Rows per page:"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-datatable__actions__range-controls"
+          >
+            <div
+              class="v-datatable__actions__pagination"
+            >
+              1-10 of 10
+            </div>
+            <button
+              aria-label="Previous page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_left
+                </i>
+              </div>
+            </button>
+            <button
+              aria-label="Next page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_right
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/venues/Events Snapshots Populated 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="v-card__title px-3"
+  >
+    <div
+      class="layout align-center justify-center row fill-height"
+    >
+      <div
+        class="flex"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+          Assigned Events
+        
+        </h3>
+      </div>
+       
+      <div
+        class="flex shrink"
+      >
+        <div
+          class="v-dialog__container"
+          style="display: inline-block;"
+        >
+          <button
+            class="v-btn theme--dark primary"
+            slot="activator"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon v-icon--left material-icons theme--dark"
+              >
+                add_circle_outline
+              </i>
+              Add New Event
+            
+            </div>
+          </button>
+          <div
+            class="v-dialog__content"
+            style="z-index: 0;"
+            tabindex="-1"
+          >
+            <div
+              class="v-dialog"
+              style="max-width: 400px; display: none;"
+            >
+               
+              <div
+                class="v-card v-sheet theme--light"
+              >
+                <div
+                  class="v-card__text grey--text"
+                >
+                  
+  Coming Soon
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-card__text ma-2"
+  >
+    <div
+      class="filter-transparent v-card v-sheet theme--light transparent"
+      color="transparent"
+      icon="search"
+      sortables="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      without-expansion=""
+    >
+      <form
+        class="v-form"
+        novalidate="novalidate"
+      >
+        <div
+          class="container filter-sorter-container fluid"
+        >
+           
+          <div
+            class="layout filter-sorter-main-layout row wrap"
+          >
+            <!---->
+             
+            <div
+              class="flex grow"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Start typing to Search"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          search
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex shrink"
+            >
+              <div
+                class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-select__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Sort by
+                      </label>
+                      <div
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-label="Sort by"
+                          aria-readonly="false"
+                          autocomplete="on"
+                          data-vv-name="sort"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Draft
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    FF Initial Review
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Customer Agreement
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Fleet Member Selection
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Customer Review
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Fleet Member Contracts
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Confirmed
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Cancelled
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Past
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+             
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+            style="display: none;"
+          >
+            <div
+              class="flex"
+            />
+             
+            <div
+              class="flex text-no-wrap"
+            >
+              <button
+                class="v-btn v-btn--large theme--light"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            Clear Filters
+          
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+     
+    <div
+      class="event-list-table"
+      items="[object Object],[object Object],[object Object],[object Object],[object Object]"
+    >
+      <div
+        class="v-table__overflow"
+      >
+        <table
+          class="v-datatable v-table v-datatable--select-all theme--light"
+        >
+          <thead>
+            <tr>
+              <th>
+                <div
+                  class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-input--selection-controls__input"
+                      >
+                        <input
+                          aria-checked="false"
+                          role="checkbox"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="v-input--selection-controls__ripple"
+                        />
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          check_box_outline_blank
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-label="Status: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Status
+    
+                </span>
+              </th>
+              <th
+                aria-label="Title / Venue: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Title / Venue
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Date: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Date
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Type: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Type
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Managed By: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Managed By
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Customer: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <span>
+                  
+      Customer
+    
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Manage: Not sorted."
+                aria-sort="none"
+                class="column text-xs-left"
+                role="columnheader"
+                scope="col"
+              >
+                <span>
+                  
+      Manage
+    
+                </span>
+              </th>
+            </tr>
+            <tr
+              class="v-datatable__progress"
+            >
+              <th
+                class="column"
+                colspan="8"
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="text-xs-center"
+                colspan="8"
+              >
+                No matching records found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="v-datatable v-table v-datatable--select-all theme--light"
+      >
+        <div
+          class="v-datatable__actions"
+        >
+          <div
+            class="v-datatable__actions__select"
+          >
+            Rows per page:
+            <div
+              class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Rows per page:"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light v-menu__content--auto "
+                      style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-datatable__actions__range-controls"
+          >
+            <div
+              class="v-datatable__actions__pagination"
+            >
+              1-10 of 10
+            </div>
+            <button
+              aria-label="Previous page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_left
+                </i>
+              </div>
+            </button>
+            <button
+              aria-label="Next page"
+              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                >
+                  chevron_right
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

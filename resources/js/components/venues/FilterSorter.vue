@@ -1,22 +1,31 @@
 <template>
-  <search-filter-sorter
-    without-filter-label
-    sort-label="Sort by"
-    :sort-options="statuses"
-    v-bind="$attrs"
-    v-on="$listeners"
-    @run="run"
-    @clear="clearFilters"
-  >
-  </search-filter-sorter>
+  <v-layout>
+    <v-flex>
+      <search-filter-sorter
+        without-filter-label
+        without-sort-by
+        v-bind="$attrs"
+        v-on="$listeners"
+        @run="run"
+        @clear="clearFilters"
+      />
+    </v-flex>
+    <v-flex>
+      <f-btn-status
+        :items="statuses"
+      />
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter.vue'
+import FBtnStatus from '@freshinup/core-ui/src/components/FBtnStatus'
 
 export default {
   components: {
-    SearchFilterSorter
+    SearchFilterSorter,
+    FBtnStatus
   },
   props: {
     statuses: {
