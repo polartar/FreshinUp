@@ -60,7 +60,7 @@
           <status-select
             v-model="item.status"
             :options="statuses"
-            @input="changeStatus($doc, item)"
+            @input="changeStatus($event, item)"
           />
         </template>
         <template v-slot:item-inner-title="{ item }">
