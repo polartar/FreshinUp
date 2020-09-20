@@ -149,7 +149,7 @@ import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 
-export const DEFAULT_STORE = {
+export const DEFAULT_VENUE = {
   uuid: '',
   name: '',
   address_line_1: '',
@@ -170,7 +170,7 @@ export default {
   },
   data () {
     return {
-      ...DEFAULT_STORE
+      ...DEFAULT_VENUE
     }
   },
   methods: {

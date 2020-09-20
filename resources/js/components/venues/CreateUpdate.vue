@@ -52,7 +52,11 @@ export default {
   },
   computed: {
     pageTitle () {
-      return this.isNew ? 'New Fleet Member' : 'Fleet Member Details'
+      return this.isNew ? 'New Venue' : 'Venue Details'
+    },
+
+    isNew () {
+      return !this.$route.params.id
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
