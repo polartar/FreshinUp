@@ -51,6 +51,7 @@
 
 ## September 19, 2020
 - **ADD** Venue component: Venue Documents [#459](https://github.com/FreshinUp/foodfleet/issues/459)
+- **ADD** Venue component: Assigned Events [#460](https://github.com/FreshinUp/foodfleet/issues/460)
 
 <br/>
 

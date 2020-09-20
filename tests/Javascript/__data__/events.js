@@ -22,7 +22,6 @@ export const FIXTURE_EVENTS = [
       uuid: '4b2e762d-ec19-44ef-a1ad-78e7c45dec00',
       name: 'New Hattie'
     },
-
     host: {
       id: 89,
       uuid: '28138d6d-9605-42e8-9ceb-f2616a514ee5',
@@ -33,7 +32,17 @@ export const FIXTURE_EVENTS = [
     commission_rate: 12,
     commission_type: 2,
     type_id: 1,
-    type: { id: 1, name: 'Catering' }
+    type: { id: 1, name: 'Catering' },
+    tags: [
+      {
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
+      },
+      {
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
+      }
+    ]
   },
   {
     uuid: 'c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5',
@@ -71,7 +80,17 @@ export const FIXTURE_EVENTS = [
     type: {
       id: 2,
       name: 'Cash and Carry'
-    }
+    },
+    tags: [
+      {
+        uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
+        name: 'eos'
+      },
+      {
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
+      }
+    ]
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c67',
@@ -106,7 +125,17 @@ export const FIXTURE_EVENTS = [
     commission_rate: 12,
     commission_type: 2,
     type_id: 1,
-    type: { id: 1, name: 'Catering' }
+    type: { id: 1, name: 'Catering' },
+    tags: [
+      {
+        uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
+        name: 'eos'
+      },
+      {
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
+      }
+    ]
   },
   {
     uuid: '790aba97-1eb6-5630-82d9-7bd561256c67',
@@ -139,7 +168,17 @@ export const FIXTURE_EVENTS = [
     type: {
       id: 2,
       name: 'Cash and Carry'
-    }
+    },
+    tags: [
+      {
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
+      },
+      {
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
+      }
+    ]
   },
   {
     uuid: '790aba97-1eb6-4630-82d9-7bd561256c22',
@@ -171,6 +210,16 @@ export const FIXTURE_EVENTS = [
       name: 'Carter-Green'
     },
     type_id: 2,
-    type: { id: 2, name: 'Cash and carry' }
+    type: { id: 2, name: 'Cash and carry' },
+    tags: [
+      {
+        uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
+        name: 'sit'
+      },
+      {
+        uuid: '3057a91c-ff55-496a-8471-31bf115224e2',
+        name: 'reprehenderit'
+      }
+    ]
   }
 ]
