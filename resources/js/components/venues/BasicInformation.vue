@@ -33,7 +33,7 @@
             Address line 1
           </div>
           <v-text-field
-            v-model="addressLine1"
+            v-model="address_line_1"
             placeholder="Address 1"
             single-line
             outline
@@ -46,7 +46,7 @@
             Address line 2
           </div>
           <v-text-field
-            v-model="addressLine2"
+            v-model="address_line_2"
             placeholder="Address 2"
             single-line
             outline
@@ -126,7 +126,7 @@
             depressed
             disabled
             color="primary"
-            @click="onSave"
+            @click="save"
           >
             Save Changes
           </v-btn>
@@ -152,8 +152,8 @@ import keys from 'lodash/keys'
 export const DEFAULT_STORE = {
   uuid: '',
   name: '',
-  addressLine1: '',
-  addressLine2: '',
+  address_line_1: '',
+  address_line_2: '',
   owner_uuid: '',
   owner: {
     name: '',
@@ -174,9 +174,6 @@ export default {
     }
   },
   methods: {
-    onSave () {
-      this.save()
-    },
     onCancel () {
       this.$emit('cancel')
     },

@@ -9,8 +9,9 @@ export const FIXTURE_VENUES = [
       mobile_phone: '321-123-1234',
       avatar: 'https://via.placeholder.com/800x600.png'
     },
-    addressLine1: '123 LA Stadium Way North Velmaville, CA 123',
-    addressLine2: '123 LA Stadium Way North Velmaville, CA 123',
+    address: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_1: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_2: '123 LA Stadium Way North Velmaville, CA 123',
     locations: [
       {
         uuid: 'lota',
@@ -40,8 +41,9 @@ export const FIXTURE_VENUES = [
       mobile_phone: '321-123-1234',
       avatar: 'https://via.placeholder.com/800x600.png'
     },
-    addressLine1: '123 LA Stadium Way North Velmaville, CA 123',
-    addressLine2: '123 LA Stadium Way North Velmaville, CA 123',
+    address: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_1: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_2: '123 LA Stadium Way North Velmaville, CA 123',
     locations: [
       {
         uuid: 'lotb',
