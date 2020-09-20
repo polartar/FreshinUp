@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $uuid
  * @property string $name
  * @property string $address
+ * @property string $address_line_1
+ * @property string $address_line_2
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
@@ -29,6 +31,12 @@ class Venue extends Model
     use GeneratesUuid;
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+    protected $appends = ['address'];
+
+    public function getAddressAttribute()
+    {
+        return $this->address_line_1 . ' ' . $this->address_line_2;
+    }
 
     public function locations()
     {
