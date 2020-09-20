@@ -59,17 +59,16 @@
 </template>
 <script>
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
-export const DEFAULT_STORE = {
-  id: 0,
-  name: '',
-  radius: 0,
-  state: '',
-  store_uuid: ''
-}
 export default {
   mixins: [MapValueKeysToData],
   data () {
-    return DEFAULT_STORE
+    return {
+      id: 0,
+      name: '',
+      radius: 0,
+      state: '',
+      store_uuid: ''
+    }
   },
   methods: {
     onCancel () {

@@ -13,14 +13,25 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class Document
- *
  * @property int id
  * @property string uuid
  * @property string title
- *
+ * @property int status
+ * @property int type
+ * @property string description
+ * @property string notes
+ * @property Carbon expiration_at
+ * @property string created_by_uuid
  * @property Carbon created_at
  * @property Carbon updated_at
  * @property string deleted_at
+ * @property string assigned_uuid
+ * @property string assigned_type
+ * @property string event_store_uuid
+ *
+ *
+ * @property \App\User owner
+ * @property \App\User|Store|Event assigned
  */
 class Document extends Model implements HasMedia
 {

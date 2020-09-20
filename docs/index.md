@@ -48,13 +48,38 @@
 <br/>
 
 # Changes
-## September 16, 2020
 
-## September 13, 2020
-- **ADD** Add Areas of Operation
+## September 19, 2020
+- **ADD** Venue component: Venue Documents [#459](https://github.com/FreshinUp/foodfleet/issues/459)
+- **ADD** Venue component: Assigned Events [#460](https://github.com/FreshinUp/foodfleet/issues/460)
+
+<br/>
+
+## September 18, 2020
+- **ADD** Venue component: Locations [#458](https://github.com/FreshinUp/foodfleet/issues/458)
+
+<br/>
+
+## September 17, 2020
+- **ADD** Uploading image for Fleet Member [#433](https://github.com/FreshinUp/foodfleet/issues/433)
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
+<br/>
+
+## September 16, 2020
+- **FIX** Editing fleet member returns error snackbar [#466](https://github.com/FreshinUp/foodfleet/issues/466)
+
+<br/>
+
+## September 14, 2020
+- **ADD** Add Areas of Operation [#469](https://github.com/FreshinUp/foodfleet/issues/469)
+
+<br/>
 
 ## September 13, 2020
 - **ADD** Fleet member details page displays Area of operations list [#471](https://github.com/FreshinUp/foodfleet/issues/471)
+
+<br/>
 
 ## September 12, 2020
 - **MOD** Fleet Member displays columns Owner and State [#470](https://github.com/FreshinUp/foodfleet/issues/470)

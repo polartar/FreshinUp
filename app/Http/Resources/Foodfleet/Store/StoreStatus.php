@@ -12,7 +12,7 @@ class StoreStatus extends JsonResource
             StoreStatusEnum::DRAFT => 'accent',
             StoreStatusEnum::PENDING => 'warning',
             StoreStatusEnum::REVISION => 'success',
-            StoreStatusEnum::REJECTED => 'danger',
+            StoreStatusEnum::REJECTED => 'error',
             StoreStatusEnum::APPROVED => 'success',
             StoreStatusEnum::ON_HOLD => 'accent',
         ];

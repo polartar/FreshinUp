@@ -5,14 +5,7 @@ import axios from 'axios/index'
 
 // Components
 import FilterSorter from './FilterSorter.vue'
-
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
-]
+import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
 const mock = new MockAdapter(axios)
 mock.onGet('/foodfleet/event-tags').reply(200, {
@@ -40,48 +33,43 @@ mock.onGet('/users?filter[type]=1').reply(200, {
   ]
 })
 
-storiesOf('FoodFleet|components/event/FilterSorter', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'default', value: '#f1f3f6', default: true }
-    ]
-  })
-  .add('default', () => ({
-    components: { FilterSorter },
-    methods: {
-      filterEvents (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
+export const Default = () => ({
+  components: { FilterSorter },
+  methods: {
+    filterEvents (params) {
+      action('Run')(params)
+    }
+  },
+  template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-sorter
           @runFilter="filterEvents"
         />
       </v-container>
     `
-  }))
-  .add('with statuses', () => ({
-    components: { FilterSorter },
-    data () {
-      return {
-        statuses: statuses,
-        filters: {
-          status_id: null,
-          host_uuid: null,
-          manager_uuid: null,
-          event_tag_uuid: null,
-          start_at: null,
-          end_at: null
-        }
+})
+
+export const WithStatuses = () => ({
+  components: { FilterSorter },
+  data () {
+    return {
+      statuses: FIXTURE_EVENT_STATUSES,
+      filters: {
+        status_id: null,
+        host_uuid: null,
+        manager_uuid: null,
+        event_tag_uuid: null,
+        start_at: null,
+        end_at: null
       }
-    },
-    methods: {
-      filterEvents (params) {
-        action('Run')(params)
-      }
-    },
-    template: `
+    }
+  },
+  methods: {
+    filterEvents (params) {
+      action('Run')(params)
+    }
+  },
+  template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-sorter
           :filters="filters"
@@ -90,4 +78,13 @@ storiesOf('FoodFleet|components/event/FilterSorter', module)
         />
       </v-container>
     `
-  }))
+})
+
+storiesOf('FoodFleet|components/event/FilterSorter', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'default', value: '#f1f3f6', default: true }
+    ]
+  })
+  .add('Default', Default)
+  .add('WithStatuses', WithStatuses)

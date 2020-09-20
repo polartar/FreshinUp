@@ -230,8 +230,7 @@ export default {
         { value: '-title', text: 'Title (Z - A)' }
       ],
       events: ['Event will populate once your restaurant is assigned.'],
-      fleetMemberLoading: false,
-      isNew: false
+      fleetMemberLoading: false
     }
   },
   computed: {
@@ -249,8 +248,12 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
+    isNew () {
+      return !get(this.store, 'uuid')
+    },
     store () {
-      return this.$store.getters['stores/item'] || DEFAULT_STORE
+      // This allow us to have the the object to have the wanted keys in case of creation
+      return Object.assign({}, DEFAULT_STORE, this.$store.getters['stores/item'])
     },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
@@ -286,7 +289,18 @@ export default {
         this.loading = false
       }
     },
-    deleteMember (item) {},
+    deleteMember (item) {
+      this.loading = true
+      this.$store.dispatch('stores/deleteItem', { getItems: false, params: { id: this.$route.params.id } })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Deleted')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+      this.$router.push({ path: '/admin/fleet-members' })
+    },
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
     },
@@ -339,10 +353,12 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []
-    const params = { id }
     if (id !== 'new') {
-      promises.push(vm.$store.dispatch('documents/getItem', { params }))
-
+      promises.push(vm.$store.dispatch('documents/getItems', {
+        params: {
+          'filter[assigned_uuid]': id
+        }
+      }))
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
         params: {

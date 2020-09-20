@@ -4,7 +4,7 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
-use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Location as LocationModel;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -20,12 +20,13 @@ class Locations extends Controller
      */
     public function index(Request $request)
     {
-        $locations = QueryBuilder::for(Location::class, $request)
+        $locations = QueryBuilder::for(LocationModel::class, $request)
             ->allowedFilters([
                 Filter::exact('uuid'),
-                'name'
+                Filter::exact('category_id'),
+                'name',
             ])
-            ->allowedIncludes(['venue']);
+            ->allowedIncludes(['venue', 'category', 'events']);
 
         return LocationResource::collection($locations->jsonPaginate());
     }
