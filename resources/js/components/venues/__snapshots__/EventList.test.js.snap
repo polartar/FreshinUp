@@ -1253,7 +1253,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                
               <div>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -1265,7 +1265,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                   </span>
                 </span>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -1587,7 +1587,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                
               <div>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -1599,7 +1599,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                   </span>
                 </span>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -1921,7 +1921,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                
               <div>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -1933,7 +1933,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                   </span>
                 </span>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -2255,7 +2255,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                
               <div>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -2267,7 +2267,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                   </span>
                 </span>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -2589,7 +2589,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                
               <div>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span
@@ -2601,7 +2601,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                   </span>
                 </span>
                 <span
-                  class="v-chip theme--light orange"
+                  class="v-chip white--text theme--light orange"
                   tabindex="0"
                 >
                   <span

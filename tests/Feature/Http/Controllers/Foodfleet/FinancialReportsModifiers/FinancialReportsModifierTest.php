@@ -18,9 +18,7 @@ class FinancialReportsModifierTest extends TestCase
     public function testGetList()
     {
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
         $data = $this
             ->json('get', "/api/foodfleet/financial-modifiers")
             ->assertStatus(200)
@@ -28,13 +26,10 @@ class FinancialReportsModifierTest extends TestCase
                 'data',
             ])
             ->json('data');
-
-
         $this->assertEmpty($data);
 
 
         factory(Modifier::class, 5)->create();
-
         $data = $this
             ->json('get', "/api/foodfleet/financial-modifiers")
             ->assertStatus(200)
@@ -42,7 +37,6 @@ class FinancialReportsModifierTest extends TestCase
                 'data'
             ])
             ->json('data');
-
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
     }

@@ -7,15 +7,9 @@ import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/ev
 
 export const Default = () => ({
   components: { FilterSorter },
-  methods: {
-    filterEvents (params) {
-      action('Run')(params)
-    }
-  },
   template: `
     <v-container>
       <filter-sorter
-        @runFilter="filterEvents"
       />
     </v-container>
   `
@@ -25,19 +19,24 @@ export const Populated = () => ({
   components: { FilterSorter },
   data () {
     return {
-      statuses: FIXTURE_EVENT_STATUSES
+      statuses: FIXTURE_EVENT_STATUSES,
+      sortOptions: [
+        'status',
+        'created_at'
+      ]
     }
   },
   methods: {
-    filterEvents (params) {
-      action('Run')(params)
+    onRunFilter (params) {
+      action('runFilter')(params)
     }
   },
   template: `
     <v-container>
       <filter-sorter
         :statuses="statuses"
-        @runFilter="filterEvents"
+        :sort-options="sortOptions"
+        @runFilter="onRunFilter"
       />
     </v-container>
   `

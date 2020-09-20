@@ -44,14 +44,22 @@ export const Populated = () => ({
     },
     onManageMultiple (act, items) {
       action('onManageMultiple')(act, items)
+    },
+    onRunFilter (params) {
+      action('runFilter')(params)
+    },
+    onStatusChange (value) {
+      action('onStatusChange')(value)
     }
   },
   template: `
     <events
       :items="items"
       :statuses="statuses"
+      @change-status="onStatusChange"
       @manage="onManage"
       @manage-multiple="onManageMultiple"
+      @runFilter="onRunFilter"
     />
   `
 })

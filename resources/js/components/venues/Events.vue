@@ -43,13 +43,13 @@
 
     <v-card-text class="ma-2">
       <filter-sorter
-        v-if="!isLoading"
         :statuses="statuses"
+        :sort-options="sortOptions"
         without-expansion
         icon="search"
         color="transparent"
         class="filter-transparent"
-        @runFilter="$emit('runFilter', $event)"
+        @runFilter="onFilter"
       />
       <event-list
         :is-loading="isLoading"
@@ -64,9 +64,16 @@
 
 <script>
 import FilterSorter from '~/components/venues/FilterSorter.vue'
-import EventList from '../events/EventList'
-import EventForm from './EventForm'
+import EventList from './EventList'
+import EventForm from '../events/EventForm'
 
+export const DEFAULT_SORT_OPTIONS = [
+  'status',
+  'name',
+  'start_at',
+  'manager',
+  'host'
+]
 export default {
   components: { FilterSorter, EventList, EventForm },
   props: {
@@ -76,29 +83,13 @@ export default {
   },
   data () {
     return {
-      newEventDialog: false
-    }
-  },
-  computed: {
-    selectedDocActions () {
-      if (!this.selected.length) return []
-      let actions = []
-      actions.push({ action: 'delete', text: 'Delete' })
-      return actions
+      newEventDialog: false,
+      sortOptions: DEFAULT_SORT_OPTIONS
     }
   },
   methods: {
-    changeStatus (value, doc) {
-      this.$emit('change-status', value, doc)
-    },
-    changeStatusMultiple (value) {
-      this.$emit('change-status-multiple', value, this.selected)
-    },
-    sort (item) {
-      this.$emit('sort', item.id)
-    },
-    searchInput (val) {
-      this.$emit('searchInput', val)
+    onFilter (payload) {
+      this.$emit('runFilter', payload)
     }
   }
 }

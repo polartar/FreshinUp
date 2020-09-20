@@ -24,6 +24,7 @@
         <v-chip
           v-for="(tag, index) of item.tags"
           :key="index"
+          class="white--text"
           color="orange"
         >
           {{ tag.name }}
@@ -35,17 +36,17 @@
         {{ item.start_at }}
       </div>
       <div class="grey--text">
-        @{{ item.venue && item.venue.name }}
+        @{{ get(item, 'venue.name') }}
       </div>
     </template>
     <template v-slot:item-inner-manager="{ item }">
       <div class="grey--text">
-        {{ item.manager && item.manager.name }}
+        {{ get(item, 'manager.name') }}
       </div>
     </template>
     <template v-slot:item-inner-host="{ item }">
       <div class="grey--text">
-        {{ item.host && item.host.name }}
+        {{ get(item, 'host.name') }}
       </div>
     </template>
   </f-data-table>
@@ -54,6 +55,7 @@
 <script>
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 import StatusSelect from '~/components/docs/StatusSelect'
+import get from 'lodash/get'
 
 export const HEADERS = [
   { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
@@ -80,20 +82,10 @@ export default {
       itemActions: ITEM_ACTIONS
     }
   },
-  computed: {
-    selectedDocActions () {
-      if (!this.selected.length) return []
-      let actions = []
-      actions.push({ action: 'delete', text: 'Delete' })
-      return actions
-    }
-  },
   methods: {
-    changeStatus (value, doc) {
-      this.$emit('change-status', value, doc)
-    },
-    manageMultiple (value) {
-      this.$emit('manage-multiple', value, this.selected)
+    get,
+    changeStatus (value, event) {
+      this.$emit('change-status', value, event)
     }
   }
 }
