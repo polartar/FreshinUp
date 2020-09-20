@@ -20,6 +20,7 @@
             Venue name
           </div>
           <v-text-field
+            v-model="name"
             placeholder="Name"
             single-line
             outline
@@ -32,6 +33,7 @@
             Address line 1
           </div>
           <v-text-field
+            v-model="addressLine1"
             placeholder="Address 1"
             single-line
             outline
@@ -44,6 +46,7 @@
             Address line 2
           </div>
           <v-text-field
+            v-model="addressLine2"
             placeholder="Address 2"
             single-line
             outline
@@ -67,19 +70,19 @@
                 color="grey lighten-4"
               >
                 <img
-                  src="https://vuetifyjs.com/apple-touch-icon-180x180.png"
+                  :src="owner.avatar"
                   alt="avatar"
                 >
               </v-avatar>
               <div class="mx-2 px-2">
                 <div class="primary--text subheading">
-                  Full Name
+                  {{ owner.name }}
                 </div>
                 <div class="grey--text text--darken-2">
-                  Email address
+                  {{ owner.email }}
                 </div>
                 <div class="grey--text text--darken-2">
-                  Phone Number
+                  {{ owner.mobile_phone }}
                 </div>
               </div>
             </v-flex>
@@ -115,6 +118,7 @@
           <v-btn
             depressed
             disabled
+            @click="onCancel"
           >
             Cancel
           </v-btn>
@@ -122,6 +126,7 @@
             depressed
             disabled
             color="primary"
+            @click="onSave"
           >
             Save Changes
           </v-btn>
@@ -130,6 +135,7 @@
           <v-btn
             depressed
             disabled
+            @click="onDeleteVenue"
           >
             Delete Venue
           </v-btn>
@@ -139,9 +145,44 @@
   </v-card>
 </template>
 <script>
+import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import pick from 'lodash/pick'
+import keys from 'lodash/keys'
+
+export const DEFAULT_STORE = {
+  uuid: '',
+  name: '',
+  addressLine1: '',
+  addressLine2: '',
+  owner_uuid: '',
+  owner: {
+    name: '',
+    email: '',
+    mobile_phone: '',
+    avatar: ''
+  }
+}
+
 export default {
+  mixins: [MapValueKeysToData],
   props: {
     loading: { type: Boolean, default: false }
+  },
+  data () {
+    return {
+      ...DEFAULT_STORE
+    }
+  },
+  methods: {
+    onSave () {
+      this.save()
+    },
+    onCancel () {
+      this.$emit('cancel')
+    },
+    onDeleteVenue () {
+      this.$emit('delete', pick(this, keys(this.value)))
+    }
   }
 }
 </script>

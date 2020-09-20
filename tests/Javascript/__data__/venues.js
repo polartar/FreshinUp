@@ -2,7 +2,15 @@ export const FIXTURE_VENUES = [
   {
     uuid: 'abc111',
     name: 'LA Stadium',
-    address: '123 LA Stadium Way North Velmaville, CA 123',
+    owner_uuid: '',
+    owner: {
+      name: 'Demo Admin',
+      email: 'demoAdmin@example.com',
+      mobile_phone: '321-123-1234',
+      avatar: 'https://via.placeholder.com/800x600.png'
+    },
+    addressLine1: '123 LA Stadium Way North Velmaville, CA 123',
+    addressLine2: '123 LA Stadium Way North Velmaville, CA 123',
     locations: [
       {
         uuid: 'lota',
@@ -25,7 +33,15 @@ export const FIXTURE_VENUES = [
   {
     uuid: 'abc222',
     name: 'ATL Stadium',
-    address: '12345 ATL Stadium Way Lake Miles, CA 90210',
+    owner_uuid: '',
+    owner: {
+      name: 'Demo Admin',
+      email: 'demoAdmin@example.com',
+      mobile_phone: '321-123-1234',
+      avatar: 'https://via.placeholder.com/800x600.png'
+    },
+    addressLine1: '123 LA Stadium Way North Velmaville, CA 123',
+    addressLine2: '123 LA Stadium Way North Velmaville, CA 123',
     locations: [
       {
         uuid: 'lotb',
