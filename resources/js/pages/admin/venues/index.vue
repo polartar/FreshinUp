@@ -16,7 +16,7 @@
         <v-btn
           slot="activator"
           color="white"
-          @click="venueNew"
+          @click="onCreateNew"
         >
           <span class="primary--text">Add New Venue</span>
         </v-btn>
@@ -39,7 +39,7 @@
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
         @paginate="onPaginate"
-        @manage-edit="venueEdit"
+        @manage-view="onManageView"
         @manage-delete="deleteSingle"
         @manage-multiple-delete="multipleDelete"
         @change-status="changeStatusSingle"
@@ -93,7 +93,7 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import VenueList from '~/components/venues/VenueList.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-import FilterSorter from '../../../components/venues/FilterSorter'
+import FilterSorter from '~/components/venues/FilterSorter'
 
 const INCLUDE = [
   'status',
@@ -147,11 +147,11 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    venueNew () {
+    onCreateNew () {
       this.$router.push({ path: '/admin/venues/new' })
     },
-    venueEdit (venue) {
-      this.$router.push({ path: '/admin/venues/' + venue.uuid + '/edit' })
+    onManageView (venue) {
+      this.$router.push({ path: `/admin/venues/${venue.uuid}/edit` })
     },
     deleteSingle (venue) {
       this.deleteTemp = [venue]
@@ -227,8 +227,7 @@ export default {
     })
     vm.setPageLoading(true)
     Promise.all([
-      vm.$store.dispatch('venueStatuses/getItems'),
-      vm.$store.dispatch('venueTypes/getItems')
+      vm.$store.dispatch('venueStatuses/getItems')
     ])
       .then(() => {
         if (next) next()

@@ -240,4 +240,73 @@ class VenueTest extends TestCase
             'name' => $user->name,
         ], $data[0]['owner']);
     }
+
+    public function testUpdateNonExisting()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Venue::class)->make()->toArray();
+
+        $this->json('PUT', 'api/foodfleet/venues/abc', $payload)
+            ->assertStatus(404);
+    }
+
+    public function testUpdateWithInvalidPayload()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $venue = factory(Venue::class)->create();
+        $payload = factory(Venue::class)->make()->toArray();
+        $payload['owner_uuid'] = 'abc';
+
+        $this->json('PUT', '/api/foodfleet/venues/'.$venue->uuid, $payload)
+            ->assertStatus(422);
+
+        $payload['status_id'] = 999;
+        $this->json('PUT', '/api/foodfleet/venues/'.$venue->uuid, $payload)
+            ->assertStatus(422);
+    }
+
+    public function testUpdateItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $venue = factory(Venue::class)->create();
+        $payload = factory(Venue::class)->make([
+            'status_id' => factory(VenueStatus::class)->create()->id
+        ])->toArray();
+
+        $data = $this->json('PUT', '/api/foodfleet/venues/'.$venue->uuid, $payload)
+            ->assertStatus(200)
+            ->json('data');
+        $expected = [
+          'id' => $venue->id,
+          'uuid' => $venue->uuid,
+          'name' => $payload['name'],
+          'address' => $payload['address'],
+          'status_id' => $payload['status_id'],
+          'owner_uuid' => $payload['owner_uuid'],
+        ];
+        $this->assertArraySubset($expected, $data);
+    }
+
+    public function testDeleteNonExisting()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $this->json('DELETE', '/api/foodfleet/venues/abc123')
+            ->assertStatus(404);
+    }
+
+    public function testDeleteItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $venue = factory(Venue::class)->create();
+
+        $this
+            ->json('DELETE', '/api/foodfleet/venues/'.$venue->uuid)
+            ->assertStatus(204);
+    }
 }

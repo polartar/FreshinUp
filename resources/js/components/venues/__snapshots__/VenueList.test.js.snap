@@ -49,17 +49,25 @@ exports[`components/venues/VenueList Snapshots Empty 1`] = `
               </div>
             </th>
             <th
-              aria-label="Status: Not sorted."
+              aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Status
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
               aria-label="Venue / Owner: Not sorted. Activate to sort ascending."
@@ -83,25 +91,17 @@ exports[`components/venues/VenueList Snapshots Empty 1`] = `
               </i>
             </th>
             <th
-              aria-label="Locations: Not sorted. Activate to sort ascending."
+              aria-label="Locations: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Locations
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
             <th
               aria-label="Submitted On: Not sorted. Activate to sort ascending."
@@ -127,7 +127,7 @@ exports[`components/venues/VenueList Snapshots Empty 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -454,17 +454,25 @@ exports[`components/venues/VenueList Snapshots IsLoading 1`] = `
               </div>
             </th>
             <th
-              aria-label="Status: Not sorted."
+              aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Status
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
               aria-label="Venue / Owner: Not sorted. Activate to sort ascending."
@@ -488,25 +496,17 @@ exports[`components/venues/VenueList Snapshots IsLoading 1`] = `
               </i>
             </th>
             <th
-              aria-label="Locations: Not sorted. Activate to sort ascending."
+              aria-label="Locations: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Locations
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
             <th
               aria-label="Submitted On: Not sorted. Activate to sort ascending."
@@ -532,7 +532,7 @@ exports[`components/venues/VenueList Snapshots IsLoading 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -887,17 +887,25 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
               </div>
             </th>
             <th
-              aria-label="Status: Not sorted."
+              aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Status
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
               aria-label="Venue / Owner: Not sorted. Activate to sort ascending."
@@ -921,25 +929,17 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
               </i>
             </th>
             <th
-              aria-label="Locations: Not sorted. Activate to sort ascending."
+              aria-label="Locations: Not sorted."
               aria-sort="none"
-              class="column sortable text-xs-left"
+              class="column text-xs-left"
               role="columnheader"
               scope="col"
-              tabindex="0"
             >
               <span>
                 
         Locations
       
               </span>
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                arrow_upward
-              </i>
             </th>
             <th
               aria-label="Submitted On: Not sorted. Activate to sort ascending."
@@ -965,7 +965,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -1151,7 +1151,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      North Velmaville,Lake Mitchellchester
+      North Velmaville, Lake Mitchellchester
     
               </div>
             </td>
@@ -1162,7 +1162,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Sep 29, 2019
+      Sep 30, 2019
     
               </div>
             </td>
@@ -1406,7 +1406,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Sep 29, 2019
+      Sep 30, 2019
     
               </div>
             </td>
@@ -1650,7 +1650,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Sep 29, 2019
+      Sep 30, 2019
     
               </div>
             </td>

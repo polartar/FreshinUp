@@ -2,11 +2,9 @@
   <search-filter-sorter
     ref="filter"
     class="filter-transparent"
-    expanded
     without-filter-label
-    placeholder="Filter by venue name"
     without-sort-by
-    :sort-options="sortables"
+    placeholder="Filter by venue name"
     color="transparent"
     v-bind="$attrs"
     v-on="$listeners"
@@ -94,7 +92,6 @@ import FilterLabel from '~/components/FilterLabel'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import FAutocomplete from '~/components/FAutocomplete'
-import debounce from 'lodash/debounce'
 
 export const DEFAULT_FILTERS = {
   status_id: null,
@@ -110,14 +107,8 @@ export default {
     FAutocomplete
   },
   props: {
-    filters: {
-      type: Object,
-      default: () => DEFAULT_FILTERS
-    },
-    statuses: {
-      type: Array,
-      default: () => []
-    }
+    filters: { type: Object, default: () => DEFAULT_FILTERS },
+    statuses: { type: Array, default: () => [] }
   },
   watch: {
     filters: {
@@ -129,11 +120,6 @@ export default {
     }
   },
   methods: {
-    // mutating the filter immediately would cause too much network request
-    // while the user is still typing
-    onStateChanged: debounce(function (value) {
-      this.filters.state_of_incorporation = value
-    }, 400),
     selectOwner (user) {
       this.filters.owner_uuid = user ? user.uuid : null
     },
@@ -153,17 +139,20 @@ export default {
 }
 </script>
 <style lang="styl" scoped>
-  /deep/ .data-time-picker.no-border input.field-input{
+  /deep/ .data-time-picker.no-border input.field-input {
     border: none !important;
   }
-  /deep/ .filter-sorter-expanded-layout{
+
+  /deep/ .filter-sorter-expanded-layout {
     align-items: center;
   }
-  /deep/ .filter-sorter-expanded-layout>.flex.text-no-wrap>.v-btn{
+
+  /deep/ .filter-sorter-expanded-layout > .flex.text-no-wrap > .v-btn {
     margin: 0;
     height: 48px;
   }
-  .filter-transparent{
+
+  .filter-transparent {
     box-shadow: none;
   }
 </style>

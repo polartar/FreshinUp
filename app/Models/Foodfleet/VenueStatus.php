@@ -10,14 +10,15 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string name
- * @property \DateTime created_at
- * @property \DateTime updated_at
+ *
+ *
  * @property Venue[] venues
  */
 class VenueStatus extends Model
 {
+    public $timestamps = false;
     public function venues()
     {
-        return $this->hasMany('Venues', 'status_id');
+        return $this->hasMany('venues', 'status_id');
     }
 }

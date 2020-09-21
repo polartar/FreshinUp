@@ -2,7 +2,8 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import VenueList from './VenueList'
-import { FIXTURE_VENUE_STATUSES, FIXTURE_VENUES } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUES } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venueStatuses'
 
 export const Empty = () => ({
   components: { VenueList },

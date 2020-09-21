@@ -3,10 +3,364 @@
 exports[`components/venues/FilterSorter Snapshots Default 1`] = `
 <div
   class="container"
-  style="background-color: rgba(0, 0, 0, 0.2);"
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
+  >
+    <form
+      class="v-form"
+      novalidate="novalidate"
+    >
+      <div
+        class="container filter-sorter-container fluid"
+      >
+         
+        <div
+          class="layout filter-sorter-main-layout row wrap"
+        >
+          <!---->
+           
+          <div
+            class="flex grow"
+          >
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="Filter by venue name"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="flex shrink"
+          >
+            <button
+              class="v-btn v-btn--large theme--light ma-0 "
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            More Filters
+          
+              </div>
+            </button>
+          </div>
+           
+        </div>
+         
+        <!---->
+         
+        <div
+          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          style="display: none;"
+        >
+          <div
+            class="flex"
+          >
+            <div
+              class="v-card__text px-0"
+            >
+              <div
+                class="layout mb-4 row justify-space-between"
+              >
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Statuses
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
+                    flat=""
+                    hide-details=""
+                    item-text="name"
+                    item-value="id"
+                    placeholder="Select Status"
+                    role="combobox"
+                    solo=""
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <div
+                            class="v-select__selections"
+                          >
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              placeholder="Select Status"
+                              readonly="readonly"
+                              type="text"
+                            />
+                          </div>
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  role="listitem"
+                                >
+                                  <a
+                                    class="v-list__tile v-list__tile--link theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__action"
+                                    >
+                                      <i
+                                        aria-hidden="true"
+                                        class="v-icon far fa-square theme--light"
+                                      />
+                                    </div>
+                                     
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        All Status
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                 
+                                <hr
+                                  class="mt-2 v-divider theme--light"
+                                />
+                                <div
+                                  role="listitem"
+                                >
+                                  <div
+                                    class="v-list__tile theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Owner
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    background-color="white"
+                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                    height="48"
+                    hide-details=""
+                    no-filter=""
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot white"
+                        style="height: 48px;"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <input
+                            autocomplete="off"
+                            avatar-key="avatarKey"
+                            placeholder="Owned by"
+                            role="combobox"
+                            type="text"
+                          />
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light v-autocomplete__content"
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  role="listitem"
+                                >
+                                  <div
+                                    class="v-list__tile theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex text-no-wrap"
+          >
+            <button
+              class="v-btn v-btn--large theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Clear Filters
+          
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`components/venues/FilterSorter Snapshots Expanded 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="filter-transparent v-card v-sheet theme--light transparent"
+    expanded=""
   >
     <form
       class="v-form"
@@ -356,10 +710,9 @@ exports[`components/venues/FilterSorter Snapshots Default 1`] = `
 </div>
 `;
 
-exports[`components/venues/FilterSorter Snapshots WithStatus 1`] = `
+exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
 <div
   class="container"
-  style="background-color: rgba(0, 0, 0, 0.2);"
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
@@ -426,7 +779,7 @@ exports[`components/venues/FilterSorter Snapshots WithStatus 1`] = `
                 class="v-btn__content"
               >
                 
-            Less Filters
+            More Filters
           
               </div>
             </button>
@@ -434,12 +787,11 @@ exports[`components/venues/FilterSorter Snapshots WithStatus 1`] = `
            
         </div>
          
-        <hr
-          class="v-divider theme--light"
-        />
+        <!---->
          
         <div
           class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          style="display: none;"
         >
           <div
             class="flex"

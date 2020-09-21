@@ -2,25 +2,18 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\EventStatuses;
 
-use App\User;
 use App\Models\Foodfleet\EventStatus;
-
+use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
-use Carbon\Carbon;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EventStatusTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
@@ -47,11 +40,6 @@ class EventStatusTest extends TestCase
         }
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();

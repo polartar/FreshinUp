@@ -14,7 +14,7 @@ class AddStatusIdToVenuesTable extends Migration
     public function up()
     {
         Schema::table('venues', function (Blueprint $table) {
-            $table->integer('status_id')->nullable();
+            $table->integer('status_id')->nullable()->index();
         });
     }
 
@@ -26,7 +26,7 @@ class AddStatusIdToVenuesTable extends Migration
     public function down()
     {
         Schema::table('venues', function (Blueprint $table) {
-            $table->dropColumn(['status_id']);
+            $table->dropColumn('status_id');
         });
     }
 }

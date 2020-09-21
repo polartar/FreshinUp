@@ -1,7 +1,8 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/venues/VenueList.vue'
 import * as Stories from '~/components/venues/VenueList.stories'
-import { FIXTURE_VENUE_STATUSES, FIXTURE_VENUES } from '../../__data__/venues'
+import { FIXTURE_VENUES } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venueStatuses'
 
 describe('components/venues/VenueList', () => {
   describe('Snapshots', () => {
@@ -24,7 +25,7 @@ describe('components/venues/VenueList', () => {
 
   describe('Props & Computed', () => {
     test('isLoading', async () => {
-      const wrapper = mount(Component)
+      const wrapper = shallowMount(Component)
       expect(wrapper.vm.isLoading).toBe(false)
 
       wrapper.setProps({
@@ -34,7 +35,7 @@ describe('components/venues/VenueList', () => {
       expect(wrapper.vm.isLoading).toBe(true)
     })
     test('items', async () => {
-      const wrapper = mount(Component)
+      const wrapper = shallowMount(Component)
       expect(wrapper.vm.items).toHaveLength(0)
 
       wrapper.setProps({
@@ -44,7 +45,7 @@ describe('components/venues/VenueList', () => {
       expect(wrapper.vm.items).toMatchObject(FIXTURE_VENUES)
     })
     test('statuses', async () => {
-      const wrapper = mount(Component)
+      const wrapper = shallowMount(Component)
       expect(wrapper.vm.statuses).toHaveLength(0)
 
       wrapper.setProps({

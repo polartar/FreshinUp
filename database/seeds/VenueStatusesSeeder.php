@@ -14,7 +14,6 @@ class VenueStatusesSeeder extends Seeder
     public function run()
     {
         $statuses = VenueStatusEnums::toKeyedSelectArray();
-
         foreach ($statuses as $id => $name) {
             VenueStatus::updateOrCreate(
                 ['id' => $id],

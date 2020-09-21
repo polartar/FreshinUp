@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions'
 
 // Components
 import FilterSorter from './FilterSorter.vue'
-import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venues'
 import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
+import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venueStatuses'
 
 const mock = new MockAdapter(axios)
 mock.onGet(/\/users.*/).reply(200, {
@@ -16,13 +16,25 @@ mock.onGet(/\/users.*/).reply(200, {
 export const Default = () => ({
   components: { FilterSorter },
   template: `
-    <v-container style="background-color: rgba(0,0,0,.2)">
-      <filter-sorter />
+    <v-container>
+      <filter-sorter
+      />
     </v-container>
   `
 })
 
-export const WithStatus = () => ({
+export const Expanded = () => ({
+  components: { FilterSorter },
+  template: `
+    <v-container>
+      <filter-sorter
+        expanded
+      />
+    </v-container>
+  `
+})
+
+export const Populated = () => ({
   components: { FilterSorter },
   data () {
     return {
@@ -35,11 +47,11 @@ export const WithStatus = () => ({
   },
   methods: {
     filterVenues (params) {
-      action('Run')(params)
+      action('runFilter')(params)
     }
   },
   template: `
-    <v-container style="background-color: rgba(0,0,0,.2)">
+    <v-container>
       <filter-sorter
         :filters="filters"
         :statuses="statuses"
@@ -56,4 +68,5 @@ storiesOf('FoodFleet|components/venues/FilterSorter', module)
     ]
   })
   .add('Default', Default)
-  .add('WithStatus', WithStatus)
+  .add('Expanded', Expanded)
+  .add('Populated', Populated)

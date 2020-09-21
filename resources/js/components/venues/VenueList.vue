@@ -4,7 +4,7 @@
     :items="items"
     :is-loading="isLoading"
     :item-actions="itemActions"
-    :multi-item-actions="itemActions"
+    :multi-item-actions="multipleItemActions"
     item-key="id"
     v-bind="$attrs"
     v-on="$listeners"
@@ -18,20 +18,20 @@
       <status-select
         v-model="item.status_id"
         :options="statuses"
-        @input="changeStatus($event, props.item)"
+        @input="changeStatus($event, item)"
       />
     </template>
-    <template v-slot:item-inner-name,owner_uuid="{ item }">
+    <template v-slot:item-inner-name="{ item }">
       <div class="subheading primary--text">
         {{ item.name }}
       </div>
       <div class="grey--text">
-        {{ item.owner && item.owner.name }}
+        {{ get(item, 'owner.name') }}
       </div>
     </template>
     <template v-slot:item-inner-locations="{ item }">
       <div class="grey--text">
-        {{ getLocations(item.locations) }}
+        {{ get(item, 'locations', []) | toNames }}
       </div>
     </template>
   </f-data-table>
@@ -41,9 +41,29 @@
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import get from 'lodash/get'
 
+export const DEFAULT_HEADERS = [
+  { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
+  { text: 'Venue / Owner', sortable: true, value: 'name', align: 'left' },
+  { text: 'Locations', sortable: false, value: 'locations', align: 'left' },
+  { text: 'Submitted On', sortable: true, value: 'created_at', align: 'left' },
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
+]
+export const DEFAULT_ITEM_ACTIONS = [
+  { action: 'view', text: 'View / Edit' },
+  { action: 'delete', text: 'Delete' }
+]
+export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
+  { action: 'delete', text: 'Delete' }
+]
 export default {
   components: { FDataTable, StatusSelect },
+  filters: {
+    toNames (value) {
+      return value.map(location => location.name).join(', ')
+    }
+  },
   mixins: [
     FormatDate
   ],
@@ -54,29 +74,16 @@ export default {
   },
   data () {
     return {
-      selected: [],
-      headers: [
-        { text: 'Status', sortable: false, value: 'status_id', align: 'left' },
-        { text: 'Venue / Owner', value: 'name,owner_uuid', align: 'left' },
-        { text: 'Locations', sortable: true, value: 'locations', align: 'left' },
-        { text: 'Submitted On', value: 'created_at', align: 'left' },
-        { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
-      ],
-      itemActions: [
-        { action: 'view', text: 'View / Edit' },
-        { action: 'delete', text: 'Delete' }
-      ],
-      actionBtnTitle: 'Manage'
+      headers: DEFAULT_HEADERS,
+      itemActions: DEFAULT_ITEM_ACTIONS,
+      multipleItemActions: DEFAULT_MULTIPLE_ITEM_ACTIONS
     }
   },
   methods: {
+    get,
     changeStatus (value, venue) {
       this.$emit('change-status', value, venue)
-    },
-    getLocations (locations) {
-      return locations.map(location => location.name).join(',')
     }
-
   }
 }
 </script>
