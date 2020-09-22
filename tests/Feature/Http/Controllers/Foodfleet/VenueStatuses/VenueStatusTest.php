@@ -1,29 +1,34 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet\EventStatuses;
+namespace Tests\Feature\Http\Controllers\Foodfleet\VenueStatuses;
 
-use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\VenueStatus;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class EventStatusTest extends TestCase
+class VenueStatusTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
 
-        $eventStatuses = factory(EventStatus::class, 5)->create();
+        $venueStatuses = factory(VenueStatus::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/event-statuses")
+            ->json('get', "/api/foodfleet/venue/statuses")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -32,30 +37,35 @@ class EventStatusTest extends TestCase
 
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
-        foreach ($eventStatuses as $idx => $eventStatus) {
+        foreach ($venueStatuses as $idx => $venueStatus) {
             $this->assertArraySubset([
-                'id' => $eventStatus->id,
-                'name' => $eventStatus->name,
+                'id' => $venueStatus->id,
+                'name' => $venueStatus->name,
             ], $data[$idx]);
         }
     }
 
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
     public function testGetListWithFilters()
     {
         $user = factory(User::class)->create();
 
         Passport::actingAs($user);
 
-        factory(EventStatus::class, 5)->create([
+        factory(VenueStatus::class, 5)->create([
             'name' => 'Not visibles'
         ]);
 
-        $eventStatusesToFind = factory(EventStatus::class, 5)->create([
+        $venueStatusesToFind = factory(VenueStatus::class, 5)->create([
             'name' => 'To find'
         ]);
 
         $data = $this
-            ->json('get', "/api/foodfleet/event-statuses")
+            ->json('get', "/api/foodfleet/venue/statuses")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -67,7 +77,7 @@ class EventStatusTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/event-statuses?filter[name]=find")
+            ->json('get', "/api/foodfleet/venue/statuses?filter[name]=find")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -77,10 +87,10 @@ class EventStatusTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals(5, count($data));
 
-        foreach ($eventStatusesToFind as $idx => $eventStatus) {
+        foreach ($venueStatusesToFind as $idx => $venueStatus) {
             $this->assertArraySubset([
-                'id' => $eventStatus->id,
-                'name' => $eventStatus->name,
+                'id' => $venueStatus->id,
+                'name' => $venueStatus->name,
             ], $data[$idx]);
         }
     }

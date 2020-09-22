@@ -49,6 +49,12 @@
 
 # Changes
 
+
+## September 20, 2020
+- **ADD** Can route to Venue page [#455](https://github.com/FreshinUp/foodfleet/issues/455)
+
+<br/>
+
 ## September 19, 2020
 - **ADD** Venue component: Venue Documents [#459](https://github.com/FreshinUp/foodfleet/issues/459)
 - **ADD** Venue component: Assigned Events [#460](https://github.com/FreshinUp/foodfleet/issues/460)

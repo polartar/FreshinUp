@@ -83,11 +83,9 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent v-card v-sheet theme--light transparent"
+      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
       color="transparent"
-      icon="search"
-      sort-options="status,name,start_at,manager,host"
-      without-expansion=""
+      without-sort-by=""
     >
       <form
         class="v-form"
@@ -118,23 +116,9 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        placeholder="Start typing to Search"
+                        placeholder="Search"
                         type="text"
                       />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          search
-                        </i>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -152,174 +136,7 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
               </div>
             </div>
              
-            <div
-              class="flex shrink"
-            >
-              <div
-                class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
-                role="combobox"
-              >
-                <div
-                  class="v-input__control"
-                >
-                  <div
-                    class="v-input__slot"
-                  >
-                    <div
-                      class="v-select__slot"
-                    >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Sort by
-                      </label>
-                      <div
-                        class="v-select__selections"
-                      >
-                        <input
-                          aria-label="Sort by"
-                          aria-readonly="false"
-                          autocomplete="on"
-                          data-vv-name="sort"
-                          readonly="readonly"
-                          type="text"
-                        />
-                      </div>
-                      <div
-                        class="v-input__append-inner"
-                      >
-                        <div
-                          class="v-input__icon v-input__icon--append"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light"
-                          >
-                            arrow_drop_down
-                          </i>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="v-menu"
-                    >
-                      <div
-                        class="v-menu__content theme--light "
-                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                      >
-                        <div
-                          class="v-select-list v-card theme--light"
-                        >
-                          <div
-                            class="v-list theme--light"
-                            role="list"
-                          >
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    status
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    name
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    start_at
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    manager
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    host
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-text-field__details"
-                  >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <div
-                        class="v-messages__wrapper"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!---->
              
             <!---->
              
@@ -503,7 +320,7 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
                 <th
                   aria-label="Manage: Not sorted."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column text-xs-center"
                   role="columnheader"
                   scope="col"
                 >
@@ -866,11 +683,9 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent v-card v-sheet theme--light transparent"
+      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
       color="transparent"
-      icon="search"
-      sort-options="status,name,start_at,manager,host"
-      without-expansion=""
+      without-sort-by=""
     >
       <form
         class="v-form"
@@ -901,23 +716,9 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        placeholder="Start typing to Search"
+                        placeholder="Search"
                         type="text"
                       />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          search
-                        </i>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -935,174 +736,7 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
               </div>
             </div>
              
-            <div
-              class="flex shrink"
-            >
-              <div
-                class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
-                role="combobox"
-              >
-                <div
-                  class="v-input__control"
-                >
-                  <div
-                    class="v-input__slot"
-                  >
-                    <div
-                      class="v-select__slot"
-                    >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Sort by
-                      </label>
-                      <div
-                        class="v-select__selections"
-                      >
-                        <input
-                          aria-label="Sort by"
-                          aria-readonly="false"
-                          autocomplete="on"
-                          data-vv-name="sort"
-                          readonly="readonly"
-                          type="text"
-                        />
-                      </div>
-                      <div
-                        class="v-input__append-inner"
-                      >
-                        <div
-                          class="v-input__icon v-input__icon--append"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light"
-                          >
-                            arrow_drop_down
-                          </i>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="v-menu"
-                    >
-                      <div
-                        class="v-menu__content theme--light "
-                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                      >
-                        <div
-                          class="v-select-list v-card theme--light"
-                        >
-                          <div
-                            class="v-list theme--light"
-                            role="list"
-                          >
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    status
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    name
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    start_at
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    manager
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    host
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-text-field__details"
-                  >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <div
-                        class="v-messages__wrapper"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!---->
              
             <!---->
              
@@ -1286,7 +920,7 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
                 <th
                   aria-label="Manage: Not sorted."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column text-xs-center"
                   role="columnheader"
                   scope="col"
                 >
@@ -1597,6 +1231,7 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
 exports[`components/venues/Events Snapshots Populated 1`] = `
 <div
   class="v-card v-sheet theme--light"
+  sortables="status,name,start_at,manager,host"
 >
   <div
     class="v-card__title px-3"
@@ -1677,11 +1312,9 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent v-card v-sheet theme--light transparent"
+      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
       color="transparent"
-      icon="search"
-      sort-options="status,name,start_at,manager,host"
-      without-expansion=""
+      without-sort-by=""
     >
       <form
         class="v-form"
@@ -1712,23 +1345,9 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
                       class="v-text-field__slot"
                     >
                       <input
-                        placeholder="Start typing to Search"
+                        placeholder="Search"
                         type="text"
                       />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          search
-                        </i>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -1746,174 +1365,7 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
               </div>
             </div>
              
-            <div
-              class="flex shrink"
-            >
-              <div
-                class="v-input filter-sorter-sortable-select v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select theme--light"
-                role="combobox"
-              >
-                <div
-                  class="v-input__control"
-                >
-                  <div
-                    class="v-input__slot"
-                  >
-                    <div
-                      class="v-select__slot"
-                    >
-                      <label
-                        aria-hidden="true"
-                        class="v-label theme--light"
-                        style="left: 0px; position: absolute;"
-                      >
-                        Sort by
-                      </label>
-                      <div
-                        class="v-select__selections"
-                      >
-                        <input
-                          aria-label="Sort by"
-                          aria-readonly="false"
-                          autocomplete="on"
-                          data-vv-name="sort"
-                          readonly="readonly"
-                          type="text"
-                        />
-                      </div>
-                      <div
-                        class="v-input__append-inner"
-                      >
-                        <div
-                          class="v-input__icon v-input__icon--append"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon material-icons theme--light"
-                          >
-                            arrow_drop_down
-                          </i>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="v-menu"
-                    >
-                      <div
-                        class="v-menu__content theme--light "
-                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                      >
-                        <div
-                          class="v-select-list v-card theme--light"
-                        >
-                          <div
-                            class="v-list theme--light"
-                            role="list"
-                          >
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    status
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    name
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    start_at
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    manager
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__content"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    host
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-text-field__details"
-                  >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <div
-                        class="v-messages__wrapper"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!---->
              
             <!---->
              
@@ -1952,9 +1404,11 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
      
     <div
       item-key="id"
+      sortables="status,name,start_at,manager,host"
     >
       <div
         class="ui-datatable elevation-1"
+        sortables="status,name,start_at,manager,host"
       >
         <div
           class="v-table__overflow"
@@ -2097,7 +1551,7 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
                 <th
                   aria-label="Manage: Not sorted."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column text-xs-center"
                   role="columnheader"
                   scope="col"
                 >

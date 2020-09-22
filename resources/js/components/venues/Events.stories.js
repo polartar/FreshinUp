@@ -35,7 +35,14 @@ export const Populated = () => ({
   data () {
     return {
       items: FIXTURE_EVENTS,
-      statuses: FIXTURE_EVENT_STATUSES
+      statuses: FIXTURE_EVENT_STATUSES,
+      sortables: [
+        'status',
+        'name',
+        'start_at',
+        'manager',
+        'host'
+      ]
     }
   },
   methods: {
@@ -54,6 +61,7 @@ export const Populated = () => ({
   },
   template: `
     <events
+      :sortables="sortables"
       :items="items"
       :statuses="statuses"
       @change-status="onStatusChange"

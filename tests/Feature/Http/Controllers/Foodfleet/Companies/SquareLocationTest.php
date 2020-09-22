@@ -18,6 +18,7 @@ class SquareLocationTest extends TestCase
 
     public function testGetList()
     {
+        $this->markTestSkipped();
         $user = factory(User::class)->create();
         Passport::actingAs($user);
 

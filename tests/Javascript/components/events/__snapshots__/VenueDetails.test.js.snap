@@ -501,6 +501,23 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                             </div>
                           </a>
                         </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                ATL Stadium 2
+                              </div>
+                            </div>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -905,6 +922,23 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                                 class="v-list__tile__title"
                               >
                                 ATL Stadium
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                ATL Stadium 2
                               </div>
                             </div>
                           </a>
@@ -1329,6 +1363,23 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                                 class="v-list__tile__title"
                               >
                                 ATL Stadium
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                ATL Stadium 2
                               </div>
                             </div>
                           </a>

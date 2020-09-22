@@ -4,7 +4,7 @@
     :items="items"
     :is-loading="isLoading"
     :item-actions="itemActions"
-    :multi-item-actions="itemActions"
+    :multi-item-actions="multipleItemActions"
     item-key="uuid"
     v-bind="$attrs"
     v-on="$listeners"
@@ -34,14 +34,17 @@ import StatusSelect from '~/components/docs/StatusSelect'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 
 export const HEADERS = [
-  { text: 'Status', sortable: true, value: 'status', align: 'center', width: '100' },
-  { text: 'Document', sortable: true, value: 'title', align: 'left', width: '300' },
+  { text: 'Status', sortable: true, value: 'status', align: 'left' },
+  { text: 'Document', sortable: true, value: 'title', align: 'left' },
   { text: 'Submitted on', sortable: true, value: 'created_at', align: 'center' },
   { text: 'Expiration date', sortable: true, value: 'expiration_at', align: 'center' },
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
   { action: 'view', text: 'View / Edit' },
+  { action: 'delete', text: 'Delete' }
+]
+export const MULTIPLE_ITEM_ACTIONS = [
   { action: 'delete', text: 'Delete' }
 ]
 export default {
@@ -55,6 +58,7 @@ export default {
   data () {
     return {
       itemActions: ITEM_ACTIONS,
+      multipleItemActions: MULTIPLE_ITEM_ACTIONS,
       headers: HEADERS
     }
   },
