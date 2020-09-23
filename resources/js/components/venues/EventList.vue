@@ -4,7 +4,7 @@
     :items="items"
     :is-loading="isLoading"
     :item-actions="itemActions"
-    :multi-item-actions="itemActions"
+    :multi-item-actions="multipleItemActions"
     item-key="id"
     v-bind="$attrs"
     v-on="$listeners"
@@ -63,10 +63,13 @@ export const HEADERS = [
   { text: 'Date/ Venue', sortable: true, value: 'start_at,venue', align: 'left' },
   { text: 'Managed By', value: 'manager', align: 'left' },
   { text: 'Customer', value: 'host', align: 'left' },
-  { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
   { action: 'view', text: 'View / Edit' },
+  { action: 'delete', text: 'Delete' }
+]
+export const MULTIPLE_ITEM_ACTIONS = [
   { action: 'delete', text: 'Delete' }
 ]
 export default {
@@ -79,7 +82,8 @@ export default {
   data () {
     return {
       headers: HEADERS,
-      itemActions: ITEM_ACTIONS
+      itemActions: ITEM_ACTIONS,
+      multipleItemActions: MULTIPLE_ITEM_ACTIONS
     }
   },
   methods: {

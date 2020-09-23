@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             DocumentTypesSeeder::class,
             DocumentStatusesSeeder::class,
             LocationCategorySeeder::class,
+            VenueStatusesSeeder::class,
         ]);
     }
 }

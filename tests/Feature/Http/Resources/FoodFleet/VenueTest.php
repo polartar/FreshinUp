@@ -19,7 +19,9 @@ class VenueTest extends TestCase
         $expected = [
             "uuid" => $venue->uuid,
             "name" => $venue->name,
-            "address" => $venue->address
+            "address" => $venue->address,
+            'status_id' => $venue->status_id,
+            'owner_uuid' => $venue->owner_uuid
         ];
         $request = app()->make(Request::class);
         $result = $resource->toArray($request);

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import MockAdapter from 'axios-mock-adapter'
-import axios from 'axios/index'
+import axios from 'axios'
 
 // Components
 import FilterSorter from './FilterSorter.vue'
@@ -80,7 +80,7 @@ export const WithStatuses = () => ({
     `
 })
 
-storiesOf('FoodFleet|components/event/FilterSorter', module)
+storiesOf('FoodFleet|components/events/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

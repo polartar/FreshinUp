@@ -42,11 +42,8 @@
     <v-divider />
 
     <v-card-text class="ma-2">
-      <filter-sorter
-        :statuses="statuses"
-        :sort-options="sortOptions"
-        without-expansion
-        icon="search"
+      <event-filter-sorter
+        without-sort-by
         color="transparent"
         class="filter-transparent"
         @runFilter="onFilter"
@@ -63,19 +60,12 @@
 </template>
 
 <script>
-import FilterSorter from '~/components/venues/FilterSorter.vue'
+import EventFilterSorter from './EventFilterSorter.vue'
 import EventList from './EventList'
 import EventForm from '../events/EventForm'
 
-export const DEFAULT_SORT_OPTIONS = [
-  'status',
-  'name',
-  'start_at',
-  'manager',
-  'host'
-]
 export default {
-  components: { FilterSorter, EventList, EventForm },
+  components: { EventFilterSorter, EventList, EventForm },
   props: {
     items: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] },
@@ -83,8 +73,7 @@ export default {
   },
   data () {
     return {
-      newEventDialog: false,
-      sortOptions: DEFAULT_SORT_OPTIONS
+      newEventDialog: false
     }
   },
   methods: {

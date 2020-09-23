@@ -91,7 +91,8 @@ class MenuItems extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $store_uuid
+     * @param $uuid
      * @return \Illuminate\Http\Response
      */
     public function destroy($store_uuid, $uuid)

@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Component from './DocumentList.vue'
 import * as Stories from './DocumentList.stories'
 import { FIXTURE_DOCUMENTS } from '../../../../tests/Javascript/__data__/documents'
@@ -50,6 +50,20 @@ describe('components/venues/DocumentList', () => {
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.statuses).toMatchObject(FIXTURE_DOCUMENT_STATUSES)
+    })
+  })
+
+  describe('Methods', () => {
+    test('changeStatus', async () => {
+      const wrapper = shallowMount(Component)
+      const value = 2
+      const document = FIXTURE_DOCUMENTS[0]
+      wrapper.vm.changeStatus(value, document)
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted()['change-status']
+      expect(emitted).toBeTruthy()
+      expect(emitted[0][0]).toEqual(value)
+      expect(emitted[0][1]).toMatchObject(document)
     })
   })
 })

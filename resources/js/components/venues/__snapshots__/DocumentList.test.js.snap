@@ -51,12 +51,16 @@ exports[`components/venues/DocumentList Snapshots Empty 1`] = `
             <th
               aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column sortable text-xs-center"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="100"
             >
+              <span>
+                
+        Status
+      
+              </span>
               <i
                 aria-hidden="true"
                 class="v-icon material-icons theme--light"
@@ -64,11 +68,6 @@ exports[`components/venues/DocumentList Snapshots Empty 1`] = `
               >
                 arrow_upward
               </i>
-              <span>
-                
-        Status
-      
-              </span>
             </th>
             <th
               aria-label="Document: Not sorted. Activate to sort ascending."
@@ -77,7 +76,6 @@ exports[`components/venues/DocumentList Snapshots Empty 1`] = `
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="300"
             >
               <span>
                 
@@ -466,12 +464,16 @@ exports[`components/venues/DocumentList Snapshots Loading 1`] = `
             <th
               aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column sortable text-xs-center"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="100"
             >
+              <span>
+                
+        Status
+      
+              </span>
               <i
                 aria-hidden="true"
                 class="v-icon material-icons theme--light"
@@ -479,11 +481,6 @@ exports[`components/venues/DocumentList Snapshots Loading 1`] = `
               >
                 arrow_upward
               </i>
-              <span>
-                
-        Status
-      
-              </span>
             </th>
             <th
               aria-label="Document: Not sorted. Activate to sort ascending."
@@ -492,7 +489,6 @@ exports[`components/venues/DocumentList Snapshots Loading 1`] = `
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="300"
             >
               <span>
                 
@@ -909,12 +905,16 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             <th
               aria-label="Status: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column sortable text-xs-center"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="100"
             >
+              <span>
+                
+        Status
+      
+              </span>
               <i
                 aria-hidden="true"
                 class="v-icon material-icons theme--light"
@@ -922,11 +922,6 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
               >
                 arrow_upward
               </i>
-              <span>
-                
-        Status
-      
-              </span>
             </th>
             <th
               aria-label="Document: Not sorted. Activate to sort ascending."
@@ -935,7 +930,6 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
               role="columnheader"
               scope="col"
               tabindex="0"
-              width="300"
             >
               <span>
                 
@@ -1054,7 +1048,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -1278,7 +1272,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -1502,7 +1496,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -1726,7 +1720,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -1950,7 +1944,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -2174,7 +2168,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -2398,7 +2392,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -2622,7 +2616,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -2846,7 +2840,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
@@ -3070,7 +3064,7 @@ exports[`components/venues/DocumentList Snapshots Populated 1`] = `
             </td>
              
             <td
-              class="text-xs-center"
+              class="text-xs-left"
             >
               <div
                 class="v-menu"
