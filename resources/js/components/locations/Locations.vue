@@ -30,6 +30,10 @@
               </v-btn>
             </template>
             <v-card>
+              <v-card-title>
+                <div>Add location</div>
+              </v-card-title>
+              <v-divider />
               <location-form />
             </v-card>
           </v-dialog>
