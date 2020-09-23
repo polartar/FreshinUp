@@ -31,11 +31,6 @@ export const FIXTURE_VENUES = [
       }
     ],
     status_id: 1,
-    owner_uuid: 'o110',
-    owner: {
-      uuid: 'o110',
-      name: 'Josh Smith @ Restaurant Inc'
-    },
     created_at: '2019-09-30T03:51:14.000000Z'
   },
   {
@@ -62,11 +57,6 @@ export const FIXTURE_VENUES = [
       }
     ],
     status_id: 2,
-    owner_uuid: 'o111',
-    owner: {
-      uuid: 'o111',
-      name: 'Josh Smith @ Restaurant Inc'
-    },
     created_at: '2019-09-30T03:51:14.000000Z'
   },
   {
@@ -84,10 +74,12 @@ export const FIXTURE_VENUES = [
       }
     ],
     status_id: 3,
-    owner_uuid: 'o222',
+    owner_uuid: '',
     owner: {
-      uuid: 'o222',
-      name: 'Josh Smith @ Dibitery Inc'
+      name: 'Demo Admin',
+      email: 'demoAdmin@example.com',
+      mobile_phone: '321-123-1234',
+      avatar: 'https://via.placeholder.com/800x600.png'
     },
     created_at: '2019-09-30T03:51:14.000000Z'
   }

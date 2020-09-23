@@ -94,13 +94,27 @@
             align-content-center
             justify-center
           >
-            <v-btn
-              depressed
-              disabled
-              color="primary"
+            <v-dialog
+              v-model="changeUserDialog"
+              max-width="500"
             >
-              Change user
-            </v-btn>
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  depressed
+                  color="primary"
+                  @click="changeUserDialog = true"
+                >
+                  Change user
+                </v-btn>
+              </template>
+              <v-card>
+                <v-card-title>
+                  <h4>Change user</h4>
+                </v-card-title>
+                <v-divider />
+                <div>Checking after</div>
+              </v-card>
+            </v-dialog>
           </v-flex>
         </v-layout>
       </v-flex>
@@ -166,11 +180,13 @@ export const DEFAULT_VENUE = {
 export default {
   mixins: [MapValueKeysToData],
   props: {
-    loading: { type: Boolean, default: false }
+    loading: { type: Boolean, default: false },
+    users: { type: Array, default: () => [] }
   },
   data () {
     return {
-      ...DEFAULT_VENUE
+      ...DEFAULT_VENUE,
+      changeUserDialog: false
     }
   },
   methods: {
