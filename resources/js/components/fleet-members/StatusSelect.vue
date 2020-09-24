@@ -18,7 +18,7 @@ export default {
       return this.options.map(option => ({
         label: option.name,
         id: option.id,
-        color: 'warning'
+        color: option.color
       }))
     }
   }

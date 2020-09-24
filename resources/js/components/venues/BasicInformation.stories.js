@@ -3,6 +3,18 @@ import { action } from '@storybook/addon-actions'
 
 import BasicInformation from './BasicInformation'
 import { FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
+
+const mock = new MockAdapter(axios)
+mock.onGet(/.*users.*/).reply(200, {
+  data: [
+    { uuid: 1, name: 'user 1' },
+    { uuid: 2, name: 'user 2' },
+    { uuid: 3, name: 'user 3' },
+    { uuid: 4, name: 'user 4' }
+  ]
+})
 
 export const Default = () => ({
   components: { BasicInformation },

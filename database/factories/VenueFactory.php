@@ -10,7 +10,8 @@ $factory->define(Venue::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "name" => $faker->word,
-        "address" => $faker->address,
+        "address_line_1" => $faker->streetAddress,
+        "address_line_2" => $faker->streetAddress,
         "status_id" => function () {
             return factory(VenueStatus::class)->create()->id;
         },

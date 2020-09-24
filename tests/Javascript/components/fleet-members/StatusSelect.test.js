@@ -46,7 +46,7 @@ describe('components/fleet-members/StatusSelect', () => {
       const expectations = FIXTURE_STORE_STATUSES.map(option => ({
         label: option.name,
         id: option.id,
-        color: 'warning'
+        color: option.color
       }))
       expect(wrapper.vm.items).toEqual(expectations)
     })

@@ -38,7 +38,9 @@ class VenueTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $venue->uuid,
                 'name' => $venue->name,
-                'address' => $venue->address
+                'address' => $venue->address,
+                'address_line_1' => $venue->address_line_1,
+                'address_line_2' => $venue->address_line_2,
             ], $data[$idx]);
         }
     }
@@ -84,12 +86,14 @@ class VenueTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $venue->uuid,
                 'name' => $venue->name,
-                'address' => $venue->address
+                'address' => $venue->address,
+                'address_line_1' => $venue->address_line_1,
+                'address_line_2' => $venue->address_line_2
             ], $data[$idx]);
         }
-
+        $venue = $venuesToFind->first();
         $data = $this
-            ->json('get', "/api/foodfleet/venues?filter[uuid]=".$venuesToFind->first()->uuid)
+            ->json('get', "/api/foodfleet/venues?filter[uuid]=".$venue->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -100,9 +104,11 @@ class VenueTest extends TestCase
         $this->assertEquals(1, count($data));
 
         $this->assertArraySubset([
-            'uuid' => $venuesToFind->first()->uuid,
-            'name' => $venuesToFind->first()->name,
-            'address' => $venuesToFind->first()->address
+            'uuid' => $venue->uuid,
+            'name' => $venue->name,
+            'address' => $venue->address,
+            'address_line_1' => $venue->address_line_1,
+            'address_line_2' => $venue->address_line_2,
         ], $data[0]);
     }
 
@@ -133,7 +139,9 @@ class VenueTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $venue->uuid,
                 'name' => $venue->name,
-                'address' => $venue->address
+                'address' => $venue->address,
+                'address_line_1' => $venue->address_line_1,
+                'address_line_2' => $venue->address_line_2
             ], $data[$idx]);
             $this->assertArrayHasKey('locations', $data[$idx]);
             foreach ($venueLocations[$venue->uuid] as $locationIndex => $location) {
@@ -284,6 +292,8 @@ class VenueTest extends TestCase
           'uuid' => $venue->uuid,
           'name' => $payload['name'],
           'address' => $payload['address'],
+          'address_line_1' => $payload['address_line_1'],
+          'address_line_2' => $payload['address_line_2'],
           'status_id' => $payload['status_id'],
           'owner_uuid' => $payload['owner_uuid'],
         ];
@@ -308,5 +318,88 @@ class VenueTest extends TestCase
         $this
             ->json('DELETE', '/api/foodfleet/venues/'.$venue->uuid)
             ->assertStatus(204);
+    }
+
+    public function testCreatedItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Venue::class)->make()->toArray();
+        $data = $this
+            ->json('POST', 'api/foodfleet/venues', $payload)
+            ->assertStatus(201)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'name' => $payload['name'],
+            'address_line_1' => $payload['address_line_1'],
+            'address_line_2' => $payload['address_line_2'],
+            'status_id' => $payload['status_id'],
+            'owner_uuid' => $payload['owner_uuid'],
+        ], $data);
+    }
+
+    public function testGetItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $venue = factory(Venue::class)->create();
+
+        $data = $this
+            ->json('GET', '/api/foodfleet/venues/'.$venue->uuid)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertArraySubset([
+            "id" => $venue->id,
+            "uuid" => $venue->uuid,
+            "name" => $venue->name,
+            "address" => $venue->address,
+            "address_line_1" => $venue->address_line_1,
+            "address_line_2" => $venue->address_line_2,
+            "status_id" => $venue->status_id,
+            'owner_uuid' => $venue->owner_uuid,
+        ], $data);
+    }
+
+    public function testGetItemIncludingOwner()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $owner = factory(User::class)->create();
+        $venue = factory(Venue::class)->create([
+            'owner_uuid' => $owner->uuid
+        ]);
+
+        $data = $this
+            ->json('GET', '/api/foodfleet/venues/'.$venue->uuid . '?include=owner')
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertArraySubset([
+            "id" => $venue->id,
+            "uuid" => $venue->uuid,
+            "name" => $venue->name,
+            "address" => $venue->address,
+            "address_line_1" => $venue->address_line_1,
+            "address_line_2" => $venue->address_line_2,
+            "status_id" => $venue->status_id,
+            'owner_uuid' => $venue->owner_uuid
+        ], $data);
+        $this->assertArrayHasKey('owner', $data);
+        $this->assertArraySubset([
+            'uuid' => $owner->uuid,
+            'mobile_phone' => $owner->mobile_phone,
+            'name' => $owner->name,
+            'email' => $owner->email,
+        ], $data['owner']);
     }
 }

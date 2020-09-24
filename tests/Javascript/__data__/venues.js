@@ -4,14 +4,15 @@ export const FIXTURE_VENUES = [
     name: 'LA Stadium',
     owner_uuid: '',
     owner: {
+      uuid: 'd111',
       name: 'Demo Admin',
       email: 'demoAdmin@example.com',
       mobile_phone: '321-123-1234',
       avatar: 'https://via.placeholder.com/800x600.png'
     },
     address: '123 LA Stadium Way North Velmaville, CA 123',
-    address_line_1: '123 LA Stadium Way North Velmaville, CA 123',
-    address_line_2: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_1: '123 LA Stadium Way',
+    address_line_2: 'North Velmaville, CA 123',
     locations: [
       {
         uuid: 'lota',
@@ -74,8 +75,9 @@ export const FIXTURE_VENUES = [
       }
     ],
     status_id: 3,
-    owner_uuid: '',
+    owner_uuid: 'o111',
     owner: {
+      uuid: 'o111',
       name: 'Demo Admin',
       email: 'demoAdmin@example.com',
       mobile_phone: '321-123-1234',
@@ -86,3 +88,12 @@ export const FIXTURE_VENUES = [
 ]
 
 export const FIXTURE_VENUE = FIXTURE_VENUES[0]
+
+export const EMPTY_VENUE = {
+  name: '',
+  owner_uuid: '',
+  address: '',
+  address_line_1: '',
+  address_line_2: '',
+  status_id: ''
+}

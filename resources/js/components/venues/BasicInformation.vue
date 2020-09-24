@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      Basic Information
+      <h3>Basic Information</h3>
       <v-progress-linear
         v-if="loading"
         indeterminate
@@ -58,6 +58,7 @@
               Owned by
             </div>
             <v-flex
+              v-if="hasOwner"
               xs12
               sm6
               md8
@@ -70,19 +71,19 @@
                 color="grey lighten-4"
               >
                 <img
-                  :src="owner.avatar"
+                  :src="get(owner, 'avatar')"
                   alt="avatar"
                 >
               </v-avatar>
               <div class="mx-2 px-2">
                 <div class="primary--text subheading">
-                  {{ owner.name }}
+                  {{ get(owner, 'name') }}
                 </div>
                 <div class="grey--text text--darken-2">
-                  {{ owner.email }}
+                  {{ get(owner, 'email') }}
                 </div>
                 <div class="grey--text text--darken-2">
-                  {{ owner.mobile_phone }}
+                  {{ get(owner, 'mobile_phone') }}
                 </div>
               </div>
             </v-flex>
@@ -109,10 +110,53 @@
               </template>
               <v-card>
                 <v-card-title>
-                  <h4>Change user</h4>
+                  <v-layout
+                    row
+                    space-between
+                    align-center
+                  >
+                    <v-flex>
+                      <h4>Change user</h4>
+                    </v-flex>
+                    <v-btn
+                      small
+                      round
+                      color="grey"
+                      class="white--text"
+                      @click="changeUserDialog = false"
+                    >
+                      <v-flex>
+                        <v-icon
+                          small
+                          class="white--text"
+                        >
+                          fa fa-times
+                        </v-icon>
+                      </v-flex>
+                      <v-flex>
+                        Close
+                      </v-flex>
+                    </v-btn>
+                  </v-layout>
                 </v-card-title>
                 <v-divider />
-                <div>Checking after</div>
+                <v-card-text>
+                  Owner
+                  <simple
+                    url="users"
+                    term-param="term"
+                    results-id-key="uuid"
+                    :value="owner.uuid"
+                    placeholder="Search / Select owner"
+                    background-color="white"
+                    class="mt-0 pt-0"
+                    height="48"
+                    not-clearable
+                    solo
+                    flat
+                    @input="selectOwner"
+                  />
+                </v-card-text>
               </v-card>
             </v-dialog>
           </v-flex>
@@ -122,7 +166,13 @@
         xs4
         pl-3
       >
-        MAP
+        <div>
+          MAP coming soon
+          <div
+            style="background-color: #e5e5e5; width: 100%;
+height: 480px"
+          />
+        </div>
       </v-flex>
     </v-layout>
     <v-divider />
@@ -131,24 +181,24 @@
         <div>
           <v-btn
             depressed
-            disabled
             @click="onCancel"
           >
             Cancel
           </v-btn>
           <v-btn
             depressed
-            disabled
             color="primary"
+            :loading="loading"
             @click="save"
           >
-            Save Changes
+            {{ isEditing ? 'Save Changes' : 'Submit' }}
           </v-btn>
         </div>
         <div class="text-xs-right">
           <v-btn
             depressed
-            disabled
+            :loading="loading"
+            :disabled="!isEditing"
             @click="onDeleteVenue"
           >
             Delete Venue
@@ -162,6 +212,8 @@
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import pick from 'lodash/pick'
 import keys from 'lodash/keys'
+import get from 'lodash/get'
+import Simple from 'fresh-bus/components/search/simple'
 
 export const DEFAULT_VENUE = {
   uuid: '',
@@ -170,18 +222,20 @@ export const DEFAULT_VENUE = {
   address_line_2: '',
   owner_uuid: '',
   owner: {
+    uuid: '',
     name: '',
     email: '',
     mobile_phone: '',
     avatar: ''
   }
 }
-
 export default {
+  components: {
+    Simple
+  },
   mixins: [MapValueKeysToData],
   props: {
-    loading: { type: Boolean, default: false },
-    users: { type: Array, default: () => [] }
+    loading: { type: Boolean, default: false }
   },
   data () {
     return {
@@ -189,7 +243,20 @@ export default {
       changeUserDialog: false
     }
   },
+  computed: {
+    hasOwner () {
+      return get(this.owner, 'uuid')
+    },
+    isEditing () {
+      return this.uuid
+    }
+  },
   methods: {
+    get,
+    selectOwner (user) {
+      this.owner = Object.assign({}, this.owner, user)
+      this.owner_uuid = user.uuid
+    },
     onCancel () {
       this.$emit('cancel')
     },

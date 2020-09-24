@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
+exports[`components/events/CreateUpdate Visuals mount create page 1`] = `
 <div>
   <form
     class="v-form"
@@ -9421,7 +9421,7 @@ exports[`Event CreateUpdate Component Visuals mount create page 1`] = `
 </div>
 `;
 
-exports[`Event CreateUpdate Component Visuals mount edit page 1`] = `
+exports[`components/events/CreateUpdate Visuals mount edit page 1`] = `
 <div>
   <form
     class="v-form"

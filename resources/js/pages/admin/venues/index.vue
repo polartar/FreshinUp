@@ -165,9 +165,14 @@ export default {
       this.$store.dispatch('venues/patchItem', {
         data: { status_id: statusId },
         params: { id: venue.uuid }
-      }).then(() => {
-        this.filterVenues(this.lastFilterParams)
       })
+        .then(() => {
+          this.filterVenues(this.lastFilterParams)
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
     },
     changeStatusMultiple (statusId, venues) {
       venues.forEach((venue) => {

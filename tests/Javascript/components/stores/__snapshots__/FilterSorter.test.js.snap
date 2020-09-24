@@ -1371,6 +1371,65 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                                     </div>
                                   </a>
                                 </div>
+                                <div
+                                  role="listitem"
+                                >
+                                  <a
+                                    class="v-list__tile v-list__tile--link theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__action"
+                                    >
+                                      <div
+                                        class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                      >
+                                        <div
+                                          class="v-input__control"
+                                        >
+                                          <div
+                                            class="v-input__slot"
+                                          >
+                                            <div
+                                              class="v-input--selection-controls__input"
+                                            >
+                                              <input
+                                                aria-checked="false"
+                                                role="checkbox"
+                                                type="checkbox"
+                                                value=""
+                                              />
+                                              <div
+                                                class="v-input--selection-controls__ripple"
+                                              />
+                                              <i
+                                                aria-hidden="true"
+                                                class="v-icon material-icons theme--light"
+                                              >
+                                                check_box_outline_blank
+                                              </i>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="v-messages theme--light"
+                                          >
+                                            <div
+                                              class="v-messages__wrapper"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        On Hold
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2463,6 +2522,65 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                                         class="v-list__tile__title"
                                       >
                                         Approved
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div
+                                  role="listitem"
+                                >
+                                  <a
+                                    class="v-list__tile v-list__tile--link theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__action"
+                                    >
+                                      <div
+                                        class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                      >
+                                        <div
+                                          class="v-input__control"
+                                        >
+                                          <div
+                                            class="v-input__slot"
+                                          >
+                                            <div
+                                              class="v-input--selection-controls__input"
+                                            >
+                                              <input
+                                                aria-checked="false"
+                                                role="checkbox"
+                                                type="checkbox"
+                                                value=""
+                                              />
+                                              <div
+                                                class="v-input--selection-controls__ripple"
+                                              />
+                                              <i
+                                                aria-hidden="true"
+                                                class="v-icon material-icons theme--light"
+                                              >
+                                                check_box_outline_blank
+                                              </i>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="v-messages theme--light"
+                                          >
+                                            <div
+                                              class="v-messages__wrapper"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        On Hold
                                       </div>
                                     </div>
                                   </a>
