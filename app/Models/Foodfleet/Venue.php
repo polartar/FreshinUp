@@ -14,9 +14,11 @@ use App\User;
  * @property int $id
  * @property string $uuid
  * @property string $name
- * @property string $address
  * @property int status_id
  * @property string owner_uuid
+ * @property string $address
+ * @property string $address_line_1
+ * @property string $address_line_2
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
@@ -33,7 +35,16 @@ class Venue extends Model
     use SoftDeletes;
     use GeneratesUuid;
     protected $guarded = ['id', 'uuid'];
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+    protected $appends = ['address'];
+    protected $casts = [
+        'status_id' => 'int'
+    ];
+
+    public function getAddressAttribute()
+    {
+        return $this->address_line_1 . ' ' . $this->address_line_2;
+    }
 
     public function locations()
     {

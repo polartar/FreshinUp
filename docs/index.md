@@ -50,6 +50,11 @@
 # Changes
 
 
+## September 24, 2020
+- **ADD** Can route to New Venue page and Basic Information component [#457](https://github.com/FreshinUp/foodfleet/issues/457)
+
+<br/>
+
 ## September 20, 2020
 - **ADD** Can route to Venue page [#455](https://github.com/FreshinUp/foodfleet/issues/455)
 

@@ -5,7 +5,7 @@ exports[`components/fleet-members/StatusSelect Visuals ReadOnly 1`] = `
   class="container"
 >
   <button
-    class="v-btn theme--dark warning warning-text--text"
+    class="v-btn theme--dark accent accent-text--text"
     type="button"
   >
     <div
@@ -123,7 +123,7 @@ exports[`components/fleet-members/StatusSelect Visuals Selected 1`] = `
   class="container"
 >
   <button
-    class="v-btn theme--dark warning warning-text--text"
+    class="v-btn theme--dark accent accent-text--text"
     type="button"
   >
     <div
