@@ -30,6 +30,37 @@
               </v-btn>
             </template>
             <v-card>
+              <v-card-title>
+                <v-layout
+                  row
+                  space-between
+                  align-center
+                >
+                  <v-flex class="grey--text">
+                    <h3>Add Location</h3>
+                  </v-flex>
+                  <v-btn
+                    small
+                    round
+                    color="grey"
+                    class="white--text"
+                    @click="newLocationDialog = false"
+                  >
+                    <v-flex>
+                      <v-icon
+                        small
+                        class="white--text"
+                      >
+                        fa fa-times
+                      </v-icon>
+                    </v-flex>
+                    <v-flex>
+                      Close
+                    </v-flex>
+                  </v-btn>
+                </v-layout>
+              </v-card-title>
+              <v-divider />
               <location-form />
             </v-card>
           </v-dialog>
