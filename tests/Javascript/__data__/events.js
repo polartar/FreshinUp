@@ -33,7 +33,7 @@ export const FIXTURE_EVENTS = [
     commission_type: 2,
     type_id: 1,
     type: { id: 1, name: 'Catering' },
-    tags: [
+    event_tags: [
       {
         uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
         name: 'sit'
@@ -81,7 +81,7 @@ export const FIXTURE_EVENTS = [
       id: 2,
       name: 'Cash and Carry'
     },
-    tags: [
+    event_tags: [
       {
         uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
         name: 'eos'
@@ -126,7 +126,7 @@ export const FIXTURE_EVENTS = [
     commission_type: 2,
     type_id: 1,
     type: { id: 1, name: 'Catering' },
-    tags: [
+    event_tags: [
       {
         uuid: '82d2f1ae-41b5-4774-8456-02285397296d',
         name: 'eos'
@@ -169,7 +169,7 @@ export const FIXTURE_EVENTS = [
       id: 2,
       name: 'Cash and Carry'
     },
-    tags: [
+    event_tags: [
       {
         uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
         name: 'sit'
@@ -211,7 +211,7 @@ export const FIXTURE_EVENTS = [
     },
     type_id: 2,
     type: { id: 2, name: 'Cash and carry' },
-    tags: [
+    event_tags: [
       {
         uuid: 'a5c1e30b-de54-43a7-a501-9f0fa5255bd7',
         name: 'sit'

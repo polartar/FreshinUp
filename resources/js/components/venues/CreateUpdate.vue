@@ -148,6 +148,8 @@ const LOCATION_INCLUDES = [
 ]
 const EVENT_INCLUDES = [
   'event_tags',
+  'host',
+  'manager'
 ]
 const DELETABLE_RESOURCE = {
   DOCUMENT: 'DOCUMENT',
