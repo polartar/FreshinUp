@@ -3,11 +3,14 @@ import { action } from '@storybook/addon-actions'
 
 import LocationForm from './LocationForm'
 import { FIXTURE_LOCATIONS } from '../../../../tests/Javascript/__data__/locations'
+import { FIXTURE_LOCATION_CATEGORIES } from '../../../../tests/Javascript/__data__/locationCategories'
 
-export const Empty = () => ({
+export const Default = () => ({
   components: { LocationForm },
   template: `
-    <LocationForm />
+    <v-container class="white">
+      <LocationForm/>
+    </v-container>
   `
 })
 
@@ -16,16 +19,7 @@ export const WithData = () => ({
   data () {
     return {
       location: FIXTURE_LOCATIONS[0],
-      categories: [
-        {
-          id: 2,
-          name: 'Outdoor'
-        },
-        {
-          id: 1,
-          name: 'Indoor'
-        }
-      ]
+      categories: FIXTURE_LOCATION_CATEGORIES
     }
   },
   methods: {
@@ -37,7 +31,14 @@ export const WithData = () => ({
     }
   },
   template: `
-    <LocationForm :value="location" :categories="categories" @input="onSave" @cancel="onCancel"/>
+    <v-container class="white">
+      <LocationForm
+        class="white"
+        :value="location"
+        :categories="categories"
+        @input="onSave"
+        @cancel="onCancel"/>
+    </v-container>
   `
 })
 
@@ -47,5 +48,5 @@ storiesOf('FoodFleet|components/locations/LocationsForm', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('Empty', Empty)
+  .add('Default', Default)
   .add('With data', WithData)

@@ -1,14 +1,14 @@
 <template>
-  <v-card-text class="grey--text">
-    <v-flex
-      xs6
-      pr-2
-    >
+  <v-layout
+    column
+    class="grey--text"
+  >
+    <v-flex>
       <div class="mb-2 text-uppercase grey--text font-weight-bold">
         Category
       </div>
       <v-select
-        v-model="category"
+        v-model="category_id"
         :items="categories"
         item-text="name"
         item-value="id"
@@ -17,10 +17,10 @@
       />
     </v-flex>
     <v-flex
-      pa-4
       text-xs-center
     >
-      MAP
+      MAP coming soon
+      <div style="background-color: #e5e5e5; width: 100%; height: 400px;" />
     </v-flex>
     <v-layout>
       <v-flex pr-2>
@@ -54,7 +54,7 @@
         outline
       />
     </v-flex>
-    <div class="py-3 d-flex justify-space-between">
+    <v-flex class="py-3 d-flex justify-space-between">
       <v-btn
         depressed
         @click="onCancel"
@@ -68,19 +68,27 @@
       >
         Save changes
       </v-btn>
-    </div>
-  </v-card-text>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const DEFAULT_LOCATION = {
-  capacity: 0,
-  category: '',
+  name: '',
+  capacity: '',
+  category_id: '',
   details: ''
 }
 
+/**
+   * These comments are just for intellisense (IDE)
+   * @property {number} capacity
+   * @property {number} category_id
+   * @property {String} details
+   * @property {String} name
+   */
 export default {
   mixins: [MapValueKeysToData],
   props: {
