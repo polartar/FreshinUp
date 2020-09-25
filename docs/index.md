@@ -50,7 +50,8 @@
 # Changes
 
 
-## September 23, 2020
+## September 25, 2020
+- **ADD** Add Location component: Outdoor [#461](https://github.com/FreshinUp/foodfleet/issues/461)
 - **ADD** Add Location component: Indoor [#474](https://github.com/FreshinUp/foodfleet/issues/474)
 
 <br/>
