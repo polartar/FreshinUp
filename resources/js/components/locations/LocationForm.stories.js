@@ -15,7 +15,17 @@ export const WithData = () => ({
   components: { LocationForm },
   data () {
     return {
-      location: FIXTURE_LOCATIONS[0]
+      location: FIXTURE_LOCATIONS[0],
+      categories: [
+        {
+          id: 2,
+          name: 'Outdoor'
+        },
+        {
+          id: 1,
+          name: 'Indoor'
+        }
+      ]
     }
   },
   methods: {
@@ -27,7 +37,7 @@ export const WithData = () => ({
     }
   },
   template: `
-    <LocationForm :value="location" @input="onSave" @cancel="onCancel"/>
+    <LocationForm :value="location" :categories="categories" @input="onSave" @cancel="onCancel"/>
   `
 })
 
