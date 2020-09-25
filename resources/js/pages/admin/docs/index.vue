@@ -60,7 +60,7 @@
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex'
-import docFilter from '~/components/docs/FilterSorter.vue'
+import DocFilter from '~/components/docs/FilterSorter.vue'
 import DoctableList from '~/components/docs/DoctableList.vue'
 import get from 'lodash/get'
 import DocsDatatableManager from '~/components/mixins/DocsDatatableManager'
@@ -69,7 +69,7 @@ import DocsDeleteDialog from '~/components/docs/DeleteDialog.vue'
 export default {
   layout: 'admin',
   components: {
-    docFilter,
+    DocFilter,
     DoctableList,
     DocsDeleteDialog
   },

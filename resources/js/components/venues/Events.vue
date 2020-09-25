@@ -44,8 +44,6 @@
     <v-card-text class="ma-2">
       <event-filter-sorter
         without-sort-by
-        color="transparent"
-        class="filter-transparent"
         @runFilter="onFilter"
       />
       <event-list

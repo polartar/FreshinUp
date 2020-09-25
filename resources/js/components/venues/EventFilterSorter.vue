@@ -1,10 +1,8 @@
 <template>
   <search-filter-sorter
     ref="filter"
-    class="filter-transparent"
     without-filter-label
     placeholder="Search"
-    color="transparent"
     v-bind="$attrs"
     v-on="$listeners"
     @run="run"

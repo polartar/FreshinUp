@@ -22,6 +22,7 @@ import storeTypes from './modules/storeTypes'
 import storeAreas from './modules/storeAreas'
 import companies from './modules/companies'
 import venueStatuses from './modules/venueStatuses'
+import locations from './modules/locations'
 
 export default (initialState = {}) => {
   return createStore(
@@ -49,7 +50,8 @@ export default (initialState = {}) => {
         storeStatuses: storeStatuses({}),
         storeTypes: storeTypes({}),
         storeAreas: storeAreas({}),
-        companies: companies({})
+        companies: companies({}),
+        locations: locations({})
       }
     }
   )

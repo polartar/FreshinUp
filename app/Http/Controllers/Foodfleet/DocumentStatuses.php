@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Http\Resources\Foodfleet\Document\Status as DocumentStatusResource;
+use App\Http\Resources\Foodfleet\DocumentStatus as DocumentStatusResource;
 use App\Models\Foodfleet\DocumentStatus;
 
 use App\Http\Controllers\Controller;

@@ -5,7 +5,8 @@
     :is-loading="isLoading"
     :item-actions="itemActions"
     :multi-item-actions="itemActions"
-    item-key="id"
+    single-select
+    item-key="uuid"
     v-bind="$attrs"
     v-on="$listeners"
   >
@@ -35,8 +36,8 @@ import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 import FChip from '@freshinup/core-ui/src/components/FChip'
 import get from 'lodash/get'
 export const HEADERS = [
-  { text: 'Location name / category', sortable: false, value: 'name' },
-  { text: 'Capacity', sortable: false, value: 'capacity', align: 'center' },
+  { text: 'Location name / category', sortable: true, value: 'name' },
+  { text: 'Capacity', sortable: true, value: 'capacity', align: 'center' },
   { text: 'Associated events', sortable: false, value: 'eventNames', align: 'right' },
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]

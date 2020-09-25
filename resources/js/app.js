@@ -28,6 +28,7 @@ import messages from './store/modules/messages.js'
 import venues from './store/modules/venues'
 import venueStatuses from './store/modules/venueStatuses'
 import companies from './store/modules/companies'
+import locations from './store/modules/locations'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
@@ -170,7 +171,8 @@ const appInstance = new App({
       venues: venues({}),
       venueStatuses: venueStatuses({}),
       eventHistories: eventHistories({}),
-      companies: companies({})
+      companies: companies({}),
+      locations: locations({})
     }
   }),
   theme,

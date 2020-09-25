@@ -23,10 +23,17 @@ class Locations extends Controller
         $locations = QueryBuilder::for(LocationModel::class, $request)
             ->allowedFilters([
                 Filter::exact('uuid'),
+                Filter::exact('venue_uuid'),
                 Filter::exact('category_id'),
                 'name',
             ])
-            ->allowedIncludes(['venue', 'category', 'events']);
+            ->allowedSorts([
+                'name',
+                'capacity'
+            ])
+            ->allowedIncludes([
+                'venue', 'category', 'events'
+            ]);
 
         return LocationResource::collection($locations->jsonPaginate());
     }

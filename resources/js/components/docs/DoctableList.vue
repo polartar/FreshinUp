@@ -297,7 +297,7 @@ export default {
         { text: 'Type', sortable: false, value: 'type', align: 'center' },
         { text: 'Title / Owner', value: 'title,owner', align: 'left', width: '300' },
         { text: 'Submited on', value: 'created_at', align: 'center' },
-        { text: 'Expiration date', sortable: false, value: 'expiration_at', align: 'center' },
+        { text: 'Expiration date', sortable: true, value: 'expiration_at', align: 'center' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
       ],
       itemActions: [

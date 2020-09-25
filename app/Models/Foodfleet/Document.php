@@ -16,8 +16,8 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property int id
  * @property string uuid
  * @property string title
- * @property int status
- * @property int type
+ * @property int status // TODO: rename to status_id
+ * @property int type // TODO: rename to type_id
  * @property string description
  * @property string notes
  * @property Carbon expiration_at
@@ -27,7 +27,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string deleted_at
  * @property string assigned_uuid
  * @property string assigned_type
- * @property string event_store_uuid
+ * @property string event_store_uuid // TODO: we might not need this field. remove and use assigned_uuid, assigned_type. Leave it as is for now
  *
  *
  * @property \App\User owner

@@ -110,7 +110,7 @@ export default {
         },
         {
           value: 5,
-          text: 'Event/Fleet Memeber',
+          text: 'Event/Fleet Member',
           url: 'foodfleet/events',
           param: 'filter[name]',
           idKey: 'uuid',
