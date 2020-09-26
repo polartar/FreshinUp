@@ -19,7 +19,7 @@
     </template>
     <template v-slot:item-inner-cost="{ item }">
       <div class="grey--text">
-        $ {{ item.cost }}
+        {{ formatMoney(item.cost) }}
       </div>
     </template>
   </f-data-table>
@@ -28,6 +28,7 @@
 <script>
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 import get from 'lodash/get'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 
 export const DEFAULT_HEADERS = [
   { text: 'Item', sortable: true, value: 'title,description', align: 'left' },
@@ -43,6 +44,7 @@ export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
 ]
 export default {
   components: { FDataTable },
+  mixins: [ FormatMoney ],
   props: {
     items: { type: Array, default: () => [] },
     isLoading: { type: Boolean, default: false }

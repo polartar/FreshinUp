@@ -947,7 +947,7 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      $ 200
+      $200.00
     
               </div>
             </td>
@@ -1078,7 +1078,7 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      $ 200
+      $200.00
     
               </div>
             </td>
@@ -1209,7 +1209,7 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      $ 2100
+      $2,100.00
     
               </div>
             </td>
