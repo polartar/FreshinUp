@@ -146,7 +146,13 @@ class Store extends Model implements HasMedia
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
     }
 
+    // TODO: needs test on models
     public function menuItems()
+    {
+        return $this->hasMany(MenuItem::class, 'store_uuid', 'uuid');
+    }
+
+    public function eventMenuItems()
     {
         return $this->hasMany(EventMenuItem::class, 'store_uuid', 'uuid');
     }
