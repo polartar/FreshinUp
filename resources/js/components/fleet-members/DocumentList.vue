@@ -9,7 +9,7 @@
         fill-height
       >
         <v-flex>
-          <h3 class="primary--text">
+          <h3 class="grey--text">
             Fleet Member Documents
           </h3>
         </v-flex>

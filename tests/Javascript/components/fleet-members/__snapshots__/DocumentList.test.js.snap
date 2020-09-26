@@ -15,7 +15,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
         class="flex"
       >
         <h3
-          class="primary--text"
+          class="grey--text"
         >
           
           Fleet Member Documents
@@ -694,7 +694,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
         class="flex"
       >
         <h3
-          class="primary--text"
+          class="grey--text"
         >
           
           Fleet Member Documents
