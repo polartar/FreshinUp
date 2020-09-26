@@ -22,6 +22,8 @@ class Venue extends JsonResource
             "uuid" => $this->uuid,
             "name" => $this->name,
             "address" => $this->address,
+            "address_line_1" => $this->address_line_1,
+            "address_line_2" => $this->address_line_2,
             "locations" => Location::collection($this->whenLoaded('locations')),
             "status_id" => $this->status_id,
             "status" => new VenueStatus($this->whenLoaded('status')),

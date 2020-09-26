@@ -2,14 +2,14 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import LocationForm from './LocationForm'
-import { FIXTURE_LOCATION } from '../../../../tests/Javascript/__data__/locations'
-import { CATEGORIES } from '../../../../tests/Javascript/__data__/locationCategories'
+import { FIXTURE_LOCATIONS } from '../../../../tests/Javascript/__data__/locations'
+import { FIXTURE_LOCATION_CATEGORIES } from '../../../../tests/Javascript/__data__/locationCategories'
 
 export const Default = () => ({
   components: { LocationForm },
   template: `
-    <v-container>
-      <location-form/>
+    <v-container class="white">
+      <LocationForm/>
     </v-container>
   `
 })
@@ -18,20 +18,10 @@ export const WithData = () => ({
   components: { LocationForm },
   data () {
     return {
-      location: FIXTURE_LOCATION,
-      categories: CATEGORIES
+      location: FIXTURE_LOCATIONS[0],
+      categories: FIXTURE_LOCATION_CATEGORIES
     }
   },
-  template: `
-    <v-container>
-      <location-form
-        :value="location"
-        :categories="categories"
-        @input="onSave"
-        @cancel="onCancel"
-      />
-    </v-container>
-  `,
   methods: {
     onSave (payload) {
       action('onSave')(payload)
@@ -39,7 +29,17 @@ export const WithData = () => ({
     onCancel () {
       action('onCancel')()
     }
-  }
+  },
+  template: `
+    <v-container class="white">
+      <LocationForm
+        class="white"
+        :value="location"
+        :categories="categories"
+        @input="onSave"
+        @cancel="onCancel"/>
+    </v-container>
+  `
 })
 
 storiesOf('FoodFleet|components/locations/LocationForm', module)

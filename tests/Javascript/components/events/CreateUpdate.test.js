@@ -11,7 +11,7 @@ import { getFileNameCopy } from '../../../../resources/js/components/events/Crea
 import { FIXTURE_EVENT_HISTORIES } from 'tests/__data__/eventHistory'
 import storeStatuses from '../../../../resources/js/store/modules/storeStatuses'
 
-describe('Event CreateUpdate Component', () => {
+describe('components/events/CreateUpdate', () => {
   let localVue, mock, store
   describe('Visuals', () => {
     beforeEach(() => {

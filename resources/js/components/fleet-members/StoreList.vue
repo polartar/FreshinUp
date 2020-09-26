@@ -91,18 +91,11 @@
             hide-details
           />
         </td>
-        <td class="justify-center text-xs-center select-td">
-          <v-select
-            :items="statuses"
-            :value="props.item.status"
-            item-text="name"
-            item-value="id"
-            menu-props="auto"
-            label="Status"
-            hide-details
-            single-line
-            solo
-            @change="changeStatus($event, props.item)"
+        <td class="justify-center text-xs-left select-td">
+          <status-select
+            :value="props.item.status_id"
+            :options="statuses"
+            @input="changeStatus($event, props.item)"
           />
         </td>
         <td>
@@ -150,6 +143,7 @@
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
+import StatusSelect from './StatusSelect'
 export const HEADERS = [
   { text: 'Status', sortable: true, value: 'status_id' },
   { text: 'Fleet Member Name / Type', sortable: true, value: 'name,type' },
@@ -159,7 +153,7 @@ export const HEADERS = [
   { text: 'Manage', sortable: false, value: 'manage' }
 ]
 export default {
-  components: { FBtnMenu },
+  components: { FBtnMenu, StatusSelect },
   mixins: [
     Pagination,
     FormatDate

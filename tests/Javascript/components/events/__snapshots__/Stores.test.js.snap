@@ -922,6 +922,23 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                                             </div>
                                           </a>
                                         </div>
+                                        <div
+                                          role="listitem"
+                                        >
+                                          <a
+                                            class="v-list__tile v-list__tile--link theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                On Hold
+                                              </div>
+                                            </div>
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -4248,6 +4265,23 @@ exports[`Store List component Snapshots stores empty 1`] = `
                                                 class="v-list__tile__title"
                                               >
                                                 Approved
+                                              </div>
+                                            </div>
+                                          </a>
+                                        </div>
+                                        <div
+                                          role="listitem"
+                                        >
+                                          <a
+                                            class="v-list__tile v-list__tile--link theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                On Hold
                                               </div>
                                             </div>
                                           </a>

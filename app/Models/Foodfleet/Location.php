@@ -11,23 +11,23 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Location
  *
- * @property int $id
- * @property string $uuid
- * @property string $name
- * @property string $spots
- * @property string $capacity
- * @property string $details
- * @property string $venue_uuid
- * @property int $category_id
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property string $deleted_at
+ * @property int id
+ * @property string uuid
+ * @property string name
+ * @property string spots
+ * @property string capacity
+ * @property string details
+ * @property string venue_uuid
+ * @property int category_id
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property string deleted_at
  *
  *
  * @property Event[} $events
  * @property Document[} documents
- * @property Venue $venue
- * @property LocationCategory $category
+ * @property Venue venue
+ * @property LocationCategory category
  *
  */
 class Location extends Model

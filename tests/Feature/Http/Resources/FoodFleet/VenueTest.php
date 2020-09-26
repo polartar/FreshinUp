@@ -20,6 +20,8 @@ class VenueTest extends TestCase
             "uuid" => $venue->uuid,
             "name" => $venue->name,
             "address" => $venue->address,
+            "address_line_1" => $venue->address_line_1,
+            "address_line_2" => $venue->address_line_2,
             'status_id' => $venue->status_id,
             'owner_uuid' => $venue->owner_uuid
         ];

@@ -31,7 +31,7 @@ export const Populated = () => ({
   components: { Locations },
   data () {
     return {
-      items: FIXTURE_LOCATIONS
+      items: FIXTURE_LOCATIONS,
     }
   },
   methods: {
@@ -40,11 +40,15 @@ export const Populated = () => ({
     },
     onManageMultiple (act, items) {
       action('onManageMultiple')(act, items)
+    },
+    onSubmit (payload) {
+      action('onSubmit')(payload)
     }
   },
   template: `
     <locations
       :items="items"
+      @location-submit="onSubmit"
       @manage="onManage"
       @manage-multiple="onManageMultiple"
     />

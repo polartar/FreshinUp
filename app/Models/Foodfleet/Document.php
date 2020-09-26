@@ -31,7 +31,8 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  *
  *
  * @property \App\User owner
- * @property \App\User|Store|Event assigned
+ * @property DocumentType type
+ * @property \App\User|Store|Event|Location assigned
  */
 class Document extends Model implements HasMedia
 {

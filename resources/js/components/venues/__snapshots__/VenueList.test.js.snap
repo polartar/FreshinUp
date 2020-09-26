@@ -1140,7 +1140,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Restaurant Inc
+      Demo Admin
     
               </div>
             </td>
@@ -1384,7 +1384,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Restaurant Inc
+      Demo Admin
     
               </div>
             </td>
@@ -1628,7 +1628,7 @@ exports[`components/venues/VenueList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Dibitery Inc
+      Demo Admin
     
               </div>
             </td>

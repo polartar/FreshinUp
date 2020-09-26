@@ -17,7 +17,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
           Locations
         </h3>
       </div>
-       
+
       <div
         class="flex shrink"
       >
@@ -41,7 +41,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                 add_circle_outline
               </i>
               Add new location
-            
+
             </div>
           </button>
           <div
@@ -53,144 +53,101 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
               class="v-dialog"
               style="max-width: 600px; display: none;"
             >
-               
+
               <div
                 class="v-card v-sheet theme--light"
               >
                 <div
                   class="v-card__title"
                 >
-                  <div
-                    class="layout row space-between align-center"
-                  >
-                    <div
-                      class="flex grey--text"
-                    >
-                      <h3>
-                        Add Location
-                      </h3>
-                    </div>
-                     
-                    <button
-                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        <div
-                          class="flex"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon white--text fa fa fa fa-times theme--light"
-                            style="font-size: 16px;"
-                          />
-                        </div>
-                         
-                        <div
-                          class="flex"
-                        >
-                          
-                    Close
-                  
-                        </div>
-                      </div>
-                    </button>
+                  <div>
+                    Add location
                   </div>
                 </div>
-                 
+
                 <hr
                   class="v-divider theme--light"
                 />
-                 
+
                 <div
-                  class="v-card v-sheet theme--light"
+                  class="layout grey--text column"
                 >
                   <div
-                    class="v-card__text"
+                    class="flex"
                   >
                     <div
-                      class="layout row wrap"
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Category
+
+                    </div>
+
+                    <div
+                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                      role="combobox"
                     >
                       <div
-                        class="flex grey--text xs6 pr-3"
+                        class="v-input__control"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Category
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
-                          role="combobox"
+                          class="v-input__slot"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
                             >
                               <div
-                                class="v-select__slot"
+                                class="v-input__icon v-input__icon--append"
                               >
-                                <div
-                                  class="v-select__selections"
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
                                 >
-                                  <input
-                                    aria-readonly="false"
-                                    autocomplete="on"
-                                    readonly="readonly"
-                                    type="text"
-                                  />
-                                </div>
-                                <div
-                                  class="v-input__append-inner"
-                                >
-                                  <div
-                                    class="v-input__icon v-input__icon--append"
-                                  >
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      arrow_drop_down
-                                    </i>
-                                  </div>
-                                </div>
+                                  arrow_drop_down
+                                </i>
                               </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
                               <div
-                                class="v-menu"
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-menu__content theme--light "
-                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-select-list v-card theme--light"
+                                    role="listitem"
                                   >
                                     <div
-                                      class="v-list theme--light"
-                                      role="list"
+                                      class="v-list__tile theme--light"
                                     >
                                       <div
-                                        role="listitem"
+                                        class="v-list__tile__content"
                                       >
                                         <div
-                                          class="v-list__tile theme--light"
+                                          class="v-list__tile__title"
                                         >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              No data available
-                                            </div>
-                                          </div>
+                                          No data available
                                         </div>
                                       </div>
                                     </div>
@@ -198,200 +155,197 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
                             <div
-                              class="v-text-field__details"
+                              class="v-messages__wrapper"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex text-xs-center"
+                  >
+
+    MAP coming soon
+
+                    <div
+                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
+                    />
+                  </div>
+
+                  <div
+                    class="layout"
+                  >
+                    <div
+                      class="flex pr-2"
+                    >
+                      <div
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
+                      >
+
+        Location
+
+                      </div>
+
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <input
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
-                       
+                    </div>
+
+                    <div
+                      class="flex pl-2"
+                    >
                       <div
-                        class="flex xs8 pa-2"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
-                        <div
-                          class="mb-2  grey--text"
-                        >
-                          
-          Coming Soon
-        
-                        </div>
+
+        Capacity
+
                       </div>
-                       
+
                       <div
-                        class="flex xs6 pr-2"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Location Name
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                          class="v-input__control"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-input__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-text-field__slot"
                             >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                              <input
+                                type="text"
+                              />
                             </div>
                           </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs6 pl-2"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Capacity
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
                           <div
-                            class="v-input__control"
+                            class="v-text-field__details"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs12"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Description
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
-                          <div
-                            class="v-input__control"
-                          >
-                            <div
-                              class="v-input__slot"
-                            >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <textarea
-                                  rows="5"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <span
-                                  class="v-messages__wrapper"
-                                  name="message-transition"
-                                  tag="div"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
+
                   <div
-                    class="v-card__actions pa-3 d-flex justify-space-between"
+                    class="flex"
                   >
-                    <div>
-                      <button
-                        class="white--text v-btn v-btn--depressed theme--light grey"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Cancel
-      
-                        </div>
-                      </button>
-                       
-                      <button
-                        class="v-btn v-btn--depressed theme--light primary"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Save changes
-      
-                        </div>
-                      </button>
+                    <div
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Description
+
                     </div>
+
+                    <div
+                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-text-field__slot"
+                          >
+                            <textarea
+                              rows="5"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex py-3 d-flex justify-space-between"
+                  >
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Cancel
+
+                      </div>
+                    </button>
+
+                    <button
+                      class="v-btn v-btn--depressed theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Save changes
+
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -401,11 +355,11 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />
-   
+
   <div
     class="v-card__text primary--text"
   >
@@ -464,9 +418,9 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Location name / category
-      
+
                   </span>
                 </th>
                 <th
@@ -477,9 +431,9 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Capacity
-      
+
                   </span>
                 </th>
                 <th
@@ -490,9 +444,9 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Associated events
-      
+
                   </span>
                 </th>
                 <th
@@ -503,9 +457,9 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Manage
-      
+
                   </span>
                 </th>
               </tr>
@@ -531,7 +485,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
           </table>
         </div>
       </div>
-       
+
       <div
         class="layout align-center"
       >
@@ -581,7 +535,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
             </ul>
           </div>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -775,7 +729,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />
@@ -799,7 +753,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
           Locations
         </h3>
       </div>
-       
+
       <div
         class="flex shrink"
       >
@@ -823,7 +777,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                 add_circle_outline
               </i>
               Add new location
-            
+
             </div>
           </button>
           <div
@@ -835,144 +789,101 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
               class="v-dialog"
               style="max-width: 600px; display: none;"
             >
-               
+
               <div
                 class="v-card v-sheet theme--light"
               >
                 <div
                   class="v-card__title"
                 >
-                  <div
-                    class="layout row space-between align-center"
-                  >
-                    <div
-                      class="flex grey--text"
-                    >
-                      <h3>
-                        Add Location
-                      </h3>
-                    </div>
-                     
-                    <button
-                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        <div
-                          class="flex"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon white--text fa fa fa fa-times theme--light"
-                            style="font-size: 16px;"
-                          />
-                        </div>
-                         
-                        <div
-                          class="flex"
-                        >
-                          
-                    Close
-                  
-                        </div>
-                      </div>
-                    </button>
+                  <div>
+                    Add location
                   </div>
                 </div>
-                 
+
                 <hr
                   class="v-divider theme--light"
                 />
-                 
+
                 <div
-                  class="v-card v-sheet theme--light"
+                  class="layout grey--text column"
                 >
                   <div
-                    class="v-card__text"
+                    class="flex"
                   >
                     <div
-                      class="layout row wrap"
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Category
+
+                    </div>
+
+                    <div
+                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                      role="combobox"
                     >
                       <div
-                        class="flex grey--text xs6 pr-3"
+                        class="v-input__control"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Category
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
-                          role="combobox"
+                          class="v-input__slot"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
                             >
                               <div
-                                class="v-select__slot"
+                                class="v-input__icon v-input__icon--append"
                               >
-                                <div
-                                  class="v-select__selections"
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
                                 >
-                                  <input
-                                    aria-readonly="false"
-                                    autocomplete="on"
-                                    readonly="readonly"
-                                    type="text"
-                                  />
-                                </div>
-                                <div
-                                  class="v-input__append-inner"
-                                >
-                                  <div
-                                    class="v-input__icon v-input__icon--append"
-                                  >
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      arrow_drop_down
-                                    </i>
-                                  </div>
-                                </div>
+                                  arrow_drop_down
+                                </i>
                               </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
                               <div
-                                class="v-menu"
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-menu__content theme--light "
-                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-select-list v-card theme--light"
+                                    role="listitem"
                                   >
                                     <div
-                                      class="v-list theme--light"
-                                      role="list"
+                                      class="v-list__tile theme--light"
                                     >
                                       <div
-                                        role="listitem"
+                                        class="v-list__tile__content"
                                       >
                                         <div
-                                          class="v-list__tile theme--light"
+                                          class="v-list__tile__title"
                                         >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              No data available
-                                            </div>
-                                          </div>
+                                          No data available
                                         </div>
                                       </div>
                                     </div>
@@ -980,200 +891,197 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
                             <div
-                              class="v-text-field__details"
+                              class="v-messages__wrapper"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex text-xs-center"
+                  >
+
+    MAP coming soon
+
+                    <div
+                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
+                    />
+                  </div>
+
+                  <div
+                    class="layout"
+                  >
+                    <div
+                      class="flex pr-2"
+                    >
+                      <div
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
+                      >
+
+        Location
+
+                      </div>
+
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <input
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
-                       
+                    </div>
+
+                    <div
+                      class="flex pl-2"
+                    >
                       <div
-                        class="flex xs8 pa-2"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
-                        <div
-                          class="mb-2  grey--text"
-                        >
-                          
-          Coming Soon
-        
-                        </div>
+
+        Capacity
+
                       </div>
-                       
+
                       <div
-                        class="flex xs6 pr-2"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Location Name
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                          class="v-input__control"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-input__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-text-field__slot"
                             >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                              <input
+                                type="text"
+                              />
                             </div>
                           </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs6 pl-2"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Capacity
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
                           <div
-                            class="v-input__control"
+                            class="v-text-field__details"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs12"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Description
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
-                          <div
-                            class="v-input__control"
-                          >
-                            <div
-                              class="v-input__slot"
-                            >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <textarea
-                                  rows="5"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <span
-                                  class="v-messages__wrapper"
-                                  name="message-transition"
-                                  tag="div"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
+
                   <div
-                    class="v-card__actions pa-3 d-flex justify-space-between"
+                    class="flex"
                   >
-                    <div>
-                      <button
-                        class="white--text v-btn v-btn--depressed theme--light grey"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Cancel
-      
-                        </div>
-                      </button>
-                       
-                      <button
-                        class="v-btn v-btn--depressed theme--light primary"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Save changes
-      
-                        </div>
-                      </button>
+                    <div
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Description
+
                     </div>
+
+                    <div
+                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-text-field__slot"
+                          >
+                            <textarea
+                              rows="5"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex py-3 d-flex justify-space-between"
+                  >
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Cancel
+
+                      </div>
+                    </button>
+
+                    <button
+                      class="v-btn v-btn--depressed theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Save changes
+
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1183,11 +1091,11 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />
-   
+
   <div
     class="v-card__text primary--text"
   >
@@ -1246,9 +1154,9 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Location name / category
-      
+
                   </span>
                 </th>
                 <th
@@ -1259,9 +1167,9 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Capacity
-      
+
                   </span>
                 </th>
                 <th
@@ -1272,9 +1180,9 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Associated events
-      
+
                   </span>
                 </th>
                 <th
@@ -1285,9 +1193,9 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Manage
-      
+
                   </span>
                 </th>
               </tr>
@@ -1341,7 +1249,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
           </table>
         </div>
       </div>
-       
+
       <div
         class="layout align-center"
       >
@@ -1391,7 +1299,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
             </ul>
           </div>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -1585,7 +1493,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />
@@ -1609,7 +1517,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
           Locations
         </h3>
       </div>
-       
+
       <div
         class="flex shrink"
       >
@@ -1633,7 +1541,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                 add_circle_outline
               </i>
               Add new location
-            
+
             </div>
           </button>
           <div
@@ -1645,144 +1553,101 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
               class="v-dialog"
               style="max-width: 600px; display: none;"
             >
-               
+
               <div
                 class="v-card v-sheet theme--light"
               >
                 <div
                   class="v-card__title"
                 >
-                  <div
-                    class="layout row space-between align-center"
-                  >
-                    <div
-                      class="flex grey--text"
-                    >
-                      <h3>
-                        Add Location
-                      </h3>
-                    </div>
-                     
-                    <button
-                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        <div
-                          class="flex"
-                        >
-                          <i
-                            aria-hidden="true"
-                            class="v-icon white--text fa fa fa fa-times theme--light"
-                            style="font-size: 16px;"
-                          />
-                        </div>
-                         
-                        <div
-                          class="flex"
-                        >
-                          
-                    Close
-                  
-                        </div>
-                      </div>
-                    </button>
+                  <div>
+                    Add location
                   </div>
                 </div>
-                 
+
                 <hr
                   class="v-divider theme--light"
                 />
-                 
+
                 <div
-                  class="v-card v-sheet theme--light"
+                  class="layout grey--text column"
                 >
                   <div
-                    class="v-card__text"
+                    class="flex"
                   >
                     <div
-                      class="layout row wrap"
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Category
+
+                    </div>
+
+                    <div
+                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                      role="combobox"
                     >
                       <div
-                        class="flex grey--text xs6 pr-3"
+                        class="v-input__control"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Category
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
-                          role="combobox"
+                          class="v-input__slot"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
                             >
                               <div
-                                class="v-select__slot"
+                                class="v-input__icon v-input__icon--append"
                               >
-                                <div
-                                  class="v-select__selections"
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
                                 >
-                                  <input
-                                    aria-readonly="false"
-                                    autocomplete="on"
-                                    readonly="readonly"
-                                    type="text"
-                                  />
-                                </div>
-                                <div
-                                  class="v-input__append-inner"
-                                >
-                                  <div
-                                    class="v-input__icon v-input__icon--append"
-                                  >
-                                    <i
-                                      aria-hidden="true"
-                                      class="v-icon material-icons theme--light"
-                                    >
-                                      arrow_drop_down
-                                    </i>
-                                  </div>
-                                </div>
+                                  arrow_drop_down
+                                </i>
                               </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
                               <div
-                                class="v-menu"
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  class="v-menu__content theme--light "
-                                  style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-select-list v-card theme--light"
+                                    role="listitem"
                                   >
                                     <div
-                                      class="v-list theme--light"
-                                      role="list"
+                                      class="v-list__tile theme--light"
                                     >
                                       <div
-                                        role="listitem"
+                                        class="v-list__tile__content"
                                       >
                                         <div
-                                          class="v-list__tile theme--light"
+                                          class="v-list__tile__title"
                                         >
-                                          <div
-                                            class="v-list__tile__content"
-                                          >
-                                            <div
-                                              class="v-list__tile__title"
-                                            >
-                                              No data available
-                                            </div>
-                                          </div>
+                                          No data available
                                         </div>
                                       </div>
                                     </div>
@@ -1790,200 +1655,197 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
                             <div
-                              class="v-text-field__details"
+                              class="v-messages__wrapper"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex text-xs-center"
+                  >
+
+    MAP coming soon
+
+                    <div
+                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
+                    />
+                  </div>
+
+                  <div
+                    class="layout"
+                  >
+                    <div
+                      class="flex pr-2"
+                    >
+                      <div
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
+                      >
+
+        Location
+
+                      </div>
+
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <input
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
-                       
+                    </div>
+
+                    <div
+                      class="flex pl-2"
+                    >
                       <div
-                        class="flex xs8 pa-2"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
-                        <div
-                          class="mb-2  grey--text"
-                        >
-                          
-          Coming Soon
-        
-                        </div>
+
+        Capacity
+
                       </div>
-                       
+
                       <div
-                        class="flex xs6 pr-2"
+                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                       >
                         <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Location Name
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                          class="v-input__control"
                         >
                           <div
-                            class="v-input__control"
+                            class="v-input__slot"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-text-field__slot"
                             >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
+                              <input
+                                type="text"
+                              />
                             </div>
                           </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs6 pl-2"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Capacity
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
                           <div
-                            class="v-input__control"
+                            class="v-text-field__details"
                           >
                             <div
-                              class="v-input__slot"
+                              class="v-messages theme--light"
                             >
                               <div
-                                class="v-text-field__slot"
-                              >
-                                <input
-                                  type="text"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <div
-                                  class="v-messages__wrapper"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                       
-                      <div
-                        class="flex xs12"
-                      >
-                        <div
-                          class="mb-2 text-uppercase grey--text font-weight-bold"
-                        >
-                          
-          Description
-        
-                        </div>
-                         
-                        <div
-                          class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                        >
-                          <div
-                            class="v-input__control"
-                          >
-                            <div
-                              class="v-input__slot"
-                            >
-                              <div
-                                class="v-text-field__slot"
-                              >
-                                <textarea
-                                  rows="5"
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="v-text-field__details"
-                            >
-                              <div
-                                class="v-messages theme--light"
-                              >
-                                <span
-                                  class="v-messages__wrapper"
-                                  name="message-transition"
-                                  tag="div"
-                                />
-                              </div>
+                                class="v-messages__wrapper"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                   
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
+
                   <div
-                    class="v-card__actions pa-3 d-flex justify-space-between"
+                    class="flex"
                   >
-                    <div>
-                      <button
-                        class="white--text v-btn v-btn--depressed theme--light grey"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Cancel
-      
-                        </div>
-                      </button>
-                       
-                      <button
-                        class="v-btn v-btn--depressed theme--light primary"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-        Save changes
-      
-                        </div>
-                      </button>
+                    <div
+                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                    >
+
+      Description
+
                     </div>
+
+                    <div
+                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-text-field__slot"
+                          >
+                            <textarea
+                              rows="5"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="v-text-field__details"
+                        >
+                          <div
+                            class="v-messages theme--light"
+                          >
+                            <span
+                              class="v-messages__wrapper"
+                              name="message-transition"
+                              tag="div"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex py-3 d-flex justify-space-between"
+                  >
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Cancel
+
+                      </div>
+                    </button>
+
+                    <button
+                      class="v-btn v-btn--depressed theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+
+      Save changes
+
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1993,11 +1855,11 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />
-   
+
   <div
     class="v-card__text primary--text"
   >
@@ -2056,9 +1918,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Location name / category
-      
+
                   </span>
                 </th>
                 <th
@@ -2069,9 +1931,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Capacity
-      
+
                   </span>
                 </th>
                 <th
@@ -2082,9 +1944,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Associated events
-      
+
                   </span>
                 </th>
                 <th
@@ -2095,9 +1957,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   scope="col"
                 >
                   <span>
-                    
+
         Manage
-      
+
                   </span>
                 </th>
               </tr>
@@ -2147,18 +2009,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Johnstonborough
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2166,18 +2028,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               81
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2185,9 +2047,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       accusantium, saepe
-    
+
                   </div>
                 </td>
                 <td
@@ -2203,9 +2065,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2218,7 +2080,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2277,18 +2139,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Vivienberg
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2296,18 +2158,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               26
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2315,9 +2177,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       ipsum, quibusdam
-    
+
                   </div>
                 </td>
                 <td
@@ -2333,9 +2195,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2348,7 +2210,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2407,18 +2269,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       O'Konborough
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2426,18 +2288,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               32
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2445,9 +2307,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       lorem
-    
+
                   </div>
                 </td>
                 <td
@@ -2463,9 +2325,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2478,7 +2340,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2537,18 +2399,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Dickinsonhaven
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2556,18 +2418,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               77
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2575,9 +2437,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       schinner.com, baumbach.com
-    
+
                   </div>
                 </td>
                 <td
@@ -2593,9 +2455,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2608,7 +2470,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2667,18 +2529,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Kirstinton
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2686,18 +2548,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               33
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2705,9 +2567,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       weber.org
-    
+
                   </div>
                 </td>
                 <td
@@ -2723,9 +2585,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2738,7 +2600,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2797,18 +2659,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Bodehaven
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2816,18 +2678,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               78
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2835,9 +2697,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       moen.com
-    
+
                   </div>
                 </td>
                 <td
@@ -2853,9 +2715,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2868,7 +2730,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -2927,18 +2789,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       West Susannaside
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -2946,18 +2808,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Indoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               28
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -2965,9 +2827,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
-      
-    
+
+
+
                   </div>
                 </td>
                 <td
@@ -2983,9 +2845,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -2998,7 +2860,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -3057,18 +2919,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Shannonview
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -3076,18 +2938,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Outdoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               70
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -3095,9 +2957,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       hirthe.com, hagenes.com
-    
+
                   </div>
                 </td>
                 <td
@@ -3113,9 +2975,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -3128,7 +2990,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -3187,18 +3049,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       South Martinestad
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -3206,18 +3068,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Outdoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               47
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -3225,9 +3087,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
-      
-    
+
+
+
                   </div>
                 </td>
                 <td
@@ -3243,9 +3105,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -3258,7 +3120,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -3317,18 +3179,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </td>
-                 
+
                 <td
                   class="text-xs-undefined"
                 >
                   <div
                     class="subheading primary--text"
                   >
-                    
+
       Daughertymouth
-    
+
                   </div>
-                   
+
                   <span
                     class="v-chip font-weight-bold text-uppercase caption theme--light warning white--text"
                     tabindex="0"
@@ -3336,18 +3198,18 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                     <span
                       class="v-chip__content"
                     >
-                      
+
       Outdoor
-    
+
                     </span>
                   </span>
                 </td>
                 <td
                   class="text-xs-center"
                 >
-                  
+
               66
-            
+
                 </td>
                 <td
                   class="text-xs-right"
@@ -3355,9 +3217,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   <div
                     class="text-truncate"
                   >
-                    
+
       quitzon.com, sauer.com, stanton.com
-    
+
                   </div>
                 </td>
                 <td
@@ -3373,9 +3235,9 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       <div
                         class="v-btn__content"
                       >
-                        
+
                 Manage
-               
+
                         <i
                           aria-hidden="true"
                           class="v-icon v-icon--right material-icons theme--dark"
@@ -3388,7 +3250,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         class="v-list theme--light"
                         role="list"
@@ -3415,7 +3277,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
           </table>
         </div>
       </div>
-       
+
       <div
         class="layout align-center"
       >
@@ -3465,7 +3327,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
             </ul>
           </div>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -3659,7 +3521,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
       </div>
     </div>
   </div>
-   
+
   <hr
     class="v-divider theme--light"
   />

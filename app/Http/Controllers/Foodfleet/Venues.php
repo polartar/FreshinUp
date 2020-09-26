@@ -15,6 +15,24 @@ use App\Http\Resources\Foodfleet\Venue as VenueResource;
 
 class Venues extends Controller
 {
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'owner_uuid' => 'exists:users,uuid',
+            'status_id' => 'exists:venue_statuses,id',
+        ]);
+        $payload = $request->only([
+            'name',
+            'address_line_1',
+            'address_line_2',
+            'status_id',
+            'owner_uuid',
+        ]);
+        $venue = Venue::create($payload);
+        return new VenueResource($venue);
+    }
+
     public function index(Request $request)
     {
         $venues = QueryBuilder::for(Venue::class, $request)
@@ -47,7 +65,8 @@ class Venues extends Controller
         ]);
         $payload = $request->only([
             'name',
-            'address',
+            'address_line_1',
+            'address_line_2',
             'status_id',
             'owner_uuid',
         ]);
@@ -60,5 +79,18 @@ class Venues extends Controller
         $venue = Venue::where('uuid', $uuid)->firstOrFail();
         $venue->delete();
         return response()->json(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function show(Request $request, $uuid)
+    {
+        $venue = QueryBuilder::for(Venue::class, $request)
+            ->where('uuid', $uuid)
+            ->allowedIncludes([
+                'locations',
+                'owner',
+                'status'
+            ])
+            ->firstOrFail();
+        return new VenueResource($venue);
     }
 }

@@ -4,5 +4,5 @@ export const FIXTURE_STORE_STATUSES = [
   { id: 3, name: 'Revision', color: 'success' },
   { id: 4, name: 'Rejected', color: 'danger' },
   { id: 5, name: 'Approved', color: 'success' },
-  { id: 5, name: 'On Hold', color: 'accent' }
+  { id: 6, name: 'On Hold', color: 'accent' }
 ]

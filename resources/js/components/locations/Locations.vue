@@ -61,7 +61,11 @@
                 </v-layout>
               </v-card-title>
               <v-divider />
-              <location-form />
+              <location-form
+                :value="location"
+                @input="onSubmit"
+                @cancel="newLocationDialog = false"
+              />
             </v-card>
           </v-dialog>
         </v-flex>
@@ -83,11 +87,12 @@
 <script>
 import get from 'lodash/get'
 import LocationList from './LocationList'
-import LocationForm from './LocationForm'
+import LocationForm, { DEFAULT_LOCATION } from './LocationForm'
 
 export default {
   components: { LocationList, LocationForm },
   props: {
+    location: { type: Object, default: () => DEFAULT_LOCATION },
     items: { type: Array, default: () => [] },
     isLoading: { type: Boolean, default: false }
   },
@@ -97,7 +102,10 @@ export default {
     }
   },
   methods: {
-    get
+    get,
+    onSubmit (location) {
+      this.$emit('location-submit', location)
+    }
   }
 }
 </script>

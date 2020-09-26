@@ -9,7 +9,7 @@
       <h2 class="white--text">
         {{ pageTitle }}
       </h2>
-      <v-flex text-xs-right>
+      <v-flex>
         <v-btn
           slot="activator"
           color="primary"
@@ -194,10 +194,10 @@ export default {
       this.deleteDialog = false
       this.deleteTemp = []
     },
-    changeStatus (status, store) {
+    changeStatus (statusId, store) {
       this.$store
         .dispatch('stores/patchItem', {
-          data: { status },
+          data: { status_id: statusId },
           params: { id: store.uuid }
         })
         .then(() => {
