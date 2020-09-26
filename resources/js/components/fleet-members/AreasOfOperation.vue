@@ -32,10 +32,31 @@
               </v-btn>
             </template>
             <v-card>
-              <v-divider />
-              <v-card-text class="grey--text">
-                Add new area
-              </v-card-text>
+              <div class="d-flex justify-space-between align-center">
+                <v-card-text class="grey--text subheading font-weight-bold">
+                  Add new area
+                </v-card-text>
+                <v-btn
+                  small
+                  round
+                  depressed
+                  color="grey"
+                  class="white--text"
+                  @click="newOperation = false"
+                >
+                  <v-flex>
+                    <v-icon
+                      small
+                      class="white--text"
+                    >
+                      fa fa-times
+                    </v-icon>
+                  </v-flex>
+                  <v-flex>
+                    Close
+                  </v-flex>
+                </v-btn>
+              </div>
               <v-divider />
               <area-form class="ma-2" />
             </v-card>

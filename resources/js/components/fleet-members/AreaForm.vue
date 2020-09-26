@@ -25,7 +25,6 @@
         v-model="radius"
         :min="0"
         :max="100"
-        height="20"
         thumb-label
       />
     </v-flex>
@@ -66,3 +65,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+  >>>.v-slider__track__container, >>>.v-slider__track, >>>.v-slider__track-fill {
+    height: 10px;
+  }
+
+  >>>.v-slider__track {
+    left: 11px!important;
+  }
+
+  >>>.v-slider__thumb {
+    height: 30px!important;
+    width: 30px!important;
+  }
+</style>
