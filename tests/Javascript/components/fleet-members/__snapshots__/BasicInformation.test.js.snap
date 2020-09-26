@@ -13,7 +13,9 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
       <h3
         class="grey--text"
       >
-        Basic Information
+        
+      Basic Information
+    
       </h3>
        
       <!---->
@@ -1056,7 +1058,9 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
       <h3
         class="grey--text"
       >
-        Basic Information
+        
+      Basic Information
+    
       </h3>
        
       <div
@@ -2156,7 +2160,9 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
       <h3
         class="grey--text"
       >
-        Basic Information
+        
+      Basic Information
+    
       </h3>
        
       <!---->
