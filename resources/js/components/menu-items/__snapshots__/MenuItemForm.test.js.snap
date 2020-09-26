@@ -5,20 +5,15 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
   class="container white"
 >
   <div
-    class="v-card v-sheet theme--light"
-    style="background-color: rgb(229, 229, 229);"
+    class="ff-menu-item__form"
   >
-    <div
-      class="v-card__title"
+    <h3
+      class="headline grey--text font-weight-bold"
     >
-      <h3
-        class="grey--text"
-      >
-        
-      Add menu new item
-    
-      </h3>
-    </div>
+      
+    Add menu new item
+  
+    </h3>
      
     <div
       class="layout"
@@ -41,7 +36,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -85,7 +80,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -128,7 +123,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -164,7 +159,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
           class="text-uppercase grey--text font-weight-bold"
         >
           
-        Description
+        Item description
       
         </div>
          
@@ -175,7 +170,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -203,37 +198,32 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
       </div>
     </div>
      
-    <div
-      class="v-card__actions pa-2 d-flex"
-    >
-      <div>
-        <button
-          class="v-btn v-btn--disabled v-btn--depressed theme--light grey--text"
-          disabled="disabled"
-          type="button"
+    <div>
+      <button
+        class="white--text v-btn v-btn--depressed theme--light grey"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            
-        Cancel
-      
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--depressed theme--light primary"
-          type="button"
+          
+      Cancel
+    
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            
-        Save changes
-      
-          </div>
-        </button>
-      </div>
+          
+      Save
+    
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -244,20 +234,15 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
   class="container white"
 >
   <div
-    class="v-card v-sheet theme--light"
-    style="background-color: rgb(229, 229, 229);"
+    class="ff-menu-item__form"
   >
-    <div
-      class="v-card__title"
+    <h3
+      class="headline grey--text font-weight-bold"
     >
-      <h3
-        class="grey--text"
-      >
-        
-      Add menu new item
-    
-      </h3>
-    </div>
+      
+    Add menu new item
+  
+    </h3>
      
     <div
       class="layout"
@@ -280,7 +265,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -324,7 +309,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -367,7 +352,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -403,7 +388,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
           class="text-uppercase grey--text font-weight-bold"
         >
           
-        Description
+        Item description
       
         </div>
          
@@ -414,7 +399,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
             class="v-input__control"
           >
             <div
-              class="v-input__slot"
+              class="v-input__slot white"
             >
               <div
                 class="v-text-field__slot"
@@ -442,37 +427,32 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
       </div>
     </div>
      
-    <div
-      class="v-card__actions pa-2 d-flex"
-    >
-      <div>
-        <button
-          class="v-btn v-btn--disabled v-btn--depressed theme--light grey--text"
-          disabled="disabled"
-          type="button"
+    <div>
+      <button
+        class="white--text v-btn v-btn--depressed theme--light grey"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            
-        Cancel
-      
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--depressed theme--light primary"
-          type="button"
+          
+      Cancel
+    
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            
-        Save changes
-      
-          </div>
-        </button>
-      </div>
+          
+      Save
+    
+        </div>
+      </button>
     </div>
   </div>
 </div>

@@ -1,10 +1,8 @@
 <template>
-  <v-card style="background-color: #e5e5e5;">
-    <v-card-title>
-      <h3 class="grey--text">
-        Add menu new item
-      </h3>
-    </v-card-title>
+  <div class="ff-menu-item__form">
+    <h3 class="headline grey--text font-weight-bold">
+      Add menu new item
+    </h3>
     <v-layout>
       <v-flex
         xs8
@@ -15,6 +13,7 @@
         </div>
         <v-text-field
           v-model="title"
+          background-color="white"
           placeholder="Enter menu item title"
           single-line
           outline
@@ -29,6 +28,7 @@
         </div>
         <v-text-field
           v-model="servings"
+          background-color="white"
           single-line
           outline
         />
@@ -42,6 +42,7 @@
         </div>
         <v-text-field
           v-model="cost"
+          background-color="white"
           single-line
           outline
         />
@@ -53,35 +54,34 @@
         px-2
       >
         <div class="text-uppercase grey--text font-weight-bold">
-          Description
+          Item description
         </div>
         <v-textarea
           v-model="description"
+          background-color="white"
           single-line
           outline
         />
       </v-flex>
     </v-layout>
-    <v-card-actions class="pa-2 d-flex">
-      <div>
-        <v-btn
-          depressed
-          color="grey"
-          disabled
-          @click="onCancel"
-        >
-          Cancel
-        </v-btn>
-        <v-btn
-          depressed
-          color="primary"
-          @click="save"
-        >
-          Save changes
-        </v-btn>
-      </div>
-    </v-card-actions>
-  </v-card>
+    <div>
+      <v-btn
+        depressed
+        color="grey"
+        class="white--text"
+        @click="onCancel"
+      >
+        Cancel
+      </v-btn>
+      <v-btn
+        depressed
+        color="primary"
+        @click="save"
+      >
+        Save
+      </v-btn>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -115,3 +115,19 @@ export default {
   }
 }
 </script>
+
+<style lang="styl" scoped>
+  .ff-menu-item__form {
+    background-color: rgba(160,169,186,0.1); /*rgba(#a0a9ba, .10)*/;
+    padding: 2rem;
+  }
+
+  .ff-menu-item__form h3 {
+    color: #a0a9ba;
+    margin-bottom: 1rem;
+  }
+
+  /deep/ .v-text-field--outline > .v-input__control > .v-input__slot {
+    background: white!important;
+  }
+</style>
