@@ -34,7 +34,7 @@
             <v-card>
               <v-divider />
               <v-card-text class="grey--text">
-                Coming Soon here
+                Add new area
               </v-card-text>
               <v-divider />
               <area-form class="ma-2" />

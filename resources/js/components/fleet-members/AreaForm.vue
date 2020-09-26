@@ -25,24 +25,13 @@
         v-model="radius"
         :min="0"
         :max="100"
+        height="20"
         thumb-label
       />
     </v-flex>
-    <v-flex
-      xs12
-      pa-2
-    >
-      <div class="text-xs-center">
-        MAP HERE
-      </div>
-    </v-flex>
-    <v-layout
-      align-center
-      justify-space-between
-    >
+    <v-flex class="py-3 d-flex justify-space-between">
       <v-btn
         depressed
-        disabled
         @click="onCancel"
       >
         Cancel
@@ -54,7 +43,7 @@
       >
         Save changes
       </v-btn>
-    </v-layout>
+    </v-flex>
   </form>
 </template>
 <script>
