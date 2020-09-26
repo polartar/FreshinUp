@@ -50,6 +50,11 @@
 # Changes
 
 
+## September 26, 2020
+- **ADD** Component: fleet member menu item add [#493](https://github.com/FreshinUp/foodfleet/issues/493)
+
+<br/>
+
 ## September 24, 2020
 - **ADD** Can route to New Venue page and Basic Information component [#457](https://github.com/FreshinUp/foodfleet/issues/457)
 
