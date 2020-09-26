@@ -88,10 +88,12 @@
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const DEFAULT_MENU_ITEM = {
+  uuid: '',
   title: '',
   description: '',
   servings: '',
-  cost: ''
+  cost: '',
+  store_uuid: ''
 }
 
 /**

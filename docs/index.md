@@ -49,10 +49,11 @@
 
 # Changes
 
-
 ## September 26, 2020
 - **ADD** Component: fleet member menu item add [#493](https://github.com/FreshinUp/foodfleet/issues/493)
 - **MOD** Fleet member details page display section in the right order [#490](https://github.com/FreshinUp/foodfleet/issues/490)
+- **ADD** Fleet member menu list component [#492](https://github.com/FreshinUp/foodfleet/issues/492)
+
 
 <br/>
 
