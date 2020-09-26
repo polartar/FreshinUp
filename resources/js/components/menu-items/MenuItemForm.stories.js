@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import MenuItemForm from './MenuItemForm'
-import { FIXTURE_MENU } from '../../../../tests/Javascript/__data__/menus'
+import { FIXTURE_MENU_ITEMS } from '../../../../tests/Javascript/__data__/menuItems'
 
 export const Default = () => ({
   components: { MenuItemForm },
@@ -17,7 +17,7 @@ export const WithData = () => ({
   components: { MenuItemForm },
   data () {
     return {
-      item: FIXTURE_MENU
+      item: FIXTURE_MENU_ITEMS[0]
     }
   },
   methods: {
@@ -45,4 +45,4 @@ storiesOf('FoodFleet|components/menu-items/MenuItemForm', module)
     ]
   })
   .add('Default', Default)
-  .add('With data', WithData)
+  .add('WithData', WithData)

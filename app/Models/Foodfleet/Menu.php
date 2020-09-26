@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  *
  * @property Store store
+ * @property EventMenuItem[] items
  */
 class Menu extends Model
 {
@@ -35,5 +36,11 @@ class Menu extends Model
     public function store()
     {
         return $this->belongsTo(Store::class, 'store_uuid', 'uuid');
+    }
+
+    // TODO: need test
+    public function items()
+    {
+        return $this->hasMany(EventMenuItem::class);
     }
 }
