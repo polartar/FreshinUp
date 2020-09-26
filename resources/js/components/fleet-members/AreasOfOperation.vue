@@ -7,7 +7,9 @@
         align-center
       >
         <v-flex>
-          <h3>Areas of Operation</h3>
+          <h3 class="grey--text">
+            Areas of Operation
+          </h3>
         </v-flex>
         <v-flex shrink>
           <v-dialog

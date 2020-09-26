@@ -5,11 +5,11 @@
     :is-loading="isLoading"
     :item-actions="itemActions"
     :multi-item-actions="multipleItemActions"
-    item-key="id"
+    item-key="uuid"
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <template v-slot:item-inner-title,description="{ item }">
+    <template v-slot:item-inner-title="{ item }">
       <div class="subheading primary--text">
         {{ item.title }}
       </div>
@@ -27,11 +27,10 @@
 
 <script>
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
-import get from 'lodash/get'
 import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 
 export const DEFAULT_HEADERS = [
-  { text: 'Item', sortable: true, value: 'title,description', align: 'left' },
+  { text: 'Item', sortable: true, value: 'title', align: 'left' },
   { text: 'Cost', sortable: true, value: 'cost', align: 'right' },
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
@@ -55,9 +54,6 @@ export default {
       itemActions: DEFAULT_ITEM_ACTIONS,
       multipleItemActions: DEFAULT_MULTIPLE_ITEM_ACTIONS
     }
-  },
-  methods: {
-    get
   }
 }
 </script>

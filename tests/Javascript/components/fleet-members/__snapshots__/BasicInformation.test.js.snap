@@ -10,9 +10,14 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
     <div
       class="v-card__title"
     >
-      
-    Basic Information
+      <h3
+        class="grey--text"
+      >
+        
+      Basic Information
     
+      </h3>
+       
       <!---->
     </div>
      
@@ -1050,9 +1055,14 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
     <div
       class="v-card__title"
     >
-      
-    Basic Information
+      <h3
+        class="grey--text"
+      >
+        
+      Basic Information
     
+      </h3>
+       
       <div
         aria-valuemax="100"
         aria-valuemin="0"
@@ -2147,9 +2157,14 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
     <div
       class="v-card__title"
     >
-      
-    Basic Information
+      <h3
+        class="grey--text"
+      >
+        
+      Basic Information
     
+      </h3>
+       
       <!---->
     </div>
      

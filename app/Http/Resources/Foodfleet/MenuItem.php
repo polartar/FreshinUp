@@ -21,6 +21,7 @@ class MenuItem extends JsonResource
             "description" => $this->description,
             "servings" => $this->servings,
             "cost" => $this->cost,
+            "store_uuid" => $this->store_uuid,
             "store" => new Store($this->whenLoaded('store'))
         ];
     }

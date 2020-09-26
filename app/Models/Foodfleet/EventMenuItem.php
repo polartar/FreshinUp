@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class EventMenuItem
  * @package App\Models\Foodfleet
  *
+ * TODO: we normally wouldn't need his class since there is already MenuItem
+ * By making MenuItem have a polymorphic relationship with Event
+ * But there is also menu in the equation so I don't know. We will leave it as is for now
+ *
  * @property int id
  * @property string uuid
  * @property string event_uuid

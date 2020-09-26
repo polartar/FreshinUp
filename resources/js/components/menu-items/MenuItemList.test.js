@@ -1,7 +1,7 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Component from './MenuItemList'
 import * as Stories from './MenuItemList.stories'
-import { FIXTURE_MENUS } from '../../../../tests/Javascript/__data__/menus'
+import { FIXTURE_MENU_ITEMS } from '../../../../tests/Javascript/__data__/menuItems'
 
 describe('components/menu-items/MenuItemList', () => {
   describe('Snapshots', () => {
@@ -38,10 +38,10 @@ describe('components/menu-items/MenuItemList', () => {
       expect(wrapper.vm.items).toHaveLength(0)
 
       wrapper.setProps({
-        items: FIXTURE_MENUS
+        items: FIXTURE_MENU_ITEMS
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.items).toMatchObject(FIXTURE_MENUS)
+      expect(wrapper.vm.items).toMatchObject(FIXTURE_MENU_ITEMS)
     })
   })
 })

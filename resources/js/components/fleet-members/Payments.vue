@@ -6,7 +6,11 @@
         justify-space-between
         row
       >
-        <v-flex>Payments</v-flex>
+        <v-flex>
+          <h3 class="grey--text">
+            Payments
+          </h3>
+        </v-flex>
         <v-flex class="text-xs-right">
           <v-btn
             depressed
