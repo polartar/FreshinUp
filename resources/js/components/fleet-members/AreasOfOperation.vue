@@ -58,7 +58,11 @@
                 </v-btn>
               </div>
               <v-divider />
-              <area-form class="ma-2" />
+              <area-form
+                class="ma-2"
+                @cancel="newOperation = false"
+                @save="onAddArea"
+              />
             </v-card>
           </v-dialog>
         </v-flex>
@@ -93,6 +97,11 @@ export default {
   data () {
     return {
       newOperation: false
+    }
+  },
+  methods: {
+    onAddArea (data) {
+      this.$emit('manage-add', data)
     }
   }
 }

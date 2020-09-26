@@ -34,6 +34,9 @@ export const Populated = () => ({
     },
     onManageMultiple (act, items) {
       action('manage-multiple')(act, items)
+    },
+    onManageAdd (area) {
+      action('manage-add')(area)
     }
   },
   template: `
@@ -42,6 +45,7 @@ export const Populated = () => ({
           :items="areas"
           @manage="onManage"
           @manage-multiple="onManageMultiple"
+          @manage-add="onManageAdd"
         />
       </v-container>
     `

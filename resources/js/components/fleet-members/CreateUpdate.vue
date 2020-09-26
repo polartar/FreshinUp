@@ -84,6 +84,7 @@
             :total-items="storeAreaPagination.totalItems"
             :sort-by="storeAreaSorting.sortBy"
             :descending="storeAreaSorting.descending"
+            @manage-add="onAddArea"
             @paginate="onAreaPaginate"
             @manage-delete="onDeleteArea"
             @manage-multiple-delete="onDeleteArea"
@@ -310,6 +311,8 @@ export default {
     onDeleteArea (area) {
       this.deleteTemp = Array.isArray(area) ? area : [area]
       this.deleteDialog = true
+    },
+    onAddArea (area) {
     },
     async onSubmitDelete () {
       this.deletablesProcessing = true

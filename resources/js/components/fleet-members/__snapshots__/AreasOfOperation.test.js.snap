@@ -64,16 +64,43 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Default 1`] = `
                 <div
                   class="v-card v-sheet theme--light"
                 >
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
                   <div
-                    class="v-card__text grey--text"
+                    class="d-flex justify-space-between align-center"
                   >
-                    
-              Coming Soon here
-            
+                    <div
+                      class="v-card__text grey--text subheading font-weight-bold"
+                    >
+                      
+                Add new area
+              
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                  Close
+                
+                        </div>
+                      </div>
+                    </button>
                   </div>
                    
                   <hr
@@ -208,23 +235,10 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Default 1`] = `
                     </div>
                      
                     <div
-                      class="flex xs12 pa-2"
-                    >
-                      <div
-                        class="text-xs-center"
-                      >
-                        
-      MAP HERE
-    
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="layout align-center justify-space-between"
+                      class="flex py-3 d-flex justify-space-between"
                     >
                       <button
-                        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-                        disabled="disabled"
+                        class="v-btn v-btn--depressed theme--light"
                         type="button"
                       >
                         <div
@@ -727,16 +741,43 @@ exports[`components/fleet-members/AreasOfOperation Snapshots IsLoading 1`] = `
                 <div
                   class="v-card v-sheet theme--light"
                 >
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
                   <div
-                    class="v-card__text grey--text"
+                    class="d-flex justify-space-between align-center"
                   >
-                    
-              Coming Soon here
-            
+                    <div
+                      class="v-card__text grey--text subheading font-weight-bold"
+                    >
+                      
+                Add new area
+              
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                  Close
+                
+                        </div>
+                      </div>
+                    </button>
                   </div>
                    
                   <hr
@@ -871,23 +912,10 @@ exports[`components/fleet-members/AreasOfOperation Snapshots IsLoading 1`] = `
                     </div>
                      
                     <div
-                      class="flex xs12 pa-2"
-                    >
-                      <div
-                        class="text-xs-center"
-                      >
-                        
-      MAP HERE
-    
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="layout align-center justify-space-between"
+                      class="flex py-3 d-flex justify-space-between"
                     >
                       <button
-                        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-                        disabled="disabled"
+                        class="v-btn v-btn--depressed theme--light"
                         type="button"
                       >
                         <div
@@ -1418,16 +1446,43 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Populated 1`] = `
                 <div
                   class="v-card v-sheet theme--light"
                 >
-                  <hr
-                    class="v-divider theme--light"
-                  />
-                   
                   <div
-                    class="v-card__text grey--text"
+                    class="d-flex justify-space-between align-center"
                   >
-                    
-              Coming Soon here
-            
+                    <div
+                      class="v-card__text grey--text subheading font-weight-bold"
+                    >
+                      
+                Add new area
+              
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                  Close
+                
+                        </div>
+                      </div>
+                    </button>
                   </div>
                    
                   <hr
@@ -1562,23 +1617,10 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Populated 1`] = `
                     </div>
                      
                     <div
-                      class="flex xs12 pa-2"
-                    >
-                      <div
-                        class="text-xs-center"
-                      >
-                        
-      MAP HERE
-    
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="layout align-center justify-space-between"
+                      class="flex py-3 d-flex justify-space-between"
                     >
                       <button
-                        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-                        disabled="disabled"
+                        class="v-btn v-btn--depressed theme--light"
                         type="button"
                       >
                         <div

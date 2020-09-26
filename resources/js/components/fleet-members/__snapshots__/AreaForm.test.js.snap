@@ -132,23 +132,10 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
     </div>
      
     <div
-      class="flex xs12 pa-2"
-    >
-      <div
-        class="text-xs-center"
-      >
-        
-      MAP HERE
-    
-      </div>
-    </div>
-     
-    <div
-      class="layout align-center justify-space-between"
+      class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-        disabled="disabled"
+        class="v-btn v-btn--depressed theme--light"
         type="button"
       >
         <div
@@ -309,23 +296,10 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
     </div>
      
     <div
-      class="flex xs12 pa-2"
-    >
-      <div
-        class="text-xs-center"
-      >
-        
-      MAP HERE
-    
-      </div>
-    </div>
-     
-    <div
-      class="layout align-center justify-space-between"
+      class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-        disabled="disabled"
+        class="v-btn v-btn--depressed theme--light"
         type="button"
       >
         <div
