@@ -77,36 +77,6 @@
           xs12
           py-2
         >
-          <DocumentList
-            :docs="docs"
-            :statuses="documentStatuses"
-            :types="documentTypes"
-            :sortables="sortables"
-            :rows-per-page="pagination.rowsPerPage"
-            :page="pagination.page"
-            :total-items="pagination.totalItems"
-            :sort-by="sorting.sortBy"
-            :descending="sorting.descending"
-          />
-        </v-flex>
-        <v-flex
-          xs12
-          py-2
-        >
-          <payments />
-        </v-flex>
-        <v-flex
-          xs12
-          py-2
-        >
-          <Events
-            :events="events"
-          />
-        </v-flex>
-        <v-flex
-          xs12
-          py-2
-        >
           <AreasOfOperation
             :items="storeAreas"
             :rows-per-page="storeAreaPagination.rowsPerPage"
@@ -163,7 +133,37 @@
           xs12
           py-2
         >
+          <DocumentList
+            :docs="docs"
+            :statuses="documentStatuses"
+            :types="documentTypes"
+            :sortables="sortables"
+            :rows-per-page="pagination.rowsPerPage"
+            :page="pagination.page"
+            :total-items="pagination.totalItems"
+            :sort-by="sorting.sortBy"
+            :descending="sorting.descending"
+          />
+        </v-flex>
+        <v-flex
+          xs12
+          py-2
+        >
           <Menu />
+        </v-flex>
+        <v-flex
+          xs12
+          py-2
+        >
+          <Events
+            :events="events"
+          />
+        </v-flex>
+        <v-flex
+          xs12
+          py-2
+        >
+          <payments />
         </v-flex>
       </v-layout>
     </v-form>
