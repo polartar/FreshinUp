@@ -244,7 +244,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
   class="container white"
 >
   <div
-    class="white v-card v-sheet theme--light"
+    class="v-card v-sheet theme--light"
     style="background-color: rgb(229, 229, 229);"
   >
     <div

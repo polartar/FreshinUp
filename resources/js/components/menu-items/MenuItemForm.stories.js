@@ -31,7 +31,6 @@ export const WithData = () => ({
   template: `
     <v-container class="white">
       <MenuItemForm
-        class="white"
         :value="item"
         @input="onSave"
         @cancel="onCancel"/>
