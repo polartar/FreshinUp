@@ -322,7 +322,7 @@ exports[`components/locations/LocationForm Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select theme--light"
+            class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--is-label-active v-input--is-dirty theme--light"
             role="combobox"
           >
             <div
@@ -337,6 +337,11 @@ exports[`components/locations/LocationForm Snapshots WithData 1`] = `
                   <div
                     class="v-select__selections"
                   >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      Indoor
+                    </div>
                     <input
                       aria-readonly="false"
                       autocomplete="on"
@@ -374,10 +379,11 @@ exports[`components/locations/LocationForm Snapshots WithData 1`] = `
                         role="list"
                       >
                         <div
+                          class="primary--text"
                           role="listitem"
                         >
-                          <div
-                            class="v-list__tile theme--light"
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                           >
                             <div
                               class="v-list__tile__content"
@@ -385,10 +391,27 @@ exports[`components/locations/LocationForm Snapshots WithData 1`] = `
                               <div
                                 class="v-list__tile__title"
                               >
-                                No data available
+                                Indoor
                               </div>
                             </div>
-                          </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Outdoor
+                              </div>
+                            </div>
+                          </a>
                         </div>
                       </div>
                     </div>

@@ -16,7 +16,7 @@
 
           <v-select
             v-model="category_id"
-            :items="Categories"
+            :items="categories"
             item-value="id"
             item-text="name"
             solo
