@@ -27,6 +27,7 @@
         type="file"
         multiple
         class="ff-add-location__file_input"
+        :accept="acceptedFormats"
         @change="onFileChange"
       >
       <div
@@ -166,7 +167,13 @@ export default {
   mixins: [MapValueKeysToData, FormatFileSize],
   props: {
     categories: { type: Array, default: () => [] },
-    documents: { type: Array, default: () => [] }
+    documents: { type: Array, default: () => [] },
+    allowedFormats: {
+      type: Array,
+      default: () => [
+        'PDF', 'JPG', 'JPEG', 'PNG', 'GIF', 'DOCX', 'PPTX'
+      ]
+    }
   },
   data () {
     return {
@@ -176,6 +183,9 @@ export default {
   computed: {
     isIndoor () {
       return this.category_id === 1
+    },
+    acceptedFormats () {
+      return this.allowedFormats.map(format => `.${format.toLowerCase()}`).join(',')
     }
   },
   watch: {
@@ -249,6 +259,8 @@ export default {
   }
 
   .ff-add-location__document_item {
-    display: flex; justify-content: space-between; align-items: center
+    display: flex;
+    justify-content: space-between;
+    align-items: center
   }
 </style>

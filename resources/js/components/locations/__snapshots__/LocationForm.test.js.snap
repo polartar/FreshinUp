@@ -436,6 +436,7 @@ exports[`components/locations/LocationForm Snapshots Indoor 1`] = `
      
     <div>
       <input
+        accept=".pdf,.jpg,.jpeg,.png,.gif,.docx,.pptx"
         class="ff-add-location__file_input"
         multiple="multiple"
         type="file"
@@ -1096,6 +1097,7 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
      
     <div>
       <input
+        accept=".pdf,.jpg,.jpeg,.png,.gif,.docx,.pptx"
         class="ff-add-location__file_input"
         multiple="multiple"
         type="file"
