@@ -31,7 +31,7 @@ export const Populated = () => ({
   components: { Locations },
   data () {
     return {
-      items: FIXTURE_LOCATIONS,
+      items: FIXTURE_LOCATIONS
     }
   },
   methods: {

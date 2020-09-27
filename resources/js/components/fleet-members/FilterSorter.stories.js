@@ -22,7 +22,7 @@ mock.onGet(/\/users.*/).reply(200, {
 export const Default = () => ({
   components: { FilterSorter },
   template: `
-      <v-container class="grey">
+      <v-container style="background-color: #d1d1d1;">
         <filter-sorter />
       </v-container>
     `
@@ -42,7 +42,7 @@ export const Set = () => ({
     }
   },
   template: `
-      <v-container class="grey">
+      <v-container style="background-color: #d1d1d1;">
         <filter-sorter
           :statuses="statuses"
           :sortables="sortables"
@@ -72,7 +72,7 @@ export const Populated = () => ({
     }
   },
   template: `
-      <v-container class="grey">
+      <v-container style="background-color: #d1d1d1;">
         <filter-sorter
           :filters="filters"
           :statuses="statuses"

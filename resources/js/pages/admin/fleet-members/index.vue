@@ -6,19 +6,21 @@
       justify-space-between
       ma-2
     >
-      <h2 class="white--text">
-        {{ pageTitle }}
-      </h2>
-      <v-flex>
+      <v-layout
+        flex
+        align-center
+      >
+        <h2 class="white--text mr-3">
+          {{ pageTitle }}
+        </h2>
         <v-btn
           slot="activator"
-          color="primary"
-          dark
+          color="white"
           href="/admin/fleet-members/new"
         >
-          Add New Fleet Member
+          <span class="primary--text">Add New Fleet Member</span>
         </v-btn>
-      </v-flex>
+      </v-layout>
     </v-flex>
 
     <filter-sorter
