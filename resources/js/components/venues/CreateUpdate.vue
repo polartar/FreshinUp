@@ -26,8 +26,9 @@
         xs12
       >
         <status-select
-          v-model="venue.status_id"
+          :value="get(venue, 'status_id')"
           :options="statuses"
+          @input="value => venue.status_id = value"
         />
       </v-flex>
     </div>
@@ -79,6 +80,7 @@ export default {
     }
   },
   methods: {
+    get,
     returnToList () {
       this.$router.push({ path: '/admin/venues' })
     },

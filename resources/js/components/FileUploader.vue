@@ -90,16 +90,8 @@ export default {
     event: 'onValueChange'
   },
   props: {
-    value: {
-      type: Object,
-      default: () => {
-        return { name: '', src: '' }
-      }
-    },
-    maxFileSize: {
-      type: Number,
-      default: 100
-    }
+    value: { type: Object, default: () => ({ name: '', src: '' }) },
+    maxFileSize: { type: Number, default: 100 }
   },
   data () {
     return {
@@ -120,15 +112,15 @@ export default {
     },
     async onFileChange (file) {
       if (file.length > 0) {
-        let fileSouce = file[0]
-        let size = fileSouce.size - this.maxInBytes
+        let fileSource = file[0]
+        let size = fileSource.size - this.maxInBytes
 
         if (size > 1) {
           this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
         } else {
-          const fileSrc = await this.submitFile(fileSouce)
+          const fileSrc = await this.submitFile(fileSource)
           if (fileSrc) {
-            this.$emit('onValueChange', { name: fileSouce.name, src: fileSrc })
+            this.$emit('onValueChange', { name: fileSource.name, src: fileSrc })
           }
         }
       }

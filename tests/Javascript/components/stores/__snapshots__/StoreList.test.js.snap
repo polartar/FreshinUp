@@ -611,7 +611,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-center select-td"
+              class="justify-center text-xs-left select-td"
             >
               <div
                 class="v-menu"
@@ -899,7 +899,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-center select-td"
+              class="justify-center text-xs-left select-td"
             >
               <div
                 class="v-menu"
@@ -1175,7 +1175,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-center select-td"
+              class="justify-center text-xs-left select-td"
             >
               <div
                 class="v-menu"
@@ -1451,7 +1451,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-center select-td"
+              class="justify-center text-xs-left select-td"
             >
               <div
                 class="v-menu"
@@ -1739,7 +1739,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-center select-td"
+              class="justify-center text-xs-left select-td"
             >
               <div
                 class="v-menu"

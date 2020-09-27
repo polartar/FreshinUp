@@ -202,3 +202,5 @@ export const FIXTURE_LOCATIONS = [
     ]
   }
 ]
+
+export const FIXTURE_LOCATION = FIXTURE_LOCATIONS[0]

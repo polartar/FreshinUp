@@ -40,11 +40,15 @@ export const Populated = () => ({
     },
     onManageMultiple (act, items) {
       action('onManageMultiple')(act, items)
+    },
+    onSubmit (payload) {
+      action('onSubmit')(payload)
     }
   },
   template: `
     <locations
       :items="items"
+      @location-submit="onSubmit"
       @manage="onManage"
       @manage-multiple="onManageMultiple"
     />
