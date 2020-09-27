@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-card-title>
-      Basic Information
+      <h3 class="grey--text">
+        Basic Information
+      </h3>
       <v-progress-linear
         v-if="loading"
         indeterminate

@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/menu-items/MenuItemForm Default Default 1`] = `
+<div
+  class="container white"
+>
+  <div
+    class="ff-menu-item__form"
+  >
+    <h3
+      class="headline grey--text font-weight-bold"
+    >
+      
+    Add menu new item
+  
+    </h3>
+     
+    <div
+      class="layout"
+    >
+      <div
+        class="flex xs8 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        Item Title
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  placeholder="Enter menu item title"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs2 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        servings
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs2 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        Cost
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="layout"
+    >
+      <div
+        class="flex xs12 px-2"
+      >
+        <div
+          class="text-uppercase grey--text font-weight-bold"
+        >
+          
+        Item description
+      
+        </div>
+         
+        <div
+          class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <textarea
+                  rows="5"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <span
+                  class="v-messages__wrapper"
+                  name="message-transition"
+                  tag="div"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div>
+      <button
+        class="white--text v-btn v-btn--depressed theme--light grey"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Cancel
+    
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Save
+    
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
+<div
+  class="container white"
+>
+  <div
+    class="ff-menu-item__form"
+  >
+    <h3
+      class="headline grey--text font-weight-bold"
+    >
+      
+    Add menu new item
+  
+    </h3>
+     
+    <div
+      class="layout"
+    >
+      <div
+        class="flex xs8 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        Item Title
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  placeholder="Enter menu item title"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs2 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        servings
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs2 px-2"
+      >
+        <div
+          class="mb-2 text-uppercase grey--text font-weight-bold"
+        >
+          
+        Cost
+      
+        </div>
+         
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <input
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="layout"
+    >
+      <div
+        class="flex xs12 px-2"
+      >
+        <div
+          class="text-uppercase grey--text font-weight-bold"
+        >
+          
+        Item description
+      
+        </div>
+         
+        <div
+          class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot white"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <textarea
+                  rows="5"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <span
+                  class="v-messages__wrapper"
+                  name="message-transition"
+                  tag="div"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div>
+      <button
+        class="white--text v-btn v-btn--depressed theme--light grey"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Cancel
+    
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Save
+    
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
