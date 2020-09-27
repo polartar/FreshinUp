@@ -19,9 +19,6 @@ use App\Models\Foodfleet\Document;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Document::class, function (Faker $faker) {
-    // *** Commented out because this can cause more problem than the actual benefits
-    // $assigned_type = $faker->randomElement([User::class, Store::class, Event::class, Location::class]);
-    // $assigned_uuid = factory($assigned_type)->create()->uuid;
     return [
         'title' => $faker->word,
         'description' => $faker->realText(),
@@ -33,9 +30,6 @@ $factory->define(Document::class, function (Faker $faker) {
         },
         'created_by_uuid' => function () {
             return factory(User::class)->create()->uuid;
-        },
-        // 'assigned_uuid' => $assigned_uuid,
-        // 'assigned_type' => $assigned_type,
-        // 'event_store_uuid' => '',
+        }
     ];
 });
