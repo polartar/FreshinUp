@@ -2,21 +2,17 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Documents;
 
-use App\User;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
-
+use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Http\Testing\File;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
-use Carbon\Carbon;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Testing\File;
-use Illuminate\Support\Str;
 
 class DocumentTest extends TestCase
 {
@@ -149,7 +145,7 @@ class DocumentTest extends TestCase
             ->toMediaCollection('attachment');
         $attachment = $document->getFirstMedia('attachment');
 
-        $url = 'api/foodfleet/documents/' . $document->uuid;
+        $url = 'api/foodfleet/documents/'.$document->uuid;
         $returnedDocument = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -185,8 +181,8 @@ class DocumentTest extends TestCase
         ]);
 
         $response = $this->get('/api/foodfleet/documents?'
-            . 'filter[assigned_uuid]=' . $event->uuid
-            . '&filter[event_store_uuid]=' . $eventStoreUUID);
+            .'filter[assigned_uuid]='.$event->uuid
+            .'&filter[event_store_uuid]='.$eventStoreUUID);
 
         $this->assertEquals(1, count($response->json('data')));
         $response->assertStatus(200)
@@ -201,4 +197,6 @@ class DocumentTest extends TestCase
                 ]
             ]);
     }
+
+    // TODO: test document creation or at least test actions/CreateDocument
 }

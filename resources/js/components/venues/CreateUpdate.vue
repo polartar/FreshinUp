@@ -1,6 +1,10 @@
 <template>
   <div>
-    <v-layout pt4 class="px-4" column>
+    <v-layout
+      pt4
+      class="px-4"
+      column
+    >
       <v-flex>
         <v-btn
           flat
@@ -41,21 +45,30 @@
           @delete="onDelete"
         />
       </v-flex>
-      <v-flex class="mt-4" v-if="!isNew">
+      <v-flex
+        v-if="!isNew"
+        class="mt-4"
+      >
         <locations
           :is-loading="locationLoading"
+          :form-is-loading="locationFormIsLoading"
           :items="locations"
+          :categories="locationCategories"
           :rows-per-page="locationPagination.rowsPerPage"
           :page="locationPagination.page"
           :total-items="locationPagination.totalItems"
           :sort-by="locationSorting.sortBy"
           :descending="locationSorting.descending"
+          @new-location="createLocation"
           @paginate="onLocationPaginate"
           @manage-delete="item => deleteResource(DELETABLE_RESOURCE.LOCATION, item)"
           @manage-multiple-delete="items => deleteResources(DELETABLE_RESOURCE.LOCATION, items)"
         />
       </v-flex>
-      <v-flex class="mt-4" v-if="!isNew">
+      <v-flex
+        v-if="!isNew"
+        class="mt-4"
+      >
         <documents
           :is-loading="documentLoading"
           :items="documents"
@@ -74,7 +87,10 @@
           @change-status-multiple="changeDocumentStatuses"
         />
       </v-flex>
-      <v-flex class="mt-4" v-if="!isNew">
+      <v-flex
+        v-if="!isNew"
+        class="mt-4"
+      >
         <events
           :items="events"
           :statuses="eventStatuses"
@@ -120,7 +136,7 @@
           </template>
           <template v-else>
             <p class="subheading">
-              Deletable(s) : {{ deletable.temp | formatDeleteTitles }}
+              Deletable(s) : {{ deletable.temp | formatDeleteTitles(deletable.resource) }}
             </p>
           </template>
         </div>
@@ -139,7 +155,7 @@ import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import Locations from '../locations/Locations'
 import Events from './Events'
 
-const INCLUDE = [
+const VENUE_INCLUDES = [
   'owner'
 ]
 const LOCATION_INCLUDES = [
@@ -155,8 +171,16 @@ const DELETABLE_RESOURCE = {
   DOCUMENT: 'DOCUMENT',
   LOCATION: 'LOCATION',
   VENUE: 'VENUE',
-  EVENT: 'EVENT',
+  EVENT: 'EVENT'
 }
+
+const TITLE_RESOURCE = {
+  DOCUMENT: 'title',
+  LOCATION: 'name',
+  VENUE: 'name',
+  EVENT: 'name'
+}
+
 export default {
   layout: 'admin',
   components: {
@@ -165,23 +189,25 @@ export default {
     Documents,
     SimpleConfirm,
     Locations,
-    Events,
+    Events
   },
   data () {
     return {
+      locationFormIsLoading: false,
+      DELETABLE_RESOURCE,
       deletable: {
-        resource: '', // DOCUMENT | LOCATION | VENUE
+        resource: '', // DOCUMENT | LOCATION | VENUE | EVENT
         dialog: false,
         processing: false,
         progress: 0,
         status: '',
         temp: [],
         dialogTitle: (items) => items.length < 2
-          ? 'Are you sure you want to delete this document?'
-          : 'Are you sure you want to delete the following documents?'
+          ? 'Are you sure you want to this item ?'
+          : 'Are you sure you want to delete the following items?'
       },
       documentLoading: false,
-      locationLoading: false,
+      locationLoading: false
     }
   },
   computed: {
@@ -195,11 +221,12 @@ export default {
       documentSortBy: 'sortBy'
     }),
     ...mapGetters('locations', {
-      locations: 'items',
+      locations_: 'items',
       locationPagination: 'pagination',
       locationSorting: 'sorting',
       locationSortBy: 'sortBy'
     }),
+    ...mapGetters('locationCategories', { locationCategories: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
     ...mapGetters('venues', { venue_: 'item' }),
     ...mapGetters('venueStatuses', { statuses: 'items' }),
@@ -210,6 +237,10 @@ export default {
       eventSorting: 'sorting',
       eventSortBy: 'sortBy'
     }),
+    locations () {
+      // For some reasons, after creating a location, locations/items result to an object
+      return Array.isArray(this.locations_) ? this.locations_ : []
+    },
     venue () {
       return this.isNew ? DEFAULT_VENUE : this.venue_
     },
@@ -220,12 +251,13 @@ export default {
       return get(this.$route, 'params.id', 'new') === 'new'
     }
   },
-  mixins: [deletables],
   filters: {
-    formatDeleteTitles (value, prop = 'name') {
+    formatDeleteTitles (value, resource) {
+      const prop = TITLE_RESOURCE[resource] || 'name'
       return value.map(item => item[prop]).join(', ')
     }
   },
+  mixins: [deletables],
   methods: {
     get,
     ...mapActions('page', {
@@ -239,7 +271,7 @@ export default {
       this.$store.dispatch('events/patchFilters', {
         'filter[name]': params['filter[name]']
       })
-      this.$store.dispatch('events/getItems', { params: { include: EVENT_INCLUDES }})
+      this.$store.dispatch('events/getItems')
     },
     changeStatus (statusId) {
       return this.onSave({ status_id: statusId, uuid: this.$route.params.id })
@@ -277,14 +309,14 @@ export default {
         this.$store.dispatch('generalErrorMessages/setErrors', message)
       }
     },
-    deleteResource (resource, type) {
+    deleteResource (type, resource) {
       this.deletable.resource = type
       this.deletable.temp = [resource]
       this.deletable.dialog = true
     },
-    deleteResources (documents, type) {
+    deleteResources (type, resources) {
       this.deletable.resource = type
-      this.deleteTemp = documents
+      this.deletable.temp = resources
       this.deletable.dialog = true
     },
 
@@ -294,10 +326,10 @@ export default {
       this.$store.dispatch('documents/getItems')
     },
     viewDocument (document) {
-      this.$router.push({ path: `/admin/documents/${document.uuid}` })
+      this.$router.push({ path: `/admin/docs/${document.uuid}` })
     },
     editDocument (document) {
-      this.$router.push({ path: `/admin/documents/${document.uuid}/edit` })
+      this.$router.push({ path: `/admin/docs/${document.uuid}/edit` })
     },
     changeDocumentStatus (statusId, document) {
       this.documentLoading = true
@@ -327,7 +359,7 @@ export default {
 
       this.deletable.temp.forEach((item) => {
         dispatcheables.push(this.$store.dispatch(`${this.deletable.resource.toLowerCase()}s/deleteItem`, {
-          getItems: false,
+          getItems: true,
           params: { id: item.uuid } // assomption that all models (location, venue, document) has uuid
         }))
       })
@@ -338,8 +370,8 @@ export default {
       for (let i in chunks) {
         await Promise.all(chunks[i])
         doneCount += chunks[i].length
-        this.deleteTempStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
-        this.deleteTempProgress = doneCount / this.deleteTemp.length * 100
+        this.deletable.status = doneCount + ' / ' + this.deletable.temp.length + ' Done'
+        this.deletable.progress = doneCount / this.deletable.temp.length * 100
         await this.sleep(this.deletablesSleepTime)
       }
 
@@ -356,15 +388,33 @@ export default {
     // Locations
     onLocationPaginate (value) {
       this.$store.dispatch('locations/setPagination', value)
-      this.$store.dispatch('locations/getItems', {
-        params: { include: LOCATION_INCLUDES }
+      this.$store.dispatch('locations/getItems')
+    },
+    createLocation (data, locationFormComponent) {
+      // TODO: We should avoid mutating props but in this case we don't care
+      this.locationFormIsLoading = true
+      this.$store.dispatch('locations/createItem', {
+        data: { ...data, venue_uuid: this.$route.params.id }
       })
+        .then(response => {
+          // get(response, 'data', data)
+          this.$store.dispatch('generalMessage/setMessage', 'Location added.')
+          locationFormComponent.newLocationDialog = false
+          this.$store.dispatch('locations/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.locationFormIsLoading = false
+        })
     },
 
     // Events
     onEventPaginate (value) {
       this.$store.dispatch('events/setPagination', value)
-      this.$store.dispatch('events/getItems', { params: { include: EVENT_INCLUDES }})
+      this.$store.dispatch('events/getItems')
     },
     changeEventStatus (statusId, event) {
       this.documentLoading = true
@@ -396,7 +446,7 @@ export default {
 
     if (id !== 'new') {
       vm.setPageLoading(true)
-      vm.$store.dispatch('venues/getItem', { params: { id, include: INCLUDE } })
+      vm.$store.dispatch('venues/getItem', { params: { id, include: VENUE_INCLUDES } })
         .then()
         .catch(error => console.error(error))
         .then(() => {
@@ -408,13 +458,16 @@ export default {
       promises.push(vm.$store.dispatch('documents/getItems'))
       promises.push(vm.$store.dispatch('documentStatuses/getItems'))
       vm.$store.dispatch('events/setFilters', {
-        'filter[venue_uuid]': id
+        'filter[venue_uuid]': id,
+        include: EVENT_INCLUDES
       })
-      promises.push(vm.$store.dispatch('events/getItems', { params: { include: EVENT_INCLUDES }}))
+      promises.push(vm.$store.dispatch('events/getItems'))
       vm.$store.dispatch('locations/setFilters', {
-        'filter[venue_uuid]': id
+        venue_uuid: id,
+        include: LOCATION_INCLUDES.join(',')
       })
-      promises.push(vm.$store.dispatch('locations/getItems', { params: { include: LOCATION_INCLUDES } }))
+      promises.push(vm.$store.dispatch('locations/getItems'))
+      promises.push(vm.$store.dispatch('locationCategories/getItems'))
     }
     promises.push(vm.$store.dispatch('venueStatuses/getItems'))
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))

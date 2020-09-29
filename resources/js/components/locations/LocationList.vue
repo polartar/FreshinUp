@@ -4,8 +4,7 @@
     :items="options"
     :is-loading="isLoading"
     :item-actions="itemActions"
-    :multi-item-actions="itemActions"
-    single-select
+    :multi-item-actions="multipleItemActions"
     item-key="uuid"
     v-bind="$attrs"
     v-on="$listeners"
@@ -44,6 +43,9 @@ export const HEADERS = [
 export const ITEM_ACTIONS = [
   { action: 'delete', text: 'Delete' }
 ]
+export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
+  { action: 'delete', text: 'Delete' }
+]
 export default {
   components: { FDataTable, FChip },
   props: {
@@ -53,7 +55,8 @@ export default {
   data () {
     return {
       headers: HEADERS,
-      itemActions: ITEM_ACTIONS
+      itemActions: ITEM_ACTIONS,
+      multipleItemActions: DEFAULT_MULTIPLE_ITEM_ACTIONS
     }
   },
   computed: {

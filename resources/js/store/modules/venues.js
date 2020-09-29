@@ -1,9 +1,5 @@
-import makeRestStore from '@freshinup/core-ui/src/store/utils/makeRestStore'
+import makeRestStore from '../utils/makeRestStore'
 
 export default ({ items, item }) => {
-  const store = makeRestStore('foodfleet/venues', { items, item })
-  return {
-    namespaced: true,
-    ...store
-  }
+  return makeRestStore('foodfleet/venues', { items, item })
 }

@@ -29,6 +29,7 @@ import venues from './store/modules/venues'
 import venueStatuses from './store/modules/venueStatuses'
 import companies from './store/modules/companies'
 import locations from './store/modules/locations'
+import locationCategories from './store/modules/locationCategories'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
@@ -172,7 +173,8 @@ const appInstance = new App({
       venueStatuses: venueStatuses({}),
       eventHistories: eventHistories({}),
       companies: companies({}),
-      locations: locations({})
+      locations: locations({}),
+      locationCategories: locationCategories({})
     }
   }),
   theme,

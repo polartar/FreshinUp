@@ -13,29 +13,19 @@
           </h3>
         </v-flex>
         <v-flex shrink>
-          <v-dialog
-            v-model="newEventDialog"
-            max-width="400"
+          <v-btn
+            slot="activator"
+            color="primary"
+            dark
+            href="/admin/events/new"
           >
-            <template v-slot:activator="{ on }">
-              <v-btn
-                slot="activator"
-                color="primary"
-                dark
-                @click="newEventDialog = true"
-              >
-                <v-icon
-                  dark
-                  left
-                >
-                  add_circle_outline
-                </v-icon>Add New Event
-              </v-btn>
-            </template>
-            <v-card>
-              <event-form />
-            </v-card>
-          </v-dialog>
+            <v-icon
+              dark
+              left
+            >
+              add_circle_outline
+            </v-icon>Add New Event
+          </v-btn>
         </v-flex>
       </v-layout>
     </v-card-title>
@@ -60,19 +50,13 @@
 <script>
 import EventFilterSorter from './EventFilterSorter.vue'
 import EventList from './EventList'
-import EventForm from '../events/EventForm'
 
 export default {
-  components: { EventFilterSorter, EventList, EventForm },
+  components: { EventFilterSorter, EventList },
   props: {
     items: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] },
     isLoading: { type: Boolean, default: false }
-  },
-  data () {
-    return {
-      newEventDialog: false
-    }
   },
   methods: {
     onFilter (payload) {

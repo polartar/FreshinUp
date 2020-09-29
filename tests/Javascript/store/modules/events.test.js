@@ -118,7 +118,7 @@ describe('store/modules/events', () => {
         const data = FIXTURE_EVENTS[0]
         store.actions.updateItem({ commit }, { data })
         expect(commit).toHaveBeenCalledWith('UPDATE_ITEM', {
-          data: omit(FIXTURE_EVENTS[0], ['event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status']),
+          data: omit(FIXTURE_EVENTS[0], ['event_tags', 'event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status']),
           params: {}
         })
       })

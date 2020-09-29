@@ -2,7 +2,8 @@
 
 exports[`components/stores/FilterSorter Snapshots Default 1`] = `
 <div
-  class="container grey"
+  class="container"
+  style="background-color: rgb(209, 209, 209);"
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
@@ -704,7 +705,8 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
 
 exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
 <div
-  class="container grey"
+  class="container"
+  style="background-color: rgb(209, 209, 209);"
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
@@ -1881,7 +1883,8 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
 
 exports[`components/stores/FilterSorter Snapshots Set 1`] = `
 <div
-  class="container grey"
+  class="container"
+  style="background-color: rgb(209, 209, 209);"
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"

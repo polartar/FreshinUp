@@ -2,16 +2,32 @@ import { storiesOf } from '@storybook/vue'
 
 // Components
 import FileUploader from './FileUploader.vue'
+import { action } from '@storybook/addon-actions'
 
-storiesOf('FoodFleet|ui/FileUploader', module)
-  .add('default', () => ({
-    components: { FileUploader },
-    data: () => ({
-      file: { name: '', src: '' }
-    }),
-    template: `
+export const Default = () => ({
+  components: { FileUploader },
+  data: () => ({
+    file: { name: '', src: '' },
+    maxFileSize: 5 // 5 MB
+  }),
+  methods: {
+    onValueChange (value) {
+      action('onValueChange')(value)
+    }
+  },
+  template: `
       <v-container>
-        <file-uploader v-model="file"/>
+        <pre>
+          {{ file }}
+        </pre>
+        <file-uploader
+          v-model="file"
+          :max-file-size="maxFileSize"
+          @onValueChange="onValueChange"
+        />
       </v-container>
 `
-  }))
+})
+
+storiesOf('FoodFleet|ui/FileUploader', module)
+  .add('default', Default)

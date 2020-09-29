@@ -91,7 +91,7 @@
             hide-details
           />
         </td>
-        <td class="justify-center text-xs-center select-td">
+        <td class="justify-center text-xs-left select-td">
           <status-select
             :value="props.item.status_id"
             :options="statuses"

@@ -16,8 +16,12 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Default 1`] = `
         <div
           class="flex"
         >
-          <h3>
-            Areas of Operation
+          <h3
+            class="grey--text"
+          >
+            
+          Areas of Operation
+        
           </h3>
         </div>
          
@@ -675,8 +679,12 @@ exports[`components/fleet-members/AreasOfOperation Snapshots IsLoading 1`] = `
         <div
           class="flex"
         >
-          <h3>
-            Areas of Operation
+          <h3
+            class="grey--text"
+          >
+            
+          Areas of Operation
+        
           </h3>
         </div>
          
@@ -1362,8 +1370,12 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Populated 1`] = `
         <div
           class="flex"
         >
-          <h3>
-            Areas of Operation
+          <h3
+            class="grey--text"
+          >
+            
+          Areas of Operation
+        
           </h3>
         </div>
          

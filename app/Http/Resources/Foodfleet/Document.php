@@ -21,11 +21,13 @@ class Document extends JsonResource
         $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type, $this->event_store_uuid);
         $assignedResource = DocumentAssignedEnum::getResource($assignedType);
         $attachment = $this->getFirstMedia('attachment');
+//        dd($attachment);
         $file = [
             'name' => optional($attachment)->file_name,
             'src' => optional($attachment)->getPath()
         ];
         $data = [
+            'id' => $this->id,
             'uuid' => $this->uuid,
             'title' => $this->title,
             'status' => $this->status ? intval($this->status) : DocumentStatusEnum::PENDING,
