@@ -1039,14 +1039,14 @@ class EventTest extends TestCase
         ]);
 
         factory(Document::class, 5)->create([
-            'type' => 3,
+            'type' => 2,
             'status' => 2,
             'assigned_uuid' => $user->uuid,
             'assigned_type' => 'App\User'
         ]);
-
-        $data = $this
-            ->json('get', "/api/foodfleet/event-summary/".$event->uuid)
+        $response = $this->json('get', "/api/foodfleet/event-summary/".$event->uuid);
+        dump($response);
+        $data = $response
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -1098,7 +1098,7 @@ class EventTest extends TestCase
         ]);
 
         factory(Document::class, 5)->create([
-            'type' => 3,
+            'type' => 2,
             'status' => 2,
             'assigned_uuid' => $user->uuid,
             'assigned_type' => 'App\User'

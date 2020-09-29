@@ -35,7 +35,6 @@ class EventSummary extends JsonResource
             $customer = User::where('id', $host->users_id)->first();
             $signed_contracts = Document::where('assigned_uuid', $customer->uuid)
                 ->where('assigned_type', DocumentAssignedEnum::getDescription(DocumentAssignedEnum::USER))
-                ->where('type', DocumentTypeEnum::CONTRACT)
                 ->where('status', DocumentStatusEnum::APPROVED)
                 ->count();
             $customer = (object) [
@@ -71,7 +70,7 @@ class EventSummary extends JsonResource
             "total_cost" => $total_cost,
             "amount_due" => $total_commission + $total_cost
         ];
-        
+
         return [
             "customer" => $customer,
             "financial" => $financial
