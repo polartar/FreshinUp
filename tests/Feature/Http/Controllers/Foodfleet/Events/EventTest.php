@@ -1044,9 +1044,9 @@ class EventTest extends TestCase
             'assigned_uuid' => $user->uuid,
             'assigned_type' => 'App\User'
         ]);
-        $response = $this->json('get', "/api/foodfleet/event-summary/".$event->uuid);
-        dump($response);
-        $data = $response
+
+        $data = $this
+            ->json('get', "/api/foodfleet/event-summary/".$event->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
