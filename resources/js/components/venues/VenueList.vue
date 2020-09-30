@@ -5,7 +5,7 @@
     :is-loading="isLoading"
     :item-actions="itemActions"
     :multi-item-actions="multipleItemActions"
-    item-key="id"
+    item-key="uuid"
     v-bind="$attrs"
     v-on="$listeners"
   >

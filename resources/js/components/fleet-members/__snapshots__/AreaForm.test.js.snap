@@ -2,7 +2,7 @@
 
 exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
 <div
-  class="container"
+  class="container white"
 >
   <form
     class="py-2"

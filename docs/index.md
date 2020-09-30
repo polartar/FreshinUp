@@ -1,5 +1,9 @@
 # Roadmap
 
+## Fleet member menu page
+## Document template page
+## Document page
+
 ## Venue Page
 - Venues can be search by (this is unknown)
 - Venues can be filtered by **Statues**, **Venue/Owner**, **Locations**, and **Submitted On**
@@ -49,11 +53,22 @@
 
 # Changes
 
+## September 27, 2020
+- **ADD** New Venue page: integration
+ [#483](https://github.com/FreshinUp/foodfleet/issues/483)
+ 
+ <br/>
+
 ## September 26, 2020
 - **ADD** Component: fleet member menu item add [#493](https://github.com/FreshinUp/foodfleet/issues/493)
 - **MOD** Fleet member details page display section in the right order [#490](https://github.com/FreshinUp/foodfleet/issues/490)
 - **ADD** Fleet member menu list component [#492](https://github.com/FreshinUp/foodfleet/issues/492)
+- **ADD** Add Location component: Indoor [#474](https://github.com/FreshinUp/foodfleet/issues/474)
 
+<br/>
+
+## September 25, 2020
+- **ADD** Add Location component: Outdoor [#461](https://github.com/FreshinUp/foodfleet/issues/461)
 
 <br/>
 

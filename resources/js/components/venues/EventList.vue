@@ -20,9 +20,9 @@
       <div class="grey--text">
         {{ item.name }}
       </div>
-      <div v-if="item.tags.length">
+      <div v-if="get(item, 'event_tags.length')">
         <v-chip
-          v-for="(tag, index) of item.tags"
+          v-for="(tag, index) of get(item, 'event_tags', [])"
           :key="index"
           class="white--text"
           color="orange"
@@ -54,7 +54,7 @@
 
 <script>
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
-import StatusSelect from '~/components/docs/StatusSelect'
+import StatusSelect from '../events/StatusSelect'
 import get from 'lodash/get'
 
 export const HEADERS = [

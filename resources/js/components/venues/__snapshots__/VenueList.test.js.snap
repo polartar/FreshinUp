@@ -2,7 +2,7 @@
 
 exports[`components/venues/VenueList Snapshots Empty 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"
@@ -407,7 +407,7 @@ exports[`components/venues/VenueList Snapshots Empty 1`] = `
 
 exports[`components/venues/VenueList Snapshots IsLoading 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"
@@ -840,7 +840,7 @@ exports[`components/venues/VenueList Snapshots IsLoading 1`] = `
 
 exports[`components/venues/VenueList Snapshots Populated 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"

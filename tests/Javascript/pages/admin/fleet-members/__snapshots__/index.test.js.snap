@@ -9,32 +9,34 @@ exports[`pages/admin/fleet-members Mount snapshot 1`] = `
     ma-2=""
     tag="div"
   >
-    <h2
-      class="white--text"
-    >
-      
-      Fleet Member List
-    
-    </h2>
-     
-    <v-flex-stub
+    <v-layout-stub
+      align-center=""
+      flex=""
       tag="div"
-      text-xs-right=""
     >
+      <h2
+        class="white--text mr-3"
+      >
+        
+        Fleet Member List
+      
+      </h2>
+       
       <v-btn-stub
         activeclass="v-btn--active"
-        color="primary"
-        dark="true"
+        color="white"
         href="/admin/fleet-members/new"
         slot="activator"
         tag="button"
         type="button"
       >
-        
-        Add New Fleet Member
-      
+        <span
+          class="primary--text"
+        >
+          Add New Fleet Member
+        </span>
       </v-btn-stub>
-    </v-flex-stub>
+    </v-layout-stub>
   </v-flex-stub>
    
   <filter-sorter-stub

@@ -13,6 +13,7 @@ class LocationTest extends TestCase {
         $location = factory(Location::class)->make();
         $resource = new LocationResource($location);
         $expected = [
+            "id" => $location->id,
             "uuid" => $location->uuid,
             "name" => $location->name,
             "venue_uuid" => $location->venue_uuid,

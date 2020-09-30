@@ -55,7 +55,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
 
     Route::get('location/categories', 'Foodfleet\LocationCategory@index');
-    Route::get('locations', 'Foodfleet\Locations@index');
+    Route::apiResource('locations', 'Foodfleet\Locations')->only('index', 'store', 'destroy');
 
 
     Route::get('payments', 'Foodfleet\Payments@index');

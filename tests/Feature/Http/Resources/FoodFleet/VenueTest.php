@@ -17,6 +17,7 @@ class VenueTest extends TestCase
         $venue = factory(Venue::class)->create();
         $resource = new VenueResource($venue);
         $expected = [
+            "id" => $venue->id,
             "uuid" => $venue->uuid,
             "name" => $venue->name,
             "address" => $venue->address,

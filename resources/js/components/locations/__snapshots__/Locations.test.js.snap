@@ -60,8 +60,43 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                 <div
                   class="v-card__title"
                 >
-                  <div>
-                    Add location
+                  <div
+                    class="layout row space-between align-center"
+                  >
+                    <div
+                      class="flex grey--text"
+                    >
+                      <h3>
+                        Add Location
+                      </h3>
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                    Close
+                  
+                        </div>
+                      </div>
+                    </button>
                   </div>
                 </div>
                  
@@ -70,282 +105,298 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                 />
                  
                 <div
-                  class="layout grey--text column"
+                  class="v-card__text py-4"
                 >
                   <div
-                    class="flex"
+                    class="grey--text"
                   >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
-                    >
-                      
-      Category
-    
-                    </div>
+                    <!---->
                      
                     <div
-                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-                      role="combobox"
+                      class="flex"
                     >
                       <div
-                        class="v-input__control"
+                        class="layout row"
                       >
                         <div
-                          class="v-input__slot"
+                          class="flex xs12 sm6"
                         >
                           <div
-                            class="v-select__slot"
+                            class="mb-2 text-uppercase grey--text font-weight-bold"
                           >
-                            <div
-                              class="v-select__selections"
-                            >
-                              <input
-                                aria-readonly="false"
-                                autocomplete="on"
-                                readonly="readonly"
-                                type="text"
-                              />
-                            </div>
-                            <div
-                              class="v-input__append-inner"
-                            >
-                              <div
-                                class="v-input__icon v-input__icon--append"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  class="v-icon material-icons theme--light"
-                                >
-                                  arrow_drop_down
-                                </i>
-                              </div>
-                            </div>
+                            
+          Category
+        
                           </div>
+                           
                           <div
-                            class="v-menu"
+                            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                            role="combobox"
                           >
                             <div
-                              class="v-menu__content theme--light "
-                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              class="v-input__control"
                             >
                               <div
-                                class="v-select-list v-card theme--light"
+                                class="v-input__slot"
                               >
                                 <div
-                                  class="v-list theme--light"
-                                  role="list"
+                                  class="v-select__slot"
                                 >
                                   <div
-                                    role="listitem"
+                                    class="v-select__selections"
+                                  >
+                                    <input
+                                      aria-readonly="false"
+                                      autocomplete="on"
+                                      readonly="readonly"
+                                      type="text"
+                                    />
+                                  </div>
+                                  <div
+                                    class="v-input__append-inner"
                                   >
                                     <div
-                                      class="v-list__tile theme--light"
+                                      class="v-input__icon v-input__icon--append"
+                                    >
+                                      <i
+                                        aria-hidden="true"
+                                        class="v-icon material-icons theme--light"
+                                      >
+                                        arrow_drop_down
+                                      </i>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-menu"
+                                >
+                                  <div
+                                    class="v-menu__content theme--light "
+                                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  >
+                                    <div
+                                      class="v-select-list v-card theme--light"
                                     >
                                       <div
-                                        class="v-list__tile__content"
+                                        class="v-list theme--light"
+                                        role="list"
                                       >
                                         <div
-                                          class="v-list__tile__title"
+                                          role="listitem"
                                         >
-                                          No data available
+                                          <div
+                                            class="v-list__tile theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                No data available
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="v-text-field__details"
-                        >
-                          <div
-                            class="v-messages theme--light"
-                          >
-                            <div
-                              class="v-messages__wrapper"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex text-xs-center"
-                  >
-                    
-    MAP coming soon
-    
-                    <div
-                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
-                    />
-                  </div>
-                   
-                  <div
-                    class="layout"
-                  >
-                    <div
-                      class="flex pr-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Location
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
                               <div
-                                class="v-messages__wrapper"
-                              />
+                                class="v-text-field__details"
+                              >
+                                <div
+                                  class="v-messages theme--light"
+                                >
+                                  <div
+                                    class="v-messages__wrapper"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                      
+                    <!---->
+                     
                     <div
-                      class="flex pl-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Capacity
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex"
-                  >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                      class="flex text-xs-center"
                     >
                       
-      Description
+    MAP coming soon
     
+                      <div
+                        style="background-color: rgb(229, 229, 229); height: 150px;"
+                      />
                     </div>
                      
                     <div
-                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      class="layout"
                     >
                       <div
-                        class="v-input__control"
+                        class="flex pr-2"
                       >
                         <div
-                          class="v-input__slot"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Location
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-text-field__slot"
+                            class="v-input__control"
                           >
-                            <textarea
-                              rows="5"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </div>
+                       
+                      <div
+                        class="flex pl-2"
+                      >
                         <div
-                          class="v-text-field__details"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Capacity
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-messages theme--light"
+                            class="v-input__control"
                           >
-                            <span
-                              class="v-messages__wrapper"
-                              name="message-transition"
-                              tag="div"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="number"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                   
-                  <div
-                    class="flex py-3 d-flex justify-space-between"
-                  >
-                    <button
-                      class="v-btn v-btn--depressed theme--light"
-                      type="button"
+                     
+                    <div
+                      class="flex"
                     >
                       <div
-                        class="v-btn__content"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
                         
+      Description
+    
+                      </div>
+                       
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex py-3 d-flex justify-space-between"
+                    >
+                      <button
+                        class="v-btn v-btn--depressed theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Cancel
     
-                      </div>
-                    </button>
-                     
-                    <button
-                      class="v-btn v-btn--depressed theme--light primary"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
+                        </div>
+                      </button>
+                       
+                      <button
+                        class="v-btn v-btn--depressed theme--light primary"
+                        type="button"
                       >
-                        
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Save changes
     
-                      </div>
-                    </button>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,7 +415,7 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
     class="v-card__text primary--text"
   >
     <div
-      item-key="id"
+      item-key="uuid"
     >
       <div
         class="ui-datatable elevation-1"
@@ -411,25 +462,41 @@ exports[`components/locations/Locations Snapshots Empty 1`] = `
                   </div>
                 </th>
                 <th
-                  aria-label="Location name / category: Not sorted."
+                  aria-label="Location name / category: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column sortable text-xs-left"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
                   <span>
                     
         Location name / category
       
                   </span>
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                 </th>
                 <th
-                  aria-label="Capacity: Not sorted."
+                  aria-label="Capacity: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-center"
+                  class="column sortable text-xs-center"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                   <span>
                     
         Capacity
@@ -796,8 +863,43 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                 <div
                   class="v-card__title"
                 >
-                  <div>
-                    Add location
+                  <div
+                    class="layout row space-between align-center"
+                  >
+                    <div
+                      class="flex grey--text"
+                    >
+                      <h3>
+                        Add Location
+                      </h3>
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                    Close
+                  
+                        </div>
+                      </div>
+                    </button>
                   </div>
                 </div>
                  
@@ -806,282 +908,298 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                 />
                  
                 <div
-                  class="layout grey--text column"
+                  class="v-card__text py-4"
                 >
                   <div
-                    class="flex"
+                    class="grey--text"
                   >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
-                    >
-                      
-      Category
-    
-                    </div>
+                    <!---->
                      
                     <div
-                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-                      role="combobox"
+                      class="flex"
                     >
                       <div
-                        class="v-input__control"
+                        class="layout row"
                       >
                         <div
-                          class="v-input__slot"
+                          class="flex xs12 sm6"
                         >
                           <div
-                            class="v-select__slot"
+                            class="mb-2 text-uppercase grey--text font-weight-bold"
                           >
-                            <div
-                              class="v-select__selections"
-                            >
-                              <input
-                                aria-readonly="false"
-                                autocomplete="on"
-                                readonly="readonly"
-                                type="text"
-                              />
-                            </div>
-                            <div
-                              class="v-input__append-inner"
-                            >
-                              <div
-                                class="v-input__icon v-input__icon--append"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  class="v-icon material-icons theme--light"
-                                >
-                                  arrow_drop_down
-                                </i>
-                              </div>
-                            </div>
+                            
+          Category
+        
                           </div>
+                           
                           <div
-                            class="v-menu"
+                            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                            role="combobox"
                           >
                             <div
-                              class="v-menu__content theme--light "
-                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              class="v-input__control"
                             >
                               <div
-                                class="v-select-list v-card theme--light"
+                                class="v-input__slot"
                               >
                                 <div
-                                  class="v-list theme--light"
-                                  role="list"
+                                  class="v-select__slot"
                                 >
                                   <div
-                                    role="listitem"
+                                    class="v-select__selections"
+                                  >
+                                    <input
+                                      aria-readonly="false"
+                                      autocomplete="on"
+                                      readonly="readonly"
+                                      type="text"
+                                    />
+                                  </div>
+                                  <div
+                                    class="v-input__append-inner"
                                   >
                                     <div
-                                      class="v-list__tile theme--light"
+                                      class="v-input__icon v-input__icon--append"
+                                    >
+                                      <i
+                                        aria-hidden="true"
+                                        class="v-icon material-icons theme--light"
+                                      >
+                                        arrow_drop_down
+                                      </i>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-menu"
+                                >
+                                  <div
+                                    class="v-menu__content theme--light "
+                                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  >
+                                    <div
+                                      class="v-select-list v-card theme--light"
                                     >
                                       <div
-                                        class="v-list__tile__content"
+                                        class="v-list theme--light"
+                                        role="list"
                                       >
                                         <div
-                                          class="v-list__tile__title"
+                                          role="listitem"
                                         >
-                                          No data available
+                                          <div
+                                            class="v-list__tile theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                No data available
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="v-text-field__details"
-                        >
-                          <div
-                            class="v-messages theme--light"
-                          >
-                            <div
-                              class="v-messages__wrapper"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex text-xs-center"
-                  >
-                    
-    MAP coming soon
-    
-                    <div
-                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
-                    />
-                  </div>
-                   
-                  <div
-                    class="layout"
-                  >
-                    <div
-                      class="flex pr-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Location
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
                               <div
-                                class="v-messages__wrapper"
-                              />
+                                class="v-text-field__details"
+                              >
+                                <div
+                                  class="v-messages theme--light"
+                                >
+                                  <div
+                                    class="v-messages__wrapper"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                      
+                    <!---->
+                     
                     <div
-                      class="flex pl-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Capacity
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex"
-                  >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                      class="flex text-xs-center"
                     >
                       
-      Description
+    MAP coming soon
     
+                      <div
+                        style="background-color: rgb(229, 229, 229); height: 150px;"
+                      />
                     </div>
                      
                     <div
-                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      class="layout"
                     >
                       <div
-                        class="v-input__control"
+                        class="flex pr-2"
                       >
                         <div
-                          class="v-input__slot"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Location
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-text-field__slot"
+                            class="v-input__control"
                           >
-                            <textarea
-                              rows="5"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </div>
+                       
+                      <div
+                        class="flex pl-2"
+                      >
                         <div
-                          class="v-text-field__details"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Capacity
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-messages theme--light"
+                            class="v-input__control"
                           >
-                            <span
-                              class="v-messages__wrapper"
-                              name="message-transition"
-                              tag="div"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="number"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                   
-                  <div
-                    class="flex py-3 d-flex justify-space-between"
-                  >
-                    <button
-                      class="v-btn v-btn--depressed theme--light"
-                      type="button"
+                     
+                    <div
+                      class="flex"
                     >
                       <div
-                        class="v-btn__content"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
                         
+      Description
+    
+                      </div>
+                       
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex py-3 d-flex justify-space-between"
+                    >
+                      <button
+                        class="v-btn v-btn--depressed theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Cancel
     
-                      </div>
-                    </button>
-                     
-                    <button
-                      class="v-btn v-btn--depressed theme--light primary"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
+                        </div>
+                      </button>
+                       
+                      <button
+                        class="v-btn v-btn--depressed theme--light primary"
+                        type="button"
                       >
-                        
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Save changes
     
-                      </div>
-                    </button>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1100,7 +1218,7 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
     class="v-card__text primary--text"
   >
     <div
-      item-key="id"
+      item-key="uuid"
     >
       <div
         class="ui-datatable elevation-1"
@@ -1147,25 +1265,41 @@ exports[`components/locations/Locations Snapshots Loading 1`] = `
                   </div>
                 </th>
                 <th
-                  aria-label="Location name / category: Not sorted."
+                  aria-label="Location name / category: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column sortable text-xs-left"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
                   <span>
                     
         Location name / category
       
                   </span>
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                 </th>
                 <th
-                  aria-label="Capacity: Not sorted."
+                  aria-label="Capacity: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-center"
+                  class="column sortable text-xs-center"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                   <span>
                     
         Capacity
@@ -1560,8 +1694,43 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                 <div
                   class="v-card__title"
                 >
-                  <div>
-                    Add location
+                  <div
+                    class="layout row space-between align-center"
+                  >
+                    <div
+                      class="flex grey--text"
+                    >
+                      <h3>
+                        Add Location
+                      </h3>
+                    </div>
+                     
+                    <button
+                      class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon white--text fa fa fa fa-times theme--light"
+                            style="font-size: 16px;"
+                          />
+                        </div>
+                         
+                        <div
+                          class="flex"
+                        >
+                          
+                    Close
+                  
+                        </div>
+                      </div>
+                    </button>
                   </div>
                 </div>
                  
@@ -1570,282 +1739,315 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                 />
                  
                 <div
-                  class="layout grey--text column"
+                  class="v-card__text py-4"
                 >
                   <div
-                    class="flex"
+                    class="grey--text"
                   >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
-                    >
-                      
-      Category
-    
-                    </div>
+                    <!---->
                      
                     <div
-                      class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-                      role="combobox"
+                      class="flex"
                     >
                       <div
-                        class="v-input__control"
+                        class="layout row"
                       >
                         <div
-                          class="v-input__slot"
+                          class="flex xs12 sm6"
                         >
                           <div
-                            class="v-select__slot"
+                            class="mb-2 text-uppercase grey--text font-weight-bold"
                           >
-                            <div
-                              class="v-select__selections"
-                            >
-                              <input
-                                aria-readonly="false"
-                                autocomplete="on"
-                                readonly="readonly"
-                                type="text"
-                              />
-                            </div>
-                            <div
-                              class="v-input__append-inner"
-                            >
-                              <div
-                                class="v-input__icon v-input__icon--append"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  class="v-icon material-icons theme--light"
-                                >
-                                  arrow_drop_down
-                                </i>
-                              </div>
-                            </div>
+                            
+          Category
+        
                           </div>
+                           
                           <div
-                            class="v-menu"
+                            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                            role="combobox"
                           >
                             <div
-                              class="v-menu__content theme--light "
-                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              class="v-input__control"
                             >
                               <div
-                                class="v-select-list v-card theme--light"
+                                class="v-input__slot"
                               >
                                 <div
-                                  class="v-list theme--light"
-                                  role="list"
+                                  class="v-select__slot"
                                 >
                                   <div
-                                    role="listitem"
+                                    class="v-select__selections"
+                                  >
+                                    <input
+                                      aria-readonly="false"
+                                      autocomplete="on"
+                                      readonly="readonly"
+                                      type="text"
+                                    />
+                                  </div>
+                                  <div
+                                    class="v-input__append-inner"
                                   >
                                     <div
-                                      class="v-list__tile theme--light"
+                                      class="v-input__icon v-input__icon--append"
+                                    >
+                                      <i
+                                        aria-hidden="true"
+                                        class="v-icon material-icons theme--light"
+                                      >
+                                        arrow_drop_down
+                                      </i>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="v-menu"
+                                >
+                                  <div
+                                    class="v-menu__content theme--light "
+                                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                                  >
+                                    <div
+                                      class="v-select-list v-card theme--light"
                                     >
                                       <div
-                                        class="v-list__tile__content"
+                                        class="v-list theme--light"
+                                        role="list"
                                       >
                                         <div
-                                          class="v-list__tile__title"
+                                          role="listitem"
                                         >
-                                          No data available
+                                          <a
+                                            class="v-list__tile v-list__tile--link theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                Indoor
+                                              </div>
+                                            </div>
+                                          </a>
+                                        </div>
+                                        <div
+                                          role="listitem"
+                                        >
+                                          <a
+                                            class="v-list__tile v-list__tile--link theme--light"
+                                          >
+                                            <div
+                                              class="v-list__tile__content"
+                                            >
+                                              <div
+                                                class="v-list__tile__title"
+                                              >
+                                                Outdoor
+                                              </div>
+                                            </div>
+                                          </a>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="v-text-field__details"
-                        >
-                          <div
-                            class="v-messages theme--light"
-                          >
-                            <div
-                              class="v-messages__wrapper"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex text-xs-center"
-                  >
-                    
-    MAP coming soon
-    
-                    <div
-                      style="background-color: rgb(229, 229, 229); width: 100%; height: 400px;"
-                    />
-                  </div>
-                   
-                  <div
-                    class="layout"
-                  >
-                    <div
-                      class="flex pr-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Location
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
                               <div
-                                class="v-messages__wrapper"
-                              />
+                                class="v-text-field__details"
+                              >
+                                <div
+                                  class="v-messages theme--light"
+                                >
+                                  <div
+                                    class="v-messages__wrapper"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                      
+                    <!---->
+                     
                     <div
-                      class="flex pl-2"
-                    >
-                      <div
-                        class="mb-2 text-uppercase grey--text font-weight-bold"
-                      >
-                        
-        Capacity
-      
-                      </div>
-                       
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-text-field__slot"
-                            >
-                              <input
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="v-text-field__details"
-                          >
-                            <div
-                              class="v-messages theme--light"
-                            >
-                              <div
-                                class="v-messages__wrapper"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="flex"
-                  >
-                    <div
-                      class="mb-2 text-uppercase grey--text font-weight-bold"
+                      class="flex text-xs-center"
                     >
                       
-      Description
+    MAP coming soon
     
+                      <div
+                        style="background-color: rgb(229, 229, 229); height: 150px;"
+                      />
                     </div>
                      
                     <div
-                      class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      class="layout"
                     >
                       <div
-                        class="v-input__control"
+                        class="flex pr-2"
                       >
                         <div
-                          class="v-input__slot"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Location
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-text-field__slot"
+                            class="v-input__control"
                           >
-                            <textarea
-                              rows="5"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </div>
+                       
+                      <div
+                        class="flex pl-2"
+                      >
                         <div
-                          class="v-text-field__details"
+                          class="mb-2 text-uppercase grey--text font-weight-bold"
+                        >
+                          
+        Capacity
+      
+                        </div>
+                         
+                        <div
+                          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
                         >
                           <div
-                            class="v-messages theme--light"
+                            class="v-input__control"
                           >
-                            <span
-                              class="v-messages__wrapper"
-                              name="message-transition"
-                              tag="div"
-                            />
+                            <div
+                              class="v-input__slot"
+                            >
+                              <div
+                                class="v-text-field__slot"
+                              >
+                                <input
+                                  type="number"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="v-text-field__details"
+                            >
+                              <div
+                                class="v-messages theme--light"
+                              >
+                                <div
+                                  class="v-messages__wrapper"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                   
-                  <div
-                    class="flex py-3 d-flex justify-space-between"
-                  >
-                    <button
-                      class="v-btn v-btn--depressed theme--light"
-                      type="button"
+                     
+                    <div
+                      class="flex"
                     >
                       <div
-                        class="v-btn__content"
+                        class="mb-2 text-uppercase grey--text font-weight-bold"
                       >
                         
+      Description
+    
+                      </div>
+                       
+                      <div
+                        class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-text-field__slot"
+                            >
+                              <textarea
+                                rows="5"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="v-text-field__details"
+                          >
+                            <div
+                              class="v-messages theme--light"
+                            >
+                              <span
+                                class="v-messages__wrapper"
+                                name="message-transition"
+                                tag="div"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex py-3 d-flex justify-space-between"
+                    >
+                      <button
+                        class="v-btn v-btn--depressed theme--light"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Cancel
     
-                      </div>
-                    </button>
-                     
-                    <button
-                      class="v-btn v-btn--depressed theme--light primary"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
+                        </div>
+                      </button>
+                       
+                      <button
+                        class="v-btn v-btn--depressed theme--light primary"
+                        type="button"
                       >
-                        
+                        <div
+                          class="v-btn__content"
+                        >
+                          
       Save changes
     
-                      </div>
-                    </button>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1864,7 +2066,7 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
     class="v-card__text primary--text"
   >
     <div
-      item-key="id"
+      item-key="uuid"
     >
       <div
         class="ui-datatable elevation-1"
@@ -1911,25 +2113,41 @@ exports[`components/locations/Locations Snapshots Populated 1`] = `
                   </div>
                 </th>
                 <th
-                  aria-label="Location name / category: Not sorted."
+                  aria-label="Location name / category: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-left"
+                  class="column sortable text-xs-left"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
                   <span>
                     
         Location name / category
       
                   </span>
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                 </th>
                 <th
-                  aria-label="Capacity: Not sorted."
+                  aria-label="Capacity: Not sorted. Activate to sort ascending."
                   aria-sort="none"
-                  class="column text-xs-center"
+                  class="column sortable text-xs-center"
                   role="columnheader"
                   scope="col"
+                  tabindex="0"
                 >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                    style="font-size: 16px;"
+                  >
+                    arrow_upward
+                  </i>
                   <span>
                     
         Capacity

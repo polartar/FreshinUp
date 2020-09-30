@@ -15,7 +15,7 @@ export const Default = () => ({
     }
   },
   template: `
-    <v-container>
+    <v-container class="white">
       <area-form
         @input="onSave"
         @cancel="onCancel"/>

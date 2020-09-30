@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 import Locations from './Locations'
 import { FIXTURE_LOCATIONS } from '../../../../tests/Javascript/__data__/locations'
+import { FIXTURE_LOCATION_CATEGORIES } from '../../../../tests/Javascript/__data__/locationCategories'
 
 export const Empty = () => ({
   components: { Locations },
@@ -31,7 +32,8 @@ export const Populated = () => ({
   components: { Locations },
   data () {
     return {
-      items: FIXTURE_LOCATIONS
+      items: FIXTURE_LOCATIONS,
+      categories: FIXTURE_LOCATION_CATEGORIES
     }
   },
   methods: {
@@ -40,11 +42,16 @@ export const Populated = () => ({
     },
     onManageMultiple (act, items) {
       action('onManageMultiple')(act, items)
+    },
+    onSubmit (payload) {
+      action('onSubmit')(payload)
     }
   },
   template: `
     <locations
       :items="items"
+      :categories="categories"
+      @new-location="onSubmit"
       @manage="onManage"
       @manage-multiple="onManageMultiple"
     />
