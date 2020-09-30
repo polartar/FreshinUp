@@ -61,11 +61,15 @@
                 </v-layout>
               </v-card-title>
               <v-divider />
-              <location-form
-                :value="location"
-                @input="onSubmit"
-                @cancel="newLocationDialog = false"
-              />
+              <v-card-text class="py-4">
+                <location-form
+                  :is-loading="formIsLoading"
+                  :value="location"
+                  :categories="categories"
+                  @input="onSubmit"
+                  @cancel="newLocationDialog = false"
+                />
+              </v-card-text>
             </v-card>
           </v-dialog>
         </v-flex>
@@ -92,19 +96,22 @@ import LocationForm, { DEFAULT_LOCATION } from './LocationForm'
 export default {
   components: { LocationList, LocationForm },
   props: {
-    location: { type: Object, default: () => DEFAULT_LOCATION },
+    categories: { type: Array, default: () => [] },
     items: { type: Array, default: () => [] },
-    isLoading: { type: Boolean, default: false }
+    isLoading: { type: Boolean, default: false },
+    formIsLoading: { type: Boolean, default: false }
   },
   data () {
     return {
+      location: DEFAULT_LOCATION,
       newLocationDialog: false
     }
   },
   methods: {
     get,
     onSubmit (location) {
-      this.$emit('location-submit', location)
+      this.location = Object.assign({}, this.location, location)
+      this.$emit('new-location', location, this)
     }
   }
 }

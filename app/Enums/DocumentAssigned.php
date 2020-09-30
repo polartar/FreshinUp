@@ -2,10 +2,12 @@
 
 namespace App\Enums;
 
-use BenSampo\Enum\Enum;
-use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Location;
+use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\Venue;
 use App\User;
+use BenSampo\Enum\Enum;
 
 final class DocumentAssigned extends Enum
 {
@@ -14,6 +16,7 @@ final class DocumentAssigned extends Enum
     const VENUE = 3;
     const EVENT = 4;
     const EVENT_STORE = 5;
+    const LOCATION = 6;
 
     public static function toKeyedSelectArray()
     {
@@ -56,23 +59,23 @@ final class DocumentAssigned extends Enum
     public static function getDescription($value): string
     {
         if ($value === self::USER) {
-            return 'App\User';
+            return User::class;
         }
 
         if ($value === self::STORE) {
-            return 'App\Models\Foodfleet\Store';
+            return Store::class;
         }
 
         if ($value === self::VENUE) {
-            return 'App\Models\Foodfleet\Venue';
+            return Venue::class;
         }
 
-        if ($value === self::EVENT) {
-            return 'App\Models\Foodfleet\Event';
+        if ($value === self::EVENT || $value === self::EVENT_STORE) {
+            return Event::class;
         }
 
-        if ($value === self::EVENT_STORE) {
-            return 'App\Models\Foodfleet\Event';
+        if ($value === self::LOCATION) {
+            return Location::class;
         }
 
         return parent::getDescription($value);
@@ -81,23 +84,23 @@ final class DocumentAssigned extends Enum
     public static function getResource($value): string
     {
         if ($value === self::USER) {
-            return 'FreshinUp\FreshBusForms\Http\Resources\User\User';
+            return \FreshinUp\FreshBusForms\Http\Resources\User\User::class;
         }
 
         if ($value === self::STORE) {
-            return 'App\Http\Resources\Foodfleet\Store\Store';
+            return \App\Http\Resources\Foodfleet\Store\Store::class;
         }
 
         if ($value === self::VENUE) {
-            return 'App\Http\Resources\Foodfleet\Venue';
+            return \App\Http\Resources\Foodfleet\Venue::class;
         }
 
-        if ($value === self::EVENT) {
-            return 'App\Http\Resources\Foodfleet\Event';
+        if ($value === self::EVENT || $value === self::EVENT_STORE) {
+            return \App\Http\Resources\Foodfleet\Event::class;
         }
 
-        if ($value === self::EVENT_STORE) {
-            return 'App\Http\Resources\Foodfleet\Event';
+        if ($value === self::LOCATION) {
+            return \App\Http\Resources\Foodfleet\Location::class;
         }
 
         return '';

@@ -117,12 +117,20 @@ exports[`Document List component Snapshots defaults 1`] = `
               </span>
             </th>
             <th
-              aria-label="Expiration date: Not sorted."
+              aria-label="Expiration date: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-center"
+              class="column sortable text-xs-center"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
               <span>
                 
         Expiration date

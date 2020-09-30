@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Foodfleet\Document;
+namespace App\Http\Resources\Foodfleet;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Type extends JsonResource
+class DocumentType extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,6 +17,8 @@ class Type extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
+            'name' => $this->name,
             'value' => $this->id,
             'text' => $this->name,
         ];

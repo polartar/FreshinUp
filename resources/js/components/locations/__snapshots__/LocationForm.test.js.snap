@@ -7,6 +7,8 @@ exports[`components/locations/LocationForm Snapshots Default 1`] = `
   <div
     class="grey--text"
   >
+    <!---->
+     
     <div
       class="flex"
     >
@@ -198,7 +200,7 @@ exports[`components/locations/LocationForm Snapshots Default 1`] = `
                 class="v-text-field__slot"
               >
                 <input
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -303,6 +305,8 @@ exports[`components/locations/LocationForm Snapshots Indoor 1`] = `
   <div
     class="grey--text white"
   >
+    <!---->
+     
     <div
       class="flex"
     >
@@ -442,6 +446,8 @@ exports[`components/locations/LocationForm Snapshots Indoor 1`] = `
         type="file"
       />
         
+      <!---->
+       
       <div
         class="layout align-center column"
       >
@@ -540,7 +546,7 @@ exports[`components/locations/LocationForm Snapshots Indoor 1`] = `
                 class="v-text-field__slot"
               >
                 <input
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -645,6 +651,8 @@ exports[`components/locations/LocationForm Snapshots Outdoor 1`] = `
   <div
     class="grey--text white"
   >
+    <!---->
+     
     <div
       class="flex"
     >
@@ -859,7 +867,7 @@ exports[`components/locations/LocationForm Snapshots Outdoor 1`] = `
                 class="v-text-field__slot"
               >
                 <input
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -964,6 +972,8 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
   <div
     class="grey--text white"
   >
+    <!---->
+     
     <div
       class="flex"
     >
@@ -1108,7 +1118,7 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
           class="ff-add-location__document_item"
         >
           <span
-            class="text-uppercase primary--text font-weight-bold"
+            class="primary--text font-weight-bold"
           >
             FLOOR_PLAN_1.PDF
           </span>
@@ -1145,7 +1155,7 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
           class="ff-add-location__document_item"
         >
           <span
-            class="text-uppercase primary--text font-weight-bold"
+            class="primary--text font-weight-bold"
           >
             FLOOR_PLAN_2.PDF
           </span>
@@ -1177,6 +1187,8 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
           class="v-divider theme--light"
         />
       </div>
+       
+      <!---->
        
       <div
         class="layout align-center column"
@@ -1276,7 +1288,7 @@ exports[`components/locations/LocationForm Snapshots WithDocuments 1`] = `
                 class="v-text-field__slot"
               >
                 <input
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>

@@ -53,6 +53,12 @@
 
 # Changes
 
+## September 27, 2020
+- **ADD** New Venue page: integration
+ [#483](https://github.com/FreshinUp/foodfleet/issues/483)
+ 
+ <br/>
+
 ## September 26, 2020
 - **MOD** Document types are incorrect [#496](https://github.com/FreshinUp/foodfleet/issues/496)
 

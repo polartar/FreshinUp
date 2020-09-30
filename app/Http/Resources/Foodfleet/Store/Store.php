@@ -10,7 +10,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use FreshinUp\FreshBusForms\Http\Resources\Address\Address;
 use App\Http\Resources\Foodfleet\EventMenuItem;
 use App\Http\Resources\Foodfleet\Message;
-use App\Http\Resources\Foodfleet\Document\Document;
+use App\Http\Resources\Foodfleet\Document;
 
 class Store extends JsonResource
 {

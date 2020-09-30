@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-form
+      v-if="!isLoading"
       ref="form"
       v-model="isValid"
     >

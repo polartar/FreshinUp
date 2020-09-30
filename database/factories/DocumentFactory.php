@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Foodfleet\DocumentStatus;
 use App\Models\Foodfleet\DocumentType;
 use App\User;
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use App\Models\Foodfleet\Document;
 
@@ -24,7 +24,10 @@ $factory->define(Document::class, function (Faker $faker) {
         'description' => $faker->realText(),
         'notes' => $faker->realText(),
         'expiration_at' => $faker->dateTimeBetween('+1 days', '+10 days'),
-        'status' => '',
+
+        'status' => function () {
+            return factory(DocumentStatus::class)->create()->id;
+        },
         'type' => function () {
             return factory(DocumentType::class)->create()->id;
         },

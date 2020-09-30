@@ -818,7 +818,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Event/Fleet Memeber
+                                      Event/Fleet Member
                                     </div>
                                   </div>
                                 </a>
@@ -2842,7 +2842,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      Event/Fleet Memeber
+                                      Event/Fleet Member
                                     </div>
                                   </div>
                                 </a>
