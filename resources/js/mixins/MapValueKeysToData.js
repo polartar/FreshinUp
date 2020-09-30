@@ -12,6 +12,11 @@ export default {
       default: () => ({ })
     }
   },
+  computed: {
+    payload () {
+      return pick(this, keys(this.value))
+    }
+  },
   watch: {
     value (value) {
       if (value) {
@@ -33,7 +38,7 @@ export default {
       })
     },
     save () {
-      this.$emit('input', pick(this, keys(this.value)))
+      this.$emit('input', this.payload)
     }
   }
 }

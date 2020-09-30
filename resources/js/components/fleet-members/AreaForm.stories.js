@@ -2,23 +2,24 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import AreaForm from './AreaForm'
-import { FIXTURE_STORE } from '../../../../tests/Javascript/__data__/stores'
+import { FIXTURE_STORE_AREAS } from '../../../../tests/Javascript/__data__/storeAreas'
 
 export const Default = () => ({
   components: { AreaForm },
-  methods: {
-    onSave () {
-      action('save')()
-    },
-    onCancel () {
-      action('cancel')()
-    }
-  },
+  template: `
+    <v-container class="white">
+      <area-form/>
+    </v-container>
+  `
+})
+
+export const Loading = () => ({
+  components: { AreaForm },
   template: `
     <v-container class="white">
       <area-form
-        @input="onSave"
-        @cancel="onCancel"/>
+        is-loading
+      />
     </v-container>
   `
 })
@@ -27,21 +28,21 @@ export const WithData = () => ({
   components: { AreaForm },
   data () {
     return {
-      store: FIXTURE_STORE
+      storeArea: FIXTURE_STORE_AREAS[0]
     }
   },
   methods: {
-    onSave () {
-      action('save')()
+    onSave (payload) {
+      action('save')(payload)
     },
     onCancel () {
       action('cancel')()
     }
   },
   template: `
-    <v-container>
+    <v-container class="white">
       <area-form
-        :value="store"
+        :value="storeArea"
         @input="onSave"
         @cancel="onCancel"/>
     </v-container>
@@ -55,4 +56,5 @@ storiesOf('FoodFleet|components/fleet-members/AreaForm', module)
     ]
   })
   .add('Default', Default)
+  .add('Loading', Loading)
   .add('WithData', WithData)

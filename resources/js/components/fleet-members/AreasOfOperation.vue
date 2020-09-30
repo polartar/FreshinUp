@@ -11,36 +11,7 @@
             Areas of Operation
           </h3>
         </v-flex>
-        <v-flex shrink>
-          <v-dialog
-            v-model="newOperation"
-            max-width="600"
-          >
-            <template v-slot:activator="{ on }">
-              <v-btn
-                slot="activator"
-                color="primary"
-                text
-                @click="newOperation = true"
-              >
-                <v-icon
-                  dark
-                  left
-                >
-                  add_circle_outline
-                </v-icon>Add new area
-              </v-btn>
-            </template>
-            <v-card>
-              <v-divider />
-              <v-card-text class="grey--text">
-                Coming Soon here
-              </v-card-text>
-              <v-divider />
-              <area-form class="ma-2" />
-            </v-card>
-          </v-dialog>
-        </v-flex>
+        <slot name="head" />
       </v-layout>
     </v-card-title>
     <v-divider />
@@ -58,21 +29,14 @@
 
 <script>
 import StoreAreaList from './StoreAreaList'
-import AreaForm from './AreaForm'
 
 export default {
   components: {
-    StoreAreaList,
-    AreaForm
+    StoreAreaList
   },
   props: {
     isLoading: { type: Boolean, default: false },
     items: { type: Array, default: () => [] }
-  },
-  data () {
-    return {
-      newOperation: false
-    }
   }
 }
 </script>

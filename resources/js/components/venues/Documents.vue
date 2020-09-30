@@ -13,34 +13,20 @@
           </h3>
         </v-flex>
         <v-flex shrink>
-          <v-dialog
-            v-model="newDocumentDialog"
-            max-width="400"
+          <v-btn
+            slot="activator"
+            color="primary"
+            dark
+            href="/admin/docs/new"
           >
-            <template v-slot:activator="{ on }">
-              <v-btn
-                slot="activator"
-                color="primary"
-                dark
-                @click="newDocumentDialog = true"
-              >
-                <v-icon
-                  dark
-                  left
-                >
-                  add_circle_outline
-                </v-icon>
-                Add New Document
-              </v-btn>
-            </template>
-            <v-card>
-              <v-divider />
-              <v-card-text class="grey--text">
-                <document-form />
-              </v-card-text>
-              <v-divider />
-            </v-card>
-          </v-dialog>
+            <v-icon
+              dark
+              left
+            >
+              add_circle_outline
+            </v-icon>
+            Add New Document
+          </v-btn>
         </v-flex>
       </v-layout>
     </v-card-title>
@@ -59,19 +45,13 @@
 
 <script>
 import DocumentList from './DocumentList'
-import DocumentForm from './DocumentForm'
 
 export default {
-  components: { DocumentList, DocumentForm },
+  components: { DocumentList },
   props: {
     isLoading: { type: Boolean, default: false },
     items: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] }
-  },
-  data () {
-    return {
-      newDocumentDialog: false
-    }
   }
 }
 </script>

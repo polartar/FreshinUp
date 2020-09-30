@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import MapValueKeysToData from '../../../resources/js/mixins/MapValueKeysToData'
+import MapValueKeysToData from './MapValueKeysToData'
 import pick from 'lodash/pick'
 
 const FIXTURES = {
@@ -21,7 +21,7 @@ const FIXTURES = {
 }
 
 describe('Mixin MapValueKeysToData', () => {
-  describe('Props', () => {
+  describe('Props & Computed', () => {
     test('prop value changes data matching keys', async () => {
       const MockComponent = {
         render () {},
@@ -51,6 +51,31 @@ describe('Mixin MapValueKeysToData', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.name).toEqual('Jim Kirk')
       expect(wrapper.vm.is_secured).toEqual(true)
+    })
+    test('payload', async () => {
+      const MockComponent = {
+        render () {},
+        mixins: [MapValueKeysToData]
+      }
+      const wrapper = shallowMount(MockComponent, {
+        propsData: {
+          value: {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+          }
+        }
+      })
+      wrapper.setData({
+        a: 1,
+        b: 2
+      })
+      // payload will contain only keys from data in value
+      expect(wrapper.vm.payload).toMatchObject({
+        a: 1,
+        b: 2
+      })
     })
   })
   describe('Methods', () => {
