@@ -78,18 +78,77 @@
           xs12
           py-2
         >
-          <AreasOfOperation
+          <areas-of-operation
+            :is-loading="areasLoading"
             :items="storeAreas"
             :rows-per-page="storeAreaPagination.rowsPerPage"
             :page="storeAreaPagination.page"
             :total-items="storeAreaPagination.totalItems"
             :sort-by="storeAreaSorting.sortBy"
             :descending="storeAreaSorting.descending"
-            @manage-add="onAddArea"
             @paginate="onAreaPaginate"
+            @manage-add="onAddArea"
             @manage-delete="onDeleteArea"
             @manage-multiple-delete="onDeleteArea"
-          />
+          >
+            <template v-slot:head>
+              <v-flex shrink>
+                <v-dialog
+                  v-model="newArea"
+                  max-width="600"
+                >
+                  <template v-slot:activator="{ on }">
+                    <v-btn
+                      slot="activator"
+                      color="primary"
+                      text
+                      @click="newArea = true"
+                    >
+                      <v-icon
+                        left
+                      >
+                        add_circle_outline
+                      </v-icon>Add New Area
+                    </v-btn>
+                  </template>
+                  <v-card>
+                    <div class="d-flex justify-space-between align-center">
+                      <v-card-text class="grey--text subheading font-weight-bold">
+                        Add new area
+                      </v-card-text>
+                      <v-btn
+                        small
+                        round
+                        depressed
+                        color="grey"
+                        class="white--text"
+                        @click="newArea = false"
+                      >
+                        <v-flex>
+                          <v-icon
+                            small
+                            class="white--text"
+                          >
+                            fa fa-times
+                          </v-icon>
+                        </v-flex>
+                        <v-flex>
+                          Close
+                        </v-flex>
+                      </v-btn>
+                    </div>
+                    <v-divider />
+                    <area-form
+                      :is-loading="newAreaLoading"
+                      class="ma-2"
+                      @cancel="newArea = false"
+                      @input="onAddArea"
+                    />
+                  </v-card>
+                </v-dialog>
+              </v-flex>
+            </template>
+          </areas-of-operation>
 
           <v-dialog
             v-model="deleteDialog"
@@ -141,11 +200,11 @@
             :statuses="documentStatuses"
             :types="documentTypes"
             :sortables="sortables"
-            :rows-per-page="pagination.rowsPerPage"
-            :page="pagination.page"
-            :total-items="pagination.totalItems"
-            :sort-by="sorting.sortBy"
-            :descending="sorting.descending"
+            :rows-per-page="documentPagination.rowsPerPage"
+            :page="documentPagination.page"
+            :total-items="documentPagination.totalItems"
+            :sort-by="documentSorting.sortBy"
+            :descending="documentSorting.descending"
           />
         </v-flex>
         <v-flex
@@ -190,6 +249,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+import AreaForm from './AreaForm'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -199,6 +259,7 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
+    AreaForm,
     SimpleConfirm,
     BasicInformation,
     DocumentList,
@@ -216,19 +277,12 @@ export default {
   mixins: [Validate, deletables],
   data () {
     return {
+      newArea: false,
+      newAreaLoading: false,
       deleteTemp: [],
       deleteDialog: false,
       loading: false,
       locations: ['Square'], // TODO: static to Square only until we know better
-      pagination: {
-        page: 1,
-        rowsPerPage: 10,
-        totalItems: 5
-      },
-      sorting: {
-        descending: false,
-        sortBy: ''
-      },
       sortables: [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
@@ -245,7 +299,11 @@ export default {
       storeAreaPagination: 'pagination',
       storeAreaSorting: 'sorting'
     }),
-    ...mapGetters('documents', { docs: 'items' }),
+    ...mapGetters('documents', {
+      docs: 'items',
+      documentPagination: 'pagination',
+      documentSorting: 'sorting'
+    }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
@@ -254,6 +312,9 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
+    areasLoading () {
+      return get(this.$store, 'state.storeAreas.pending.items', false)
+    },
     isNew () {
       return !get(this.store, 'uuid')
     },
@@ -268,7 +329,8 @@ export default {
       return this.isNew ? 'New Fleet Member' : 'Fleet Member Details'
     },
     storeAreas () {
-      return this.isNew ? [] : this.areas
+      // TODO: see https://github.com/FreshinUp/core-ui/issues/135
+      return Array.isArray(this.areas) ? this.areas : []
     },
     deleteDialogTitle () {
       return this.deleteTemp.length < 2
@@ -318,6 +380,22 @@ export default {
       this.deleteDialog = true
     },
     onAddArea (area) {
+      this.newAreaLoading = true
+      this.$store.dispatch('storeAreas/createItem', {
+        data: { ...area, store_uuid: this.$route.params.id }
+      })
+        .then(_ => {
+          this.newArea = false
+          this.$store.dispatch('generalMessage/setMessage', 'Area created.')
+          this.$store.dispatch('storeAreas/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.newAreaLoading = false
+        })
     },
     async onSubmitDelete () {
       this.deletablesProcessing = true
@@ -383,7 +461,7 @@ export default {
           vm.fleetMemberLoading = false
         })
       vm.$store.dispatch('storeAreas/setFilters', {
-        'filter[store_uuid]': id
+        store_uuid: id
       })
       promises.push(vm.$store.dispatch('storeAreas/getItems'))
     }

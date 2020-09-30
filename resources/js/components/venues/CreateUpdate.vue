@@ -191,6 +191,13 @@ export default {
     Locations,
     Events
   },
+  filters: {
+    formatDeleteTitles (value, resource) {
+      const prop = TITLE_RESOURCE[resource] || 'name'
+      return value.map(item => item[prop]).join(', ')
+    }
+  },
+  mixins: [deletables],
   data () {
     return {
       locationFormIsLoading: false,
@@ -251,13 +258,6 @@ export default {
       return get(this.$route, 'params.id', 'new') === 'new'
     }
   },
-  filters: {
-    formatDeleteTitles (value, resource) {
-      const prop = TITLE_RESOURCE[resource] || 'name'
-      return value.map(item => item[prop]).join(', ')
-    }
-  },
-  mixins: [deletables],
   methods: {
     get,
     ...mapActions('page', {
@@ -392,6 +392,8 @@ export default {
     },
     createLocation (data, locationFormComponent) {
       // TODO: We should avoid mutating props but in this case we don't care
+      // TODO: use slot, move form component to here just like we did
+      // in fleet-members/CreateUpdate.vue for AreaForm
       this.locationFormIsLoading = true
       this.$store.dispatch('locations/createItem', {
         data: { ...data, venue_uuid: this.$route.params.id }

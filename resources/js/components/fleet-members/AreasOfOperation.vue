@@ -11,61 +11,7 @@
             Areas of Operation
           </h3>
         </v-flex>
-        <v-flex shrink>
-          <v-dialog
-            v-model="newOperation"
-            max-width="600"
-          >
-            <template v-slot:activator="{ on }">
-              <v-btn
-                slot="activator"
-                color="primary"
-                text
-                @click="newOperation = true"
-              >
-                <v-icon
-                  dark
-                  left
-                >
-                  add_circle_outline
-                </v-icon>Add new area
-              </v-btn>
-            </template>
-            <v-card>
-              <div class="d-flex justify-space-between align-center">
-                <v-card-text class="grey--text subheading font-weight-bold">
-                  Add new area
-                </v-card-text>
-                <v-btn
-                  small
-                  round
-                  depressed
-                  color="grey"
-                  class="white--text"
-                  @click="newOperation = false"
-                >
-                  <v-flex>
-                    <v-icon
-                      small
-                      class="white--text"
-                    >
-                      fa fa-times
-                    </v-icon>
-                  </v-flex>
-                  <v-flex>
-                    Close
-                  </v-flex>
-                </v-btn>
-              </div>
-              <v-divider />
-              <area-form
-                class="ma-2"
-                @cancel="newOperation = false"
-                @save="onAddArea"
-              />
-            </v-card>
-          </v-dialog>
-        </v-flex>
+        <slot name="head" />
       </v-layout>
     </v-card-title>
     <v-divider />
@@ -83,26 +29,14 @@
 
 <script>
 import StoreAreaList from './StoreAreaList'
-import AreaForm from './AreaForm'
 
 export default {
   components: {
-    StoreAreaList,
-    AreaForm
+    StoreAreaList
   },
   props: {
     isLoading: { type: Boolean, default: false },
     items: { type: Array, default: () => [] }
-  },
-  data () {
-    return {
-      newOperation: false
-    }
-  },
-  methods: {
-    onAddArea (data) {
-      this.$emit('manage-add', data)
-    }
   }
 }
 </script>

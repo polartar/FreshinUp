@@ -1,9 +1,10 @@
 <template>
-  <form class="py-2">
-    <v-flex
-      xs12
-      px-2
-    >
+  <form class="py-2 px-2">
+    <v-progress-linear
+      v-if="isLoading"
+      indeterminate
+    />
+    <v-flex>
       <div class="mb-2 text-uppercase grey--text font-weight-bold">
         Area address
       </div>
@@ -14,10 +15,7 @@
         outline
       />
     </v-flex>
-    <v-flex
-      xs12
-      px-2
-    >
+    <v-flex>
       <div class="text-uppercase grey--text font-weight-bold">
         Radius
       </div>
@@ -28,6 +26,15 @@
         thumb-label
       />
     </v-flex>
+    <v-flex>
+      <v-layout
+        row
+        class="justify-space-between grey--text"
+      >
+        <span class="font-weight-bold">0</span>
+        <span class="font-weight-bold">100</span>
+      </v-layout>
+    </v-flex>
     <v-flex class="py-3 d-flex justify-space-between">
       <v-btn
         depressed
@@ -36,6 +43,7 @@
         Cancel
       </v-btn>
       <v-btn
+        :loading="isLoading"
         depressed
         color="primary"
         @click="save"
@@ -46,16 +54,25 @@
   </form>
 </template>
 <script>
+
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+export const DEFAULT_AREA = {
+  id: '',
+  name: '',
+  radius: '',
+  state: '',
+  store_uuid: ''
+}
 export default {
   mixins: [MapValueKeysToData],
+  props: {
+    isLoading: { type: Boolean, default: false },
+    // Override value prop to give default object mapping
+    value: { type: Object, default: () => DEFAULT_AREA }
+  },
   data () {
     return {
-      id: 0,
-      name: '',
-      radius: 0,
-      state: '',
-      store_uuid: ''
+      ...DEFAULT_AREA
     }
   },
   methods: {
