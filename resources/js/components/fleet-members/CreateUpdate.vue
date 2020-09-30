@@ -74,6 +74,7 @@
           />
         </v-flex>
         <v-flex
+          v-if="!isNew"
           xs12
           py-2
         >
@@ -130,6 +131,7 @@
           </v-dialog>
         </v-flex>
         <v-flex
+          v-if="!isNew"
           xs12
           py-2
         >
@@ -146,12 +148,14 @@
           />
         </v-flex>
         <v-flex
+          v-if="!isNew"
           xs12
           py-2
         >
           <Menu />
         </v-flex>
         <v-flex
+          v-if="!isNew"
           xs12
           py-2
         >
@@ -160,6 +164,7 @@
           />
         </v-flex>
         <v-flex
+          v-if="!isNew"
           xs12
           py-2
         >

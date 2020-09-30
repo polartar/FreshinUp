@@ -2,6 +2,10 @@
   <div
     class="grey--text"
   >
+    <v-progress-linear
+      v-if="isLoading"
+      indeterminate
+    />
     <v-flex>
       <v-layout row>
         <v-flex
@@ -35,7 +39,7 @@
         :key="fileIndex"
       >
         <div class="ff-add-location__document_item">
-          <span class="text-uppercase primary--text font-weight-bold">{{ file.name }}</span>
+          <span class="primary--text font-weight-bold">{{ file.name }}</span>
           <span class="font-weight-bold">
             {{ file.size | formatFileSize }}
             <v-btn
@@ -53,6 +57,10 @@
         </div>
         <v-divider />
       </div>
+      <v-progress-linear
+        v-if="uploading"
+        indeterminate
+      />
       <v-layout
         column
         class="align-center"
@@ -99,6 +107,7 @@
         </div>
         <v-text-field
           v-model="capacity"
+          type="number"
           single-line
           outline
         />
@@ -123,6 +132,7 @@
       </v-btn>
       <v-btn
         depressed
+        :loading="isLoading"
         color="primary"
         @click="save"
       >
@@ -166,6 +176,7 @@ export default {
   },
   mixins: [MapValueKeysToData, FormatFileSize],
   props: {
+    isLoading: { type: Boolean, default: false },
     categories: { type: Array, default: () => [] },
     documents: { type: Array, default: () => [] },
     allowedFormats: {
@@ -177,6 +188,7 @@ export default {
   },
   data () {
     return {
+      uploading: false,
       ...DEFAULT_LOCATION
     }
   },
@@ -212,16 +224,25 @@ export default {
       return true
     },
     async onFileChange (e) {
-      const files = e.target.files
-      for (const file of files) {
-        await this.submitFile(file)
-        this.files.push(file)
+      try {
+        this.uploading = true
+        const files = e.target.files
+        for (const file of files) {
+          const src = await this.submitFile(file)
+          this.files.push({
+            name: file.name,
+            size: file.size,
+            src
+          })
+        }
+      } catch (error) {
+      } finally {
+        this.uploading = false
       }
     },
     submitFile (file) {
       return new Promise(async (resolve, reject) => {
         try {
-          file.uploading = true
           let formData = new FormData()
           formData.append('file', file)
           const response = await axios.post('/foodfleet/tmp-media',
@@ -229,18 +250,11 @@ export default {
             {
               headers: {
                 'Content-Type': 'multipart/form-data'
-              },
-              onUploadProgress: function (progressEvent) {
-                file.uploadPercentage = parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)) || 0
               }
             }
           )
-          file.uploading = false
-          file.uploadPercentage = 0
-          resolve(get(response, 'data', {}))
+          resolve(get(response, 'data', ''))
         } catch (e) {
-          file.uploading = false
-          file.uploadPercentage = 0
           reject(e)
         }
       })

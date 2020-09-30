@@ -57,6 +57,16 @@ describe('components/locations/LocationForm', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.isIndoor).toBe(false)
     })
+    test('isLoading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.isLoading).toBe(false)
+
+      wrapper.setProps({
+        isLoading: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.isLoading).toBe(true)
+    })
     test('acceptedFormats', async () => {
       const wrapper = shallowMount(Component)
       wrapper.setProps({

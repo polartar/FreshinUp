@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
-use App\Http\Controllers\Controller;
 use App\Actions\CreateDocument;
 use App\Actions\UpdateDocument;
-use App\Http\Resources\Foodfleet\Document\Document as DocumentResource;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Foodfleet\Document as DocumentResource;
+use App\Models\Foodfleet\Document;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
-use App\Models\Foodfleet\Document;
 use Illuminate\Http\Request;
-use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\Filter;
-use App\User;
-
-
+use Spatie\QueryBuilder\QueryBuilder;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class Documents extends Controller
@@ -22,7 +19,7 @@ class Documents extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
@@ -67,7 +64,7 @@ class Documents extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return DocumentResource
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -111,7 +108,7 @@ class Documents extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param $uuid
      * @return DocumentResource
      * @throws \Illuminate\Validation\ValidationException

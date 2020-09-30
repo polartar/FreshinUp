@@ -1,5 +1,6 @@
 export const FIXTURE_LOCATIONS = [
   {
+    id: 1,
     uuid: '9b8f16de-10ac-319f-bae6-b562a30198c2',
     name: 'Johnstonborough',
     venue_uuid: '7c9f7d4d-28b1-3971-a5ab-87db7fc2ab3f',
@@ -23,6 +24,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 2,
     uuid: 'f4dad0c7-4fe7-3fa3-a387-c9c3ac90a9b3',
     name: 'Vivienberg',
     venue_uuid: 'daf754e0-207d-3f9b-9b98-a9cc402789f7',
@@ -46,6 +48,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 3,
     uuid: 'af7eb46a-7bc1-3b00-8d56-e22a23d1fe23',
     name: 'O\'Konborough',
     venue_uuid: 'e7e32ae4-5623-33c7-9ccb-258e52a5025f',
@@ -65,6 +68,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 4,
     uuid: 'd766d92b-1abd-3ff9-995d-ec092a5cc523',
     name: 'Dickinsonhaven',
     venue_uuid: '0dd1db10-0a46-3dea-9ba5-b58f23b94c24',
@@ -88,6 +92,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 5,
     uuid: 'fc03a759-eb03-3a9a-a1d6-d0b5da54dfdf',
     name: 'Kirstinton',
     venue_uuid: 'ac874a8c-ab71-346d-8b21-042cd49c0e8c',
@@ -107,6 +112,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 6,
     uuid: '975dee5b-d919-33ad-8512-729cce551e15',
     name: 'Bodehaven',
     venue_uuid: '68aea945-ec63-3a6d-b1ee-acc8e5e1618a',
@@ -126,6 +132,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 7,
     uuid: 'a7b00b24-f12f-3210-9462-4b52edec73fb',
     name: 'West Susannaside',
     venue_uuid: '8be7715a-eb33-3b08-9727-87a67d908415',
@@ -139,6 +146,7 @@ export const FIXTURE_LOCATIONS = [
     details: 'Minima libero tempora eos cumque cum et. Voluptates fugit nostrum quia error.'
   },
   {
+    id: 8,
     uuid: '1983422a-a595-37eb-b0fc-24b058e7169e',
     name: 'Shannonview',
     venue_uuid: '7e050068-eeb3-3fa4-8884-8805a64b0674',
@@ -162,6 +170,7 @@ export const FIXTURE_LOCATIONS = [
     ]
   },
   {
+    id: 9,
     uuid: 'a3b62de3-53d4-3227-b20a-5c740c02df4a',
     name: 'South Martinestad',
     venue_uuid: '55ff334f-1885-3203-81dd-f459efd5788a',
@@ -175,6 +184,7 @@ export const FIXTURE_LOCATIONS = [
     details: 'Dolorem ullam consequatur amet facilis voluptatem voluptatem aliquam. Et placeat reprehenderit saepe, sunt.'
   },
   {
+    id: 10,
     uuid: '40013370-ea48-37b3-8791-f0e4f2f86bf5',
     name: 'Daughertymouth',
     venue_uuid: '93d665b1-0c15-3d32-ae40-c018d24c428b',

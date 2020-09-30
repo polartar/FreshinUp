@@ -65,14 +65,8 @@ export default {
   components: { DocumentList, DocumentForm },
   props: {
     isLoading: { type: Boolean, default: false },
-    items: {
-      type: Array,
-      default: () => []
-    },
-    statuses: {
-      type: Array,
-      default: () => []
-    }
+    items: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {

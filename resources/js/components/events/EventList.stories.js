@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-
 // Components
 import EventList from './EventList.vue'
+import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
 let events = [
   {
@@ -83,13 +83,193 @@ let events = [
   }
 ]
 
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Past' },
-  { id: 5, name: 'Cancelled' }
-]
+export const Empty = () => ({
+  components: { EventList },
+  data () {
+    return {
+      events: [],
+      statuses: FIXTURE_EVENT_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
+      }
+    }
+  },
+  template: `
+    <event-list
+      :events="events"
+      :statuses="statuses"
+      :rows-per-page="pagination.rowsPerPage"
+      :page="pagination.page"
+      :total-items="pagination.totalItems"
+      :sort-by="sorting.sortBy"
+      :descending="sorting.descending"
+    />
+  `
+})
+
+export const Set = () => ({
+  components: { EventList },
+  data () {
+    return {
+      events: events,
+      statuses: FIXTURE_EVENT_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
+      }
+    }
+  },
+  methods: {
+    edit (params) {
+      action('manage-edit')(params)
+    },
+    del (params) {
+      action('manage-delete')(params)
+    },
+    multipleDelete (params) {
+      action('manage-multiple-delete')(params)
+    },
+    changeStatus (status, event) {
+      action('change-status')(status, event)
+    },
+    changeStatusMultiple (status, events) {
+      action('change-status-multiple')(status, events)
+    }
+  },
+  template: `
+    <event-list
+      :events="events"
+      :statuses="statuses"
+      :rows-per-page="pagination.rowsPerPage"
+      :page="pagination.page"
+      :total-items="pagination.totalItems"
+      :sort-by="sorting.sortBy"
+      :descending="sorting.descending"
+      @manage-edit="edit"
+      @manage-delete="del"
+      @manage-multiple-delete="multipleDelete"
+      @change-status="changeStatus"
+      @change-status-multiple="changeStatusMultiple"
+    />
+  `
+})
+
+export const ForHost = () => ({
+  components: { EventList },
+  data () {
+    return {
+      events: events,
+      statuses: FIXTURE_EVENT_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
+      }
+    }
+  },
+  methods: {
+    edit (params) {
+      action('manage-edit')(params)
+    },
+    cancel (params) {
+      action('manage-cancel')(params)
+    },
+    multipleCancel (params) {
+      action('manage-multiple-cancel')(params)
+    },
+    changeStatus (status, event) {
+      action('change-status')(status, event)
+    },
+    changeStatusMultiple (status, events) {
+      action('change-status-multiple')(status, events)
+    }
+  },
+  template: `
+    <event-list
+      :events="events"
+      :statuses="statuses"
+      :rows-per-page="pagination.rowsPerPage"
+      :page="pagination.page"
+      :total-items="pagination.totalItems"
+      :sort-by="sorting.sortBy"
+      :descending="sorting.descending"
+      role="host"
+      @manage-edit="edit"
+      @manage-cancel="cancel"
+      @manage-multiple-cancel="multipleCancel"
+      @change-status="changeStatus"
+      @change-status-multiple="changeStatusMultiple"
+    />
+  `
+})
+
+export const ForSupplier = () => ({
+  components: { EventList },
+  data () {
+    return {
+      events: events,
+      statuses: FIXTURE_EVENT_STATUSES,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
+      }
+    }
+  },
+  methods: {
+    edit (params) {
+      action('manage-edit')(params)
+    },
+    leave (params) {
+      action('manage-leave')(params)
+    },
+    multipleLeave (params) {
+      action('manage-multiple-leave')(params)
+    },
+    changeStatus (status, event) {
+      action('change-status')(status, event)
+    },
+    changeStatusMultiple (status, events) {
+      action('change-status-multiple')(status, events)
+    }
+  },
+  template: `
+    <event-list
+      :events="events"
+      :statuses="statuses"
+      :rows-per-page="pagination.rowsPerPage"
+      :page="pagination.page"
+      :total-items="pagination.totalItems"
+      :sort-by="sorting.sortBy"
+      :descending="sorting.descending"
+      role="supplier"
+      @manage-edit="edit"
+      @manage-leave="leave"
+      @manage-multiple-leave="multipleLeave"
+      @change-status="changeStatus"
+      @change-status-multiple="changeStatusMultiple"
+    />
+  `
+})
 
 storiesOf('FoodFleet|components/events/EventList', module)
   .addParameters({
@@ -97,187 +277,7 @@ storiesOf('FoodFleet|components/events/EventList', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('events is empty', () => ({
-    components: { EventList },
-    data () {
-      return {
-        events: [],
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
-      }
-    },
-    template: `
-      <event-list
-        :events="events"
-        :statuses="statuses"
-        :rows-per-page="pagination.rowsPerPage"
-        :page="pagination.page"
-        :total-items="pagination.totalItems"
-        :sort-by="sorting.sortBy"
-        :descending="sorting.descending"
-      />
-    `
-  }))
-  .add('Events is set', () => ({
-    components: { EventList },
-    data () {
-      return {
-        events: events,
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
-      }
-    },
-    methods: {
-      edit (params) {
-        action('manage-edit')(params)
-      },
-      del (params) {
-        action('manage-delete')(params)
-      },
-      multipleDelete (params) {
-        action('manage-multiple-delete')(params)
-      },
-      changeStatus (status, event) {
-        action('change-status')(status, event)
-      },
-      changeStatusMultiple (status, events) {
-        action('change-status-multiple')(status, events)
-      }
-    },
-    template: `
-      <event-list
-        :events="events"
-        :statuses="statuses"
-        :rows-per-page="pagination.rowsPerPage"
-        :page="pagination.page"
-        :total-items="pagination.totalItems"
-        :sort-by="sorting.sortBy"
-        :descending="sorting.descending"
-        @manage-edit="edit"
-        @manage-delete="del"
-        @manage-multiple-delete="multipleDelete"
-        @change-status="changeStatus"
-        @change-status-multiple="changeStatusMultiple"
-      />
-    `
-  }))
-  .add('for host', () => ({
-    components: { EventList },
-    data () {
-      return {
-        events: events,
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
-      }
-    },
-    methods: {
-      edit (params) {
-        action('manage-edit')(params)
-      },
-      cancel (params) {
-        action('manage-cancel')(params)
-      },
-      multipleCancel (params) {
-        action('manage-multiple-cancel')(params)
-      },
-      changeStatus (status, event) {
-        action('change-status')(status, event)
-      },
-      changeStatusMultiple (status, events) {
-        action('change-status-multiple')(status, events)
-      }
-    },
-    template: `
-      <event-list
-        :events="events"
-        :statuses="statuses"
-        :rows-per-page="pagination.rowsPerPage"
-        :page="pagination.page"
-        :total-items="pagination.totalItems"
-        :sort-by="sorting.sortBy"
-        :descending="sorting.descending"
-        role="host"
-        @manage-edit="edit"
-        @manage-cancel="cancel"
-        @manage-multiple-cancel="multipleCancel"
-        @change-status="changeStatus"
-        @change-status-multiple="changeStatusMultiple"
-      />
-    `
-  }))
-  .add('for supplier ', () => ({
-    components: { EventList },
-    data () {
-      return {
-        events: events,
-        statuses: statuses,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
-      }
-    },
-    methods: {
-      edit (params) {
-        action('manage-edit')(params)
-      },
-      leave (params) {
-        action('manage-leave')(params)
-      },
-      multipleLeave (params) {
-        action('manage-multiple-leave')(params)
-      },
-      changeStatus (status, event) {
-        action('change-status')(status, event)
-      },
-      changeStatusMultiple (status, events) {
-        action('change-status-multiple')(status, events)
-      }
-    },
-    template: `
-      <event-list
-        :events="events"
-        :statuses="statuses"
-        :rows-per-page="pagination.rowsPerPage"
-        :page="pagination.page"
-        :total-items="pagination.totalItems"
-        :sort-by="sorting.sortBy"
-        :descending="sorting.descending"
-        role="supplier"
-        @manage-edit="edit"
-        @manage-leave="leave"
-        @manage-multiple-leave="multipleLeave"
-        @change-status="changeStatus"
-        @change-status-multiple="changeStatusMultiple"
-      />
-    `
-  }))
+  .add('events is empty', Empty)
+  .add('Events is set', Set)
+  .add('for host', ForHost)
+  .add('for supplier ', ForSupplier)

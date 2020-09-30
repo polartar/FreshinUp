@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Foodfleet\Document;
+namespace App\Http\Resources\Foodfleet;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
@@ -27,6 +27,7 @@ class Document extends JsonResource
             'src' => optional($attachment)->getPath()
         ];
         $data = [
+            'id' => $this->id,
             'uuid' => $this->uuid,
             'title' => $this->title,
             'status' => $this->status ? intval($this->status) : DocumentStatusEnum::PENDING,

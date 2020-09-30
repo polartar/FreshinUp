@@ -25,52 +25,24 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/events/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              Add New Event
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <div
-                  class="v-card__text grey--text"
-                >
-                  
-  Coming Soon
-
-                </div>
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            Add New Event
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -83,8 +55,8 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
-      color="transparent"
+      class="v-card v-sheet theme--light"
+      style="background-color: rgb(248, 248, 248); border-color: #f8f8f8;"
       without-sort-by=""
     >
       <form
@@ -625,52 +597,24 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/events/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              Add New Event
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <div
-                  class="v-card__text grey--text"
-                >
-                  
-  Coming Soon
-
-                </div>
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            Add New Event
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -683,8 +627,8 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
-      color="transparent"
+      class="v-card v-sheet theme--light"
+      style="background-color: rgb(248, 248, 248); border-color: #f8f8f8;"
       without-sort-by=""
     >
       <form
@@ -1254,52 +1198,24 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/events/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              Add New Event
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <div
-                  class="v-card__text grey--text"
-                >
-                  
-  Coming Soon
-
-                </div>
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            Add New Event
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1312,8 +1228,8 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
     class="v-card__text ma-2"
   >
     <div
-      class="filter-transparent filter-transparent v-card v-sheet theme--light transparent"
-      color="transparent"
+      class="v-card v-sheet theme--light"
+      style="background-color: rgb(248, 248, 248); border-color: #f8f8f8;"
       without-sort-by=""
     >
       <form

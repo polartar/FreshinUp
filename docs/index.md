@@ -53,6 +53,12 @@
 
 # Changes
 
+## September 27, 2020
+- **ADD** New Venue page: integration
+ [#483](https://github.com/FreshinUp/foodfleet/issues/483)
+ 
+ <br/>
+
 ## September 26, 2020
 - **ADD** Component: fleet member menu item add [#493](https://github.com/FreshinUp/foodfleet/issues/493)
 - **MOD** Fleet member details page display section in the right order [#490](https://github.com/FreshinUp/foodfleet/issues/490)

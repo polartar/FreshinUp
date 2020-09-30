@@ -2,7 +2,7 @@
 
 exports[`components/locations/LocationList Snapshots Empty 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"
@@ -49,25 +49,41 @@ exports[`components/locations/LocationList Snapshots Empty 1`] = `
               </div>
             </th>
             <th
-              aria-label="Location name / category: Not sorted."
+              aria-label="Location name / category: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Location name / category
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
-              aria-label="Capacity: Not sorted."
+              aria-label="Capacity: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-center"
+              class="column sortable text-xs-center"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
               <span>
                 
         Capacity
@@ -370,7 +386,7 @@ exports[`components/locations/LocationList Snapshots Empty 1`] = `
 
 exports[`components/locations/LocationList Snapshots Loading 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"
@@ -417,25 +433,41 @@ exports[`components/locations/LocationList Snapshots Loading 1`] = `
               </div>
             </th>
             <th
-              aria-label="Location name / category: Not sorted."
+              aria-label="Location name / category: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Location name / category
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
-              aria-label="Capacity: Not sorted."
+              aria-label="Capacity: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-center"
+              class="column sortable text-xs-center"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
               <span>
                 
         Capacity
@@ -766,7 +798,7 @@ exports[`components/locations/LocationList Snapshots Loading 1`] = `
 
 exports[`components/locations/LocationList Snapshots Populated 1`] = `
 <div
-  item-key="id"
+  item-key="uuid"
 >
   <div
     class="ui-datatable elevation-1"
@@ -813,25 +845,41 @@ exports[`components/locations/LocationList Snapshots Populated 1`] = `
               </div>
             </th>
             <th
-              aria-label="Location name / category: Not sorted."
+              aria-label="Location name / category: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column sortable text-xs-left"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
               <span>
                 
         Location name / category
       
               </span>
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
             </th>
             <th
-              aria-label="Capacity: Not sorted."
+              aria-label="Capacity: Not sorted. Activate to sort ascending."
               aria-sort="none"
-              class="column text-xs-center"
+              class="column sortable text-xs-center"
               role="columnheader"
               scope="col"
+              tabindex="0"
             >
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+                style="font-size: 16px;"
+              >
+                arrow_upward
+              </i>
               <span>
                 
         Capacity

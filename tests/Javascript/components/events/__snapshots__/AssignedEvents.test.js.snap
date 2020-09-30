@@ -286,7 +286,25 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           
                 </div>
                  
-                <!---->
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              sit
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
               </td>
                
               <td>
@@ -362,7 +380,25 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           
                 </div>
                  
-                <!---->
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              eos
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
               </td>
                
               <td>
@@ -438,7 +474,25 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           
                 </div>
                  
-                <!---->
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              eos
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
               </td>
                
               <td>
@@ -514,7 +568,25 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           
                 </div>
                  
-                <!---->
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              sit
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
               </td>
                
               <td>
@@ -590,7 +662,25 @@ exports[`Assigned Events component Snapshots events set 1`] = `
           
                 </div>
                  
-                <!---->
+                <div
+                  class="text-no-wrap"
+                >
+                  <span
+                    class="v-chip theme--light secondary secondary-text--text"
+                    tabindex="0"
+                  >
+                    <span
+                      class="v-chip__content"
+                    >
+                      
+              sit
+            
+                    </span>
+                  </span>
+                   
+              + 1 More
+            
+                </div>
               </td>
                
               <td>

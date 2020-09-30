@@ -1,6 +1,7 @@
 export const FIXTURE_VENUES = [
   {
     uuid: 'abc111',
+    id: 1,
     name: 'LA Stadium',
     owner_uuid: '',
     owner: {
@@ -35,6 +36,7 @@ export const FIXTURE_VENUES = [
     created_at: '2019-09-30T03:51:14.000000Z'
   },
   {
+    id: 2,
     uuid: 'abc222',
     name: 'ATL Stadium',
     owner_uuid: '',
@@ -61,6 +63,7 @@ export const FIXTURE_VENUES = [
     created_at: '2019-09-30T03:51:14.000000Z'
   },
   {
+    id: 3,
     uuid: 'abc223',
     name: 'ATL Stadium 2',
     address: '12345 ATL Stadium Way Lake Miles, CA 90210',

@@ -22,6 +22,15 @@ export const Default = () => ({
   `
 })
 
+export const Loading = () => ({
+  components: { LocationForm },
+  template: `
+    <v-container class="white">
+      <LocationForm is-loading/>
+    </v-container>
+  `
+})
+
 export const Indoor = () => ({
   components: { LocationForm },
   data () {
@@ -128,6 +137,7 @@ storiesOf('FoodFleet|components/locations/LocationForm', module)
     ]
   })
   .add('Default', Default)
+  .add('Loading', Loading)
   .add('Indoor', Indoor)
   .add('Outdoor', Outdoor)
   .add('WithDocuments', WithDocuments)
