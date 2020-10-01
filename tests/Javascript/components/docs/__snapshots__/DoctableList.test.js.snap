@@ -202,7 +202,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -214,14 +214,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Approved
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -277,11 +279,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -360,7 +361,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -505,7 +506,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -517,14 +518,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Pending
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -563,11 +566,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -808,7 +810,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -820,14 +822,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Rejected
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -900,11 +904,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -966,7 +969,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -1111,7 +1114,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -1123,14 +1126,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Pending
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1169,11 +1174,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                             role="list"
                           >
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1414,7 +1418,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -1426,14 +1430,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Expiring
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1523,11 +1529,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1572,7 +1577,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -1717,7 +1722,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -1729,14 +1734,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Approved
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -1792,11 +1799,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -1875,7 +1881,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -2020,7 +2026,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -2032,14 +2038,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Expiring
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2129,11 +2137,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2178,7 +2185,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -2323,7 +2330,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -2335,14 +2342,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Rejected
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2415,11 +2424,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2481,7 +2489,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -2626,7 +2634,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -2638,14 +2646,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Expired
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -2752,11 +2762,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"
@@ -2784,7 +2793,7 @@ exports[`Document List component Snapshots defaults 1`] = `
                 class="doc-type-icon"
               >
                 <i
-                  class="fa fa-file-pdf"
+                  class="fa fa-file-image"
                 />
               </div>
             </td>
@@ -2929,7 +2938,7 @@ exports[`Document List component Snapshots defaults 1`] = `
               class="justify-center text-xs-center select-td"
             >
               <div
-                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details theme--light"
                 role="combobox"
               >
                 <div
@@ -2941,14 +2950,16 @@ exports[`Document List component Snapshots defaults 1`] = `
                     <div
                       class="v-select__slot"
                     >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Status
+                      </label>
                       <div
                         class="v-select__selections"
                       >
-                        <div
-                          class="v-select__selection v-select__selection--comma"
-                        >
-                          Rejected
-                        </div>
                         <input
                           aria-label="Status"
                           aria-readonly="false"
@@ -3021,11 +3032,10 @@ exports[`Document List component Snapshots defaults 1`] = `
                               </a>
                             </div>
                             <div
-                              class="primary--text"
                               role="listitem"
                             >
                               <a
-                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
                                   class="v-list__tile__content"

@@ -41,7 +41,7 @@ exports[`Document list component Snapshots 1`] = `
           <thead>
             <tr>
               <th
-                aria-label="ITEMS: Not sorted. Activate to sort ascending."
+                aria-label="STATUS: Not sorted. Activate to sort ascending."
                 aria-sort="none"
                 class="column sortable text-xs-left"
                 role="columnheader"
@@ -49,7 +49,7 @@ exports[`Document list component Snapshots 1`] = `
                 tabindex="0"
               >
                 
-    ITEMS
+    STATUS
   
                 <i
                   aria-hidden="true"
@@ -116,152 +116,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark success success-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Approved
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Approved
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Rejected
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expiring
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -318,152 +265,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark warning warning-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Pending
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
                           >
                             Pending
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Approved
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Rejected
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expiring
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -520,152 +414,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark error error-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Rejected
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Rejected
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Expiring
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -722,152 +563,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark warning warning-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Pending
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
                           >
                             Pending
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Approved
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Rejected
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expiring
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -924,152 +712,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark secondary secondary-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Expiring
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Rejected
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Expiring
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Expired
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1126,152 +861,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark success success-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Approved
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Approved
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Rejected
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expiring
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1328,152 +1010,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark secondary secondary-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Expiring
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Rejected
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Expiring
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Expired
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1530,152 +1159,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark error error-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Rejected
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Rejected
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Expiring
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1732,152 +1308,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark secondary secondary-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Expired
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Rejected
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expiring
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Expired
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
-                        >
-                          <div
-                            class="v-select-list v-card theme--light"
-                          >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1934,152 +1457,99 @@ exports[`Document list component Snapshots 1`] = `
                 class="py-3"
               >
                 <div
-                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                  role="combobox"
+                  class="v-menu"
                 >
-                  <div
-                    class="v-input__control"
+                  <button
+                    class="v-btn theme--dark error error-text--text"
+                    type="button"
                   >
                     <div
-                      class="v-input__slot"
+                      class="v-btn__content"
+                    >
+                      
+  Rejected
+ 
+                      <i
+                        aria-hidden="true"
+                        class="v-icon v-icon--right material-icons theme--dark"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </button>
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      class="v-list theme--light"
+                      role="list"
                     >
                       <div
-                        class="v-select__slot"
+                        role="listitem"
                       >
-                        <div
-                          class="v-select__selections"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select__selection v-select__selection--comma"
+                            class="v-list__tile__title"
+                          >
+                            Pending
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Approved
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
                           >
                             Rejected
                           </div>
-                          <input
-                            aria-label="Status"
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
-                        >
-                          <div
-                            class="v-input__icon v-input__icon--append"
-                          >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                       <div
-                        class="v-menu"
+                        role="listitem"
                       >
-                        <div
-                          class="v-menu__content theme--light v-menu__content--auto "
-                          style="max-height: 200px; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
                         >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-list__tile__title"
                           >
-                            <div
-                              class="v-list theme--light"
-                              role="list"
-                            >
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Pending
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Approved
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="primary--text"
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Rejected
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expiring
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Expired
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
+                            Expiring
                           </div>
-                        </div>
+                        </a>
+                      </div>
+                      <div
+                        role="listitem"
+                      >
+                        <a
+                          class="v-list__tile v-list__tile--link theme--light"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            Expired
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -2180,7 +1650,7 @@ exports[`Document list component document list is empty 1`] = `
           <thead>
             <tr>
               <th
-                aria-label="ITEMS: Not sorted. Activate to sort ascending."
+                aria-label="STATUS: Not sorted. Activate to sort ascending."
                 aria-sort="none"
                 class="column sortable text-xs-left"
                 role="columnheader"
@@ -2188,7 +1658,7 @@ exports[`Document list component document list is empty 1`] = `
                 tabindex="0"
               >
                 
-    ITEMS
+    STATUS
   
                 <i
                   aria-hidden="true"

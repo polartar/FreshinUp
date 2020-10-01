@@ -297,6 +297,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
      
     <div
       class="elevation-1"
+      docss=""
     >
       <div
         class="v-table__overflow"
@@ -342,12 +343,15 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
               <th
                 aria-label="Status: Not sorted. Activate to sort ascending."
                 aria-sort="none"
-                class="column sortable text-xs-center"
+                class="column sortable text-xs-left"
                 role="columnheader"
                 scope="col"
                 tabindex="0"
                 width="200"
               >
+                <span>
+                  Status
+                </span>
                 <i
                   aria-hidden="true"
                   class="v-icon material-icons theme--light"
@@ -355,9 +359,6 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                 >
                   arrow_upward
                 </i>
-                <span>
-                  Status
-                </span>
               </th>
               <th
                 aria-label="Document: Not sorted. Activate to sort ascending."
@@ -479,7 +480,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                       <div
                         class="v-select__selection v-select__selection--comma"
                       >
-                        10
+                        5
                       </div>
                       <input
                         aria-label="Rows per page:"
@@ -519,10 +520,11 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -536,11 +538,10 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
                             </a>
                           </div>
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -635,7 +636,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
             <div
               class="v-datatable__actions__pagination"
             >
-              1-10 of 10
+              1-5 of 10
             </div>
             <button
               aria-label="Previous page"
@@ -656,8 +657,7 @@ exports[`DocumentList component Snapshots docss empty 1`] = `
             </button>
             <button
               aria-label="Next page"
-              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-              disabled="disabled"
+              class="v-btn v-btn--flat v-btn--icon theme--light"
               type="button"
             >
               <div
@@ -976,6 +976,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
      
     <div
       class="elevation-1"
+      docss="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
     >
       <div
         class="v-table__overflow"
@@ -1021,12 +1022,15 @@ exports[`DocumentList component Snapshots docss set 1`] = `
               <th
                 aria-label="Status: Not sorted. Activate to sort ascending."
                 aria-sort="none"
-                class="column sortable text-xs-center"
+                class="column sortable text-xs-left"
                 role="columnheader"
                 scope="col"
                 tabindex="0"
                 width="200"
               >
+                <span>
+                  Status
+                </span>
                 <i
                   aria-hidden="true"
                   class="v-icon material-icons theme--light"
@@ -1034,9 +1038,6 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                 >
                   arrow_upward
                 </i>
-                <span>
-                  Status
-                </span>
               </th>
               <th
                 aria-label="Document: Not sorted. Activate to sort ascending."
@@ -1158,7 +1159,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                       <div
                         class="v-select__selection v-select__selection--comma"
                       >
-                        10
+                        5
                       </div>
                       <input
                         aria-label="Rows per page:"
@@ -1198,10 +1199,11 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -1215,11 +1217,10 @@ exports[`DocumentList component Snapshots docss set 1`] = `
                             </a>
                           </div>
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -1314,7 +1315,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
             <div
               class="v-datatable__actions__pagination"
             >
-              1-10 of 10
+              1-5 of 10
             </div>
             <button
               aria-label="Previous page"
@@ -1335,8 +1336,7 @@ exports[`DocumentList component Snapshots docss set 1`] = `
             </button>
             <button
               aria-label="Next page"
-              class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-              disabled="disabled"
+              class="v-btn v-btn--flat v-btn--icon theme--light"
               type="button"
             >
               <div

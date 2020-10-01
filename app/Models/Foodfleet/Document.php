@@ -16,8 +16,8 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property int id
  * @property string uuid
  * @property string title
- * @property int status // TODO: rename to status_id
- * @property int type // TODO: rename to type_id
+ * @property int status_id
+ * @property int type_id
  * @property string description
  * @property string notes
  * @property Carbon expiration_at
@@ -33,7 +33,8 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  *
  *
  * @property \App\User owner
- * @property DocumentType // type
+ * @property DocumentType type
+ * @property DocumentStatus status
  * @property \App\User|Store|Event|Location assigned
  */
 class Document extends Model implements HasMedia
@@ -77,5 +78,15 @@ class Document extends Model implements HasMedia
     public function assigned()
     {
         return $this->morphTo('assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(DocumentStatus::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(DocumentType::class);
     }
 }

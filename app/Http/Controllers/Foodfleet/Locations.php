@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Foodfleet;
 use App\Actions\CreateDocument;
 use App\Enums\DocumentAssigned;
 use App\Enums\DocumentStatus;
-use App\Enums\DocumentTypes as DocumentTypeEnum;
+use App\Enums\DocumentType as DocumentTypeEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Location as LocationResource;
 use App\Models\Foodfleet\Location as LocationModel;
@@ -68,11 +68,11 @@ class Locations extends Controller
                     'title' => $file['name'],
                     'description' => $file['name'],
                     'file' => $file,
-                    'status' => DocumentStatus::PENDING,
-                    'type' => DocumentTypeEnum::DOWNLOADABLE,
+                    'status_id' => DocumentStatus::PENDING,
+                    'type_id' => DocumentTypeEnum::DOWNLOADABLE,
                     'assigned_type' => DocumentAssigned::LOCATION,
                     'assigned_uuid' => $location->uuid,
-                    'owner_uuid' => optional($request->user())->id
+                    'owner_uuid' => optional($request->user())->uuid
                 ]);
             }
         }

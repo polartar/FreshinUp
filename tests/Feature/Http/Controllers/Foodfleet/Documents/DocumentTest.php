@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Documents;
 
+use App\Enums\DocumentStatus;
+use App\Enums\DocumentType;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
@@ -32,8 +34,8 @@ class DocumentTest extends TestCase
 
         $documents = factory(Document::class, 5)->create([
             'created_by_uuid' => $user->uuid,
-            'type' => 1,
-            'status' => 1
+            'type_id' => 1,
+            'status_id' => 1
         ]);
 
         $data = $this
@@ -50,8 +52,8 @@ class DocumentTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $document->uuid,
                 'title' => $document->title,
-                'status' => $document->status,
-                'type' => $document->type,
+                'status_id' => $document->status_id,
+                'type_id' => $document->type_id,
                 'description' => $document->description,
                 'notes' => $document->notes,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
@@ -74,15 +76,15 @@ class DocumentTest extends TestCase
         factory(Document::class, 5)->create([
             'title' => 'Not visibles',
             'created_by_uuid' => $user->uuid,
-            'type' => 1,
-            'status' => 1
+            'type_id' => DocumentType::FROM_TEMPLATE,
+            'status_id' => DocumentStatus::PENDING
         ]);
 
         $documentsToFind = factory(Document::class, 5)->create([
             'title' => 'To find',
             'created_by_uuid' => $user->uuid,
-            'type' => 1,
-            'status' => 1
+            'type_id' => 1,
+            'status_id' => 1
         ]);
 
         $data = $this
@@ -112,11 +114,10 @@ class DocumentTest extends TestCase
             $this->assertArraySubset([
                 'uuid' => $document->uuid,
                 'title' => $document->title,
-                'status' => $document->status,
-                'type' => $document->type,
+                'status_id' => $document->status_id,
+                'type_id' => $document->type_id,
                 'description' => $document->description,
                 'notes' => $document->notes,
-                'assigned' => null,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($document->updated_at))
             ], $data[$idx]);
@@ -132,8 +133,8 @@ class DocumentTest extends TestCase
         $document = factory(Document::class)->create([
             'title' => 'To find',
             'created_by_uuid' => $user->uuid,
-            'type' => 1,
-            'status' => 1
+            'type_id' => 1,
+            'status_id' => 1
         ]);
 
         Storage::fake('cms');

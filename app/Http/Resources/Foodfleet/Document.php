@@ -5,7 +5,7 @@ namespace App\Http\Resources\Foodfleet;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 use App\Enums\DocumentStatus as DocumentStatusEnum;
-use App\Enums\DocumentTypes as DocumentTypeEnum;
+use App\Enums\DocumentType as DocumentTypeEnum;
 use FreshinUp\FreshBusForms\Http\Resources\User\User as UserResource;
 
 class Document extends JsonResource
@@ -30,18 +30,21 @@ class Document extends JsonResource
             'id' => $this->id,
             'uuid' => $this->uuid,
             'title' => $this->title,
-            'status' => $this->status ? intval($this->status) : DocumentStatusEnum::PENDING,
-            'type' => $this->type ? intval($this->type) : DocumentTypeEnum::FROM_TEMPLATE,
+            'status_id' => $this->status_id ? intval($this->status_id) : DocumentStatusEnum::PENDING,
+            'status' => new DocumentStatus($this->whenLoaded('status')),
+            'type_id' => $this->type_id ? intval($this->type_id) : DocumentTypeEnum::FROM_TEMPLATE,
+            'type' => new DocumentStatus($this->whenLoaded('type')),
             'description' => $this->description,
             'file' => $file,
             'notes' => $this->notes,
             'owner' => new UserResource($this->whenLoaded('owner')),
             'assigned' => new $assignedResource($this->whenLoaded('assigned')),
-            'assigned_type' => $assignedType,
+            'assigned_type' => 1,
             'event_store_uuid' => $this->event_store_uuid,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
+            'created_by_uuid' => $this->created_by_uuid,
         ];
 
         return $data;

@@ -13,11 +13,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property \DateTime created_at
  * @property \DateTime updated_at
  *
+ *
+ * @property Document[] documents
  */
 class DocumentType extends Model
 {
     public function documents()
     {
-        return $this->hasMany('Document', 'type');
+        return $this->hasMany(Document::class, 'type_id');
     }
 }

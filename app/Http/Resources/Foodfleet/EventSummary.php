@@ -9,7 +9,7 @@ use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\EventMenuItem;
 use App\Enums\DocumentAssigned as DocumentAssignedEnum;
 use App\Enums\DocumentStatus as DocumentStatusEnum;
-use App\Enums\DocumentTypes as DocumentTypeEnum;
+use App\Enums\DocumentType as DocumentTypeEnum;
 use App\Http\Resources\Foodfleet\Store\EventStore;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -35,8 +35,7 @@ class EventSummary extends JsonResource
             $customer = User::where('id', $host->users_id)->first();
             $signed_contracts = Document::where('assigned_uuid', $customer->uuid)
                 ->where('assigned_type', DocumentAssignedEnum::getDescription(DocumentAssignedEnum::USER))
-                ->where('type', DocumentTypeEnum::CONTRACT)
-                ->where('status', DocumentStatusEnum::APPROVED)
+                ->where('status_id', DocumentStatusEnum::APPROVED)
                 ->count();
             $customer = (object) [
                 "owner" => $customer->first_name . ' ' . $customer->last_name,
@@ -71,7 +70,7 @@ class EventSummary extends JsonResource
             "total_cost" => $total_cost,
             "amount_due" => $total_commission + $total_cost
         ];
-        
+
         return [
             "customer" => $customer,
             "financial" => $financial
