@@ -92,7 +92,7 @@ describe('DocumentList component', () => {
         { action: 'view', text: 'View / Edit' },
         { action: 'delete', text: 'Delete' }
       ]
-      const mockDoc = { id: 1, title: 'mock title', status: 1 }
+      const mockDoc = { id: 1, title: 'mock title', status_id: 1 }
 
       wrapper.vm.manage(itemActions[0], mockDoc)
       wrapper.vm.manage(itemActions[1], mockDoc)
@@ -102,13 +102,13 @@ describe('DocumentList component', () => {
       expect(wrapper.emitted()['manage-view'][0][0].title).toEqual(
         'mock title'
       )
-      expect(wrapper.emitted()['manage-view'][0][0].status).toEqual(1)
+      expect(wrapper.emitted()['manage-view'][0][0].status_id).toEqual(1)
       expect(wrapper.emitted()['manage-delete']).toBeTruthy()
       expect(wrapper.emitted()['manage-delete'][0][0].id).toEqual(1)
       expect(wrapper.emitted()['manage-delete'][0][0].title).toEqual(
         'mock title'
       )
-      expect(wrapper.emitted()['manage-delete'][0][0].status).toEqual(1)
+      expect(wrapper.emitted()['manage-delete'][0][0].status_id).toEqual(1)
     })
 
     test('manageMultiple function emitted multiple manage action', () => {
@@ -127,7 +127,7 @@ describe('DocumentList component', () => {
         localVue
       })
 
-      const mockDoc = { id: 1, title: 'mock title', status: 1 }
+      const mockDoc = { id: 1, title: 'mock title', status_id: 1 }
 
       wrapper.vm.changeStatus(2, mockDoc)
 
@@ -137,7 +137,7 @@ describe('DocumentList component', () => {
       expect(wrapper.emitted()['change-status'][0][1].title).toEqual(
         'mock title'
       )
-      expect(wrapper.emitted()['change-status'][0][1].status).toEqual(1)
+      expect(wrapper.emitted()['change-status'][0][1].status_id).toEqual(1)
     })
 
     test('changeStatusMultiple function emitted change-status-multiple action', () => {

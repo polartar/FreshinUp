@@ -53,16 +53,17 @@
 
 # Changes
 
+## September 30, 2020
+- **ADD** AAreas of Operation Component [#468](https://github.com/FreshinUp/foodfleet/issues/468)
+- **MOD** Document types are incorrect [#496](https://github.com/FreshinUp/foodfleet/issues/496)
+
+<br/>
+
 ## September 27, 2020
 - **ADD** New Venue page: integration
  [#483](https://github.com/FreshinUp/foodfleet/issues/483)
  
  <br/>
-
-## September 26, 2020
-- **MOD** Document types are incorrect [#496](https://github.com/FreshinUp/foodfleet/issues/496)
-
-<br/>
 
 ## September 26, 2020
 - **ADD** Component: fleet member menu item add [#493](https://github.com/FreshinUp/foodfleet/issues/493)

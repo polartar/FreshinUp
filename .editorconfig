@@ -8,12 +8,6 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[*.js]
-indent_size = 2
-
-[*.vue]
-indent_size = 2
-
 [*.json]
 indent_size = 2
 
@@ -21,13 +15,10 @@ indent_size = 2
 trim_trailing_whitespace = false
 
 [*.js]
-indent_style = space
 indent_size = 2
 
 [*.vue]
-indent_style = space
 indent_size = 2
-
 
 [*.yml]
 indent_size = 2

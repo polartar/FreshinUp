@@ -1,8 +1,8 @@
 export const FIXTURE_DOCUMENTS = [{
   uuid: 'f38af949-678f-42d3-8908-f2527306c1d8',
   title: 'aliasa',
-  status: 2,
-  type: 1,
+  status_id: 2,
+  type_id: 1,
   description: 'QZkBryOdhffHIouRmEBnrA7fhub6DHkvirpOdkO5IHTaqMRFKY',
   notes: 'XzU9ublRc0QGJ4l9J3eK',
   owner: {
@@ -67,8 +67,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: 'acb7cd62-98fd-46b3-969f-f8c5f069d778',
   title: 'eius',
-  status: 1,
-  type: 2,
+  status_id: 1,
+  type_id: 2,
   description: 'GNWEGRNcWrnNd7Tep4vZ8QOIzmYMle9x65kyieoBvOLyAoi4Od',
   notes: 'X2bD5v8zskKlxgUq739q',
   owner: {
@@ -133,8 +133,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '17838ae4-5b52-4044-a966-527b60c09b1d',
   title: 'voluptas',
-  status: 3,
-  type: 1,
+  status_id: 3,
+  type_id: 1,
   description: 'nhQeRf3NINeP5YSRvuIGzpRvqhtjStNNNmkxi3vrW0L8MwwziF',
   notes: 'IqUH6F2SBVtoM8YZXW7p',
   owner: {
@@ -198,8 +198,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '4a95eefe-008e-4254-92ca-e38cbf046805',
   title: 'est',
-  status: 1,
-  type: 2,
+  status_id: 1,
+  type_id: 2,
   description: 'dZNsqz0oStLr8gQhtSxDcldgjxD9ooOt2ki109giWQ7C1euPsO',
   notes: '58tkfqulvobZichqDedN',
   owner: {
@@ -264,8 +264,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '0801264a-2b89-4497-9ec2-a5b21b7ac1be',
   title: 'quidem',
-  status: 4,
-  type: 1,
+  status_id: 4,
+  type_id: 1,
   description: '9vPgMQNb7z3ORCYJrHHYjyQpEYt9IDMl57KgaB2fqAH4AklrE4',
   notes: '1dn6T7ESmpxugGsCmfPo',
   owner: {
@@ -330,8 +330,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: 'f18bddd6-4f15-4607-bcf2-d2f3c1c76908',
   title: 'beatae',
-  status: 2,
-  type: 1,
+  status_id: 2,
+  type_id: 1,
   description: 'S1JSLox58mdt2VFPALaSY15qPbrhpcSeJtTMauUp3x5b6qju4D',
   notes: 'zA1FFlty12ekGy5C57uv',
   owner: {
@@ -396,8 +396,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '447ee532-0854-41ba-8b2d-757cd47edb2d',
   title: 'vel',
-  status: 4,
-  type: 1,
+  status_id: 4,
+  type_id: 1,
   description: 'RWFDSgZ6GQ73EMuE2PBdyrr4oNgbc1eimmYQcBRLatFSoQCLB6',
   notes: 'Plbdb3FfrTTERZ6e6M3l',
   owner: {
@@ -461,8 +461,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '9ddc0a0a-9e54-40e8-84db-6b9907b68ba4',
   title: 'est',
-  status: 3,
-  type: 1,
+  status_id: 3,
+  type_id: 1,
   description: 'y4EZ98cRZmVNXfyrqlIqrtMR4n5l63t0l2M5wcqixVvHuZmuBB',
   notes: 'nwv7Ay1tnjsbyn4kehhM',
   owner: {
@@ -527,8 +527,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: 'cc080f0b-0fa0-48ad-83b5-ce505be3d357',
   title: 'sunt',
-  status: 5,
-  type: 1,
+  status_id: 5,
+  type_id: 1,
   description: '2cpuPfu8j02kN2Bjb4IifL3TTa3N1zHnUebL9TYJ3kzdoTC1jm',
   notes: 'jnzgjATf6GAYnNAEhANq',
   owner: {
@@ -593,8 +593,8 @@ export const FIXTURE_DOCUMENTS = [{
 {
   uuid: '020278c8-3144-4d21-b438-08a05bb5147f',
   title: 'est',
-  status: 3,
-  type: 2,
+  status_id: 3,
+  type_id: 2,
   description: 'bcvX0DulSFiqLRCaIFWc69ABIVjHgNspHKDz1SnbEUrE9EVsXE',
   notes: 'Sy0HbRbNIRMhVViWukyN',
   owner: {
@@ -727,8 +727,8 @@ export const EMPTY_DOCUMENT = {
   description: null,
   expiration_at: null,
   notes: null,
-  status: 1,
-  title: null,
+  status_id: 1,
+  title_id: null,
   type: 1,
   updated_at: null,
   uuid: null

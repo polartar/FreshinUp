@@ -1039,10 +1039,10 @@ class EventTest extends TestCase
         ]);
 
         factory(Document::class, 5)->create([
-            'type' => 2,
-            'status' => 2,
+            'type_id' => 2,
+            'status_id' => 2,
             'assigned_uuid' => $user->uuid,
-            'assigned_type' => 'App\User'
+            'assigned_type' => \App\User::class
         ]);
 
         $data = $this
@@ -1098,10 +1098,10 @@ class EventTest extends TestCase
         ]);
 
         factory(Document::class, 5)->create([
-            'type' => 2,
-            'status' => 2,
+            'type_id' => 2,
+            'status_id' => 2,
             'assigned_uuid' => $user->uuid,
-            'assigned_type' => 'App\User'
+            'assigned_type' => \App\User::class
         ]);
 
         $this->json('PUT', 'api/foodfleet/stores/'.$storeUuids[0], [

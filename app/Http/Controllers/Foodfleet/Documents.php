@@ -29,16 +29,16 @@ class Documents extends Controller
             ->with('assigned')
             ->allowedSorts([
                 'title',
-                'type',
-                'status',
+                'type_id',
+                'status_id',
                 'created_at',
                 'expiration_at',
                 'created_by'
             ])
             ->allowedFilters([
                 'title',
-                Filter::exact('type'),
-                Filter::exact('status'),
+                Filter::exact('type_id'),
+                Filter::exact('status_id'),
                 Filter::exact('assigned_uuid'),
                 Filter::exact('event_store_uuid'),
                 Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
@@ -74,8 +74,8 @@ class Documents extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'type' => 'integer|required',
-            'status' => 'integer|required',
+            'type_id' => 'integer|required',
+            'status_id' => 'integer|required',
             'description' => 'required',
             'expiration_at' => 'date'
         ]);
@@ -117,8 +117,8 @@ class Documents extends Controller
     {
         $this->validate($request, [
             'title' => 'string',
-            'type' => 'integer',
-            'status' => 'integer',
+            'type_id' => 'integer',
+            'status_id' => 'integer',
             'description' => 'string',
             'expiration_at' => 'date'
         ]);

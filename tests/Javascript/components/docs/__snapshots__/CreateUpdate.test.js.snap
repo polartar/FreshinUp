@@ -46,7 +46,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
       class="flex text-xs-right sm2 xs12"
     >
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
         role="combobox"
       >
         <div
@@ -61,11 +61,6 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               <div
                 class="v-select__selections"
               >
-                <div
-                  class="v-select__selection v-select__selection--comma"
-                >
-                  Pending
-                </div>
                 <input
                   aria-readonly="false"
                   autocomplete="on"
@@ -103,11 +98,10 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     role="list"
                   >
                     <div
-                      class="primary--text"
                       role="listitem"
                     >
                       <a
-                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        class="v-list__tile v-list__tile--link theme--light"
                       >
                         <div
                           class="v-list__tile__content"
@@ -2086,7 +2080,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
       class="flex text-xs-right sm2 xs12"
     >
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
         role="combobox"
       >
         <div
@@ -2101,11 +2095,6 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               <div
                 class="v-select__selections"
               >
-                <div
-                  class="v-select__selection v-select__selection--comma"
-                >
-                  Approved
-                </div>
                 <input
                   aria-readonly="false"
                   autocomplete="on"
@@ -2160,11 +2149,10 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                       </a>
                     </div>
                     <div
-                      class="primary--text"
                       role="listitem"
                     >
                       <a
-                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                        class="v-list__tile v-list__tile--link theme--light"
                       >
                         <div
                           class="v-list__tile__content"
@@ -2326,7 +2314,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
               role="combobox"
             >
               <div
@@ -2338,14 +2326,16 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                   <div
                     class="v-select__slot"
                   >
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Type
+                    </label>
                     <div
                       class="v-select__selections"
                     >
-                      <div
-                        class="v-select__selection v-select__selection--comma"
-                      >
-                        From Template
-                      </div>
                       <input
                         aria-label="Type"
                         aria-readonly="false"
@@ -2385,11 +2375,10 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                           role="list"
                         >
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -2486,114 +2475,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
             </div>
           </div>
            
-          <div
-            class="flex md7 sm12"
-          >
-            <div
-              class="layout row mb-2"
-            >
-              
-      Document Template
-    
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Document Template
-                    </label>
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-label="Document Template"
-                        aria-readonly="false"
-                        autocomplete="on"
-                        data-vv-name="template"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!---->
            
           <div
             class="flex xs12"

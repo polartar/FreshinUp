@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\DocumentStatus;
 use App\Models\Foodfleet\DocumentType;
 use App\User;
 use Faker\Generator as Faker;
-use App\Models\Foodfleet\Document;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +24,10 @@ $factory->define(Document::class, function (Faker $faker) {
         'description' => $faker->realText(),
         'notes' => $faker->realText(),
         'expiration_at' => $faker->dateTimeBetween('+1 days', '+10 days'),
-
-        'status' => function () {
+        'status_id' => function () {
             return factory(DocumentStatus::class)->create()->id;
         },
-        'type' => function () {
+        'type_id' => function () {
             return factory(DocumentType::class)->create()->id;
         },
         'created_by_uuid' => function () {

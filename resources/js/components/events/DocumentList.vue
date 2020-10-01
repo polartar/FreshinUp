@@ -28,17 +28,10 @@
       slot-scope="props"
     >
       <td class="py-3">
-        <v-select
-          :items="statuses"
-          :value="props.item.status"
-          item-text="text"
-          item-value="value"
-          menu-props="auto"
-          label="Status"
-          hide-details
-          single-line
-          solo
-          @change="changeStatus($event, props.item)"
+        <status-select
+          :options="statuses"
+          :value="props.item.status_id"
+          @input="changeStatus($event, props.item)"
         />
       </td>
       <td class="py-3">
@@ -66,8 +59,18 @@
 
 <script>
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import StatusSelect from '../docs/StatusSelect'
 
+export const DEFAULT_HEADERS = [
+  { text: 'STATUS', sortable: true, value: 'title', align: 'left' },
+  { text: 'NAME', sortable: false, value: 'document', align: 'left' },
+  { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
+  { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
+]
 export default {
+  components: {
+    StatusSelect
+  },
   mixins: [ FormatDate ],
   props: {
     documents: {
@@ -82,12 +85,7 @@ export default {
   },
   data () {
     return {
-      headers: [
-        { text: 'ITEMS', sortable: true, value: 'title', align: 'left' },
-        { text: 'NAME', sortable: false, value: 'document', align: 'left' },
-        { text: 'LAST UPDATED', sortable: true, value: 'last_updated', align: 'left' },
-        { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
-      ]
+      headers: DEFAULT_HEADERS
     }
   },
   methods: {

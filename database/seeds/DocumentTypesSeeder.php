@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Foodfleet\DocumentType;
-use App\Enums\DocumentTypes as DocumentTypesEmums;
+use App\Enums\DocumentType as DocumentTypesEmums;
 
 class DocumentTypesSeeder extends Seeder
 {

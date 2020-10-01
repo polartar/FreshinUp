@@ -9,9 +9,9 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <template v-slot:item-inner-status="{ item }">
+    <template v-slot:item-inner-status_id="{ item }">
       <status-select
-        v-model="item.status"
+        v-model="item.status_id"
         :options="statuses"
         @input="changeStatus($event, item)"
       />
@@ -34,7 +34,7 @@ import StatusSelect from '~/components/docs/StatusSelect'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 
 export const HEADERS = [
-  { text: 'Status', sortable: true, value: 'status', align: 'left' },
+  { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
   { text: 'Document', sortable: true, value: 'title', align: 'left' },
   { text: 'Submitted on', sortable: true, value: 'created_at', align: 'center' },
   { text: 'Expiration date', sortable: true, value: 'expiration_at', align: 'center' },

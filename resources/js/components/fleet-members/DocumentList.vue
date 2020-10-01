@@ -64,12 +64,13 @@
         :headers="headers"
         :items="docs"
         :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
-        :pagination.sync="pagination"
         :loading="isLoading"
         :total-items="totalItems"
+        v-bind="$attrs"
         item-key="uuid"
         select-all
         disable-initial-sort
+        v-on="$listeners"
       >
         <v-progress-linear
           slot="progress"
@@ -220,7 +221,7 @@
               </td>
             </slot>
             <slot
-              v-else-if="['status', 'manage'].indexOf(header.value) === -1"
+              v-else-if="['status_id', 'manage'].indexOf(header.value) === -1"
               :name="'item-' + header.value"
               :item="props.item"
             >
@@ -237,7 +238,7 @@
               </td>
             </slot>
             <slot
-              v-else-if="header.value === 'status'"
+              v-else-if="header.value === 'status_id'"
               :name="'item-' + header.value"
               :item="props.item"
             >
@@ -246,7 +247,7 @@
                 class="justify-center select-td"
               >
                 <status-select
-                  v-model="props.item.status"
+                  v-model="props.item.status_id"
                   :options="statuses"
                   @input="changeStatus($event, props.item)"
                 />
@@ -317,8 +318,8 @@ export default {
         {
           text: 'Status',
           sortable: true,
-          value: 'status',
-          align: 'center',
+          value: 'status_id',
+          align: 'left',
           width: '200'
         },
         { text: 'Document', value: 'title,owner', align: 'left', width: '300' },

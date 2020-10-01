@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 
-final class DocumentTypes extends Enum
+final class DocumentType extends Enum
 {
     const FROM_TEMPLATE = 1;
     const DOWNLOADABLE = 2;

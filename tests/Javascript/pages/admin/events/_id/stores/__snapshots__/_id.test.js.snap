@@ -1410,7 +1410,7 @@ exports[`Event StoreDetails Component Mount mount store detail page 1`] = `
                           <thead>
                             <tr>
                               <th
-                                aria-label="ITEMS: Not sorted. Activate to sort ascending."
+                                aria-label="STATUS: Not sorted. Activate to sort ascending."
                                 aria-sort="none"
                                 class="column sortable text-xs-left"
                                 role="columnheader"
@@ -1418,7 +1418,7 @@ exports[`Event StoreDetails Component Mount mount store detail page 1`] = `
                                 tabindex="0"
                               >
                                 
-    ITEMS
+    STATUS
   
                                 <i
                                   aria-hidden="true"
