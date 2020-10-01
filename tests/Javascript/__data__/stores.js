@@ -1,8 +1,10 @@
 export const FIXTURE_STORES = [
   {
+    id: 1,
     uuid: 'abc111',
     name: 'Da Lobster',
     type_id: 1,
+    radius: 41,
     tags: [
       {
         uuid: 'a111',
@@ -54,9 +56,11 @@ export const FIXTURE_STORES = [
     }
   },
   {
+    id: 2,
     uuid: 'abc222',
     name: 'Rekindler',
     type_id: 2,
+    radius: 96,
     tags: [
       {
         uuid: 'a111',
@@ -101,9 +105,11 @@ export const FIXTURE_STORES = [
     }
   },
   {
+    id: 3,
     uuid: 'abc333',
     name: 'Fiora',
     type_id: 2,
+    radius: 37,
     tags: [{
       uuid: 'a111',
       name: 'ASIAN'
@@ -150,9 +156,11 @@ export const FIXTURE_STORES = [
     }
   },
   {
+    id: 4,
     uuid: 'abc444',
     name: 'Trundle',
     type_id: 2,
+    radius: 14,
     tags: [{
       uuid: 'a111',
       name: 'ASIAN'
@@ -201,9 +209,11 @@ export const FIXTURE_STORES = [
     }
   },
   {
+    id: 5,
     uuid: 'abc555',
     name: 'La fourchette',
     type_id: 2,
+    radius: 32,
     tags: [
       {
         uuid: 't1',

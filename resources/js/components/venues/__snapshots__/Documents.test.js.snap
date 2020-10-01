@@ -25,63 +25,25 @@ exports[`components/venues/Documents Snapshots Empty 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/docs/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              
-              Add New Document
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__text grey--text"
-                >
-                  <div>
-                    
-  Coming Soon
-
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            
+          Add New Document
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -530,63 +492,25 @@ exports[`components/venues/Documents Snapshots Loading 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/docs/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              
-              Add New Document
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__text grey--text"
-                >
-                  <div>
-                    
-  Coming Soon
-
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            
+          Add New Document
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1063,63 +987,25 @@ exports[`components/venues/Documents Snapshots Populated 1`] = `
       <div
         class="flex shrink"
       >
-        <div
-          class="v-dialog__container"
-          style="display: inline-block;"
+        <a
+          class="v-btn theme--dark primary"
+          href="/admin/docs/new"
+          slot="activator"
         >
-          <button
-            class="v-btn theme--dark primary"
-            slot="activator"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--dark"
-              >
-                add_circle_outline
-              </i>
-              
-              Add New Document
-            
-            </div>
-          </button>
           <div
-            class="v-dialog__content"
-            style="z-index: 0;"
-            tabindex="-1"
+            class="v-btn__content"
           >
-            <div
-              class="v-dialog"
-              style="max-width: 400px; display: none;"
+            <i
+              aria-hidden="true"
+              class="v-icon v-icon--left material-icons theme--dark"
             >
-               
-              <div
-                class="v-card v-sheet theme--light"
-              >
-                <hr
-                  class="v-divider theme--light"
-                />
-                 
-                <div
-                  class="v-card__text grey--text"
-                >
-                  <div>
-                    
-  Coming Soon
-
-                  </div>
-                </div>
-                 
-                <hr
-                  class="v-divider theme--light"
-                />
-              </div>
-            </div>
+              add_circle_outline
+            </i>
+            
+          Add New Document
+        
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>

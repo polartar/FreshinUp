@@ -5,10 +5,12 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
   class="container white"
 >
   <form
-    class="py-2"
+    class="py-2 px-2"
   >
+    <!---->
+     
     <div
-      class="flex xs12 px-2"
+      class="flex"
     >
       <div
         class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -52,7 +54,7 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
     </div>
      
     <div
-      class="flex xs12 px-2"
+      class="flex"
     >
       <div
         class="text-uppercase grey--text font-weight-bold"
@@ -78,10 +80,10 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
                 aria-readonly="false"
                 aria-valuemax="100"
                 aria-valuemin="0"
-                aria-valuenow="0"
+                aria-valuenow=""
                 readonly="readonly"
                 role="slider"
-                value="0"
+                value=""
               />
               <div
                 class="v-slider__track__container"
@@ -111,7 +113,7 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
                     style="height: 32px; width: 32px;"
                   >
                     <span>
-                      0
+                      
                     </span>
                   </div>
                 </div>
@@ -132,23 +134,30 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
     </div>
      
     <div
-      class="flex xs12 pa-2"
+      class="flex"
     >
       <div
-        class="text-xs-center"
+        class="layout justify-space-between grey--text row"
       >
-        
-      MAP HERE
-    
+        <span
+          class="font-weight-bold"
+        >
+          0
+        </span>
+         
+        <span
+          class="font-weight-bold"
+        >
+          100
+        </span>
       </div>
     </div>
      
     <div
-      class="layout align-center justify-space-between"
+      class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-        disabled="disabled"
+        class="v-btn v-btn--depressed theme--light"
         type="button"
       >
         <div
@@ -177,15 +186,260 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
 </div>
 `;
 
-exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
+exports[`components/fleet-members/AreaForm Snapshots Loading 1`] = `
 <div
-  class="container"
+  class="container white"
 >
   <form
-    class="py-2"
+    class="py-2 px-2"
   >
     <div
-      class="flex xs12 px-2"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="v-progress-linear"
+      role="progressbar"
+      style="height: 7px;"
+    >
+      <div
+        class="v-progress-linear__background primary"
+        style="height: 7px; opacity: 0.3; width: 100%;"
+      />
+      <div
+        class="v-progress-linear__bar"
+      >
+        <div
+          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+        >
+          <div
+            class="v-progress-linear__bar__indeterminate long primary"
+          />
+          <div
+            class="v-progress-linear__bar__indeterminate short primary"
+          />
+        </div>
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="mb-2 text-uppercase grey--text font-weight-bold"
+      >
+        
+      Area address
+    
+      </div>
+       
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-text-field__slot"
+            >
+              <input
+                placeholder="Enter an address"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="text-uppercase grey--text font-weight-bold"
+      >
+        
+      Radius
+    
+      </div>
+       
+      <div
+        class="v-input v-input--slider v-input--slider--thumb-label theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-slider"
+            >
+              <input
+                aria-readonly="false"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow=""
+                readonly="readonly"
+                role="slider"
+                value=""
+              />
+              <div
+                class="v-slider__track__container"
+              >
+                <div
+                  class="v-slider__track"
+                  style="left: 7px; width: 100%;"
+                />
+                <div
+                  class="v-slider__track-fill primary"
+                  style="left: 0px; width: 0%;"
+                />
+              </div>
+              <div
+                class="v-slider__thumb-container v-slider__thumb-container--show-label"
+                style="left: 0%;"
+              >
+                <div
+                  class="v-slider__thumb"
+                />
+                <div
+                  class="v-slider__thumb-label__container"
+                  style="display: none;"
+                >
+                  <div
+                    class="v-slider__thumb-label"
+                    style="height: 32px; width: 32px;"
+                  >
+                    <span>
+                      
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="layout justify-space-between grey--text row"
+      >
+        <span
+          class="font-weight-bold"
+        >
+          0
+        </span>
+         
+        <span
+          class="font-weight-bold"
+        >
+          100
+        </span>
+      </div>
+    </div>
+     
+    <div
+      class="flex py-3 d-flex justify-space-between"
+    >
+      <button
+        class="v-btn v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Cancel
+    
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--loader v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      Save changes
+    
+        </div>
+        <span
+          class="v-btn__loading"
+        >
+          <div
+            aria-valuemax="100"
+            aria-valuemin="0"
+            class="v-progress-circular v-progress-circular--indeterminate"
+            role="progressbar"
+            style="height: 23px; width: 23px;"
+          >
+            <svg
+              style="transform: rotate(0deg);"
+              viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="v-progress-circular__overlay"
+                cx="43.80952380952381"
+                cy="43.80952380952381"
+                fill="transparent"
+                r="20"
+                stroke-dasharray="125.664"
+                stroke-dashoffset="125.66370614359172px"
+                stroke-width="3.8095238095238093"
+              />
+            </svg>
+            <div
+              class="v-progress-circular__info"
+            />
+          </div>
+        </span>
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
+<div
+  class="container white"
+>
+  <form
+    class="py-2 px-2"
+  >
+    <!---->
+     
+    <div
+      class="flex"
     >
       <div
         class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -229,7 +483,7 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
     </div>
      
     <div
-      class="flex xs12 px-2"
+      class="flex"
     >
       <div
         class="text-uppercase grey--text font-weight-bold"
@@ -240,7 +494,7 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
       </div>
        
       <div
-        class="v-input v-input--slider v-input--slider--thumb-label theme--light"
+        class="v-input v-input--slider v-input--slider--thumb-label v-input--is-label-active v-input--is-dirty theme--light"
       >
         <div
           class="v-input__control"
@@ -255,40 +509,40 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
                 aria-readonly="false"
                 aria-valuemax="100"
                 aria-valuemin="0"
-                aria-valuenow="0"
+                aria-valuenow="74"
                 readonly="readonly"
                 role="slider"
-                value="0"
+                value="74"
               />
               <div
                 class="v-slider__track__container"
               >
                 <div
                   class="v-slider__track"
-                  style="left: 7px; width: 100%;"
+                  style="left: 0px; width: 100%;"
                 />
                 <div
                   class="v-slider__track-fill primary"
-                  style="left: 0px; width: 0%;"
+                  style="left: 0px; width: 74%;"
                 />
               </div>
               <div
-                class="v-slider__thumb-container v-slider__thumb-container--show-label"
-                style="left: 0%;"
+                class="v-slider__thumb-container v-slider__thumb-container--show-label primary--text"
+                style="left: 74%;"
               >
                 <div
-                  class="v-slider__thumb"
+                  class="v-slider__thumb primary"
                 />
                 <div
                   class="v-slider__thumb-label__container"
                   style="display: none;"
                 >
                   <div
-                    class="v-slider__thumb-label"
+                    class="v-slider__thumb-label primary"
                     style="height: 32px; width: 32px;"
                   >
                     <span>
-                      0
+                      74
                     </span>
                   </div>
                 </div>
@@ -309,23 +563,30 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
     </div>
      
     <div
-      class="flex xs12 pa-2"
+      class="flex"
     >
       <div
-        class="text-xs-center"
+        class="layout justify-space-between grey--text row"
       >
-        
-      MAP HERE
-    
+        <span
+          class="font-weight-bold"
+        >
+          0
+        </span>
+         
+        <span
+          class="font-weight-bold"
+        >
+          100
+        </span>
       </div>
     </div>
      
     <div
-      class="layout align-center justify-space-between"
+      class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--disabled v-btn--depressed theme--light"
-        disabled="disabled"
+        class="v-btn v-btn--depressed theme--light"
         type="button"
       >
         <div
