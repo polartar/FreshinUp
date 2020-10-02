@@ -54,9 +54,6 @@ export const Populated = () => ({
     onManageMultipleDelete (act, items) {
       action('onManageMultipleDelete')(act, items)
     },
-    onPaginate (value) {
-      action('onPaginate')(value)
-    },
     onNew (payload) {
       action('onNew')(payload)
     }
@@ -69,7 +66,6 @@ export const Populated = () => ({
         :total-items="pagination.totalItems"
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
-        @paginate="onPaginate"
         @manage-view="onManageView"
         @manage-delete="onManageDelete"
         @manage-multiple-delete="onManageMultipleDelete"

@@ -22,7 +22,7 @@
       ma-2
     >
       <h2 class="white--text">
-        {{ store && store.name }}
+        {{ get(store, 'name') }}
       </h2>
       <v-flex
         text-xs-right
@@ -220,6 +220,7 @@ export default {
     }
   },
   methods: {
+    get,
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
