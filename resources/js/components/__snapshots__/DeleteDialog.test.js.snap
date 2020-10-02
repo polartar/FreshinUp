@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/DeleteDialog Snapshots Basic 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+    title="All to trash ?"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog"
+        style="max-width: 500px; display: none;"
+      >
+        <div
+          class="simple-confirm pa-3 v-card v-sheet theme--light"
+        >
+          <div
+            class="v-card__title px-0 justify-center"
+          >
+            <div
+              class="title font-weight-bold"
+            >
+              
+        Are you sure you want to delete the selected item(s)
+      
+            </div>
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="py-5 px-2"
+          >
+            <p
+              class="subheading"
+            >
+              
+          item(s): 
+        
+            </p>
+          </div>
+           
+          <div
+            class="v-card__actions px-8"
+          >
+            <button
+              class="v-btn v-btn--block theme--light light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      No
+    
+              </div>
+            </button>
+             
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--block theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      Yes
+    
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/DeleteDialog Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-dialog__container"
+    style="display: block;"
+  >
+    <div
+      class="v-dialog__content"
+      style="z-index: 0;"
+      tabindex="-1"
+    >
+      <div
+        class="v-dialog"
+        style="max-width: 500px; display: none;"
+      >
+        <div
+          class="simple-confirm pa-3 v-card v-sheet theme--light deleting"
+        >
+          <div
+            class="v-card__title px-0 justify-center"
+          >
+            <div
+              class="title font-weight-bold"
+            >
+              
+        Are you sure you want to delete the selected item(s)
+      
+            </div>
+          </div>
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="py-5 px-2"
+          >
+            <div
+              class="text-xs-center"
+            >
+              <p
+                class="subheading"
+              >
+                
+            Processing, please wait...
+          
+              </p>
+               
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                class="v-progress-circular primary--text"
+                role="progressbar"
+                style="height: 200px; width: 200px;"
+              >
+                <svg
+                  style="transform: rotate(-90deg);"
+                  viewBox="21.62162162162162 21.62162162162162 43.24324324324324 43.24324324324324"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="v-progress-circular__underlay"
+                    cx="43.24324324324324"
+                    cy="43.24324324324324"
+                    fill="transparent"
+                    r="20"
+                    stroke-dasharray="125.664"
+                    stroke-dashoffset="0"
+                    stroke-width="3.243243243243243"
+                  />
+                  <circle
+                    class="v-progress-circular__overlay"
+                    cx="43.24324324324324"
+                    cy="43.24324324324324"
+                    fill="transparent"
+                    r="20"
+                    stroke-dasharray="125.664"
+                    stroke-dashoffset="125.66370614359172px"
+                    stroke-width="3.243243243243243"
+                  />
+                </svg>
+                <div
+                  class="v-progress-circular__info"
+                >
+                  
+            
+          
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions px-8"
+          >
+            <button
+              class="v-btn v-btn--block theme--light light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      No
+    
+              </div>
+            </button>
+             
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn v-btn--block theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+      Yes
+    
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

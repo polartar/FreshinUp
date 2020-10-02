@@ -87,8 +87,7 @@
             :sort-by="storeAreaSorting.sortBy"
             :descending="storeAreaSorting.descending"
             @paginate="onAreaPaginate"
-            @manage-add="onAddArea"
-            @manage-delete="onDeleteArea"
+            @manage-delete="item => onDeleteArea([item])"
             @manage-multiple-delete="onDeleteArea"
           >
             <template v-slot:head>
@@ -150,45 +149,16 @@
             </template>
           </areas-of-operation>
 
-          <v-dialog
-            v-model="deleteDialog"
-            max-width="500"
-          >
-            <simple-confirm
-              :class="{ 'deleting': deletablesProcessing }"
-              :title="deleteDialogTitle"
-              ok-label="Yes"
-              cancel-label="No"
-              @ok="onSubmitDelete"
-              @cancel="onCancelDelete"
-            >
-              <div class="py-5 px-2">
-                <template v-if="deletablesProcessing">
-                  <div class="text-xs-center">
-                    <p class="subheading">
-                      Processing, please wait...
-                    </p>
-                    <v-progress-circular
-                      :rotate="-90"
-                      :size="200"
-                      :width="15"
-                      :value="deletablesProgress"
-                      color="primary"
-                    >
-                      {{ deletablesStatus }}
-                    </v-progress-circular>
-                  </div>
-                </template>
-                <template v-else>
-                  <p class="subheading">
-                    <span v-if="deletables.length < 2">Area</span>
-                    <span v-else>Areas</span>
-                    : {{ deleteTemp | formatDeleteTitles }}
-                  </p>
-                </template>
-              </div>
-            </simple-confirm>
-          </v-dialog>
+          <delete-dialog
+            :value="deletable.storeAreas.dialog"
+            item-title-prop="name"
+            :is-loading="deletable.storeAreas.processing"
+            :progress="deletable.storeAreas.progress"
+            :items="deletable.storeAreas.temp"
+            @confirm="deleteItems(DELETABLE_RESOURCE.AREA, deletable.storeAreas.temp)"
+            @cancel="onCancelDeleteItems(DELETABLE_RESOURCE.AREA)"
+          />
+          />
         </v-flex>
         <v-flex
           v-if="!isNew"
@@ -212,7 +182,33 @@
           xs12
           py-2
         >
-          <Menu />
+          <MenuItems
+            :items="menuItems"
+            :rows-per-page="menuItemPagination.rowsPerPage"
+            :page="menuItemPagination.page"
+            :total-items="menuItemPagination.totalItems"
+            :sort-by="menuItemSorting.sortBy"
+            :descending="menuItemSorting.descending"
+            @paginate="onMenuItemPaginate"
+            @manage-delete="item => onMenuItemManageMultipleDelete([item])"
+            @manage-multiple-delete="onMenuItemManageMultipleDelete"
+          >
+            <template #new-form="{ close }">
+              <menu-item-form
+                @input="payload => createMenuItem(payload, close)"
+                @cancel="close"
+              />
+            </template>
+          </MenuItems>
+
+          <delete-dialog
+            :value="deletable.menuItems.dialog"
+            item-title-prop="title"
+            :is-loading="deletable.menuItems.processing"
+            :progress="deletable.menuItems.progress"
+            :items="deletable.menuItems.temp"
+            @confirm="deleteItems(DELETABLE_RESOURCE.MENU_ITEM, deletable.menuItems.temp)"
+            @cancel="onCancelDeleteItems(DELETABLE_RESOURCE.MENU_ITEM)"/>
         </v-flex>
         <v-flex
           v-if="!isNew"
@@ -242,7 +238,9 @@ import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
 import Events from './Events'
 import AreasOfOperation from './AreasOfOperation'
-import Menu from './Menu'
+import MenuItems from '../menu-items/MenuItems'
+import MenuItemForm from '../menu-items/MenuItemForm'
+import DeleteDialog from '../DeleteDialog'
 import StatusSelect from './StatusSelect'
 import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
@@ -256,6 +254,12 @@ const { mapFields } = createHelpers({
   mutationType: 'updateField'
 })
 
+const DELETABLE_RESOURCE = {
+  MENU_ITEM: 'menuItems',
+  STORE: 'stores',
+  AREA: 'storeAreas',
+}
+
 export default {
   layout: 'admin',
   components: {
@@ -266,21 +270,32 @@ export default {
     Payments,
     Events,
     AreasOfOperation,
-    Menu,
-    StatusSelect
-  },
-  filters: {
-    formatDeleteTitles (value) {
-      return value.map(item => item.name).join(', ')
-    }
+    MenuItems,
+    MenuItemForm,
+    StatusSelect,
+    DeleteDialog
   },
   mixins: [Validate, deletables],
   data () {
     return {
+      menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
-      deleteTemp: [],
-      deleteDialog: false,
+
+      // TODO: Extract to state machine
+      DELETABLE_RESOURCE,
+      deletable: Object.values(DELETABLE_RESOURCE).reduce((acc, key) => {
+        acc[key] = {
+          status: '',
+          processing: false,
+          progress: 0,
+          temp: [],
+          dialog: false,
+          idProp: key === 'storeAreas' ? 'id' : 'uuid'
+        }
+        return acc
+      }, {}),
+
       loading: false,
       locations: ['Square'], // TODO: static to Square only until we know better
       sortables: [
@@ -303,6 +318,11 @@ export default {
       docs: 'items',
       documentPagination: 'pagination',
       documentSorting: 'sorting'
+    }),
+    ...mapGetters('menuItems', {
+      menuItems: 'items',
+      menuItemPagination: 'pagination',
+      menuItemSorting: 'sorting',
     }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
@@ -331,14 +351,10 @@ export default {
     storeAreas () {
       // TODO: see https://github.com/FreshinUp/core-ui/issues/135
       return Array.isArray(this.areas) ? this.areas : []
-    },
-    deleteDialogTitle () {
-      return this.deleteTemp.length < 2
-        ? 'Are you sure you want to delete this area?'
-        : 'Are you sure you want to delete the following areas?'
     }
   },
   methods: {
+    // store
     async saveOrCreate (data) {
       try {
         this.loading = true
@@ -375,10 +391,41 @@ export default {
     backToList () {
       this.$router.push({ path: '/admin/fleet-members' })
     },
-    onDeleteArea (area) {
-      this.deleteTemp = Array.isArray(area) ? area : [area]
-      this.deleteDialog = true
+    async deleteItems (resource, items) {
+      const deletable = this.deletable[resource]
+      deletable.processing = true
+      this.deletable[resource].progress = 0
+      this.deletable[resource].status = ''
+      const idProp = this.deletable[resource].idProp
+      const dispatcheables = []
+
+      items.forEach(item => {
+        dispatcheables.push(
+          this.$store.dispatch(`${resource}/deleteItem`, {
+            getItems: true,
+            params: { id: item[idProp] }
+          })
+        )
+      })
+
+      let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
+      let doneCount = 0
+
+      for (let i in chunks) {
+        await Promise.all(chunks[i])
+        doneCount += chunks[i].length
+        deletable.progress = doneCount
+        await this.sleep(this.deletablesSleepTime)
+      }
+      deletable.processing = false
+      deletable.dialog = false
     },
+    onCancelDeleteItems (resource) {
+      this.deletable[resource].dialog = false
+      this.deletable[resource].temp = []
+    },
+
+    // store areas
     onAddArea (area) {
       this.newAreaLoading = true
       this.$store.dispatch('storeAreas/createItem', {
@@ -397,44 +444,41 @@ export default {
           this.newAreaLoading = false
         })
     },
-    async onSubmitDelete () {
-      this.deletablesProcessing = true
-      this.deletablesProgress = 0
-      this.deletablesStatus = ''
-      let dispatcheables = []
-
-      this.deleteTemp.forEach(area => {
-        dispatcheables.push(
-          this.$store.dispatch('storeAreas/deleteItem', {
-            getItems: true,
-            params: { id: area.id }
-          })
-        )
-      })
-
-      let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
-      let doneCount = 0
-
-      for (let i in chunks) {
-        await Promise.all(chunks[i])
-        doneCount += chunks[i].length
-        this.deleteTempStatus =
-          doneCount + ' / ' + this.deleteTemp.length + ' Done'
-        this.deleteTempProgress = (doneCount / this.deleteTemp.length) * 100
-        await this.sleep(this.deletablesSleepTime)
-      }
-
-      this.deletablesProcessing = false
-      this.deleteDialog = false
-    },
-    onCancelDelete () {
-      this.deleteDialog = false
-      this.deleteTemp = []
+    onDeleteArea (areas) {
+      this.deletable.storeAreas.temp = areas
+      this.deletable.storeAreas.dialog = true
     },
     onAreaPaginate (value) {
       this.$store.dispatch('storeAreas/setPagination', value)
       this.$store.dispatch('storeAreas/getItems')
-    }
+    },
+
+    // menu items
+    onMenuItemPaginate (value) {
+      this.$store.dispatch('menuItems/setPagination', value)
+      this.$store.dispatch('menuItems/getItems')
+    },
+    onMenuItemManageMultipleDelete (menuItems) {
+      this.deletable.menuItems.temp = menuItems
+      this.deletable.menuItems.dialog = true
+    },
+    createMenuItem (data, onSuccess) {
+      this.menuItemLoading = true
+      this.$store.dispatch('menuItems/createItem', {
+        data: { ...data, store_uuid: this.$route.params.id }
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          onSuccess()
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.menuItemLoading = false
+        })
+    },
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
@@ -464,6 +508,11 @@ export default {
         store_uuid: id
       })
       promises.push(vm.$store.dispatch('storeAreas/getItems'))
+
+      vm.$store.dispatch('menuItems/setFilters', {
+        store_uuid: id
+      })
+      promises.push(vm.$store.dispatch('menuItems/getItems'))
     }
     vm.$store.dispatch('page/setLoading', true)
     // TODO: next step is to gather squareLocations from API

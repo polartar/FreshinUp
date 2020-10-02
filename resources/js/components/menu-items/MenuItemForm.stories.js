@@ -13,6 +13,17 @@ export const Default = () => ({
   `
 })
 
+export const Loading = () => ({
+  components: { MenuItemForm },
+  template: `
+    <v-container class="white">
+      <MenuItemForm
+        is-loading
+      />
+    </v-container>
+  `
+})
+
 export const WithData = () => ({
   components: { MenuItemForm },
   data () {
@@ -45,4 +56,5 @@ storiesOf('FoodFleet|components/menu-items/MenuItemForm', module)
     ]
   })
   .add('Default', Default)
+  .add('Loading', Loading)
   .add('WithData', WithData)

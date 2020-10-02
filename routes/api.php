@@ -76,9 +76,5 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('messages', 'Foodfleet\Messages@index');
     Route::post('messages', 'Foodfleet\Messages@store');
 
-    Route::get('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@index');
-    Route::post('stores/{uuid}/menu-items', 'Foodfleet\MenuItems@store');
-    Route::put('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@update');
-    Route::get('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@show');
-    Route::delete('stores/{uuid}/menu-items/{id}', 'Foodfleet\MenuItems@destroy');
+    Route::apiResource('menu-items', 'Foodfleet\MenuItems');
 });

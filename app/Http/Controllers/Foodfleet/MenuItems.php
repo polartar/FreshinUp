@@ -13,16 +13,20 @@ use Illuminate\Http\Request;
 
 class MenuItems extends Controller
 {
-    public function index(Request $request, $uuid)
+    public function index(Request $request)
     {
         $items = QueryBuilder::for(MenuItem::class, $request)
             ->allowedIncludes(['store'])
             ->allowedFilters([
-                'store',
                 Filter::exact('uuid'),
                 Filter::exact('store_uuid')
-            ]);
-        return MenuItemResource::collection($items->get());
+            ])
+            ->allowedSorts([
+                'title',
+                'cost'
+            ])
+        ;
+        return MenuItemResource::collection($items->jsonPaginate());
     }
 
 
@@ -51,10 +55,10 @@ class MenuItems extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $uuid
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $store_uuid, $uuid)
+    public function show(Request $request, $uuid)
     {
         $menu = QueryBuilder::for(MenuItem::class, $request)
             ->where('uuid', $uuid)
@@ -68,10 +72,10 @@ class MenuItems extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  string $uuid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $store_uuid, $uuid)
+    public function update(Request $request, $uuid)
     {
         $this->validate($request, [
             'title' => 'string',
@@ -81,21 +85,18 @@ class MenuItems extends Controller
         ]);
 
         $inputs = $request->input();
-        $menuItem = MenuItem::where('uuid', $uuid)->first();
-        if ($menuItem) {
-            $menuItem->update($inputs);
-        }
+        $menuItem = MenuItem::where('uuid', $uuid)->firstOrFail();
+        $menuItem->update($inputs);
         return new MenuItemResource($menuItem);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $store_uuid
      * @param $uuid
      * @return \Illuminate\Http\Response
      */
-    public function destroy($store_uuid, $uuid)
+    public function destroy($uuid)
     {
         $menuItem = MenuItem::where('uuid', $uuid)->firstOrFail();
         $menuItem->delete();

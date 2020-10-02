@@ -10,8 +10,8 @@ describe('components/menu-items/MenuItemList', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('IsLoading', async () => {
-      const wrapper = mount(Stories.IsLoading())
+    test('Loading', async () => {
+      const wrapper = mount(Stories.Loading())
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })

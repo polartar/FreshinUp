@@ -31,16 +31,6 @@ export default {
       if (this.$route && this.$route.params) return this.$route.params.id
       return null
     },
-
-    docsStatusesWithColors () {
-      return statusesColored(JSON.parse(JSON.stringify(this.docsStatuses)), {
-        1: 'warning',
-        2: 'success',
-        3: 'danger',
-        4: 'secondary',
-        5: 'secondary'
-      })
-    }
   },
   mixins: [deletables],
   methods: {

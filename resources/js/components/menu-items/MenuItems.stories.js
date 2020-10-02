@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import MenuItems from './MenuItems'
+import MenuItemForm from './MenuItemForm'
 import { FIXTURE_MENU_ITEMS } from '../../../../tests/Javascript/__data__/menuItems'
 
 export const Empty = () => ({
@@ -19,7 +20,7 @@ export const Empty = () => ({
 })
 
 export const IsLoading = () => ({
-  components: { MenuItems },
+  components: { MenuItems, MenuItemForm },
   template: `
     <menu-items
       is-loading
@@ -28,7 +29,7 @@ export const IsLoading = () => ({
 })
 
 export const Populated = () => ({
-  components: { MenuItems },
+  components: { MenuItems, MenuItemForm },
   data () {
     return {
       items: FIXTURE_MENU_ITEMS,
@@ -44,11 +45,14 @@ export const Populated = () => ({
     }
   },
   methods: {
-    onManage (act, item) {
-      action('onManage')(act, item)
+    onManageView (act, item) {
+      action('onManageView')(act, item)
     },
-    onManageMultiple (act, items) {
-      action('onManageMultiple')(act, items)
+    onManageDelete (act, item) {
+      action('onManageDelete')(act, item)
+    },
+    onManageMultipleDelete (act, items) {
+      action('onManageMultipleDelete')(act, items)
     },
     onPaginate (value) {
       action('onPaginate')(value)
@@ -65,11 +69,19 @@ export const Populated = () => ({
         :total-items="pagination.totalItems"
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
-        @new-submit="onNew"
         @paginate="onPaginate"
-        @manage="onManage"
-        @manage-multiple="onManageMultiple"
-      />
+        @manage-view="onManageView"
+        @manage-delete="onManageDelete"
+        @manage-multiple-delete="onManageMultipleDelete"
+      >
+        <template #new-form="{ close }">
+          <menu-item-form
+            @input="onNew"
+            @cancel="close"
+          />
+        </template>
+
+      </menu-items>
     `
 })
 

@@ -224,14 +224,12 @@ export default {
     ...mapGetters('documents', {
       documents: 'items',
       documentPagination: 'pagination',
-      documentSorting: 'sorting',
-      documentSortBy: 'sortBy'
+      documentSorting: 'sorting'
     }),
     ...mapGetters('locations', {
       locations_: 'items',
       locationPagination: 'pagination',
-      locationSorting: 'sorting',
-      locationSortBy: 'sortBy'
+      locationSorting: 'sorting'
     }),
     ...mapGetters('locationCategories', { locationCategories: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
@@ -375,14 +373,13 @@ export default {
         await this.sleep(this.deletablesSleepTime)
       }
 
-      // this.filterEvents(this.lastFilterParams)
       await this.sleep(500)
       this.deletable.processing = false
       this.deletable.dialog = false
     },
     onCancelDelete () {
-      this.deleteDialog = false
-      this.deleteTemp = []
+      this.deletable.dialog = false
+      this.deletable.temp = []
     },
 
     // Locations

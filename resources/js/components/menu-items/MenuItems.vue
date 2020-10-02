@@ -14,6 +14,7 @@
             slot="activator"
             color="primary"
             text
+            v-show="!newDialog"
             @click="newDialog = true"
           >
             <v-icon
@@ -33,12 +34,7 @@
         v-bind="$attrs"
         v-on="$listeners"
       />
-      <menu-item-form
-        v-else
-        :value="menuItem"
-        @input="onSubmit"
-        @cancel="newDialog = false"
-      />
+      <slot v-else name="new-form" :close="() => this.newDialog = false"/>
     </v-card-text>
     <v-divider />
   </v-card>
@@ -46,21 +42,13 @@
 
 <script>
 import MenuItemList from './MenuItemList'
-import MenuItemForm, { DEFAULT_MENU_ITEM } from './MenuItemForm'
 export default {
   components: {
     MenuItemList,
-    MenuItemForm
   },
   data () {
     return {
-      menuItem: DEFAULT_MENU_ITEM,
       newDialog: false
-    }
-  },
-  methods: {
-    onSubmit (payload) {
-      this.$emit('new-submit', payload)
     }
   }
 
