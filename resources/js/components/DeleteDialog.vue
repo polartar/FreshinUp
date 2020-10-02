@@ -5,15 +5,15 @@
     v-on="$listeners"
   >
     <simple-confirm
-      :class="{ deleting: processing }"
-      :title="dialogTitle"
+      :class="{ deleting: isLoading }"
+      :title="title"
       ok-label="Yes"
       cancel-label="No"
-      @ok="onSubmitDelete"
-      @cancel="onCancelDelete"
+      @ok="$emit('confirm')"
+      @cancel="$emit('cancel')"
     >
       <div class="py-5 px-2">
-        <template v-if="processing">
+        <template v-if="isLoading">
           <div class="text-xs-center">
             <p class="subheading">
               Processing, please wait...
@@ -22,18 +22,16 @@
               :rotate="-90"
               :size="200"
               :width="15"
-              :value="deletablesProgress"
+              :value="progress"
               color="primary"
             >
-              {{ deletablesStatus }}
+              {{ progressStatus }}
             </v-progress-circular>
           </div>
         </template>
         <template v-else>
           <p class="subheading">
-            <span v-if="deletables.length < 2">Document</span>
-            <span v-else>Documents</span>
-            : {{ deleteTemp | formatDeleteTitles }}
+            item(s): {{ message }}
           </p>
         </template>
       </div>
@@ -42,39 +40,28 @@
 </template>
 
 <script>
-// TODO: replace with the one under components/DeleteDialog
-import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+
 export default {
   components: {
     simpleConfirm
   },
-  filters: {
-    formatDeleteTitles (value) {
-      return value.map(item => item.title).join(', ')
-    }
-  },
-  mixins: [deletables],
   props: {
-    processing: {
-      type: Boolean,
-      default: false
-    },
-    dialogTitle: {
+    itemTitleProp: { type: String, default: 'title' },
+    isLoading: { type: Boolean, default: false },
+    progress: { type: Number, default: 0 },
+    title: {
       type: String,
       default: 'Are you sure you want to delete the selected item(s)'
     },
-    deleteTemp: {
-      type: Array,
-      default: () => []
+    items: { type: Array, default: () => [] }
+  },
+  computed: {
+    progressStatus () {
+      return `${Math.round(this.progress * 100) / 100} %`
     },
-    onSubmitDelete: {
-      type: Function,
-      required: true
-    },
-    onCancelDelete: {
-      type: Function,
-      required: true
+    message () {
+      return this.items.map(item => item[this.itemTitleProp]).join(', ')
     }
   }
 }

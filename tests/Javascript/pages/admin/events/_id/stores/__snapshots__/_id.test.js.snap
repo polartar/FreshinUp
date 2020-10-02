@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event StoreDetails Component Mount mount store detail page 1`] = `
+exports[`page/admin/events/store Mount mount store detail page 1`] = `
 <div>
   <div
     class="layout row align-center pt-3"

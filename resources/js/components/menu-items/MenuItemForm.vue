@@ -1,8 +1,12 @@
 <template>
   <div class="ff-menu-item__form">
-    <h3 class="headline grey--text font-weight-bold">
+    <h3 class="grey--text font-weight-bold">
       Add menu new item
     </h3>
+    <v-progress-linear
+      v-if="isLoading"
+      indeterminate
+    />
     <v-layout>
       <v-flex
         xs8
@@ -75,6 +79,7 @@
       </v-btn>
       <v-btn
         depressed
+        :loading="isLoading"
         color="primary"
         @click="save"
       >
@@ -105,6 +110,11 @@ export const DEFAULT_MENU_ITEM = {
  */
 export default {
   mixins: [MapValueKeysToData],
+  props: {
+    // overriding value prop from mixin to set default value
+    value: { type: Object, default: () => DEFAULT_MENU_ITEM },
+    isLoading: { type: Boolean, default: false }
+  },
   data () {
     return {
       ...DEFAULT_MENU_ITEM

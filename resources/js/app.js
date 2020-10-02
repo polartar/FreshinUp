@@ -30,62 +30,64 @@ import venueStatuses from './store/modules/venueStatuses'
 import companies from './store/modules/companies'
 import locations from './store/modules/locations'
 import locationCategories from './store/modules/locationCategories'
+import menuItems from './store/modules/menuItems'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
   requiredCompanyForRegister: false,
   ...window.__INITIAL_STATE__
 }
+const navigation = {
+  title: 'Food Fleet',
+  logo: '/images/logo.png',
+  drawerItems: [
+    {
+      action: 'icon-dashboard',
+      title: 'Dashboard',
+      to: '/admin'
+    },
+    {
+      action: 'icon-users',
+      title: 'Users',
+      to: '/admin/users'
+    },
+    {
+      action: 'icon-companies',
+      title: 'Companies',
+      to: '/admin/companies'
+    },
+    {
+      action: 'icon-trucks',
+      title: 'Fleet Members',
+      to: '/admin/fleet-members'
+    },
+    {
+      action: 'icon-venues',
+      title: 'Venues',
+      to: '/admin/venues'
+    },
+    {
+      action: 'icon-events',
+      title: 'Events',
+      to: '/admin/events'
+    },
+    {
+      action: 'icon-financial',
+      title: 'Financials',
+      to: '/admin/financials'
+    },
+    {
+      action: 'icon-reports',
+      title: 'Analytics',
+      to: '/admin/analytics'
+    }
+  ],
+  items: []
+}
 const appInstance = new App({
   components: {},
   store: createStore({
-    navigation: {
-      title: 'Food Fleet',
-      logo: '/images/logo.png',
-      drawerItems: [
-        {
-          action: 'icon-dashboard',
-          title: 'Dashboard',
-          to: '/admin'
-        },
-        {
-          action: 'icon-users',
-          title: 'Users',
-          to: '/admin/users'
-        },
-        {
-          action: 'icon-companies',
-          title: 'Companies',
-          to: '/admin/companies'
-        },
-        {
-          action: 'icon-trucks',
-          title: 'Fleet Members',
-          to: '/admin/fleet-members'
-        },
-        {
-          action: 'icon-venues',
-          title: 'Venues',
-          to: '/admin/venues'
-        },
-        {
-          action: 'icon-events',
-          title: 'Events',
-          to: '/admin/events'
-        },
-        {
-          action: 'icon-financial',
-          title: 'Financials',
-          to: '/admin/financials'
-        },
-        {
-          action: 'icon-reports',
-          title: 'Analytics',
-          to: '/admin/analytics'
-        }
-      ],
-      items: []
-    },
+    navigation,
     navigationAdmin: {
       title: 'Food Fleet',
       logo: '/images/logo.png',
@@ -174,7 +176,8 @@ const appInstance = new App({
       eventHistories: eventHistories({}),
       companies: companies({}),
       locations: locations({}),
-      locationCategories: locationCategories({})
+      locationCategories: locationCategories({}),
+      menuItems: menuItems({})
     }
   }),
   theme,

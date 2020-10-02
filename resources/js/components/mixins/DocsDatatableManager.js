@@ -1,12 +1,5 @@
 import { mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
-const statusesColored = (statuses, statusColorMap) => {
-  if (!statuses.length) return statuses
-  for (let i in statuses) {
-    statuses[i].color = statusColorMap[statuses[i].value]
-  }
-  return statuses
-}
 export default {
   data () {
     return {
@@ -30,16 +23,6 @@ export default {
     docsActiveStoreUuid () {
       if (this.$route && this.$route.params) return this.$route.params.id
       return null
-    },
-
-    docsStatusesWithColors () {
-      return statusesColored(JSON.parse(JSON.stringify(this.docsStatuses)), {
-        1: 'warning',
-        2: 'success',
-        3: 'danger',
-        4: 'secondary',
-        5: 'secondary'
-      })
     }
   },
   mixins: [deletables],

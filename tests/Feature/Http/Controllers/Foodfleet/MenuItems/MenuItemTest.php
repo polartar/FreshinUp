@@ -15,42 +15,64 @@ class MenuItemTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testGetList()
     {
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
-        $store = factory(Store::class)->create();
-
-
-        $items = factory(MenuItem::class, 3)->create([
-            'store_uuid' => $store->uuid,
-            'title' => 'A',
-        ]);
-
+        $menuItems = factory(MenuItem::class, 10)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/stores/{$store->uuid}/menu-items")
+            ->json('get', "/api/foodfleet/menu-items");
+        $data = $data
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
             ])
             ->json('data');
 
+        $this->assertNotEmpty($data);
+        $this->assertCount(10, $data);
+        foreach ($menuItems as $idx => $item) {
+            $this->assertArraySubset([
+                "id" => $item->id,
+                "uuid" => $item->uuid,
+                "title" => $item->title,
+                "description" => $item->description,
+                "servings" => $item->servings,
+                "cost" => $item->cost,
+                "store_uuid" => $item->store_uuid,
+            ], $data[$idx]);
+        }
+    }
+    public function testGetListFilteredByStore()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $store = factory(Store::class)->create();
+        $items = factory(MenuItem::class, 3)->create([
+            'store_uuid' => $store->uuid,
+            'title' => 'A',
+        ]);
 
+        $data = $this
+            ->json('get', "/api/foodfleet/menu-items?filter[store_uuid]={$store->uuid}")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
 
         $this->assertNotEmpty($data);
         $this->assertCount(3, $data);
         foreach ($items as $idx => $item) {
             $this->assertArraySubset([
-                'uuid' => $item->uuid,
-                'title' => 'A'
+                "id" => $item->id,
+                "uuid" => $item->uuid,
+                "title" => $item->title,
+                "description" => $item->description,
+                "servings" => $item->servings,
+                "cost" => $item->cost,
+                "store_uuid" => $item->store_uuid,
             ], $data[$idx]);
         }
     }
@@ -63,7 +85,7 @@ class MenuItemTest extends TestCase
         $store = factory(Store::class)->create();
 
         $data = $this
-            ->json('POST', 'api/foodfleet/stores/{$store->uuid}/menu-items', [
+            ->json('POST', 'api/foodfleet/menu-items', [
                 'title' => 'create menu item test',
                 'servings' => 5,
                 'cost' => 123,
@@ -73,7 +95,7 @@ class MenuItemTest extends TestCase
             ->assertStatus(201)
             ->json('data');
 
-        $url = 'api/foodfleet/stores/{$store->uuid}/menu-items?filter[uuid]=' . $data['uuid'] . '&include=store';
+        $url = 'api/foodfleet/menu-items?filter[uuid]=' . $data['uuid'] . '&include=store';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -94,7 +116,7 @@ class MenuItemTest extends TestCase
         ]);
 
         $data = $this
-            ->json('PUT', 'api/foodfleet/stores/{$store->uuid}/menu-items/' . $item->uuid, [
+            ->json('PUT', 'api/foodfleet/menu-items/' . $item->uuid, [
                 'title' => 'create menu title test',
                 'servings' => 5,
                 'cost' => 123,
@@ -103,7 +125,7 @@ class MenuItemTest extends TestCase
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/stores/{$store->uuid}/menu-items/' . $item->uuid . '?include=store';
+        $url = 'api/foodfleet/menu-items/' . $item->uuid . '?include=store';
         $result = $this->json('GET', $url)
             ->assertStatus(200)
             ->json('data');
@@ -127,16 +149,16 @@ class MenuItemTest extends TestCase
         ]);
 
         $data = $this
-            ->json('GET', 'api/foodfleet/stores/{$store->uuid}/menu-items/' . $item->uuid)
+            ->json('GET', 'api/foodfleet/menu-items/' . $item->uuid)
             ->assertStatus(200)
             ->json('data');
 
         $this->assertEquals($item->uuid, $data['uuid']);
 
-        $this->json('DELETE', 'api/foodfleet/stores/{$store->uuid}/menu-items/' . $item->uuid)
+        $this->json('DELETE', 'api/foodfleet/menu-items/' . $item->uuid)
             ->assertStatus(204);
 
-        $this->json('GET', 'api/foodfleet/stores/{$store->uuid}/menu-items/' . $item->uuid)
+        $this->json('GET', 'api/foodfleet/menu-items/' . $item->uuid)
             ->assertStatus(404);
     }
 }
