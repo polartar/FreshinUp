@@ -5,20 +5,20 @@ namespace App\Models\Foodfleet;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class VenueStatus
+ * Class DocumentTemplateType
  * @package App\Models\Foodfleet
  *
  * @property int id
  * @property string name
  *
  *
- * @property Venue[] venues
+ * @property DocumentTemplate[] templates
  */
-class VenueStatus extends Model
+class DocumentTemplateType extends Model
 {
     public $timestamps = false;
-    public function venues()
+    public function templates ()
     {
-        return $this->hasMany(Venue::class, 'status_id');
+        return $this->hasMany(DocumentTemplate::class, 'type_id');
     }
 }
