@@ -7,16 +7,16 @@ exports[`components/DeleteDialog Snapshots Basic 1`] = `
   <div
     class="v-dialog__container"
     style="display: block;"
-    title="All to trash ?"
+    value="true"
   >
     <div
-      class="v-dialog__content"
-      style="z-index: 0;"
+      class="v-dialog__content v-dialog__content--active"
+      style="z-index: 202;"
       tabindex="-1"
     >
       <div
-        class="v-dialog"
-        style="max-width: 500px; display: none;"
+        class="v-dialog v-dialog--active"
+        style="max-width: 500px;"
       >
         <div
           class="simple-confirm pa-3 v-card v-sheet theme--light"
@@ -28,7 +28,7 @@ exports[`components/DeleteDialog Snapshots Basic 1`] = `
               class="title font-weight-bold"
             >
               
-        Are you sure you want to delete the selected item(s)
+        All to trash ?
       
             </div>
           </div>
@@ -44,7 +44,7 @@ exports[`components/DeleteDialog Snapshots Basic 1`] = `
               class="subheading"
             >
               
-          item(s): 
+          item(s): Demo Admin, Level 1 User, Level 2 User, Level 3 User, Level 4 User, Level 5 User, Level 6 User, Level 7 User, Level 8 User, Colleague 1 User
         
             </p>
           </div>
@@ -96,15 +96,16 @@ exports[`components/DeleteDialog Snapshots Loading 1`] = `
   <div
     class="v-dialog__container"
     style="display: block;"
+    value="true"
   >
     <div
-      class="v-dialog__content"
-      style="z-index: 0;"
+      class="v-dialog__content v-dialog__content--active"
+      style="z-index: 202;"
       tabindex="-1"
     >
       <div
-        class="v-dialog"
-        style="max-width: 500px; display: none;"
+        class="v-dialog v-dialog--active"
+        style="max-width: 500px;"
       >
         <div
           class="simple-confirm pa-3 v-card v-sheet theme--light deleting"
@@ -177,7 +178,7 @@ exports[`components/DeleteDialog Snapshots Loading 1`] = `
                   class="v-progress-circular__info"
                 >
                   
-            
+            0 %
           
                 </div>
               </div>

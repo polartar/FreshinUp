@@ -40,29 +40,29 @@
 </template>
 
 <script>
-  import get from 'lodash/get'
-  import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-  export default {
-    components: {
-      simpleConfirm
+import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+
+export default {
+  components: {
+    simpleConfirm
+  },
+  props: {
+    itemTitleProp: { type: String, default: 'title' },
+    isLoading: { type: Boolean, default: false },
+    progress: { type: Number, default: 0 },
+    title: {
+      type: String,
+      default: 'Are you sure you want to delete the selected item(s)'
     },
-    props: {
-      itemTitleProp: { type: String, default: 'title' },
-      isLoading: { type: Boolean, default: false },
-      progress: { type: Number, default: 0 },
-      title: {
-        type: String,
-        default: 'Are you sure you want to delete the selected item(s)'
-      },
-      items: { type: Array, default: () => [] }
+    items: { type: Array, default: () => [] }
+  },
+  computed: {
+    progressStatus () {
+      return `${Math.round(this.progress * 100) / 100} %`
     },
-    computed: {
-      progressStatus () {
-        return `${Math.round(this.progress * 100) / 100} %`
-      },
-      message () {
-        return this.items.map(item => item[this.itemTitleProp]).join(', ')
-      }
+    message () {
+      return this.items.map(item => item[this.itemTitleProp]).join(', ')
     }
   }
+}
 </script>

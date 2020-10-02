@@ -58,7 +58,7 @@ export const Progress = () => ({
     const delay = (timeout) => new Promise((resolve) => {
       setTimeout(resolve, timeout)
     })
-    for (const _ of Array(this.total).fill(1)) {
+    for (let i = 0; i < this.total; i++) {
       await delay(1500)
       this.progress += 100 / this.total
     }

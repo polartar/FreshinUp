@@ -22,8 +22,6 @@ describe('components/menu-items/MenuItemForm', () => {
     })
   })
 
-
-
   describe('Props & Computed', () => {
     test('isLoading', async () => {
       const wrapper = shallowMount(Component)
@@ -36,7 +34,6 @@ describe('components/menu-items/MenuItemForm', () => {
       expect(wrapper.vm.isLoading).toBe(true)
     })
   })
-
 
   describe('methods', () => {
     test('onCancel()', async () => {

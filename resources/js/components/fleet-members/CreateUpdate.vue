@@ -208,7 +208,8 @@
             :progress="deletable.menuItems.progress"
             :items="deletable.menuItems.temp"
             @confirm="deleteItems(DELETABLE_RESOURCE.MENU_ITEM, deletable.menuItems.temp)"
-            @cancel="onCancelDeleteItems(DELETABLE_RESOURCE.MENU_ITEM)"/>
+            @cancel="onCancelDeleteItems(DELETABLE_RESOURCE.MENU_ITEM)"
+          />
         </v-flex>
         <v-flex
           v-if="!isNew"
@@ -246,7 +247,6 @@ import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
-import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import AreaForm from './AreaForm'
 
 const { mapFields } = createHelpers({
@@ -257,14 +257,13 @@ const { mapFields } = createHelpers({
 const DELETABLE_RESOURCE = {
   MENU_ITEM: 'menuItems',
   STORE: 'stores',
-  AREA: 'storeAreas',
+  AREA: 'storeAreas'
 }
 
 export default {
   layout: 'admin',
   components: {
     AreaForm,
-    SimpleConfirm,
     BasicInformation,
     DocumentList,
     Payments,
@@ -322,7 +321,7 @@ export default {
     ...mapGetters('menuItems', {
       menuItems: 'items',
       menuItemPagination: 'pagination',
-      menuItemSorting: 'sorting',
+      menuItemSorting: 'sorting'
     }),
     ...mapGetters('documentTypes', { documentTypes: 'items' }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
@@ -478,7 +477,7 @@ export default {
         .then(() => {
           this.menuItemLoading = false
         })
-    },
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'

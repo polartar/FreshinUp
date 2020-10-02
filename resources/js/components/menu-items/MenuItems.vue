@@ -11,10 +11,10 @@
         </v-flex>
         <v-flex shrink>
           <v-btn
+            v-show="!newDialog"
             slot="activator"
             color="primary"
             text
-            v-show="!newDialog"
             @click="newDialog = true"
           >
             <v-icon
@@ -34,7 +34,11 @@
         v-bind="$attrs"
         v-on="$listeners"
       />
-      <slot v-else name="new-form" :close="() => this.newDialog = false"/>
+      <slot
+        v-else
+        name="new-form"
+        :close="() => this.newDialog = false"
+      />
     </v-card-text>
     <v-divider />
   </v-card>
@@ -44,7 +48,7 @@
 import MenuItemList from './MenuItemList'
 export default {
   components: {
-    MenuItemList,
+    MenuItemList
   },
   data () {
     return {

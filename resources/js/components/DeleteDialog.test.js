@@ -1,4 +1,4 @@
-import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import * as Stories from './DeleteDialog.stories'
 import Component from './DeleteDialog.vue'
 import { FIXTURE_STORES } from '../../../tests/Javascript/__data__/stores'
@@ -38,15 +38,15 @@ describe('components/DeleteDialog', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.itemTitleProp).toEqual('name')
     })
-    test('dialogTitle', async () => {
+    test('title', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.dialogTitle).toEqual('Are you sure you want to delete the selected item(s)')
+      expect(wrapper.vm.title).toEqual('Are you sure you want to delete the selected item(s)')
 
       wrapper.setProps({
-        dialogTitle: 'Trash them all ?'
+        title: 'Trash them all ?'
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.dialogTitle).toEqual('Trash them all ?')
+      expect(wrapper.vm.title).toEqual('Trash them all ?')
     })
     test('items', async () => {
       const wrapper = shallowMount(Component)
@@ -76,7 +76,7 @@ describe('components/DeleteDialog', () => {
         progress: 67
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.progress).toEqual('67 %')
+      expect(wrapper.vm.progressStatus).toEqual('67 %')
     })
     test('message', async () => {
       const wrapper = shallowMount(Component)

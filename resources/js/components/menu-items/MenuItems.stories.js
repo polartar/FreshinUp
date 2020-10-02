@@ -19,7 +19,7 @@ export const Empty = () => ({
   `
 })
 
-export const IsLoading = () => ({
+export const Loading = () => ({
   components: { MenuItems, MenuItemForm },
   template: `
     <menu-items
@@ -92,5 +92,5 @@ storiesOf('FoodFleet|components/menu-items/MenuItems', module)
     ]
   })
   .add('Empty', Empty)
-  .add('IsLoading', IsLoading)
+  .add('Loading', Loading)
   .add('Populated', Populated)

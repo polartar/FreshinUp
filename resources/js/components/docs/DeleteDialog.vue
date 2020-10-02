@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  // TODO: replace with the one under components/DeleteDialog
+// TODO: replace with the one under components/DeleteDialog
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 export default {
