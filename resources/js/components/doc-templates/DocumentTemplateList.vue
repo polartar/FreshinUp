@@ -38,7 +38,7 @@
   export const DEFAULT_HEADERS = [
     { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
     { text: 'Title', sortable: true, value: 'title', align: 'left' },
-    { text: 'Type', sortable: true, value: 'type', align: 'left' },
+    { text: 'Type', sortable: true, value: 'type_id', align: 'left' },
     { text: 'Last Updated', sortable: true, value: 'updated_at', align: 'left' },
     { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
   ]

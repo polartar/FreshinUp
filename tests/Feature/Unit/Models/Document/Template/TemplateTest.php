@@ -2,21 +2,21 @@
 
 namespace Tests\Feature\Unit\Models;
 
-use App\Models\Foodfleet\DocumentTemplate;
+use App\Models\Foodfleet\Document\Template\Template;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
-class DocumentTemplateTest extends TestCase
+class TemplateTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
     public function testModel()
     {
 
-        /** @var DocumentTemplate $template */
-        $template = factory(DocumentTemplate::class)->create();
+        /** @var Template $template */
+        $template = factory(Template::class)->create();
 
         $this->assertDatabaseHas('document_templates', [
             'uuid' => $template->uuid

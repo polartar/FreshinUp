@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Foodfleet\DocumentTemplateType;
+use App\Models\Foodfleet\Document\Template\Type;
 use Faker\Generator as Faker;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(DocumentTemplateType::class, function (Faker $faker) {
+$factory->define(Type::class, function (Faker $faker) {
     return [
         "name" => $faker->word
     ];
