@@ -37,7 +37,7 @@
       <slot
         v-else
         name="new-form"
-        :close="() => this.newDialog = false"
+        :close="() => newDialog = false"
       />
     </v-card-text>
     <v-divider />

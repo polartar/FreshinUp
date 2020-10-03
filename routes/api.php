@@ -18,9 +18,15 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
     Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
-    Route::apiResource('documents', 'Foodfleet\Documents');
     Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
+    Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')
+        ->only('index');
+    Route::apiResource('document/template/types', 'Foodfleet\Document\Template\Types')
+        ->only('index');
+    Route::apiResource('document/templates', 'Foodfleet\Document\Template\Templates')
+        ->only('index', 'show', 'update', 'destroy');
+    Route::apiResource('documents', 'Foodfleet\Documents');
     Route::apiResource('tmp-media', 'Foodfleet\TmpMedia');
     Route::apiResource('company-owners', 'Foodfleet\CompanyOwners');
     Route::get('categories', 'Foodfleet\Categories@index');

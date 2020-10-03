@@ -35,6 +35,8 @@ class TestDataSeeder extends Seeder
             FinancialReportsTableSeeder::class,
             DocumentsTableSeeder::class,
             VenueStatusesSeeder::class,
+            DocumentTemplateStatusSeeder::class,
+            DocumentTemplateSeeder::class,
         ]);
     }
 }

@@ -111,11 +111,11 @@
     </slot>
     <v-content class="main-page-container">
       <v-container
-        v-if="$store.state.page.title.length"
+        v-if="pageTitle"
         fluid
       >
         <h1 class="page-title white--text">
-          {{ $store.state.page.title }}
+          {{ pageTitle }}
         </h1>
       </v-container>
 
@@ -227,7 +227,10 @@ export default {
     }),
     ...mapGetters(['currentUser']),
     ...mapGetters('userNotifications', { 'notifications': 'unacknowledged' }),
-    ...mapGetters('page', ['isLoading'])
+    ...mapGetters('page', {
+      isLoading: 'isLoading',
+      pageTitle: 'title'
+    })
   },
   methods: {
     ...mapActions('generalErrorMessages', {

@@ -1,19 +1,10 @@
 <?php
 
+use App\Models\Foodfleet\DocumentType;
 use Faker\Generator as Faker;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\App\Models\Foodfleet\DocumentType::class, function (Faker $faker) {
+$factory->define(DocumentType::class, function (Faker $faker) {
     return [
         "name" => $faker->word
     ];

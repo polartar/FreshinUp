@@ -36,7 +36,7 @@ exports[`components/venues/FilterSorter Snapshots Default 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
-                      placeholder="Filter by venue name"
+                      placeholder="Filter by template name"
                       type="text"
                     />
                   </div>
@@ -391,7 +391,7 @@ exports[`components/venues/FilterSorter Snapshots Expanded 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
-                      placeholder="Filter by venue name"
+                      placeholder="Filter by template name"
                       type="text"
                     />
                   </div>
@@ -716,6 +716,7 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
+    filters="[object Object]"
   >
     <form
       class="v-form"
@@ -746,7 +747,7 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
-                      placeholder="Filter by venue name"
+                      placeholder="Filter by template name"
                       type="text"
                     />
                   </div>
@@ -820,24 +821,11 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                       </strong>
                     </div>
                      
-                    <button
-                      class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
-                      color="white"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon clear-button-icon fa fa fa fa-times theme--light"
-                        />
-                      </div>
-                    </button>
+                    <!---->
                   </div>
                    
                   <div
-                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
                     flat=""
                     hide-details=""
                     item-text="name"
@@ -858,13 +846,6 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                           <div
                             class="v-select__selections"
                           >
-                            <div
-                              class="nowrap"
-                            >
-                              <span>
-                                2 selected
-                              </span>
-                            </div>
                             <input
                               aria-readonly="false"
                               autocomplete="on"
@@ -913,7 +894,7 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                                     >
                                       <i
                                         aria-hidden="true"
-                                        class="v-icon fa fa-minus-square theme--light primary--text"
+                                        class="v-icon far fa-square theme--light"
                                       />
                                     </div>
                                      
@@ -933,17 +914,16 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                                   class="mt-2 v-divider theme--light"
                                 />
                                 <div
-                                  class="primary--text"
                                   role="listitem"
                                 >
                                   <a
-                                    class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                    class="v-list__tile v-list__tile--link theme--light"
                                   >
                                     <div
                                       class="v-list__tile__action"
                                     >
                                       <div
-                                        class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                        class="v-input v-input--selection-controls v-input--checkbox theme--light"
                                       >
                                         <div
                                           class="v-input__control"
@@ -955,19 +935,19 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                                               class="v-input--selection-controls__input"
                                             >
                                               <input
-                                                aria-checked="true"
+                                                aria-checked="false"
                                                 role="checkbox"
                                                 type="checkbox"
                                                 value=""
                                               />
                                               <div
-                                                class="v-input--selection-controls__ripple primary--text"
+                                                class="v-input--selection-controls__ripple"
                                               />
                                               <i
                                                 aria-hidden="true"
-                                                class="v-icon material-icons theme--light primary--text"
+                                                class="v-icon material-icons theme--light"
                                               >
-                                                check_box
+                                                check_box_outline_blank
                                               </i>
                                             </div>
                                           </div>
@@ -993,17 +973,16 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                                   </a>
                                 </div>
                                 <div
-                                  class="primary--text"
                                   role="listitem"
                                 >
                                   <a
-                                    class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                    class="v-list__tile v-list__tile--link theme--light"
                                   >
                                     <div
                                       class="v-list__tile__action"
                                     >
                                       <div
-                                        class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                        class="v-input v-input--selection-controls v-input--checkbox theme--light"
                                       >
                                         <div
                                           class="v-input__control"
@@ -1015,19 +994,19 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                                               class="v-input--selection-controls__input"
                                             >
                                               <input
-                                                aria-checked="true"
+                                                aria-checked="false"
                                                 role="checkbox"
                                                 type="checkbox"
                                                 value=""
                                               />
                                               <div
-                                                class="v-input--selection-controls__ripple primary--text"
+                                                class="v-input--selection-controls__ripple"
                                               />
                                               <i
                                                 aria-hidden="true"
-                                                class="v-icon material-icons theme--light primary--text"
+                                                class="v-icon material-icons theme--light"
                                               >
-                                                check_box
+                                                check_box_outline_blank
                                               </i>
                                             </div>
                                           </div>
@@ -1256,20 +1235,7 @@ exports[`components/venues/FilterSorter Snapshots Populated 1`] = `
                       </strong>
                     </div>
                      
-                    <button
-                      class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
-                      color="white"
-                      type="button"
-                    >
-                      <div
-                        class="v-btn__content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon clear-button-icon fa fa fa fa-times theme--light"
-                        />
-                      </div>
-                    </button>
+                    <!---->
                   </div>
                    
                   <div

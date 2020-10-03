@@ -4,7 +4,7 @@
     class="filter-transparent"
     without-filter-label
     without-sort-by
-    placeholder="Filter by venue name"
+    placeholder="Filter by template name"
     color="transparent"
     v-bind="$attrs"
     v-on="$listeners"
@@ -30,13 +30,13 @@
                 Statuses
               </filter-label>
               <clear-button
-                v-if="filters.status_id && filters.status_id.length > 0"
+                v-if="status_id && status_id.length > 0"
                 color="white"
-                @clear="filters.status_id = null;"
+                @clear="status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="filters.status_id"
+              v-model="status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -59,14 +59,14 @@
                 Owner
               </filter-label>
               <clear-button
-                v-if="filters.owner_uuid"
+                v-if="owner_uuid"
                 color="white"
-                @clear="filters.owner_uuid = null; $refs.owner.clearTerm()"
+                @clear="owner_uuid = null; $refs.owner.clearTerm()"
               />
             </v-layout>
             <f-autocomplete
               ref="owner"
-              :value="filters.owner_uuid"
+              :value="owner_uuid"
               no-filter
               placeholder="Owned by"
               value-fetch
@@ -93,11 +93,6 @@ import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import FAutocomplete from '~/components/FAutocomplete'
 
-export const DEFAULT_FILTERS = {
-  status_id: null,
-  owner_uuid: null
-}
-
 export default {
   components: {
     FilterLabel,
@@ -107,8 +102,21 @@ export default {
     FAutocomplete
   },
   props: {
-    filters: { type: Object, default: () => DEFAULT_FILTERS },
     statuses: { type: Array, default: () => [] }
+  },
+  data () {
+    return {
+      owner_uuid: null,
+      status_id: null
+    }
+  },
+  computed: {
+    filters () {
+      return {
+        owner_uuid: this.owner_uuid,
+        status_id: this.status_id
+      }
+    }
   },
   watch: {
     filters: {
@@ -121,7 +129,7 @@ export default {
   },
   methods: {
     selectOwner (user) {
-      this.filters.owner_uuid = user ? user.uuid : null
+      this.owner_uuid = user ? user.uuid : null
     },
     run (params) {
       const finalParams = {
@@ -132,8 +140,8 @@ export default {
     },
     clearFilters () {
       this.$refs.owner.clearTerm()
-      this.filters.status_id = null
-      this.filters.owner_uuid = null
+      this.status_id = null
+      this.owner_uuid = null
     }
   }
 }

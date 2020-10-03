@@ -53,6 +53,12 @@
 
 # Changes
 
+## Oct 2, 2020
+- **ADD** Document template - Set status [#501](https://github.com/FreshinUp/foodfleet/issues/501)
+- **ADD** Document template list [#502](https://github.com/FreshinUp/foodfleet/issues/502)
+
+<br/>
+
 ## Oct 1, 2020
 - **ADD** Fleet member menu integration [#491](https://github.com/FreshinUp/foodfleet/issues/491)
 

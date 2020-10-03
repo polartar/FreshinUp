@@ -5,7 +5,7 @@ namespace App\Models\Foodfleet;
 use App\User;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

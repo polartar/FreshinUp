@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import Component, { DEFAULT_FILTERS } from './FilterSorter.vue'
+import Component from './FilterSorter.vue'
 import * as Stories from './FilterSorter.stories'
 import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
 import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venueStatuses'
@@ -30,20 +30,6 @@ describe('components/venues/FilterSorter', () => {
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.statuses).toMatchObject(FIXTURE_VENUE_STATUSES)
-    })
-    test('filters', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.filters).toMatchObject(DEFAULT_FILTERS)
-
-      const filters = {
-        a: 1,
-        b: 2
-      }
-      wrapper.setProps({
-        filters
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.filters).toMatchObject(filters)
     })
   })
 
@@ -101,16 +87,13 @@ describe('components/venues/FilterSorter', () => {
         status_id: [1, 2],
         owner_uuid: 'o111'
       }
-      wrapper.setProps({
-        filters
+      wrapper.setData({
+        ...filters
       })
-      expect(wrapper.vm.filters.status_id).toEqual(filters.status_id)
-      expect(wrapper.vm.filters.owner_uuid).toEqual(filters.owner_uuid)
-
       wrapper.vm.clearFilters()
       expect(clearTermMock).toHaveBeenCalled()
-      expect(wrapper.vm.filters.status_id).toBeNull()
-      expect(wrapper.vm.filters.owner_uuid).toBeNull()
+      expect(wrapper.vm.status_id).toBeNull()
+      expect(wrapper.vm.owner_uuid).toBeNull()
     })
   })
 })

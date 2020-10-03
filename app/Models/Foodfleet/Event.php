@@ -7,7 +7,7 @@ use App\User;
 use App\Models\Foodfleet\Square\Transaction;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**

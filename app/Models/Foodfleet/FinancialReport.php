@@ -3,7 +3,7 @@
 namespace App\Models\Foodfleet;
 
 use App\User;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FinancialReport extends Model

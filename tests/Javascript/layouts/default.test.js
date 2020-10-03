@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USER } from 'tests/__data__/users'
-import Component from '~/layouts/admin.vue'
+import Component from '~/layouts/default.vue'
 
 const mockAuth = {
   logout: () => {
@@ -41,7 +41,6 @@ describe('Default layout', () => {
       await wrapper.vm.$store.dispatch('users/getItem', { params: { id: 1 } })
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
-      expect(wrapper.find('.page-title').text()).toStrictEqual('Default template')
       expect(wrapper.element).toMatchSnapshot()
     })
     it('signout redirects', async () => {

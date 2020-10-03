@@ -2,7 +2,7 @@
 
 namespace App\Models\Foodfleet;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 
 /**
  * Class VenueStatus
@@ -19,6 +19,6 @@ class VenueStatus extends Model
     public $timestamps = false;
     public function venues()
     {
-        return $this->hasMany('venues', 'status_id');
+        return $this->hasMany(Venue::class, 'status_id');
     }
 }
