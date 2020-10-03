@@ -27,7 +27,7 @@ class StatusTest extends TestCase
         $template = factory(Template::class)->create([
             'status_id' => $item->id
         ]);
-        $this->assertEquals($item->id, $template->type_id);
+        $this->assertEquals($item->id, $template->status_id);
         $this->assertEquals($template->uuid, $item->templates->first()->uuid);
     }
 }
