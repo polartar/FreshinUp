@@ -1,10 +1,9 @@
 <template>
-  <div>
+  <div class="px-4">
     <v-flex
       d-flex
       align-center
       justify-space-between
-      ma-3
     >
       <v-layout
         flex
@@ -16,9 +15,9 @@
         <v-btn
           slot="activator"
           color="white"
-          @click="onCreateNew"
+          href="/admin/doc-templates/new"
         >
-          <span class="primary--text">Add New</span>
+          <span class="primary--text">Add New Template</span>
         </v-btn>
       </v-layout>
     </v-flex>
@@ -27,12 +26,12 @@
       <filter-sorter
         v-if="!isLoading"
         :statuses="statuses"
-        @runFilter="filterVenues"
+        @runFilter="filterItems"
       />
       <document-template-list
-        :items="venues"
+        :items="templates"
         :statuses="statuses"
-        :is-loading="isLoading || isLoadingList"
+        :is-loading="isLoadingList"
         :rows-per-page="pagination.rowsPerPage"
         :page="pagination.page"
         :total-items="pagination.totalItems"
@@ -40,206 +39,164 @@
         :descending="sorting.descending"
         @paginate="onPaginate"
         @manage-view="onManageView"
-        @manage-delete="deleteSingle"
-        @manage-multiple-delete="multipleDelete"
+        @manage-delete="deleteItem"
+        @manage-multiple-delete="deleteItems"
         @change-status="changeStatusSingle"
         @change-status-multiple="changeStatusMultiple"
       />
     </template>
-    <v-dialog
-      v-model="deleteDialog"
-      max-width="500"
-    >
-      <simple-confirm
-        :class="{ 'deleting': deletablesProcessing }"
-        :title="deleteDialogTitle"
-        ok-label="Yes"
-        cancel-label="No"
-        @ok="onSubmitDelete"
-        @cancel="onCancelDelete"
-      >
-        <div class="py-5 px-2">
-          <template v-if="deletablesProcessing">
-            <div class="text-xs-center">
-              <p class="subheading">
-                Processing, please wait...
-              </p>
-              <v-progress-circular
-                :rotate="-90"
-                :size="200"
-                :width="15"
-                :value="deletablesProgress"
-                color="primary"
-              >
-                {{ deletablesStatus }}
-              </v-progress-circular>
-            </div>
-          </template>
-          <template v-else>
-            <p class="subheading">
-              <span v-if="deletables.length < 2">Venue</span>
-              <span v-else> Venues</span>
-              : {{ deleteTemp | formatDeleteTitles }}
-            </p>
-          </template>
-        </div>
-      </simple-confirm>
-    </v-dialog>
+    <delete-dialog
+      :value="deleteDialog"
+      :progress="deletablesProgress"
+      :progress-status="deletablesStatus"
+      item-title-prop="title"
+      :items="deleteTemp"
+      @confirm="onSubmitDelete"
+      @cancel="deleteDialog = false"
+    />
   </div>
 </template>
 <script>
-  import get from 'lodash/get'
-  import { mapActions, mapGetters, mapState } from 'vuex'
-  import { deletables } from 'fresh-bus/components/mixins/Deletables'
-  import VenueList from '~/components/venues/VenueList.vue'
-  import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-  import FilterSorter from '~/components/venues/FilterSorter'
+import get from 'lodash/get'
+import { mapActions, mapGetters } from 'vuex'
+import { deletables } from 'fresh-bus/components/mixins/Deletables'
+import FilterSorter from '~/components/doc-templates/FilterSorter'
+import DeleteDialog from '~/components/DeleteDialog'
+import DocumentTemplateList from '~/components/doc-templates/DocumentTemplateList'
 
-  const INCLUDE = [
-    'status',
-    'owner',
-    'locations'
-  ]
+const INCLUDE = [
+  'status'
+]
 
-  export default {
-    layout: 'admin',
-    components: {
-      VenueList,
-      SimpleConfirm,
-      FilterSorter
-    },
-    filters: {
-      formatDeleteTitles (value) {
-        return value.map(item => item.name).join(', ')
-      }
-    },
-    mixins: [deletables],
-    data () {
-      return {
-        deleteDialog: false,
-        deleteTemp: [],
-        deletablesProcessing: false,
-        deletablesProgress: 0,
-        deletablesStatus: '',
-        lastFilterParams: {}
-      }
-    },
-    computed: {
-      isLoadingList () {
-        return get(this.$store, 'state.venues.pending.items', true)
-      },
-      ...mapGetters(['currentUser']),
-      ...mapGetters('venues', {
-        venues: 'items',
-        pagination: 'pagination',
-        sorting: 'sorting',
-        sortBy: 'sortBy'
-      }),
-      ...mapGetters('venueStatuses', { statuses: 'items' }),
-      ...mapGetters('page', {
-        isLoading: 'isLoading',
-        pageTitle: 'title'
-      }),
-      ...mapState('venues', ['sortables']),
-      deleteDialogTitle () {
-        return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this venue?' : 'Are you sure you want to delete the following venues?'
-      }
-    },
-    methods: {
-      ...mapActions('page', {
-        setPageLoading: 'setLoading'
-      }),
-      onCreateNew () {
-        this.$router.push({ path: '/admin/venues/new' })
-      },
-      onManageView (venue) {
-        this.$router.push({ path: `/admin/venues/${venue.uuid}/edit` })
-      },
-      deleteSingle (venue) {
-        this.deleteTemp = [venue]
-        this.deleteDialog = true
-      },
-      multipleDelete (venues) {
-        this.deleteTemp = venues
-        this.deleteDialog = true
-      },
-      changeStatusSingle (statusId, venue) {
-        this.$store.dispatch('venues/patchItem', {
-          data: { status_id: statusId },
-          params: { id: venue.uuid }
-        })
-          .then(() => {
-            this.filterVenues(this.lastFilterParams)
-          })
-          .catch(error => {
-            const message = get(error, 'response.data.message', error.message)
-            this.$store.dispatch('generalErrorMessages/setErrors', message)
-          })
-      },
-      changeStatusMultiple (statusId, venues) {
-        venues.forEach((venue) => {
-          this.changeStatusSingle(statusId, venue)
-        })
-      },
-      async onSubmitDelete () {
-        this.deletablesProcessing = true
-        this.deletablesProgress = 0
-        this.deletablesStatus = ''
-        let dispatcheables = []
-
-        this.deleteTemp.forEach((venue) => {
-          dispatcheables.push(this.$store.dispatch('venues/deleteItem', {
-            getItems: false,
-            params: { id: venue.uuid }
-          }))
-        })
-
-        let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
-        let doneCount = 0
-
-        for (let i in chunks) {
-          await Promise.all(chunks[i])
-          doneCount += chunks[i].length
-          this.deleteTempStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
-          this.deleteTempProgress = doneCount / this.deleteTemp.length * 100
-          await this.sleep(this.deletablesSleepTime)
-        }
-
-        this.filterVenues(this.lastFilterParams)
-        await this.sleep(500)
-        this.deletablesProcessing = false
-        this.deleteDialog = false
-      },
-      onCancelDelete () {
-        this.deleteDialog = false
-        this.deleteTemp = []
-      },
-      onPaginate (value) {
-        this.$store.dispatch('venues/setPagination', value)
-        this.$store.dispatch('venues/getItems', { params: { include: INCLUDE } })
-      },
-      filterVenues (params) {
-        this.lastFilterParams = params
-        this.$store.dispatch('venues/setFilters', {
-          ...this.$route.query,
-          ...this.lastFilterParams
-        })
-        this.$store.dispatch('venues/getItems', { params: { include: INCLUDE } })
-      }
-    },
-    beforeRouteEnterOrUpdate (vm, to, from, next) {
-      vm.$store.dispatch('page/setTitle', 'Document Templates List')
-      vm.setPageLoading(true)
-      Promise.all([
-        vm.$store.dispatch('doc/getItems')
-      ])
-        .then(() => {
-          if (next) next()
-        })
-        .catch(error => console.error(error))
-        .then(() => {
-          vm.setPageLoading(false)
-        })
+export default {
+  components: {
+    FilterSorter,
+    DeleteDialog,
+    DocumentTemplateList
+  },
+  filters: {
+    formatDeleteTitles (value) {
+      return value.map(item => item.name).join(', ')
     }
+  },
+  extends: 'admin',
+  mixins: [deletables],
+  data () {
+    return {
+      deleteDialog: false,
+      deleteTemp: [],
+      deletablesProcessing: false,
+      pageTitle: 'Document Templates List'
+    }
+  },
+  computed: {
+    isLoadingList () {
+      return get(this.$store, 'state.documentTemplates.pending.items', true)
+    },
+    ...mapGetters('documentTemplates', {
+      templates: 'items',
+      pagination: 'pagination',
+      sorting: 'sorting',
+      sortBy: 'sortBy',
+      sortables: 'sortables'
+    }),
+    ...mapGetters('documentTemplates/statuses', { statuses: 'items' }),
+    ...mapGetters('page', {
+      isLoading: 'isLoading'
+    })
+  },
+  methods: {
+    ...mapActions('page', {
+      setPageLoading: 'setLoading'
+    }),
+    onManageView (item) {
+      this.$router.push({ path: `/admin/doc-templates/${item.uuid}/edit` })
+    },
+    deleteItem (item) {
+      this.deleteTemp = [item]
+      this.deleteDialog = true
+    },
+    deleteItems (items) {
+      this.deleteTemp = items
+      this.deleteDialog = true
+    },
+    changeStatusSingle (statusId, item) {
+      this.$store.dispatch('documentTemplates/patchItem', {
+        data: { status_id: statusId },
+        params: { id: item.uuid }
+      })
+        .then(() => {
+          this.$store.dispatch('documentTemplates/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
+    changeStatusMultiple (statusId, items) {
+      items.forEach((item) => {
+        this.changeStatusSingle(statusId, item)
+      })
+    },
+    async onSubmitDelete () {
+      this.deletablesProcessing = true
+      this.deletablesProgress = 0
+      let dispatcheables = []
+
+      this.deleteTemp.forEach((item) => {
+        dispatcheables.push(this.$store.dispatch('documentTemplates/deleteItem', {
+          getItems: true,
+          params: { id: item.uuid }
+        }))
+      })
+
+      let chunks = this.chunk(dispatcheables, this.deleteTempParrallelRequest)
+      let doneCount = 0
+
+      for (let i in chunks) {
+        await Promise.all(chunks[i])
+        doneCount += chunks[i].length
+        this.deletablesStatus = doneCount + ' / ' + this.deleteTemp.length + ' Done'
+        this.deletablesProgress = doneCount / this.deleteTemp.length * 100
+        await this.sleep(this.deletablesSleepTime)
+      }
+
+      await this.sleep(500)
+      this.deletablesProcessing = false
+      this.deleteDialog = false
+    },
+    onCancelDelete () {
+      this.deleteDialog = false
+      this.deleteTemp = []
+    },
+    onPaginate (value) {
+      this.$store.dispatch('documentTemplates/setPagination', value)
+      this.$store.dispatch('documentTemplates/getItems')
+    },
+    filterItems (params) {
+      this.$store.dispatch('documentTemplates/setFilters', {
+        ...this.$store.getters['documentTemplates/filters'],
+        ...params
+      })
+      this.$store.dispatch('documentTemplates/getItems')
+    }
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.setPageLoading(true)
+    vm.$store.dispatch('documentTemplates/setFilters', {
+      include: INCLUDE
+    })
+    Promise.all([
+      vm.$store.dispatch('documentTemplates/getItems'),
+      vm.$store.dispatch('documentTemplates/statuses/getItems')
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => {
+        vm.setPageLoading(false)
+      })
   }
+}
 </script>

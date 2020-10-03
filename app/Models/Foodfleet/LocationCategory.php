@@ -2,7 +2,7 @@
 
 namespace App\Models\Foodfleet;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 
 /**
  * Class LocationCategory

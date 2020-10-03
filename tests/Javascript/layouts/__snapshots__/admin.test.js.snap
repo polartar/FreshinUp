@@ -592,17 +592,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
     <div
       class="v-content__wrap"
     >
-      <div
-        class="container fluid"
-      >
-        <h1
-          class="page-title white--text"
-        >
-          
-        Admin template
-      
-        </h1>
-      </div>
+      <!---->
        
       <!---->
        

@@ -3,7 +3,7 @@
 namespace App\Models\Foodfleet;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 
 /**
  * Class EventHistory

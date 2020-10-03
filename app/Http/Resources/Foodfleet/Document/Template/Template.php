@@ -18,8 +18,6 @@ class Template extends JsonResource {
             'id' => $this->id,
             'uuid' => $this->uuid,
             'title' => $this->title,
-            'type_id' => $this->type_id,
-            'type' => new Type($this->whenLoaded('type')),
             'status_id' => $this->status_id,
             'status' => new Status($this->whenLoaded('status')),
             'created_at' => $this->created_at,

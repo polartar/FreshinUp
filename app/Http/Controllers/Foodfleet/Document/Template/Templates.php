@@ -17,22 +17,19 @@ class Templates extends Controller
         $templates = QueryBuilder::for(Model::class, $request)
             ->allowedFilters([
                 'title',
-                'type_id',
                 'status_id',
                 'updated_at',
             ])
             ->allowedIncludes([
-                'type',
                 'status',
             ])
             ->allowedSorts([
-                'type_id',
+                'title',
                 'status_id',
                 'updated_at',
-            ])
-            ->get();
+            ]);
 
-        return Resource::collection($templates);
+        return Resource::collection($templates->jsonPaginate());
     }
 
     public function show(Request $request, $uuid)
@@ -40,7 +37,6 @@ class Templates extends Controller
         $template = QueryBuilder::for(Model::class, $request)
             ->where('uuid', $uuid)
             ->allowedIncludes([
-                'type',
                 'status',
             ])
             ->firstOrFail();
@@ -53,8 +49,7 @@ class Templates extends Controller
         $item = Model::where('uuid', $uuid)->firstOrFail();
         $rules = [
             'title' => 'string',
-            'status_id' => 'exists:document_template_statuses,id',
-            'type_id' => 'exists:document_template_types,id',
+            'status_id' => 'exists:document_template_statuses,id'
         ];
         $payload = $request->only(array_keys($rules));
         $item->update($payload);

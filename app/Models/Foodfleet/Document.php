@@ -6,7 +6,7 @@ namespace App\Models\Foodfleet;
 use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\User\User;
 use Dyrynda\Database\Support\GeneratesUuid;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;

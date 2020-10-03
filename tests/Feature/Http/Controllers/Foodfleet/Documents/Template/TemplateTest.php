@@ -84,7 +84,6 @@ class TemplateTest extends TestCase
                 'uuid' => $item->uuid,
                 'title' => $item->title,
                 'status_id' => $item->status_id,
-                'type_id' => $item->type_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at))
             ], $data[$idx]);
@@ -120,7 +119,6 @@ class TemplateTest extends TestCase
             'uuid' => $item->uuid,
             'title' => $item->title,
             'status_id' => $item->status_id,
-            'type_id' => $item->type_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
             'updated_at' => str_replace('"', '', json_encode($item->updated_at))
         ], $data);

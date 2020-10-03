@@ -2,7 +2,7 @@
 
 namespace App\Models\Foodfleet\Document\Template;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 
 /**
  * Class Status

@@ -7,7 +7,7 @@ use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Location;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**

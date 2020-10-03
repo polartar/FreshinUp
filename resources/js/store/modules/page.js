@@ -17,6 +17,7 @@ export default (initialState = {}) => {
     actions: {
       setTitle ({ commit }, value) {
         commit('title', value)
+        document.title = value
       },
       ...store.actions
     },

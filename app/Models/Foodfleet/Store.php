@@ -8,7 +8,7 @@ use App\Models\Foodfleet\Square\Transaction;
 use App\User;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use FreshinUp\FreshBusForms\Traits\HasAddresses;
 use Spatie\MediaLibrary\HasMedia\HasMedia;

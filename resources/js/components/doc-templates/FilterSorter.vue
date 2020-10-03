@@ -4,7 +4,7 @@
     class="filter-transparent"
     without-filter-label
     without-sort-by
-    placeholder="Filter by template name"
+    placeholder="Filter by template title"
     color="transparent"
     v-bind="$attrs"
     v-on="$listeners"
@@ -30,13 +30,13 @@
                 Statuses
               </filter-label>
               <clear-button
-                v-if="status_id && status_id.length > 0"
+                v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="status_id = null;"
+                @clear="filters.status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="status_id"
+              v-model="filters.status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -45,40 +45,6 @@
               solo
               flat
               hide-details
-            />
-          </v-flex>
-          <v-flex
-            ml-2
-          >
-            <v-layout
-              row
-              justify-space-between
-              mb-2
-            >
-              <filter-label>
-                Owner
-              </filter-label>
-              <clear-button
-                v-if="owner_uuid"
-                color="white"
-                @clear="owner_uuid = null; $refs.owner.clearTerm()"
-              />
-            </v-layout>
-            <f-autocomplete
-              ref="owner"
-              :value="owner_uuid"
-              no-filter
-              placeholder="Owned by"
-              value-fetch
-              item-value="uuid"
-              item-text="name"
-              url="/users?filter[status]=1"
-              background-color="white"
-              hide-details
-              class="pt-0"
-              height="48"
-              not-clearable
-              @input="selectOwner"
             />
           </v-flex>
         </v-layout>
@@ -91,29 +57,25 @@ import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
-import FAutocomplete from '~/components/FAutocomplete'
 
 export default {
   components: {
     FilterLabel,
     ClearButton,
     MultiSelect,
-    SearchFilterSorter,
-    FAutocomplete
+    SearchFilterSorter
   },
   props: {
     statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
-      owner_uuid: null,
-      status_id: null
+      status_id: []
     }
   },
   computed: {
     filters () {
       return {
-        owner_uuid: this.owner_uuid,
         status_id: this.status_id
       }
     }
@@ -128,20 +90,18 @@ export default {
     }
   },
   methods: {
-    selectOwner (user) {
-      this.owner_uuid = user ? user.uuid : null
-    },
     run (params) {
       const finalParams = {
-        name: params.term,
+        title: params.term,
+        sort: params.orderBy,
         ...this.filters
       }
+
       this.$emit('runFilter', finalParams)
     },
-    clearFilters () {
-      this.$refs.owner.clearTerm()
+    clearFilters (params) {
       this.status_id = null
-      this.owner_uuid = null
+      this.run(params)
     }
   }
 }
@@ -162,5 +122,9 @@ export default {
 
   .filter-transparent {
     box-shadow: none;
+  }
+
+  /deep/ .v-form > .container {
+    padding: 0;
   }
 </style>

@@ -10,7 +10,7 @@ use Tests\TestCase;
 class TemplateTest extends TestCase {
 
     public function testResource () {
-        $item = factory(Model::class)->make();
+        $item = factory(Model::class)->create();
         $resource = new Resource($item);
         $expected = [
             'id' => $item->id,

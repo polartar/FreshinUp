@@ -23,7 +23,6 @@ class TemplateTest extends TestCase
         ]);
 
         // relations
-        $this->assertEquals($template->type_id, $template->type->id);
         $this->assertEquals($template->status_id, $template->status->id);
     }
 }

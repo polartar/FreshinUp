@@ -28,6 +28,14 @@ export const makeModule = (store, moduleName = '') => {
   const m = _makeModule(store, moduleName)
   const _actions = store.actions
 
+  m.getters = {
+    ...m.getters,
+    // TODO: add in core-ui
+    filters (state) {
+      return state.filters || {}
+    }
+  }
+
   m.mutations = {
     ...m.mutations,
     setFilters: (state, payload) => {
@@ -44,6 +52,14 @@ export const makeModule = (store, moduleName = '') => {
   }
   m.actions = {
     ...m.actions,
+    // already in latest version of core-ui
+    patchFilters ({ commit, state }, payload) {
+      commit('setFilters', {
+        ...state.filters,
+        ...payload
+      })
+    },
+    // TODO: add this fix to core ui
     getItems (context, payload = { params: {}, data: {} }) {
       const pagination = context.getters.pagination
       const sorting = context.getters.sorting

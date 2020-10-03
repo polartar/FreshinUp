@@ -31,6 +31,7 @@ import companies from './store/modules/companies'
 import locations from './store/modules/locations'
 import locationCategories from './store/modules/locationCategories'
 import menuItems from './store/modules/menuItems'
+import documentTemplates from './store/modules/documentTemplates'
 
 const initialState = {
   loginSuccessRedirectPath: '/admin/dashboard',
@@ -40,6 +41,7 @@ const initialState = {
 const navigation = {
   title: 'Food Fleet',
   logo: '/images/logo.png',
+  // for small screens
   drawerItems: [
     {
       action: 'icon-dashboard',
@@ -82,103 +84,107 @@ const navigation = {
       to: '/admin/analytics'
     }
   ],
+
   items: []
+}
+const navigationAdmin = {
+  title: 'Food Fleet',
+  logo: '/images/logo.png',
+  items: [
+    {
+      action: 'icon-dashboard',
+      title: 'Dashboard',
+      to: '/admin#'
+    },
+    {
+      action: 'icon-users',
+      title: 'Users',
+      to: '/admin/users'
+    },
+    {
+      action: 'icon-companies',
+      title: 'Companies',
+      to: '/admin/companies'
+    },
+    {
+      action: 'icon-trucks',
+      title: 'Fleet Members',
+      to: '/admin/fleet-members'
+    },
+    {
+      action: 'icon-events',
+      title: 'Events',
+      to: '/admin/events'
+    },
+    {
+      action: 'icon-venues',
+      title: 'Venues',
+      to: '/admin/venues'
+    },
+    {
+      action: 'icon-documents',
+      title: 'Documents',
+      to: '/admin/docs'
+    },
+    {
+      action: 'icon-templates',
+      title: 'Doc. Templates',
+      to: '/admin/doc-templates'
+    },
+    {
+      action: 'icon-financial',
+      title: 'Financials',
+      to: '/admin/financials'
+    },
+    {
+      action: 'icon-reports',
+      title: 'Analytics',
+      to: '/admin/analytics'
+    }
+  ]
+}
+const modules = {
+  page: page({}),
+  devices: devices({}),
+  financialModifiers: financialModifiers({}),
+  financialReports: financialReports({}),
+  paymentTypes: paymentTypes({}),
+  financialsummary: financialsummary({}),
+  squares: squares({}),
+  documents: documents({}),
+  documentStatuses: documentStatuses({}),
+  documentTypes: documentTypes({}),
+  stores: stores({}),
+  storeTypes: storeTypes({}),
+  storeAreas: storeAreas({}),
+  storeStatuses: storeStatuses({}),
+  companyOwners: companyOwners({}),
+  transactions: transactions({}),
+  companyDetails: companyDetails({}),
+  events: events({}),
+  eventStatuses: eventStatuses({}),
+  eventMenuItems: eventMenuItems({}),
+  eventSummary: eventSummary({}),
+  eventTypes: eventTypes({}),
+  messages: messages({}),
+  venues: venues({}),
+  venueStatuses: venueStatuses({}),
+  eventHistories: eventHistories({}),
+  companies: companies({}),
+  locations: locations({}),
+  locationCategories: locationCategories({}),
+  menuItems: menuItems({}),
+  documentTemplates: documentTemplates({})
 }
 const appInstance = new App({
   components: {},
   store: createStore({
     navigation,
-    navigationAdmin: {
-      title: 'Food Fleet',
-      logo: '/images/logo.png',
-      items: [
-        {
-          action: 'icon-dashboard',
-          title: 'Dashboard',
-          to: '/admin#'
-        },
-        {
-          action: 'icon-users',
-          title: 'Users',
-          to: '/admin/users'
-        },
-        {
-          action: 'icon-companies',
-          title: 'Companies',
-          to: '/admin/companies'
-        },
-        {
-          action: 'icon-trucks',
-          title: 'Fleet Members',
-          to: '/admin/fleet-members'
-        },
-        {
-          action: 'icon-events',
-          title: 'Events',
-          to: '/admin/events'
-        },
-        {
-          action: 'icon-venues',
-          title: 'Venues',
-          to: '/admin/venues'
-        },
-        {
-          action: 'icon-documents',
-          title: 'Documents',
-          to: '/admin/docs'
-        },
-        {
-          action: 'icon-templates',
-          title: 'Doc. Templates',
-          to: '/admin/doc-templates'
-        },
-        {
-          action: 'icon-financial',
-          title: 'Financials',
-          to: '/admin/financials'
-        },
-        {
-          action: 'icon-reports',
-          title: 'Analytics',
-          to: '/admin/analytics'
-        }
-      ]
-    },
+    navigationAdmin,
     ...initialState
   },
   {
-    modules: {
-      page: page({}),
-      devices: devices({}),
-      financialModifiers: financialModifiers({}),
-      financialReports: financialReports({}),
-      paymentTypes: paymentTypes({}),
-      financialsummary: financialsummary({}),
-      squares: squares({}),
-      documents: documents({}),
-      documentStatuses: documentStatuses({}),
-      documentTypes: documentTypes({}),
-      stores: stores({}),
-      storeTypes: storeTypes({}),
-      storeAreas: storeAreas({}),
-      storeStatuses: storeStatuses({}),
-      companyOwners: companyOwners({}),
-      transactions: transactions({}),
-      companyDetails: companyDetails({}),
-      events: events({}),
-      eventStatuses: eventStatuses({}),
-      eventMenuItems: eventMenuItems({}),
-      eventSummary: eventSummary({}),
-      eventTypes: eventTypes({}),
-      messages: messages({}),
-      venues: venues({}),
-      venueStatuses: venueStatuses({}),
-      eventHistories: eventHistories({}),
-      companies: companies({}),
-      locations: locations({}),
-      locationCategories: locationCategories({}),
-      menuItems: menuItems({})
-    }
+    modules
   }),
   theme,
 

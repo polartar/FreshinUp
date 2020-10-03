@@ -17,7 +17,6 @@ class CreateDocumentTemplatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('uuid');
             $table->string('title');
-            $table->unsignedInteger('type_id')->index();
             $table->unsignedInteger('status_id')->index();
             $table->timestamps();
         });
