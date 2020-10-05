@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Foodfleet\Event;
+use App\Models\Foodfleet\Store;
 use App\Observers\EventObserver;
+use App\Observers\StoreObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -28,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-        \App\Models\Foodfleet\Event::observe(EventObserver::class);
+        Event::observe(EventObserver::class);
+        Store::observe(StoreObserver::class);
     }
 }

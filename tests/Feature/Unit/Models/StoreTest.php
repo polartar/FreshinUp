@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Unit\Models;
 
+use App\Enums\DocumentStatus;
+use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Staff;
 use App\Models\Foodfleet\Store;
@@ -77,5 +79,36 @@ class StoreTest extends TestCase
         ]);
 
         $this->assertEquals($area->id, $store->areas->first()->id);
+    }
+
+    public function testObserverWhenItemCreated()
+    {
+        // None existing before
+        $store = factory(Store::class)->make();
+        $this->assertEquals(0, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid
+        ])->count());
+
+        // sample documents on new fleet member (store)
+        $store->save();
+        $documents = [
+            'Copy of Business License',
+            'Seller\'s Permit',
+            'NDA',
+            'Equipment List',
+            'W-9',
+            'Copy of Auto Insurance Card',
+            'Copy of Health Permit',
+            'Food Fleet Contract',
+        ];
+        foreach ($documents as $document) {
+            $this->assertEquals(1, Document::where([
+                'assigned_type' => Store::class,
+                'assigned_uuid' => $store->uuid,
+                'status_id' => DocumentStatus::PENDING,
+                'title' => $document
+            ])->count());
+        }
     }
 }

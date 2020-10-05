@@ -158,7 +158,6 @@
             @confirm="deleteItems(DELETABLE_RESOURCE.AREA, deletable.storeAreas.temp)"
             @cancel="onCancelDeleteItems(DELETABLE_RESOURCE.AREA)"
           />
-          />
         </v-flex>
         <v-flex
           v-if="!isNew"

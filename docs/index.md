@@ -53,6 +53,11 @@
 
 # Changes
 
+## Oct 4, 2020
+- **ADD** New Fleet member has sample documents [#489](https://github.com/FreshinUp/foodfleet/issues/489)
+
+<br/>
+
 ## Oct 2, 2020
 - **ADD** Document template - Set status [#501](https://github.com/FreshinUp/foodfleet/issues/501)
 - **ADD** Document template list [#502](https://github.com/FreshinUp/foodfleet/issues/502)
