@@ -52,6 +52,7 @@
 <br/>
 
 # Changes
+## Oct 5, 2020
 
 ## Oct 4, 2020
 - **ADD** New Fleet member has sample documents [#489](https://github.com/FreshinUp/foodfleet/issues/489)
