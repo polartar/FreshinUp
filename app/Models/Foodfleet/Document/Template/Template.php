@@ -4,6 +4,7 @@ namespace App\Models\Foodfleet\Document\Template;
 
 use App\Models\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
+use FreshinUp\FreshBusForms\Models\User\User;
 
 /**
  * Class Template
@@ -28,5 +29,10 @@ class Template extends Model
     public function status()
     {
         return $this->belongsTo(Status::class, 'status_id', 'id');
+    }
+
+    public function updatedBy()
+    {
+        return $this->belongsTo(User::class, 'updated_by_uuid', 'uuid');
     }
 }

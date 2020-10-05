@@ -18,7 +18,9 @@ class TemplateTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $items = factory(Model::class, 5)->create();
+        $items = factory(Model::class, 5)->create([
+            'updated_by_uuid' => $user->uuid
+        ]);
 
         $data = $this
             ->json('GET', "/api/foodfleet/document/templates")
@@ -37,7 +39,8 @@ class TemplateTest extends TestCase
                 'title' => $item->title,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
-                'updated_at' => str_replace('"', '', json_encode($item->updated_at))
+                'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
+                'updated_by_uuid' => $item->updated_by_uuid
             ], $data[$idx]);
         }
     }
@@ -47,11 +50,13 @@ class TemplateTest extends TestCase
         $user = factory(User::class)->create();
         Passport::actingAs($user);
         factory(Model::class, 5)->create([
-            'title' => 'Not visibles'
+            'title' => 'Not visibles',
+            'updated_by_uuid' => $user->uuid
         ]);
 
         $itemsToFind = factory(Model::class, 5)->create([
-            'title' => 'To find'
+            'title' => 'To find',
+            'updated_by_uuid' => $user->uuid
         ]);
 
         $data = $this
@@ -84,7 +89,8 @@ class TemplateTest extends TestCase
                 'title' => $item->title,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
-                'updated_at' => str_replace('"', '', json_encode($item->updated_at))
+                'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
+                'updated_by_uuid' => $item->updated_by_uuid
             ], $data[$idx]);
         }
     }
@@ -103,7 +109,9 @@ class TemplateTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $item = factory(Model::class)->create();
+        $item = factory(Model::class)->create([
+            'updated_by_uuid' => $user->uuid
+        ]);
 
         $data = $this
             ->json('GET', "/api/foodfleet/document/templates/" . $item->uuid)
@@ -119,7 +127,8 @@ class TemplateTest extends TestCase
             'title' => $item->title,
             'status_id' => $item->status_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
-            'updated_at' => str_replace('"', '', json_encode($item->updated_at))
+            'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
+            'updated_by_uuid' => $item->updated_by_uuid
         ], $data);
     }
 
@@ -153,7 +162,7 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $payload['title'],
-            'status_id' => $payload['status_id'],
+            'status_id' => $payload['status_id']
         ], $data);
     }
 

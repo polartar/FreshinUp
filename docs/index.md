@@ -53,6 +53,11 @@
 
 # Changes
 
+## Oct 5, 2020
+- **MOD** List page filters are not set [#503](https://github.com/FreshinUp/foodfleet/issues/503)
+
+<br/>
+
 ## Oct 4, 2020
 - **ADD** New Fleet member has sample documents [#489](https://github.com/FreshinUp/foodfleet/issues/489)
 

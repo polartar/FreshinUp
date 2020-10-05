@@ -227,6 +227,180 @@ exports[`components/doc-templates/FilterSorter Snapshots Default 1`] = `
                     </div>
                   </div>
                 </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified by
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    background-color="white"
+                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                    height="48"
+                    hide-details=""
+                    no-filter=""
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot white"
+                        style="height: 48px;"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <input
+                            autocomplete="off"
+                            avatar-key="avatarKey"
+                            placeholder="Last modified by"
+                            role="combobox"
+                            type="text"
+                          />
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light v-autocomplete__content"
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  role="listitem"
+                                >
+                                  <div
+                                    class="v-list__tile theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified date
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    button-color="#1976D2"
+                    class="picker-wrap"
+                    color="#1976D2"
+                    format="YYYY-MM-DD"
+                    formatted="MM-DD-YYYY"
+                    input-size="lg"
+                    label="Last modified date "
+                    only-date=""
+                    range=""
+                  >
+                    <div
+                      class="date-time-picker no-border"
+                      id="DateTimePicker"
+                    >
+                      <div
+                        class="field flex align-center lg"
+                        data-v-a0144ed0=""
+                      >
+                        <input
+                          class="field-input no-clear-button"
+                          data-v-a0144ed0=""
+                          id="DateTimePicker"
+                          placeholder="Last modified date "
+                          readonly="readonly"
+                          type="text"
+                        />
+                        <label
+                          class="field-label"
+                          data-v-a0144ed0=""
+                          for="DateTimePicker"
+                        >
+                          
+    Last modified date 
+  
+                        </label>
+                        <!---->
+                      </div>
+                      <!---->
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="picker-icon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon far fa-calendar-alt theme--light"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -480,6 +654,180 @@ exports[`components/doc-templates/FilterSorter Snapshots Expanded 1`] = `
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified by
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    background-color="white"
+                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                    height="48"
+                    hide-details=""
+                    no-filter=""
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot white"
+                        style="height: 48px;"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <input
+                            autocomplete="off"
+                            avatar-key="avatarKey"
+                            placeholder="Last modified by"
+                            role="combobox"
+                            type="text"
+                          />
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light v-autocomplete__content"
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  role="listitem"
+                                >
+                                  <div
+                                    class="v-list__tile theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified date
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    button-color="#1976D2"
+                    class="picker-wrap"
+                    color="#1976D2"
+                    format="YYYY-MM-DD"
+                    formatted="MM-DD-YYYY"
+                    input-size="lg"
+                    label="Last modified date "
+                    only-date=""
+                    range=""
+                  >
+                    <div
+                      class="date-time-picker no-border"
+                      id="DateTimePicker"
+                    >
+                      <div
+                        class="field flex align-center lg"
+                        data-v-a0144ed0=""
+                      >
+                        <input
+                          class="field-input no-clear-button"
+                          data-v-a0144ed0=""
+                          id="DateTimePicker"
+                          placeholder="Last modified date "
+                          readonly="readonly"
+                          type="text"
+                        />
+                        <label
+                          class="field-label"
+                          data-v-a0144ed0=""
+                          for="DateTimePicker"
+                        >
+                          
+    Last modified date 
+  
+                        </label>
+                        <!---->
+                      </div>
+                      <!---->
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="picker-icon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon far fa-calendar-alt theme--light"
+                      />
                     </div>
                   </div>
                 </div>
@@ -836,6 +1184,180 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified by
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    background-color="white"
+                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                    height="48"
+                    hide-details=""
+                    no-filter=""
+                  >
+                    <div
+                      class="v-input__control"
+                    >
+                      <div
+                        class="v-input__slot white"
+                        style="height: 48px;"
+                      >
+                        <div
+                          class="v-select__slot"
+                        >
+                          <input
+                            autocomplete="off"
+                            avatar-key="avatarKey"
+                            placeholder="Last modified by"
+                            role="combobox"
+                            type="text"
+                          />
+                          <div
+                            class="v-input__append-inner"
+                          >
+                            <div
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light v-autocomplete__content"
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
+                            >
+                              <div
+                                class="v-list theme--light"
+                                role="list"
+                              >
+                                <div
+                                  role="listitem"
+                                >
+                                  <div
+                                    class="v-list__tile theme--light"
+                                  >
+                                    <div
+                                      class="v-list__tile__content"
+                                    >
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex ml-2"
+                >
+                  <div
+                    class="layout row justify-space-between mb-2"
+                  >
+                    <div
+                      class="white--text"
+                    >
+                      <strong
+                        class="no-wrap"
+                      >
+                        
+              Last modified date
+            
+                      </strong>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    button-color="#1976D2"
+                    class="picker-wrap"
+                    color="#1976D2"
+                    format="YYYY-MM-DD"
+                    formatted="MM-DD-YYYY"
+                    input-size="lg"
+                    label="Last modified date "
+                    only-date=""
+                    range=""
+                  >
+                    <div
+                      class="date-time-picker no-border"
+                      id="DateTimePicker"
+                    >
+                      <div
+                        class="field flex align-center lg"
+                        data-v-a0144ed0=""
+                      >
+                        <input
+                          class="field-input no-clear-button"
+                          data-v-a0144ed0=""
+                          id="DateTimePicker"
+                          placeholder="Last modified date "
+                          readonly="readonly"
+                          type="text"
+                        />
+                        <label
+                          class="field-label"
+                          data-v-a0144ed0=""
+                          for="DateTimePicker"
+                        >
+                          
+    Last modified date 
+  
+                        </label>
+                        <!---->
+                      </div>
+                      <!---->
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="picker-icon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon far fa-calendar-alt theme--light"
+                      />
                     </div>
                   </div>
                 </div>

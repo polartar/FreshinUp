@@ -17,6 +17,7 @@ class TemplateTest extends TestCase {
             'uuid' => $item->uuid,
             'title' => $item->title,
             'status_id' => $item->status_id,
+            'updated_by_uuid' => $item->updated_by_uuid
         ];
         $request = app()->make(Request::class);
         $this->assertArraySubset($expected, $resource->toArray($request));
