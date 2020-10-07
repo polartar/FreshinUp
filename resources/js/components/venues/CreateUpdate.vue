@@ -218,9 +218,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('page', {
-      isLoading: 'isLoading'
-    }),
     ...mapGetters('documents', {
       documents: 'items',
       documentPagination: 'pagination',

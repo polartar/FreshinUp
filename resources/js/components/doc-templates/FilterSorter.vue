@@ -30,13 +30,13 @@
                 Statuses
               </filter-label>
               <clear-button
-                v-if="filters.status_id && filters.status_id.length > 0"
+                v-if="status_id && status_id.length > 0"
                 color="white"
-                @clear="filters.status_id = null;"
+                @clear="status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="filters.status_id"
+              v-model="status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -59,14 +59,14 @@
                 Last modified by
               </filter-label>
               <clear-button
-                v-if="filters.updated_by_uuid"
+                v-if="updated_by_uuid"
                 color="white"
-                @clear="filters.updated_by_uuid = null; $refs.updatedBy.clearTerm()"
+                @clear="updated_by_uuid = null; $refs.updatedBy.clearTerm()"
               />
             </v-layout>
             <f-autocomplete
               ref="updatedBy"
-              :value="filters.updated_by_uuid"
+              :value="updated_by_uuid"
               no-filter
               placeholder="Last modified by"
               value-fetch
@@ -93,13 +93,13 @@
                 Last modified date
               </filter-label>
               <clear-button
-                v-if="filters.updated_at && filters.updated_at.length > 0"
+                v-if="updated_at"
                 color="white"
-                @clear="filters.updated_at = null;"
+                @clear="updated_at = null;"
               />
             </v-layout>
             <date-time-picker
-              v-model="filters.updated_at"
+              v-model="updated_at"
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
@@ -123,7 +123,14 @@ import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import FAutocomplete from '~/components/FAutocomplete'
 import DateTimePicker from '~/components/DateTimePicker'
+import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
+export const DEFAULT_FILTERS = {
+  status_id: [],
+  title: '',
+  updated_at: '',
+  updated_by: ''
+}
 export default {
   components: {
     FilterLabel,
@@ -134,20 +141,13 @@ export default {
     DateTimePicker
   },
   props: {
-    statuses: { type: Array, default: () => [] }
+    statuses: { type: Array, default: () => [] },
+    // Override value prop from MapValueKeysToData to set the default value
+    value: { type: Object, default: () => DEFAULT_FILTERS }
   },
   data () {
     return {
-      status_id: []
-    }
-  },
-  computed: {
-    filters () {
-      return {
-        status_id: this.status_id,
-        updated_at: this.updated_at,
-        updated_by_uuid: this.updated_by_uuid
-      }
+      ...DEFAULT_FILTERS
     }
   },
   watch: {
@@ -159,22 +159,26 @@ export default {
       deep: true
     }
   },
+  mixins: [MapValueKeysToData],
   methods: {
     run (params) {
       const finalParams = {
         title: params.term,
         sort: params.orderBy,
-        ...this.filters
+        ...this.value
       }
-
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
+      this.title = null
       this.status_id = null
+      this.updated_at = null
+      this.updated_by_uuid = null
       this.run(params)
     },
     selectModifiedBy (user) {
       this.updated_by_uuid = user ? user.uuid : null
+      this.$refs.filter.run()
     }
   }
 }

@@ -16,6 +16,8 @@ class TemplateTest extends TestCase {
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $item->title,
+            'content' => $item->content,
+            'description' => $item->description,
             'status_id' => $item->status_id,
             'updated_by_uuid' => $item->updated_by_uuid
         ];

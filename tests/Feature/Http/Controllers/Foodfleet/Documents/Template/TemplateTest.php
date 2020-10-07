@@ -18,9 +18,7 @@ class TemplateTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $items = factory(Model::class, 5)->create([
-            'updated_by_uuid' => $user->uuid
-        ]);
+        $items = factory(Model::class, 5)->create();
 
         $data = $this
             ->json('GET', "/api/foodfleet/document/templates")
@@ -37,10 +35,12 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
-                'updated_by_uuid' => $item->updated_by_uuid
+                'updated_by_uuid' => $user->uuid
             ], $data[$idx]);
         }
     }
@@ -50,13 +50,11 @@ class TemplateTest extends TestCase
         $user = factory(User::class)->create();
         Passport::actingAs($user);
         factory(Model::class, 5)->create([
-            'title' => 'Not visibles',
-            'updated_by_uuid' => $user->uuid
+            'title' => 'Not visibles'
         ]);
 
         $itemsToFind = factory(Model::class, 5)->create([
-            'title' => 'To find',
-            'updated_by_uuid' => $user->uuid
+            'title' => 'To find'
         ]);
 
         $data = $this
@@ -87,10 +85,12 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
-                'updated_by_uuid' => $item->updated_by_uuid
+                'updated_by_uuid' => $user->uuid
             ], $data[$idx]);
         }
     }
@@ -109,9 +109,7 @@ class TemplateTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $item = factory(Model::class)->create([
-            'updated_by_uuid' => $user->uuid
-        ]);
+        $item = factory(Model::class)->create();
 
         $data = $this
             ->json('GET', "/api/foodfleet/document/templates/" . $item->uuid)
@@ -125,10 +123,30 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $item->title,
+            'content' => $item->content,
+            'description' => $item->description,
             'status_id' => $item->status_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
             'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
-            'updated_by_uuid' => $item->updated_by_uuid
+            'updated_by_uuid' => $user->updated_by_uuid
+        ], $data);
+    }
+
+    public function testCreatedItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Template::class)->make()->toArray();
+        $data = $this
+            ->json('POST', 'api/foodfleet/document/templates', $payload)
+            ->assertStatus(201)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'title' => $payload['title'],
+            'content' => $payload['content'],
+            'description' => $payload['description'],
+            'status_id' => $payload['status_id'],
         ], $data);
     }
 
@@ -162,7 +180,9 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $payload['title'],
-            'status_id' => $payload['status_id']
+            'content' => $payload['content'],
+            'description' => $payload['description'],
+            'status_id' => $payload['status_id'],
         ], $data);
     }
 

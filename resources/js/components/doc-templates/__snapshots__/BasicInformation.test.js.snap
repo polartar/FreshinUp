@@ -1,0 +1,1257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout"
+  >
+    <div
+      class="flex xs12 sm12 md8 xl9"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title"
+        >
+          <h3
+            class="grey--text"
+          >
+            
+          Basic Information
+        
+          </h3>
+           
+          <!---->
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="v-card__text"
+        >
+          <div>
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Title
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Title"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Short description
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Short description"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Content
+            
+              </div>
+               
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Short description"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+          </button>
+           
+          <div
+            class="spacer"
+          />
+           
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex ml-2 xs12 sm12 md4 xl3"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__text"
+        >
+          <!---->
+           
+          <!---->
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <input
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <div
+            class="layout text-xs-center row wrap"
+          >
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Submit
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn v-btn--disabled theme--light"
+                disabled="disabled"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Preview
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout"
+  >
+    <div
+      class="flex xs12 sm12 md8 xl9"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title"
+        >
+          <h3
+            class="grey--text"
+          >
+            
+          Basic Information
+        
+          </h3>
+           
+          <div
+            aria-valuemax="100"
+            aria-valuemin="0"
+            class="v-progress-linear"
+            role="progressbar"
+            style="height: 7px;"
+          >
+            <div
+              class="v-progress-linear__background primary"
+              style="height: 7px; opacity: 0.3; width: 100%;"
+            />
+            <div
+              class="v-progress-linear__bar"
+            >
+              <div
+                class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+              >
+                <div
+                  class="v-progress-linear__bar__indeterminate long primary"
+                />
+                <div
+                  class="v-progress-linear__bar__indeterminate short primary"
+                />
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="v-card__text"
+        >
+          <div>
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Title
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Title"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Short description
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Short description"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Content
+            
+              </div>
+               
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Short description"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--loader theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+            <span
+              class="v-btn__loading"
+            >
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                class="v-progress-circular v-progress-circular--indeterminate"
+                role="progressbar"
+                style="height: 23px; width: 23px;"
+              >
+                <svg
+                  style="transform: rotate(0deg);"
+                  viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="v-progress-circular__overlay"
+                    cx="43.80952380952381"
+                    cy="43.80952380952381"
+                    fill="transparent"
+                    r="20"
+                    stroke-dasharray="125.664"
+                    stroke-dashoffset="125.66370614359172px"
+                    stroke-width="3.8095238095238093"
+                  />
+                </svg>
+                <div
+                  class="v-progress-circular__info"
+                />
+              </div>
+            </span>
+          </button>
+           
+          <div
+            class="spacer"
+          />
+           
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex ml-2 xs12 sm12 md4 xl3"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__text"
+        >
+          <!---->
+           
+          <!---->
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <input
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <div
+            class="layout text-xs-center row wrap"
+          >
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn v-btn--loader theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Submit
+            
+                </div>
+                <span
+                  class="v-btn__loading"
+                >
+                  <div
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="v-progress-circular v-progress-circular--indeterminate"
+                    role="progressbar"
+                    style="height: 23px; width: 23px;"
+                  >
+                    <svg
+                      style="transform: rotate(0deg);"
+                      viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        class="v-progress-circular__overlay"
+                        cx="43.80952380952381"
+                        cy="43.80952380952381"
+                        fill="transparent"
+                        r="20"
+                        stroke-dasharray="125.664"
+                        stroke-dashoffset="125.66370614359172px"
+                        stroke-width="3.8095238095238093"
+                      />
+                    </svg>
+                    <div
+                      class="v-progress-circular__info"
+                    />
+                  </div>
+                </span>
+              </button>
+            </div>
+             
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn v-btn--disabled theme--light"
+                disabled="disabled"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Preview
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout"
+  >
+    <div
+      class="flex xs12 sm12 md8 xl9"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__title"
+        >
+          <h3
+            class="grey--text"
+          >
+            
+          Basic Information
+        
+          </h3>
+           
+          <!---->
+        </div>
+         
+        <hr
+          class="v-divider theme--light"
+        />
+         
+        <div
+          class="v-card__text"
+        >
+          <div>
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Title
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Title"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Short description
+            
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Short description"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Content
+            
+              </div>
+               
+              <div
+                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <textarea
+                        placeholder="Short description"
+                        rows="5"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <span
+                        class="v-messages__wrapper"
+                        name="message-transition"
+                        tag="div"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Save changes
+        
+            </div>
+          </button>
+           
+          <div
+            class="spacer"
+          />
+           
+          <button
+            class="v-btn theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex ml-2 xs12 sm12 md4 xl3"
+    >
+      <div
+        class="v-card v-sheet theme--light"
+      >
+        <div
+          class="v-card__text"
+        >
+          <h3
+            class="font-weight-bold mb-2"
+          >
+            
+          Last Modified on
+        
+          </h3>
+           
+          <span
+            class="mb-2"
+          >
+            Sep 30, 2019 • 3:51 AM by 
+            <u>
+              Demo Admin
+            </u>
+          </span>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+            role="combobox"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <div
+                    class="v-select__selections"
+                  >
+                    <div
+                      class="v-select__selection v-select__selection--comma"
+                    >
+                      Draft
+                    </div>
+                    <input
+                      aria-readonly="false"
+                      autocomplete="on"
+                      readonly="readonly"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          class="primary--text"
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Draft
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Published
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-card__actions"
+        >
+          <div
+            class="layout text-xs-center row wrap"
+          >
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Save changes
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex mb-2 xs12"
+            >
+              <button
+                class="v-btn v-btn--disabled theme--light"
+                disabled="disabled"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Preview
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs12"
+            >
+              <a
+                href="#/move-to-trash"
+              >
+                Move to trash
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

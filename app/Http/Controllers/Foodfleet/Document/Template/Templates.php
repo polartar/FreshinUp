@@ -9,6 +9,7 @@ use App\Models\Foodfleet\Document\Template\Template as Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -21,11 +22,11 @@ class Templates extends Controller
                 'title',
                 'status_id',
                 'updated_at',
-                Filter::custom('updated_by_uuid', BelongsToWhereInUuidEquals::class, 'updateBy')
+                'updated_by_uuid'
             ])
             ->allowedIncludes([
                 'status',
-                'updatedBy'
+                'updated_by'
             ])
             ->allowedSorts([
                 'title',
@@ -43,7 +44,7 @@ class Templates extends Controller
             ->where('uuid', $uuid)
             ->allowedIncludes([
                 'status',
-                'updated_by_uuid'
+                'updated_by'
             ])
             ->firstOrFail();
 
@@ -55,11 +56,32 @@ class Templates extends Controller
         $item = Model::where('uuid', $uuid)->firstOrFail();
         $rules = [
             'title' => 'string',
-            'status_id' => 'exists:document_template_statuses,id',
-            'updated_by_uuid' => 'exists:users,uuid'
+            'description' => 'string',
+            'content' => 'string',
+            'status_id' => 'exists:document_template_statuses,id'
         ];
-        $payload = $request->only(array_keys($rules));
+        $this->validate($request, $rules);
+        $payload = array_merge(
+            $request->only(array_keys($rules)),
+            [
+                'updated_by_uuid' => Auth::id()
+            ]
+        );
         $item->update($payload);
+        return new Resource($item);
+    }
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'string',
+            'description' => 'string',
+            'content' => 'string',
+            'status_id' => 'exists:document_template_statuses,id'
+        ];
+        $this->validate($request, $rules);
+        $payload = $request->only(array_keys($rules));
+        $item = Model::create($payload);
         return new Resource($item);
     }
 

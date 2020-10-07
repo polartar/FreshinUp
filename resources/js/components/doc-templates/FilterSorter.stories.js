@@ -1,9 +1,12 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
 
 // Components
 import FilterSorter from './FilterSorter.vue'
 import { FIXTURE_DOCUMENT_TEMPLATE_STATUSES } from '../../../../tests/Javascript/__data__/documentTemplateStatuses'
+import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
 
 export const Default = () => ({
   components: { FilterSorter },
@@ -26,14 +29,22 @@ export const Expanded = () => ({
   `
 })
 
+const mock = new MockAdapter(axios)
+const users = FIXTURE_USERS
+mock.onGet('users?filter[status]=1').reply(200, {
+  data: users
+})
+
 export const Populated = () => ({
   components: { FilterSorter },
   data () {
     return {
       statuses: FIXTURE_DOCUMENT_TEMPLATE_STATUSES,
       filters: {
-        status_id: [1, 2],
-        title: 'Some title'
+        status_id: [2],
+        title: 'Some title',
+        updated_by_uuid: users[0],
+        updated_at: '2020-10-06'
       }
     }
   },
@@ -45,7 +56,7 @@ export const Populated = () => ({
   template: `
     <v-container>
       <filter-sorter
-        :filters="filters"
+        :value="filters"
         :statuses="statuses"
         @runFilter="filterItems"
       />

@@ -174,6 +174,7 @@ export default {
       this.$store.dispatch('documentTemplates/getItems')
     },
     filterItems (params) {
+      console.log(params)
       this.$store.dispatch('documentTemplates/setFilters', {
         ...this.$store.getters['documentTemplates/filters'],
         ...params
