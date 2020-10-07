@@ -1,13 +1,18 @@
+import { FIXTURE_USERS } from './users'
+
 export const FIXTURE_DOCUMENT_TEMPLATES = [
   {
     id: 1,
     uuid: 'a039ca2e-f23f-3719-907b-a678a0f61712',
     title: 'non',
+    description: 'CHAPTER VIII. The Queen\'s argument was, that she looked up, but it did not quite sure',
+    content: 'Mock Turtle said: \'advance twice, set to partners--\' \'--change lobsters, and retire in same order,\' continued the Hatter, with an M, such as mouse-traps, and the cool fountains. CHAPTER VIII. The Queen\'s argument was, that she looked up, but it did not quite sure whether it would be so stingy about it, you may stand down,\' continued the King. \'Nothing whatever,\' said Alice. \'Anything you like,\' said the King, \'that saves a world of trouble, you know, upon the other paw, \'lives a Hatter: and in., <html><head><title>Officia aut cum quaerat.</title></head><body><form action="example.net" method="POST"><label for="username">saepe</label><input type="text" id="username"><label for="password">pariatur</label><input type="password" id="password"></form><div id="53265"><div id="14464"></div><div id="93172"></div></div><div id="21401"><div class="sit"></div></div><div id="37682"><div class="vitae"></div><div class="ullam"></div></div></body></html>',
     status_id: 1,
     status: {
       id: 1,
       name: 'Draft'
     },
+    updated_by: FIXTURE_USERS[0],
     created_at: '2019-09-30T03:51:14.000000Z',
     updated_at: '2019-09-30T03:51:51.000000Z'
   },

@@ -35,6 +35,8 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at))
@@ -82,6 +84,8 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at))
@@ -117,6 +121,8 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $item->title,
+            'content' => $item->content,
+            'description' => $item->description,
             'status_id' => $item->status_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
             'updated_at' => str_replace('"', '', json_encode($item->updated_at))
@@ -153,6 +159,8 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $payload['title'],
+            'content' => $payload['content'],
+            'description' => $payload['description'],
             'status_id' => $payload['status_id'],
         ], $data);
     }

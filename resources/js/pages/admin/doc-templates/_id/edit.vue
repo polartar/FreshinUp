@@ -1,19 +1,9 @@
-<template>
-  <div>
-    Coming soon
-  </div>
-</template>
-
 <script>
-export default {
+  import CreateUpdate from '~/components/doc-templates/CreateUpdate.vue'
 
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.$store.dispatch('page/setLoading', false)
-    next && next()
+  export default {
+    extends: CreateUpdate,
+    layout: CreateUpdate.layout,
+    beforeRouteEnterOrUpdate: CreateUpdate.beforeRouteEnterOrUpdate
   }
-}
 </script>
-
-<style scoped>
-
-</style>
