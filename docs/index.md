@@ -1,6 +1,5 @@
 # Roadmap
 
-## Fleet member menu page
 ## Document template page
 ## Document page
 
@@ -33,26 +32,20 @@
 
 <br/>
 
-## Fleet Members Page
-- Fleet Members can be created and viewed in Fleet List
-- Clicking `Manage` and then `View/Edit` will route you to the edit page of that Fleet Member
-- Fleet Members can be searched by Fleet Member name
-- Fleet Members can be filtered (filters created, but they do not work)
-
-<br/>
-
 ## Fleet Member Edit Page
 ### Functionality for these components
 - Fleet Member Documents
 - Payments
 - Assigned Events _(Requires Event Fleet component to be completed)_
-- Areas of Operation
-- Fleet Member Menu
 
 <br/>
 
 # Changes
-## Oct 5, 2020
+## Oct 6, 2020
+`Document template page`
+- **ADD** Detail page is not created [#504](https://github.com/FreshinUp/foodfleet/issues/504)
+
+<br/>
 
 ## Oct 4, 2020
 - **ADD** New Fleet member has sample documents [#489](https://github.com/FreshinUp/foodfleet/issues/489)
