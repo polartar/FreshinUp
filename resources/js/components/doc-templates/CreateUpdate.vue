@@ -28,7 +28,9 @@
       </v-flex>
       <v-flex class="mt-5">
         <basic-information
+          :is-loading="templateLoading"
           :value="template"
+          :statuses="statuses"
           @input="onSave"
           @cancel="returnToList"
           @delete="deleteDialog = true"
@@ -64,13 +66,15 @@ export default {
   },
   data () {
     return {
-      templateLoading: false
+      templateLoading: false,
+      deleteDialog: false
     }
   },
   computed: {
     ...mapGetters('documentTemplates', { template_: 'item' }),
+    ...mapGetters('documentTemplates/statuses', { statuses: 'items' }),
     isNew () {
-      return !!get(this, '$route.params.id')
+      return get(this.$route, 'params.id', 'new') === 'new'
     },
     pageTitle () {
       return this.isNew ? 'New Document template' : 'Document template details'
@@ -84,7 +88,7 @@ export default {
     returnToList () {
       this.$router.push({ path: '/admin/doc-templates' })
     },
-    async onSave () {
+    async onSave (data) {
       try {
         this.templateLoading = true
         if (this.isNew) {
@@ -102,12 +106,16 @@ export default {
         this.templateLoading = false
       }
     },
-    onDelete () {}
+    async onDelete (data) {
+      await this.$store.dispatch('documentTemplates/deleteItem', { getItems: false, params: { id: data.uuid } })
+      await this.$store.dispatch('generalMessage/setMessage', 'Deleted.')
+      this.returnToList()
+    }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id
     const promises = []
-    if (id != 'new') {
+    if (id !== 'new') {
       vm.$store.dispatch('documentTemplates/setFilters', {
         include: INCLUDE
       })
@@ -115,6 +123,7 @@ export default {
         params: { id }
       }))
     }
+    promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))
     Promise.all(promises)
       .then(() => {})
       .catch(error => {

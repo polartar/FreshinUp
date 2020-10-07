@@ -1,3 +1,4 @@
+import omit from 'lodash/omit'
 import makeRestStore from '../utils/makeRestStore'
 
 export default ({ items, item }) => {
@@ -11,6 +12,21 @@ export default ({ items, item }) => {
         { value: 'title', text: 'Title (A - Z)' },
         { value: '-title', text: 'Title (Z - A)' }
       ]
+    }
+  }
+
+  const _createItem = store.actions.createItem
+  const _updateItem = store.actions.updateItem
+  const unwantedKeys = ['id', 'uuid', 'status', 'updated_by', 'updated_at', 'created_at']
+  store.actions = {
+    ...store.actions,
+    createItem (context, payload) {
+      payload.data = omit(payload.data, unwantedKeys)
+      return _createItem(context, payload)
+    },
+    updateItem (context, payload) {
+      payload.data = omit(payload.data, unwantedKeys)
+      return _updateItem(context, payload)
     }
   }
 

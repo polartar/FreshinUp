@@ -1,6 +1,6 @@
 import * as Stories from './BasicInformation.stories'
-import Component, {EDITOR_OPTIONS} from './BasicInformation'
-import { shallowMount } from '@vue/test-utils'
+import Component, { DEFAULT_TEMPLATE, EDITOR_OPTIONS } from './BasicInformation'
+import { mount, shallowMount } from '@vue/test-utils'
 import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
 import { FIXTURE_DOCUMENT_TEMPLATES } from '../../../../tests/Javascript/__data__/documentTemplates'
 import { FIXTURE_DOCUMENT_TEMPLATE_STATUSES } from '../../../../tests/Javascript/__data__/documentTemplateStatuses'
@@ -40,14 +40,15 @@ describe('component/doc-templates/BasicInformation', () => {
     })
     test('isNew', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.isNew).toBe(false)
+      expect(wrapper.vm.isNew).toBe(true)
 
       wrapper.setProps({
         value: {
           uuid: 'abc123'
         }
       })
-      expect(wrapper.vm.isNew).toBe(true)
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.isNew).toBe(false)
     })
     test('statuses', async () => {
       const wrapper = shallowMount(Component)
@@ -60,7 +61,7 @@ describe('component/doc-templates/BasicInformation', () => {
     })
     test('updaterName', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.updaterName).toBeNull()
+      expect(wrapper.vm.updaterName).toBeFalsy()
 
       const user = FIXTURE_USERS[0]
       wrapper.setProps({
@@ -68,6 +69,7 @@ describe('component/doc-templates/BasicInformation', () => {
           updated_by: user
         }
       })
+      await wrapper.vm.$nextTick()
       expect(wrapper.vm.updaterName).toEqual(user.name)
     })
   })
@@ -84,6 +86,12 @@ describe('component/doc-templates/BasicInformation', () => {
       const event = wrapper.emitted().delete
       expect(event).toBeTruthy()
       expect(event[0][0]).toMatchObject(template)
+    })
+    test('cancel()', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.cancel()
+      const event = wrapper.emitted().cancel
+      expect(event).toBeTruthy()
     })
   })
 })
