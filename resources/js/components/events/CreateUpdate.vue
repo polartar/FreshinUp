@@ -518,7 +518,7 @@ export default {
     },
     async onDelete () {
       await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
-      await this.$store.dispatch('generalMessage/setMessage', 'Deleted')
+      await this.$store.dispatch('generalMessage/setMessage', 'Deleted.')
       this.$router.push({ path: '/admin/events/' })
     },
     viewDetails (store) {

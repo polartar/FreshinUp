@@ -49,10 +49,27 @@ class Templates extends Controller
         $item = Model::where('uuid', $uuid)->firstOrFail();
         $rules = [
             'title' => 'string',
+            'description' => 'string',
+            'content' => 'string',
             'status_id' => 'exists:document_template_statuses,id'
         ];
+        $this->validate($request, $rules);
         $payload = $request->only(array_keys($rules));
         $item->update($payload);
+        return new Resource($item);
+    }
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'string',
+            'description' => 'string',
+            'content' => 'string',
+            'status_id' => 'exists:document_template_statuses,id'
+        ];
+        $this->validate($request, $rules);
+        $payload = $request->only(array_keys($rules));
+        $item = Model::create($payload);
         return new Resource($item);
     }
 

@@ -10,8 +10,6 @@ use Tests\TestCase;
 class TemplateTest extends TestCase {
 
     public function testResource () {
-        for ($i = 0; $i < 10; $i++) {
-
         $item = factory(Model::class)->create();
         $resource = new Resource($item);
         $expected = [
@@ -22,9 +20,7 @@ class TemplateTest extends TestCase {
             'description' => $item->description,
             'status_id' => $item->status_id,
         ];
-        dump($expected);
         $request = app()->make(Request::class);
         $this->assertArraySubset($expected, $resource->toArray($request));
-        }
     }
 }
