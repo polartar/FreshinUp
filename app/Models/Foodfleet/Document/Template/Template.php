@@ -12,6 +12,8 @@ use Dyrynda\Database\Support\GeneratesUuid;
  * @property int id
  * @property string uuid
  * @property string title
+ * @property string description
+ * @property string content
  * @property int status_id
  * @property \Carbon\Carbon created_at
  * @property \Carbon\Carbon updated_at
@@ -22,7 +24,7 @@ use Dyrynda\Database\Support\GeneratesUuid;
 class Template extends Model
 {
     protected $table = 'document_templates';
-    protected $fillable = ['title', 'status_id'];
+    protected $guarded = ['id', 'uuid'];
     use GeneratesUuid;
 
     public function status()

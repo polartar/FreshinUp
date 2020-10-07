@@ -16,6 +16,8 @@ class TemplateTest extends TestCase {
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $item->title,
+            'content' => $item->content,
+            'description' => $item->description,
             'status_id' => $item->status_id,
         ];
         $request = app()->make(Request::class);

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet;
 
+use App\Models\Foodfleet\Document\Template\Template;
 use App\Models\Foodfleet\Document\Template\Template as Model;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -35,6 +36,8 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at))
@@ -82,6 +85,8 @@ class TemplateTest extends TestCase
                 'id' => $item->id,
                 'uuid' => $item->uuid,
                 'title' => $item->title,
+                'content' => $item->content,
+                'description' => $item->description,
                 'status_id' => $item->status_id,
                 'created_at' => str_replace('"', '', json_encode($item->created_at)),
                 'updated_at' => str_replace('"', '', json_encode($item->updated_at))
@@ -117,9 +122,29 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $item->title,
+            'content' => $item->content,
+            'description' => $item->description,
             'status_id' => $item->status_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
             'updated_at' => str_replace('"', '', json_encode($item->updated_at))
+        ], $data);
+    }
+
+    public function testCreatedItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Template::class)->make()->toArray();
+        $data = $this
+            ->json('POST', 'api/foodfleet/document/templates', $payload)
+            ->assertStatus(201)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'title' => $payload['title'],
+            'content' => $payload['content'],
+            'description' => $payload['description'],
+            'status_id' => $payload['status_id'],
         ], $data);
     }
 
@@ -153,6 +178,8 @@ class TemplateTest extends TestCase
             'id' => $item->id,
             'uuid' => $item->uuid,
             'title' => $payload['title'],
+            'content' => $payload['content'],
+            'description' => $payload['description'],
             'status_id' => $payload['status_id'],
         ], $data);
     }

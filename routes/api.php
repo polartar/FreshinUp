@@ -25,7 +25,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('document/template/types', 'Foodfleet\Document\Template\Types')
         ->only('index');
     Route::apiResource('document/templates', 'Foodfleet\Document\Template\Templates')
-        ->only('index', 'show', 'update', 'destroy');
+        ->only('index', 'show', 'store', 'update', 'destroy');
     Route::apiResource('documents', 'Foodfleet\Documents');
     Route::apiResource('tmp-media', 'Foodfleet\TmpMedia');
     Route::apiResource('company-owners', 'Foodfleet\CompanyOwners');
