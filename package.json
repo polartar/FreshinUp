@@ -17,8 +17,8 @@
     "watch-poll": "npm run watch -- --watch-poll"
   },
   "dependencies": {
-    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.9.0",
     "@fortawesome/fontawesome-free": "^5.8.2",
+    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.9.0",
     "@mdi/font": "^4.4.95",
     "@tinymce/tinymce-vue": "^1.1.2",
     "awesome-phonenumber": "^2.12.0",
@@ -35,6 +35,7 @@
     "pluralize": "^7.0.0",
     "popper.js": "^1.12",
     "tinymce": "^5.0.3",
+    "tiptap": "^1.30.0",
     "vue": "^2.6.10",
     "vue-analytics": "^5.16.4",
     "vue-axios": "^2.1.4",
