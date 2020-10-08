@@ -135,35 +135,176 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
               </div>
                
               <div
-                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                class="editor"
               >
                 <div
-                  class="v-input__control"
+                  class="menubar"
                 >
                   <div
-                    class="v-input__slot"
+                    class="menubar"
                   >
-                    <div
-                      class="v-text-field__slot"
+                    <button
+                      class="menubar__button"
                     >
-                      <textarea
-                        placeholder="Short description"
-                        rows="5"
-                      />
-                    </div>
+                      
+          H1
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H2
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H3
+        
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_bold
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_italic
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_underlined
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_left
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_center
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_right
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_justify
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Add variable
+        
+                      </div>
+                    </button>
                   </div>
+                </div>
+                 
+                <div
+                  class="editor__content pa-3"
+                >
                   <div
-                    class="v-text-field__details"
+                    class="ProseMirror"
+                    contenteditable="true"
+                    tabindex="0"
                   >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <span
-                        class="v-messages__wrapper"
-                        name="message-transition"
-                        tag="div"
-                      />
-                    </div>
+                    <p>
+                      <br />
+                    </p>
                   </div>
                 </div>
               </div>
@@ -175,7 +316,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
           class="v-card__actions"
         >
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -188,7 +329,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
           </button>
            
           <button
-            class="v-btn theme--light primary"
+            class="v-btn v-btn--depressed theme--light primary"
             type="button"
           >
             <div
@@ -205,7 +346,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
           />
            
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -332,7 +473,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn theme--light primary"
+                class="v-btn v-btn--depressed theme--light primary"
                 type="button"
               >
                 <div
@@ -349,7 +490,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Default 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn v-btn--disabled theme--light"
+                class="v-btn v-btn--disabled v-btn--depressed theme--light"
                 disabled="disabled"
                 type="button"
               >
@@ -537,35 +678,176 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
               </div>
                
               <div
-                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+                class="editor"
               >
                 <div
-                  class="v-input__control"
+                  class="menubar"
                 >
                   <div
-                    class="v-input__slot"
+                    class="menubar"
                   >
-                    <div
-                      class="v-text-field__slot"
+                    <button
+                      class="menubar__button"
                     >
-                      <textarea
-                        placeholder="Short description"
-                        rows="5"
-                      />
-                    </div>
+                      
+          H1
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H2
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H3
+        
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_bold
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_italic
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_underlined
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_left
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_center
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_right
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_justify
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Add variable
+        
+                      </div>
+                    </button>
                   </div>
+                </div>
+                 
+                <div
+                  class="editor__content pa-3"
+                >
                   <div
-                    class="v-text-field__details"
+                    class="ProseMirror"
+                    contenteditable="true"
+                    tabindex="0"
                   >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <span
-                        class="v-messages__wrapper"
-                        name="message-transition"
-                        tag="div"
-                      />
-                    </div>
+                    <p>
+                      <br />
+                    </p>
                   </div>
                 </div>
               </div>
@@ -577,7 +859,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
           class="v-card__actions"
         >
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -590,7 +872,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
           </button>
            
           <button
-            class="v-btn v-btn--loader theme--light primary"
+            class="v-btn v-btn--loader v-btn--depressed theme--light primary"
             type="button"
           >
             <div
@@ -638,7 +920,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
           />
            
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -765,7 +1047,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn v-btn--loader theme--light primary"
+                class="v-btn v-btn--loader v-btn--depressed theme--light primary"
                 type="button"
               >
                 <div
@@ -813,7 +1095,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Loading 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn v-btn--disabled theme--light"
+                class="v-btn v-btn--disabled v-btn--depressed theme--light"
                 disabled="disabled"
                 type="button"
               >
@@ -975,35 +1257,176 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
               </div>
                
               <div
-                class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+                class="editor"
               >
                 <div
-                  class="v-input__control"
+                  class="menubar"
                 >
                   <div
-                    class="v-input__slot"
+                    class="menubar"
                   >
-                    <div
-                      class="v-text-field__slot"
+                    <button
+                      class="menubar__button"
                     >
-                      <textarea
-                        placeholder="Short description"
-                        rows="5"
-                      />
-                    </div>
+                      
+          H1
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H2
+        
+                    </button>
+                     
+                    <button
+                      class="menubar__button"
+                    >
+                      
+          H3
+        
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_bold
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_italic
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_underlined
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_left
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_center
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_right
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--icon v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          format_align_justify
+                        </i>
+                      </div>
+                    </button>
+                     
+                    <button
+                      class="v-btn v-btn--depressed theme--light"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Add variable
+        
+                      </div>
+                    </button>
                   </div>
+                </div>
+                 
+                <div
+                  class="editor__content pa-3"
+                >
                   <div
-                    class="v-text-field__details"
+                    class="ProseMirror"
+                    contenteditable="true"
+                    tabindex="0"
                   >
-                    <div
-                      class="v-messages theme--light"
-                    >
-                      <span
-                        class="v-messages__wrapper"
-                        name="message-transition"
-                        tag="div"
-                      />
-                    </div>
+                    <p>
+                      Mock Turtle said: 'advance twice, set to partners--' '--change lobsters, and retire in same order,' continued the Hatter, with an M, such as mouse-traps, and the cool fountains. CHAPTER VIII. The Queen's argument was, that she looked up, but it did not quite sure whether it would be so stingy about it, you may stand down,' continued the King. 'Nothing whatever,' said Alice. 'Anything you like,' said the King, 'that saves a world of trouble, you know, upon the other paw, 'lives a Hatter: and in., saepepariatur
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1015,7 +1438,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
           class="v-card__actions"
         >
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -1028,7 +1451,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
           </button>
            
           <button
-            class="v-btn theme--light primary"
+            class="v-btn v-btn--depressed theme--light primary"
             type="button"
           >
             <div
@@ -1045,7 +1468,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
           />
            
           <button
-            class="v-btn theme--light"
+            class="v-btn v-btn--depressed theme--light"
             type="button"
           >
             <div
@@ -1208,7 +1631,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn theme--light primary"
+                class="v-btn v-btn--depressed theme--light primary"
                 type="button"
               >
                 <div
@@ -1225,7 +1648,7 @@ exports[`component/doc-templates/BasicInformation Snapshots Populated 1`] = `
               class="flex mb-2 xs12"
             >
               <button
-                class="v-btn v-btn--disabled theme--light"
+                class="v-btn v-btn--disabled v-btn--depressed theme--light"
                 disabled="disabled"
                 type="button"
               >

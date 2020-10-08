@@ -145,12 +145,22 @@ export default {
     editor: null
   }),
 
+  watch: {
+    value (val) {
+      if (this.editor && val !== this.value) {
+        this.editor.setContent(val, true)
+      }
+    }
+  },
+
   mounted: function () {
     this.$nextTick(() => this.init())
   },
 
   beforeDestroy: function () {
-    this.editor.destroy()
+    if (this.editor) {
+      this.editor.destroy()
+    }
   },
 
   methods: {
@@ -163,12 +173,12 @@ export default {
           new Underline(),
           new AlignText()
         ],
-        content: this.value
+        content: this.value,
+        onUpdate: ({ getHTML }) => {
+          const state = getHTML()
+          this.$emit('input', state)
+        }
       })
-    },
-
-    onChange () {
-      this.$emit('input', this.editor.getHTML())
     }
   }
 }
