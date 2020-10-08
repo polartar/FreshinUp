@@ -53,54 +53,6 @@
                   <div class="menubar">
                     <button
                       class="menubar__button"
-                      :class="{ 'is-active': isActive.bold() }"
-                      @click="commands.bold"
-                    >
-                      B
-                    </button>
-
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.italic() }"
-                      @click="commands.italic"
-                    >
-                      i
-                    </button>
-
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.strike() }"
-                      @click="commands.strike"
-                    >
-                      strike
-                    </button>
-
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.underline() }"
-                      @click="commands.underline"
-                    >
-                      _
-                    </button>
-
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.code() }"
-                      @click="commands.code"
-                    >
-                      code
-                    </button>
-
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.paragraph() }"
-                      @click="commands.paragraph"
-                    >
-                      p
-                    </button>
-
-                    <button
-                      class="menubar__button"
                       :class="{ 'is-active': isActive.heading({ level: 1 }) }"
                       @click="commands.heading({ level: 1 })"
                     >
@@ -123,58 +75,72 @@
                       H3
                     </button>
 
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.bullet_list() }"
-                      @click="commands.bullet_list"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': isActive.bold() }"
+                      @click="commands.bold"
                     >
-                      list
-                    </button>
+                      <v-icon>format_bold</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.ordered_list() }"
-                      @click="commands.ordered_list"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': isActive.italic() }"
+                      @click="commands.italic"
                     >
-                      o-list
-                    </button>
+                      <v-icon>format_italic</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.blockquote() }"
-                      @click="commands.blockquote"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': isActive.underline() }"
+                      @click="commands.underline"
                     >
-                      ""
-                    </button>
+                      <v-icon>format_underlined</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      :class="{ 'is-active': isActive.code_block() }"
-                      @click="commands.code_block"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'left' }"
+                      @click="commands.aligntext({ align: 'left' })"
                     >
-                      code blk
-                    </button>
+                      <v-icon>format_align_left</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      @click="commands.horizontal_rule"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'center' }"
+                      @click="commands.aligntext({ align: 'center' })"
                     >
-                      hr rule
-                    </button>
+                      <v-icon>format_align_center</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      @click="commands.undo"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'right' }"
+                      @click="commands.aligntext({ align: 'right' })"
                     >
-                      undo
-                    </button>
+                      <v-icon>format_align_right</v-icon>
+                    </v-btn>
 
-                    <button
-                      class="menubar__button"
-                      @click="commands.redo"
+                    <v-btn
+                      icon
+                      depressed
+                      :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'justify' }"
+                      @click="commands.aligntext({ align: 'justify' })"
                     >
-                      redo
-                    </button>
+                      <v-icon>format_align_justify</v-icon>
+                    </v-btn>
+
+                    <v-btn depressed>
+                      Add variable
+                    </v-btn>
                   </div>
                 </editor-menu-bar>
                 <editor-content
@@ -287,6 +253,7 @@ import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 import get from 'lodash/get'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+import AlignText from '../tiptap/aligntext.plugin'
 import {
   Blockquote,
   CodeBlock,
@@ -351,7 +318,8 @@ export default {
           new Italic(),
           new Strike(),
           new Underline(),
-          new History()
+          new History(),
+          new AlignText()
         ],
         content: this.value.content
       })
