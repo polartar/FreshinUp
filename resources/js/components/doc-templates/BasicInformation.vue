@@ -45,30 +45,164 @@
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Content
               </div>
-              <v-textarea
-                v-model="content"
-                placeholder="Short description"
-                single-line
-                outline
-              />
+              <div class="editor">
+                <editor-menu-bar
+                  v-slot="{ commands, isActive }"
+                  :editor="editor"
+                >
+                  <div class="menubar">
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.bold() }"
+                      @click="commands.bold"
+                    >
+                      B
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.italic() }"
+                      @click="commands.italic"
+                    >
+                      i
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.strike() }"
+                      @click="commands.strike"
+                    >
+                      strike
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.underline() }"
+                      @click="commands.underline"
+                    >
+                      _
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.code() }"
+                      @click="commands.code"
+                    >
+                      code
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.paragraph() }"
+                      @click="commands.paragraph"
+                    >
+                      p
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                      @click="commands.heading({ level: 1 })"
+                    >
+                      H1
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                      @click="commands.heading({ level: 2 })"
+                    >
+                      H2
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                      @click="commands.heading({ level: 3 })"
+                    >
+                      H3
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.bullet_list() }"
+                      @click="commands.bullet_list"
+                    >
+                      list
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.ordered_list() }"
+                      @click="commands.ordered_list"
+                    >
+                      o-list
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.blockquote() }"
+                      @click="commands.blockquote"
+                    >
+                      ""
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      :class="{ 'is-active': isActive.code_block() }"
+                      @click="commands.code_block"
+                    >
+                      code blk
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      @click="commands.horizontal_rule"
+                    >
+                      hr rule
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      @click="commands.undo"
+                    >
+                      undo
+                    </button>
+
+                    <button
+                      class="menubar__button"
+                      @click="commands.redo"
+                    >
+                      redo
+                    </button>
+                  </div>
+                </editor-menu-bar>
+                <editor-content
+                  class="editor__content pa-3"
+                  :editor="editor"
+                />
+              </div>
             </v-flex>
           </div>
         </v-card-text>
         <v-card-actions>
           <v-btn
+            depressed
             @click="cancel"
           >
             Cancel
           </v-btn>
           <v-btn
+            depressed
             color="primary"
             :loading="isLoading"
-            @click="save"
+            @click="onSave"
           >
             {{ isNew? 'Submit' : 'Save changes' }}
           </v-btn>
           <v-spacer />
           <v-btn
+            depressed
             @click="deleteItem"
           >
             Delete
@@ -115,6 +249,7 @@
               class="mb-2"
             >
               <v-btn
+                depressed
                 color="primary"
                 :loading="isLoading"
                 @click="save"
@@ -127,6 +262,7 @@
               class="mb-2"
             >
               <v-btn
+                depressed
                 disabled
               >
                 Preview
@@ -150,6 +286,26 @@
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 import get from 'lodash/get'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+import {
+  Blockquote,
+  CodeBlock,
+  HardBreak,
+  Heading,
+  HorizontalRule,
+  OrderedList,
+  BulletList,
+  ListItem,
+  TodoItem,
+  TodoList,
+  Bold,
+  Code,
+  Italic,
+  Link,
+  Strike,
+  Underline,
+  History
+} from 'tiptap-extensions'
 
 export const DEFAULT_TEMPLATE = {
   id: '',
@@ -162,22 +318,11 @@ export const DEFAULT_TEMPLATE = {
   updated_by: null
 }
 
-export const EDITOR_OPTIONS = {
-  height: 500,
-  menubar: false,
-  plugins: [
-    'advlist autolink lists link image charmap',
-    'searchreplace visualblocks code fullscreen',
-    'print preview anchor insertdatetime media',
-    'paste code help wordcount table'
-  ],
-  toolbar:
-    ['undo', 'redo', '|', 'formatselect', '|', 'bold',
-      'italic', 'backcolor', '|', 'alignleft', 'aligncenter',
-      'alignright', 'alignjustify', '|', 'bullist', 'numlist',
-      'outdent', 'indent', '|', 'removeformat', '|', 'help'].join(' ')
-}
 export default {
+  components: {
+    EditorContent,
+    EditorMenuBar
+  },
   mixins: [MapValueKeysToData, FormatDate],
   props: {
     isLoading: { type: Boolean, default: false },
@@ -187,21 +332,41 @@ export default {
   },
   data () {
     return {
-      apiKey: '',
-      ...DEFAULT_TEMPLATE
+      ...DEFAULT_TEMPLATE,
+      editor: new Editor({
+        extensions: [
+          new Blockquote(),
+          new BulletList(),
+          new CodeBlock(),
+          new HardBreak(),
+          new Heading({ levels: [1, 2, 3] }),
+          new HorizontalRule(),
+          new ListItem(),
+          new OrderedList(),
+          new TodoItem(),
+          new TodoList(),
+          new Link(),
+          new Bold(),
+          new Code(),
+          new Italic(),
+          new Strike(),
+          new Underline(),
+          new History()
+        ],
+        content: this.value.content
+      })
     }
   },
   computed: {
-    // TODO useful for https://github.com/FreshinUp/foodfleet/issues/517
-    editorOptions () {
-      return EDITOR_OPTIONS
-    },
     isNew () {
       return !get(this, 'uuid')
     },
     updaterName () {
       return get(this, 'updated_by.name')
     }
+  },
+  beforeDestroy () {
+    this.editor.destroy()
   },
   methods: {
     get,
@@ -210,11 +375,51 @@ export default {
     },
     cancel () {
       this.$emit('cancel')
+    },
+    onSave () {
+      this.value.content = this.editor.getHTML()
+      // eslint-disable-next-line no-console
+      console.log(this.value)
+      this.save()
     }
   }
 }
 </script>
 
 <style scoped>
+.editor {
+  position: relative;
+  /* max-width: 30rem; */
+  margin: 0 auto 5rem;
+}
 
+.menubar {
+  margin-bottom: 1rem;
+  -webkit-transition: visibility .2s .4s,opacity .2s .4s;
+  transition: visibility .2s .4s,opacity .2s .4s;
+}
+
+.editor__content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  border: solid 2px darkgray;
+  border-radius: 4px;
+}
+
+.menubar__button {
+  font-weight: 700;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  background: transparent;
+  border: 0;
+  color: #000;
+  padding: .2rem .5rem;
+  margin-right: .2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+>>>.ProseMirror {
+  outline: none;
+}
 </style>
