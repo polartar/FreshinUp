@@ -60,7 +60,7 @@
             depressed
             color="primary"
             :loading="isLoading"
-            @click="onSave"
+            @click="save"
           >
             {{ isNew? 'Submit' : 'Save changes' }}
           </v-btn>
