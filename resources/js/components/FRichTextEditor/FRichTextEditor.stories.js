@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 
 import FRichTextEditor from './FRichTextEditor'
 
-const sampleText = `
+const SAMPLE_TEXT = `
 <h2>
   Hi there,
 </h2>
@@ -39,7 +39,7 @@ export const Populated = () => ({
   components: { FRichTextEditor },
   data () {
     return {
-      text: sampleText
+      text: SAMPLE_TEXT
     }
   },
   template: `
