@@ -165,6 +165,10 @@ export default {
         ],
         content: this.value
       })
+    },
+
+    onChange () {
+      this.$emit('input', this.editor.getHTML())
     }
   }
 }
