@@ -1,8 +1,8 @@
 <template>
   <v-dialog
     :value="value"
-    @input="$emit('input', $event)"
     max-width="1200"
+    @input="$emit('input', $event)"
   >
     <v-card>
       <document-preview-header
@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import DocumentPreviewHeader from '~/components/docs/DocumentPreviewHeader';
-import DocumentPreviewContent from '~/components/docs/DocumentPreviewContent';
+import DocumentPreviewHeader from '~/components/docs/DocumentPreviewHeader'
+import DocumentPreviewContent from '~/components/docs/DocumentPreviewContent'
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
     }
   },
   methods: {
-    downloadPDF() {
+    downloadPDF () {
     }
   }
 }

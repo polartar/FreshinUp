@@ -96,12 +96,12 @@
         class="mb-3"
       >
         <document-preview-signature
-          signeeName="Food Fleet Signature"
+          signee-name="Food Fleet Signature"
         />
       </v-layout>
       <v-layout>
         <document-preview-signature
-          signeeName="Restaurant Owner Name - 2 Brothers Kitchen"
+          signee-name="Restaurant Owner Name - 2 Brothers Kitchen"
         />
       </v-layout>
     </v-card>
@@ -116,7 +116,7 @@ export default {
     DocumentPreviewSignature
   },
   methods: {
-    downloadPDF() {
+    downloadPDF () {
     }
   }
 }
