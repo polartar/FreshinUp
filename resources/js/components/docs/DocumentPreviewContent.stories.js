@@ -12,6 +12,28 @@ const doc = {
   attachment: 'https://downloadable.net/mock.zip'
 }
 
+export const Default = () => ({
+  components: { DocumentPreviewContent },
+  data () {
+    return {
+      doc: doc
+    }
+  },
+  methods: {
+    onClose () {
+      action('onClose')()
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview-content
+        :doc="doc"
+        @close="onClose"
+      />
+    </v-container>
+  `
+})
+
 // Components
 storiesOf('FoodFleet|doc/DocumentPreviewContent', module)
   .addParameters({
@@ -19,24 +41,4 @@ storiesOf('FoodFleet|doc/DocumentPreviewContent', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
-    components: { DocumentPreviewContent },
-    data () {
-      return {
-        doc: doc
-      }
-    },
-    methods: {
-      onClose () {
-        action('onClose')()
-      }
-    },
-    template: `
-      <v-container>
-        <DocumentPreviewContent
-          :doc="doc
-          @close="onClose"
-        />
-      </v-container>
-    `
-  }))
+  .add('Default', Default)

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/doc/DocumentPreviewSignature Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="layout column mb-3"
+  >
+    <div
+      class="layout"
+    >
+      <div
+        class="flex sm4"
+      >
+        <div
+          class="mr-3"
+        >
+          <div
+            class="py-3"
+          />
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="body-1 mt-2"
+          >
+            
+    mock owner name
+  
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex sm4"
+      >
+        <div
+          class="mx-3"
+        >
+          <div
+            class="py-3"
+          />
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="body-1 mt-2"
+          >
+            
+    Printed Name
+  
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex sm4"
+      >
+        <div
+          class="ml-3"
+        >
+          <div
+            class="py-3"
+          />
+           
+          <hr
+            class="v-divider theme--light"
+          />
+           
+          <div
+            class="body-1 mt-2"
+          >
+            
+    Date
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

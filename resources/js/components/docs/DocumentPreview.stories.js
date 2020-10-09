@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import DocumentPreview from './DocumentPreview.vue'
+import DocumentPreview from './DocumentPreview'
 
 const doc = {
   title: 'mock title',
@@ -12,31 +12,33 @@ const doc = {
   attachment: 'https://downloadable.net/mock.zip'
 }
 
+export const Default = () => ({
+  components: { DocumentPreview },
+  data () {
+    return {
+      doc: doc
+    }
+  },
+  methods: {
+    onClose () {
+      action('onClose')()
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview
+        :doc="doc"
+        @close="onClose"
+      />
+    </v-container>
+  `
+})
+
 // Components
-storiesOf('FoodFleet|doc/DocumentPreview', module)
+storiesOf('FoodFleet|docs/DocumentPreview', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
-    components: { DocumentPreview },
-    data () {
-      return {
-        doc: doc
-      }
-    },
-    methods: {
-      onClose () {
-        action('onClose')()
-      }
-    },
-    template: `
-      <v-container>
-        <DocumentPreview
-          :doc="doc
-          @close="onClose"
-        />
-      </v-container>
-    `
-  }))
+  .add('Default', Default)

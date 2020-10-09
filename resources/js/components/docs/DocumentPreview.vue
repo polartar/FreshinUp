@@ -12,7 +12,7 @@
         flat
         color="primary"
         class="mr-0"
-        @click="$emit('close')"
+        @click="onClose"
       >
         Close
       </v-btn>
@@ -35,6 +35,11 @@ export default {
     doc: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    onClose () {
+      this.$emit('close')
     }
   }
 }

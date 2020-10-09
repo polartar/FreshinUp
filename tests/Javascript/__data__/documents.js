@@ -5,6 +5,7 @@ export const FIXTURE_DOCUMENTS = [{
   type_id: 1,
   description: 'QZkBryOdhffHIouRmEBnrA7fhub6DHkvirpOdkO5IHTaqMRFKY',
   notes: 'XzU9ublRc0QGJ4l9J3eK',
+  attachment: null,
   owner: {
     id: 7,
     uuid: '8c708253-1da5-4ab1-b149-bedb93e48fa8',
@@ -71,6 +72,7 @@ export const FIXTURE_DOCUMENTS = [{
   type_id: 2,
   description: 'GNWEGRNcWrnNd7Tep4vZ8QOIzmYMle9x65kyieoBvOLyAoi4Od',
   notes: 'X2bD5v8zskKlxgUq739q',
+  attachment: 'https://somewhere/download.zip',
   owner: {
     id: 11,
     uuid: '2b03f5e2-8e1a-4e2a-8c0c-d17fb1f16ae3',

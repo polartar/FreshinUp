@@ -1,6 +1,22 @@
 import { storiesOf } from '@storybook/vue'
 import DocumentPreviewSignature from './DocumentPreviewSignature.vue'
 
+export const Default = () => ({
+  components: { DocumentPreviewSignature },
+  data () {
+    return {
+      signeeName: 'mock owner name'
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview-signature
+        :signeeName="signeeName"
+      />
+    </v-container>
+  `
+})
+
 // Components
 storiesOf('FoodFleet|doc/DocumentPreviewSignature', module)
   .addParameters({
@@ -8,18 +24,4 @@ storiesOf('FoodFleet|doc/DocumentPreviewSignature', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
-    components: { DocumentPreviewSignature },
-    data () {
-      return {
-        signeeName: 'mock owner name'
-      }
-    },
-    template: `
-      <v-container>
-        <DocumentPreviewSignature
-          :signeeName="signeeName"
-        />
-      </v-container>
-    `
-  }))
+  .add('Default', Default)
