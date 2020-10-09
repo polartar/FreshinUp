@@ -42,9 +42,11 @@
         text-xs-right
       >
         <v-btn
+          :disabled="!doc.attachment"
+          :href="doc.attachment"
+          target="_blank"
           color="primary"
           class="mx-0"
-          @click="downloadPDF"
         >
           Download PDF
         </v-btn>
@@ -82,7 +84,7 @@
           sm3
           class="body-2 text-xs-right"
         >
-          {{ doc.expiration_at | showExpirationDate }}
+          Expiration Date: {{ formatDate(doc.expiration_at, 'MM/DD/YYYY') }}
         </v-flex>
       </v-layout>
       <v-divider />
@@ -112,26 +114,20 @@
 </template>
 
 <script>
-import moment from 'moment'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import DocumentPreviewSignature from '~/components/docs/DocumentPreviewSignature'
 
 export default {
   components: {
     DocumentPreviewSignature
   },
-  filters: {
-    showExpirationDate (date) {
-      return 'Expiration Date:' + moment(date).calendar()
-    }
-  },
+  mixins: [
+    FormatDate
+  ],
   props: {
     doc: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    downloadPDF () {
     }
   }
 }

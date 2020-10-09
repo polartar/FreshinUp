@@ -90,10 +90,15 @@
         </v-card>
       </v-flex>
     </v-layout>
-    <document-preview
+    <v-dialog
       v-model="previewDialog"
-      :doc="doc"
-    />
+      max-width="1200"
+    >
+      <document-preview
+        :doc="doc"
+        @close="previewDialog = false"
+      />
+    </v-dialog>
   </v-form>
 </template>
 

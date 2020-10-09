@@ -1,42 +1,40 @@
 <template>
-  <v-dialog
-    :value="value"
-    max-width="1200"
-    @input="$emit('input', $event)"
-  >
-    <v-card>
-      <document-preview-header
-        @close="$emit('input', false)"
-      />
-      <v-divider />
-      <document-preview-content
-        :doc="doc"
-      />
-    </v-card>
-  </v-dialog>
+  <v-card>
+    <v-card-title
+      class="justify-space-between px-4 py-2"
+    >
+      <h3
+        class="grey--text"
+      >
+        Preview Document
+      </h3>
+      <v-btn
+        flat
+        color="primary"
+        class="mr-0"
+        @click="$emit('close')"
+      >
+        Close
+      </v-btn>
+    </v-card-title>
+    <v-divider />
+    <document-preview-content
+      :doc="doc"
+    />
+  </v-card>
 </template>
 
 <script>
-import DocumentPreviewHeader from '~/components/docs/DocumentPreviewHeader'
 import DocumentPreviewContent from '~/components/docs/DocumentPreviewContent'
 
 export default {
   components: {
-    DocumentPreviewHeader,
     DocumentPreviewContent
   },
   props: {
-    value: {
-      type: Boolean,
-      default: false
-    },
     doc: {
       type: Object,
-      default: {}
-    }
-  },
-  methods: {
-    downloadPDF () {
+      required: true
     }
   }
 }
