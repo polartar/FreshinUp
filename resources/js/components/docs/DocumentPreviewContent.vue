@@ -75,13 +75,14 @@
           pl-2
           class="title primary--text font-weight-bold"
         >
-          Fleet Member AGREEMENT
+          {{ doc.title }}
         </v-flex>
         <v-flex
+          v-if="doc.expiration_at"
           sm3
           class="body-2 text-xs-right"
         >
-          Expiration Date: 5/22/2020
+          {{ doc.expiration_at | showExpirationDate }}
         </v-flex>
       </v-layout>
       <v-divider />
@@ -89,7 +90,7 @@
         mt-3
       >
         <div
-          v-html="'<p> I am here</p>'"
+          v-html="doc.description"
         />
       </v-layout>
       <v-layout
@@ -99,9 +100,11 @@
           signee-name="Food Fleet Signature"
         />
       </v-layout>
-      <v-layout>
+      <v-layout
+        v-if="doc.owner && doc.owner.name.length"
+      >
         <document-preview-signature
-          signee-name="Restaurant Owner Name - 2 Brothers Kitchen"
+          :signee-name="doc.owner.name"
         />
       </v-layout>
     </v-card>
@@ -109,11 +112,23 @@
 </template>
 
 <script>
+import moment from 'moment'
 import DocumentPreviewSignature from '~/components/docs/DocumentPreviewSignature'
 
 export default {
   components: {
     DocumentPreviewSignature
+  },
+  filters: {
+    showExpirationDate (date) {
+      return 'Expiration Date:' + moment(date).calendar()
+    }
+  },
+  props: {
+    doc: {
+      type: Object,
+      required: true
+    }
   },
   methods: {
     downloadPDF () {

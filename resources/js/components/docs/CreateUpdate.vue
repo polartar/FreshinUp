@@ -92,6 +92,7 @@
     </v-layout>
     <document-preview
       v-model="previewDialog"
+      :doc="doc"
     />
   </v-form>
 </template>

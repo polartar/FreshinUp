@@ -9,7 +9,9 @@
         @close="$emit('input', false)"
       />
       <v-divider />
-      <document-preview-content />
+      <document-preview-content
+        :doc="doc"
+      />
     </v-card>
   </v-dialog>
 </template>
@@ -27,6 +29,10 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    doc: {
+      type: Object,
+      default: {}
     }
   },
   methods: {
