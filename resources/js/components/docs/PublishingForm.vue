@@ -67,6 +67,7 @@
         >
           <v-btn
             block
+            @click="onPreview"
           >
             Preview
           </v-btn>
@@ -165,6 +166,9 @@ export default {
     },
     onSaveClick () {
       this.$emit('data-save')
+    },
+    onPreview () {
+      this.$emit('show-preview')
     }
   }
 }

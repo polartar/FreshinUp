@@ -61,7 +61,7 @@
             Basic information
           </v-card-title>
           <v-divider />
-          <BasicInfoForm
+          <basic-info-form
             ref="basicInfo"
             :types="types"
             :templates="templates"
@@ -80,15 +80,19 @@
             Publishing
           </v-card-title>
           <v-divider />
-          <PublishingForm
+          <publishing-form
             :isvalid="isValid"
             :initdata="doc"
             @data-change="changePublishing"
             @data-save="onSaveClick"
+            @show-preview="showPreviewDialog"
           />
         </v-card>
       </v-flex>
     </v-layout>
+    <document-preview
+      v-model="previewDialog"
+    />
   </v-form>
 </template>
 
@@ -98,6 +102,7 @@ import { mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import BasicInfoForm from '~/components/docs/BasicInfoForm.vue'
 import PublishingForm from '~/components/docs/PublishingForm.vue'
+import DocumentPreview from '~/components/docs/DocumentPreview.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
 
 const { mapFields } = createHelpers({
@@ -109,7 +114,8 @@ export default {
   layout: 'admin',
   components: {
     BasicInfoForm,
-    PublishingForm
+    PublishingForm,
+    DocumentPreview
   },
   mixins: [Validate],
   data () {
@@ -118,7 +124,8 @@ export default {
       assigned_uuid: null,
       template: null,
       templates: [],
-      file: { name: null, src: null }
+      file: { name: null, src: null },
+      previewDialog: false
     }
   },
   computed: {
@@ -191,6 +198,9 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/docs' })
+    },
+    showPreviewDialog () {
+      this.previewDialog = true
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
