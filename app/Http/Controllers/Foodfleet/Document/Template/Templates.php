@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Foodfleet\Document\Template;
 
+use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Resources\Foodfleet\Document\Template\Template as Resource;
 use App\Models\Foodfleet\Document\Template\Template as Model;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class Templates extends Controller
@@ -19,14 +22,17 @@ class Templates extends Controller
                 'title',
                 'status_id',
                 'updated_at',
+                'updated_by_uuid'
             ])
             ->allowedIncludes([
                 'status',
+                'updated_by'
             ])
             ->allowedSorts([
                 'title',
                 'status_id',
                 'updated_at',
+                'updated_by_uuid'
             ]);
 
         return Resource::collection($templates->jsonPaginate());
@@ -38,6 +44,7 @@ class Templates extends Controller
             ->where('uuid', $uuid)
             ->allowedIncludes([
                 'status',
+                'updated_by'
             ])
             ->firstOrFail();
 
@@ -54,7 +61,12 @@ class Templates extends Controller
             'status_id' => 'exists:document_template_statuses,id'
         ];
         $this->validate($request, $rules);
-        $payload = $request->only(array_keys($rules));
+        $payload = array_merge(
+            $request->only(array_keys($rules)),
+            [
+                'updated_by_uuid' => Auth::id()
+            ]
+        );
         $item->update($payload);
         return new Resource($item);
     }

@@ -49,26 +49,4 @@ class EventObserver
     {
         EventHistory::where('event_uuid', $event->uuid)->delete();
     }
-
-    /**
-     * Handle the event "restored" event.
-     *
-     * @param  Event  $event
-     * @return void
-     */
-    public function restored(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Handle the event "force deleted" event.
-     *
-     * @param  Event  $event
-     * @return void
-     */
-    public function forceDeleted(Event $event)
-    {
-        //
-    }
 }
