@@ -30,13 +30,13 @@
                 Statuses
               </filter-label>
               <clear-button
-                v-if="status_id && status_id.length > 0"
+                v-if="filters.status_id && filters.status_id.length > 0"
                 color="white"
-                @clear="status_id = null;"
+                @clear="filters.status_id = null;"
               />
             </v-layout>
             <multi-select
-              v-model="status_id"
+              v-model="filters.status_id"
               placeholder="Select Status"
               :items="statuses"
               item-value="id"
@@ -59,14 +59,14 @@
                 Last modified by
               </filter-label>
               <clear-button
-                v-if="updated_by_uuid"
+                v-if="filters.updated_by_uuid"
                 color="white"
-                @clear="updated_by_uuid = null; $refs.updatedBy.clearTerm()"
+                @clear="filters.updated_by_uuid = null; $refs.updatedBy.clearTerm()"
               />
             </v-layout>
             <f-autocomplete
               ref="updatedBy"
-              :value="updated_by_uuid"
+              :value="filters.updated_by_uuid"
               no-filter
               placeholder="Last modified by"
               value-fetch
@@ -99,11 +99,10 @@
               />
             </v-layout>
             <date-time-picker
-              v-model="updated_at"
+              v-model="filters.updated_at"
               only-date
               format="YYYY-MM-DD"
               formatted="MM-DD-YYYY"
-              range
               input-size="lg"
               label="Last modified date "
               :color="$vuetify.theme.primary"
@@ -123,13 +122,12 @@ import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
 import FAutocomplete from '~/components/FAutocomplete'
 import DateTimePicker from '~/components/DateTimePicker'
-import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const DEFAULT_FILTERS = {
   status_id: [],
   title: '',
   updated_at: '',
-  updated_by: ''
+  updated_by_uuid: ''
 }
 export default {
   components: {
@@ -142,13 +140,7 @@ export default {
   },
   props: {
     statuses: { type: Array, default: () => [] },
-    // Override value prop from MapValueKeysToData to set the default value
-    value: { type: Object, default: () => DEFAULT_FILTERS }
-  },
-  data () {
-    return {
-      ...DEFAULT_FILTERS
-    }
+    filters: { type: Array, default: () => DEFAULT_FILTERS }
   },
   watch: {
     filters: {
@@ -159,25 +151,24 @@ export default {
       deep: true
     }
   },
-  mixins: [MapValueKeysToData],
   methods: {
     run (params) {
       const finalParams = {
+        ...this.filters,
         title: params.term,
-        sort: params.orderBy,
-        ...this.value
+        sort: params.orderBy
       }
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
-      this.title = null
-      this.status_id = null
-      this.updated_at = null
-      this.updated_by_uuid = null
+      this.$refs.updatedBy.clearTerm()
+      this.filters.updated_by_uuid = null
+      this.filters.status_id = null
+      this.filters.updated_at = null
       this.run(params)
     },
     selectModifiedBy (user) {
-      this.updated_by_uuid = user ? user.uuid : null
+      this.filters.updated_by_uuid = user ? user.uuid : null
       this.$refs.filter.run()
     }
   }

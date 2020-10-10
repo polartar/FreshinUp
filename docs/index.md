@@ -41,14 +41,15 @@
 <br/>
 
 # Changes
-## Oct 6, 2020
-- **ADD** Document template detail page [#504](https://github.com/FreshinUp/foodfleet/issues/504)
-- **ADD** Document template list page with filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
+
+## Oct 9, 2020
+- **MOD** Document templates: List page filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
 
 <br/>
 
-## Oct 5, 2020
-- **MOD** List page filters are not set [#503](https://github.com/FreshinUp/foodfleet/issues/503)
+## Oct 6, 2020
+- **ADD** Document template detail page [#504](https://github.com/FreshinUp/foodfleet/issues/504)
+- **ADD** Document template list page with filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
 
 <br/>
 

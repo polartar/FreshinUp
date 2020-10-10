@@ -30,9 +30,8 @@ export const Expanded = () => ({
 })
 
 const mock = new MockAdapter(axios)
-const users = FIXTURE_USERS
 mock.onGet('users?filter[status]=1').reply(200, {
-  data: users
+  data: FIXTURE_USERS
 })
 
 export const Populated = () => ({
@@ -43,7 +42,7 @@ export const Populated = () => ({
       filters: {
         status_id: [2],
         title: 'Some title',
-        updated_by_uuid: users[0],
+        updated_by_uuid: FIXTURE_USERS[0],
         updated_at: '2020-10-06'
       }
     }
@@ -56,8 +55,8 @@ export const Populated = () => ({
   template: `
     <v-container>
       <filter-sorter
-        :value="filters"
         :statuses="statuses"
+        :filters="filters"
         @runFilter="filterItems"
       />
     </v-container>

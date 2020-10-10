@@ -358,7 +358,6 @@ exports[`components/doc-templates/FilterSorter Snapshots Default 1`] = `
                     input-size="lg"
                     label="Last modified date "
                     only-date=""
-                    range=""
                   >
                     <div
                       class="date-time-picker no-border"
@@ -788,7 +787,6 @@ exports[`components/doc-templates/FilterSorter Snapshots Expanded 1`] = `
                     input-size="lg"
                     label="Last modified date "
                     only-date=""
-                    range=""
                   >
                     <div
                       class="date-time-picker no-border"
@@ -864,7 +862,6 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
 >
   <div
     class="filter-transparent v-card v-sheet theme--light transparent"
-    filters="[object Object]"
   >
     <form
       class="v-form"
@@ -969,11 +966,24 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                       </strong>
                     </div>
                      
-                    <!---->
+                    <button
+                      class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
+                      color="white"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon clear-button-icon fa fa fa fa-times theme--light"
+                        />
+                      </div>
+                    </button>
                   </div>
                    
                   <div
-                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
+                    class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                     flat=""
                     hide-details=""
                     item-text="name"
@@ -994,6 +1004,13 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                           <div
                             class="v-select__selections"
                           >
+                            <div
+                              class="nowrap"
+                            >
+                              <span>
+                                Published
+                              </span>
+                            </div>
                             <input
                               aria-readonly="false"
                               autocomplete="on"
@@ -1042,7 +1059,7 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                                     >
                                       <i
                                         aria-hidden="true"
-                                        class="v-icon far fa-square theme--light"
+                                        class="v-icon fa fa-minus-square theme--light primary--text"
                                       />
                                     </div>
                                      
@@ -1121,16 +1138,17 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                                   </a>
                                 </div>
                                 <div
+                                  class="primary--text"
                                   role="listitem"
                                 >
                                   <a
-                                    class="v-list__tile v-list__tile--link theme--light"
+                                    class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                   >
                                     <div
                                       class="v-list__tile__action"
                                     >
                                       <div
-                                        class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                        class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
                                       >
                                         <div
                                           class="v-input__control"
@@ -1142,19 +1160,19 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                                               class="v-input--selection-controls__input"
                                             >
                                               <input
-                                                aria-checked="false"
+                                                aria-checked="true"
                                                 role="checkbox"
                                                 type="checkbox"
                                                 value=""
                                               />
                                               <div
-                                                class="v-input--selection-controls__ripple"
+                                                class="v-input--selection-controls__ripple primary--text"
                                               />
                                               <i
                                                 aria-hidden="true"
-                                                class="v-icon material-icons theme--light"
+                                                class="v-icon material-icons theme--light primary--text"
                                               >
-                                                check_box_outline_blank
+                                                check_box
                                               </i>
                                             </div>
                                           </div>
@@ -1206,12 +1224,25 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                       </strong>
                     </div>
                      
-                    <!---->
+                    <button
+                      class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
+                      color="white"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon clear-button-icon fa fa fa fa-times theme--light"
+                        />
+                      </div>
+                    </button>
                   </div>
                    
                   <div
                     background-color="white"
-                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                    class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                     height="48"
                     hide-details=""
                     no-filter=""
@@ -1263,21 +1294,22 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                                 role="list"
                               >
                                 <div
+                                  class="primary--text"
                                   role="listitem"
                                 >
-                                  <div
-                                    class="v-list__tile theme--light"
+                                  <a
+                                    class="v-list__tile v-list__tile--link v-list__tile--avatar v-list__tile--active theme--light primary--text"
                                   >
                                     <div
                                       class="v-list__tile__content"
                                     >
                                       <div
-                                        class="v-list__tile__title"
+                                        class="v-list__tile__title text-truncate"
                                       >
-                                        No data available
+                                        Demo Admin
                                       </div>
                                     </div>
-                                  </div>
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -1318,14 +1350,13 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                     input-size="lg"
                     label="Last modified date "
                     only-date=""
-                    range=""
                   >
                     <div
                       class="date-time-picker no-border"
                       id="DateTimePicker"
                     >
                       <div
-                        class="field flex align-center lg"
+                        class="field flex align-center has-value lg"
                         data-v-a0144ed0=""
                       >
                         <input

@@ -23,7 +23,7 @@ class Template extends JsonResource {
             'content' => $this->content,
             'status_id' => $this->status_id,
             'status' => new Status($this->whenLoaded('status')),
-            'updatedBy' => new UserResource($this->whenLoaded('updatedBy')),
+            'updated_by' => new UserResource($this->whenLoaded('updatedBy')),
             'updated_by_uuid' => $this->updated_by_uuid,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

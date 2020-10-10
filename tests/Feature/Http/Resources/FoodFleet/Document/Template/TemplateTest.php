@@ -4,6 +4,7 @@ namespace Tests\Feature\Http\Resources\Foodfleet\Document\Template;
 
 use App\Http\Resources\Foodfleet\Document\Template\Template as Resource;
 use App\Models\Foodfleet\Document\Template\Template as Model;
+use FreshinUp\FreshBusForms\Http\Resources\User\User;
 use Illuminate\Http\Request;
 use Tests\TestCase;
 
@@ -22,6 +23,12 @@ class TemplateTest extends TestCase {
             'updated_by_uuid' => $item->updated_by_uuid
         ];
         $request = app()->make(Request::class);
-        $this->assertArraySubset($expected, $resource->toArray($request));
+        $result = $resource->toArray($request);
+        $this->assertArraySubset($expected, $result);
+
+        // relations
+        $this->assertArrayHasKey('updated_by', $result);
+        $userResource = (new User($item->updatedBy))->toArray($request);
+        $this->assertArraySubset($userResource, $result['updated_by']->toArray($request));
     }
 }
