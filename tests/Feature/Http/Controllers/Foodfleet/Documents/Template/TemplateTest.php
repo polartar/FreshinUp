@@ -128,7 +128,8 @@ class TemplateTest extends TestCase
             'status_id' => $item->status_id,
             'created_at' => str_replace('"', '', json_encode($item->created_at)),
             'updated_at' => str_replace('"', '', json_encode($item->updated_at)),
-            'updated_by_uuid' => $user->updated_by_uuid
+            // TODO: see https://github.com/FreshinUp/foodfleet/issues/500
+//            'updated_by_uuid' => $user->updated_by_uuid
         ], $data);
     }
 
@@ -136,7 +137,7 @@ class TemplateTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $payload = factory(Template::class)->make()->toArray();
+        $payload = factory(Model::class)->make()->toArray();
         $data = $this
             ->json('POST', 'api/foodfleet/document/templates', $payload)
             ->assertStatus(201)
