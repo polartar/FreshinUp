@@ -121,7 +121,7 @@ export default {
         include: INCLUDE
       })
       promises.push(vm.$store.dispatch('documentTemplates/getItem', {
-        params: { id }
+        params: { id, include: INCLUDE }
       }))
     }
     promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))
