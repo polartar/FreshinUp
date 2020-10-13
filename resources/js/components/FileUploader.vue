@@ -16,7 +16,15 @@
       <v-flex
         v-else
       >
-        <div>File: {{ value.name }}</div>
+        File:
+        <v-btn
+          v-if="isDownloadable"
+          flat
+          :href="value.src"
+          target="_blank"
+        >
+          {{ value.name }}
+        </v-btn>
       </v-flex>
     </v-layout>
     <v-layout
@@ -104,6 +112,9 @@ export default {
   computed: {
     maxInBytes () {
       return MB * this.maxFileSize
+    },
+    isDownloadable () {
+      return !!this.value.src && !!this.value.name
     }
   },
   methods: {

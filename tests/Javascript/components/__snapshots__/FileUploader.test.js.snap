@@ -10,9 +10,10 @@ exports[`FileUploader Snapshots defaults 1`] = `
     <div
       class="flex"
     >
-      <div>
-        File: 
-      </div>
+      
+      File:
+      
+      <!---->
     </div>
   </div>
    

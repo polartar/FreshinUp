@@ -16,18 +16,44 @@ export const Default = () => ({
     }
   },
   template: `
-      <v-container>
-        <pre>
-          {{ file }}
-        </pre>
-        <file-uploader
-          v-model="file"
-          :max-file-size="maxFileSize"
-          @onValueChange="onValueChange"
-        />
-      </v-container>
-`
+    <v-container>
+      <pre>
+        {{ file }}
+      </pre>
+      <file-uploader
+        v-model="file"
+        :max-file-size="maxFileSize"
+        @onValueChange="onValueChange"
+      />
+    </v-container>
+  `
+})
+
+export const Downloadable = () => ({
+  components: { FileUploader },
+  data: () => ({
+    file: { name: 'mock name', src: 'https://downloadable.net/mock' },
+    maxFileSize: 5 // 5 MB
+  }),
+  methods: {
+    onValueChange (value) {
+      action('onValueChange')(value)
+    }
+  },
+  template: `
+    <v-container>
+      <pre>
+        {{ file }}
+      </pre>
+      <file-uploader
+        v-model="file"
+        :max-file-size="maxFileSize"
+        @onValueChange="onValueChange"
+      />
+    </v-container>
+  `
 })
 
 storiesOf('FoodFleet|ui/FileUploader', module)
   .add('default', Default)
+  .add('downloadable', Downloadable)

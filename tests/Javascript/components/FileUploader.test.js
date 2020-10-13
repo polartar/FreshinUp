@@ -8,11 +8,7 @@ function MockFile (name, size, mimeType) {
   mimeType = mimeType || 'application/pdf'
 
   function range (count) {
-    let output = ''
-    for (let i = 0; i < count; i++) {
-      output += 'a'
-    }
-    return output
+    return Array(count).fill('a').join('')
   }
 
   let blob = new Blob([range(size)], { type: mimeType })
@@ -61,6 +57,14 @@ describe('FileUploader', () => {
       expect(changeValue[0].src).toEqual('')
     })
 
+    test('showError() should show the error dialog', () => {
+      const errorText = 'error text'
+      const wrapper = shallowMount(Component)
+      wrapper.vm.showError(errorText)
+      expect(wrapper.vm.errorText).toEqual(errorText)
+      expect(wrapper.vm.errorDialog).toEqual(true)
+    })
+
     test('submitFile() return file src', async () => {
       const wrapper = shallowMount(Component, {
         propsData: {
@@ -95,6 +99,16 @@ describe('FileUploader', () => {
       const file = new MockFile(null, 10 * 1024 * 1024, null)
       wrapper.vm.onFileChange([ file ])
       expect(wrapper.vm.errorDialog).toBeTruthy()
+    })
+  })
+  describe('Computed', () => {
+    test('isDownloadable', () => {
+      const wrapper = shallowMount(Component, {
+        propsData: {
+          value: { name: 'mock name', src: 'https://downloadable.net/mockfile' }
+        }
+      })
+      expect(wrapper.vm.isDownloadable).toEqual(true)
     })
   })
 })
