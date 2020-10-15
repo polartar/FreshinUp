@@ -15,7 +15,7 @@
         height="48"
         :items="options"
         hide-details
-        data-vv-name="type_id"
+        data-vv-name="typeId"
       />
     </v-flex>
     <v-flex
@@ -122,11 +122,11 @@ export default {
   },
   computed: {
     currentOption () {
-      return this.options.find(item => item.value === this.type_id)
+      return this.options.find(item => item.value === this.typeId)
     },
     typeValue: {
       get: function () {
-        return this.type_id
+        return this.typeId
       },
       set: function (value) {
         if (value !== this.typeValue) {

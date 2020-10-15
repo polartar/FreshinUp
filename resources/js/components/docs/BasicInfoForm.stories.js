@@ -1,12 +1,19 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import BasicInfoForm from './BasicInfoForm.vue'
-import { FIXTURE_DOCUMENT } from 'tests/__data__/documents'
 
 const types = [
   { value: 1, text: 'From Template' },
   { value: 2, text: 'Downloadable' }
 ]
+const doc = {
+  title: 'mock title',
+  type: 1,
+  description: 'mock description',
+  notes: 'mock notes',
+  template: null,
+  file: { name: '', src: '' }
+}
 
 // Components
 storiesOf('FoodFleet|doc/BasicInfoForm', module)
@@ -56,7 +63,7 @@ storiesOf('FoodFleet|doc/BasicInfoForm', module)
     data () {
       return {
         types: types,
-        doc: FIXTURE_DOCUMENT
+        doc: doc
       }
     },
     methods: {

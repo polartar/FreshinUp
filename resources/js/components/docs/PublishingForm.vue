@@ -29,7 +29,7 @@
       </v-layout>
       <AssignedSearch
         :value="doc.assigned && doc.assigned.uuid"
-        :type_id="doc.assigned_type"
+        :type-id="doc.assigned_type"
         @assign-change="selectAssigned"
         @type-change="changeAssignedType"
       />
@@ -102,7 +102,7 @@ export default {
   mixins: [FormatDate],
   props: {
     isvalid: {
-      type_id: Boolean,
+      type: Boolean,
       default: false
     },
     initdata: {

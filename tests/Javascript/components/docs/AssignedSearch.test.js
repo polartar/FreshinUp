@@ -10,7 +10,7 @@ describe('AssignedSearch', () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         propsData: {
-          type_id: 2,
+          typeId: 2,
           onAssignChange: () => {},
           onTypeChange: () => {}
         }
@@ -41,7 +41,7 @@ describe('AssignedSearch', () => {
     test('currentOption', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          type_id: 2
+          typeId: 2
         }
       })
       expect(wrapper.vm.currentOption.value).toBe(2)
@@ -50,11 +50,11 @@ describe('AssignedSearch', () => {
     test('typeValue change different', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          type_id: 1
+          typeId: 1
         }
       })
 
-      wrapper.vm.type_id = 2
+      wrapper.vm.typeId = 2
       expect(wrapper.vm.typeValue).toBe(2)
       wrapper.vm.typeValue = 3
       expect(wrapper.emitted()['type-change']).toBeTruthy()
@@ -64,7 +64,7 @@ describe('AssignedSearch', () => {
     test('typeValue change same', () => {
       const wrapper = shallowMount(Component, {
         propsData: {
-          type_id: 1
+          typeId: 1
         }
       })
 

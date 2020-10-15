@@ -531,7 +531,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                               <input
                                 aria-readonly="false"
                                 autocomplete="on"
-                                data-vv-name="type_id"
+                                data-vv-name="typeId"
                                 readonly="readonly"
                                 type="text"
                               />
