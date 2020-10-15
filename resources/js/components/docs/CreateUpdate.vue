@@ -115,7 +115,6 @@ export default {
   data () {
     return {
       isNew: false,
-      assigned_uuid: null,
       template: null,
       templates: [],
       file: { name: null, src: null }
@@ -128,7 +127,7 @@ export default {
     ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapFields('documents', [
       'title',
-      'type',
+      'type_id',
       'status',
       'expiration_at',
       'description',
@@ -147,7 +146,7 @@ export default {
     }),
     changeBasicInfo (data) {
       this.title = data.title
-      this.type = data.type
+      this.type_id = data.type_id
       this.description = data.description
       this.notes = data.notes
       this.template = data.template
@@ -168,7 +167,7 @@ export default {
     },
     onSaveClick () {
       this.validator().then(async valid => {
-        let data = { ...this.doc, assigned_uuid: this.assigned_uuid }
+        let data = { ...this.doc }
         data = omitBy(data, (value, key) => {
           const extra = ['created_at', 'updated_at', 'assigned', 'owner']
           return extra.includes(key) || isNull(value)
