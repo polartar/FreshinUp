@@ -56,6 +56,5 @@ class TemplateTest extends TestCase
         $payload = factory(Template::class)->make()->toArray();
         $template->update($payload);
         $this->assertEquals($jane->uuid, $template->updated_by_uuid);
-
     }
 }
