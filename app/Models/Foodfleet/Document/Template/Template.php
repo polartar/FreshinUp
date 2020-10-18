@@ -34,7 +34,8 @@ class Template extends Model
         return $this->belongsTo(Status::class, 'status_id', 'id');
     }
 
-    public function documents () {
+    public function documents()
+    {
         return $this->hasMany(Document::class);
     }
 }
