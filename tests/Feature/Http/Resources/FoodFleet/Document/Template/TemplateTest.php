@@ -11,7 +11,9 @@ use Tests\TestCase;
 class TemplateTest extends TestCase {
 
     public function testResource () {
+        /** @var Model $item */
         $item = factory(Model::class)->create();
+        $item->load(['updatedBy']);
         $resource = new Resource($item);
         $expected = [
             'id' => $item->id,
@@ -22,15 +24,15 @@ class TemplateTest extends TestCase {
             'status_id' => $item->status_id,
             'updated_by_uuid' => $item->updated_by_uuid
         ];
-        dd($expected);
         $request = app()->make(Request::class);
         $result = $resource->toArray($request);
         $this->assertArraySubset($expected, $result);
 
         // relations
-        // TODO: see https://github.com/FreshinUp/foodfleet/issues/500
-//        $this->assertArrayHasKey('updated_by', $result);
-//        $userResource = (new User($item->updatedBy))->toArray($request);
-//        $this->assertArraySubset($userResource, $result['updated_by']->toArray($request));
+        $this->assertArrayHasKey('updated_by', $result);
+        $this->assertArraySubset(
+            (new User($item->updatedBy))->toArray($request),
+            $result['updated_by']->toArray($request)
+        );
     }
 }

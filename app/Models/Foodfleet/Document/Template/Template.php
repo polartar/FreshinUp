@@ -18,11 +18,12 @@ use Illuminate\Support\Facades\Auth;
  * @property string description
  * @property string content
  * @property int status_id
- * @property \App\User updatedBy
+ * @property string updated_by_uuid
  * @property \Carbon\Carbon created_at
  * @property \Carbon\Carbon updated_at
  *
  *
+ * @property \App\User updatedBy
  * @property Status status
  * @property Document[] documents
  */
