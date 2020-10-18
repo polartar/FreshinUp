@@ -1,11 +1,11 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
 import VeeValidate from 'vee-validate'
-import theme from '~/theme'
-// Load Styles
-import '../../vendor/freshinup/fresh-bus-forms/resources/assets/js/stylus/main.styl'
+import theme from '../resources/js/theme'
+import '@freshinup/core-ui/src/styles/stylus/main.styl'
 
 Vue.use(Vuetify, {
   options: {
@@ -17,3 +17,4 @@ Vue.use(Vuetify, {
 
 Vue.use(VueAxios, axios)
 Vue.use(VeeValidate)
+Vue.use(Vuex)

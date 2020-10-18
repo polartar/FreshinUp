@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Unit\Models;
 
+use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Document\Template\Template;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -24,5 +25,9 @@ class TemplateTest extends TestCase
 
         // relations
         $this->assertEquals($template->status_id, $template->status->id);
+        $document = factory(Document::class)->create([
+            'template_uuid' => $template->uuid
+        ]);
+        $this->assertEquals($document->uuid, $template->documents->first()->uuid);
     }
 }

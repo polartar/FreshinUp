@@ -20,6 +20,7 @@ class TemplateTest extends TestCase {
             'description' => $item->description,
             'status_id' => $item->status_id,
         ];
+        dd($expected);
         $request = app()->make(Request::class);
         $this->assertArraySubset($expected, $resource->toArray($request));
     }

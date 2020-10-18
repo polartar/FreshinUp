@@ -2,6 +2,7 @@
 
 namespace App\Models\Foodfleet\Document\Template;
 
+use App\Models\Foodfleet\Document;
 use App\Models\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
 
@@ -20,6 +21,7 @@ use Dyrynda\Database\Support\GeneratesUuid;
  *
  *
  * @property Status status
+ * @property Document[] documents
  */
 class Template extends Model
 {
@@ -30,5 +32,9 @@ class Template extends Model
     public function status()
     {
         return $this->belongsTo(Status::class, 'status_id', 'id');
+    }
+
+    public function documents () {
+        return $this->hasMany(Document::class);
     }
 }

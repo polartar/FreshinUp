@@ -49,7 +49,7 @@ class Templates extends Controller
         $item = Model::where('uuid', $uuid)->firstOrFail();
         $rules = [
             'title' => 'string',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'content' => 'string',
             'status_id' => 'exists:document_template_statuses,id'
         ];

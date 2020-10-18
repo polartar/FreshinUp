@@ -17,29 +17,25 @@ let sortables = [
   { value: '-title', text: 'Title (Z - A)' }
 ]
 
-storiesOf('FoodFleet|doc/FleetMemberDocs', module)
-  .addParameters({
-    backgrounds: [{ name: 'default', value: '#f1f3f6', default: true }]
-  })
-  .add('doc is empty', () => ({
-    components: { FleetMemberDocs },
-    data () {
-      return {
-        docs: [],
-        statuses: statuses,
-        sortables: sortables,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
+export const Empty = () => ({
+  components: { FleetMemberDocs },
+  data () {
+    return {
+      docs: [],
+      statuses: statuses,
+      sortables: sortables,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
-    },
-    template: `
+    }
+  },
+  template: `
       <v-container>
         <fleet-member-docs
           :docs="docs"
@@ -53,40 +49,41 @@ storiesOf('FoodFleet|doc/FleetMemberDocs', module)
         />
       </v-container>
     `
-  }))
-  .add('docs is set', () => ({
-    components: { FleetMemberDocs },
-    data () {
-      return {
-        docs: docs,
-        statuses: statuses,
-        sortables: sortables,
-        pagination: {
-          page: 1,
-          rowsPerPage: 10,
-          totalItems: 5
-        },
-        sorting: {
-          descending: false,
-          sortBy: ''
-        }
+})
+
+export const Populated = () => ({
+  components: { FleetMemberDocs },
+  data () {
+    return {
+      docs: docs,
+      statuses: statuses,
+      sortables: sortables,
+      pagination: {
+        page: 1,
+        rowsPerPage: 10,
+        totalItems: 5
+      },
+      sorting: {
+        descending: false,
+        sortBy: ''
       }
+    }
+  },
+  methods: {
+    manage (item, doc) {
+      action('manage')(item, doc)
     },
-    methods: {
-      manage (item, doc) {
-        action('manage')(item, doc)
-      },
-      manageMultiple (act, selected) {
-        action('manageMultiple')(act, selected)
-      },
-      changeStatus (value, doc) {
-        action('changeStatus')(value, doc)
-      },
-      changeStatusMultiple (value, selected) {
-        action('changeStatusMultiple')(value, selected)
-      }
+    manageMultiple (act, selected) {
+      action('manageMultiple')(act, selected)
     },
-    template: `
+    changeStatus (value, doc) {
+      action('changeStatus')(value, doc)
+    },
+    changeStatusMultiple (value, selected) {
+      action('changeStatusMultiple')(value, selected)
+    }
+  },
+  template: `
       <v-container>
         <fleet-member-docs
           :docs="docs"
@@ -104,4 +101,11 @@ storiesOf('FoodFleet|doc/FleetMemberDocs', module)
         />
       </v-container>
     `
-  }))
+})
+
+storiesOf('FoodFleet|components/docs/FleetMemberDocs', module)
+  .addParameters({
+    backgrounds: [{ name: 'default', value: '#f1f3f6', default: true }]
+  })
+  .add('Empty', Empty)
+  .add('Populated', Populated)

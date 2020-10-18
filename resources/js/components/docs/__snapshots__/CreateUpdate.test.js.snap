@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Document CreateUpdate Component Mount mount create page 1`] = `
-<form
-  class="v-form"
-  novalidate="novalidate"
+exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
+<div
+  class="mx-4"
 >
   <div
-    class="layout row align-center pt-3"
+    class="layout row align-center"
   >
     <button
       class="v-btn v-btn--flat v-btn--small theme--light"
@@ -46,7 +45,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
       class="flex text-xs-right sm2 xs12"
     >
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
         role="combobox"
       >
         <div
@@ -61,6 +60,11 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               <div
                 class="v-select__selections"
               >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  Pending
+                </div>
                 <input
                   aria-readonly="false"
                   autocomplete="on"
@@ -98,10 +102,11 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     role="list"
                   >
                     <div
+                      class="primary--text"
                       role="listitem"
                     >
                       <a
-                        class="v-list__tile v-list__tile--link theme--light"
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                       >
                         <div
                           class="v-list__tile__content"
@@ -192,27 +197,21 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
     </div>
   </div>
    
-  <hr
-    class="v-divider theme--light"
-  />
-   
-  <br />
-   
   <div
-    class="layout doc-new-wrap row wrap pa-2 justify-space-between"
+    class="layout row wrap"
   >
     <div
-      class="flex md7 sm12"
+      class="flex sm12 md8 lg9"
     >
       <div
-        class="v-card v-sheet theme--light"
+        class="ml-2 mt-2 v-card v-sheet theme--light"
       >
         <div
           class="v-card__title subheading text-uppercase font-weight-bold"
         >
           
-          Basic information
-        
+        Basic information
+      
         </div>
          
         <hr
@@ -221,7 +220,6 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
          
         <div
           class="layout row wrap pa-3 justify-space-between"
-          errors="[object Object]"
         >
           <div
             class="flex md7 sm12"
@@ -230,8 +228,8 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               class="layout row mb-2"
             >
               
-      Title
-    
+            Title
+          
             </div>
              
             <div
@@ -282,12 +280,12 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               class="layout row mb-2"
             >
               
-      Type
-    
+            Type
+          
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
               role="combobox"
             >
               <div
@@ -299,19 +297,21 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                   <div
                     class="v-select__slot"
                   >
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Type
+                    </label>
                     <div
                       class="v-select__selections"
                     >
-                      <div
-                        class="v-select__selection v-select__selection--comma"
-                      >
-                        From Template
-                      </div>
                       <input
                         aria-label="Type"
                         aria-readonly="false"
                         autocomplete="on"
-                        data-vv-name="type"
+                        data-vv-name="type_id"
                         readonly="readonly"
                         type="text"
                       />
@@ -346,11 +346,10 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                           role="list"
                         >
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -407,8 +406,8 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               class="layout row mb-2"
             >
               
-      Short Description
-    
+            Short Description
+          
             </div>
              
             <div
@@ -454,114 +453,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
             </div>
           </div>
            
-          <div
-            class="flex md7 sm12"
-          >
-            <div
-              class="layout row mb-2"
-            >
-              
-      Document Template
-    
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Document Template
-                    </label>
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-label="Document Template"
-                        aria-readonly="false"
-                        autocomplete="on"
-                        data-vv-name="template"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!---->
            
           <div
             class="flex xs12"
@@ -570,8 +462,8 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               class="layout row mb-2"
             >
               
-      Notes / Additional Info
-    
+            Notes / Additional Info
+          
             </div>
              
             <div
@@ -616,27 +508,53 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               </div>
             </div>
           </div>
+           
+          <div
+            class="flex"
+          >
+            <button
+              class="v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Cancel
+          
+              </div>
+            </button>
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Submit
+          
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
      
     <div
-      class="flex md4 sm12"
+      class="flex sm12 md4 lg3"
     >
       <div
-        class="v-card v-sheet theme--light"
+        class="ml-2 mt-2 v-card v-sheet theme--light"
       >
         <div
-          class="v-card__title subheading text-uppercase font-weight-bold"
+          class="v-card__title"
         >
           
-          Publishing
-        
+        Publishing
+      
         </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
          
         <div
           class="layout row wrap pa-3"
@@ -644,13 +562,13 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
           <div
             class="flex xs12 mb-3"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h3
+              class="title font-weight-bold mb-2"
             >
               
-      Submitted on
-    
-            </div>
+            Submitted on
+          
+            </h3>
              
             <!---->
           </div>
@@ -658,13 +576,13 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
           <div
             class="flex xs12"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h4
+              class="title font-weight-bold mb-2"
             >
               
-      Assigned to
-    
-            </div>
+            Assigned to
+          
+            </h4>
              
             <div
               class="layout row justify-space-between"
@@ -923,13 +841,13 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
           <div
             class="flex xs12"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h4
+              class="title font-weight-bold mb-2"
             >
               
-      Expiration Date
-    
-            </div>
+            Expiration Date
+          
+            </h4>
              
             <div
               class="date-time-picker"
@@ -1993,7 +1911,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               class="layout row wrap justify-space-between"
             >
               <div
-                class="flex xs5"
+                class="flex xs12 sm-6"
               >
                 <button
                   class="v-btn v-btn--block theme--light"
@@ -2003,14 +1921,14 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     class="v-btn__content"
                   >
                     
-          Preview
-        
+                Preview
+              
                   </div>
                 </button>
               </div>
                
               <div
-                class="flex xs5"
+                class="flex xs12 sm-6"
               >
                 <button
                   class="primary v-btn v-btn--block theme--light"
@@ -2020,8 +1938,8 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     class="v-btn__content"
                   >
                     
-          Save Changes
-        
+                Submit
+              
                   </div>
                 </button>
               </div>
@@ -2047,6 +1965,7 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
       >
         <div
           class="v-card v-sheet theme--light"
+          document="[object Object]"
         >
           <div
             class="v-card__title justify-space-between px-4 py-2"
@@ -2078,99 +1997,86 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
           />
            
           <div
-            class="layout column px-4 py-3 justify-stretch"
+            class="v-card__text"
           >
             <div
-              class="layout"
+              class="layout column px-4 py-3 justify-stretch"
             >
               <div
-                class="flex sm3 mr-2"
+                class="layout"
               >
                 <div
-                  class="v-input body-2 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-                  role="combobox"
+                  class="flex sm3 mr-2"
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                    role="combobox"
                   >
                     <div
-                      class="v-input__slot primary"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot primary"
                       >
                         <div
-                          class="v-select__selections"
-                        >
-                          <input
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
+                          class="v-select__slot"
                         >
                           <div
-                            class="v-input__icon v-input__icon--append"
+                            class="v-select__selections"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light "
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                        >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-input__append-inner"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
                             >
                               <div
-                                role="listitem"
+                                class="v-list theme--light"
+                                role="list"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  role="listitem"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    class="v-list__tile theme--light"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile__content"
                                     >
-                                      Sample Event: LA Stadium Fest
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Event Samples
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2179,96 +2085,79 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex sm3 ml-2"
-              >
+                 
                 <div
-                  class="v-input body-2 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-                  role="combobox"
+                  class="flex sm3 ml-2"
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                    role="combobox"
                   >
                     <div
-                      class="v-input__slot primary"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot primary"
                       >
                         <div
-                          class="v-select__selections"
-                        >
-                          <input
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
+                          class="v-select__slot"
                         >
                           <div
-                            class="v-input__icon v-input__icon--append"
+                            class="v-select__selections"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light "
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                        >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-input__append-inner"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
                             >
                               <div
-                                role="listitem"
+                                class="v-list theme--light"
+                                role="list"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  role="listitem"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    class="v-list__tile theme--light"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile__content"
                                     >
-                                      Contract: 2 Brothers Kitchen
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Contract samples
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2277,37 +2166,20 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex sm3"
-              />
-               
-              <div
-                class="flex sm3 text-xs-right"
-              >
-                <button
-                  class="mx-0 v-btn v-btn--disabled theme--light primary--text"
-                  disabled="disabled"
-                  target="_blank"
-                  type="button"
+                 
+                <div
+                  class="flex sm3"
+                />
+                 
+                <div
+                  class="flex sm3 text-xs-right"
                 >
-                  <div
-                    class="v-btn__content"
-                  >
-                    
-        Download PDF
-      
-                  </div>
-                </button>
+                  <!---->
+                </div>
               </div>
-            </div>
-             
-            <div
-              class="my-3 px-3 v-card v-sheet theme--light"
-            >
+               
               <div
-                class="layout align-center my-3"
+                class="layout align-center px-3 my-3"
               >
                 <div
                   class="flex sm3"
@@ -2338,8 +2210,8 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
                   class="flex title primary--text font-weight-bold sm6 pl-2"
                 >
                   
+          
         
-      
                 </div>
                  
                 <!---->
@@ -2356,104 +2228,131 @@ exports[`Document CreateUpdate Component Mount mount create page 1`] = `
               </div>
                
               <div
-                class="layout mb-3"
+                class="layout"
               >
                 <div
-                  class="layout column mb-3"
+                  class="layout"
                 >
                   <div
-                    class="layout"
+                    class="flex mr-3 py-3 sm4"
                   >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mr-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Food Fleet Signature
-  
-                        </div>
-                      </div>
+                      
+              Food Fleet Signature
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex mx-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mx-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Printed Name
-  
-                        </div>
-                      </div>
+                      
+              Printed Name
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex ml-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="ml-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Date
-  
-                        </div>
-                      </div>
+                      
+              Date
+            
                     </div>
                   </div>
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="layout"
+              >
+                <div
+                  class="layout"
+                >
+                  <div
+                    class="flex mr-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="body-1 mt-2"
+                    >
+                      
+              Restaurant Owner Name: 
+            
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex mx-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="body-1 mt-2"
+                    >
+                      
+              Printed Name
+            
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex ml-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="body-1 mt-2"
+                    >
+                      
+              Date
+            
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</form>
+</div>
 `;
 
-exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
-<form
-  class="v-form"
-  novalidate="novalidate"
+exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
+<div
+  class="mx-4"
 >
   <div
-    class="layout row align-center pt-3"
+    class="layout row align-center"
   >
     <button
       class="v-btn v-btn--flat v-btn--small theme--light"
@@ -2493,7 +2392,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
       class="flex text-xs-right sm2 xs12"
     >
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
         role="combobox"
       >
         <div
@@ -2508,6 +2407,11 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               <div
                 class="v-select__selections"
               >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  Approved
+                </div>
                 <input
                   aria-readonly="false"
                   autocomplete="on"
@@ -2562,10 +2466,11 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                       </a>
                     </div>
                     <div
+                      class="primary--text"
                       role="listitem"
                     >
                       <a
-                        class="v-list__tile v-list__tile--link theme--light"
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                       >
                         <div
                           class="v-list__tile__content"
@@ -2639,27 +2544,21 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
     </div>
   </div>
    
-  <hr
-    class="v-divider theme--light"
-  />
-   
-  <br />
-   
   <div
-    class="layout doc-new-wrap row wrap pa-2 justify-space-between"
+    class="layout row wrap"
   >
     <div
-      class="flex md7 sm12"
+      class="flex sm12 md8 lg9"
     >
       <div
-        class="v-card v-sheet theme--light"
+        class="ml-2 mt-2 v-card v-sheet theme--light"
       >
         <div
           class="v-card__title subheading text-uppercase font-weight-bold"
         >
           
-          Basic information
-        
+        Basic information
+      
         </div>
          
         <hr
@@ -2668,7 +2567,6 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
          
         <div
           class="layout row wrap pa-3 justify-space-between"
-          errors="[object Object]"
         >
           <div
             class="flex md7 sm12"
@@ -2677,8 +2575,8 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               class="layout row mb-2"
             >
               
-      Title
-    
+            Title
+          
             </div>
              
             <div
@@ -2722,12 +2620,12 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               class="layout row mb-2"
             >
               
-      Type
-    
+            Type
+          
             </div>
              
             <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
             >
               <div
@@ -2739,21 +2637,19 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                   <div
                     class="v-select__slot"
                   >
-                    <label
-                      aria-hidden="true"
-                      class="v-label theme--light"
-                      style="left: 0px; position: absolute;"
-                    >
-                      Type
-                    </label>
                     <div
                       class="v-select__selections"
                     >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        From Template
+                      </div>
                       <input
                         aria-label="Type"
                         aria-readonly="false"
                         autocomplete="on"
-                        data-vv-name="type"
+                        data-vv-name="type_id"
                         readonly="readonly"
                         type="text"
                       />
@@ -2788,10 +2684,11 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -2848,8 +2745,8 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               class="layout row mb-2"
             >
               
-      Short Description
-    
+            Short Description
+          
             </div>
              
             <div
@@ -2888,7 +2785,114 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
             </div>
           </div>
            
-          <!---->
+          <div
+            class="flex md7 sm12"
+          >
+            <div
+              class="layout row mb-2"
+            >
+              
+            Document Template
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Document Template
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <input
+                        aria-label="Document Template"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        data-vv-name="template_uuid"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <div
+                              class="v-list__tile theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  No data available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
            
           <div
             class="flex xs12"
@@ -2897,8 +2901,8 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               class="layout row mb-2"
             >
               
-      Notes / Additional Info
-    
+            Notes / Additional Info
+          
             </div>
              
             <div
@@ -2936,27 +2940,53 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
+           
+          <div
+            class="flex"
+          >
+            <button
+              class="v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Cancel
+          
+              </div>
+            </button>
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Save changes
+          
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
      
     <div
-      class="flex md4 sm12"
+      class="flex sm12 md4 lg3"
     >
       <div
-        class="v-card v-sheet theme--light"
+        class="ml-2 mt-2 v-card v-sheet theme--light"
       >
         <div
-          class="v-card__title subheading text-uppercase font-weight-bold"
+          class="v-card__title"
         >
           
-          Publishing
-        
+        Publishing
+      
         </div>
-         
-        <hr
-          class="v-divider theme--light"
-        />
          
         <div
           class="layout row wrap pa-3"
@@ -2964,35 +2994,34 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
           <div
             class="flex xs12 mb-3"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h3
+              class="title font-weight-bold mb-2"
             >
               
-      Submitted on
-    
-            </div>
+            Submitted on
+          
+            </h3>
              
             <div>
               
-      Sep 30, 2019 • 03:51 am by Level 6 User
-    
+            Sep 30, 2019 • 03:51 am by Level 6 User
+          
             </div>
           </div>
            
           <div
             class="flex xs12"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h4
+              class="title font-weight-bold mb-2"
             >
               
-      Assigned to
-    
-            </div>
+            Assigned to
+          
+            </h4>
              
             <div
               class="layout row justify-space-between"
-              value="0623e163-d229-4fe9-b54f-6bbfd5b559e0"
             >
               <div
                 class="flex md6 sm12"
@@ -3057,6 +3086,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                               role="list"
                             >
                               <div
+                                class=""
                                 role="listitem"
                               >
                                 <a
@@ -3156,7 +3186,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               >
                 <div
                   background-color="white"
-                  class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--is-loading theme--light"
+                  class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                   height="48"
                 >
                   <div
@@ -3180,14 +3210,12 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                           class="v-input__append-inner"
                         >
                           <div
-                            class="v-input__icon v-input__icon--clear"
+                            class="v-input__icon v-input__icon--"
                           >
                             <i
                               aria-hidden="true"
                               class="v-icon v-icon--link material-icons theme--light"
-                            >
-                              clear
-                            </i>
+                            />
                           </div>
                         </div>
                         <div
@@ -3220,11 +3248,10 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                               role="list"
                             >
                               <div
-                                class="primary--text"
                                 role="listitem"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                <div
+                                  class="v-list__tile theme--light"
                                 >
                                   <div
                                     class="v-list__tile__content"
@@ -3232,40 +3259,13 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                                     <div
                                       class="v-list__tile__title"
                                     >
-                                      eligendi
+                                      No data available
                                     </div>
                                   </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-valuemax="100"
-                        aria-valuemin="0"
-                        class="v-progress-linear"
-                        role="progressbar"
-                        style="height: 2px;"
-                      >
-                        <div
-                          class="v-progress-linear__background primary"
-                          style="height: 2px; opacity: 0.3; width: 100%;"
-                        />
-                        <div
-                          class="v-progress-linear__bar"
-                        >
-                          <div
-                            class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
-                          >
-                            <div
-                              class="v-progress-linear__bar__indeterminate long primary"
-                            />
-                            <div
-                              class="v-progress-linear__bar__indeterminate short primary"
-                            />
-                          </div>
-                          <!---->
                         </div>
                       </div>
                     </div>
@@ -3278,13 +3278,13 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
           <div
             class="flex xs12"
           >
-            <div
-              class="layout title font-weight-bold mb-2"
+            <h4
+              class="title font-weight-bold mb-2"
             >
               
-      Expiration Date
-    
-            </div>
+            Expiration Date
+          
+            </h4>
              
             <div
               class="date-time-picker"
@@ -3382,6 +3382,15 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                         data-v-17cb1efe=""
                       >
                         <span
+                          class="slidevnext-leave slidevnext-leave-active"
+                          data-v-17cb1efe=""
+                        >
+                          
+        ...
+      
+                        </span>
+                        <span
+                          class="slidevnext-enter slidevnext-enter-active"
                           data-v-17cb1efe=""
                         >
                           
@@ -3441,7 +3450,29 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                               data-v-0da13aa6=""
                             >
                               <button
-                                class="custom-button flex align-center justify-content-center date-buttons lm-fs-16 padding-button"
+                                class="custom-button flex align-center justify-content-center date-buttons lm-fs-16 padding-button slidevnext-leave slidevnext-leave-active"
+                                data-v-02b1f8d2=""
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <span
+                                  class="custom-button-effect"
+                                  data-v-02b1f8d2=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <span
+                                  class="custom-button-content flex align-center justify-content-center flex-1"
+                                  data-v-02b1f8d2=""
+                                  style="color: rgb(25, 118, 210); fill: #1976D2;"
+                                >
+                                  
+            June
+          
+                                </span>
+                              </button>
+                              <button
+                                class="custom-button flex align-center justify-content-center date-buttons lm-fs-16 padding-button slidevnext-enter slidevnext-enter-active"
                                 data-v-02b1f8d2=""
                                 data-v-0da13aa6=""
                                 tabindex="-1"
@@ -3584,7 +3615,723 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                             data-v-0da13aa6=""
                           >
                             <div
-                              class="datepicker-days flex"
+                              class="datepicker-days flex slidenext-leave slidenext-leave-active"
+                              data-v-0da13aa6=""
+                            >
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              1
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              2
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              3
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              4
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              5
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              6
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              7
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              8
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              9
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              10
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              11
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              12
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              13
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              14
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              15
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              16
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              17
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              18
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              19
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              20
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              21
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              22
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              23
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              24
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              25
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              26
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <span
+                                  class="datepicker-today"
+                                  data-v-0da13aa6=""
+                                />
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              27
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              28
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              29
+            
+                                </span>
+                              </button>
+                              <button
+                                class="datepicker-day flex align-center justify-content-center enable"
+                                data-v-0da13aa6=""
+                                tabindex="-1"
+                                type="button"
+                              >
+                                <!---->
+                                <span
+                                  class="datepicker-day-effect"
+                                  data-v-0da13aa6=""
+                                  style="background-color: rgb(25, 118, 210);"
+                                />
+                                <!---->
+                                <span
+                                  class="datepicker-day-text flex-1"
+                                  data-v-0da13aa6=""
+                                >
+                                  
+              30
+            
+                                </span>
+                              </button>
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                              <div
+                                class="datepicker-day flex align-center justify-content-center"
+                                data-v-0da13aa6=""
+                              />
+                            </div>
+                            <div
+                              class="datepicker-days flex slidenext-enter slidenext-enter-active"
                               data-v-0da13aa6=""
                             >
                               <div
@@ -4362,7 +5109,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               class="layout row wrap justify-space-between"
             >
               <div
-                class="flex xs5"
+                class="flex xs12 sm-6"
               >
                 <button
                   class="v-btn v-btn--block theme--light"
@@ -4372,14 +5119,14 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                     class="v-btn__content"
                   >
                     
-          Preview
-        
+                Preview
+              
                   </div>
                 </button>
               </div>
                
               <div
-                class="flex xs5"
+                class="flex xs12 sm-6"
               >
                 <button
                   class="primary v-btn v-btn--block theme--light"
@@ -4389,8 +5136,8 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                     class="v-btn__content"
                   >
                     
-          Save Changes
-        
+                Save changes
+              
                   </div>
                 </button>
               </div>
@@ -4416,6 +5163,7 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
       >
         <div
           class="v-card v-sheet theme--light"
+          document="[object Object]"
         >
           <div
             class="v-card__title justify-space-between px-4 py-2"
@@ -4447,99 +5195,86 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
           />
            
           <div
-            class="layout column px-4 py-3 justify-stretch"
+            class="v-card__text"
           >
             <div
-              class="layout"
+              class="layout column px-4 py-3 justify-stretch"
             >
               <div
-                class="flex sm3 mr-2"
+                class="layout"
               >
                 <div
-                  class="v-input body-2 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-                  role="combobox"
+                  class="flex sm3 mr-2"
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                    role="combobox"
                   >
                     <div
-                      class="v-input__slot primary"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot primary"
                       >
                         <div
-                          class="v-select__selections"
-                        >
-                          <input
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
+                          class="v-select__slot"
                         >
                           <div
-                            class="v-input__icon v-input__icon--append"
+                            class="v-select__selections"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light "
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                        >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-input__append-inner"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
                             >
                               <div
-                                role="listitem"
+                                class="v-list theme--light"
+                                role="list"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  role="listitem"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    class="v-list__tile theme--light"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile__content"
                                     >
-                                      Sample Event: LA Stadium Fest
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Event Samples
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -4548,96 +5283,79 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex sm3 ml-2"
-              >
+                 
                 <div
-                  class="v-input body-2 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-                  role="combobox"
+                  class="flex sm3 ml-2"
                 >
                   <div
-                    class="v-input__control"
+                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                    role="combobox"
                   >
                     <div
-                      class="v-input__slot primary"
+                      class="v-input__control"
                     >
                       <div
-                        class="v-select__slot"
+                        class="v-input__slot primary"
                       >
                         <div
-                          class="v-select__selections"
-                        >
-                          <input
-                            aria-readonly="false"
-                            autocomplete="on"
-                            readonly="readonly"
-                            type="text"
-                          />
-                        </div>
-                        <div
-                          class="v-input__append-inner"
+                          class="v-select__slot"
                         >
                           <div
-                            class="v-input__icon v-input__icon--append"
+                            class="v-select__selections"
                           >
-                            <i
-                              aria-hidden="true"
-                              class="v-icon material-icons theme--light"
-                            >
-                              arrow_drop_down
-                            </i>
+                            <input
+                              aria-readonly="false"
+                              autocomplete="on"
+                              readonly="readonly"
+                              type="text"
+                            />
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light "
-                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                        >
                           <div
-                            class="v-select-list v-card theme--light"
+                            class="v-input__append-inner"
                           >
                             <div
-                              class="v-list theme--light"
-                              role="list"
+                              class="v-input__icon v-input__icon--append"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="v-menu"
+                        >
+                          <div
+                            class="v-menu__content theme--light "
+                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                          >
+                            <div
+                              class="v-select-list v-card theme--light"
                             >
                               <div
-                                role="listitem"
+                                class="v-list theme--light"
+                                role="list"
                               >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
+                                <div
+                                  role="listitem"
                                 >
                                   <div
-                                    class="v-list__tile__content"
+                                    class="v-list__tile theme--light"
                                   >
                                     <div
-                                      class="v-list__tile__title"
+                                      class="v-list__tile__content"
                                     >
-                                      Contract: 2 Brothers Kitchen
+                                      <div
+                                        class="v-list__tile__title"
+                                      >
+                                        No data available
+                                      </div>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__content"
-                                  >
-                                    <div
-                                      class="v-list__tile__title"
-                                    >
-                                      Contract samples
-                                    </div>
-                                  </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -4646,37 +5364,20 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex sm3"
-              />
-               
-              <div
-                class="flex sm3 text-xs-right"
-              >
-                <button
-                  class="mx-0 v-btn v-btn--disabled theme--light primary--text"
-                  disabled="disabled"
-                  target="_blank"
-                  type="button"
+                 
+                <div
+                  class="flex sm3"
+                />
+                 
+                <div
+                  class="flex sm3 text-xs-right"
                 >
-                  <div
-                    class="v-btn__content"
-                  >
-                    
-        Download PDF
-      
-                  </div>
-                </button>
+                  <!---->
+                </div>
               </div>
-            </div>
-             
-            <div
-              class="my-3 px-3 v-card v-sheet theme--light"
-            >
+               
               <div
-                class="layout align-center my-3"
+                class="layout align-center px-3 my-3"
               >
                 <div
                   class="flex sm3"
@@ -4707,17 +5408,11 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                   class="flex title primary--text font-weight-bold sm6 pl-2"
                 >
                   
-        aliasa
-      
+          
+        
                 </div>
                  
-                <div
-                  class="flex body-2 text-xs-right sm3"
-                >
-                  
-        Expiration Date: 10/09/2019
-      
-                </div>
+                <!---->
               </div>
                
               <hr
@@ -4727,88 +5422,60 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
               <div
                 class="layout mt-3"
               >
-                <div>
-                  QZkBryOdhffHIouRmEBnrA7fhub6DHkvirpOdkO5IHTaqMRFKY
-                </div>
+                <div />
               </div>
                
               <div
-                class="layout mb-3"
+                class="layout"
               >
                 <div
-                  class="layout column mb-3"
+                  class="layout"
                 >
                   <div
-                    class="layout"
+                    class="flex mr-3 py-3 sm4"
                   >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mr-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Food Fleet Signature
-  
-                        </div>
-                      </div>
+                      
+              Food Fleet Signature
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex mx-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mx-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Printed Name
-  
-                        </div>
-                      </div>
+                      
+              Printed Name
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex ml-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="ml-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Date
-  
-                        </div>
-                      </div>
+                      
+              Date
+            
                     </div>
                   </div>
                 </div>
@@ -4818,79 +5485,53 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
                 class="layout"
               >
                 <div
-                  class="layout column mb-3"
+                  class="layout"
                 >
                   <div
-                    class="layout"
+                    class="flex mr-3 py-3 sm4"
                   >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mr-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Level 6 User
-  
-                        </div>
-                      </div>
+                      
+              Restaurant Owner Name: 
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex mx-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="mx-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Printed Name
-  
-                        </div>
-                      </div>
+                      
+              Printed Name
+            
                     </div>
+                  </div>
+                   
+                  <div
+                    class="flex ml-3 py-3 sm4"
+                  >
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
                     <div
-                      class="flex sm4"
+                      class="body-1 mt-2"
                     >
-                      <div
-                        class="ml-3"
-                      >
-                        <div
-                          class="py-3"
-                        />
-                         
-                        <hr
-                          class="v-divider theme--light"
-                        />
-                         
-                        <div
-                          class="body-1 mt-2"
-                        >
-                          
-    Date
-  
-                        </div>
-                      </div>
+                      
+              Date
+            
                     </div>
                   </div>
                 </div>
@@ -4901,5 +5542,5 @@ exports[`Document CreateUpdate Component Mount mount edit page 1`] = `
       </div>
     </div>
   </div>
-</form>
+</div>
 `;

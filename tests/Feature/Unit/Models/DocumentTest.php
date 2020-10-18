@@ -31,7 +31,8 @@ class DocumentTest extends TestCase
             'deleted_at' => $type->deleted_at,
             'assigned_uuid' => $type->assigned_uuid,
             'assigned_type' => $type->assigned_type,
-             'event_store_uuid' => $type->event_store_uuid
+            'event_store_uuid' => $type->event_store_uuid,
+            'template_uuid' => $type->template_uuid,
         ]);
     }
 
@@ -68,5 +69,11 @@ class DocumentTest extends TestCase
         ]);
         $this->assertEquals($document->assigned_uuid, $document->assigned->uuid);
         $this->assertEquals($document->assigned_type, get_class($document->assigned));
+    }
+
+    public function testTemplate()
+    {
+        $document = factory(Document::class)->make();
+        $this->assertEquals($document->template_uuid, $document->template->uuid);
     }
 }

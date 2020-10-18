@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_DOCUMENT, EMPTY_DOCUMENT } from 'tests/__data__/documents'
@@ -9,7 +9,7 @@ import documents from '~/store/modules/documents'
 import documentStatuses from '~/store/modules/documentStatuses'
 import documentTypes from '~/store/modules/documentTypes'
 
-describe('Document CreateUpdate Component', () => {
+describe('components/docs/CreateUpdate', () => {
   let localVue, mock, store
   describe('Mount', () => {
     beforeEach(() => {
@@ -127,56 +127,11 @@ describe('Document CreateUpdate Component', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore(
-        {},
-        {
-          modules: {
-            documents: documents({}),
-            documentStatuses: documentStatuses({}),
-            documentTypes: documentTypes({})
-          }
-        }
-      )
+      store = createStore()
     })
 
     afterEach(() => {
       mock.restore()
-    })
-
-    test('changeBasicInfo function change doc', async () => {
-      const wrapper = shallowMount(BaseComponent, {
-        localVue: localVue,
-        store
-      })
-
-      await wrapper.vm.$store.dispatch('documents/getItem', {
-        params: { id: 1 }
-      })
-
-      wrapper.vm.changeBasicInfo({
-        title: 'mock title123'
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.title).toBe('mock title123')
-    })
-
-    test('changePublishing function change doc', async () => {
-      const wrapper = shallowMount(BaseComponent, {
-        localVue: localVue,
-        store
-      })
-
-      await wrapper.vm.$store.dispatch('documents/getItem', {
-        params: { id: 1 }
-      })
-
-      wrapper.vm.changePublishing({
-        assigned_type: 3,
-        assigned_uuid: 'mock-uuid'
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.doc.assigned_type).toBe(3)
-      expect(wrapper.vm.doc.assigned_uuid).toBe('mock-uuid')
     })
   })
 })
