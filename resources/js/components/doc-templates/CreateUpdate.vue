@@ -56,7 +56,8 @@ import get from 'lodash/get'
 import DeleteDialog from '~/components/DeleteDialog'
 
 const INCLUDE = [
-  'status'
+  'status',
+  'updated_by'
 ]
 export default {
   layout: 'admin',
