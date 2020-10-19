@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             StoreTypesSeeder::class,
             DocumentTypesSeeder::class,
             DocumentStatusesSeeder::class,
+            DocumentTemplateSeeder::class,
             LocationCategorySeeder::class,
             VenueStatusesSeeder::class,
         ]);

@@ -54,7 +54,7 @@
       max-width="1200"
     >
       <document-preview
-        :document="doc"
+        :value="doc"
         :templates="templates"
         :events="events"
         @close="previewDialog = false"
@@ -80,10 +80,9 @@ export default {
   data () {
     return {
       isNew: false,
-      assigned_uuid: null,
       template: null,
-      file: { name: null, src: null },
-      previewDialog: false
+      previewDialog: false,
+      file: { name: null, src: null }
     }
   },
   computed: {

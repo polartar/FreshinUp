@@ -49,6 +49,7 @@
           >
             <v-select
               v-model="template_uuid"
+              disabled
               background-color="primary"
               item-text="title"
               item-value="uuid"

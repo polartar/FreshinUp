@@ -826,7 +826,7 @@ export const EMPTY_DOCUMENT = {
   notes: null,
   status_id: 1,
   title_id: null,
-  type: 1,
+  type_id: 1,
   updated_at: null,
   uuid: null
 }

@@ -39,7 +39,7 @@ class Document extends JsonResource
             'notes' => $this->notes,
             'owner' => new UserResource($this->whenLoaded('owner')),
             'assigned' => new $assignedResource($this->whenLoaded('assigned')),
-            'assigned_type' => 1,
+            'assigned_type' => $assignedType,
             'event_store_uuid' => $this->event_store_uuid,
             'expiration_at' => $this->expiration_at,
             'created_at' => $this->created_at,

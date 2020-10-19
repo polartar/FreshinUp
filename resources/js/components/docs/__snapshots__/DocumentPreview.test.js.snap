@@ -130,7 +130,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
             class="flex sm3 ml-2"
           >
             <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-disabled theme--light"
               role="combobox"
             >
               <div
@@ -148,6 +148,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
                       <input
                         aria-readonly="false"
                         autocomplete="on"
+                        disabled="disabled"
                         readonly="readonly"
                         type="text"
                       />
@@ -160,7 +161,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
                       >
                         <i
                           aria-hidden="true"
-                          class="v-icon material-icons theme--light"
+                          class="v-icon v-icon--disabled material-icons theme--light"
                         >
                           arrow_drop_down
                         </i>
@@ -588,7 +589,7 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
             class="flex sm3 ml-2"
           >
             <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
               role="combobox"
             >
               <div
@@ -604,13 +605,14 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
                       class="v-select__selections"
                     >
                       <div
-                        class="v-select__selection v-select__selection--comma"
+                        class="v-select__selection v-select__selection--comma v-select__selection--disabled"
                       >
                         catering contract
                       </div>
                       <input
                         aria-readonly="false"
                         autocomplete="on"
+                        disabled="disabled"
                         readonly="readonly"
                         type="text"
                       />
@@ -623,7 +625,7 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
                       >
                         <i
                           aria-hidden="true"
-                          class="v-icon material-icons theme--light"
+                          class="v-icon v-icon--disabled material-icons theme--light"
                         >
                           arrow_drop_down
                         </i>
