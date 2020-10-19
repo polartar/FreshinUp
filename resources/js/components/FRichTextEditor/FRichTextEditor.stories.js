@@ -1,7 +1,8 @@
 import { storiesOf } from '@storybook/vue'
-// import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
 import FRichTextEditor from './FRichTextEditor'
+import { MAIN } from '../../../../.storybook/categories'
 
 const SAMPLE_TEXT = `
 <h2>
@@ -42,14 +43,23 @@ export const Populated = () => ({
       text: SAMPLE_TEXT
     }
   },
+  methods: {
+    onInput (value) {
+      this.text = value
+      action('onInput')(value)
+    }
+  },
   template: `
     <v-container>
-      <f-rich-text-editor v-model="text" />
+      <f-rich-text-editor
+        :value="text"
+        @input="onInput"
+      />
     </v-container>
   `
 })
 
-storiesOf('FoodFleet|components/FRichTextEditor', module)
+storiesOf(`${MAIN}|components/FRichTextEditor`, module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

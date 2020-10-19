@@ -24,6 +24,7 @@ import companies from './modules/companies'
 import venueStatuses from './modules/venueStatuses'
 import locations from './modules/locations'
 
+// TODO file do delete since we now use Provider.js
 export default (initialState = {}) => {
   return createStore(
     initialState,

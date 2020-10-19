@@ -128,6 +128,7 @@ import {
   // History
 } from 'tiptap-extensions'
 
+// TODO: move to core-ui
 export default {
   components: {
     EditorContent,
@@ -135,10 +136,7 @@ export default {
   },
 
   props: {
-    value: {
-      type: String,
-      default: ''
-    }
+    value: { type: String, default: '' }
   },
 
   data: () => ({
@@ -153,16 +151,14 @@ export default {
     }
   },
 
-  mounted: function () {
+  mounted () {
     this.$nextTick(() => this.init())
   },
-
-  beforeDestroy: function () {
+  beforeDestroy () {
     if (this.editor) {
       this.editor.destroy()
     }
   },
-
   methods: {
     async init () {
       this.editor = new Editor({
@@ -175,8 +171,7 @@ export default {
         ],
         content: this.value,
         onUpdate: ({ getHTML }) => {
-          const state = getHTML()
-          this.$emit('input', state)
+          this.$emit('input', getHTML())
         }
       })
     }

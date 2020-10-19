@@ -38,55 +38,6 @@ const initialState = {
   requiredCompanyForRegister: false,
   ...window.__INITIAL_STATE__
 }
-const navigation = {
-  title: 'Food Fleet',
-  logo: '/images/logo.png',
-  // for small screens
-  drawerItems: [
-    {
-      action: 'icon-dashboard',
-      title: 'Dashboard',
-      to: '/admin'
-    },
-    {
-      action: 'icon-users',
-      title: 'Users',
-      to: '/admin/users'
-    },
-    {
-      action: 'icon-companies',
-      title: 'Companies',
-      to: '/admin/companies'
-    },
-    {
-      action: 'icon-trucks',
-      title: 'Fleet Members',
-      to: '/admin/fleet-members'
-    },
-    {
-      action: 'icon-venues',
-      title: 'Venues',
-      to: '/admin/venues'
-    },
-    {
-      action: 'icon-events',
-      title: 'Events',
-      to: '/admin/events'
-    },
-    {
-      action: 'icon-financial',
-      title: 'Financials',
-      to: '/admin/financials'
-    },
-    {
-      action: 'icon-reports',
-      title: 'Analytics',
-      to: '/admin/analytics'
-    }
-  ],
-
-  items: []
-}
 const navigationAdmin = {
   title: 'Food Fleet',
   logo: '/images/logo.png',
@@ -142,6 +93,14 @@ const navigationAdmin = {
       to: '/admin/analytics'
     }
   ]
+}
+const navigation = {
+  title: navigationAdmin.title,
+  logo: navigationAdmin.logo,
+  // for small screens
+  drawerItems: navigationAdmin.items,
+
+  items: []
 }
 const modules = {
   page: page({}),

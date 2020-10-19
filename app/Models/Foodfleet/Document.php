@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet;
 
+use App\Models\Foodfleet\Document\Template\Template;
 use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\User\User;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -27,6 +28,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string deleted_at
  * @property string assigned_uuid
  * @property string assigned_type
+ * @property string template_uuid
     // TODO: we might not need this field. remove and use assigned_uuid, assigned_type.
  * Leave it as is for now
  * @property string event_store_uuid
@@ -35,6 +37,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property \App\User owner
  * @property DocumentType type
  * @property DocumentStatus status
+ * @property Template template
  * @property \App\User|Store|Event|Location assigned
  */
 class Document extends Model implements HasMedia
@@ -42,7 +45,23 @@ class Document extends Model implements HasMedia
     use SoftDeletes;
     use GeneratesUuid;
     use HasMediaTrait;
-
+    const FILLABLES = [
+        'title',
+        'status_id',
+        'type_id',
+        'description',
+        'notes',
+        'expiration_at',
+        'created_by_uuid',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'assigned_uuid',
+        'assigned_type',
+        'template_uuid',
+        'event_store_uuid',
+        'file'
+    ];
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
     protected $with = array('owner');
@@ -88,5 +107,10 @@ class Document extends Model implements HasMedia
     public function type()
     {
         return $this->belongsTo(DocumentType::class);
+    }
+
+    public function template()
+    {
+        return $this->belongsTo(Template::class, 'template_uuid', 'uuid');
     }
 }

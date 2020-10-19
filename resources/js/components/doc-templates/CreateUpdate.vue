@@ -56,7 +56,8 @@ import get from 'lodash/get'
 import DeleteDialog from '~/components/DeleteDialog'
 
 const INCLUDE = [
-  'status'
+  'status',
+  'updated_by'
 ]
 export default {
   layout: 'admin',
@@ -120,7 +121,7 @@ export default {
         include: INCLUDE
       })
       promises.push(vm.$store.dispatch('documentTemplates/getItem', {
-        params: { id }
+        params: { id, include: INCLUDE }
       }))
     }
     promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))

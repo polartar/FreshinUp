@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -9,6 +10,11 @@ abstract class TestCase extends BaseTestCase
     use CreatesApplication;
     use ArrayTestCaseTrait;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->artisan('migrate');
+    }
 
     /**
      * Call protected/private method of a class.

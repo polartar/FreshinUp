@@ -47,6 +47,69 @@
               hide-details
             />
           </v-flex>
+          <v-flex
+            ml-2
+          >
+            <v-layout
+              row
+              justify-space-between
+              mb-2
+            >
+              <filter-label>
+                Last modified by
+              </filter-label>
+              <clear-button
+                v-if="filters.updated_by_uuid"
+                color="white"
+                @clear="filters.updated_by_uuid = null; $refs.updatedBy.clearTerm()"
+              />
+            </v-layout>
+            <f-autocomplete
+              ref="updatedBy"
+              :value="filters.updated_by_uuid"
+              no-filter
+              placeholder="Last modified by"
+              value-fetch
+              item-value="uuid"
+              item-text="name"
+              url="/users?filter[status]=1"
+              background-color="white"
+              hide-details
+              class="pt-0"
+              height="48"
+              not-clearable
+              @input="selectModifiedBy"
+            />
+          </v-flex>
+          <v-flex
+            ml-2
+          >
+            <v-layout
+              row
+              justify-space-between
+              mb-2
+            >
+              <filter-label>
+                Last modified date
+              </filter-label>
+              <clear-button
+                v-if="filters.updated_at"
+                color="white"
+                @clear="filters.updated_at = null;"
+              />
+            </v-layout>
+            <date-time-picker
+              v-model="filters.updated_at"
+              only-date
+              format="YYYY-MM-DD"
+              formatted="MM-DD-YYYY"
+              input-size="lg"
+              label="Last modified date "
+              :color="$vuetify.theme.primary"
+              :button-color="$vuetify.theme.primary"
+              @input="slotProps.run"
+            />
+          </v-flex>
         </v-layout>
       </v-card-text>
     </template>
@@ -57,28 +120,27 @@ import ClearButton from '~/components/ClearButton'
 import FilterLabel from '~/components/FilterLabel'
 import SearchFilterSorter from 'fresh-bus/components/search/filter-sorter'
 import MultiSelect from 'fresh-bus/components/ui/FMultiSelect'
+import FAutocomplete from '~/components/FAutocomplete'
+import DateTimePicker from '~/components/DateTimePicker'
 
+export const DEFAULT_FILTERS = {
+  status_id: [],
+  title: '',
+  updated_at: '',
+  updated_by_uuid: ''
+}
 export default {
   components: {
     FilterLabel,
     ClearButton,
     MultiSelect,
-    SearchFilterSorter
+    SearchFilterSorter,
+    FAutocomplete,
+    DateTimePicker
   },
   props: {
-    statuses: { type: Array, default: () => [] }
-  },
-  data () {
-    return {
-      status_id: []
-    }
-  },
-  computed: {
-    filters () {
-      return {
-        status_id: this.status_id
-      }
-    }
+    statuses: { type: Array, default: () => [] },
+    filters: { type: Object, default: () => DEFAULT_FILTERS }
   },
   watch: {
     filters: {
@@ -92,16 +154,22 @@ export default {
   methods: {
     run (params) {
       const finalParams = {
+        ...this.filters,
         title: params.term,
-        sort: params.orderBy,
-        ...this.filters
+        sort: params.orderBy
       }
-
       this.$emit('runFilter', finalParams)
     },
     clearFilters (params) {
-      this.status_id = null
+      this.$refs.updatedBy.clearTerm()
+      this.filters.updated_by_uuid = null
+      this.filters.status_id = null
+      this.filters.updated_at = null
       this.run(params)
+    },
+    selectModifiedBy (user) {
+      this.filters.updated_by_uuid = user ? user.uuid : null
+      this.$refs.filter.run()
     }
   }
 }

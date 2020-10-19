@@ -23,13 +23,21 @@ import {
 } from '@freshinup/core-ui/src/store/utils/makeRestStore'
 import pickBy from 'lodash/pickBy'
 import omitBy from 'lodash/omitBy'
+import get from 'lodash/get'
 
 export const makeModule = (store, moduleName = '') => {
   const m = _makeModule(store, moduleName)
   const _actions = store.actions
 
+  const _paginationGetters = m.getters.pagination
   m.getters = {
     ...m.getters,
+    pagination (state) {
+      return {
+        ..._paginationGetters(state),
+        rowsPerPage: get(state, 'items.meta.per_page', 30)
+      }
+    },
     // TODO: add in core-ui
     filters (state) {
       return state.filters || {}

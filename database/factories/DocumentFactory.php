@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\Document\Template\Template;
 use App\Models\Foodfleet\DocumentStatus;
 use App\Models\Foodfleet\DocumentType;
 use App\User;
@@ -32,6 +33,9 @@ $factory->define(Document::class, function (Faker $faker) {
         },
         'created_by_uuid' => function () {
             return factory(User::class)->create()->uuid;
+        },
+        'template_uuid' => function () {
+            return factory(Template::class)->create()->uuid;
         }
     ];
 });

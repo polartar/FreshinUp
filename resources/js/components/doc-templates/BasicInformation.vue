@@ -1,12 +1,12 @@
 <template>
-  <v-layout>
+  <v-layout row wrap>
     <v-flex
       xs12
       sm12
       md8
       xl9
     >
-      <v-card>
+      <v-card class="ml-2 mt-2">
         <v-card-title>
           <h3 class="grey--text">
             Basic Information
@@ -45,7 +45,10 @@
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Content
               </div>
-              <f-rich-text-editor v-model="content" />
+              <f-rich-text-editor
+                :value="content"
+                @input="content = $event"
+              />
             </v-flex>
           </div>
         </v-card-text>
@@ -79,9 +82,8 @@
       sm12
       md4
       xl3
-      class="ml-2"
     >
-      <v-card>
+      <v-card class="ml-2 mt-2">
         <v-card-text>
           <h3
             v-if="!isNew"
@@ -113,12 +115,13 @@
               class="mb-2"
             >
               <v-btn
+                block
                 depressed
                 color="primary"
                 :loading="isLoading"
                 @click="save"
               >
-                {{ isNew? 'Submit' : 'Save changes' }}
+                {{ submitLabel }}
               </v-btn>
             </v-flex>
             <v-flex
@@ -126,6 +129,7 @@
               class="mb-2"
             >
               <v-btn
+                block
                 depressed
                 disabled
               >
@@ -150,7 +154,7 @@
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 import get from 'lodash/get'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
-import FRichTextEditor from '../FRichTextEditor/FRichTextEditor'
+import FRichTextEditor from '~/components/FRichTextEditor'
 
 export const DEFAULT_TEMPLATE = {
   id: '',
@@ -170,7 +174,7 @@ export default {
     isLoading: { type: Boolean, default: false },
     // Override value from MapValueKeysToData mixin to get the default values
     value: { type: Object, default: () => DEFAULT_TEMPLATE },
-    statuses: { type: Object, default: () => [] }
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
@@ -178,6 +182,9 @@ export default {
     }
   },
   computed: {
+    submitLabel () {
+      return this.isNew? 'Submit' : 'Save changes'
+    },
     isNew () {
       return !get(this, 'uuid')
     },

@@ -41,9 +41,27 @@
 <br/>
 
 # Changes
+## Oct 19, 2020
+- **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
+- **ADD** Document preview [#498](https://github.com/FreshinUp/foodfleet/issues/498)
+- **FIX** Document assignment is not working [#497](https://github.com/FreshinUp/foodfleet/issues/497)
+- **FIX** Uploaded document is not clickable / downloadable [#494](https://github.com/FreshinUp/foodfleet/issues/494)
+
+<br/>
+
+## Oct 12, 2020
+- **ADD** Document templates: create/update [#500](https://github.com/FreshinUp/foodfleet/issues/500)
+
+<br/>
+
+## Oct 9, 2020
+- **MOD** Document templates: List page filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
+
+<br/>
+
 ## Oct 6, 2020
-`Document template page`
-- **ADD** Detail page is not created [#504](https://github.com/FreshinUp/foodfleet/issues/504)
+- **ADD** Document template detail page [#504](https://github.com/FreshinUp/foodfleet/issues/504)
+- **ADD** Document template list page with filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
 
 <br/>
 
