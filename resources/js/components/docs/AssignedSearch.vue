@@ -15,7 +15,7 @@
         height="48"
         :items="options"
         hide-details
-        data-vv-name="type"
+        data-vv-name="typeId"
       />
     </v-flex>
     <v-flex
@@ -49,7 +49,7 @@ export default {
     DocSimple
   },
   props: {
-    type: {
+    typeId: {
       type: Number,
       default: 1
     }
@@ -122,11 +122,11 @@ export default {
   },
   computed: {
     currentOption () {
-      return this.options.find(item => item.value === this.type)
+      return this.options.find(item => item.value === this.typeId)
     },
     typeValue: {
       get: function () {
-        return this.type
+        return this.typeId
       },
       set: function (value) {
         if (value !== this.typeValue) {

@@ -501,6 +501,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
               >
                 <div
                   class="layout row justify-space-between"
+                  type="1"
                 >
                   <div
                     class="flex md6 sm12"
@@ -530,7 +531,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                               <input
                                 aria-readonly="false"
                                 autocomplete="on"
-                                data-vv-name="type"
+                                data-vv-name="typeId"
                                 readonly="readonly"
                                 type="text"
                               />
@@ -666,6 +667,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                       background-color="white"
                       class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
                       height="48"
+                      type="1"
                     >
                       <div
                         class="v-input__control"
@@ -682,7 +684,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
                               autocomplete="off"
                               placeholder="Search User"
                               role="combobox"
-                              type="text"
+                              type="1"
                             />
                             <div
                               class="v-input__append-inner"

@@ -36,10 +36,10 @@
         Type
       </v-layout>
       <v-select
-        v-model="doc.type"
+        v-model="doc.type_id"
         v-validate="'required'"
-        data-vv-name="type"
-        :error-messages="errors.collect('type')"
+        data-vv-name="type_id"
+        :error-messages="errors.collect('type_id')"
         single-line
         outline
         :items="types"
@@ -67,7 +67,7 @@
       />
     </v-flex>
     <v-flex
-      v-if="doc.type === 1"
+      v-if="doc.type_id === 1"
       md7
       sm12
     >
@@ -88,7 +88,7 @@
       />
     </v-flex>
     <v-flex
-      v-else-if="doc.type === 2"
+      v-else-if="doc.type_id === 2"
       md7
       sm12
       mb-4
@@ -138,7 +138,7 @@ export default {
       default: () => {
         return {
           title: null,
-          type: null,
+          type_id: null,
           description: null,
           notes: null,
           template: null,
