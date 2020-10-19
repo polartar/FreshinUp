@@ -42,6 +42,11 @@
 
 # Changes
 
+## Oct 12, 2020
+- **ADD** Document templates: create/update [#500](https://github.com/FreshinUp/foodfleet/issues/500)
+
+<br/>
+
 ## Oct 9, 2020
 - **MOD** Document templates: List page filters [#503](https://github.com/FreshinUp/foodfleet/issues/503)
 
