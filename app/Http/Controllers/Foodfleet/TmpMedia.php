@@ -10,7 +10,11 @@ class TmpMedia extends Controller
     public function store(Request $request)
     {
         $file = $request->file('file');
-        $path = $file->storeAs(sha1($request->user()->id . microtime()), $file->getClientOriginalName(), 'tmp');
+        $path = $file->storeAs(
+            sha1($request->user()->id . microtime()),
+            $file->getClientOriginalName(),
+            'tmp'
+        );
         return response()->json($path);
     }
 }
