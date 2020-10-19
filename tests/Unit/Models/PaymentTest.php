@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models;
+namespace Tests\Unit\Models;
 
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Payment;

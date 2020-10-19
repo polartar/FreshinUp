@@ -1,15 +1,15 @@
 <?php
 
-namespace Tests\Feature\Unit\Models;
+namespace Tests\Unit\Models;
 
-use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Payment;
+use App\Models\Foodfleet\Square\PaymentType;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class DeviceTest extends TestCase
+class PaymentTypeTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -22,16 +22,16 @@ class DeviceTest extends TestCase
     {
         $payment = factory(Payment::class)->create();
 
-        $device = factory(Device::class)->create();
-        $device->payments()->save($payment);
+        $paymentType = factory(PaymentType::class)->create();
+        $paymentType->payments()->save($payment);
 
-        $this->assertDatabaseHas('devices', [
-            'uuid' => $device->uuid,
+        $this->assertDatabaseHas('payment_types', [
+            'uuid' => $paymentType->uuid,
         ]);
 
         $this->assertDatabaseHas('payments', [
             'uuid' => $payment->uuid,
-            'device_uuid' => $device->uuid
+            'payment_type_uuid' => $paymentType->uuid
         ]);
     }
 }

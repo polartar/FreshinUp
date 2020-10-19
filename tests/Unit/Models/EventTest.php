@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Models;
+namespace Tests\Unit\Models;
 
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Models\Foodfleet\Event;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Helpers\EventScheduleHelper;
+namespace Tests\Unit\Helpers\EventScheduleHelper;
 
 use App\Helpers\EventScheduleHelper;
 use App\Models\Foodfleet\Event;
@@ -90,7 +90,7 @@ class EventScheduleHelperTest extends TestCase
         ]);
 
         $periods = EventScheduleHelper::analyzeSchedule($schedule, $event_start_at, $event_end_at);
-        
+
         $this->assertEquals('2019-08-05 00:00:00', $periods[0]->start_at);
         $this->assertEquals('2019-08-05 23:59:59', $periods[0]->end_at);
 
@@ -101,7 +101,7 @@ class EventScheduleHelperTest extends TestCase
         $this->assertEquals('2019-12-02 23:59:59', $periods[2]->end_at);
     }
 
-    
+
     public function testAnalyzeScheduleWithOnMonthsNextSecondDay()
     {
         $event_start_at = '2019-07-12 08:31:00';
@@ -119,7 +119,7 @@ class EventScheduleHelperTest extends TestCase
         ]);
 
         $periods = EventScheduleHelper::analyzeSchedule($schedule, $event_start_at, $event_end_at);
-        
+
         $this->assertEquals('2019-08-02 08:31:00', $periods[0]->start_at);
         $this->assertEquals('2019-08-03 08:30:59', $periods[0]->end_at);
 
@@ -148,7 +148,7 @@ class EventScheduleHelperTest extends TestCase
         ]);
 
         $periods = EventScheduleHelper::analyzeSchedule($schedule, $event_start_at, $event_end_at);
-        
+
         $this->assertEquals('2019-08-05 00:00:00', $periods[0]->start_at);
         $this->assertEquals('2019-08-05 23:59:59', $periods[0]->end_at);
 

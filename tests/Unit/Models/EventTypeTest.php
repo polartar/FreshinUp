@@ -1,15 +1,17 @@
 <?php
 
-namespace Tests\Feature\Unit\Models;
+
+namespace Tests\Unit\Models;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventStatus;
+use App\Models\Foodfleet\EventType;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class EventStatusTest extends TestCase
+class EventTypeTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
@@ -20,21 +22,18 @@ class EventStatusTest extends TestCase
      */
     public function testModel()
     {
+        $event = factory(Event::class)->create();
 
-        /** @var EventStatus $eventStatus */
-        $eventStatus = factory(EventStatus::class)->create();
-        $event = factory(Event::class)->create([
-            'status_id' => $eventStatus->id
-        ]);
+        $eventType = factory(EventType::class)->create();
+        $eventType->events()->save($event);
 
-
-        $this->assertDatabaseHas('event_statuses', [
-            'id' => $eventStatus->id
+        $this->assertDatabaseHas('event_types', [
+            'id' => $eventType->id
         ]);
 
         $this->assertDatabaseHas('events', [
             'uuid' => $event->uuid,
-            'status_id' => $eventStatus->id
+            'type_id' => $eventType->id
         ]);
     }
 }

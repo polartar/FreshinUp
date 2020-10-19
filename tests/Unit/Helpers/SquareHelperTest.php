@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Unit\Helpers\SquareHelper;
+namespace Tests\Unit\Helpers\SquareHelper;
 
 use App\Helpers\SquareHelper;
 use App\Models\Foodfleet\Square\Category;
