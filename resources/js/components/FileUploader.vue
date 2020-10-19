@@ -17,14 +17,14 @@
         v-else
       >
         File:
-        <v-btn
+        <a
           v-if="isDownloadable"
           flat
-          :href="value.src"
-          target="_blank"
+          :href="src"
+          download
         >
-          {{ value.name }}
-        </v-btn>
+          {{ name }}
+        </a>
       </v-flex>
     </v-layout>
     <v-layout
@@ -88,21 +88,32 @@
 
 <script>
 import axios from 'axios'
+import MapValueKeysToData from '../mixins/MapValueKeysToData'
+import get from 'lodash/get'
 
 const MB = 1024 * 1024
+export const DEFAULT_VALUE = {
+  name: '',
+  src: ''
+}
 
+/**
+ * @property string name
+ * @property string src
+ */
 export default {
-  name: 'FileUploader',
+  mixins: [MapValueKeysToData],
   model: {
     prop: 'value',
     event: 'onValueChange'
   },
   props: {
-    value: { type: Object, default: () => ({ name: '', src: '' }) },
+    value: { type: Object, default: () => DEFAULT_VALUE },
     maxFileSize: { type: Number, default: 100 }
   },
   data () {
     return {
+      ...DEFAULT_VALUE,
       errorDialog: false,
       errorText: '',
       uploadPercentage: 0,
@@ -114,26 +125,29 @@ export default {
       return MB * this.maxFileSize
     },
     isDownloadable () {
-      return !!this.value.src && !!this.value.name
+      return Boolean(this.src && this.name)
     }
   },
   methods: {
     launchFilePicker () {
       this.$refs.file.click()
     },
-    async onFileChange (file) {
-      if (file.length > 0) {
-        let fileSource = file[0]
-        let size = fileSource.size - this.maxInBytes
-
-        if (size > 1) {
-          this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
-        } else {
-          const fileSrc = await this.submitFile(fileSource)
-          if (fileSrc) {
-            this.$emit('onValueChange', { name: fileSource.name, src: fileSrc })
-          }
-        }
+    async onFileChange (files) {
+      const fileSource = get(files, '0')
+      if (!fileSource) {
+        this.showError(`No file selected.`)
+        return false
+      }
+      const size = fileSource.size - this.maxInBytes
+      if (size > 1) {
+        this.showError(`Your file is too big! Please select a file under ${this.maxFileSize}MB`)
+        return false
+      }
+      const filePath = await this.submitFile(fileSource)
+      if (filePath) {
+        this.src = filePath
+        this.name = fileSource.name
+        this.$emit('input', { name: fileSource.name, src: filePath })
       }
     },
     async submitFile (file) {
@@ -154,7 +168,7 @@ export default {
         )
         this.uploading = false
         this.uploadPercentage = 0
-        return response && response.data
+        return get(response, 'data')
       } catch (e) {
         this.uploading = false
         this.uploadPercentage = 0
@@ -167,12 +181,8 @@ export default {
     },
     remove () {
       this.$refs.file.value = ''
-      this.$emit('onValueChange', { name: '', src: '' })
+      this.$emit('input', DEFAULT_VALUE)
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

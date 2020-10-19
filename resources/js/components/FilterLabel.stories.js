@@ -2,26 +2,22 @@ import { storiesOf } from '@storybook/vue'
 
 // Components
 import FilterLabel from './FilterLabel.vue'
+import { MAIN } from '../../../.storybook/categories'
 
-storiesOf('FoodFleet|ui/FilterLabel', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'default', value: '#f1f3f6', default: true }
-    ]
-  })
-  .add('default', () => ({
-    components: { FilterLabel },
-    template: `
+export const Default = () => ({
+  components: { FilterLabel },
+  template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-label>
           label
         </filter-label>
       </v-container>
     `
-  }))
-  .add('black', () => ({
-    components: { FilterLabel },
-    template: `
+})
+
+export const Black = () => ({
+  components: { FilterLabel },
+  template: `
       <v-container style="background-color: rgba(0,0,0,.2)">
         <filter-label
           color="black"
@@ -30,4 +26,13 @@ storiesOf('FoodFleet|ui/FilterLabel', module)
         </filter-label>
       </v-container>
     `
-  }))
+})
+
+storiesOf(`${MAIN}|components/FilterLabel`, module)
+  .addParameters({
+    backgrounds: [
+      { name: 'default', value: '#f1f3f6', default: true }
+    ]
+  })
+  .add('Default', Default)
+  .add('Black', Black)

@@ -3,27 +3,26 @@ import { storiesOf } from '@storybook/vue'
 // Components
 import FileUploader from './FileUploader.vue'
 import { action } from '@storybook/addon-actions'
+import { MAIN } from '../../../.storybook/categories'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+
+const mock = new MockAdapter(axios)
+
+mock
+  .onPost('foodfleet/tmp-media')
+  .reply(200, 'mock url')
+  .onAny()
+  .reply(config => {
+    console.warn('No mock match for ' + config.url, config)
+    return [404, {}]
+  })
 
 export const Default = () => ({
   components: { FileUploader },
-  data: () => ({
-    file: { name: '', src: '' },
-    maxFileSize: 5 // 5 MB
-  }),
-  methods: {
-    onValueChange (value) {
-      action('onValueChange')(value)
-    }
-  },
   template: `
     <v-container>
-      <pre>
-        {{ file }}
-      </pre>
       <file-uploader
-        v-model="file"
-        :max-file-size="maxFileSize"
-        @onValueChange="onValueChange"
       />
     </v-container>
   `
@@ -36,8 +35,8 @@ export const Downloadable = () => ({
     maxFileSize: 5 // 5 MB
   }),
   methods: {
-    onValueChange (value) {
-      action('onValueChange')(value)
+    onInput (value) {
+      action('onInput')(value)
     }
   },
   template: `
@@ -48,12 +47,12 @@ export const Downloadable = () => ({
       <file-uploader
         v-model="file"
         :max-file-size="maxFileSize"
-        @onValueChange="onValueChange"
+        @input="onInput"
       />
     </v-container>
   `
 })
 
-storiesOf('FoodFleet|ui/FileUploader', module)
-  .add('default', Default)
-  .add('downloadable', Downloadable)
+storiesOf(`${MAIN}|components/FileUploader`, module)
+  .add('Default', Default)
+  .add('Downloadable', Downloadable)

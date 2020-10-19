@@ -106,7 +106,10 @@
             mb-4
             pt-5
           >
-            <file-uploader v-model="file" />
+            <file-uploader
+              :value="file"
+              @input="file = $event"
+            />
           </v-flex>
           <v-flex
             xs12

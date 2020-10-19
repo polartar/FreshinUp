@@ -72,7 +72,7 @@ export const Range = () => ({
       </v-container>
     `
 })
-storiesOf('FoodFleet|ui/DateTimePicker', module)
+storiesOf('FoodFleet|components/DateTimePicker', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
