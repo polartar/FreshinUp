@@ -271,6 +271,67 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           <!---->
            
           <div
+            class="layout mb-4"
+          >
+            <div
+              class="flex xs4 pr-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square account
+            
+              </div>
+               
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Connect
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs4 pr-2 pl-2"
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+              >
+                <span>
+                  Square business name
+                </span>
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
+             
+            <div
+              class="flex xs4 pl-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square location ID
+            
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
+          </div>
+           
+          <div
             class="flex xs4 pr-2"
           >
             <div
@@ -1340,6 +1401,67 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <!---->
+           
+          <div
+            class="layout mb-4"
+          >
+            <div
+              class="flex xs4 pr-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square account
+            
+              </div>
+               
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Connect
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs4 pr-2 pl-2"
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+              >
+                <span>
+                  Square business name
+                </span>
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
+             
+            <div
+              class="flex xs4 pl-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square location ID
+            
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
+          </div>
            
           <div
             class="flex xs4 pr-2"
@@ -2485,6 +2607,67 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
                 </div>
               </span>
             </span>
+          </div>
+           
+          <div
+            class="layout mb-4"
+          >
+            <div
+              class="flex xs4 pr-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square account
+            
+              </div>
+               
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Connect
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs4 pr-2 pl-2"
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+              >
+                <span>
+                  Square business name
+                </span>
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
+             
+            <div
+              class="flex xs4 pl-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square location ID
+            
+              </div>
+               
+              <div>
+                Please connect to Square
+              </div>
+            </div>
           </div>
            
           <div
