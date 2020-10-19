@@ -1,1 +1,1 @@
-export const MAIN = 'Foodfleet'
+export const MAIN = `FoodFleet`

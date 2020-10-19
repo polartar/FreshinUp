@@ -6,6 +6,8 @@ module.exports = {
     config.plugin(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/))
     config.resolve.alias.set('~', path.resolve(__dirname, 'resources/js'))
     config.resolve.alias.set('sass', path.resolve(__dirname, 'resources/sass'))
+    config.resolve.alias.set('tests', path.resolve(__dirname, 'tests/Javascript'))
+    config.resolve.alias.set('storybook', path.resolve(__dirname, '.storybook'))
     config.resolve.alias.set('storybook-vue-router', path.resolve(__dirname, 'node_modules/storybook-vue-router'))
     config.resolve.symlinks = true
     busConfigure(config)

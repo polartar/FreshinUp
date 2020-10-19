@@ -98,7 +98,7 @@ export const WithSortables = () => ({
   `
 })
 
-storiesOf('FoodFleet|doc/FilterSorter', module)
+storiesOf('FoodFleet|components/docs/FilterSorter', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

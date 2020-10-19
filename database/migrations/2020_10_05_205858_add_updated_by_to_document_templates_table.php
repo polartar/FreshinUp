@@ -14,7 +14,7 @@ class AddUpdatedByToDocumentTemplatesTable extends Migration
     public function up()
     {
         Schema::table('document_templates', function (Blueprint $table) {
-            $table->string('updated_by_uuid')->nullable();
+            $table->string('updated_by_uuid')->nullable()->index();
         });
     }
 
