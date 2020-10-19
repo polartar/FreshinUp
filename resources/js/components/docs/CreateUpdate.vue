@@ -1,13 +1,8 @@
 <template>
-  <v-form
-    v-if="!isLoading"
-    ref="form"
-    v-model="isValid"
-  >
+  <div class="mx-4">
     <v-layout
       row
       align-center
-      pt-3
     >
       <v-btn
         flat
@@ -34,130 +29,82 @@
         xs12
       >
         <v-select
-          v-model="status"
+          :value="doc.status_id"
           :items="statuses"
           single-line
           solo
           flat
           hide-details
+          @input="changeStatus"
         />
       </v-flex>
     </v-layout>
-    <v-divider />
-    <br>
-    <v-layout
-      row
-      wrap
-      pa-2
-      justify-space-between
-      class="doc-new-wrap"
+    <basic-information
+      ref="basicInfo"
+      :is-loading="isLoading"
+      :types="types"
+      :templates="templates"
+      :value="doc"
+      @input="onSaveClick"
+      @download="downloadDocument"
+      @preview="previewDialog = true"
+    />
+    <v-dialog
+      v-model="previewDialog"
+      max-width="1200"
     >
-      <v-flex
-        md7
-        sm12
-      >
-        <v-card>
-          <v-card-title class="subheading text-uppercase font-weight-bold">
-            Basic information
-          </v-card-title>
-          <v-divider />
-          <BasicInfoForm
-            ref="basicInfo"
-            :types="types"
-            :templates="templates"
-            :initdata="doc"
-            :errors="errors"
-            @data-change="changeBasicInfo"
-          />
-        </v-card>
-      </v-flex>
-      <v-flex
-        md4
-        sm12
-      >
-        <v-card>
-          <v-card-title class="subheading text-uppercase font-weight-bold">
-            Publishing
-          </v-card-title>
-          <v-divider />
-          <PublishingForm
-            :isvalid="isValid"
-            :initdata="doc"
-            @data-change="changePublishing"
-            @data-save="onSaveClick"
-          />
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-form>
+      <document-preview
+        :value="doc"
+        :templates="templates"
+        :events="events"
+        @close="previewDialog = false"
+      />
+    </v-dialog>
+  </div>
 </template>
 
 <script>
 import { omitBy, isNull } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
-import { createHelpers } from 'vuex-map-fields'
-import BasicInfoForm from '~/components/docs/BasicInfoForm.vue'
-import PublishingForm from '~/components/docs/PublishingForm.vue'
+import BasicInformation, { DEFAULT_DOCUMENT } from '~/components/docs/BasicInformation.vue'
+import DocumentPreview from '~/components/docs/DocumentPreview.vue'
 import Validate from 'fresh-bus/components/mixins/Validate'
-
-const { mapFields } = createHelpers({
-  getterType: 'getField',
-  mutationType: 'updateField'
-})
 
 export default {
   layout: 'admin',
   components: {
-    BasicInfoForm,
-    PublishingForm
+    BasicInformation,
+    DocumentPreview
   },
   mixins: [Validate],
   data () {
     return {
       isNew: false,
-      assigned_uuid: null,
       template: null,
-      templates: [],
+      previewDialog: false,
       file: { name: null, src: null }
     }
   },
   computed: {
     ...mapGetters('page', ['isLoading']),
-    ...mapGetters('documents', { doc: 'item' }),
+    ...mapGetters('documents', { doc_: 'item' }),
     ...mapGetters('documentTypes', { types: 'items' }),
     ...mapGetters('documentStatuses', { statuses: 'items' }),
-    ...mapFields('documents', [
-      'title',
-      'type',
-      'status',
-      'expiration_at',
-      'description',
-      'assigned_type',
-      'notes',
-      'assigned',
-      'event_store_uuid'
-    ]),
+    ...mapGetters('documentTemplates', { templates: 'items' }),
+    ...mapGetters('events', { events: 'items' }),
     pageTitle () {
       return this.isNew ? 'New Document' : 'Document Details'
+    },
+    doc () {
+      return Object.assign({}, DEFAULT_DOCUMENT, this.doc_)
     }
   },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    changeBasicInfo (data) {
-      this.title = data.title
-      this.type = data.type
-      this.description = data.description
-      this.notes = data.notes
-      this.template = data.template
-      this.file = data.file
-    },
-    changePublishing (data) {
-      this.doc.assigned_type = data.assigned_type
-      this.doc.assigned_uuid = data.assigned_uuid
-      this.doc.expiration_at = data.expiration_at
-      this.doc.event_store_uuid = data.event_store_uuid
+    downloadDocument () {
+      // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
     async validator () {
       const valids = await Promise.all([
@@ -166,10 +113,9 @@ export default {
       ])
       return valids.every(valid => valid)
     },
-    onSaveClick () {
+    onSaveClick (payload) {
       this.validator().then(async valid => {
-        let data = { ...this.doc, assigned_uuid: this.assigned_uuid }
-        data = omitBy(data, (value, key) => {
+        const data = omitBy(payload, (value, key) => {
           const extra = ['created_at', 'updated_at', 'assigned', 'owner']
           return extra.includes(key) || isNull(value)
         })
@@ -177,8 +123,7 @@ export default {
           if (this.isNew) {
             data.id = 'new'
             await this.$store.dispatch('documents/createItem', { data })
-            await this.$store.dispatch('documents/getItems')
-            this.$router.push('/admin/docs/')
+            this.backToList()
           } else {
             await this.$store.dispatch('documents/updateItem', {
               data,
@@ -191,20 +136,33 @@ export default {
     },
     backToList () {
       this.$router.push({ path: '/admin/docs' })
+    },
+    changeStatus (status) {
+      this.$store
+        .dispatch('documents/patchItem', {
+          data: { status },
+          params: { id: this.doc.uuid }
+        })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(true)
     const id = to.params.id || 'new'
-    Promise.all([
-      vm.$store.dispatch('documents/getItem', { params: { id } }),
-      vm.$store.dispatch('documentStatuses/getItems'),
-      vm.$store.dispatch('documentTypes/getItems')
-    ]).then(() => {
-      if (next) next()
-    })
+    const promises = []
+    if (id !== 'new') {
+      promises.push(vm.$store.dispatch('documents/getItem', {
+        params: { id, include: 'template' }
+      }))
+    }
+    promises.push(vm.$store.dispatch('documentStatuses/getItems'))
+    promises.push(vm.$store.dispatch('documentTypes/getItems'))
+    promises.push(vm.$store.dispatch('events/getItems'))
+    promises.push(vm.$store.dispatch('documentTemplates/getItems'))
+    Promise.all(promises)
+      .then(() => {})
       .catch((error) => { console.error(error) })
       .then(() => {
+        if (next) next()
         vm.$store.dispatch('page/setLoading', false)
       })
   }

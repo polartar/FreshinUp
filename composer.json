@@ -1,5 +1,6 @@
 {
     "name": "freshinup/foodfleet",
+  "version": "1.0.0",
     "type": "project",
     "description": "FoodFleet Admin UI and API to power FoodFleet",
     "keywords": [

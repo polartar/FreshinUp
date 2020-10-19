@@ -41,7 +41,7 @@ mock.onGet('foodfleet/events').reply(200, {
 })
 
 // Components
-storiesOf('FoodFleet|doc/AssignedSearch', module)
+storiesOf('FoodFleet|components/docs/AssignedSearch', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
