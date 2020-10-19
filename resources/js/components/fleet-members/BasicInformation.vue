@@ -83,6 +83,43 @@
               {{ tag.name }}
             </v-chip>
           </v-flex>
+          <v-layout class="mb-4">
+            <v-flex
+              xs4
+              pr-2
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Square account
+              </div>
+              <v-btn
+                depressed
+                color="primary"
+              >
+                Connect
+              </v-btn>
+            </v-flex>
+            <v-flex
+              xs4
+              pr-2
+              pl-2
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+              >
+                <span>Square business name</span>
+              </div>
+              <div>Please connect to Square</div>
+            </v-flex>
+            <v-flex
+              xs4
+              pl-2
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Square location ID
+              </div>
+              <div>Please connect to Square</div>
+            </v-flex>
+          </v-layout>
           <v-flex
             xs4
             pr-2
