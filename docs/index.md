@@ -41,6 +41,12 @@
 <br/>
 
 # Changes
+## Oct 19, 2020
+- **ADD** Document preview [#498](https://github.com/FreshinUp/foodfleet/issues/498)
+- **FIX** Document assignment is not working [#497](https://github.com/FreshinUp/foodfleet/issues/497)
+- **FIX** Uploaded document is not clickable / downloadable [#494](https://github.com/FreshinUp/foodfleet/issues/494)
+
+<br/>
 
 ## Oct 12, 2020
 - **ADD** Document templates: create/update [#500](https://github.com/FreshinUp/foodfleet/issues/500)

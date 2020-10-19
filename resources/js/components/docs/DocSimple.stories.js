@@ -15,7 +15,7 @@ mock.onGet('/users').reply(200, {
 })
 
 // Components
-storiesOf('FoodFleet|doc/DocSimple', module)
+storiesOf('FoodFleet|components/docs/DocSimple', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }

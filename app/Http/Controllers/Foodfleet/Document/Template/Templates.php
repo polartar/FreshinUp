@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Foodfleet\Document\Template;
 
-use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Resources\Foodfleet\Document\Template\Template as Resource;
 use App\Models\Foodfleet\Document\Template\Template as Model;
 
@@ -10,7 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class Templates extends Controller
@@ -56,7 +54,7 @@ class Templates extends Controller
         $item = Model::where('uuid', $uuid)->firstOrFail();
         $rules = [
             'title' => 'string',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'content' => 'string',
             'status_id' => 'exists:document_template_statuses,id'
         ];

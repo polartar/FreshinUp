@@ -21,7 +21,7 @@ class Document extends JsonResource
         $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type, $this->event_store_uuid);
         $assignedResource = DocumentAssignedEnum::getResource($assignedType);
         $attachment = $this->getFirstMedia('attachment');
-//        dd($attachment);
+        // dd($attachment);
         $file = [
             'name' => optional($attachment)->file_name,
             'src' => optional($attachment)->getPath()
@@ -33,7 +33,7 @@ class Document extends JsonResource
             'status_id' => $this->status_id ? intval($this->status_id) : DocumentStatusEnum::PENDING,
             'status' => new DocumentStatus($this->whenLoaded('status')),
             'type_id' => $this->type_id ? intval($this->type_id) : DocumentTypeEnum::FROM_TEMPLATE,
-            'type' => new DocumentStatus($this->whenLoaded('type')),
+            'type' => new DocumentType($this->whenLoaded('type')),
             'description' => $this->description,
             'file' => $file,
             'notes' => $this->notes,
@@ -45,6 +45,8 @@ class Document extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'created_by_uuid' => $this->created_by_uuid,
+            'template_uuid' => $this->template_uuid,
+            'template' => new Document\Template\Template($this->whenLoaded('template')),
         ];
 
         return $data;

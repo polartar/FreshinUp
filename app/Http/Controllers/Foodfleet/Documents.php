@@ -97,6 +97,9 @@ class Documents extends Controller
     public function show(Request $request, $uuid)
     {
         $document = QueryBuilder::for(Document::class, $request)
+            ->allowedIncludes([
+                'template'
+            ])
             ->with('assigned')
             ->with('owner')
             ->where('uuid', $uuid)
@@ -120,10 +123,11 @@ class Documents extends Controller
             'type_id' => 'integer',
             'status_id' => 'integer',
             'description' => 'string',
-            'expiration_at' => 'date'
+            'expiration_at' => 'date',
+            'template_uuid' => 'exists:document_templates,uuid'
         ]);
 
-        $inputs = $request->input();
+        $inputs = $request->only(Document::FILLABLES);
         $inputs['uuid'] = $uuid;
 
         $document = $action->execute($inputs);
