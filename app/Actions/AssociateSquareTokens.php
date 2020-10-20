@@ -13,6 +13,7 @@ class AssociateSquareTokens implements Action
         $authorizationCode = $data['code'];
 
         // Create and configure a new API client object
+        // TODO: put in the container for better testability
         $apiClient = SquareHelper::getApiClient();
 
         // Create an OAuth API client

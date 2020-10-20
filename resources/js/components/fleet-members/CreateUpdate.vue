@@ -513,12 +513,11 @@ export default {
       promises.push(vm.$store.dispatch('menuItems/getItems'))
     }
     vm.$store.dispatch('page/setLoading', true)
-    // TODO: next step is to gather squareLocations from API
-    // promises.push(vm.$store.dispatch('companies/squareLocations/getItems', {
-    //   params: {
-    //     id: vm.$store.getters.currentUser.company_id
-    //   }
-    // }))
+    promises.push(vm.$store.dispatch('companies/squareLocations/getItems', {
+      params: {
+        companyId: vm.$store.getters.currentUser.company_id
+      }
+    }))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))

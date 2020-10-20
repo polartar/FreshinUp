@@ -16,7 +16,7 @@ class Squares extends Controller
      * @param AssociateSquareTokens $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
-    public function store(StoreSquaresRequest $request, AssociateSquareTokens $action)
+    public function callback(StoreSquaresRequest $request, AssociateSquareTokens $action)
     {
         $data = [
             'code' => $request->input('code'),

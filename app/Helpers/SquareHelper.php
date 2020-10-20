@@ -5,6 +5,7 @@ namespace App\Helpers;
 class SquareHelper
 {
     /**
+     * TODO remove method and put in container client
      * Return an istance of Square Api Client
      *
      * @param String|null $accessToken
