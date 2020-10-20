@@ -57,7 +57,7 @@
             <v-icon>format_underlined</v-icon>
           </v-btn>
 
-          <v-btn
+          <!-- <v-btn
             icon
             depressed
             :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'left' }"
@@ -91,7 +91,7 @@
             @click="commands.aligntext({ align: 'justify' })"
           >
             <v-icon>format_align_justify</v-icon>
-          </v-btn>
+          </v-btn> -->
 
           <v-btn depressed>
             Add variable
@@ -107,7 +107,7 @@
 </template>
 <script>
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
-import AlignText from '../tiptap/aligntext.plugin'
+// import AlignText from '../tiptap/aligntext.plugin'
 import {
   // Blockquote,
   // CodeBlock,
@@ -166,8 +166,8 @@ export default {
           new Heading(),
           new Bold(),
           new Italic(),
-          new Underline(),
-          new AlignText()
+          new Underline()
+          // new AlignText()
         ],
         content: this.value,
         onUpdate: ({ getHTML }) => {

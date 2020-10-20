@@ -1,5 +1,8 @@
 <template>
-  <v-layout row wrap>
+  <v-layout
+    row
+    wrap
+  >
     <v-flex
       xs12
       sm12
@@ -183,7 +186,7 @@ export default {
   },
   computed: {
     submitLabel () {
-      return this.isNew? 'Submit' : 'Save changes'
+      return this.isNew ? 'Submit' : 'Save changes'
     },
     isNew () {
       return !get(this, 'uuid')
