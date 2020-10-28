@@ -69,6 +69,7 @@
             :locations="locations"
             :value="store"
             @input="saveOrCreate"
+            @connect-square="onConnectSquare"
             @delete="deleteMember"
             @cancel="onCancel"
           />
@@ -422,6 +423,9 @@ export default {
       this.deletable[resource].dialog = false
       this.deletable[resource].temp = []
     },
+    onConnectSquare () {
+      this.$router.push({ path: '/admin/contractor' })
+    },
 
     // store areas
     onAddArea (area) {
@@ -478,6 +482,17 @@ export default {
         })
     }
   },
+  watch: {
+    '$store.getters.currentUser' (user) {
+      if (user) {
+        this.$store.dispatch('companies/squareLocations/getItems', {
+          params: {
+            companyId: user.company_id
+          }
+        })
+      }
+    }
+  },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []
@@ -513,11 +528,6 @@ export default {
       promises.push(vm.$store.dispatch('menuItems/getItems'))
     }
     vm.$store.dispatch('page/setLoading', true)
-    promises.push(vm.$store.dispatch('companies/squareLocations/getItems', {
-      params: {
-        companyId: vm.$store.getters.currentUser.company_id
-      }
-    }))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))

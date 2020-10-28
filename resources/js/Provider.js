@@ -8,11 +8,13 @@ import financialsummary from './store/modules/financialsummary'
 import squares from './store/modules/squares'
 import documents from './store/modules/documents'
 import documentStatuses from './store/modules/documentStatuses'
+import documentTemplates from './store/modules/documentTemplates'
 import documentTypes from './store/modules/documentTypes'
 import transactions from './store/modules/transactions'
 import companyDetails from './store/modules/companyDetails'
 import eventSummary from './store/modules/eventSummary'
 import eventTypes from './store/modules/eventTypes'
+import events from './store/modules/events'
 import eventHistories from './store/modules/eventHistories'
 import venues from './store/modules/venues'
 import venueStatuses from './store/modules/venueStatuses'
@@ -22,6 +24,12 @@ import storeTypes from './store/modules/storeTypes'
 import storeAreas from './store/modules/storeAreas'
 import companies from './store/modules/companies'
 import locations from './store/modules/locations'
+import companyOwners from './store/modules/companyOwners'
+import eventStatuses from './store/modules/eventStatuses'
+import eventMenuItems from './store/modules/eventMenuItems'
+import locationCategories from './store/modules/locationCategories'
+import menuItems from './store/modules/menuItems'
+import messages from './store/modules/messages'
 
 export default () => {
   return {
@@ -34,14 +42,20 @@ export default () => {
       devices,
       financialModifiers,
       financialReports,
-      paymentTypes,
       financialsummary,
+      paymentTypes,
       squares,
       documents,
       documentStatuses,
+      documentTemplates,
       documentTypes,
       transactions,
+      companies,
       companyDetails,
+      companyOwners,
+      events,
+      eventStatuses,
+      eventMenuItems,
       eventSummary,
       eventTypes,
       eventHistories,
@@ -51,8 +65,12 @@ export default () => {
       storeStatuses,
       storeTypes,
       storeAreas,
-      companies,
-      locations
+      locations,
+      locationCategories,
+      messages,
+      menuItems
     }
   }
 }
+
+

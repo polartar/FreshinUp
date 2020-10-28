@@ -8,8 +8,8 @@ import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/store
 
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
+import { FIXTURE_SQUARE_LOCATIONS } from '../../../../tests/Javascript/__data__/companies'
 
-const LOCATIONS = ['Square']
 const mock = new MockAdapter(axios)
 
 mock
@@ -26,9 +26,16 @@ mock
 
 export const Default = () => ({
   components: { BasicInformation },
+  methods: {
+    onConnect () {
+      action('onConnect')()
+    }
+  },
   template: `
     <v-container>
-      <basic-information/>
+      <basic-information
+        @connect-square="onConnect"
+      />
     </v-container>
   `
 })
@@ -42,46 +49,41 @@ export const Loading = () => ({
   `
 })
 
-export const WithData = () => ({
+export const Populated = () => ({
   components: { BasicInformation },
   data () {
     return {
-      store: FIXTURE_STORE,
+      store: {...FIXTURE_STORE, square_location_id: FIXTURE_SQUARE_LOCATIONS[0].id },
       types: FIXTURE_STORE_TYPES,
-      locations: LOCATIONS,
-      squareLocations: [
-        {
-          square_id: 1,
-          name: 'Business One'
-        },
-        {
-          square_id: 2,
-          name: 'Business Two'
-        }
-      ]
+      squareLocations: FIXTURE_SQUARE_LOCATIONS
     }
   },
   template: `
     <v-container>
       <basic-information
         :value="store"
-        :locations="locations"
         :types="types"
         :square-locations="squareLocations"
         @input="onSave"
+        @connect-square="onConnect"
+        @disconnect-square="onDisconnect"
         @cancel="onCancel"
         @delete="onDelete"/>
     </v-container>
   `,
   methods: {
+    onConnect () {
+      action('onConnect')()
+    },
+    onDisconnect () {
+      action('onDisconnect')()
+    },
     onSave (payload) {
       action('onSave')(payload)
     },
-
     onCancel () {
       action('onCancel')()
     },
-
     onDelete (payload) {
       action('onDelete')(payload)
     }
@@ -96,4 +98,4 @@ storiesOf('FoodFleet|components/fleet-members/BasicInformation', module)
   })
   .add('Default', Default)
   .add('Loading', Loading)
-  .add('WithData', WithData)
+  .add('Populated', Populated)

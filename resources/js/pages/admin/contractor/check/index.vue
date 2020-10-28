@@ -21,19 +21,17 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.setPageLoading(false)
-    let data = {}
-    forEach(vm.$route.query, function (value, key) {
-      if (key === 'code') {
-        data['code'] = value
-      }
-    })
-    vm.$store.dispatch('squares/createItem', { data }).then((result) => {
-      vm.result = true
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    const data = {
+      code: vm.$route.query.code
+    }
+    vm.$store.dispatch('squares/authorize', { data })
+      .then(() => {
+        vm.result = true
+      })
       .catch(() => {
         vm.result = false
+      })
+      .then(() => {
         vm.$store.dispatch('page/setLoading', false)
         if (next) next()
       })

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,7 +83,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('menu-items', 'Foodfleet\MenuItems');
 
 
-    Route::get('companies/{company}/square-locations', 'Foodfleet\Companies\SquareLocation@index');
+    Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
+    Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
+        ->name('square.authorize');
 });
-
-Route::get('/foodfleet/squares/callback', 'Foodfleet\Squares@callback');
