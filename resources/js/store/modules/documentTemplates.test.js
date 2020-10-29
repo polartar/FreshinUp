@@ -19,7 +19,7 @@ describe('store/modules/documentTemplates', () => {
     expect(result.state).toHaveProperty('item', item)
   })
 
-  test('is a namespaced module', () => {
+  test.skip('is a namespaced module', () => {
     let item = {}
     let items = []
     const result = module({ items, item })

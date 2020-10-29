@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USER } from 'tests/__data__/users'
 import Component from '~/layouts/default.vue'
+import createStore from 'tests/createStore'
 
 const mockAuth = {
   logout: () => {

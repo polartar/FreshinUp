@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/pages/admin/financials/transactions/_id/index.vue'
 import transactions from '~/store/modules/transactions'
 import { FIXTURE_TRANSACTIONS } from 'tests/__data__/transactions'
+import createStore from 'tests/createStore'
 
 describe('Admin Transaction Details Page', () => {
   describe('Mount', () => {
@@ -18,11 +18,7 @@ describe('Admin Transaction Details Page', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          transactions: transactions({})
-        }
-      })
+      store = createStore()
     })
     afterEach(() => {
       mock.restore()

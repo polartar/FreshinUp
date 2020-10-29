@@ -32,7 +32,6 @@ export default ({ items, item }) => {
     'updated_at',
     'deleted_at',
     'owner_uuid',
-    'pos_system',
     'phone',
     'state_of_incorporation',
     'facebook',

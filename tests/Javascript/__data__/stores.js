@@ -15,8 +15,7 @@ export const FIXTURE_STORES = [
         name: 'VEGAN'
       }
     ],
-    pos_system: 'Square',
-    square_id: 1,
+    square_id: 'abc1',
     size: 200,
     owner_uuid: 'o111',
     owner: {
@@ -67,8 +66,7 @@ export const FIXTURE_STORES = [
         name: 'VEGAN'
       }
     ],
-    pos_system: 'Square',
-    square_id: 1,
+    square_id: 'abc1',
     size: 150,
     owner_uuid: 'o222',
     owner: {
@@ -114,8 +112,7 @@ export const FIXTURE_STORES = [
       uuid: 'a111',
       name: 'ASIAN'
     }],
-    pos_system: 'Square',
-    square_id: 1,
+    square_id: 'abc1',
     size: 340,
     owner_uuid: 'o333',
     owner: {
@@ -168,8 +165,7 @@ export const FIXTURE_STORES = [
       uuid: 'v111',
       name: 'VEGAN'
     }],
-    pos_system: 'Square',
-    square_id: 1,
+    square_id: 'abc1',
     size: 123,
     owner_uuid: 'o444',
     owner: {
@@ -220,8 +216,7 @@ export const FIXTURE_STORES = [
         name: 'VEGAN'
       }
     ],
-    pos_system: 'Square',
-    square_id: 1,
+    square_id: 'abc1',
     size: '',
     owner_uuid: 'o555',
     owner: {

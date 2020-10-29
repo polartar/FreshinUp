@@ -4,14 +4,12 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { forEach } from 'lodash'
 
 export default {
   layout: 'admin',
   data () {
     return {
       pageTitle: 'Square authorization',
-      result: false
     }
   },
   methods: {
@@ -20,16 +18,18 @@ export default {
     })
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(false)
+    vm.$store.dispatch('page/setLoading', true)
     const data = {
       code: vm.$route.query.code
     }
     vm.$store.dispatch('squares/authorize', { data })
       .then(() => {
-        vm.result = true
+        vm.$router.push({ path: '/admin/fleet-members' })
+        // This will reload the user with the
+        vm.$store.dispatch('currentUser/getCurrentUser')
       })
-      .catch(() => {
-        vm.result = false
+      .catch((error) => {
+        console.error(error)
       })
       .then(() => {
         vm.$store.dispatch('page/setLoading', false)

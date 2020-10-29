@@ -16,7 +16,6 @@ use Square\Environment;
 use Square\Exceptions\ApiException;
 use Square\Models\ObtainTokenRequest;
 use Square\SquareClient;
-use Symfony\Component\HttpFoundation\Response;
 
 class Square extends Controller
 {
@@ -44,8 +43,7 @@ class Square extends Controller
             config('services.square.app_secret'),
             'authorization_code'
         );
-        $body->setCode($request->query('code'));
-        // $body->setRedirectUri(env('APP_URL') . "/admin/fleet-members");
+        $body->setCode($request->input('code'));
         $apiResponse = $oAuthApi->obtainToken($body);
         if (!$apiResponse->isSuccess()) {
             return (new JsonResource($apiResponse->getErrors()))
@@ -60,9 +58,9 @@ class Square extends Controller
         }
         $company = $user->company;
 
-        $company->square_access_token = $result->accessToken;
-        $company->square_refresh_token = $result->refreshToken;
-        // TODO: save this info $result->expiresAt so that we can refresh the token
+        $company->square_access_token = $result->getAccessToken();
+        $company->square_refresh_token = $result->getRefreshToken();
+        // TODO: save this info $result->getExpiresAt() so that we can refresh the token
         // after expiration in 30 days
         $company->save();
         return response()->json([

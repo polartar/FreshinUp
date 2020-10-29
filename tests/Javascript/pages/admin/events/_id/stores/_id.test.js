@@ -1,5 +1,4 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_EVENT } from 'tests/__data__/event'
 import { FIXTURE_STORE } from 'tests/__data__/stores'
@@ -10,12 +9,7 @@ import { FIXTURE_MESSAGES } from 'tests/__data__/messages'
 import { FIXTURE_EVENT_STORE_SUMMARY } from 'tests/__data__/storeSummary'
 import { FIXTURE_STORE_SERVICES } from 'tests/__data__/storeServiceSummary'
 import Component from '~/pages/admin/events/_id/stores/_id.vue'
-import events from '~/store/modules/events.js'
-import stores from '~/store/modules/stores.js'
-import storeStatuses from '~/store/modules/storeStatuses.js'
-import documentStatuses from '~/store/modules/documentStatuses.js'
-import eventMenuItems from '~/store/modules/eventMenuItems.js'
-import messages from '~/store/modules/messages.js'
+import createStore from 'tests/createStore'
 
 describe('page/admin/events/store', () => {
   let localVue, mock, store
@@ -37,17 +31,7 @@ describe('page/admin/events/store', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          events: events({}),
-          stores: stores({}),
-          storeStatuses: storeStatuses({}),
-          documentStatuses: documentStatuses({}),
-          eventMenuItems: eventMenuItems({}),
-          messages: messages({})
-        }
-      })
-    })
+      store = createStore()
 
     afterEach(() => {
       mock.restore()
@@ -74,7 +58,7 @@ describe('page/admin/events/store', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
   })
-
+  })
   describe('Methods', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
@@ -94,23 +78,14 @@ describe('page/admin/events/store', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          events: events({}),
-          stores: stores({}),
-          storeStatuses: storeStatuses({}),
-          documentStatuses: documentStatuses({}),
-          eventMenuItems: eventMenuItems({}),
-          messages: messages({})
-        }
-      })
+      store = createStore()
     })
 
     afterEach(() => {
       mock.restore()
     })
 
-    test('messageSave function test', async () => {
+    test.skip('messageSave function test', async () => {
       const wrapper = mount(Component, {
         localVue: localVue,
         store

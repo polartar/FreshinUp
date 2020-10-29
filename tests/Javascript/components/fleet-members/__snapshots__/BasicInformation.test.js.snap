@@ -26,16 +26,16 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
     />
      
     <div
-      class="layout pa-3"
+      class="layout pa-3 row wrap"
     >
       <div
-        class="flex xs8 pr-3"
+        class="flex xs12 lg8 pr-3"
       >
         <div
           class="layout row wrap"
         >
           <div
-            class="flex xs9 pr-4"
+            class="flex xs12 md9 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -79,7 +79,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs3"
+            class="flex xs12 md3"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -179,7 +179,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs12"
+            class="flex xs12 md8"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -268,291 +268,8 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
             </div>
           </div>
            
-          <!---->
-           
           <div
-            class="layout mb-4"
-          >
-            <div
-              class="flex xs4 pr-2"
-            >
-              <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
-              >
-                
-              Square account
-            
-              </div>
-               
-              <button
-                class="v-btn v-btn--depressed theme--light primary"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-              Connect
-            
-                </div>
-              </button>
-            </div>
-             
-            <div
-              class="flex xs4 pr-2 pl-2"
-            >
-              <div
-                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-              >
-                <span>
-                  Square business name
-                </span>
-              </div>
-               
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-             
-            <div
-              class="flex xs4 pl-2"
-            >
-              <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
-              >
-                
-              Square location ID
-            
-              </div>
-               
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2"
-          >
-            <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
-            >
-              
-            Pos system
-          
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2 pl-2"
-          >
-            <div
-              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-            >
-              <span>
-                Business name
-              </span>
-               
-              <i
-                aria-hidden="true"
-                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                info
-              </i>
-              <span
-                class="v-tooltip v-tooltip--top"
-              >
-                <div
-                  class="v-tooltip__content"
-                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
-                >
-                  
-              This is the business name you entered for your fleet member on square
-            
-                </div>
-              </span>
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pl-2"
+            class="flex xs12 md4 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -590,6 +307,130 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
                       class="v-messages__wrapper"
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout mb-2 row wrap"
+          >
+            <div
+              class="flex xs12 md4 pr-2"
+            >
+              <div
+                class="text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square account
+              
+                <button
+                  class="v-btn v-btn--icon v-btn--small theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light grey--text"
+                      style="font-size: 16px;"
+                    >
+                      info
+                    </i>
+                  </div>
+                </button>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                You will be prompted to enter 
+                    <br />
+                     your Square Credentials and share 
+                    <br />
+                     your transactional data with Food Fleet
+              
+                  </div>
+                </span>
+              </div>
+               
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Connect
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs12 md4 pr-2 pl-2"
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
+              >
+                
+              Square business name
+              
+                <i
+                  aria-hidden="true"
+                  class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light grey--text"
+                  style="font-size: 16px;"
+                >
+                  info
+                </i>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                This is the business name you entered for your fleet member on square
+              
+                  </div>
+                </span>
+              </div>
+               
+              <div>
+                
+              Please connect to Square
+            
+              </div>
+               
+              <!---->
+            </div>
+             
+            <div
+              class="flex xs12 md4 pl-2"
+            >
+              <div
+                class="layout justify-content-between column"
+              >
+                <div
+                  class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
+                >
+                  
+                Square location ID
+              
+                </div>
+                 
+                <div>
+                  
+                Please connect to Square
+              
                 </div>
               </div>
             </div>
@@ -687,7 +528,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -731,7 +572,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -775,7 +616,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -819,7 +660,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -863,7 +704,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -907,7 +748,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -999,10 +840,10 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
       </div>
        
       <div
-        class="flex xs4 pl-3"
+        class="flex xs12 lg4 pl-3"
       >
         <div
-          class="px-2 sm-12"
+          class="px-2 xs-12 md-4"
         >
           <div
             class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1158,16 +999,16 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
     />
      
     <div
-      class="layout pa-3"
+      class="layout pa-3 row wrap"
     >
       <div
-        class="flex xs8 pr-3"
+        class="flex xs12 lg8 pr-3"
       >
         <div
           class="layout row wrap"
         >
           <div
-            class="flex xs9 pr-4"
+            class="flex xs12 md9 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1211,7 +1052,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs3"
+            class="flex xs12 md3"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1311,7 +1152,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs12"
+            class="flex xs12 md8"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1400,291 +1241,8 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
             </div>
           </div>
            
-          <!---->
-           
           <div
-            class="layout mb-4"
-          >
-            <div
-              class="flex xs4 pr-2"
-            >
-              <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
-              >
-                
-              Square account
-            
-              </div>
-               
-              <button
-                class="v-btn v-btn--depressed theme--light primary"
-                type="button"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  
-              Connect
-            
-                </div>
-              </button>
-            </div>
-             
-            <div
-              class="flex xs4 pr-2 pl-2"
-            >
-              <div
-                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-              >
-                <span>
-                  Square business name
-                </span>
-              </div>
-               
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-             
-            <div
-              class="flex xs4 pl-2"
-            >
-              <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
-              >
-                
-              Square location ID
-            
-              </div>
-               
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2"
-          >
-            <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
-            >
-              
-            Pos system
-          
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2 pl-2"
-          >
-            <div
-              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-            >
-              <span>
-                Business name
-              </span>
-               
-              <i
-                aria-hidden="true"
-                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                info
-              </i>
-              <span
-                class="v-tooltip v-tooltip--top"
-              >
-                <div
-                  class="v-tooltip__content"
-                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
-                >
-                  
-              This is the business name you entered for your fleet member on square
-            
-                </div>
-              </span>
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pl-2"
+            class="flex xs12 md4 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1722,6 +1280,130 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
                       class="v-messages__wrapper"
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout mb-2 row wrap"
+          >
+            <div
+              class="flex xs12 md4 pr-2"
+            >
+              <div
+                class="text-uppercase grey--text font-weight-bold"
+              >
+                
+              Square account
+              
+                <button
+                  class="v-btn v-btn--icon v-btn--small theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light grey--text"
+                      style="font-size: 16px;"
+                    >
+                      info
+                    </i>
+                  </div>
+                </button>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                You will be prompted to enter 
+                    <br />
+                     your Square Credentials and share 
+                    <br />
+                     your transactional data with Food Fleet
+              
+                  </div>
+                </span>
+              </div>
+               
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+              Connect
+            
+                </div>
+              </button>
+            </div>
+             
+            <div
+              class="flex xs12 md4 pr-2 pl-2"
+            >
+              <div
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
+              >
+                
+              Square business name
+              
+                <i
+                  aria-hidden="true"
+                  class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light grey--text"
+                  style="font-size: 16px;"
+                >
+                  info
+                </i>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                This is the business name you entered for your fleet member on square
+              
+                  </div>
+                </span>
+              </div>
+               
+              <div>
+                
+              Please connect to Square
+            
+              </div>
+               
+              <!---->
+            </div>
+             
+            <div
+              class="flex xs12 md4 pl-2"
+            >
+              <div
+                class="layout justify-content-between column"
+              >
+                <div
+                  class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
+                >
+                  
+                Square location ID
+              
+                </div>
+                 
+                <div>
+                  
+                Please connect to Square
+              
                 </div>
               </div>
             </div>
@@ -1819,7 +1501,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1863,7 +1545,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1907,7 +1589,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1951,7 +1633,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1995,7 +1677,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2039,7 +1721,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2131,10 +1813,10 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
       </div>
        
       <div
-        class="flex xs4 pl-3"
+        class="flex xs12 lg4 pl-3"
       >
         <div
-          class="px-2 sm-12"
+          class="px-2 xs-12 md-4"
         >
           <div
             class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2269,7 +1951,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
 </div>
 `;
 
-exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
+exports[`components/fleet-members/BasicInformation Snapshots Populated 1`] = `
 <div
   class="container"
 >
@@ -2295,16 +1977,16 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
     />
      
     <div
-      class="layout pa-3"
+      class="layout pa-3 row wrap"
     >
       <div
-        class="flex xs8 pr-3"
+        class="flex xs12 lg8 pr-3"
       >
         <div
           class="layout row wrap"
         >
           <div
-            class="flex xs9 pr-4"
+            class="flex xs12 md9 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2348,7 +2030,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs3"
+            class="flex xs12 md3"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2471,7 +2153,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs12"
+            class="flex xs12 md8"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -2561,7 +2243,51 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs12 pb-4"
+            class="flex xs12 md4 pl-2"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Size of the truck / trailer
+          
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <input
+                      placeholder="input value"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="flex xs12 pb-2"
           >
             <span
               class="v-chip v-chip--removable theme--light orange"
@@ -2610,353 +2336,247 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="layout mb-4"
+            class="layout mb-2 row wrap"
           >
             <div
-              class="flex xs4 pr-2"
+              class="flex xs12 md4 pr-2"
             >
               <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
+                class="text-uppercase grey--text font-weight-bold"
               >
                 
               Square account
-            
+              
+                <button
+                  class="v-btn v-btn--icon v-btn--small theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light grey--text"
+                      style="font-size: 16px;"
+                    >
+                      info
+                    </i>
+                  </div>
+                </button>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                You will be prompted to enter 
+                    <br />
+                     your Square Credentials and share 
+                    <br />
+                     your transactional data with Food Fleet
+              
+                  </div>
+                </span>
               </div>
                
               <button
-                class="v-btn v-btn--depressed theme--light primary"
+                class="v-btn v-btn--depressed theme--light error"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-              Connect
+              Disconnect
             
                 </div>
               </button>
             </div>
              
             <div
-              class="flex xs4 pr-2 pl-2"
+              class="flex xs12 md4 pr-2 pl-2"
             >
               <div
-                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+                class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
               >
-                <span>
-                  Square business name
+                
+              Square business name
+              
+                <i
+                  aria-hidden="true"
+                  class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light grey--text"
+                  style="font-size: 16px;"
+                >
+                  info
+                </i>
+                <span
+                  class="v-tooltip v-tooltip--top"
+                >
+                  <div
+                    class="v-tooltip__content"
+                    style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  >
+                    
+                This is the business name you entered for your fleet member on square
+              
+                  </div>
                 </span>
               </div>
                
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-             
-            <div
-              class="flex xs4 pl-2"
-            >
-              <div
-                class="mb-2 text-uppercase grey--text font-weight-bold"
-              >
-                
-              Square location ID
-            
-              </div>
+              <!---->
                
-              <div>
-                Please connect to Square
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2"
-          >
-            <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
-            >
-              
-            Pos system
-          
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
-              role="combobox"
-            >
               <div
-                class="v-input__control"
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                role="combobox"
               >
                 <div
-                  class="v-input__slot"
+                  class="v-input__control"
                 >
                   <div
-                    class="v-select__slot"
+                    class="v-input__slot"
                   >
                     <div
-                      class="v-select__selections"
+                      class="v-select__slot"
                     >
                       <div
-                        class="v-select__selection v-select__selection--comma"
+                        class="v-select__selections"
                       >
-                        Square
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          readonly="readonly"
+                          type="text"
+                        />
                       </div>
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
                       <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
+                        class="v-input__append-inner"
                       >
                         <div
-                          class="v-list theme--light"
-                          role="list"
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
                         >
                           <div
-                            class="primary--text"
-                            role="listitem"
+                            class="v-list theme--light"
+                            role="list"
                           >
-                            <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            <div
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  Square
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Dummy 01
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    Default Test Account
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
                   <div
-                    class="v-messages theme--light"
+                    class="v-text-field__details"
                   >
                     <div
-                      class="v-messages__wrapper"
-                    />
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-           
-          <div
-            class="flex xs4 pr-2 pl-2"
-          >
+             
             <div
-              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
+              class="flex xs12 md4 pl-2"
             >
-              <span>
-                Business name
-              </span>
-               
-              <i
-                aria-hidden="true"
-                class="v-icon ff-fleet-members__tooltip-icon material-icons theme--light"
-                style="font-size: 16px;"
-              >
-                info
-              </i>
-              <span
-                class="v-tooltip v-tooltip--top"
+              <div
+                class="layout justify-content-between column"
               >
                 <div
-                  class="v-tooltip__content"
-                  style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                  class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2"
                 >
                   
-              This is the business name you entered for your fleet member on square
-            
+                Square location ID
+              
                 </div>
-              </span>
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
+                 
                 <div
-                  class="v-input__slot"
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-disabled theme--light"
                 >
                   <div
-                    class="v-select__slot"
+                    class="v-input__control"
                   >
                     <div
-                      class="v-select__selections"
+                      class="v-input__slot"
                     >
                       <div
-                        class="v-select__selection v-select__selection--comma"
+                        class="v-text-field__slot"
                       >
-                        Business One
-                      </div>
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
+                        <input
+                          disabled="disabled"
+                          placeholder="Short description"
+                          type="text"
+                        />
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
                     <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      class="v-text-field__details"
                     >
                       <div
-                        class="v-select-list v-card theme--light"
+                        class="v-messages theme--light"
                       >
                         <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            class="primary--text"
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Business One
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Business Two
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
+                          class="v-messages__wrapper"
+                        />
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex xs4 pl-2"
-          >
-            <div
-              class="mb-2 text-uppercase grey--text font-weight-bold"
-            >
-              
-            Size of the truck / trailer
-          
-            </div>
-             
-            <div
-              class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot"
-                >
-                  <div
-                    class="v-text-field__slot"
-                  >
-                    <input
-                      placeholder="input value"
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="v-text-field__details"
-                >
-                  <div
-                    class="v-messages theme--light"
-                  >
-                    <div
-                      class="v-messages__wrapper"
-                    />
                   </div>
                 </div>
               </div>
@@ -3055,7 +2675,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3099,7 +2719,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3143,7 +2763,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3187,7 +2807,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3231,7 +2851,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pr-2"
+            class="flex xs12 md6 pr-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3275,7 +2895,7 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
           </div>
            
           <div
-            class="flex xs6 pl-2"
+            class="flex xs12 md6 pl-2"
           >
             <div
               class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -3367,10 +2987,10 @@ exports[`components/fleet-members/BasicInformation Snapshots WithData 1`] = `
       </div>
        
       <div
-        class="flex xs4 pl-3"
+        class="flex xs12 lg4 pl-3"
       >
         <div
-          class="px-2 sm-12"
+          class="px-2 xs-12 md-4"
         >
           <div
             class="mb-2 text-uppercase grey--text font-weight-bold"

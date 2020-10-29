@@ -25,7 +25,6 @@ class StoreTest extends TestCase {
             'size' => $store->size,
             'image' => $store->image,
             'owner_uuid' => $store->owner_uuid,
-            'pos_system' => $store->pos_system,
             'state_of_incorporation' => $store->state_of_incorporation,
             'facebook' => $store->facebook,
             'twitter' => $store->twitter,

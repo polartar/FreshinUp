@@ -182,7 +182,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
         />
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
           <div
             class="flex"
@@ -935,7 +935,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
         />
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
           <div
             class="flex"
@@ -2113,7 +2113,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
         />
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
           <div
             class="flex"

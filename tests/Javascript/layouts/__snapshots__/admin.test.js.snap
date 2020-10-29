@@ -149,9 +149,8 @@ exports[`Admin layout mount snapshot of layout 1`] = `
           <div
             role="listitem"
           >
-            <a
+            <router-link
               class="v-list__tile v-list__tile--link theme--dark"
-              href="/admin/users"
             >
               <div
                 class="v-list__tile__content"
@@ -171,14 +170,13 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                   class="v-icon material-icons theme--dark"
                 />
               </div>
-            </a>
+            </router-link>
           </div>
           <div
             role="listitem"
           >
-            <a
+            <router-link
               class="v-list__tile v-list__tile--link theme--dark"
-              href="/admin/teams"
             >
               <div
                 class="v-list__tile__content"
@@ -198,14 +196,13 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                   class="v-icon material-icons theme--dark"
                 />
               </div>
-            </a>
+            </router-link>
           </div>
           <div
             role="listitem"
           >
-            <a
+            <router-link
               class="v-list__tile v-list__tile--link theme--dark"
-              href="/admin/companies"
             >
               <div
                 class="v-list__tile__content"
@@ -225,7 +222,7 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                   class="v-icon material-icons theme--dark"
                 />
               </div>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -397,10 +394,16 @@ exports[`Admin layout mount snapshot of layout 1`] = `
               class="v-btn__content"
             >
               <div
-                class="v-avatar"
+                class="v-avatar primary"
                 style="height: 48px; width: 48px;"
               >
-                <img />
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light primary-text--text"
+                  style="font-size: 48px;"
+                >
+                  account_circle
+                </i>
               </div>
             </div>
           </button>
@@ -420,10 +423,16 @@ exports[`Admin layout mount snapshot of layout 1`] = `
                 class="flex shrink"
               >
                 <div
-                  class="v-avatar"
+                  class="v-avatar accent"
                   style="height: 64px; width: 64px;"
                 >
-                  <img />
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light accent-text--text"
+                    style="font-size: 64px;"
+                  >
+                    account_circle
+                  </i>
                 </div>
               </div>
                

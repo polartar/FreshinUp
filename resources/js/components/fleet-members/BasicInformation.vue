@@ -10,7 +10,7 @@
       />
     </v-card-title>
     <v-divider />
-    <v-layout class="pa-3">
+    <v-layout row wrap class="pa-3">
       <v-flex
         xs12
         lg8
@@ -21,8 +21,9 @@
           wrap
         >
           <v-flex
-            xs9
-            pr-4
+            xs12
+            md9
+            pr-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Fleet member name
@@ -99,7 +100,7 @@
               {{ tag.name }}
             </v-chip>
           </v-flex>
-          <v-layout class="mb-2">
+          <v-layout row wrap class="mb-2">
             <v-flex
               xs12
               md4
@@ -170,7 +171,7 @@
               </div>
               <v-select
                 v-if="hasSquareAccount"
-                v-model="square_location_id"
+                v-model="square_id"
                 :items="squareLocations"
                 single-line
                 outline
@@ -184,15 +185,20 @@
               pl-2
             >
               <v-layout column class="justify-content-between">
-                <div class="text-uppercase grey--text font-weight-bold pt-2">
+                <div class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2">
                   Square location ID
                 </div>
                 <div v-if="!hasSquareAccount">
                   Please connect to Square
                 </div>
-                <div v-else>
-                  {{ get(squareAccount, 'id') }}
-                </div>
+                <v-text-field
+                  v-else
+                  :value="get(squareAccount, 'id')"
+                  disabled
+                  placeholder="Short description"
+                  single-line
+                  outline
+                />
               </v-layout>
             </v-flex>
           </v-layout>
@@ -403,8 +409,7 @@ export const DEFAULT_STORE = {
   name: '',
   type_id: '',
   tags: [],
-  pos_system: '',
-  square_location_id: '',
+  square_id: '',
   square_business_name: '',
   size: '',
   owner_uuid: '',
@@ -452,7 +457,7 @@ export default {
       }, {})
     },
     squareAccount () {
-      return this.squareAccountsById[this.square_location_id]
+      return this.squareAccountsById[this.square_id]
     },
     hasSquareAccount () {
       return this.squareLocations.length > 0

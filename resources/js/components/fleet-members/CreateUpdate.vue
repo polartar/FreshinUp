@@ -66,10 +66,10 @@
             :loading="loading"
             :types="storeTypes"
             :square-locations="squareLocations"
-            :locations="locations"
             :value="store"
             @input="saveOrCreate"
             @connect-square="onConnectSquare"
+            @disconnect-square="onDisconnectSquare"
             @delete="deleteMember"
             @cancel="onCancel"
           />
@@ -296,7 +296,6 @@ export default {
       }, {}),
 
       loading: false,
-      locations: ['Square'], // TODO: static to Square only until we know better
       sortables: [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
@@ -331,6 +330,39 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
+    squareUrl () {
+      const SCOPES = [
+        'PAYMENTS_READ',
+        'CUSTOMERS_READ',
+        'EMPLOYEES_READ',
+        'INVENTORY_READ',
+        'ITEMS_READ',
+        'MERCHANT_PROFILE_READ',
+        'ORDERS_READ',
+        // 'SETTLEMENTS_READ',
+        // 'BANK_ACCOUNTS_READ',
+        // 'CUSTOMERS_WRITE',
+        // 'PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS', 'PAYMENTS_WRITE', 'PAYMENTS_READ'
+        // Let’s look at the scope that we set for this walkthrough:
+        //
+        // MERCHANT_PROFILE_READ enables calls to List Merchants and Retrieve Merchant endpoints. It is useful to be able to call these endpoints so you can verify seller information tied to the OAuth token.
+        //
+        // PAYMENTS_WRITE and PAYMENTS_READ enable you to create, cancel, and retrieve payments using the Payments API. Later in our walkthrough, you call Create Payment with an OAuth token.
+        //
+        // PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS enables you to add an application fee to a payment. The application fee is taken from the payment taken on behalf of the seller and added to your developer account. The seller gets the balance of the payment (less the Square transaction fee). The application fee is specified as part of a Create Payment call.
+      ]
+      const BASE_URL = (process.env.SQUARE_ENVIRONMENT === 'production')
+        ? 'https://connect.squareup.com'
+        : 'https://connect.squareupsandbox.com'
+
+      const params = {
+        client_id: process.env.SQUARE_APP_ID,
+        scope: SCOPES.join('+'),
+        // session: false,
+      }
+      const queryParams = Object.keys(params).map(key => `${key}=${params[key]}`).join('&')
+      return `${BASE_URL}/oauth2/authorize?${queryParams}`
+    },
     areasLoading () {
       return get(this.$store, 'state.storeAreas.pending.items', false)
     },
@@ -424,7 +456,10 @@ export default {
       this.deletable[resource].temp = []
     },
     onConnectSquare () {
-      this.$router.push({ path: '/admin/contractor' })
+      window.location = this.squareUrl
+    },
+    onDisconnectSquare () {
+      this.squareLocations = []
     },
 
     // store areas
@@ -532,6 +567,15 @@ export default {
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+
+    if (!process.env.SQUARE_APP_ID) {
+      this.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')
+      return false
+    }
+    if (!process.env.SQUARE_ENVIRONMENT) {
+      this.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square environment')
+      return false
+    }
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {
