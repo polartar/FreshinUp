@@ -205,6 +205,7 @@
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import Mustache from 'mustache'
 
 export const DEFAULT_DOCUMENT = {
   uuid: '',
@@ -262,9 +263,22 @@ export default {
     },
     content () {
       const html = get(this.selectedTemplate, 'content')
-      // TODO: this should be interpolated to with variable inside
-      // see https://github.com/FreshinUp/foodfleet/issues/532
-      return html
+      // TODO: get variables from event and store of document
+      const variables = {
+        event: {
+          LimitationsOnMenuAlterations: '100',
+          PrepAdvanceTime: '100',
+          CleanUpTime: '100',
+          PerPersonCharge: '100',
+          EstimatedTotalCost: '100',
+          Deposit: '100',
+          ApproximateSecondPayment: '100',
+          PercentFor90DayCancellation: '100',
+          PercentFor45DayCancellation: '100',
+          PercentFor31DayCancellation: '100'
+        }
+      }
+      return Mustache.render(html, variables)
     }
   },
   methods: {
