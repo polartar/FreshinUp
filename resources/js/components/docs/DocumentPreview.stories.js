@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import DocumentPreview from './DocumentPreview'
 import { FIXTURE_DOCUMENTS } from '../../../../tests/Javascript/__data__/documents'
-import { FIXTURE_DOCUMENT_TEMPLATES } from '../../../../tests/Javascript/__data__/documentTemplates'
+import { FIXTURE_DOCUMENT_TEMPLATES, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES } from '../../../../tests/Javascript/__data__/documentTemplates'
 import { FIXTURE_EVENTS } from '../../../../tests/Javascript/__data__/events'
 
 const document = FIXTURE_DOCUMENTS[0]
@@ -23,7 +23,8 @@ export const Populated = () => ({
     return {
       document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
-      events: FIXTURE_EVENTS
+      events: FIXTURE_EVENTS,
+      templateVariables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
     }
   },
   methods: {
@@ -37,6 +38,7 @@ export const Populated = () => ({
         :value="document"
         :templates="templates"
         :events="events"
+        :templateVariables="templateVariables"
         @close="onClose"
       />
     </v-container>

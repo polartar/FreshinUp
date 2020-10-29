@@ -232,7 +232,8 @@ export default {
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
-    events: { type: Array, default: () => [] }
+    events: { type: Array, default: () => [] },
+    templateVariables: { type: Object, default: () => {} }
   },
   data () {
     return {
@@ -263,21 +264,8 @@ export default {
     },
     content () {
       const html = get(this.selectedTemplate, 'content')
-      // TODO: get variables from event and store of document
-      const variables = {
-        event: {
-          LimitationsOnMenuAlterations: '100',
-          PrepAdvanceTime: '100',
-          CleanUpTime: '100',
-          PerPersonCharge: '100',
-          EstimatedTotalCost: '100',
-          Deposit: '100',
-          ApproximateSecondPayment: '100',
-          PercentFor90DayCancellation: '100',
-          PercentFor45DayCancellation: '100',
-          PercentFor31DayCancellation: '100'
-        }
-      }
+      if (!html) return html
+      const variables = this.templateVariables
       return Mustache.render(html, variables)
     }
   },
