@@ -16,44 +16,46 @@ class SquaresTest extends TestCase
 
     public function testVerifyWithNotValidToken()
     {
+        $company = factory(Company::class)->create();
         $user = factory(User::class)->create([
             'level' => 1,
+            'company_id' => $company->id
         ]);
-        $company = factory(Company::class)->create();
-        $user->company()->associate($company);
-        $user->save();
 
         Passport::actingAs($user);
 
-        $response = $this->json('post', "/api/foodfleet/square/verify", ['code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q']);
+        $response = $this->json('POST', "/api/foodfleet/squares/authorize", [
+            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
+        ]);
         $response->assertStatus(400);
     }
 
     public function testVerifyWithNoTokenInTheRequest()
     {
+        $company = factory(Company::class)->create();
         $user = factory(User::class)->create([
             'level' => 1,
+            'company_id' => $company->id
         ]);
-        $company = factory(Company::class)->create();
-        $user->company()->associate($company);
-        $user->save();
 
         Passport::actingAs($user);
-
-        $response = $this->json('post', "/api/foodfleet/square/verify");
+        $response = $this->json('post', "/api/foodfleet/squares/authorize");
         $response->assertStatus(422);
     }
 
     public function testVerifyWithUserThatItIsNotAnAdmin()
     {
-        $user = factory(User::class)->create(['level' => 8]);
         $company = factory(Company::class)->create();
-        $user->company()->associate($company);
-        $user->save();
+        $user = factory(User::class)->create([
+            'level' => 8,
+            'company_id' => $company->id
+        ]);
 
         Passport::actingAs($user);
 
-        $response = $this->json('post', "/api/foodfleet/square/verify", ['code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q']);
+        $response = $this->json('post', "/api/foodfleet/squares/authorize", [
+            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
+        ]);
         $response->assertStatus(403);
     }
 
@@ -61,20 +63,25 @@ class SquaresTest extends TestCase
     {
         $user = factory(User::class)->create([
             'level' => 1,
+            'company_id' => null
         ]);
 
         Passport::actingAs($user);
 
-        $response = $this->json('post', "/api/foodfleet/square/verify", ['code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q']);
+        $response = $this->json('post', "/api/foodfleet/squares/authorize", ['code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q']);
         $response->assertStatus(403);
     }
 
     public function testVerifyOk () {
-        $this->markTestSkipped();
-    }
+        $company = factory(Company::class)->create();
+        $user = factory(User::class)->create([
+            'level' => 1,
+            'company_id' => $company->id
+        ]);
 
-    public function testConnect () {
-        $data = $this->json('GET', '/api/foodfleet/square/connect');
-        dd($data);
+        Passport::actingAs($user);
+
+        $response = $this->json('post', "/api/foodfleet/squares/authorize", ['code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q']);
+        $response->assertStatus(200);
     }
 }

@@ -139,6 +139,7 @@
                 color="error"
                 @click="disconnectSquare"
                 v-else
+                disabled
               >
                 Disconnect
               </v-btn>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSquaresRequest;
 use App\Models\Foodfleet\Company;
 use App\User;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -33,6 +34,14 @@ class Square extends Controller
 
 
     public function authorizeApp (Request $request) {
+        $this->validate($request, [
+            'code' => 'required'
+        ]);
+        /** @var User $authUser */
+        $authUser = $request->user();
+        if (!$authUser || !$authUser->isAdmin() || $authUser->company == null) {
+            throw new AuthorizationException();
+        }
         $client = new SquareClient([
             'accessToken' => config('services.square.access_token'),
             'environment' => config('services.square.environment'),
