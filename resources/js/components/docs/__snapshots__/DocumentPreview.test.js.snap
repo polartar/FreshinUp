@@ -46,7 +46,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
           class="layout"
         >
           <div
-            class="flex sm3 mr-2"
+            class="flex xs12 m3 mr-2"
           >
             <div
               class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
@@ -431,7 +431,7 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
           class="layout"
         >
           <div
-            class="flex sm3 mr-2"
+            class="flex xs12 m3 mr-2"
           >
             <div
               class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
@@ -942,7 +942,7 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
       
             <p>
               
-      The Parties have agreed to the menu attached to this Catering Agreement as Exhibit A. Caterer reserves the right to make small changes to the menu if key ingredients are unable to be sourced due to reasons beyond the control of the Parties. The following limitations will apply to this reservation of right - 100. No alcoholic beverages will be served without a separate agreement relating thereto.
+      The Parties have agreed to the menu attached to this Catering Agreement as Exhibit A. Caterer reserves the right to make small changes to the menu if key ingredients are unable to be sourced due to reasons beyond the control of the Parties. The following limitations will apply to this reservation of right - 3. No alcoholic beverages will be served without a separate agreement relating thereto.
       
             </p>
             
@@ -954,9 +954,9 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
       
             <p>
               
-      Caterer will need to have access to the Venue no later than 100 hours in advance of the Start Time for the Event, and 100 hours after the End Time for clean up. Client will make all necessary arrangements, at Client’s expense, to get this access arranged.
+      Caterer will need to have access to the Venue no later than 93 hours in advance of the Start Time for the Event, and 17 hours after the End Time for clean up. Client will make all necessary arrangements, at Client’s expense, to get this access arranged.
       In exchange for the services of Caterer as specified in this Catering Contract, Client will pay to
-      Caterer $ 100 per person attending the event, but in no event less than the
+      Caterer $ 2 per person attending the event, but in no event less than the
       Guest Count provided by Client to Caterer one week in advance of the Event. As of the signing of
       this Contract, the total amount is estimated to be $ 100 (“Estimated Total
       Cost”).

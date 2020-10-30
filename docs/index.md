@@ -41,6 +41,11 @@
 <br/>
 
 # Changes
+## Oct 30, 2020
+- **FIX** Cannot connect to Square [#519](https://github.com/FreshinUp/foodfleet/issues/519)
+
+<br/>
+
 ## Oct 19, 2020
 - **ADD** Document preview [#498](https://github.com/FreshinUp/foodfleet/issues/498)
 - **FIX** Document assignment is not working [#497](https://github.com/FreshinUp/foodfleet/issues/497)

@@ -52,13 +52,14 @@ describe('components/docs/DocumentPreview', () => {
       expect(wrapper.vm.templates).toMatchObject(FIXTURE_DOCUMENT_TEMPLATES)
     })
 
-    test('templateVariables', async () => {
+    test('variables', async () => {
       const wrapper = shallowMount(Component)
+      // expect(wrapper.vm.variables).toMatchObject({})
 
       wrapper.setProps({
-        templateVariables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+        variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
       })
-      expect(wrapper.vm.templateVariables).toMatchObject(FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
+      expect(wrapper.vm.variables).toMatchObject(FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
     })
 
     // computed
@@ -155,17 +156,18 @@ describe('components/docs/DocumentPreview', () => {
 
     test('content', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.content).toBeUndefined()
+      expect(wrapper.vm.content).toEqual('')
 
       wrapper.setProps({
         value: {
           template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
           templates: FIXTURE_DOCUMENT_TEMPLATES,
-          templateVariables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+          variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
         }
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.content).toEqual(Mustache.render(FIXTURE_DOCUMENT_TEMPLATES[0].content, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES))
+      const expected = Mustache.render(FIXTURE_DOCUMENT_TEMPLATES[0].content, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
+      expect(wrapper.vm.content).toEqual(expected)
     })
   })
 

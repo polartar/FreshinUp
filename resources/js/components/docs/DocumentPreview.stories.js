@@ -24,7 +24,7 @@ export const Populated = () => ({
       document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
-      templateVariables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
     }
   },
   methods: {
@@ -38,7 +38,7 @@ export const Populated = () => ({
         :value="document"
         :templates="templates"
         :events="events"
-        :templateVariables="templateVariables"
+        :variables="variables"
         @close="onClose"
       />
     </v-container>

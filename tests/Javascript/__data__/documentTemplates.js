@@ -96,7 +96,7 @@ export const FIXTURE_DOCUMENT_TEMPLATES = [
     status_id: 1,
     status: {
       id: 1,
-      name: 'Published'
+      name: 'Draft'
     },
     updated_by: FIXTURE_USERS[0],
     created_at: '2019-09-30T03:51:14.000000Z',
@@ -214,10 +214,10 @@ export const FIXTURE_DOCUMENT_TEMPLATES = [
 
 export const FIXTURE_DOCUMENT_TEMPLATES_VARIABLES = {
   event: {
-    LimitationsOnMenuAlterations: '100',
-    PrepAdvanceTime: '100',
-    CleanUpTime: '100',
-    PerPersonCharge: '100',
+    LimitationsOnMenuAlterations: '3',
+    PrepAdvanceTime: '93',
+    CleanUpTime: '17',
+    PerPersonCharge: '2',
     EstimatedTotalCost: '100',
     Deposit: '100',
     ApproximateSecondPayment: '100',
