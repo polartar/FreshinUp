@@ -27,7 +27,8 @@
       >
         <v-layout>
           <v-flex
-            sm3
+            xs12
+            m3
             mr-2
           >
             <v-select
@@ -233,7 +234,7 @@ export default {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
-    templateVariables: { type: Object, default: () => {} }
+    variables: { type: Object, default: () => {} }
   },
   data () {
     return {
@@ -263,10 +264,8 @@ export default {
       return this.templatesByUuid[this.template_uuid]
     },
     content () {
-      const html = get(this.selectedTemplate, 'content')
-      if (!html) return html
-      const variables = this.templateVariables
-      return Mustache.render(html, variables)
+      const html = get(this.selectedTemplate, 'content', '')
+      return Mustache.render(html, this.variables)
     }
   },
   methods: {

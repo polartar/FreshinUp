@@ -56,6 +56,7 @@
       <document-preview
         :value="doc"
         :templates="templates"
+        :variables="templateVariables"
         :events="events"
         @close="previewDialog = false"
       />
@@ -97,6 +98,10 @@ export default {
     },
     doc () {
       return Object.assign({}, DEFAULT_DOCUMENT, this.doc_)
+    },
+    templateVariables () {
+      // TODO: issue coming soon
+      return {}
     }
   },
   methods: {
