@@ -18,7 +18,6 @@ $factory->define(Store::class, function (Faker $faker) {
             return factory(StoreType::class)->create();
         },
         'name' => $faker->word,
-        'pos_system' => 'Square',
         'size' => $faker->randomNumber(1),
         'contact_phone' => $faker->phoneNumber,
         'state_of_incorporation' => $faker->state,
@@ -27,7 +26,7 @@ $factory->define(Store::class, function (Faker $faker) {
         'facebook' => $faker->url,
         'instagram' => $faker->url,
         'staff_notes' => $faker->text,
-        "square_id" => $faker->randomNumber(5),
+        "square_id" => $faker->uuid,
         "status_id" => function () {
             return factory(StoreStatus::class)->create()->id;
         },

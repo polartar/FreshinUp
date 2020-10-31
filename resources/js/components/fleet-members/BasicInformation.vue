@@ -10,9 +10,14 @@
       />
     </v-card-title>
     <v-divider />
-    <v-layout class="pa-3">
+    <v-layout
+      row
+      wrap
+      class="pa-3"
+    >
       <v-flex
-        xs8
+        xs12
+        lg8
         pr-3
       >
         <v-layout
@@ -20,8 +25,9 @@
           wrap
         >
           <v-flex
-            xs9
-            pr-4
+            xs12
+            md9
+            pr-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Fleet member name
@@ -33,7 +39,10 @@
               outline
             />
           </v-flex>
-          <v-flex xs3>
+          <v-flex
+            xs12
+            md3
+          >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Type
             </div>
@@ -46,7 +55,10 @@
               outline
             />
           </v-flex>
-          <v-flex xs12>
+          <v-flex
+            xs12
+            md8
+          >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Tags
             </div>
@@ -69,68 +81,8 @@
             />
           </v-flex>
           <v-flex
-            v-if="tags.length"
             xs12
-            pb-4
-          >
-            <v-chip
-              v-for="(tag, index) of tags"
-              :key="index"
-              close
-              color="orange"
-              @click="deleteTag(tag)"
-            >
-              {{ tag.name }}
-            </v-chip>
-          </v-flex>
-          <v-flex
-            xs4
-            pr-2
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Pos system
-            </div>
-            <v-select
-              v-model="pos_system"
-              :items="locations"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            xs4
-            pr-2
-            pl-2
-          >
-            <div
-              class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative"
-            >
-              <span>Business name</span>
-              <v-tooltip top>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-icon
-                    class="ff-fleet-members__tooltip-icon"
-                    small
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    info
-                  </v-icon>
-                </template>
-                This is the business name you entered for your fleet member on square
-              </v-tooltip>
-            </div>
-            <v-select
-              v-model="square_id"
-              :items="squareLocations"
-              single-line
-              outline
-              item-text="name"
-              item-value="square_id"
-            />
-          </v-flex>
-          <v-flex
-            xs4
+            md4
             pl-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -143,6 +95,131 @@
               outline
             />
           </v-flex>
+          <v-flex
+            v-if="tags.length"
+            xs12
+            pb-2
+          >
+            <v-chip
+              v-for="(tag, index) of tags"
+              :key="index"
+              close
+              color="orange"
+              @click="deleteTag(tag)"
+            >
+              {{ tag.name }}
+            </v-chip>
+          </v-flex>
+          <v-layout
+            row
+            wrap
+            class="mb-2"
+          >
+            <v-flex
+              xs12
+              md4
+              pr-2
+            >
+              <div class="text-uppercase grey--text font-weight-bold">
+                Square account
+                <v-tooltip top>
+                  <template v-slot:activator="{ on }">
+                    <v-btn
+                      small
+                      icon
+                      v-on="on"
+                    >
+                      <v-icon
+                        color="grey"
+                        small
+                      >
+                        info
+                      </v-icon>
+                    </v-btn>
+                  </template>
+                  You will be prompted to enter <br> your Square Credentials and share <br> your transactional data with Food Fleet
+                </v-tooltip>
+              </div>
+              <v-btn
+                v-if="!hasSquareAccount"
+                depressed
+                color="primary"
+                @click="connectSquare"
+              >
+                Connect
+              </v-btn>
+              <v-btn
+                v-else
+                depressed
+                color="error"
+                disabled
+                @click="disconnectSquare"
+              >
+                Disconnect
+              </v-btn>
+            </v-flex>
+            <v-flex
+              xs12
+              md4
+              pr-2
+              pl-2
+            >
+              <div class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2">
+                Square business name
+                <v-tooltip top>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon
+                      color="grey"
+                      class="ff-fleet-members__tooltip-icon"
+                      small
+                      v-bind="attrs"
+                      v-on="on"
+                    >
+                      info
+                    </v-icon>
+                  </template>
+                  This is the business name you entered for your fleet member on square
+                </v-tooltip>
+              </div>
+              <div v-if="!hasSquareAccount">
+                Please connect to Square
+              </div>
+              <v-select
+                v-if="hasSquareAccount"
+                v-model="square_id"
+                :items="squareLocations"
+                single-line
+                outline
+                item-text="business_name"
+                item-value="id"
+              />
+            </v-flex>
+            <v-flex
+              xs12
+              md4
+              pl-2
+            >
+              <v-layout
+                column
+                class="justify-content-between"
+              >
+                <div class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2">
+                  Square location ID
+                </div>
+                <div v-if="!hasSquareAccount">
+                  Please connect to Square
+                </div>
+                <v-text-field
+                  v-else
+                  :value="get(squareAccount, 'id')"
+                  disabled
+                  placeholder="Short description"
+                  single-line
+                  outline
+                />
+              </v-layout>
+            </v-flex>
+          </v-layout>
           <v-flex
             xs12
             class="mb-2"
@@ -166,7 +243,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pr-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -180,7 +258,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pl-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -194,7 +273,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pr-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -208,7 +288,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pl-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -222,7 +303,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pr-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -236,7 +318,8 @@
             />
           </v-flex>
           <v-flex
-            xs6
+            xs12
+            md6
             pl-2
           >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -263,10 +346,11 @@
         </v-layout>
       </v-flex>
       <v-flex
-        xs4
+        xs12
+        lg4
         pl-3
       >
-        <div class="px-2 sm-12">
+        <div class="px-2 xs-12 md-4">
           <div class="mb-2 text-uppercase grey--text font-weight-bold">
             Truck / Trailer image
           </div>
@@ -343,7 +427,6 @@ export const DEFAULT_STORE = {
   name: '',
   type_id: '',
   tags: [],
-  pos_system: '',
   square_id: '',
   size: '',
   owner_uuid: '',
@@ -356,24 +439,18 @@ export const DEFAULT_STORE = {
   staff_notes: '',
   image: null
 }
+
 export const DEFAULT_IMAGE = 'https://via.placeholder.com/800x600.png'
+
 export default {
   components: { FAutocomplete, Simple },
   mixins: [MapValueKeysToData],
   props: {
     loading: { type: Boolean, default: false },
-    types: {
-      type: Array,
-      default: () => []
-    },
-    locations: {
-      type: Array,
-      default: () => []
-    },
-    squareLocations: {
-      type: Array,
-      default: () => []
-    }
+    types: { type: Array, default: () => [] },
+    squareLocations: { type: Array, default: () => [] },
+    // Overriding value prop from mixin MapValueKeysToData to grab the default values
+    value: { type: Object, default: () => DEFAULT_STORE }
   },
   data () {
     return {
@@ -389,9 +466,28 @@ export default {
     },
     storeImage () {
       return this.hasImage ? this.image : '/images/default.png'
+    },
+    squareAccountsById () {
+      return this.squareLocations.reduce((map, location) => {
+        map[location.id] = location
+        return map
+      }, {})
+    },
+    squareAccount () {
+      return this.squareAccountsById[this.square_id]
+    },
+    hasSquareAccount () {
+      return this.squareLocations.length > 0
     }
   },
   methods: {
+    get,
+    connectSquare () {
+      this.$emit('connect-square')
+    },
+    disconnectSquare () {
+      this.$emit('disconnect-square')
+    },
     storeImageChange (e) {
       const file = e.target.files[0]
       if (!file) {

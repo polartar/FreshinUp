@@ -119,7 +119,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                       <div
                         class="v-select__selection v-select__selection--comma"
                       >
-                        Oldest
+                        Newest
                       </div>
                       <input
                         aria-label="Sort by"
@@ -160,10 +160,11 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                           role="list"
                         >
                           <div
+                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -177,11 +178,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                             </a>
                           </div>
                           <div
-                            class="primary--text"
                             role="listitem"
                           >
                             <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                              class="v-list__tile v-list__tile--link theme--light"
                             >
                               <div
                                 class="v-list__tile__content"
@@ -406,273 +406,33 @@ exports[`Admin Users Page Mount snapshot 1`] = `
         <!---->
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
           style="display: none;"
         >
           <div
             class="flex"
           >
             <div
-              class="v-card__text"
+              class="v-card__text pl-1 pr-1"
             >
               <div
-                class="layout row wrap"
+                class="container pr-0 pl-0 grid-list-md"
               >
                 <div
-                  class="flex lg4"
+                  class="layout row wrap justify-space-between"
                 >
                   <div
-                    class="layout row"
+                    class="flex f-bus-filter-sorter__statuses sm12 md2"
                   >
                     <div
                       class="flex shrink"
                     >
                       <div
-                        class="v-card__text"
+                        class="v-card__text pl-0"
                       >
-                        Level
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex"
-                    >
-                      <div
-                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-                        role="combobox"
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-select__slot"
-                            >
-                              <div
-                                class="v-select__selections"
-                              >
-                                <div
-                                  class="v-select__selection v-select__selection--comma"
-                                >
-                                  All
-                                </div>
-                                <input
-                                  aria-readonly="false"
-                                  autocomplete="on"
-                                  placeholder="All Levels"
-                                  readonly="readonly"
-                                  type="text"
-                                />
-                              </div>
-                              <div
-                                class="v-input__append-inner"
-                              >
-                                <div
-                                  class="v-input__icon v-input__icon--append"
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    class="v-icon material-icons theme--light"
-                                  >
-                                    arrow_drop_down
-                                  </i>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="v-menu"
-                            >
-                              <div
-                                class="v-menu__content theme--light "
-                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                              >
-                                <div
-                                  class="v-select-list v-card theme--light"
-                                >
-                                  <div
-                                    class="v-list theme--light"
-                                    role="list"
-                                  >
-                                    <div
-                                      class="primary--text"
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            All
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            1. Platform Admin
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            2. Platform Director
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            3. Platform Lead
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            4. Platform Member
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            5. Company Admin
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            6. Company Director
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            7. Company Lead
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    <div
-                                      role="listitem"
-                                    >
-                                      <a
-                                        class="v-list__tile v-list__tile--link theme--light"
-                                      >
-                                        <div
-                                          class="v-list__tile__content"
-                                        >
-                                          <div
-                                            class="v-list__tile__title"
-                                          >
-                                            8. Company Member
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-                <div
-                  class="flex lg4"
-                >
-                  <div
-                    class="layout row"
-                  >
-                    <div
-                      class="flex shrink"
-                    >
-                      <div
-                        class="v-card__text"
-                      >
-                        Status
+                        
+                Status
+              
                       </div>
                     </div>
                      
@@ -745,6 +505,48 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                                         class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                       >
                                         <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="true"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple primary--text"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light primary--text"
+                                                  >
+                                                    check_box
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
                                           class="v-list__tile__content"
                                         >
                                           <div
@@ -761,6 +563,48 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                                       <a
                                         class="v-list__tile v-list__tile--link theme--light"
                                       >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
                                         <div
                                           class="v-list__tile__content"
                                         >
@@ -779,6 +623,48 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                                         class="v-list__tile v-list__tile--link theme--light"
                                       >
                                         <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
                                           class="v-list__tile__content"
                                         >
                                           <div
@@ -796,6 +682,48 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                                         class="v-list__tile v-list__tile--link theme--light"
                                       >
                                         <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
                                           class="v-list__tile__content"
                                         >
                                           <div
@@ -812,6 +740,48 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                                       <a
                                         class="v-list__tile v-list__tile--link theme--light"
                                       >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
                                         <div
                                           class="v-list__tile__content"
                                         >
@@ -832,21 +802,960 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-                <div
-                  class="flex lg4"
-                >
+                   
                   <div
-                    class="layout row"
+                    class="flex f-bus-filter-sorter__types sm12 md2"
                   >
                     <div
                       class="flex shrink"
                     >
                       <div
-                        class="v-card__text"
+                        class="v-card__text pl-0"
                       >
-                        Company
+                        
+                User Type
+              
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                        role="combobox"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <div
+                                class="v-select__selections"
+                              >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  All
+                                </div>
+                                <input
+                                  aria-readonly="false"
+                                  autocomplete="on"
+                                  placeholder="All"
+                                  readonly="readonly"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      class="primary--text"
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="true"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple primary--text"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light primary--text"
+                                                  >
+                                                    check_box
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            All
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            Employee
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            Customer
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            Potential Customer
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex f-bus-filter-sorter__levels sm12 md2"
+                  >
+                    <div
+                      class="flex shrink"
+                    >
+                      <div
+                        class="v-card__text pl-0"
+                      >
+                        
+                Level
+              
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                        role="combobox"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <div
+                                class="v-select__selections"
+                              >
+                                <div
+                                  class="v-select__selection v-select__selection--comma"
+                                >
+                                  All
+                                </div>
+                                <input
+                                  aria-readonly="false"
+                                  autocomplete="on"
+                                  placeholder="All"
+                                  readonly="readonly"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light "
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      class="primary--text"
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="true"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple primary--text"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light primary--text"
+                                                  >
+                                                    check_box
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            All
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            1. Platform Admin
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            2. Platform Director
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            3. Platform Lead
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            4. Platform Member
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            5. Company Admin
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            6. Company Director
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            7. Company Lead
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <a
+                                        class="v-list__tile v-list__tile--link theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__action"
+                                        >
+                                          <div
+                                            class="v-input v-input--selection-controls v-input--checkbox theme--light"
+                                          >
+                                            <div
+                                              class="v-input__control"
+                                            >
+                                              <div
+                                                class="v-input__slot"
+                                              >
+                                                <div
+                                                  class="v-input--selection-controls__input"
+                                                >
+                                                  <input
+                                                    aria-checked="false"
+                                                    role="checkbox"
+                                                    type="checkbox"
+                                                    value=""
+                                                  />
+                                                  <div
+                                                    class="v-input--selection-controls__ripple"
+                                                  />
+                                                  <i
+                                                    aria-hidden="true"
+                                                    class="v-icon material-icons theme--light"
+                                                  >
+                                                    check_box_outline_blank
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="v-messages theme--light"
+                                              >
+                                                <div
+                                                  class="v-messages__wrapper"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            8. Company Member
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex sm12 md2"
+                  >
+                    <div
+                      class="flex shrink"
+                    >
+                      <div
+                        class="v-card__text pl-0"
+                      >
+                        
+                City
+              
                       </div>
                     </div>
                      
@@ -942,6 +1851,223 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                       </div>
                     </div>
                   </div>
+                   
+                  <div
+                    class="flex sm12 md2"
+                  >
+                    <div
+                      class="flex shrink"
+                    >
+                      <div
+                        class="v-card__text pl-0"
+                      >
+                        
+                State
+              
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex sm12 md2"
+                  >
+                    <div
+                      class="flex shrink"
+                    >
+                      <div
+                        class="v-card__text pl-0"
+                      >
+                        
+                Company
+              
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        height="48"
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="All"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon v-icon--link material-icons theme--light"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
                 </div>
               </div>
             </div>

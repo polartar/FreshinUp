@@ -35,10 +35,10 @@ return [
     ],
 
     'square' => [
-        'sq_token' => env('SQ_TOKEN'),
-        'sq_app_id' => env('SQ_APP_ID'),
-        'sq_app_secret' => env('SQ_APP_SECRET'),
-        'sq_domain' => env('SQ_DOMAIN')
+        'access_token' => env('SQUARE_ACCESS_TOKEN'),
+        'app_id' => env('SQUARE_APP_ID'),
+        'app_secret' => env('SQUARE_APP_SECRET'),
+        'environment' => env('SQUARE_ENVIRONMENT')
     ],
 
     'stripe' => [

@@ -165,7 +165,7 @@ exports[`components/venues/EventFilterSorter Snapshots Default 1`] = `
         <!---->
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
           style="display: none;"
         >
           <div
@@ -411,7 +411,7 @@ exports[`components/venues/EventFilterSorter Snapshots Set 1`] = `
         <!---->
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
           style="display: none;"
         >
           <div

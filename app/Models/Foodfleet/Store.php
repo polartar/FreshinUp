@@ -32,7 +32,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property Carbon updated_at
  * @property string deleted_at
  * @property string owner_uuid
- * @property string pos_system
  * @property string phone
  * @property string state_of_incorporation
  * @property string facebook

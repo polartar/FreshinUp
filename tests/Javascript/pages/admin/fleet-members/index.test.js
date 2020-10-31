@@ -1,10 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
-import { createLocalVue } from 'fresh-bus/tests/utils'
 import { FIXTURE_STORES_RESPONSE, FIXTURE_STORES_SORTED_BY_FIRSTNAME } from 'tests/__data__/stores'
 import Component from '~/pages/admin/fleet-members/index.vue'
-import stores from '~/store/modules/stores'
-import storeStatuses from '~/store/modules/storeStatuses'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
+import createStore from 'tests/createStore'
 
 describe('pages/admin/fleet-members', () => {
   let localVue, mock, store, actions
@@ -30,12 +28,7 @@ describe('pages/admin/fleet-members', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      const store = createStore({}, {
-        modules: {
-          stores: stores({}),
-          storeStatuses: storeStatuses({})
-        }
-      })
+      const store = createStore()
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         store

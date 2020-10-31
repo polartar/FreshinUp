@@ -751,7 +751,7 @@ exports[`Store List component Snapshots stores assigned 1`] = `
                 <!---->
                  
                 <div
-                  class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+                  class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
                   style="display: none;"
                 >
                   <div
@@ -4098,7 +4098,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
                 <!---->
                  
                 <div
-                  class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+                  class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
                   style="display: none;"
                 >
                   <div

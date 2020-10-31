@@ -25,7 +25,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
               class="layout row justify-space-between"
             >
               <a
-                class="mt-2 title primary--text"
+                class="mt-2 title primary--text text-truncate"
                 href="#"
               >
                 
@@ -3363,7 +3363,7 @@ exports[`Admin Financial Reports Page Mount snapshot 1`] = `
               <!---->
                
               <div
-                class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+                class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
                 style="display: none;"
               >
                 <div

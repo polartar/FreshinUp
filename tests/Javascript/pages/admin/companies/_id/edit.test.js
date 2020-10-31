@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import createStore from '~/store'
+import createStore from 'tests/createStore'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import { FIXTURE_USERS_RESPONSE } from 'tests/__data__/users'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'

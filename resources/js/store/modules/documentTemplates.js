@@ -34,5 +34,8 @@ export default ({ items, item }) => {
     ...store.modules,
     statuses: makeRestStore('foodfleet/document/template/statuses', { items, item })
   }
-  return store
+  return {
+    namespaced: true,
+    ...store
+  }
 }

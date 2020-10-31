@@ -30,19 +30,25 @@ Frequency: `Every minute`
 
 #### Square setup
 - create an account on `https://developer.squareup.com`
-- create a test application and set it as sandbox if you are on staging or without if you are in production
-- set your callback url in the app under Oauth based on your base url (eg: `https://foodfleet.freshinup.com/admin/contractor/check`)
+- create a test application
 - set your env variables related to square
 ```
-SQ_TOKEN=<your-app-token>
-SQ_APP_ID=<your-app-id>
-SQ_APP_SECRET=<your-app-secret>
-SQ_DOMAIN=https://connect.squareupsandbox.com (staging) OR https://connect.squareupsandbox.com (production)
+SQUARE_ACCESS_TOKEN=<your-app-access-token>
+SQUARE_APP_ID=<your-app-id>
+SQUARE_APP_SECRET=<your-app-secret>
+SQUARE_ENVIRONMENT=<sandbox|production>
 ```
 IF you are on staging:
 - go back to `https://developer.squareup.com` dashboard page and create a test user WITHOUT any permission on the app
 - click on the `Launch` button right after the test account
 - the test account will remain active for a limited amount of time. After that it will be necessary re-launch the account from the developer dashboard
+- To connect a new account you need to hit
+`https://connect.squareup(sandbox).com?client_id=$clientId`
+(if in dev)
+It is important that you're sign in to your square dashboard when try the authorization
+- the redirect url should be set to `$baseUrl/admin/contractor/check`. $baseUrl being your https server (use ngrok if needed) ie https://foodfleet.freshinup.com/admin/contractor/check, http://c5e152320a0b.ngrok.io/admin/contractor/check but not localhost
+
+Login->fleet member detail page -> connect square -> callback -> redirect back
 
 ### Development Setup
 #### Requirements
