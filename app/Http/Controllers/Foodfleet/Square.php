@@ -12,7 +12,6 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Auth;
 use Square\Environment;
 use Square\Exceptions\ApiException;
 use Square\Models\ObtainTokenRequest;
@@ -20,20 +19,22 @@ use Square\SquareClient;
 
 class Square extends Controller
 {
-    public function connect () {
+    public function connect()
+    {
         // The same logic is being done on the backend. Now we need to pick where is the best place
         // to put this
         $environment = config('services.square.environment');
         $baseUrl = ($environment === Environment::PRODUCTION)
             ? 'https://connect.squareup.com'
             : 'https://connect.squareupsandbox.com';
-        $url =  "$baseUrl/oauth2/authorize?"
+        $url = "$baseUrl/oauth2/authorize?"
             . 'scope=CUSTOMERS_WRITE+CUSTOMERS_READ+MERCHANT_PROFILE_READ';
         redirect($url);
     }
 
 
-    public function authorizeApp (Request $request) {
+    public function authorizeApp(Request $request)
+    {
         $this->validate($request, [
             'code' => 'required'
         ]);
@@ -42,10 +43,8 @@ class Square extends Controller
         if (!$authUser || !$authUser->isAdmin() || $authUser->company == null) {
             throw new AuthorizationException();
         }
-        $client = new SquareClient([
-            'accessToken' => config('services.square.access_token'),
-            'environment' => config('services.square.environment'),
-        ]);
+        /** @var SquareClient $client */
+        $client = app(SquareClient::class);
         $oAuthApi = $client->getOAuthApi();
         $body = new ObtainTokenRequest(
             config('services.square.app_id'),
@@ -72,9 +71,7 @@ class Square extends Controller
         // TODO: save this info $result->getExpiresAt() so that we can refresh the token
         // after expiration in 30 days
         $company->save();
-        return response()->json([
-            'result' => true
-        ]);
+        return response()->json(null);
     }
 
 
@@ -84,7 +81,7 @@ class Square extends Controller
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\AnonymousResourceCollection|JsonResource
      * @throws \Exception
      */
-    public function locations (Request $request, Company $company)
+    public function locations(Request $request, Company $company)
     {
         if (!$company->square_access_token) {
             return response()->json([

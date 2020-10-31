@@ -33,31 +33,31 @@ describe('page/admin/events/store', () => {
         })
       store = createStore()
 
-    afterEach(() => {
-      mock.restore()
-    })
-
-    it('mount store detail page', async () => {
-      const wrapper = mount(Component, {
-        localVue,
-        store
+      afterEach(() => {
+        mock.restore()
       })
-      await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('stores/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('stores/summary/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: 2 } })
-      await wrapper.vm.$store.dispatch('eventMenuItems/getItems')
-      await wrapper.vm.$store.dispatch('messages/getItems')
-      await wrapper.vm.$store.dispatch('storeStatuses/getItems')
-      await wrapper.vm.$store.dispatch('documentStatuses/getItems')
 
-      await wrapper.vm.$store.dispatch('page/setLoading', false)
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.store.name).toContain(FIXTURE_STORE.name)
-      expect(wrapper.vm.event.uuid).toBe(FIXTURE_EVENT.uuid)
-      expect(wrapper.element).toMatchSnapshot()
+      it('mount store detail page', async () => {
+        const wrapper = mount(Component, {
+          localVue,
+          store
+        })
+        await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 2 } })
+        await wrapper.vm.$store.dispatch('stores/getItem', { params: { id: 2 } })
+        await wrapper.vm.$store.dispatch('stores/summary/getItem', { params: { id: 2 } })
+        await wrapper.vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: 2 } })
+        await wrapper.vm.$store.dispatch('eventMenuItems/getItems')
+        await wrapper.vm.$store.dispatch('messages/getItems')
+        await wrapper.vm.$store.dispatch('storeStatuses/getItems')
+        await wrapper.vm.$store.dispatch('documentStatuses/getItems')
+
+        await wrapper.vm.$store.dispatch('page/setLoading', false)
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.store.name).toContain(FIXTURE_STORE.name)
+        expect(wrapper.vm.event.uuid).toBe(FIXTURE_EVENT.uuid)
+        expect(wrapper.element).toMatchSnapshot()
+      })
     })
-  })
   })
   describe('Methods', () => {
     beforeEach(() => {

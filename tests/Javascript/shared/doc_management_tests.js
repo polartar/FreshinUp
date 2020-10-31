@@ -1,6 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
 import { FIXTURE_DOCUMENTS_RESPONSE } from 'tests/__data__/documents'
-import documents from '~/store/modules/documents'
 import createStore from 'tests/createStore'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 
@@ -8,7 +7,6 @@ export const docMethodsTests = function (Component) {
   let localVue, mock, store, actions
   beforeEach(() => {
     const vue = createLocalVue({ validation: true })
-    const docModule = documents({})
     localVue = vue.localVue
     actions = {
       patchItem: jest.fn()

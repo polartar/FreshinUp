@@ -395,12 +395,12 @@ exports[`Admin layout mount snapshot of layout 1`] = `
             >
               <div
                 class="v-avatar primary"
-                style="height: 48px; width: 48px;"
+                style="height: 36px; width: 36px;"
               >
                 <i
                   aria-hidden="true"
                   class="v-icon material-icons theme--light primary-text--text"
-                  style="font-size: 48px;"
+                  style="font-size: 36px;"
                 >
                   account_circle
                 </i>

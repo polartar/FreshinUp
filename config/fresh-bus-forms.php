@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\SPAController;
-use App\Http\Controllers\ConsumerController;
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
+use FreshinUp\FreshBusForms\Http\Controllers\ConsumerController;
+use FreshinUp\FreshBusForms\Http\Controllers\SPAController;
 
 return [
     'app' => [

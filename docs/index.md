@@ -50,7 +50,7 @@
 <br/>
 
 # Changes
-## Oct 29, 2020
+## Oct 30, 2020
 - **ADD** Cannot connect to Square [#519](https://github.com/FreshinUp/foodfleet/issues/519)
 
 <br/>

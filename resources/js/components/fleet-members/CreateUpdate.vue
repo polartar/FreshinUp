@@ -338,7 +338,7 @@ export default {
         'INVENTORY_READ',
         'ITEMS_READ',
         'MERCHANT_PROFILE_READ',
-        'ORDERS_READ',
+        'ORDERS_READ'
         // 'SETTLEMENTS_READ',
         // 'BANK_ACCOUNTS_READ',
         // 'CUSTOMERS_WRITE',
@@ -357,7 +357,7 @@ export default {
 
       const params = {
         client_id: process.env.SQUARE_APP_ID,
-        scope: SCOPES.join('+'),
+        scope: SCOPES.join('+')
         // session: false,
       }
       const queryParams = Object.keys(params).map(key => `${key}=${params[key]}`).join('&')
@@ -382,6 +382,17 @@ export default {
     storeAreas () {
       // TODO: see https://github.com/FreshinUp/core-ui/issues/135
       return Array.isArray(this.areas) ? this.areas : []
+    }
+  },
+  watch: {
+    '$store.getters.currentUser' (user) {
+      if (user) {
+        this.$store.dispatch('companies/squareLocations/getItems', {
+          params: {
+            companyId: user.company_id
+          }
+        })
+      }
     }
   },
   methods: {
@@ -459,7 +470,7 @@ export default {
       window.location = this.squareUrl
     },
     onDisconnectSquare () {
-      this.squareLocations = []
+      // TODO delay to a later time
     },
 
     // store areas
@@ -515,17 +526,6 @@ export default {
         .then(() => {
           this.menuItemLoading = false
         })
-    }
-  },
-  watch: {
-    '$store.getters.currentUser' (user) {
-      if (user) {
-        this.$store.dispatch('companies/squareLocations/getItems', {
-          params: {
-            companyId: user.company_id
-          }
-        })
-      }
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

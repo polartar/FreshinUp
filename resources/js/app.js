@@ -93,7 +93,7 @@ const appInstance = new App({
   modules: [
     CoreProvider,
     FreshBusProvider,
-    ClientProvider,
+    ClientProvider
   ],
   initialState,
   theme,

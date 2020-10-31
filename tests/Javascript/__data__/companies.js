@@ -2773,28 +2773,28 @@ export const FIXTURE_SQUARE_LOCATIONS = [
     'mcc': '7299'
   },
   {
-    "id": "LWP0KP8XGVZTM",
-    "name": "Default Test Account",
-    "address": {
-      "address_line_1": "1600 Pennsylvania Ave NW",
-      "locality": "Washington",
-      "administrative_district_level_1": "DC",
-      "postal_code": "20500",
-      "country": "US"
+    'id': 'LWP0KP8XGVZTM',
+    'name': 'Default Test Account',
+    'address': {
+      'address_line_1': '1600 Pennsylvania Ave NW',
+      'locality': 'Washington',
+      'administrative_district_level_1': 'DC',
+      'postal_code': '20500',
+      'country': 'US'
     },
-    "timezone": "UTC",
-    "capabilities": [
-      "CREDIT_CARD_PROCESSING"
+    'timezone': 'UTC',
+    'capabilities': [
+      'CREDIT_CARD_PROCESSING'
     ],
-    "status": "ACTIVE",
-    "created_at": "2020-10-20T16:14:51Z",
-    "merchant_id": "MLYGH32E4JTBK",
-    "country": "US",
-    "language_code": "en-US",
-    "currency": "USD",
-    "business_name": "Default Test Account",
-    "type": "PHYSICAL",
-    "business_hours": {},
-    "mcc": "7298"
+    'status': 'ACTIVE',
+    'created_at': '2020-10-20T16:14:51Z',
+    'merchant_id': 'MLYGH32E4JTBK',
+    'country': 'US',
+    'language_code': 'en-US',
+    'currency': 'USD',
+    'business_name': 'Default Test Account',
+    'type': 'PHYSICAL',
+    'business_hours': {},
+    'mcc': '7298'
   }
 ]

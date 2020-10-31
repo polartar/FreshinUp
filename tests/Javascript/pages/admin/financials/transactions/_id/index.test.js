@@ -1,7 +1,6 @@
 import { mount } from '@vue/test-utils'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/pages/admin/financials/transactions/_id/index.vue'
-import transactions from '~/store/modules/transactions'
 import { FIXTURE_TRANSACTIONS } from 'tests/__data__/transactions'
 import createStore from 'tests/createStore'
 

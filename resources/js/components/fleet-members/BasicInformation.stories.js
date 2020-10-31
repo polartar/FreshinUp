@@ -53,7 +53,7 @@ export const Populated = () => ({
   components: { BasicInformation },
   data () {
     return {
-      store: {...FIXTURE_STORE, square_location_id: FIXTURE_SQUARE_LOCATIONS[0].id },
+      store: { ...FIXTURE_STORE, square_id: FIXTURE_SQUARE_LOCATIONS[0].id },
       types: FIXTURE_STORE_TYPES,
       squareLocations: FIXTURE_SQUARE_LOCATIONS
     }

@@ -9,7 +9,7 @@ export default {
   layout: 'admin',
   data () {
     return {
-      pageTitle: 'Square authorization',
+      pageTitle: 'Square authorization'
     }
   },
   methods: {

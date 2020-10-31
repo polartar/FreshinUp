@@ -10,7 +10,11 @@
       />
     </v-card-title>
     <v-divider />
-    <v-layout row wrap class="pa-3">
+    <v-layout
+      row
+      wrap
+      class="pa-3"
+    >
       <v-flex
         xs12
         lg8
@@ -35,7 +39,10 @@
               outline
             />
           </v-flex>
-          <v-flex xs12 md3>
+          <v-flex
+            xs12
+            md3
+          >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Type
             </div>
@@ -48,7 +55,10 @@
               outline
             />
           </v-flex>
-          <v-flex xs12 md8>
+          <v-flex
+            xs12
+            md8
+          >
             <div class="mb-2 text-uppercase grey--text font-weight-bold">
               Tags
             </div>
@@ -100,7 +110,11 @@
               {{ tag.name }}
             </v-chip>
           </v-flex>
-          <v-layout row wrap class="mb-2">
+          <v-layout
+            row
+            wrap
+            class="mb-2"
+          >
             <v-flex
               xs12
               md4
@@ -123,23 +137,23 @@
                       </v-icon>
                     </v-btn>
                   </template>
-                  You will be prompted to enter <br/> your Square Credentials and share <br/> your transactional data with Food Fleet
+                  You will be prompted to enter <br> your Square Credentials and share <br> your transactional data with Food Fleet
                 </v-tooltip>
               </div>
               <v-btn
+                v-if="!hasSquareAccount"
                 depressed
                 color="primary"
                 @click="connectSquare"
-                v-if="!hasSquareAccount"
               >
                 Connect
               </v-btn>
               <v-btn
+                v-else
                 depressed
                 color="error"
-                @click="disconnectSquare"
-                v-else
                 disabled
+                @click="disconnectSquare"
               >
                 Disconnect
               </v-btn>
@@ -185,7 +199,10 @@
               md4
               pl-2
             >
-              <v-layout column class="justify-content-between">
+              <v-layout
+                column
+                class="justify-content-between"
+              >
                 <div class="ff-fleet-members__basic_information mb-2 text-uppercase grey--text font-weight-bold d-flex justify-space-between position-relative pt-2">
                   Square location ID
                 </div>
@@ -411,7 +428,6 @@ export const DEFAULT_STORE = {
   type_id: '',
   tags: [],
   square_id: '',
-  square_business_name: '',
   size: '',
   owner_uuid: '',
   contact_phone: '',

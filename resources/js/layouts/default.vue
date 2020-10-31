@@ -91,9 +91,12 @@
             icon
             flat
             class="avatar"
-
           >
-            <f-user-avatar :user="currentUser" :size="48" color="primary"/>
+            <f-user-avatar
+              :user="currentUser"
+              :size="36"
+              color="primary"
+            />
           </v-btn>
 
           <user-menu

@@ -26,9 +26,9 @@ describe('Event Customers page', () => {
         .onGet('api/foodfleet/messages').reply(200, { data: FIXTURE_MESSAGES })
         .onGet('api/foodfleet/stores').reply(200, { data: FIXTURE_STORES })
         .onAny().reply(config => {
-        console.warn('No mock match for ' + config.url, config)
-        return [404, {}]
-      })
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
       store = createStore()
     })
 
@@ -73,9 +73,9 @@ describe('Event Customers page', () => {
         .onGet('api/foodfleet/stores').reply(200, { data: FIXTURE_STORES })
         .onPost('api/foodfleet/messages').reply(200)
         .onAny().reply(config => {
-        console.warn('No mock match for ' + config.url, config)
-        return [404, {}]
-      })
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
       store = createStore()
     })
 
