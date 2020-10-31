@@ -15,6 +15,32 @@ class SquaresTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
+    private function mockSquare($isSuccess)
+    {
+        $accessToken = $this->faker->uuid;
+        $refreshToken = $this->faker->uuid;
+        $resultMock = \Mockery::mock();
+        $resultMock->shouldReceive('getAccessToken')
+            ->andReturn($accessToken);
+        $resultMock->shouldReceive('getRefreshToken')
+            ->andReturn($refreshToken);
+        $apiResponseMock = \Mockery::mock(\Square\Http\ApiResponse::class);
+        $apiResponseMock->shouldReceive('isSuccess')
+            ->andReturn($isSuccess);
+        $apiResponseMock->shouldReceive('getResult')
+            ->andReturn($resultMock);
+        $oAuthApiMock = \Mockery::mock(\Square\Apis\OAuthApi::class);
+        $oAuthApiMock->shouldReceive('obtainToken')
+            ->andReturn($apiResponseMock);
+        $this->mock(SquareClient::class)
+            ->shouldReceive('getOAuthApi')
+            ->andReturn($oAuthApiMock);
+        if (!$isSuccess) {
+            $apiResponseMock->shouldReceive('getErrors');
+        }
+        return compact('accessToken', 'refreshToken');
+    }
+
     public function testVerifyWithNotValidToken()
     {
         $company = factory(Company::class)->create();
@@ -24,7 +50,7 @@ class SquaresTest extends TestCase
         ]);
 
         Passport::actingAs($user);
-
+        $this->mockSquare(false);
         $response = $this->json('POST', "/api/foodfleet/squares/authorize", [
             'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
         ]);
@@ -75,29 +101,6 @@ class SquaresTest extends TestCase
         $response->assertStatus(403);
     }
 
-    private function mockSquare()
-    {
-        $accessToken = $this->faker->uuid;
-        $refreshToken = $this->faker->uuid;
-        $resultMock = \Mockery::mock();
-        $resultMock->shouldReceive('getAccessToken')
-            ->andReturn($accessToken);
-        $resultMock->shouldReceive('getRefreshToken')
-            ->andReturn($refreshToken);
-        $apiResponseMock = \Mockery::mock(\Square\Http\ApiResponse::class);
-        $apiResponseMock->shouldReceive('isSuccess')
-            ->andReturn(true);
-        $apiResponseMock->shouldReceive('getResult')
-            ->andReturn($resultMock);
-        $oAuthApiMock = \Mockery::mock(\Square\Apis\OAuthApi::class);
-        $oAuthApiMock->shouldReceive('obtainToken')
-            ->andReturn($apiResponseMock);
-        $this->mock(SquareClient::class)
-            ->shouldReceive('getOAuthApi')
-            ->andReturn($oAuthApiMock);
-        return compact('accessToken', 'refreshToken');
-    }
-
     public function testVerifyOk()
     {
         $company = factory(Company::class)->create();
@@ -106,7 +109,7 @@ class SquaresTest extends TestCase
             'company_id' => $company->id
         ]);
 
-        $result = $this->mockSquare();
+        $result = $this->mockSquare(true);
 
         Passport::actingAs($user);
 
