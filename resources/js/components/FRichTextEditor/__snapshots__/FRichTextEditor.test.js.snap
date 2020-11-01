@@ -10,94 +10,77 @@ exports[`component/FRichTextEditor Snapshots Default 1`] = `
     <div
       class="menubar"
     >
-      <div
-        class="menubar"
+      <button
+        class="menubar__button"
       >
-        <button
-          class="menubar__button"
-        >
-          
-          H1
         
-        </button>
-         
-        <button
-          class="menubar__button"
-        >
-          
-          H2
+        H1
+      
+      </button>
+       
+      <button
+        class="menubar__button"
+      >
         
-        </button>
-         
-        <button
-          class="menubar__button"
-        >
-          
-          H3
+        H2
+      
+      </button>
+       
+      <button
+        class="menubar__button"
+      >
         
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+        H3
+      
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_bold
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+            format_bold
+          </i>
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_italic
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+            format_italic
+          </i>
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_underlined
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--depressed theme--light"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            
-          Add variable
-        
-          </div>
-        </button>
-      </div>
+            format_underlined
+          </i>
+        </div>
+      </button>
     </div>
      
     <div
@@ -127,94 +110,77 @@ exports[`component/FRichTextEditor Snapshots Populated 1`] = `
     <div
       class="menubar"
     >
-      <div
-        class="menubar"
+      <button
+        class="menubar__button"
       >
-        <button
-          class="menubar__button"
-        >
-          
-          H1
         
-        </button>
-         
-        <button
-          class="menubar__button is-active"
-        >
-          
-          H2
+        H1
+      
+      </button>
+       
+      <button
+        class="menubar__button"
+      >
         
-        </button>
-         
-        <button
-          class="menubar__button"
-        >
-          
-          H3
+        H2
+      
+      </button>
+       
+      <button
+        class="menubar__button"
+      >
         
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+        H3
+      
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_bold
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+            format_bold
+          </i>
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_italic
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--icon v-btn--depressed theme--light"
-          type="button"
+            format_italic
+          </i>
+        </div>
+      </button>
+       
+      <button
+        class="v-btn v-btn--icon v-btn--depressed theme--light"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
+          <i
+            aria-hidden="true"
+            class="v-icon material-icons theme--light"
           >
-            <i
-              aria-hidden="true"
-              class="v-icon material-icons theme--light"
-            >
-              format_underlined
-            </i>
-          </div>
-        </button>
-         
-        <button
-          class="v-btn v-btn--depressed theme--light"
-          type="button"
-        >
-          <div
-            class="v-btn__content"
-          >
-            
-          Add variable
-        
-          </div>
-        </button>
-      </div>
+            format_underlined
+          </i>
+        </div>
+      </button>
     </div>
      
     <div

@@ -5,59 +5,58 @@
       :editor="editor"
     >
       <div class="menubar">
-        <div class="menubar">
-          <button
-            class="menubar__button"
-            :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-            @click="commands.heading({ level: 1 })"
-          >
-            H1
-          </button>
+        <button
+          class="menubar__button"
+          :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+          @click="commands.heading({ level: 1 })"
+        >
+          H1
+        </button>
 
-          <button
-            class="menubar__button"
-            :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-            @click="commands.heading({ level: 2 })"
-          >
-            H2
-          </button>
+        <button
+          class="menubar__button"
+          :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+          @click="commands.heading({ level: 2 })"
+        >
+          H2
+        </button>
 
-          <button
-            class="menubar__button"
-            :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-            @click="commands.heading({ level: 3 })"
-          >
-            H3
-          </button>
+        <button
+          class="menubar__button"
+          :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+          @click="commands.heading({ level: 3 })"
+        >
+          H3
+        </button>
 
-          <v-btn
-            icon
-            depressed
-            :class="{ 'is-active': isActive.bold() }"
-            @click="commands.bold"
-          >
-            <v-icon>format_bold</v-icon>
-          </v-btn>
+        <v-btn
+          icon
+          depressed
+          :class="{ 'is-active': isActive.bold() }"
+          @click="commands.bold"
+        >
+          <v-icon>format_bold</v-icon>
+        </v-btn>
 
-          <v-btn
-            icon
-            depressed
-            :class="{ 'is-active': isActive.italic() }"
-            @click="commands.italic"
-          >
-            <v-icon>format_italic</v-icon>
-          </v-btn>
+        <v-btn
+          icon
+          depressed
+          :class="{ 'is-active': isActive.italic() }"
+          @click="commands.italic"
+        >
+          <v-icon>format_italic</v-icon>
+        </v-btn>
 
-          <v-btn
-            icon
-            depressed
-            :class="{ 'is-active': isActive.underline() }"
-            @click="commands.underline"
-          >
-            <v-icon>format_underlined</v-icon>
-          </v-btn>
+        <v-btn
+          icon
+          depressed
+          :class="{ 'is-active': isActive.underline() }"
+          @click="commands.underline"
+        >
+          <v-icon>format_underlined</v-icon>
+        </v-btn>
 
-          <!-- <v-btn
+        <!-- <v-btn
             icon
             depressed
             :class="{ 'is-active': editor.activeMarkAttrs.aligntext.align === 'left' }"
@@ -92,11 +91,6 @@
           >
             <v-icon>format_align_justify</v-icon>
           </v-btn> -->
-
-          <v-btn depressed>
-            Add variable
-          </v-btn>
-        </div>
       </div>
     </editor-menu-bar>
     <editor-content
@@ -134,8 +128,8 @@ export default {
     EditorContent,
     EditorMenuBar
   },
-
   props: {
+    // overriding value to give default empty string
     value: { type: String, default: '' }
   },
 
@@ -144,23 +138,27 @@ export default {
   }),
 
   watch: {
-    value (val) {
-      if (this.editor && val !== this.value) {
-        this.editor.setContent(val, true)
+    value (val, oldValue) {
+      if (!this.editor) {
+        return false
+      }
+      // condition 1:  val !== this.value avoid update infinite loop
+      // Value changing emitting input value changing emitting input again etc
+      // condition 2: String(oldValue).length === 0
+      // Hack/fix when oldValue === default value of prop 'value'
+      if (val !== this.value || String(oldValue).length === 0) {
+        this.$nextTick(() => {
+          this.editor.setContent(val)
+        })
       }
     }
   },
 
   mounted () {
-    this.$nextTick(() => this.init())
-  },
-  beforeDestroy () {
-    if (this.editor) {
-      this.editor.destroy()
-    }
+    this.setupEditor()
   },
   methods: {
-    async init () {
+    setupEditor () {
       this.editor = new Editor({
         extensions: [
           new Heading(),
@@ -174,6 +172,10 @@ export default {
           this.$emit('input', getHTML())
         }
       })
+      this.editor.setContent(this.value)
+      this.$once('hook:destroyed', () => {
+        this.editor.destroy()
+      })
     }
   }
 }
@@ -181,7 +183,6 @@ export default {
 <style scoped>
 .editor {
   position: relative;
-  /* max-width: 30rem; */
   margin: 0 auto 5rem;
 }
 

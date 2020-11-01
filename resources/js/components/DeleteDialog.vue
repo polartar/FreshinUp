@@ -41,6 +41,7 @@
 
 <script>
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+import get from 'lodash/get'
 
 export default {
   components: {
@@ -61,7 +62,9 @@ export default {
       return `${Math.round(this.progress * 100) / 100} %`
     },
     message () {
-      return this.items.map(item => item[this.itemTitleProp]).join(', ')
+      return this.items.map(item => get(item, this.itemTitleProp))
+        .filter(Boolean)
+        .join(', ')
     }
   }
 }

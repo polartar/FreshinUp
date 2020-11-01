@@ -162,6 +162,9 @@ export default {
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('events/getItems'))
+    vm.$store.dispatch('documentTemplates/setFilters', {
+      status_id: vm.$store.getters['documentTemplates/STATUS'].PUBLISHED
+    })
     promises.push(vm.$store.dispatch('documentTemplates/getItems'))
     Promise.all(promises)
       .then(() => {})

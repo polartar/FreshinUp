@@ -42,6 +42,7 @@
 
 # Changes
 ## Oct 31, 2020
+- **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
 - **ADD** Document - Preview bind variable [#532](https://github.com/FreshinUp/foodfleet/issues/532)
 
 <br/>
@@ -52,7 +53,6 @@
 <br/>
 
 ## Oct 19, 2020
-- **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
 - **ADD** Document preview [#498](https://github.com/FreshinUp/foodfleet/issues/498)
 - **FIX** Document assignment is not working [#497](https://github.com/FreshinUp/foodfleet/issues/497)
 - **FIX** Uploaded document is not clickable / downloadable [#494](https://github.com/FreshinUp/foodfleet/issues/494)
