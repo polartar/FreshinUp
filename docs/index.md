@@ -41,8 +41,13 @@
 <br/>
 
 # Changes
-## Oct 31, 2020
+## Nov 1, 2020
 - **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
+- **ADD** System does not show a confirmation snackbar [#522](https://github.com/FreshinUp/foodfleet/issues/522)
+
+<br/>
+
+## Oct 31, 2020
 - **ADD** Document - Preview bind variable [#532](https://github.com/FreshinUp/foodfleet/issues/532)
 
 <br/>

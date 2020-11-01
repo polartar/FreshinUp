@@ -5,6 +5,8 @@ export default (initialState = {}) => {
     authorize (context, payload) {
       return new Promise((resolve, reject) => {
         axios({
+          // this is actually calling /api/foodfleet/squares/authorize somehow
+          // don't ask me how
           url: '/foodfleet/squares/authorize',
           method: 'POST',
           headers: {
