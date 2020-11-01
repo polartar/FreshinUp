@@ -190,7 +190,7 @@
                 :items="squareLocations"
                 single-line
                 outline
-                item-text="business_name"
+                item-text="name"
                 item-value="id"
               />
             </v-flex>

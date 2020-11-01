@@ -390,16 +390,19 @@ export default {
   watch: {
     '$store.getters.currentUser' (user) {
       if (user) {
-        this.$store.dispatch('companies/squareLocations/getItems', {
-          params: {
-            companyId: user.company_id
-          }
-        })
-          .catch(error => console.error(error))
+        this.getSquareLocations(user.company_id)
       }
     }
   },
   methods: {
+    getSquareLocations (companyId) {
+      this.$store.dispatch('companies/squareLocations/getItems', {
+        params: {
+          companyId: companyId
+        }
+      })
+        .catch(error => console.error(error))
+    },
     // store
     async saveOrCreate (data) {
       try {
@@ -565,6 +568,10 @@ export default {
         store_uuid: id
       })
       promises.push(vm.$store.dispatch('menuItems/getItems'))
+      const currentUser = vm.$store.getters['currentUser']
+      if (currentUser) {
+        vm.getSquareLocations(currentUser.company_id)
+      }
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))

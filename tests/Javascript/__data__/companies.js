@@ -2767,7 +2767,6 @@ export const FIXTURE_SQUARE_LOCATIONS = [
     'country': 'US',
     'language_code': 'en-US',
     'currency': 'USD',
-    'business_name': 'Dummy 01',
     'type': 'PHYSICAL',
     'business_hours': [],
     'mcc': '7299'
@@ -2792,7 +2791,6 @@ export const FIXTURE_SQUARE_LOCATIONS = [
     'country': 'US',
     'language_code': 'en-US',
     'currency': 'USD',
-    'business_name': 'Default Test Account',
     'type': 'PHYSICAL',
     'business_hours': {},
     'mcc': '7298'
