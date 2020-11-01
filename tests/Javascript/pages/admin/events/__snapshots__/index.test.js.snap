@@ -56,22 +56,9 @@ exports[`Admin Events Page Mount snapshot 1`] = `
    
   <v-divider-stub />
    
-  <filter-sorter-stub
-    filters="[object Object]"
-    statuses=""
-    types=""
-  />
+  <!---->
    
-  <event-list-stub
-    events=""
-    page="1"
-    role="admin"
-    rowsperpage="30"
-    rowsperpageitems="5,10,15,25,30,50"
-    sortby=""
-    statuses=""
-    totalitems="0"
-  />
+  <!---->
    
   <v-dialog-stub
     contentclass=""

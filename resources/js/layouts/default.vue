@@ -92,12 +92,11 @@
             flat
             class="avatar"
           >
-            <v-avatar size="48">
-              <img
-                :src="currentUser.avatar"
-                :alt="currentUser.name"
-              >
-            </v-avatar>
+            <f-user-avatar
+              :user="currentUser"
+              :size="36"
+              color="primary"
+            />
           </v-btn>
 
           <user-menu
@@ -169,6 +168,7 @@ import UserMenu from 'fresh-bus/components/layout/UserMenu.vue'
 import NavigationDrawerList from 'fresh-bus/components/layout/NavigationDrawerList.vue'
 import NotificationMenu from 'fresh-bus/components/layout/NotificationMenu.vue'
 import FreshBusFooter from 'fresh-bus/components/Footer.vue'
+import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 
 const generalErrorMessageFields = createHelpers({
   getterType: 'generalErrorMessages/getField',
@@ -190,7 +190,8 @@ export default {
     UserMenu,
     NotificationMenu,
     NavigationDrawerList,
-    FreshBusFooter
+    FreshBusFooter,
+    FUserAvatar
   },
   data: () => ({
     isAdmin: false,
@@ -258,6 +259,11 @@ export default {
 </script>
 
 <style scoped>
+  /deep/ .v-avatar.primary {
+    width: 48px;
+    height: 48px;
+    background-color: tomato;;
+  }
   .main-page-container {
     background-color: transparent;
   }

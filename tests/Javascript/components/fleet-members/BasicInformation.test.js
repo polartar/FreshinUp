@@ -10,8 +10,8 @@ describe('components/fleet-members/BasicInformation', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('WithData', async () => {
-      const wrapper = mount(Stories.WithData())
+    test('Populated', async () => {
+      const wrapper = mount(Stories.Populated())
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })

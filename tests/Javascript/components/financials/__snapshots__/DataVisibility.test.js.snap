@@ -11,7 +11,7 @@ exports[`DataVisibility Snapshots maxWidthBottomRow set 1`] = `
       class="layout row justify-space-between"
     >
       <a
-        class="mt-2 title primary--text"
+        class="mt-2 title primary--text text-truncate"
         href="#"
       >
         
@@ -753,7 +753,7 @@ exports[`DataVisibility Snapshots parameters and visibleParameters set 1`] = `
       class="layout row justify-space-between"
     >
       <a
-        class="mt-2 title primary--text"
+        class="mt-2 title primary--text text-truncate"
         href="#"
       >
         

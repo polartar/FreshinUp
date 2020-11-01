@@ -27,7 +27,8 @@
       >
         <v-layout>
           <v-flex
-            sm3
+            xs12
+            m3
             mr-2
           >
             <v-select
@@ -205,6 +206,7 @@
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import Mustache from 'mustache'
 
 export const DEFAULT_DOCUMENT = {
   uuid: '',
@@ -231,7 +233,8 @@ export default {
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
-    events: { type: Array, default: () => [] }
+    events: { type: Array, default: () => [] },
+    variables: { type: Object, default: () => {} }
   },
   data () {
     return {
@@ -261,10 +264,8 @@ export default {
       return this.templatesByUuid[this.template_uuid]
     },
     content () {
-      const html = get(this.selectedTemplate, 'content')
-      // TODO: this should be interpolated to with variable inside
-      // see https://github.com/FreshinUp/foodfleet/issues/532
-      return html
+      const html = get(this.selectedTemplate, 'content', '')
+      return Mustache.render(html, this.variables)
     }
   },
   methods: {

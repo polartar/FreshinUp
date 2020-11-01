@@ -211,3 +211,18 @@ export const FIXTURE_DOCUMENT_TEMPLATES = [
     updated_at: '2019-09-30T03:51:51.000000Z'
   }
 ]
+
+export const FIXTURE_DOCUMENT_TEMPLATES_VARIABLES = {
+  event: {
+    LimitationsOnMenuAlterations: '3',
+    PrepAdvanceTime: '93',
+    CleanUpTime: '17',
+    PerPersonCharge: '2',
+    EstimatedTotalCost: '100',
+    Deposit: '100',
+    ApproximateSecondPayment: '100',
+    PercentFor90DayCancellation: '100',
+    PercentFor45DayCancellation: '100',
+    PercentFor31DayCancellation: '100'
+  }
+}

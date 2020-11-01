@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USERS_RESPONSE, FIXTURE_USERS_SORTED_BY_FIRSTNAME } from 'tests/__data__/users'
 import { FIXTURE_CURRENT_USER } from 'tests/__data__/user'
 import Component from '~/pages/admin/users/index.vue'
+import createStore from 'tests/createStore'
 
 describe('Admin Users Page', () => {
   let localVue, mock

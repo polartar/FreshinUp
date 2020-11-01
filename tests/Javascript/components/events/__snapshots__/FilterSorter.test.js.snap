@@ -79,7 +79,7 @@ exports[`FilterSorter Snapshots defaults 1`] = `
       />
        
       <div
-        class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+        class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
       >
         <div
           class="flex"
@@ -886,7 +886,7 @@ exports[`FilterSorter Snapshots with props 1`] = `
       />
        
       <div
-        class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+        class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
       >
         <div
           class="flex"
@@ -978,7 +978,7 @@ exports[`FilterSorter Snapshots without-expansion 1`] = `
       />
        
       <div
-        class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+        class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
       >
         <div
           class="flex"

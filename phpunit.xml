@@ -42,10 +42,10 @@
         <env name="MAIL_DRIVER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
-        <env name="SQ_TOKEN" value="EAAAEO4a3YaMEUyfLWMJA9EMPp5ZdIr2nUliMCG28hAAjcNTfooTw0NVC-EOT36d"/>
-        <env name="SQ_APP_ID" value="sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw"/>
-        <env name="SQ_APP_SECRET" value="sandbox-sq0csb-97eMZwHAinUbZnK_SJcFRV_sk8iMSOng8n5W8Vmvgqw"/>
-        <env name="SQ_DOMAIN" value="https://connect.squareupsandbox.com"/>
+        <env name="SQUARE_ACCESS_TOKEN" value="EAAAEO4a3YaMEUyfLWMJA9EMPp5ZdIr2nUliMCG28hAAjcNTfooTw0NVC-EOT36d"/>
+        <env name="SQUARE_APP_ID" value="sandbox-sq0idb-XpOEfx_tSDS3oIDPuf9Tqw"/>
+        <env name="SQUARE_APP_SECRET" value="sandbox-sq0csb-97eMZwHAinUbZnK_SJcFRV_sk8iMSOng8n5W8Vmvgqw"/>
+        <env name="SQUARE_ENVIRONMENT" value="sandbox"/>
         <env name="LOG_CHANNEL" value="test"/>
     </php>
 </phpunit>

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { createLocalVue } from 'fresh-bus/tests/utils'
+import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/events/CustomerSummary.vue'
 import { FIXTURE_EVENT_CUSTOMER_SUMMARY } from 'tests/__data__/customerSummary'
 

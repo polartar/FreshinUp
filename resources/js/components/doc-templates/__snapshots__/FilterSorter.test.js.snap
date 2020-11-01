@@ -80,7 +80,7 @@ exports[`components/doc-templates/FilterSorter Snapshots Default 1`] = `
         <!---->
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
           style="display: none;"
         >
           <div
@@ -510,7 +510,7 @@ exports[`components/doc-templates/FilterSorter Snapshots Expanded 1`] = `
         />
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
           <div
             class="flex"
@@ -936,7 +936,7 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
         <!---->
          
         <div
-          class="layout filter-sorter-expanded-layout align-center justify-center row fill-height"
+          class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
           style="display: none;"
         >
           <div

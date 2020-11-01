@@ -41,6 +41,16 @@
 <br/>
 
 # Changes
+## Oct 31, 2020
+- **ADD** Document - Preview bind variable [#532](https://github.com/FreshinUp/foodfleet/issues/532)
+
+<br/>
+
+## Oct 30, 2020
+- **FIX** Cannot connect to Square [#519](https://github.com/FreshinUp/foodfleet/issues/519)
+
+<br/>
+
 ## Oct 19, 2020
 - **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
 - **ADD** Document preview [#498](https://github.com/FreshinUp/foodfleet/issues/498)

@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/companies/CreateUpdate.vue'
+import createStore from 'tests/createStore'
 
 describe('Companies CreateUpdate Component', () => {
   let localVue, mock, store
