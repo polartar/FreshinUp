@@ -24,10 +24,8 @@ export default {
     vm.$store.dispatch('page/setLoading', true)
     vm.$store.dispatch('squares/authorize', { data })
       .then(() => {
-        vm.$store.dispatch('generalMessage/setMessage', 'Square account is now connected to this Fleet Member')
         vm.$router.push({ path: '/admin/fleet-members' })
-        // This will reload the user with the
-        vm.$store.dispatch('currentUser/getCurrentUser')
+        vm.$store.dispatch('generalMessage/setMessage', 'Square account is now connected to this Fleet Member')
       })
       .catch((error) => {
         console.error(error)
@@ -39,6 +37,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>
