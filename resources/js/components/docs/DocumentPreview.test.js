@@ -3,7 +3,8 @@ import Component, { DEFAULT_DOCUMENT } from './DocumentPreview'
 import { mount, shallowMount } from '@vue/test-utils'
 import { FIXTURE_DOCUMENTS } from 'tests/__data__/documents'
 import { FIXTURE_EVENTS } from 'tests/__data__/events'
-import { FIXTURE_DOCUMENT_TEMPLATES } from 'tests/__data__/documentTemplates'
+import { FIXTURE_DOCUMENT_TEMPLATES, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES } from 'tests/__data__/documentTemplates'
+import Mustache from 'mustache'
 
 describe('components/docs/DocumentPreview', () => {
   describe('Snapshots', () => {
@@ -49,6 +50,16 @@ describe('components/docs/DocumentPreview', () => {
         templates: FIXTURE_DOCUMENT_TEMPLATES
       })
       expect(wrapper.vm.templates).toMatchObject(FIXTURE_DOCUMENT_TEMPLATES)
+    })
+
+    test('variables', async () => {
+      const wrapper = shallowMount(Component)
+      // expect(wrapper.vm.variables).toMatchObject({})
+
+      wrapper.setProps({
+        variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+      })
+      expect(wrapper.vm.variables).toMatchObject(FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
     })
 
     // computed
@@ -145,16 +156,18 @@ describe('components/docs/DocumentPreview', () => {
 
     test('content', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.content).toBeUndefined()
+      expect(wrapper.vm.content).toEqual('')
 
       wrapper.setProps({
         value: {
           template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
-          templates: FIXTURE_DOCUMENT_TEMPLATES
+          templates: FIXTURE_DOCUMENT_TEMPLATES,
+          variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
         }
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.content).toEqual(FIXTURE_DOCUMENT_TEMPLATES[0].content)
+      const expected = Mustache.render(FIXTURE_DOCUMENT_TEMPLATES[0].content, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
+      expect(wrapper.vm.content).toEqual(expected)
     })
   })
 

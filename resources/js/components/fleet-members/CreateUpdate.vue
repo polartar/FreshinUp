@@ -260,6 +260,9 @@ const DELETABLE_RESOURCE = {
   AREA: 'storeAreas'
 }
 
+const SQUARE_APP_ID = process.env.SQUARE_APP_ID
+const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
+
 export default {
   layout: 'admin',
   components: {
@@ -351,12 +354,12 @@ export default {
         //
         // PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS enables you to add an application fee to a payment. The application fee is taken from the payment taken on behalf of the seller and added to your developer account. The seller gets the balance of the payment (less the Square transaction fee). The application fee is specified as part of a Create Payment call.
       ]
-      const BASE_URL = (process.env.SQUARE_ENVIRONMENT === 'production')
+      const BASE_URL = (SQUARE_ENVIRONMENT === 'production')
         ? 'https://connect.squareup.com'
         : 'https://connect.squareupsandbox.com'
 
       const params = {
-        client_id: process.env.SQUARE_APP_ID,
+        client_id: SQUARE_APP_ID,
         scope: SCOPES.join('+')
         // session: false,
       }
@@ -562,20 +565,21 @@ export default {
       })
       promises.push(vm.$store.dispatch('menuItems/getItems'))
     }
-    vm.$store.dispatch('page/setLoading', true)
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
 
-    if (!process.env.SQUARE_APP_ID) {
-      this.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')
+    if (!SQUARE_APP_ID) {
+      vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')
       return false
     }
-    if (!process.env.SQUARE_ENVIRONMENT) {
-      this.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square environment')
+    if (!SQUARE_ENVIRONMENT) {
+      vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square environment')
       return false
     }
+
+    vm.$store.dispatch('page/setLoading', true)
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {
