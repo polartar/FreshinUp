@@ -395,6 +395,7 @@ export default {
             companyId: user.company_id
           }
         })
+          .catch(error => console.error(error))
       }
     }
   },

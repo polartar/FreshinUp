@@ -226,7 +226,6 @@ export default {
     ...mapState('navigation', {
       userMenuItems: state => state.userMenuItems
     }),
-    ...mapGetters(['currentUser']),
     ...mapGetters('userNotifications', { 'notifications': 'unacknowledged' }),
     ...mapGetters('page', {
       isLoading: 'isLoading',
@@ -250,10 +249,13 @@ export default {
     vm.$store.dispatch('page/setLoading', true)
     Promise.all([
       vm.$store.dispatch('currentUser/getCurrentUser')
-    ]).then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-      if (next) next()
-    })
+    ])
+      .then()
+      .catch(error => console.error(error))
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+        if (next) next()
+      })
   }
 }
 </script>
