@@ -26,6 +26,18 @@ describe('store/modules/documentTemplates', () => {
     expect(result).toHaveProperty('namespaced', true)
   })
 
+  describe('getters', () => {
+    test('STATUS', () => {
+      const item = {}
+      const items = []
+      const store = module({ items, item })
+      expect(store.getters.STATUS({})).toMatchObject({
+        DRAFT: 1,
+        PUBLISHED: 2
+      })
+    })
+  })
+
   describe('Actions', () => {
     describe('createItem()', () => {
       test('should exclude unwanted keys', async () => {

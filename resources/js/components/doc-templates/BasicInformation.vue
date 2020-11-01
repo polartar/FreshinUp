@@ -1,12 +1,15 @@
 <template>
-  <v-layout>
+  <v-layout
+    row
+    wrap
+  >
     <v-flex
       xs12
       sm12
       md8
       xl9
     >
-      <v-card>
+      <v-card class="ml-2 mt-2">
         <v-card-title>
           <h3 class="grey--text">
             Basic Information
@@ -45,22 +48,22 @@
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Content
               </div>
-              <v-textarea
-                v-model="content"
-                placeholder="Short description"
-                single-line
-                outline
+              <f-rich-text-editor
+                :value="content"
+                @input="content = $event"
               />
             </v-flex>
           </div>
         </v-card-text>
         <v-card-actions>
           <v-btn
+            depressed
             @click="cancel"
           >
             Cancel
           </v-btn>
           <v-btn
+            depressed
             color="primary"
             :loading="isLoading"
             @click="save"
@@ -69,6 +72,7 @@
           </v-btn>
           <v-spacer />
           <v-btn
+            depressed
             @click="deleteItem"
           >
             Delete
@@ -81,9 +85,8 @@
       sm12
       md4
       xl3
-      class="ml-2"
     >
-      <v-card>
+      <v-card class="ml-2 mt-2">
         <v-card-text>
           <h3
             v-if="!isNew"
@@ -115,11 +118,13 @@
               class="mb-2"
             >
               <v-btn
+                block
+                depressed
                 color="primary"
                 :loading="isLoading"
                 @click="save"
               >
-                {{ isNew? 'Submit' : 'Save changes' }}
+                {{ submitLabel }}
               </v-btn>
             </v-flex>
             <v-flex
@@ -127,6 +132,8 @@
               class="mb-2"
             >
               <v-btn
+                block
+                depressed
                 disabled
               >
                 Preview
@@ -150,6 +157,7 @@
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 import get from 'lodash/get'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import FRichTextEditor from '~/components/FRichTextEditor'
 
 export const DEFAULT_TEMPLATE = {
   id: '',
@@ -162,39 +170,23 @@ export const DEFAULT_TEMPLATE = {
   updated_by: null
 }
 
-export const EDITOR_OPTIONS = {
-  height: 500,
-  menubar: false,
-  plugins: [
-    'advlist autolink lists link image charmap',
-    'searchreplace visualblocks code fullscreen',
-    'print preview anchor insertdatetime media',
-    'paste code help wordcount table'
-  ],
-  toolbar:
-    ['undo', 'redo', '|', 'formatselect', '|', 'bold',
-      'italic', 'backcolor', '|', 'alignleft', 'aligncenter',
-      'alignright', 'alignjustify', '|', 'bullist', 'numlist',
-      'outdent', 'indent', '|', 'removeformat', '|', 'help'].join(' ')
-}
 export default {
+  components: { FRichTextEditor },
   mixins: [MapValueKeysToData, FormatDate],
   props: {
     isLoading: { type: Boolean, default: false },
     // Override value from MapValueKeysToData mixin to get the default values
     value: { type: Object, default: () => DEFAULT_TEMPLATE },
-    statuses: { type: Object, default: () => [] }
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
-      apiKey: '',
       ...DEFAULT_TEMPLATE
     }
   },
   computed: {
-    // TODO useful for https://github.com/FreshinUp/foodfleet/issues/517
-    editorOptions () {
-      return EDITOR_OPTIONS
+    submitLabel () {
+      return this.isNew ? 'Submit' : 'Save changes'
     },
     isNew () {
       return !get(this, 'uuid')
@@ -214,7 +206,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

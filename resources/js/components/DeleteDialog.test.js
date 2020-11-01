@@ -78,15 +78,29 @@ describe('components/DeleteDialog', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.progressStatus).toEqual('67 %')
     })
-    test('message', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.message).toEqual('')
-
-      wrapper.setProps({
-        items: FIXTURE_STORES // any array of items
+    describe('message', () => {
+      test('default', async () => {
+        const wrapper = shallowMount(Component)
+        expect(wrapper.vm.message).toEqual('')
       })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.message).toEqual(FIXTURE_STORES.map(item => item.title).join(', '))
+      test('when empty or undefined', async () => {
+        const wrapper = shallowMount(Component)
+
+        wrapper.setProps({
+          items: FIXTURE_STORES // any array of items
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.message).toEqual('')
+      })
+      test('otherwise', async () => {
+        const wrapper = shallowMount(Component)
+        wrapper.setProps({
+          items: FIXTURE_STORES,
+          itemTitleProp: 'name'
+        })
+        await wrapper.vm.$nextTick()
+        expect(wrapper.vm.message).toEqual(FIXTURE_STORES.map(item => item.name).join(', '))
+      })
     })
   })
 })

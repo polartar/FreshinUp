@@ -5,13 +5,20 @@ export default ({ items, item }) => {
   const store = makeRestStore('foodfleet/document/templates', { items, item })
   store.getters = {
     ...store.getters,
-    sortables (state) {
+    sortables () {
       return [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
         { value: 'title', text: 'Title (A - Z)' },
         { value: '-title', text: 'Title (Z - A)' }
       ]
+    },
+    STATUS () {
+      return {
+        // one to one mapping with values from App\Enums\DocumentTemplateStatus
+        DRAFT: 1,
+        PUBLISHED: 2
+      }
     }
   }
 

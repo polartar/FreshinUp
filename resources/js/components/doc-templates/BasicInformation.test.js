@@ -1,5 +1,5 @@
 import * as Stories from './BasicInformation.stories'
-import Component, { DEFAULT_TEMPLATE, EDITOR_OPTIONS } from './BasicInformation'
+import Component, { DEFAULT_TEMPLATE } from './BasicInformation'
 import { mount, shallowMount } from '@vue/test-utils'
 import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
 import { FIXTURE_DOCUMENT_TEMPLATES } from '../../../../tests/Javascript/__data__/documentTemplates'
@@ -34,10 +34,7 @@ describe('component/doc-templates/BasicInformation', () => {
       })
       expect(wrapper.vm.value).toMatchObject(template)
     })
-    test('editorOptions', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.editorOptions).toMatchObject(EDITOR_OPTIONS)
-    })
+
     test('isNew', async () => {
       const wrapper = shallowMount(Component)
       expect(wrapper.vm.isNew).toBe(true)

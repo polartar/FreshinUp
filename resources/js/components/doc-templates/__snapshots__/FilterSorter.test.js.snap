@@ -1338,7 +1338,20 @@ exports[`components/doc-templates/FilterSorter Snapshots Populated 1`] = `
                       </strong>
                     </div>
                      
-                    <!---->
+                    <button
+                      class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
+                      color="white"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon clear-button-icon fa fa fa fa-times theme--light"
+                        />
+                      </div>
+                    </button>
                   </div>
                    
                   <div

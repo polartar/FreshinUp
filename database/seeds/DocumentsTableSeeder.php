@@ -29,8 +29,8 @@ class DocumentsTableSeeder extends Seeder
 
         for ($i = 0; $i < 50; $i++) {
             $document = factory(Document::class)->create([
-                'type' => $types->random()->id,
-                'status' => $status->random()->id,
+                'type_id' => $types->random()->id,
+                'status_id' => $status->random()->id,
                 'created_by_uuid' => $users->random()->uuid
             ]);
 

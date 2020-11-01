@@ -93,9 +93,9 @@
                 Last modified date
               </filter-label>
               <clear-button
-                v-if="updated_at"
+                v-if="filters.updated_at"
                 color="white"
-                @clear="updated_at = null;"
+                @clear="filters.updated_at = null;"
               />
             </v-layout>
             <date-time-picker
@@ -140,7 +140,7 @@ export default {
   },
   props: {
     statuses: { type: Array, default: () => [] },
-    filters: { type: Array, default: () => DEFAULT_FILTERS }
+    filters: { type: Object, default: () => DEFAULT_FILTERS }
   },
   watch: {
     filters: {
