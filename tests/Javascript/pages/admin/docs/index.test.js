@@ -1,15 +1,12 @@
 import { shallowMount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import {
   FIXTURE_DOCUMENTS_RESPONSE,
   FIXTURE_DOCUMENTS_SORTED_BY_FIRSTNAME
 } from 'tests/__data__/documents'
 import Component from '~/pages/admin/docs/index.vue'
-import documents from '~/store/modules/documents'
-import documentStatuses from '~/store/modules/documentStatuses'
-import documentTypes from '~/store/modules/documentTypes'
 import { docMethodsTests } from 'tests/shared/doc_management_tests.js'
+import createStore from 'tests/createStore'
 
 describe('Admin Docs Page', () => {
   let localVue, mock
@@ -39,16 +36,7 @@ describe('Admin Docs Page', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      const store = createStore(
-        {},
-        {
-          modules: {
-            documents: documents({}),
-            documentStatuses: documentStatuses({}),
-            documentTypes: documentTypes({})
-          }
-        }
-      )
+      const store = createStore()
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         store

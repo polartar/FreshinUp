@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_USER } from 'tests/__data__/user'
 import Component from '~/pages/admin/dashboard/index.vue'
+import createStore from 'tests/createStore'
 
 describe('Admin Dashboard Steps Page', () => {
   let localVue, mock, store
@@ -27,7 +27,7 @@ describe('Admin Dashboard Steps Page', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      const store = createStore({})
+      const store = createStore()
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         store

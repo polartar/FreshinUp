@@ -1,11 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import BaseComponent from '~/components/venues/CreateUpdate.vue'
 import { FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
-import venues from '../../store/modules/venues'
 import { FIXTURE_VENUE_STATUSES } from '../../../../tests/Javascript/__data__/venueStatuses'
-import venueStatuses from '../../store/modules/venueStatuses'
+import createStore from 'tests/createStore'
 
 describe.skip('components/venues/CreateUpdate', () => {
   let localVue, mock, store
@@ -22,12 +20,7 @@ describe.skip('components/venues/CreateUpdate', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          venueStatuses: venueStatuses({}),
-          venues: venues({})
-        }
-      })
+      store = createStore()
     })
 
     afterEach(() => {
@@ -85,12 +78,7 @@ describe.skip('components/venues/CreateUpdate', () => {
           console.warn('No mock match for ' + config.url, config)
           return [404, {}]
         })
-      store = createStore({}, {
-        modules: {
-          venues: venues({}),
-          venueStatuses: venueStatuses({})
-        }
-      })
+      store = createStore()
     })
 
     afterEach(() => {

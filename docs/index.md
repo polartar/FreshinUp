@@ -41,6 +41,11 @@
 <br/>
 
 # Changes
+## Oct 31, 2020
+- **ADD** Document - Preview bind variable [#532](https://github.com/FreshinUp/foodfleet/issues/532)
+
+<br/>
+
 ## Oct 30, 2020
 - **FIX** Cannot connect to Square [#519](https://github.com/FreshinUp/foodfleet/issues/519)
 

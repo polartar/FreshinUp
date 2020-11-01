@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Page from '~/pages/admin/companies/index.vue'
+import createStore from 'tests/createStore'
 
 describe('Admin Companies Page', () => {
   let localVue, mock, store

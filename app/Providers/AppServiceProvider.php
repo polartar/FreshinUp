@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Square\SquareClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
+        $this->app->bind(SquareClient::class, function ($app) {
+            return new SquareClient([
+                'accessToken' => config('services.square.access_token'),
+                'environment' => config('services.square.environment'),
+            ]);
+        });
     }
 
     /**

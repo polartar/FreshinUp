@@ -66,9 +66,10 @@
             :loading="loading"
             :types="storeTypes"
             :square-locations="squareLocations"
-            :locations="locations"
             :value="store"
             @input="saveOrCreate"
+            @connect-square="onConnectSquare"
+            @disconnect-square="onDisconnectSquare"
             @delete="deleteMember"
             @cancel="onCancel"
           />
@@ -259,6 +260,9 @@ const DELETABLE_RESOURCE = {
   AREA: 'storeAreas'
 }
 
+const SQUARE_APP_ID = process.env.SQUARE_APP_ID
+const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
+
 export default {
   layout: 'admin',
   components: {
@@ -295,7 +299,6 @@ export default {
       }, {}),
 
       loading: false,
-      locations: ['Square'], // TODO: static to Square only until we know better
       sortables: [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
@@ -330,6 +333,39 @@ export default {
     ...mapFields('stores', [
       'status_id'
     ]),
+    squareUrl () {
+      const SCOPES = [
+        'PAYMENTS_READ',
+        'CUSTOMERS_READ',
+        'EMPLOYEES_READ',
+        'INVENTORY_READ',
+        'ITEMS_READ',
+        'MERCHANT_PROFILE_READ',
+        'ORDERS_READ'
+        // 'SETTLEMENTS_READ',
+        // 'BANK_ACCOUNTS_READ',
+        // 'CUSTOMERS_WRITE',
+        // 'PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS', 'PAYMENTS_WRITE', 'PAYMENTS_READ'
+        // Let’s look at the scope that we set for this walkthrough:
+        //
+        // MERCHANT_PROFILE_READ enables calls to List Merchants and Retrieve Merchant endpoints. It is useful to be able to call these endpoints so you can verify seller information tied to the OAuth token.
+        //
+        // PAYMENTS_WRITE and PAYMENTS_READ enable you to create, cancel, and retrieve payments using the Payments API. Later in our walkthrough, you call Create Payment with an OAuth token.
+        //
+        // PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS enables you to add an application fee to a payment. The application fee is taken from the payment taken on behalf of the seller and added to your developer account. The seller gets the balance of the payment (less the Square transaction fee). The application fee is specified as part of a Create Payment call.
+      ]
+      const BASE_URL = (SQUARE_ENVIRONMENT === 'production')
+        ? 'https://connect.squareup.com'
+        : 'https://connect.squareupsandbox.com'
+
+      const params = {
+        client_id: SQUARE_APP_ID,
+        scope: SCOPES.join('+')
+        // session: false,
+      }
+      const queryParams = Object.keys(params).map(key => `${key}=${params[key]}`).join('&')
+      return `${BASE_URL}/oauth2/authorize?${queryParams}`
+    },
     areasLoading () {
       return get(this.$store, 'state.storeAreas.pending.items', false)
     },
@@ -349,6 +385,17 @@ export default {
     storeAreas () {
       // TODO: see https://github.com/FreshinUp/core-ui/issues/135
       return Array.isArray(this.areas) ? this.areas : []
+    }
+  },
+  watch: {
+    '$store.getters.currentUser' (user) {
+      if (user) {
+        this.$store.dispatch('companies/squareLocations/getItems', {
+          params: {
+            companyId: user.company_id
+          }
+        })
+      }
     }
   },
   methods: {
@@ -421,6 +468,12 @@ export default {
     onCancelDeleteItems (resource) {
       this.deletable[resource].dialog = false
       this.deletable[resource].temp = []
+    },
+    onConnectSquare () {
+      window.location = this.squareUrl
+    },
+    onDisconnectSquare () {
+      // TODO delay to a later time
     },
 
     // store areas
@@ -512,17 +565,21 @@ export default {
       })
       promises.push(vm.$store.dispatch('menuItems/getItems'))
     }
-    vm.$store.dispatch('page/setLoading', true)
-    // TODO: next step is to gather squareLocations from API
-    // promises.push(vm.$store.dispatch('companies/squareLocations/getItems', {
-    //   params: {
-    //     id: vm.$store.getters.currentUser.company_id
-    //   }
-    // }))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+
+    if (!SQUARE_APP_ID) {
+      vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')
+      return false
+    }
+    if (!SQUARE_ENVIRONMENT) {
+      vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square environment')
+      return false
+    }
+
+    vm.$store.dispatch('page/setLoading', true)
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {

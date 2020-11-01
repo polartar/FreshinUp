@@ -1,18 +1,12 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/pages/admin/financials/transactions/index.vue'
-import devices from '~/store/modules/devices'
-import paymentTypes from '~/store/modules/paymentTypes'
-import financialsummary from '~/store/modules/financialsummary'
-import transactions from '~/store/modules/transactions'
-import financialModifiers from '~/store/modules/financialModifiers'
-import financialReports from '~/store/modules/financialReports'
 import { FIXTURE_FINANCIAL_SUMMARY } from 'tests/__data__/financialSummary'
 import { FIXTURE_TRANSACTIONS } from 'tests/__data__/transactions'
 import { FIXTURE_CURRENT_USER } from 'tests/__data__/user'
 import { FIXTURE_FINANCIAL_MODIFIERS } from 'tests/__data__/modifiers'
 import { FIXTURE_REPORTABLES } from 'tests/__data__/reportables'
+import createStore from 'tests/createStore'
 
 describe('Admin Financial Results Page', () => {
   let localVue, mock, store
@@ -53,15 +47,7 @@ describe('Admin Financial Results Page', () => {
         return [404, { message: 'No mock match for ' + config.url, data: config }]
       })
 
-      const store = createStore({}, {
-        modules: {
-          devices: devices({}),
-          paymentTypes: paymentTypes({}),
-          financialsummary: financialsummary({}),
-          transactions: transactions({}),
-          financialModifiers: financialModifiers({})
-        }
-      })
+      const store = createStore()
 
       const wrapper = mount(Component, {
         localVue: localVue,
@@ -120,16 +106,7 @@ describe('Admin Financial Results Page', () => {
         return [404, { message: 'No mock match for ' + config.url, data: config }]
       })
 
-      store = createStore({}, {
-        modules: {
-          devices: devices({}),
-          paymentTypes: paymentTypes({}),
-          financialsummary: financialsummary({}),
-          transactions: transactions({}),
-          financialModifiers: financialModifiers({}),
-          financialReports: financialReports({})
-        }
-      })
+      store = createStore()
     })
     afterEach(() => {
       mock.restore()

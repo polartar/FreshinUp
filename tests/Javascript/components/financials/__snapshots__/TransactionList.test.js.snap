@@ -189,7 +189,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249929"
               >
                 
@@ -370,7 +370,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249930"
               >
                 
@@ -551,7 +551,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249931"
               >
                 
@@ -732,7 +732,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249932"
               >
                 
@@ -913,7 +913,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249933"
               >
                 
@@ -1094,7 +1094,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249934"
               >
                 
@@ -1275,7 +1275,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249935"
               >
                 
@@ -1456,7 +1456,7 @@ exports[`TransactionList Snapshots all visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249936"
               >
                 
@@ -1942,7 +1942,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249929"
               >
                 
@@ -2015,7 +2015,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249930"
               >
                 
@@ -2088,7 +2088,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249931"
               >
                 
@@ -2161,7 +2161,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249932"
               >
                 
@@ -2234,7 +2234,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249933"
               >
                 
@@ -2307,7 +2307,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249934"
               >
                 
@@ -2380,7 +2380,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249935"
               >
                 
@@ -2453,7 +2453,7 @@ exports[`TransactionList Snapshots partial visibility selected 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249936"
               >
                 
@@ -3162,7 +3162,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249929"
               >
                 
@@ -3244,7 +3244,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249930"
               >
                 
@@ -3326,7 +3326,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249931"
               >
                 
@@ -3408,7 +3408,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249932"
               >
                 
@@ -3490,7 +3490,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249933"
               >
                 
@@ -3572,7 +3572,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249934"
               >
                 
@@ -3654,7 +3654,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249935"
               >
                 
@@ -3736,7 +3736,7 @@ exports[`TransactionList Snapshots transactions set 1`] = `
           >
             <div>
               <a
-                class="title primary--text"
+                class="title primary--text text-truncate"
                 href="/admin/financials/transactions/17249936"
               >
                 

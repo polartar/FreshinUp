@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
-import { createStore } from 'fresh-bus/store'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/dashboard/StepsCard.vue'
+import createStore from 'tests/createStore'
 
 describe('Dashboard StepsCard Component', () => {
   describe('Snapshots', () => {
@@ -10,7 +10,7 @@ describe('Dashboard StepsCard Component', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
       localVue = vue.localVue
-      store = createStore({})
+      store = createStore()
     })
 
     it('should match snapshots for common', async () => {

@@ -1,13 +1,13 @@
 <?php
 
-use FreshinUp\FreshBusForms\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
 use FreshinUp\FreshBusForms\Http\Controllers\ConsumerController;
 use FreshinUp\FreshBusForms\Http\Controllers\SPAController;
 
 return [
     'app' => [
-        'name' => 'FoodFleet'
+        'name' => config('app.name')
     ],
     'models' => [
         'user'          => \App\User::class,

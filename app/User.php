@@ -2,9 +2,17 @@
 
 namespace App;
 
+use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\FinancialReport;
 use App\Models\Foodfleet\Document;
 
+/**
+ * Class User
+ * @package App
+ *
+ * @property int company_id
+ * @property Company company
+ */
 class User extends \FreshinUp\FreshBusForms\Models\User\User
 {
     /**

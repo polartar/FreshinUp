@@ -139,13 +139,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': true,
         'joined_at': '2019-07-10 15:34:30',
         'industry_roles': []
       },
-      { 'id': 4,
+      {
+        'id': 4,
         'uuid': '79a0a719-080c-4762-a0cd-ace9af9c1bf7',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -269,7 +271,8 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:30',
@@ -312,7 +315,8 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:32',
@@ -425,7 +429,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -442,12 +447,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': true,
         'joined_at': '2019-07-10 15:34:32',
-        'industry_roles': [] },
-      { 'id': 12,
+        'industry_roles': []
+      },
+      {
+        'id': 12,
         'uuid': '7c0bf87f-6ef5-454d-aee1-f408ea4518b6',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -465,7 +473,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -482,12 +491,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': true,
         'joined_at': '2019-07-10 15:34:32',
-        'industry_roles': [] },
-      { 'id': 13,
+        'industry_roles': []
+      },
+      {
+        'id': 13,
         'uuid': '27fc1499-6b9a-42da-a437-e74761bce3cc',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -505,7 +517,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -522,12 +535,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': true,
         'joined_at': '2019-07-10 15:34:32',
-        'industry_roles': [] },
-      { 'id': 14,
+        'industry_roles': []
+      },
+      {
+        'id': 14,
         'uuid': 'ed14ae68-b6a6-4b78-b7c0-4a1069fd286a',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -545,7 +561,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -562,12 +579,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:32',
-        'industry_roles': [] },
-      { 'id': 15,
+        'industry_roles': []
+      },
+      {
+        'id': 15,
         'uuid': 'f2b36beb-a3e1-4d03-9647-4e74ee801e6f',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -585,7 +605,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -602,12 +623,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:33',
-        'industry_roles': [] },
-      { 'id': 16,
+        'industry_roles': []
+      },
+      {
+        'id': 16,
         'uuid': 'da009be1-00f3-4a58-bf18-f4a3af308ca6',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -625,7 +649,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -642,12 +667,15 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:33',
-        'industry_roles': [] },
-      { 'id': 17,
+        'industry_roles': []
+      },
+      {
+        'id': 17,
         'uuid': '21af0be6-5215-4c89-836a-4e649c6dbfcf',
         'company_id': 1,
         'company_name': 'FreshBus',
@@ -665,7 +693,8 @@ export const FIXTURE_COMPANY = {
         'title': null,
         'avatar': 'https://via.placeholder.com/800x600.png',
         'requested_company': null,
-        'company': { 'id': 1,
+        'company': {
+          'id': 1,
           'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
           'created_at': '2019-07-10 15:34:30',
           'status': 1,
@@ -682,16 +711,19 @@ export const FIXTURE_COMPANY = {
           'teams_count': null,
           'tags': [],
           'logo': 'https://via.placeholder.com/800x600.png',
-          'company_types': [] },
+          'company_types': []
+        },
         'last_login': '',
         'has_admin_access': false,
         'joined_at': '2019-07-10 15:34:33',
-        'industry_roles': [] }],
+        'industry_roles': []
+      }],
     'members_count': 16,
     'teams_count': 2,
     'tags': [],
     'logo': 'https://via.placeholder.com/800x600.png',
-    'admin': { 'id': 1,
+    'admin': {
+      'id': 1,
       'uuid': '4314a914-b8d8-4ad8-b3cf-a3ece1a4dd88',
       'company_id': 1,
       'company_name': 'FreshBus',
@@ -709,7 +741,8 @@ export const FIXTURE_COMPANY = {
       'title': null,
       'avatar': 'https://via.placeholder.com/800x600.png',
       'requested_company': null,
-      'company': { 'id': 1,
+      'company': {
+        'id': 1,
         'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
         'created_at': '2019-07-10 15:34:30',
         'status': 1,
@@ -737,10 +770,12 @@ export const FIXTURE_COMPANY = {
   },
   'meta': {
     'types': [
-      { 'id': 1,
+      {
+        'id': 1,
         'name': 'Registered Representative'
       },
-      { 'id': 2,
+      {
+        'id': 2,
         'name': 'RIA'
       },
       {
@@ -845,23 +880,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '2019-10-09 20:56:21',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 2,
@@ -898,23 +925,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 3,
@@ -951,23 +970,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 4,
@@ -1004,23 +1015,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 5,
@@ -1057,23 +1060,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 6,
@@ -1110,23 +1105,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 7,
@@ -1163,23 +1150,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 8,
@@ -1216,23 +1195,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 10,
@@ -1269,23 +1240,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 11,
@@ -1322,23 +1285,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 12,
@@ -1375,23 +1330,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 13,
@@ -1428,23 +1375,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 14,
@@ -1481,23 +1420,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 15,
@@ -1534,23 +1465,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 16,
@@ -1587,23 +1510,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 17,
@@ -1640,23 +1555,15 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 18,
@@ -1693,20 +1600,14 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-10 14:09:34',
-          'industry_roles': [
-
-          ],
+          'industry_roles': [],
           'addresses': [
             {
               'id': 1,
@@ -1724,13 +1625,9 @@ export const FIXTURE_COMPANIES_RESPONSE = {
       ],
       'members_count': 17,
       'teams_count': null,
-      'tags': [
-
-      ],
+      'tags': [],
       'logo': 'https://via.placeholder.com/800x600.png',
-      'company_types': [
-
-      ]
+      'company_types': []
     },
     {
       'id': 2,
@@ -1782,34 +1679,22 @@ export const FIXTURE_COMPANIES_RESPONSE = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         }
       ],
       'members_count': 1,
       'teams_count': null,
-      'tags': [
-
-      ],
+      'tags': [],
       'logo': 'https://via.placeholder.com/800x600.png',
-      'company_types': [
-
-      ]
+      'company_types': []
     }
   ],
   'links': {
@@ -1955,34 +1840,22 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         }
       ],
       'members_count': 1,
       'teams_count': null,
-      'tags': [
-
-      ],
+      'tags': [],
       'logo': 'https://via.placeholder.com/800x600.png',
-      'company_types': [
-
-      ]
+      'company_types': []
     },
     {
       'id': 1,
@@ -2034,23 +1907,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '2019-10-09 20:56:21',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 2,
@@ -2087,23 +1952,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 3,
@@ -2140,23 +1997,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 4,
@@ -2193,23 +2042,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 5,
@@ -2246,23 +2087,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 6,
@@ -2299,23 +2132,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:05',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 7,
@@ -2352,23 +2177,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 8,
@@ -2405,23 +2222,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 10,
@@ -2458,23 +2267,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 11,
@@ -2511,23 +2312,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 12,
@@ -2564,23 +2357,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 13,
@@ -2617,23 +2402,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-09 20:55:07',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 14,
@@ -2670,23 +2447,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 15,
@@ -2723,23 +2492,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 16,
@@ -2776,23 +2537,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 17,
@@ -2829,23 +2582,15 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': false,
           'joined_at': '2019-10-09 20:55:08',
-          'industry_roles': [
-
-          ],
-          'addresses': [
-
-          ]
+          'industry_roles': [],
+          'addresses': []
         },
         {
           'id': 18,
@@ -2882,20 +2627,14 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
             'notes': null,
             'members_count': null,
             'teams_count': null,
-            'tags': [
-
-            ],
+            'tags': [],
             'logo': 'https://via.placeholder.com/800x600.png',
-            'company_types': [
-
-            ]
+            'company_types': []
           },
           'last_login': '',
           'has_admin_access': true,
           'joined_at': '2019-10-10 14:09:34',
-          'industry_roles': [
-
-          ],
+          'industry_roles': [],
           'addresses': [
             {
               'id': 1,
@@ -2913,13 +2652,9 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
       ],
       'members_count': 17,
       'teams_count': null,
-      'tags': [
-
-      ],
+      'tags': [],
       'logo': 'https://via.placeholder.com/800x600.png',
-      'company_types': [
-
-      ]
+      'company_types': []
     }
   ],
   'links': {
@@ -3012,3 +2747,54 @@ export const FIXTURE_COMPANIES_SORTED_BY_NAME = {
     ]
   }
 }
+
+export const FIXTURE_SQUARE_LOCATIONS = [
+  {
+    'id': 'LD3N2QNRJQNQJ',
+    'name': 'Dummy 01',
+    'address': {
+      'address_line_1': '1600 Pennsylvania Ave NW',
+      'locality': 'Washington',
+      'administrative_district_level_1': 'DC',
+      'postal_code': '20500',
+      'country': 'US'
+    },
+    'timezone': 'UTC',
+    'capabilities': ['CREDIT_CARD_PROCESSING'],
+    'status': 'ACTIVE',
+    'created_at': '2020-10-20T17:02:10Z',
+    'merchant_id': 'MLNY5RDXCA4GE',
+    'country': 'US',
+    'language_code': 'en-US',
+    'currency': 'USD',
+    'business_name': 'Dummy 01',
+    'type': 'PHYSICAL',
+    'business_hours': [],
+    'mcc': '7299'
+  },
+  {
+    'id': 'LWP0KP8XGVZTM',
+    'name': 'Default Test Account',
+    'address': {
+      'address_line_1': '1600 Pennsylvania Ave NW',
+      'locality': 'Washington',
+      'administrative_district_level_1': 'DC',
+      'postal_code': '20500',
+      'country': 'US'
+    },
+    'timezone': 'UTC',
+    'capabilities': [
+      'CREDIT_CARD_PROCESSING'
+    ],
+    'status': 'ACTIVE',
+    'created_at': '2020-10-20T16:14:51Z',
+    'merchant_id': 'MLYGH32E4JTBK',
+    'country': 'US',
+    'language_code': 'en-US',
+    'currency': 'USD',
+    'business_name': 'Default Test Account',
+    'type': 'PHYSICAL',
+    'business_hours': {},
+    'mcc': '7298'
+  }
+]

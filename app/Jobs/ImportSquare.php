@@ -23,6 +23,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
 
+// TODO: this whole job need to be updated
+// We will need this for the financial reporting page
+// see: https://github.com/FreshinUp/foodfleet/issues/536
 class ImportSquare implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
