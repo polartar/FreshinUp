@@ -4,6 +4,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import get from 'lodash/get'
 
 export default {
   layout: 'admin',
