@@ -40,9 +40,12 @@
       <v-flex class="mt-5">
         <basic-information
           :value="venue"
+          :addresses-loading="addressesAreLoading"
+          :address-entries="addressEntries"
           @input="onSave"
           @cancel="onCancel"
           @delete="onDelete"
+          @search-places="onSearchPlaces"
         />
       </v-flex>
       <v-flex
@@ -145,6 +148,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import { mapActions, mapGetters } from 'vuex'
 import BasicInformation, { DEFAULT_VENUE } from './BasicInformation'
 import Documents from './Documents'
@@ -154,6 +158,8 @@ import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import Locations from '../locations/Locations'
 import Events from './Events'
+
+const MAP_BOX_TOKEN = process.env.MAP_BOX_TOKEN
 
 const VENUE_INCLUDES = [
   'owner'
@@ -214,7 +220,9 @@ export default {
           : 'Are you sure you want to delete the following items?'
       },
       documentLoading: false,
-      locationLoading: false
+      locationLoading: false,
+      addressEntries: [],
+      addressesAreLoading: false
     }
   },
   computed: {
@@ -434,6 +442,20 @@ export default {
     },
     viewEvent (event) {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
+    },
+    onSearchPlaces (text) {
+      axios
+        .get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${text}.json?access_token=${MAP_BOX_TOKEN}`
+        )
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          console.log(res.data)
+          this.addressEntries = res.data.features
+        })
+      // eslint-disable-next-line no-console
+        .catch((err) => console.log(err))
+        .finally(() => (this.addressesAreLoading = false))
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

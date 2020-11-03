@@ -11,6 +11,7 @@
     <v-layout pa-3>
       <v-flex
         xs8
+        lg7
         pr-3
       >
         <v-flex
@@ -24,6 +25,24 @@
             placeholder="Name"
             single-line
             outline
+          />
+        </v-flex>
+        <v-flex xs12>
+          <div class="mb-2 text-uppercase grey--text font-weight-bold">
+            Address
+          </div>
+          <v-autocomplete
+            v-model="currentAddress"
+            :items="addresses"
+            :loading="addressesLoading"
+            hide-no-data
+            hide-selected
+            item-text="text"
+            placeholder="Start typing to Search"
+            return-object
+            single-line
+            outline
+            @change="searchPlaces"
           />
         </v-flex>
         <v-flex
@@ -164,13 +183,16 @@
       </v-flex>
       <v-flex
         xs4
+        lg5
         pl-3
       >
-        <div>
-          MAP coming soon
-          <div
-            style="background-color: #e5e5e5; width: 100%;
-height: 480px"
+        <div
+          style="height: 100%;"
+          class="my-2"
+        >
+          <MglMap
+            :access-token="mapToken"
+            :map-style="mapStyle"
           />
         </div>
       </v-flex>
@@ -209,11 +231,16 @@ height: 480px"
   </v-card>
 </template>
 <script>
+import Mapbox from 'mapbox-gl'
+import { MglMap } from 'vue-mapbox'
+
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 import get from 'lodash/get'
 import Simple from 'fresh-bus/components/search/simple'
+
+const MAP_BOX_TOKEN = process.env.MAP_BOX_TOKEN
 
 export const DEFAULT_VENUE = {
   uuid: '',
@@ -231,15 +258,21 @@ export const DEFAULT_VENUE = {
 }
 export default {
   components: {
-    Simple
+    Simple,
+    MglMap
   },
   mixins: [MapValueKeysToData],
   props: {
-    loading: { type: Boolean, default: false }
+    loading: { type: Boolean, default: false },
+    addressesLoading: { type: Boolean, default: false },
+    addressEntries: { type: Array, default: () => [] }
   },
   data () {
     return {
       ...DEFAULT_VENUE,
+      mapToken: MAP_BOX_TOKEN,
+      mapStyle: 'mapbox://styles/mapbox/streets-v11', // your map style
+      currentAddress: null,
       changeUserDialog: false
     }
   },
@@ -249,7 +282,21 @@ export default {
     },
     isEditing () {
       return this.uuid
+    },
+    addresses () {
+      return this.addressEntries.map(entry => {
+        // To be implemented
+        return Object.assign({}, entry)
+      })
     }
+  },
+  created () {
+    // We need to set mapbox-gl library here in order to use it in template
+    this.mapbox = Mapbox
+    this.lazyLoad({
+      href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
+      rel: 'stylesheet'
+    })
   },
   methods: {
     get,
@@ -262,6 +309,24 @@ export default {
     },
     onDeleteVenue () {
       this.$emit('delete', pick(this, keys(this.value)))
+    },
+    lazyLoad (options) {
+      return new Promise((resolve, reject) => {
+        let element = document.createElement('link')
+        Object.keys(options).forEach(key => element.setAttribute(key, options[key]))
+        element.addEventListener('load', () => {
+          resolve(element)
+        })
+        element.addEventListener('error', (e) => {
+          reject(e)
+        })
+        document.body.append(element)
+      })
+    },
+    searchPlaces () {
+      // eslint-disable-next-line no-console
+      console.log(this.currentAddress)
+      this.$emit('searchPlaces', this.currentAddress)
     }
   }
 }
