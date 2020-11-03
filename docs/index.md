@@ -41,6 +41,12 @@
 <br/>
 
 # Changes
+
+## Nov 3, 2020
+- **FIX** Events List Status Sort Doesn't work [#538](https://github.com/FreshinUp/foodfleet/issues/538)
+
+<br/>
+
 ## Nov 1, 2020
 - **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
 - **ADD** System does not show a confirmation snackbar [#522](https://github.com/FreshinUp/foodfleet/issues/522)
