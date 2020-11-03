@@ -54,12 +54,30 @@ import { mapGetters } from 'vuex'
 import BasicInformation, { DEFAULT_TEMPLATE } from './BasicInformation'
 import get from 'lodash/get'
 import DeleteDialog from '~/components/DeleteDialog'
-import { FIXTURE_VALIDATION_SCHEMA } from '../../../../tests/Javascript/__data__/validationSchema'
 
 const INCLUDE = [
   'status',
   'updated_by'
 ]
+
+const VALIDATION_SCHEMA = {
+  template: {
+    id: 1,
+    uuid: '3f7c009b-26aa-38f3-8079-2bae84ac4a64',
+    title: 'Template Title',
+    description: 'Template description',
+    content: '<p>content</p>',
+    status_id: 1,
+    updated_by_uuid: 'efc83248-0efd-4257-a348-62f0903794f6',
+    created_at: '2020-10-27 02:17:08',
+    updated_at: '2020-10-27 02:17:08',
+    updateBy: {
+      name: 'John Doe',
+      email: 'john@doe.com'
+    }
+  }
+}
+
 export default {
   layout: 'admin',
   components: {
@@ -92,18 +110,19 @@ export default {
     },
     async onSave (data) {
       const variables = data.content.match(/\{{.*?\}}/g)
-      const possibleVariables = variables.map((item) => {
+      const validatedVariables = variables.map((item) => {
         const formatedVariable = item.slice(2, -2).trim()
-        const isPossible = FIXTURE_VALIDATION_SCHEMA.template.findIndex((field) =>
-          'template' + '.' + field === formatedVariable
-        )
-        if (isPossible > -1) {
-          return formatedVariable
-        } else {
-          return false
+        const variableFields = formatedVariable.split('.')
+        let schema = VALIDATION_SCHEMA
+        for (let i = 0; i < variableFields.length; i++) {
+          schema = schema[variableFields[i]]
+          if (schema === undefined) {
+            return false
+          }
         }
+        return formatedVariable
       })
-      if (possibleVariables.findIndex(item => item === false) > -1) {
+      if (validatedVariables.findIndex(item => item === false) > -1) {
         return 'Falied Variable Validation'
       }
       try {
