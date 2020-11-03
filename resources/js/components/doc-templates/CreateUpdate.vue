@@ -54,6 +54,7 @@ import { mapGetters } from 'vuex'
 import BasicInformation, { DEFAULT_TEMPLATE } from './BasicInformation'
 import get from 'lodash/get'
 import DeleteDialog from '~/components/DeleteDialog'
+import { FIXTURE_VALIDATION_SCHEMA } from '../../../../tests/Javascript/__data__/validationSchema'
 
 const INCLUDE = [
   'status',
@@ -90,6 +91,21 @@ export default {
       this.$router.push({ path: '/admin/doc-templates' })
     },
     async onSave (data) {
+      const variables = data.content.match(/\{{.*?\}}/g)
+      const possibleVariables = variables.map((item) => {
+        const formatedVariable = item.slice(2, -2).trim()
+        const isPossible = FIXTURE_VALIDATION_SCHEMA.template.findIndex((field) =>
+          'template' + '.' + field === formatedVariable
+        )
+        if (isPossible > -1) {
+          return formatedVariable
+        } else {
+          return false
+        }
+      })
+      if (possibleVariables.findIndex(item => item === false) > -1) {
+        return 'Falied Variable Validation'
+      }
       try {
         this.templateLoading = true
         if (this.isNew) {
