@@ -42,7 +42,7 @@
 
 # Changes
 
-## Nov 1, 2020
+## Nov 3, 2020
 - **FIX** Events List Status Sort Doesn't work [#538](https://github.com/FreshinUp/foodfleet/issues/538)
 
 <br/>
