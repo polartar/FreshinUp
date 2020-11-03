@@ -41,8 +41,12 @@
 <br/>
 
 # Changes
-## Nov 2, 2020
+
+## Nov 3, 2020
 - Basic Info map display on Venue component
+- **FIX** Events List Status Sort Doesn't work [#538](https://github.com/FreshinUp/foodfleet/issues/538)
+
+<br/>
 
 ## Nov 1, 2020
 - **ADD** Document template - Basic information content field is a rich text [#517](https://github.com/FreshinUp/foodfleet/issues/517)
