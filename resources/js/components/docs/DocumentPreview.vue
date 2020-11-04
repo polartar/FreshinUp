@@ -80,123 +80,139 @@
             >
               Download PDF
             </v-btn>
+            <v-btn
+              :disabled="!isAcceptable"
+              color="primary"
+              class="mx-0"
+            >
+              Accept Contract
+            </v-btn>
           </v-flex>
         </v-layout>
-        <v-layout
-          align-center
-          px-3
-          my-3
+        <vue-custom-scrollbar
+          column
+          sm3
+          class="mt-2"
+          style="max-height: 60vh"
+          :settings="settings"
+          @ps-y-reach-end="handleScroll"
         >
-          <v-flex
-            sm3
+          <v-layout
+            align-center
+            px-3
+            my-3
           >
-            <v-img
-              src="/images/logo.png"
-              alt="main logo"
-              :height="50"
-              :width="160"
+            <v-flex
+              sm3
+            >
+              <v-img
+                src="/images/logo.png"
+                alt="main logo"
+                :height="50"
+                :width="160"
+              />
+            </v-flex>
+            <v-divider
+              vertical
             />
-          </v-flex>
-          <v-divider
-            vertical
-          />
-          <v-flex
-            sm6
-            pl-2
-            class="title primary--text font-weight-bold"
-          >
-            {{ templateTitle }}
-          </v-flex>
-          <v-flex
-            v-if="expiration_at"
-            sm3
-            class="body-2 text-xs-right"
-          >
-            Expiration Date: {{ formatDate(expiration_at, 'MM / DD / YYYY') }}
-          </v-flex>
-        </v-layout>
-        <v-divider />
-        <v-layout
-          mt-3
-        >
-          <div
-            v-html="content"
-          />
-        </v-layout>
-        <v-layout>
-          <v-layout>
             <v-flex
-              sm4
-              class="mr-3 py-3"
+              sm6
+              pl-2
+              class="title primary--text font-weight-bold"
             >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Food Fleet Signature
-              </div>
+              {{ templateTitle }}
             </v-flex>
             <v-flex
-              sm4
-              class="mx-3 py-3"
+              v-if="expiration_at"
+              sm3
+              class="body-2 text-xs-right"
             >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Printed Name
-              </div>
-            </v-flex>
-            <v-flex
-              sm4
-              class="ml-3 py-3"
-            >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Date
-              </div>
+              Expiration Date: {{ formatDate(expiration_at, 'MM / DD / YYYY') }}
             </v-flex>
           </v-layout>
-        </v-layout>
-        <v-layout>
-          <v-layout>
-            <v-flex
-              sm4
-              class="mr-3 py-3"
-            >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Restaurant Owner Name: {{ ownerName }}
-              </div>
-            </v-flex>
-            <v-flex
-              sm4
-              class="mx-3 py-3"
-            >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Printed Name
-              </div>
-            </v-flex>
-            <v-flex
-              sm4
-              class="ml-3 py-3"
-            >
-              <v-divider />
-              <div
-                class="body-1 mt-2"
-              >
-                Date
-              </div>
-            </v-flex>
+          <v-divider />
+          <v-layout
+            mt-3
+          >
+            <div
+              v-html="content"
+            />
           </v-layout>
-        </v-layout>
+          <v-layout>
+            <v-layout>
+              <v-flex
+                sm4
+                class="mr-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Food Fleet Signature
+                </div>
+              </v-flex>
+              <v-flex
+                sm4
+                class="mx-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Printed Name
+                </div>
+              </v-flex>
+              <v-flex
+                sm4
+                class="ml-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Date
+                </div>
+              </v-flex>
+            </v-layout>
+          </v-layout>
+          <v-layout>
+            <v-layout>
+              <v-flex
+                sm4
+                class="mr-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Restaurant Owner Name: {{ ownerName }}
+                </div>
+              </v-flex>
+              <v-flex
+                sm4
+                class="mx-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Printed Name
+                </div>
+              </v-flex>
+              <v-flex
+                sm4
+                class="ml-3 py-3"
+              >
+                <v-divider />
+                <div
+                  class="body-1 mt-2"
+                >
+                  Date
+                </div>
+              </v-flex>
+            </v-layout>
+          </v-layout>
+        </vue-custom-scrollbar>
       </v-layout>
     </v-card-text>
   </v-card>
@@ -207,6 +223,7 @@ import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import Mustache from 'mustache'
+import vueCustomScrollbar from 'vue-custom-scrollbar'
 
 export const DEFAULT_DOCUMENT = {
   uuid: '',
@@ -229,6 +246,9 @@ export const DEFAULT_DOCUMENT = {
 
 // TODO who are _restaurant owner_ and _fleet member_ for document
 export default {
+  components: {
+    vueCustomScrollbar
+  },
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
@@ -238,7 +258,13 @@ export default {
   },
   data () {
     return {
-      ...DEFAULT_DOCUMENT
+      ...DEFAULT_DOCUMENT,
+      isAcceptable: false,
+      settings: {
+        suppressScrollY: false,
+        suppressScrollX: false,
+        wheelPropagation: false
+      }
     }
   },
   computed: {
@@ -272,7 +298,16 @@ export default {
     get,
     onClose () {
       this.$emit('close')
+    },
+    handleScroll (event) {
+      this.isAcceptable = true
+      console.log("------------", this.isAcceptable)
     }
   }
 }
 </script>
+<style>
+.ps__rail-y {
+  display: none;
+}
+</style>
