@@ -269,12 +269,17 @@ export default {
       this.$store.dispatch('events/getItems')
     },
     changeStatus (statusId) {
-      return this.onSave({ status_id: statusId, uuid: this.$route.params.id })
+      if (!this.isNew) {
+        return this.onSave({ status_id: statusId, uuid: this.$route.params.id })
+      } else {
+        this.status_id = statusId
+      }
     },
     async onSave (data) {
       try {
         this.setPageLoading(true)
         if (this.isNew) {
+          data.status_id = this.status_id
           await this.$store.dispatch('venues/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
           this.returnToList()

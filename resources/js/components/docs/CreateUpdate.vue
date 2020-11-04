@@ -127,6 +127,7 @@ export default {
         if (valid) {
           if (this.isNew) {
             data.id = 'new'
+            data.status_id = this.status_id
             await this.$store.dispatch('documents/createItem', { data })
             this.backToList()
           } else {
@@ -143,11 +144,15 @@ export default {
       this.$router.push({ path: '/admin/docs' })
     },
     changeStatus (status) {
-      this.$store
-        .dispatch('documents/patchItem', {
-          data: { status },
-          params: { id: this.doc.uuid }
-        })
+      if (!this.isNew) {
+        this.$store
+          .dispatch('documents/patchItem', {
+            data: { status_id: +status },
+            params: { id: this.doc.uuid }
+          })
+      } else {
+        this.status_id = status
+      }
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

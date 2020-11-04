@@ -38,6 +38,7 @@ class Document extends JsonResource
             'file' => $file,
             'notes' => $this->notes,
             'owner' => new UserResource($this->whenLoaded('owner')),
+            'assigned_uuid' => $this->assigned_uuid,
             'assigned' => new $assignedResource($this->whenLoaded('assigned')),
             'assigned_type' => $assignedType,
             'event_store_uuid' => $this->event_store_uuid,

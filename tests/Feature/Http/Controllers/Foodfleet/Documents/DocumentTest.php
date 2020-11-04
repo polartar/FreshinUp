@@ -191,9 +191,7 @@ class DocumentTest extends TestCase
                 'data' => [
                     [
                         'event_store_uuid' => $eventStoreUUID,
-                        'assigned' => [
-                            'uuid' => $event->uuid
-                        ]
+                        'assigned_uuid' =>  $event->uuid
                     ]
                 ]
             ]);
