@@ -51,7 +51,7 @@ export const WithData = () => ({
     <v-container>
       <basic-information
         :value="venue"
-        :address-entries="FIXTURE_MAPBOX_SEARCH_RESULT"
+        :address-entries="addresses"
         @input="onSave"
         @cancel="onCancel"
         @delete="onDelete"/>

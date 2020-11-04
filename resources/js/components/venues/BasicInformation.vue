@@ -39,10 +39,10 @@
             hide-selected
             item-text="text"
             placeholder="Start typing to Search"
+            :search-input.sync="addressInput"
             return-object
             single-line
             outline
-            @change="searchPlaces"
           />
         </v-flex>
         <v-flex
@@ -193,7 +193,15 @@
           <MglMap
             :access-token="mapToken"
             :map-style="mapStyle"
-          />
+            :center="mapCenter"
+            :max-bounds="mapBox"
+          >
+            <MglMarker
+              v-if="mapBox"
+              :coordinates="mapCenter"
+              color="green"
+            />
+          </MglMap>
         </div>
       </v-flex>
     </v-layout>
@@ -232,13 +240,15 @@
 </template>
 <script>
 import Mapbox from 'mapbox-gl'
-import { MglMap } from 'vue-mapbox'
+import { MglMap, MglMarker } from 'vue-mapbox'
 
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 import get from 'lodash/get'
 import Simple from 'fresh-bus/components/search/simple'
+
+import debounce from 'lodash/debounce'
 
 const MAP_BOX_TOKEN = process.env.MAP_BOX_TOKEN
 
@@ -259,7 +269,8 @@ export const DEFAULT_VENUE = {
 export default {
   components: {
     Simple,
-    MglMap
+    MglMap,
+    MglMarker
   },
   mixins: [MapValueKeysToData],
   props: {
@@ -273,7 +284,8 @@ export default {
       mapToken: MAP_BOX_TOKEN,
       mapStyle: 'mapbox://styles/mapbox/streets-v11', // your map style
       currentAddress: null,
-      changeUserDialog: false
+      changeUserDialog: false,
+      addressInput: null
     }
   },
   computed: {
@@ -288,6 +300,17 @@ export default {
         // To be implemented
         return Object.assign({}, entry)
       })
+    },
+    mapCenter () {
+      return this.currentAddress ? this.currentAddress['center'] : undefined
+    },
+    mapBox () {
+      return this.currentAddress ? this.currentAddress['bbox'] : undefined
+    }
+  },
+  watch: {
+    addressInput (val) {
+      this.searchPlaces(val)
     }
   },
   created () {
@@ -323,11 +346,9 @@ export default {
         document.body.append(element)
       })
     },
-    searchPlaces () {
-      // eslint-disable-next-line no-console
-      console.log(this.currentAddress)
-      this.$emit('searchPlaces', this.currentAddress)
-    }
+    searchPlaces: debounce(function (text) {
+      this.$emit('searchPlaces', text)
+    }, 400)
   }
 }
 </script>
