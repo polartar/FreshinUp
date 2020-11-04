@@ -79,7 +79,7 @@ export const VARIABLE_SCHEMA = {
       first_name: 'John',
       last_name: 'Doe',
       email: 'john@doe.com'
-    },
+    }
   }
 }
 
@@ -124,7 +124,7 @@ export default {
         const errorVars = this.errorVars(data.content, VARIABLE_SCHEMA)
         if (errorVars.length !== 0) {
           // only show first 3 variables
-          throw new Error('Invalid variable(s): ' + errorVars.slice(0,3).join(', '))
+          throw new Error('Invalid variable(s): ' + errorVars.slice(0, 3).join(', '))
         }
         this.templateLoading = true
         if (this.isNew) {

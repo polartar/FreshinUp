@@ -6,20 +6,20 @@ import { mount } from 'vue-cli-plugin-freshinup-ui/utils/testing'
 import { FIXTURE_DOCUMENT_TEMPLATES } from '../../../../tests/Javascript/__data__/documentTemplates'
 
 describe('components/doc-templates/CreateUpdate', () => {
+  let store, mock, localVue
+  beforeEach(() => {
+    store = createStore()
+    let v = createLocalVue()
+    localVue = v.localVue
+    mock = v.mock
+  })
   describe('Snapshots', () => {
-    let store, mock, localVue
-    beforeEach(() => {
-      store = createStore()
-      let v = createLocalVue()
-      localVue = v.localVue
-      mock = v.mock
-    })
     test('new', (done) => {
       const wrapper = mount(Component, {
         localVue,
         store
       })
-      Component.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: 'new' }}, null, () => {
+      Component.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: 'new' } }, null, () => {
         expect(wrapper.element).toMatchSnapshot()
         done()
       })
@@ -31,19 +31,13 @@ describe('components/doc-templates/CreateUpdate', () => {
         localVue,
         store
       })
-      Component.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: FIXTURE_DOCUMENT_TEMPLATES[0].uuid }}, null, () => {
+      Component.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: FIXTURE_DOCUMENT_TEMPLATES[0].uuid } }, null, () => {
         expect(wrapper.element).toMatchSnapshot()
         done()
       })
     })
   })
   describe('Methods', () => {
-    let store, mock, localVue
-    beforeEach(() => {
-      const v = createLocalVue()
-      mock = v.mock
-      store = createStore()
-    })
     describe('errorVars', () => {
       test('when no variables', async () => {
         const wrapper = shallowMount(Component, {
