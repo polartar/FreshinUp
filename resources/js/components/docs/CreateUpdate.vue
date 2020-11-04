@@ -58,6 +58,7 @@
         :templates="templates"
         :variables="templateVariables"
         :events="events"
+        :preview-dialog="previewDialog"
         @close="previewDialog = false"
       />
     </v-dialog>

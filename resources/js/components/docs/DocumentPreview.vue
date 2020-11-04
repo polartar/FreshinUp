@@ -81,7 +81,7 @@
               Download PDF
             </v-btn>
             <v-btn
-              :disabled="!isAcceptable"
+              :disabled="isScrollVisible && !isAcceptable"
               color="primary"
               class="mx-0"
             >
@@ -90,12 +90,13 @@
           </v-flex>
         </v-layout>
         <vue-custom-scrollbar
+          ref="scrollbar"
           column
           sm3
           class="mt-2"
-          style="max-height: 60vh"
+          style="overflow: auto; max-height: 60vh"
           :settings="settings"
-          @ps-y-reach-end="handleScroll"
+          @ps-y-reach-end="isAcceptable = previewDialog"
         >
           <v-layout
             align-center
@@ -254,7 +255,8 @@ export default {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
-    variables: { type: Object, default: () => {} }
+    variables: { type: Object, default: () => {} },
+    previewDialog: { type: Boolean, default: () => false }
   },
   data () {
     return {
@@ -292,16 +294,20 @@ export default {
     content () {
       const html = get(this.selectedTemplate, 'content', '')
       return Mustache.render(html, this.variables)
+    },
+    isScrollVisible () {
+      if (this.previewDialog) {
+        const scrollHeight = this.$refs.scrollbar.$el.scrollHeight
+        const clientHeight = this.$refs.scrollbar.$el.clientHeight
+        if (scrollHeight > clientHeight) return true
+      }
+      return false
     }
   },
   methods: {
     get,
     onClose () {
       this.$emit('close')
-    },
-    handleScroll (event) {
-      this.isAcceptable = true
-      console.log("------------", this.isAcceptable)
     }
   }
 }
