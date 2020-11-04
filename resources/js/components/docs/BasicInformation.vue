@@ -97,6 +97,7 @@
               item-value="uuid"
               data-vv-name="template_uuid"
               label="Document Template"
+              @input="changeTemplate"
             />
           </v-flex>
           <v-flex
@@ -343,6 +344,9 @@ export default {
     },
     changeAssignedType (value) {
       this.assigned_type = value
+    },
+    changeTemplate (template) {
+      this.$emit('selectTemplate', template)
     }
   }
 }

@@ -232,6 +232,7 @@ export default {
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
+    currentTemplateUuid: { type: String, default: () => '' },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
     variables: { type: Object, default: () => {} }
@@ -243,7 +244,8 @@ export default {
   },
   computed: {
     templateTitle () {
-      return get(this, 'template.title')
+      const index = this.templates.findIndex(template => template.uuid === this.currentTemplateUuid)
+      return this.templates[index].title
     },
     attachment () {
       return get(this, 'file.src')
@@ -266,6 +268,11 @@ export default {
     content () {
       const html = get(this.selectedTemplate, 'content', '')
       return Mustache.render(html, this.variables)
+    }
+  },
+  watch: {
+    currentTemplateUuid: function (value) {
+      this.template_uuid = value
     }
   },
   methods: {

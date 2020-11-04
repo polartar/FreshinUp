@@ -48,6 +48,7 @@
       @input="onSaveClick"
       @download="downloadDocument"
       @preview="previewDialog = true"
+      @selectTemplate="onSelectTemplate"
     />
     <v-dialog
       v-model="previewDialog"
@@ -55,6 +56,7 @@
     >
       <document-preview
         :value="doc"
+        :current-template-uuid="currentTemplateUuid"
         :templates="templates"
         :variables="templateVariables"
         :events="events"
@@ -81,7 +83,7 @@ export default {
   data () {
     return {
       isNew: false,
-      template: null,
+      currentTemplateUuid: null,
       previewDialog: false,
       file: { name: null, src: null }
     }
@@ -104,6 +106,11 @@ export default {
       return {}
     }
   },
+  watch: {
+    doc_: function (doc) {
+      this.currentTemplateUuid = doc.template_uuid
+    }
+  },
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
@@ -117,6 +124,9 @@ export default {
         this.$refs.basicInfo.$validator.validateAll()
       ])
       return valids.every(valid => valid)
+    },
+    onSelectTemplate (template) {
+      this.currentTemplateUuid = template
     },
     onSaveClick (payload) {
       this.validator().then(async valid => {
