@@ -296,12 +296,12 @@ export default {
       return Mustache.render(html, this.variables)
     },
     isScrollVisible () {
-      if (this.previewDialog) {
+      if (this.previewDialog && this.$refs.scrollbar) {
         const scrollHeight = this.$refs.scrollbar.$el.scrollHeight
         const clientHeight = this.$refs.scrollbar.$el.clientHeight
         if (scrollHeight > clientHeight) return true
       }
-      return false
+      return true
     }
   },
   methods: {

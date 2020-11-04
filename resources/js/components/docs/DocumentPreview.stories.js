@@ -21,10 +21,15 @@ export const Populated = () => ({
   components: { DocumentPreview },
   data () {
     return {
-      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
+      document: {
+        ...document,
+        event_store_uuid: FIXTURE_EVENTS[0].uuid,
+        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid
+      },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
-      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES,
+      previewDialog: true
     }
   },
   methods: {
@@ -39,6 +44,7 @@ export const Populated = () => ({
         :templates="templates"
         :events="events"
         :variables="variables"
+        :previewDialog="previewDialog"
         @close="onClose"
       />
     </v-container>
