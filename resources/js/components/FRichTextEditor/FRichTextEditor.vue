@@ -147,9 +147,7 @@ export default {
       // condition 2: String(oldValue).length === 0
       // Hack/fix when oldValue === default value of prop 'value'
       if (val !== this.value || String(oldValue).length === 0) {
-        this.$nextTick(() => {
-          this.editor.setContent(val)
-        })
+        this.editor.setContent(val)
       }
     }
   },
