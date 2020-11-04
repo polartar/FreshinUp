@@ -5369,21 +5369,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                 <div
                   class="flex sm3 text-xs-right"
                 >
-                  <button
-                    class="mx-0 v-btn v-btn--disabled theme--light primary--text"
-                    disabled="disabled"
-                    download=""
-                    target="_blank"
-                    type="button"
-                  >
-                    <div
-                      class="v-btn__content"
-                    >
-                      
-            Download PDF
-          
-                    </div>
-                  </button>
+                  <!---->
                 </div>
               </div>
                
@@ -5423,13 +5409,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
         
                 </div>
                  
-                <div
-                  class="flex body-2 text-xs-right sm3"
-                >
-                  
-          Expiration Date: 10 / 09 / 2019
-        
-                </div>
+                <!---->
               </div>
                
               <hr
@@ -5515,7 +5495,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                       class="body-1 mt-2"
                     >
                       
-              Restaurant Owner Name: eligendi
+              Restaurant Owner Name: 
             
                     </div>
                   </div>

@@ -244,6 +244,7 @@ export default {
   },
   computed: {
     templateTitle () {
+      if (!this.currentTemplateUuid) return ''
       const index = this.templates.findIndex(template => template.uuid === this.currentTemplateUuid)
       return this.templates[index].title
     },
