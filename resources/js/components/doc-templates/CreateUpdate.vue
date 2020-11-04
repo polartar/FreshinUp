@@ -60,21 +60,26 @@ const INCLUDE = [
   'updated_by'
 ]
 
-const VALIDATION_SCHEMA = {
+export const VARIABLE_SCHEMA = {
   template: {
     id: 1,
     uuid: '3f7c009b-26aa-38f3-8079-2bae84ac4a64',
     title: 'Template Title',
     description: 'Template description',
-    content: '<p>content</p>',
     status_id: 1,
-    updated_by_uuid: 'efc83248-0efd-4257-a348-62f0903794f6',
+    status: {
+      id: 2,
+      name: 'Published'
+    },
     created_at: '2020-10-27 02:17:08',
     updated_at: '2020-10-27 02:17:08',
-    updateBy: {
+    updated_by_uuid: 'efc83248-0efd-4257-a348-62f0903794f6',
+    updatedBy: {
       name: 'John Doe',
+      first_name: 'John',
+      last_name: 'Doe',
       email: 'john@doe.com'
-    }
+    },
   }
 }
 
@@ -100,7 +105,7 @@ export default {
       return this.isNew ? 'New Document template' : 'Document template details'
     },
     template () {
-      return this.isNew ? DEFAULT_TEMPLATE : this.template_
+      return Object.assign({}, DEFAULT_TEMPLATE, this.template_)
     }
   },
   methods: {
@@ -108,24 +113,19 @@ export default {
     returnToList () {
       this.$router.push({ path: '/admin/doc-templates' })
     },
+    errorVars (content, schema) {
+      const variables = (content.match(/{{.*?}}/g) || [])
+        .map((item) => item.slice(2, -2).trim())
+
+      return variables.filter(variable => get(schema, variable) === undefined)
+    },
     async onSave (data) {
-      const variables = data.content.match(/\{{.*?\}}/g)
-      const validatedVariables = variables.map((item) => {
-        const formatedVariable = item.slice(2, -2).trim()
-        const variableFields = formatedVariable.split('.')
-        let schema = VALIDATION_SCHEMA
-        for (let i = 0; i < variableFields.length; i++) {
-          schema = schema[variableFields[i]]
-          if (schema === undefined) {
-            return false
-          }
-        }
-        return formatedVariable
-      })
-      if (validatedVariables.findIndex(item => item === false) > -1) {
-        return 'Falied Variable Validation'
-      }
       try {
+        const errorVars = this.errorVars(data.content, VARIABLE_SCHEMA)
+        if (errorVars.length !== 0) {
+          // only show first 3 variables
+          throw new Error('Invalid variable(s): ' + errorVars.slice(0,3).join(', '))
+        }
         this.templateLoading = true
         if (this.isNew) {
           await this.$store.dispatch('documentTemplates/createItem', { data })
@@ -160,6 +160,7 @@ export default {
       }))
     }
     promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))
+    vm.$store.dispatch('page/setLoading', true)
     Promise.all(promises)
       .then(() => {})
       .catch(error => {
