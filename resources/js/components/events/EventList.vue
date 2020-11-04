@@ -169,7 +169,7 @@ export default {
     return {
       selected: [],
       headers: [
-        { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
+        { text: 'Status', width: 200, sortable: true, value: 'status_id', align: 'left' },
         { text: 'Title / Venue', value: 'name,venue', align: 'left' },
         { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
         { text: 'Type', value: 'type_id', align: 'left' },

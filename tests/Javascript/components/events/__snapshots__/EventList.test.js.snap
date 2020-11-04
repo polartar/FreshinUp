@@ -52,6 +52,7 @@ exports[`Event List component Snapshots events empty 1`] = `
             role="columnheader"
             scope="col"
             tabindex="0"
+            width="200"
           >
             <span>
               
@@ -485,6 +486,7 @@ exports[`Event List component Snapshots events set 1`] = `
             role="columnheader"
             scope="col"
             tabindex="0"
+            width="200"
           >
             <span>
               
