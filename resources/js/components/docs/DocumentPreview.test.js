@@ -172,7 +172,7 @@ describe('components/docs/DocumentPreview', () => {
 
     test('isScrollVisible', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.isScrollVisible).toEqual(false)
+      expect(wrapper.vm.isScrollVisible).toEqual(true)
 
       wrapper.setProps({
         value: {
@@ -183,7 +183,7 @@ describe('components/docs/DocumentPreview', () => {
         previewDialog: true
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.isScrollVisible).toEqual(false)
+      expect(wrapper.vm.isScrollVisible).toEqual(true)
     })
   })
 

@@ -218,7 +218,8 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
             <!---->
              
             <button
-              class="mx-0 v-btn theme--light primary"
+              class="mx-0 v-btn v-btn--disabled theme--light primary--text"
+              disabled="disabled"
               type="button"
             >
               <div
@@ -232,10 +233,8 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
           </div>
         </div>
          
-        <section
-          class="ps-container mt-2 ps"
-          column=""
-          sm3=""
+        <div
+          class="layout mt-2 column sm3"
           style="overflow: auto; max-height: 60vh;"
         >
           <div
@@ -398,27 +397,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="ps__rail-x"
-            style="left: 0px; top: 0px;"
-          >
-            <div
-              class="ps__thumb-x"
-              style="left: 0px; width: 0px;"
-              tabindex="0"
-            />
-          </div>
-          <div
-            class="ps__rail-y"
-            style="top: 0px; left: 0px;"
-          >
-            <div
-              class="ps__thumb-y"
-              style="top: 0px; height: 0px;"
-              tabindex="0"
-            />
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   </div>
@@ -890,7 +869,8 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
             </button>
              
             <button
-              class="mx-0 v-btn theme--light primary"
+              class="mx-0 v-btn v-btn--disabled theme--light primary--text"
+              disabled="disabled"
               type="button"
             >
               <div
@@ -904,10 +884,8 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
           </div>
         </div>
          
-        <section
-          class="ps-container mt-2 ps"
-          column=""
-          sm3=""
+        <div
+          class="layout mt-2 column sm3"
           style="overflow: auto; max-height: 60vh;"
         >
           <div
@@ -1268,27 +1246,7 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="ps__rail-x"
-            style="left: 0px; top: 0px;"
-          >
-            <div
-              class="ps__thumb-x"
-              style="left: 0px; width: 0px;"
-              tabindex="0"
-            />
-          </div>
-          <div
-            class="ps__rail-y"
-            style="top: 0px; left: 0px;"
-          >
-            <div
-              class="ps__thumb-y"
-              style="top: 0px; height: 0px;"
-              tabindex="0"
-            />
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   </div>

@@ -90,14 +90,13 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <vue-custom-scrollbar
+        <v-layout
           ref="scrollbar"
           column
           sm3
           class="mt-2"
           style="overflow: auto; max-height: 60vh"
-          :settings="settings"
-          @ps-y-reach-end="isAcceptable = previewDialog"
+          @scroll.passive="handleScroll"
         >
           <v-layout
             align-center
@@ -214,7 +213,7 @@
               </v-flex>
             </v-layout>
           </v-layout>
-        </vue-custom-scrollbar>
+        </v-layout>
       </v-layout>
     </v-card-text>
   </v-card>
@@ -225,7 +224,6 @@ import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import Mustache from 'mustache'
-import vueCustomScrollbar from 'vue-custom-scrollbar'
 
 export const DEFAULT_DOCUMENT = {
   uuid: '',
@@ -248,9 +246,6 @@ export const DEFAULT_DOCUMENT = {
 
 // TODO who are _restaurant owner_ and _fleet member_ for document
 export default {
-  components: {
-    vueCustomScrollbar
-  },
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
@@ -262,12 +257,7 @@ export default {
   data () {
     return {
       ...DEFAULT_DOCUMENT,
-      isAcceptable: false,
-      settings: {
-        suppressScrollY: false,
-        suppressScrollX: false,
-        wheelPropagation: false
-      }
+      isAcceptable: false
     }
   },
   computed: {
@@ -298,11 +288,18 @@ export default {
     },
     isScrollVisible () {
       if (this.previewDialog && this.$refs.scrollbar) {
-        const scrollHeight = this.$refs.scrollbar.$el.scrollHeight
-        const clientHeight = this.$refs.scrollbar.$el.clientHeight
-        if (scrollHeight > clientHeight) return true
+        const scrollHeight = this.$refs.scrollbar.scrollHeight
+        const clientHeight = this.$refs.scrollbar.clientHeight
+        if (scrollHeight > clientHeight) {
+          return true
+        } else return false
       }
-      return false
+      return true
+    }
+  },
+  watch: {
+    previewDialog (value) {
+      if (!value) this.isAcceptable = false
     }
   },
   methods: {
@@ -312,12 +309,11 @@ export default {
     },
     acceptContract () {
       this.$emit('contract-accepted')
+    },
+    handleScroll (event) {
+      const { scrollTop, clientHeight, scrollHeight } = event.target
+      if (scrollTop > scrollHeight - clientHeight - 2) this.isAcceptable = this.previewDialog
     }
   }
 }
 </script>
-<style>
-.ps__rail-y {
-  display: none;
-}
-</style>
