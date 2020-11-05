@@ -28,16 +28,7 @@ export const Loading = () => ({
   components: { BasicInformation },
   template: `
     <v-container>
-      <basic-information loading/>
-    </v-container>
-  `
-})
-
-export const AddressesLoading = () => ({
-  components: { BasicInformation },
-  template: `
-    <v-container>
-      <basic-information addresses-loading/>
+      <basic-information loading addresses-loading/>
     </v-container>
   `
 })

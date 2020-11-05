@@ -39,6 +39,7 @@
             hide-selected
             item-text="text"
             placeholder="Start typing to Search"
+            :search-input.sync="address_line_1"
             return-object
             single-line
             outline
@@ -298,9 +299,6 @@ export default {
     searchPlaces: debounce(function (query) {
       this.$emit('search-places', query)
     }, 400)
-  },
-  mounted () {
-
   }
 }
 </script>
