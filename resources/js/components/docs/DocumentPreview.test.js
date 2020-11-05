@@ -169,6 +169,22 @@ describe('components/docs/DocumentPreview', () => {
       const expected = Mustache.render(FIXTURE_DOCUMENT_TEMPLATES[0].content, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
       expect(wrapper.vm.content).toEqual(expected)
     })
+
+    test('isScrollVisible', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.isScrollVisible).toEqual(false)
+
+      wrapper.setProps({
+        value: {
+          template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid
+        },
+        templates: FIXTURE_DOCUMENT_TEMPLATES,
+        variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES,
+        previewDialog: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.isScrollVisible).toEqual(false)
+    })
   })
 
   describe('Methods', () => {
@@ -177,6 +193,14 @@ describe('components/docs/DocumentPreview', () => {
       wrapper.vm.onClose()
       await wrapper.vm.$nextTick()
       const emitted = wrapper.emitted().close
+      expect(emitted).toBeTruthy()
+    })
+
+    test('acceptContract()', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.acceptContract()
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted('contract-accepted')
       expect(emitted).toBeTruthy()
     })
   })

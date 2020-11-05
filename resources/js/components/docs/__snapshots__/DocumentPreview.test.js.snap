@@ -218,8 +218,7 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
             <!---->
              
             <button
-              class="mx-0 v-btn v-btn--disabled theme--light primary--text"
-              disabled="disabled"
+              class="mx-0 v-btn theme--light primary"
               type="button"
             >
               <div

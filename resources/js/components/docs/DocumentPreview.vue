@@ -84,6 +84,7 @@
               :disabled="isScrollVisible && !isAcceptable"
               color="primary"
               class="mx-0"
+              @click="acceptContract"
             >
               Accept Contract
             </v-btn>
@@ -301,13 +302,16 @@ export default {
         const clientHeight = this.$refs.scrollbar.$el.clientHeight
         if (scrollHeight > clientHeight) return true
       }
-      return true
+      return false
     }
   },
   methods: {
     get,
     onClose () {
       this.$emit('close')
+    },
+    acceptContract () {
+      this.$emit('contract-accepted')
     }
   }
 }
