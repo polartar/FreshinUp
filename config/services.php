@@ -54,6 +54,10 @@ return [
     'vue_client' => [
         'id' => env('VUE_CLIENT_ID'),
         'secret' => env('VUE_CLIENT_SECRET'),
+    ],
+
+    'mapbox' => [
+        'access_token' => env('MAPBOX_ACCESS_TOKEN')
     ]
 
 ];

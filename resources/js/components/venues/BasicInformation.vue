@@ -29,7 +29,7 @@
         </v-flex>
         <v-flex xs12>
           <div class="mb-2 text-uppercase grey--text font-weight-bold">
-            Address
+            Address line 1
           </div>
           <v-autocomplete
             v-model="currentAddress"
@@ -42,20 +42,7 @@
             return-object
             single-line
             outline
-            @change="searchPlaces"
-          />
-        </v-flex>
-        <v-flex
-          xs12
-        >
-          <div class="mb-2 text-uppercase grey--text font-weight-bold">
-            Address line 1
-          </div>
-          <v-text-field
-            v-model="address_line_1"
-            placeholder="Address 1"
-            single-line
-            outline
+            @update:searchInput="searchPlaces"
           />
         </v-flex>
         <v-flex
@@ -190,10 +177,17 @@
           style="height: 100%;"
           class="my-2"
         >
-          <MglMap
-            :access-token="mapToken"
-            :map-style="mapStyle"
-          />
+          <f-map
+            :access-token="mapboxAccessToken"
+            :center="mapCenter"
+            :max-bounds="mapBox"
+          >
+            <f-map-marker
+              v-if="mapCenter"
+              :coordinates="mapCenter"
+              color="green"
+            />
+          </f-map>
         </div>
       </v-flex>
     </v-layout>
@@ -231,16 +225,15 @@
   </v-card>
 </template>
 <script>
-import Mapbox from 'mapbox-gl'
-import { MglMap } from 'vue-mapbox'
 
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 import get from 'lodash/get'
 import Simple from 'fresh-bus/components/search/simple'
-
-const MAP_BOX_TOKEN = process.env.MAP_BOX_TOKEN
+import FMap from '~/components/FMap'
+import FMapMarker from '~/components/FMapMarker'
+import debounce from 'lodash/debounce'
 
 export const DEFAULT_VENUE = {
   uuid: '',
@@ -259,21 +252,21 @@ export const DEFAULT_VENUE = {
 export default {
   components: {
     Simple,
-    MglMap
+    FMap,
+    FMapMarker
   },
   mixins: [MapValueKeysToData],
   props: {
     loading: { type: Boolean, default: false },
     addressesLoading: { type: Boolean, default: false },
-    addressEntries: { type: Array, default: () => [] }
+    addresses: { type: Array, default: () => [] },
+    mapboxAccessToken: { type: String, required: true }
   },
   data () {
     return {
       ...DEFAULT_VENUE,
-      mapToken: MAP_BOX_TOKEN,
-      mapStyle: 'mapbox://styles/mapbox/streets-v11', // your map style
-      currentAddress: null,
-      changeUserDialog: false
+      changeUserDialog: false,
+      currentAddress: null
     }
   },
   computed: {
@@ -283,20 +276,12 @@ export default {
     isEditing () {
       return this.uuid
     },
-    addresses () {
-      return this.addressEntries.map(entry => {
-        // To be implemented
-        return Object.assign({}, entry)
-      })
+    mapCenter () {
+      return this.currentAddress ? this.currentAddress['center'] : undefined
+    },
+    mapBox () {
+      return this.currentAddress ? this.currentAddress['bbox'] : undefined
     }
-  },
-  created () {
-    // We need to set mapbox-gl library here in order to use it in template
-    this.mapbox = Mapbox
-    this.lazyLoad({
-      href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
-      rel: 'stylesheet'
-    })
   },
   methods: {
     get,
@@ -310,24 +295,12 @@ export default {
     onDeleteVenue () {
       this.$emit('delete', pick(this, keys(this.value)))
     },
-    lazyLoad (options) {
-      return new Promise((resolve, reject) => {
-        let element = document.createElement('link')
-        Object.keys(options).forEach(key => element.setAttribute(key, options[key]))
-        element.addEventListener('load', () => {
-          resolve(element)
-        })
-        element.addEventListener('error', (e) => {
-          reject(e)
-        })
-        document.body.append(element)
-      })
-    },
-    searchPlaces () {
-      // eslint-disable-next-line no-console
-      console.log(this.currentAddress)
-      this.$emit('searchPlaces', this.currentAddress)
-    }
+    searchPlaces: debounce(function (query) {
+      this.$emit('search-places', query)
+    }, 400)
+  },
+  mounted () {
+
   }
 }
 </script>

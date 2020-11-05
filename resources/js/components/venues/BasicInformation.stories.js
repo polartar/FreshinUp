@@ -2,9 +2,8 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import BasicInformation from './BasicInformation'
-import { FIXTURE_VENUE, FIXTURE_MAPBOX_SEARCH_RESULT } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_MAPBOX_SEARCH_RESULT, FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
 import MockAdapter from 'axios-mock-adapter'
-import axios from 'axios'
 
 const mock = new MockAdapter(axios)
 mock.onGet(/.*users.*/).reply(200, {
@@ -15,11 +14,6 @@ mock.onGet(/.*users.*/).reply(200, {
     { uuid: 4, name: 'user 4' }
   ]
 })
-
-// const addressSearchMapMock = new MockAdapter(axios)
-// addressSearchMapMock.onGet(/.*geocoding.*/).reply(200, {
-//   data: FIXTURE_MAPBOX_SEARCH_RESULT
-// })
 
 export const Default = () => ({
   components: { BasicInformation },
@@ -34,7 +28,16 @@ export const Loading = () => ({
   components: { BasicInformation },
   template: `
     <v-container>
-      <basic-information loading addresses-loading/>
+      <basic-information loading/>
+    </v-container>
+  `
+})
+
+export const AddressesLoading = () => ({
+  components: { BasicInformation },
+  template: `
+    <v-container>
+      <basic-information addresses-loading/>
     </v-container>
   `
 })
@@ -44,14 +47,14 @@ export const WithData = () => ({
   data () {
     return {
       venue: FIXTURE_VENUE,
-      addresses: FIXTURE_MAPBOX_SEARCH_RESULT.features
+      addresses: FIXTURE_MAPBOX_SEARCH_RESULT
     }
   },
   template: `
     <v-container>
       <basic-information
         :value="venue"
-        :address-entries="FIXTURE_MAPBOX_SEARCH_RESULT"
+        :addresses="addresses"
         @input="onSave"
         @cancel="onCancel"
         @delete="onDelete"/>
@@ -80,4 +83,5 @@ storiesOf('FoodFleet|components/venues/BasicInformation', module)
   })
   .add('Default', Default)
   .add('Loading', Loading)
+  .add('AddressesLoading', AddressesLoading)
   .add('With data', WithData)

@@ -44,11 +44,11 @@
 
 ## Nov 4, 2020
 - **ADD** Document template - Add variable function [#506](https://github.com/FreshinUp/foodfleet/issues/506)
+- Basic Info map display on Venue component
 
 <br/>
 
 ## Nov 3, 2020
-- Basic Info map display on Venue component
 - **FIX** Events List Status Sort Doesn't work [#538](https://github.com/FreshinUp/foodfleet/issues/538)
 
 <br/>

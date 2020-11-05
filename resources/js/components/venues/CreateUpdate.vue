@@ -41,7 +41,8 @@
         <basic-information
           :value="venue"
           :addresses-loading="addressesAreLoading"
-          :address-entries="addressEntries"
+          :addresses="addresses"
+          :mapbox-access-token="MAPBOX_ACCESS_TOKEN"
           @input="onSave"
           @cancel="onCancel"
           @delete="onDelete"
@@ -148,7 +149,6 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
 import { mapActions, mapGetters } from 'vuex'
 import BasicInformation, { DEFAULT_VENUE } from './BasicInformation'
 import Documents from './Documents'
@@ -159,7 +159,7 @@ import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import Locations from '../locations/Locations'
 import Events from './Events'
 
-const MAP_BOX_TOKEN = process.env.MAP_BOX_TOKEN
+const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN || 'pk.eyJ1IjoiYmNkYnVkZHkiLCJhIjoiY2toM3luOTlrMDE2dDJzazBzN2NqaGZobCJ9.azAiM_hZuTI3Ew9Q1HpFtg'
 
 const VENUE_INCLUDES = [
   'owner'
@@ -206,6 +206,7 @@ export default {
   mixins: [deletables],
   data () {
     return {
+      MAPBOX_ACCESS_TOKEN,
       locationFormIsLoading: false,
       DELETABLE_RESOURCE,
       deletable: {
@@ -221,7 +222,6 @@ export default {
       },
       documentLoading: false,
       locationLoading: false,
-      addressEntries: [],
       addressesAreLoading: false
     }
   },
@@ -246,6 +246,10 @@ export default {
       eventPagination: 'pagination',
       eventSorting: 'sorting',
       eventSortBy: 'sortBy'
+    }),
+    ...mapGetters('mapbox', {
+      addresses: 'places',
+      addressesAreLoading: 'placesLoading'
     }),
     locations () {
       // For some reasons, after creating a location, locations/items result to an object
@@ -444,18 +448,11 @@ export default {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
     },
     onSearchPlaces (text) {
-      axios
-        .get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${text}.json?access_token=${MAP_BOX_TOKEN}`
-        )
-        .then((res) => {
-          // eslint-disable-next-line no-console
-          console.log(res.data)
-          this.addressEntries = res.data.features
-        })
-      // eslint-disable-next-line no-console
-        .catch((err) => console.log(err))
-        .finally(() => (this.addressesAreLoading = false))
+      this.$store.dispatch('mapbox/getPlaces', {
+        text,
+        accessToken: MAPBOX_ACCESS_TOKEN
+      })
+        .catch((err) => console.error(err))
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
