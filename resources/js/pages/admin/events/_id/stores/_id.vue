@@ -194,7 +194,7 @@ export default {
     summary () {
       return {
         status: get(this.store, 'status'),
-        owner: get(this.storeSummary, 'owner.first_name') + get(this.storeSummary, 'owner.last_name'),
+        owner: get(this.storeSummary, 'owner.name'),
         lisence_due: 'Dec, 30 2020',
         phone: get(this.storeSummary, 'owner.mobile_phone'),
         email: get(this.storeSummary, 'owner.email'),

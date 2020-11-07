@@ -17,18 +17,11 @@ class StoreSummary extends JsonResource
      */
     public function toArray($request)
     {
-        $supplier = Company::where('uuid', $this->supplier_uuid)->first();
-        $owner = User::make();
-
-        if (!empty($supplier->users_id)) {
-            $owner = User::where('id', $supplier->users_id)->first();
-        }
-        
         return [
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status" => $this->status,
-            "owner" => $owner,
+            "owner" => $this->owner,
             "tags" => Tag::collection($this->whenLoaded('tags'))
         ];
     }

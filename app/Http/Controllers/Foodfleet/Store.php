@@ -130,7 +130,7 @@ class Store extends Controller
     public function summary(Request $request, $uuid)
     {
         $store = QueryBuilder::for(StoreModel::class, $request)
-            ->with('tags')
+            ->with('tags', 'owner')
             ->where('uuid', $uuid)
             ->firstOrFail();
 
