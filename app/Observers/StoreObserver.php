@@ -45,8 +45,8 @@ class StoreObserver
                 'assigned_type' => Store::class,
                 'assigned_uuid' => $store->uuid,
                 'status_id' => DocumentStatus::PENDING,
-                'title' => "From a template",
-                'description' => "From a template",
+                'title' => "Fleet Member agreement",
+                'description' => "Fleet Member agreement",
             ]);
         }
     }
