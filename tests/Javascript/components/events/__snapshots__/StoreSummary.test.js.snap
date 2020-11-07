@@ -170,7 +170,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        SEAFOOD
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -179,7 +179,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        SMOKED
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -188,7 +188,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        DESSERT
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -197,7 +197,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        BAY AREA
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -206,7 +206,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        VEGAN OPTIONS
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -215,7 +215,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        SMOKED
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -224,7 +224,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        DESSERT
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -233,7 +233,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        SEAFOOD
+        
       
       </f-chip-stub>
       <f-chip-stub
@@ -242,7 +242,7 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         value="true"
       >
         
-        SMOKED
+        
       
       </f-chip-stub>
     </v-layout-stub>
