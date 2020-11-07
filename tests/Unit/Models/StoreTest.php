@@ -3,6 +3,7 @@
 namespace Tests\Unit\Models;
 
 use App\Enums\DocumentStatus;
+use App\Enums\StoreStatus as StoreStatusEnum;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Staff;
@@ -109,5 +110,106 @@ class StoreTest extends TestCase
                 'title' => $document
             ])->count());
         }
+    }
+
+    public function testObserverWhenStoreUpdateWithStatusDifferentOfPending()
+    {
+        $store = factory(Store::class)->create([
+            'status_id' => StoreStatusEnum::DRAFT
+        ]);
+        $storeDocumentSize = Document::where([ 'assigned_uuid' => $store->uuid ])->count();
+        $this->assertEquals($storeDocumentSize, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $store->update([
+            'status_id' => StoreStatusEnum::APPROVED
+        ]);
+        $this->assertEquals($storeDocumentSize, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+        $document = Document::where([
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
+    }
+
+    public function testObserverWhenStoreUpdatedWithStatusPending()
+    {
+        $store = factory(Store::class)->create([
+            'status_id' => StoreStatusEnum::DRAFT
+        ]);
+        $storeDocumentSize = Document::where([ 'assigned_uuid' => $store->uuid ])->count();
+        $this->assertEquals($storeDocumentSize, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $store->update([
+            'status_id' => StoreStatusEnum::PENDING
+        ]);
+        $this->assertEquals($storeDocumentSize + 1, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
+    }
+
+    public function testObserverWhenStoreUpdatedWithStatusPendingWhenHasChangedToPending()
+    {
+        $store = factory(Store::class)->create([
+            'status_id' => StoreStatusEnum::DRAFT
+        ]);
+        $storeDocumentSize = Document::where([ 'assigned_uuid' => $store->uuid ])->count();
+        $this->assertEquals($storeDocumentSize, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $store->update([
+            'status_id' => StoreStatusEnum::PENDING
+        ]);
+        $this->assertEquals($storeDocumentSize + 1, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $store->update([
+            'status_id' => StoreStatusEnum::APPROVED
+        ]);
+        $this->assertEquals($storeDocumentSize + 1, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $store->update([
+            'status_id' => StoreStatusEnum::PENDING
+        ]);
+        $this->assertEquals($storeDocumentSize + 1, Document::where([
+            'assigned_type' => Store::class,
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $store->uuid,
+            'status_id' => DocumentStatus::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
     }
 }

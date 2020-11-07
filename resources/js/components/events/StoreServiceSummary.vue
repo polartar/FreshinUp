@@ -51,7 +51,7 @@
             xs6
             text-truncate
           >
-            {{ service.total_cost }}
+            {{ formatMoney(service.total_cost) }}
           </v-flex>
         </v-layout>
         <v-divider />
@@ -183,8 +183,9 @@
 
 <script>
 import Validate from 'fresh-bus/components/mixins/Validate'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 export default {
-  mixins: [Validate],
+  mixins: [Validate, FormatMoney],
   props: {
     service: {
       type: Object,
