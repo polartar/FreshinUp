@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 8, 2020
+- **ADD** Event status change - generate client agreement [#543](https://github.com/FreshinUp/foodfleet/issues/543)
+
+<br/>
+
 ## Nov 4, 2020
 - **ADD** Document template - Add variable function [#506](https://github.com/FreshinUp/foodfleet/issues/506)
 
