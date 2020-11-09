@@ -14,6 +14,7 @@ export default {
     }
   },
   methods: {
+    get,
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     })
