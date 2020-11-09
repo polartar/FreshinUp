@@ -524,11 +524,8 @@ class StoresTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $company = factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create([
-            'users_id' => $user->id
-        ]);
         $store = factory(Store::class)->create([
-            'supplier_uuid' => $company->uuid
+            'owner_uuid' => $user->uuid
         ]);
         $tags = factory(StoreTag::class, 3)->create();
         $store->tags()->sync($tags->map(function ($tag) {
