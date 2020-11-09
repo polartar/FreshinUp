@@ -6,12 +6,11 @@
       :key="message.uuid"
     >
       <v-layout
-        flex
-        px-3
+        row
+        justify-start
+        pa-3
       >
-        <v-flex
-          py-3
-        >
+        <div>
           <v-avatar
             size="56"
             color="primary"
@@ -28,11 +27,9 @@
               {{ message.owner && message.owner.name | formatName }}
             </span>
           </v-avatar>
-        </v-flex>
-        <v-flex
-          ml-4
-          py-3
-          class="grey--text"
+        </div>
+        <div
+          class="ml-4 grey--text"
         >
           <div class="subheading font-weight-bold">
             {{ message.owner && message.owner.name }}
@@ -43,7 +40,7 @@
           <div class="subheading">
             {{ message.content }}
           </div>
-        </v-flex>
+        </div>
       </v-layout>
       <v-divider />
     </div>
