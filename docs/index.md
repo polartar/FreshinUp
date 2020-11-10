@@ -41,6 +41,7 @@
 <br/>
 
 # Changes
+## Nov 10, 2020
 
 ## Nov 4, 2020
 - **ADD** Document template - Add variable function [#506](https://github.com/FreshinUp/foodfleet/issues/506)
