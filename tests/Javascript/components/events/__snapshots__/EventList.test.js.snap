@@ -929,6 +929,19 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
+                        Duplicate
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
                         Delete
                       </div>
                     </a>
@@ -1225,6 +1238,19 @@ exports[`Event List component Snapshots events set 1`] = `
                         class="v-list__tile__title"
                       >
                         Edit
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Duplicate
                       </div>
                     </a>
                   </div>
@@ -1545,6 +1571,19 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
+                        Duplicate
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
                         Delete
                       </div>
                     </a>
@@ -1853,6 +1892,19 @@ exports[`Event List component Snapshots events set 1`] = `
                       <div
                         class="v-list__tile__title"
                       >
+                        Duplicate
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
                         Delete
                       </div>
                     </a>
@@ -2149,6 +2201,19 @@ exports[`Event List component Snapshots events set 1`] = `
                         class="v-list__tile__title"
                       >
                         Edit
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    role="listitem"
+                  >
+                    <a
+                      class="v-list__tile v-list__tile--link theme--light"
+                    >
+                      <div
+                        class="v-list__tile__title"
+                      >
+                        Duplicate
                       </div>
                     </a>
                   </div>

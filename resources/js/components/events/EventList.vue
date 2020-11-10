@@ -183,7 +183,8 @@ export default {
   computed: {
     itemActions () {
       let actions = [
-        { action: 'edit', text: 'Edit' }
+        { action: 'edit', text: 'Edit' },
+        { action: 'duplicate', text: 'Duplicate' }
       ]
       actions = this.generateActions(actions)
       return actions

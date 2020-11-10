@@ -58,6 +58,7 @@
         :descending="sorting.descending"
         @paginate="onPaginate"
         @manage-edit="eventEdit"
+        @manage-duplicate="eventDuplicate"
         @manage-delete="deleteSingle"
         @manage-multiple-delete="multipleDelete"
         @change-status="changeStatusSingle"
@@ -138,6 +139,19 @@
         </div>
       </simple-confirm>
     </v-dialog>
+    <v-flex>
+      <v-dialog
+        v-model="duplicateDialog"
+        max-width="500"
+      >
+        <duplicate-dialog
+          :duplicating="duplicating"
+          :duplicate-dialog="duplicateDialog"
+          @manage-duplicate="onDuplicate"
+          @manage-duplicate-dialog="changeDuplicateDialogue"
+        />
+      </v-dialog>
+    </v-flex>
   </div>
 </template>
 <script>
@@ -150,6 +164,7 @@ import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar
 import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+import DuplicateDialog from '~/components/events/DuplicateDialog.vue'
 
 const INCLUDE = [
   'status',
@@ -160,6 +175,19 @@ const INCLUDE = [
   'venue'
 ]
 
+export const getFileNameCopy = (name) => {
+  const regex = /\s*\(([0-9]+)\)$/gm
+  const matches = name.match(regex) || []
+  const count = (
+    parseInt(
+      get(matches, '[0]', '')
+        .replace('(', '')
+        .replace(')', '')
+    ) || 0
+  ) + 1
+  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
+}
+
 export default {
   layout: 'admin',
   components: {
@@ -167,7 +195,8 @@ export default {
     EventCalendar,
     FilterSorter,
     FilterSorterForCalendar,
-    SimpleConfirm
+    SimpleConfirm,
+    DuplicateDialog
   },
   filters: {
     formatDeleteTitles (value) {
@@ -180,6 +209,8 @@ export default {
     return {
       pageTitle: 'Events',
       deleteDialog: false,
+      duplicateDialog: false,
+      duplicating: false,
       deleteTemp: [],
       deletablesProcessing: false,
       deletablesProgress: 0,
@@ -205,6 +236,7 @@ export default {
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
+    ...mapGetters('events', { event: 'item' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('eventTypes', { 'eventTypes': 'items' }),
     ...mapGetters('page', ['isLoading']),
@@ -232,6 +264,105 @@ export default {
     deleteSingle (event) {
       this.deleteTemp = [event]
       this.deleteDialog = true
+    },
+    changeDuplicateDialogue (value) {
+      this.duplicateDialog = value
+    },
+    async eventDuplicate (event) {
+      this.duplicateDialog = true
+      const params = {
+        id: event.uuid,
+        include: 'manager,host,event_tags,venue,location'
+      }
+      await this.$store.dispatch('events/getItem', { params })
+        .then()
+        .catch(error => {
+          console.error(error)
+        })
+        .then()
+    },
+    onDuplicate (duplicate) {
+      const toDuplicate = [
+        {
+          condition: duplicate.basicInformation,
+          action: (payload) => {
+            return {
+              ...payload,
+              ...this.event
+            }
+          }
+        },
+        {
+          condition: duplicate.venue,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+          }
+        },
+        {
+          condition: duplicate.fleetMember,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+          }
+        },
+        {
+          condition: duplicate.customer,
+          action: (payload) => {
+            return {
+              ...payload
+            }
+          }
+        }
+      ]
+
+      const data = toDuplicate.reduce((payload, strategy) => {
+        if (strategy.condition) {
+          payload = Object.assign({}, payload, strategy.action(payload))
+        }
+        return payload
+      }, {})
+
+      if (data.name) {
+        data.name = getFileNameCopy(data.name)
+      }
+      this.duplicating = true
+      this.$store.dispatch('events/createItem', {
+        data: {
+          attendees: data.attendees,
+          budget: data.budget,
+          commission_rate: data.commission_rate,
+          commission_type: data.commission_type,
+          customer_notes: data.customer_notes,
+          end_at: data.end_at,
+          host_status: data.host_status,
+          host_uuid: data.host_uuid,
+          manager_uuid: data.manager_uuid,
+          member_notes: data.member_notes,
+          name: data.name,
+          schedule: null,
+          staff_notes: data.staff_notes,
+          start_at: data.start_at,
+          status_id: data.status_id,
+          type_id: data.type_id
+        }
+      })
+        .then(response => {
+          const eventUuid = get(response, 'data.data.uuid')
+          if (eventUuid) {
+            const path = `/admin/events/${eventUuid}/edit`
+            this.$router.push({ path })
+          }
+        })
+        .catch(error => {
+          console.error(error)
+        })
+        .then(() => {
+          this.duplicating = false
+          this.duplicateDialog = false
+        })
     },
     multipleDelete (events) {
       this.deleteTemp = events
