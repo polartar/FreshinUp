@@ -34,11 +34,9 @@ exports[`Messages component test Snapshots messages 1`] = `
              
             <div>
               <div
-                class="layout flex px-3"
+                class="layout row justify-start pa-3"
               >
-                <div
-                  class="flex py-3"
-                >
+                <div>
                   <div
                     class="v-avatar primary"
                     style="height: 56px; width: 56px;"
@@ -51,7 +49,7 @@ exports[`Messages component test Snapshots messages 1`] = `
                 </div>
                  
                 <div
-                  class="flex grey--text ml-4 py-3"
+                  class="ml-4 grey--text"
                 >
                   <div
                     class="subheading font-weight-bold"
@@ -85,11 +83,9 @@ exports[`Messages component test Snapshots messages 1`] = `
             </div>
             <div>
               <div
-                class="layout flex px-3"
+                class="layout row justify-start pa-3"
               >
-                <div
-                  class="flex py-3"
-                >
+                <div>
                   <div
                     class="v-avatar primary"
                     style="height: 56px; width: 56px;"
@@ -105,7 +101,7 @@ exports[`Messages component test Snapshots messages 1`] = `
                 </div>
                  
                 <div
-                  class="flex grey--text ml-4 py-3"
+                  class="ml-4 grey--text"
                 >
                   <div
                     class="subheading font-weight-bold"
