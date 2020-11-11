@@ -3,7 +3,7 @@
     <v-card-title>
       <h3>Basic Information</h3>
       <v-progress-linear
-        v-if="loading"
+        v-if="isLoading"
         indeterminate
       />
     </v-card-title>
@@ -32,17 +32,17 @@
             Address line 1
           </div>
           <v-autocomplete
-            v-model="currentAddress"
+            :value="address_line_1"
             :items="addresses"
             :loading="addressesLoading"
             hide-no-data
             hide-selected
             item-text="text"
             placeholder="Start typing to Search"
-            :search-input.sync="address_line_1"
             return-object
             single-line
             outline
+            @input="onPlaceInput"
             @update:searchInput="searchPlaces"
           />
         </v-flex>
@@ -72,16 +72,12 @@
               align-center
               layout
             >
-              <v-avatar
+              <f-user-avatar
                 :tile="false"
+                :user="owner"
+                class="ff-venue-details__owner"
                 :size="80"
-                color="grey lighten-4"
-              >
-                <img
-                  :src="get(owner, 'avatar')"
-                  alt="avatar"
-                >
-              </v-avatar>
+              />
               <div class="mx-2 px-2">
                 <div class="primary--text subheading">
                   {{ get(owner, 'name') }}
@@ -179,14 +175,15 @@
           class="my-2"
         >
           <f-map
+            v-if="mapboxAccessToken"
             :access-token="mapboxAccessToken"
             :center="mapCenter"
-            :max-bounds="mapBox"
+            :max-bounds="borderBox"
           >
             <f-map-marker
               v-if="mapCenter"
               :coordinates="mapCenter"
-              color="green"
+              :color="markerColor"
             />
           </f-map>
         </div>
@@ -205,7 +202,7 @@
           <v-btn
             depressed
             color="primary"
-            :loading="loading"
+            :loading="isLoading"
             @click="save"
           >
             {{ isEditing ? 'Save Changes' : 'Submit' }}
@@ -214,7 +211,7 @@
         <div class="text-xs-right">
           <v-btn
             depressed
-            :loading="loading"
+            :loading="isLoading"
             :disabled="!isEditing"
             @click="onDeleteVenue"
           >
@@ -228,10 +225,10 @@
 <script>
 
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
-import pick from 'lodash/pick'
-import keys from 'lodash/keys'
 import get from 'lodash/get'
+import theme from '~/theme'
 import Simple from 'fresh-bus/components/search/simple'
+import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 import FMap from '~/components/FMap'
 import FMapMarker from '~/components/FMapMarker'
 import debounce from 'lodash/debounce'
@@ -241,6 +238,8 @@ export const DEFAULT_VENUE = {
   name: '',
   address_line_1: '',
   address_line_2: '',
+  latitude: '',
+  longitude: '',
   owner_uuid: '',
   owner: {
     uuid: '',
@@ -254,34 +253,36 @@ export default {
   components: {
     Simple,
     FMap,
-    FMapMarker
+    FMapMarker,
+    FUserAvatar
   },
   mixins: [MapValueKeysToData],
   props: {
-    loading: { type: Boolean, default: false },
+    isLoading: { type: Boolean, default: false },
     addressesLoading: { type: Boolean, default: false },
     addresses: { type: Array, default: () => [] },
-    mapboxAccessToken: { type: String, required: true }
+    mapboxAccessToken: { type: String, default: null }
   },
   data () {
     return {
       ...DEFAULT_VENUE,
+      markerColor: theme.primary,
       changeUserDialog: false,
-      currentAddress: null
+      borderBox: null
     }
   },
   computed: {
     hasOwner () {
-      return get(this.owner, 'uuid')
+      return Boolean(get(this.owner, 'uuid'))
     },
     isEditing () {
-      return this.uuid
+      return Boolean(this.uuid)
     },
     mapCenter () {
-      return this.currentAddress ? this.currentAddress['center'] : undefined
-    },
-    mapBox () {
-      return this.currentAddress ? this.currentAddress['bbox'] : undefined
+      if (!this.latitude || !this.longitude) {
+        return undefined
+      }
+      return [this.longitude, this.latitude]
     }
   },
   methods: {
@@ -294,11 +295,29 @@ export default {
       this.$emit('cancel')
     },
     onDeleteVenue () {
-      this.$emit('delete', pick(this, keys(this.value)))
+      this.$emit('delete', this.payload)
     },
     searchPlaces: debounce(function (query) {
-      this.$emit('search-places', query)
-    }, 400)
+      if (query && query === this.address_line_1) {
+        this.$emit('search-places', query)
+      }
+    }, 400),
+    onPlaceInput (place) {
+      // lodash.get method is here for clarity purpose
+      this.borderBox = get(place, 'bbox')
+      this.address_line_1 = get(place, 'text', '')
+      this.address_line_2 = get(place, 'place_name', '')
+        .replace(`${this.address_line_1}, `, '')
+      const [longitude, latitude] = get(place, 'center', [])
+      this.latitude = latitude
+      this.longitude = longitude
+    }
   }
 }
 </script>
+
+<style scoped>
+  .ff-venue-details__owner span {
+    border-radius: 50%;
+  }
+</style>

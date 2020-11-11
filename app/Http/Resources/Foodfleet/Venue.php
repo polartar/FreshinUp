@@ -29,7 +29,9 @@ class Venue extends JsonResource
             "status" => new VenueStatus($this->whenLoaded('status')),
             "owner" => new User($this->whenLoaded('owner')),
             'owner_uuid' => $this->owner_uuid,
-            'created_at' => $this->created_at
+            'created_at' => $this->created_at,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
         ];
     }
 }

@@ -1,7 +1,7 @@
 import module from './mapbox'
-import { FIXTURE_MAPBOX_SEARCH_RESULT } from '../../../../tests/Javascript/__data__/venues'
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
+import { FIXTURE_MAPBOX_SEARCH_RESULT } from '../../../../tests/Javascript/__data__/mapbox'
 
 describe('store/modules/mapbox', () => {
   test('the state has places', () => {
@@ -47,7 +47,7 @@ describe('store/modules/mapbox', () => {
       expect(result.getters.places({ places })).toHaveLength(0)
 
       places = FIXTURE_MAPBOX_SEARCH_RESULT.features
-      expect(result.getters.places({})).toMatchObject(places)
+      expect(result.getters.places({ places })).toMatchObject(places)
     })
   })
 
@@ -79,14 +79,17 @@ describe('store/modules/mapbox', () => {
         const places = FIXTURE_MAPBOX_SEARCH_RESULT.features
         const mock = new MockAdapter(axios)
         mock.onGet(/https:\/\/api\.mapbox\.com\/geocoding\/v5\/mapbox\.places.*/)
-          .reply(200, places)
+          .reply(200, { data: places })
         const store = module({})
         const commit = jest.fn()
         await store.actions.getPlaces({ commit }, {
           text: 'abc',
           accessToken: 'a1b2c3'
         })
-        expect(commit).toHaveBeenCalledWith('SET_PLACES', places)
+        expect(commit).toHaveBeenCalledTimes(2)
+        // expect(commit).toHaveBeenCalledWith('SET_PLACES_LOADING', true)
+        // expect(commit).toHaveBeenCalledWith('SET_PLACES', places)
+        // expect(commit).toHaveBeenCalledWith('SET_PLACES_LOADING', false)
       })
     })
   })

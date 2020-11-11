@@ -2,8 +2,10 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
 import BasicInformation from './BasicInformation'
-import { FIXTURE_MAPBOX_SEARCH_RESULT, FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
+import { FIXTURE_VENUE } from '../../../../tests/Javascript/__data__/venues'
 import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
+import { FIXTURE_MAPBOX_SEARCH_RESULT } from '../../../../tests/Javascript/__data__/mapbox'
 
 const mock = new MockAdapter(axios)
 mock.onGet(/.*users.*/).reply(200, {
@@ -28,17 +30,27 @@ export const Loading = () => ({
   components: { BasicInformation },
   template: `
     <v-container>
-      <basic-information loading addresses-loading/>
+      <basic-information loading/>
     </v-container>
   `
 })
 
-export const WithData = () => ({
+export const AddressesLoading = () => ({
+  components: { BasicInformation },
+  template: `
+    <v-container>
+      <basic-information addresses-loading/>
+    </v-container>
+  `
+})
+
+export const Populated = () => ({
   components: { BasicInformation },
   data () {
     return {
       venue: FIXTURE_VENUE,
-      addresses: FIXTURE_MAPBOX_SEARCH_RESULT
+      addresses: FIXTURE_MAPBOX_SEARCH_RESULT.features,
+      accessToken: process.env.MAPBOX_ACCESS_TOKEN
     }
   },
   template: `
@@ -46,6 +58,8 @@ export const WithData = () => ({
       <basic-information
         :value="venue"
         :addresses="addresses"
+        :mapbox-access-token="accessToken"
+        @search-places="onSearchPlaces"
         @input="onSave"
         @cancel="onCancel"
         @delete="onDelete"/>
@@ -55,13 +69,14 @@ export const WithData = () => ({
     onSave (payload) {
       action('onSave')(payload)
     },
-
     onCancel () {
       action('onCancel')()
     },
-
     onDelete (payload) {
       action('onDelete')(payload)
+    },
+    onSearchPlaces (payload) {
+      action('onSearchPlaces')(payload)
     }
   }
 })
@@ -75,4 +90,4 @@ storiesOf('FoodFleet|components/venues/BasicInformation', module)
   .add('Default', Default)
   .add('Loading', Loading)
   .add('AddressesLoading', AddressesLoading)
-  .add('With data', WithData)
+  .add('Populated', Populated)

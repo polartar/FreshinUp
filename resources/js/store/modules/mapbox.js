@@ -9,7 +9,7 @@ export default (initialState = {}) => {
   }
   const getters = {
     places: (state) => state.places,
-    placesLoading: (state) => state.placesLoading,
+    placesLoading: (state) => state.placesLoading
   }
   const mutations = {
     SET_PLACES_LOADING (state, loading) {

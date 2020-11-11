@@ -40,6 +40,7 @@
       <v-flex class="mt-5">
         <basic-information
           :value="venue"
+          :is-loading="venueLoading"
           :addresses-loading="addressesAreLoading"
           :addresses="addresses"
           :mapbox-access-token="MAPBOX_ACCESS_TOKEN"
@@ -220,9 +221,9 @@ export default {
           ? 'Are you sure you want to this item ?'
           : 'Are you sure you want to delete the following items?'
       },
+      venueLoading: false,
       documentLoading: false,
-      locationLoading: false,
-      addressesAreLoading: false
+      locationLoading: false
     }
   },
   computed: {
@@ -285,7 +286,7 @@ export default {
     },
     async onSave (data) {
       try {
-        this.setPageLoading(true)
+        this.venueLoading = true
         if (this.isNew) {
           await this.$store.dispatch('venues/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
@@ -298,7 +299,7 @@ export default {
         const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
       } finally {
-        this.setPageLoading(false)
+        this.venueLoading = false
       }
     },
     onCancel () {
@@ -448,6 +449,9 @@ export default {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
     },
     onSearchPlaces (text) {
+      if (!text) {
+        return false
+      }
       this.$store.dispatch('mapbox/getPlaces', {
         text,
         accessToken: MAPBOX_ACCESS_TOKEN

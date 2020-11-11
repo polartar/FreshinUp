@@ -21,7 +21,7 @@ describe('components/FMap', () => {
   describe('Props & Computed', () => {
     test('accessToken', async () => {
       const wrapper = shallowMount(Component, {
-        props: {
+        propsData: {
           accessToken: 'aaa111'
         }
       })

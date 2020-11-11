@@ -42,9 +42,13 @@
 
 # Changes
 
+## Nov 11, 2020
+- Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
+
+<br/>
+
 ## Nov 4, 2020
 - **ADD** Document template - Add variable function [#506](https://github.com/FreshinUp/foodfleet/issues/506)
-- Basic Info map display on Venue component
 
 <br/>
 

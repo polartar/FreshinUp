@@ -9,7 +9,7 @@ const MAP_STYLES = [
   'mapbox://styles/mapbox/light-v10',
   'mapbox://styles/mapbox/dark-v10',
   'mapbox://styles/mapbox/satellite-v9',
-  'mapbox://styles/mapbox/satellite-streets-v11',
+  'mapbox://styles/mapbox/satellite-streets-v11'
 ]
 
 export const Basic = () => ({
@@ -23,9 +23,11 @@ export const Basic = () => ({
     }
   },
   template: `
-    <f-map
-      :access-token="accessToken"
-    />
+    <v-container>
+      <f-map
+        :access-token="accessToken"
+      />
+    </v-container>
   `
 })
 
@@ -37,16 +39,16 @@ export const OtherStyles = () => ({
   data () {
     return {
       accessToken: process.env.MAPBOX_ACCESS_TOKEN,
-      center: '',
       mStyle: select('MapBox Style', MAP_STYLES, MAP_STYLES[0])
     }
   },
   template: `
-    <f-map
-      :access-token="accessToken"
-      :center="center"
-      :mStyle="mStyle"
-    />
+    <v-container>
+      <f-map
+        :access-token="accessToken"
+        :mStyle="mStyle"
+      />
+    </v-container>
   `
 })
 
@@ -58,19 +60,21 @@ export const WithMarker = () => ({
   data () {
     return {
       accessToken: process.env.MAPBOX_ACCESS_TOKEN,
-      center: ''
+      center: [ -118.406829, 33.942912 ] // [longitude, latitude]
     }
   },
   template: `
-    <f-map
-      :access-token="accessToken"
-      :center="center"
-    >
-      <f-map-marker
-        :coordinates="center"
-        color="green"
-      />
-    </f-map>
+    <v-container>
+      <f-map
+        :access-token="accessToken"
+        :center="center"
+      >
+        <f-map-marker
+          :coordinates="center"
+          color="primary"
+        />
+      </f-map>
+    </v-container>
   `
 })
 

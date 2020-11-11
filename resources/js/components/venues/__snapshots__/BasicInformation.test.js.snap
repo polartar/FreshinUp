@@ -1,0 +1,1979 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/venues/BasicInformation Snapshots AddressesLoading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title"
+    >
+      <h3>
+        Basic Information
+      </h3>
+       
+      <!---->
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout pa-3"
+    >
+      <div
+        class="flex xs8 lg7 pr-3"
+      >
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Venue name
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 1
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-loading theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <input
+                    autocomplete="off"
+                    placeholder="Start typing to Search"
+                    role="combobox"
+                    type="text"
+                  />
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light v-autocomplete__content"
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  class="v-progress-linear"
+                  role="progressbar"
+                  style="height: 2px;"
+                >
+                  <div
+                    class="v-progress-linear__background primary"
+                    style="height: 2px; opacity: 0.3; width: 100%;"
+                  />
+                  <div
+                    class="v-progress-linear__bar"
+                  >
+                    <div
+                      class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+                    >
+                      <div
+                        class="v-progress-linear__bar__indeterminate long primary"
+                      />
+                      <div
+                        class="v-progress-linear__bar__indeterminate short primary"
+                      />
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <span
+                    class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 2
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Address 2"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="layout row"
+        >
+          <div
+            class="flex xs8"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Owned by
+          
+            </div>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="flex xs4 layout column align-content-center justify-center"
+          >
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Change user
+              
+                </div>
+              </button>
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
+                  <div
+                    class="v-card v-sheet theme--light"
+                  >
+                    <div
+                      class="v-card__title"
+                    >
+                      <div
+                        class="layout row space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <h4>
+                            Change user
+                          </h4>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                      Close
+                    
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text"
+                    >
+                      
+                Owner
+                
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        flat=""
+                        height="48"
+                        solo=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="Search / Select owner"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs4 lg5 pl-3"
+      >
+        <div
+          class="my-2"
+          style="height: 100%;"
+        >
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions pa-3 d-flex justify-space-between"
+    >
+      <div
+        class="d-flex"
+      >
+        <div>
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete Venue
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/venues/BasicInformation Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title"
+    >
+      <h3>
+        Basic Information
+      </h3>
+       
+      <!---->
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout pa-3"
+    >
+      <div
+        class="flex xs8 lg7 pr-3"
+      >
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Venue name
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 1
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <input
+                    autocomplete="off"
+                    placeholder="Start typing to Search"
+                    role="combobox"
+                    type="text"
+                  />
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light v-autocomplete__content"
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <span
+                    class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 2
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Address 2"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="layout row"
+        >
+          <div
+            class="flex xs8"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Owned by
+          
+            </div>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="flex xs4 layout column align-content-center justify-center"
+          >
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Change user
+              
+                </div>
+              </button>
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
+                  <div
+                    class="v-card v-sheet theme--light"
+                  >
+                    <div
+                      class="v-card__title"
+                    >
+                      <div
+                        class="layout row space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <h4>
+                            Change user
+                          </h4>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                      Close
+                    
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text"
+                    >
+                      
+                Owner
+                
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        flat=""
+                        height="48"
+                        solo=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="Search / Select owner"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs4 lg5 pl-3"
+      >
+        <div
+          class="my-2"
+          style="height: 100%;"
+        >
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions pa-3 d-flex justify-space-between"
+    >
+      <div
+        class="d-flex"
+      >
+        <div>
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete Venue
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/venues/BasicInformation Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+    loading=""
+  >
+    <div
+      class="v-card__title"
+    >
+      <h3>
+        Basic Information
+      </h3>
+       
+      <!---->
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout pa-3"
+    >
+      <div
+        class="flex xs8 lg7 pr-3"
+      >
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Venue name
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 1
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <input
+                    autocomplete="off"
+                    placeholder="Start typing to Search"
+                    role="combobox"
+                    type="text"
+                  />
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light v-autocomplete__content"
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <div
+                            class="v-list__tile theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                No data available
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <span
+                    class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 2
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Address 2"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="layout row"
+        >
+          <div
+            class="flex xs8"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Owned by
+          
+            </div>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="flex xs4 layout column align-content-center justify-center"
+          >
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Change user
+              
+                </div>
+              </button>
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
+                  <div
+                    class="v-card v-sheet theme--light"
+                  >
+                    <div
+                      class="v-card__title"
+                    >
+                      <div
+                        class="layout row space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <h4>
+                            Change user
+                          </h4>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                      Close
+                    
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text"
+                    >
+                      
+                Owner
+                
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        flat=""
+                        height="48"
+                        solo=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="Search / Select owner"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs4 lg5 pl-3"
+      >
+        <div
+          class="my-2"
+          style="height: 100%;"
+        >
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions pa-3 d-flex justify-space-between"
+    >
+      <div
+        class="d-flex"
+      >
+        <div>
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete Venue
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/venues/BasicInformation Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title"
+    >
+      <h3>
+        Basic Information
+      </h3>
+       
+      <!---->
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="layout pa-3"
+    >
+      <div
+        class="flex xs8 lg7 pr-3"
+      >
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Venue name
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 1
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-select__slot"
+                >
+                  <input
+                    autocomplete="off"
+                    placeholder="Start typing to Search"
+                    role="combobox"
+                    type="text"
+                  />
+                  <div
+                    class="v-input__append-inner"
+                  >
+                    <div
+                      class="v-input__icon v-input__icon--append"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        arrow_drop_down
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-menu"
+                >
+                  <div
+                    class="v-menu__content theme--light v-autocomplete__content"
+                    style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                    <div
+                      class="v-select-list v-card theme--light"
+                    >
+                      <div
+                        class="v-list theme--light"
+                        role="list"
+                      >
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Los Angeles
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Los Ángeles
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Los Angeles International Airport (LAX)
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
+                                Los Angeles Heights - Keystone
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <span
+                    class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="flex xs12"
+        >
+          <div
+            class="mb-2 text-uppercase grey--text font-weight-bold"
+          >
+            
+          Address line 2
+        
+          </div>
+           
+          <div
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-text-field__slot"
+                >
+                  <input
+                    placeholder="Address 2"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <div
+                    class="v-messages__wrapper"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="layout row"
+        >
+          <div
+            class="flex xs8"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+            Owned by
+          
+            </div>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="flex xs4 layout column align-content-center justify-center"
+          >
+            <div
+              class="v-dialog__container"
+              style="display: inline-block;"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Change user
+              
+                </div>
+              </button>
+              <div
+                class="v-dialog__content"
+                style="z-index: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="v-dialog"
+                  style="max-width: 500px; display: none;"
+                >
+                   
+                  <div
+                    class="v-card v-sheet theme--light"
+                  >
+                    <div
+                      class="v-card__title"
+                    >
+                      <div
+                        class="layout row space-between align-center"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <h4>
+                            Change user
+                          </h4>
+                        </div>
+                         
+                        <button
+                          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+                          type="button"
+                        >
+                          <div
+                            class="v-btn__content"
+                          >
+                            <div
+                              class="flex"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="v-icon white--text fa fa fa fa-times theme--light"
+                                style="font-size: 16px;"
+                              />
+                            </div>
+                             
+                            <div
+                              class="flex"
+                            >
+                              
+                      Close
+                    
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="v-divider theme--light"
+                    />
+                     
+                    <div
+                      class="v-card__text"
+                    >
+                      
+                Owner
+                
+                      <div
+                        background-color="white"
+                        class="v-input mt-0 pt-0 v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
+                        flat=""
+                        height="48"
+                        solo=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot white"
+                            style="height: 48px;"
+                          >
+                            <div
+                              class="v-select__slot"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                placeholder="Search / Select owner"
+                                role="combobox"
+                                type="text"
+                              />
+                              <div
+                                class="v-input__append-inner"
+                              >
+                                <div
+                                  class="v-input__icon v-input__icon--append"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="v-icon material-icons theme--light"
+                                  >
+                                    arrow_drop_down
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="v-menu"
+                            >
+                              <div
+                                class="v-menu__content theme--light v-autocomplete__content"
+                                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                              >
+                                <div
+                                  class="v-select-list v-card theme--light"
+                                >
+                                  <div
+                                    class="v-list theme--light"
+                                    role="list"
+                                  >
+                                    <div
+                                      role="listitem"
+                                    >
+                                      <div
+                                        class="v-list__tile theme--light"
+                                      >
+                                        <div
+                                          class="v-list__tile__content"
+                                        >
+                                          <div
+                                            class="v-list__tile__title"
+                                          >
+                                            No data available
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="flex xs4 lg5 pl-3"
+      >
+        <div
+          class="my-2"
+          style="height: 100%;"
+        >
+          <div
+            class="mgl-map-wrapper"
+          >
+            <div
+              id="map-3139394969384912"
+            />
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions pa-3 d-flex justify-space-between"
+    >
+      <div
+        class="d-flex"
+      >
+        <div>
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Cancel
+        
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Submit
+        
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--disabled v-btn--depressed theme--light"
+            disabled="disabled"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+          Delete Venue
+        
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
