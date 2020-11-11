@@ -15,19 +15,39 @@ describe('components/venues/BasicInformation', () => {
       window.URL.createObjectURL = _createObjectURL
     })
     test('Default', () => {
-      const wrapper = mount(Stories.Default())
+      const wrapper = mount(Stories.Default(), {
+        stubs: {
+          'f-map': true,
+          'f-map-marker': true
+        }
+      })
       expect(wrapper.element).toMatchSnapshot()
     })
     test('Loading', () => {
-      const wrapper = mount(Stories.Loading())
+      const wrapper = mount(Stories.Loading(), {
+        stubs: {
+          'f-map': true,
+          'f-map-marker': true
+        }
+      })
       expect(wrapper.element).toMatchSnapshot()
     })
     test('AddressesLoading', () => {
-      const wrapper = mount(Stories.AddressesLoading())
+      const wrapper = mount(Stories.AddressesLoading(), {
+        stubs: {
+          'f-map': true,
+          'f-map-marker': true
+        }
+      })
       expect(wrapper.element).toMatchSnapshot()
     })
     test('Populated', () => {
-      const wrapper = mount(Stories.Populated())
+      const wrapper = mount(Stories.Populated(), {
+        stubs: {
+          'f-map': true,
+          'f-map-marker': true
+        }
+      })
       expect(wrapper.element).toMatchSnapshot()
     })
   })
