@@ -45,6 +45,35 @@ export const Populated = () => ({
   `
 })
 
+export const Signed = () => ({
+  components: { DocumentPreview },
+  data () {
+    return {
+      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
+      templates: FIXTURE_DOCUMENT_TEMPLATES,
+      events: FIXTURE_EVENTS,
+      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+    }
+  },
+  methods: {
+    onClose () {
+      action('onClose')()
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview
+        :value="document"
+        :templates="templates"
+        :events="events"
+        :variables="variables"
+        signed
+        @close="onClose"
+      />
+    </v-container>
+  `
+})
+
 storiesOf('FoodFleet|components/docs/DocumentPreview', module)
   .addParameters({
     backgrounds: [
@@ -53,3 +82,4 @@ storiesOf('FoodFleet|components/docs/DocumentPreview', module)
   })
   .add('Default', Default)
   .add('Populated', Populated)
+  .add('Signed', Signed)

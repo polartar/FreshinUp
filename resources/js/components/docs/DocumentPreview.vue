@@ -25,49 +25,53 @@
         py-3
         justify-stretch
       >
-        <v-layout>
+        <v-layout justify-space-between>
           <v-flex
-            xs12
-            m3
+            xs8
+            layout
             mr-2
           >
-            <v-select
-              v-model="event_store_uuid"
-              item-text="name"
-              item-value="uuid"
-              background-color="primary"
-              color="success"
-              solo
-              flat
-              hide-details
-              :items="events"
-              class="white--text"
-            />
+            <v-flex
+              xs8
+              mr-1
+            >
+              <v-select
+                v-model="event_store_uuid"
+                item-text="name"
+                item-value="uuid"
+                background-color="primary"
+                color="success"
+                solo
+                flat
+                hide-details
+                :items="events"
+                class="white--text"
+              />
+            </v-flex>
+            <v-flex
+              xs4
+              ml-1
+            >
+              <v-select
+                v-model="template_uuid"
+                disabled
+                background-color="primary"
+                item-text="title"
+                item-value="uuid"
+                color="success"
+                solo
+                flat
+                hide-details
+                class="white--text"
+                :items="templates"
+              />
+            </v-flex>
           </v-flex>
           <v-flex
-            sm3
+            xs4
             ml-2
-          >
-            <v-select
-              v-model="template_uuid"
-              disabled
-              background-color="primary"
-              item-text="title"
-              item-value="uuid"
-              color="success"
-              solo
-              flat
-              hide-details
-              class="white--text"
-              :items="templates"
-            />
-          </v-flex>
-          <v-flex
-            sm3
-          />
-          <v-flex
-            sm3
-            text-xs-right
+            layout
+            justify-end
           >
             <v-btn
               v-if="downloadable"
@@ -76,9 +80,18 @@
               download
               target="_blank"
               color="primary"
-              class="mx-0"
+              class="mx-1"
             >
               Download PDF
+            </v-btn>
+            <v-btn
+              v-if="!signed"
+              depressed
+              download
+              color="primary"
+              class="mx-1"
+            >
+              Accept contract
             </v-btn>
           </v-flex>
         </v-layout>
@@ -234,7 +247,8 @@ export default {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
-    variables: { type: Object, default: () => {} }
+    variables: { type: Object, default: () => {} },
+    signed: { type: Boolean, default: false }
   },
   data () {
     return {
