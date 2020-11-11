@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/FMap Snapshots Basic 1`] = `
+<div
+  class="mgl-map-wrapper"
+>
+  <div
+    id="map-6614095300611871"
+  />
+  <!---->
+</div>
+`;

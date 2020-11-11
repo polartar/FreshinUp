@@ -40,9 +40,14 @@
       <v-flex class="mt-5">
         <basic-information
           :value="venue"
+          :is-loading="venueLoading"
+          :addresses-loading="addressesAreLoading"
+          :addresses="addresses"
+          :mapbox-access-token="MAPBOX_ACCESS_TOKEN"
           @input="onSave"
           @cancel="onCancel"
           @delete="onDelete"
+          @search-places="onSearchPlaces"
         />
       </v-flex>
       <v-flex
@@ -155,6 +160,8 @@ import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import Locations from '../locations/Locations'
 import Events from './Events'
 
+const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN || 'pk.eyJ1IjoiYmNkYnVkZHkiLCJhIjoiY2toM3luOTlrMDE2dDJzazBzN2NqaGZobCJ9.azAiM_hZuTI3Ew9Q1HpFtg'
+
 const VENUE_INCLUDES = [
   'owner'
 ]
@@ -200,6 +207,7 @@ export default {
   mixins: [deletables],
   data () {
     return {
+      MAPBOX_ACCESS_TOKEN,
       locationFormIsLoading: false,
       DELETABLE_RESOURCE,
       deletable: {
@@ -213,6 +221,7 @@ export default {
           ? 'Are you sure you want to this item ?'
           : 'Are you sure you want to delete the following items?'
       },
+      venueLoading: false,
       documentLoading: false,
       locationLoading: false
     }
@@ -238,6 +247,10 @@ export default {
       eventPagination: 'pagination',
       eventSorting: 'sorting',
       eventSortBy: 'sortBy'
+    }),
+    ...mapGetters('mapbox', {
+      addresses: 'places',
+      addressesAreLoading: 'placesLoading'
     }),
     locations () {
       // For some reasons, after creating a location, locations/items result to an object
@@ -273,7 +286,7 @@ export default {
     },
     async onSave (data) {
       try {
-        this.setPageLoading(true)
+        this.venueLoading = true
         if (this.isNew) {
           await this.$store.dispatch('venues/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
@@ -286,7 +299,7 @@ export default {
         const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
       } finally {
-        this.setPageLoading(false)
+        this.venueLoading = false
       }
     },
     onCancel () {
@@ -434,6 +447,16 @@ export default {
     },
     viewEvent (event) {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
+    },
+    onSearchPlaces (text) {
+      if (!text) {
+        return false
+      }
+      this.$store.dispatch('mapbox/getPlaces', {
+        text,
+        accessToken: MAPBOX_ACCESS_TOKEN
+      })
+        .catch((err) => console.error(err))
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
