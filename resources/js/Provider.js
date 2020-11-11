@@ -30,6 +30,7 @@ import eventMenuItems from './store/modules/eventMenuItems'
 import locationCategories from './store/modules/locationCategories'
 import menuItems from './store/modules/menuItems'
 import messages from './store/modules/messages'
+import mapbox from './store/modules/mapbox'
 
 export default () => {
   return {
@@ -68,6 +69,7 @@ export default () => {
       locations,
       locationCategories,
       messages,
+      mapbox,
       menuItems
     }
   }
