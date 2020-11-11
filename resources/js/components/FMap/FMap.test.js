@@ -1,5 +1,5 @@
 import Component from './FMap'
-import { mount, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 describe('components/FMap', () => {
   // no snapshots tests since it will break on CI
