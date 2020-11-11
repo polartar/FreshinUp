@@ -4,6 +4,9 @@ namespace App\Observers;
 
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
+use App\Enums\DocumentStatus as  DocumentStatusEnum;
+use App\Enums\EventStatus as EventStatusEnum;
+use App\Models\Foodfleet\Document;
 
 class EventObserver
 {
@@ -36,6 +39,15 @@ class EventObserver
                 'status_id' => $event->status_id,
                 'date' => now()
             ]);
+            if ($event->status_id == EventStatusEnum::FLEET_MEMBER_CONTRACTS) {
+                Document::updateOrCreate([
+                    'assigned_type' => Event::class,
+                    'assigned_uuid' => $event->uuid,
+                    'status_id' => DocumentStatusEnum::PENDING,
+                    'title' => 'Fleet Member Contracts',
+                    'description' => 'Fleet Member Contracts',
+                ]);
+            }
         }
     }
 

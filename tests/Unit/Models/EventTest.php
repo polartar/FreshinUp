@@ -10,6 +10,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
+use App\Enums\DocumentStatus as DocumentStatusEnum;
+use App\Models\Foodfleet\Document;
 
 class EventTest extends TestCase
 {
@@ -134,5 +136,119 @@ class EventTest extends TestCase
 
         $event->delete();
         $this->assertEquals(0, EventHistory::where('event_uuid', $event->uuid)->count());
+    }
+
+    public function testObserverWhenEventUpdateWithStatusDifferentOfFleetMemberContracts()
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+        $eventDocumentSize = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
+
+        $this->assertEquals($eventDocumentSize, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $event->update([
+            'status_id' => EventStatusEnum::FF_INITIAL_REVIEW
+        ]);
+        $this->assertEquals($eventDocumentSize, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $event->uuid,
+        ])->first();
+        $this->assertNull($document);
+    }
+
+    public function testObserverWhenEventUpdatedWithStatusFleetMemberContracts()
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => EventStatusEnum::FF_INITIAL_REVIEW
+        ]);
+        $eventDocumentSize = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
+        $this->assertEquals($eventDocumentSize, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $event->update([
+            'status_id' => EventStatusEnum::FLEET_MEMBER_CONTRACTS
+        ]);
+        $this->assertEquals($eventDocumentSize + 1, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
+    }
+
+    public function testObserverWhenEventUpdatedWithStatusPendingWhenHasChangedToFleetMemberContracts()
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+        $eventDocumentSize = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
+        $this->assertEquals($eventDocumentSize, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $event->update([
+            'status_id' => EventStatusEnum::FLEET_MEMBER_CONTRACTS
+        ]);
+        $this->assertEquals($eventDocumentSize + 1, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
+
+        $event->update([
+            'status_id' => EventStatusEnum::CONFIRMED
+        ]);
+        $this->assertEquals($eventDocumentSize + 1, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
+
+        $event->update([
+            'status_id' => EventStatusEnum::FLEET_MEMBER_CONTRACTS
+        ]);
+        $this->assertEquals($eventDocumentSize + 1, Document::where([
+            'assigned_type' => Event::class,
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->count());
+
+        $document = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'status_id' => DocumentStatusEnum::PENDING
+        ])->first();
+        $this->assertNotNull($document->uuid);
     }
 }

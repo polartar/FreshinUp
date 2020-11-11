@@ -43,6 +43,7 @@
 # Changes
 
 ## Nov 11, 2020
+- **ADD** Event status change generate fleet member event contract [#545](https://github.com/FreshinUp/foodfleet/issues/545)
 - Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
 <br/>
