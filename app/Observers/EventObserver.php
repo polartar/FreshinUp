@@ -41,11 +41,12 @@ class EventObserver
             ]);
 
             if ($event->status_id == EventStatus::CUSTOMER_AGREEMENT) {
-                Document::firstOrCreate([
+                Document::updateOrCreate([
                     'assigned_type' => Event::class,
                     'assigned_uuid' => $event->uuid,
                     'status_id' => DocumentStatus::PENDING,
-                    'title' => $event->name . ' - Customer Agreement',
+                    'title' => $event->name . ' - Customer Agreement'
+                ], [
                     'description' => $event->name . ' - Customer Agreement',
                 ]);
             }
