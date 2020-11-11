@@ -239,6 +239,7 @@ class EventTest extends TestCase
         $event->update([
             'status_id' => EventStatusEnum::FLEET_MEMBER_CONTRACTS
         ]);
+
         $this->assertEquals($eventDocumentSize + 1, Document::where([
             'assigned_type' => Event::class,
             'assigned_uuid' => $event->uuid,
