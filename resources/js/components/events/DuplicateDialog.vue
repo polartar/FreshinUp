@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-progress-linear
-      v-if="duplicating"
+      v-if="loading"
       indeterminate
     />
     <v-card-title>
@@ -85,8 +85,7 @@
 export default {
   layout: 'admin',
   props: {
-    duplicateDialog: { type: Boolean, default: false },
-    duplicating: { type: Boolean, default: false }
+    loading: { type: Boolean, default: false }
   },
   data () {
     return {
@@ -103,7 +102,7 @@ export default {
       this.$emit('manage-duplicate-dialog', value)
     },
     onDuplicate () {
-      this.$emit('manage-duplicate', this.duplicate)
+      this.$emit('Duplicate', this.duplicate)
     }
   }
 }

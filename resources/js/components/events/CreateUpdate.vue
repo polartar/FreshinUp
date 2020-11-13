@@ -38,7 +38,7 @@
             </v-flex>
             <v-flex>
               <v-dialog
-                v-model="duplicateDialog"
+                v-model="show"
                 max-width="500"
               >
                 <template v-slot:activator="{ on }">
@@ -46,15 +46,15 @@
                     slot="activator"
                     color="white"
                     v-on="on"
-                    @click="duplicateDialog = true"
+                    @click="show = true"
                   >
                     <span class="primary--text">Duplicate</span>
                   </v-btn>
                 </template>
                 <duplicate-dialog
-                  :duplicating="duplicating"
-                  :duplicate-dialog="duplicateDialog"
-                  @manage-duplicate="onDuplicate"
+                  :loading="loading"
+                  :show="show"
+                  @Duplicate="onDuplicate"
                   @manage-duplicate-dialog="changeDuplicateDialogue"
                 />
               </v-dialog>
@@ -220,24 +220,12 @@ import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from 'fresh-bus/components/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 import DuplicateDialog from '~/components/events/DuplicateDialog.vue'
+import getFileNameCopy from '~/components/events/utils.js'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
   mutationType: 'updateField'
 })
-
-export const getFileNameCopy = (name) => {
-  const regex = /\s*\(([0-9]+)\)$/gm
-  const matches = name.match(regex) || []
-  const count = (
-    parseInt(
-      get(matches, '[0]', '')
-        .replace('(', '')
-        .replace(')', '')
-    ) || 0
-  ) + 1
-  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
-}
 
 export default {
   layout: 'admin',
@@ -254,8 +242,8 @@ export default {
   data () {
     return {
       eventLoading: false,
-      duplicating: false,
-      duplicateDialog: false,
+      loading: false,
+      show: false,
       questDialog: false,
       isNew: false,
       types: []
@@ -297,7 +285,7 @@ export default {
       setPageLoading: 'setLoading'
     }),
     changeDuplicateDialogue (value) {
-      this.duplicateDialog = value
+      this.show = value
     },
     onDuplicate (duplicate) {
       // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
@@ -352,7 +340,7 @@ export default {
       if (data.name) {
         data.name = getFileNameCopy(data.name)
       }
-      this.duplicating = true
+      this.loading = true
       this.$store.dispatch('events/createItem', {
         data
       })
@@ -368,8 +356,8 @@ export default {
           console.error(error)
         })
         .then(() => {
-          this.duplicating = false
-          this.duplicateDialog = false
+          this.loading = false
+          this.show = false
         })
     },
     changeBasicInfo (data) {

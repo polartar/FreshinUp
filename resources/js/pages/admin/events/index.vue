@@ -141,13 +141,13 @@
     </v-dialog>
     <v-flex>
       <v-dialog
-        v-model="duplicateDialog"
+        v-model="show"
         max-width="500"
       >
         <duplicate-dialog
-          :duplicating="duplicating"
-          :duplicate-dialog="duplicateDialog"
-          @manage-duplicate="onDuplicate"
+          :loading="loading"
+          :show="show"
+          @Duplicate="onDuplicate"
           @manage-duplicate-dialog="changeDuplicateDialogue"
         />
       </v-dialog>
@@ -165,6 +165,7 @@ import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import DuplicateDialog from '~/components/events/DuplicateDialog.vue'
+import getFileNameCopy from '~/components/events/utils.js'
 
 const INCLUDE = [
   'status',
@@ -174,19 +175,6 @@ const INCLUDE = [
   'type',
   'venue'
 ]
-
-export const getFileNameCopy = (name) => {
-  const regex = /\s*\(([0-9]+)\)$/gm
-  const matches = name.match(regex) || []
-  const count = (
-    parseInt(
-      get(matches, '[0]', '')
-        .replace('(', '')
-        .replace(')', '')
-    ) || 0
-  ) + 1
-  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
-}
 
 export default {
   layout: 'admin',
@@ -209,8 +197,8 @@ export default {
     return {
       pageTitle: 'Events',
       deleteDialog: false,
-      duplicateDialog: false,
-      duplicating: false,
+      show: false,
+      loading: false,
       deleteTemp: [],
       deletablesProcessing: false,
       deletablesProgress: 0,
@@ -266,10 +254,10 @@ export default {
       this.deleteDialog = true
     },
     changeDuplicateDialogue (value) {
-      this.duplicateDialog = value
+      this.show = value
     },
     async eventDuplicate (event) {
-      this.duplicateDialog = true
+      this.show = true
       const params = {
         id: event.uuid,
         include: 'manager,host,event_tags,venue,location'
@@ -328,7 +316,7 @@ export default {
       if (data.name) {
         data.name = getFileNameCopy(data.name)
       }
-      this.duplicating = true
+      this.loading = true
       this.$store.dispatch('events/createItem', {
         data: {
           attendees: data.attendees,
@@ -354,14 +342,17 @@ export default {
           if (eventUuid) {
             const path = `/admin/events/${eventUuid}/edit`
             this.$router.push({ path })
+            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
           }
         })
         .catch(error => {
           console.error(error)
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
-          this.duplicating = false
-          this.duplicateDialog = false
+          this.loading = false
+          this.show = false
         })
     },
     multipleDelete (events) {
