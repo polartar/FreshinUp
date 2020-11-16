@@ -9,7 +9,7 @@
     />
     <v-layout>
       <v-flex
-        xs8
+        v-if="includeServings ? 'xs8': 'xs10'"
         px-2
       >
         <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -24,6 +24,7 @@
         />
       </v-flex>
       <v-flex
+        v-if="includeServings"
         xs2
         px-2
       >
@@ -96,8 +97,8 @@ export const DEFAULT_MENU_ITEM = {
   uuid: '',
   title: '',
   description: '',
-  servings: '',
-  cost: '',
+  servings: 0,
+  cost: 0,
   store_uuid: ''
 }
 
@@ -113,7 +114,8 @@ export default {
   props: {
     // overriding value prop from mixin to set default value
     value: { type: Object, default: () => DEFAULT_MENU_ITEM },
-    isLoading: { type: Boolean, default: false }
+    isLoading: { type: Boolean, default: false },
+    includeServings: { type: Boolean, default: true }
   },
   data () {
     return {

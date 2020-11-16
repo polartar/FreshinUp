@@ -21,6 +21,16 @@ describe('components/menu-items/MenuItemForm', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
   })
+  test('WithServings', async () => {
+    const wrapper = mount(Stories.WithServings())
+    await wrapper.vm.$nextTick()
+    expect(wrapper.element).toMatchSnapshot()
+  })
+  test('WithoutServings', async () => {
+    const wrapper = mount(Stories.WithoutServings())
+    await wrapper.vm.$nextTick()
+    expect(wrapper.element).toMatchSnapshot()
+  })
 
   describe('Props & Computed', () => {
     test('isLoading', async () => {

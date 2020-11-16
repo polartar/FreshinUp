@@ -195,6 +195,7 @@
           >
             <template #new-form="{ close }">
               <menu-item-form
+                :include-servings="false"
                 @input="payload => createMenuItem(payload, close)"
                 @cancel="close"
               />

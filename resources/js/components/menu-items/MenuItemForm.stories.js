@@ -49,6 +49,39 @@ export const WithData = () => ({
   `
 })
 
+export const WithServings = () => ({
+  components: { MenuItemForm },
+  data () {
+    return {
+      item: FIXTURE_MENU_ITEMS[0]
+    }
+  },
+  template: `
+    <v-container class="white">
+      <MenuItemForm
+        :value="item"
+      />
+    </v-container>
+  `
+})
+
+export const WithoutServings = () => ({
+  components: { MenuItemForm },
+  data () {
+    return {
+      item: FIXTURE_MENU_ITEMS[1]
+    }
+  },
+  template: `
+    <v-container class="white">
+      <MenuItemForm
+        :value="item"
+        :include-servings="false"
+      />
+    </v-container>
+  `
+})
+
 storiesOf('FoodFleet|components/menu-items/MenuItemForm', module)
   .addParameters({
     backgrounds: [
@@ -58,3 +91,5 @@ storiesOf('FoodFleet|components/menu-items/MenuItemForm', module)
   .add('Default', Default)
   .add('Loading', Loading)
   .add('WithData', WithData)
+  .add('WithServings', WithServings)
+  .add('WithoutServings', WithoutServings)
