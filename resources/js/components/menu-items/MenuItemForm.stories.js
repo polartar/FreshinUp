@@ -28,7 +28,7 @@ export const WithData = () => ({
   components: { MenuItemForm },
   data () {
     return {
-      item: FIXTURE_MENU_ITEMS[0]
+      item: FIXTURE_MENU_ITEMS[2]
     }
   },
   methods: {
