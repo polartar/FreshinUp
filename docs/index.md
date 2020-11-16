@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 16, 2020
+- **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
+
+<br/>
+
 ## Nov 11, 2020
 - Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
