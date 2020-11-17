@@ -25,54 +25,12 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
           </h3>
         </div>
          
-        <div
-          class="flex text-xs-right"
-        >
-          <button
-            class="v-btn v-btn--depressed theme--light primary"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--light"
-              >
-                add_circle
-              </i>
-              
-          Add new item
-        
-            </div>
-          </button>
-        </div>
       </div>
     </div>
      
     <hr
       class="v-divider theme--light"
     />
-     
-    <div
-      class="v-dialog__container"
-      style="display: block;"
-    >
-      <div
-        class="v-dialog__content"
-        style="z-index: 0;"
-        tabindex="-1"
-      >
-        <div
-          class="v-dialog"
-          style="max-width: 300px; display: none;"
-        >
-          
-    Coming soon
-  
-        </div>
-      </div>
-    </div>
      
     <div
       class="layout"
@@ -435,54 +393,12 @@ exports[`fleet-members/Payments Snapshots WithData 1`] = `
           </h3>
         </div>
          
-        <div
-          class="flex text-xs-right"
-        >
-          <button
-            class="v-btn v-btn--depressed theme--light primary"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
-            >
-              <i
-                aria-hidden="true"
-                class="v-icon v-icon--left material-icons theme--light"
-              >
-                add_circle
-              </i>
-              
-          Add new item
-        
-            </div>
-          </button>
-        </div>
       </div>
     </div>
      
     <hr
       class="v-divider theme--light"
     />
-     
-    <div
-      class="v-dialog__container"
-      style="display: block;"
-    >
-      <div
-        class="v-dialog__content"
-        style="z-index: 0;"
-        tabindex="-1"
-      >
-        <div
-          class="v-dialog"
-          style="max-width: 300px; display: none;"
-        >
-          
-    Coming soon
-  
-        </div>
-      </div>
-    </div>
      
     <div
       class="layout"

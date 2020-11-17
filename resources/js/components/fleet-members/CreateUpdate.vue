@@ -225,7 +225,65 @@
           xs12
           py-2
         >
-          <payments />
+          <payments>
+            <template v-slot:head>
+              <v-flex shrink>
+                <v-dialog
+                  v-model="newPayment"
+                  max-width="600"
+                >
+                  <template v-slot:activator="{ on }">
+                    <v-btn
+                      slot="activator"
+                      color="primary"
+                      text
+                      @click="newPayment = true"
+                    >
+                      <v-icon
+                        left
+                      >
+                        add_circle_outline
+                      </v-icon>Request New Payment
+                    </v-btn>
+                  </template>
+                  <v-card>
+                    <div class="d-flex justify-space-between align-center">
+                      <v-card-text class="grey--text subheading font-weight-bold">
+                        Request New Payment
+                      </v-card-text>
+                      <v-btn
+                        small
+                        round
+                        depressed
+                        color="grey"
+                        class="white--text"
+                        @click="newPayment = false"
+                      >
+                        <v-flex>
+                          <v-icon
+                            small
+                            class="white--text"
+                          >
+                            fa fa-times
+                          </v-icon>
+                        </v-flex>
+                        <v-flex>
+                          Close
+                        </v-flex>
+                      </v-btn>
+                    </div>
+                    <v-divider />
+                    <payment-form
+                      :is-loading="newPaymentLoading"
+                      class="ma-2"
+                      @cancel="newPayment = false"
+                      @input="onAddPayment"
+                    />
+                  </v-card>
+                </v-dialog>
+              </v-flex>
+            </template>
+          </payments>
         </v-flex>
       </v-layout>
     </v-form>
@@ -248,6 +306,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import AreaForm from './AreaForm'
+import PaymentForm from '../payments/PaymentForm'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -266,6 +325,7 @@ const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 export default {
   layout: 'admin',
   components: {
+    PaymentForm,
     AreaForm,
     BasicInformation,
     DocumentList,
@@ -283,6 +343,8 @@ export default {
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
+      newPayment: false,
+      newPaymentLoading: false,
 
       // TODO: Extract to state machine
       DELETABLE_RESOURCE,
@@ -532,6 +594,24 @@ export default {
         })
         .then(() => {
           this.menuItemLoading = false
+        })
+    },
+    onAddPayment (payment) {
+      this.newPaymentLoading = true
+      this.$store.dispatch('payments/createItem', {
+        data: { ...payment, store_uuid: this.$route.params.id }
+      })
+        .then(_ => {
+          this.newPayment = false
+          this.$store.dispatch('generalMessage/setMessage', 'Payment created.')
+          this.$store.dispatch('payments/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.newPaymentLoading = false
         })
     }
   },

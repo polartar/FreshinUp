@@ -11,29 +11,10 @@
             Payments
           </h3>
         </v-flex>
-        <v-flex class="text-xs-right">
-          <v-btn
-            depressed
-            color="primary"
-            @click="newDialogShown = true"
-          >
-            <v-icon
-              left
-            >
-              add_circle
-            </v-icon>
-            Add new item
-          </v-btn>
-        </v-flex>
+        <slot name="head" />
       </v-layout>
     </v-card-title>
     <v-divider />
-    <v-dialog
-      v-model="newDialogShown"
-      max-width="300"
-    >
-      Coming soon
-    </v-dialog>
     <v-layout>
       <v-flex xs12>
         <v-data-table
@@ -128,8 +109,7 @@ export default {
         { text: 'Amount', value: 'amount_money' },
         { text: 'Manage', value: 'manage' }
       ],
-      statuses,
-      newDialogShown: false
+      statuses
     }
   },
 
