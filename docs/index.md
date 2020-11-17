@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 17, 2020
+- **ADD** Food Fleet Members: Create request payment modal [#571](https://github.com/FreshinUp/foodfleet/issues/571)
+
+<br/>
+
 ## Nov 11, 2020
 - Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
