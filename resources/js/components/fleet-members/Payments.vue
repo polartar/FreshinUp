@@ -44,7 +44,7 @@
               </div>
             </td>
             <td class="py-2 grey--text">
-              {{ get(props, 'item.payment_name') }}
+              {{ get(props, 'item.name') }}
             </td>
             <td class="py-2 grey--text">
               {{ formatDate(get(props, 'item.due_date'), 'MMM DD, YYYY') }}
@@ -104,7 +104,7 @@ export default {
       headers: [
         { text: 'Status', value: 'status' },
         { text: 'Event name', value: 'event_name' },
-        { text: 'Payment name', value: 'payment_name' },
+        { text: 'Payment name', value: 'name' },
         { text: 'Due date', value: 'due_date' },
         { text: 'Amount', value: 'amount_money' },
         { text: 'Manage', value: 'manage' }

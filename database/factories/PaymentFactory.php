@@ -16,7 +16,7 @@ $factory->define(Payment::class, function (Faker $faker) {
             return factory(PaymentStatus::class)->create()->id;
         },
         'due_date' => $faker->date(),
-        'name' => $faker->text(50),
-        'description' => $faker->word()
+        'name' => $faker->word(),
+        'description' => $faker->text(50)
     ];
 });
