@@ -136,4 +136,22 @@ class PaymentTest extends TestCase
             'square_id' => $paymentToFind->square_id
         ], $data[0]);
     }
+
+    public function testCreatedItem()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $payload = factory(Payment::class)->make()->toArray();
+        $data = $this->json('POST', 'api/foodfleet/payments', $payload)
+            ->assertStatus(201)
+            ->json('data');
+
+        $this->assertArraySubset([
+            'name' => $payload['name'],
+            'amount_money' => $payload['amount_money'],
+            'description' => $payload['description'],
+            'due_date' => $payload['due_date'],
+            'status_id' => $payload['status_id'],
+        ], $data);
+    }
 }

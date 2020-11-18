@@ -9,7 +9,7 @@
         Payment Name
       </div>
       <v-text-field
-        v-model="payment_name"
+        v-model="name"
         single-line
         outline
       />
@@ -75,7 +75,7 @@ import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const DEFAULT_PAYMENT = {
   id: '',
-  payment_name: '',
+  name: '',
   amount_money: '',
   description: '',
   due_date: ''

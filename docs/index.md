@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 18, 2020
+- **ADD** Food Fleet Members: Create Request payment function [#570](https://github.com/FreshinUp/foodfleet/issues/570)
+
+<br/>
+
 ## Nov 17, 2020
 - **ADD** Food Fleet Members: Create request payment modal [#571](https://github.com/FreshinUp/foodfleet/issues/571)
 
