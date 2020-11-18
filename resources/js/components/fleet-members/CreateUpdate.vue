@@ -189,14 +189,24 @@
             :total-items="menuItemPagination.totalItems"
             :sort-by="menuItemSorting.sortBy"
             :descending="menuItemSorting.descending"
+            :dialog="dialog"
             @paginate="onMenuItemPaginate"
+            @change-dialog="onChangeDialog"
+            @manage-view="onManageView"
             @manage-delete="item => onMenuItemManageMultipleDelete([item])"
             @manage-multiple-delete="onMenuItemManageMultipleDelete"
           >
             <template #new-form="{ close }">
               <menu-item-form
-                @input="payload => createMenuItem(payload, close)"
-                @cancel="close"
+                @input="payload => createOrUpdateMenuItem(payload, close)"
+                @cancel="onChangeDialog('')"
+              />
+            </template>
+            <template #edit-form="{ close }">
+              <menu-item-form
+                :value="menuItem"
+                @input="payload => createOrUpdateMenuItem(payload, close)"
+                @cancel="onChangeDialog('')"
               />
             </template>
           </MenuItems>
@@ -283,6 +293,8 @@ export default {
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
+      dialog: '',
+      menuItem: null,
 
       // TODO: Extract to state machine
       DELETABLE_RESOURCE,
@@ -434,6 +446,13 @@ export default {
         })
       this.$router.push({ path: '/admin/fleet-members' })
     },
+    onChangeDialog (value) {
+      this.dialog = value
+    },
+    onManageView (item) {
+      this.dialog = 'edit'
+      this.menuItem = item
+    },
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
     },
@@ -517,22 +536,37 @@ export default {
       this.deletable.menuItems.temp = menuItems
       this.deletable.menuItems.dialog = true
     },
-    createMenuItem (data, onSuccess) {
+    createOrUpdateMenuItem (data, onSuccess) {
       this.menuItemLoading = true
-      this.$store.dispatch('menuItems/createItem', {
-        data: { ...data, store_uuid: this.$route.params.id }
-      })
-        .then(() => {
-          this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          onSuccess()
+      if (data.uuid !== '') {
+        this.$store.dispatch('menuItems/updateItem', { data, params: { id: data.uuid } })
+          .then(() => {
+            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+            onSuccess()
+          })
+          .catch(error => {
+            const message = get(error, 'response.data.message', error.message)
+            this.$store.dispatch('generalErrorMessages/setErrors', message)
+          })
+          .then(() => {
+            this.menuItemLoading = false
+          })
+      } else {
+        this.$store.dispatch('menuItems/createItem', {
+          data: { ...data, store_uuid: this.$route.params.id }
         })
-        .catch(error => {
-          const message = get(error, 'response.data.message', error.message)
-          this.$store.dispatch('generalErrorMessages/setErrors', message)
-        })
-        .then(() => {
-          this.menuItemLoading = false
-        })
+          .then(() => {
+            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+            onSuccess()
+          })
+          .catch(error => {
+            const message = get(error, 'response.data.message', error.message)
+            this.$store.dispatch('generalErrorMessages/setErrors', message)
+          })
+          .then(() => {
+            this.menuItemLoading = false
+          })
+      }
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
