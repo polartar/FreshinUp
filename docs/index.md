@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 19, 2020
+- **ADD** Event status change - generate client agreement [#543](https://github.com/FreshinUp/foodfleet/issues/543)
+
+<br/>
+
 ## Nov 11, 2020
 - Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
