@@ -183,20 +183,25 @@
           py-2
         >
           <MenuItems
+            :dialog="menuItemDialog"
             :items="menuItems"
             :rows-per-page="menuItemPagination.rowsPerPage"
             :page="menuItemPagination.page"
             :total-items="menuItemPagination.totalItems"
             :sort-by="menuItemSorting.sortBy"
             :descending="menuItemSorting.descending"
+            @dialog="menuItemDialog = $event"
             @paginate="onMenuItemPaginate"
+            @manage-view="onMenuItemManageView"
             @manage-delete="item => onMenuItemManageMultipleDelete([item])"
             @manage-multiple-delete="onMenuItemManageMultipleDelete"
           >
-            <template #new-form="{ close }">
+            <template #new-form>
               <menu-item-form
-                @input="payload => createMenuItem(payload, close)"
-                @cancel="close"
+                :is-loading="menuItemLoading"
+                :value="menuItem"
+                @input="createOrUpdateMenuItem"
+                @cancel="menuItemDialog = false"
               />
             </template>
           </MenuItems>
@@ -240,7 +245,7 @@ import { mapGetters } from 'vuex'
 import Events from './Events'
 import AreasOfOperation from './AreasOfOperation'
 import MenuItems from '../menu-items/MenuItems'
-import MenuItemForm from '../menu-items/MenuItemForm'
+import MenuItemForm, { DEFAULT_MENU_ITEM } from '../menu-items/MenuItemForm'
 import DeleteDialog from '../DeleteDialog'
 import StatusSelect from './StatusSelect'
 import { createHelpers } from 'vuex-map-fields'
@@ -280,9 +285,11 @@ export default {
   mixins: [Validate, deletables],
   data () {
     return {
+      menuItemDialog: false,
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
+      menuItem: DEFAULT_MENU_ITEM,
 
       // TODO: Extract to state machine
       DELETABLE_RESOURCE,
@@ -434,6 +441,10 @@ export default {
         })
       this.$router.push({ path: '/admin/fleet-members' })
     },
+    onMenuItemManageView (item) {
+      this.menuItem = Object.assign({}, DEFAULT_MENU_ITEM, item)
+      this.menuItemDialog = true
+    },
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
     },
@@ -517,14 +528,19 @@ export default {
       this.deletable.menuItems.temp = menuItems
       this.deletable.menuItems.dialog = true
     },
-    createMenuItem (data, onSuccess) {
+    createOrUpdateMenuItem (data) {
       this.menuItemLoading = true
-      this.$store.dispatch('menuItems/createItem', {
-        data: { ...data, store_uuid: this.$route.params.id }
-      })
+      const action = data.uuid
+        ? this.$store.dispatch('menuItems/updateItem', {
+          data, params: { id: data.uuid }
+        })
+        : this.$store.dispatch('menuItems/createItem', {
+          data: { ...data, store_uuid: this.$route.params.id }
+        })
+      action
         .then(() => {
           this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          onSuccess()
+          this.menuItemDialog = false
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
