@@ -2,6 +2,7 @@
 
 namespace App\Models\Foodfleet\Document\Template;
 
+use App\Enums\DocumentTemplateStatus;
 use App\Models\Foodfleet\Document;
 use App\Models\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -65,5 +66,14 @@ class Template extends Model
                 $template->updated_by_uuid = $user->uuid;
             }
         });
+    }
+
+    public static function getClientAgreement()
+    {
+        return Template::firstOrCreate([
+            'title' => 'Client event agreement'
+        ], [
+            'status_id' => DocumentTemplateStatus::PUBLISHED
+        ]);
     }
 }

@@ -3,8 +3,11 @@
 namespace Tests\Unit\Models;
 
 use App\Enums\DocumentStatus as DocumentStatusEnum;
+use App\Enums\DocumentTemplateStatus;
+use App\Enums\DocumentType;
 use App\Enums\EventStatus as EventStatusEnum;
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\Document\Template\Template;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
 use App\Models\Foodfleet\Square\Transaction;
@@ -159,13 +162,14 @@ class EventTest extends TestCase
     public function testObserverWhenEventUpdateWithStatusDifferentOfCustomerAgreement($status_id)
     {
         $event = factory(Event::class)->create([
+            'status_id' => 999
+        ]);
+        $count = Document::where([ 'event_store_uuid' => $event->uuid ])->count();
+        $event->update([
             'status_id' => $status_id
         ]);
-        $count = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
-        $event->update([
-            'status_id' => EventStatusEnum::CONFIRMED
-        ]);
-        $this->assertEquals($count, Document::where([ 'assigned_uuid' => $event->uuid ])->count());
+        // count remain the same
+        $this->assertEquals($count, Document::where([ 'event_store_uuid' => $event->uuid ])->count());
     }
 
 
@@ -176,25 +180,26 @@ class EventTest extends TestCase
     public function testObserverWhenEventUpdatedWithStatusCustomerAgreement($status_id)
     {
         $event = factory(Event::class)->create([
+            'status_id' => 999
+        ]);
+        $count = Document::where([ 'event_store_uuid' => $event->uuid ])->count();
+        $event->update([
             'status_id' => $status_id
         ]);
-        $count = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
-        $event->update([
-            'status_id' => EventStatusEnum::CONFIRMED
-        ]);
-        $this->assertEquals($count, Document::where([ 'assigned_uuid' => $event->uuid ])->count());
+        $this->assertEquals($count, Document::where([ 'event_store_uuid' => $event->uuid ])->count());
 
         $event->update([
             'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
         ]);
-        $this->assertEquals($count + 1, Document::where([ 'assigned_uuid' => $event->uuid ])->count());
-
+        $this->assertEquals($count + 1, Document::where([ 'event_store_uuid' => $event->uuid ])->count());
+        $template = Template::getClientAgreement();
         $this->assertDatabaseHas('documents', [
-            'assigned_type' => Event::class,
-            'assigned_uuid' => $event->uuid,
             'status_id' => DocumentStatusEnum::PENDING,
+            'type_id' => DocumentType::FROM_TEMPLATE,
             'title' => $event->name . ' - Customer Agreement',
             'description' => $event->name . ' - Customer Agreement',
+            'event_store_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
         ]);
     }
 
@@ -205,11 +210,11 @@ class EventTest extends TestCase
     public function testEventStatusChangedToPendingTwice($status_id)
     {
         $event = factory(Event::class)->create([
-            'status_id' => $status_id
+            'status_id' => 999
         ]);
         $count = Document::where([ 'assigned_uuid' => $event->uuid ])->count();
         $event->update([
-            'status_id' => EventStatusEnum::CONFIRMED
+            'status_id' => $status_id
         ]);
         $this->assertEquals($count, Document::where([ 'assigned_uuid' => $event->uuid ])->count());
 

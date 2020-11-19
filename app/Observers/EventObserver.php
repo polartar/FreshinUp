@@ -3,8 +3,10 @@
 namespace App\Observers;
 
 use App\Enums\DocumentStatus;
+use App\Enums\DocumentTemplateStatus;
 use App\Enums\EventStatus;
 use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\Document\Template\Template;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventHistory;
 
@@ -41,11 +43,12 @@ class EventObserver
             ]);
 
             if ($event->status_id == EventStatus::CUSTOMER_AGREEMENT) {
+                $template = Template::getClientAgreement();
                 Document::updateOrCreate([
-                    'assigned_type' => Event::class,
-                    'assigned_uuid' => $event->uuid,
+                    'event_store_uuid' => $event->uuid,
                     'status_id' => DocumentStatus::PENDING,
-                    'title' => $event->name . ' - Customer Agreement'
+                    'title' => $event->name . ' - Customer Agreement',
+                    'template_uuid' => $template->uuid
                 ], [
                     'description' => $event->name . ' - Customer Agreement',
                 ]);
