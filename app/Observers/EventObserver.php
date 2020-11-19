@@ -45,7 +45,8 @@ class EventObserver
             if ($event->status_id == EventStatus::CUSTOMER_AGREEMENT) {
                 $template = Template::getClientAgreement();
                 Document::updateOrCreate([
-                    'event_store_uuid' => $event->uuid,
+                    'assigned_uuid' => $event->uuid,
+                    'assigned_type' => Event::class,
                     'status_id' => DocumentStatus::PENDING,
                     'title' => $event->name . ' - Customer Agreement',
                     'template_uuid' => $template->uuid

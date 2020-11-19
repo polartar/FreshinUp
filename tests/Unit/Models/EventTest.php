@@ -163,12 +163,12 @@ class EventTest extends TestCase
         $event = factory(Event::class)->create([
             'status_id' => 999
         ]);
-        $count = Document::where(['event_store_uuid' => $event->uuid])->count();
+        $count = Document::where(['assigned_uuid' => $event->uuid])->count();
         $event->update([
             'status_id' => $status_id
         ]);
         // count remain the same
-        $this->assertEquals($count, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count, Document::where(['assigned_uuid' => $event->uuid])->count());
     }
 
 
@@ -181,23 +181,23 @@ class EventTest extends TestCase
         $event = factory(Event::class)->create([
             'status_id' => 999
         ]);
-        $count = Document::where(['event_store_uuid' => $event->uuid])->count();
+        $count = Document::where(['assigned_uuid' => $event->uuid])->count();
         $event->update([
             'status_id' => $status_id
         ]);
-        $this->assertEquals($count, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count, Document::where(['assigned_uuid' => $event->uuid])->count());
 
         $event->update([
             'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
         ]);
-        $this->assertEquals($count + 1, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count + 1, Document::where(['assigned_uuid' => $event->uuid])->count());
         $template = Template::getClientAgreement();
         $this->assertDatabaseHas('documents', [
             'status_id' => DocumentStatusEnum::PENDING,
             'type_id' => DocumentType::FROM_TEMPLATE,
             'title' => $event->name.' - Customer Agreement',
             'description' => $event->name.' - Customer Agreement',
-            'event_store_uuid' => $event->uuid,
+            'assigned_uuid' => $event->uuid,
             'template_uuid' => $template->uuid
         ]);
     }
@@ -211,16 +211,16 @@ class EventTest extends TestCase
         $event = factory(Event::class)->create([
             'status_id' => 999
         ]);
-        $count = Document::where(['event_store_uuid' => $event->uuid])->count();
+        $count = Document::where(['assigned_uuid' => $event->uuid])->count();
         $event->update([
             'status_id' => $status_id
         ]);
-        $this->assertEquals($count, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count, Document::where(['assigned_uuid' => $event->uuid])->count());
 
         $event->update([
             'status_id' => EventStatusEnum::CUSTOMER_AGREEMENT
         ]);
-        $this->assertEquals($count + 1, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count + 1, Document::where(['assigned_uuid' => $event->uuid])->count());
 
         // change back to previous status and back to the wanted one
         $event->update([
@@ -231,6 +231,6 @@ class EventTest extends TestCase
         ]);
 
         // should be unchanged
-        $this->assertEquals($count + 1, Document::where(['event_store_uuid' => $event->uuid])->count());
+        $this->assertEquals($count + 1, Document::where(['assigned_uuid' => $event->uuid])->count());
     }
 }
