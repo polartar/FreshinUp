@@ -6,27 +6,11 @@ use BenSampo\Enum\Enum;
 
 final class UserStatus extends Enum
 {
-    const ACTIVE = 1;
-    const INACTIVE = 2;
-    const HOLD = 3;
-    const PENDING = 4;
-    const PROSPECT = 5;
-    const ISNEW = 6;
-
-    public static function isInactive($value)
-    {
-        return $value === self::INACTIVE;
-    }
-
-    public static function isPending($value)
-    {
-        return $value === self::PENDING;
-    }
-
-    public static function isActive($value)
-    {
-        return $value === self::ACTIVE;
-    }
+    const LEAD = 1;
+    const PENDING_INVITATION = 2;
+    const PENDING_REVIEW = 3;
+    const APPROVED = 4;
+    const ON_HOLD = 5;
 
     public static function toKeyedSelectArray()
     {
