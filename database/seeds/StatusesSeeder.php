@@ -1,8 +1,7 @@
 <?php
 
-use FreshinUp\FreshBusForms\Models\User\UserLevel;
 use FreshinUp\FreshBusForms\Models\User\UserStatus;
-use FreshinUp\FreshBusForms\Models\User\UserType;
+use App\Enums\UserStatus as UserStatusEnum;
 use Illuminate\Database\Seeder;
 
 class StatusesSeeder extends Seeder
@@ -14,16 +13,9 @@ class StatusesSeeder extends Seeder
      */
     public function run()
     {
+        // TODO: remove later
         UserStatus::truncate();
-           
-        $statuses = [
-            1 => 'Prospect / Lead',
-            2 => 'Pending Invitation',
-            3 => 'Pending Review',
-            4 => 'Approved',
-            5 => 'On Hold',
-        ];
-
+        $statuses = UserStatusEnum::toKeyedSelectArray();
         foreach($statuses as $id => $name) {
             UserStatus::updateOrCreate(
                 ['id' => $id],
