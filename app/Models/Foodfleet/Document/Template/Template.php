@@ -34,6 +34,8 @@ class Template extends Model
     protected $guarded = ['id', 'uuid'];
     use GeneratesUuid;
 
+    const CLIENT_EVENT_AGREEMENT = 'Client event agreement';
+
     public function status()
     {
         return $this->belongsTo(Status::class, 'status_id', 'id');
@@ -70,8 +72,8 @@ class Template extends Model
 
     public static function getClientAgreement()
     {
-        return Template::firstOrCreate([
-            'title' => 'Client event agreement'
+        return self::firstOrCreate([
+            'title' => self::CLIENT_EVENT_AGREEMENT
         ], [
             'status_id' => DocumentTemplateStatus::PUBLISHED
         ]);
