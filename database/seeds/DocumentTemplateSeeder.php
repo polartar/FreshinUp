@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\DocumentTemplateStatus;
 use App\Models\Foodfleet\Document\Template\Status;
 use App\Models\Foodfleet\Document\Template\Template;
 use Illuminate\Database\Seeder;
@@ -15,7 +14,6 @@ class DocumentTemplateSeeder extends Seeder
      */
     public function run()
     {
-        // defaulted to this until we
         Template::getClientAgreement();
 
         $statuses = Status::get();
