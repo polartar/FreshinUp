@@ -11,11 +11,11 @@
         </v-flex>
         <v-flex shrink>
           <v-btn
-            v-show="dialog === ''"
+            v-show="!dialog"
             slot="activator"
             color="primary"
             text
-            @click="onChangeDialog('new')"
+            @click="$emit('dialog', true)"
           >
             <v-icon
               dark
@@ -30,19 +30,13 @@
     <v-divider />
     <v-card-text class="primary--text">
       <menu-item-list
-        v-if="dialog === ''"
+        v-if="!dialog"
         v-bind="$attrs"
         v-on="$listeners"
       />
       <slot
-        v-else-if="dialog === 'new'"
+        v-else
         name="new-form"
-        :close="() => onChangeDialog('')"
-      />
-      <slot
-        v-else-if="dialog === 'edit'"
-        name="edit-form"
-        :close="() => onChangeDialog('')"
       />
     </v-card-text>
     <v-divider />
@@ -56,12 +50,7 @@ export default {
     MenuItemList
   },
   props: {
-    dialog: { type: String, default: '' }
-  },
-  methods: {
-    onChangeDialog (value) {
-      this.$emit('change-dialog', value)
-    }
+    dialog: { type: Boolean, default: false }
   }
 }
 </script>

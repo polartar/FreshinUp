@@ -183,30 +183,25 @@
           py-2
         >
           <MenuItems
+            :dialog="menuItemDialog"
             :items="menuItems"
             :rows-per-page="menuItemPagination.rowsPerPage"
             :page="menuItemPagination.page"
             :total-items="menuItemPagination.totalItems"
             :sort-by="menuItemSorting.sortBy"
             :descending="menuItemSorting.descending"
-            :dialog="dialog"
+            @dialog="menuItemDialog = $event"
             @paginate="onMenuItemPaginate"
-            @change-dialog="onChangeDialog"
-            @manage-view="onManageView"
+            @manage-view="onMenuItemManageView"
             @manage-delete="item => onMenuItemManageMultipleDelete([item])"
             @manage-multiple-delete="onMenuItemManageMultipleDelete"
           >
-            <template #new-form="{ close }">
+            <template #new-form>
               <menu-item-form
-                @input="payload => createOrUpdateMenuItem(payload, close)"
-                @cancel="onChangeDialog('')"
-              />
-            </template>
-            <template #edit-form="{ close }">
-              <menu-item-form
+                :is-loading="menuItemLoading"
                 :value="menuItem"
-                @input="payload => createOrUpdateMenuItem(payload, close)"
-                @cancel="onChangeDialog('')"
+                @input="createOrUpdateMenuItem"
+                @cancel="menuItemDialog = false"
               />
             </template>
           </MenuItems>
@@ -250,7 +245,7 @@ import { mapGetters } from 'vuex'
 import Events from './Events'
 import AreasOfOperation from './AreasOfOperation'
 import MenuItems from '../menu-items/MenuItems'
-import MenuItemForm from '../menu-items/MenuItemForm'
+import MenuItemForm, { DEFAULT_MENU_ITEM } from '../menu-items/MenuItemForm'
 import DeleteDialog from '../DeleteDialog'
 import StatusSelect from './StatusSelect'
 import { createHelpers } from 'vuex-map-fields'
@@ -290,11 +285,11 @@ export default {
   mixins: [Validate, deletables],
   data () {
     return {
+      menuItemDialog: false,
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
-      dialog: '',
-      menuItem: null,
+      menuItem: DEFAULT_MENU_ITEM,
 
       // TODO: Extract to state machine
       DELETABLE_RESOURCE,
@@ -446,12 +441,9 @@ export default {
         })
       this.$router.push({ path: '/admin/fleet-members' })
     },
-    onChangeDialog (value) {
-      this.dialog = value
-    },
-    onManageView (item) {
-      this.dialog = 'edit'
-      this.menuItem = item
+    onMenuItemManageView (item) {
+      this.menuItem = Object.assign({}, DEFAULT_MENU_ITEM, item)
+      this.menuItemDialog = true
     },
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
@@ -536,37 +528,27 @@ export default {
       this.deletable.menuItems.temp = menuItems
       this.deletable.menuItems.dialog = true
     },
-    createOrUpdateMenuItem (data, onSuccess) {
+    createOrUpdateMenuItem (data) {
       this.menuItemLoading = true
-      if (data.uuid !== '') {
-        this.$store.dispatch('menuItems/updateItem', { data, params: { id: data.uuid } })
-          .then(() => {
-            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-            onSuccess()
-          })
-          .catch(error => {
-            const message = get(error, 'response.data.message', error.message)
-            this.$store.dispatch('generalErrorMessages/setErrors', message)
-          })
-          .then(() => {
-            this.menuItemLoading = false
-          })
-      } else {
-        this.$store.dispatch('menuItems/createItem', {
+      const action = data.uuid
+        ? this.$store.dispatch('menuItems/updateItem', {
+          data, params: { id: data.uuid }
+        })
+        : this.$store.dispatch('menuItems/createItem', {
           data: { ...data, store_uuid: this.$route.params.id }
         })
-          .then(() => {
-            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-            onSuccess()
-          })
-          .catch(error => {
-            const message = get(error, 'response.data.message', error.message)
-            this.$store.dispatch('generalErrorMessages/setErrors', message)
-          })
-          .then(() => {
-            this.menuItemLoading = false
-          })
-      }
+      action
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          this.menuItemDialog = false
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.menuItemLoading = false
+        })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {

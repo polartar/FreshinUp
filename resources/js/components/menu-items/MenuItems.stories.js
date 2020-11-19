@@ -32,6 +32,7 @@ export const Populated = () => ({
   components: { MenuItems, MenuItemForm },
   data () {
     return {
+      dialog: false,
       items: FIXTURE_MENU_ITEMS,
       pagination: {
         rowsPerPage: 10,
@@ -60,6 +61,7 @@ export const Populated = () => ({
   },
   template: `
       <menu-items
+        :dialog="dialog"
         :items="items"
         :rows-per-page="pagination.rowsPerPage"
         :page="pagination.page"
@@ -70,10 +72,10 @@ export const Populated = () => ({
         @manage-delete="onManageDelete"
         @manage-multiple-delete="onManageMultipleDelete"
       >
-        <template #new-form="{ close }">
+        <template #new-form>
           <menu-item-form
             @input="onNew"
-            @cancel="close"
+            @cancel="dialog = false"
           />
         </template>
 

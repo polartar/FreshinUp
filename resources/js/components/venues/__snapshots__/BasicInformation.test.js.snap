@@ -1905,7 +1905,11 @@ exports[`components/venues/BasicInformation Snapshots Populated 1`] = `
           class="my-2"
           style="height: 100%;"
         >
-          <!---->
+          <f-map-stub
+            access-token="pk.eyJ1IjoiYmNkYnVkZHkiLCJhIjoiY2toM3luOTlrMDE2dDJzazBzN2NqaGZobCJ9.azAiM_hZuTI3Ew9Q1HpFtg"
+          >
+            <!---->
+          </f-map-stub>
         </div>
       </div>
     </div>
