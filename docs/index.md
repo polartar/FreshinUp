@@ -42,6 +42,11 @@
 
 # Changes
 
+## Nov 20, 2020
+- **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
+
+<br/>
+
 ## Nov 19, 2020
 - **ADD** Event status change - generate client agreement [#543](https://github.com/FreshinUp/foodfleet/issues/543)
 - **FIX** User status options not correct [#588](https://github.com/FreshinUp/foodfleet/issues/588)
