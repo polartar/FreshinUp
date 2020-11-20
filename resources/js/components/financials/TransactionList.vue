@@ -88,8 +88,8 @@
 import TitleLink from 'fresh-bus/components/TitleLink'
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import reduce from 'lodash/reduce'
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
 export default {
   components: {

@@ -230,7 +230,28 @@
           xs12
           py-2
         >
-          <payments />
+          <payments
+            :items="payments"
+            :dialog="newPaymentDialog"
+            :statuses="paymentStatuses"
+            :rows-per-page="paymentPagination.rowsPerPage"
+            :page="paymentPagination.page"
+            :total-items="paymentPagination.totalItems"
+            :sort-by="paymentSorting.sortBy"
+            :descending="paymentSorting.descending"
+            @dialog="newPaymentDialog = $event"
+            @manage-pay="onPaymentManagePay"
+            @manage-retry="onPaymentManageRetry"
+          >
+            <template #form>
+              <payment-form
+                :is-loading="newPaymentLoading"
+                class="ma-2"
+                @cancel="dialog = false"
+                @input="onAddPayment"
+              />
+            </template>
+          </payments>
         </v-flex>
       </v-layout>
     </v-form>
@@ -253,6 +274,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import AreaForm from './AreaForm'
+import PaymentForm from '../payments/PaymentForm'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -271,6 +293,7 @@ const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 export default {
   layout: 'admin',
   components: {
+    PaymentForm,
     AreaForm,
     BasicInformation,
     DocumentList,
@@ -289,6 +312,8 @@ export default {
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
+      newPaymentDialog: false,
+      newPaymentLoading: false,
       menuItem: DEFAULT_MENU_ITEM,
 
       // TODO: Extract to state machine
@@ -326,6 +351,14 @@ export default {
       docs: 'items',
       documentPagination: 'pagination',
       documentSorting: 'sorting'
+    }),
+    ...mapGetters('payments', {
+      payments: 'items',
+      paymentPagination: 'pagination',
+      paymentSorting: 'sorting'
+    }),
+    ...mapGetters('paymentStatuses', {
+      paymentStatuses: 'items'
     }),
     ...mapGetters('menuItems', {
       menuItems: 'items',
@@ -402,6 +435,8 @@ export default {
     }
   },
   methods: {
+    onPaymentManagePay (item) {},
+    onPaymentManageRetry (item) {},
     getSquareLocations (companyId) {
       this.$store.dispatch('companies/squareLocations/getItems', {
         params: {
@@ -549,6 +584,24 @@ export default {
         .then(() => {
           this.menuItemLoading = false
         })
+    },
+    onAddPayment (payment) {
+      this.newPaymentLoading = true
+      this.$store.dispatch('payments/createItem', {
+        data: { ...payment, store_uuid: this.$route.params.id }
+      })
+        .then(() => {
+          this.newPaymentDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Payment created.')
+          this.$store.dispatch('payments/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.newPaymentLoading = false
+        })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -588,6 +641,7 @@ export default {
       if (currentUser) {
         vm.getSquareLocations(currentUser.company_id)
       }
+      promises.push(vm.$store.dispatch('payments/getItems'))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))

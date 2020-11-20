@@ -123,7 +123,7 @@
 
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 export default {
   components: {
