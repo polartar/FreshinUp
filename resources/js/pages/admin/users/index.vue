@@ -131,10 +131,11 @@ export default {
       lastFilterParams: {},
       headers: [
         { text: 'Status', sortable: true, value: 'status', align: 'center' },
-        { text: 'Name / Email', value: 'name,email', align: 'left' },
+        { text: 'Name / Email Address', value: 'name,email', align: 'left' },
+        { text: 'Company Name', value: 'company_name', align: 'left' },
         { text: 'User Type', sortable: true, value: 'user_type', align: 'center' },
-        { text: 'Company', value: 'company_name', align: 'left' },
-        { text: 'BUS Role', sortable: true, value: 'level', align: 'center' },
+        { text: 'Role', sortable: true, value: 'level', align: 'center' },
+        { text: 'Managed by', sortable: true, value: 'manager', align: 'center' },
         { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
       ],
       itemActions: [

@@ -44,6 +44,7 @@
 
 ## Nov 20, 2020
 - **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
+- **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
 
 <br/>
 
