@@ -11,147 +11,167 @@
             Payments
           </h3>
         </v-flex>
-        <slot name="head" />
+        <v-flex shrink>
+          <v-dialog
+            :value="dialog"
+            max-width="600"
+            @input="$emit('dialog', $event)"
+          >
+            <template v-slot:activator="{ on }">
+              <v-btn
+                slot="activator"
+                color="primary"
+                text
+                @click="$emit('dialog', true)"
+              >
+                <v-icon
+                  left
+                >
+                  add_circle_outline
+                </v-icon>Request New Payment
+              </v-btn>
+            </template>
+            <v-card>
+              <div class="d-flex justify-space-between align-center">
+                <v-card-text class="grey--text subheading font-weight-bold">
+                  Request New Payment
+                </v-card-text>
+                <v-btn
+                  small
+                  round
+                  depressed
+                  color="grey"
+                  class="white--text"
+                  @click="$emit('dialog', false)"
+                >
+                  <v-flex>
+                    <v-icon
+                      small
+                      class="white--text"
+                    >
+                      fa fa-times
+                    </v-icon>
+                  </v-flex>
+                  <v-flex>
+                    Close
+                  </v-flex>
+                </v-btn>
+              </div>
+              <v-divider />
+              <slot
+                v-if="dialog"
+                name="form"
+              />
+            </v-card>
+          </v-dialog>
+        </v-flex>
       </v-layout>
     </v-card-title>
     <v-divider />
     <v-layout>
       <v-flex xs12>
-        <v-data-table
+        <f-data-table
           :headers="headers"
-          :items="payments"
+          :items="items"
+          :is-loading="isLoading"
+          :item-actions="itemActions"
+          :multi-item-actions="multipleItemActions"
           item-key="uuid"
+          v-bind="$attrs"
+          v-on="$listeners"
         >
-          <template v-slot:items="props">
-            <td class="py-2">
-              <v-btn
-                depressed
-                class="white--text"
-                :class="getStatus(props.item).class"
-              >
-                {{ getStatus(props.item).text }}
-              </v-btn>
-            </td>
-            <td class="py-2">
-              <div class="subheading primary--text">
-                {{ get(props, 'item.event_name') }}
-              </div>
-              <div class="grey--text">
-                {{ formatDate(get(props, 'item.venue_due_date'), 'MMM DD, YYYY') }}
-              </div>
-              <div class="grey--text">
-                @ {{ get(props, 'item.venue') }}
-              </div>
-            </td>
-            <td class="py-2 grey--text">
-              {{ get(props, 'item.payment_name') }}
-            </td>
-            <td class="py-2 grey--text">
-              {{ formatDate(get(props, 'item.due_date'), 'MMM DD, YYYY') }}
-            </td>
-            <td class="py-2 grey--text">
-              {{ formatMoney(get(props, 'item.amount_money'), { format: '$0,0.00', precision: 4 }) }}
-            </td>
-            <td class="py-2">
-              <v-btn
-                v-if="processable(props.item)"
-                depressed
-                color="primary"
-              >
-                {{ manageLabel(props.item) }}
-              </v-btn>
-            </td>
+          <template v-slot:item-inner-status="{ item }">
+            <status-select
+              :value="item.status_id"
+              :options="statuses"
+              @input="changeStatus($event, item)"
+            />
           </template>
-        </v-data-table>
+          <template v-slot:item-inner-event_name="{ item }">
+            <div class="subheading primary--text">
+              {{ get(item, 'event_name') }}
+            </div>
+            <div class="grey--text">
+              {{ formatDate(get(item, 'venue_due_date'), 'MMM DD, YYYY') }}
+            </div>
+            <div class="grey--text">
+              @ {{ get(item, 'venue') }}
+            </div>
+          </template>
+          <template v-slot:item-inner-amount_money="{ item }">
+            <div class="grey--text">
+              {{ formatDate(get(item, 'due_date'), 'MMM DD, YYYY') }}
+            </div>
+          </template>
+          <template v-slot:item-inner-amount_money="{ item }">
+            <div class="grey--text">
+              {{ formatMoney(get(item, 'amount_money'), { format: '$0,0.00', precision: 4 }) }}
+            </div>
+          </template>
+          <template v-slot:item-inner-manage="{ item }">
+            <v-btn
+              v-show="processable(item)"
+              depressed
+              color="primary"
+            >
+              {{ manageLabel(item) }}
+            </v-btn>
+          </template>
+        </f-data-table>
       </v-flex>
     </v-layout>
   </v-card>
 </template>
 <script>
 import get from 'lodash/get'
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
+import StatusSelect from './StatusSelect'
 
-const statuses = [
-  {
-    id: 1,
-    text: 'Pending'
-  },
-  {
-    id: 2,
-    text: 'Paid'
-  },
-  {
-    id: 3,
-    text: 'Failed'
-  },
-  {
-    id: 4,
-    text: 'Refunded'
-  }
+export const HEADERS = [
+  { text: 'Status', value: 'status' },
+  { text: 'Event name', value: 'event_name' },
+  { text: 'Payment name', value: 'payment_name' },
+  { text: 'Due date', value: 'due_date' },
+  { text: 'Amount', value: 'amount_money' },
+  { text: 'Manage', value: 'manage' }
+]
+
+export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
+  { action: 'delete', text: 'Delete' }
 ]
 
 export default {
+  components: { FDataTable, StatusSelect },
   mixins: [FormatMoney, FormatDate],
   props: {
-    payments: {
-      type: Array,
-      default: () => []
-    }
+    dialog: { type: Boolean, default: false },
+    isLoading: { type: Boolean, default: false },
+    items: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
-      headers: [
-        { text: 'Status', value: 'status' },
-        { text: 'Event name', value: 'event_name' },
-        { text: 'Payment name', value: 'payment_name' },
-        { text: 'Due date', value: 'due_date' },
-        { text: 'Amount', value: 'amount_money' },
-        { text: 'Manage', value: 'manage' }
-      ],
-      statuses
+      headers: HEADERS,
+      multipleItemActions: DEFAULT_MULTIPLE_ITEM_ACTIONS,
+      itemActions: []
     }
   },
-
   methods: {
     get,
-
-    getStatus (item) {
-      let status = this.statuses.find(s => item.status === s.id)
-
-      if (!status) { return }
-
-      switch (status.id) {
-        case 1:
-          status = Object.assign({}, status, { class: 'grey' })
-          break
-        case 2:
-          status = Object.assign({}, status, { class: 'green' })
-          break
-        case 3:
-          status = Object.assign({}, status, { class: 'red' })
-          break
-        case 4:
-          status = Object.assign({}, status, { class: 'orange' })
-          break
-        default:
-          status = Object.assign({}, status, { class: '', text: 'Button' })
-          break
-      }
-
-      return status
-    },
-
     processable (item) {
-      return item.status === 1 || item.status === 3
+      return [1, 3].includes(item.status)
     },
-
     manageLabel (item) {
-      if (item.status === 1) { return 'Pay now' }
-
-      if (item.status === 3) { return 'Retry' }
-
-      return ''
+      const map = {
+        1: 'Pay now',
+        3: 'Retry'
+      }
+      return map[item.status] || ''
+    },
+    changeStatus (value, item) {
+      this.$emit('change-status', value, item)
     }
   }
 }

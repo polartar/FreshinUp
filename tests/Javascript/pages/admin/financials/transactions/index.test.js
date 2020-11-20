@@ -30,7 +30,7 @@ describe('Admin Financial Results Page', () => {
       mock.onGet('api/currentUser')
         .reply(200, FIXTURE_CURRENT_USER)
 
-      mock.onGet('api/foodfleet/payment-types')
+      mock.onGet('api/foodfleet/payment/types')
         .reply(200, {})
 
       mock.onGet('api/foodfleet/financial-modifiers')
@@ -86,7 +86,7 @@ describe('Admin Financial Results Page', () => {
       mock.onPut('api/users')
         .reply(201, FIXTURE_CURRENT_USER)
 
-      mock.onGet('api/foodfleet/payment-types')
+      mock.onGet('api/foodfleet/payment/types')
         .reply(200, {})
 
       mock.onGet('api/foodfleet/financial-modifiers')

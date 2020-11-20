@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventStatus;
 use App\Models\Foodfleet\EventType;
@@ -20,7 +19,7 @@ $factory->define(Event::class, function (Faker $faker) {
         "status_id" => function () {
             return factory(EventStatus::class)->create();
         },
-        "location_uuid" =>  function () {
+        "location_uuid" => function () {
             return factory(Location::class)->create()->uuid;
         },
         "start_at" => $faker->dateTime('now +1 hour'),

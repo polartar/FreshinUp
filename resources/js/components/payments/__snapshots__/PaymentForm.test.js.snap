@@ -1228,7 +1228,7 @@ exports[`components/payments/PaymentForm Snapshots Default 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div
@@ -2511,7 +2511,7 @@ exports[`components/payments/PaymentForm Snapshots Loading 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div
@@ -2592,7 +2592,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
       </div>
        
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
       >
         <div
           class="v-input__control"
@@ -2678,7 +2678,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
       </div>
        
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
       >
         <div
           class="v-input__control"
@@ -3786,7 +3786,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div

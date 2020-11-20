@@ -1,4 +1,4 @@
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 export default {
   methods: {
     formatRangeDate (startDate, endDate) {

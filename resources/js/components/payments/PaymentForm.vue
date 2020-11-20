@@ -53,6 +53,7 @@
       <v-btn
         color="grey"
         depressed
+        class="white--text"
         @click="onCancel"
       >
         Cancel

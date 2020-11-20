@@ -35,7 +35,7 @@ export const DEFAULT_HEADERS = [
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const DEFAULT_ITEM_ACTIONS = [
-  // Disabled for now { action: 'view', text: 'View / Edit' },
+  { action: 'view', text: 'View / Edit' },
   { action: 'delete', text: 'Delete' }
 ]
 export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
