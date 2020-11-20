@@ -271,7 +271,7 @@
 
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 export default {
   components: { FBtnMenu },

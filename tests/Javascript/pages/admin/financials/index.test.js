@@ -26,7 +26,7 @@ describe('Admin Financial Reports Page', () => {
       mock.onGet('api/foodfleet/devices')
         .reply(200, {})
 
-      mock.onGet('api/foodfleet/payment-types')
+      mock.onGet('api/foodfleet/payment/types')
         .reply(200, {})
 
       mock.onAny().reply(config => {

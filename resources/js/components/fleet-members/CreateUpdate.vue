@@ -183,21 +183,26 @@
           py-2
         >
           <MenuItems
+            :dialog="menuItemDialog"
             :items="menuItems"
             :rows-per-page="menuItemPagination.rowsPerPage"
             :page="menuItemPagination.page"
             :total-items="menuItemPagination.totalItems"
             :sort-by="menuItemSorting.sortBy"
             :descending="menuItemSorting.descending"
+            @dialog="menuItemDialog = $event"
             @paginate="onMenuItemPaginate"
+            @manage-view="onMenuItemManageView"
             @manage-delete="item => onMenuItemManageMultipleDelete([item])"
             @manage-multiple-delete="onMenuItemManageMultipleDelete"
           >
-            <template #new-form="{ close }">
+            <template #new-form>
               <menu-item-form
-                :include-servings="false"
-                @input="payload => createMenuItem(payload, close)"
-                @cancel="close"
+                without-servings
+                :is-loading="menuItemLoading"
+                :value="menuItem"
+                @input="createOrUpdateMenuItem"
+                @cancel="menuItemDialog = false"
               />
             </template>
           </MenuItems>
@@ -226,7 +231,28 @@
           xs12
           py-2
         >
-          <payments />
+          <payments
+            :items="payments"
+            :dialog="newPaymentDialog"
+            :statuses="paymentStatuses"
+            :rows-per-page="paymentPagination.rowsPerPage"
+            :page="paymentPagination.page"
+            :total-items="paymentPagination.totalItems"
+            :sort-by="paymentSorting.sortBy"
+            :descending="paymentSorting.descending"
+            @dialog="newPaymentDialog = $event"
+            @manage-pay="onPaymentManagePay"
+            @manage-retry="onPaymentManageRetry"
+          >
+            <template #form>
+              <payment-form
+                :is-loading="newPaymentLoading"
+                class="ma-2"
+                @cancel="dialog = false"
+                @input="onAddPayment"
+              />
+            </template>
+          </payments>
         </v-flex>
       </v-layout>
     </v-form>
@@ -241,7 +267,7 @@ import { mapGetters } from 'vuex'
 import Events from './Events'
 import AreasOfOperation from './AreasOfOperation'
 import MenuItems from '../menu-items/MenuItems'
-import MenuItemForm from '../menu-items/MenuItemForm'
+import MenuItemForm, { DEFAULT_MENU_ITEM } from '../menu-items/MenuItemForm'
 import DeleteDialog from '../DeleteDialog'
 import StatusSelect from './StatusSelect'
 import { createHelpers } from 'vuex-map-fields'
@@ -249,6 +275,7 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import AreaForm from './AreaForm'
+import PaymentForm from '../payments/PaymentForm'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -267,6 +294,7 @@ const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 export default {
   layout: 'admin',
   components: {
+    PaymentForm,
     AreaForm,
     BasicInformation,
     DocumentList,
@@ -281,9 +309,13 @@ export default {
   mixins: [Validate, deletables],
   data () {
     return {
+      menuItemDialog: false,
       menuItemLoading: false,
       newArea: false,
       newAreaLoading: false,
+      newPaymentDialog: false,
+      newPaymentLoading: false,
+      menuItem: DEFAULT_MENU_ITEM,
 
       // TODO: Extract to state machine
       DELETABLE_RESOURCE,
@@ -320,6 +352,14 @@ export default {
       docs: 'items',
       documentPagination: 'pagination',
       documentSorting: 'sorting'
+    }),
+    ...mapGetters('payments', {
+      payments: 'items',
+      paymentPagination: 'pagination',
+      paymentSorting: 'sorting'
+    }),
+    ...mapGetters('paymentStatuses', {
+      paymentStatuses: 'items'
     }),
     ...mapGetters('menuItems', {
       menuItems: 'items',
@@ -396,6 +436,8 @@ export default {
     }
   },
   methods: {
+    onPaymentManagePay (item) {},
+    onPaymentManageRetry (item) {},
     getSquareLocations (companyId) {
       this.$store.dispatch('companies/squareLocations/getItems', {
         params: {
@@ -434,6 +476,10 @@ export default {
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
       this.$router.push({ path: '/admin/fleet-members' })
+    },
+    onMenuItemManageView (item) {
+      this.menuItem = Object.assign({}, DEFAULT_MENU_ITEM, item)
+      this.menuItemDialog = true
     },
     onCancel () {
       this.$router.push({ path: '/admin/fleet-members' })
@@ -518,14 +564,19 @@ export default {
       this.deletable.menuItems.temp = menuItems
       this.deletable.menuItems.dialog = true
     },
-    createMenuItem (data, onSuccess) {
+    createOrUpdateMenuItem (data) {
       this.menuItemLoading = true
-      this.$store.dispatch('menuItems/createItem', {
-        data: { ...data, store_uuid: this.$route.params.id }
-      })
+      const action = data.uuid
+        ? this.$store.dispatch('menuItems/updateItem', {
+          data, params: { id: data.uuid }
+        })
+        : this.$store.dispatch('menuItems/createItem', {
+          data: { ...data, store_uuid: this.$route.params.id }
+        })
+      action
         .then(() => {
           this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          onSuccess()
+          this.menuItemDialog = false
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -533,6 +584,24 @@ export default {
         })
         .then(() => {
           this.menuItemLoading = false
+        })
+    },
+    onAddPayment (payment) {
+      this.newPaymentLoading = true
+      this.$store.dispatch('payments/createItem', {
+        data: { ...payment, store_uuid: this.$route.params.id }
+      })
+        .then(() => {
+          this.newPaymentDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Payment created.')
+          this.$store.dispatch('payments/getItems')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.newPaymentLoading = false
         })
     }
   },
@@ -573,6 +642,7 @@ export default {
       if (currentUser) {
         vm.getSquareLocations(currentUser.company_id)
       }
+      promises.push(vm.$store.dispatch('payments/getItems'))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))

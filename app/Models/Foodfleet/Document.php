@@ -29,8 +29,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string assigned_uuid
  * @property string assigned_type
  * @property string template_uuid
-    // TODO: we might not need this field. remove and use assigned_uuid, assigned_type.
- * Leave it as is for now
  * @property string event_store_uuid
  *
  *

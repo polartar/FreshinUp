@@ -9,7 +9,7 @@
     />
     <v-layout>
       <v-flex
-        v-if="includeServings ? 'xs8': 'xs10'"
+        v-if="!withoutServings ? 'xs8': 'xs10'"
         px-2
       >
         <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -24,7 +24,7 @@
         />
       </v-flex>
       <v-flex
-        v-if="includeServings"
+        v-if="!withoutServings"
         xs2
         px-2
       >
@@ -115,7 +115,7 @@ export default {
     // overriding value prop from mixin to set default value
     value: { type: Object, default: () => DEFAULT_MENU_ITEM },
     isLoading: { type: Boolean, default: false },
-    includeServings: { type: Boolean, default: true }
+    withoutServings: { type: Boolean, default: false }
   },
   data () {
     return {

@@ -49,7 +49,7 @@ export const WithData = () => ({
   `
 })
 
-export const WithServings = () => ({
+export const WithoutServings = () => ({
   components: { MenuItemForm },
   data () {
     return {
@@ -60,12 +60,13 @@ export const WithServings = () => ({
     <v-container class="white">
       <MenuItemForm
         :value="item"
+        without-servings
       />
     </v-container>
   `
 })
 
-export const WithoutServings = () => ({
+export const WithServings = () => ({
   components: { MenuItemForm },
   data () {
     return {
@@ -76,7 +77,6 @@ export const WithoutServings = () => ({
     <v-container class="white">
       <MenuItemForm
         :value="item"
-        :include-servings="false"
       />
     </v-container>
   `

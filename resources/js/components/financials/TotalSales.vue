@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 import reduce from 'lodash/reduce'
 
 export default {
