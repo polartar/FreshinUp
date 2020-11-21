@@ -37,6 +37,7 @@
 
 ## Nov 21, 2020
 - **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
+- **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
 
 <br/>
 
