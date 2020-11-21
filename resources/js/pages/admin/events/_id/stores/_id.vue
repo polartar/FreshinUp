@@ -32,7 +32,7 @@
         <f-btn-status
           label-prop="name"
           :value="status_id"
-          :items="storeStatusesOptions"
+          :items="storeStatuses"
         />
       </v-flex>
     </v-layout>
@@ -45,6 +45,7 @@
       <v-flex
         md8
         sm8
+        xs12
       >
         <v-card class="mx-2">
           <v-tabs
@@ -107,6 +108,7 @@
       <v-flex
         md4
         sm4
+        xs12
       >
         <v-layout
           row
@@ -167,12 +169,6 @@ export default {
         'Event Menu', 'Event Documents', 'Event Activity'
       ],
       activists: 'William D and John Smith',
-      storeStatusesOptions: [
-        { id: 1, name: 'Draft' },
-        { id: 2, name: 'Pending' },
-        { id: 3, name: 'Confirmed' },
-        { id: 4, name: 'Declined' }
-      ]
     }
   },
   computed: {
