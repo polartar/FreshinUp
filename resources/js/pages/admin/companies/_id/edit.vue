@@ -116,13 +116,13 @@
 import CreateUpdate from '~/components/companies/CreateUpdate.vue'
 import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
 import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
-import UserList from 'fresh-bus/components/datatable/user-list.vue'
+// import UserList from 'fresh-bus/components/datatable/user-list.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
-    CreateUpdate,
-    UserList
+    CreateUpdate
+    // UserList
   },
   mixins: [UsersPage],
   layout: BusCreateUpdate.layout,
