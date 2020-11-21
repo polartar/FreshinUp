@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 
 export default {

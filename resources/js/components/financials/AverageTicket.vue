@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 export default {
   mixins: [FormatMoney],
   props: {

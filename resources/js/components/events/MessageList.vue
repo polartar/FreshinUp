@@ -47,7 +47,7 @@
   </div>
 </template>
 <script>
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 export default {
   filters: {
     formatName (value) {
