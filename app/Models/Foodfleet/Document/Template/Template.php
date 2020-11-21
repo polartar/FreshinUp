@@ -77,7 +77,7 @@ class Template extends Model
             'title' => self::CLIENT_EVENT_AGREEMENT
         ], [
             'status_id' => DocumentTemplateStatus::PUBLISHED,
-            'description' => self::FLEET_MEMBER_EVENT_CONTRACT
+            'description' => self::CLIENT_EVENT_AGREEMENT
         ]);
     }
 
