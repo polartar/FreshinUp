@@ -278,7 +278,7 @@ class EventTest extends TestCase
 
     /**
      * @param $status_id
-     * @dataProvider getCustomerAgreementStatusProvider
+     * @dataProvider getFleetMemberEventStatusProvider
      */
     public function testObserverWhenEventUpdateWithStatusDifferentOfFleetMemberEventContract($status_id)
     {
@@ -303,7 +303,7 @@ class EventTest extends TestCase
 
     /**
      * @param $status_id
-     * @dataProvider getCustomerAgreementStatusProvider
+     * @dataProvider getFleetMemberEventStatusProvider
      */
     public function testObserverWhenEventUpdatedWithStatusFleetMemberEventContract($status_id)
     {
