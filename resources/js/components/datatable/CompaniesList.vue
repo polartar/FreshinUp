@@ -133,7 +133,7 @@
           </v-btn>
           <v-list>
             <v-list-tile
-              v-for="(item, index) in _companyActions(props.item)"
+              v-for="(item, index) in _companyActions()"
               :key="index"
               @click="manage(item.action, props.item)"
             >
@@ -168,7 +168,12 @@ export default {
 
   methods: {
     _companyActions (company) {
-      return this.companyActions(company).filter(item => item.action !== 'team-add')
+      const actions = [
+        { action: 'edit', text: 'View / Edit' },
+        { action: 'delete', text: 'Delete' }
+      ]
+
+      return actions
     }
   }
 }
