@@ -115,6 +115,20 @@ import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import get from 'lodash/get'
 
+export const HEADERS = [
+  { text: 'Status', sortable: true, value: 'status', align: 'center' },
+  { text: 'Name / Email', value: 'name,email', align: 'left' },
+  { text: 'Company', value: 'company_name', align: 'left' },
+  { text: 'User Type', sortable: true, value: 'user_type', align: 'center' },
+  { text: 'Role', sortable: true, value: 'level', align: 'center' },
+  { text: 'Managed by', sortable: true, value: 'manager', align: 'center' },
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
+]
+export const ITEM_ACTIONS = [
+  { action: 'view', text: 'View' },
+  { action: 'edit', text: 'Edit' },
+  { action: 'delete', text: 'Delete' }
+]
 export default {
   layout: 'admin',
   components: {
@@ -129,20 +143,8 @@ export default {
       deleteUserDialog: false,
       user: {},
       lastFilterParams: {},
-      headers: [
-        { text: 'Status', sortable: true, value: 'status', align: 'center' },
-        { text: 'Name / Email Address', value: 'name,email', align: 'left' },
-        { text: 'Company Name', value: 'company_name', align: 'left' },
-        { text: 'User Type', sortable: true, value: 'user_type', align: 'center' },
-        { text: 'Role', sortable: true, value: 'level', align: 'center' },
-        { text: 'Managed by', sortable: true, value: 'manager', align: 'center' },
-        { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
-      ],
-      itemActions: [
-        { action: 'view', text: 'View' },
-        { action: 'edit', text: 'Edit' },
-        { action: 'delete', text: 'Delete' }
-      ]
+      headers: HEADERS,
+      itemActions: ITEM_ACTIONS
     }
   },
   computed: {
@@ -255,16 +257,20 @@ export default {
     vm.$store.dispatch('users/setFilters', {
       ...vm.$route.query
     })
+    vm.$store.dispatch('users/setPagination', {
+      rowsPerPage: 30
+    })
     Promise.all([
-      vm.$store.dispatch('userLevels/getUserlevels'),
+      vm.$store.dispatch('userLevels/getItems'),
       vm.$store.dispatch('userTypes/getItems'),
-      vm.$store.dispatch('userStatuses/getUserstatuses')
+      vm.$store.dispatch('userStatuses/getItems')
     ])
-      .then(() => {
-        if (next) next()
-      })
+      .then()
       .catch((error) => console.error(error))
-      .then(() => vm.$store.dispatch('page/setLoading', false))
+      .then(() => {
+        next && next()
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>

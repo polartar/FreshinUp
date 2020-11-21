@@ -2164,7 +2164,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 </span>
               </th>
               <th
-                aria-label="Name / Email Address: Not sorted. Activate to sort ascending."
+                aria-label="Name / Email: Not sorted. Activate to sort ascending."
                 aria-sort="none"
                 class="column sortable text-xs-left"
                 role="columnheader"
@@ -2173,7 +2173,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
               >
                 <span>
                   
-        Name / Email Address
+        Name / Email
       
                 </span>
                 <i
@@ -2185,7 +2185,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 </i>
               </th>
               <th
-                aria-label="Company Name: Not sorted. Activate to sort ascending."
+                aria-label="Company: Not sorted. Activate to sort ascending."
                 aria-sort="none"
                 class="column sortable text-xs-left"
                 role="columnheader"
@@ -2194,7 +2194,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
               >
                 <span>
                   
-        Company Name
+        Company
       
                 </span>
                 <i
