@@ -42,9 +42,14 @@
 
 # Changes
 
+## Nov 2, 2020
+- **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
+
+<br/>
+
 ## Nov 20, 2020
 - **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
-- **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
+- **ADD** Event status change generate fleet member event contract [#545](https://github.com/FreshinUp/foodfleet/issues/545)
 
 <br/>
 
@@ -57,7 +62,7 @@
 <br/>
 
 ## Nov 11, 2020
-- Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
+- **ADD** Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
 <br/>
 

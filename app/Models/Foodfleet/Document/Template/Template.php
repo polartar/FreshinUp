@@ -35,6 +35,7 @@ class Template extends Model
     use GeneratesUuid;
 
     const CLIENT_EVENT_AGREEMENT = 'Client event agreement';
+    const FLEET_MEMBER_EVENT_CONTRACT = 'Fleet member event contract';
 
     public function status()
     {
@@ -75,7 +76,18 @@ class Template extends Model
         return self::firstOrCreate([
             'title' => self::CLIENT_EVENT_AGREEMENT
         ], [
-            'status_id' => DocumentTemplateStatus::PUBLISHED
+            'status_id' => DocumentTemplateStatus::PUBLISHED,
+            'description' => self::CLIENT_EVENT_AGREEMENT
+        ]);
+    }
+
+    public static function getFleetMemberEventContract()
+    {
+        return self::firstOrCreate([
+            'title' => self::FLEET_MEMBER_EVENT_CONTRACT
+        ], [
+            'status_id' => DocumentTemplateStatus::PUBLISHED,
+            'description' => self::FLEET_MEMBER_EVENT_CONTRACT
         ]);
     }
 }
