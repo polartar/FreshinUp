@@ -2,6 +2,7 @@
 
 namespace App\Models\Foodfleet\Document\Template;
 
+use App\Enums\DocumentTemplateStatus;
 use App\Models\Foodfleet\Document;
 use App\Models\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -32,6 +33,9 @@ class Template extends Model
     protected $table = 'document_templates';
     protected $guarded = ['id', 'uuid'];
     use GeneratesUuid;
+
+    const CLIENT_EVENT_AGREEMENT = 'Client event agreement';
+    const FLEET_MEMBER_EVENT_CONTRACT = 'Fleet member event contract';
 
     public function status()
     {
@@ -65,5 +69,25 @@ class Template extends Model
                 $template->updated_by_uuid = $user->uuid;
             }
         });
+    }
+
+    public static function getClientAgreement()
+    {
+        return self::firstOrCreate([
+            'title' => self::CLIENT_EVENT_AGREEMENT
+        ], [
+            'status_id' => DocumentTemplateStatus::PUBLISHED,
+            'description' => self::FLEET_MEMBER_EVENT_CONTRACT
+        ]);
+    }
+
+    public static function getFleetMemberEventContract()
+    {
+        return self::firstOrCreate([
+            'title' => self::FLEET_MEMBER_EVENT_CONTRACT
+        ], [
+            'status_id' => DocumentTemplateStatus::PUBLISHED,
+            'description' => self::FLEET_MEMBER_EVENT_CONTRACT
+        ]);
     }
 }

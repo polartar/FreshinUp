@@ -12,8 +12,19 @@ import { MglMap } from 'vue-mapbox'
 import { lazyLoad } from '../../utils'
 
 /**
-   * Map wrapper of MapBox
-   */
+ * Map wrapper of MapBox
+ * TODO: use API directly instead of lib from NPM
+ * const map = new mapboxgl.Map({
+ *   container: options.container,
+ *   style: options.style,
+ *   center: options.center,
+ *   zoom: 15
+ * })
+ *
+ * // add navigation
+ * const nav = new mapboxgl.NavigationControl()
+ * map.addControl(nav, 'top-left')
+ */
 export default {
   components: {
     MglMap

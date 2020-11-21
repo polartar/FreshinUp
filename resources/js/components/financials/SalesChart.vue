@@ -9,8 +9,8 @@
 
 <script>
 import Lines from '../charts/Lines'
-import FormatMoney from 'fresh-bus/components/mixins/FormatMoney'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
 export default {
   components: {

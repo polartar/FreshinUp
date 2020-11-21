@@ -1,10 +1,9 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
+import * as Stories from '../payments/PaymentForm.stories'
+import Component from '../payments/PaymentForm'
 
-import * as Stories from './MenuItemForm.stories'
-import Component from './MenuItemForm.vue'
-
-describe('components/menu-items/MenuItemForm', () => {
-  describe('Default', () => {
+describe('components/payments/PaymentForm', () => {
+  describe('Snapshots', () => {
     test('Default', async () => {
       const wrapper = mount(Stories.Default())
       await wrapper.vm.$nextTick()
@@ -21,18 +20,7 @@ describe('components/menu-items/MenuItemForm', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
   })
-  test('WithServings', async () => {
-    const wrapper = mount(Stories.WithServings())
-    await wrapper.vm.$nextTick()
-    expect(wrapper.element).toMatchSnapshot()
-  })
-  test('WithoutServings', async () => {
-    const wrapper = mount(Stories.WithoutServings())
-    await wrapper.vm.$nextTick()
-    expect(wrapper.element).toMatchSnapshot()
-  })
-
-  describe('Props & Computed', () => {
+  describe('Props & Data', () => {
     test('isLoading', async () => {
       const wrapper = shallowMount(Component)
       expect(wrapper.vm.isLoading).toBe(false)
@@ -43,21 +31,19 @@ describe('components/menu-items/MenuItemForm', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.isLoading).toBe(true)
     })
-    test('withoutServings', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.withoutServings).toBe(false)
-
-      wrapper.setProps({
-        withoutServings: true
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.withoutServings).toBe(true)
-    })
   })
 
   describe('methods', () => {
+    let localVue
+
+    beforeEach(() => {
+      localVue = createLocalVue()
+    })
+
     test('onCancel()', async () => {
-      const wrapper = shallowMount(Component)
+      const wrapper = shallowMount(Component, {
+        localVue: localVue
+      })
       wrapper.vm.onCancel()
       await wrapper.vm.$nextTick()
       expect(wrapper.emitted().cancel).toBeTruthy()
