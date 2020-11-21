@@ -15,6 +15,14 @@
 
         <v-divider />
 
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+        <!-- Commented out for now
         <user-filter
           v-if="!isLoading"
           :sortables="sortables"
@@ -44,6 +52,7 @@
           @manage-delete="deleteUser"
           @manage-multiple-delete="deleteMultiple"
         />
+        -->
       </v-card>
 
       <v-card
