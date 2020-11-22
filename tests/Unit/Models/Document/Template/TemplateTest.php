@@ -34,6 +34,52 @@ class TemplateTest extends TestCase
         $this->assertEquals($template->updated_by_uuid, $template->updatedBy->uuid);
     }
 
+    public function testGetClientAgreementWhenNotExist()
+    {
+        $title = Template::CLIENT_EVENT_AGREEMENT;
+        $this->assertEquals(0, Template::where('title', $title)->count());
+        $template = Template::getClientAgreement();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertNotNull($template->uuid);
+        $this->assertEquals($title, $template->title);
+    }
+
+    public function testGetClientAgreementWhenExist()
+    {
+        $title = Template::CLIENT_EVENT_AGREEMENT;
+        $oldTemplate = factory(Template::class)->create([
+            'title' => $title,
+        ]);
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $template = Template::getClientAgreement();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertEquals($title, $template->title);
+        $this->assertEquals($oldTemplate->uuid, $template->uuid);
+    }
+
+    public function testGetFleetMemberContractsWhenNotExist()
+    {
+        $title = Template::FLEET_MEMBER_EVENT_CONTRACT;
+        $this->assertEquals(0, Template::where('title', $title)->count());
+        $template = Template::getFleetMemberEventContract();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertNotNull($template->uuid);
+        $this->assertEquals($title, $template->title);
+    }
+
+    public function testGetFleetMemberContractsWhenExist()
+    {
+        $title = Template::FLEET_MEMBER_EVENT_CONTRACT;
+        $oldTemplate = factory(Template::class)->create([
+            'title' => $title,
+        ]);
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $template = Template::getFleetMemberEventContract();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertEquals($title, $template->title);
+        $this->assertEquals($oldTemplate->uuid, $template->uuid);
+    }
+
 
     public function testObserverWhenItemCreated()
     {
@@ -42,7 +88,6 @@ class TemplateTest extends TestCase
         $template = factory(Template::class)->create();
         $this->assertEquals($user->uuid, $template->updated_by_uuid);
     }
-
 
     public function testObserverWhenItemUpdated()
     {
