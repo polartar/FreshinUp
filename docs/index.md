@@ -35,9 +35,15 @@
 
 # Changes
 
+## Nov 22, 2020
+- **MOD** "View" option must be removed from the "Manage" dropdown button (company list) [#574](https://github.com/FreshinUp/foodfleet/issues/574)
+
+<br/>
+
 ## Nov 21, 2020
 - **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
 - **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
+- **FIX** Event activity (internal comm) - Customer [#546](https://github.com/FreshinUp/foodfleet/issues/546)
 
 <br/>
 
