@@ -42,6 +42,30 @@ describe('Event StoreServiceSummary component', () => {
     })
   })
 
+  describe('Props & Computed', () => {
+    describe('commissionValue', () => {
+      test('commissionValue return correctly format percentage', () => {
+        const wrapper = shallowMount(Component, {
+          localVue: localVue,
+          propsData: {
+            service: FIXTURE_STORE_SERVICES[0]
+          }
+        })
+        expect(wrapper.vm.commissionValue).toEqual('30 %')
+      })
+
+      test('commissionValue return correctly format dollar', () => {
+        const wrapper = shallowMount(Component, {
+          localVue: localVue,
+          propsData: {
+            service: FIXTURE_STORE_SERVICES[1]
+          }
+        })
+        expect(wrapper.vm.commissionValue).toEqual('$ 40')
+      })
+    })
+  })
+
   describe('Methods', () => {
     beforeEach(() => {
       const vue = createLocalVue({ validation: true })
@@ -69,26 +93,6 @@ describe('Event StoreServiceSummary component', () => {
       expect(wrapper.emitted().save).toBeTruthy()
       expect(wrapper.emitted().save).toHaveLength(1)
       expect(wrapper.emitted().save[0]).toEqual([FIXTURE_STORE_SERVICES[0]])
-    })
-
-    test('getCommissionValue return correctly format percentage', () => {
-      const wrapper = shallowMount(Component, {
-        localVue: localVue,
-        propsData: {
-          service: FIXTURE_STORE_SERVICES[0]
-        }
-      })
-      expect(wrapper.vm.getCommissionValue()).toEqual('30 %')
-    })
-
-    test('getCommissionValue return correctly format dollar', () => {
-      const wrapper = shallowMount(Component, {
-        localVue: localVue,
-        propsData: {
-          service: FIXTURE_STORE_SERVICES[1]
-        }
-      })
-      expect(wrapper.vm.getCommissionValue()).toEqual('$ 40')
     })
   })
 })

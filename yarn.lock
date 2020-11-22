@@ -1138,9 +1138,9 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.32.1":
-  version "1.32.1"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#a82830b2ee9ad9f8f490a13dd3094352ef2a5e4f"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.54.0":
+  version "1.54.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#8828ae86f442cbb32772eca2200f863836f7ddea"
   dependencies:
     "@mdi/font" "^4.4.95"
     awesome-phonenumber "^2.22.0"
@@ -1151,6 +1151,7 @@
     jspdf-autotable "^3.2.13"
     lodash "^4.17.5"
     moment "^2.24.0"
+    moment-timezone "^0.5.31"
     pluralize "^8.0.0"
     vee-validate "^2.2.2"
     vue "^2.6.10"
@@ -10775,6 +10776,18 @@ moment-range@^4.0.1:
   integrity sha512-n8sceWwSTjmz++nFHzeNEUsYtDqjgXgcOBzsHi+BoXQU2FW+eU92LUaK8gqOiSu5PG57Q9sYj1Fz4LRDj4FtKA==
   dependencies:
     es6-symbol "^3.1.0"
+
+moment-timezone@^0.5.31:
+  version "0.5.32"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.32.tgz#db7677cc3cc680fd30303ebd90b0da1ca0dfecc2"
+  integrity sha512-Z8QNyuQHQAmWucp8Knmgei8YNo28aLjJq6Ma+jy1ZSpSk5nyfRT8xgUbSQvD2+2UajISfenndwvFuH3NGS+nvA==
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0":
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 moment@^2.10.2, moment@^2.24.0:
   version "2.24.0"
