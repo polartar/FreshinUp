@@ -1,5 +1,6 @@
 <script>
-import CreateUpdate from 'fresh-bus/components/pages/admin/users/CreateUpdate.vue'
+import CreateUpdate from '~/components/users/CreateUpdate.vue'
+
 
 export default {
   extends: CreateUpdate,
@@ -7,21 +8,7 @@ export default {
   beforeRouteEnterOrUpdate: CreateUpdate.beforeRouteEnterOrUpdate,
   data () {
     return {
-      isNew: true,
-      enabledFields: [
-        'company',
-        'title',
-        'mobile_phone',
-        'office_phone',
-        'notes',
-        'level',
-        'type',
-        'street',
-        'street_2',
-        'city',
-        'country_id',
-        'post_code'
-      ]
+      isNew: true
     }
   }
 }
