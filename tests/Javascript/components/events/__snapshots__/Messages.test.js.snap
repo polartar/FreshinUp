@@ -34,45 +34,51 @@ exports[`Messages component test Snapshots messages 1`] = `
              
             <div>
               <div
-                class="layout row justify-start pa-3"
+                class="ff-message-list__item"
               >
-                <div>
+                <div
+                  class="flex pr-2 ff-message-list__item--user"
+                >
                   <div
-                    class="v-avatar primary"
+                    class="v-avatar accent"
                     style="height: 56px; width: 56px;"
                   >
                     <img
-                      alt="Avatar"
+                      alt="William D"
                       src="https://via.placeholder.com/100x100.png"
                     />
                   </div>
                 </div>
                  
                 <div
-                  class="ml-4 grey--text"
+                  class="flex"
                 >
                   <div
-                    class="subheading font-weight-bold"
+                    class="grey--text"
                   >
-                    
-          William D
-        
-                  </div>
-                   
-                  <div
-                    class="caption mb-4"
-                  >
-                    
-          Posted on 09/24/2019 | 06:33 am
-        
-                  </div>
-                   
-                  <div
-                    class="subheading"
-                  >
-                    
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
-        
+                    <div
+                      class="subheading font-weight-bold"
+                    >
+                      
+            William D
+          
+                    </div>
+                     
+                    <div
+                      class="caption mb-4"
+                    >
+                      
+            Posted on 09/24/2019 | 06:33 am
+          
+                    </div>
+                     
+                    <div
+                      class="subheading"
+                    >
+                      
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
+          
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,48 +89,54 @@ exports[`Messages component test Snapshots messages 1`] = `
             </div>
             <div>
               <div
-                class="layout row justify-start pa-3"
+                class="ff-message-list__item"
               >
-                <div>
+                <div
+                  class="flex pr-2 ff-message-list__item--user"
+                >
                   <div
-                    class="v-avatar primary"
+                    class="v-avatar accent"
                     style="height: 56px; width: 56px;"
                   >
-                    <span
-                      class="white--text"
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light accent-text--text"
+                      style="font-size: 56px;"
                     >
-                      
-            JS
-          
-                    </span>
+                      account_circle
+                    </i>
                   </div>
                 </div>
                  
                 <div
-                  class="ml-4 grey--text"
+                  class="flex"
                 >
                   <div
-                    class="subheading font-weight-bold"
+                    class="grey--text"
                   >
-                    
-          John Smith
-        
-                  </div>
-                   
-                  <div
-                    class="caption mb-4"
-                  >
-                    
-          Posted on 09/24/2019 | 06:33 am
-        
-                  </div>
-                   
-                  <div
-                    class="subheading"
-                  >
-                    
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
-        
+                    <div
+                      class="subheading font-weight-bold"
+                    >
+                      
+            John Smith
+          
+                    </div>
+                     
+                    <div
+                      class="caption mb-4"
+                    >
+                      
+            Posted on 09/24/2019 | 06:33 am
+          
+                    </div>
+                     
+                    <div
+                      class="subheading"
+                    >
+                      
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum leo, sed fringilla ipsum. Aenean vitae urna a nisl vulputate venenatis nec ac tortor. Nulla quis ante ac mi auctor placerat.
+          
+                    </div>
                   </div>
                 </div>
               </div>

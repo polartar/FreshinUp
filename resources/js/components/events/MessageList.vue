@@ -16,8 +16,7 @@
             :user="message.owner"
           />
         </v-flex>
-        <v-flex
-        >
+        <v-flex>
           <div
             class="grey--text"
           >
@@ -65,6 +64,7 @@ export default {
   .ff-message-list__item {
     display: flex;
     flex-wrap: wrap;
+    padding-top: .85rem;
   }
 
   .ff-message-list__item--user {
