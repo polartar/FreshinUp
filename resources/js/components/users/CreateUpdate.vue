@@ -444,7 +444,6 @@
 import CreateUpdate from 'fresh-bus/components/pages/admin/users/CreateUpdate.vue'
 
 export default {
-  components: { CreateUpdate },
   extends: CreateUpdate,
   layout: CreateUpdate.layout,
   beforeRouteEnterOrUpdate: CreateUpdate.beforeRouteEnterOrUpdate,
