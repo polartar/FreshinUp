@@ -198,6 +198,7 @@
           >
             <template #new-form>
               <menu-item-form
+                without-servings
                 :is-loading="menuItemLoading"
                 :value="menuItem"
                 @input="createOrUpdateMenuItem"

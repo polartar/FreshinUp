@@ -5,16 +5,11 @@
 
 ## Venue Page
 - Venues can be search by (this is unknown)
-- Venues can be filtered by **Statues**, **Venue/Owner**, **Locations**, and **Submitted On**
-- Clicking `Manage` and then `View/Edit` will route you to the edit page of that Venue
 
 <br/>
 
 ## Venue Edit Page
 ### Components
-- Basic Information
-- Locations
-- Venue Documents
 - Assigned Events
 
 <br/>
@@ -26,7 +21,6 @@
 - As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
 ### Components
-- Venue Details _(requires Venues to be completed)_
 - Event Fleet _(Requires Fleet Members to be completed)_
 - Customer
 
@@ -34,13 +28,30 @@
 
 ## Fleet Member Edit Page
 ### Functionality for these components
-- Fleet Member Documents
 - Payments
 - Assigned Events _(Requires Event Fleet component to be completed)_
 
 <br/>
 
 # Changes
+
+## Nov 22, 2020
+- **MOD** "View" option must be removed from the "Manage" dropdown button (company list) [#574](https://github.com/FreshinUp/foodfleet/issues/574)
+
+<br/>
+
+## Nov 21, 2020
+- **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
+- **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
+- **FIX** Event activity (internal comm) - Customer [#546](https://github.com/FreshinUp/foodfleet/issues/546)
+
+<br/>
+
+## Nov 20, 2020
+- **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
+- **ADD** Event status change generate fleet member event contract [#545](https://github.com/FreshinUp/foodfleet/issues/545)
+
+<br/>
 
 ## Nov 19, 2020
 - **ADD** Event status change - generate client agreement [#543](https://github.com/FreshinUp/foodfleet/issues/543)
@@ -51,7 +62,7 @@
 <br/>
 
 ## Nov 11, 2020
-- Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
+- **ADD** Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
 
 <br/>
 

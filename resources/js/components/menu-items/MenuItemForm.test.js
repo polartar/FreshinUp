@@ -21,6 +21,16 @@ describe('components/menu-items/MenuItemForm', () => {
       expect(wrapper.element).toMatchSnapshot()
     })
   })
+  test('WithServings', async () => {
+    const wrapper = mount(Stories.WithServings())
+    await wrapper.vm.$nextTick()
+    expect(wrapper.element).toMatchSnapshot()
+  })
+  test('WithoutServings', async () => {
+    const wrapper = mount(Stories.WithoutServings())
+    await wrapper.vm.$nextTick()
+    expect(wrapper.element).toMatchSnapshot()
+  })
 
   describe('Props & Computed', () => {
     test('isLoading', async () => {
@@ -32,6 +42,16 @@ describe('components/menu-items/MenuItemForm', () => {
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.isLoading).toBe(true)
+    })
+    test('withoutServings', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.withoutServings).toBe(false)
+
+      wrapper.setProps({
+        withoutServings: true
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.withoutServings).toBe(true)
     })
   })
 
