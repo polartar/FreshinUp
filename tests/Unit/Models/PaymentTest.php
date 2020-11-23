@@ -4,7 +4,6 @@ namespace Tests\Unit\Models;
 
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Payment;
-use App\Models\Foodfleet\Square\PaymentStatus;
 use App\Models\Foodfleet\Square\PaymentType;
 use App\Models\Foodfleet\Square\Transaction;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -55,7 +54,7 @@ class PaymentTest extends TestCase
         // Relations
         $this->assertEquals($payment->status_id, $payment->status->id);
         $this->assertEquals($payment->device_uuid, $payment->device->uuid);
-        $this->assertEquals($payment->payment_type_uuid, $payment->paymentType->uuid);
+        $this->assertEquals($payment->payment_type_uuid, $payment->type->uuid);
         $this->assertEquals($payment->transaction_uuid, $payment->transaction->uuid);
     }
 }
