@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { omitBy, isNull } from 'lodash'
+import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import BasicInformation, { DEFAULT_DOCUMENT } from '~/components/docs/BasicInformation.vue'
 import DocumentPreview from '~/components/docs/DocumentPreview.vue'
@@ -80,7 +80,6 @@ export default {
   mixins: [Validate],
   data () {
     return {
-      isNew: false,
       template: null,
       previewDialog: false,
       file: { name: null, src: null }
@@ -93,6 +92,9 @@ export default {
     ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapGetters('documentTemplates', { templates: 'items' }),
     ...mapGetters('events', { events: 'items' }),
+    isNew () {
+      return get(this, '$route.params.id', 'new') === 'new'
+    },
     pageTitle () {
       return this.isNew ? 'New Document' : 'Document Details'
     },
@@ -118,27 +120,27 @@ export default {
       ])
       return valids.every(valid => valid)
     },
-    onSaveClick (payload) {
-      this.validator().then(async valid => {
-        const data = omitBy(payload, (value, key) => {
-          const extra = ['created_at', 'updated_at', 'assigned', 'owner']
-          return extra.includes(key) || isNull(value)
-        })
-        if (valid) {
-          if (this.isNew) {
-            data.id = 'new'
-            data.status_id = this.status_id
-            await this.$store.dispatch('documents/createItem', { data })
-            this.backToList()
-          } else {
-            await this.$store.dispatch('documents/updateItem', {
-              data,
-              params: { id: data.uuid }
-            })
-            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-          }
-        }
+    async onSaveClick (payload) {
+      // const valid = await this.validator()
+      // if (!valid) {
+      //   this.$store.dispatch('generalErrorMessages/setErrors', 'Form is invalid.')
+      //   return false
+      // }
+      const data = omitBy(payload, (value, key) => {
+        const extra = ['created_at', 'updated_at', 'assigned', 'owner']
+        return extra.includes(key) || isNull(value)
       })
+      if (this.isNew) {
+        await this.$store.dispatch('documents/createItem', { data })
+        await this.$store.dispatch('generalMessage/setMessage', 'Created.')
+        this.backToList()
+      } else {
+        await this.$store.dispatch('documents/updateItem', {
+          data,
+          params: { id: data.uuid }
+        })
+        await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+      }
     },
     backToList () {
       this.$router.push({ path: '/admin/docs' })

@@ -24,10 +24,9 @@ class Documents extends Controller
      */
     public function index(Request $request)
     {
+        // TODO: test for page[size]=30&page[number]=1&sort=created_at&filter[title]=ca using mysql test database
         $documents = QueryBuilder::for(Document::class, $request)
-            ->allowedIncludes([
-                'assigned'
-            ])
+            ->with('owner', 'assigned')
             ->allowedSorts([
                 'title',
                 'type_id',
