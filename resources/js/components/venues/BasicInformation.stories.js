@@ -50,7 +50,7 @@ export const Populated = () => ({
     return {
       venue: FIXTURE_VENUE,
       addresses: FIXTURE_MAPBOX_SEARCH_RESULT.features,
-      accessToken: process.env.MAPBOX_ACCESS_TOKEN
+      accessToken: 'pk.eyJ1IjoiYmNkYnVkZHkiLCJhIjoiY2toM3luOTlrMDE2dDJzazBzN2NqaGZobCJ9.azAiM_hZuTI3Ew9Q1HpFtg'// process.env.MAPBOX_ACCESS_TOKEN
     }
   },
   template: `

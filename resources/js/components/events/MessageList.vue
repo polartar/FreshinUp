@@ -5,59 +5,45 @@
       v-for="message in messages"
       :key="message.uuid"
     >
-      <v-layout
-        flex
-        px-3
+      <div
+        class="ff-message-list__item"
       >
         <v-flex
-          py-3
+          class="pr-2 ff-message-list__item--user"
         >
-          <v-avatar
-            size="56"
-            color="primary"
+          <f-user-avatar
+            :size="56"
+            :user="message.owner"
+          />
+        </v-flex>
+        <v-flex>
+          <div
+            class="grey--text"
           >
-            <img
-              v-if="message.owner && message.owner.avatar"
-              :src="message.owner.avatar"
-              alt="Avatar"
-            >
-            <span
-              v-else
-              class="white--text"
-            >
-              {{ message.owner && message.owner.name | formatName }}
-            </span>
-          </v-avatar>
-        </v-flex>
-        <v-flex
-          ml-4
-          py-3
-          class="grey--text"
-        >
-          <div class="subheading font-weight-bold">
-            {{ message.owner && message.owner.name }}
-          </div>
-          <div class="caption mb-4">
-            Posted on {{ formatDate(message.created_at, 'MM/DD/YYYY | hh:mm a') }}
-          </div>
-          <div class="subheading">
-            {{ message.content }}
+            <div class="subheading font-weight-bold">
+              {{ get(message, 'owner.name') }}
+            </div>
+            <div class="caption mb-4">
+              Posted on {{ formatDate(message.created_at, 'MM/DD/YYYY | hh:mm a') }}
+            </div>
+            <div class="subheading">
+              {{ message.content }}
+            </div>
           </div>
         </v-flex>
-      </v-layout>
+      </div>
       <v-divider />
     </div>
   </div>
 </template>
 <script>
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import get from 'lodash/get'
+import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
+
 export default {
-  filters: {
-    formatName (value) {
-      if (!value) return ''
-      let arr = value.toString().split(' ')
-      return arr.map(item => item.charAt(0).toUpperCase()).join('')
-    }
+  components: {
+    FUserAvatar
   },
   mixins: [
     FormatDate
@@ -67,6 +53,22 @@ export default {
       type: [Array, Object],
       default: () => []
     }
+  },
+  methods: {
+    get
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .ff-message-list__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: .85rem;
+  }
+
+  .ff-message-list__item--user {
+    flex: 0 0 auto;
+  }
+
+</style>

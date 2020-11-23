@@ -65,10 +65,11 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
 
     Route::apiResource('payments', 'Foodfleet\Payments');
+    Route::get('payment/types', 'Foodfleet\PaymentTypes@index');
+    // Route::get('payment/statuses', 'Foodfleet\PaymentStatuses@index');
     Route::get('staffs', 'Foodfleet\Staffs@index');
     Route::get('transactions', 'Foodfleet\Transactions@index');
     Route::get('transactions/{uuid}', 'Foodfleet\Transactions@show');
-    Route::get('payment-types', 'Foodfleet\PaymentTypes@index');
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');

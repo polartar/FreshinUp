@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
-    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.32.1",
+    "@freshinup/core-ui": "git+ssh://git@github.com/freshinup/core-ui.git#1.54.0",
     "@mdi/font": "^4.4.95",
     "@tinymce/tinymce-vue": "^1.1.2",
     "awesome-phonenumber": "^2.12.0",

@@ -1662,22 +1662,7 @@ exports[`Admin Companies Page Mount snapshot 1`] = `
                           class="v-list__tile__title"
                         >
                           
-              View
-            
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      role="listitem"
-                    >
-                      <a
-                        class="v-list__tile v-list__tile--link theme--light"
-                      >
-                        <div
-                          class="v-list__tile__title"
-                        >
-                          
-              Edit
+              View / Edit
             
                         </div>
                       </a>
@@ -1960,22 +1945,7 @@ exports[`Admin Companies Page Mount snapshot 1`] = `
                           class="v-list__tile__title"
                         >
                           
-              View
-            
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      role="listitem"
-                    >
-                      <a
-                        class="v-list__tile v-list__tile--link theme--light"
-                      >
-                        <div
-                          class="v-list__tile__title"
-                        >
-                          
-              Edit
+              View / Edit
             
                         </div>
                       </a>

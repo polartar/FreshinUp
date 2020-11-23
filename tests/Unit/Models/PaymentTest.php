@@ -30,7 +30,7 @@ class PaymentTest extends TestCase
         $payment = factory(Payment::class)->create();
         $payment->transaction()->associate($transaction);
         $payment->device()->associate($device);
-        $payment->paymentType()->associate($paymentType);
+        $payment->type()->associate($paymentType);
         $payment->save();
 
         $this->assertDatabaseHas('payments', [

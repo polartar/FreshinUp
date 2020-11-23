@@ -1228,7 +1228,7 @@ exports[`components/payments/PaymentForm Snapshots Default 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div
@@ -2511,7 +2511,7 @@ exports[`components/payments/PaymentForm Snapshots Loading 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div
@@ -3786,7 +3786,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
       class="flex py-3 d-flex justify-space-between"
     >
       <button
-        class="v-btn v-btn--depressed theme--light grey"
+        class="white--text v-btn v-btn--depressed theme--light grey"
         type="button"
       >
         <div

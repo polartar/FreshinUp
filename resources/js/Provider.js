@@ -5,6 +5,7 @@ import financialModifiers from './store/modules/financialModifiers'
 import financialReports from './store/modules/financialReports'
 import payments from './store/modules/payments'
 import paymentTypes from './store/modules/paymentTypes'
+import paymentStatuses from './store/modules/paymentStatuses'
 import financialsummary from './store/modules/financialsummary'
 import squares from './store/modules/squares'
 import documents from './store/modules/documents'
@@ -47,6 +48,7 @@ export default () => {
       financialsummary,
       payments,
       paymentTypes,
+      paymentStatuses,
       squares,
       documents,
       documentStatuses,

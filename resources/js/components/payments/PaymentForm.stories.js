@@ -1,6 +1,6 @@
 import PaymentForm from './PaymentForm'
 import { action } from '@storybook/addon-actions'
-import { FIXTURE_PAYMENTS } from '../../../../tests/Javascript/__data__/Payments'
+import { FIXTURE_PAYMENTS } from '../../../../tests/Javascript/__data__/payments'
 import { storiesOf } from '@storybook/vue'
 
 export const Default = () => ({

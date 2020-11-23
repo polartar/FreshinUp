@@ -1,10 +1,6 @@
 <?php
 
-use App\Models\Foodfleet\Event;
-use App\Models\Foodfleet\Location;
-use App\Models\Foodfleet\Square\Customer;
 use App\Models\Foodfleet\Square\Device;
-use App\Models\Foodfleet\Square\Item;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentStatus;
 use App\Models\Foodfleet\Square\PaymentType;

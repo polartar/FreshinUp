@@ -9,19 +9,33 @@ use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
+ * Class Payment
  *
- * @property int $id
- * @property string $uuid
- * @property string $name
- * @property int $status_id
+ * @property int id
+ * @property string uuid
+ * @property int amount_money
+ * @property string description
+ * @property string name
+ * @property Carbon due_date
+ * @property int status_id
  *
- * @property PaymentStatus $status
+ * // Old fields
+ * @property int tip_money
+ * @property int processing_fee_money
+ * @property int square_id
+ * @property Carbon square_created_at
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property Carbon deleted_at
+ * @property string device_uuid
+ * @property string transaction_uuid
+ * @property string payment_type_uuid
  *
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property string $deleted_at
  *
+ * @property Device device
+ * @property Transaction transaction
+ * @property PaymentType type
+ * @property PaymentStatus status
  */
 class Payment extends Model
 {
@@ -37,7 +51,7 @@ class Payment extends Model
         return $this->belongsTo(Device::class, 'device_uuid', 'uuid');
     }
 
-    public function paymentType()
+    public function type()
     {
         return $this->belongsTo(PaymentType::class, 'payment_type_uuid', 'uuid');
     }
