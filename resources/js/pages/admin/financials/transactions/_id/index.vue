@@ -70,7 +70,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import ItemList from '~/components/financials/ItemList.vue'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
 const include = [
   'items.category',

@@ -18,7 +18,8 @@ module.exports = {
     }
   },
   setupFiles: JestConfig.setupFiles.concat([
-    '<rootDir>/tests/Javascript/mockDate.js'
+    '<rootDir>/tests/Javascript/mockDate.js',
+    '<rootDir>/tests/Javascript/jest.stub.js'
   ]),
   moduleNameMapper: {
     ...JestConfig.moduleNameMapper,

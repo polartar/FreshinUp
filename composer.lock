@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0def5e957457221ae5fac6ee93d27a34",
+    "content-hash": "ad16b899aed9e474cef5f5caa5e751ef",
     "packages": [
         {
             "name": "apimatic/jsonmapper",
@@ -1196,16 +1196,16 @@
         },
         {
             "name": "freshinup/fresh-bus-forms",
-            "version": "2.56.0",
+            "version": "2.56.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:FreshinUp/fresh-bus-forms.git",
-                "reference": "b1fd7ca89982682fbe55a920299a812ae69e1c78"
+                "reference": "ee55265c5098917596f2bd4704de8cade1928e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/b1fd7ca89982682fbe55a920299a812ae69e1c78",
-                "reference": "b1fd7ca89982682fbe55a920299a812ae69e1c78",
+                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/ee55265c5098917596f2bd4704de8cade1928e19",
+                "reference": "ee55265c5098917596f2bd4704de8cade1928e19",
                 "shasum": ""
             },
             "require": {
@@ -1311,17 +1311,17 @@
                     "homepage": "https://freshinup.com"
                 }
             ],
-            "description": ":Foundation for the FreshPlatform including the UI and API",
+            "description": "Foundation for the FreshPlatform including the UI and API",
             "homepage": "https://github.com/freshinup/freshbusforms",
             "keywords": [
                 "FreshBusForms",
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.56.0",
+                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.56.2",
                 "issues": "https://github.com/FreshinUp/fresh-bus-forms/issues"
             },
-            "time": "2020-06-30T18:00:13+00:00"
+            "time": "2020-11-22T11:00:42+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -1371,6 +1371,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
@@ -4426,6 +4427,7 @@
                 "parser",
                 "useragent"
             ],
+            "abandoned": "matomo/device-detector",
             "time": "2020-08-17T07:37:33+00:00"
         },
         {

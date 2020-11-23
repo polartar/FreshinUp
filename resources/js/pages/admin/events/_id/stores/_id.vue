@@ -32,7 +32,7 @@
         <f-btn-status
           label-prop="name"
           :value="status_id"
-          :items="storeStatusesOptions"
+          :items="storeStatuses"
         />
       </v-flex>
     </v-layout>
@@ -40,11 +40,12 @@
     <br>
     <v-layout
       row
+      wrap
       pa-2
     >
       <v-flex
-        md8
-        sm8
+        mt-2
+        sm12
       >
         <v-card class="mx-2">
           <v-tabs
@@ -105,8 +106,8 @@
         </v-card>
       </v-flex>
       <v-flex
-        md4
-        sm4
+        mt-2
+        sm12
       >
         <v-layout
           row
@@ -166,13 +167,7 @@ export default {
       tabItems: [
         'Event Menu', 'Event Documents', 'Event Activity'
       ],
-      activists: 'William D and John Smith',
-      storeStatusesOptions: [
-        { id: 1, name: 'Draft' },
-        { id: 2, name: 'Pending' },
-        { id: 3, name: 'Confirmed' },
-        { id: 4, name: 'Declined' }
-      ]
+      activists: 'William D and John Smith'
     }
   },
   computed: {
@@ -192,10 +187,13 @@ export default {
       return get(this.store, 'documents') || []
     },
     summary () {
+      const firstName = get(this.storeSummary, 'owner.first_name')
+      const lastName = get(this.storeSummary, 'owner.last_name')
+      const owner = firstName && lastName ? `${firstName} ${lastName}` : ''
       return {
         status: get(this.store, 'status'),
-        owner: get(this.storeSummary, 'owner.first_name') + get(this.storeSummary, 'owner.last_name'),
-        lisence_due: 'Dec, 30 2020',
+        owner,
+        lisence_due: 'Dec, 30 2020', // TODO replace with real value
         phone: get(this.storeSummary, 'owner.mobile_phone'),
         email: get(this.storeSummary, 'owner.email'),
         tags: get(this.storeSummary, 'tags')

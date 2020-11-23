@@ -18,6 +18,8 @@ $factory->define(Venue::class, function (Faker $faker) {
         'owner_uuid' => function () {
             return factory(User::class)->create()->uuid;
         },
-        'created_at' => $faker->dateTimeBetween('-30days', '+30days')
+        'created_at' => $faker->dateTimeBetween('-30days', '+30days'),
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
     ];
 });
