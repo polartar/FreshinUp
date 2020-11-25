@@ -39,7 +39,7 @@
           {{ props.item.title }}
         </div>
         <div class="gray--text">
-          {{ props.item.owner.first_name + props.item.owner.last_name }}
+          {{ get(props, 'item.owner.first_name') }} {{ get(props, 'item.owner.last_name') }}
         </div>
       </td>
       <td class="text-xs-left py-3">
@@ -60,6 +60,7 @@
 <script>
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import StatusSelect from '../docs/StatusSelect'
+import get from 'lodash/get'
 
 export const DEFAULT_HEADERS = [
   { text: 'STATUS', sortable: true, value: 'title', align: 'left' },
@@ -89,6 +90,7 @@ export default {
     }
   },
   methods: {
+    get,
     changeStatus (value, doc) {
       this.$emit('change-status', value, doc)
     },

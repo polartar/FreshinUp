@@ -260,6 +260,7 @@ export const DEFAULT_DOCUMENT = {
   uuid: null,
   title: null,
   type_id: null,
+  status_id: 1,
   description: null,
   notes: null,
   template: {},
