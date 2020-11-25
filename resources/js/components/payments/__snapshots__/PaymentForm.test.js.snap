@@ -2785,7 +2785,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                       data-v-17cb1efe=""
                     >
                       
-        2020
+        2013
       
                     </div>
                   </span>
@@ -2802,7 +2802,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                       data-v-17cb1efe=""
                     >
                       
-        Wed 8 Jul
+        Mon 8 Jul
       
                     </span>
                   </span>
@@ -2902,7 +2902,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                               style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
-            2020
+            2013
           
                             </span>
                           </button>
@@ -3004,14 +3004,6 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                           class="datepicker-days flex"
                           data-v-0da13aa6=""
                         >
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
-                          <div
-                            class="datepicker-day align-center justify-content-center"
-                            data-v-0da13aa6=""
-                          />
                           <div
                             class="datepicker-day align-center justify-content-center"
                             data-v-0da13aa6=""
@@ -3698,6 +3690,14 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
             
                             </span>
                           </button>
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
+                          <div
+                            class="datepicker-day flex align-center justify-content-center"
+                            data-v-0da13aa6=""
+                          />
                           <div
                             class="datepicker-day flex align-center justify-content-center"
                             data-v-0da13aa6=""
