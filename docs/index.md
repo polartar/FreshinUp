@@ -35,6 +35,11 @@
 
 # Changes
 
+## Nov 25, 2020
+- **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
+
+<br/>
+
 ## Nov 22, 2020
 - **MOD** "View" option must be removed from the "Manage" dropdown button (company list) [#574](https://github.com/FreshinUp/foodfleet/issues/574)
 - **MOD** Return to User list button is not created  [#592](https://github.com/FreshinUp/foodfleet/issues/592)
