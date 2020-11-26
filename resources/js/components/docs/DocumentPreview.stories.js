@@ -21,7 +21,7 @@ export const Populated = () => ({
   components: { DocumentPreview },
   data () {
     return {
-      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
+      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid, signed_at: null },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
       variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
@@ -49,7 +49,7 @@ export const Signed = () => ({
   components: { DocumentPreview },
   data () {
     return {
-      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid },
+      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid, signed_at: '2020-11-26T12:00:00' },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
       variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
@@ -67,7 +67,6 @@ export const Signed = () => ({
         :templates="templates"
         :events="events"
         :variables="variables"
-        signed
         @close="onClose"
       />
     </v-container>

@@ -34,10 +34,10 @@
 <br/>
 
 # Changes
-## Nov 10, 2020
 
 ## Nov 25, 2020
 - **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
+- **ADD** Sign documents [#542](https://github.com/FreshinUp/foodfleet/issues/542)
 
 <br/>
 

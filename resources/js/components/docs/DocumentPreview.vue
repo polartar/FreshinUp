@@ -85,7 +85,7 @@
               Download PDF
             </v-btn>
             <v-btn
-              v-if="!signed"
+              v-if="!isSigned"
               depressed
               download
               color="primary"
@@ -131,19 +131,24 @@
         <v-divider />
         <v-layout
           mt-3
+          row
+          wrap
+          style="justify-content: flex-end"
         >
-          <div style="position: relative;">
+          <v-flex xs12>
             <div
               v-html="content"
             />
+          </v-flex>
+          <v-flex shrink>
             <div
-              v-if="signed"
-              class="document-watermark"
+              v-if="isSigned"
+              class="ff-document-preview__watermark"
             >
               <div>Accepted </div>
               <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
             </div>
-          </div>
+          </v-flex>
         </v-layout>
         <v-layout>
           <v-layout>
@@ -158,8 +163,8 @@
                 Food Fleet Signature
               </div>
               <div
-                v-if="signed"
-                class="document-signature"
+                v-if="isSigned"
+                class="ff-document-preview__signature"
               >
                 {{ owner.name }}
               </div>
@@ -263,8 +268,7 @@ export default {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
-    variables: { type: Object, default: () => {} },
-    signed: { type: Boolean, default: false }
+    variables: { type: Object, default: () => {} }
   },
   data () {
     return {
@@ -296,6 +300,9 @@ export default {
     content () {
       const html = get(this.selectedTemplate, 'content', '')
       return Mustache.render(html, this.variables)
+    },
+    isSigned () {
+      return Boolean(this.signed_at)
     }
   },
   methods: {
@@ -307,14 +314,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.document-signature {
-  font-family: 'Kristi';
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+.ff-document-preview__signature {
+  font-family: 'Kristi', cursive;
   font-size: 30px;
 }
-.document-watermark {
-  position: absolute;
+.ff-document-preview__watermark {
   bottom: 5px;
-  right: 0px;
+  right: 0;
   color: #508c85 !important;
   padding: 10px;
   border-radius: 10px;

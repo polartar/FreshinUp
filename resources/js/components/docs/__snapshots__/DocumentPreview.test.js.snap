@@ -277,13 +277,18 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
         />
          
         <div
-          class="layout mt-3"
+          class="layout mt-3 row wrap"
+          style="justify-content: flex-end;"
         >
           <div
-            style="position: relative;"
+            class="flex xs12"
           >
             <div />
-             
+          </div>
+           
+          <div
+            class="flex shrink"
+          >
             <!---->
           </div>
         </div>
@@ -937,10 +942,11 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
         />
          
         <div
-          class="layout mt-3"
+          class="layout mt-3 row wrap"
+          style="justify-content: flex-end;"
         >
           <div
-            style="position: relative;"
+            class="flex xs12"
           >
             <div>
               
@@ -1135,7 +1141,11 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
               
 
             </div>
-             
+          </div>
+           
+          <div
+            class="flex shrink"
+          >
             <!---->
           </div>
         </div>
