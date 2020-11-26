@@ -15,6 +15,14 @@
 
         <v-divider />
 
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+        <!-- Commented out for now
         <user-filter
           v-if="!isLoading"
           :sortables="sortables"
@@ -44,6 +52,7 @@
           @manage-delete="deleteUser"
           @manage-multiple-delete="deleteMultiple"
         />
+        -->
       </v-card>
 
       <v-card
@@ -107,13 +116,13 @@
 import CreateUpdate from '~/components/companies/CreateUpdate.vue'
 import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
 import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
-import UserList from 'fresh-bus/components/datatable/user-list.vue'
+// import UserList from 'fresh-bus/components/datatable/user-list.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
-    CreateUpdate,
-    UserList
+    CreateUpdate
+    // UserList
   },
   mixins: [UsersPage],
   layout: BusCreateUpdate.layout,

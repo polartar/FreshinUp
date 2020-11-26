@@ -50,6 +50,11 @@ It is important that you're sign in to your square dashboard when try the author
 
 Login->fleet member detail page -> connect square -> callback -> redirect back
 
+
+#### Mapbox setup
+- Create a developer account on https://mapbox.com
+- retrieve access token from https://account.mapbox.com/access-tokens/
+
 ### Development Setup
 #### Requirements
 * Git (https://git-scm.com/downloads)

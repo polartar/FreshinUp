@@ -24,7 +24,9 @@ class VenueTest extends TestCase
             "address_line_1" => $venue->address_line_1,
             "address_line_2" => $venue->address_line_2,
             'status_id' => $venue->status_id,
-            'owner_uuid' => $venue->owner_uuid
+            'owner_uuid' => $venue->owner_uuid,
+            'latitude' => $venue->latitude,
+            'longitude' => $venue->longitude,
         ];
         $request = app()->make(Request::class);
         $result = $resource->toArray($request);

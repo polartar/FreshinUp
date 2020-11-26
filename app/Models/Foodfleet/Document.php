@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet;
 
+use App\Enums\DocumentAssigned;
 use App\Models\Foodfleet\Document\Template\Template;
 use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\User\User;
@@ -29,8 +30,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string assigned_uuid
  * @property string assigned_type
  * @property string template_uuid
-    // TODO: we might not need this field. remove and use assigned_uuid, assigned_type.
- * Leave it as is for now
  * @property string event_store_uuid
  *
  *
@@ -64,7 +63,7 @@ class Document extends Model implements HasMedia
     ];
     protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
-    protected $with = array('owner');
+    protected $with = ['owner'];
 
     /**
      * Get the route key for the model.
@@ -112,5 +111,29 @@ class Document extends Model implements HasMedia
     public function template()
     {
         return $this->belongsTo(Template::class, 'template_uuid', 'uuid');
+    }
+
+    public static function getAssignedModel($assigned_type)
+    {
+        if ($assigned_type === DocumentAssigned::USER) {
+            return \FreshinUp\FreshBusForms\Http\Resources\User\User::class;
+        }
+
+        if ($assigned_type === DocumentAssigned::STORE) {
+            return \App\Http\Resources\Foodfleet\Store\Store::class;
+        }
+
+        if ($assigned_type === DocumentAssigned::VENUE) {
+            return \App\Http\Resources\Foodfleet\Venue::class;
+        }
+
+        if ($assigned_type === DocumentAssigned::EVENT || $assigned_type === DocumentAssigned::EVENT_STORE) {
+            return \App\Http\Resources\Foodfleet\Event::class;
+        }
+
+        if ($assigned_type === DocumentAssigned::LOCATION) {
+            return \App\Http\Resources\Foodfleet\Location::class;
+        }
+        return false;
     }
 }

@@ -25,7 +25,6 @@ class Documents extends Controller
     public function index(Request $request)
     {
         $documents = QueryBuilder::for(Document::class, $request)
-            ->with('owner')
             ->with('assigned')
             ->allowedSorts([
                 'title',
@@ -80,7 +79,7 @@ class Documents extends Controller
             'expiration_at' => 'date'
         ]);
 
-        $inputs = $request->input();
+        $inputs = $request->only(Document::FILLABLES);
         $inputs['created_by_uuid'] = $user->uuid;
 
         $document = $action->execute($inputs);

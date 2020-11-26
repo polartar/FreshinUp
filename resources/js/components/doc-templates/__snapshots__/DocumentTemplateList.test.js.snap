@@ -1027,14 +1027,14 @@ exports[`components/doc-templates/DocumentTemplateList Snapshots Populated 1`] =
               class="text-xs-left"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn theme--dark error error-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Pending
+  Rejected
  
                   <i
                     aria-hidden="true"
@@ -1163,6 +1163,250 @@ exports[`components/doc-templates/DocumentTemplateList Snapshots Populated 1`] =
               >
                 
       Sep 30, 2019
+    
+              </div>
+            </td>
+            <td
+              class="justify-center text-xs-center"
+            >
+              <button
+                class="v-btn theme--dark primary primary-text--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Manage
+               
+                  <i
+                    aria-hidden="true"
+                    class="v-icon v-icon--right material-icons theme--dark"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </button>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light "
+                  style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                   
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Delete
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div
+                class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                primary=""
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <input
+                        aria-checked="false"
+                        primary=""
+                        role="checkbox"
+                        type="checkbox"
+                        value=""
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple"
+                      />
+                      <i
+                        aria-hidden="true"
+                        class="v-icon material-icons theme--light"
+                      >
+                        check_box_outline_blank
+                      </i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+             
+            <td
+              class="text-xs-left"
+            >
+              <button
+                class="v-btn theme--dark warning warning-text--text"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+  Pending
+ 
+                  <i
+                    aria-hidden="true"
+                    class="v-icon v-icon--right material-icons theme--dark"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </button>
+              <div
+                class="v-menu"
+              >
+                <div
+                  class="v-menu__content theme--light "
+                  style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                >
+                   
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Pending
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Approved
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Rejected
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Expiring
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          Expired
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              class="text-xs-left"
+            >
+              <div
+                class="subheading primary--text"
+              >
+                
+      
+    
+              </div>
+               
+              <div
+                class="grey--text"
+              >
+                
+      
+    
+              </div>
+            </td>
+            <td
+              class="text-xs-left"
+            >
+              <div
+                class="grey--text"
+              >
+                
+      
+    
+              </div>
+            </td>
+            <td
+              class="text-xs-left"
+            >
+              <div
+                class="grey--text"
+              >
+                
+      
     
               </div>
             </td>

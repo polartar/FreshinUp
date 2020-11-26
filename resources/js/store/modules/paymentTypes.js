@@ -5,8 +5,8 @@ export default (initialState = {}) => {
     'paymenttypes',
     { item: initialState.item, items: initialState.items },
     {
-      itemsPath: () => `/foodfleet/payment-types`,
-      itemPath: ({ id }) => `/foodfleet/payment-types/${id}`
+      itemsPath: () => `/foodfleet/payment/types`,
+      itemPath: ({ id }) => `/foodfleet/payment/types/${id}`
     }
   )
 
