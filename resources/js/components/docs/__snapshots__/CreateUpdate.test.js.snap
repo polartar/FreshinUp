@@ -5197,76 +5197,162 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               class="layout column px-4 py-3 justify-stretch"
             >
               <div
-                class="layout"
+                class="layout justify-space-between"
               >
                 <div
-                  class="flex xs12 m3 mr-2"
+                  class="flex xs8 layout mr-2"
                 >
                   <div
-                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-                    role="combobox"
+                    class="flex xs8 mr-1"
                   >
                     <div
-                      class="v-input__control"
+                      class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                      role="combobox"
                     >
                       <div
-                        class="v-input__slot primary"
+                        class="v-input__control"
                       >
                         <div
-                          class="v-select__slot"
+                          class="v-input__slot primary"
                         >
                           <div
-                            class="v-select__selections"
-                          >
-                            <input
-                              aria-readonly="false"
-                              autocomplete="on"
-                              readonly="readonly"
-                              type="text"
-                            />
-                          </div>
-                          <div
-                            class="v-input__append-inner"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-input__icon v-input__icon--append"
+                              class="v-select__selections"
                             >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon material-icons theme--light"
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
                               >
-                                arrow_drop_down
-                              </i>
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
+                              >
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="flex xs4 ml-1"
+                  >
+                    <div
+                      class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-disabled theme--light"
+                      role="combobox"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
                         <div
-                          class="v-menu"
+                          class="v-input__slot primary"
                         >
                           <div
-                            class="v-menu__content theme--light "
-                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            class="v-select__slot"
                           >
                             <div
-                              class="v-select-list v-card theme--light"
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-readonly="false"
+                                autocomplete="on"
+                                disabled="disabled"
+                                readonly="readonly"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
                             >
                               <div
-                                class="v-list theme--light"
-                                role="list"
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon v-icon--disabled material-icons theme--light"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light "
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
                               >
                                 <div
-                                  role="listitem"
+                                  class="v-list theme--light"
+                                  role="list"
                                 >
                                   <div
-                                    class="v-list__tile theme--light"
+                                    role="listitem"
                                   >
                                     <div
-                                      class="v-list__tile__content"
+                                      class="v-list__tile theme--light"
                                     >
                                       <div
-                                        class="v-list__tile__title"
+                                        class="v-list__tile__content"
                                       >
-                                        No data available
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -5281,96 +5367,10 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                 </div>
                  
                 <div
-                  class="flex sm3 ml-2"
-                >
-                  <div
-                    class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-disabled theme--light"
-                    role="combobox"
-                  >
-                    <div
-                      class="v-input__control"
-                    >
-                      <div
-                        class="v-input__slot primary"
-                      >
-                        <div
-                          class="v-select__slot"
-                        >
-                          <div
-                            class="v-select__selections"
-                          >
-                            <input
-                              aria-readonly="false"
-                              autocomplete="on"
-                              disabled="disabled"
-                              readonly="readonly"
-                              type="text"
-                            />
-                          </div>
-                          <div
-                            class="v-input__append-inner"
-                          >
-                            <div
-                              class="v-input__icon v-input__icon--append"
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon v-icon--disabled material-icons theme--light"
-                              >
-                                arrow_drop_down
-                              </i>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="v-menu"
-                        >
-                          <div
-                            class="v-menu__content theme--light "
-                            style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                          >
-                            <div
-                              class="v-select-list v-card theme--light"
-                            >
-                              <div
-                                class="v-list theme--light"
-                                role="list"
-                              >
-                                <div
-                                  role="listitem"
-                                >
-                                  <div
-                                    class="v-list__tile theme--light"
-                                  >
-                                    <div
-                                      class="v-list__tile__content"
-                                    >
-                                      <div
-                                        class="v-list__tile__title"
-                                      >
-                                        No data available
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-                <div
-                  class="flex sm3"
-                />
-                 
-                <div
-                  class="flex sm3 text-xs-right"
+                  class="flex xs4 ml-2 layout justify-end"
                 >
                   <button
-                    class="mx-0 v-btn v-btn--disabled theme--light primary--text"
+                    class="mx-1 v-btn v-btn--disabled theme--light primary--text"
                     disabled="disabled"
                     download=""
                     target="_blank"
@@ -5381,6 +5381,20 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     >
                       
             Download PDF
+          
+                    </div>
+                  </button>
+                   
+                  <button
+                    class="mx-1 v-btn v-btn--depressed theme--light primary"
+                    download=""
+                    type="button"
+                  >
+                    <div
+                      class="v-btn__content"
+                    >
+                      
+            Accept contract
           
                     </div>
                   </button>
@@ -5439,7 +5453,13 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               <div
                 class="layout mt-3"
               >
-                <div />
+                <div
+                  style="position: relative;"
+                >
+                  <div />
+                   
+                  <!---->
+                </div>
               </div>
                
               <div
@@ -5462,6 +5482,8 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               Food Fleet Signature
             
                     </div>
+                     
+                    <!---->
                   </div>
                    
                   <div
