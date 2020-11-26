@@ -36,7 +36,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Store[] stores
  * @property Company[] host
  * @property User manager
- * @property Location[] location
+ * @property Location location
  * @property Transaction[] transactions
  * @property EventTag[] eventTags
  * @property Document[] documents
