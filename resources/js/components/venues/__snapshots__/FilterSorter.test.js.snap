@@ -183,7 +183,7 @@ exports[`components/venues/FilterSorter Snapshots Default 1`] = `
                                     >
                                       <i
                                         aria-hidden="true"
-                                        class="v-icon fa fa-check-square theme--light"
+                                        class="v-icon far fa-square theme--light"
                                       />
                                     </div>
                                      
@@ -539,7 +539,7 @@ exports[`components/venues/FilterSorter Snapshots Expanded 1`] = `
                                     >
                                       <i
                                         aria-hidden="true"
-                                        class="v-icon fa fa-check-square theme--light"
+                                        class="v-icon far fa-square theme--light"
                                       />
                                     </div>
                                      
