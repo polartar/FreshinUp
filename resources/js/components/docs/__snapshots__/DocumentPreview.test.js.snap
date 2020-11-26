@@ -43,76 +43,162 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
         class="layout column px-4 py-3 justify-stretch"
       >
         <div
-          class="layout"
+          class="layout justify-space-between"
         >
           <div
-            class="flex xs12 m3 mr-2"
+            class="flex xs8 layout mr-2"
           >
             <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
-              role="combobox"
+              class="flex xs8 mr-1"
             >
               <div
-                class="v-input__control"
+                class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details theme--light"
+                role="combobox"
               >
                 <div
-                  class="v-input__slot primary"
+                  class="v-input__control"
                 >
                   <div
-                    class="v-select__slot"
+                    class="v-input__slot primary"
                   >
                     <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
+                      class="v-select__slot"
                     >
                       <div
-                        class="v-input__icon v-input__icon--append"
+                        class="v-select__selections"
                       >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
                         >
-                          arrow_drop_down
-                        </i>
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <div
+                                class="v-list__tile theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs4 ml-1"
+            >
+              <div
+                class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-disabled theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
                   <div
-                    class="v-menu"
+                    class="v-input__slot primary"
                   >
                     <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      class="v-select__slot"
                     >
                       <div
-                        class="v-select-list v-card theme--light"
+                        class="v-select__selections"
+                      >
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          disabled="disabled"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
                       >
                         <div
-                          class="v-list theme--light"
-                          role="list"
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--disabled material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
                         >
                           <div
-                            role="listitem"
+                            class="v-list theme--light"
+                            role="list"
                           >
                             <div
-                              class="v-list__tile theme--light"
+                              role="listitem"
                             >
                               <div
-                                class="v-list__tile__content"
+                                class="v-list__tile theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  No data available
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    No data available
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -127,95 +213,23 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
           </div>
            
           <div
-            class="flex sm3 ml-2"
-          >
-            <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-disabled theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot primary"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        disabled="disabled"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon v-icon--disabled material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            role="listitem"
-                          >
-                            <div
-                              class="v-list__tile theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  No data available
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex sm3"
-          />
-           
-          <div
-            class="flex sm3 text-xs-right"
+            class="flex xs4 ml-2 layout justify-end"
           >
             <!---->
+             
+            <button
+              class="mx-1 v-btn v-btn--depressed theme--light primary"
+              download=""
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Accept contract
+          
+              </div>
+            </button>
           </div>
         </div>
          
@@ -265,7 +279,13 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
         <div
           class="layout mt-3"
         >
-          <div />
+          <div
+            style="position: relative;"
+          >
+            <div />
+             
+            <!---->
+          </div>
         </div>
          
         <div
@@ -288,6 +308,8 @@ exports[`components/docs/DocumentPreview Snapshots Default 1`] = `
               Food Fleet Signature
             
               </div>
+               
+              <!---->
             </div>
              
             <div
@@ -428,153 +450,398 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
         class="layout column px-4 py-3 justify-stretch"
       >
         <div
-          class="layout"
+          class="layout justify-space-between"
         >
           <div
-            class="flex xs12 m3 mr-2"
+            class="flex xs8 layout mr-2"
           >
             <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-              role="combobox"
+              class="flex xs8 mr-1"
             >
               <div
-                class="v-input__control"
+                class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
+                role="combobox"
               >
                 <div
-                  class="v-input__slot primary"
+                  class="v-input__control"
                 >
                   <div
-                    class="v-select__slot"
+                    class="v-input__slot primary"
                   >
                     <div
-                      class="v-select__selections"
+                      class="v-select__slot"
                     >
                       <div
-                        class="v-select__selection v-select__selection--comma"
+                        class="v-select__selections"
                       >
-                        accusantium
+                        <div
+                          class="v-select__selection v-select__selection--comma"
+                        >
+                          accusantium
+                        </div>
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          readonly="readonly"
+                          type="text"
+                        />
                       </div>
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        readonly="readonly"
-                        type="text"
-                      />
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
                     </div>
                     <div
-                      class="v-input__append-inner"
+                      class="v-menu"
                     >
                       <div
-                        class="v-input__icon v-input__icon--append"
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                       >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon material-icons theme--light"
+                        <div
+                          class="v-select-list v-card theme--light"
                         >
-                          arrow_drop_down
-                        </i>
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              class="success--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light success--text"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    accusantium
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    saepe
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    ipsum
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    quibusdam
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    lorem
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs4 ml-1"
+            >
+              <div
+                class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
+                role="combobox"
+              >
+                <div
+                  class="v-input__control"
+                >
                   <div
-                    class="v-menu"
+                    class="v-input__slot primary"
                   >
                     <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      class="v-select__slot"
                     >
                       <div
-                        class="v-select-list v-card theme--light"
+                        class="v-select__selections"
                       >
                         <div
-                          class="v-list theme--light"
-                          role="list"
+                          class="v-select__selection v-select__selection--comma v-select__selection--disabled"
+                        >
+                          catering contract
+                        </div>
+                        <input
+                          aria-readonly="false"
+                          autocomplete="on"
+                          disabled="disabled"
+                          readonly="readonly"
+                          type="text"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--disabled material-icons theme--light"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-menu"
+                    >
+                      <div
+                        class="v-menu__content theme--light "
+                        style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                      >
+                        <div
+                          class="v-select-list v-card theme--light"
                         >
                           <div
-                            class="success--text"
-                            role="listitem"
+                            class="v-list theme--light"
+                            role="list"
                           >
-                            <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light success--text"
+                            <div
+                              class="success--text"
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--active theme--light success--text"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  accusantium
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    catering contract
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  saepe
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    quia
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  ipsum
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    totam
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  quibusdam
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    iste
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
                             >
-                              <div
-                                class="v-list__tile__content"
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div
-                                  class="v-list__tile__title"
+                                  class="v-list__tile__content"
                                 >
-                                  lorem
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    rerum
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    qui
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    sunt
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    et
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    qui
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__content"
+                                >
+                                  <div
+                                    class="v-list__tile__title"
+                                  >
+                                    adipisci
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -586,255 +853,10 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
           </div>
            
           <div
-            class="flex sm3 ml-2"
-          >
-            <div
-              class="v-input white--text v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-select v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
-              role="combobox"
-            >
-              <div
-                class="v-input__control"
-              >
-                <div
-                  class="v-input__slot primary"
-                >
-                  <div
-                    class="v-select__slot"
-                  >
-                    <div
-                      class="v-select__selections"
-                    >
-                      <div
-                        class="v-select__selection v-select__selection--comma v-select__selection--disabled"
-                      >
-                        catering contract
-                      </div>
-                      <input
-                        aria-readonly="false"
-                        autocomplete="on"
-                        disabled="disabled"
-                        readonly="readonly"
-                        type="text"
-                      />
-                    </div>
-                    <div
-                      class="v-input__append-inner"
-                    >
-                      <div
-                        class="v-input__icon v-input__icon--append"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon v-icon--disabled material-icons theme--light"
-                        >
-                          arrow_drop_down
-                        </i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="v-menu"
-                  >
-                    <div
-                      class="v-menu__content theme--light "
-                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                    >
-                      <div
-                        class="v-select-list v-card theme--light"
-                      >
-                        <div
-                          class="v-list theme--light"
-                          role="list"
-                        >
-                          <div
-                            class="success--text"
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light success--text"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  catering contract
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  quia
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  totam
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  iste
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  rerum
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  qui
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  sunt
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  et
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  qui
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div
-                            role="listitem"
-                          >
-                            <a
-                              class="v-list__tile v-list__tile--link theme--light"
-                            >
-                              <div
-                                class="v-list__tile__content"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  adipisci
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="flex sm3"
-          />
-           
-          <div
-            class="flex sm3 text-xs-right"
+            class="flex xs4 ml-2 layout justify-end"
           >
             <button
-              class="mx-0 v-btn v-btn--disabled theme--light primary--text"
+              class="mx-1 v-btn v-btn--disabled theme--light primary--text"
               disabled="disabled"
               download=""
               target="_blank"
@@ -845,6 +867,20 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
               >
                 
             Download PDF
+          
+              </div>
+            </button>
+             
+            <button
+              class="mx-1 v-btn v-btn--depressed theme--light primary"
+              download=""
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+            Accept contract
           
               </div>
             </button>
@@ -903,28 +939,31 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
         <div
           class="layout mt-3"
         >
-          <div>
-            
-
-            <h3>
-              Catering Contract
-            </h3>
-            
-      
-            <p>
+          <div
+            style="position: relative;"
+          >
+            <div>
               
+
+              <h3>
+                Catering Contract
+              </h3>
+              
+      
+              <p>
+                
         This Catering Contract is entered into between 2 Brothers Kitchen (“Caterer”) and John Smith (“Client”) (together, “Parties”) and sets forth the agreement between the Parties relating to catering services to be provided by the Caterer for Client for the event identified in this Contract.
       
-            </p>
-            
-      
-            <h3>
-              1. Event Details
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                1. Event Details
+              </h3>
+              
+      
+              <p>
+                
       Client is hiring Caterer to provide food and beverages, and related services, for the following event (“Event”):
       Date: June 12, 2019
       Event start time (for guests): 10:00 AM
@@ -932,28 +971,28 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
       Location: LA Stadium (“Venue”)
       Estimated number of guests: 300
       
-            </p>
-            
-      
-            <h3>
-              2. Menu to Be Served
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                2. Menu to Be Served
+              </h3>
+              
+      
+              <p>
+                
       The Parties have agreed to the menu attached to this Catering Agreement as Exhibit A. Caterer reserves the right to make small changes to the menu if key ingredients are unable to be sourced due to reasons beyond the control of the Parties. The following limitations will apply to this reservation of right - 3. No alcoholic beverages will be served without a separate agreement relating thereto.
       
-            </p>
-            
-      
-            <h3>
-              3. Coordination with Venue
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                3. Coordination with Venue
+              </h3>
+              
+      
+              <p>
+                
       Caterer will need to have access to the Venue no later than 93 hours in advance of the Start Time for the Event, and 17 hours after the End Time for clean up. Client will make all necessary arrangements, at Client’s expense, to get this access arranged.
       In exchange for the services of Caterer as specified in this Catering Contract, Client will pay to
       Caterer $ 2 per person attending the event, but in no event less than the
@@ -962,42 +1001,42 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
       Cost”).
       Payment will be made to the Caterer as follows: $ 100 deposit due on the date of signing, and the balance of approximately $ 100 will be due one week in advance of the event. The exact amount due will be determined, and provided from Client to Caterer in writing, one week in advance of the Event along with a Final Guest Count.
       
-            </p>
-            
-      
-            <h3>
-              5. Responsibilities for Related Costs
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                5. Responsibilities for Related Costs
+              </h3>
+              
+      
+              <p>
+                
       Client is solely responsible for all costs and/or deposits relating to use of the Venue, and for obtaining any necessary permissions, authorizations, or other requirement of Caterer providing services at the Venue.
       
-            </p>
-            
-      
-            <h3>
-              6. Insurance and Indemnification
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                6. Insurance and Indemnification
+              </h3>
+              
+      
+              <p>
+                
       Caterer has, or will obtain, general liability insurance relating to Caterer’s services at the Event.
       However, Client will indemnify and hold harmless Caterer for any damage, theft, or loss of Caterer’s
       property occurring at the event, causes by any of Client’s guests.
       
-            </p>
-            
-      
-            <h3>
-              7. Cancellation
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                7. Cancellation
+              </h3>
+              
+      
+              <p>
+                
       If the Client needs to cancel the event, Client must provide written notice to Caterer along with any
       required cancellation fee described in this Catering Contract, to effect cancellation.
       Client understands that upon entering into this Contract, Caterer is committing time and resources to
@@ -1014,87 +1053,90 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
       The Client’s deposit will be credited against the cancellation fees owed. Any balance will be payable
       upon the notice of cancellation.
       
-            </p>
-            
-      
-            <h3>
-              8. Legal Compliance
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                8. Legal Compliance
+              </h3>
+              
+      
+              <p>
+                
       Caterer will work in compliance with all applicable local health department rules and regulations
       relating to food preparation and food service.
       
-            </p>
-            
-      
-            <h3>
-              9. Assignment
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                9. Assignment
+              </h3>
+              
+      
+              <p>
+                
       This Contract cannot be assigned by either Party without the other’s written consent, with the
       exception set forth in paragraph 10, below.
       
-            </p>
-            
-      
-            <h3>
-              10. Limitation of Remedies
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                10. Limitation of Remedies
+              </h3>
+              
+      
+              <p>
+                
       If Caterer cannot fulfill its obligations under this Contract for reasons outside of its control, Caterer
       may locate and retain a replacement catering company at no additional cost to Client, or refund
       Client’s money in full. Caterer will not be responsible for any additional damages or compensation
       under these circumstances.
       
-            </p>
-            
-      
-            <h3>
-              11. Resolution of Disputes
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                11. Resolution of Disputes
+              </h3>
+              
+      
+              <p>
+                
       The Parties agree to not post any negative information about the other arising out of this Contract or
       Event on any online forum or website without providing advance written notice of the intended
       content thereof, and providing the other party with an opportunity to resolve any issues between the
       parties amicably.
-            </p>
-            
-      
-            <h3>
-              12. Jurisdiction and Venue
-            </h3>
-            
-      
-            <p>
+              </p>
               
+      
+              <h3>
+                12. Jurisdiction and Venue
+              </h3>
+              
+      
+              <p>
+                
       This Contract will be interpreted according to the laws of the State of [State] and any legal action
       must be filed in the County of [County] in the State of [State] .
-            </p>
-            
+              </p>
+              
       
-            <h3>
-              13. Entire Agreement
-            </h3>
-            
+              <h3>
+                13. Entire Agreement
+              </h3>
+              
       
-            <p>
-              This document, along with its exhibits and attachments, constitutes the entire agreement between
+              <p>
+                This document, along with its exhibits and attachments, constitutes the entire agreement between
       the Parties.
-            </p>
-            
+              </p>
+              
 
+            </div>
+             
+            <!---->
           </div>
         </div>
          
@@ -1118,6 +1160,8 @@ exports[`components/docs/DocumentPreview Snapshots Populated 1`] = `
               Food Fleet Signature
             
               </div>
+               
+              <!---->
             </div>
              
             <div
