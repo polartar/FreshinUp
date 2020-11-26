@@ -15,12 +15,12 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
       <div
         class="container filter-sorter-container fluid"
       >
-         
+
         <div
           class="layout filter-sorter-main-layout row wrap"
         >
           <!---->
-           
+
           <div
             class="flex grow"
           >
@@ -56,7 +56,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -157,7 +157,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -168,19 +168,19 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Less Filters
-          
+
               </div>
             </button>
           </div>
-           
+
         </div>
-         
+
         <hr
           class="v-divider theme--light"
         />
-         
+
         <div
           class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
@@ -205,15 +205,15 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Statuses
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
                     flat=""
@@ -287,7 +287,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                                         class="v-icon fa fa-check-square theme--light"
                                       />
                                     </div>
-                                     
+
                                     <div
                                       class="v-list__tile__content"
                                     >
@@ -299,7 +299,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                                     </div>
                                   </a>
                                 </div>
-                                 
+
                                 <hr
                                   class="mt-2 v-divider theme--light"
                                 />
@@ -328,7 +328,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -341,15 +341,15 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Owner
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
@@ -428,7 +428,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -441,15 +441,15 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               State
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     class="v-input pt-0 v-text-field v-text-field--single-line v-text-field--placeholder theme--light"
                   >
@@ -483,7 +483,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -496,15 +496,15 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Tags
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-menu mt-0 pt-0"
@@ -559,7 +559,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         autofocus="autofocus"
                         background-color="white"
@@ -634,7 +634,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
                                         </span>
                                       </div>
                                     </div>
-                                      
+
                                     <div
                                       role="listitem"
                                       style="display: none;"
@@ -679,7 +679,7 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex text-no-wrap"
           >
@@ -690,9 +690,9 @@ exports[`components/stores/FilterSorter Snapshots Default 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Clear Filters
-          
+
               </div>
             </button>
           </div>
@@ -718,12 +718,12 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
       <div
         class="container filter-sorter-container fluid"
       >
-         
+
         <div
           class="layout filter-sorter-main-layout row wrap"
         >
           <!---->
-           
+
           <div
             class="flex grow"
           >
@@ -759,7 +759,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -910,7 +910,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -921,19 +921,19 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Less Filters
-          
+
               </div>
             </button>
           </div>
-           
+
         </div>
-         
+
         <hr
           class="v-divider theme--light"
         />
-         
+
         <div
           class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
@@ -958,12 +958,12 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Statuses
-            
+
                       </strong>
                     </div>
-                     
+
                     <button
                       class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
                       color="white"
@@ -979,7 +979,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       </div>
                     </button>
                   </div>
-                   
+
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
                     flat=""
@@ -1060,7 +1060,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                                         class="v-icon fa fa-minus-square theme--light primary--text"
                                       />
                                     </div>
-                                     
+
                                     <div
                                       class="v-list__tile__content"
                                     >
@@ -1072,7 +1072,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                                     </div>
                                   </a>
                                 </div>
-                                 
+
                                 <hr
                                   class="mt-2 v-divider theme--light"
                                 />
@@ -1440,7 +1440,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -1453,12 +1453,12 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Owner
-            
+
                       </strong>
                     </div>
-                     
+
                     <button
                       class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
                       color="white"
@@ -1474,7 +1474,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       </div>
                     </button>
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
@@ -1553,7 +1553,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -1566,12 +1566,12 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               State
-            
+
                       </strong>
                     </div>
-                     
+
                     <button
                       class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
                       color="white"
@@ -1587,7 +1587,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       </div>
                     </button>
                   </div>
-                   
+
                   <div
                     class="v-input pt-0 v-text-field v-text-field--single-line v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light"
                   >
@@ -1621,7 +1621,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -1634,12 +1634,12 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Tags
-            
+
                       </strong>
                     </div>
-                     
+
                     <button
                       class="mr-0 v-btn v-btn--flat v-btn--icon theme--light white--text"
                       color="white"
@@ -1655,7 +1655,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       </div>
                     </button>
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-menu mt-0 pt-0"
@@ -1710,7 +1710,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         autofocus="autofocus"
                         background-color="white"
@@ -1785,7 +1785,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
                                         </span>
                                       </div>
                                     </div>
-                                      
+
                                     <div
                                       role="listitem"
                                       style="display: none;"
@@ -1830,7 +1830,7 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex text-no-wrap"
           >
@@ -1841,9 +1841,9 @@ exports[`components/stores/FilterSorter Snapshots Populated 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Clear Filters
-          
+
               </div>
             </button>
           </div>
@@ -1869,12 +1869,12 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
       <div
         class="container filter-sorter-container fluid"
       >
-         
+
         <div
           class="layout filter-sorter-main-layout row wrap"
         >
           <!---->
-           
+
           <div
             class="flex grow"
           >
@@ -1910,7 +1910,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -2061,7 +2061,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex shrink"
           >
@@ -2072,19 +2072,19 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Less Filters
-          
+
               </div>
             </button>
           </div>
-           
+
         </div>
-         
+
         <hr
           class="v-divider theme--light"
         />
-         
+
         <div
           class="layout filter-sorter-expanded-layout align-center justify-center row wrap fill-height"
         >
@@ -2109,15 +2109,15 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Statuses
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-input--hide-details theme--light"
                     flat=""
@@ -2191,7 +2191,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                                         class="v-icon far fa-square theme--light"
                                       />
                                     </div>
-                                     
+
                                     <div
                                       class="v-list__tile__content"
                                     >
@@ -2203,7 +2203,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                                     </div>
                                   </a>
                                 </div>
-                                 
+
                                 <hr
                                   class="mt-2 v-divider theme--light"
                                 />
@@ -2569,7 +2569,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -2582,15 +2582,15 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Owner
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-input pt-0 v-text-field v-text-field--placeholder v-select v-autocomplete v-input--hide-details theme--light"
@@ -2669,7 +2669,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -2682,15 +2682,15 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               State
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     class="v-input pt-0 v-text-field v-text-field--single-line v-text-field--placeholder theme--light"
                   >
@@ -2724,7 +2724,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex ml-2"
                 >
@@ -2737,15 +2737,15 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                       <strong
                         class="no-wrap"
                       >
-                        
+
               Tags
-            
+
                       </strong>
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     background-color="white"
                     class="v-menu mt-0 pt-0"
@@ -2800,7 +2800,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                       class="v-menu__content theme--light "
                       style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                     >
-                       
+
                       <div
                         autofocus="autofocus"
                         background-color="white"
@@ -2875,7 +2875,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
                                         </span>
                                       </div>
                                     </div>
-                                      
+
                                     <div
                                       role="listitem"
                                       style="display: none;"
@@ -2920,7 +2920,7 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex text-no-wrap"
           >
@@ -2931,9 +2931,9 @@ exports[`components/stores/FilterSorter Snapshots Set 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Clear Filters
-          
+
               </div>
             </button>
           </div>
