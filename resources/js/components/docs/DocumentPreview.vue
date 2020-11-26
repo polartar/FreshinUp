@@ -87,9 +87,9 @@
             <v-btn
               v-if="!isSigned"
               depressed
-              download
               color="primary"
               class="mx-1"
+              @click="acceptContract"
             >
               Accept contract
             </v-btn>
@@ -129,27 +129,11 @@
           </v-flex>
         </v-layout>
         <v-divider />
-        <v-layout
-          mt-3
-          row
-          wrap
-          style="justify-content: flex-end"
-        >
-          <v-flex xs12>
-            <div
-              v-html="content"
-            />
-          </v-flex>
-          <v-flex shrink>
-            <div
-              v-if="isSigned"
-              class="ff-document-preview__watermark"
-            >
-              <div>Accepted </div>
-              <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
-            </div>
-          </v-flex>
-        </v-layout>
+        <v-flex xs12>
+          <div
+            v-html="content"
+          />
+        </v-flex>
         <v-layout>
           <v-layout>
             <v-flex
@@ -166,7 +150,7 @@
                 v-if="isSigned"
                 class="ff-document-preview__signature"
               >
-                {{ owner.name }}
+                {{ assigneeName }}
               </div>
             </v-flex>
             <v-flex
@@ -179,6 +163,7 @@
               >
                 Printed Name
               </div>
+              <span class="text-uppercase">{{ assigneeName }}</span>
             </v-flex>
             <v-flex
               sm4
@@ -189,6 +174,13 @@
                 class="body-1 mt-2"
               >
                 Date
+              </div>
+              <div
+                v-if="isSigned"
+                class="ff-document-preview__watermark"
+              >
+                <div>Accepted </div>
+                <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
               </div>
             </v-flex>
           </v-layout>
@@ -216,6 +208,7 @@
               >
                 Printed Name
               </div>
+              <span class="text-uppercase">{{ ownerName }}</span>
             </v-flex>
             <v-flex
               sm4
@@ -283,6 +276,9 @@ export default {
       return get(this, 'file.src')
     },
     ownerName () {
+      return get(this, 'owner.name')
+    },
+    assigneeName () {
       return get(this, 'assigned.name')
     },
     downloadable () {
@@ -309,6 +305,9 @@ export default {
     get,
     onClose () {
       this.$emit('close')
+    },
+    acceptContract () {
+      this.$emit('accept-contract')
     }
   }
 }

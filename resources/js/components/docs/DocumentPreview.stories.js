@@ -30,6 +30,9 @@ export const Populated = () => ({
   methods: {
     onClose () {
       action('onClose')()
+    },
+    acceptContract () {
+      action('acceptContract')()
     }
   },
   template: `
@@ -39,6 +42,7 @@ export const Populated = () => ({
         :templates="templates"
         :events="events"
         :variables="variables"
+        @accept-contract="acceptContract"
         @close="onClose"
       />
     </v-container>
