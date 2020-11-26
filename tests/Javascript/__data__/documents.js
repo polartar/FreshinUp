@@ -159,7 +159,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-09 20:03:19',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:51.000000Z'
+  updated_at: '2019-09-30T03:51:51.000000Z',
+  signed_at: '2019-09-30T03:51:51.000000Z'
 },
 {
   uuid: 'acb7cd62-98fd-46b3-969f-f8c5f069d778',

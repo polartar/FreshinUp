@@ -132,9 +132,18 @@
         <v-layout
           mt-3
         >
-          <div
-            v-html="content"
-          />
+          <div style="position: relative;">
+            <div
+              v-html="content"
+            />
+            <div
+              v-if="signed"
+              class="document-watermark"
+            >
+              <div>Accepted </div>
+              <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
+            </div>
+          </div>
         </v-layout>
         <v-layout>
           <v-layout>
@@ -147,6 +156,12 @@
                 class="body-1 mt-2"
               >
                 Food Fleet Signature
+              </div>
+              <div
+                v-if="signed"
+                class="document-signature"
+              >
+                {{ owner.name }}
               </div>
             </v-flex>
             <v-flex
@@ -234,6 +249,7 @@ export const DEFAULT_DOCUMENT = {
   expiration_at: '',
   created_at: '',
   updated_at: '',
+  signed_at: '',
   template_uuid: '',
   template: {},
   event_store_uuid: '',
@@ -290,3 +306,22 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.document-signature {
+  font-family: 'Kristi';
+  font-size: 30px;
+}
+.document-watermark {
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  color: #508c85 !important;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: solid;
+  font-size: 18px;
+}
+</style>
