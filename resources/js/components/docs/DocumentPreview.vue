@@ -322,12 +322,14 @@ export default {
   bottom: 5px;
   right: 0;
   color: #508c85 !important;
-  padding: 10px;
+  padding: .85rem;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
   border: solid;
-  font-size: 18px;
+  font-size: 1rem;
+  max-width: max-content;
+  margin: 0 auto;
 }
 </style>
