@@ -35,6 +35,11 @@
 
 # Changes
 
+## Dec 3, 2020
+- **MOD** User type dropdown menu is not displaying the proper user types [#607](https://github.com/FreshinUp/foodfleet/issues/607)
+
+<br/>
+
 ## Nov 26, 2020
 - **ADD** Sign documents [#542](https://github.com/FreshinUp/foodfleet/issues/542)
 
@@ -55,6 +60,7 @@
 - **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
 - **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
 - **FIX** Event activity (internal comm) - Customer [#546](https://github.com/FreshinUp/foodfleet/issues/546)
+
 
 <br/>
 
