@@ -26,10 +26,13 @@ class Venues extends Controller
             'name',
             'address_line_1',
             'address_line_2',
+            'latitude',
+            'longitude',
             'status_id',
             'owner_uuid',
         ]);
         $venue = Venue::create($payload);
+        $venue->load('owner');
         return new VenueResource($venue);
     }
 
@@ -67,10 +70,13 @@ class Venues extends Controller
             'name',
             'address_line_1',
             'address_line_2',
+            'latitude',
+            'longitude',
             'status_id',
             'owner_uuid',
         ]);
         $venue->update($payload);
+        $venue->load('owner');
         return new VenueResource($venue);
     }
 

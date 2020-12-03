@@ -17,11 +17,12 @@ class StoreSummary extends JsonResource
      */
     public function toArray($request)
     {
+        $UserResource = config('fresh-bus-forms.resources.user');
         return [
             "uuid" => $this->uuid,
             "name" => $this->name,
             "status" => $this->status,
-            "owner" => $this->owner,
+            "owner" => new $UserResource($this->whenLoaded('owner')),
             "tags" => Tag::collection($this->whenLoaded('tags'))
         ];
     }

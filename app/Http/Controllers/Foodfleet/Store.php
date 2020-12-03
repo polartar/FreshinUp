@@ -13,7 +13,6 @@ use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
 use App\Sorts\Stores\OwnerNameSort;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -130,7 +129,10 @@ class Store extends Controller
     public function summary(Request $request, $uuid)
     {
         $store = QueryBuilder::for(StoreModel::class, $request)
-            ->with('tags', 'owner')
+            ->with('tags')
+            ->allowedIncludes([
+                'owner'
+            ])
             ->where('uuid', $uuid)
             ->firstOrFail();
 

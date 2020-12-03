@@ -254,12 +254,13 @@ import get from 'lodash/get'
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import AssignedSearch from '~/components/docs/AssignedSearch.vue'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
 export const DEFAULT_DOCUMENT = {
   uuid: null,
   title: null,
   type_id: null,
+  status_id: 1,
   description: null,
   notes: null,
   template: {},

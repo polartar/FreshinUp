@@ -21,7 +21,6 @@ class Document extends JsonResource
         $assignedType = DocumentAssignedEnum::getKeyUseDescription($this->assigned_type, $this->event_store_uuid);
         $assignedResource = DocumentAssignedEnum::getResource($assignedType);
         $attachment = $this->getFirstMedia('attachment');
-        // dd($attachment);
         $file = [
             'name' => optional($attachment)->file_name,
             'src' => optional($attachment)->getPath()
@@ -38,7 +37,7 @@ class Document extends JsonResource
             'file' => $file,
             'notes' => $this->notes,
             'owner' => new UserResource($this->whenLoaded('owner')),
-            'assigned' => new $assignedResource($this->whenLoaded('assigned')),
+            'assigned_uuid' => $this->assigned_uuid,
             'assigned_type' => $assignedType,
             'event_store_uuid' => $this->event_store_uuid,
             'expiration_at' => $this->expiration_at,
@@ -47,7 +46,12 @@ class Document extends JsonResource
             'created_by_uuid' => $this->created_by_uuid,
             'template_uuid' => $this->template_uuid,
             'template' => new Document\Template\Template($this->whenLoaded('template')),
+            'signed_at' => $this->signed_at
         ];
+
+        if (!empty($assignedResource)) {
+            $data['assigned'] = new $assignedResource($this->whenLoaded('assigned'));
+        }
 
         return $data;
     }

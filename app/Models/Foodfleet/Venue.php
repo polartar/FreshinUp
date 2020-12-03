@@ -19,6 +19,8 @@ use App\User;
  * @property string $address
  * @property string $address_line_1
  * @property string $address_line_2
+ * @property string $longitude
+ * @property string $latitude
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property string $deleted_at
