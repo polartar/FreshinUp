@@ -8,7 +8,7 @@ final class UserType extends Enum
 {
     const SUPPLIER = 1;
     const CUSTOMER = 2;
-    const FOOD_FLEET_MEMBER = 3;
+    const FOOD_FLEET_STAFF = 3;
 
     public static function toKeyedSelectArray()
     {

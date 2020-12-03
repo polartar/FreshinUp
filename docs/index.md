@@ -42,6 +42,11 @@
 
 # Changes
 
+## Dec 3, 2020
+- **MOD** User type dropdown menu is not displaying the proper user types [#607](https://github.com/FreshinUp/foodfleet/issues/607)
+
+<br/>
+
 ## Nov 20, 2020
 - **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
 
