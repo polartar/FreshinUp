@@ -72,7 +72,7 @@
             @click="edit"
           >
             <v-card-text class="pa-0">
-              {{ getCommissionValue() }}
+              {{ commissionValue }}
             </v-card-text>
             <v-icon>edit</v-icon>
           </v-btn>
@@ -186,18 +186,32 @@ import Validate from 'fresh-bus/components/mixins/Validate'
 export default {
   mixins: [Validate],
   props: {
-    service: {
-      type: Object,
-      required: true
-    }
+    service: { type: Object, required: true }
   },
-  data: function () {
-    const commissionTypes = [ { id: 1, label: 'Percentage(%)', unit: '%' }, { id: 2, label: 'Flat ($)', unit: '$' } ]
+  data () {
     return {
       formValue: { ...this.service },
       inputValue: { ...this.service },
-      commissionTypes: commissionTypes,
+      commissionTypes: [
+        { id: 1, label: 'Percentage(%)', unit: '%' },
+        { id: 2, label: 'Flat ($)', unit: '$' }
+      ],
       showEdit: false
+    }
+  },
+  computed: {
+    commissionValue () {
+      const commissionRate = this.formValue.commission_rate
+      const commissionType = this.commissionTypes[this.formValue.commission_type - 1] || { unit: '' }
+      const unit = commissionType.unit
+
+      if (unit === '$') {
+        return `${unit} ${commissionRate}`
+      } else if (unit === '%') {
+        return `${commissionRate} ${unit}`
+      } else {
+        return ''
+      }
     }
   },
   watch: {
@@ -211,18 +225,6 @@ export default {
   methods: {
     viewContract () {
       this.$emit('viewContract')
-    },
-    getCommissionValue () {
-      const commissionRate = this.formValue.commission_rate
-      const unit = this.commissionTypes[this.formValue.commission_type - 1].unit
-
-      if (unit === '$') {
-        return `${unit} ${commissionRate}`
-      } else if (unit === '%') {
-        return `${commissionRate} ${unit}`
-      } else {
-        return ''
-      }
     },
     edit () {
       this.inputValue = { ...this.formValue }

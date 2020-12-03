@@ -168,7 +168,12 @@ export default {
 
   methods: {
     _companyActions (company) {
-      return this.companyActions(company).filter(item => item.action !== 'team-add')
+      // @deprecated
+      // return this.companyActions(company).filter(item => item.action !== 'team-add')
+      return [
+        { action: 'edit', text: 'View / Edit' },
+        { action: 'delete', text: 'Delete' }
+      ]
     }
   }
 }

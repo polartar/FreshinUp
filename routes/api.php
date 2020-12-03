@@ -18,6 +18,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
     Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
+    Route::post('documents/{uuid}/accept', 'Foodfleet\Documents@accept');
     Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')

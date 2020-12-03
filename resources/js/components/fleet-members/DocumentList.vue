@@ -290,6 +290,28 @@ import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import StatusSelect from '~/components/docs/StatusSelect'
 import FilterSorter from '~/components/docs/FilterSorter.vue'
 
+export const HEADERS = [
+  {
+    text: 'Status',
+    sortable: true,
+    value: 'status_id',
+    align: 'left',
+    width: '200'
+  },
+  { text: 'Document', value: 'title,owner', align: 'left', width: '300' },
+  { text: 'Submitted on', value: 'created_at', align: 'center' },
+  {
+    text: 'Expiration date',
+    sortable: true,
+    value: 'expiration_at',
+    align: 'center'
+  },
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
+]
+export const ITEM_ACTIONS = [
+  { action: 'view', text: 'View / Edit' },
+  { action: 'delete', text: 'Delete' }
+]
 export default {
   components: { FBtnMenu, StatusSelect, FilterSorter },
   mixins: [Pagination, FormatDate],
@@ -314,28 +336,8 @@ export default {
   data () {
     return {
       selected: [],
-      headers: [
-        {
-          text: 'Status',
-          sortable: true,
-          value: 'status_id',
-          align: 'left',
-          width: '200'
-        },
-        { text: 'Document', value: 'title,owner', align: 'left', width: '300' },
-        { text: 'Submitted on', value: 'created_at', align: 'center' },
-        {
-          text: 'Expiration date',
-          sortable: true,
-          value: 'expiration_at',
-          align: 'center'
-        },
-        { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
-      ],
-      itemActions: [
-        { action: 'view', text: 'View / Edit' },
-        { action: 'delete', text: 'Delete' }
-      ],
+      headers: HEADERS,
+      itemActions: ITEM_ACTIONS,
       actionBtnTitle: 'Manage',
       newDocumentDialog: false
     }
