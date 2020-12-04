@@ -25,49 +25,53 @@
         py-3
         justify-stretch
       >
-        <v-layout>
+        <v-layout justify-space-between>
           <v-flex
-            xs12
-            m3
+            xs8
+            layout
             mr-2
           >
-            <v-select
-              v-model="event_store_uuid"
-              item-text="name"
-              item-value="uuid"
-              background-color="primary"
-              color="success"
-              solo
-              flat
-              hide-details
-              :items="events"
-              class="white--text"
-            />
+            <v-flex
+              xs8
+              mr-1
+            >
+              <v-select
+                v-model="event_store_uuid"
+                item-text="name"
+                item-value="uuid"
+                background-color="primary"
+                color="success"
+                solo
+                flat
+                hide-details
+                :items="events"
+                class="white--text"
+              />
+            </v-flex>
+            <v-flex
+              xs4
+              ml-1
+            >
+              <v-select
+                v-model="template_uuid"
+                disabled
+                background-color="primary"
+                item-text="title"
+                item-value="uuid"
+                color="success"
+                solo
+                flat
+                hide-details
+                class="white--text"
+                :items="templates"
+              />
+            </v-flex>
           </v-flex>
           <v-flex
-            sm3
+            xs4
             ml-2
-          >
-            <v-select
-              v-model="template_uuid"
-              disabled
-              background-color="primary"
-              item-text="title"
-              item-value="uuid"
-              color="success"
-              solo
-              flat
-              hide-details
-              class="white--text"
-              :items="templates"
-            />
-          </v-flex>
-          <v-flex
-            sm3
-          />
-          <v-flex
-            sm3
-            text-xs-right
+            layout
+            justify-end
           >
             <v-btn
               v-if="downloadable"
@@ -76,142 +80,149 @@
               download
               target="_blank"
               color="primary"
-              class="mx-0"
+              class="mx-1"
             >
               Download PDF
             </v-btn>
+            <!-- isSigned -->
             <v-btn
               :disabled="isScrollVisible && !isAcceptable"
+              v-if="!isSigned"
+              depressed
               color="primary"
-              class="mx-0"
+              class="mx-1"
               @click="acceptContract"
             >
-              Accept Contract
+              Accept contract
             </v-btn>
           </v-flex>
         </v-layout>
         <v-layout
-          ref="scrollbar"
-          column
-          sm3
-          class="mt-2"
-          style="overflow: auto; max-height: 60vh"
-          @scroll.passive="handleScroll"
+          align-center
+          px-3
+          my-3
         >
-          <v-layout
-            align-center
-            px-3
-            my-3
+          <v-flex
+            sm3
           >
-            <v-flex
-              sm3
-            >
-              <v-img
-                src="/images/logo.png"
-                alt="main logo"
-                :height="50"
-                :width="160"
-              />
-            </v-flex>
-            <v-divider
-              vertical
+            <v-img
+              src="/images/logo.png"
+              alt="main logo"
+              :height="50"
+              :width="160"
             />
-            <v-flex
-              sm6
-              pl-2
-              class="title primary--text font-weight-bold"
-            >
-              {{ templateTitle }}
-            </v-flex>
-            <v-flex
-              v-if="expiration_at"
-              sm3
-              class="body-2 text-xs-right"
-            >
-              Expiration Date: {{ formatDate(expiration_at, 'MM / DD / YYYY') }}
-            </v-flex>
-          </v-layout>
-          <v-divider />
-          <v-layout
-            mt-3
+          </v-flex>
+          <v-divider
+            vertical
+          />
+          <v-flex
+            sm6
+            pl-2
+            class="title primary--text font-weight-bold"
           >
-            <div
-              v-html="content"
-            />
-          </v-layout>
+            {{ templateTitle }}
+          </v-flex>
+          <v-flex
+            v-if="expiration_at"
+            sm3
+            class="body-2 text-xs-right"
+          >
+            Expiration Date: {{ formatDate(expiration_at, 'MM / DD / YYYY') }}
+          </v-flex>
+        </v-layout>
+        <v-divider />
+        <v-flex xs12>
+          <div
+            v-html="content"
+          />
+        </v-flex>
+        <v-layout>
           <v-layout>
-            <v-layout>
-              <v-flex
-                sm4
-                class="mr-3 py-3"
+            <v-flex
+              sm4
+              class="mr-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Food Fleet Signature
-                </div>
-              </v-flex>
-              <v-flex
-                sm4
-                class="mx-3 py-3"
+                Food Fleet Signature
+              </div>
+              <div
+                v-if="isSigned"
+                class="ff-document-preview__signature"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Printed Name
-                </div>
-              </v-flex>
-              <v-flex
-                sm4
-                class="ml-3 py-3"
+                {{ assigneeName }}
+              </div>
+            </v-flex>
+            <v-flex
+              sm4
+              class="mx-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Date
-                </div>
-              </v-flex>
-            </v-layout>
+                Printed Name
+              </div>
+              <span class="text-uppercase">{{ assigneeName }}</span>
+            </v-flex>
+            <v-flex
+              sm4
+              class="ml-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
+              >
+                Date
+              </div>
+              <div
+                v-if="isSigned"
+                class="ff-document-preview__watermark"
+              >
+                <div>Accepted </div>
+                <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
+              </div>
+            </v-flex>
           </v-layout>
+        </v-layout>
+        <v-layout>
           <v-layout>
-            <v-layout>
-              <v-flex
-                sm4
-                class="mr-3 py-3"
+            <v-flex
+              sm4
+              class="mr-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Restaurant Owner Name: {{ ownerName }}
-                </div>
-              </v-flex>
-              <v-flex
-                sm4
-                class="mx-3 py-3"
+                Restaurant Owner Name: {{ ownerName }}
+              </div>
+            </v-flex>
+            <v-flex
+              sm4
+              class="mx-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Printed Name
-                </div>
-              </v-flex>
-              <v-flex
-                sm4
-                class="ml-3 py-3"
+                Printed Name
+              </div>
+              <span class="text-uppercase">{{ ownerName }}</span>
+            </v-flex>
+            <v-flex
+              sm4
+              class="ml-3 py-3"
+            >
+              <v-divider />
+              <div
+                class="body-1 mt-2"
               >
-                <v-divider />
-                <div
-                  class="body-1 mt-2"
-                >
-                  Date
-                </div>
-              </v-flex>
-            </v-layout>
+                Date
+              </div>
+            </v-flex>
           </v-layout>
         </v-layout>
       </v-layout>
@@ -238,6 +249,7 @@ export const DEFAULT_DOCUMENT = {
   expiration_at: '',
   created_at: '',
   updated_at: '',
+  signed_at: '',
   template_uuid: '',
   template: {},
   event_store_uuid: '',
@@ -268,6 +280,9 @@ export default {
       return get(this, 'file.src')
     },
     ownerName () {
+      return get(this, 'owner.name')
+    },
+    assigneeName () {
       return get(this, 'assigned.name')
     },
     downloadable () {
@@ -285,6 +300,9 @@ export default {
     content () {
       const html = get(this.selectedTemplate, 'content', '')
       return Mustache.render(html, this.variables)
+    },
+    isSigned () {
+      return Boolean(this.signed_at)
     },
     isScrollVisible () {
       if (this.previewDialog && this.$refs.scrollbar) {
@@ -308,7 +326,7 @@ export default {
       this.$emit('close')
     },
     acceptContract () {
-      this.$emit('contract-accepted')
+      this.$emit('accept-contract')
     },
     handleScroll (event) {
       const { scrollTop, clientHeight, scrollHeight } = event.target
@@ -317,3 +335,24 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+.ff-document-preview__signature {
+  font-family: 'Kristi', cursive;
+  font-size: 30px;
+}
+.ff-document-preview__watermark {
+  bottom: 5px;
+  right: 0;
+  color: #508c85 !important;
+  padding: .85rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: solid;
+  font-size: 1rem;
+  max-width: max-content;
+  margin: 0 auto;
+}
+</style>

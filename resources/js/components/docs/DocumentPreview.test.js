@@ -101,13 +101,28 @@ describe('components/docs/DocumentPreview', () => {
 
       wrapper.setProps({
         value: {
-          assigned: {
+          owner: {
             name: 'Assigned name'
           }
         }
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.ownerName).toEqual('Assigned name')
+    })
+
+    test('assigneeName', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.assigneeName).toBeUndefined()
+
+      wrapper.setProps({
+        value: {
+          assigned: {
+            name: 'Assigned name'
+          }
+        }
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.assigneeName).toEqual('Assigned name')
     })
 
     test('downloadable', async () => {
@@ -193,6 +208,13 @@ describe('components/docs/DocumentPreview', () => {
       wrapper.vm.onClose()
       await wrapper.vm.$nextTick()
       const emitted = wrapper.emitted().close
+      expect(emitted).toBeTruthy()
+    })
+    test('acceptContract()', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.acceptContract()
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted()['accept-contract']
       expect(emitted).toBeTruthy()
     })
 

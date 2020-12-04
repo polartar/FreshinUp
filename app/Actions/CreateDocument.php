@@ -15,6 +15,14 @@ class CreateDocument implements Action
         $collection = collect($data);
         $createData = $collection->except(['file'])->all();
 
+        $assigned_type = Document::getAssignedModel($createData['assigned_type']);
+        if ($assigned_type) {
+            $createData['assigned_type'] = $assigned_type;
+        } else {
+            unset($createData['assigned_type']);
+            unset($createData['assigned_uuid']);
+        }
+        // TODO: validate assigned
         $document = Document::create($createData);
 
         if ($collection->get('file')) {

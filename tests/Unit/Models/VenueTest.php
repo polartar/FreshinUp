@@ -28,7 +28,9 @@ class VenueTest extends TestCase
             'uuid' => $venue->uuid,
             'name' => $venue->name,
             'address_line_1' => $venue->address_line_1,
-            'address_line_2' => $venue->address_line_2
+            'address_line_2' => $venue->address_line_2,
+            'latitude' => $venue->latitude,
+            'longitude' => $venue->longitude,
         ]);
 
         // external table relations

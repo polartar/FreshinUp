@@ -57,7 +57,8 @@ class DocumentTest extends TestCase
                 'description' => $document->description,
                 'notes' => $document->notes,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
-                'updated_at' => str_replace('"', '', json_encode($document->updated_at))
+                'updated_at' => str_replace('"', '', json_encode($document->updated_at)),
+                'signed_at' => $document->signed_at
             ], $data[$idx]);
         }
     }
@@ -119,7 +120,8 @@ class DocumentTest extends TestCase
                 'description' => $document->description,
                 'notes' => $document->notes,
                 'created_at' => str_replace('"', '', json_encode($document->created_at)),
-                'updated_at' => str_replace('"', '', json_encode($document->updated_at))
+                'updated_at' => str_replace('"', '', json_encode($document->updated_at)),
+                'signed_at' => null
             ], $data[$idx]);
         }
     }
@@ -191,12 +193,51 @@ class DocumentTest extends TestCase
                 'data' => [
                     [
                         'event_store_uuid' => $eventStoreUUID,
-                        'assigned' => [
-                            'uuid' => $event->uuid
-                        ]
+                        'assigned_uuid' =>  $event->uuid
                     ]
                 ]
             ]);
+    }
+
+    public function testAcceptContractWhenNotExist()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $this
+            ->json('POST', "/api/foodfleet/documents/999/accept")
+            ->assertStatus(404);
+    }
+
+    public function testAcceptContractWhenAlreadyAccepted()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $document = factory(Document::class)->create([
+            'signed_at' => now()
+        ]);
+        $this->assertNotNull($document['signed_at']);
+        $this
+            ->json('POST', "/api/foodfleet/documents/" . $document['uuid']. "/accept")
+            ->assertStatus(422);
+    }
+
+    public function testAcceptContract()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        $document = factory(Document::class)->create();
+        $data = $this
+            ->json('POST', "/api/foodfleet/documents/" . $document['uuid']. "/accept")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+        $this->assertNotNull($data['signed_at']);
     }
 
     // TODO: test document creation or at least test actions/CreateDocument

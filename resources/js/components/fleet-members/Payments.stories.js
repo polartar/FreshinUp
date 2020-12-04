@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/vue'
-// import { action } from '@storybook/addon-actions'
-
 import Payments from './Payments'
-import { FIXTURE_PAYMENTS } from '../../../../tests/Javascript/__data__/Payments'
+import PaymentForm from '~/components/payments/PaymentForm'
+import { FIXTURE_PAYMENTS } from '../../../../tests/Javascript/__data__/payments'
+import { FIXTURE_PAYMENT_STATUSES } from '../../../../tests/Javascript/__data__/paymentStatuses'
+import { action } from '@storybook/addon-actions'
 
 export const Default = () => ({
   components: { Payments },
@@ -13,19 +14,73 @@ export const Default = () => ({
     `
 })
 
-export const WithData = () => ({
+export const Loading = () => ({
   components: { Payments },
+  template: `
+      <v-container>
+        <payments
+          is-loading
+        />
+      </v-container>
+    `
+})
+
+export const Populated = () => ({
+  components: { Payments, PaymentForm },
   data () {
     return {
-      paymentList: FIXTURE_PAYMENTS
+      items: FIXTURE_PAYMENTS,
+      statuses: FIXTURE_PAYMENT_STATUSES,
+      newPaymentLoading: false,
+      dialog: false,
+      pagination: {
+        rowsPerPage: 10,
+        page: 1,
+        totalItems: 35
+      },
+      sorting: {
+        sortBy: 'uuid',
+        descending: false
+      }
+    }
+  },
+  methods: {
+    onManageRetry (act, item) {
+      action('onManageRetry')(act, item)
+    },
+    onManagePay (act, item) {
+      action('onManagePay')(act, item)
+    },
+    onAddPayment (payload) {
+      action('onAddPayment')(payload)
     }
   },
   template: `
       <v-container>
-        <payments :payments="paymentList"/>
+        <payments
+          :items="items"
+          :dialog="dialog"
+          :statuses="statuses"
+          :rows-per-page="pagination.rowsPerPage"
+          :page="pagination.page"
+          :total-items="pagination.totalItems"
+          :sort-by="sorting.sortBy"
+          :descending="sorting.descending"
+          @dialog="dialog = $event"
+          @manage-pay="onManagePay"
+          @manage-retry="onManageRetry"
+        >
+          <template #form>
+            <payment-form
+              :is-loading="newPaymentLoading"
+              class="ma-2"
+              @cancel="dialog = false"
+              @input="onAddPayment"
+            />
+          </template>
+        </payments>
       </v-container>
-    `,
-  methods: { }
+    `
 })
 
 storiesOf('FoodFleet|components/fleet-members/Payments', module)
@@ -35,4 +90,5 @@ storiesOf('FoodFleet|components/fleet-members/Payments', module)
     ]
   })
   .add('Default', Default)
-  .add('With data', WithData)
+  .add('Loading', Loading)
+  .add('Populated', Populated)

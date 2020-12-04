@@ -2,6 +2,7 @@
 
 use FreshinUp\FreshBusForms\Models\User\UserLevel;
 use FreshinUp\FreshBusForms\Models\User\UserType;
+use App\Enums\UserType as UserTypeEnum;
 use Illuminate\Database\Seeder;
 
 class UserLevelTypeSeeder extends Seeder
@@ -20,11 +21,7 @@ class UserLevelTypeSeeder extends Seeder
             8 => 'Company Employee',
         ];
 
-        $types = [
-            1 => 'Food Fleet Staff',
-            2 => 'Customer',
-            3 => 'Food Fleet Member'
-        ];
+        $types = UserTypeEnum::toKeyedSelectArray();
 
         $displayIds = [];
         foreach($levels as $displayId => $name) {

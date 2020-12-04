@@ -993,6 +993,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
                           Delete
                         </div>
                       </a>
@@ -1102,6 +1115,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                     class="v-list theme--light"
                     role="list"
                   >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
                     <div
                       role="listitem"
                     >
@@ -1229,6 +1255,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
                           Delete
                         </div>
                       </a>
@@ -1338,6 +1377,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                     class="v-list theme--light"
                     role="list"
                   >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
                     <div
                       role="listitem"
                     >
@@ -1465,6 +1517,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
                           Delete
                         </div>
                       </a>
@@ -1574,6 +1639,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                     class="v-list theme--light"
                     role="list"
                   >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
                     <div
                       role="listitem"
                     >
@@ -1701,6 +1779,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
                           Delete
                         </div>
                       </a>
@@ -1810,6 +1901,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                     class="v-list theme--light"
                     role="list"
                   >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
                     <div
                       role="listitem"
                     >
@@ -1937,6 +2041,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
                           Delete
                         </div>
                       </a>
@@ -2046,6 +2163,19 @@ exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
                     class="v-list theme--light"
                     role="list"
                   >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__title"
+                        >
+                          View / Edit
+                        </div>
+                      </a>
+                    </div>
                     <div
                       role="listitem"
                     >

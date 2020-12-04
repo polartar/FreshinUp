@@ -39,7 +39,7 @@
 
 <script>
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import get from 'lodash/get'
 
