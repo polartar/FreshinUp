@@ -37,6 +37,7 @@
 
 ## Dec 4, 2020
 - **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
+- **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 
 <br/>
 
