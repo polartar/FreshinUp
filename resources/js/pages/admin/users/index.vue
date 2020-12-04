@@ -43,6 +43,7 @@
       must-sort
       @paginate="onPaginate"
       @change-status="changeStatus"
+      @change-status-multiple="changeStatusMultiple"
       @change-level="changeLevel"
       @manage-view="userView"
       @manage-edit="userEdit"
@@ -109,7 +110,7 @@
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex'
-import UserList from 'fresh-bus/components/datatable/user-list.vue'
+import UserList from '~/components/datatable/UserList.vue'
 import userFilter from 'fresh-bus/components/users/FilterSorter.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
@@ -179,6 +180,11 @@ export default {
     changeStatus (status, user) {
       this.$store.dispatch('users/patchItem', { data: { status }, params: { id: user.id } }).then(() => {
         this.filterUsers(this.lastFilterParams)
+      })
+    },
+    changeStatusMultiple (statusId, users) {
+      users.forEach((user) => {
+        this.changeStatus(statusId, user)
       })
     },
     changeLevel (level, user) {
