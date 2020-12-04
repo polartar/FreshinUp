@@ -35,9 +35,13 @@
 
 # Changes
 
+## Dec 4, 2020
+- **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
+
+<br/>
+
 ## Dec 3, 2020
 - **MOD** User type dropdown menu is not displaying the proper user types [#607](https://github.com/FreshinUp/foodfleet/issues/607)
-- **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
 
 <br/>
 

@@ -166,7 +166,7 @@ export default {
       tab: null,
       tabItems: [
         'Event Menu', 'Event Documents', 'Event Activity'
-      ],
+      ]
     }
   },
   computed: {
@@ -298,7 +298,7 @@ export default {
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
       vm.$store.dispatch('stores/getItem', { params }),
-      vm.$store.dispatch('stores/summary/getItem', { params: { id: storeUuid } }),
+      vm.$store.dispatch('stores/summary/getItem', { params: { id: storeUuid, include: 'owner' } }),
       vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: storeUuid } }),
       vm.$store.dispatch('eventMenuItems/setFilters', filter),
       vm.$store.dispatch('eventMenuItems/getItems'),
