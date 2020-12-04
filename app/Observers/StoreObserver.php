@@ -40,13 +40,14 @@ class StoreObserver
 
     public function updated(Store $store)
     {
-        if ($store->isDirty('status_id') && $store->status_id == StoreStatusEnum::PENDING) {
+        if ($store->isDirty('status_id')
+            && $store->status_id == StoreStatusEnum::PENDING) {
             Document::updateOrCreate([
                 'assigned_type' => Store::class,
                 'assigned_uuid' => $store->uuid,
                 'status_id' => DocumentStatus::PENDING,
-                'title' => "Fleet Member agreement",
-                'description' => "Fleet Member agreement",
+                'title' => "Fleet Member event agreement",
+                'description' => "Fleet Member event agreement",
             ]);
         }
     }
