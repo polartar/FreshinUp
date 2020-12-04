@@ -44,7 +44,7 @@ describe('page/admin/events/store', () => {
         })
         await wrapper.vm.$store.dispatch('events/getItem', { params: { id: 2 } })
         await wrapper.vm.$store.dispatch('stores/getItem', { params: { id: 2 } })
-        await wrapper.vm.$store.dispatch('stores/summary/getItem', { params: { id: 2 } })
+        await wrapper.vm.$store.dispatch('stores/summary/getItem', { params: { id: 2, include: 'owner' } })
         await wrapper.vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: 2 } })
         await wrapper.vm.$store.dispatch('eventMenuItems/getItems')
         await wrapper.vm.$store.dispatch('messages/getItems')
