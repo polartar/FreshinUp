@@ -25,6 +25,9 @@ class EventObserver
             'status_id' => $event->status_id,
             'date' => now()
         ]);
+        if ($event->status_id == EventStatus::DRAFT) {
+            $this->createIfNotExistsFleetMemberEventAgreement($event);
+        }
     }
 
     /**
@@ -44,7 +47,7 @@ class EventObserver
 
             if ($event->status_id == EventStatus::CUSTOMER_AGREEMENT) {
                 $template = Template::getClientAgreement();
-                Document::updateOrCreate([
+                Document::firstOrCreate([
                     'assigned_uuid' => $event->uuid,
                     'assigned_type' => Event::class,
                     'status_id' => DocumentStatus::PENDING,
@@ -56,7 +59,7 @@ class EventObserver
                 ]);
             } elseif ($event->status_id == EventStatus::FLEET_MEMBER_CONTRACTS) {
                 $template = Template::getFleetMemberEventContract();
-                Document::updateOrCreate([
+                Document::firstOrCreate([
                     // TODO: see https://github.com/FreshinUp/foodfleet/issues/545
                     // seems like we need to create document for all fleet member not just for the event
                     // 'event_store_uuid' => $store->uuid,
@@ -71,8 +74,25 @@ class EventObserver
                 ], [
                     'description' => $event->name . ' - Fleet member contract',
                 ]);
+            } elseif ($event->status_id == EventStatus::DRAFT) {
+                $this->createIfNotExistsFleetMemberEventAgreement($event);
             }
         }
+    }
+
+    private function createIfNotExistsFleetMemberEventAgreement($event)
+    {
+        $template = Template::getFleetMemberEventAgreement();
+        Document::firstOrCreate([
+            'assigned_uuid' => $event->uuid,
+            'assigned_type' => Event::class,
+            'type_id' => DocumentType::FROM_TEMPLATE,
+            'status_id' => DocumentStatus::PENDING,
+            'title' => $event->name . ' - Fleet Member Event Agreement',
+            'template_uuid' => $template->uuid
+        ], [
+            'description' => $event->name . ' - Fleet Member Event Agreement',
+        ]);
     }
 
     /**
