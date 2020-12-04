@@ -440,8 +440,8 @@ class EventTest extends TestCase
         $this->assertDatabaseHas('documents', [
             'status_id' => DocumentStatusEnum::PENDING,
             'type_id' => DocumentType::FROM_TEMPLATE,
-            'title' => $event->name.' - Fleet Member Client Agreement',
-            'description' => $event->name.' - Fleet Member Client Agreement',
+            'title' => $event->name.' - Fleet Member Event Agreement',
+            'description' => $event->name.' - Fleet Member Event Agreement',
             'assigned_uuid' => $event->uuid,
             'template_uuid' => $template->uuid
         ]);
