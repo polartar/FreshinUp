@@ -28,7 +28,7 @@ class PaymentTypeTest extends TestCase
         $paymentTypes = factory(PaymentType::class, 5)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/payment-types")
+            ->json('get', "/api/foodfleet/payment/types")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -45,7 +45,7 @@ class PaymentTypeTest extends TestCase
         }
 
         $data = $this
-            ->json('get', "/api/foodfleet/payment-types?filter[uuid]=" . $paymentTypes->first()->uuid)
+            ->json('get', "/api/foodfleet/payment/types?filter[uuid]=" . $paymentTypes->first()->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -77,7 +77,7 @@ class PaymentTypeTest extends TestCase
         $paymentTypeToFind = factory(PaymentType::class)->create();
 
         $data = $this
-            ->json('get', "/api/foodfleet/payment-types")
+            ->json('get', "/api/foodfleet/payment/types")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -89,7 +89,7 @@ class PaymentTypeTest extends TestCase
 
 
         $data = $this
-            ->json('get', "/api/foodfleet/payment-types?filter[uuid]=" . $paymentTypeToFind->uuid)
+            ->json('get', "/api/foodfleet/payment/types?filter[uuid]=" . $paymentTypeToFind->uuid)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

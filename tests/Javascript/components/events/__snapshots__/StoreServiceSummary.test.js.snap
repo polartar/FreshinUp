@@ -78,7 +78,7 @@ exports[`Event StoreServiceSummary component Snapshots cancel state  1`] = `
           xs6=""
         >
           
-          
+          $24,000.00
         
         </v-flex-stub>
       </v-layout-stub>
@@ -334,7 +334,7 @@ exports[`Event StoreServiceSummary component Snapshots edit state  1`] = `
           xs6=""
         >
           
-          
+          $24,000.00
         
         </v-flex-stub>
       </v-layout-stub>
@@ -590,7 +590,7 @@ exports[`Event StoreServiceSummary component Snapshots required set 1`] = `
           xs6=""
         >
           
-          
+          $24,000.00
         
         </v-flex-stub>
       </v-layout-stub>

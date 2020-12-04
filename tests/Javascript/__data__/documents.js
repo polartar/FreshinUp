@@ -159,7 +159,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-09 20:03:19',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:51.000000Z'
+  updated_at: '2019-09-30T03:51:51.000000Z',
+  signed_at: '2019-09-30T03:51:51.000000Z'
 },
 {
   uuid: 'acb7cd62-98fd-46b3-969f-f8c5f069d778',
@@ -225,7 +226,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-06 18:42:49',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '17838ae4-5b52-4044-a966-527b60c09b1d',
@@ -290,7 +292,8 @@ the Parties.</p>
   assigned_type: 4,
   expiration_at: '2019-10-02 21:12:24',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '4a95eefe-008e-4254-92ca-e38cbf046805',
@@ -356,7 +359,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-02 09:10:59',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '0801264a-2b89-4497-9ec2-a5b21b7ac1be',
@@ -422,7 +426,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-07 16:30:38',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: 'f18bddd6-4f15-4607-bcf2-d2f3c1c76908',
@@ -488,7 +493,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-08 19:33:07',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '447ee532-0854-41ba-8b2d-757cd47edb2d',
@@ -553,7 +559,8 @@ the Parties.</p>
   assigned_type: 4,
   expiration_at: '2019-10-02 04:23:52',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '9ddc0a0a-9e54-40e8-84db-6b9907b68ba4',
@@ -619,7 +626,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-09 23:20:03',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: 'cc080f0b-0fa0-48ad-83b5-ce505be3d357',
@@ -685,7 +693,8 @@ the Parties.</p>
   assigned_type: 2,
   expiration_at: '2019-10-06 08:04:07',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 },
 {
   uuid: '020278c8-3144-4d21-b438-08a05bb5147f',
@@ -795,7 +804,8 @@ the Parties.</p>
   assigned_type: 1,
   expiration_at: '2019-10-04 23:52:41',
   created_at: '2019-09-30T03:51:14.000000Z',
-  updated_at: '2019-09-30T03:51:14.000000Z'
+  updated_at: '2019-09-30T03:51:14.000000Z',
+  signed_at: null
 }]
 
 export const FIXTURE_DOCUMENT = FIXTURE_DOCUMENTS[0]

@@ -5,16 +5,11 @@
 
 ## Venue Page
 - Venues can be search by (this is unknown)
-- Venues can be filtered by **Statues**, **Venue/Owner**, **Locations**, and **Submitted On**
-- Clicking `Manage` and then `View/Edit` will route you to the edit page of that Venue
 
 <br/>
 
 ## Venue Edit Page
 ### Components
-- Basic Information
-- Locations
-- Venue Documents
 - Assigned Events
 
 <br/>
@@ -26,7 +21,6 @@
 - As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
 ### Components
-- Venue Details _(requires Venues to be completed)_
 - Event Fleet _(Requires Fleet Members to be completed)_
 - Customer
 
@@ -34,7 +28,6 @@
 
 ## Fleet Member Edit Page
 ### Functionality for these components
-- Fleet Member Documents
 - Payments
 - Assigned Events _(Requires Event Fleet component to be completed)_
 
@@ -93,7 +86,6 @@
 
 ## Nov 11, 2020
 - **ADD** Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
->>>>>>> Stashed changes
 
 <br/>
 

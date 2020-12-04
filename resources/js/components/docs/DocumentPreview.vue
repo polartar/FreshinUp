@@ -25,49 +25,53 @@
         py-3
         justify-stretch
       >
-        <v-layout>
+        <v-layout justify-space-between>
           <v-flex
-            xs12
-            m3
+            xs8
+            layout
             mr-2
           >
-            <v-select
-              v-model="event_store_uuid"
-              item-text="name"
-              item-value="uuid"
-              background-color="primary"
-              color="success"
-              solo
-              flat
-              hide-details
-              :items="events"
-              class="white--text"
-            />
+            <v-flex
+              xs8
+              mr-1
+            >
+              <v-select
+                v-model="event_store_uuid"
+                item-text="name"
+                item-value="uuid"
+                background-color="primary"
+                color="success"
+                solo
+                flat
+                hide-details
+                :items="events"
+                class="white--text"
+              />
+            </v-flex>
+            <v-flex
+              xs4
+              ml-1
+            >
+              <v-select
+                v-model="template_uuid"
+                disabled
+                background-color="primary"
+                item-text="title"
+                item-value="uuid"
+                color="success"
+                solo
+                flat
+                hide-details
+                class="white--text"
+                :items="templates"
+              />
+            </v-flex>
           </v-flex>
           <v-flex
-            sm3
+            xs4
             ml-2
-          >
-            <v-select
-              v-model="template_uuid"
-              disabled
-              background-color="primary"
-              item-text="title"
-              item-value="uuid"
-              color="success"
-              solo
-              flat
-              hide-details
-              class="white--text"
-              :items="templates"
-            />
-          </v-flex>
-          <v-flex
-            sm3
-          />
-          <v-flex
-            sm3
-            text-xs-right
+            layout
+            justify-end
           >
             <v-btn
               v-if="downloadable"
@@ -76,9 +80,18 @@
               download
               target="_blank"
               color="primary"
-              class="mx-0"
+              class="mx-1"
             >
               Download PDF
+            </v-btn>
+            <v-btn
+              v-if="!isSigned"
+              depressed
+              color="primary"
+              class="mx-1"
+              @click="acceptContract"
+            >
+              Accept contract
             </v-btn>
           </v-flex>
         </v-layout>
@@ -116,13 +129,11 @@
           </v-flex>
         </v-layout>
         <v-divider />
-        <v-layout
-          mt-3
-        >
+        <v-flex xs12>
           <div
             v-html="content"
           />
-        </v-layout>
+        </v-flex>
         <v-layout>
           <v-layout>
             <v-flex
@@ -135,6 +146,12 @@
               >
                 Food Fleet Signature
               </div>
+              <div
+                v-if="isSigned"
+                class="ff-document-preview__signature"
+              >
+                {{ assigneeName }}
+              </div>
             </v-flex>
             <v-flex
               sm4
@@ -146,6 +163,7 @@
               >
                 Printed Name
               </div>
+              <span class="text-uppercase">{{ assigneeName }}</span>
             </v-flex>
             <v-flex
               sm4
@@ -156,6 +174,13 @@
                 class="body-1 mt-2"
               >
                 Date
+              </div>
+              <div
+                v-if="isSigned"
+                class="ff-document-preview__watermark"
+              >
+                <div>Accepted </div>
+                <div><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z') }}</div>
               </div>
             </v-flex>
           </v-layout>
@@ -183,6 +208,7 @@
               >
                 Printed Name
               </div>
+              <span class="text-uppercase">{{ ownerName }}</span>
             </v-flex>
             <v-flex
               sm4
@@ -221,6 +247,7 @@ export const DEFAULT_DOCUMENT = {
   expiration_at: '',
   created_at: '',
   updated_at: '',
+  signed_at: '',
   template_uuid: '',
   template: {},
   event_store_uuid: '',
@@ -249,6 +276,9 @@ export default {
       return get(this, 'file.src')
     },
     ownerName () {
+      return get(this, 'owner.name')
+    },
+    assigneeName () {
       return get(this, 'assigned.name')
     },
     downloadable () {
@@ -266,13 +296,40 @@ export default {
     content () {
       const html = get(this.selectedTemplate, 'content', '')
       return Mustache.render(html, this.variables)
+    },
+    isSigned () {
+      return Boolean(this.signed_at)
     }
   },
   methods: {
     get,
     onClose () {
       this.$emit('close')
+    },
+    acceptContract () {
+      this.$emit('accept-contract')
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+.ff-document-preview__signature {
+  font-family: 'Kristi', cursive;
+  font-size: 30px;
+}
+.ff-document-preview__watermark {
+  bottom: 5px;
+  right: 0;
+  color: #508c85 !important;
+  padding: .85rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: solid;
+  font-size: 1rem;
+  max-width: max-content;
+  margin: 0 auto;
+}
+</style>

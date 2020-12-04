@@ -1,14 +1,11 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-
 import BasicInformation from './BasicInformation'
-
 import { FIXTURE_STORE } from '../../../../tests/Javascript/__data__/stores'
-import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
-
-import MockAdapter from 'axios-mock-adapter'
-import axios from 'axios'
 import { FIXTURE_SQUARE_LOCATIONS } from '../../../../tests/Javascript/__data__/companies'
+import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
 
 const mock = new MockAdapter(axios)
 
