@@ -37,6 +37,7 @@
 
 ## Dec 4, 2020
 - **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
+- **ADD** Event status change generates fleet member event invitation agreement [#544](https://github.com/FreshinUp/foodfleet/issues/544)
 
 <br/>
 
