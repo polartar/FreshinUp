@@ -175,6 +175,7 @@
             :total-items="documentPagination.totalItems"
             :sort-by="documentSorting.sortBy"
             :descending="documentSorting.descending"
+            @manage-view="onViewDocument"
           />
         </v-flex>
         <v-flex
@@ -436,6 +437,9 @@ export default {
     }
   },
   methods: {
+    onViewDocument (document) {
+      this.$router.push({ path: `/admin/docs/${document.uuid}` })
+    },
     onPaymentManagePay (item) {},
     onPaymentManageRetry (item) {},
     getSquareLocations (companyId) {
