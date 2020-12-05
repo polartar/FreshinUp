@@ -17,7 +17,7 @@
         Close
       </v-btn>
     </v-card-title>
-    <v-divider/>
+    <v-divider />
     <v-card-text>
       <v-layout
         column
@@ -66,7 +66,11 @@
                     </v-flex>
                   </v-flex>
         -->
-        <v-layout row wrap class="d-flex justify-content-between">
+        <v-layout
+          row
+          wrap
+          class="d-flex justify-content-between"
+        >
           <v-flex xs12>
             <v-btn
               v-if="downloadable"
@@ -91,6 +95,7 @@
             <v-btn
               v-if="!isSigned"
               :disabled="!endOfScroll"
+              :loading="isLoading"
               depressed
               color="primary"
               @click="acceptContract"
@@ -135,8 +140,11 @@
               Expiration Date: {{ formatDate(expiration_at, 'MM / DD / YYYY') }}
             </v-flex>
           </v-layout>
-          <v-divider/>
-          <v-flex xs12 py-2>
+          <v-divider />
+          <v-flex
+            xs12
+            py-2
+          >
             <div
               v-html="content"
             />
@@ -148,7 +156,7 @@
               sm4
               class="mr-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -165,7 +173,7 @@
               sm4
               class="mx-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -177,7 +185,7 @@
               sm4
               class="ml-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -188,7 +196,8 @@
                 class="ff-document-preview__watermark"
               >
                 <div>Accepted</div>
-                <div class="ff-document-preview__watermark__date"><span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z')
+                <div class="ff-document-preview__watermark__date">
+                  <span style="text-transform: lowercase">on</span> {{ formatDate(signed_at, 'MMM D, YYYY h:mm a z')
                   }}
                 </div>
               </div>
@@ -201,7 +210,7 @@
               sm4
               class="mr-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -215,7 +224,7 @@
               sm4
               class="mx-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -227,7 +236,7 @@
               sm4
               class="ml-3 py-3"
             >
-              <v-divider/>
+              <v-divider />
               <div
                 class="body-1 mt-2"
               >
@@ -242,101 +251,103 @@
 </template>
 
 <script>
-  import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
-  import get from 'lodash/get'
-  import MapValueKeysToData from '../../mixins/MapValueKeysToData'
-  import Mustache from 'mustache'
-  import debounce from 'lodash/debounce'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import get from 'lodash/get'
+import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import Mustache from 'mustache'
+import debounce from 'lodash/debounce'
 
-  export const DEFAULT_DOCUMENT = {
-    uuid: '',
-    title: '',
-    status_id: '',
-    type_id: '',
-    description: '',
-    notes: '',
-    owner: '',
-    assigned: '',
-    assigned_type: '',
-    expiration_at: '',
-    created_at: '',
-    updated_at: '',
-    signed_at: '',
-    template_uuid: '',
-    template: {},
-    event_store_uuid: '',
-    file: {}
-  }
+export const DEFAULT_DOCUMENT = {
+  uuid: '',
+  title: '',
+  status_id: '',
+  type_id: '',
+  description: '',
+  notes: '',
+  owner: '',
+  assigned: '',
+  assigned_type: '',
+  expiration_at: '',
+  created_at: '',
+  updated_at: '',
+  signed_at: '',
+  template_uuid: '',
+  template: {},
+  event_store_uuid: '',
+  file: {}
+}
 
-  // TODO who are _restaurant owner_ and _fleet member_ for document
-  export default {
-    mixins: [FormatDate, MapValueKeysToData],
-    props: {
-      value: { type: Object, default: () => DEFAULT_DOCUMENT },
-      templates: { type: Array, default: () => [] },
-      events: { type: Array, default: () => [] },
-      variables: { type: Object, default: () => {} }
+// TODO who are _restaurant owner_ and _fleet member_ for document
+export default {
+  mixins: [FormatDate, MapValueKeysToData],
+  props: {
+    value: { type: Object, default: () => DEFAULT_DOCUMENT },
+    isLoading: { type: Boolean, default: () => false },
+    templates: { type: Array, default: () => [] },
+    events: { type: Array, default: () => [] },
+    variables: { type: Object, default: () => {} }
+  },
+  data () {
+    return {
+      ...DEFAULT_DOCUMENT,
+      endOfScroll: false
+    }
+  },
+  computed: {
+    templateTitle () {
+      return get(this, 'template.title')
     },
-    data () {
-      return {
-        ...DEFAULT_DOCUMENT,
-        endOfScroll: false
-      }
+    attachment () {
+      return get(this, 'file.src')
     },
-    computed: {
-      templateTitle () {
-        return get(this, 'template.title')
-      },
-      attachment () {
-        return get(this, 'file.src')
-      },
-      ownerName () {
-        return get(this, 'owner.name')
-      },
-      assigneeName () {
-        return get(this, 'assigned.name')
-      },
-      downloadable () {
-        return !!get(this, 'template_uuid')
-      },
-      templatesByUuid () {
-        return this.templates.reduce((map, template) => {
-          map[template.uuid] = template
-          return map
-        }, {})
-      },
-      selectedTemplate () {
-        return this.templatesByUuid[this.template_uuid]
-      },
-      content () {
-        const html = get(this.selectedTemplate, 'content', '')
-        return Mustache.render(html, this.variables)
-      },
-      isSigned () {
-        return Boolean(this.signed_at)
-      }
+    // TODO: company
+    ownerName () {
+      return get(this, 'owner.name')
     },
-    methods: {
-      get,
-      onClose () {
-        this.$emit('close')
-      },
-      acceptContract () {
-        this.$emit('accept-contract')
-      }
+    assigneeName () {
+      return get(this, 'assigned.name')
     },
-    mounted () {
-      const container = document.querySelector('.ff-document-preview__content')
-      if (!container) return false
-      const scrollHandler = debounce(() => {
-        this.endOfScroll = container.offsetHeight + container.scrollTop >= container.scrollHeight
-      }, 300)
-      container.addEventListener('scroll', scrollHandler)
-      this.$once('hook:destroyed', () => {
-        container.removeEventListener('scroll', scrollHandler)
-      })
+    downloadable () {
+      return !!get(this, 'template_uuid')
+    },
+    templatesByUuid () {
+      return this.templates.reduce((map, template) => {
+        map[template.uuid] = template
+        return map
+      }, {})
+    },
+    selectedTemplate () {
+      return this.templatesByUuid[this.template_uuid]
+    },
+    content () {
+      const html = get(this.selectedTemplate, 'content', '')
+      return Mustache.render(html, this.variables)
+    },
+    isSigned () {
+      return Boolean(this.signed_at)
+    }
+  },
+  mounted () {
+    const container = document.querySelector('.ff-document-preview__content')
+    if (!container) return false
+    const scrollHandler = debounce(() => {
+      this.endOfScroll = container.offsetHeight + container.scrollTop >= container.scrollHeight
+    }, 300)
+    container.addEventListener('scroll', scrollHandler)
+    this.$once('hook:destroyed', () => {
+      container.removeEventListener('scroll', scrollHandler)
+    })
+  },
+  methods: {
+    get,
+    onClose () {
+      this.$emit('close')
+    },
+    acceptContract () {
+      this.$emit('accept-contract')
     }
   }
+}
 </script>
 <style lang="scss" scoped>
   @import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');

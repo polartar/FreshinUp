@@ -169,6 +169,7 @@ class Documents extends Controller
         $document->update([
             'signed_at' => now()
         ]);
+        $document->load('template', 'owner', 'assigned');
         return new DocumentResource($document);
     }
 }

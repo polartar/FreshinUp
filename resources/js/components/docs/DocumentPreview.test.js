@@ -46,6 +46,16 @@ describe('components/docs/DocumentPreview', () => {
       expect(wrapper.vm.value).toMatchObject(document)
     })
 
+    test('isLoading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.isLoading).toBe(false)
+
+      wrapper.setProps({
+        isLoading: true
+      })
+      expect(wrapper.vm.isLoading).toBe(true)
+    })
+
     test('events', async () => {
       const wrapper = shallowMount(Component)
       expect(wrapper.vm.events).toHaveLength(0)
@@ -198,22 +208,6 @@ describe('components/docs/DocumentPreview', () => {
       const expected = Mustache.render(FIXTURE_DOCUMENT_TEMPLATES[0].content, FIXTURE_DOCUMENT_TEMPLATES_VARIABLES)
       expect(wrapper.vm.content).toEqual(expected)
     })
-
-    test('isScrollVisible', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.isScrollVisible).toEqual(true)
-
-      wrapper.setProps({
-        value: {
-          template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid
-        },
-        templates: FIXTURE_DOCUMENT_TEMPLATES,
-        variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES,
-        previewDialog: true
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.isScrollVisible).toEqual(true)
-    })
   })
 
   describe('Methods', () => {
@@ -229,14 +223,6 @@ describe('components/docs/DocumentPreview', () => {
       wrapper.vm.acceptContract()
       await wrapper.vm.$nextTick()
       const emitted = wrapper.emitted()['accept-contract']
-      expect(emitted).toBeTruthy()
-    })
-
-    test('acceptContract()', async () => {
-      const wrapper = shallowMount(Component)
-      wrapper.vm.acceptContract()
-      await wrapper.vm.$nextTick()
-      const emitted = wrapper.emitted('contract-accepted')
       expect(emitted).toBeTruthy()
     })
   })

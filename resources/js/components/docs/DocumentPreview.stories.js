@@ -56,6 +56,40 @@ export const Populated = () => ({
   `
 })
 
+export const IsLoading = () => ({
+  components: { DocumentPreview },
+  data () {
+    return {
+      document: {
+        ...document,
+        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
+        signed_at: null
+      },
+      templates: FIXTURE_DOCUMENT_TEMPLATES,
+      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
+    }
+  },
+  methods: {
+    onClose () {
+      action('onClose')()
+    },
+    acceptContract () {
+      action('acceptContract')()
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview
+        :value="document"
+        :templates="templates"
+        :events="events"
+        :variables="variables"
+        is-loading
+      />
+    </v-container>
+  `
+})
+
 export const Signed = () => ({
   components: { DocumentPreview },
   data () {
@@ -92,4 +126,5 @@ storiesOf('FoodFleet|components/docs/DocumentPreview', module)
   })
   .add('Default', Default)
   .add('Populated', Populated)
+  .add('IsLoading', IsLoading)
   .add('Signed', Signed)

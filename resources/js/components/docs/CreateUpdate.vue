@@ -58,6 +58,7 @@
         :templates="templates"
         :variables="templateVariables"
         :events="events"
+        :is-loading="documentLoading"
         @accept-contract="acceptContract"
         @close="previewDialog = false"
       />
@@ -83,6 +84,7 @@ export default {
     return {
       template: null,
       previewDialog: false,
+      documentLoading: false,
       file: { name: null, src: null }
     }
   },
@@ -115,7 +117,19 @@ export default {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
     acceptContract () {
-      this.$store.dispatch('document/acceptContract')
+      this.documentLoading = true
+      this.$store.dispatch('documents/acceptContract', { params: { id: this.$route.params.id } })
+        .then(() => {
+          this.previewDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Contract accepted.')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.documentLoading = false
+        })
     },
     async validator () {
       const valids = await Promise.all([
@@ -166,8 +180,11 @@ export default {
     const id = to.params.id || 'new'
     const promises = []
     if (id !== 'new') {
+      vm.$store.dispatch('documents/setFilters', {
+        include: 'template'
+      })
       promises.push(vm.$store.dispatch('documents/getItem', {
-        params: { id, include: 'template' }
+        params: { id }
       }))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
