@@ -35,6 +35,11 @@
 
 # Changes
 
+## Dec 5, 2020
+- **ADD** Document preview - Accept contract [#541](https://github.com/FreshinUp/foodfleet/issues/541
+
+<br/>
+
 ## Dec 4, 2020
 - **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 - **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)

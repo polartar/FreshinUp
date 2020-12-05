@@ -21,7 +21,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
             aria-hidden="true"
             class="v-icon fas fa-arrow-left theme--light"
           />
-           
+
           <span>
             Return to Document list
           </span>
@@ -29,18 +29,18 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
       </div>
     </button>
   </div>
-   
+
   <div
     class="layout row justify-space-between ma-2"
   >
     <h2
       class="white--text"
     >
-      
+
       New Document
-    
+
     </h2>
-     
+
     <div
       class="flex text-xs-right sm2 xs12"
     >
@@ -190,7 +190,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
       </div>
     </div>
   </div>
-   
+
   <div
     class="layout row wrap"
   >
@@ -203,15 +203,15 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
         <div
           class="v-card__title subheading text-uppercase font-weight-bold"
         >
-          
+
         Basic information
-      
+
         </div>
-         
+
         <hr
           class="v-divider theme--light"
         />
-         
+
         <div
           class="layout row wrap pa-3 justify-space-between"
         >
@@ -221,11 +221,11 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
             <div
               class="layout row mb-2"
             >
-              
+
             Title
-          
+
             </div>
-             
+
             <div
               class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
             >
@@ -266,18 +266,18 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex md4 sm12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Type
-          
+
             </div>
-             
+
             <div
               class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
               role="combobox"
@@ -392,18 +392,18 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex md7 sm12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Short Description
-          
+
             </div>
-             
+
             <div
               class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
             >
@@ -446,20 +446,20 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <!---->
-           
+
           <div
             class="flex xs12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Notes / Additional Info
-          
+
             </div>
-             
+
             <div
               class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
             >
@@ -502,7 +502,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex"
           >
@@ -513,12 +513,12 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Cancel
-          
+
               </div>
             </button>
-             
+
             <button
               class="v-btn theme--light primary"
               type="button"
@@ -526,16 +526,16 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Submit
-          
+
               </div>
             </button>
           </div>
         </div>
       </div>
     </div>
-     
+
     <div
       class="flex sm12 md4 lg3"
     >
@@ -545,11 +545,11 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
         <div
           class="v-card__title"
         >
-          
+
         Publishing
-      
+
         </div>
-         
+
         <div
           class="layout row wrap pa-3"
         >
@@ -559,25 +559,25 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
             <h3
               class="title font-weight-bold mb-2"
             >
-              
+
             Submitted on
-          
+
             </h3>
-             
+
             <!---->
           </div>
-           
+
           <div
             class="flex xs12"
           >
             <h4
               class="title font-weight-bold mb-2"
             >
-              
+
             Assigned to
-          
+
             </h4>
-             
+
             <div
               class="layout row justify-space-between"
               type="1"
@@ -738,7 +738,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                   </div>
                 </div>
               </div>
-               
+
               <div
                 class="flex md6 sm12 ml-4"
               >
@@ -833,18 +833,18 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex xs12"
           >
             <h4
               class="title font-weight-bold mb-2"
             >
-              
+
             Expiration Date
-          
+
             </h4>
-             
+
             <div
               class="date-time-picker"
               id="DateTimePicker"
@@ -866,9 +866,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                   data-v-a0144ed0=""
                   for="DateTimePicker"
                 >
-                  
+
     Select date & time
-  
+
                 </label>
                 <!---->
               </div>
@@ -899,9 +899,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                         <div
                           data-v-17cb1efe=""
                         >
-                          
+
         2019
-      
+
                         </div>
                       </span>
                     </div>
@@ -916,9 +916,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                         <span
                           data-v-17cb1efe=""
                         >
-                          
+
         ...
-      
+
                         </span>
                       </span>
                       <!---->
@@ -989,9 +989,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   data-v-02b1f8d2=""
                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                 >
-                                  
+
             June
-          
+
                                 </span>
                               </button>
                             </span>
@@ -1016,9 +1016,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   data-v-02b1f8d2=""
                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                 >
-                                  
+
             2019
-          
+
                                 </span>
                               </button>
                             </span>
@@ -1054,57 +1054,57 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Sun
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Mon
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Tue
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Wed
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Thu
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Fri
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Sat
-  
+
                           </div>
                         </div>
                         <div
@@ -1160,9 +1160,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               1
-            
+
                                 </span>
                               </button>
                               <button
@@ -1182,9 +1182,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               2
-            
+
                                 </span>
                               </button>
                               <button
@@ -1204,9 +1204,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               3
-            
+
                                 </span>
                               </button>
                               <button
@@ -1226,9 +1226,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               4
-            
+
                                 </span>
                               </button>
                               <button
@@ -1248,9 +1248,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               5
-            
+
                                 </span>
                               </button>
                               <button
@@ -1270,9 +1270,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               6
-            
+
                                 </span>
                               </button>
                               <button
@@ -1292,9 +1292,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               7
-            
+
                                 </span>
                               </button>
                               <button
@@ -1314,9 +1314,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               8
-            
+
                                 </span>
                               </button>
                               <button
@@ -1336,9 +1336,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               9
-            
+
                                 </span>
                               </button>
                               <button
@@ -1358,9 +1358,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               10
-            
+
                                 </span>
                               </button>
                               <button
@@ -1380,9 +1380,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               11
-            
+
                                 </span>
                               </button>
                               <button
@@ -1402,9 +1402,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               12
-            
+
                                 </span>
                               </button>
                               <button
@@ -1424,9 +1424,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               13
-            
+
                                 </span>
                               </button>
                               <button
@@ -1446,9 +1446,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               14
-            
+
                                 </span>
                               </button>
                               <button
@@ -1468,9 +1468,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               15
-            
+
                                 </span>
                               </button>
                               <button
@@ -1490,9 +1490,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               16
-            
+
                                 </span>
                               </button>
                               <button
@@ -1512,9 +1512,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               17
-            
+
                                 </span>
                               </button>
                               <button
@@ -1534,9 +1534,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               18
-            
+
                                 </span>
                               </button>
                               <button
@@ -1556,9 +1556,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               19
-            
+
                                 </span>
                               </button>
                               <button
@@ -1578,9 +1578,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               20
-            
+
                                 </span>
                               </button>
                               <button
@@ -1600,9 +1600,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               21
-            
+
                                 </span>
                               </button>
                               <button
@@ -1622,9 +1622,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               22
-            
+
                                 </span>
                               </button>
                               <button
@@ -1644,9 +1644,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               23
-            
+
                                 </span>
                               </button>
                               <button
@@ -1666,9 +1666,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               24
-            
+
                                 </span>
                               </button>
                               <button
@@ -1688,9 +1688,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               25
-            
+
                                 </span>
                               </button>
                               <button
@@ -1710,9 +1710,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               26
-            
+
                                 </span>
                               </button>
                               <button
@@ -1735,9 +1735,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               27
-            
+
                                 </span>
                               </button>
                               <button
@@ -1757,9 +1757,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               28
-            
+
                                 </span>
                               </button>
                               <button
@@ -1779,9 +1779,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               29
-            
+
                                 </span>
                               </button>
                               <button
@@ -1801,9 +1801,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               30
-            
+
                                 </span>
                               </button>
                               <div
@@ -1859,9 +1859,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                         data-v-fea0e798=""
                         style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
-                        
+
       Now
-    
+
                       </span>
                     </button>
                     <button
@@ -1899,7 +1899,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex xs12 mt-3"
           >
@@ -1916,13 +1916,13 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                   <div
                     class="v-btn__content"
                   >
-                    
+
                 Preview
-              
+
                   </div>
                 </button>
               </div>
-               
+
               <div
                 class="flex xs12 sm-6"
               >
@@ -1933,9 +1933,9 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                   <div
                     class="v-btn__content"
                   >
-                    
+
                 Submit
-              
+
                   </div>
                 </button>
               </div>
@@ -1945,7 +1945,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
       </div>
     </div>
   </div>
-   
+
   <div
     class="v-dialog__container"
     style="display: block;"
@@ -1968,11 +1968,11 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
             <h3
               class="grey--text"
             >
-              
+
       Preview Document
-    
+
             </h3>
-             
+
             <button
               class="mr-0 v-btn v-btn--flat theme--light primary--text"
               type="button"
@@ -1980,17 +1980,17 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
       Close
-    
+
               </div>
             </button>
           </div>
-           
+
           <hr
             class="v-divider theme--light"
           />
-           
+
           <div
             class="v-card__text"
           >
@@ -2080,7 +2080,7 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex sm3 ml-2"
                 >
@@ -2162,18 +2162,18 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex sm3"
                 />
-                 
+
                 <div
                   class="flex sm3 text-xs-right"
                 >
                   <!---->
                 </div>
               </div>
-               
+
               <div
                 class="layout align-center px-3 my-3"
               >
@@ -2197,32 +2197,32 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                     />
                   </div>
                 </div>
-                 
+
                 <hr
                   class="v-divider v-divider--vertical theme--light"
                 />
-                 
+
                 <div
                   class="flex title primary--text font-weight-bold sm6 pl-2"
                 >
-                  
-          
-        
+
+
+
                 </div>
-                 
+
                 <!---->
               </div>
-               
+
               <hr
                 class="v-divider theme--light"
               />
-               
+
               <div
                 class="layout mt-3"
               >
                 <div />
               </div>
-               
+
               <div
                 class="layout"
               >
@@ -2235,50 +2235,50 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Food Fleet Signature
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex mx-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Printed Name
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex ml-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Date
-            
+
                     </div>
                   </div>
                 </div>
               </div>
-               
+
               <div
                 class="layout"
               >
@@ -2291,45 +2291,45 @@ exports[`components/docs/CreateUpdate Mount mount create page 1`] = `
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
-              Restaurant Owner Name: 
-            
+
+              Restaurant Owner Name:
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex mx-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Printed Name
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex ml-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Date
-            
+
                     </div>
                   </div>
                 </div>
@@ -2364,7 +2364,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
             aria-hidden="true"
             class="v-icon fas fa-arrow-left theme--light"
           />
-           
+
           <span>
             Return to Document list
           </span>
@@ -2372,18 +2372,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
       </div>
     </button>
   </div>
-   
+
   <div
     class="layout row justify-space-between ma-2"
   >
     <h2
       class="white--text"
     >
-      
+
       Document Details
-    
+
     </h2>
-     
+
     <div
       class="flex text-xs-right sm2 xs12"
     >
@@ -2539,7 +2539,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
       </div>
     </div>
   </div>
-   
+
   <div
     class="layout row wrap"
   >
@@ -2552,15 +2552,15 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
         <div
           class="v-card__title subheading text-uppercase font-weight-bold"
         >
-          
+
         Basic information
-      
+
         </div>
-         
+
         <hr
           class="v-divider theme--light"
         />
-         
+
         <div
           class="layout row wrap pa-3 justify-space-between"
         >
@@ -2570,11 +2570,11 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
             <div
               class="layout row mb-2"
             >
-              
+
             Title
-          
+
             </div>
-             
+
             <div
               class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
             >
@@ -2608,18 +2608,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex md4 sm12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Type
-          
+
             </div>
-             
+
             <div
               class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
               role="combobox"
@@ -2733,18 +2733,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex md7 sm12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Short Description
-          
+
             </div>
-             
+
             <div
               class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
             >
@@ -2780,18 +2780,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex md7 sm12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Document Template
-          
+
             </div>
-             
+
             <div
               class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
               role="combobox"
@@ -2889,18 +2889,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex xs12"
           >
             <div
               class="layout row mb-2"
             >
-              
+
             Notes / Additional Info
-          
+
             </div>
-             
+
             <div
               class="v-input v-textarea v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
             >
@@ -2936,7 +2936,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex"
           >
@@ -2947,12 +2947,12 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Cancel
-          
+
               </div>
             </button>
-             
+
             <button
               class="v-btn theme--light primary"
               type="button"
@@ -2960,16 +2960,16 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
             Save changes
-          
+
               </div>
             </button>
           </div>
         </div>
       </div>
     </div>
-     
+
     <div
       class="flex sm12 md4 lg3"
     >
@@ -2979,11 +2979,11 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
         <div
           class="v-card__title"
         >
-          
+
         Publishing
-      
+
         </div>
-         
+
         <div
           class="layout row wrap pa-3"
         >
@@ -2993,29 +2993,29 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
             <h3
               class="title font-weight-bold mb-2"
             >
-              
+
             Submitted on
-          
+
             </h3>
-             
+
             <div>
-              
+
             Sep 30, 2019 • 03:51 am by Level 6 User
-          
+
             </div>
           </div>
-           
+
           <div
             class="flex xs12"
           >
             <h4
               class="title font-weight-bold mb-2"
             >
-              
+
             Assigned to
-          
+
             </h4>
-             
+
             <div
               class="layout row justify-space-between"
               type="2"
@@ -3176,7 +3176,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                   </div>
                 </div>
               </div>
-               
+
               <div
                 class="flex md6 sm12 ml-4"
               >
@@ -3271,18 +3271,18 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex xs12"
           >
             <h4
               class="title font-weight-bold mb-2"
             >
-              
+
             Expiration Date
-          
+
             </h4>
-             
+
             <div
               class="date-time-picker"
               id="DateTimePicker"
@@ -3304,9 +3304,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                   data-v-a0144ed0=""
                   for="DateTimePicker"
                 >
-                  
+
     Select date & time
-  
+
                 </label>
                 <button
                   class="custom-button flex align-center justify-content-center field-clear-button round"
@@ -3330,9 +3330,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                       data-v-02b1f8d2=""
                       data-v-a0144ed0=""
                     >
-                      
+
       ✕
-    
+
                     </span>
                   </span>
                 </button>
@@ -3364,9 +3364,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                         <div
                           data-v-17cb1efe=""
                         >
-                          
+
         2019
-      
+
                         </div>
                       </span>
                     </div>
@@ -3382,17 +3382,17 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                           class="slidevnext-leave slidevnext-leave-active"
                           data-v-17cb1efe=""
                         >
-                          
+
         ...
-      
+
                         </span>
                         <span
                           class="slidevnext-enter slidevnext-enter-active"
                           data-v-17cb1efe=""
                         >
-                          
+
         Wed 9 Oct
-      
+
                         </span>
                       </span>
                       <!---->
@@ -3463,9 +3463,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   data-v-02b1f8d2=""
                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                 >
-                                  
+
             June
-          
+
                                 </span>
                               </button>
                               <button
@@ -3485,9 +3485,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   data-v-02b1f8d2=""
                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                 >
-                                  
+
             October
-          
+
                                 </span>
                               </button>
                             </span>
@@ -3512,9 +3512,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   data-v-02b1f8d2=""
                                   style="color: rgb(25, 118, 210); fill: #1976D2;"
                                 >
-                                  
+
             2019
-          
+
                                 </span>
                               </button>
                             </span>
@@ -3550,57 +3550,57 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Sun
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Mon
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Tue
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Wed
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Thu
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Fri
-  
+
                           </div>
                           <div
                             class="flex-1 text-muted lm-fs-12 flex justify-content-center align-center week-days-container"
                             data-v-34f8dbed=""
                           >
-                            
+
     Sat
-  
+
                           </div>
                         </div>
                         <div
@@ -3656,9 +3656,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               1
-            
+
                                 </span>
                               </button>
                               <button
@@ -3678,9 +3678,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               2
-            
+
                                 </span>
                               </button>
                               <button
@@ -3700,9 +3700,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               3
-            
+
                                 </span>
                               </button>
                               <button
@@ -3722,9 +3722,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               4
-            
+
                                 </span>
                               </button>
                               <button
@@ -3744,9 +3744,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               5
-            
+
                                 </span>
                               </button>
                               <button
@@ -3766,9 +3766,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               6
-            
+
                                 </span>
                               </button>
                               <button
@@ -3788,9 +3788,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               7
-            
+
                                 </span>
                               </button>
                               <button
@@ -3810,9 +3810,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               8
-            
+
                                 </span>
                               </button>
                               <button
@@ -3832,9 +3832,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               9
-            
+
                                 </span>
                               </button>
                               <button
@@ -3854,9 +3854,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               10
-            
+
                                 </span>
                               </button>
                               <button
@@ -3876,9 +3876,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               11
-            
+
                                 </span>
                               </button>
                               <button
@@ -3898,9 +3898,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               12
-            
+
                                 </span>
                               </button>
                               <button
@@ -3920,9 +3920,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               13
-            
+
                                 </span>
                               </button>
                               <button
@@ -3942,9 +3942,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               14
-            
+
                                 </span>
                               </button>
                               <button
@@ -3964,9 +3964,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               15
-            
+
                                 </span>
                               </button>
                               <button
@@ -3986,9 +3986,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               16
-            
+
                                 </span>
                               </button>
                               <button
@@ -4008,9 +4008,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               17
-            
+
                                 </span>
                               </button>
                               <button
@@ -4030,9 +4030,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               18
-            
+
                                 </span>
                               </button>
                               <button
@@ -4052,9 +4052,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               19
-            
+
                                 </span>
                               </button>
                               <button
@@ -4074,9 +4074,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               20
-            
+
                                 </span>
                               </button>
                               <button
@@ -4096,9 +4096,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               21
-            
+
                                 </span>
                               </button>
                               <button
@@ -4118,9 +4118,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               22
-            
+
                                 </span>
                               </button>
                               <button
@@ -4140,9 +4140,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               23
-            
+
                                 </span>
                               </button>
                               <button
@@ -4162,9 +4162,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               24
-            
+
                                 </span>
                               </button>
                               <button
@@ -4184,9 +4184,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               25
-            
+
                                 </span>
                               </button>
                               <button
@@ -4206,9 +4206,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               26
-            
+
                                 </span>
                               </button>
                               <button
@@ -4231,9 +4231,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               27
-            
+
                                 </span>
                               </button>
                               <button
@@ -4253,9 +4253,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               28
-            
+
                                 </span>
                               </button>
                               <button
@@ -4275,9 +4275,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               29
-            
+
                                 </span>
                               </button>
                               <button
@@ -4297,9 +4297,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               30
-            
+
                                 </span>
                               </button>
                               <div
@@ -4356,9 +4356,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               1
-            
+
                                 </span>
                               </button>
                               <button
@@ -4378,9 +4378,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               2
-            
+
                                 </span>
                               </button>
                               <button
@@ -4400,9 +4400,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               3
-            
+
                                 </span>
                               </button>
                               <button
@@ -4422,9 +4422,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               4
-            
+
                                 </span>
                               </button>
                               <button
@@ -4444,9 +4444,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               5
-            
+
                                 </span>
                               </button>
                               <button
@@ -4466,9 +4466,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               6
-            
+
                                 </span>
                               </button>
                               <button
@@ -4488,9 +4488,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               7
-            
+
                                 </span>
                               </button>
                               <button
@@ -4510,9 +4510,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               8
-            
+
                                 </span>
                               </button>
                               <button
@@ -4532,9 +4532,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               9
-            
+
                                 </span>
                               </button>
                               <button
@@ -4554,9 +4554,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               10
-            
+
                                 </span>
                               </button>
                               <button
@@ -4576,9 +4576,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               11
-            
+
                                 </span>
                               </button>
                               <button
@@ -4598,9 +4598,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               12
-            
+
                                 </span>
                               </button>
                               <button
@@ -4620,9 +4620,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               13
-            
+
                                 </span>
                               </button>
                               <button
@@ -4642,9 +4642,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               14
-            
+
                                 </span>
                               </button>
                               <button
@@ -4664,9 +4664,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               15
-            
+
                                 </span>
                               </button>
                               <button
@@ -4686,9 +4686,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               16
-            
+
                                 </span>
                               </button>
                               <button
@@ -4708,9 +4708,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               17
-            
+
                                 </span>
                               </button>
                               <button
@@ -4730,9 +4730,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               18
-            
+
                                 </span>
                               </button>
                               <button
@@ -4752,9 +4752,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               19
-            
+
                                 </span>
                               </button>
                               <button
@@ -4774,9 +4774,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               20
-            
+
                                 </span>
                               </button>
                               <button
@@ -4796,9 +4796,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               21
-            
+
                                 </span>
                               </button>
                               <button
@@ -4818,9 +4818,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               22
-            
+
                                 </span>
                               </button>
                               <button
@@ -4840,9 +4840,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               23
-            
+
                                 </span>
                               </button>
                               <button
@@ -4862,9 +4862,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               24
-            
+
                                 </span>
                               </button>
                               <button
@@ -4884,9 +4884,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               25
-            
+
                                 </span>
                               </button>
                               <button
@@ -4906,9 +4906,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               26
-            
+
                                 </span>
                               </button>
                               <button
@@ -4928,9 +4928,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               27
-            
+
                                 </span>
                               </button>
                               <button
@@ -4950,9 +4950,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               28
-            
+
                                 </span>
                               </button>
                               <button
@@ -4972,9 +4972,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               29
-            
+
                                 </span>
                               </button>
                               <button
@@ -4994,9 +4994,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               30
-            
+
                                 </span>
                               </button>
                               <button
@@ -5016,9 +5016,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                                   class="datepicker-day-text flex-1"
                                   data-v-0da13aa6=""
                                 >
-                                  
+
               31
-            
+
                                 </span>
                               </button>
                               <div
@@ -5058,9 +5058,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                         data-v-fea0e798=""
                         style="color: rgb(25, 118, 210); fill: #1976D2;"
                       >
-                        
+
       Now
-    
+
                       </span>
                     </button>
                     <button
@@ -5098,7 +5098,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               </div>
             </div>
           </div>
-           
+
           <div
             class="flex xs12 mt-3"
           >
@@ -5115,13 +5115,13 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                   <div
                     class="v-btn__content"
                   >
-                    
+
                 Preview
-              
+
                   </div>
                 </button>
               </div>
-               
+
               <div
                 class="flex xs12 sm-6"
               >
@@ -5132,9 +5132,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                   <div
                     class="v-btn__content"
                   >
-                    
+
                 Save changes
-              
+
                   </div>
                 </button>
               </div>
@@ -5144,7 +5144,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
       </div>
     </div>
   </div>
-   
+
   <div
     class="v-dialog__container"
     style="display: block;"
@@ -5167,11 +5167,11 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
             <h3
               class="grey--text"
             >
-              
+
       Preview Document
-    
+
             </h3>
-             
+
             <button
               class="mr-0 v-btn v-btn--flat theme--light primary--text"
               type="button"
@@ -5179,17 +5179,17 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
               <div
                 class="v-btn__content"
               >
-                
+
       Close
-    
+
               </div>
             </button>
           </div>
-           
+
           <hr
             class="v-divider theme--light"
           />
-           
+
           <div
             class="v-card__text"
           >
@@ -5282,7 +5282,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                       </div>
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex xs4 ml-1"
                   >
@@ -5365,7 +5365,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     </div>
                   </div>
                 </div>
-                 
+
                 <div
                   class="flex xs4 ml-2 layout justify-end"
                 >
@@ -5379,12 +5379,12 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <div
                       class="v-btn__content"
                     >
-                      
+
             Download PDF
-          
+
                     </div>
                   </button>
-                   
+
                   <button
                     class="mx-1 v-btn v-btn--depressed theme--light primary"
                     download=""
@@ -5393,14 +5393,14 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <div
                       class="v-btn__content"
                     >
-                      
+
             Accept contract
-          
+
                     </div>
                   </button>
                 </div>
               </div>
-               
+
               <div
                 class="layout align-center px-3 my-3"
               >
@@ -5424,32 +5424,32 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     />
                   </div>
                 </div>
-                 
+
                 <hr
                   class="v-divider v-divider--vertical theme--light"
                 />
-                 
+
                 <div
                   class="flex title primary--text font-weight-bold sm6 pl-2"
                 >
-                  
-          
-        
+
+
+
                 </div>
-                 
+
                 <div
                   class="flex body-2 text-xs-right sm3"
                 >
-                  
+
           Expiration Date: 10 / 09 / 2019
-        
+
                 </div>
               </div>
-               
+
               <hr
                 class="v-divider theme--light"
               />
-               
+
               <div
                 class="layout mt-3"
               >
@@ -5457,11 +5457,11 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                   style="position: relative;"
                 >
                   <div />
-                   
+
                   <!---->
                 </div>
               </div>
-               
+
               <div
                 class="layout"
               >
@@ -5474,52 +5474,52 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Food Fleet Signature
-            
+
                     </div>
-                     
+
                     <!---->
                   </div>
-                   
+
                   <div
                     class="flex mx-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Printed Name
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex ml-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Date
-            
+
                     </div>
                   </div>
                 </div>
               </div>
-               
+
               <div
                 class="layout"
               >
@@ -5532,45 +5532,45 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Restaurant Owner Name: eligendi
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex mx-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Printed Name
-            
+
                     </div>
                   </div>
-                   
+
                   <div
                     class="flex ml-3 py-3 sm4"
                   >
                     <hr
                       class="v-divider theme--light"
                     />
-                     
+
                     <div
                       class="body-1 mt-2"
                     >
-                      
+
               Date
-            
+
                     </div>
                   </div>
                 </div>
