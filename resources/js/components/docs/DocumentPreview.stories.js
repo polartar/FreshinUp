@@ -24,7 +24,8 @@ export const Populated = () => ({
       document: {
         ...document,
         event_store_uuid: FIXTURE_EVENTS[0].uuid,
-        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid
+        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
+        signed_at: null
       },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
@@ -47,7 +48,7 @@ export const Populated = () => ({
         :templates="templates"
         :events="events"
         :variables="variables"
-        :previewDialog="previewDialog"
+        :preview-dialog="previewDialog"
         @accept-contract="acceptContract"
         @close="onClose"
       />

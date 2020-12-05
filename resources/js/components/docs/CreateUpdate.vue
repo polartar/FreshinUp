@@ -58,7 +58,7 @@
         :templates="templates"
         :variables="templateVariables"
         :events="events"
-        :preview-dialog="previewDialog"
+        @accept-contract="acceptContract"
         @close="previewDialog = false"
       />
     </v-dialog>
@@ -113,6 +113,9 @@ export default {
     }),
     downloadDocument () {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
+    },
+    acceptContract () {
+      this.$store.dispatch('document/acceptContract')
     },
     async validator () {
       const valids = await Promise.all([
