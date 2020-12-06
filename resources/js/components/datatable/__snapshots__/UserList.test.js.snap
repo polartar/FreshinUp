@@ -61,6 +61,10 @@ exports[`User List component Snapshots Empty 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Status
@@ -75,6 +79,10 @@ exports[`User List component Snapshots Empty 1`] = `
               scope="col"
               tabindex="0"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Name / Email / Title / Company
@@ -96,6 +104,10 @@ exports[`User List component Snapshots Empty 1`] = `
               scope="col"
               tabindex="0"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Requested company
@@ -124,6 +136,10 @@ exports[`User List component Snapshots Empty 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Join Date
@@ -145,6 +161,10 @@ exports[`User List component Snapshots Empty 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Level
@@ -158,6 +178,10 @@ exports[`User List component Snapshots Empty 1`] = `
               role="columnheader"
               scope="col"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Manage
@@ -493,6 +517,10 @@ exports[`User List component Snapshots Set 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Status
@@ -507,6 +535,10 @@ exports[`User List component Snapshots Set 1`] = `
               scope="col"
               tabindex="0"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Name / Email / Title / Company
@@ -528,6 +560,10 @@ exports[`User List component Snapshots Set 1`] = `
               scope="col"
               tabindex="0"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Requested company
@@ -556,6 +592,10 @@ exports[`User List component Snapshots Set 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Join Date
@@ -577,6 +617,10 @@ exports[`User List component Snapshots Set 1`] = `
               >
                 arrow_upward
               </i>
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Level
@@ -590,6 +634,10 @@ exports[`User List component Snapshots Set 1`] = `
               role="columnheader"
               scope="col"
             >
+              <!---->
+               
+              <!---->
+               
               <span>
                 
         Manage

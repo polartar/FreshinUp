@@ -43,11 +43,12 @@
       must-sort
       @paginate="onPaginate"
       @change-status="changeStatus"
-      @change-status-multiple="changeStatusMultiple"
       @change-level="changeLevel"
       @manage-view="userView"
       @manage-edit="userEdit"
       @manage-delete="deleteUser"
+      @manage-multiple-status="changeStatusMultiple"
+      @manage-multiple-level="changeLevelMultiple"
       @manage-multiple-delete="deleteMultiple"
     >
       <template v-slot:item-inner-name,email="{ item }">
@@ -182,10 +183,26 @@ export default {
         this.filterUsers(this.lastFilterParams)
       })
     },
-    changeStatusMultiple (statusId, users) {
-      users.forEach((user) => {
-        this.changeStatus(statusId, user)
+    bulkUpdate (users, payload) {
+      this.$store.dispatch('users/bulkUpdate/createItem', {
+        data: {
+          userIds: users.map(user => user.id),
+          ...payload
+        }
       })
+        .then(() => {
+          this.filterUsers(this.lastFilterParams)
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
+    changeStatusMultiple (users, status) {
+      this.bulkUpdate(users, { status_id: status.id })
+    },
+    changeLevelMultiple (users, level) {
+      this.bulkUpdate(users, { level_id: level.id })
     },
     changeLevel (level, user) {
       this.$store.dispatch('users/patchItem', { data: { level }, params: { id: user.id } }).then(() => {
@@ -209,6 +226,8 @@ export default {
       this.deleteDialogUp(user)
     },
     async deleteUsers () {
+      // TODO: we can use this.bulkUpdate(users, { bulkDelete: true }) to delete all users
+      // without using the logic below
       this.deletablesProcessing = true
       this.deletablesProgress = 0
       this.deletablesStatus = ''
@@ -250,7 +269,9 @@ export default {
     },
     filterUsers (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('users/setSort', params.sort)
+      if (params.sort) {
+        this.$store.dispatch('users/setSort', params.sort)
+      }
       this.$store.dispatch('users/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams

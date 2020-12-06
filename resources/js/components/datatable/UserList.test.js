@@ -69,16 +69,5 @@ describe('User List component', () => {
       expect(wrapper.emitted()['change-status']).toBeTruthy()
       expect(wrapper.emitted()['change-status'][0][0]).toEqual(2)
     })
-
-    test('changeStatusMultiple function emitted change-status-multiple action', () => {
-      const wrapper = shallowMount(Component, {
-        localVue
-      })
-
-      wrapper.vm.changeStatusMultiple(3)
-
-      expect(wrapper.emitted()['change-status-multiple']).toBeTruthy()
-      expect(wrapper.emitted()['change-status-multiple'][0][0]).toEqual(3)
-    })
   })
 })

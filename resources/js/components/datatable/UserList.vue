@@ -3,7 +3,7 @@
     <v-data-table
       v-model="selected"
       class="elevation-1"
-      :headers="_headers"
+      :headers="reactiveHeaders"
       :items="users"
       :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
       :pagination.sync="pagination"
@@ -23,39 +23,27 @@
         slot="headerCell"
         slot-scope="props"
       >
-        <span v-if="selected.length > 1 && props.header.value === 'manage'">
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              color="primary"
-              dark
-              @click="manageMultiple('delete')"
-            >
-              Delete
-            </v-btn>
-          </v-menu>
-        </span>
-        <span v-else-if="selected.length > 1 && props.header.value === 'status'">
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              light
-            >
-              Change Statuses
-            </v-btn>
-            <v-list>
-              <v-list-tile
-                v-for="(item, index) in statuses"
-                :key="index"
-                @click="changeStatusMultiple(item.id)"
-              >
-                <v-list-tile-title>
-                  {{ item.name }}
-                </v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-        </span>
+        <f-manage-multiple
+          v-if="selected.length > 1 && props.header.value === 'manage'"
+          :items="statuses"
+          item-label="name"
+          label="Delete"
+          @item="manageMultiple('delete')"
+        />
+        <f-manage-multiple
+          v-if="selected.length > 1 && props.header.value === 'status'"
+          :items="statuses"
+          item-label="name"
+          label="Change status"
+          @item="manageMultiple('status', $event)"
+        />
+        <f-manage-multiple
+          v-if="selected.length > 1 && props.header.value === 'level'"
+          :items="levels"
+          item-label="name"
+          label="Change level"
+          @item="manageMultiple('level', $event)"
+        />
         <span v-else>
           {{ props.header.text }}
         </span>
@@ -82,7 +70,7 @@
           />
         </td>
         <template
-          v-for="(header, headerIndex) in _headers"
+          v-for="(header, headerIndex) in reactiveHeaders"
         >
           <slot
             v-if="header.value === 'id'"
@@ -297,6 +285,7 @@
 
 <script>
 import UserList from 'fresh-bus/components/datatable/user-list.vue'
+import FManageMultiple from '@freshinup/core-ui/src/components/FManageMultiple'
 
 export const DEFAULT_HEADERS = [
   { text: 'Status', sortable: true, value: 'status', align: 'center' },
@@ -315,6 +304,7 @@ export const DEFAULT_ITEM_ACTIONS = [
 ]
 
 export default {
+  components: { FManageMultiple },
   extends: UserList,
   props: {
     headers: {
@@ -332,9 +322,20 @@ export default {
       actionBtnTitle: 'Manage'
     }
   },
+  computed: {
+    reactiveHeaders () {
+      return this.selected.length > 0
+        ? this._headers.map(header => ({
+          ...header,
+          sortable: false
+        }))
+        : this._headers
+    }
+  },
   methods: {
-    changeStatusMultiple (value) {
-      this.$emit('change-status-multiple', value, this.selected)
+    manageMultiple (action, value) {
+      this.$emit('manage-multiple-' + action, this.selected, value)
+      this.$emit('manage-multiple', action, this.selected, value)
     }
   }
 }

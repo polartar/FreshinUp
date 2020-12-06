@@ -71,6 +71,9 @@ export const Set = () => ({
     },
     changeStatusMultiple (status, events) {
       action('change-status-multiple')(status, events)
+    },
+    changeLevelMultiple (status, events) {
+      action('change-level-multiple')(status, events)
     }
   },
   template: `
@@ -88,6 +91,7 @@ export const Set = () => ({
       @manage-multiple-delete="multipleDelete"
       @change-status="changeStatus"
       @change-status-multiple="changeStatusMultiple"
+      @change-level-multiple="changeLevelMultiple"
     />
   `
 })

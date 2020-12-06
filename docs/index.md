@@ -35,9 +35,13 @@
 
 # Changes
 
+## Dec 6, 2020
+- **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
+
+<br/>
+
 ## Dec 5, 2020
 - **ADD** Document preview - Accept contract [#541](https://github.com/FreshinUp/foodfleet/issues/541)
-- **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 
 <br/>
 

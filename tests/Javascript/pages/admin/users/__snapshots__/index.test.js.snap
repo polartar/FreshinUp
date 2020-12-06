@@ -2157,6 +2157,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Status
@@ -2171,6 +2175,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 scope="col"
                 tabindex="0"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Name / Email
@@ -2192,6 +2200,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 scope="col"
                 tabindex="0"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Company
@@ -2220,6 +2232,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         User Type
@@ -2241,6 +2257,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Role
@@ -2262,6 +2282,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Managed by
@@ -2275,6 +2299,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 role="columnheader"
                 scope="col"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Manage
