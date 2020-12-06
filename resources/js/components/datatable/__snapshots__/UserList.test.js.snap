@@ -814,11 +814,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 CEO
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -1346,11 +1346,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 Admin
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -1878,11 +1878,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -2410,11 +2410,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -2936,11 +2936,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -3462,11 +3462,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -3994,11 +3994,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -4520,11 +4520,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -5046,11 +5046,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ FreshinUp
                 
-                </div>
+                </span>
               </div>
             </td>
             <td
@@ -5578,11 +5578,11 @@ exports[`User List component Snapshots Set 1`] = `
                 
                 
                 
-                <div>
+                <span>
                   
                   @ foodfleet
                 
-                </div>
+                </span>
               </div>
             </td>
             <td

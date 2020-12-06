@@ -1,34 +1,22 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Component from './UserList'
-import { FIXTURE_USER_STATUSES } from '../../../../tests/Javascript/__data__/userStatuses'
-import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
-import { FIXTURE_USER_LEVELS } from '../../../../tests/Javascript/__data__/userLevels'
+import * as Stories from './UserList.stories'
 
 describe('User List component', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
-    test('Set', () => {
+    test('Empty', () => {
       localVue = createLocalVue()
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          statuses: FIXTURE_USER_STATUSES,
-          users: FIXTURE_USERS,
-          levels: FIXTURE_USER_LEVELS
-        }
+      const wrapper = mount(Stories.Empty(), {
+        localVue
       })
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('Empty', () => {
+    test('Set', () => {
       localVue = createLocalVue()
-      const wrapper = mount(Component, {
-        localVue: localVue,
-        propsData: {
-          statuses: FIXTURE_USER_STATUSES,
-          levels: FIXTURE_USER_LEVELS,
-          users: []
-        }
+      const wrapper = mount(Stories.Set(), {
+        localVue
       })
       expect(wrapper.element).toMatchSnapshot()
     })

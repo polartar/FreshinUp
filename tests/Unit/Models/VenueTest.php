@@ -37,7 +37,6 @@ class VenueTest extends TestCase
         $location = factory(Location::class)->create([
             'venue_uuid' => $venue->uuid
         ]);
-        dd($location);
         $this->assertEquals(1, $venue->locations()->where('uuid', $location->uuid)->count());
 
         $event = factory(Event::class)->create([

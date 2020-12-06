@@ -118,9 +118,9 @@
                   {{ props.item.name }}<br>
                   {{ props.item.email }}<br>
                   {{ props.item.title }}
-                  <div v-if="props.item.company">
+                  <span v-if="props.item.company">
                     @ {{ props.item.company.name }}
-                  </div>
+                  </span>
                 </div>
               </slot>
             </td>
