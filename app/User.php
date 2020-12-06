@@ -5,13 +5,44 @@ namespace App;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\FinancialReport;
 use App\Models\Foodfleet\Document;
+use Carbon\Carbon;
+use FreshinUp\FreshBusForms\Http\Resources\User\Level;
+use FreshinUp\FreshBusForms\Models\User\UserStatus;
 
 /**
  * Class User
  * @package App
  *
+ * @property int id
+ * @property string uuid
+ * @property string first_name
+ * @property string last_name
+ * @property string email
+ * @property string mobile_phone
+ * @property string office_phone
+ * @property string notes
+ * @property string password
+ * @property string remember_token
+ * @property string requested_company
+ * @property string title
+ * @property Carbon email_verified_at
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property Carbon deleted_at
+ * @property Carbon last_login
+ * @property Carbon company_join_date
+ * @property int status
+ * @property int level
+ * @property int type
  * @property int company_id
+ * @property string data_visibility // json
+ * @property int company_branch_id
+ *
+ *
+ * @property UserStatus user_status
+ * @property Level user_level
  * @property Company company
+ * // and so on ...
  */
 class User extends \FreshinUp\FreshBusForms\Models\User\User
 {

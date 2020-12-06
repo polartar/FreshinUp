@@ -106,7 +106,10 @@
         </div>
       </td>
       <td>
-        <div class="grey--text">
+        <div
+          class="grey--text"
+          style="width: 200px;"
+        >
           {{ formatRangeDate(props.item.start_at, props.item.end_at) }}
         </div>
       </td>

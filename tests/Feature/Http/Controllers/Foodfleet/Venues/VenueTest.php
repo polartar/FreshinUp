@@ -41,6 +41,8 @@ class VenueTest extends TestCase
                 'address' => $venue->address,
                 'address_line_1' => $venue->address_line_1,
                 'address_line_2' => $venue->address_line_2,
+                'longitude' => $venue->longitude,
+                'latitude' => $venue->latitude,
             ], $data[$idx]);
         }
     }
@@ -88,7 +90,9 @@ class VenueTest extends TestCase
                 'name' => $venue->name,
                 'address' => $venue->address,
                 'address_line_1' => $venue->address_line_1,
-                'address_line_2' => $venue->address_line_2
+                'address_line_2' => $venue->address_line_2,
+                'longitude' => $venue->longitude,
+                'latitude' => $venue->latitude,
             ], $data[$idx]);
         }
         $venue = $venuesToFind->first();
@@ -109,6 +113,8 @@ class VenueTest extends TestCase
             'address' => $venue->address,
             'address_line_1' => $venue->address_line_1,
             'address_line_2' => $venue->address_line_2,
+            'latitude' => $venue->latitude,
+            'longitude' => $venue->longitude,
         ], $data[0]);
     }
 
@@ -141,7 +147,9 @@ class VenueTest extends TestCase
                 'name' => $venue->name,
                 'address' => $venue->address,
                 'address_line_1' => $venue->address_line_1,
-                'address_line_2' => $venue->address_line_2
+                'address_line_2' => $venue->address_line_2,
+                'longitude' => $venue->longitude,
+                'latitude' => $venue->latitude,
             ], $data[$idx]);
             $this->assertArrayHasKey('locations', $data[$idx]);
             foreach ($venueLocations[$venue->uuid] as $locationIndex => $location) {
@@ -296,6 +304,8 @@ class VenueTest extends TestCase
           'address_line_2' => $payload['address_line_2'],
           'status_id' => $payload['status_id'],
           'owner_uuid' => $payload['owner_uuid'],
+          'longitude' => $payload['longitude'],
+          'latitude' => $payload['latitude'],
         ];
         $this->assertArraySubset($expected, $data);
     }
@@ -336,6 +346,8 @@ class VenueTest extends TestCase
             'address_line_2' => $payload['address_line_2'],
             'status_id' => $payload['status_id'],
             'owner_uuid' => $payload['owner_uuid'],
+            'latitude' => $payload['latitude'],
+            'longitude' => $payload['longitude'],
         ], $data);
     }
 
@@ -363,6 +375,8 @@ class VenueTest extends TestCase
             "address_line_2" => $venue->address_line_2,
             "status_id" => $venue->status_id,
             'owner_uuid' => $venue->owner_uuid,
+            'latitude' => $venue->latitude,
+            'longitude' => $venue->longitude,
         ], $data);
     }
 
@@ -392,7 +406,9 @@ class VenueTest extends TestCase
             "address_line_1" => $venue->address_line_1,
             "address_line_2" => $venue->address_line_2,
             "status_id" => $venue->status_id,
-            'owner_uuid' => $venue->owner_uuid
+            'owner_uuid' => $venue->owner_uuid,
+            'latitude' => $venue->latitude,
+            'longitude' => $venue->longitude,
         ], $data);
         $this->assertArrayHasKey('owner', $data);
         $this->assertArraySubset([

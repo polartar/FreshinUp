@@ -1,7 +1,8 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import { FIXTURE_COMPANIES_RESPONSE } from 'tests/__data__/companies'
 import Component from '~/components/datatable/CompaniesList.vue'
+import { FIXTURE_COMPANY } from '../../__data__/companies'
 
 describe('Companies List Component', () => {
   let localVue
@@ -48,6 +49,16 @@ describe('Companies List Component', () => {
 
       expect(wrapper.findAll('tbody tr').at(0).text()).toContain(FIXTURE_COMPANIES_RESPONSE.data[0].name)
       expect(wrapper.findAll('tbody tr').at(1).text()).toContain(FIXTURE_COMPANIES_RESPONSE.data[1].name)
+    })
+  })
+
+  describe('Methods', () => {
+    test('_companyActions(company)', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm._companyActions(FIXTURE_COMPANY)).toMatchObject([
+        { action: 'edit', text: 'View / Edit' },
+        { action: 'delete', text: 'Delete' }
+      ])
     })
   })
 })

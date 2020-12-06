@@ -18,6 +18,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
     Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
+    Route::post('documents/{uuid}/accept', 'Foodfleet\Documents@accept');
     Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')
@@ -65,10 +66,11 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
 
     Route::get('payments', 'Foodfleet\Payments@index');
+    Route::get('payment/types', 'Foodfleet\PaymentTypes@index');
+    // Route::get('payment/statuses', 'Foodfleet\PaymentStatuses@index');
     Route::get('staffs', 'Foodfleet\Staffs@index');
     Route::get('transactions', 'Foodfleet\Transactions@index');
     Route::get('transactions/{uuid}', 'Foodfleet\Transactions@show');
-    Route::get('payment-types', 'Foodfleet\PaymentTypes@index');
     Route::get('devices', 'Foodfleet\Devices@index');
     Route::get('financial-summary', 'Foodfleet\FinancialSummary@index');
     Route::get('companies/{company}/members', 'Foodfleet\Companies\CompanyMembers@index');

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import FormatDate from 'fresh-bus/components/mixins/FormatDate'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
 // TODO: extract this component to core-ui to FTimeline
 export default {

@@ -58,6 +58,8 @@
         :templates="templates"
         :variables="templateVariables"
         :events="events"
+        :is-loading="documentLoading"
+        @accept-contract="acceptContract"
         @close="previewDialog = false"
       />
     </v-dialog>
@@ -65,7 +67,7 @@
 </template>
 
 <script>
-import { omitBy, isNull } from 'lodash'
+import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import BasicInformation, { DEFAULT_DOCUMENT } from '~/components/docs/BasicInformation.vue'
 import DocumentPreview from '~/components/docs/DocumentPreview.vue'
@@ -80,9 +82,9 @@ export default {
   mixins: [Validate],
   data () {
     return {
-      isNew: false,
       template: null,
       previewDialog: false,
+      documentLoading: false,
       file: { name: null, src: null }
     }
   },
@@ -93,6 +95,9 @@ export default {
     ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapGetters('documentTemplates', { templates: 'items' }),
     ...mapGetters('events', { events: 'items' }),
+    isNew () {
+      return get(this, '$route.params.id', 'new') === 'new'
+    },
     pageTitle () {
       return this.isNew ? 'New Document' : 'Document Details'
     },
@@ -111,6 +116,21 @@ export default {
     downloadDocument () {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
+    acceptContract () {
+      this.documentLoading = true
+      this.$store.dispatch('documents/acceptContract', { params: { id: this.$route.params.id } })
+        .then(() => {
+          this.previewDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Contract accepted.')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.documentLoading = false
+        })
+    },
     async validator () {
       const valids = await Promise.all([
         this.$validator.validateAll(),
@@ -118,36 +138,41 @@ export default {
       ])
       return valids.every(valid => valid)
     },
-    onSaveClick (payload) {
-      this.validator().then(async valid => {
-        const data = omitBy(payload, (value, key) => {
-          const extra = ['created_at', 'updated_at', 'assigned', 'owner']
-          return extra.includes(key) || isNull(value)
-        })
-        if (valid) {
-          if (this.isNew) {
-            data.id = 'new'
-            await this.$store.dispatch('documents/createItem', { data })
-            this.backToList()
-          } else {
-            await this.$store.dispatch('documents/updateItem', {
-              data,
-              params: { id: data.uuid }
-            })
-            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
-          }
-        }
+    async onSaveClick (payload) {
+      // const valid = await this.validator()
+      // if (!valid) {
+      //   this.$store.dispatch('generalErrorMessages/setErrors', 'Form is invalid.')
+      //   return false
+      // }
+      const data = omitBy(payload, (value, key) => {
+        const extra = ['created_at', 'updated_at', 'assigned', 'owner']
+        return extra.includes(key) || isNull(value)
       })
+      if (this.isNew) {
+        await this.$store.dispatch('documents/createItem', { data })
+        await this.$store.dispatch('generalMessage/setMessage', 'Created.')
+        this.backToList()
+      } else {
+        await this.$store.dispatch('documents/updateItem', {
+          data,
+          params: { id: data.uuid }
+        })
+        await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+      }
     },
     backToList () {
       this.$router.push({ path: '/admin/docs' })
     },
     changeStatus (status) {
-      this.$store
-        .dispatch('documents/patchItem', {
-          data: { status },
-          params: { id: this.doc.uuid }
-        })
+      if (!this.isNew) {
+        this.$store
+          .dispatch('documents/patchItem', {
+            data: { status_id: +status },
+            params: { id: this.doc.uuid }
+          })
+      } else {
+        this.status_id = status
+      }
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
@@ -155,8 +180,11 @@ export default {
     const id = to.params.id || 'new'
     const promises = []
     if (id !== 'new') {
+      vm.$store.dispatch('documents/setFilters', {
+        include: 'template'
+      })
       promises.push(vm.$store.dispatch('documents/getItem', {
-        params: { id, include: 'template' }
+        params: { id }
       }))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))

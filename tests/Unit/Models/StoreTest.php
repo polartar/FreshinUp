@@ -3,6 +3,7 @@
 namespace Tests\Unit\Models;
 
 use App\Enums\DocumentStatus;
+use App\Enums\StoreStatus as StoreStatusEnum;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Staff;

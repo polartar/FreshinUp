@@ -1,9 +1,13 @@
 export const FIXTURE_VENUES = [
   {
-    uuid: 'abc111',
     id: 1,
+    uuid: '604061d2-7253-34ec-95bd-d31aa42e7fd4',
     name: 'LA Stadium',
-    owner_uuid: '',
+    address: '381 Jade Rest Suite 601 45753, Okuneva Heights Suite 101',
+    address_line_1: '381 Jade Rest Suite 601',
+    address_line_2: '45753 Okuneva Heights Suite, 101',
+    status_id: 3,
+    owner_uuid: 'd111',
     owner: {
       uuid: 'd111',
       name: 'Demo Admin',
@@ -11,9 +15,8 @@ export const FIXTURE_VENUES = [
       mobile_phone: '321-123-1234',
       avatar: 'https://via.placeholder.com/800x600.png'
     },
-    address: '123 LA Stadium Way North Velmaville, CA 123',
-    address_line_1: '123 LA Stadium Way',
-    address_line_2: 'North Velmaville, CA 123',
+    latitude: 17.373867,
+    longitude: -152.304272,
     locations: [
       {
         uuid: 'lota',
@@ -32,8 +35,18 @@ export const FIXTURE_VENUES = [
         details: 'Lorem Mitchellchester dolor sit amet, consectetur adipiscing elit. Nam interdum sagittis nibh sed accumsan. Etiam a mauris eget turpis maximus fermentum. Suspendisse eu condimentum'
       }
     ],
-    status_id: 1,
     created_at: '2019-09-30T03:51:14.000000Z'
+  },
+  {
+    uuid: 'abc111',
+    id: 1,
+    name: '',
+    owner_uuid: '',
+    address: '123 LA Stadium Way North Velmaville, CA 123',
+    address_line_1: '123 LA Stadium Way',
+    address_line_2: 'North Velmaville, CA 123',
+
+    status_id: 1
   },
   {
     id: 2,

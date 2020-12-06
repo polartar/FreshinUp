@@ -2157,6 +2157,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Status
@@ -2171,9 +2175,38 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 scope="col"
                 tabindex="0"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Name / Email
+      
+                </span>
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+              </th>
+              <th
+                aria-label="Company: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-left"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <!---->
+                 
+                <!---->
+                 
+                <span>
+                  
+        Company
       
                 </span>
                 <i
@@ -2199,6 +2232,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         User Type
@@ -2206,28 +2243,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 </span>
               </th>
               <th
-                aria-label="Company: Not sorted. Activate to sort ascending."
-                aria-sort="none"
-                class="column sortable text-xs-left"
-                role="columnheader"
-                scope="col"
-                tabindex="0"
-              >
-                <span>
-                  
-        Company
-      
-                </span>
-                <i
-                  aria-hidden="true"
-                  class="v-icon material-icons theme--light"
-                  style="font-size: 16px;"
-                >
-                  arrow_upward
-                </i>
-              </th>
-              <th
-                aria-label="BUS Role: Not sorted. Activate to sort ascending."
+                aria-label="Role: Not sorted. Activate to sort ascending."
                 aria-sort="none"
                 class="column sortable text-xs-center"
                 role="columnheader"
@@ -2241,9 +2257,38 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 >
                   arrow_upward
                 </i>
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
-        BUS Role
+        Role
+      
+                </span>
+              </th>
+              <th
+                aria-label="Managed by: Not sorted. Activate to sort ascending."
+                aria-sort="none"
+                class="column sortable text-xs-center"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <i
+                  aria-hidden="true"
+                  class="v-icon material-icons theme--light"
+                  style="font-size: 16px;"
+                >
+                  arrow_upward
+                </i>
+                <!---->
+                 
+                <!---->
+                 
+                <span>
+                  
+        Managed by
       
                 </span>
               </th>
@@ -2254,6 +2299,10 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                 role="columnheader"
                 scope="col"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <span>
                   
         Manage
@@ -2266,7 +2315,7 @@ exports[`Admin Users Page Mount snapshot 1`] = `
             >
               <th
                 class="column"
-                colspan="7"
+                colspan="8"
               />
             </tr>
           </thead>
@@ -2411,18 +2460,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -2504,6 +2553,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -2722,18 +2778,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -2815,6 +2871,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3033,18 +3096,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3126,6 +3189,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3344,18 +3414,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3437,6 +3507,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3655,18 +3732,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3748,6 +3825,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -3966,18 +4050,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4059,6 +4143,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4277,18 +4368,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4370,6 +4461,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4588,18 +4686,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4681,6 +4779,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4899,18 +5004,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       FreshinUp
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -4992,6 +5097,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -5210,18 +5322,18 @@ exports[`Admin Users Page Mount snapshot 1`] = `
     
               </td>
               <td
-                class="text-xs-center"
-              >
-                
-              
-            
-              </td>
-              <td
                 class="text-xs-left"
               >
                 
       foodfleet
     
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"
@@ -5303,6 +5415,13 @@ exports[`Admin Users Page Mount snapshot 1`] = `
                     </div>
                   </div>
                 </div>
+              </td>
+              <td
+                class="text-xs-center"
+              >
+                
+              
+            
               </td>
               <td
                 class="justify-center text-xs-center"

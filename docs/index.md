@@ -5,16 +5,11 @@
 
 ## Venue Page
 - Venues can be search by (this is unknown)
-- Venues can be filtered by **Statues**, **Venue/Owner**, **Locations**, and **Submitted On**
-- Clicking `Manage` and then `View/Edit` will route you to the edit page of that Venue
 
 <br/>
 
 ## Venue Edit Page
 ### Components
-- Basic Information
-- Locations
-- Venue Documents
 - Assigned Events
 
 <br/>
@@ -26,7 +21,6 @@
 - As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
 
 ### Components
-- Venue Details _(requires Venues to be completed)_
 - Event Fleet _(Requires Fleet Members to be completed)_
 - Customer
 
@@ -34,13 +28,76 @@
 
 ## Fleet Member Edit Page
 ### Functionality for these components
-- Fleet Member Documents
 - Payments
 - Assigned Events _(Requires Event Fleet component to be completed)_
 
 <br/>
 
 # Changes
+
+## Dec 6, 2020
+- **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
+
+<br/>
+
+## Dec 5, 2020
+- **ADD** Document preview - Accept contract [#541](https://github.com/FreshinUp/foodfleet/issues/541)
+
+<br/>
+
+## Dec 4, 2020
+- **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
+- **ADD** Event status change generates fleet member event invitation agreement [#544](https://github.com/FreshinUp/foodfleet/issues/544)
+
+<br/>
+
+## Dec 3, 2020
+- **MOD** User type dropdown menu is not displaying the proper user types [#607](https://github.com/FreshinUp/foodfleet/issues/607)
+
+<br/>
+
+## Nov 26, 2020
+- **ADD** Sign documents [#542](https://github.com/FreshinUp/foodfleet/issues/542)
+
+<br/>
+
+## Nov 25, 2020
+- **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
+
+<br/>
+
+## Nov 22, 2020
+- **MOD** "View" option must be removed from the "Manage" dropdown button (company list) [#574](https://github.com/FreshinUp/foodfleet/issues/574)
+- **MOD** Return to User list button is not created  [#592](https://github.com/FreshinUp/foodfleet/issues/592)
+
+<br/>
+
+## Nov 21, 2020
+- **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
+- **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
+- **FIX** Event activity (internal comm) - Customer [#546](https://github.com/FreshinUp/foodfleet/issues/546)
+
+
+<br/>
+
+## Nov 20, 2020
+- **ADD** Update Fleet Member Menu Form [#568](https://github.com/FreshinUp/foodfleet/issues/568)
+- **ADD** Event status change generate fleet member event contract [#545](https://github.com/FreshinUp/foodfleet/issues/545)
+
+<br/>
+
+## Nov 19, 2020
+- **ADD** Event status change - generate client agreement [#543](https://github.com/FreshinUp/foodfleet/issues/543)
+- **FIX** User status options not correct [#588](https://github.com/FreshinUp/foodfleet/issues/588)
+- **FIX** Cannot edit menu item [#599](https://github.com/FreshinUp/foodfleet/issues/599)
+- **ADD** Food Fleet Members: Create request payment modal [#571](https://github.com/FreshinUp/foodfleet/issues/571)
+
+<br/>
+
+## Nov 11, 2020
+- **ADD** Venue component: Basic Information displays Map [#462](https://github.com/FreshinUp/foodfleet/issues/462)
+
+<br/>
 
 ## Nov 4, 2020
 - **ADD** Document template - Add variable function [#506](https://github.com/FreshinUp/foodfleet/issues/506)
