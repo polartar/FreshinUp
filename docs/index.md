@@ -35,6 +35,11 @@
 
 # Changes
 
+## Dec 9, 2020
+- **ADD** Duplicate to event "Manage" dropdown selector [#586](https://github.com/FreshinUp/foodfleet/issues/586)
+
+<br/>
+
 ## Dec 6, 2020
 - **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 

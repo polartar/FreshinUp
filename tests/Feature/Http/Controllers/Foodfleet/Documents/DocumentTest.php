@@ -238,6 +238,7 @@ class DocumentTest extends TestCase
             ->json('data');
 
         $this->assertNotNull($data['signed_at']);
+        $this->assertEquals(DocumentStatus::APPROVED, $data['status_id']);
     }
 
     // TODO: test document creation or at least test actions/CreateDocument

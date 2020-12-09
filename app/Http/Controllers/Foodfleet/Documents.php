@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Actions\CreateDocument;
 use App\Actions\UpdateDocument;
+use App\Enums\DocumentStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Document as DocumentResource;
 use App\Models\Foodfleet\Document;
@@ -167,7 +168,8 @@ class Documents extends Controller
             ], 422);
         }
         $document->update([
-            'signed_at' => now()
+            'signed_at' => now(),
+            'status_id' => DocumentStatus::APPROVED
         ]);
         $document->load('template', 'owner', 'assigned');
         return new DocumentResource($document);

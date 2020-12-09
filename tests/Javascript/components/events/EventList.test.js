@@ -42,6 +42,7 @@ describe('Event List component', () => {
 
       const itemActions = [
         { action: 'edit', text: 'Edit' },
+        { action: 'duplicate', text: 'Duplicate' },
         { action: 'delete', text: 'Delete' },
         { action: 'cancel', text: 'Cancel' },
         { action: 'leave', text: 'Leave Event' }
@@ -52,8 +53,10 @@ describe('Event List component', () => {
       wrapper.vm.manage(itemActions[1], mockEvent)
       wrapper.vm.manage(itemActions[2], mockEvent)
       wrapper.vm.manage(itemActions[3], mockEvent)
+      wrapper.vm.manage(itemActions[4], mockEvent)
 
       expect(wrapper.emitted()['manage-edit']).toBeTruthy()
+      expect(wrapper.emitted()['manage-duplicate']).toBeTruthy()
       expect(wrapper.emitted()['manage-delete']).toBeTruthy()
       expect(wrapper.emitted()['manage-cancel']).toBeTruthy()
       expect(wrapper.emitted()['manage-leave']).toBeTruthy()

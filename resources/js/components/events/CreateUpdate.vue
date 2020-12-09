@@ -51,86 +51,11 @@
                     <span class="primary--text">Duplicate</span>
                   </v-btn>
                 </template>
-                <v-card>
-                  <v-progress-linear
-                    v-if="duplicating"
-                    indeterminate
-                  />
-                  <v-card-title>
-                    <v-layout
-                      row
-                      space-between
-                      align-center
-                    >
-                      <v-flex>
-                        <h3>Duplicate Event</h3>
-                      </v-flex>
-                      <v-btn
-                        small
-                        round
-                        color="grey"
-                        class="white--text"
-                        @click="duplicateDialog = false"
-                      >
-                        <v-flex>
-                          <v-icon
-                            small
-                            class="white--text"
-                          >
-                            fa fa-times
-                          </v-icon>
-                        </v-flex>
-                        <v-flex>
-                          Close
-                        </v-flex>
-                      </v-btn>
-                    </v-layout>
-                  </v-card-title>
-                  <v-divider />
-                  <v-card-text class="grey--text">
-                    <small class="font-weight-bold">SELECT</small>
-                    <p>Choose what will be carried over to the duplicate event</p>
-                    <v-checkbox
-                      v-model="duplicate.basicInformation"
-                      class="mt-0 mb-0 p-0"
-                      label="Basic Information"
-                    />
-                    <v-checkbox
-                      v-model="duplicate.venue"
-                      class="mt-0 mb-0 p-0"
-                      label="Venue/lovation (coming soon)"
-                    />
-                    <v-checkbox
-                      v-model="duplicate.fleetMember"
-                      class="mt-0 mb-0 p-0"
-                      label="Fleet Member (coming soon)"
-                    />
-                    <v-checkbox
-                      v-model="duplicate.customer"
-                      class="mt-0 mb-0 p-0"
-                      label="Customer (coming soon)"
-                    />
-                  </v-card-text>
-                  <v-divider />
-                  <v-card-actions>
-                    <v-layout
-                      row
-                      justify-end
-                    >
-                      <v-btn
-                        @click="duplicateDialog = false"
-                      >
-                        Cancel
-                      </v-btn>
-                      <v-btn
-                        color="primary"
-                        @click="onDuplicate"
-                      >
-                        Duplicate
-                      </v-btn>
-                    </v-layout>
-                  </v-card-actions>
-                </v-card>
+                <duplicate-event-dialog
+                  :is-loading="duplicating"
+                  @input="onDuplicate"
+                  @close="duplicateDialog = false"
+                />
               </v-dialog>
             </v-flex>
           </v-layout>
@@ -255,7 +180,7 @@
     >
       <v-flex>
         <stores
-          :types="types"
+          :types="storeTypes"
           :statuses="storeStatuses"
           :stores="stores"
           @manage-view-details="viewDetails"
@@ -293,24 +218,12 @@ import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
+import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
   mutationType: 'updateField'
 })
-
-export const getFileNameCopy = (name) => {
-  const regex = /\s*\(([0-9]+)\)$/gm
-  const matches = name.match(regex) || []
-  const count = (
-    parseInt(
-      get(matches, '[0]', '')
-        .replace('(', '')
-        .replace(')', '')
-    ) || 0
-  ) + 1
-  return `Copy of ${name.replace(get(matches, '[0]', ''), '')} (${count})`
-}
 
 export default {
   layout: 'admin',
@@ -320,7 +233,8 @@ export default {
     BasicInformation,
     Customers,
     EventStatusTimeline,
-    VenueDetails
+    VenueDetails,
+    DuplicateEventDialog
   },
   mixins: [Validate, FormatDate],
   data () {
@@ -329,19 +243,13 @@ export default {
       duplicating: false,
       duplicateDialog: false,
       questDialog: false,
-      duplicate: {
-        basicInformation: true,
-        venue: false,
-        fleetMember: true,
-        customer: true
-      },
-      isNew: false,
-      types: []
+      isNew: false
     }
   },
   computed: {
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
+    ...mapGetters('eventTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('venues', { 'venues': 'items' }),
@@ -374,74 +282,29 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    onDuplicate () {
-      // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
-      // Fields remaining/not found: $location_uuid
-      const toDuplicate = [
-        {
-          condition: this.duplicate.basicInformation,
-          action: (payload) => {
-            return {
-              ...payload,
-              ...this.$refs.basicInfo.eventData
-            }
-          }
-        },
-        // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
-        {
-          condition: this.duplicate.venue,
-          action: (payload) => {
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: this.duplicate.fleetMember,
-          action: (payload) => {
-            // fields to consider: this.types,this.storeStatuses,this.stores
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: this.duplicate.customer,
-          action: (payload) => {
-            // fields to consider: this.customers,this.statuses
-            return {
-              ...payload
-            }
-          }
-        }
-      ]
-      const data = toDuplicate.reduce((payload, strategy) => {
-        if (strategy.condition) {
-          payload = Object.assign({}, payload, strategy.action(payload))
-        }
-        return payload
-      }, {})
-      if (data.name) {
-        data.name = getFileNameCopy(data.name)
-      }
+    onDuplicate (options) {
       this.duplicating = true
-      this.$store.dispatch('events/createItem', {
-        data
+      this.$store.dispatch('events/duplicate', {
+        params: {
+          uuid: this.$route.params.id
+        },
+        data: options
       })
-        .then(response => {
-          const eventUuid = get(response, 'data.data.uuid')
+        .then(data => {
+          this.duplicateDialog = false
+          const eventUuid = get(data, 'data.uuid')
           if (eventUuid) {
             const path = `/admin/events/${eventUuid}/edit`
-            window.location = path
-            // TODO: Replace this with the proper route for an event item this.$router.push({ path })
+            this.$router.push({ path })
+            this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
           }
         })
         .catch(error => {
-          console.error(error)
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
           this.duplicating = false
-          this.duplicateDialog = false
         })
     },
     changeBasicInfo (data) {
@@ -531,6 +394,9 @@ export default {
       this.$router.push({ path: '/admin/events' })
     },
     onLocationOrVenueChanged (location) {
+      if (!this.event) {
+        return false
+      }
       this.event.location_uuid = location.uuid
       this.event.venue_uuid = location.venue_uuid
     }

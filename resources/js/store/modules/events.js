@@ -3,6 +3,7 @@ import omitBy from 'lodash/omitBy'
 import isNull from 'lodash/isNull'
 import omit from 'lodash/omit'
 import moment from 'moment'
+import axios from 'axios'
 
 export default ({ items, item }) => {
   const store = makeRestStore(
@@ -39,6 +40,21 @@ export default ({ items, item }) => {
   const _updateItem = store.actions.updateItem
   store.actions = {
     ...store.actions,
+    duplicate (context, { params, data }) {
+      return new Promise((resolve, reject) => {
+        const { uuid } = params
+        if (!uuid) {
+          return reject(new Error('Events/duplicate: uuid is not defined'))
+        }
+        axios({
+          url: `/foodfleet/events/${uuid}/duplicate`,
+          method: 'POST',
+          data
+        })
+          .then(response => resolve(response.data))
+          .catch(error => reject(error))
+      })
+    },
     updateItem (context, payload) {
       payload.data = stripeUnwantedObject(payload.data)
       payload.data = omitBy(payload.data, (value) => String(value).length === 0 || isNull(value))
