@@ -742,14 +742,12 @@ class EventTest extends TestCase
     }
 
 
-
-    public function testDuplicateItem() // ($payload)
-    {
-/**
+    /**
      * @dataProvider getDuplicateProvider
      * @param $payload
      */
-        $payload = ['basicInformation' => true];
+    public function testDuplicateItem($payload)
+    {
         $admin = factory(User::class)->create([
             'level' => 1
         ]);
