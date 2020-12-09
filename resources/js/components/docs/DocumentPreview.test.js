@@ -18,6 +18,20 @@ describe('components/docs/DocumentPreview', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
+    test('End Of Scroll', async () => {
+      const wrapper = mount(Stories.Populated(), {
+        data: () => ({
+          endOfScroll: true
+        })
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('Signed', async () => {
+      const wrapper = mount(Stories.Signed())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
   })
 
   describe('Props & Computed', () => {
@@ -30,6 +44,16 @@ describe('components/docs/DocumentPreview', () => {
         value: document
       })
       expect(wrapper.vm.value).toMatchObject(document)
+    })
+
+    test('isLoading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.isLoading).toBe(false)
+
+      wrapper.setProps({
+        isLoading: true
+      })
+      expect(wrapper.vm.isLoading).toBe(true)
     })
 
     test('events', async () => {

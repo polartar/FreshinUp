@@ -21,9 +21,51 @@ export const Populated = () => ({
   components: { DocumentPreview },
   data () {
     return {
-      document: { ...document, event_store_uuid: FIXTURE_EVENTS[0].uuid, signed_at: null },
+      document: {
+        ...document,
+        event_store_uuid: FIXTURE_EVENTS[0].uuid,
+        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
+        signed_at: null
+      },
       templates: FIXTURE_DOCUMENT_TEMPLATES,
       events: FIXTURE_EVENTS,
+      variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES,
+      previewDialog: true
+    }
+  },
+  methods: {
+    onClose () {
+      action('onClose')()
+    },
+    acceptContract () {
+      action('acceptContract')()
+    }
+  },
+  template: `
+    <v-container>
+      <document-preview
+        :value="document"
+        :templates="templates"
+        :events="events"
+        :variables="variables"
+        :preview-dialog="previewDialog"
+        @accept-contract="acceptContract"
+        @close="onClose"
+      />
+    </v-container>
+  `
+})
+
+export const IsLoading = () => ({
+  components: { DocumentPreview },
+  data () {
+    return {
+      document: {
+        ...document,
+        template_uuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid,
+        signed_at: null
+      },
+      templates: FIXTURE_DOCUMENT_TEMPLATES,
       variables: FIXTURE_DOCUMENT_TEMPLATES_VARIABLES
     }
   },
@@ -42,8 +84,7 @@ export const Populated = () => ({
         :templates="templates"
         :events="events"
         :variables="variables"
-        @accept-contract="acceptContract"
-        @close="onClose"
+        is-loading
       />
     </v-container>
   `
@@ -85,4 +126,5 @@ storiesOf('FoodFleet|components/docs/DocumentPreview', module)
   })
   .add('Default', Default)
   .add('Populated', Populated)
+  .add('IsLoading', IsLoading)
   .add('Signed', Signed)

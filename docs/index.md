@@ -35,6 +35,32 @@
 
 # Changes
 
+## Dec 9, 2020
+- **ADD** Duplicate to event "Manage" dropdown selector [#586](https://github.com/FreshinUp/foodfleet/issues/586)
+
+<br/>
+
+## Dec 6, 2020
+- **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
+
+<br/>
+
+## Dec 5, 2020
+- **ADD** Document preview - Accept contract [#541](https://github.com/FreshinUp/foodfleet/issues/541)
+
+<br/>
+
+## Dec 4, 2020
+- **ADD** Event activity (internal comm) Fleet member [#547](https://github.com/FreshinUp/foodfleet/issues/547)
+- **ADD** Event status change generates fleet member event invitation agreement [#544](https://github.com/FreshinUp/foodfleet/issues/544)
+
+<br/>
+
+## Dec 3, 2020
+- **MOD** User type dropdown menu is not displaying the proper user types [#607](https://github.com/FreshinUp/foodfleet/issues/607)
+
+<br/>
+
 ## Nov 26, 2020
 - **ADD** Sign documents [#542](https://github.com/FreshinUp/foodfleet/issues/542)
 
@@ -55,6 +81,7 @@
 - **MOD** User data table is not in the correct order [#591](https://github.com/FreshinUp/foodfleet/issues/591)
 - **MOD** Company members container must be hidden / removed [#573](https://github.com/FreshinUp/foodfleet/issues/573)
 - **FIX** Event activity (internal comm) - Customer [#546](https://github.com/FreshinUp/foodfleet/issues/546)
+
 
 <br/>
 

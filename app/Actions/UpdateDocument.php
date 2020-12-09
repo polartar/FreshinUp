@@ -15,7 +15,7 @@ class UpdateDocument implements Action
         $document = Document::where('uuid', $data['uuid'])
             ->with('assigned')
             ->with('owner')
-            ->first();
+            ->firstOrFail();
 
         $collection = collect($data);
         $updateData = $collection->except(['assigned_type', 'assigned_uuid', 'uuid', 'file'])->all();
@@ -24,7 +24,9 @@ class UpdateDocument implements Action
         if ($collection->get('assigned_type') && $collection->get('assigned_uuid')) {
             $assignedModelName = DocumentAssignedEnum::getDescription($data['assigned_type']);
             $assigned = call_user_func(array($assignedModelName, 'where'), 'uuid', $data['assigned_uuid'])->first();
-            $assigned->documents()->save($document);
+            if ($assigned) {
+                $assigned->documents()->save($document);
+            }
         }
 
         if ($collection->get('file')) {

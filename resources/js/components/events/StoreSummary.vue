@@ -115,7 +115,7 @@
           :color="'primary'"
           class="my-1 ml-0 mr-2"
         >
-          {{ tag }}
+          {{ tag.name }}
         </f-chip>
       </v-layout>
 
