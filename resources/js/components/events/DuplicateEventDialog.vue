@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-progress-linear
-      v-if="loading"
+      v-if="isLoading"
       indeterminate
     />
     <v-card-title>
@@ -18,7 +18,7 @@
           round
           color="grey"
           class="white--text"
-          @click="changeDuplicateDialogue(false)"
+          @click="close()"
         >
           <v-flex>
             <v-icon
@@ -39,24 +39,25 @@
       <small class="font-weight-bold">SELECT</small>
       <p>Choose what will be carried over to the duplicate event</p>
       <v-checkbox
-        v-model="duplicate.basicInformation"
+        v-model="basicInformation"
+        disabled
         class="mt-0 mb-0 p-0"
         label="Basic Information"
       />
       <v-checkbox
-        v-model="duplicate.venue"
+        v-model="venue"
         class="mt-0 mb-0 p-0"
-        label="Venue/lovation (coming soon)"
+        label="Venue/location"
       />
       <v-checkbox
-        v-model="duplicate.fleetMember"
+        v-model="fleetMember"
         class="mt-0 mb-0 p-0"
-        label="Fleet Member (coming soon)"
+        label="Fleet Member"
       />
       <v-checkbox
-        v-model="duplicate.customer"
+        v-model="customer"
         class="mt-0 mb-0 p-0"
-        label="Customer (coming soon)"
+        label="Customer"
       />
     </v-card-text>
     <v-divider />
@@ -66,13 +67,14 @@
         justify-end
       >
         <v-btn
-          @click="changeDuplicateDialogue(false)"
+          @click="close()"
         >
           Cancel
         </v-btn>
         <v-btn
           color="primary"
-          @click="onDuplicate"
+          :loading="isLoading"
+          @click="save()"
         >
           Duplicate
         </v-btn>
@@ -82,27 +84,34 @@
 </template>
 
 <script>
+import MapValueKeysToData from '~/mixins/MapValueKeysToData'
+
+export const DEFAULT_VALUE = {
+  basicInformation: true,
+  venue: false,
+  fleetMember: false,
+  customer: false
+}
+/**
+ * @property boolean basicInformation
+ * @property boolean venue
+ * @property boolean fleetMember
+ * @property boolean customer
+ */
 export default {
-  layout: 'admin',
+  mixins: [MapValueKeysToData],
   props: {
-    loading: { type: Boolean, default: false }
+    value: { type: Object, default: () => DEFAULT_VALUE },
+    isLoading: { type: Boolean, default: false }
   },
   data () {
     return {
-      duplicate: {
-        basicInformation: true,
-        venue: false,
-        fleetMember: true,
-        customer: true
-      }
+      ...DEFAULT_VALUE
     }
   },
   methods: {
-    changeDuplicateDialogue (value) {
-      this.$emit('manage-duplicate-dialog', value)
-    },
-    onDuplicate () {
-      this.$emit('Duplicate', this.duplicate)
+    close () {
+      this.$emit('close')
     }
   }
 }

@@ -3,7 +3,7 @@ import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLoca
 import { FIXTURE_EVENT, EMPTY_EVENT } from 'tests/__data__/event'
 import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 import BaseComponent from '~/components/events/CreateUpdate.vue'
-import getFileNameCopy from '../../../../resources/js/components/events/utils'
+import { getFileNameCopy } from '~/utils'
 import { FIXTURE_EVENT_HISTORIES } from 'tests/__data__/eventHistory'
 import createStore from 'tests/createStore'
 

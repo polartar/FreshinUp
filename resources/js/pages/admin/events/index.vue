@@ -58,7 +58,7 @@
         :descending="sorting.descending"
         @paginate="onPaginate"
         @manage-edit="eventEdit"
-        @manage-duplicate="eventDuplicate"
+        @manage-duplicate="onManageDuplicate"
         @manage-delete="deleteSingle"
         @manage-multiple-delete="multipleDelete"
         @change-status="changeStatusSingle"
@@ -139,19 +139,16 @@
         </div>
       </simple-confirm>
     </v-dialog>
-    <v-flex>
-      <v-dialog
-        v-model="show"
-        max-width="500"
-      >
-        <duplicate-dialog
-          :loading="loading"
-          :show="show"
-          @Duplicate="onDuplicate"
-          @manage-duplicate-dialog="changeDuplicateDialogue"
-        />
-      </v-dialog>
-    </v-flex>
+    <v-dialog
+      :value="editingEvent != null"
+      max-width="500"
+    >
+      <duplicate-event-dialog
+        :is-loading="duplicating"
+        @input="onDuplicate"
+        @close="editingEvent = null"
+      />
+    </v-dialog>
   </div>
 </template>
 <script>
@@ -164,8 +161,7 @@ import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar
 import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-import DuplicateDialog from '~/components/events/DuplicateDialog.vue'
-import getFileNameCopy from '~/components/events/utils.js'
+import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
 
 const INCLUDE = [
   'status',
@@ -184,7 +180,7 @@ export default {
     FilterSorter,
     FilterSorterForCalendar,
     SimpleConfirm,
-    DuplicateDialog
+    DuplicateEventDialog
   },
   filters: {
     formatDeleteTitles (value) {
@@ -197,7 +193,6 @@ export default {
     return {
       pageTitle: 'Events',
       deleteDialog: false,
-      show: false,
       loading: false,
       deleteTemp: [],
       deletablesProcessing: false,
@@ -210,7 +205,10 @@ export default {
       views: [
         { value: 1, text: 'List view' },
         { value: 2, text: 'Calendar view' }
-      ]
+      ],
+      editingEvent: null,
+      duplicateDialog: false,
+      duplicating: false
     }
   },
   computed: {
@@ -243,6 +241,9 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    onManageDuplicate (event) {
+      this.editingEvent = event
+    },
     eventNew () {
       this.$router.push({ path: '/admin/events/new' })
     },
@@ -253,96 +254,28 @@ export default {
       this.deleteTemp = [event]
       this.deleteDialog = true
     },
-    changeDuplicateDialogue (value) {
-      this.show = value
-    },
-    async eventDuplicate (event) {
-      this.show = true
-      const params = {
-        id: event.uuid,
-        include: 'manager,host,event_tags,venue,location'
-      }
-      await this.$store.dispatch('events/getItem', { params })
-        .then()
-        .catch(error => {
-          console.error(error)
-        })
-        .then()
-    },
-    onDuplicate (duplicate) {
-      const toDuplicate = [
-        {
-          condition: duplicate.basicInformation,
-          action: (payload) => {
-            return {
-              ...payload,
-              ...this.event
-            }
-          }
+    /**
+     * @param {object} options
+     * @param {boolean} [options.basicInformation]
+     * @param {boolean} [options.venue]
+     * @param {boolean} [options.fleetMember]
+     * @param {boolean} [options.customer]
+     */
+    onDuplicate (options) {
+      this.duplicating = true
+      this.$store.dispatch('events/duplicate', {
+        params: {
+          uuid: this.editingEvent.uuid
         },
-        {
-          condition: duplicate.venue,
-          action: (payload) => {
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: duplicate.fleetMember,
-          action: (payload) => {
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: duplicate.customer,
-          action: (payload) => {
-            return {
-              ...payload
-            }
-          }
-        }
-      ]
-
-      const data = toDuplicate.reduce((payload, strategy) => {
-        if (strategy.condition) {
-          payload = Object.assign({}, payload, strategy.action(payload))
-        }
-        return payload
-      }, {})
-
-      if (data.name) {
-        data.name = getFileNameCopy(data.name)
-      }
-      this.loading = true
-      this.$store.dispatch('events/createItem', {
-        data: {
-          attendees: data.attendees,
-          budget: data.budget,
-          commission_rate: data.commission_rate,
-          commission_type: data.commission_type,
-          customer_notes: data.customer_notes,
-          end_at: data.end_at,
-          host_status: data.host_status,
-          host_uuid: data.host_uuid,
-          manager_uuid: data.manager_uuid,
-          member_notes: data.member_notes,
-          name: data.name,
-          schedule: null,
-          staff_notes: data.staff_notes,
-          start_at: data.start_at,
-          status_id: data.status_id,
-          type_id: data.type_id
-        }
+        data: options
       })
-        .then(response => {
-          const eventUuid = get(response, 'data.data.uuid')
+        .then(data => {
+          this.editingEvent = null
+          const eventUuid = get(data, 'data.uuid')
           if (eventUuid) {
             const path = `/admin/events/${eventUuid}/edit`
             this.$router.push({ path })
-            this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+            this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
           }
         })
         .catch(error => {
@@ -351,8 +284,7 @@ export default {
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
-          this.loading = false
-          this.show = false
+          this.duplicating = false
         })
     },
     multipleDelete (events) {

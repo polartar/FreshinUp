@@ -38,7 +38,7 @@
             </v-flex>
             <v-flex>
               <v-dialog
-                v-model="show"
+                v-model="duplicateDialog"
                 max-width="500"
               >
                 <template v-slot:activator="{ on }">
@@ -46,16 +46,15 @@
                     slot="activator"
                     color="white"
                     v-on="on"
-                    @click="show = true"
+                    @click="duplicateDialog = true"
                   >
                     <span class="primary--text">Duplicate</span>
                   </v-btn>
                 </template>
-                <duplicate-dialog
-                  :loading="loading"
-                  :show="show"
-                  @Duplicate="onDuplicate"
-                  @manage-duplicate-dialog="changeDuplicateDialogue"
+                <duplicate-event-dialog
+                  :is-loading="duplicating"
+                  @input="onDuplicate"
+                  @close="duplicateDialog = false"
                 />
               </v-dialog>
             </v-flex>
@@ -181,7 +180,7 @@
     >
       <v-flex>
         <stores
-          :types="types"
+          :types="storeTypes"
           :statuses="storeStatuses"
           :stores="stores"
           @manage-view-details="viewDetails"
@@ -219,8 +218,7 @@ import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
-import DuplicateDialog from '~/components/events/DuplicateDialog.vue'
-import getFileNameCopy from '~/components/events/utils.js'
+import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -236,22 +234,22 @@ export default {
     Customers,
     EventStatusTimeline,
     VenueDetails,
-    DuplicateDialog
+    DuplicateEventDialog
   },
   mixins: [Validate, FormatDate],
   data () {
     return {
       eventLoading: false,
-      loading: false,
-      show: false,
+      duplicating: false,
+      duplicateDialog: false,
       questDialog: false,
-      isNew: false,
-      types: []
+      isNew: false
     }
   },
   computed: {
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
+    ...mapGetters('eventTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('venues', { 'venues': 'items' }),
@@ -284,80 +282,29 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    changeDuplicateDialogue (value) {
-      this.show = value
-    },
-    onDuplicate (duplicate) {
-      // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
-      // Fields remaining/not found: $location_uuid
-
-      const toDuplicate = [
-        {
-          condition: duplicate.basicInformation,
-          action: (payload) => {
-            return {
-              ...payload,
-              ...this.$refs.basicInfo.eventData
-            }
-          }
+    onDuplicate (options) {
+      this.duplicating = true
+      this.$store.dispatch('events/duplicate', {
+        params: {
+          uuid: this.$route.params.id
         },
-        // TODO: future work: https://github.com/FreshinUp/foodfleet/issues/385
-        {
-          condition: duplicate.venue,
-          action: (payload) => {
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: duplicate.fleetMember,
-          action: (payload) => {
-            // fields to consider: this.types,this.storeStatuses,this.stores
-            return {
-              ...payload
-            }
-          }
-        },
-        {
-          condition: duplicate.customer,
-          action: (payload) => {
-            // fields to consider: this.customers,this.statuses
-            return {
-              ...payload
-            }
-          }
-        }
-      ]
-
-      const data = toDuplicate.reduce((payload, strategy) => {
-        if (strategy.condition) {
-          payload = Object.assign({}, payload, strategy.action(payload))
-        }
-        return payload
-      }, {})
-
-      if (data.name) {
-        data.name = getFileNameCopy(data.name)
-      }
-      this.loading = true
-      this.$store.dispatch('events/createItem', {
-        data
+        data: options
       })
-        .then(response => {
-          const eventUuid = get(response, 'data.data.uuid')
+        .then(data => {
+          this.duplicateDialog = false
+          const eventUuid = get(data, 'data.uuid')
           if (eventUuid) {
             const path = `/admin/events/${eventUuid}/edit`
-            window.location = path
-            // TODO: Replace this with the proper route for an event item this.$router.push({ path })
+            this.$router.push({ path })
+            this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
           }
         })
         .catch(error => {
-          console.error(error)
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
-          this.loading = false
-          this.show = false
+          this.duplicating = false
         })
     },
     changeBasicInfo (data) {
@@ -447,6 +394,9 @@ export default {
       this.$router.push({ path: '/admin/events' })
     },
     onLocationOrVenueChanged (location) {
+      if (!this.event) {
+        return false
+      }
       this.event.location_uuid = location.uuid
       this.event.venue_uuid = location.venue_uuid
     }

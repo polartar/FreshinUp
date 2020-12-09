@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Duplicate Dialog component Snapshots Default 1`] = `
+exports[`DuplicateEventDialog Snapshots Default 1`] = `
 <div
   class="container"
 >
   <div
     class="v-card v-sheet theme--light"
-    duplicate="[object Object]"
   >
     <!---->
      
@@ -71,7 +70,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
       </p>
        
       <div
-        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
       >
         <div
           class="v-input__control"
@@ -85,6 +84,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               <input
                 aria-checked="true"
                 aria-label="Basic Information"
+                disabled="disabled"
                 role="checkbox"
                 type="checkbox"
                 value=""
@@ -133,7 +133,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
             >
               <input
                 aria-checked="false"
-                aria-label="Venue/lovation (coming soon)"
+                aria-label="Venue/location"
                 role="checkbox"
                 type="checkbox"
                 value=""
@@ -153,7 +153,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               class="v-label theme--light"
               style="left: 0px; position: relative;"
             >
-              Venue/lovation (coming soon)
+              Venue/location
             </label>
           </div>
           <div
@@ -169,7 +169,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
       </div>
        
       <div
-        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
       >
         <div
           class="v-input__control"
@@ -181,20 +181,20 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               class="v-input--selection-controls__input"
             >
               <input
-                aria-checked="true"
-                aria-label="Fleet Member (coming soon)"
+                aria-checked="false"
+                aria-label="Fleet Member"
                 role="checkbox"
                 type="checkbox"
                 value=""
               />
               <div
-                class="v-input--selection-controls__ripple accent--text"
+                class="v-input--selection-controls__ripple"
               />
               <i
                 aria-hidden="true"
-                class="v-icon material-icons theme--light accent--text"
+                class="v-icon material-icons theme--light"
               >
-                check_box
+                check_box_outline_blank
               </i>
             </div>
             <label
@@ -202,7 +202,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               class="v-label theme--light"
               style="left: 0px; position: relative;"
             >
-              Fleet Member (coming soon)
+              Fleet Member
             </label>
           </div>
           <div
@@ -218,7 +218,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
       </div>
        
       <div
-        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
       >
         <div
           class="v-input__control"
@@ -230,20 +230,20 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               class="v-input--selection-controls__input"
             >
               <input
-                aria-checked="true"
-                aria-label="Customer (coming soon)"
+                aria-checked="false"
+                aria-label="Customer"
                 role="checkbox"
                 type="checkbox"
                 value=""
               />
               <div
-                class="v-input--selection-controls__ripple accent--text"
+                class="v-input--selection-controls__ripple"
               />
               <i
                 aria-hidden="true"
-                class="v-icon material-icons theme--light accent--text"
+                class="v-icon material-icons theme--light"
               >
-                check_box
+                check_box_outline_blank
               </i>
             </div>
             <label
@@ -251,7 +251,7 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
               class="v-label theme--light"
               style="left: 0px; position: relative;"
             >
-              Customer (coming soon)
+              Customer
             </label>
           </div>
           <div
@@ -308,13 +308,377 @@ exports[`Duplicate Dialog component Snapshots Default 1`] = `
 </div>
 `;
 
-exports[`Duplicate Dialog component Snapshots WithData 1`] = `
+exports[`DuplicateEventDialog Snapshots IsLoading 1`] = `
 <div
   class="container"
 >
   <div
     class="v-card v-sheet theme--light"
-    duplicate="[object Object]"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="v-progress-linear"
+      role="progressbar"
+      style="height: 7px;"
+    >
+      <div
+        class="v-progress-linear__background primary"
+        style="height: 7px; opacity: 0.3; width: 100%;"
+      />
+      <div
+        class="v-progress-linear__bar"
+      >
+        <div
+          class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+        >
+          <div
+            class="v-progress-linear__bar__indeterminate long primary"
+          />
+          <div
+            class="v-progress-linear__bar__indeterminate short primary"
+          />
+        </div>
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="v-card__title"
+    >
+      <div
+        class="layout row space-between align-center"
+      >
+        <div
+          class="flex"
+        >
+          <h3>
+            Duplicate Event
+          </h3>
+        </div>
+         
+        <button
+          class="white--text v-btn v-btn--round v-btn--small theme--light grey"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <div
+              class="flex"
+            >
+              <i
+                aria-hidden="true"
+                class="v-icon white--text fa fa fa fa-times theme--light"
+                style="font-size: 16px;"
+              />
+            </div>
+             
+            <div
+              class="flex"
+            >
+              
+          Close
+        
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text grey--text"
+    >
+      <small
+        class="font-weight-bold"
+      >
+        SELECT
+      </small>
+       
+      <p>
+        Choose what will be carried over to the duplicate event
+      </p>
+       
+      <div
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-input--selection-controls__input"
+            >
+              <input
+                aria-checked="true"
+                aria-label="Basic Information"
+                disabled="disabled"
+                role="checkbox"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="v-input--selection-controls__ripple accent--text"
+              />
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light accent--text"
+              >
+                check_box
+              </i>
+            </div>
+            <label
+              aria-hidden="true"
+              class="v-label theme--light"
+              style="left: 0px; position: relative;"
+            >
+              Basic Information
+            </label>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-input--selection-controls__input"
+            >
+              <input
+                aria-checked="false"
+                aria-label="Venue/location"
+                role="checkbox"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="v-input--selection-controls__ripple"
+              />
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                check_box_outline_blank
+              </i>
+            </div>
+            <label
+              aria-hidden="true"
+              class="v-label theme--light"
+              style="left: 0px; position: relative;"
+            >
+              Venue/location
+            </label>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-input--selection-controls__input"
+            >
+              <input
+                aria-checked="false"
+                aria-label="Fleet Member"
+                role="checkbox"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="v-input--selection-controls__ripple"
+              />
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                check_box_outline_blank
+              </i>
+            </div>
+            <label
+              aria-hidden="true"
+              class="v-label theme--light"
+              style="left: 0px; position: relative;"
+            >
+              Fleet Member
+            </label>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-input--selection-controls__input"
+            >
+              <input
+                aria-checked="false"
+                aria-label="Customer"
+                role="checkbox"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="v-input--selection-controls__ripple"
+              />
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light"
+              >
+                check_box_outline_blank
+              </i>
+            </div>
+            <label
+              aria-hidden="true"
+              class="v-label theme--light"
+              style="left: 0px; position: relative;"
+            >
+              Customer
+            </label>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__actions"
+    >
+      <div
+        class="layout row justify-end"
+      >
+        <button
+          class="v-btn theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+        Cancel
+      
+          </div>
+        </button>
+         
+        <button
+          class="v-btn v-btn--loader theme--light primary"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            
+        Duplicate
+      
+          </div>
+          <span
+            class="v-btn__loading"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              class="v-progress-circular v-progress-circular--indeterminate"
+              role="progressbar"
+              style="height: 23px; width: 23px;"
+            >
+              <svg
+                style="transform: rotate(0deg);"
+                viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="v-progress-circular__overlay"
+                  cx="43.80952380952381"
+                  cy="43.80952380952381"
+                  fill="transparent"
+                  r="20"
+                  stroke-dasharray="125.664"
+                  stroke-dashoffset="125.66370614359172px"
+                  stroke-width="3.8095238095238093"
+                />
+              </svg>
+              <div
+                class="v-progress-circular__info"
+              />
+            </div>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DuplicateEventDialog Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
   >
     <!---->
      
@@ -379,7 +743,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
       </p>
        
       <div
-        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty v-input--is-disabled theme--light"
       >
         <div
           class="v-input__control"
@@ -393,6 +757,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
               <input
                 aria-checked="true"
                 aria-label="Basic Information"
+                disabled="disabled"
                 role="checkbox"
                 type="checkbox"
                 value=""
@@ -428,6 +793,55 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
       </div>
        
       <div
+        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-input--selection-controls__input"
+            >
+              <input
+                aria-checked="true"
+                aria-label="Venue/location"
+                role="checkbox"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="v-input--selection-controls__ripple accent--text"
+              />
+              <i
+                aria-hidden="true"
+                class="v-icon material-icons theme--light accent--text"
+              >
+                check_box
+              </i>
+            </div>
+            <label
+              aria-hidden="true"
+              class="v-label theme--light"
+              style="left: 0px; position: relative;"
+            >
+              Venue/location
+            </label>
+          </div>
+          <div
+            class="v-messages theme--light"
+          >
+            <span
+              class="v-messages__wrapper"
+              name="message-transition"
+              tag="div"
+            />
+          </div>
+        </div>
+      </div>
+       
+      <div
         class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox theme--light"
       >
         <div
@@ -441,7 +855,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
             >
               <input
                 aria-checked="false"
-                aria-label="Venue/lovation (coming soon)"
+                aria-label="Fleet Member"
                 role="checkbox"
                 type="checkbox"
                 value=""
@@ -461,7 +875,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
               class="v-label theme--light"
               style="left: 0px; position: relative;"
             >
-              Venue/lovation (coming soon)
+              Fleet Member
             </label>
           </div>
           <div
@@ -490,7 +904,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
             >
               <input
                 aria-checked="true"
-                aria-label="Fleet Member (coming soon)"
+                aria-label="Customer"
                 role="checkbox"
                 type="checkbox"
                 value=""
@@ -510,56 +924,7 @@ exports[`Duplicate Dialog component Snapshots WithData 1`] = `
               class="v-label theme--light"
               style="left: 0px; position: relative;"
             >
-              Fleet Member (coming soon)
-            </label>
-          </div>
-          <div
-            class="v-messages theme--light"
-          >
-            <span
-              class="v-messages__wrapper"
-              name="message-transition"
-              tag="div"
-            />
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="v-input mt-0 mb-0 p-0 v-input--selection-controls v-input--checkbox v-input--is-label-active v-input--is-dirty theme--light"
-      >
-        <div
-          class="v-input__control"
-        >
-          <div
-            class="v-input__slot"
-          >
-            <div
-              class="v-input--selection-controls__input"
-            >
-              <input
-                aria-checked="true"
-                aria-label="Customer (coming soon)"
-                role="checkbox"
-                type="checkbox"
-                value=""
-              />
-              <div
-                class="v-input--selection-controls__ripple accent--text"
-              />
-              <i
-                aria-hidden="true"
-                class="v-icon material-icons theme--light accent--text"
-              >
-                check_box
-              </i>
-            </div>
-            <label
-              aria-hidden="true"
-              class="v-label theme--light"
-              style="left: 0px; position: relative;"
-            >
-              Customer (coming soon)
+              Customer
             </label>
           </div>
           <div
