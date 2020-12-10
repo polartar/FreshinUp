@@ -40,6 +40,11 @@
 
 <br/>
 
+## Dec 10, 2020
+- **MOD** User navigation tabs are incorrect [#583](https://github.com/FreshinUp/foodfleet/issues/583)
+
+<br/>
+
 ## Dec 6, 2020
 - **MOD** Cannot manage multiple users [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 
