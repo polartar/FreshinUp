@@ -164,7 +164,7 @@
 import '../../fonts/css/fontello.css'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
-import UserMenu from 'fresh-bus/components/layout/UserMenu.vue'
+import UserMenu from '~/components/users/UserMenu.vue'
 import NavigationDrawerList from 'fresh-bus/components/layout/NavigationDrawerList.vue'
 import NotificationMenu from 'fresh-bus/components/layout/NotificationMenu.vue'
 import FreshBusFooter from 'fresh-bus/components/Footer.vue'
@@ -185,6 +185,10 @@ const navigationAdminFields = createHelpers({
   mutationType: 'navigationAdmin/updateField'
 }).mapFields
 
+export const USER_MENU_ITEMS = [
+  { title: 'My Profile', to: { name: 'myprofile' } }
+]
+
 export default {
   components: {
     UserMenu,
@@ -196,7 +200,8 @@ export default {
   data: () => ({
     isAdmin: false,
     navDrawerLogo: false,
-    navDrawerNoActions: false
+    navDrawerNoActions: false,
+    userMenuItems: USER_MENU_ITEMS
   }),
   computed: {
     ...generalErrorMessageFields([
@@ -222,9 +227,6 @@ export default {
     ...mapGetters(['currentUser']),
     ...mapGetters('currentUser', {
       isCurrentUserAdmin: 'isAdmin'
-    }),
-    ...mapState('navigation', {
-      userMenuItems: state => state.userMenuItems
     }),
     ...mapGetters('userNotifications', { 'notifications': 'unacknowledged' }),
     ...mapGetters('page', {

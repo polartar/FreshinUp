@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserMenu Snapshots Default 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="layout pa-3 row"
+  >
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-avatar accent"
+        style="height: 64px; width: 64px;"
+      >
+        <img
+          alt="Demo Admin"
+          src="https://via.placeholder.com/800x600.png"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="flex pl-3"
+    >
+      <h4
+        class="title primary--text"
+      >
+        
+        Demo Admin
+      
+      </h4>
+       
+      <span
+        class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light primary white--text"
+        tabindex="-1"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        Platform Admin
+      
+        </span>
+      </span>
+       
+      <div>
+        <!---->
+        
+          Laravel
+        
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-list pb-0 theme--light"
+    role="list"
+  >
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      role="listitem"
+    >
+      <a
+        class="v-list__tile v-list__tile--link theme--light"
+      >
+        <div
+          class="v-list__tile__title grey--text"
+        >
+          
+        Sign Out
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UserMenu Snapshots Set 1`] = `
+<div
+  class="v-card v-sheet theme--light"
+>
+  <div
+    class="layout pa-3 row"
+  >
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-avatar accent"
+        style="height: 64px; width: 64px;"
+      >
+        <img
+          alt="Demo Admin"
+          src="https://via.placeholder.com/800x600.png"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="flex pl-3"
+    >
+      <h4
+        class="title primary--text"
+      >
+        
+        Demo Admin
+      
+      </h4>
+       
+      <span
+        class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light primary white--text"
+        tabindex="-1"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        Platform Admin
+      
+        </span>
+      </span>
+       
+      <div>
+        <!---->
+        
+          Laravel
+        
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-list pb-0 theme--light"
+    role="list"
+  >
+    <div
+      class="grey--text"
+      role="listitem"
+    >
+      <router-link
+        class="v-list__tile v-list__tile--link theme--light"
+      >
+        <div
+          class="v-list__tile__content"
+        >
+          <div
+            class="v-list__tile__title"
+          >
+            My Profile
+          </div>
+        </div>
+      </router-link>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      role="listitem"
+    >
+      <a
+        class="v-list__tile v-list__tile--link theme--light"
+      >
+        <div
+          class="v-list__tile__title grey--text"
+        >
+          
+        Sign Out
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UserMenu Snapshots isCurrentUser 1`] = `
+<div
+  adminuser="[object Object]"
+  class="v-card v-sheet theme--light"
+  iscurrentuser="true"
+>
+  <div
+    class="layout pa-3 row"
+  >
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-avatar accent"
+        style="height: 64px; width: 64px;"
+      >
+        <img
+          alt="Demo Admin"
+          src="https://via.placeholder.com/800x600.png"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="flex pl-3"
+    >
+      <h4
+        class="title primary--text"
+      >
+        
+        Demo Admin
+      
+      </h4>
+       
+      <span
+        class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light primary white--text"
+        tabindex="-1"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        Platform Admin
+      
+        </span>
+      </span>
+       
+      <div>
+        <!---->
+        
+          Laravel
+        
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-list pb-0 theme--light"
+    role="list"
+  >
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      role="listitem"
+    >
+      <a
+        class="v-list__tile v-list__tile--link theme--light"
+      >
+        <div
+          class="v-list__tile__title grey--text"
+        >
+          
+        Sign Out
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UserMenu Snapshots isCurrentUserAdmin 1`] = `
+<div
+  adminuser="[object Object]"
+  class="v-card v-sheet theme--light"
+  iscurrentuseradmin="true"
+>
+  <div
+    class="layout pa-3 row"
+  >
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-avatar accent"
+        style="height: 64px; width: 64px;"
+      >
+        <img
+          alt="Demo Admin"
+          src="https://via.placeholder.com/800x600.png"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="flex pl-3"
+    >
+      <h4
+        class="title primary--text"
+      >
+        
+        Demo Admin
+      
+      </h4>
+       
+      <span
+        class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light primary white--text"
+        tabindex="-1"
+      >
+        <span
+          class="v-chip__content"
+        >
+          
+        Platform Admin
+      
+        </span>
+      </span>
+       
+      <div>
+        <!---->
+        
+          Laravel
+        
+      </div>
+    </div>
+  </div>
+   
+  <hr
+    class="v-divider theme--light"
+  />
+   
+  <div
+    class="v-list pb-0 theme--light"
+    role="list"
+  >
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      role="listitem"
+    >
+      <a
+        class="v-list__tile v-list__tile--link theme--light"
+      >
+        <div
+          class="v-list__tile__title grey--text"
+        >
+          
+        Sign Out
+      
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
