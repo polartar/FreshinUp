@@ -41,6 +41,9 @@ export const Populated = () => ({
     },
     onStepChange (step) {
       action('onStepChange')(step)
+    },
+    onClose (step) {
+      action('onClose')(step)
     }
   },
   template: `
@@ -50,6 +53,7 @@ export const Populated = () => ({
           :value="data"
           @input="onInput"
           @step-change="onStepChange"
+          @close="onClose"
         >
         </register-steps>
       </v-container>
