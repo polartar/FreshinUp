@@ -255,7 +255,7 @@ import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 import Mustache from 'mustache'
-import debounce from 'lodash/debounce'
+import { scrollEnd } from '../../utils'
 
 export const DEFAULT_DOCUMENT = {
   uuid: '',
@@ -328,15 +328,14 @@ export default {
     }
   },
   mounted () {
-    const container = document.querySelector('.ff-document-preview__content')
-    if (!container) return false
-    const scrollHandler = debounce(() => {
-      this.endOfScroll = container.offsetHeight + container.scrollTop >= container.scrollHeight
-    }, 300)
-    container.addEventListener('scroll', scrollHandler)
-    this.$once('hook:destroyed', () => {
-      container.removeEventListener('scroll', scrollHandler)
+    const self = this
+    const onDestroy = scrollEnd({
+      element: document.querySelector('.ff-document-preview__content'),
+      onScrollEnd (endOfScroll) {
+        self.endOfScroll = endOfScroll
+      }
     })
+    this.$once('hook:destroyed', onDestroy)
   },
   methods: {
     get,
