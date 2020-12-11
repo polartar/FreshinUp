@@ -8,9 +8,11 @@ use App\User;
 use FreshinUp\FreshBusForms\Enums\UserLevel;
 use Illuminate\Http\Request;
 
-class Users extends Controller {
+class Users extends Controller
+{
     // TODO tests
-    public function storeCustomerOrSupplier (Request $request) {
+    public function storeCustomerOrSupplier(Request $request)
+    {
         // sending all because action is filtering payload
         $rules = [
             'email' => 'required|email',
