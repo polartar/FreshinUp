@@ -197,6 +197,12 @@
         </div>
       </v-stepper-content>
     </v-stepper-items>
+    <v-divider class="mt-4" />
+    <div class="text-xs-center pa-3">
+      <router-link :to="{ name: 'auth' }">
+        Already have an account? Login here
+      </router-link>
+    </div>
   </v-stepper>
 </template>
 

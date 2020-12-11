@@ -13,7 +13,7 @@ class StatusesSeeder extends Seeder
      */
     public function run()
     {
-        // TODO: remove later
+        // Do not remove. This is undoing the UserStatus seeder from FreshBus
         UserStatus::truncate();
         $statuses = UserStatusEnum::toKeyedSelectArray();
         foreach($statuses as $id => $name) {

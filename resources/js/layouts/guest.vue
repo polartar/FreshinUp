@@ -56,7 +56,12 @@
 import Default from './default'
 
 export default {
-  extends: Default
+  extends: Default,
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    this.$auth.logout({
+      redirect: false
+    })
+  }
 }
 </script>
 
