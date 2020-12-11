@@ -1,0 +1,1704 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/RegisterSteps Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-stepper theme--light"
+  >
+    <div
+      class="v-stepper__header"
+    >
+      <div
+        class="v-stepper__step v-stepper__step--active"
+      >
+        <span
+          class="v-stepper__step__step primary"
+        >
+          1
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 1
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          2
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 2
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          3
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 3
+    
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-stepper__items"
+    >
+      <div
+        class="v-stepper__content"
+        style=""
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+          >
+            <h2
+              class="display-1 font-weight-bold primary--text text-center mb-2 ff-step__title"
+            >
+              
+          Sign up as a customer to book an event!
+        
+            </h2>
+             
+            <p
+              class="text-center grey--text"
+            >
+              
+          You will be instructed on how to book and manage your company's events once your account is activated.
+        
+            </p>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          First Name
+                        </label>
+                        <input
+                          aria-label="First Name"
+                          data-vv-name="first_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Last Name
+                        </label>
+                        <input
+                          aria-label="Last Name"
+                          data-vv-name="last_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        aria-label="Email Address"
+                        data-vv-name="email"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Phone number
+                      </label>
+                      <input
+                        aria-label="Phone number"
+                        data-vv-name="mobile_phone"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Password
+                        </label>
+                        <input
+                          aria-label="Password"
+                          data-vv-name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Confirm Password
+                        </label>
+                        <input
+                          aria-label="Confirm Password"
+                          data-vv-name="password_confirmation"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout inline-actions"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <h2
+            class="display-1 font-weight-bold primary--text text-center mb-4"
+          >
+            
+        Terms and conditions
+      
+          </h2>
+           
+          <div
+            class="flex mb-12 ff-register-steps__terms"
+          >
+            <p>
+              
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aut, autem dignissimos distinctio eos ipsa laborum odio quidem, recusandae sapiente velit veniam. Ab accusamus accusantium adipisci aspernatur autem, beatae consectetur cupiditate debitis deserunt dignissimos ea, enim ex expedita illo iure labore maxime minus nam nisi optio praesentium provident quaerat quam quas quia quidem quisquam saepe sed sit totam ullam veniam vitae voluptatem!
+        
+            </p>
+             
+            <p>
+              
+          Adipisci at cum dolore, ea enim eum eveniet fuga illum impedit laborum laudantium molestias, nesciunt numquam quidem quis recusandae reiciendis repellendus repudiandae sapiente, veritatis! Accusantium amet consequatur culpa deleniti dolor ducimus eum eveniet illum in iure laudantium maiores molestias nihil numquam odio perferendis porro, recusandae, suscipit voluptas voluptatum!
+        
+            </p>
+             
+            <p>
+              
+          Alias blanditiis corporis cumque deleniti doloremque doloribus et exercitationem in laudantium magnam pariatur, perspiciatis placeat provident quam quas reiciendis repellat ullam velit veritatis voluptas! Autem commodi, earum enim eum ex exercitationem explicabo, in itaque, libero maiores placeat ratione! Autem consectetur consequuntur deserunt, dolorem dolores laudantium placeat repellendus! Adipisci aut autem culpa cupiditate harum nemo nostrum obcaecati placeat ut veniam. Aperiam at distinctio illo impedit pariatur quo sunt! Ab alias commodi dolorum impedit ipsa, libero minus molestiae officia repellat sed!
+        
+            </p>
+             
+            <p>
+              
+          Ab aperiam autem beatae, culpa deleniti deserunt dolorem doloremque dolorum eos esse explicabo fuga in nesciunt nihil nobis non nulla odio omnis perspiciatis quis quisquam quod quos repellat sed tempore, ullam voluptas, voluptate? Dicta dolor nisi ut velit. Accusantium aperiam assumenda, consectetur corporis culpa eos, error esse eveniet facilis fuga id incidunt iste necessitatibus nemo nesciunt pariatur quibusdam recusandae reiciendis repellat saepe similique, velit vitae voluptates.
+        
+            </p>
+             
+            <p>
+              
+          Atque cumque ducimus libero magnam optio quaerat reiciendis voluptas? Accusantium architecto atque autem consectetur distinctio dolor doloremque dolorum eaque earum eligendi esse ex harum, incidunt ipsam iusto, laboriosam magni maxime neque non optio pariatur placeat praesentium quae qui quidem quisquam sapiente sed sint sit soluta suscipit tenetur ullam veritatis. A ad aliquid architecto cum debitis, doloribus ducimus est eveniet ex inventore iure iusto, libero nam nemo numquam obcaecati omnis perferendis porro quo repellat sequi sunt unde veritatis vitae, voluptates?
+        
+            </p>
+             
+            <p>
+              
+          Accusamus debitis dolore doloremque fugit illo illum incidunt ipsam ipsum libero, porro qui, recusandae, sed voluptatum. A aspernatur, dolorum eius expedita hic inventore iusto nesciunt odit pariatur quaerat quasi quia ratione sunt ut voluptatem. Ab aliquam aspernatur commodi consectetur consequuntur deserunt dicta dolorem doloremque eos error eum ex expedita facere fuga fugit id illum in inventore iste iure iusto laborum molestiae necessitatibus nemo, numquam porro quam quas, quasi reiciendis repellendus, saepe sequi tenetur velit!
+        
+            </p>
+             
+            <p>
+              
+          Dignissimos iste itaque laudantium magnam officia reiciendis sequi tenetur veritatis voluptas? Ab assumenda, atque corporis delectus dolores ea earum esse est exercitationem inventore ipsa ipsum iure laboriosam laborum laudantium magni necessitatibus nihil numquam officiis porro quae qui quis quod recusandae sapiente vel velit vitae. Aut cumque delectus nemo sed soluta? Aliquid amet beatae corporis debitis dicta ducimus et id maiores maxime minus molestiae nam nihil non pariatur porro praesentium quas quis quisquam sed sit temporibus, ut voluptate voluptatem? Ab adipisci dolorem ea eum ipsum iusto laboriosam minus non quasi? Eum nostrum, praesentium!
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Previous
+        
+              </div>
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled theme--light primary--text"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+            style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+          >
+            <h2
+              class="primary--text display-1 ff-step__title mb-2"
+            >
+              
+          Thank you!
+        
+            </h2>
+             
+            <p
+              class="grey--text ff-step__title pb-4"
+            >
+              
+          Our staff will review your new account request. You will be notified when your account is activated.
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+            style="justify-content: center;"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Close
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/RegisterSteps Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-stepper theme--light"
+  >
+    <div
+      class="v-stepper__header"
+    >
+      <div
+        class="v-stepper__step v-stepper__step--active"
+      >
+        <span
+          class="v-stepper__step__step primary"
+        >
+          1
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 1
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          2
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 2
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          3
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 3
+    
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-stepper__items"
+    >
+      <div
+        class="v-stepper__content"
+        style=""
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+          >
+            <h2
+              class="display-1 font-weight-bold primary--text text-center mb-2 ff-step__title"
+            >
+              
+          Sign up as a customer to book an event!
+        
+            </h2>
+             
+            <p
+              class="text-center grey--text"
+            >
+              
+          You will be instructed on how to book and manage your company's events once your account is activated.
+        
+            </p>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          First Name
+                        </label>
+                        <input
+                          aria-label="First Name"
+                          data-vv-name="first_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Last Name
+                        </label>
+                        <input
+                          aria-label="Last Name"
+                          data-vv-name="last_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        aria-label="Email Address"
+                        data-vv-name="email"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Phone number
+                      </label>
+                      <input
+                        aria-label="Phone number"
+                        data-vv-name="mobile_phone"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Password
+                        </label>
+                        <input
+                          aria-label="Password"
+                          data-vv-name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Confirm Password
+                        </label>
+                        <input
+                          aria-label="Confirm Password"
+                          data-vv-name="password_confirmation"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout inline-actions"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <h2
+            class="display-1 font-weight-bold primary--text text-center mb-4"
+          >
+            
+        Terms and conditions
+      
+          </h2>
+           
+          <div
+            class="flex mb-12 ff-register-steps__terms"
+          >
+            <p>
+              
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aut, autem dignissimos distinctio eos ipsa laborum odio quidem, recusandae sapiente velit veniam. Ab accusamus accusantium adipisci aspernatur autem, beatae consectetur cupiditate debitis deserunt dignissimos ea, enim ex expedita illo iure labore maxime minus nam nisi optio praesentium provident quaerat quam quas quia quidem quisquam saepe sed sit totam ullam veniam vitae voluptatem!
+        
+            </p>
+             
+            <p>
+              
+          Adipisci at cum dolore, ea enim eum eveniet fuga illum impedit laborum laudantium molestias, nesciunt numquam quidem quis recusandae reiciendis repellendus repudiandae sapiente, veritatis! Accusantium amet consequatur culpa deleniti dolor ducimus eum eveniet illum in iure laudantium maiores molestias nihil numquam odio perferendis porro, recusandae, suscipit voluptas voluptatum!
+        
+            </p>
+             
+            <p>
+              
+          Alias blanditiis corporis cumque deleniti doloremque doloribus et exercitationem in laudantium magnam pariatur, perspiciatis placeat provident quam quas reiciendis repellat ullam velit veritatis voluptas! Autem commodi, earum enim eum ex exercitationem explicabo, in itaque, libero maiores placeat ratione! Autem consectetur consequuntur deserunt, dolorem dolores laudantium placeat repellendus! Adipisci aut autem culpa cupiditate harum nemo nostrum obcaecati placeat ut veniam. Aperiam at distinctio illo impedit pariatur quo sunt! Ab alias commodi dolorum impedit ipsa, libero minus molestiae officia repellat sed!
+        
+            </p>
+             
+            <p>
+              
+          Ab aperiam autem beatae, culpa deleniti deserunt dolorem doloremque dolorum eos esse explicabo fuga in nesciunt nihil nobis non nulla odio omnis perspiciatis quis quisquam quod quos repellat sed tempore, ullam voluptas, voluptate? Dicta dolor nisi ut velit. Accusantium aperiam assumenda, consectetur corporis culpa eos, error esse eveniet facilis fuga id incidunt iste necessitatibus nemo nesciunt pariatur quibusdam recusandae reiciendis repellat saepe similique, velit vitae voluptates.
+        
+            </p>
+             
+            <p>
+              
+          Atque cumque ducimus libero magnam optio quaerat reiciendis voluptas? Accusantium architecto atque autem consectetur distinctio dolor doloremque dolorum eaque earum eligendi esse ex harum, incidunt ipsam iusto, laboriosam magni maxime neque non optio pariatur placeat praesentium quae qui quidem quisquam sapiente sed sint sit soluta suscipit tenetur ullam veritatis. A ad aliquid architecto cum debitis, doloribus ducimus est eveniet ex inventore iure iusto, libero nam nemo numquam obcaecati omnis perferendis porro quo repellat sequi sunt unde veritatis vitae, voluptates?
+        
+            </p>
+             
+            <p>
+              
+          Accusamus debitis dolore doloremque fugit illo illum incidunt ipsam ipsum libero, porro qui, recusandae, sed voluptatum. A aspernatur, dolorum eius expedita hic inventore iusto nesciunt odit pariatur quaerat quasi quia ratione sunt ut voluptatem. Ab aliquam aspernatur commodi consectetur consequuntur deserunt dicta dolorem doloremque eos error eum ex expedita facere fuga fugit id illum in inventore iste iure iusto laborum molestiae necessitatibus nemo, numquam porro quam quas, quasi reiciendis repellendus, saepe sequi tenetur velit!
+        
+            </p>
+             
+            <p>
+              
+          Dignissimos iste itaque laudantium magnam officia reiciendis sequi tenetur veritatis voluptas? Ab assumenda, atque corporis delectus dolores ea earum esse est exercitationem inventore ipsa ipsum iure laboriosam laborum laudantium magni necessitatibus nihil numquam officiis porro quae qui quis quod recusandae sapiente vel velit vitae. Aut cumque delectus nemo sed soluta? Aliquid amet beatae corporis debitis dicta ducimus et id maiores maxime minus molestiae nam nihil non pariatur porro praesentium quas quis quisquam sed sit temporibus, ut voluptate voluptatem? Ab adipisci dolorem ea eum ipsum iusto laboriosam minus non quasi? Eum nostrum, praesentium!
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Previous
+        
+              </div>
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled v-btn--loader theme--light primary--text"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+              <span
+                class="v-btn__loading"
+              >
+                <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  class="v-progress-circular v-progress-circular--indeterminate"
+                  role="progressbar"
+                  style="height: 23px; width: 23px;"
+                >
+                  <svg
+                    style="transform: rotate(0deg);"
+                    viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      class="v-progress-circular__overlay"
+                      cx="43.80952380952381"
+                      cy="43.80952380952381"
+                      fill="transparent"
+                      r="20"
+                      stroke-dasharray="125.664"
+                      stroke-dashoffset="125.66370614359172px"
+                      stroke-width="3.8095238095238093"
+                    />
+                  </svg>
+                  <div
+                    class="v-progress-circular__info"
+                  />
+                </div>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+            style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+          >
+            <h2
+              class="primary--text display-1 ff-step__title mb-2"
+            >
+              
+          Thank you!
+        
+            </h2>
+             
+            <p
+              class="grey--text ff-step__title pb-4"
+            >
+              
+          Our staff will review your new account request. You will be notified when your account is activated.
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+            style="justify-content: center;"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Close
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/RegisterSteps Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-stepper theme--light"
+  >
+    <div
+      class="v-stepper__header"
+    >
+      <div
+        class="v-stepper__step v-stepper__step--active"
+      >
+        <span
+          class="v-stepper__step__step primary"
+        >
+          1
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 1
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          2
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 2
+    
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="v-stepper__step v-stepper__step--inactive"
+      >
+        <span
+          class="v-stepper__step__step"
+        >
+          3
+        </span>
+        <div
+          class="v-stepper__label"
+        >
+          
+      Step 3
+    
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-stepper__items"
+    >
+      <div
+        class="v-stepper__content"
+        style=""
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+          >
+            <h2
+              class="display-1 font-weight-bold primary--text text-center mb-2 ff-step__title"
+            >
+              
+          Sign up as a customer to book an event!
+        
+            </h2>
+             
+            <p
+              class="text-center grey--text"
+            >
+              
+          You will be instructed on how to book and manage your company's events once your account is activated.
+        
+            </p>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          aria-label="First Name"
+                          data-vv-name="first_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          aria-label="Last Name"
+                          data-vv-name="last_name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        aria-label="Email Address"
+                        data-vv-name="email"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex sm-12"
+            >
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <label
+                        aria-hidden="true"
+                        class="v-label theme--light"
+                        style="left: 0px; position: absolute;"
+                      >
+                        Phone number
+                      </label>
+                      <input
+                        aria-label="Phone number"
+                        data-vv-name="mobile_phone"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex sm-6 xs-12"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          aria-label="Password"
+                          data-vv-name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm-6 xs-12 pl-2"
+              >
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          aria-label="Confirm Password"
+                          data-vv-name="password_confirmation"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--link material-icons theme--light"
+                          >
+                            visibility_off
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout inline-actions"
+          >
+            <div
+              class="spacer"
+            />
+             
+            <button
+              class="v-btn theme--light primary"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <h2
+            class="display-1 font-weight-bold primary--text text-center mb-4"
+          >
+            
+        Terms and conditions
+      
+          </h2>
+           
+          <div
+            class="flex mb-12 ff-register-steps__terms"
+          >
+            <p>
+              
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aut, autem dignissimos distinctio eos ipsa laborum odio quidem, recusandae sapiente velit veniam. Ab accusamus accusantium adipisci aspernatur autem, beatae consectetur cupiditate debitis deserunt dignissimos ea, enim ex expedita illo iure labore maxime minus nam nisi optio praesentium provident quaerat quam quas quia quidem quisquam saepe sed sit totam ullam veniam vitae voluptatem!
+        
+            </p>
+             
+            <p>
+              
+          Adipisci at cum dolore, ea enim eum eveniet fuga illum impedit laborum laudantium molestias, nesciunt numquam quidem quis recusandae reiciendis repellendus repudiandae sapiente, veritatis! Accusantium amet consequatur culpa deleniti dolor ducimus eum eveniet illum in iure laudantium maiores molestias nihil numquam odio perferendis porro, recusandae, suscipit voluptas voluptatum!
+        
+            </p>
+             
+            <p>
+              
+          Alias blanditiis corporis cumque deleniti doloremque doloribus et exercitationem in laudantium magnam pariatur, perspiciatis placeat provident quam quas reiciendis repellat ullam velit veritatis voluptas! Autem commodi, earum enim eum ex exercitationem explicabo, in itaque, libero maiores placeat ratione! Autem consectetur consequuntur deserunt, dolorem dolores laudantium placeat repellendus! Adipisci aut autem culpa cupiditate harum nemo nostrum obcaecati placeat ut veniam. Aperiam at distinctio illo impedit pariatur quo sunt! Ab alias commodi dolorum impedit ipsa, libero minus molestiae officia repellat sed!
+        
+            </p>
+             
+            <p>
+              
+          Ab aperiam autem beatae, culpa deleniti deserunt dolorem doloremque dolorum eos esse explicabo fuga in nesciunt nihil nobis non nulla odio omnis perspiciatis quis quisquam quod quos repellat sed tempore, ullam voluptas, voluptate? Dicta dolor nisi ut velit. Accusantium aperiam assumenda, consectetur corporis culpa eos, error esse eveniet facilis fuga id incidunt iste necessitatibus nemo nesciunt pariatur quibusdam recusandae reiciendis repellat saepe similique, velit vitae voluptates.
+        
+            </p>
+             
+            <p>
+              
+          Atque cumque ducimus libero magnam optio quaerat reiciendis voluptas? Accusantium architecto atque autem consectetur distinctio dolor doloremque dolorum eaque earum eligendi esse ex harum, incidunt ipsam iusto, laboriosam magni maxime neque non optio pariatur placeat praesentium quae qui quidem quisquam sapiente sed sint sit soluta suscipit tenetur ullam veritatis. A ad aliquid architecto cum debitis, doloribus ducimus est eveniet ex inventore iure iusto, libero nam nemo numquam obcaecati omnis perferendis porro quo repellat sequi sunt unde veritatis vitae, voluptates?
+        
+            </p>
+             
+            <p>
+              
+          Accusamus debitis dolore doloremque fugit illo illum incidunt ipsam ipsum libero, porro qui, recusandae, sed voluptatum. A aspernatur, dolorum eius expedita hic inventore iusto nesciunt odit pariatur quaerat quasi quia ratione sunt ut voluptatem. Ab aliquam aspernatur commodi consectetur consequuntur deserunt dicta dolorem doloremque eos error eum ex expedita facere fuga fugit id illum in inventore iste iure iusto laborum molestiae necessitatibus nemo, numquam porro quam quas, quasi reiciendis repellendus, saepe sequi tenetur velit!
+        
+            </p>
+             
+            <p>
+              
+          Dignissimos iste itaque laudantium magnam officia reiciendis sequi tenetur veritatis voluptas? Ab assumenda, atque corporis delectus dolores ea earum esse est exercitationem inventore ipsa ipsum iure laboriosam laborum laudantium magni necessitatibus nihil numquam officiis porro quae qui quis quod recusandae sapiente vel velit vitae. Aut cumque delectus nemo sed soluta? Aliquid amet beatae corporis debitis dicta ducimus et id maiores maxime minus molestiae nam nihil non pariatur porro praesentium quas quis quisquam sed sit temporibus, ut voluptate voluptatem? Ab adipisci dolorem ea eum ipsum iusto laboriosam minus non quasi? Eum nostrum, praesentium!
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Previous
+        
+              </div>
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled theme--light primary--text"
+              disabled="disabled"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Next
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="v-stepper__content"
+        style="display: none;"
+      >
+        <div
+          class="v-stepper__wrapper"
+        >
+          <div
+            class="flex mb-12 text-center"
+            style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+          >
+            <h2
+              class="primary--text display-1 ff-step__title mb-2"
+            >
+              
+          Thank you!
+        
+            </h2>
+             
+            <p
+              class="grey--text ff-step__title pb-4"
+            >
+              
+          Our staff will review your new account request. You will be notified when your account is activated.
+        
+            </p>
+          </div>
+           
+          <div
+            class="inline-actions"
+            style="justify-content: center;"
+          >
+            <button
+              class="grey white--text v-btn theme--light"
+              type="button"
+            >
+              <div
+                class="v-btn__content"
+              >
+                
+          Close
+        
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
