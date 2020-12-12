@@ -58,6 +58,7 @@
         :descending="sorting.descending"
         @paginate="onPaginate"
         @manage-edit="eventEdit"
+        @manage-duplicate="onManageDuplicate"
         @manage-delete="deleteSingle"
         @manage-multiple-delete="multipleDelete"
         @change-status="changeStatusSingle"
@@ -138,6 +139,16 @@
         </div>
       </simple-confirm>
     </v-dialog>
+    <v-dialog
+      :value="editingEvent != null"
+      max-width="500"
+    >
+      <duplicate-event-dialog
+        :is-loading="duplicating"
+        @input="onDuplicate"
+        @close="editingEvent = null"
+      />
+    </v-dialog>
   </div>
 </template>
 <script>
@@ -150,6 +161,7 @@ import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar
 import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
+import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
 
 const INCLUDE = [
   'status',
@@ -167,7 +179,8 @@ export default {
     EventCalendar,
     FilterSorter,
     FilterSorterForCalendar,
-    SimpleConfirm
+    SimpleConfirm,
+    DuplicateEventDialog
   },
   filters: {
     formatDeleteTitles (value) {
@@ -180,6 +193,7 @@ export default {
     return {
       pageTitle: 'Events',
       deleteDialog: false,
+      loading: false,
       deleteTemp: [],
       deletablesProcessing: false,
       deletablesProgress: 0,
@@ -191,7 +205,10 @@ export default {
       views: [
         { value: 1, text: 'List view' },
         { value: 2, text: 'Calendar view' }
-      ]
+      ],
+      editingEvent: null,
+      duplicateDialog: false,
+      duplicating: false
     }
   },
   computed: {
@@ -205,6 +222,7 @@ export default {
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
+    ...mapGetters('events', { event: 'item' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('eventTypes', { 'eventTypes': 'items' }),
     ...mapGetters('page', ['isLoading']),
@@ -223,6 +241,9 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    onManageDuplicate (event) {
+      this.editingEvent = event
+    },
     eventNew () {
       this.$router.push({ path: '/admin/events/new' })
     },
@@ -232,6 +253,39 @@ export default {
     deleteSingle (event) {
       this.deleteTemp = [event]
       this.deleteDialog = true
+    },
+    /**
+     * @param {object} options
+     * @param {boolean} [options.basicInformation]
+     * @param {boolean} [options.venue]
+     * @param {boolean} [options.fleetMember]
+     * @param {boolean} [options.customer]
+     */
+    onDuplicate (options) {
+      this.duplicating = true
+      this.$store.dispatch('events/duplicate', {
+        params: {
+          uuid: this.editingEvent.uuid
+        },
+        data: options
+      })
+        .then(data => {
+          this.editingEvent = null
+          const eventUuid = get(data, 'data.uuid')
+          if (eventUuid) {
+            const path = `/admin/events/${eventUuid}/edit`
+            this.$router.push({ path })
+            this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
+          }
+        })
+        .catch(error => {
+          console.error(error)
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.duplicating = false
+        })
     },
     multipleDelete (events) {
       this.deleteTemp = events

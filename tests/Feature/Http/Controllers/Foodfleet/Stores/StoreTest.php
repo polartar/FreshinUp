@@ -528,14 +528,15 @@ class StoresTest extends TestCase
             'users_id' => $user->id
         ]);
         $store = factory(Store::class)->create([
-            'supplier_uuid' => $company->uuid
+            'supplier_uuid' => $company->uuid,
+            'owner_uuid' => $user->uuid
         ]);
         $tags = factory(StoreTag::class, 3)->create();
         $store->tags()->sync($tags->map(function ($tag) {
             return $tag->uuid;
         }));
         $data = $this
-            ->json('get', "/api/foodfleet/store-summary/" . $store->uuid)
+            ->json('get', "/api/foodfleet/store-summary/" . $store->uuid . "?include=owner")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'

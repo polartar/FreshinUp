@@ -309,8 +309,8 @@ export const HEADERS = [
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
-  { action: 'view', text: 'View / Edit' },
-  { action: 'delete', text: 'Delete' }
+  { action: 'view', text: 'View / Edit' }
+  // disabled for now { action: 'delete', text: 'Delete' }
 ]
 export default {
   components: { FBtnMenu, StatusSelect, FilterSorter },

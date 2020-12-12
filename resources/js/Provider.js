@@ -33,6 +33,8 @@ import locationCategories from './store/modules/locationCategories'
 import menuItems from './store/modules/menuItems'
 import messages from './store/modules/messages'
 import mapbox from './store/modules/mapbox'
+import userTypes from './store/modules/userTypes'
+import users from './store/modules/users'
 
 export default () => {
   return {
@@ -74,7 +76,9 @@ export default () => {
       locationCategories,
       messages,
       mapbox,
-      menuItems
+      menuItems,
+      users,
+      userTypes
     }
   }
 }

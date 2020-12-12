@@ -384,4 +384,163 @@ class EventTest extends TestCase
             'template_uuid' => $template->uuid
         ])->count());
     }
+
+
+    public function getEventAgreementStatusProvider()
+    {
+        return [
+            // [EventStatusEnum::DRAFT], ** DO NOT UNCOMMENT **
+            [EventStatusEnum::FF_INITIAL_REVIEW],
+            [EventStatusEnum::CUSTOMER_AGREEMENT],
+            [EventStatusEnum::FLEET_MEMBER_SELECTION],
+            [EventStatusEnum::CUSTOMER_REVIEW],
+            [EventStatusEnum::FLEET_MEMBER_CONTRACTS],
+            [EventStatusEnum::CONFIRMED],
+            [EventStatusEnum::CANCELLED],
+            [EventStatusEnum::PAST],
+        ];
+    }
+
+    /**
+     * @param $status_id
+     * @dataProvider getEventAgreementStatusProvider
+     */
+    public function testObserverWhenEventCreatedWithStatusDifferentOfDraft($status_id)
+    {
+        $template = Template::getFleetMemberEventAgreement();
+        $this->assertEquals(0, Document::where([
+            'template_uuid' => $template->uuid
+        ])->count());
+        $event = factory(Event::class)->create([
+            'status_id' => $status_id
+        ]);
+
+        // count remain the same
+        $this->assertEquals(0, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+    }
+
+    public function testObserverWhenEventCreatedWithStatusDraft()
+    {
+        $template = Template::getFleetMemberEventAgreement();
+        $this->assertEquals(0, Document::where([
+            'template_uuid' => $template->uuid
+        ])->count());
+
+        $event = factory(Event::class)->create([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+
+        $this->assertEquals(1, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+        $this->assertDatabaseHas('documents', [
+            'status_id' => DocumentStatusEnum::PENDING,
+            'type_id' => DocumentType::FROM_TEMPLATE,
+            'title' => $event->name.' - Fleet Member Event Agreement',
+            'description' => $event->name.' - Fleet Member Event Agreement',
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ]);
+    }
+
+    /**
+     * @param $status_id
+     * @dataProvider getEventAgreementStatusProvider
+     */
+    public function testObserverWhenEventUpdateWithStatusDifferentOfDraft($status_id)
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => 999
+        ]);
+        $template = Template::getFleetMemberEventAgreement();
+        $count = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count();
+        $event->update([
+            'status_id' => $status_id
+        ]);
+        // count remain the same
+        $this->assertEquals($count, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+    }
+
+
+    public function testObserverWhenEventUpdatedWithStatusDraft()
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => 999
+        ]);
+        $template = Template::getFleetMemberEventAgreement();
+        $count = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count();
+        $event->update([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+        $this->assertEquals($count + 1, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+        $this->assertDatabaseHas('documents', [
+            'status_id' => DocumentStatusEnum::PENDING,
+            'type_id' => DocumentType::FROM_TEMPLATE,
+            'title' => $event->name.' - Fleet Member Event Agreement',
+            'description' => $event->name.' - Fleet Member Event Agreement',
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ]);
+    }
+
+    /**
+     * @param $status_id
+     * @dataProvider getEventAgreementStatusProvider
+     */
+    public function testEventStatusChangedToDraftTwice($status_id)
+    {
+        $event = factory(Event::class)->create([
+            'status_id' => 999
+        ]);
+        $template = Template::getFleetMemberEventAgreement();
+        $count = Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count();
+        $event->update([
+            'status_id' => $status_id
+        ]);
+        $this->assertEquals($count, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+
+        $event->update([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+        $this->assertEquals($count + 1, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+
+        // change back to previous status and back to the wanted one
+        $event->update([
+            'status_id' => $status_id
+        ]);
+        $event->update([
+            'status_id' => EventStatusEnum::DRAFT
+        ]);
+
+        // should be unchanged
+        $this->assertEquals($count + 1, Document::where([
+            'assigned_uuid' => $event->uuid,
+            'template_uuid' => $template->uuid
+        ])->count());
+    }
 }

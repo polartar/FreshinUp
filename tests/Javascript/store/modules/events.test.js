@@ -3,6 +3,8 @@ import omit from 'lodash/omit'
 import moment from 'moment'
 import { DEFAULT_DATE } from 'vue-cli-plugin-freshinup/utils/testing/mockDate'
 import { FIXTURE_EVENTS } from '../../__data__/events'
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
 
 describe('store/modules/events', () => {
   test('the state has items', () => {
@@ -29,7 +31,7 @@ describe('store/modules/events', () => {
   })
 
   describe('Actions', () => {
-    describe('createItem()', () => {
+    describe('createItem(context, payload)', () => {
       test('picks only allowed params from filters JSON as string', () => {
         let item = {}
         let items = []
@@ -65,7 +67,7 @@ describe('store/modules/events', () => {
       })
     })
 
-    describe('updateItem', () => {
+    describe('updateItem(context, payload)', () => {
       it('should picks only allowed params from filters JSON as string', () => {
         let item = {}
         let items = []
@@ -121,6 +123,30 @@ describe('store/modules/events', () => {
           data: omit(FIXTURE_EVENTS[0], ['event_tags', 'event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status']),
           params: {}
         })
+      })
+    })
+
+    describe('duplicate(context, payload)', () => {
+      let mock
+      beforeEach(() => {
+        mock = new MockAdapter(axios)
+        mock.onPost(/events\/[A-z0-9]+\/duplicate/)
+          .reply(200, FIXTURE_EVENTS[0])
+      })
+      test.skip('works', () => {
+        let item = {}
+        let items = []
+        const store = module({ items, item })
+        const commit = jest.fn()
+        const event = FIXTURE_EVENTS[0]
+        const data = {
+          basicInformation: true,
+          venue: true,
+          fleetMember: true,
+          customer: true
+        }
+        store.actions.duplicate({ commit }, { params: { uuid: event.uuid }, data })
+        // .then(ev => )
       })
     })
   })

@@ -241,7 +241,7 @@ export default {
     }),
     signout () {
       this.$auth.logout({
-        redirect: 'auth'
+        redirect: '/auth'
       })
     }
   },

@@ -47,6 +47,8 @@
       @manage-view="userView"
       @manage-edit="userEdit"
       @manage-delete="deleteUser"
+      @manage-multiple-status="changeStatusMultiple"
+      @manage-multiple-level="changeLevelMultiple"
       @manage-multiple-delete="deleteMultiple"
     >
       <template v-slot:item-inner-name,email="{ item }">
@@ -109,7 +111,7 @@
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex'
-import UserList from 'fresh-bus/components/datatable/user-list.vue'
+import UserList from '~/components/datatable/UserList.vue'
 import userFilter from 'fresh-bus/components/users/FilterSorter.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
@@ -181,6 +183,27 @@ export default {
         this.filterUsers(this.lastFilterParams)
       })
     },
+    bulkUpdate (users, payload) {
+      this.$store.dispatch('users/bulkUpdate/createItem', {
+        data: {
+          userIds: users.map(user => user.id),
+          ...payload
+        }
+      })
+        .then(() => {
+          this.filterUsers(this.lastFilterParams)
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
+    changeStatusMultiple (users, status) {
+      this.bulkUpdate(users, { status_id: status.id })
+    },
+    changeLevelMultiple (users, level) {
+      this.bulkUpdate(users, { level_id: level.id })
+    },
     changeLevel (level, user) {
       this.$store.dispatch('users/patchItem', { data: { level }, params: { id: user.id } }).then(() => {
         this.filterUsers(this.lastFilterParams)
@@ -203,6 +226,8 @@ export default {
       this.deleteDialogUp(user)
     },
     async deleteUsers () {
+      // TODO: we can use this.bulkUpdate(users, { bulkDelete: true }) to delete all users
+      // without using the logic below
       this.deletablesProcessing = true
       this.deletablesProgress = 0
       this.deletablesStatus = ''
@@ -244,7 +269,9 @@ export default {
     },
     filterUsers (params) {
       this.lastFilterParams = params
-      this.$store.dispatch('users/setSort', params.sort)
+      if (params.sort) {
+        this.$store.dispatch('users/setSort', params.sort)
+      }
       this.$store.dispatch('users/setFilters', {
         ...this.$route.query,
         ...this.lastFilterParams
