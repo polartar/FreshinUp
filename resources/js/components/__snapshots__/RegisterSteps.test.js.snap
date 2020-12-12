@@ -565,6 +565,22 @@ exports[`components/RegisterSteps Snapshots Default 1`] = `
         </div>
       </div>
     </div>
+     
+    <hr
+      class="mt-4 v-divider theme--light"
+    />
+     
+    <div
+      class="text-xs-center pa-3"
+    >
+      <router-link
+        to="[object Object]"
+      >
+        
+      Already have an account? Login here
+    
+      </router-link>
+    </div>
   </div>
 </div>
 `;
@@ -1165,6 +1181,22 @@ exports[`components/RegisterSteps Snapshots Loading 1`] = `
         </div>
       </div>
     </div>
+     
+    <hr
+      class="mt-4 v-divider theme--light"
+    />
+     
+    <div
+      class="text-xs-center pa-3"
+    >
+      <router-link
+        to="[object Object]"
+      >
+        
+      Already have an account? Login here
+    
+      </router-link>
+    </div>
   </div>
 </div>
 `;
@@ -1698,6 +1730,22 @@ exports[`components/RegisterSteps Snapshots Populated 1`] = `
           </div>
         </div>
       </div>
+    </div>
+     
+    <hr
+      class="mt-4 v-divider theme--light"
+    />
+     
+    <div
+      class="text-xs-center pa-3"
+    >
+      <router-link
+        to="[object Object]"
+      >
+        
+      Already have an account? Login here
+    
+      </router-link>
     </div>
   </div>
 </div>

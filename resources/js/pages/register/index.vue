@@ -1,10 +1,12 @@
 <template>
-  <register-steps
-    ref="steps"
-    :is-loading="loading"
-    @input="createAccount"
-    @close="onClose"
-  />
+  <v-container class="ff-register__container">
+    <register-steps
+      ref="steps"
+      :is-loading="loading"
+      @input="createAccount"
+      @close="onClose"
+    />
+  </v-container>
 </template>
 
 <script>
@@ -13,14 +15,13 @@ import get from 'lodash/get'
 
 export default {
   meta: {
-    auth: false
+    layout: 'guest'
   },
   layout: 'guest',
   components: {
     RegisterSteps
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.$auth.logout({ redirect: false })
     vm.$store.dispatch('page/setLoading', false)
     next && next()
   },
@@ -32,10 +33,12 @@ export default {
   methods: {
     createAccount (data) {
       this.loading = true
-      this.$store.dispatch('users/createCustomerOrSupplier', { data: {
-        ...data,
-        type: this.typeId
-      } })
+      this.$store.dispatch('users/createCustomerOrSupplier', {
+        data: {
+          ...data,
+          type: this.typeId
+        }
+      })
         .then(responseData => {
         // I am sad that I have to use this twice :(
           this.$refs.steps.step = 3
@@ -56,3 +59,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .ff-register__container {
+    max-width: 80rem;
+  }
+</style>
