@@ -16,6 +16,7 @@ import NotFoundPage from 'fresh-bus/pages/404.vue'
 const navigationAdmin = {
   title: 'Food Fleet',
   logo: '/images/logo.png',
+  background: '/images/background.png',
   items: [
     {
       action: 'icon-dashboard',
