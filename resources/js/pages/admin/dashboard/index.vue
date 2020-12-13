@@ -1,198 +1,111 @@
 <template>
-  <v-container v-if="!isLoading">
-    <v-layout row>
-      <v-flex
-        xs12
-        pa-2
-      >
-        <h2 class="f-page__title f-page__title--admin">
-          {{ pageTitle }}
-        </h2>
-        <p class="white--text">
-          We need to walk you through these steps before you can {{ youCanText }}.
-        </p>
+  <div class="pa-4">
+    <h1 class="white--text">Welcome back, {{ get(currentUser, 'name') }}</h1>
+
+    <v-layout>
+      <v-flex xs12 sm9 md8 :class="{'mr-4': $vuetify.breakpoint.smAndUp}">
+        <upcoming-events-table/>
+      </v-flex>
+      <v-flex xs12 sm3 md4>
+        <upcoming-events-calendar/>
       </v-flex>
     </v-layout>
-    <v-layout
-      v-show="isSupplier"
-    >
-      <v-flex
-        pa-2
-        xs12
-        sm4
-      >
-        <steps-card
-          :content="{
-            title: '1. Update Your Profile',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editUserRoute"
-          :icon="{
-            name: 'icon-users',
-            size: 175
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm4
-      >
-        <steps-card
-          :content="{
-            title: '2. Register Your Company',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editCompanyRoute"
-          :icon="{
-            name: 'icon-companies',
-            size: 175
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm4
-      >
-        <steps-card
-          :content="{
-            title: '3. Submit Your Fleet',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="'/admin/fleet-members/new'"
-          :icon="{
-            name: 'icon-trucks',
-            size: 175
-          }"
-        />
-      </v-flex>
-    </v-layout>
-    <v-layout
-      v-show="!isSupplier"
-    >
-      <v-flex
-        pa-2
-        xs12
-        sm3
-      >
-        <steps-card
-          :content="{
-            title: '1. Update Your Profile',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editUserRoute"
-          :icon="{
-            name: 'icon-users',
-            size: 145
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm3
-      >
-        <steps-card
-          :content="{
-            title: '2. Register Your Company',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editCompanyRoute"
-          :icon="{
-            name: 'icon-companies',
-            size: 145
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm3
-      >
-        <steps-card
-          :content="{
-            title: '3. Submit A Venue',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="'/admin/venues/new'"
-          :icon="{
-            name: 'icon-venues',
-            size: 145
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm3
-      >
-        <steps-card
-          :content="{
-            title: '4. Book An Event',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="'/admin/events/new'"
-          :icon="{
-            name: 'icon-events',
-            size: 145
-          }"
-        />
-      </v-flex>
-    </v-layout>
-  </v-container>
+
+    <supplier-fleets
+      :is-loading="storesLoading"
+      :stores="stores"
+      :store-statuses="storeStatuses"
+      :status-stats="storeStatusStats"
+      @view-all="viewFleets"
+    />
+  </div>
 </template>
 <script>
+
 import { mapGetters } from 'vuex'
-import StepsCard from '~/components/dashboard/StepsCard.vue'
+import UpcomingEventsCalendar from '~/components/supplier/UpcomingEventsCalendar.vue'
+import UpcomingEventsTable from '~/components/supplier/UpcomingEventsTable.vue'
+import SupplierFleets from '~/components/supplier/SupplierFleets.vue'
+import get from 'lodash/get'
 
 export default {
   layout: 'admin',
   name: 'Dashboard',
   components: {
-    StepsCard
+    SupplierFleets,
+    UpcomingEventsCalendar,
+    UpcomingEventsTable
   },
   data () {
     return {
-      pageTitle: 'Welcome to Food Fleet!'
+      eventStatusStats: [], // TODO
+      storeStatusStats: [], // TODO
     }
   },
   computed: {
     ...mapGetters(['currentUser']),
     ...mapGetters('page', ['isLoading']),
-    editUserRoute () {
-      if (this.currentUser && this.currentUser.company_id) {
-        return '/admin/users/' + this.currentUser.id + '/edit'
-      } else {
-        return '/admin/dashboard'
-      }
-    },
-    editCompanyRoute () {
-      if (this.currentUser && this.currentUser.company_id) {
-        return '/admin/companies/' + this.currentUser.company_id + '/edit'
-      } else {
-        return '/admin/dashboard'
-      }
-    },
-    isSupplier () {
-      return this.currentUser.type !== 2
-    },
-    youCanText () {
-      return this.isSupplier ? 'join our fleet' : 'book an event'
-    }
+    ...mapGetters('eventStatus', {
+      eventStatuses: 'items',
+    }),
+    ...mapGetters('storeStatuses', {
+      storeStatuses: 'items',
+    }),
+    ...mapGetters('events', {
+      events: 'items',
+      eventsLoading: 'itemsLoading'
+    }),
+    ...mapGetters('stores', {
+      stores: 'items',
+      storesLoading: 'itemsLoading'
+    }),
   },
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
+  methods: {
+    get,
+    viewAll () {},
+    viewEvents () {},
+    viewFleets () {},
+    changeEventStatus (value, item) {
+      this.$store.dispatch('events/patchItem', {
+        data: {
+          status_id: value,
+        },
+        params: {
+          id: item.uuid
+        }
+      })
+    },
+  },
+  async beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    vm.$store.dispatch('currentUser/getCurrentUser').then(() => {
-      vm.$store.dispatch('page/setLoading', false)
+    const authUser = await vm.$store.dispatch('currentUser/getCurrentUser')
+    const promises = []
+    // TODO check/guard that authUser.type = UserType.SUPPLIER
+
+    // events
+    vm.$store.dispatch('events/setFilters', {
+      host_uuid: authUser.company.uuid,
+      include: 'location,venue'
     })
-  }
+    promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+    promises.push(vm.$store.dispatch('events/getItems'))
+
+    // stores (=fleets)
+    vm.$store.dispatch('stores/setFilters', {
+      supplier_uuid: authUser.company.uuid,
+      include: 'type'
+    })
+    promises.push(vm.$store.dispatch('stores/getItems'))
+    promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+
+    //
+    Promise.all(promises)
+      .then()
+      .catch(error => console.error(error))
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+      })
+  },
+
 }
 </script>
