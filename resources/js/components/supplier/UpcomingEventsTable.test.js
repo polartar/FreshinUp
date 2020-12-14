@@ -1,11 +1,10 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import * as Stories from './SupplierFleets.stories'
-import Component from './SupplierFleets.vue'
-import { FIXTURE_STORE_STATUS_STATS } from 'tests/__data__/storeStatusStats'
-import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
-import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
+import * as Stories from './UpcomingEventsTable.stories'
+import Component from './UpcomingEventsTable.vue'
+import { FIXTURE_EVENTS } from '../../../../tests/Javascript/__data__/events'
+import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
-describe('components/supplier/SupplierFleets', () => {
+describe('components/supplier/UpcomingEventsTable', () => {
   describe('Snapshots', () => {
     test('Default', async () => {
       const wrapper = mount(Stories.Default())
@@ -35,35 +34,25 @@ describe('components/supplier/SupplierFleets', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.isLoading).toBe(true)
     })
-    test('stores', async () => {
+    test('events', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.stores).toHaveLength(0)
+      expect(wrapper.vm.events).toHaveLength(0)
 
       wrapper.setProps({
-        stores: FIXTURE_STORES
+        events: FIXTURE_EVENTS
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.stores).toMatchObject(FIXTURE_STORES)
+      expect(wrapper.vm.events).toMatchObject(FIXTURE_EVENTS)
     })
-    test('statuses', async () => {
+    test('eventStatuses', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.statuses).toHaveLength(0)
+      expect(wrapper.vm.eventStatuses).toHaveLength(0)
 
       wrapper.setProps({
-        statuses: FIXTURE_STORE_STATUSES
+        eventStatuses: FIXTURE_EVENT_STATUSES
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.statuses).toMatchObject(FIXTURE_STORE_STATUSES)
-    })
-    test('statusStats', async () => {
-      const wrapper = shallowMount(Component)
-      expect(wrapper.vm.statusStats).toHaveLength(0)
-
-      wrapper.setProps({
-        statusStats: FIXTURE_STORE_STATUS_STATS
-      })
-      await wrapper.vm.$nextTick()
-      expect(wrapper.vm.statusStats).toMatchObject(FIXTURE_STORE_STATUS_STATS)
+      expect(wrapper.vm.eventStatuses).toMatchObject(FIXTURE_EVENT_STATUSES)
     })
   })
 
@@ -76,7 +65,7 @@ describe('components/supplier/SupplierFleets', () => {
     })
     test('viewItem(item)', () => {
       const wrapper = shallowMount(Component)
-      const item = FIXTURE_STORES[0]
+      const item = FIXTURE_EVENTS[0]
       wrapper.vm.viewItem(item)
       const emitted = wrapper.emitted()['manage-view']
       expect(emitted).toBeTruthy()
@@ -85,7 +74,7 @@ describe('components/supplier/SupplierFleets', () => {
     test('changeStatus(value, item)', () => {
       const wrapper = shallowMount(Component)
       const value = 1
-      const item = FIXTURE_STORE_STATUSES[0]
+      const item = FIXTURE_EVENT_STATUSES[0]
       wrapper.vm.changeStatus(value, item)
       const emitted = wrapper.emitted()['change-status']
       expect(emitted).toBeTruthy()
@@ -93,7 +82,7 @@ describe('components/supplier/SupplierFleets', () => {
       expect(emitted[0][1]).toMatchObject(item)
     })
     describe('manageMultiple(action, items, value)', () => {
-      const items = FIXTURE_STORES
+      const items = FIXTURE_EVENTS
       test('when action = view', () => {
         const wrapper = shallowMount(Component)
         wrapper.vm.manageMultiple('view', items)

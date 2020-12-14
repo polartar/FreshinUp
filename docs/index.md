@@ -34,7 +34,11 @@
 <br/>
 
 # Changes
-## Nov 26, 2020
+
+## Dec 13, 2020
+- **ADD** Supplier dashboard [#581](https://github.com/FreshinUp/foodfleet/issues/581)
+
+<br/>
 
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)

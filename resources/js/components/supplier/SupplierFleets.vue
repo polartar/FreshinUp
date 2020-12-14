@@ -1,11 +1,9 @@
 <template>
   <v-card>
-    <v-card-title>
-      <v-layout justify-space-between align-center>
-        <span class="grey--text">My fleets</span>
-        <v-spacer/>
-        <v-btn color="primary" round @click="viewAll">View All Events</v-btn>
-      </v-layout>
+    <v-card-title justify-space-between align-center>
+      <span class="grey--text">My fleets</span>
+      <v-spacer/>
+      <v-btn color="primary" round @click="viewAll">View All</v-btn>
     </v-card-title>
     <v-divider/>
     <v-layout row wrap class="px-4 py-2">
@@ -22,8 +20,10 @@
       <v-layout row wrap>
         <v-flex xs12>
           <f-data-table
-            :headers="FLEET_HEADERS"
+            :headers="HEADERS"
             :items="stores"
+            :item-actions="ITEM_ACTIONS"
+            :multi-item-actions="ITEMS_ACTIONS"
             :is-loading="isLoading"
             v-bind="$attrs"
             v-on="$listeners"
@@ -31,7 +31,7 @@
             <template v-slot:item-inner-status_id="{ item }">
               <store-status-select
                 v-model="item.status_id"
-                :options="storeStatuses"
+                :options="statuses"
                 @input="changeStatus($event, item)"
               />
             </template>
@@ -43,7 +43,7 @@
               <span class="grey--text" v-if="items.length <= 1">Status</span>
               <f-manage-multiple
                 v-else
-                :items="storeStatuses"
+                :items="statuses"
                 item-label="name"
                 label="Change status"
                 @item="manageMultiple('status', items, $event)"
@@ -63,17 +63,27 @@
   import FManageMultiple from '@freshinup/core-ui/src/components/FManageMultiple'
   import get from 'lodash/get'
 
-  export const FLEET_HEADERS = [
+  export const HEADERS = [
     { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
     { text: 'Name / Category', sortable: true, value: 'name', align: 'left' },
     { text: 'Hometown', sortable: true, value: 'state_of_incorporation', align: 'left' },
     { text: 'Manage', sortable: false, value: 'manage', align: 'center' },
   ]
+
+  export const ITEM_ACTIONS = [
+    { action: 'view', text: 'View / Edit' },
+    { action: 'delete', text: 'Delete' },
+  ]
+
+  export const ITEMS_ACTIONS = [
+    { action: 'delete', text: 'Delete' }
+  ]
+
   export default {
     props: {
       isLoading: { type: Boolean, default: false },
       stores: { type: Array, default: () => [] },
-      storeStatuses: { type: Array, default: () => [] },
+      statuses: { type: Array, default: () => [] },
       statusStats: { type: Array, default: () => [] },
     },
     components: {
@@ -84,7 +94,9 @@
     },
     data () {
       return {
-        FLEET_HEADERS,
+        HEADERS,
+        ITEM_ACTIONS,
+        ITEMS_ACTIONS
       }
     },
     methods: {

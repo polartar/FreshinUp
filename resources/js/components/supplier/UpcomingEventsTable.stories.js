@@ -1,24 +1,23 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import SupplierFleets from './SupplierFleets'
-import { FIXTURE_STORE_STATUS_STATS } from '../../../../tests/Javascript/__data__/storeStatusStats'
-import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
-import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
+import UpcomingEventsTable from './UpcomingEventsTable'
+import { FIXTURE_EVENTS } from '../../../../tests/Javascript/__data__/events'
+import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
 export const Default = () => ({
-  components: { SupplierFleets },
+  components: { UpcomingEventsTable },
   template: `
       <v-container>
-        <supplier-fleets/>
+        <upcoming-events-table/>
       </v-container>
     `
 })
 
 export const Loading = () => ({
-  components: { SupplierFleets },
+  components: { UpcomingEventsTable },
   template: `
       <v-container>
-        <supplier-fleets
+        <upcoming-events-table
           is-loading
         />
       </v-container>
@@ -26,12 +25,19 @@ export const Loading = () => ({
 })
 
 export const Populated = () => ({
-  components: { SupplierFleets },
+  components: { UpcomingEventsTable },
   data () {
     return {
-      statuses: FIXTURE_STORE_STATUSES,
-      stores: FIXTURE_STORES,
-      statusStats: FIXTURE_STORE_STATUS_STATS
+      events: FIXTURE_EVENTS.map(event => {
+        return {
+          name: event.name,
+          start: '2020-12-10',
+          end: '2020-12-10',
+          color: 'primary',
+          timed: false
+        }
+      }),
+      eventStatuses: FIXTURE_EVENT_STATUSES,
     }
   },
   methods: {
@@ -47,10 +53,9 @@ export const Populated = () => ({
   },
   template: `
       <v-container>
-        <supplier-fleets
-          :stores="stores"
-          :statuses="statuses"
-          :status-stats="statusStats"
+        <upcoming-events-table
+          :events="events"
+          :statuses="eventStatuses"
           @change-status="changeStatus"
           @manage="manage"
           @manage-multiple="manageMultiple"
@@ -59,7 +64,7 @@ export const Populated = () => ({
     `
 })
 
-storiesOf('FoodFleet|components/supplier/SupplierFleets', module)
+storiesOf('FoodFleet|components/supplier/UpcomingEventsTable', module)
   .add('Default', Default)
   .add('Loading', Loading)
   .add('Populated', Populated)

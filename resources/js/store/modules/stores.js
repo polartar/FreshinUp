@@ -1,10 +1,10 @@
 import isObject from 'lodash/isObject'
 import omitBy from 'lodash/omitBy'
 import makeRestStore, {
-  buildApi,
   makeModule
-} from '@freshinup/core-ui/src/store/utils/makeRestStore'
+} from '../utils/makeRestStore'
 import pick from 'lodash/pick'
+import { buildApi } from '@freshinup/core-ui/src/store/utils/makeRestStore'
 
 export const SORTABLES = [
   { value: '-created_at', text: 'Newest' },

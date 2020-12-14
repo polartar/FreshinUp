@@ -1,79 +1,119 @@
 <template>
-  <div>
-    <v-layout class="white pa-2" justify-between>
+  <v-card>
+    <v-card-title justify-space-between align-center>
       <span class="grey--text">My upcoming Events</span>
+      <v-spacer/>
       <v-btn color="primary" round @click="viewAll()">View all</v-btn>
-    </v-layout>
-    <f-data-table
-      :items="events"
-      :is-loading="isLoading"
-      :headers="EVENT_HEADERS"
-      :item-actions="EVENT_ITEMS_ACTIONS"
-    >
-      <template v-slot:item-inner-status_id="{ item }">
-        <event-status-select
-          v-model="item.status_id"
-          :options="eventStatuses"
-          @input="changeEventStatus($event, item)"
-        />
-      </template>
-      <template v-slot:item-inner-name="{ item }">
-        <span class="primary--text">{{ item.name }}</span>
-      </template>
-      <template v-slot:item-inner-date="{ item }">
-        {{ dateTimePeriod(item.start_at, item.end_at) }}
-      </template>
-      <template v-slot:item-inner-venue="{ item }">
-        @ {{ item.venue.name }} <br/>
-        {{ item.location.name }}
-      </template>
-    </f-data-table>
-  </div>
+    </v-card-title>
+    <v-divider/>
+    <v-card-text>
+      <f-data-table
+        :items="events"
+        :is-loading="isLoading"
+        :headers="HEADERS"
+        :item-actions="ITEM_ACTIONS"
+        :multi-item-actions="ITEMS_ACTIONS"
+        v-bind="$attrs"
+        v-on="$listeners"
+      >
+        <template v-slot:item-inner-status_id="{ item }">
+          <event-status-select
+            v-model="item.status_id"
+            :options="statuses"
+            @input="changeStatus($event, item)"
+          />
+        </template>
+        <template v-slot:item-inner-name="{ item }">
+          <a href="#manage-view" class="primary--text" @click.prevent="viewItem(item)">{{ item.name }}</a>
+        </template>
+        <template v-slot:item-inner-date="{ item }">
+          <div class="grey--text">
+            {{ formatDate(item.start_at) }} <br/>
+            {{ formatDate(item.end_at) }}
+          </div>
+        </template>
+        <template v-slot:item-inner-venue="{ item }">
+          <div class="grey--text">
+            @ {{ item.venue.name }} <br/>
+            {{ item.location.name }}
+          </div>
+        </template>
+        <template v-slot:header-inner-status_id="{ items }">
+          <span class="grey--text" v-if="items.length <= 1">Status</span>
+          <f-manage-multiple
+            v-else
+            :items="statuses"
+            item-label="name"
+            label="Change status"
+            @item="manageMultiple('status', items, $event)"
+          />
+        </template>
+      </f-data-table>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
 
   import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
+  import FManageMultiple from '@freshinup/core-ui/src/components/FManageMultiple'
   import EventStatusSelect from '~/components/events/StatusSelect.vue'
   import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 
-  export const EVENT_HEADERS = [
-    { text: 'Status', sortable: true, value: 'status_id', align: 'center' },
-    { text: 'Event', sortable: true, value: 'name', align: 'center' },
-    { text: 'Date & Time', sortable: true, value: 'date', align: 'center' },
-    { text: 'Venue', sortable: true, value: 'venue', align: 'center' },
+  export const HEADERS = [
+    { text: 'Status', sortable: true, value: 'status_id', align: 'left' },
+    { text: 'Event', sortable: true, value: 'name', align: 'left' },
+    { text: 'Date & Time', sortable: true, value: 'date', align: 'left' },
+    { text: 'Venue', sortable: true, value: 'venue', align: 'left' },
     { text: 'Manage', sortable: false, value: 'manage', align: 'center' },
   ]
 
-  export const EVENT_ITEMS_ACTIONS = [
-    { action: 'view', text: 'View' }
+  export const ITEM_ACTIONS = [
+    { action: 'view', text: 'View / Edit' },
+    { action: 'delete', text: 'Delete' },
   ]
+
+  export const ITEMS_ACTIONS = [
+    { action: 'delete', text: 'Delete' }
+  ]
+
   export default {
     mixins: [FormatDate],
     components: {
       FDataTable,
-      EventStatusSelect
+      EventStatusSelect,
+      FManageMultiple
     },
     props: {
       isLoading: { type: Boolean, default: false },
-      eventStatuses: { type: Array, default: () => [] }
+      events: { type: Array, default: () => [] },
+      statuses: { type: Array, default: () => [] }
     },
     data () {
       return {
-        EVENT_HEADERS,
-        EVENT_ITEMS_ACTIONS
+        HEADERS,
+        ITEM_ACTIONS,
+        ITEMS_ACTIONS,
       }
     },
     methods: {
-      viewAll () {
-        this.$emit('view-all')
+      onClick () {
+        debugger
       },
-      changeEventStatus (value, item) {
+      viewItem (item) {
+        this.$emit('manage-view', item)
+        this.$emit('manage', 'view', item)
+      },
+      viewAll () {
+        this.$emit('manage-multiple', 'view')
+        this.$emit('manage-multiple-view')
+      },
+      changeStatus (value, item) {
         this.$emit('change-status', value, item)
       },
-      dateTimePeriod (start, end) {
-        // TODO if same date.// Aug 25 - 28 / 2019 10:00 am – 4:00 pm
-        return `${this.formatDate(start)} - ${this.formatDate(end)}`
+      manageMultiple (action, items, value) {
+        this.$emit('manage-multiple-' + action, items, value)
+        this.$emit('manage-multiple', action, items, value)
       },
     }
   }

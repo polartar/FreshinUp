@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 // Components
 import EventCalendar from './EventCalendar.vue'
+import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
 
 const events = [
   {
@@ -164,12 +165,14 @@ storiesOf('FoodFleet|components/event/EventCalendar', module)
         events: [],
         type: 'month',
         yearRange: [2010, 2020],
-        date: '2019-12-31'
+        date: '2019-12-31',
+        statuses: FIXTURE_EVENT_STATUSES,
       }
     },
     template: `
       <event-calendar
         :events="events"
+        :statuses="statuses"
         :type="type"
         :yearRange="yearRange"
         :date="date"
@@ -183,7 +186,8 @@ storiesOf('FoodFleet|components/event/EventCalendar', module)
         events: events,
         type: 'month',
         yearRange: [2010, 2020],
-        date: '2019-12-31'
+        date: '2019-12-31',
+        statuses: FIXTURE_EVENT_STATUSES,
       }
     },
     methods: {
@@ -197,6 +201,7 @@ storiesOf('FoodFleet|components/event/EventCalendar', module)
     template: `
       <event-calendar
         :events="events"
+        :statuses="statuses"
         :type="type"
         :yearRange="yearRange"
         :date="date"

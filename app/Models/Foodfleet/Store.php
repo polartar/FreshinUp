@@ -19,10 +19,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property int id
  * @property string uuid
  * @property string name
- * @property int square_id
- * @property int status_id
- * @property int type_id
- * @property string supplier_uuid
  * @property string address_uuid
  * @property string website
  * @property string contact_phone
@@ -31,13 +27,17 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property Carbon created_at
  * @property Carbon updated_at
  * @property string deleted_at
- * @property string owner_uuid
  * @property string phone
  * @property string state_of_incorporation
  * @property string facebook
  * @property string twitter
  * @property string instagram
  * @property string staff_notes
+ * @property int square_id
+ * @property int status_id
+ * @property int type_id
+ * @property string supplier_uuid
+ * @property string owner_uuid
  *
  *
  * @property StoreStatus status

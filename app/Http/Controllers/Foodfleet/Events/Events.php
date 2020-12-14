@@ -64,6 +64,7 @@ class Events extends Controller
                 'status',
                 'host',
                 'location',
+                'location.venue',
                 'manager',
                 'event_tags',
                 'type',
