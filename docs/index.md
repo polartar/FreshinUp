@@ -35,6 +35,16 @@
 
 # Changes
 
+## Dec 12, 2020
+- **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
+
+<br/>
+
+## Dec 10, 2020
+- **ADD** Supplier Sign Up form [#580](https://github.com/FreshinUp/foodfleet/issues/580)
+
+<br/>
+
 ## Dec 9, 2020
 - **ADD** Duplicate to event "Manage" dropdown selector [#586](https://github.com/FreshinUp/foodfleet/issues/586)
 

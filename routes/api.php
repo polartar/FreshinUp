@@ -89,4 +89,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
+
+    Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 });
