@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Payment as PaymentModel;
 use Illuminate\Http\Request;
@@ -25,10 +26,13 @@ class Payments extends Controller
                 'name',
                 Filter::exact('uuid'),
                 'square_id',
-                Filter::exact('status_id')
+                Filter::exact('status_id'),
+                Filter::custom('event_uuid', BelongsToWhereInUuidEquals::class, 'event'),
             ])
             ->allowedIncludes([
-                'status'
+                'status',
+                'event',
+                'event.location'
             ])
             ->allowedSorts([
                 'name',

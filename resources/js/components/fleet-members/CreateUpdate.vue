@@ -289,6 +289,11 @@ const DELETABLE_RESOURCE = {
   AREA: 'storeAreas'
 }
 
+const PAYMENT_INCLUDES = [
+  'status',
+  'event'
+]
+
 const SQUARE_APP_ID = process.env.SQUARE_APP_ID
 const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 
@@ -646,13 +651,13 @@ export default {
       if (currentUser) {
         vm.getSquareLocations(currentUser.company_id)
       }
-      promises.push(vm.$store.dispatch('payments/getItems'))
+      promises.push(vm.$store.dispatch('payments/getItems', { params: { include: PAYMENT_INCLUDES } }))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
-    promises.push(vm.$store.dispatch('payments/getItems'))
+    promises.push(vm.$store.dispatch('paymentStatuses/getItems'))
 
     if (!SQUARE_APP_ID) {
       vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')

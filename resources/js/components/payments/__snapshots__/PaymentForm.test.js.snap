@@ -2785,7 +2785,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                       data-v-17cb1efe=""
                     >
                       
-        2013
+        1972
       
                     </div>
                   </span>
@@ -2802,7 +2802,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                       data-v-17cb1efe=""
                     >
                       
-        Mon 8 Jul
+        Wed 3 May
       
                     </span>
                   </span>
@@ -2875,7 +2875,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                               style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
-            July
+            May
           
                             </span>
                           </button>
@@ -2902,7 +2902,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                               style="color: rgb(25, 118, 210); fill: #1976D2;"
                             >
                               
-            2013
+            1972
           
                             </span>
                           </button>
@@ -3053,7 +3053,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                             </span>
                           </button>
                           <button
-                            class="datepicker-day flex align-center justify-content-center enable"
+                            class="datepicker-day flex align-center justify-content-center selected enable"
                             data-v-0da13aa6=""
                             tabindex="-1"
                             type="button"
@@ -3163,7 +3163,7 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
                             </span>
                           </button>
                           <button
-                            class="datepicker-day flex align-center justify-content-center selected enable"
+                            class="datepicker-day flex align-center justify-content-center enable"
                             data-v-0da13aa6=""
                             tabindex="-1"
                             type="button"

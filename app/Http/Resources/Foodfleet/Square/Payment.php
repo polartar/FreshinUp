@@ -3,6 +3,7 @@
 
 namespace App\Http\Resources\Foodfleet\Square;
 
+use App\Http\Resources\Foodfleet\Event as EventResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Enums\PaymentStatus as PaymentStatusEnum;
@@ -34,7 +35,9 @@ class Payment extends JsonResource
             'payment_type' => $this->payment_type,
             'device_uuid' => $this->device_uuid,
             'payment_type_uuid' => $this->payment_type_uuid,
-            'processing_fee_money' => $this->processing_fee_money
+            'processing_fee_money' => $this->processing_fee_money,
+            'event_uuid' => $this->event_uuid,
+            "event" => new EventResource($this->whenLoaded('event'))
         ];
     }
 }

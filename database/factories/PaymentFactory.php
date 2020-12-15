@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentStatus;
 use App\Models\Foodfleet\Square\PaymentType;
@@ -28,5 +29,8 @@ $factory->define(Payment::class, function (Faker $faker) {
         "transaction_uuid" => function () {
             return factory(Transaction::class)->create()->uuid;
         },
+        "event_uuid" => function () {
+            return factory(Event::class)->create()->uuid;
+        }
     ];
 });

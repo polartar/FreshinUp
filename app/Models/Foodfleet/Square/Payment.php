@@ -3,6 +3,7 @@
 
 namespace App\Models\Foodfleet\Square;
 
+use App\Models\Foodfleet\Event;
 use Carbon\Carbon;
 use Dyrynda\Database\Support\GeneratesUuid;
 use App\Models\Model;
@@ -64,5 +65,10 @@ class Payment extends Model
     public function status()
     {
         return $this->belongsTo(PaymentStatus::class, 'status_id', 'id');
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_uuid', 'uuid');
     }
 }

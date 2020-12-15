@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentStatus;
@@ -20,6 +21,7 @@ class PaymentsTableSeeder extends Seeder
         $paymentTypes = PaymentType::get();
         $transactions = Transaction::get();
         $status = PaymentStatus::get();
+        $events = Event::get();
 
         for ($i = 0; $i < 500; $i++) {
             factory(Payment::class)->create([
@@ -27,7 +29,8 @@ class PaymentsTableSeeder extends Seeder
                 'payment_type_uuid' => $paymentTypes->random()->uuid,
                 'transaction_uuid' => $transactions->random()->uuid,
                 'square_created_at' => $faker->dateTimeBetween('-190 days', 'now'),
-                'status_id' => $status->random()->id
+                'status_id' => $status->random()->id,
+                'event_uuid' => $events->random()->uuid
             ]);
         }
     }

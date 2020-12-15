@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Models;
 
+use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Square\Device;
 use App\Models\Foodfleet\Square\Payment;
 use App\Models\Foodfleet\Square\PaymentType;
@@ -25,11 +26,13 @@ class PaymentTest extends TestCase
         $device = factory(Device::class)->create();
         $paymentType = factory(PaymentType::class)->create();
         $transaction = factory(Transaction::class)->create();
+        $event = factory(Event::class)->create();
 
         $payment = factory(Payment::class)->create();
         $payment->transaction()->associate($transaction);
         $payment->device()->associate($device);
         $payment->type()->associate($paymentType);
+        $payment->event()->associate($event);
         $payment->save();
 
         $this->assertDatabaseHas('payments', [
@@ -47,7 +50,8 @@ class PaymentTest extends TestCase
             'processing_fee_money' => $payment->processing_fee_money,
             'due_date' => $payment->due_date,
             'description' => $payment->description,
-            'status_id' => $payment->status_id
+            'status_id' => $payment->status_id,
+            'event_uuid' => $payment->event_uuid
 
         ]);
 
@@ -56,5 +60,6 @@ class PaymentTest extends TestCase
         $this->assertEquals($payment->device_uuid, $payment->device->uuid);
         $this->assertEquals($payment->payment_type_uuid, $payment->type->uuid);
         $this->assertEquals($payment->transaction_uuid, $payment->transaction->uuid);
+        $this->assertEquals($payment->event_uuid, $payment->event->uuid);
     }
 }
