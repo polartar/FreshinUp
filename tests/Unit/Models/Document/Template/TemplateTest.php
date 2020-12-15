@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Models;
 
+use App\Enums\DocumentTemplateStatus;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Document\Template\Template;
 use App\User;
@@ -42,6 +43,7 @@ class TemplateTest extends TestCase
         $this->assertEquals(1, Template::where('title', $title)->count());
         $this->assertNotNull($template->uuid);
         $this->assertEquals($title, $template->title);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
     }
 
     public function testGetClientAgreementWhenExist()
@@ -49,12 +51,14 @@ class TemplateTest extends TestCase
         $title = Template::CLIENT_EVENT_AGREEMENT;
         $oldTemplate = factory(Template::class)->create([
             'title' => $title,
+            'status_id' => DocumentTemplateStatus::PUBLISHED
         ]);
         $this->assertEquals(1, Template::where('title', $title)->count());
         $template = Template::getClientAgreement();
         $this->assertEquals(1, Template::where('title', $title)->count());
         $this->assertEquals($title, $template->title);
         $this->assertEquals($oldTemplate->uuid, $template->uuid);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
     }
 
     public function testGetFleetMemberContractsWhenNotExist()
@@ -65,6 +69,7 @@ class TemplateTest extends TestCase
         $this->assertEquals(1, Template::where('title', $title)->count());
         $this->assertNotNull($template->uuid);
         $this->assertEquals($title, $template->title);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
     }
 
     public function testGetFleetMemberContractsWhenExist()
@@ -72,14 +77,15 @@ class TemplateTest extends TestCase
         $title = Template::FLEET_MEMBER_EVENT_CONTRACT;
         $oldTemplate = factory(Template::class)->create([
             'title' => $title,
+            'status_id' => DocumentTemplateStatus::PUBLISHED
         ]);
         $this->assertEquals(1, Template::where('title', $title)->count());
         $template = Template::getFleetMemberEventContract();
         $this->assertEquals(1, Template::where('title', $title)->count());
         $this->assertEquals($title, $template->title);
         $this->assertEquals($oldTemplate->uuid, $template->uuid);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
     }
-
 
     public function testObserverWhenItemCreated()
     {
@@ -101,5 +107,31 @@ class TemplateTest extends TestCase
         $payload = factory(Template::class)->make()->toArray();
         $template->update($payload);
         $this->assertEquals($jane->uuid, $template->updated_by_uuid);
+    }
+
+    public function testGetFleetMemberEventAgreementWhenNotExist()
+    {
+        $title = Template::FLEET_MEMBER_EVENT_AGREEMENT;
+        $this->assertEquals(0, Template::where('title', $title)->count());
+        $template = Template::getFleetMemberEventAgreement();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertNotNull($template->uuid);
+        $this->assertEquals($title, $template->title);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
+    }
+
+    public function testGetFleetMemberEventAgreementWhenExist()
+    {
+        $title = Template::FLEET_MEMBER_EVENT_AGREEMENT;
+        $oldTemplate = factory(Template::class)->create([
+            'title' => $title,
+            'status_id' => DocumentTemplateStatus::PUBLISHED
+        ]);
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $template = Template::getFleetMemberEventAgreement();
+        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertEquals($title, $template->title);
+        $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);
+        $this->assertEquals($oldTemplate->uuid, $template->uuid);
     }
 }

@@ -18,6 +18,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('financial-modifiers', 'Foodfleet\FinancialModifiers');
 
     Route::get('documents/new', 'Foodfleet\Documents@showNewRecommendation');
+    Route::post('documents/{uuid}/accept', 'Foodfleet\Documents@accept');
     Route::apiResource('document-statuses', 'Foodfleet\DocumentStatuses');
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')
@@ -36,6 +37,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('events/{event}/stores', 'Foodfleet\Events\Store@index');
     Route::get('event-summary/{uuid}', 'Foodfleet\Events\Events@summary');
     Route::apiResource('events', 'Foodfleet\Events\Events');
+    Route::post('/events/{uuid}/duplicate', 'Foodfleet\Events\Events@duplicate');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('event/types', 'Foodfleet\EventType@index');
@@ -87,4 +89,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
+
+    Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 });

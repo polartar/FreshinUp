@@ -21,6 +21,7 @@
       slot="headerCell"
       slot-scope="props"
     >
+      <!-- TODO: https://github.com/FreshinUp/foodfleet/issues/638 -->
       <span v-if="selected.length > 1 && props.header.value === 'manage'">
         <v-menu offset-y>
           <v-btn
@@ -102,7 +103,7 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ props.item.location && props.item.location.venue && props.item.location.venue.name }}
+          @{{ get(props, 'item.location.venue.name') }}
         </div>
       </td>
       <td>
@@ -115,16 +116,16 @@
       </td>
 
       <td>
-        {{ props.item.type && props.item.type.name }}
+        {{ get(props, 'item.type.name') }}
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.manager && props.item.manager.name }}
+          {{ get(props, 'item.manager.name') }}
         </div>
       </td>
       <td>
         <div class="grey--text">
-          {{ props.item.host && props.item.host.name }}
+          {{ get(props, 'item.host.name') }}
         </div>
       </td>
       <td>
@@ -145,6 +146,17 @@ import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
+import get from 'lodash/get'
+
+export const DEFAULT_HEADERS = [
+  { text: 'Status', width: 200, sortable: true, value: 'status_id', align: 'left' },
+  { text: 'Title / Venue', value: 'name,venue', align: 'left' },
+  { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
+  { text: 'Type', value: 'type_id', align: 'left' },
+  { text: 'Managed By', value: 'manager', align: 'left' },
+  { text: 'Customer', value: 'host', align: 'left' },
+  { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
+]
 
 export default {
   components: { FBtnMenu, StatusSelect },
@@ -171,22 +183,15 @@ export default {
   data () {
     return {
       selected: [],
-      headers: [
-        { text: 'Status', width: 200, sortable: true, value: 'status_id', align: 'left' },
-        { text: 'Title / Venue', value: 'name,venue', align: 'left' },
-        { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
-        { text: 'Type', value: 'type_id', align: 'left' },
-        { text: 'Managed By', value: 'manager', align: 'left' },
-        { text: 'Customer', value: 'host', align: 'left' },
-        { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
-      ],
+      headers: DEFAULT_HEADERS,
       actionBtnTitle: 'Manage'
     }
   },
   computed: {
     itemActions () {
       let actions = [
-        { action: 'edit', text: 'Edit' }
+        { action: 'edit', text: 'Edit' },
+        { action: 'duplicate', text: 'Duplicate' } // TODO: should be move to specific genericActions
       ]
       actions = this.generateActions(actions)
       return actions
@@ -203,6 +208,7 @@ export default {
     }
   },
   methods: {
+    get,
     manage (item, event) {
       this.$emit('manage-' + item.action, event)
       this.$emit('manage', item.action, event)

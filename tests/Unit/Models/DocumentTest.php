@@ -33,6 +33,7 @@ class DocumentTest extends TestCase
             'assigned_type' => $type->assigned_type,
             'event_store_uuid' => $type->event_store_uuid,
             'template_uuid' => $type->template_uuid,
+            'signed_at' => $type->signed_at,
         ]);
     }
 

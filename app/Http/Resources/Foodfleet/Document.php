@@ -46,6 +46,7 @@ class Document extends JsonResource
             'created_by_uuid' => $this->created_by_uuid,
             'template_uuid' => $this->template_uuid,
             'template' => new Document\Template\Template($this->whenLoaded('template')),
+            'signed_at' => $this->signed_at
         ];
 
         if (!empty($assignedResource)) {

@@ -209,42 +209,6 @@ exports[`Event StoreSummary component Snapshots required set 1`] = `
         VEGAN OPTIONS
       
       </f-chip-stub>
-      <f-chip-stub
-        class="my-1 ml-0 mr-2"
-        color="primary"
-        value="true"
-      >
-        
-        SMOKED
-      
-      </f-chip-stub>
-      <f-chip-stub
-        class="my-1 ml-0 mr-2"
-        color="primary"
-        value="true"
-      >
-        
-        DESSERT
-      
-      </f-chip-stub>
-      <f-chip-stub
-        class="my-1 ml-0 mr-2"
-        color="primary"
-        value="true"
-      >
-        
-        SEAFOOD
-      
-      </f-chip-stub>
-      <f-chip-stub
-        class="my-1 ml-0 mr-2"
-        color="primary"
-        value="true"
-      >
-        
-        SMOKED
-      
-      </f-chip-stub>
     </v-layout-stub>
      
     <v-divider-stub

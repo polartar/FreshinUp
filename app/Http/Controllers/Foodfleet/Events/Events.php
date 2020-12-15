@@ -8,6 +8,7 @@ use App\Actions\CreateEvent;
 use App\Actions\UpdateEvent;
 use App\Models\Foodfleet\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\Sort;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -90,8 +91,9 @@ class Events extends Controller
                 Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
                 Filter::custom('venue_uuid', BelongsToWhereInUuidEquals::class, 'venue'),
                 Filter::custom('location_uuid', BelongsToWhereInUuidEquals::class, 'location'),
-            ]);
-        return EventResource::collection($events->jsonPaginate());
+            ])
+            ->jsonPaginate();
+        return EventResource::collection($events);
     }
 
     /**
@@ -156,6 +158,7 @@ class Events extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  Request  $request
      * @param $uuid
      * @return EventResource
      */
@@ -172,8 +175,9 @@ class Events extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param $uuid
+     * @param  UpdateEvent  $action
      * @return EventResource
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -232,5 +236,71 @@ class Events extends Controller
         $event = Event::where('uuid', $uuid)->firstOrFail();
         $event->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
+    }
+
+    public function duplicate(Request $request, $uuid)
+    {
+        $this->validate($request, [
+            'basicInformation' => 'required|boolean',
+            'venue' => 'boolean',
+            'customer' => 'boolean',
+            'fleetMember' => 'boolean'
+        ]);
+        $fields = $request->only(['basicInformation', 'venue', 'customer', 'fleetMember']);
+        if (!$fields['basicInformation']) {
+            return response([
+                'basicInformation' => 'Basic information is required at least'
+            ], 422);
+        }
+        $event = Event::where('uuid', $uuid)->firstOrFail();
+        $payload = [];
+        // Basic Information
+        if (Arr::get($fields, 'basicInformation', false)) {
+            $payload = array_merge($payload, [
+                'name' => "Copy of $event->name",
+                'type_id' => $event->type_id,
+                'start_at' => $event->start_at,
+                'end_at' => $event->end_at,
+                'host_uuid' => $event->host_uuid,
+                'host_status' => $event->host_status,
+                'manager_uuid' => $event->manager_uuid,
+                'status_id' => $event->status_id,
+                'budget' => $event->budget,
+                'attendees' => $event->attendees,
+                'commission_rate' => $event->commission_rate,
+                'commission_type' => $event->commission_type,
+                'staff_notes' => $event->staff_notes,
+                'member_notes' => $event->member_notes,
+                'customer_notes' => $event->customer_notes,
+            ]);
+        }
+
+        // Venue
+        if (Arr::get($fields, 'venue', false)) {
+            $payload = array_merge($payload, [
+                'venue_uuid' => $event->venue_uuid,
+                'location_uuid' => $event->location_uuid,
+            ]);
+        }
+
+        // Customer
+        if (Arr::get($fields, 'customer', false)) {
+            $payload = array_merge($payload, [
+                'host_uuid' => $event->host_uuid,
+            ]);
+        }
+        $duplicate = Event::create($payload);
+
+        // Fleet member
+        if (Arr::get($fields, 'fleetMember', false)) {
+            $storeUuids = $event->stores()->pluck('uuid');
+            $duplicate->stores()->sync($storeUuids);
+        }
+
+        if (Arr::get($fields, 'basicInformation', false)) {
+            $tagUuids = $event->eventTags()->pluck('uuid');
+            $duplicate->eventTags()->sync($tagUuids);
+        }
+        return new EventResource($duplicate);
     }
 }
