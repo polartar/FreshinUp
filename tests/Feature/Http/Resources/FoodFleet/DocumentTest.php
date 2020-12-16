@@ -32,6 +32,7 @@ class DocumentTest extends TestCase
             'created_by_uuid' => $document->created_by_uuid,
             'event_store_uuid' => $document->event_store_uuid,
             'template_uuid' => $document->template_uuid,
+            'signed_at' => $document->signed_at,
         ];
         $request = app()->make(Request::class);
         $result = $resource->toArray($request);

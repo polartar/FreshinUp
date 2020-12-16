@@ -27,6 +27,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property Carbon created_at
  * @property Carbon updated_at
  * @property string deleted_at
+ * @property string signed_at
  * @property string assigned_uuid
  * @property string assigned_type
  * @property string template_uuid
@@ -59,10 +60,11 @@ class Document extends Model implements HasMedia
         'assigned_type',
         'template_uuid',
         'event_store_uuid',
-        'file'
+        'file',
+        'signed_at'
     ];
     protected $guarded = ['id', 'uuid'];
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'signed_at'];
     protected $with = ['owner'];
 
     /**

@@ -18,6 +18,20 @@ describe('components/docs/DocumentPreview', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
+    test('End Of Scroll', async () => {
+      const wrapper = mount(Stories.Populated(), {
+        data: () => ({
+          endOfScroll: true
+        })
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
+    test('Signed', async () => {
+      const wrapper = mount(Stories.Signed())
+      await wrapper.vm.$nextTick()
+      expect(wrapper.element).toMatchSnapshot()
+    })
   })
 
   describe('Props & Computed', () => {
@@ -30,6 +44,16 @@ describe('components/docs/DocumentPreview', () => {
         value: document
       })
       expect(wrapper.vm.value).toMatchObject(document)
+    })
+
+    test('isLoading', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.isLoading).toBe(false)
+
+      wrapper.setProps({
+        isLoading: true
+      })
+      expect(wrapper.vm.isLoading).toBe(true)
     })
 
     test('events', async () => {
@@ -101,13 +125,28 @@ describe('components/docs/DocumentPreview', () => {
 
       wrapper.setProps({
         value: {
-          assigned: {
+          owner: {
             name: 'Assigned name'
           }
         }
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.ownerName).toEqual('Assigned name')
+    })
+
+    test('assigneeName', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.assigneeName).toBeUndefined()
+
+      wrapper.setProps({
+        value: {
+          assigned: {
+            name: 'Assigned name'
+          }
+        }
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.assigneeName).toEqual('Assigned name')
     })
 
     test('downloadable', async () => {
@@ -177,6 +216,13 @@ describe('components/docs/DocumentPreview', () => {
       wrapper.vm.onClose()
       await wrapper.vm.$nextTick()
       const emitted = wrapper.emitted().close
+      expect(emitted).toBeTruthy()
+    })
+    test('acceptContract()', async () => {
+      const wrapper = shallowMount(Component)
+      wrapper.vm.acceptContract()
+      await wrapper.vm.$nextTick()
+      const emitted = wrapper.emitted()['accept-contract']
       expect(emitted).toBeTruthy()
     })
   })

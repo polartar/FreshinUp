@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Event
+ *
  * @property int id
  * @property string uuid
  * @property string name
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string location_uuid
  * @property \Datetime start_at
  * @property \Datetime end_at
- * @property string host_uuid
+ * @property int host_uuid
  * @property string host_status
  * @property string manager_uuid
  * @property int status_id
@@ -28,13 +29,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int commission_rate
  * @property int commission_type
  * @property string venue_uuid
+ * @property string staff_notes
+ * @property string member_notes
+ * @property string customer_notes
  * @property Carbon created_at
  * @property Carbon updated_at
  * @property string deleted_at
  *
  *
  * @property Store[] stores
- * @property Company[] host
+ * @property Company host
  * @property User manager
  * @property Location location
  * @property Transaction[] transactions
@@ -54,7 +58,7 @@ class Event extends Model
     use GeneratesUuid;
 
     protected $guarded = ['id', 'uuid'];
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'start_at', 'end_at'];
     protected $with = ['schedule'];
 
     public function stores()

@@ -166,8 +166,7 @@ export default {
       tab: null,
       tabItems: [
         'Event Menu', 'Event Documents', 'Event Activity'
-      ],
-      activists: 'William D and John Smith'
+      ]
     }
   },
   computed: {
@@ -180,6 +179,12 @@ export default {
     ...mapGetters('eventMenuItems', { menuItems: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
+    activists () {
+      if (!this.store.name) {
+        return ''
+      }
+      return `Messages between FoodFleet and ${this.store.name} will be displayed here`
+    },
     status_id () {
       return get(this.store, 'status', 1)
     },
@@ -293,7 +298,7 @@ export default {
     Promise.all([
       vm.$store.dispatch('events/getItem', { params: eventParams }),
       vm.$store.dispatch('stores/getItem', { params }),
-      vm.$store.dispatch('stores/summary/getItem', { params: { id: storeUuid } }),
+      vm.$store.dispatch('stores/summary/getItem', { params: { id: storeUuid, include: 'owner' } }),
       vm.$store.dispatch('stores/serviceSummary/getItem', { params: { id: storeUuid } }),
       vm.$store.dispatch('eventMenuItems/setFilters', filter),
       vm.$store.dispatch('eventMenuItems/getItems'),

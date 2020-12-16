@@ -15,9 +15,11 @@ use App\Models\Foodfleet\Store;
 use App\Models\Foodfleet\Venue;
 use App\User;
 use FreshinUp\FreshBusForms\Models\Company\Company;
+use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
@@ -643,6 +645,177 @@ class EventTest extends TestCase
         ], $data);
     }
 
+    public function testDuplicateItemWhenNotFound()
+    {
+
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+        Passport::actingAs($admin);
+        $payload = ['basicInformation' => true];
+        /** @var Event $event */
+        $count = Event::count();
+        $this->json('POST', "api/foodfleet/events/abc123/duplicate", $payload)
+            ->assertStatus(404);
+        $this->assertEquals($count, Event::count());
+    }
+
+    public function getDuplicateEmptyProvider()
+    {
+        return [
+            [ [], ],
+            [
+                ['basicInformation' => false]
+            ],
+            [
+                ['venue' => false]
+            ],
+            [
+                ['customer' => false]
+            ],
+            [
+                ['fleetMember' => false]
+            ],
+            [
+                [
+                'basicInformation' => false,
+                'venue' => false,
+                'customer' => false,
+                'fleetMember' => false
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * @dataProvider getDuplicateEmptyProvider
+     * @param $payload
+     */
+    public function testDuplicateItemWhenNoneSelectedOrEmpty($payload)
+    {
+
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+        Passport::actingAs($admin);
+        /** @var Event $event */
+        $event = factory(Event::class)->create();
+        $count = Event::count();
+        $this->json('POST', "api/foodfleet/events/{$event->uuid}/duplicate", $payload)
+            ->assertStatus(422);
+        $this->assertEquals($count, Event::count());
+    }
+
+    public function getDuplicateProvider()
+    {
+        return [
+            [
+                ['basicInformation' => true]
+            ],
+            [
+                [
+                    'basicInformation' => true,
+                    'venue' => true
+                ]
+            ],
+            [
+                [
+                    'basicInformation' => true,
+                    'customer' => true
+                ]
+            ],
+            [
+                [
+                    'basicInformation' => true,
+                    'fleetMember' => true
+                ]
+            ],
+            [
+                [
+                    'basicInformation' => true,
+                    'venue' => true,
+                    'customer' => true,
+                    'fleetMember' => true
+                ]
+            ]
+        ];
+    }
+
+
+    /**
+     * @dataProvider getDuplicateProvider
+     * @param $payload
+     */
+    public function testDuplicateItem($payload)
+    {
+        $admin = factory(User::class)->create([
+            'level' => 1
+        ]);
+        Passport::actingAs($admin);
+
+        /** @var Event $event */
+        $event = factory(Event::class)->create();
+        $eventTags = factory(EventTag::class, 5)->create();
+        $event->eventTags()->saveMany($eventTags);
+        $this->assertEquals(5, $event->eventTags()->count());
+        /* The following fields are not duplicated until explicitly requested by client
+        * @property Document[] documents
+        * @property MenuItem[] menuItems
+        * @property EventSchedule schedule
+         */
+        $count = Event::count();
+        $data = $this
+            ->json('POST', "api/foodfleet/events/{$event->uuid}/duplicate", $payload)
+            ->assertStatus(201)
+            ->json('data');
+
+        /** @var Event $duplicate */
+        $duplicate = Event::where('uuid', $data['uuid'])->firstOrFail();
+        $this->assertEquals($count + 1, Event::count());
+        $this->assertNotEquals($event->id, $duplicate->id);
+        $this->assertNotEquals($event->uuid, $duplicate->uuid);
+
+        // Basic Information
+        if (Arr::get($payload, 'basicInformation', false)) {
+            $this->assertEquals("Copy of $event->name", $duplicate->name);
+            $this->assertEquals($event->type_id, $duplicate->type_id);
+            $this->assertEquals($event->start_at->format('Y-m-d H:i:s'), $duplicate->start_at->format('Y-m-d H:i:s'));
+            $this->assertEquals($event->end_at->format('Y-m-d H:i:s'), $duplicate->end_at->format('Y-m-d H:i:s'));
+            $this->assertEquals($event->host_uuid, $duplicate->host_uuid);
+            $this->assertEquals($event->host_status, $duplicate->host_status);
+            $this->assertEquals($event->manager_uuid, $duplicate->manager_uuid);
+            $this->assertEquals($event->status_id, $duplicate->status_id);
+            $this->assertEquals($event->budget, $duplicate->budget);
+            $this->assertEquals($event->attendees, $duplicate->attendees);
+            $this->assertEquals($event->commission_rate, $duplicate->commission_rate);
+            $this->assertEquals($event->commission_type, $duplicate->commission_type);
+            $this->assertEquals($event->staff_notes, $duplicate->staff_notes);
+            $this->assertEquals($event->member_notes, $duplicate->member_notes);
+            $this->assertEquals($event->customer_notes, $duplicate->customer_notes);
+            $this->assertEquals(5, $duplicate->eventTags()->count());
+            $this->assertEquals(
+                $event->eventTags()->pluck('name')->toArray(),
+                $duplicate->eventTags()->pluck('name')->toArray()
+            );
+        }
+
+        // Venue
+        if (Arr::get($payload, 'venue', false)) {
+            $this->assertEquals($duplicate->venue_uuid, $event->venue_uuid);
+            $this->assertEquals($duplicate->location_uuid, $event->location_uuid);
+        }
+
+        // Fleet member
+        if (Arr::get($payload, 'fleetMember', false)) {
+            $this->assertEquals($event->stores()->count(), $duplicate->stores()->count());
+        }
+
+        // Customer
+        if (Arr::get($payload, 'customer', false)) {
+            $this->assertEquals($duplicate->host_uuid, $event->host_uuid);
+        }
+    }
+
     public function testCreatedItem()
     {
         $admin = factory(User::class)->create([
@@ -690,8 +863,8 @@ class EventTest extends TestCase
             'location_uuid' => $payload['location_uuid'],
             'host_status' => $payload['host_status'],
             'status_id' => $payload['status_id'],
-            'start_at' => $payload['start_at'],
-            'end_at' => $payload['end_at'],
+            'start_at' => '2050-09-18T00:00:00.000000Z',
+            'end_at' => '2050-09-20T00:00:00.000000Z',
             'staff_notes' => $payload['staff_notes'],
             'member_notes' => $payload['member_notes'],
             'customer_notes' => $payload['customer_notes'],

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Foodfleet;
 
 use App\Actions\CreateDocument;
 use App\Actions\UpdateDocument;
+use App\Enums\DocumentStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Foodfleet\Document as DocumentResource;
 use App\Models\Foodfleet\Document;
 use FreshinUp\FreshBusForms\Filters\GreaterThanOrEqualTo as FilterGreaterThanOrEqualTo;
 use FreshinUp\FreshBusForms\Filters\LessThanOrEqualTo as FilterLessThanOrEqualTo;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
@@ -32,7 +34,8 @@ class Documents extends Controller
                 'status_id',
                 'created_at',
                 'expiration_at',
-                'created_by'
+                'created_by',
+                'signed_at'
             ])
             ->allowedFilters([
                 'title',
@@ -41,10 +44,13 @@ class Documents extends Controller
                 Filter::exact('assigned_uuid'),
                 Filter::exact('event_store_uuid'),
                 Filter::custom('expiration_from', FilterGreaterThanOrEqualTo::class, 'expiration_at'),
-                Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at')
-            ]);
+                Filter::custom('expiration_to', FilterLessThanOrEqualTo::class, 'expiration_at'),
+                Filter::custom('signed_from', FilterGreaterThanOrEqualTo::class, 'signed_at'),
+                Filter::custom('signed_to', FilterLessThanOrEqualTo::class, 'signed_at')
+            ])
+            ->jsonPaginate();
 
-        return DocumentResource::collection($documents->jsonPaginate());
+        return DocumentResource::collection($documents);
     }
 
     /**
@@ -90,6 +96,7 @@ class Documents extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  Request  $request
      * @param $uuid
      * @return DocumentResource
      */
@@ -143,8 +150,28 @@ class Documents extends Controller
      */
     public function destroy($uuid)
     {
-        $document = Document::where('uuid', $uuid)->first();
+        $document = Document::where('uuid', $uuid)->firstOrFail();
         $document->delete();
         return response()->json(null, SymfonyResponse::HTTP_NO_CONTENT);
+    }
+
+    /**
+     * @param $uuid
+     * @return DocumentResource|\Illuminate\Http\JsonResponse
+     */
+    public function accept($uuid)
+    {
+        $document = Document::whereUuid($uuid)->firstOrFail();
+        if ($document->signed_at) {
+            return response()->json([
+                "message" => "Document [{$document->title}] already signed."
+            ], 422);
+        }
+        $document->update([
+            'signed_at' => now(),
+            'status_id' => DocumentStatus::APPROVED
+        ]);
+        $document->load('template', 'owner', 'assigned');
+        return new DocumentResource($document);
     }
 }

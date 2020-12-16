@@ -1,3 +1,6 @@
+import get from 'lodash/get'
+import set from 'lodash/set'
+import axios from 'axios'
 import { makeModule } from '../utils/makeRestStore'
 import { buildApi } from '@freshinup/core-ui/src/store/utils/makeRestStore'
 export default (initialState = {}) => {
@@ -22,6 +25,9 @@ export default (initialState = {}) => {
     ...store.mutations,
     sortBy (state, value) {
       state.sortBy = value
+    },
+    SET_ITEM (state, value) {
+      set(state, 'item.data', value)
     }
   }
   // Add Actions
@@ -29,6 +35,23 @@ export default (initialState = {}) => {
     ...store.actions,
     sortBy ({ commit, dispatch }, value) {
       commit('UPDATE_SORT', { sortBy: value })
+    },
+    acceptContract ({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        const uuid = get(payload, 'params.id')
+        if (!uuid) {
+          return reject(new Error('[Document/Accept]: Document uuid is not defined.'))
+        }
+        axios({
+          url: `/foodfleet/documents/${uuid}/accept`,
+          method: 'POST'
+        })
+          .then(response => {
+            commit('SET_ITEM', get(response, 'data.data'))
+            resolve(response.data)
+          })
+          .catch(error => reject(error))
+      })
     }
   }
 
