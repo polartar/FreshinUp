@@ -145,9 +145,7 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
       </form>
     </div>
      
-    <div
-      item-key="id"
-    >
+    <div>
       <div
         class="ui-datatable elevation-1"
       >
@@ -717,9 +715,7 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
       </form>
     </div>
      
-    <div
-      item-key="id"
-    >
+    <div>
       <div
         class="ui-datatable elevation-1"
       >
@@ -1319,7 +1315,6 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
     </div>
      
     <div
-      item-key="id"
       sortables="status,name,start_at,manager,host"
     >
       <div

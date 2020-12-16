@@ -35,6 +35,11 @@
 
 # Changes
 
+## Dec 15, 2020
+- **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
+
+<br/>
+
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
 
@@ -47,11 +52,6 @@
 
 ## Dec 9, 2020
 - **ADD** Duplicate to event "Manage" dropdown selector [#586](https://github.com/FreshinUp/foodfleet/issues/586)
-
-<br/>
-
-## Dec 10, 2020
-- **MOD** User navigation tabs are incorrect [#583](https://github.com/FreshinUp/foodfleet/issues/583)
 
 <br/>
 

@@ -122,7 +122,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
         >
            
           <div
-            class="v-card v-sheet theme--light"
+            class="ff-user-menu v-card v-sheet theme--light"
           >
             <div
               class="layout pa-3 row"
@@ -148,7 +148,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 class="flex pl-3"
               >
                 <h4
-                  class="title primary--text"
+                  class="title secondary--text"
                 >
                   
         
@@ -156,7 +156,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
                 </h4>
                  
                 <span
-                  class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light primary white--text"
+                  class="v-chip mx-0 pl-3 pr-3 f-userMenu__userLevel v-chip--disabled v-chip--small theme--light secondary white--text"
                   tabindex="-1"
                 >
                   <span
@@ -186,7 +186,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
               role="list"
             >
               <div
-                class="grey--text"
+                class="secondary--text darken-3"
                 role="listitem"
               >
                 <router-link
@@ -203,6 +203,80 @@ exports[`Default layout mount snapshot of layout 1`] = `
                   </div>
                 </router-link>
               </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Teams
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Company
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Settings
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+              <div
+                class="secondary--text darken-3"
+                role="listitem"
+              >
+                <router-link
+                  class="v-list__tile v-list__tile--link theme--light"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      My Company Settings
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+               
+              <!---->
                
               <hr
                 class="v-divider theme--light"
@@ -215,11 +289,9 @@ exports[`Default layout mount snapshot of layout 1`] = `
                   class="v-list__tile v-list__tile--link theme--light"
                 >
                   <div
-                    class="v-list__tile__title grey--text"
+                    class="v-list__tile__title"
                   >
-                    
-        Sign Out
-      
+                    Sign Out
                   </div>
                 </a>
               </div>

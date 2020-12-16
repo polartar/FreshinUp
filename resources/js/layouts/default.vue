@@ -99,10 +99,12 @@
             />
           </v-btn>
 
-          <user-menu
-            :user="currentUser"
+          <f-user-menu
+            class="ff-user-menu"
+            :user="authUser"
             :user-is-admin="isCurrentUserAdmin"
             :menu-items="userMenuItems"
+            :consumer-view="false"
             @signout="signout"
           />
         </v-menu>
@@ -164,11 +166,12 @@
 import '../../fonts/css/fontello.css'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
-import UserMenu from '~/components/users/UserMenu.vue'
 import NavigationDrawerList from 'fresh-bus/components/layout/NavigationDrawerList.vue'
 import NotificationMenu from 'fresh-bus/components/layout/NotificationMenu.vue'
 import FreshBusFooter from 'fresh-bus/components/Footer.vue'
+import FUserMenu from '@freshinup/core-ui/src/components/FUserMenu'
 import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
+import { USER_TYPE } from '../store/modules/userTypes'
 
 const generalErrorMessageFields = createHelpers({
   getterType: 'generalErrorMessages/getField',
@@ -185,13 +188,9 @@ const navigationAdminFields = createHelpers({
   mutationType: 'navigationAdmin/updateField'
 }).mapFields
 
-export const USER_MENU_ITEMS = [
-  { title: 'My Profile', to: { name: 'myprofile' } }
-]
-
 export default {
   components: {
-    UserMenu,
+    FUserMenu,
     NotificationMenu,
     NavigationDrawerList,
     FreshBusFooter,
@@ -200,8 +199,7 @@ export default {
   data: () => ({
     isAdmin: false,
     navDrawerLogo: false,
-    navDrawerNoActions: false,
-    userMenuItems: USER_MENU_ITEMS
+    navDrawerNoActions: false
   }),
   computed: {
     ...generalErrorMessageFields([
@@ -216,7 +214,8 @@ export default {
     }),
     ...mapState('navigation', {
       items: 'drawerItems',
-      logo: 'logo'
+      logo: 'logo',
+      userMenuItems: 'userMenuItems'
     }),
     ...mapGetters('generalErrorMessages', {
       errorMessages: 'errorMessages'
@@ -232,7 +231,14 @@ export default {
     ...mapGetters('page', {
       isLoading: 'isLoading',
       pageTitle: 'title'
-    })
+    }),
+    authUser () {
+      const user = this.currentUser
+      return {
+        ...user,
+        level_name: user.type === USER_TYPE.SUPPLIER ? 'Supplier' : ''
+      }
+    }
   },
   methods: {
     ...mapActions('generalErrorMessages', {
@@ -247,11 +253,18 @@ export default {
       })
     }
   },
+  watch: {
+    '$store.getters.currentUser' (authUser) {
+      if (authUser.type === USER_TYPE.SUPPLIER) {
+        this.$store.dispatch('navigation/setUserMenuItems', [
+          { title: 'My Profile', to: { name: 'myprofile' } }
+        ])
+      }
+    }
+  },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    Promise.all([
-      vm.$store.dispatch('currentUser/getCurrentUser')
-    ])
+    vm.$store.dispatch('currentUser/getCurrentUser')
       .then()
       .catch(error => console.error(error))
       .then(() => {
@@ -309,5 +322,23 @@ export default {
 
   /deep/ .v-toolbar__content {
     padding-left: 10px;
+  }
+
+  /deep/ .f-userMenu__userLevel {
+    background-color: var(--v-primary-base) !important;
+  }
+
+  /* Custom CSS for top nav bar menu - As a supplier*/
+  /deep/ .title.secondary--text {
+    color: var(--v-primary-base) !important;
+  }
+  /deep/ .v-avatar.accent {
+    border: 4px solid var(--v-primary-base)!important;
+  }
+  /deep/ .ff-user-menu .v-list__tile__title {
+    color: var(--v-primary-base) !important;
+  }
+  /deep/ .v-list__tile--active .v-list__tile__title {
+    color: #fafafa !important;
   }
 </style>
