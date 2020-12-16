@@ -37,6 +37,11 @@
 ## Dec 14, 2020
 
 
+## Dec 15, 2020
+- **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
+
+<br/>
+
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
 

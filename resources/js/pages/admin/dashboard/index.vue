@@ -189,10 +189,11 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.$store.dispatch('page/setLoading', true)
-    vm.$store.dispatch('currentUser/getCurrentUser').then(() => {
-      vm.$store.dispatch('page/setLoading', false)
-    })
+    vm.$store.dispatch('page/setLoading', false)
+    // Should not need to call getCurrentUser. Already done in default layout
+    // vm.$store.dispatch('currentUser/getCurrentUser').then(() => {
+    //   vm.$store.dispatch('page/setLoading', false)
+    // })
   }
 }
 </script>
