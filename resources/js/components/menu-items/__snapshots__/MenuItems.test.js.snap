@@ -52,7 +52,9 @@ exports[`components/menu-items/MenuItems Snapshots Empty 1`] = `
   <div
     class="v-card__text primary--text"
   >
-    <div>
+    <div
+      item-key="uuid"
+    >
       <div
         class="ui-datatable elevation-1"
       >
@@ -478,7 +480,9 @@ exports[`components/menu-items/MenuItems Snapshots Loading 1`] = `
   <div
     class="v-card__text primary--text"
   >
-    <div>
+    <div
+      item-key="uuid"
+    >
       <div
         class="ui-datatable elevation-1"
       >
@@ -937,6 +941,7 @@ exports[`components/menu-items/MenuItems Snapshots Populated 1`] = `
     class="v-card__text primary--text"
   >
     <div
+      item-key="uuid"
       page="1"
       rows-per-page="10"
       sort-by="uuid"

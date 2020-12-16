@@ -126,7 +126,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >
@@ -695,7 +697,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >
@@ -1296,7 +1300,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >

@@ -35,7 +35,9 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Default 1`] = `
     <div
       class="v-card__text primary--text"
     >
-      <div>
+      <div
+        item-key="id"
+      >
         <div
           class="ui-datatable elevation-1"
         >
@@ -466,7 +468,9 @@ exports[`components/fleet-members/AreasOfOperation Snapshots IsLoading 1`] = `
     <div
       class="v-card__text primary--text"
     >
-      <div>
+      <div
+        item-key="id"
+      >
         <div
           class="ui-datatable elevation-1"
         >
@@ -925,7 +929,9 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Populated 1`] = `
     <div
       class="v-card__text primary--text"
     >
-      <div>
+      <div
+        item-key="id"
+      >
         <div
           class="ui-datatable elevation-1"
         >
