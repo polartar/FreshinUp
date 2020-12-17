@@ -3,7 +3,12 @@ import { storiesOf } from '@storybook/vue'
 // Components
 import UserProfile from './UserProfile.vue'
 
-storiesOf('FoodFleet|users/UserProfile', module)
+storiesOf('FoodFleet|components/users/UserProfile', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'default', value: '#f1f3f6', default: true }
+    ]
+  })
   .add(
     'for any user',
     () => ({

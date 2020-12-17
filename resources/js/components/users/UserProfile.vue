@@ -1,60 +1,31 @@
 <template>
   <v-layout
-    align-start
     row
     wrap
   >
     <v-flex
       xs12
-      sm12
-      md4
       mb-4
-      px-2
     >
-      <profile-card
-        :user="user"
-        :company="company"
-        :is-current-user="isCurrentUser"
-        :is-current-user-admin="isCurrentUserAdmin"
-        class="px-4"
-      />
+      <basic-information />
     </v-flex>
     <v-flex
       xs12
-      sm12
-      md8
-      :class="{'pl-3': $vuetify.breakpoint.mdAndUp}"
+      mb-4
     >
-      <v-layout
-        row
-        wrap
-      >
-        <v-flex
-          xs12
-          mb-4
-          px-2
-        >
-          <company-info
-            :user="user"
-            :admin-user="adminUser"
-            :is-current-user-admin="isCurrentUserAdmin"
-            :total-members="totalCompanyMembers"
-            :company="company"
-            :title="isCurrentUser ? 'Your Company' : 'Company'"
-          />
-        </v-flex>
-      </v-layout>
+      <notification-settings />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import ProfileCard from 'fresh-bus/components/users/ProfileCard.vue'
-import CompanyInfo from 'fresh-bus/components/companies/CompanySummary.vue'
+
+import NotificationSettings from './NotificationSettings.vue'
+import BasicInformation from './BasicInformation.vue'
 export default {
   components: {
-    ProfileCard,
-    CompanyInfo
+    NotificationSettings,
+    BasicInformation
   },
   props: {
     isCurrentUserAdmin: {
