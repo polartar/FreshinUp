@@ -2,466 +2,513 @@
 
 exports[`UserProfile Snapshots isCurrentUser 1`] = `
 <div
-  class="layout align-start row wrap"
+  class="layout row wrap"
 >
   <div
-    class="flex xs12 sm12 md4 mb-4 px-2"
+    class="flex xs12 mb-4"
   >
     <div
-      class="fresh-profile-card px-4 v-card v-sheet theme--light"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="layout align-start row wrap"
+        class="v-card__title"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+      Basic Information
+    
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3 row wrap"
       >
         <div
-          class="flex xs12"
+          class="flex xs8"
         >
           <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
+            class="layout row wrap"
           >
             <div
-              class="flex pt-2"
+              class="flex xs6 px-2"
             >
               <div
-                class="card-heading body-2 grey--text font-weight-bold"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
               >
                 
-      YOUR PROFILE
-    
+            First name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
              
             <div
-              class="spacer"
-            />
-              
-            <!---->
-          </div>
-        </div>
-         
-        <div
-          class="flex xs12 sm6 md12"
-        >
-          <div
-            class="v-responsive v-image"
-            style="max-height: 320px;"
-          >
-            <div
-              class="v-image__image v-image__image--preload v-image__image--contain"
-              mode="in-out"
-              name="fade-transition"
-              style="background-position: center center;"
-            />
-            <div
-              class="v-responsive__content"
-            />
-          </div>
-        </div>
-         
-        <div
-          class="flex xs12 sm6 md12"
-        >
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-card__text"
+              class="flex xs6 px-2"
             >
               <div
-                class="layout pt-0 pl-1 mt-0 justify-left"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Last name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
-                  class="subheading font-weight-bold secondary--text mb-2"
+                  class="v-input__control"
                 >
-                  
-              Demo Admin
-            
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-               
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
               <div
-                class="layout pt-0 ma-0 justify-left"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
               >
-                <span
-                  class="v-chip ma-0 font-weight-bold v-chip--small theme--dark secondary"
-                  depressed=""
-                  tabindex="0"
-                >
-                  <span
-                    class="v-chip__content"
-                  >
-                    
-              Platform Admin
-            
-                  </span>
-                </span>
+                
+            Company
+          
               </div>
                
               <div
-                class="flex my-1 column"
+                class="pt-4"
+              >
+                
+            Company name
+          
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Title
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Email
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Office phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Mobile phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs3 px-1"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            Change password
+          
+                </div>
+              </button>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="flex xs4 pl-4"
+        >
+          <div
+            class="px-2 xs-12 md-4"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+          Profile picture
+        
+            </div>
+             
+            <input
+              class="ff-profile-picture__image_input"
+              type="file"
+            />
+             
+            <div
+              class="v-responsive v-image grey lighten-2"
+            >
+              <div
+                class="v-image__image v-image__image--preload v-image__image--cover"
+                mode="in-out"
+                name="fade-transition"
+                style="background-position: center center;"
               />
-               
               <div
-                class="layout pt-2 pl-1 mt-0 justify-left"
-              >
-                <div
-                  class="profile-position greyish-brown--text"
-                >
-                  
-              No Title @ FreshBus
-            
-                </div>
-              </div>
+                class="v-responsive__content"
+              />
             </div>
           </div>
            
           <div
-            class="flex hidden-sm-only xs12"
+            class="py-3 d-flex justify-space-between"
           >
-            <hr
-              class="v-divider theme--light"
-            />
-          </div>
-           
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-list fresh-profile-card__contact-list theme--light"
-              role="list"
+            <button
+              class="v-btn v-btn--depressed theme--light primary"
+              type="button"
             >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-envelope theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
-                demoAdmin@example.com
-              
-                    </div>
-                  </div>
-                </div>
+                
+          Upload Image
+        
               </div>
-               
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled v-btn--depressed theme--light"
+              disabled="disabled"
+              type="button"
+            >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-phone theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
-                123-456-7890
-              
-                    </div>
-                  </div>
-                </div>
+                
+          Delete Image
+        
               </div>
-               
-              <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
-              >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-mobile-alt theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="body-2"
-                    >
-                      
-                321-123-1234
-              
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </button>
           </div>
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3"
+      >
+        <div
+          class="flex"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Cancel
+      
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Save changes
+      
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="flex text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Delete account
+      
+            </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
    
   <div
-    class="flex xs12 sm12 md8 pl-3"
+    class="flex xs12 mb-4"
   >
     <div
-      class="layout row wrap"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="flex xs12 mb-4 px-2"
+        class="v-card__title"
       >
-        <div
-          class="v-card v-sheet theme--light"
-          user="[object Object]"
+        <h3
+          class="grey--text"
         >
-          <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
-          >
-            <div
-              class="flex pt-2"
-            >
-              <div
-                class="card-heading body-2 grey--text font-weight-bold"
-              >
-                
-      YOUR COMPANY
+          
+      Notification settings
     
-              </div>
-            </div>
-             
-            <div
-              class="spacer"
-            />
-              
-            <!---->
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-           
-          <div
-            class="container my-0 mx-2 px-2 py-2 justify-space-between"
-          >
-            <div
-              class="layout ma-0 pa-0 justify-space-between row wrap"
-            >
-              <div
-                class="flex"
-              >
-                <div
-                  class="container grid-list-md fluid justify-start pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="v-avatar v-avatar--tile"
-                      style="height: 48px; width: 48px;"
-                    >
-                      <div
-                        class="v-responsive v-image"
-                      >
-                        <div
-                          class="v-responsive__sizer"
-                          style="padding-bottom: 100%;"
-                        />
-                        <div
-                          class="v-image__image v-image__image--preload v-image__image--cover"
-                          mode="in-out"
-                          name="fade-transition"
-                          style="background-position: center center;"
-                        />
-                        <div
-                          class="v-responsive__content"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                FreshBus
-              
-                      </div>
-                       
-                      <div>
-                        <span
-                          class="v-chip my-0 ml-0 mr-1 font-weight-bold text-uppercase v-chip--small theme--dark secondary"
-                          depressed=""
-                          tabindex="0"
-                        >
-                          <span
-                            class="v-chip__content"
-                          >
-                            
-    No Company Type
-  
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex pr-1"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 56px; width: 56px;"
-                    >
-                      <img
-                        src="https://via.placeholder.com/800x600.png"
-                      />
-                    </div>
-                     
-                    <div
-                      class="flex"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                Demo Admin
-              
-                      </div>
-                       
-                      <span
-                        class="v-chip ma-0 font-weight-bold text-uppercase small-caption v-chip--small theme--dark secondary"
-                        depressed=""
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-                Platform Admin
-              
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex shrink align-center mt-0 pr-2"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0 mr-4"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="flex shrink"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 50px; width: 50px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon white--text far fa-id-badge theme--light"
-                          style="font-size: 28px;"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="headline font-weight-bold"
-                      >
-                        
-                16
-              
-                      </div>
-                       
-                      <div
-                        class="text-uppercase small-caption grey--text font-weight-bold"
-                      >
-                        
-                Total Members
-              
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-4 row wrap"
+      >
+        <div>
+          Coming Soon
         </div>
       </div>
     </div>
@@ -471,526 +518,513 @@ exports[`UserProfile Snapshots isCurrentUser 1`] = `
 
 exports[`UserProfile Snapshots isCurrentUserAdmin 1`] = `
 <div
-  class="layout align-start row wrap"
+  class="layout row wrap"
 >
   <div
-    class="flex xs12 sm12 md4 mb-4 px-2"
+    class="flex xs12 mb-4"
   >
     <div
-      class="fresh-profile-card px-4 v-card v-sheet theme--light"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="layout align-start row wrap"
+        class="v-card__title"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+      Basic Information
+    
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3 row wrap"
       >
         <div
-          class="flex xs12"
+          class="flex xs8"
         >
           <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
+            class="layout row wrap"
           >
             <div
-              class="flex pt-2"
+              class="flex xs6 px-2"
             >
               <div
-                class="card-heading body-2 grey--text font-weight-bold"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
               >
                 
-      PROFILE
-    
+            First name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
              
             <div
-              class="spacer"
-            />
-              
-            <div
-              class="v-menu"
+              class="flex xs6 px-2"
             >
-              <a
-                class="v-btn v-btn--icon theme--light"
-                href="admin/users/1/edit"
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Last name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Company
+          
+              </div>
+               
+              <div
+                class="pt-4"
+              >
+                
+            Company name
+          
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Title
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Email
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Office phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Mobile phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs3 px-1"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
               >
                 <div
                   class="v-btn__content"
                 >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon grey--text fa fa fa fa-cog theme--light"
-                    style="font-size: 16px;"
-                  />
-                </div>
-              </a>
-              <div
-                class="v-menu__content theme--light fresh-tipmenu secondary"
-                style="max-height: auto; min-width: 0px; max-width: 300px; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
-              >
-                 
-                <span
-                  class="font-weight-bold text-uppercase small-caption white--text text-no-wrap"
-                >
                   
-      Edit Profile
-    
-                </span>
-              </div>
+            Change password
+          
+                </div>
+              </button>
             </div>
           </div>
+           
+          <!---->
         </div>
          
         <div
-          class="flex xs12 sm6 md12"
+          class="flex xs4 pl-4"
         >
           <div
-            class="v-responsive v-image"
-            style="max-height: 320px;"
+            class="px-2 xs-12 md-4"
           >
             <div
-              class="v-image__image v-image__image--preload v-image__image--contain"
-              mode="in-out"
-              name="fade-transition"
-              style="background-position: center center;"
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+          Profile picture
+        
+            </div>
+             
+            <input
+              class="ff-profile-picture__image_input"
+              type="file"
             />
+             
             <div
-              class="v-responsive__content"
-            />
-          </div>
-        </div>
-         
-        <div
-          class="flex xs12 sm6 md12"
-        >
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-card__text"
+              class="v-responsive v-image grey lighten-2"
             >
               <div
-                class="layout pt-0 pl-1 mt-0 justify-left"
-              >
-                <div
-                  class="subheading font-weight-bold secondary--text mb-2"
-                >
-                  
-              Demo Admin
-            
-                </div>
-              </div>
-               
-              <div
-                class="layout pt-0 ma-0 justify-left"
-              >
-                <span
-                  class="v-chip ma-0 font-weight-bold v-chip--small theme--dark secondary"
-                  depressed=""
-                  tabindex="0"
-                >
-                  <span
-                    class="v-chip__content"
-                  >
-                    
-              Platform Admin
-            
-                  </span>
-                </span>
-              </div>
-               
-              <div
-                class="flex my-1 column"
+                class="v-image__image v-image__image--preload v-image__image--cover"
+                mode="in-out"
+                name="fade-transition"
+                style="background-position: center center;"
               />
-               
               <div
-                class="layout pt-2 pl-1 mt-0 justify-left"
-              >
-                <div
-                  class="profile-position greyish-brown--text"
-                >
-                  
-              No Title @ FreshBus
-            
-                </div>
-              </div>
+                class="v-responsive__content"
+              />
             </div>
           </div>
            
           <div
-            class="flex hidden-sm-only xs12"
+            class="py-3 d-flex justify-space-between"
           >
-            <hr
-              class="v-divider theme--light"
-            />
-          </div>
-           
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-list fresh-profile-card__contact-list theme--light"
-              role="list"
+            <button
+              class="v-btn v-btn--depressed theme--light primary"
+              type="button"
             >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-envelope theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
-                demoAdmin@example.com
-              
-                    </div>
-                  </div>
-                </div>
+                
+          Upload Image
+        
               </div>
-               
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled v-btn--depressed theme--light"
+              disabled="disabled"
+              type="button"
+            >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-phone theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
-                123-456-7890
-              
-                    </div>
-                  </div>
-                </div>
+                
+          Delete Image
+        
               </div>
-               
-              <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
-              >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-mobile-alt theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="body-2"
-                    >
-                      
-                321-123-1234
-              
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </button>
           </div>
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3"
+      >
+        <div
+          class="flex"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Cancel
+      
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Save changes
+      
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="flex text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Delete account
+      
+            </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
    
   <div
-    class="flex xs12 sm12 md8 pl-3"
+    class="flex xs12 mb-4"
   >
     <div
-      class="layout row wrap"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="flex xs12 mb-4 px-2"
+        class="v-card__title"
       >
-        <div
-          class="v-card v-sheet theme--light"
-          user="[object Object]"
+        <h3
+          class="grey--text"
         >
-          <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
-          >
-            <div
-              class="flex pt-2"
-            >
-              <div
-                class="card-heading body-2 grey--text font-weight-bold"
-              >
-                
-      COMPANY
+          
+      Notification settings
     
-              </div>
-            </div>
-             
-            <div
-              class="spacer"
-            />
-              
-            <div
-              class="v-menu"
-            >
-              <a
-                class="v-btn v-btn--icon theme--light"
-                href="admin/companies/1/edit"
-              >
-                <div
-                  class="v-btn__content"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="v-icon grey--text fa fa fa fa-cog theme--light"
-                    style="font-size: 16px;"
-                  />
-                </div>
-              </a>
-              <div
-                class="v-menu__content theme--light fresh-tipmenu secondary"
-                style="max-height: auto; min-width: 0px; max-width: 300px; top: 12px; left: 12px; transform-origin: top left; z-index: 0; display: none;"
-              >
-                 
-                <span
-                  class="font-weight-bold text-uppercase small-caption white--text text-no-wrap"
-                >
-                  
-      Edit Company
-    
-                </span>
-              </div>
-            </div>
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-           
-          <div
-            class="container my-0 mx-2 px-2 py-2 justify-space-between"
-          >
-            <div
-              class="layout ma-0 pa-0 justify-space-between row wrap"
-            >
-              <div
-                class="flex"
-              >
-                <div
-                  class="container grid-list-md fluid justify-start pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="v-avatar v-avatar--tile"
-                      style="height: 48px; width: 48px;"
-                    >
-                      <div
-                        class="v-responsive v-image"
-                      >
-                        <div
-                          class="v-responsive__sizer"
-                          style="padding-bottom: 100%;"
-                        />
-                        <div
-                          class="v-image__image v-image__image--preload v-image__image--cover"
-                          mode="in-out"
-                          name="fade-transition"
-                          style="background-position: center center;"
-                        />
-                        <div
-                          class="v-responsive__content"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                FreshBus
-              
-                      </div>
-                       
-                      <div>
-                        <span
-                          class="v-chip my-0 ml-0 mr-1 font-weight-bold text-uppercase v-chip--small theme--dark secondary"
-                          depressed=""
-                          tabindex="0"
-                        >
-                          <span
-                            class="v-chip__content"
-                          >
-                            
-    No Company Type
-  
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex pr-1"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 56px; width: 56px;"
-                    >
-                      <img
-                        src="https://via.placeholder.com/800x600.png"
-                      />
-                    </div>
-                     
-                    <div
-                      class="flex"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                Demo Admin
-              
-                      </div>
-                       
-                      <span
-                        class="v-chip ma-0 font-weight-bold text-uppercase small-caption v-chip--small theme--dark secondary"
-                        depressed=""
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-                Platform Admin
-              
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex shrink align-center mt-0 pr-2"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0 mr-4"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="flex shrink"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 50px; width: 50px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon white--text far fa-id-badge theme--light"
-                          style="font-size: 28px;"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="headline font-weight-bold"
-                      >
-                        
-                16
-              
-                      </div>
-                       
-                      <div
-                        class="text-uppercase small-caption grey--text font-weight-bold"
-                      >
-                        
-                Total Members
-              
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-4 row wrap"
+      >
+        <div>
+          Coming Soon
         </div>
       </div>
     </div>
@@ -1000,466 +1034,513 @@ exports[`UserProfile Snapshots isCurrentUserAdmin 1`] = `
 
 exports[`UserProfile Snapshots without user and company 1`] = `
 <div
-  class="layout align-start row wrap"
+  class="layout row wrap"
 >
   <div
-    class="flex xs12 sm12 md4 mb-4 px-2"
+    class="flex xs12 mb-4"
   >
     <div
-      class="fresh-profile-card px-4 v-card v-sheet theme--light"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="layout align-start row wrap"
+        class="v-card__title"
+      >
+        <h3
+          class="grey--text"
+        >
+          
+      Basic Information
+    
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3 row wrap"
       >
         <div
-          class="flex xs12"
+          class="flex xs8"
         >
           <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
+            class="layout row wrap"
           >
             <div
-              class="flex pt-2"
+              class="flex xs6 px-2"
             >
               <div
-                class="card-heading body-2 grey--text font-weight-bold"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
               >
                 
-      YOUR PROFILE
-    
+            First name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
              
             <div
-              class="spacer"
-            />
-              
-            <!---->
-          </div>
-        </div>
-         
-        <div
-          class="flex xs12 sm6 md12"
-        >
-          <div
-            class="v-responsive v-image"
-            style="max-height: 320px;"
-          >
-            <div
-              class="v-image__image v-image__image--preload v-image__image--contain"
-              mode="in-out"
-              name="fade-transition"
-              style="background-position: center center;"
-            />
-            <div
-              class="v-responsive__content"
-            />
-          </div>
-        </div>
-         
-        <div
-          class="flex xs12 sm6 md12"
-        >
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-card__text"
+              class="flex xs6 px-2"
             >
               <div
-                class="layout pt-0 pl-1 mt-0 justify-left"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Last name
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
               >
                 <div
-                  class="subheading font-weight-bold secondary--text mb-2"
+                  class="v-input__control"
                 >
-                  
-              
-            
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-               
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
               <div
-                class="layout pt-0 ma-0 justify-left"
+                class="mb-2 text-uppercase grey--text font-weight-bold"
               >
-                <span
-                  class="v-chip ma-0 font-weight-bold v-chip--small theme--dark secondary"
-                  depressed=""
-                  tabindex="0"
-                >
-                  <span
-                    class="v-chip__content"
-                  >
-                    
-              
-            
-                  </span>
-                </span>
+                
+            Company
+          
               </div>
                
               <div
-                class="flex my-1 column"
+                class="pt-4"
+              >
+                
+            Company name
+          
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Title
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Email
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Office phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="flex xs6 px-2"
+            >
+              <div
+                class="mb-2 text-uppercase grey--text font-weight-bold"
+              >
+                
+            Mobile phone
+          
+              </div>
+               
+              <div
+                class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder theme--light"
+              >
+                <div
+                  class="v-input__control"
+                >
+                  <div
+                    class="v-input__slot"
+                  >
+                    <div
+                      class="v-text-field__slot"
+                    >
+                      <input
+                        placeholder="Name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="v-text-field__details"
+                  >
+                    <div
+                      class="v-messages theme--light"
+                    >
+                      <div
+                        class="v-messages__wrapper"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="layout row wrap"
+          >
+            <div
+              class="flex xs3 px-1"
+            >
+              <button
+                class="v-btn v-btn--depressed theme--light primary"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+            Change password
+          
+                </div>
+              </button>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="flex xs4 pl-4"
+        >
+          <div
+            class="px-2 xs-12 md-4"
+          >
+            <div
+              class="mb-2 text-uppercase grey--text font-weight-bold"
+            >
+              
+          Profile picture
+        
+            </div>
+             
+            <input
+              class="ff-profile-picture__image_input"
+              type="file"
+            />
+             
+            <div
+              class="v-responsive v-image grey lighten-2"
+            >
+              <div
+                class="v-image__image v-image__image--preload v-image__image--cover"
+                mode="in-out"
+                name="fade-transition"
+                style="background-position: center center;"
               />
-               
               <div
-                class="layout pt-2 pl-1 mt-0 justify-left"
-              >
-                <div
-                  class="profile-position greyish-brown--text"
-                >
-                  
-              No Title @ 
-            
-                </div>
-              </div>
+                class="v-responsive__content"
+              />
             </div>
           </div>
            
           <div
-            class="flex hidden-sm-only xs12"
+            class="py-3 d-flex justify-space-between"
           >
-            <hr
-              class="v-divider theme--light"
-            />
-          </div>
-           
-          <div
-            class="flex xs12 sm12 md12"
-          >
-            <div
-              class="v-list fresh-profile-card__contact-list theme--light"
-              role="list"
+            <button
+              class="v-btn v-btn--depressed theme--light primary"
+              type="button"
             >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-envelope theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
                 
-              
-                    </div>
-                  </div>
-                </div>
+          Upload Image
+        
               </div>
-               
+            </button>
+             
+            <button
+              class="v-btn v-btn--disabled v-btn--depressed theme--light"
+              disabled="disabled"
+              type="button"
+            >
               <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
+                class="v-btn__content"
               >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-phone theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="v-list__tile__title body-2"
-                    >
-                      
                 
-              
-                    </div>
-                  </div>
-                </div>
+          Delete Image
+        
               </div>
-               
-              <div
-                class="fresh-profile-card__contact-list-item"
-                role="listitem"
-              >
-                <div
-                  class="v-list__tile v-list__tile--avatar theme--light"
-                >
-                  <div
-                    class="v-list__tile__avatar fresh-profile-card__contact-list-item"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 40px; width: 40px;"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 30px; width: 30px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon fa fa fa fa-mobile-alt theme--dark"
-                          style="font-size: 16px;"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="v-list__tile__content"
-                  >
-                    <div
-                      class="body-2"
-                    >
-                      
-                
-              
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </button>
           </div>
+        </div>
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-3"
+      >
+        <div
+          class="flex"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Cancel
+      
+            </div>
+          </button>
+           
+          <button
+            class="v-btn v-btn--depressed theme--light primary"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Save changes
+      
+            </div>
+          </button>
+        </div>
+         
+        <div
+          class="flex text-xs-right"
+        >
+          <button
+            class="v-btn v-btn--depressed theme--light"
+            type="button"
+          >
+            <div
+              class="v-btn__content"
+            >
+              
+        Delete account
+      
+            </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
    
   <div
-    class="flex xs12 sm12 md8 pl-3"
+    class="flex xs12 mb-4"
   >
     <div
-      class="layout row wrap"
+      class="v-card v-sheet theme--light"
     >
       <div
-        class="flex xs12 mb-4 px-2"
+        class="v-card__title"
       >
-        <div
-          class="v-card v-sheet theme--light"
-          user="[object Object]"
+        <h3
+          class="grey--text"
         >
-          <div
-            class="layout xs12 sm12 md12 lg12 row px-4 py-1 align-center"
-          >
-            <div
-              class="flex pt-2"
-            >
-              <div
-                class="card-heading body-2 grey--text font-weight-bold"
-              >
-                
-      YOUR COMPANY
+          
+      Notification settings
     
-              </div>
-            </div>
-             
-            <div
-              class="spacer"
-            />
-              
-            <!---->
-          </div>
-           
-          <hr
-            class="v-divider theme--light"
-          />
-           
-          <div
-            class="container my-0 mx-2 px-2 py-2 justify-space-between"
-          >
-            <div
-              class="layout ma-0 pa-0 justify-space-between row wrap"
-            >
-              <div
-                class="flex"
-              >
-                <div
-                  class="container grid-list-md fluid justify-start pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="v-avatar v-avatar--tile"
-                      style="height: 48px; width: 48px;"
-                    >
-                      <div
-                        class="v-responsive v-image"
-                      >
-                        <div
-                          class="v-responsive__sizer"
-                          style="padding-bottom: 100%;"
-                        />
-                        <div
-                          class="v-image__image v-image__image--preload v-image__image--cover"
-                          mode="in-out"
-                          name="fade-transition"
-                          style="background-position: center center;"
-                        />
-                        <div
-                          class="v-responsive__content"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                
-              
-                      </div>
-                       
-                      <div>
-                        <span
-                          class="v-chip my-0 ml-0 mr-1 font-weight-bold text-uppercase v-chip--small theme--dark secondary"
-                          depressed=""
-                          tabindex="0"
-                        >
-                          <span
-                            class="v-chip__content"
-                          >
-                            
-    No Company Type
-  
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex pr-1"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0"
-                >
-                  <div
-                    class="layout row justify-start"
-                  >
-                    <div
-                      class="v-avatar"
-                      style="height: 56px; width: 56px;"
-                    >
-                      <img
-                        src="https://via.placeholder.com/800x600.png"
-                      />
-                    </div>
-                     
-                    <div
-                      class="flex"
-                    >
-                      <div
-                        class="body-2 font-weight-bold secondary--text mb-1 mt-1"
-                      >
-                        
-                Demo Admin
-              
-                      </div>
-                       
-                      <span
-                        class="v-chip ma-0 font-weight-bold text-uppercase small-caption v-chip--small theme--dark secondary"
-                        depressed=""
-                        tabindex="0"
-                      >
-                        <span
-                          class="v-chip__content"
-                        >
-                          
-                Platform Admin
-              
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                class="flex shrink align-center mt-0 pr-2"
-              >
-                <div
-                  class="container grid-list-md fluid pa-0 ma-0 mr-4"
-                >
-                  <div
-                    class="layout row justify-start align-center"
-                  >
-                    <div
-                      class="flex shrink"
-                    >
-                      <div
-                        class="v-avatar secondary"
-                        style="height: 50px; width: 50px;"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="v-icon white--text far fa-id-badge theme--light"
-                          style="font-size: 28px;"
-                        />
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="flex grow"
-                    >
-                      <div
-                        class="headline font-weight-bold"
-                      >
-                        
-                0
-              
-                      </div>
-                       
-                      <div
-                        class="text-uppercase small-caption grey--text font-weight-bold"
-                      >
-                        
-                Total Members
-              
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </h3>
+         
+        <!---->
+      </div>
+       
+      <hr
+        class="v-divider theme--light"
+      />
+       
+      <div
+        class="layout pa-4 row wrap"
+      >
+        <div>
+          Coming Soon
         </div>
       </div>
     </div>
