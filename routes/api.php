@@ -45,6 +45,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/new', 'Foodfleet\Store@showNewRecommendation');
+    Route::get('stores/{uuid}/events', 'Foodfleet\Store@events');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
     Route::get('store-summary/{uuid}', 'Foodfleet\Store@summary');

@@ -1,7 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import Component from '~/components/fleet-members/StatusSelect.vue'
-import * as Stories from '~/components/fleet-members/StatusSelect.stories'
-import { FIXTURE_STORE_STATUSES } from '../../__data__/storeStatuses'
+import Component from './StatusSelect.vue'
+import * as Stories from './StatusSelect.stories'
+import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
 
 describe('components/fleet-members/StatusSelect', () => {
   describe('Visuals', () => {

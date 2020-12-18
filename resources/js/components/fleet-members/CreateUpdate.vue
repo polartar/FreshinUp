@@ -223,9 +223,30 @@
           xs12
           py-2
         >
-          <Events
-            :events="events"
-          />
+          <v-card>
+            <v-card-title>
+              <h3 class="grey--text font-weight-bold">
+                Assigned events
+              </h3>
+            </v-card-title>
+            <v-divider />
+            <v-card-text>
+              <event-list
+                :events="events"
+                :statuses="eventStatuses"
+                :rows-per-page="eventPagination.rowsPerPage"
+                :page="eventPagination.page"
+                :total-items="eventPagination.totalItems"
+                :sort-by="eventSorting.sortBy"
+                :descending="eventSorting.descending"
+                @manage-duplicate="onManageDuplicate"
+                @manage-edit="editEvent"
+                @change-status="changeEventStatus"
+                @change-status-multiple="changeEventsStatus"
+                @paginate="onEventPaginate"
+              />
+            </v-card-text>
+          </v-card>
         </v-flex>
         <v-flex
           v-if="!isNew"
@@ -233,6 +254,7 @@
           py-2
         >
           <payments
+            :is-loading="paymentsLoading"
             :items="payments"
             :dialog="newPaymentDialog"
             :statuses="paymentStatuses"
@@ -242,13 +264,16 @@
             :sort-by="paymentSorting.sortBy"
             :descending="paymentSorting.descending"
             @dialog="newPaymentDialog = $event"
+            @change-status="changePaymentStatus"
             @manage-pay="onPaymentManagePay"
             @manage-retry="onPaymentManageRetry"
+            @paginate="onPaymentPaginate"
           >
             <template #form>
               <payment-form
                 :is-loading="newPaymentLoading"
                 class="ma-2"
+                :events="events"
                 @cancel="dialog = false"
                 @input="onAddPayment"
               />
@@ -257,6 +282,17 @@
         </v-flex>
       </v-layout>
     </v-form>
+
+    <v-dialog
+      :value="duplicateEventDialog"
+      max-width="500"
+    >
+      <duplicate-event-dialog
+        :is-loading="duplicatingEvent"
+        @input="duplicateEvent"
+        @close="duplicateEventDialog = false"
+      />
+    </v-dialog>
   </div>
 </template>
 <script>
@@ -265,7 +301,7 @@ import BasicInformation, { DEFAULT_STORE } from './BasicInformation'
 import Payments from './Payments'
 import DocumentList from './DocumentList'
 import { mapGetters } from 'vuex'
-import Events from './Events'
+import EventList from '~/components/events/EventList'
 import AreasOfOperation from './AreasOfOperation'
 import MenuItems from '../menu-items/MenuItems'
 import MenuItemForm, { DEFAULT_MENU_ITEM } from '../menu-items/MenuItemForm'
@@ -277,6 +313,7 @@ import get from 'lodash/get'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import AreaForm from './AreaForm'
 import PaymentForm from '../payments/PaymentForm'
+import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -300,12 +337,13 @@ export default {
     BasicInformation,
     DocumentList,
     Payments,
-    Events,
+    EventList,
     AreasOfOperation,
     MenuItems,
     MenuItemForm,
     StatusSelect,
-    DeleteDialog
+    DeleteDialog,
+    DuplicateEventDialog
   },
   mixins: [Validate, deletables],
   data () {
@@ -339,8 +377,11 @@ export default {
         { value: 'title', text: 'Title (A - Z)' },
         { value: '-title', text: 'Title (Z - A)' }
       ],
-      events: ['Event will populate once your restaurant is assigned.'],
-      fleetMemberLoading: false
+      fleetMemberLoading: false,
+
+      editingEvent: null,
+      duplicatingEvent: false,
+      duplicateEventDialog: false
     }
   },
   computed: {
@@ -357,10 +398,19 @@ export default {
     ...mapGetters('payments', {
       payments: 'items',
       paymentPagination: 'pagination',
-      paymentSorting: 'sorting'
+      paymentSorting: 'sorting',
+      paymentsLoading: 'itemsLoading'
     }),
     ...mapGetters('paymentStatuses', {
       paymentStatuses: 'items'
+    }),
+    ...mapGetters('eventStatuses', {
+      eventStatuses: 'items'
+    }),
+    ...mapGetters('stores/events', {
+      events: 'items',
+      eventPagination: 'pagination',
+      eventSorting: 'sorting'
     }),
     ...mapGetters('menuItems', {
       menuItems: 'items',
@@ -431,7 +481,7 @@ export default {
   },
   watch: {
     '$store.getters.currentUser' (user) {
-      if (user) {
+      if (user && user.company_id) {
         this.getSquareLocations(user.company_id)
       }
     }
@@ -450,6 +500,7 @@ export default {
       })
         .catch(error => console.error(error))
     },
+
     // store
     async saveOrCreate (data) {
       try {
@@ -593,7 +644,10 @@ export default {
     onAddPayment (payment) {
       this.newPaymentLoading = true
       this.$store.dispatch('payments/createItem', {
-        data: { ...payment, store_uuid: this.$route.params.id }
+        data: {
+          ...payment,
+          store_uuid: this.$route.params.id
+        }
       })
         .then(() => {
           this.newPaymentDialog = false
@@ -607,12 +661,96 @@ export default {
         .then(() => {
           this.newPaymentLoading = false
         })
+    },
+
+    // events
+    editEvent (event) {
+      this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
+    },
+    deleteEvent (event) {
+      // TODO: will need to refresh because
+      // events/deleteItem is different with stores/events/deleteItem
+      // So deleting from 'events/deleteItem' should delete in 'stores/events/deleteItem'
+      this.$store.dispatch('events/deleteItem', {
+        getItems: true,
+        params: { id: event.uuid }
+      })
+        .catch(error => console.error(error))
+    },
+    deleteEvents (events) {
+      // TODO: bulk delete for events https://github.com/FreshinUp/foodfleet/issues/645
+      Promise.all(events.map(event => this.deleteEvent(event)))
+    },
+    changeEventStatus (value, event) {
+      this.$store.dispatch('events/patchItem', {
+        getItems: true,
+        params: { id: event.uuid },
+        data: {
+          status_id: value
+        }
+      })
+        .catch(error => console.error(error))
+    },
+    changeEventsStatus (value, events) {
+      // TODO: bulk update for events https://github.com/FreshinUp/foodfleet/issues/646
+      Promise.all(events.map(event => this.changeEventStatus(value, event)))
+    },
+    onEventPaginate (value) {
+      this.$store.dispatch('stores/events/setPagination', value)
+      this.$store.dispatch('stores/events/getItems', { params: { id: this.$route.params.id } })
+    },
+    duplicateEvent (payload) {
+      this.duplicatingEvent = true
+      // TODO see deleteEvent todo
+      this.$store.dispatch('events/duplicate', {
+        params: {
+          uuid: this.editingEvent.uuid
+        },
+        data: payload
+      })
+        .then(() => {
+          this.duplicateEventDialog = false
+          this.editingEvent = null
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.duplicatingEvent = false
+        })
+    },
+    onManageDuplicate (event) {
+      this.editingEvent = event
+      this.duplicateEventDialog = true
+    },
+
+    // Payment
+    changePaymentStatus (value, payment) {
+      this.$store.dispatch('payments/patchItem', {
+        getItems: true,
+        params: { id: payment.uuid },
+        data: {
+          status_id: value
+        }
+      })
+        .catch(error => console.error(error))
+    },
+    onPaymentPaginate (value) {
+      this.$store.dispatch('payments/setPagination', value)
+      this.$store.dispatch('payments/getItems')
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = to.params.id || 'new'
     const promises = []
     if (id !== 'new') {
+      promises.push(vm.$store.dispatch('eventStatuses/getItems'))
+      promises.push(vm.$store.dispatch('stores/events/getItems', {
+        params: {
+          id
+        }
+      }))
       promises.push(vm.$store.dispatch('documents/getItems', {
         params: {
           'filter[assigned_uuid]': id
@@ -646,12 +784,17 @@ export default {
       if (currentUser) {
         vm.getSquareLocations(currentUser.company_id)
       }
+      vm.$store.dispatch('payments/setFilters', {
+        store_uuid: id,
+        include: 'event'
+      })
       promises.push(vm.$store.dispatch('payments/getItems'))
     }
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+    promises.push(vm.$store.dispatch('paymentStatuses/getItems'))
     promises.push(vm.$store.dispatch('payments/getItems'))
 
     if (!SQUARE_APP_ID) {
@@ -663,14 +806,13 @@ export default {
       return false
     }
 
-    vm.$store.dispatch('page/setLoading', true)
+    vm.$store.dispatch('page/setLoading', false)
     Promise.all(promises)
       .then(() => {})
       .catch((error) => {
         console.error(error)
       })
       .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
         if (next) next()
       })
   }

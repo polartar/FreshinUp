@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
-import Component from '~/components/fleet-members/DocumentList.vue'
+import Component from './DocumentList.vue'
 import { FIXTURE_DOCUMENTS } from 'tests/__data__/documents'
 import { FIXTURE_DOCUMENT_STATUSES } from 'tests/__data__/documentStatuses'
 

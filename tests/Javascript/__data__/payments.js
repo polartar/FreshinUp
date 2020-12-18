@@ -1,3 +1,5 @@
+import { FIXTURE_EVENTS } from './events'
+import { FIXTURE_STORES } from './stores'
 export const FIXTURE_PAYMENTS = [
   {
     id: 1,
@@ -54,6 +56,12 @@ export const FIXTURE_PAYMENTS = [
     payment_type_uuid: 'a6269b12-aede-41e3-8d20-68a6906b1c05',
     transaction_uuid: '30f7e314-f35f-426f-b0ea-ac36fabac8e2'
   }
-]
+].map((payment, i) => {
+  return {
+    ...payment,
+    store_uuid: FIXTURE_STORES[i].uuid,
+    event_uuid: FIXTURE_EVENTS[i].uuid
+  }
+})
 
 export const FIXTURE_PAYMENT = FIXTURE_PAYMENTS[0]

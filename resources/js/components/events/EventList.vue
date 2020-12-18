@@ -103,7 +103,7 @@
           {{ props.item.name }}
         </div>
         <div class="grey--text">
-          @{{ get(props, 'item.location.venue.name') }}
+          @{{ get(props, 'item.venue.name') }}
         </div>
       </td>
       <td>
@@ -153,7 +153,7 @@ export const DEFAULT_HEADERS = [
   { text: 'Title / Venue', value: 'name,venue', align: 'left' },
   { text: 'Date', sortable: true, value: 'start_at', align: 'left' },
   { text: 'Type', value: 'type_id', align: 'left' },
-  { text: 'Managed By', value: 'manager', align: 'left' },
+  { text: 'Managed By', value: 'manager', align: 'left', sortable: false },
   { text: 'Customer', value: 'host', align: 'left' },
   { text: 'Manage', sortable: false, value: 'manage', align: 'left' }
 ]
@@ -165,6 +165,7 @@ export default {
     FormatRangeDate
   ],
   props: {
+    headers: { type: Array, default: () => DEFAULT_HEADERS },
     events: {
       type: Array,
       default: () => []
@@ -183,7 +184,6 @@ export default {
   data () {
     return {
       selected: [],
-      headers: DEFAULT_HEADERS,
       actionBtnTitle: 'Manage'
     }
   },
@@ -191,7 +191,8 @@ export default {
     itemActions () {
       let actions = [
         { action: 'edit', text: 'Edit' },
-        { action: 'duplicate', text: 'Duplicate' } // TODO: should be move to specific genericActions
+        { action: 'duplicate', text: 'Duplicate' }
+        // TODO: should be move to specific genericActions
       ]
       actions = this.generateActions(actions)
       return actions

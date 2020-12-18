@@ -21,7 +21,7 @@ const navigationAdmin = {
     {
       action: 'icon-dashboard',
       title: 'Dashboard',
-      to: '/admin#'
+      to: '/admin/dashboard'
     },
     {
       action: 'icon-users',

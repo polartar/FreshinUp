@@ -26,7 +26,8 @@ class PaymentTest extends TestCase
             'name' => $payment->name,
             'due_date' => $payment->due_date,
             'description' => $payment->description,
-            'status_id' => $payment->status_id
+            'status_id' => $payment->status_id,
+            'store_uuid' => $payment->store_uuid,
         ];
         $result = $resource->toArray($request);
         $this->assertArraySubset($expected, $result);

@@ -15,11 +15,6 @@ class PaymentTest extends TestCase
 {
     use RefreshDatabase, WithFaker, WithoutMiddleware;
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function testModel()
     {
         $device = factory(Device::class)->create();
@@ -47,8 +42,9 @@ class PaymentTest extends TestCase
             'processing_fee_money' => $payment->processing_fee_money,
             'due_date' => $payment->due_date,
             'description' => $payment->description,
-            'status_id' => $payment->status_id
-
+            'status_id' => $payment->status_id,
+            'store_uuid' => $payment->store_uuid,
+            'event_uuid' => $payment->event_uuid,
         ]);
 
         // Relations
@@ -56,5 +52,7 @@ class PaymentTest extends TestCase
         $this->assertEquals($payment->device_uuid, $payment->device->uuid);
         $this->assertEquals($payment->payment_type_uuid, $payment->type->uuid);
         $this->assertEquals($payment->transaction_uuid, $payment->transaction->uuid);
+        $this->assertEquals($payment->store_uuid, $payment->store->uuid);
+        $this->assertEquals($payment->event_uuid, $payment->event->uuid);
     }
 }

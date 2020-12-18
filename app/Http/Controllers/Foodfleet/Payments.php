@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Foodfleet;
 
+use App\Enums\PaymentStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Foodfleet\Square\Payment as PaymentModel;
 use Illuminate\Http\Request;
@@ -22,13 +23,15 @@ class Payments extends Controller
     {
         $payments = QueryBuilder::for(PaymentModel::class, $request)
             ->allowedFilters([
+                'store_uuid',
                 'name',
                 Filter::exact('uuid'),
                 'square_id',
                 Filter::exact('status_id')
             ])
             ->allowedIncludes([
-                'status'
+                'status',
+                'event'
             ])
             ->allowedSorts([
                 'name',
@@ -43,16 +46,21 @@ class Payments extends Controller
 
     public function store(Request $request)
     {
-        $rules = [
-            'name' => 'string|required',
-            'description' => 'string',
-            'amount_money' => 'integer|required',
-            'due_date' => 'date|required',
-            'status_id' => 'integer'
-        ];
-        $this->validate($request, $rules);
-        $payload = $request->only(array_keys($rules));
-        $item = PaymentModel::create($payload);
+        $this->validate($request, PaymentModel::RULES);
+        $payload = $request->only(PaymentModel::FILLABLES);
+        $item = PaymentModel::create(array_merge($payload, [
+            'status_id' => $request->input('status_id', PaymentStatus::PENDING)
+        ]));
         return new PaymentResource($item);
+    }
+
+    public function update(Request $request, $uuid)
+    {
+        $payment = PaymentModel::where('uuid', $uuid)->firstOrFail();
+        $this->validate($request, PaymentModel::EDIT_RULES);
+        $payload = $request->only(PaymentModel::FILLABLES);
+        $payment->update($payload);
+        $payment->load('event');
+        return new PaymentResource($payment);
     }
 }

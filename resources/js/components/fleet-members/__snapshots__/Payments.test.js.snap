@@ -1641,14 +1641,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       
-              Event fee
+              eum
             
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
                       
-              2013-06-06
+              2002-07-08
             
                     </td>
                     <td
@@ -1658,7 +1658,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            $92.32
+            $79.19
           
                       </div>
                     </td>
@@ -1721,14 +1721,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark red red-text--text"
+                        class="v-btn theme--dark grey grey-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Failed
+  Pending
  
                           <i
                             aria-hidden="true"
@@ -1837,14 +1837,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       
-              Event Amount
+              nemo
             
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
                       
-              2013-07-08
+              2006-04-03
             
                     </td>
                     <td
@@ -1854,7 +1854,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            $23.45
+            $68.09
           
                       </div>
                     </td>
@@ -1917,14 +1917,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark orange orange-text--text"
+                        class="v-btn theme--dark grey grey-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Refunded
+  Pending
  
                           <i
                             aria-hidden="true"
@@ -2033,14 +2033,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       
-              Event Amount
+              commodi
             
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
                       
-              2013-07-09
+              2010-08-20
             
                     </td>
                     <td
@@ -2050,7 +2050,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            $24.35
+            $96.26
           
                       </div>
                     </td>
