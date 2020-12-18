@@ -19,12 +19,12 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
           <h3
             class="grey--text"
           >
-            
+
           Payments
-        
+
           </h3>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -44,7 +44,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                 add_circle_outline
               </i>
               Request New Payment
-            
+
             </div>
           </button>
           <div
@@ -60,7 +60,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                 class="v-dialog"
                 style="max-width: 600px; display: none;"
               >
-                 
+
                 <div
                   class="v-card v-sheet theme--light"
                 >
@@ -70,11 +70,11 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                     <div
                       class="v-card__text grey--text subheading font-weight-bold"
                     >
-                      
+
                 Request New Payment
-              
+
                     </div>
-                     
+
                     <button
                       class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
                       type="button"
@@ -91,22 +91,22 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                             style="font-size: 16px;"
                           />
                         </div>
-                         
+
                         <div
                           class="flex"
                         >
-                          
+
                   Close
-                
+
                         </div>
                       </div>
                     </button>
                   </div>
-                   
+
                   <hr
                     class="v-divider theme--light"
                   />
-                   
+
                   <!---->
                 </div>
               </div>
@@ -115,11 +115,11 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
         </div>
       </div>
     </div>
-     
+
     <hr
       class="v-divider theme--light"
     />
-     
+
     <div
       class="layout"
     >
@@ -182,9 +182,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Status
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -203,9 +203,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Event name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -224,9 +224,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Payment name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -245,9 +245,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Due date
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -266,9 +266,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Amount
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -287,9 +287,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Manage
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -322,7 +322,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
               </table>
             </div>
           </div>
-           
+
           <div
             class="layout align-center"
           >
@@ -372,7 +372,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                 </ul>
               </div>
             </div>
-             
+
             <div
               class="flex shrink"
             >
@@ -590,12 +590,12 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
           <h3
             class="grey--text"
           >
-            
+
           Payments
-        
+
           </h3>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -615,7 +615,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                 add_circle_outline
               </i>
               Request New Payment
-            
+
             </div>
           </button>
           <div
@@ -631,7 +631,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                 class="v-dialog"
                 style="max-width: 600px; display: none;"
               >
-                 
+
                 <div
                   class="v-card v-sheet theme--light"
                 >
@@ -641,11 +641,11 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                     <div
                       class="v-card__text grey--text subheading font-weight-bold"
                     >
-                      
+
                 Request New Payment
-              
+
                     </div>
-                     
+
                     <button
                       class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
                       type="button"
@@ -662,22 +662,22 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                             style="font-size: 16px;"
                           />
                         </div>
-                         
+
                         <div
                           class="flex"
                         >
-                          
+
                   Close
-                
+
                         </div>
                       </div>
                     </button>
                   </div>
-                   
+
                   <hr
                     class="v-divider theme--light"
                   />
-                   
+
                   <!---->
                 </div>
               </div>
@@ -686,11 +686,11 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
         </div>
       </div>
     </div>
-     
+
     <hr
       class="v-divider theme--light"
     />
-     
+
     <div
       class="layout"
     >
@@ -753,9 +753,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Status
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -774,9 +774,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Event name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -795,9 +795,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Payment name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -816,9 +816,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Due date
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -837,9 +837,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Amount
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -858,9 +858,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Manage
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -921,7 +921,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
               </table>
             </div>
           </div>
-           
+
           <div
             class="layout align-center"
           >
@@ -971,7 +971,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                 </ul>
               </div>
             </div>
-             
+
             <div
               class="flex shrink"
             >
@@ -1193,12 +1193,12 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
           <h3
             class="grey--text"
           >
-            
+
           Payments
-        
+
           </h3>
         </div>
-         
+
         <div
           class="flex shrink"
         >
@@ -1218,7 +1218,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                 add_circle_outline
               </i>
               Request New Payment
-            
+
             </div>
           </button>
           <div
@@ -1234,7 +1234,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                 class="v-dialog"
                 style="max-width: 600px; display: none;"
               >
-                 
+
                 <div
                   class="v-card v-sheet theme--light"
                 >
@@ -1244,11 +1244,11 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                     <div
                       class="v-card__text grey--text subheading font-weight-bold"
                     >
-                      
+
                 Request New Payment
-              
+
                     </div>
-                     
+
                     <button
                       class="white--text v-btn v-btn--depressed v-btn--round v-btn--small theme--light grey"
                       type="button"
@@ -1265,22 +1265,22 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                             style="font-size: 16px;"
                           />
                         </div>
-                         
+
                         <div
                           class="flex"
                         >
-                          
+
                   Close
-                
+
                         </div>
                       </div>
                     </button>
                   </div>
-                   
+
                   <hr
                     class="v-divider theme--light"
                   />
-                   
+
                   <!---->
                 </div>
               </div>
@@ -1289,11 +1289,11 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
         </div>
       </div>
     </div>
-     
+
     <hr
       class="v-divider theme--light"
     />
-     
+
     <div
       class="layout"
     >
@@ -1356,9 +1356,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Status
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1377,9 +1377,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Event name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1398,9 +1398,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Payment name
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1419,9 +1419,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Due date
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1440,9 +1440,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Amount
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1461,9 +1461,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       tabindex="0"
                     >
                       <span>
-                        
+
         Manage
-      
+
                       </span>
                       <i
                         aria-hidden="true"
@@ -1520,7 +1520,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         </div>
                       </div>
                     </td>
-                     
+
                     <td
                       class="text-xs-undefined"
                     >
@@ -1531,9 +1531,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
+
   Pending
- 
+
                           <i
                             aria-hidden="true"
                             class="v-icon v-icon--right material-icons theme--dark"
@@ -1549,7 +1549,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                           class="v-menu__content theme--light "
                           style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                         >
-                           
+
                           <div
                             class="v-list theme--light"
                             role="list"
@@ -1616,40 +1616,40 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="subheading primary--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            @ 
-          
+
+            @
+
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               eum
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               2002-07-08
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
@@ -1657,9 +1657,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="grey--text"
                       >
-                        
+
             $79.19
-          
+
                       </div>
                     </td>
                     <td
@@ -1673,9 +1673,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
-            
-          
+
+
+
                         </div>
                       </button>
                     </td>
@@ -1716,7 +1716,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         </div>
                       </div>
                     </td>
-                     
+
                     <td
                       class="text-xs-undefined"
                     >
@@ -1727,9 +1727,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
+
   Pending
- 
+
                           <i
                             aria-hidden="true"
                             class="v-icon v-icon--right material-icons theme--dark"
@@ -1745,7 +1745,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                           class="v-menu__content theme--light "
                           style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                         >
-                           
+
                           <div
                             class="v-list theme--light"
                             role="list"
@@ -1812,40 +1812,40 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="subheading primary--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            @ 
-          
+
+            @
+
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               nemo
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               2006-04-03
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
@@ -1853,9 +1853,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="grey--text"
                       >
-                        
+
             $68.09
-          
+
                       </div>
                     </td>
                     <td
@@ -1869,9 +1869,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
-            
-          
+
+
+
                         </div>
                       </button>
                     </td>
@@ -1912,7 +1912,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         </div>
                       </div>
                     </td>
-                     
+
                     <td
                       class="text-xs-undefined"
                     >
@@ -1923,9 +1923,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
+
   Pending
- 
+
                           <i
                             aria-hidden="true"
                             class="v-icon v-icon--right material-icons theme--dark"
@@ -1941,7 +1941,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                           class="v-menu__content theme--light "
                           style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                         >
-                           
+
                           <div
                             class="v-list theme--light"
                             role="list"
@@ -2008,40 +2008,40 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="subheading primary--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            
-          
+
+
+
                       </div>
-                       
+
                       <div
                         class="grey--text"
                       >
-                        
-            @ 
-          
+
+            @
+
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               commodi
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
+
               2010-08-20
-            
+
                     </td>
                     <td
                       class="text-xs-undefined"
@@ -2049,9 +2049,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <div
                         class="grey--text"
                       >
-                        
+
             $96.26
-          
+
                       </div>
                     </td>
                     <td
@@ -2065,9 +2065,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         <div
                           class="v-btn__content"
                         >
-                          
-            
-          
+
+
+
                         </div>
                       </button>
                     </td>
@@ -2076,7 +2076,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
               </table>
             </div>
           </div>
-           
+
           <div
             class="layout align-center"
           >
@@ -2150,7 +2150,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                 </ul>
               </div>
             </div>
-             
+
             <div
               class="flex shrink"
             >

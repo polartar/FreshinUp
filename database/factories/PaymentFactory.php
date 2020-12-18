@@ -36,5 +36,8 @@ $factory->define(Payment::class, function (Faker $faker) {
         "transaction_uuid" => function () {
             return factory(Transaction::class)->create()->uuid;
         },
+        "event_uuid" => function () {
+            return factory(Event::class)->create()->uuid;
+        }
     ];
 });
