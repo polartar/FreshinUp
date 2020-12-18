@@ -28,7 +28,7 @@
               First name
             </div>
             <v-text-field
-              v-model="name"
+              v-model="first_name"
               placeholder="Name"
               single-line
               outline
@@ -42,7 +42,7 @@
               Last name
             </div>
             <v-text-field
-              v-model="name"
+              v-model="last_name"
               placeholder="Name"
               single-line
               outline
@@ -57,7 +57,7 @@
             </div>
             <v-text-field
               v-if="modeDetail"
-              v-model="name"
+              v-model="company_name"
               placeholder="Name"
               single-line
               outline
@@ -66,7 +66,7 @@
               v-else
               class="pt-4"
             >
-              Company name
+              {{ company_name }}
             </div>
           </v-flex>
           <v-flex
@@ -77,7 +77,7 @@
               Title
             </div>
             <v-text-field
-              v-model="name"
+              v-model="title"
               placeholder="Name"
               single-line
               outline
@@ -97,7 +97,7 @@
               User type
             </div>
             <v-text-field
-              v-model="name"
+              v-model="type"
               placeholder="Name"
               single-line
               outline
@@ -144,7 +144,7 @@
               Email
             </div>
             <v-text-field
-              v-model="name"
+              v-model="email"
               placeholder="Name"
               single-line
               outline
@@ -163,7 +163,7 @@
               Office phone
             </div>
             <v-text-field
-              v-model="name"
+              v-model="office_phone"
               placeholder="Name"
               single-line
               outline
@@ -177,7 +177,7 @@
               Mobile phone
             </div>
             <v-text-field
-              v-model="name"
+              v-model="mobile_phone"
               placeholder="Name"
               single-line
               outline
@@ -197,7 +197,7 @@
               :loading="loading"
               depressed
               color="primary"
-              @click="save"
+              @click="onChangePassword"
             >
               Change password
             </v-btn>
@@ -264,7 +264,7 @@
         <v-btn
           :loading="loading"
           depressed
-          @click="save"
+          @click="onCancel"
         >
           Cancel
         </v-btn>
@@ -281,7 +281,7 @@
         <v-btn
           :loading="loading"
           depressed
-          @click="save"
+          @click="onDelete"
         >
           Delete account
         </v-btn>
@@ -291,11 +291,34 @@
 </template>
 <script>
 import get from 'lodash/get'
+import pick from 'lodash/pick'
+import keys from 'lodash/keys'
 
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const DEFAULT_STORE = {
-  image: null
+  id: null,
+  uuid: '',
+  company_id: null,
+  company_name: '',
+  status: null,
+  type: null,
+  level: null,
+  level_name: '',
+  first_name: '',
+  last_name: '',
+  name: '',
+  email: '',
+  mobile_phone: '',
+  office_phone: '',
+  notes: null,
+  title: null,
+  avatar: '',
+  requested_company: null,
+  company: null,
+  last_login: '',
+  has_admin_access: false,
+  joined_at: ''
 }
 
 export const DEFAULT_IMAGE = 'https://via.placeholder.com/800x600.png'
@@ -318,10 +341,10 @@ export default {
       return !!get(this.value, 'uuid')
     },
     hasImage () {
-      return !!this.image && this.image !== DEFAULT_IMAGE
+      return !!this.avatar && this.avatar !== DEFAULT_IMAGE
     },
     storeImage () {
-      return this.hasImage ? this.image : '/images/default.png'
+      return this.hasImage ? this.avatar : '/images/default.png'
     }
   },
   methods: {
@@ -333,7 +356,7 @@ export default {
       }
       const reader = new FileReader()
       reader.onload = (event) => {
-        this.image = event.target.result
+        this.avatar = event.target.result
       }
       reader.readAsDataURL(file)
     },
@@ -350,7 +373,16 @@ export default {
         return false
       }
       image.value = null
-      this.image = null
+      this.avatar = null
+    },
+    onCancel () {
+      this.$emit('cancel')
+    },
+    onDelete () {
+      this.$emit('delete', pick(this, keys(this.value)))
+    },
+    onChangePassword () {
+      this.$emit('delete', pick(this, keys(this.value)))
     }
   }
 }
