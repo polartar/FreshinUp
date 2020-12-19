@@ -11,12 +11,11 @@
     </v-card-title>
     <v-divider />
     <v-layout
-      row
-      wrap
       class="pa-4"
       align-center
+      justify-center
     >
-      <div>Coming Soon</div>
+      Coming Soon
     </v-layout>
   </v-card>
 </template>

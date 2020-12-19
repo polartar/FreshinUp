@@ -13,9 +13,13 @@
     <v-card-text>
       <v-layout
         row
-        wrap
+        data-wrap
       >
-        <v-flex xs12 sm10 md8>
+        <v-flex
+          xs12
+          sm10
+          lg8
+        >
           <v-layout
             row
             wrap
@@ -83,168 +87,179 @@
                 outline
               />
             </v-flex>
-          </v-layout>
-          <v-flex
-            v-if="forCustomer"
-            xs6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              User type
-            </div>
-            <v-select
-              :items="types"
-              v-model="type"
-              item-text="name"
-              item-value="id"
-              placeholder="Type"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            v-if="forCustomer"
-            xs6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Role
-            </div>
-            <v-select
-              :items="levels"
-              v-model="level"
-              item-text="name"
-              item-value="id"
-              placeholder="Level"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            v-if="forCustomer"
-            xs6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Food fleet manager
-            </div>
-            <simple
-              class="mb-2"
-              single-line
-              outline
-              url="users"
-              term-param="term"
-              results-id-key="uuid"
-              :value="manager_uuid"
-              placeholder="Manager"
-              height="48"
-              not-clearable
-              flat
-              @input="selectManager"
-            />
-          </v-flex>
-          <v-flex
-            xs12
-            sm6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Email
-            </div>
-            <v-text-field
-              v-model="email"
-              placeholder="Email"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            xs12
-            sm6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Office phone
-            </div>
-            <v-text-field
-              v-model="office_phone"
-              placeholder="Office phone"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            xs12
-            sm6
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Mobile phone
-            </div>
-            <v-text-field
-              v-model="mobile_phone"
-              placeholder="Mobile phone"
-              single-line
-              outline
-            />
-          </v-flex>
-          <v-flex
-            xs3
-          >
-            <v-btn
-              :loading="isLoading"
-              depressed
-              color="primary"
-              @click="onChangePassword"
+            <v-flex
+              v-if="forCustomer"
+              xs6
             >
-              Change password
-            </v-btn>
-          </v-flex>
-          <v-flex
-            v-if="forCustomer"
-            xs12
-          >
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Notes / Additional Info
-            </div>
-            <v-textarea
-              v-model="notes"
-              single-line
-              outline
-              data-vv-name="notes"
-              label="Notes / Additional Info"
-            />
-          </v-flex>
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                User type
+              </div>
+              <v-select
+                v-model="type"
+                :items="types"
+                item-text="name"
+                item-value="id"
+                placeholder="Type"
+                single-line
+                outline
+              />
+            </v-flex>
+            <v-flex
+              v-if="forCustomer"
+              xs6
+              class="pl-2"
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Role
+              </div>
+              <v-select
+                v-model="level"
+                :items="levels"
+                item-text="name"
+                item-value="id"
+                placeholder="Level"
+                single-line
+                outline
+              />
+            </v-flex>
+            <v-flex
+              v-if="forCustomer"
+              xs6
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Food fleet manager
+              </div>
+              <simple
+                class="mb-2"
+                single-line
+                outline
+                url="users"
+                term-param="term"
+                results-id-key="uuid"
+                :value="manager_uuid"
+                placeholder="Manager"
+                height="48"
+                not-clearable
+                flat
+                @input="selectManager"
+              />
+            </v-flex>
+            <v-flex
+              :class="{'pl-2': forCustomer, 'sm-6': forCustomer, 'xs-12': !forCustomer}"
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Email
+              </div>
+              <v-text-field
+                v-model="email"
+                placeholder="Email"
+                single-line
+                outline
+              />
+            </v-flex>
+            <v-flex
+              xs12
+              sm6
+              :class="{'pl-2': !forCustomer}"
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Office phone
+              </div>
+              <v-text-field
+                v-model="office_phone"
+                placeholder="Office phone"
+                single-line
+                outline
+              />
+            </v-flex>
+            <v-flex
+              xs12
+              sm6
+              :class="{'pl-2': forCustomer}"
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Mobile phone
+              </div>
+              <v-text-field
+                v-model="mobile_phone"
+                placeholder="Mobile phone"
+                single-line
+                outline
+              />
+            </v-flex>
+            <v-flex
+              v-if="forCustomer"
+              xs12
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Notes / Additional Info
+              </div>
+              <v-textarea
+                v-model="notes"
+                single-line
+                outline
+                data-vv-name="notes"
+                label="Notes / Additional Info"
+              />
+            </v-flex>
+            <v-flex
+              xs12
+            >
+              <v-btn
+                :loading="isLoading"
+                depressed
+                color="primary"
+                disabled
+                @click="onChangePassword"
+              >
+                Change password
+              </v-btn>
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-flex
           xs12
           sm2
-          md4
+          lg4
         >
-          <div class="px-2 xs-12 md-4">
-            <div class="mb-2 text-uppercase grey--text font-weight-bold">
-              Profile picture
-            </div>
-            <input
-              class="ff-profile-picture__image_input"
-              type="file"
-              @change="storeImageChange"
+          <v-layout
+            row
+            wrap
+          >
+            <v-flex
+              xs12
+              class="px-2"
             >
-            <v-img
-              :src="storeImage"
-              class="grey lighten-2"
-            />
-          </div>
-          <div class="py-3 d-flex justify-space-between">
-            <v-btn
-              depressed
-              color="primary"
-              @click="updateStoreImage"
-            >
-              Upload Image
-            </v-btn>
-            <v-btn
-              depressed
-              :disabled="!hasImage"
-              @click="deleteStoreImage"
-            >
-              Delete Image
-            </v-btn>
-          </div>
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Profile picture
+              </div>
+              <input
+                class="ff-profile-picture__image_input"
+                type="file"
+                @change="storeImageChange"
+              >
+              <v-img
+                :src="storeImage"
+                class="grey lighten-2"
+              />
+            </v-flex>
+            <v-flex class="py-3 d-flex justify-space-between">
+              <v-btn
+                depressed
+                color="primary"
+                @click="updateStoreImage"
+              >
+                Upload Image
+              </v-btn>
+              <v-btn
+                depressed
+                :disabled="!hasImage"
+                @click="deleteStoreImage"
+              >
+                Delete Image
+              </v-btn>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
     </v-card-text>
@@ -256,6 +271,7 @@
         <v-btn
           :loading="isLoading"
           depressed
+          disabled
           @click="onCancel"
         >
           Cancel
@@ -315,16 +331,16 @@ export const DEFAULT_USER = {
 export const DEFAULT_IMAGE = 'https://via.placeholder.com/800x600.png'
 
 export default {
-  mixins: [MapValueKeysToData],
   components: {
     Simple
   },
+  mixins: [MapValueKeysToData],
   props: {
     isLoading: { type: Boolean, default: false },
     // Overriding value prop from mixin MapValueKeysToData to grab the default values
     value: { type: Object, default: () => DEFAULT_USER },
     levels: { type: Array, default: () => [] },
-    types: { type: Array, default: () => [] },
+    types: { type: Array, default: () => [] }
   },
   data () {
     return {
@@ -389,7 +405,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.ff-profile-picture__image_input {
+  .ff-profile-picture__image_input {
     display: none;
   }
 </style>

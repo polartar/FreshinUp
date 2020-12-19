@@ -59,7 +59,7 @@ export const ForSupplier = () => ({
     return {
       user: { ...FIXTURE_USER, type: USER_TYPE.SUPPLIER },
       levels: FIXTURE_USER_LEVELS,
-      types: FIXTURE_USER_TYPES,
+      types: FIXTURE_USER_TYPES
     }
   },
   methods,
@@ -84,7 +84,7 @@ export const ForCustomer = () => ({
     return {
       user: { ...FIXTURE_USER, type: USER_TYPE.CUSTOMER },
       levels: FIXTURE_USER_LEVELS,
-      types: FIXTURE_USER_TYPES,
+      types: FIXTURE_USER_TYPES
     }
   },
   template: `

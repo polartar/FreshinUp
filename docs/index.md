@@ -23,9 +23,13 @@
 
 # Changes
 
+## Dec 19, 2020
+- **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
+
+<br/>
+
 ## Dec 18, 2020
 - **ADD** Request payment function is not created [570](https://github.com/FreshinUp/foodfleet/issues/570)
-- **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
 
 <br/>
 
