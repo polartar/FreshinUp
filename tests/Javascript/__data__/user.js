@@ -14,7 +14,7 @@ export const FIXTURE_USER = {
   mobile_phone: '321-123-1234',
   office_phone: '123-456-7890',
   notes: null,
-  title: null,
+  title: 'phD',
   avatar: 'https://via.placeholder.com/800x600.png',
   requested_company: null,
   company: {
@@ -39,5 +39,6 @@ export const FIXTURE_USER = {
   },
   last_login: '2019-07-02 23:32:29',
   has_admin_access: true,
-  joined_at: '2019-06-29 04:12:23'
+  joined_at: '2019-06-29 04:12:23',
+  manager_uuid: 'f9ecb331-28b4-3d1b-a4c7-132be8c0e677'
 }

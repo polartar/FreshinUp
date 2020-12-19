@@ -30,4 +30,7 @@ class Users extends Controller
         $Resource = config('fresh-bus-forms.resources.user');
         return new $Resource($user);
     }
+
+    // TODO: update
+    // see https://github.com/FreshinUp/fresh-bus-forms/issues/871
 }
