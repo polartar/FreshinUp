@@ -1,3 +1,6 @@
+
+import { FIXTURE_LOCATIONS } from './locations'
+
 export const FIXTURE_EVENTS = [
   {
     uuid: 'a7936425-485a-4419-9acd-13cdccaed346',
@@ -222,4 +225,10 @@ export const FIXTURE_EVENTS = [
       }
     ]
   }
-]
+].map((event, i) => {
+  return {
+    ...event,
+    location_uui: FIXTURE_LOCATIONS[i].uuid,
+    location: FIXTURE_LOCATIONS[i]
+  }
+})
