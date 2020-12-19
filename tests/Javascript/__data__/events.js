@@ -225,10 +225,4 @@ export const FIXTURE_EVENTS = [
       }
     ]
   }
-].map((event, i) => {
-  return {
-    ...event,
-    location_uui: FIXTURE_LOCATIONS[i].uuid,
-    location: FIXTURE_LOCATIONS[i]
-  }
-})
+]
