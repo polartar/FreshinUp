@@ -151,7 +151,6 @@ class PaymentTest extends TestCase
 
         $this->assertArrayHasKey('name', $data);
         $this->assertArrayHasKey('amount_money', $data);
-        $this->assertArrayHasKey('due_date', $data);
         $this->assertArrayHasKey('store_uuid', $data);
     }
 
@@ -293,7 +292,6 @@ class PaymentTest extends TestCase
             'square_created_at' => $payload['square_created_at'],
             'store_uuid' => $payload['store_uuid'],
             'transaction_uuid' => $payload['transaction_uuid'],
-            'payment_type' => $payload['payment_type'],
             'device_uuid' => $payload['device_uuid'],
             'payment_type_uuid' => $payload['payment_type_uuid'],
             'processing_fee_money' => round($payload['processing_fee_money'], 2),

@@ -14,7 +14,7 @@ class AddEventUuidToPaymentsTable extends Migration
     public function up()
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->string('event_uuid')->nullable();
+            $table->string('event_uuid')->nullable()->index();
         });
     }
 

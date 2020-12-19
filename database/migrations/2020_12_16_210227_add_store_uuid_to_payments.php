@@ -15,7 +15,6 @@ class AddStoreUuidToPayments extends Migration
     {
         Schema::table('payments', function (Blueprint $table) {
             $table->string('store_uuid')->index()->nullable();
-            $table->string('event_uuid')->index()->nullable();
         });
     }
 
@@ -27,7 +26,7 @@ class AddStoreUuidToPayments extends Migration
     public function down()
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->dropColumn('store_uuid', 'event_uuid');
+            $table->dropColumn('store_uuid');
         });
     }
 }

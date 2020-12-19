@@ -14,7 +14,7 @@ class PaymentTest extends TestCase
 
     public function testModel()
     {
-
+        /** @var Payment $payment */
         $payment = factory(Payment::class)->create();
 
         $this->assertDatabaseHas('payments', [
