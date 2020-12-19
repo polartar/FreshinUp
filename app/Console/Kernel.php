@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ImportSquare;
+use App\Console\Commands\InstallPassportClientKeys;
 use App\Console\Commands\RevokeTokens;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -15,7 +16,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ImportSquare::class
+        ImportSquare::class,
+        InstallPassportClientKeys::class,
     ];
 
     /**
