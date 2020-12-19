@@ -5,7 +5,7 @@
         Notification settings
       </h3>
       <v-progress-linear
-        v-if="loading"
+        v-if="isLoading"
         indeterminate
       />
     </v-card-title>
@@ -14,6 +14,7 @@
       row
       wrap
       class="pa-4"
+      align-center
     >
       <div>Coming Soon</div>
     </v-layout>
@@ -21,6 +22,8 @@
 </template>
 <script>
 export default {
-
+  props: {
+    isLoading: { type: Boolean, default: false }
+  }
 }
 </script>

@@ -4,6 +4,21 @@ import { action } from '@storybook/addon-actions'
 import { FIXTURE_USER } from '../../../../tests/Javascript/__data__/user'
 
 import BasicInformation from './BasicInformation.vue'
+import { USER_TYPE } from '../../store/modules/userTypes'
+import { FIXTURE_USER_LEVELS } from '../../../../tests/Javascript/__data__/userLevels'
+import { FIXTURE_USER_TYPES } from '../../../../tests/Javascript/__data__/userTypes'
+
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+
+const mock = new MockAdapter(axios)
+
+mock.onGet(/users/)
+  .reply(200, {
+    uuid: 'f9ecb331-28b4-3d1b-a4c7-132be8c0e677',
+    first_name: 'John',
+    last_name: 'Doe'
+  })
 
 export const Default = () => ({
   components: { BasicInformation },
@@ -13,60 +28,79 @@ export const Default = () => ({
       </v-container>
     `
 })
-export const DefaultModeDetail = () => ({
+
+export const IsLoading = () => ({
   components: { BasicInformation },
   template: `
       <v-container>
-        <basic-information mode-detail>
+        <basic-information is-loading/>
       </v-container>
     `
 })
 
-export const Populated = () => ({
+const methods = {
+  onSave (payload) {
+    action('onSave')(payload)
+  },
+  onCancel () {
+    action('onCancel')()
+  },
+  onDelete (payload) {
+    action('onDelete')(payload)
+  },
+  onChangePassword (payload) {
+    action('onChangePassword')(payload)
+  }
+}
+
+export const ForSupplier = () => ({
   components: { BasicInformation },
   data () {
     return {
-      user: FIXTURE_USER
+      user: { ...FIXTURE_USER, type: USER_TYPE.SUPPLIER },
+      levels: FIXTURE_USER_LEVELS,
+      types: FIXTURE_USER_TYPES,
     }
   },
+  methods,
   template: `
       <v-container>
         <basic-information
           :value="user"
+          :levels="levels"
+          :types="types"
+          @input="onSave"
+          @cancel="onCancel"
+          @delete="onDelete"
+          @change-password="onChangePassword"
         />
       </v-container>
     `
 })
 
-export const PopulatedModeDetail = () => ({
+export const ForCustomer = () => ({
   components: { BasicInformation },
   data () {
     return {
-      user: FIXTURE_USER
+      user: { ...FIXTURE_USER, type: USER_TYPE.CUSTOMER },
+      levels: FIXTURE_USER_LEVELS,
+      types: FIXTURE_USER_TYPES,
     }
   },
   template: `
       <v-container>
         <basic-information
-          mode-detail
           :value="user"
+          :levels="levels"
+          :types="types"
+          @input="onSave"
+          @cancel="onCancel"
+          @delete="onDelete"
+          @change-password="onChangePassword"
         />
       </v-container>
     `,
-  methods: {
-    onSave (payload) {
-      action('onSave')(payload)
-    },
-    onCancel () {
-      action('onCancel')()
-    },
-    onDelete (payload) {
-      action('onDelete')(payload)
-    },
-    onChangePassword (payload) {
-      action('onChangePassword')(payload)
-    }
-  }
+  methods
 })
 
 storiesOf('FoodFleet|components/users/BasicInformation', module)
@@ -76,6 +110,6 @@ storiesOf('FoodFleet|components/users/BasicInformation', module)
     ]
   })
   .add('Default', Default)
-  .add('Default detail', DefaultModeDetail)
-  .add('Populated', Populated)
-  .add('Populated detail', PopulatedModeDetail)
+  .add('IsLoading', IsLoading)
+  .add('ForSupplier', ForSupplier)
+  .add('ForCustomer', ForCustomer)
