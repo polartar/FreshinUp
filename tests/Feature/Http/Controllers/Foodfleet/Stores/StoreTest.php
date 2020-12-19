@@ -742,10 +742,5 @@ class StoresTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals($store->events()->count(), count($data));
         // TODO a better way of asserting the following
-//        foreach ($events as $event) {
-//            $this->assertArraySubset([
-//                'uuid' => $event->uuid,
-//            ], $data);
-//        }
     }
 }
