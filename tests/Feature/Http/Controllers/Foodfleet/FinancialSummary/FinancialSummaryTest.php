@@ -36,9 +36,7 @@ class FinancialSummaryTest extends TestCase
     {
         $this->createPaymentTypes();
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
 
         $data = $this
             ->json('get', "/api/foodfleet/financial-summary")
@@ -2153,6 +2151,7 @@ class FinancialSummaryTest extends TestCase
 
     private function createPaymentTypes()
     {
+        // TODO should be handled by a seeder. Most likely we will need it in app.
         factory(PaymentType::class)->create(['name' => 'CASH']);
         factory(PaymentType::class)->create(['name' => 'VISA']);
         factory(PaymentType::class)->create(['name' => 'MASTERCARD']);

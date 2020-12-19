@@ -708,4 +708,39 @@ class StoresTest extends TestCase
             ->assertStatus(204);
         $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
     }
+
+
+    public function testGetEventListOnNotExistingStore()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $this
+            ->json('GET', "/api/foodfleet/stores/999/events")
+            ->assertStatus(404);
+    }
+
+    public function testGetEventList()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        factory(Event::class, 5)->create();
+        /** @var Store $store */
+        $store = factory(Store::class)->create();
+        $events = factory(Event::class, 3)->create();
+        foreach ($events as $event) {
+            $store->events()->attach($event->uuid);
+        }
+        $this->assertEquals(3, $store->events()->count());
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/stores/{$store->uuid}/events")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertNotEmpty($data);
+        $this->assertEquals($store->events()->count(), count($data));
+        // TODO a better way of asserting the following
+    }
 }

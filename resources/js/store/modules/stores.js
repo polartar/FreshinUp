@@ -90,6 +90,13 @@ export default ({ items, item }) => {
         {
           itemPath: ({ id }) => `/foodfleet/store-service-summary/${id}`
         }
+      ),
+      events: makeRestStore(
+        'events',
+        { item },
+        {
+          itemsPath: ({ id }) => `/foodfleet/stores/${id}/events`
+        }
       )
     }
   }

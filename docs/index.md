@@ -35,6 +35,11 @@
 
 # Changes
 
+## Dec 18, 2020
+- **ADD** Request payment function is not created [570](https://github.com/FreshinUp/foodfleet/issues/570)
+
+<br/>
+
 ## Dec 15, 2020
 - **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
 
@@ -83,6 +88,7 @@
 
 ## Nov 25, 2020
 - **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
+- **ADD** Food Fleet Members: Create Request payment function [#570](https://github.com/FreshinUp/foodfleet/issues/570)
 
 <br/>
 
