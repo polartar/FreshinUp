@@ -84,7 +84,7 @@ describe('components/events/EventCalendar', () => {
           }
         })
 
-        expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
+        expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5')
       })
 
       test('for multiple days event', () => {
@@ -94,9 +94,9 @@ describe('components/events/EventCalendar', () => {
           }
         })
 
-        expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
-        expect(wrapper.vm.eventsMap['2019-10-11'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
-        expect(wrapper.vm.eventsMap['2019-10-12'][0].uuid).toEqual('a7936425-485a-4419-9acd-13cdccaed346')
+        expect(wrapper.vm.eventsMap['2019-10-10'][0].uuid).toEqual('c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5')
+        expect(wrapper.vm.eventsMap['2019-10-11'][0].uuid).toEqual('c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5')
+        expect(wrapper.vm.eventsMap['2019-10-12'][0].uuid).toEqual('c48fb5d3-37e0-4cb5-bb44-d2d1b5fd97d5')
       })
     })
 
@@ -116,7 +116,7 @@ describe('components/events/EventCalendar', () => {
         6: 'warning',
         7: 'success',
         8: 'error',
-        9: 'grey',
+        9: 'grey'
       })
     })
   })

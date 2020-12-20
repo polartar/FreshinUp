@@ -1,0 +1,1411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/supplier/UpcomingEventsCalendar Snapshots Default 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      align-center=""
+      class="v-card__title"
+      justify-space-between=""
+    >
+      <span
+        class="grey--text"
+      >
+        Upcoming events
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View All
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        class="layout row justify-space-between align-center"
+      >
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-left theme--light"
+            />
+          </div>
+        </button>
+         
+        <span
+          class="font-weight-bold text-uppercase"
+        >
+          June 2019
+        </span>
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-right theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+      >
+        <div
+          class="v-calendar-weekly__head"
+        >
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Mon
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Tue
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Wed
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-present v-outside primary--text"
+          >
+            Thu
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future v-outside"
+          >
+            Fri
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sat
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sun
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              31
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              1
+            </div>
+            <div
+              class="v-calendar-weekly__day-month"
+            >
+              Jun
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              2
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              9
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              16
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              20
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              21
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              22
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              23
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              24
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              25
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              26
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-present"
+          >
+            <div
+              class="v-calendar-weekly__day-label primary--text"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/supplier/UpcomingEventsCalendar Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      align-center=""
+      class="v-card__title"
+      justify-space-between=""
+    >
+      <span
+        class="grey--text"
+      >
+        Upcoming events
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View All
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        class="layout row justify-space-between align-center"
+      >
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-left theme--light"
+            />
+          </div>
+        </button>
+         
+        <span
+          class="font-weight-bold text-uppercase"
+        >
+          June 2019
+        </span>
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-right theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+      >
+        <div
+          class="v-calendar-weekly__head"
+        >
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Mon
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Tue
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Wed
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-present v-outside primary--text"
+          >
+            Thu
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future v-outside"
+          >
+            Fri
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sat
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sun
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              31
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              1
+            </div>
+            <div
+              class="v-calendar-weekly__day-month"
+            >
+              Jun
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              2
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              9
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              16
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              20
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              21
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              22
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              23
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              24
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              25
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              26
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-present"
+          >
+            <div
+              class="v-calendar-weekly__day-label primary--text"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/supplier/UpcomingEventsCalendar Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      align-center=""
+      class="v-card__title"
+      justify-space-between=""
+    >
+      <span
+        class="grey--text"
+      >
+        Upcoming events
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View All
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        class="layout row justify-space-between align-center"
+      >
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-left theme--light"
+            />
+          </div>
+        </button>
+         
+        <span
+          class="font-weight-bold text-uppercase"
+        >
+          June 2019
+        </span>
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-right theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+      >
+        <div
+          class="v-calendar-weekly__head"
+        >
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Mon
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Tue
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-past v-outside"
+          >
+            Wed
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-present v-outside primary--text"
+          >
+            Thu
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future v-outside"
+          >
+            Fri
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sat
+          </div>
+          <div
+            class="v-calendar-weekly__head-weekday v-future"
+          >
+            Sun
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past v-outside"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              31
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              1
+            </div>
+            <div
+              class="v-calendar-weekly__day-month"
+            >
+              Jun
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              2
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              9
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              16
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              20
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              21
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              22
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              23
+            </div>
+          </div>
+        </div>
+        <div
+          class="v-calendar-weekly__week"
+        >
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              24
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              25
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-past"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              26
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-present"
+          >
+            <div
+              class="v-calendar-weekly__day-label primary--text"
+            >
+              27
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              28
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              29
+            </div>
+          </div>
+          <div
+            class="v-calendar-weekly__day v-future"
+          >
+            <div
+              class="v-calendar-weekly__day-label"
+            >
+              30
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

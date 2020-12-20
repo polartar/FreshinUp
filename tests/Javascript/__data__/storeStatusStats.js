@@ -18,5 +18,5 @@ export const FIXTURE_STORE_STATUS_STATS = [
     label: 'On hold',
     value: 4,
     color: 'grey'
-  },
+  }
 ]

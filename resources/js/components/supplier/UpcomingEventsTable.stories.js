@@ -37,7 +37,7 @@ export const Populated = () => ({
           timed: false
         }
       }),
-      eventStatuses: FIXTURE_EVENT_STATUSES,
+      eventStatuses: FIXTURE_EVENT_STATUSES
     }
   },
   methods: {

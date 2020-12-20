@@ -8,32 +8,33 @@ exports[`components/supplier/SupplierFleets Snapshots Default 1`] = `
     class="v-card v-sheet theme--light"
   >
     <div
+      align-center=""
       class="v-card__title"
+      justify-space-between=""
     >
-      <div
-        class="layout justify-space-between align-center"
+      <span
+        class="grey--text"
       >
-        <span
-          class="grey--text"
-        >
-          My fleets
-        </span>
-         
+        My fleets
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
         <div
-          class="spacer"
-        />
-         
-        <button
-          class="v-btn v-btn--round theme--light primary"
-          type="button"
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            View All Events
-          </div>
-        </button>
-      </div>
+          
+      View All
+    
+        </div>
+      </button>
     </div>
      
     <hr
@@ -459,32 +460,33 @@ exports[`components/supplier/SupplierFleets Snapshots Loading 1`] = `
     class="v-card v-sheet theme--light"
   >
     <div
+      align-center=""
       class="v-card__title"
+      justify-space-between=""
     >
-      <div
-        class="layout justify-space-between align-center"
+      <span
+        class="grey--text"
       >
-        <span
-          class="grey--text"
-        >
-          My fleets
-        </span>
-         
+        My fleets
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
         <div
-          class="spacer"
-        />
-         
-        <button
-          class="v-btn v-btn--round theme--light primary"
-          type="button"
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            View All Events
-          </div>
-        </button>
-      </div>
+          
+      View All
+    
+        </div>
+      </button>
     </div>
      
     <hr
@@ -938,32 +940,33 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
     class="v-card v-sheet theme--light"
   >
     <div
+      align-center=""
       class="v-card__title"
+      justify-space-between=""
     >
-      <div
-        class="layout justify-space-between align-center"
+      <span
+        class="grey--text"
       >
-        <span
-          class="grey--text"
-        >
-          My fleets
-        </span>
-         
+        My fleets
+      </span>
+       
+      <div
+        class="spacer"
+      />
+       
+      <button
+        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
+        disabled="disabled"
+        type="button"
+      >
         <div
-          class="spacer"
-        />
-         
-        <button
-          class="v-btn v-btn--round theme--light primary"
-          type="button"
+          class="v-btn__content"
         >
-          <div
-            class="v-btn__content"
-          >
-            View All Events
-          </div>
-        </button>
-      </div>
+          
+      View All
+    
+        </div>
+      </button>
     </div>
      
     <hr
@@ -976,45 +979,93 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
       <div
         class="flex xs12 sm6 md3"
       >
-        <div>
-          
-  Active
-  42
-  primary
-
+        <div
+          class="layout pa-4 column justify-center align-center"
+        >
+          <div
+            class="flex display-3 primary--text"
+          >
+            
+    42
+  
+          </div>
+           
+          <div
+            class="flex grey--text text-uppercase font-weight-bold"
+          >
+            
+    Active
+  
+          </div>
         </div>
       </div>
       <div
         class="flex xs12 sm6 md3"
       >
-        <div>
-          
-  Pending
-  24
-  warning
-
+        <div
+          class="layout pa-4 column justify-center align-center"
+        >
+          <div
+            class="flex display-3 warning--text"
+          >
+            
+    24
+  
+          </div>
+           
+          <div
+            class="flex grey--text text-uppercase font-weight-bold"
+          >
+            
+    Pending
+  
+          </div>
         </div>
       </div>
       <div
         class="flex xs12 sm6 md3"
       >
-        <div>
-          
-  Expiring Soon
-  12
-  error
-
+        <div
+          class="layout pa-4 column justify-center align-center"
+        >
+          <div
+            class="flex display-3 error--text"
+          >
+            
+    12
+  
+          </div>
+           
+          <div
+            class="flex grey--text text-uppercase font-weight-bold"
+          >
+            
+    Expiring Soon
+  
+          </div>
         </div>
       </div>
       <div
         class="flex xs12 sm6 md3"
       >
-        <div>
-          
-  On hold
-  4
-  grey
-
+        <div
+          class="layout pa-4 column justify-center align-center"
+        >
+          <div
+            class="flex display-3 grey--text"
+          >
+            
+    4
+  
+          </div>
+           
+          <div
+            class="flex grey--text text-uppercase font-weight-bold"
+          >
+            
+    On hold
+  
+          </div>
         </div>
       </div>
     </div>
@@ -1320,7 +1371,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <a
-                          class="font-weight-bold"
+                          class="font-weight-bold text-not-underline"
                           href="#view-item"
                         >
                           Da Lobster
@@ -1380,20 +1431,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    View
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    Edit
+                                    View / Edit
                                   </div>
                                 </a>
                               </div>
@@ -1571,7 +1609,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <a
-                          class="font-weight-bold"
+                          class="font-weight-bold text-not-underline"
                           href="#view-item"
                         >
                           Rekindler
@@ -1631,20 +1669,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    View
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    Edit
+                                    View / Edit
                                   </div>
                                 </a>
                               </div>
@@ -1822,7 +1847,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <a
-                          class="font-weight-bold"
+                          class="font-weight-bold text-not-underline"
                           href="#view-item"
                         >
                           Fiora
@@ -1882,20 +1907,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    View
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    Edit
+                                    View / Edit
                                   </div>
                                 </a>
                               </div>
@@ -2073,7 +2085,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <a
-                          class="font-weight-bold"
+                          class="font-weight-bold text-not-underline"
                           href="#view-item"
                         >
                           Trundle
@@ -2133,20 +2145,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    View
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    Edit
+                                    View / Edit
                                   </div>
                                 </a>
                               </div>
@@ -2324,7 +2323,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <a
-                          class="font-weight-bold"
+                          class="font-weight-bold text-not-underline"
                           href="#view-item"
                         >
                           La fourchette
@@ -2384,20 +2383,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                                   <div
                                     class="v-list__tile__title"
                                   >
-                                    View
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                role="listitem"
-                              >
-                                <a
-                                  class="v-list__tile v-list__tile--link theme--light"
-                                >
-                                  <div
-                                    class="v-list__tile__title"
-                                  >
-                                    Edit
+                                    View / Edit
                                   </div>
                                 </a>
                               </div>

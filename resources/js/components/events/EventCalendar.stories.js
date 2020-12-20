@@ -166,7 +166,7 @@ storiesOf('FoodFleet|components/event/EventCalendar', module)
         type: 'month',
         yearRange: [2010, 2020],
         date: '2019-12-31',
-        statuses: FIXTURE_EVENT_STATUSES,
+        statuses: FIXTURE_EVENT_STATUSES
       }
     },
     template: `
@@ -187,7 +187,7 @@ storiesOf('FoodFleet|components/event/EventCalendar', module)
         type: 'month',
         yearRange: [2010, 2020],
         date: '2019-12-31',
-        statuses: FIXTURE_EVENT_STATUSES,
+        statuses: FIXTURE_EVENT_STATUSES
       }
     },
     methods: {

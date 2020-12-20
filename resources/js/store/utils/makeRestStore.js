@@ -42,7 +42,7 @@ export const makeModule = (store, moduleName = '') => {
     // TODO: add in core-ui
     filters (state) {
       return state.filters || {}
-    },
+    }
   }
 
   m.mutations = {

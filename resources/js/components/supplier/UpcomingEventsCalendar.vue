@@ -1,13 +1,27 @@
 <template>
   <v-card>
-    <v-card-title justify-space-between align-center>
+    <v-card-title
+      justify-space-between
+      align-center
+    >
       <span class="grey--text">Upcoming events</span>
-      <v-spacer/>
-      <v-btn color="primary" round @click="viewAll">View All</v-btn>
+      <v-spacer />
+      <v-btn
+        color="primary"
+        round
+        disabled
+        @click="viewAll()"
+      >
+        View All
+      </v-btn>
     </v-card-title>
-    <v-divider/>
+    <v-divider />
     <v-card-text>
-      <v-layout row justify-space-between align-center>
+      <v-layout
+        row
+        justify-space-between
+        align-center
+      >
         <v-btn
           icon
           @click="previous"
@@ -44,69 +58,70 @@
 </template>
 
 <script>
-  import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
-  import get from 'lodash/get'
-  import isEmpty from 'lodash/isEmpty'
-  import moment from 'moment'
+import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import get from 'lodash/get'
+import isEmpty from 'lodash/isEmpty'
+import moment from 'moment'
 
-  const DATE_FORMAT = 'YYYY-MM-DD'
+const DATE_FORMAT = 'YYYY-MM-DD'
 
-  export default {
-    props: {
-      events: { type: Array, default: () => [] },
-      statuses: { type: Array, default: () => [] }
+export default {
+  mixins: [FormatDate],
+  props: {
+    isLoading: { type: Boolean, default: false },
+    events: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
+  },
+  data () {
+    return {
+      value: new Date(),
+      weekday: [1, 2, 3, 4, 5, 6, 0]
+    }
+  },
+  computed: {
+    colorsByStatusId () {
+      return this.statuses.reduce((map, status) => {
+        map[status.id] = status.color
+        return map
+      }, {})
     },
-    mixins: [FormatDate],
-    data () {
-      return {
-        value: new Date(),
-        weekday: [1, 2, 3, 4, 5, 6, 0],
-      }
-    },
-    computed: {
-      colorsByStatusId () {
-        return this.statuses.reduce((map, status) => {
-          map[status.id] = status.color
-          return map
-        }, {})
-      },
-      eventsMap () {
-        return this.events.reduce((map, evt) => {
-          const occurrences = get(evt, 'schedule.schedule_occurrences', null)
-          if (isEmpty(occurrences)) {
-            const startMoment = moment(evt.start_at, DATE_FORMAT)
-            const endMoment = moment(evt.end_at, DATE_FORMAT)
-            let startDate = startMoment.format(DATE_FORMAT)
-            const endDate = endMoment.format(DATE_FORMAT)
-            while (startDate <= endDate) {
-              map[startDate] = map[startDate] || []
-              map[startDate].push(evt)
-              startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
-            }
-          } else {
-            occurrences.forEach(occurrence => {
-              const startAt = moment(occurrence.start_at, DATE_FORMAT).format(DATE_FORMAT)
-              map[startAt] = map[startAt] || []
-              map[startAt].push(evt)
-            })
+    eventsMap () {
+      return this.events.reduce((map, evt) => {
+        const occurrences = get(evt, 'schedule.schedule_occurrences', null)
+        if (isEmpty(occurrences)) {
+          const startMoment = moment(evt.start_at, DATE_FORMAT)
+          const endMoment = moment(evt.end_at, DATE_FORMAT)
+          let startDate = startMoment.format(DATE_FORMAT)
+          const endDate = endMoment.format(DATE_FORMAT)
+          while (startDate <= endDate) {
+            map[startDate] = map[startDate] || []
+            map[startDate].push(evt)
+            startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
           }
-          return map
-        }, {})
-      }
+        } else {
+          occurrences.forEach(occurrence => {
+            const startAt = moment(occurrence.start_at, DATE_FORMAT).format(DATE_FORMAT)
+            map[startAt] = map[startAt] || []
+            map[startAt].push(evt)
+          })
+        }
+        return map
+      }, {})
+    }
+  },
+  methods: {
+    viewAll () {
+      this.$emit('manage-multiple-view')
+      this.$emit('manage-multiple', 'view')
     },
-    methods: {
-      viewAll () {
-        this.$emit('manage-multiple-view')
-        this.$emit('manage-multiple', 'view')
-      },
-      previous () {
-        this.$refs.calendar.prev()
-      },
-      next () {
-        this.$refs.calendar.next()
-      },
+    previous () {
+      this.$refs.calendar.prev()
+    },
+    next () {
+      this.$refs.calendar.next()
     }
   }
+}
 </script>
 
 <style scoped>

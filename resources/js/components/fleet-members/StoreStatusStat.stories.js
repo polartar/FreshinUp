@@ -21,7 +21,7 @@ export const Populated = () => {
     data: () => ({
       label: item.label,
       value: item.value,
-      color: select('Color', FIXTURE_STORE_STATUS_STATS.map(stat => stat.color), item.color),
+      color: select('Color', FIXTURE_STORE_STATUS_STATS.map(stat => stat.color), item.color)
     }),
     template: `
       <v-container>
@@ -31,7 +31,7 @@ export const Populated = () => {
           :color="color"
         />
       </v-container>
-    `,
+    `
   }
 }
 

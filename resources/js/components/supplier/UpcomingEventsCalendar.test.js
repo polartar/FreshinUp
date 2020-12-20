@@ -46,13 +46,13 @@ describe('components/supplier/UpcomingEventsCalendar', () => {
     })
     test('eventStatuses', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.eventStatuses).toHaveLength(0)
+      expect(wrapper.vm.statuses).toHaveLength(0)
 
       wrapper.setProps({
-        eventStatuses: FIXTURE_EVENT_STATUSES
+        statuses: FIXTURE_EVENT_STATUSES
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.eventStatuses).toMatchObject(FIXTURE_EVENT_STATUSES)
+      expect(wrapper.vm.statuses).toMatchObject(FIXTURE_EVENT_STATUSES)
     })
     test('colorByStatusId', () => {
       const wrapper = shallowMount(Component)
@@ -70,7 +70,7 @@ describe('components/supplier/UpcomingEventsCalendar', () => {
         6: 'warning',
         7: 'success',
         8: 'error',
-        9: 'grey',
+        9: 'grey'
       })
     })
   })

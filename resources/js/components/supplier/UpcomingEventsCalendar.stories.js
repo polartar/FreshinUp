@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import UpcomingEventsCalendar from './UpcomingEventsCalendar'
 import { FIXTURE_EVENTS } from '../../../../tests/Javascript/__data__/events'
 import { FIXTURE_EVENT_STATUSES } from '../../../../tests/Javascript/__data__/eventStatuses'
-import  { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
 export const Default = () => ({
   components: { UpcomingEventsCalendar },
@@ -13,13 +13,24 @@ export const Default = () => ({
     `
 })
 
+export const Loading = () => ({
+  components: { UpcomingEventsCalendar },
+  template: `
+      <v-container>
+        <upcoming-events-calendar
+          is-loading
+        />
+      </v-container>
+    `
+})
+
 export const Populated = () => {
   return ({
     components: { UpcomingEventsCalendar },
     data () {
       return {
         events: FIXTURE_EVENTS,
-        statuses: FIXTURE_EVENT_STATUSES,
+        statuses: FIXTURE_EVENT_STATUSES
       }
     },
     methods: {
@@ -42,3 +53,4 @@ export const Populated = () => {
 storiesOf('FoodFleet|components/supplier/UpcomingEventsCalendar', module)
   .add('Default', Default)
   .add('Populated', Populated)
+  .add('Loading', Loading)

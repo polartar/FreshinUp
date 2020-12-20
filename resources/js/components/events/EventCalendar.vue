@@ -148,7 +148,7 @@ export default {
       ],
       currentMonth: currentDate.month() + 1,
       currentYear: currentDate.year(),
-      currentDate: currentDate.format(DATE_FORMAT),
+      currentDate: currentDate.format(DATE_FORMAT)
     }
   },
   computed: {
@@ -161,7 +161,7 @@ export default {
     eventsMap () {
       return this.events.reduce((map, evt) => {
         const occurrences = get(evt, 'schedule.schedule_occurrences', null)
-        if ( isEmpty(occurrences)) {
+        if (isEmpty(occurrences)) {
           const startMoment = moment(evt.start_at, DATE_FORMAT)
           const endMoment = moment(evt.end_at, DATE_FORMAT)
           let startDate = startMoment.format(DATE_FORMAT)

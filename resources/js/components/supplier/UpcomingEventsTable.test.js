@@ -44,15 +44,15 @@ describe('components/supplier/UpcomingEventsTable', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.events).toMatchObject(FIXTURE_EVENTS)
     })
-    test('eventStatuses', async () => {
+    test('statuses', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.eventStatuses).toHaveLength(0)
+      expect(wrapper.vm.statuses).toHaveLength(0)
 
       wrapper.setProps({
-        eventStatuses: FIXTURE_EVENT_STATUSES
+        statuses: FIXTURE_EVENT_STATUSES
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.eventStatuses).toMatchObject(FIXTURE_EVENT_STATUSES)
+      expect(wrapper.vm.statuses).toMatchObject(FIXTURE_EVENT_STATUSES)
     })
   })
 

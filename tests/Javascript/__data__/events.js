@@ -26,13 +26,13 @@ export const FIXTURE_EVENTS = [
     },
     location_uuid: '89e53925-4d7a-356c-8469-5b385146ab09',
     location: {
-      uuid: "89e53925-4d7a-356c-8469-5b385146ab09",
-      name: "Tremblayland",
-      venue_uuid: "28558e89-19fa-3b1d-a817-a6743bbdaf75",
+      uuid: '89e53925-4d7a-356c-8469-5b385146ab09',
+      name: 'Tremblayland',
+      venue_uuid: '28558e89-19fa-3b1d-a817-a6743bbdaf75',
       category_id: 659,
       spots: 77,
       capacity: 88,
-      details: "Ab voluptatem fuga dolorem enim non harum. Qui distinctio ab consequuntur aut.",
+      details: 'Ab voluptatem fuga dolorem enim non harum. Qui distinctio ab consequuntur aut.'
     },
     host: {
       id: 89,
@@ -83,13 +83,13 @@ export const FIXTURE_EVENTS = [
     },
     location_uuid: 'f0cb1ebc-d100-32b0-8116-4b2bf5a7293c',
     location: {
-      uuid: "f0cb1ebc-d100-32b0-8116-4b2bf5a7293c",
-      name: "North Chelsey",
-      venue_uuid: "69ec6db2-479f-3549-93cd-53fdfb63de78",
+      uuid: 'f0cb1ebc-d100-32b0-8116-4b2bf5a7293c',
+      name: 'North Chelsey',
+      venue_uuid: '69ec6db2-479f-3549-93cd-53fdfb63de78',
       category_id: 661,
       spots: 25,
       capacity: 17,
-      details: "Fugit aut quo et. Nostrum officia consectetur voluptatem eligendi iste.",
+      details: 'Fugit aut quo et. Nostrum officia consectetur voluptatem eligendi iste.'
     },
     host: {
       id: 96,
@@ -143,13 +143,13 @@ export const FIXTURE_EVENTS = [
     },
     location_uuid: '510ffbd1-ad6a-31b5-846b-22798e09bfc1',
     location: {
-      uuid: "510ffbd1-ad6a-31b5-846b-22798e09bfc1",
-      name: "Lake Elbert",
-      venue_uuid: "671765be-e1dd-3855-a884-0d39048b9204",
+      uuid: '510ffbd1-ad6a-31b5-846b-22798e09bfc1',
+      name: 'Lake Elbert',
+      venue_uuid: '671765be-e1dd-3855-a884-0d39048b9204',
       category_id: 662,
       spots: 17,
       capacity: 91,
-      details: "Qui ut deserunt natus qui reprehenderit velit. Expedita iusto delectus in id.",
+      details: 'Qui ut deserunt natus qui reprehenderit velit. Expedita iusto delectus in id.'
     },
     host: {
       id: 94,
@@ -200,13 +200,13 @@ export const FIXTURE_EVENTS = [
     },
     location_uuid: '',
     location: {
-      uuid: "8e9356fa-f672-310d-9930-58ef9ae4ec33",
-      name: "Mossiechester",
-      venue_uuid: "4a38d0a8-358b-31fb-bb5a-091cdc4f3452",
+      uuid: '8e9356fa-f672-310d-9930-58ef9ae4ec33',
+      name: 'Mossiechester',
+      venue_uuid: '4a38d0a8-358b-31fb-bb5a-091cdc4f3452',
       category_id: 663,
       spots: 87,
       capacity: 76,
-      details: "Adipisci exercitationem modi dolor dignissimos est est. Et illum voluptate suscipit officiis et.",
+      details: 'Adipisci exercitationem modi dolor dignissimos est est. Et illum voluptate suscipit officiis et.'
     },
     host: {
       id: 94,
@@ -255,13 +255,13 @@ export const FIXTURE_EVENTS = [
     },
     location_uuid: '220936b4-5e50-38fa-b697-8795681f7ae7',
     location: {
-      uuid: "220936b4-5e50-38fa-b697-8795681f7ae7",
-      name: "West Greyson",
-      venue_uuid: "d0cfa93a-acd9-30e7-9aee-8cd189f1b0c4",
+      uuid: '220936b4-5e50-38fa-b697-8795681f7ae7',
+      name: 'West Greyson',
+      venue_uuid: 'd0cfa93a-acd9-30e7-9aee-8cd189f1b0c4',
       category_id: 660,
       spots: 83,
       capacity: 66,
-      details: "Tenetur et quas cumque aut quia ut. Aspernatur numquam ipsam aut quo.",
+      details: 'Tenetur et quas cumque aut quia ut. Aspernatur numquam ipsam aut quo.'
     },
     host: {
       id: 94,

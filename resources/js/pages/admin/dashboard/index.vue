@@ -1,9 +1,19 @@
 <template>
   <div class="pa-4">
-    <h1 class="white--text">Welcome back, {{ get(currentUser, 'name') }}</h1>
+    <h1 class="white--text">
+      Welcome back, {{ get(currentUser, 'name') }}
+    </h1>
 
-    <v-layout class="my-4" row wrap>
-      <v-flex xs12 sm12 md9>
+    <v-layout
+      class="my-4"
+      row
+      wrap
+    >
+      <v-flex
+        xs12
+        sm12
+        md9
+      >
         <upcoming-events-table
           :class="{'mr-4': $vuetify.breakpoint.mdAndUp}"
           :is-loading="eventsLoading"
@@ -23,7 +33,11 @@
           @manage-multiple-delete="deleteEvents"
         />
       </v-flex>
-      <v-flex xs12 sm12 md3>
+      <v-flex
+        xs12
+        sm12
+        md3
+      >
         <upcoming-events-calendar
           :class="{'mt-4': $vuetify.breakpoint.smOnly}"
           :events="events"
@@ -71,23 +85,14 @@ export default {
   },
   data () {
     return {
-      storeStatusStats: [], // TODO
+      storeStatusStats: [] // TODO
     }
   },
   computed: {
     ...mapGetters(['currentUser']),
     ...mapGetters('page', ['isLoading']),
     ...mapGetters('eventStatuses', {
-      eventStatuses: 'items',
-    }),
-    ...mapGetters('storeStatuses', {
-      storeStatuses: 'items',
-    }),
-    ...mapGetters('events', {
-      events: 'items',
-      eventsLoading: 'itemsLoading',
-      eventPagination: 'pagination',
-      eventSorting: 'sorting'
+      eventStatuses: 'items'
     }),
     ...mapGetters('stores', {
       stores: 'items',
@@ -95,6 +100,18 @@ export default {
       storePagination: 'pagination',
       storeSorting: 'sorting'
     }),
+    ...mapGetters('storeStatuses', {
+      storeStatuses: 'items'
+    }),
+    ...mapGetters('stores/stats', {
+      stats: 'items'
+    }),
+    ...mapGetters('events', {
+      events: 'items',
+      eventsLoading: 'itemsLoading',
+      eventPagination: 'pagination',
+      eventSorting: 'sorting'
+    })
   },
   methods: {
     get,
@@ -131,7 +148,7 @@ export default {
     changeStoreStatus (value, store) {
       this.$store.dispatch('stores/patchItem', {
         data: {
-          status_id: value,
+          status_id: value
         },
         params: {
           id: store.uuid
@@ -168,10 +185,10 @@ export default {
           id: event.uuid
         }
       })
-      .catch(error => {
-        const message = get(error, 'response.data.message', error.message)
-        this.$store.dispatch('generalErrorMessages/setErrors', message)
-      })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
     },
     deleteEvents (events) {
       // TODO: bulk delete for events https://github.com/FreshinUp/foodfleet/issues/645
@@ -184,10 +201,10 @@ export default {
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
     },
-    changeEventStatus (status_id, item) {
+    changeEventStatus (value, item) {
       this.$store.dispatch('events/patchItem', {
         data: {
-          status_id
+          status_id: value
         },
         params: {
           id: item.uuid
@@ -204,23 +221,26 @@ export default {
           const message = get(error, 'response.data.message', error.message)
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
-    },
+    }
   },
   async beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    const response = await vm.$store.dispatch('currentUser/getCurrentUser')
-    const authUser = response.data
-    if (!get(authUser, 'company.uuid')) {
+    await vm.$store.dispatch('currentUser/getCurrentUser')
+    vm.$store.dispatch('page/setLoading', false)
+    if (!get(vm.currentUser, 'company.uuid')) {
       console.error('User does not have a company. Aborting')
       return false
     }
     const promises = []
-    // TODO check/guard that authUser.type = UserType.SUPPLIER
+    // TODO check/guard that vm.currentUser.type = UserType.SUPPLIER
 
     // events
     const today = moment().format('YYYY-MM-DD')
+    vm.$store.dispatch('events/setPagination', {
+      rowsPerPage: 5
+    })
     vm.$store.dispatch('events/setFilters', {
-      host_uuid: authUser.company.uuid,
+      host_uuid: vm.currentUser.company.uuid,
       include: 'location,venue',
       start_at: today
     })
@@ -228,21 +248,22 @@ export default {
     promises.push(vm.$store.dispatch('events/getItems'))
 
     // stores (=fleets)
+    vm.$store.dispatch('stores/setPagination', {
+      rowsPerPage: 5
+    })
     vm.$store.dispatch('stores/setFilters', {
-      supplier_uuid: authUser.company.uuid,
+      supplier_uuid: vm.currentUser.company.uuid,
       include: 'type'
     })
     promises.push(vm.$store.dispatch('stores/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+    promises.push(vm.$store.dispatch('stores/stats/getItems'))
 
     //
     Promise.all(promises)
       .then()
       .catch(error => console.error(error))
-      .then(() => {
-        vm.$store.dispatch('page/setLoading', false)
-      })
-  },
+  }
 
 }
 </script>

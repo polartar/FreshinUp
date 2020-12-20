@@ -10,13 +10,17 @@ exports[`components/fleet-members/StoreStatusStat Snapshots Default 1`] = `
     <div
       class="flex display-3 grey--text"
     >
-      0
+      
+    0
+  
     </div>
      
     <div
       class="flex grey--text text-uppercase font-weight-bold"
     >
       
+    
+  
     </div>
   </div>
 </div>
@@ -32,13 +36,17 @@ exports[`components/fleet-members/StoreStatusStat Snapshots Populated 1`] = `
     <div
       class="flex display-3 warning--text"
     >
-      24
+      
+    24
+  
     </div>
      
     <div
       class="flex grey--text text-uppercase font-weight-bold"
     >
-      Pending
+      
+    Pending
+  
     </div>
   </div>
 </div>
