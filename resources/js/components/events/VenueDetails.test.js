@@ -2,7 +2,7 @@ import { mount, shallowMount } from '@vue/test-utils'
 import * as Stories from '~/components/events/VenueDetails.stories'
 import Component, { DEFAULT_LOCATION } from '~/components/events/VenueDetails.vue'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
-import { FIXTURE_VENUES } from '../../__data__/venues'
+import { FIXTURE_VENUES } from 'tests/__data__/venues'
 
 describe('events/VenueDetails', () => {
   let localVue

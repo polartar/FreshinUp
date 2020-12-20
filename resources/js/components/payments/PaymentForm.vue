@@ -14,7 +14,7 @@
         :error-messages="errors.collect('event_uuid')"
         data-vv-name="event_uuid"
         :items="events"
-        item-text="title"
+        item-text="name"
         item-value="uuid"
         single-line
         solo

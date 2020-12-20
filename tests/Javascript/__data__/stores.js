@@ -1,3 +1,5 @@
+import { FIXTURE_STORE_TYPES } from './storeTypes'
+
 export const FIXTURE_STORES = [
   {
     id: 1,
@@ -248,6 +250,11 @@ export const FIXTURE_STORES = [
       { uuid: '4', name: 'Tag 4' }
     ]
   }
-]
+].map(store => {
+  return {
+    ...store,
+    type: FIXTURE_STORE_TYPES.find(type => type.id === store.type_id)
+  }
+})
 
 export const FIXTURE_STORE = FIXTURE_STORES[0]

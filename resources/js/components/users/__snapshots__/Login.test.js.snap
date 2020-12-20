@@ -1,0 +1,732 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/users/Login Snapshots Basic 1`] = `
+<div
+  class="container fluid"
+>
+  <div
+    class="layout align-center justify-center"
+  >
+    <div
+      class="flex xs12 sm10 md4"
+    >
+      <form
+        class="v-form"
+        novalidate="novalidate"
+      >
+        <div
+          class="elevation-12 rounded-card v-card v-sheet theme--light"
+        >
+          <nav
+            class="v-toolbar elevation-0 theme--light transparent"
+            style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);"
+          >
+            <div
+              class="v-toolbar__content"
+              style="height: 64px;"
+            >
+              <div
+                class="v-responsive v-image"
+                style="height: 64px;"
+              >
+                <div
+                  class="v-image__image v-image__image--preload v-image__image--contain"
+                  mode="in-out"
+                  name="fade-transition"
+                  style="background-position: center center;"
+                />
+                <div
+                  class="v-responsive__content"
+                />
+              </div>
+            </div>
+          </nav>
+           
+          <div
+            class="v-card__title justify-center v-card__title--primary"
+          >
+            <h3
+              class="headline mb-0 primary--text font-weight-bold"
+              style="justify-content: center;"
+            >
+              
+        Log in to FoodFleet
+      
+            </h3>
+          </div>
+           
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label v-label--active theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Email address
+                    </label>
+                    <input
+                      aria-label="Email address"
+                      name="login"
+                      placeholder="Email address"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      class="v-label v-label--active theme--light"
+                      for="password"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Password
+                    </label>
+                    <input
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex xs12"
+              >
+                
+          Forgot password ?
+          
+                <button
+                  class="text-uppercase v-btn v-btn--flat v-btn--small theme--light primary--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Reset password here
+          
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <button
+                  class="ff-login__button mt-2 mb-2 v-btn theme--light primary"
+                  type="submit"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Login
+          
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex"
+              >
+                <p
+                  class="mb-1 mt-2"
+                >
+                  
+            Not a member ?
+          
+                </p>
+                 
+                <p>
+                  
+            Sign up as a
+            
+                  <a
+                    href="#register-customer"
+                  >
+                    Customer
+                  </a>
+                  
+            or
+            
+                  <a
+                    href="#register-supplier"
+                  >
+                    Join our fleet
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/users/Login Snapshots Loading 1`] = `
+<div
+  class="container fluid"
+>
+  <div
+    class="layout align-center justify-center"
+  >
+    <div
+      class="flex xs12 sm10 md4"
+    >
+      <form
+        class="v-form"
+        novalidate="novalidate"
+      >
+        <div
+          class="elevation-12 rounded-card v-card v-sheet theme--light"
+        >
+          <nav
+            class="v-toolbar elevation-0 theme--light transparent"
+            style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);"
+          >
+            <div
+              class="v-toolbar__content"
+              style="height: 64px;"
+            >
+              <div
+                class="v-responsive v-image"
+                style="height: 64px;"
+              >
+                <div
+                  class="v-image__image v-image__image--preload v-image__image--contain"
+                  mode="in-out"
+                  name="fade-transition"
+                  style="background-position: center center;"
+                />
+                <div
+                  class="v-responsive__content"
+                />
+              </div>
+            </div>
+          </nav>
+           
+          <div
+            class="v-card__title justify-center v-card__title--primary"
+          >
+            <h3
+              class="headline mb-0 primary--text font-weight-bold"
+              style="justify-content: center;"
+            >
+              
+        Log in to Foodfleet
+      
+            </h3>
+          </div>
+           
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label v-label--active theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Email address
+                    </label>
+                    <input
+                      aria-label="Email address"
+                      name="login"
+                      placeholder="Email address"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      class="v-label v-label--active theme--light"
+                      for="password"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Password
+                    </label>
+                    <input
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex xs12"
+              >
+                
+          Forgot password ?
+          
+                <button
+                  class="text-uppercase v-btn v-btn--flat v-btn--small theme--light primary--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Reset password here
+          
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <button
+                  class="ff-login__button mt-2 mb-2 v-btn v-btn--loader theme--light primary"
+                  type="submit"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Login
+          
+                  </div>
+                  <span
+                    class="v-btn__loading"
+                  >
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="v-progress-circular v-progress-circular--indeterminate"
+                      role="progressbar"
+                      style="height: 23px; width: 23px;"
+                    >
+                      <svg
+                        style="transform: rotate(0deg);"
+                        viewBox="21.904761904761905 21.904761904761905 43.80952380952381 43.80952380952381"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          class="v-progress-circular__overlay"
+                          cx="43.80952380952381"
+                          cy="43.80952380952381"
+                          fill="transparent"
+                          r="20"
+                          stroke-dasharray="125.664"
+                          stroke-dashoffset="125.66370614359172px"
+                          stroke-width="3.8095238095238093"
+                        />
+                      </svg>
+                      <div
+                        class="v-progress-circular__info"
+                      />
+                    </div>
+                  </span>
+                </button>
+              </div>
+               
+              <div
+                class="flex"
+              >
+                <p
+                  class="mb-1 mt-2"
+                >
+                  
+            Not a member ?
+          
+                </p>
+                 
+                <p>
+                  
+            Sign up as a
+            
+                  <a
+                    href="#register-customer"
+                  >
+                    Customer
+                  </a>
+                  
+            or
+            
+                  <a
+                    href="#register-supplier"
+                  >
+                    Join our fleet
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/users/Login Snapshots WithError 1`] = `
+<div
+  class="container fluid"
+>
+  <div
+    class="layout align-center justify-center"
+  >
+    <div
+      class="flex xs12 sm10 md4"
+    >
+      <form
+        class="v-form"
+        novalidate="novalidate"
+      >
+        <div
+          class="elevation-12 rounded-card v-card v-sheet theme--light"
+        >
+          <nav
+            class="v-toolbar elevation-0 theme--light transparent"
+            style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);"
+          >
+            <div
+              class="v-toolbar__content"
+              style="height: 64px;"
+            >
+              <div
+                class="v-responsive v-image"
+                style="height: 64px;"
+              >
+                <div
+                  class="v-image__image v-image__image--preload v-image__image--contain"
+                  mode="in-out"
+                  name="fade-transition"
+                  style="background-position: center center;"
+                />
+                <div
+                  class="v-responsive__content"
+                />
+              </div>
+            </div>
+          </nav>
+           
+          <div
+            class="v-card__title justify-center v-card__title--primary"
+          >
+            <h3
+              class="headline mb-0 primary--text font-weight-bold"
+              style="justify-content: center;"
+            >
+              
+        Log in to FoodFleet
+      
+            </h3>
+          </div>
+           
+          <div
+            class="v-card__text"
+          >
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label v-label--active theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Email address
+                    </label>
+                    <input
+                      aria-label="Email address"
+                      name="login"
+                      placeholder="Email address"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="v-input v-text-field v-text-field--placeholder theme--light"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-text-field__slot"
+                  >
+                    <label
+                      class="v-label v-label--active theme--light"
+                      for="password"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Password
+                    </label>
+                    <input
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="v-card__actions"
+          >
+            <div
+              class="layout row wrap"
+            >
+              <div
+                class="flex xs12"
+              >
+                
+          Forgot password ?
+          
+                <button
+                  class="text-uppercase v-btn v-btn--flat v-btn--small theme--light primary--text"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Reset password here
+          
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex xs12"
+              >
+                <button
+                  class="ff-login__button mt-2 mb-2 v-btn theme--light primary"
+                  type="submit"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Login
+          
+                  </div>
+                </button>
+              </div>
+               
+              <div
+                class="flex"
+              >
+                <p
+                  class="mb-1 mt-2"
+                >
+                  
+            Not a member ?
+          
+                </p>
+                 
+                <p>
+                  
+            Sign up as a
+            
+                  <a
+                    href="#register-customer"
+                  >
+                    Customer
+                  </a>
+                  
+            or
+            
+                  <a
+                    href="#register-supplier"
+                  >
+                    Join our fleet
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="v-snack v-snack--active v-snack--top"
+          name="v-snack-transition"
+        >
+          <div
+            class="v-snack__wrapper error"
+          >
+            <div
+              class="v-snack__content"
+            >
+              
+              Wrong login or password
+              
+              <button
+                class="v-btn v-btn--flat theme--dark"
+                type="button"
+              >
+                <div
+                  class="v-btn__content"
+                >
+                  
+                Close
+              
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
