@@ -16,6 +16,107 @@ exports[`components/payments/PaymentForm Snapshots Default 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
+      Event
+    
+      </div>
+       
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-select theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <div
+                class="v-select__selections"
+              >
+                <input
+                  aria-readonly="false"
+                  autocomplete="on"
+                  data-vv-name="event_uuid"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <div
+                        class="v-list__tile theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            No data available
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="mb-2 text-uppercase grey--text font-weight-bold"
+      >
+        
       Payment Name
     
       </div>
@@ -76,7 +177,8 @@ exports[`components/payments/PaymentForm Snapshots Default 1`] = `
               class="v-text-field__slot"
             >
               <input
-                type="text"
+                data-vv-name="amount_money"
+                type="number"
               />
             </div>
           </div>
@@ -1299,6 +1401,107 @@ exports[`components/payments/PaymentForm Snapshots Loading 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
+      Event
+    
+      </div>
+       
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-select theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <div
+                class="v-select__selections"
+              >
+                <input
+                  aria-readonly="false"
+                  autocomplete="on"
+                  data-vv-name="event_uuid"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <div
+                        class="v-list__tile theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            No data available
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="mb-2 text-uppercase grey--text font-weight-bold"
+      >
+        
       Payment Name
     
       </div>
@@ -1359,7 +1562,8 @@ exports[`components/payments/PaymentForm Snapshots Loading 1`] = `
               class="v-text-field__slot"
             >
               <input
-                type="text"
+                data-vv-name="amount_money"
+                type="number"
               />
             </div>
           </div>
@@ -2587,12 +2791,187 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
+      Event
+    
+      </div>
+       
+      <div
+        class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <div
+                class="v-select__selections"
+              >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  [object Object]
+                </div>
+                <input
+                  aria-readonly="false"
+                  autocomplete="on"
+                  data-vv-name="event_uuid"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            [object Object]
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="primary--text"
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            [object Object]
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            [object Object]
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            [object Object]
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            [object Object]
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="flex"
+    >
+      <div
+        class="mb-2 text-uppercase grey--text font-weight-bold"
+      >
+        
       Payment Name
     
       </div>
        
       <div
-        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-input--is-label-active v-input--is-dirty theme--light"
       >
         <div
           class="v-input__control"
@@ -2647,7 +3026,8 @@ exports[`components/payments/PaymentForm Snapshots WithData 1`] = `
               class="v-text-field__slot"
             >
               <input
-                type="text"
+                data-vv-name="amount_money"
+                type="number"
               />
             </div>
           </div>

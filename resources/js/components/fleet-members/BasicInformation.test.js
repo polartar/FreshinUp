@@ -1,7 +1,7 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
-import * as Stories from '~/components/fleet-members/BasicInformation.stories'
-import Component, { DEFAULT_IMAGE } from '~/components/fleet-members/BasicInformation.vue'
-import { FIXTURE_STORE } from '../../__data__/stores'
+import * as Stories from './BasicInformation.stories'
+import Component, { DEFAULT_IMAGE } from './BasicInformation.vue'
+import { FIXTURE_STORE } from 'tests/__data__/stores'
 
 describe('components/fleet-members/BasicInformation', () => {
   describe('Snapshots', () => {

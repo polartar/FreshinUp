@@ -1617,7 +1617,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            Random event name
+            
           
                       </div>
                        
@@ -1625,7 +1625,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Sep 09, 2020
+            
           
                       </div>
                        
@@ -1633,23 +1633,31 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Convention center
+            
           
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Event venue fee
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              2020-07-08
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Jul 08, 2020
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"
@@ -1812,7 +1820,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            Random event name
+            
           
                       </div>
                        
@@ -1820,7 +1828,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Sep 09, 2020
+            
           
                       </div>
                        
@@ -1828,23 +1836,31 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Convention center
+            
           
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Event venue fee
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              2020-07-08
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Jul 08, 2020
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"
@@ -2008,7 +2024,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            Random event name
+            
           
                       </div>
                        
@@ -2016,7 +2032,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Sep 09, 2020
+            
           
                       </div>
                        
@@ -2024,23 +2040,31 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Convention center
+            
           
                       </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Event venue fee
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"
                     >
-                      
-              2020-07-08
-            
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Jul 08, 2020
+          
+                      </div>
                     </td>
                     <td
                       class="text-xs-undefined"

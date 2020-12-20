@@ -1,24 +1,24 @@
 import navigation from '@freshinup/core-ui/src/store/modules/navigation'
-
-export default ({ items, item }) => {
-  const store = navigation({ items, item })
+export const DEFAULT_USER_MENU_ITEMS = [
+  { title: 'My Profile', to: { name: 'myprofile' } },
+  { title: 'My Teams', to: { name: 'myteams' } },
+  { title: 'My Company', to: { name: 'mycompany' } },
+  { title: 'My Settings', to: { name: 'settings' } },
+  { title: 'My Company Settings', to: { name: '404' } }
+]
+export default (initialState = {}) => {
+  const store = navigation(initialState)
   store.mutations = {
     ...store.mutations,
-    /**
-     * @param state
-     * @param { { title: string, to: { name: string } }[] } items
-     * @constructor
-     */
     SET_USER_MENU_ITEMS (state, items) {
       state.userMenuItems = items
     }
   }
   store.actions = {
     ...store.actions,
-    actions: {
-      setUserMenuItems (context, items) {
-        context.commit('SET_USER_MENU_ITEMS', items)
-      }
+    // TODO move to core-ui
+    setUserMenuItems (context, items) {
+      context.commit('SET_USER_MENU_ITEMS', items)
     }
   }
   return store

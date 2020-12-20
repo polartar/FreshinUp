@@ -87,18 +87,23 @@
               @input="changeStatus($event, item)"
             />
           </template>
-          <template v-slot:item-inner-event_name="{ item }">
+          <template v-slot:item-inner-event="{ item }">
             <div class="subheading primary--text">
-              {{ get(item, 'event_name') }}
+              {{ get(item, 'event.name') }}
             </div>
             <div class="grey--text">
-              {{ formatDate(get(item, 'venue_due_date'), 'MMM DD, YYYY') }}
+              {{ formatDate(get(item, 'event.start_at'), 'MMM DD, YYYY') }}
             </div>
             <div class="grey--text">
-              @ {{ get(item, 'venue') }}
+              {{ get(item, 'event.location.name') | prefixStr }}
             </div>
           </template>
-          <template v-slot:item-inner-amount_money="{ item }">
+          <template v-slot:item-inner-name="{ item }">
+            <div class="grey--text">
+              {{ get(item, 'name') }}
+            </div>
+          </template>
+          <template v-slot:item-inner-due_date="{ item }">
             <div class="grey--text">
               {{ formatDate(get(item, 'due_date'), 'MMM DD, YYYY') }}
             </div>
@@ -131,8 +136,8 @@ import StatusSelect from './StatusSelect'
 
 export const HEADERS = [
   { text: 'Status', value: 'status' },
-  { text: 'Event name', value: 'event_name' },
-  { text: 'Payment name', value: 'payment_name' },
+  { text: 'Event name', value: 'event' },
+  { text: 'Payment name', value: 'name' },
   { text: 'Due date', value: 'due_date' },
   { text: 'Amount', value: 'amount_money' },
   { text: 'Manage', value: 'manage' }
@@ -144,6 +149,12 @@ export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
 
 export default {
   components: { FDataTable, StatusSelect },
+  filters: {
+    prefixStr: function (value, prefix = '@') {
+      if (!value) return ''
+      return value ? `${prefix} ${value}` : ''
+    }
+  },
   mixins: [FormatMoney, FormatDate],
   props: {
     dialog: { type: Boolean, default: false },

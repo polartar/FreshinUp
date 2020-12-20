@@ -122,7 +122,7 @@ exports[`Default layout mount snapshot of layout 1`] = `
         >
            
           <div
-            class="v-card v-sheet theme--light"
+            class="ff-user-menu v-card v-sheet theme--light"
           >
             <div
               class="layout pa-3 row"

@@ -1,30 +1,76 @@
-import module from './navigation'
-
+import module, { DEFAULT_USER_MENU_ITEMS } from './navigation'
 describe('store/modules/navigation', () => {
-  test('the state has items', () => {
-    const item = {}
-    const items = []
-    const result = module({ items, item })
-    expect(result).toHaveProperty('state')
-    expect(result.state).toHaveProperty('items', items)
-  })
-
-  test('the state has item', () => {
-    const item = {}
-    const items = []
-    const result = module({ items, item })
-    expect(result).toHaveProperty('state')
-    expect(result.state).toHaveProperty('item', item)
-  })
-
   test('is a namespaced module', () => {
-    let item = {}
-    let items = []
-    const result = module({ items, item })
-    expect(result).toHaveProperty('namespaced', true)
+    const store = module({})
+    expect(store).toHaveProperty('namespaced', true)
   })
 
-  // TODO: Future work. Ignore for now
-  describe('Mutations', () => {})
-  describe('Actions', () => {})
+  describe('State', () => {
+    test('title', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('title', 'FreshPlatform')
+    })
+    test('drawerItems', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('drawerItems', [])
+    })
+    test('userMenuItems', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('userMenuItems', DEFAULT_USER_MENU_ITEMS)
+    })
+    test('isConsumerViewAvailable', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('isConsumerViewAvailable', true)
+    })
+    test('hideUserLevel', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('hideUserLevel', false)
+    })
+    test('displayedUserField', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('displayedUserField', 'title,company_name')
+    })
+    test('items', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('items', [])
+    })
+    test('breadcrumbs', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('breadcrumbs', [])
+    })
+    // TODO test initialState override
+  })
+
+  describe('Mutations', () => {
+    test('SET_USER_MENU_ITEMS', () => {
+      const store = module({})
+      expect(store.state.userMenuItems).toMatchObject(DEFAULT_USER_MENU_ITEMS)
+
+      const items = [
+        { title: 'My Profile', to: { name: 'myprofile' } }
+      ]
+      store.mutations.SET_USER_MENU_ITEMS(store.state, items)
+      expect(store.state.userMenuItems).toMatchObject(items)
+    })
+  })
+
+  describe('Actions', () => {
+    test('setUserMenuItems', () => {
+      const store = module({})
+      const commit = jest.fn()
+      const items = [
+        { title: 'My Profile', to: { name: 'myprofile' } }
+      ]
+      store.actions.setUserMenuItems({ commit }, items)
+      expect(commit).toHaveBeenCalledWith('SET_USER_MENU_ITEMS', items)
+    })
+  })
 })
