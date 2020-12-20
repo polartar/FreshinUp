@@ -93,7 +93,6 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import StoreList from '~/components/fleet-members/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-import get from 'lodash/get'
 import FilterSorter from '~/components/fleet-members/FilterSorter.vue'
 
 const INCLUDE = [

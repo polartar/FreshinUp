@@ -18,14 +18,14 @@ describe('pages/admin/fleet-members', () => {
     })
     test('snapshot', async () => {
       mock.onGet('api/foodfleet/stores')
-          .reply(200, { data: FIXTURE_STORES_SORTED_BY_FIRSTNAME })
+        .reply(200, { data: FIXTURE_STORES_SORTED_BY_FIRSTNAME })
         .onGet('api/foodfleet/stores')
-          .reply(200, FIXTURE_STORES_RESPONSE)
+        .reply(200, FIXTURE_STORES_RESPONSE)
         .onAny()
-          .reply(config => {
-            console.warn('No mock match for ' + config.url, config)
-            return [404, {}]
-          })
+        .reply(config => {
+          console.warn('No mock match for ' + config.url, config)
+          return [404, {}]
+        })
       const store = createStore()
       const wrapper = shallowMount(Component, {
         localVue: localVue,
