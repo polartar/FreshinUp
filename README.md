@@ -70,6 +70,7 @@ $ cd foodfleet
 $ nvm install
 $ composer install
 $ php artisan foodfleet:install --dev
+$ php artisan passport-client:update-env
 $ yarn watch-poll
 ```
 
