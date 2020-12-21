@@ -48,6 +48,7 @@
       @input="onSaveClick"
       @download="downloadDocument"
       @preview="previewDialog = true"
+      @selectTemplate="onSelectTemplate"
     />
     <v-dialog
       v-model="previewDialog"
@@ -55,6 +56,7 @@
     >
       <document-preview
         :value="doc"
+        :current-template-uuid="currentTemplateUuid"
         :templates="templates"
         :variables="templateVariables"
         :events="events"
@@ -82,7 +84,8 @@ export default {
   mixins: [Validate],
   data () {
     return {
-      template: null,
+      isNew: false,
+      currentTemplateUuid: null,
       previewDialog: false,
       documentLoading: false,
       file: { name: null, src: null }
@@ -107,6 +110,11 @@ export default {
     templateVariables () {
       // TODO: issue coming soon
       return {}
+    }
+  },
+  watch: {
+    doc_: function (doc) {
+      this.currentTemplateUuid = doc.template_uuid
     }
   },
   methods: {
@@ -138,15 +146,28 @@ export default {
       ])
       return valids.every(valid => valid)
     },
-    async onSaveClick (payload) {
-      // const valid = await this.validator()
-      // if (!valid) {
-      //   this.$store.dispatch('generalErrorMessages/setErrors', 'Form is invalid.')
-      //   return false
-      // }
-      const data = omitBy(payload, (value, key) => {
-        const extra = ['created_at', 'updated_at', 'assigned', 'owner']
-        return extra.includes(key) || isNull(value)
+    onSelectTemplate (template) {
+      this.currentTemplateUuid = template
+    },
+    onSaveClick (payload) {
+      this.validator().then(async valid => {
+        const data = omitBy(payload, (value, key) => {
+          const extra = ['created_at', 'updated_at', 'assigned', 'owner']
+          return extra.includes(key) || isNull(value)
+        })
+        if (valid) {
+          if (this.isNew) {
+            data.id = 'new'
+            await this.$store.dispatch('documents/createItem', { data })
+            this.backToList()
+          } else {
+            await this.$store.dispatch('documents/updateItem', {
+              data,
+              params: { id: data.uuid }
+            })
+            await this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          }
+        }
       })
       if (this.isNew) {
         await this.$store.dispatch('documents/createItem', { data })

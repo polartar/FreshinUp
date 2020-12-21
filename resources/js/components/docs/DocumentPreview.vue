@@ -282,7 +282,7 @@ export default {
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
-    isLoading: { type: Boolean, default: () => false },
+    currentTemplateUuid: { type: String, default: () => '' },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
     variables: { type: Object, default: () => {} }
@@ -295,7 +295,9 @@ export default {
   },
   computed: {
     templateTitle () {
-      return get(this, 'template.title')
+      if (!this.currentTemplateUuid) return ''
+      const index = this.templates.findIndex(template => template.uuid === this.currentTemplateUuid)
+      return this.templates[index].title
     },
     attachment () {
       return get(this, 'file.src')
@@ -327,15 +329,10 @@ export default {
       return Boolean(this.signed_at)
     }
   },
-  mounted () {
-    const self = this
-    const onDestroy = scrollEnd({
-      element: document.querySelector('.ff-document-preview__content'),
-      onScrollEnd (endOfScroll) {
-        self.endOfScroll = endOfScroll
-      }
-    })
-    this.$once('hook:destroyed', onDestroy)
+  watch: {
+    currentTemplateUuid: function (value) {
+      this.template_uuid = value
+    }
   },
   methods: {
     get,

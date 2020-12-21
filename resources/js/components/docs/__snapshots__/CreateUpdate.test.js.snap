@@ -5369,6 +5369,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                 <div
                   class="flex xs4 ml-2 layout justify-end"
                 >
+<<<<<<< HEAD
                   <button
                     class="mx-1 v-btn v-btn--disabled theme--light primary--text"
                     disabled="disabled"
@@ -5398,6 +5399,9 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
 
                     </div>
                   </button>
+=======
+                  <!---->
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
                 </div>
               </div>
 
@@ -5436,6 +5440,7 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
 
 
                 </div>
+<<<<<<< HEAD
 
                 <div
                   class="flex body-2 text-xs-right sm3"
@@ -5444,6 +5449,10 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
           Expiration Date: 10 / 09 / 2019
 
                 </div>
+=======
+                 
+                <!---->
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
               </div>
 
               <hr
@@ -5536,9 +5545,15 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <div
                       class="body-1 mt-2"
                     >
+<<<<<<< HEAD
 
               Restaurant Owner Name: eligendi
 
+=======
+                      
+              Restaurant Owner Name: 
+            
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
                     </div>
                   </div>
 
