@@ -282,7 +282,7 @@ export default {
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
-    isLoading: { type: Boolean, default: () => false },
+    currentTemplateUuid: { type: String, default: () => '' },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
     template_uuid:{type:String},
@@ -329,6 +329,7 @@ export default {
       return Boolean(this.signed_at)
     }
   },
+<<<<<<< HEAD
   mounted () {
     const self = this
     const onDestroy = scrollEnd({
@@ -338,6 +339,12 @@ export default {
       }
     })
     this.$once('hook:destroyed', onDestroy)
+=======
+  watch: {
+    currentTemplateUuid: function (value) {
+      this.template_uuid = value
+    }
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
   },
   methods: {
     get,
