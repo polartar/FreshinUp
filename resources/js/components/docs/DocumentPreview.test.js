@@ -89,18 +89,14 @@ describe('components/docs/DocumentPreview', () => {
     // computed
     test('templateTitle', async () => {
       const wrapper = shallowMount(Component)
-      expect(wrapper.vm.templateTitle).toBeUndefined()
+      expect(wrapper.vm.templateTitle).toEqual('')
 
-      const template = FIXTURE_DOCUMENT_TEMPLATES[0]
       wrapper.setProps({
-        value: {
-          template: {
-            title: template.title
-          }
-        }
+        templates: FIXTURE_DOCUMENT_TEMPLATES,
+        currentTemplateUuid: FIXTURE_DOCUMENT_TEMPLATES[0].uuid
       })
       await wrapper.vm.$nextTick()
-      expect(wrapper.vm.templateTitle).toEqual(template.title)
+      expect(wrapper.vm.templateTitle).toEqual(FIXTURE_DOCUMENT_TEMPLATES[0].title)
     })
 
     test('attachment', async () => {
