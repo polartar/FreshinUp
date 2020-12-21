@@ -10,6 +10,7 @@ use App\Models\Foodfleet\StoreStatus;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\StoreType;
 use App\User;
+use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -742,5 +743,52 @@ class StoresTest extends TestCase
         $this->assertNotEmpty($data);
         $this->assertEquals($store->events()->count(), count($data));
         // TODO a better way of asserting the following
+    }
+
+    /**
+     * Get the statistics of stores by their status
+     * @group statistics
+     */
+    public function testCanGetStatsOfStoresByStatuses()
+    {
+        //Given
+        $statuses = StoreStatus::all();
+        $state_count = count($statuses);//6 here
+        $store_count = 1;
+        $total_number_of_stores = $state_count * $store_count;
+
+        foreach ($statuses as $status) {
+            $state = factory(StoreStatus::class)->create([
+                'name' => $status['label'],
+            ]);
+
+            factory(Store::class, $store_count)->create([
+                'status_id' => $state->id,
+            ]);
+        }
+
+        // 6 states, each with 5 stores, can expect there to be 30 stores now
+        $this->assertCount($total_number_of_stores, Store::all());
+        $this->assertCount($state_count, StoreStatus::all());
+
+        // get all the various statuses and create stores to match
+
+        // When
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $data = $this->getJson('/api/foodfleet/stores/stats')
+            ->assertStatus(200)
+            ->assertJsonStructure([ 'data' ])
+            ->json('data');
+
+        $this->assertEquals($state_count, count($data));//the number of states there are
+
+        foreach ($data as $id => $state) {
+            Assert::assertArraySubset([
+                'label' => $state['label'],
+                'color' => $state['color'],
+                'value' => $state['value']
+            ], $data[$id]);
+        }
     }
 }

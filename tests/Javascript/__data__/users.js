@@ -43,7 +43,8 @@ export const FIXTURE_USERS = [
     last_login: '2019-07-10 01:55:25',
     has_admin_access: true,
     joined_at: '2019-04-07 03:19:35',
-    industry_roles: ['Seller']
+    industry_roles: ['Seller'],
+    manager_uuid: 'f9ecb331-28b4-3d1b-a4c7-132be8c0e677'
   },
   {
     id: 2,
@@ -87,7 +88,8 @@ export const FIXTURE_USERS = [
     last_login: '',
     has_admin_access: true,
     joined_at: '2019-04-07 03:19:35',
-    industry_roles: []
+    industry_roles: [],
+    manager_uuid: '8e8e737e-c23e-3871-9808-b02fff7251d0'
   },
   {
     id: 3,
@@ -131,7 +133,8 @@ export const FIXTURE_USERS = [
     last_login: '2019-06-04 03:14:47',
     has_admin_access: true,
     joined_at: '2019-04-07 03:19:35',
-    industry_roles: []
+    industry_roles: [],
+    manager_uuid: 'e5d9f6c4-9f00-3027-91e9-b990e96f6ae1'
   },
   {
     id: 4,
@@ -175,7 +178,8 @@ export const FIXTURE_USERS = [
     last_login: '',
     has_admin_access: true,
     joined_at: '2019-04-07 03:19:35',
-    industry_roles: []
+    industry_roles: [],
+    manager_uuid: '9d53cd5c-2c54-39b9-8e99-05b5cabfb5c8'
   },
   {
     id: 5,

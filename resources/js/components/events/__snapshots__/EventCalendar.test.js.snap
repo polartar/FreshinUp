@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventCalendar Snapshots defaults 1`] = `
+exports[`components/events/EventCalendar Snapshots defaults 1`] = `
 <div
   class="container"
 >
@@ -376,6 +376,23 @@ exports[`EventCalendar Snapshots defaults 1`] = `
                               <div
                                 class="v-list__tile__title"
                               >
+                                2016
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
                                 2017
                               </div>
                             </div>
@@ -574,6 +591,7 @@ exports[`EventCalendar Snapshots defaults 1`] = `
       >
         <div
           class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+          weekday="1,2,3,4,5,6,0"
         >
           <div
             class="v-calendar-weekly__head"
@@ -966,7 +984,7 @@ exports[`EventCalendar Snapshots defaults 1`] = `
 </div>
 `;
 
-exports[`EventCalendar Snapshots with events data 1`] = `
+exports[`components/events/EventCalendar Snapshots with events data 1`] = `
 <div
   class="container"
 >
@@ -1342,6 +1360,23 @@ exports[`EventCalendar Snapshots with events data 1`] = `
                               <div
                                 class="v-list__tile__title"
                               >
+                                2016
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          role="listitem"
+                        >
+                          <a
+                            class="v-list__tile v-list__tile--link theme--light"
+                          >
+                            <div
+                              class="v-list__tile__content"
+                            >
+                              <div
+                                class="v-list__tile__title"
+                              >
                                 2017
                               </div>
                             </div>
@@ -1540,6 +1575,7 @@ exports[`EventCalendar Snapshots with events data 1`] = `
       >
         <div
           class="v-calendar-monthly v-calendar-weekly v-calendar theme--light"
+          weekday="1,2,3,4,5,6,0"
         >
           <div
             class="v-calendar-weekly__head"

@@ -53,9 +53,7 @@ exports[`components/venues/Documents Snapshots Empty 1`] = `
   <div
     class="v-card__text ma-2"
   >
-    <div
-      item-key="uuid"
-    >
+    <div>
       <div
         class="ui-datatable elevation-1"
       >
@@ -520,9 +518,7 @@ exports[`components/venues/Documents Snapshots Loading 1`] = `
   <div
     class="v-card__text ma-2"
   >
-    <div
-      item-key="uuid"
-    >
+    <div>
       <div
         class="ui-datatable elevation-1"
       >
@@ -1015,9 +1011,7 @@ exports[`components/venues/Documents Snapshots Populated 1`] = `
   <div
     class="v-card__text ma-2"
   >
-    <div
-      item-key="uuid"
-    >
+    <div>
       <div
         class="ui-datatable elevation-1"
       >
