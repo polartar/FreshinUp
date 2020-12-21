@@ -333,7 +333,7 @@ export default {
       this.$emit('download')
     },
     preview () {
-      this.$emit('preview')
+      this.$emit('preview', this.template_uuid)
     },
     cancel () {
       this.$emit('cancel')

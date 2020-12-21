@@ -204,7 +204,7 @@
             </v-flex>
           </v-layout>
         </v-layout>
-        <v-layout class="mx-2">
+         <v-layout class="mx-2">
           <v-layout>
             <v-flex
               sm4
@@ -285,6 +285,7 @@ export default {
     isLoading: { type: Boolean, default: () => false },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
+    template_uuid:{type:String},
     variables: { type: Object, default: () => {} }
   },
   data () {
@@ -295,7 +296,8 @@ export default {
   },
   computed: {
     templateTitle () {
-      return get(this, 'template.title')
+      return get(this.selectedTemplate, 'title', '');
+      // return get(this, 'template.title')
     },
     attachment () {
       return get(this, 'file.src')
@@ -317,7 +319,7 @@ export default {
       }, {})
     },
     selectedTemplate () {
-      return this.templatesByUuid[this.template_uuid]
+       return this.templatesByUuid[this.template_uuid]
     },
     content () {
       const html = get(this.selectedTemplate, 'content', '')

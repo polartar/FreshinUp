@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad16b899aed9e474cef5f5caa5e751ef",
+    "content-hash": "27762a25876c7467f44157452a39cbd1",
     "packages": [
         {
             "name": "apimatic/jsonmapper",
@@ -1948,16 +1948,16 @@
         },
         {
             "name": "jjclane/laravel-sqlite-migrations",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JJCLane/laravel-sqlite-migrations.git",
-                "reference": "f92bba365f6bac342480cca69ef895e300a24bd4"
+                "reference": "bfa2ae25e7b1098c5d7acfcc2321ff27f3809e80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JJCLane/laravel-sqlite-migrations/zipball/f92bba365f6bac342480cca69ef895e300a24bd4",
-                "reference": "f92bba365f6bac342480cca69ef895e300a24bd4",
+                "url": "https://api.github.com/repos/JJCLane/laravel-sqlite-migrations/zipball/bfa2ae25e7b1098c5d7acfcc2321ff27f3809e80",
+                "reference": "bfa2ae25e7b1098c5d7acfcc2321ff27f3809e80",
                 "shasum": ""
             },
             "require": {
@@ -1980,7 +1980,11 @@
                 }
             ],
             "description": "A trait to translate Laravel migrations into SQLite safe migrations.",
-            "time": "2020-05-19T22:18:04+00:00"
+            "support": {
+                "issues": "https://github.com/JJCLane/laravel-sqlite-migrations/issues",
+                "source": "https://github.com/JJCLane/laravel-sqlite-migrations/tree/0.1.5"
+            },
+            "time": "2020-10-24T20:11:15+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -10387,5 +10391,6 @@
         "php": "^7.1.3",
         "ext-json": "^1.7"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

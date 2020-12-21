@@ -47,7 +47,7 @@
       :value="doc"
       @input="onSaveClick"
       @download="downloadDocument"
-      @preview="previewDialog = true"
+      @preview="preview"
     />
     <v-dialog
       v-model="previewDialog"
@@ -58,6 +58,7 @@
         :templates="templates"
         :variables="templateVariables"
         :events="events"
+        :template_uuid = "template_uuid"
         :is-loading="documentLoading"
         @accept-contract="acceptContract"
         @close="previewDialog = false"
@@ -83,6 +84,7 @@ export default {
   data () {
     return {
       template: null,
+      template_uuid:null,
       previewDialog: false,
       documentLoading: false,
       file: { name: null, src: null }
@@ -113,6 +115,12 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    preview(id){
+     
+      this.previewDialog = true;
+      this.template_uuid = id;
+      
+    },
     downloadDocument () {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
