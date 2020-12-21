@@ -1,46 +1,113 @@
 <template>
-  <v-container
+  <v-layout
     v-if="!isLoading"
-    fill-height
+    class="px-4"
+    row
+    wrap
   >
-    <user-profile
-      :user="currentUser"
-      is-current-user
-      :company="user.company"
-    />
-  </v-container>
+    <v-flex
+      xs12
+      mb-4
+    >
+      <basic-information
+        :is-loading="loading"
+        :value="currentUser"
+        :levels="levels"
+        :types="types"
+        @input="onSave"
+        @delete="onDelete"
+      />
+    </v-flex>
+    <v-flex
+      xs12
+      mb-4
+    >
+      <notification-settings />
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import UserProfile from '~/components/users/UserProfile.vue'
 import { mapGetters } from 'vuex'
+import NotificationSettings from '~/components/users/NotificationSettings'
+import BasicInformation from '~/components/users/BasicInformation'
+import get from 'lodash/get'
 
 export default {
   components: {
-    UserProfile
+    NotificationSettings,
+    BasicInformation
+  },
+  data () {
+    return {
+      loading: false
+    }
   },
   computed: {
-    ...mapGetters('users', { user: 'item' }),
+    ...mapGetters('userLevels', { levels: 'items' }),
+    ...mapGetters('userTypes', { types: 'items' }),
     ...mapGetters('page', ['isLoading']),
     ...mapGetters(['currentUser']),
     isCurrentUserAdmin () {
       return this.currentUser && this.currentUser.level < 5
     }
   },
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
+  methods: {
+    onSave (payload) {
+      this.loading = true
+      this.$store.dispatch('users/patchItem', {
+        params: {
+          id: this.currentUser.id
+        },
+        data: payload
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.loading = false
+        })
+    },
+    onDelete () {
+      this.loading = true
+      this.$store.dispatch('users/deleteItem', {
+        params: {
+          id: this.currentUser.id
+        }
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessages/setMessage', 'Deleted.')
+          this.$router.push({ path: '/auth' })
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.loading = false
+        })
+    }
+  },
+  async beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    vm.$store.dispatch('currentUser/getCurrentUser', { params: { include: 'teams.users' } }).then(() => {
-      Promise.all([
-        vm.$store.dispatch('users/getItem', { params: { id: vm.currentUser.id, include: 'teams.users,company.users' } })
-      ]).then(() => {
-        vm.$store.dispatch('page/setTitle', vm.currentUser.name)
+    await vm.$store.dispatch('currentUser/getCurrentUser', {
+      params: { include: 'teams.users' }
+    })
+    vm.$store.dispatch('page/setTitle', vm.currentUser.name)
+    vm.$store.dispatch('page/setLoading', false)
+    const promises = []
+    promises.push(vm.$store.dispatch('userLevels/getItems'))
+    promises.push(vm.$store.dispatch('userTypes/getItems'))
+    Promise.all(promises)
+      .then(() => {})
+      .catch((error) => { console.error(error) })
+      .then(() => {
         if (next) next()
       })
-        .catch((error) => { console.error(error) })
-        .then(() => {
-          vm.$store.dispatch('page/setLoading', false)
-        })
-    })
   }
 }
 </script>

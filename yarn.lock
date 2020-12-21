@@ -1138,9 +1138,9 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
   integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
 
-"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.54.1":
-  version "1.54.1"
-  resolved "git+ssh://git@github.com/freshinup/core-ui.git#98f06ab316272afc9baf68bacb364afa464137c5"
+"@freshinup/core-ui@git+ssh://git@github.com/freshinup/core-ui.git#1.55.0":
+  version "1.55.0"
+  resolved "git+ssh://git@github.com/freshinup/core-ui.git#8848218d25e25cb64637ac25a1eba9cfa4b2a01e"
   dependencies:
     "@mdi/font" "^4.4.95"
     awesome-phonenumber "^2.22.0"

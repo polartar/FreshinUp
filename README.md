@@ -79,6 +79,16 @@ $ php artisan fresh-bus:update --dev
 $ yarn watch-poll
 ```
 
+### Additional steps if you're on windows
+```
+yarn global add @vue/cli
+php artisan foodlfeet:seed --quickstart
+php artisan fresh-bus:install-auth
+# restart your development server
+# then try login with demoadmin@example.com password: fresh123
+# if that's not working inspect your database 
+```
+
 ## Media Library Configuration
 
 ### Local Development (Homestead)

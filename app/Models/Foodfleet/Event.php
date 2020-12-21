@@ -16,25 +16,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int id
  * @property string uuid
  * @property string name
- * @property int type_id
- * @property string location_uuid
  * @property \Datetime start_at
  * @property \Datetime end_at
- * @property int host_uuid
  * @property string host_status
- * @property string manager_uuid
- * @property int status_id
  * @property int budget
  * @property int attendees
  * @property int commission_rate
  * @property int commission_type
- * @property string venue_uuid
  * @property string staff_notes
  * @property string member_notes
  * @property string customer_notes
  * @property Carbon created_at
  * @property Carbon updated_at
  * @property string deleted_at
+ * @property string manager_uuid
+ * @property int status_id
+ * @property int type_id
+ * @property string host_uuid
+ * @property string venue_uuid
+ * @property string location_uuid
  *
  *
  * @property Store[] stores

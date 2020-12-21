@@ -10,7 +10,7 @@ $factory->define(Template::class, function (Faker $faker) {
     return [
         "uuid" => $faker->uuid,
         "title" => $faker->word,
-        "description" => $faker->realText(200),
+        "description" => $faker->realText(100),
         "content" => $faker->randomHtml(),
         "status_id" => function () {
             return factory(Status::class)->create()->id;

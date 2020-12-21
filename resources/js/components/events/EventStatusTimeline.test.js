@@ -1,8 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Component from '~/components/events/EventStatusTimeline.vue'
 import * as Stories from '~/components/events/EventStatusTimeline.stories'
-import { FIXTURE_EVENT_HISTORIES } from '../../__data__/eventHistory'
-import { FIXTURE_EVENT_STATUSES } from '../../__data__/eventStatuses'
+import { FIXTURE_EVENT_HISTORIES } from 'tests/__data__/eventHistory'
+import { FIXTURE_EVENT_STATUSES } from 'tests/__data__/eventStatuses'
 
 describe('EventStatusTimeline', () => {
   describe('Snapshots', () => {
