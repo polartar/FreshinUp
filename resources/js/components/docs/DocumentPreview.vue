@@ -319,7 +319,7 @@ export default {
       }, {})
     },
     selectedTemplate () {
-       return this.templatesByUuid[this.template_uuid]
+        return this.templatesByUuid[this.template_uuid]
     },
     content () {
       const html = get(this.selectedTemplate, 'content', '')
@@ -329,22 +329,10 @@ export default {
       return Boolean(this.signed_at)
     }
   },
-<<<<<<< HEAD
-  mounted () {
-    const self = this
-    const onDestroy = scrollEnd({
-      element: document.querySelector('.ff-document-preview__content'),
-      onScrollEnd (endOfScroll) {
-        self.endOfScroll = endOfScroll
-      }
-    })
-    this.$once('hook:destroyed', onDestroy)
-=======
   watch: {
     currentTemplateUuid: function (value) {
       this.template_uuid = value
     }
->>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
   },
   methods: {
     get,

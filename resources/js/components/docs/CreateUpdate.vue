@@ -119,8 +119,7 @@ export default {
      
       this.previewDialog = true;
       this.template_uuid = id;
-      
-    },
+     },
     downloadDocument () {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
@@ -149,7 +148,7 @@ export default {
     onSelectTemplate (template) {
       this.currentTemplateUuid = template
     },
-    onSaveClick (payload) {
+    async onSaveClick (payload) {
       this.validator().then(async valid => {
         const data = omitBy(payload, (value, key) => {
           const extra = ['created_at', 'updated_at', 'assigned', 'owner']
