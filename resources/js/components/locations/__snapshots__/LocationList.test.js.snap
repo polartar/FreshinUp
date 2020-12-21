@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/locations/LocationList Snapshots Empty 1`] = `
-<div
-  item-key="uuid"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >
@@ -385,9 +383,7 @@ exports[`components/locations/LocationList Snapshots Empty 1`] = `
 `;
 
 exports[`components/locations/LocationList Snapshots Loading 1`] = `
-<div
-  item-key="uuid"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >
@@ -797,9 +793,7 @@ exports[`components/locations/LocationList Snapshots Loading 1`] = `
 `;
 
 exports[`components/locations/LocationList Snapshots Populated 1`] = `
-<div
-  item-key="uuid"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >

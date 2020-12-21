@@ -14,6 +14,7 @@ class TestDataSeeder extends Seeder
         $this->call([
             AddressesTableSeeder::class,
             PaymentTypesTableSeeder::class,
+            PaymentStatusesSeeder::class,
             DevicesTableSeeder::class,
             SupplierCompaniesTableSeeder::class,
             HostCompaniesTableSeeder::class,

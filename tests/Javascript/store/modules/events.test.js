@@ -40,7 +40,7 @@ describe('store/modules/events', () => {
         const data = FIXTURE_EVENTS[0]
         store.actions.createItem({ commit }, { data })
         expect(commit).toHaveBeenCalledWith('CREATE_ITEM', {
-          data: omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type']),
+          data: omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type', 'location']),
           params: {}
         })
       })
@@ -76,7 +76,7 @@ describe('store/modules/events', () => {
         const data = FIXTURE_EVENTS[0]
         store.actions.updateItem({ commit }, { data })
         expect(commit).toHaveBeenCalledWith('UPDATE_ITEM', {
-          data: omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type']),
+          data: omit(data, ['event_recurring_checked', 'event_tags', 'host', 'venue', 'manager', 'status', 'type', 'location']),
           params: {}
         })
       })
@@ -120,7 +120,7 @@ describe('store/modules/events', () => {
         const data = FIXTURE_EVENTS[0]
         store.actions.updateItem({ commit }, { data })
         expect(commit).toHaveBeenCalledWith('UPDATE_ITEM', {
-          data: omit(FIXTURE_EVENTS[0], ['event_tags', 'event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status']),
+          data: omit(FIXTURE_EVENTS[0], ['event_tags', 'event_recurring_checked', 'type', 'host', 'venue', 'manager', 'status', 'location']),
           params: {}
         })
       })

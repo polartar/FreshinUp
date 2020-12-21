@@ -7,11 +7,14 @@ use App\Enums\StoreStatus as StoreStatusEnum;
 use App\Filters\BelongsToWhereInIdEquals;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Foodfleet\Store\Statistic;
 use App\Http\Resources\Foodfleet\Store\Store as StoreResource;
+use App\Http\Resources\Foodfleet\Event as EventResource;
 use App\Http\Resources\Foodfleet\Store\StoreServiceSummary as StoreServiceSummaryResource;
 use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
+use App\Models\Foodfleet\StoreStatus;
 use App\Sorts\Stores\OwnerNameSort;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -51,9 +54,10 @@ class Store extends Controller
                 Filter::custom('type_id', BelongsToWhereInIdEquals::class, 'type'),
                 Filter::exact('uuid'),
                 Filter::exact('supplier_uuid')
-            ]);
+            ])
+            ->jsonPaginate();
 
-        return StoreResource::collection($stores->jsonPaginate());
+        return StoreResource::collection($stores);
     }
 
     public function update(Request $request, $uuid)
@@ -202,5 +206,40 @@ class Store extends Controller
         }
         $store->load('tags');
         return new StoreResource($store);
+    }
+
+    public function events(Request $request, $uuid)
+    {
+        /** @var StoreModel $store */
+        $store = StoreModel::where('uuid', $uuid)->firstOrFail();
+        $events = QueryBuilder::for(
+            Event::whereIn(
+                'uuid',
+                $store->events()->pluck('events.uuid')->toArray()
+            ),
+            $request
+        )
+            ->allowedSorts([
+                'status_id',
+                'created_at',
+                'start_at',
+                'name',
+                'type_id'
+            ])
+            ->allowedFilters([
+                'name',
+                Filter::exact('status_id'),
+                Filter::exact('uuid'),
+            ])
+            ->jsonPaginate();
+
+        return EventResource::collection($events);
+    }
+
+    public function stats()
+    {
+        $states = StoreStatus::withCount('stores')->get();
+
+        return Statistic::collection($states);
     }
 }

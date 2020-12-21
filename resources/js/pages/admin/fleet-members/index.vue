@@ -33,7 +33,7 @@
       v-if="!isLoading"
       :stores="stores"
       :statuses="statuses"
-      :is-loading="isLoading || isLoadingList"
+      :is-loading="storesLoading"
       :rows-per-page="pagination.rowsPerPage"
       :page="pagination.page"
       :total-items="pagination.totalItems"
@@ -93,7 +93,6 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import StoreList from '~/components/fleet-members/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
-import get from 'lodash/get'
 import FilterSorter from '~/components/fleet-members/FilterSorter.vue'
 
 const INCLUDE = [
@@ -128,14 +127,12 @@ export default {
     }
   },
   computed: {
-    isLoadingList () {
-      return get(this.$store, 'state.stores.pending.items', true)
-    },
     ...mapGetters('stores', {
       stores: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
-      sortBy: 'sortBy'
+      sortBy: 'sortBy',
+      storesLoading: 'itemsLoading'
     }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('stores', ['sortables']),

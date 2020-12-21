@@ -1,27 +1,26 @@
 import module from './stores'
 
 describe('store/modules/stores', () => {
-  test('the state has items', () => {
-    const item = {}
-    const items = []
-    const result = module({ items, item })
-    expect(result).toHaveProperty('state')
-    expect(result.state).toHaveProperty('items', items)
-  })
-
-  test('the state has item', () => {
-    const item = {}
-    const items = []
-    const result = module({ items, item })
-    expect(result).toHaveProperty('state')
-    expect(result.state).toHaveProperty('item', item)
-  })
-
   test.skip('is a namespaced module', () => {
     let item = {}
     let items = []
     const result = module({ items, item })
     expect(result).toHaveProperty('namespaced', true)
+  })
+
+  describe('State', () => {
+    test('items', () => {
+      const items = []
+      const result = module({ items })
+      expect(result).toHaveProperty('state')
+      expect(result.state).toHaveProperty('items', items)
+    })
+    test('item', () => {
+      const item = {}
+      const result = module({ item })
+      expect(result).toHaveProperty('state')
+      expect(result.state).toHaveProperty('item', item)
+    })
   })
 
   describe('Actions', () => {

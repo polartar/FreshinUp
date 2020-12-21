@@ -10,6 +10,7 @@ use App\Models\Foodfleet\StoreStatus;
 use App\Models\Foodfleet\StoreTag;
 use App\Models\Foodfleet\StoreType;
 use App\User;
+use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -707,5 +708,87 @@ class StoresTest extends TestCase
         $this->json('DELETE', 'api/foodfleet/store/areas/' . $area->id)
             ->assertStatus(204);
         $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
+    }
+
+
+    public function testGetEventListOnNotExistingStore()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $this
+            ->json('GET', "/api/foodfleet/stores/999/events")
+            ->assertStatus(404);
+    }
+
+    public function testGetEventList()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        factory(Event::class, 5)->create();
+        /** @var Store $store */
+        $store = factory(Store::class)->create();
+        $events = factory(Event::class, 3)->create();
+        foreach ($events as $event) {
+            $store->events()->attach($event->uuid);
+        }
+        $this->assertEquals(3, $store->events()->count());
+
+        $data = $this
+            ->json('GET', "/api/foodfleet/stores/{$store->uuid}/events")
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertNotEmpty($data);
+        $this->assertEquals($store->events()->count(), count($data));
+        // TODO a better way of asserting the following
+    }
+
+    /**
+     * Get the statistics of stores by their status
+     * @group statistics
+     */
+    public function testCanGetStatsOfStoresByStatuses()
+    {
+        //Given
+        $statuses = StoreStatus::all();
+        $state_count = count($statuses);//6 here
+        $store_count = 1;
+        $total_number_of_stores = $state_count * $store_count;
+
+        foreach ($statuses as $status) {
+            $state = factory(StoreStatus::class)->create([
+                'name' => $status['label'],
+            ]);
+
+            factory(Store::class, $store_count)->create([
+                'status_id' => $state->id,
+            ]);
+        }
+
+        // 6 states, each with 5 stores, can expect there to be 30 stores now
+        $this->assertCount($total_number_of_stores, Store::all());
+        $this->assertCount($state_count, StoreStatus::all());
+
+        // get all the various statuses and create stores to match
+
+        // When
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $data = $this->getJson('/api/foodfleet/stores/stats')
+            ->assertStatus(200)
+            ->assertJsonStructure([ 'data' ])
+            ->json('data');
+
+        $this->assertEquals($state_count, count($data));//the number of states there are
+
+        foreach ($data as $id => $state) {
+            Assert::assertArraySubset([
+                'label' => $state['label'],
+                'color' => $state['color'],
+                'value' => $state['value']
+            ], $data[$id]);
+        }
     }
 }
