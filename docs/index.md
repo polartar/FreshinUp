@@ -23,6 +23,12 @@
 
 # Changes
 
+
+## Dec 21, 2020
+- **FIX** Can't search for venues on event details page [615](https://github.com/FreshinUp/foodfleet/issues/615)
+
+<br/>
+
 ## Dec 19, 2020
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
 - **ADD** Return fleet members stats by status [644](https://github.com/FreshinUp/foodfleet/issues/644)
