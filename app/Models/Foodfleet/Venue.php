@@ -60,7 +60,8 @@ class Venue extends Model
 
     public function events()
     {
-        return $this->hasMany(Event::class, 'venue_uuid', 'uuid');
+        //return $this->hasMany(Event::class, 'venue_uuid', 'uuid');
+        return $this->hasManyThrough(Event::class, Location::class, 'venue_uuid', 'location_uuid', 'uuid', 'uuid');
     }
 
     public function owner()
