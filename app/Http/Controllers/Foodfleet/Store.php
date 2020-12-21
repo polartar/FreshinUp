@@ -7,12 +7,14 @@ use App\Enums\StoreStatus as StoreStatusEnum;
 use App\Filters\BelongsToWhereInIdEquals;
 use App\Filters\BelongsToWhereInUuidEquals;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Foodfleet\Store\Statistic;
 use App\Http\Resources\Foodfleet\Store\Store as StoreResource;
 use App\Http\Resources\Foodfleet\Event as EventResource;
 use App\Http\Resources\Foodfleet\Store\StoreServiceSummary as StoreServiceSummaryResource;
 use App\Http\Resources\Foodfleet\Store\StoreSummary as StoreSummaryResource;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
+use App\Models\Foodfleet\StoreStatus;
 use App\Sorts\Stores\OwnerNameSort;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -232,5 +234,12 @@ class Store extends Controller
             ->jsonPaginate();
 
         return EventResource::collection($events);
+    }
+
+    public function stats()
+    {
+        $states = StoreStatus::withCount('stores')->get();
+
+        return Statistic::collection($states);
     }
 }

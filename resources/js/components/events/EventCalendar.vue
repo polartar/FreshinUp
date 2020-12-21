@@ -77,6 +77,7 @@
             v-model="currentDate"
             :type="type"
             color="primary"
+            :weekday="[1, 2, 3, 4, 5, 6, 0]"
           >
             <template v-slot:day="{ date }">
               <template v-for="event in eventsMap[date]">
@@ -85,7 +86,7 @@
                   full-width
                   offset-x
                   class="white--text clickable"
-                  :class="statusColorMaps[event.status_id]"
+                  :class="colorsByStatusId[event.status_id]"
                   @click="clickEvent(event)"
                   v-text="event.name"
                 />
@@ -100,29 +101,26 @@
 
 <script>
 
-import _ from 'lodash'
+import isEmpty from 'lodash/isEmpty'
+import get from 'lodash/get'
+import range from 'lodash/range'
 import moment from 'moment'
 
 const DATE_FORMAT = 'YYYY-MM-DD'
 
+export const lastThreeYears = () => {
+  const today = new Date()
+  const year = today.getFullYear()
+  return [year - 3, year + 1]
+}
 export default {
   props: {
-    events: {
-      type: Array,
-      default: () => []
-    },
-    type: {
-      type: String,
-      default: 'month'
-    },
-    yearRange: {
-      type: Array,
-      default: () => [2017, 2020]
-    },
-    date: {
-      type: String,
-      default: '2019-1-1'
-    }
+    isLoading: { type: Boolean, default: false },
+    events: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] },
+    type: { type: String, default: 'month' },
+    yearRange: { type: Array, default: lastThreeYears },
+    date: { type: String, default: '2019-1-1' }
   },
   data () {
     const currentDate = moment(this.date)
@@ -133,7 +131,7 @@ export default {
         { text: 'Week', value: 'week' },
         { text: 'Month', value: 'month' }
       ],
-      years: _.range.apply(this, this.yearRange),
+      years: range.apply(this, this.yearRange),
       months: [
         { text: 'January', value: 1 },
         { text: 'February', value: 2 },
@@ -150,19 +148,38 @@ export default {
       ],
       currentMonth: currentDate.month() + 1,
       currentYear: currentDate.year(),
-      currentDate: currentDate.format(DATE_FORMAT),
-      statusColorMaps: {
-        1: 'accent',
-        2: 'warning',
-        3: 'success',
-        4: 'secondary',
-        5: 'accent'
-      }
+      currentDate: currentDate.format(DATE_FORMAT)
     }
   },
   computed: {
+    colorsByStatusId () {
+      return this.statuses.reduce((map, status) => {
+        map[status.id] = status.color
+        return map
+      }, {})
+    },
     eventsMap () {
-      return this.scheduleHandle()
+      return this.events.reduce((map, evt) => {
+        const occurrences = get(evt, 'schedule.schedule_occurrences', null)
+        if (isEmpty(occurrences)) {
+          const startMoment = moment(evt.start_at, DATE_FORMAT)
+          const endMoment = moment(evt.end_at, DATE_FORMAT)
+          let startDate = startMoment.format(DATE_FORMAT)
+          const endDate = endMoment.format(DATE_FORMAT)
+          while (startDate <= endDate) {
+            map[startDate] = map[startDate] || []
+            map[startDate].push(evt)
+            startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
+          }
+        } else {
+          occurrences.forEach(occurrence => {
+            const startAt = moment(occurrence.start_at, DATE_FORMAT).format(DATE_FORMAT)
+            map[startAt] = map[startAt] || []
+            map[startAt].push(evt)
+          })
+        }
+        return map
+      }, {})
     }
   },
   watch: {
@@ -185,30 +202,6 @@ export default {
       this.currentYear = calendarToday.year
       this.currentMonth = calendarToday.month
     },
-    scheduleHandle () {
-      const map = {}
-      this.events.forEach(evt => {
-        const occurrences = _.get(evt, 'schedule.schedule_occurrences', null)
-        if (_.isEmpty(occurrences)) {
-          const startMoment = moment(evt.start_at, DATE_FORMAT)
-          const endMoment = moment(evt.end_at, DATE_FORMAT)
-          let startDate = startMoment.format(DATE_FORMAT)
-          const endDate = endMoment.format(DATE_FORMAT)
-          while (startDate <= endDate) {
-            map[startDate] = map[startDate] || []
-            map[startDate].push(evt)
-            startDate = startMoment.add(1, 'days').format(DATE_FORMAT)
-          }
-        } else {
-          occurrences.forEach(occurrence => {
-            const startAt = moment(occurrence.start_at, DATE_FORMAT).format(DATE_FORMAT)
-            map[startAt] = map[startAt] || []
-            map[startAt].push(evt)
-          })
-        }
-      })
-      return map
-    },
     moveDate (date) {
       const currentDate = moment(this.currentDate)
       let years = 0
@@ -230,7 +223,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
   .v-calendar-weekly__day {
     overflow: visible;
   }

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/venues/EventList Snapshots Empty 1`] = `
-<div
-  item-key="id"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >
@@ -427,9 +425,7 @@ exports[`components/venues/EventList Snapshots Empty 1`] = `
 `;
 
 exports[`components/venues/EventList Snapshots Loading 1`] = `
-<div
-  item-key="id"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >
@@ -881,9 +877,7 @@ exports[`components/venues/EventList Snapshots Loading 1`] = `
 `;
 
 exports[`components/venues/EventList Snapshots Populated 1`] = `
-<div
-  item-key="id"
->
+<div>
   <div
     class="ui-datatable elevation-1"
   >
@@ -1285,7 +1279,7 @@ exports[`components/venues/EventList Snapshots Populated 1`] = `
                 class="grey--text"
               >
                 
-      2019-10-10 11:04:19
+      2020-12-10 11:04:19
     
               </div>
                

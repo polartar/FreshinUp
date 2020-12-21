@@ -35,6 +35,7 @@ export const makeModule = (store, moduleName = '') => {
     pagination (state) {
       return {
         ..._paginationGetters(state),
+        // override default value to 30
         rowsPerPage: get(state, 'items.meta.per_page', 30)
       }
     },

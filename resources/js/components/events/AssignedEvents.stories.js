@@ -81,8 +81,8 @@ storiesOf('FoodFleet|components/events/AssignedEvents', module)
         :total-items="pagination.totalItems"
         :sort-by="sorting.sortBy"
         :descending="sorting.descending"
-        @viewEvent="viewEvent"
         @sort="sort"
+        @viewEvent="viewEvent"
         @searchInput="searchInput"
       />
     `

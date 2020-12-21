@@ -3,6 +3,7 @@
     <register-steps
       ref="steps"
       :is-loading="loading"
+      :type-id="typeId"
       @input="createAccount"
       @close="onClose"
     />
@@ -12,6 +13,7 @@
 <script>
 import RegisterSteps from '~/components/RegisterSteps.vue'
 import get from 'lodash/get'
+import { USER_TYPE } from '../../store/modules/userTypes'
 
 export default {
   meta: {
@@ -30,6 +32,13 @@ export default {
       loading: false
     }
   },
+  computed: {
+    typeId () {
+      return get(this.$route, 'query.type', 'customer') === 'supplier'
+        ? USER_TYPE.SUPPLIER
+        : USER_TYPE.CUSTOMER
+    }
+  },
   methods: {
     createAccount (data) {
       this.loading = true
@@ -40,8 +49,9 @@ export default {
         }
       })
         .then(responseData => {
-        // I am sad that I have to use this twice :(
+          // I am sad that I have to use this twice :(
           this.$refs.steps.step = 3
+          // no success message because step 3 is a success page
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)

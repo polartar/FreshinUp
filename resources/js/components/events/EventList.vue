@@ -1,4 +1,5 @@
 <template>
+  <!--  <f-data-table></f-data-table>-->
   <v-data-table
     v-model="selected"
     class="event-list-table"
