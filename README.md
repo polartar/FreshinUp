@@ -58,7 +58,7 @@ Login->fleet member detail page -> connect square -> callback -> redirect back
 ### Development Setup
 #### Requirements
 * Git (https://git-scm.com/downloads)
-* PHP 7.1+ (https://www.php.net/downloads.php)
+* PHP 7.3 (https://www.php.net/downloads.php)
 * Composer (https://getcomposer.org/download/)
 * Yarn (https://yarnpkg.com/en/docs/getting-started)
 * Node 8 (https://nodejs.org/en/download/)
