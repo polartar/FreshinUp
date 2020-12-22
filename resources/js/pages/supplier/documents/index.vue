@@ -116,7 +116,8 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('documents/setFilters', {
-      ...vm.$route.query
+      ...vm.$route.query,
+      assigned_uuid: vm.$store.getters.currentUser.uuid
     })
     vm.setPageLoading(true)
     Promise.all([

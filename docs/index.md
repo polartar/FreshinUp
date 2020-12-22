@@ -24,6 +24,7 @@
 # Changes
 
 ## Dec 22, 2020
+- **ADD** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
 - **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
 
 <br/>

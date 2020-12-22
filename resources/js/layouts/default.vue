@@ -20,7 +20,7 @@
           <img :src="logo">
         </div>
         <navigation-drawer-list
-          :items="items"
+          :items="drawItems"
           :no-actions="navDrawerNoActions"
         />
       </v-navigation-drawer>
@@ -188,6 +188,34 @@ const navigationAdminFields = createHelpers({
   mutationType: 'navigationAdmin/updateField'
 }).mapFields
 
+const ITEMS_SUPPLIER = [
+  {
+    action: 'icon-dashboard',
+    title: 'Dashboard',
+    to: '/supplier/dashboard'
+  },
+  {
+    action: 'icon-companies',
+    title: 'My company',
+    to: '/supplier/company'
+  },
+  {
+    action: 'icon-trucks',
+    title: 'My Fleet',
+    to: '/supplier/store'
+  },
+  {
+    action: 'icon-events',
+    title: 'Events',
+    to: '/supplier/events'
+  },
+  {
+    action: 'icon-documents',
+    title: 'Documents',
+    to: '/supplier/documents'
+  }
+]
+
 export default {
   components: {
     FUserMenu,
@@ -199,7 +227,8 @@ export default {
   data: () => ({
     isAdmin: false,
     navDrawerLogo: false,
-    navDrawerNoActions: false
+    navDrawerNoActions: false,
+    itemsSupplier: ITEMS_SUPPLIER
   }),
   computed: {
     ...generalErrorMessageFields([
@@ -238,6 +267,9 @@ export default {
         ...user,
         level_name: user.type === USER_TYPE.SUPPLIER ? 'Supplier' : ''
       }
+    },
+    drawItems () {
+      return this.authUser.level_name === 'Supplier' ? this.itemsSupplier : this.items
     }
   },
   methods: {
