@@ -100,7 +100,7 @@
 
         <v-divider />
 
-        <v-alert
+        <v-alert 
           :value="true"
           color="warning"
           icon="warning"
