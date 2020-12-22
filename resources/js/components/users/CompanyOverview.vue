@@ -46,7 +46,7 @@
         Member {{ members_count }}
       </v-flex>
       <v-flex class="grey--text caption">
-        Manager
+        {{ admin.level_name }}
       </v-flex>
       <v-flex>
         <v-layout align-center>
@@ -69,7 +69,7 @@
               {{ admin.email }}
             </div>
             <div class="grey--text caption">
-              Manager @{{ admin.company_name }}
+              {{ admin.level_name }} @{{ admin.company_name }}
             </div>
           </v-flex>
         </v-layout>
@@ -92,7 +92,8 @@ export const DEFAULT_COMPANY = {
     name: '',
     email: '',
     company_name: '',
-    avatar: ''
+    avatar: '',
+    level_name: ''
   }
 }
 
