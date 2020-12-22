@@ -23,6 +23,11 @@
 
 # Changes
 
+## Dec 22, 2020
+- **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+
+<br/>
+
 ## Dec 19, 2020
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
 - **ADD** Return fleet members stats by status [644](https://github.com/FreshinUp/foodfleet/issues/644)
