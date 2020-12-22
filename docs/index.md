@@ -23,6 +23,11 @@
 
 # Changes
 
+## Dec 22, 2020
+- **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+
+<br/>
+
 ## Dec 19, 2020
 <<<<<<< HEAD
 - **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
