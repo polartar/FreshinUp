@@ -49,7 +49,7 @@ export default (initialState = {}) => {
       state.userMenuItems = items
     },
     SET_DRAWER_ITEMS (state, items) {
-      state.items = items
+      state.drawerItems = items
     }
   }
   store.actions = {

@@ -67,7 +67,7 @@ describe('store/modules/navigation', () => {
         { title: 'My Profile', to: { name: 'myprofile' } }
       ]
       store.mutations.SET_DRAWER_ITEMS(store.state, items)
-      expect(store.state.items).toMatchObject(items)
+      expect(store.state.drawerItems).toMatchObject(items)
     })
   })
 
