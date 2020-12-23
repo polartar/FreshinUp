@@ -4,6 +4,7 @@ import * as Stories from './Payments.stories'
 import Component from './Payments.vue'
 import { FIXTURE_PAYMENTS } from 'tests/__data__/payments'
 import { FIXTURE_PAYMENT_STATUSES } from 'tests/__data__/paymentStatuses'
+import { PAYMENT_STATUS } from '../../store/modules/paymentStatuses'
 
 describe('fleet-members/Payments', () => {
   describe('Snapshots', () => {
@@ -72,24 +73,51 @@ describe('fleet-members/Payments', () => {
       const wrapper = shallowMount(Component)
       const item = FIXTURE_PAYMENTS[0]
       test('when processable', () => {
-        expect(wrapper.vm.processable({ ...item, status: 1 })).toBe(true)
-        expect(wrapper.vm.processable({ ...item, status: 3 })).toBe(true)
+        expect(wrapper.vm.processable({ ...item, status_id: 1 })).toBe(true)
+        expect(wrapper.vm.processable({ ...item, status_id: 4 })).toBe(true)
       })
 
       test('when not processable', () => {
-        expect(wrapper.vm.processable({ ...item, status: 2 })).toBe(false)
-        expect(wrapper.vm.processable({ ...item, status: 4 })).toBe(false)
-        expect(wrapper.vm.processable({ ...item, status: 5 })).toBe(false)
+        expect(wrapper.vm.processable({ ...item, status_id: 2 })).toBe(false)
+        expect(wrapper.vm.processable({ ...item, status_id: 3 })).toBe(false)
+        expect(wrapper.vm.processable({ ...item, status_id: 5 })).toBe(false)
+      })
+    })
+    describe('process(item)', () => {
+      const item = FIXTURE_PAYMENTS[0]
+      test('when processable', () => {
+        const processables = [PAYMENT_STATUS.PENDING, PAYMENT_STATUS.FAILED]
+        processables.forEach(status => {
+          const wrapper = shallowMount(Component)
+          wrapper.vm.process({ ...item, status })
+          const emitted = wrapper.emitted()['manage-pay']
+          expect(emitted).toBeTruthy()
+          expect(emitted[0][0]).toMatchObject({ ...item, status })
+        })
+      })
+
+      test('when not processable', () => {
+        const unprocessables = [
+          PAYMENT_STATUS.OVERDUE,
+          PAYMENT_STATUS.PAID,
+          PAYMENT_STATUS.REFUNDED
+        ]
+        unprocessables.forEach(status_id => {
+          const wrapper = shallowMount(Component)
+          wrapper.vm.process({ ...item, status_id })
+          const emitted = wrapper.emitted()['manage-pay']
+          expect(emitted).toBeFalsy()
+        })
       })
     })
     describe('manageLabel(item)', () => {
       const wrapper = shallowMount(Component)
       const item = FIXTURE_PAYMENTS[0]
-      expect(wrapper.vm.manageLabel({ ...item, status: 1 })).toEqual('Pay now')
-      expect(wrapper.vm.manageLabel({ ...item, status: 2 })).toEqual('')
-      expect(wrapper.vm.manageLabel({ ...item, status: 3 })).toEqual('Retry')
-      expect(wrapper.vm.manageLabel({ ...item, status: 4 })).toEqual('')
-      expect(wrapper.vm.manageLabel({ ...item, status: 5 })).toEqual('')
+      expect(wrapper.vm.manageLabel({ ...item, status_id: 1 })).toEqual('Pay now')
+      expect(wrapper.vm.manageLabel({ ...item, status_id: 2 })).toEqual('')
+      expect(wrapper.vm.manageLabel({ ...item, status_id: 3 })).toEqual('')
+      expect(wrapper.vm.manageLabel({ ...item, status_id: 4 })).toEqual('Retry')
+      expect(wrapper.vm.manageLabel({ ...item, status_id: 5 })).toEqual('')
     })
   })
 })

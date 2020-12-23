@@ -70,7 +70,8 @@ $ cd foodfleet
 $ nvm install
 $ composer install
 $ php artisan foodfleet:install --dev
-$ php artisan passport-client:update-env
+$ # In case of login failed
+$ php artisan fresh-bus:install-auth
 $ yarn watch-poll
 ```
 

@@ -733,12 +733,14 @@ export default {
     // Payment
     changePaymentStatus (value, payment) {
       this.$store.dispatch('payments/patchItem', {
-        getItems: true,
         params: { id: payment.uuid },
         data: {
           status_id: value
         }
       })
+        .then(() => {
+          this.$store.dispatch('payments/getItems')
+        })
         .catch(error => console.error(error))
     },
     onPaymentPaginate (value) {

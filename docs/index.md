@@ -25,17 +25,14 @@
 
 ## Dec 22, 2020
 - **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+- **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
 
 <br/>
 
 ## Dec 19, 2020
-<<<<<<< HEAD
-- **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
-=======
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
 - **ADD** Return fleet members stats by status [644](https://github.com/FreshinUp/foodfleet/issues/644)
 - **ADD** Supplier dashboard [#581](https://github.com/FreshinUp/foodfleet/issues/581)
->>>>>>> master
 
 <br/>
 

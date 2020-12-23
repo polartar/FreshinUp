@@ -193,25 +193,17 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Event name: Not sorted. Activate to sort ascending."
+                      aria-label="Event name: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Event name
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                     <th
                       aria-label="Payment name: Not sorted. Activate to sort ascending."
@@ -277,25 +269,17 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Manage: Not sorted. Activate to sort ascending."
+                      aria-label="Manage: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Manage
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                   </tr>
                   <tr
@@ -762,25 +746,17 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Event name: Not sorted. Activate to sort ascending."
+                      aria-label="Event name: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Event name
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                     <th
                       aria-label="Payment name: Not sorted. Activate to sort ascending."
@@ -846,25 +822,17 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Manage: Not sorted. Activate to sort ascending."
+                      aria-label="Manage: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Manage
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                   </tr>
                   <tr
@@ -1363,25 +1331,17 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Event name: Not sorted. Activate to sort ascending."
+                      aria-label="Event name: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Event name
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                     <th
                       aria-label="Payment name: Not sorted. Activate to sort ascending."
@@ -1447,25 +1407,17 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       </i>
                     </th>
                     <th
-                      aria-label="Manage: Not sorted. Activate to sort ascending."
+                      aria-label="Manage: Not sorted."
                       aria-sort="none"
-                      class="column sortable text-xs-left"
+                      class="column text-xs-left"
                       role="columnheader"
                       scope="col"
-                      tabindex="0"
                     >
                       <span>
                         
         Manage
       
                       </span>
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                        style="font-size: 16px;"
-                      >
-                        arrow_upward
-                      </i>
                     </th>
                   </tr>
                   <tr
@@ -1570,6 +1522,19 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                                 <div
                                   class="v-list__tile__title"
                                 >
+                                  Overdue
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
                                   Paid
                                 </div>
                               </a>
@@ -1619,7 +1584,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Oct 10, 2019
+            Dec 10, 2020
           
                       </div>
                        
@@ -1627,7 +1592,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            
+            @ Tremblayland
           
                       </div>
                     </td>
@@ -1668,15 +1633,15 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="justify-center text-xs-center"
                     >
                       <button
-                        class="v-btn v-btn--depressed theme--light primary"
-                        style="display: none;"
+                        class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+                        disabled="disabled"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-            
+            Pay now
           
                         </div>
                       </button>
@@ -1723,14 +1688,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark green green-text--text"
+                        class="v-btn theme--dark warning warning-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Paid
+  Overdue
  
                           <i
                             aria-hidden="true"
@@ -1762,6 +1727,19 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                                   class="v-list__tile__title"
                                 >
                                   Pending
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Overdue
                                 </div>
                               </a>
                             </div>
@@ -1831,7 +1809,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            
+            @ North Chelsey
           
                       </div>
                     </td>
@@ -1872,7 +1850,8 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="justify-center text-xs-center"
                     >
                       <button
-                        class="v-btn v-btn--depressed theme--light primary"
+                        class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+                        disabled="disabled"
                         style="display: none;"
                         type="button"
                       >
@@ -1927,14 +1906,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark red red-text--text"
+                        class="v-btn theme--dark success success-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Failed
+  Paid
  
                           <i
                             aria-hidden="true"
@@ -1966,6 +1945,19 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                                   class="v-list__tile__title"
                                 >
                                   Pending
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Overdue
                                 </div>
                               </a>
                             </div>
@@ -2035,7 +2027,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            
+            @ Lake Elbert
           
                       </div>
                     </td>
@@ -2076,7 +2068,8 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="justify-center text-xs-center"
                     >
                       <button
-                        class="v-btn v-btn--depressed theme--light primary"
+                        class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+                        disabled="disabled"
                         style="display: none;"
                         type="button"
                       >
