@@ -1,18 +1,15 @@
 <script>
-import CompaniesPage from 'fresh-bus/pages/admin/companies/index.vue'
-import companiesList from '~/components/datatable/CompaniesList.vue'
-import companiesFilter from '~/components/companies/FilterSorter.vue'
+import companies from '~/pages/admin/companies/index.vue'
+import { mapGetters } from 'vuex'
 
 export default {
-  components: {
-    companiesList,
-    companiesFilter
+  extends: companies,
+  computed: {
+    ...mapGetters(['currentUser'])
   },
-  extends: CompaniesPage,
-
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    vm.$store.dispatch('companies/setFilters', { ...vm.$route.query, users_id: vm.$store.getters.currentUser.id })
+    vm.$store.dispatch('companies/setFilters', { ...vm.$route.query, uuid: vm.currentUser.company.uuid })
     Promise.all([
       vm.$store.dispatch('companies/getItems', { params: { include: 'users' } })
     ]).then(() => {
