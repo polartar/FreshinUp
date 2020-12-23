@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Foodfleet;
+namespace Tests\Feature\Http\Controllers\Foodfleet\Square\PaymentStatuses;
 
 use App\Models\Foodfleet\Square\PaymentStatus;
 use App\User;

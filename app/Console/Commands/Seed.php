@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use FreshinUp\FreshBusForms\Models\User\UserStatus;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\InputOption;
@@ -29,6 +30,9 @@ class Seed extends Command
                 '--force' => $this->option('force')
             ]);
         }
+
+        // Do not remove. This is undoing the UserStatus seeder from FreshBus
+        UserStatus::truncate();
 
         $this->call('fresh-bus:seed', [
             '--quickstart' =>  $this->option('quickstart')

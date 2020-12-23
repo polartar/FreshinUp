@@ -6,17 +6,22 @@ export const FIXTURE_PAYMENT_STATUSES = [
   },
   {
     id: 2,
-    name: 'Paid',
-    color: 'green'
+    name: 'Overdue',
+    color: 'warning'
   },
   {
     id: 3,
-    name: 'Failed',
-    color: 'red'
+    name: 'Paid',
+    color: 'success'
   },
   {
     id: 4,
+    name: 'Failed',
+    color: 'error'
+  },
+  {
+    id: 5,
     name: 'Refunded',
-    color: 'orange'
+    color: 'warning'
   }
 ]
