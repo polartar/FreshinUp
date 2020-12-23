@@ -45,8 +45,6 @@ class Company extends JsonResource
             'logo' => $this->logo,
             'admin' => new $userResourceClass($this->whenLoaded('admin')),
             'company_types' => CompanyTypeResource::collection($this->company_types()->get()),
-            'type_id' => $this->type_id,
-            'type' => new CompanyType($this->whenLoaded('type')),
         ];
     }
 
