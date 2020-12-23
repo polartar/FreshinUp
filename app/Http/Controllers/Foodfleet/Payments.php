@@ -37,7 +37,8 @@ class Payments extends Controller
                 'name',
                 'status_id',
                 'created_at',
-                'due_date'
+                'due_date',
+                'amount_money'
             ]);
 
 

@@ -45,9 +45,6 @@ export const Populated = () => ({
     }
   },
   methods: {
-    onManageRetry (act, item) {
-      action('onManageRetry')(act, item)
-    },
     onManagePay (act, item) {
       action('onManagePay')(act, item)
     },
@@ -68,7 +65,6 @@ export const Populated = () => ({
           :descending="sorting.descending"
           @dialog="dialog = $event"
           @manage-pay="onManagePay"
-          @manage-retry="onManageRetry"
         >
           <template #form>
             <payment-form

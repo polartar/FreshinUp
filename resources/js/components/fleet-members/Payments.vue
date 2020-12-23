@@ -80,7 +80,7 @@
           v-bind="$attrs"
           v-on="$listeners"
         >
-          <template v-slot:item-inner-status="{ item }">
+          <template v-slot:item-inner-status_id="{ item }">
             <status-select
               :value="item.status_id"
               :options="statuses"
@@ -117,7 +117,9 @@
             <v-btn
               v-show="processable(item)"
               depressed
+              disabled
               color="primary"
+              @click="process(item)"
             >
               {{ manageLabel(item) }}
             </v-btn>
@@ -133,17 +135,23 @@ import FormatMoney from '@freshinup/core-ui/src/mixins/FormatMoney'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 import StatusSelect from './StatusSelect'
+import { PAYMENT_STATUS } from '../../store/modules/paymentStatuses'
 
 export const HEADERS = [
-  { text: 'Status', value: 'status' },
-  { text: 'Event name', value: 'event' },
+  { text: 'Status', value: 'status_id' },
+  { text: 'Event name', value: 'event', sortable: false },
   { text: 'Payment name', value: 'name' },
   { text: 'Due date', value: 'due_date' },
   { text: 'Amount', value: 'amount_money' },
-  { text: 'Manage', value: 'manage' }
+  { text: 'Manage', value: 'manage', sortable: false }
+]
+
+export const DEFAULT_ITEM_ACTIONS = [
+  { action: 'cancel', text: 'Cancel' }
 ]
 
 export const DEFAULT_MULTIPLE_ITEM_ACTIONS = [
+  { action: 'cancel', text: 'Cancel' },
   { action: 'delete', text: 'Delete' }
 ]
 
@@ -166,20 +174,25 @@ export default {
     return {
       headers: HEADERS,
       multipleItemActions: DEFAULT_MULTIPLE_ITEM_ACTIONS,
-      itemActions: []
+      itemActions: DEFAULT_ITEM_ACTIONS
     }
   },
   methods: {
     get,
     processable (item) {
-      return [1, 3].includes(item.status)
+      return [PAYMENT_STATUS.PENDING, PAYMENT_STATUS.FAILED].includes(item.status_id)
+    },
+    process (item) {
+      if (this.processable(item)) {
+        this.$emit('manage-pay', item)
+      }
     },
     manageLabel (item) {
       const map = {
-        1: 'Pay now',
-        3: 'Retry'
+        [PAYMENT_STATUS.PENDING]: 'Pay now',
+        [PAYMENT_STATUS.FAILED]: 'Retry'
       }
-      return map[item.status] || ''
+      return map[item.status_id] || ''
     },
     changeStatus (value, item) {
       this.$emit('change-status', value, item)
