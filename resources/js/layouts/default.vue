@@ -172,8 +172,7 @@ import FreshBusFooter from 'fresh-bus/components/Footer.vue'
 import FUserMenu from '@freshinup/core-ui/src/components/FUserMenu'
 import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 import { USER_TYPE } from '../store/modules/userTypes'
-import { SUPPLIER_ITEMS } from '../store/modules/navigationAdmin'
-import { SUPPLIER_USER_MENU_ITEMS } from '../store/modules/navigation'
+import { SUPPLIER_ITEMS, SUPPLIER_USER_MENU_ITEMS } from '../store/modules/navigation'
 
 const generalErrorMessageFields = createHelpers({
   getterType: 'generalErrorMessages/getField',
@@ -257,9 +256,10 @@ export default {
   },
   watch: {
     '$store.getters.currentUser' (authUser) {
+      // TODO: ultimately this should be call just after login
       if (authUser.type === USER_TYPE.SUPPLIER) {
         this.$store.dispatch('navigation/setUserMenuItems', SUPPLIER_USER_MENU_ITEMS)
-        this.$store.dispatch('navigationAdmin/setItems', SUPPLIER_ITEMS)
+        this.$store.dispatch('navigation/setDrawerItems', SUPPLIER_ITEMS)
       }
     }
   },

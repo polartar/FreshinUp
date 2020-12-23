@@ -60,6 +60,15 @@ describe('store/modules/navigation', () => {
       store.mutations.SET_USER_MENU_ITEMS(store.state, items)
       expect(store.state.userMenuItems).toMatchObject(items)
     })
+
+    test('SET_DRAWER_ITEMS', () => {
+      const store = module({})
+      const items = [
+        { title: 'My Profile', to: { name: 'myprofile' } }
+      ]
+      store.mutations.SET_DRAWER_ITEMS(store.state, items)
+      expect(store.state.items).toMatchObject(items)
+    })
   })
 
   describe('Actions', () => {
@@ -71,6 +80,16 @@ describe('store/modules/navigation', () => {
       ]
       store.actions.setUserMenuItems({ commit }, items)
       expect(commit).toHaveBeenCalledWith('SET_USER_MENU_ITEMS', items)
+    })
+
+    test('setDrawerItems', () => {
+      const store = module({})
+      const commit = jest.fn()
+      const items = [
+        { title: 'My Profile', to: { name: 'myprofile' } }
+      ]
+      store.actions.setDrawerItems({ commit }, items)
+      expect(commit).toHaveBeenCalledWith('SET_DRAWER_ITEMS', items)
     })
   })
 })

@@ -28,40 +28,15 @@ export const DEFAULT_ITEMS = [
   }
 ]
 
-export const SUPPLIER_ITEMS = [
-  {
-    action: 'icon-dashboard',
-    title: 'Dashboard',
-    to: '/supplier/dashboard'
-  },
-  {
-    action: 'icon-companies',
-    title: 'My company',
-    to: '/supplier/company'
-  },
-  {
-    action: 'icon-trucks',
-    title: 'My Fleet',
-    to: '/supplier/store'
-  },
-  {
-    action: 'icon-events',
-    title: 'Events',
-    to: '/supplier/events'
-  },
-  {
-    action: 'icon-documents',
-    title: 'Documents',
-    to: '/supplier/documents'
-  }
-]
-
 export default (initialState = {}) => {
   const store = navigationAdmin(initialState)
   store.mutations = {
     ...store.mutations,
     SET_ITEMS (state, items) {
       state.items = items
+    },
+    SET_DRAWER_ITEMS (state, items) {
+      state.drawerItems = items
     }
   }
   store.actions = {
@@ -69,6 +44,9 @@ export default (initialState = {}) => {
     // TODO move to core-ui
     setItems (context, items) {
       context.commit('SET_ITEMS', items)
+    },
+    setDrawerItems (context, items) {
+      context.commit('SET_DRAWER_ITEMS', items)
     }
   }
   return store
