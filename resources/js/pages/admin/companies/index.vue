@@ -8,7 +8,15 @@ export default {
     companiesList,
     companiesFilter
   },
-  extends: CompaniesPage,
-  beforeRouteEnterOrUpdate: CompaniesPage.beforeRouteEnterOrUpdate
+  extends: CompaniesPage,beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.$store.dispatch('page/setLoading', true)
+    vm.$store.dispatch('companies/setFilters', { ...vm.$route.query })
+    Promise.all([
+      vm.$store.dispatch('companies/getItems', { params: { include: 'users,type' } })
+    ]).then(() => {
+      vm.$store.dispatch('page/setLoading', false)
+      if (next) next()
+    })
+  },
 }
 </script>

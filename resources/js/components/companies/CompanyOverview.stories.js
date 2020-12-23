@@ -21,6 +21,17 @@ export const Empty = () => ({
     `
 })
 
+export const Loading = () => ({
+  components: { CompanyOverview },
+  template: `
+      <v-container>
+        <company-overview
+          is-loading
+        />
+      </v-container>
+    `
+})
+
 export const Populated = () => ({
   components: { CompanyOverview },
   data () {
@@ -35,16 +46,17 @@ export const Populated = () => ({
         <company-overview
           :value="company"
           :types="companyTypes"
-          @view-details="onViewDetails"/>
+          @manage-view="onManageView"/>
       </v-container>
     `
 })
 
-storiesOf('FoodFleet|components/users/Company overview', module)
+storiesOf('FoodFleet|components/companies/CompanyOverview', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
   .add('Empty', Empty)
+  .add('Loading', Loading)
   .add('Populated', Populated)

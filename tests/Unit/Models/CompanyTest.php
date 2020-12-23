@@ -31,7 +31,8 @@ class CompanyTest extends TestCase
         $foodFleetCompany->save();
 
         $this->assertDatabaseHas('companies', [
-            'uuid' => $foodFleetCompany->uuid
+            'uuid' => $foodFleetCompany->uuid,
+            'type_id' => $foodFleetCompany->type_id,
         ]);
 
         $this->assertDatabaseHas('events', [
@@ -43,5 +44,6 @@ class CompanyTest extends TestCase
             'uuid' => $store->uuid,
             'supplier_uuid' => $foodFleetCompany->uuid
         ]);
+        $this->assertEquals($foodFleetCompany->type_id, $foodFleetCompany->type->id);
     }
 }
