@@ -102,9 +102,9 @@ describe('fleet-members/Payments', () => {
           PAYMENT_STATUS.PAID,
           PAYMENT_STATUS.REFUNDED
         ]
-        unprocessables.forEach(status_id => {
+        unprocessables.forEach(status => {
           const wrapper = shallowMount(Component)
-          wrapper.vm.process({ ...item, status_id })
+          wrapper.vm.process({ ...item, status_id: status })
           const emitted = wrapper.emitted()['manage-pay']
           expect(emitted).toBeFalsy()
         })
