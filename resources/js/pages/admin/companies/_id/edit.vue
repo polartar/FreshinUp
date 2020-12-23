@@ -209,4 +209,10 @@ export default {
 .fresh-company__edit--3 .v-select__selections {
   color: #888888 !important;
 }
+.v-select--chips{
+  pointer-events: none;
+}
+.v-select--chips .v-input__icon{
+  display: none;
+}
 </style>
