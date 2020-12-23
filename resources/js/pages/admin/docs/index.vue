@@ -10,7 +10,6 @@
         {{ pageTitle }}
       </h2>
       <v-flex text-xs-right>
-        å
         <v-btn
           slot="activator"
           color="primary"
