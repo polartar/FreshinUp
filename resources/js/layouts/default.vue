@@ -20,7 +20,7 @@
           <img :src="logo">
         </div>
         <navigation-drawer-list
-          :items="drawItems"
+          :items="drawerItems"
           :no-actions="navDrawerNoActions"
         />
       </v-navigation-drawer>
@@ -172,6 +172,8 @@ import FreshBusFooter from 'fresh-bus/components/Footer.vue'
 import FUserMenu from '@freshinup/core-ui/src/components/FUserMenu'
 import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 import { USER_TYPE } from '../store/modules/userTypes'
+import { SUPPLIER_ITEMS } from '../store/modules/navigationAdmin'
+import { SUPPLIER_USER_MENU_ITEMS } from '../store/modules/navigation'
 
 const generalErrorMessageFields = createHelpers({
   getterType: 'generalErrorMessages/getField',
@@ -213,7 +215,7 @@ export default {
       isMessageVisible: 'isVisible'
     }),
     ...mapState('navigation', {
-      items: 'drawerItems',
+      drawerItems: 'drawerItems',
       logo: 'logo',
       userMenuItems: 'userMenuItems'
     }),
@@ -238,12 +240,6 @@ export default {
         ...user,
         level_name: user.type === USER_TYPE.SUPPLIER ? 'Supplier' : ''
       }
-    },
-    ...mapState('navigationSupplier', {
-      itemsSupplier: 'items'
-    }),
-    drawItems () {
-      return this.authUser.level_name === 'Supplier' ? this.itemsSupplier : this.items
     }
   },
   methods: {
@@ -262,9 +258,8 @@ export default {
   watch: {
     '$store.getters.currentUser' (authUser) {
       if (authUser.type === USER_TYPE.SUPPLIER) {
-        this.$store.dispatch('navigation/setUserMenuItems', [
-          { title: 'My Profile', to: { name: 'myprofile' } }
-        ])
+        this.$store.dispatch('navigation/setUserMenuItems', SUPPLIER_USER_MENU_ITEMS)
+        this.$store.dispatch('navigationAdmin/setItems', SUPPLIER_ITEMS)
       }
     }
   },
