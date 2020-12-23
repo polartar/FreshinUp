@@ -23,8 +23,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')
         ->only('index');
-    Route::apiResource('document/template/types', 'Foodfleet\Document\Template\Types')
-        ->only('index');
     Route::apiResource('document/templates', 'Foodfleet\Document\Template\Templates')
         ->only('index', 'show', 'store', 'update', 'destroy');
     Route::apiResource('documents', 'Foodfleet\Documents');
@@ -43,6 +41,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('event/types', 'Foodfleet\EventType@index');
     Route::get('event/status/histories', 'Foodfleet\EventHistory@index');
 
+    Route::get('stores/stats', 'Foodfleet\Store@stats');
     Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/new', 'Foodfleet\Store@showNewRecommendation');
     Route::get('stores/{uuid}/events', 'Foodfleet\Store@events');

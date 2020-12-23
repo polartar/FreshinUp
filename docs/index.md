@@ -23,8 +23,16 @@
 
 # Changes
 
+## Dec 22, 2020
+- **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+- **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
+
+<br/>
+
 ## Dec 19, 2020
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
+- **ADD** Return fleet members stats by status [644](https://github.com/FreshinUp/foodfleet/issues/644)
+- **ADD** Supplier dashboard [#581](https://github.com/FreshinUp/foodfleet/issues/581)
 
 <br/>
 
@@ -37,6 +45,7 @@
 - **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
 
 <br/>
+
 
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
@@ -81,7 +90,6 @@
 
 ## Nov 25, 2020
 - **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
-- **ADD** Food Fleet Members: Create Request payment function [#570](https://github.com/FreshinUp/foodfleet/issues/570)
 
 <br/>
 

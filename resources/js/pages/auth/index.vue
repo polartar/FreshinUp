@@ -16,113 +16,30 @@
           sm10
           md4
         >
-          <v-form @submit.prevent="login">
-            <v-card class="elevation-12 rounded-card">
-              <v-toolbar
+          <login
+            :is-loading="loading"
+            :logo="logo"
+            :title="title"
+            @password-forgot="forgotPwDialog = true"
+            @input="login"
+            @register-as="registerAs"
+          >
+            <v-snackbar
+              :value="Boolean(error)"
+              color="error"
+              :timeout="6000"
+              top
+            >
+              Wrong login or password
+              <v-btn
+                dark
                 flat
-                color="transparent"
+                @click="error = null"
               >
-                <v-img
-                  :src="logo"
-                  height="64"
-                  contain
-                />
-              </v-toolbar>
-
-              <v-card-title
-                primary-title
-                class="justify-center"
-              >
-                <div>
-                  <h3
-                    class="display-1 mb-0 primary--text font-weight-bold"
-                    :style="{ justifyContent: 'center'}"
-                  >
-                    Log in to {{ title }}
-                  </h3>
-                </div>
-              </v-card-title>
-
-              <v-card-text>
-                <v-text-field
-                  v-model="email"
-                  name="login"
-                  placeholder="Email address"
-                  type="text"
-                  label="Email address"
-                />
-                <v-text-field
-                  id="password"
-                  v-model="password"
-                  name="password"
-                  placeholder="Password"
-                  label="Password"
-                  type="password"
-                />
-              </v-card-text>
-
-              <div>
-                <v-card-actions>
-                  <v-layout
-                    row
-                    wrap
-                  >
-                    <v-flex xs12>
-                      Forgot password ?
-                      <v-btn
-                        class="text-uppercase"
-                        color="primary"
-                        type="button"
-                        flat
-                        small
-                        @click="forgotPwDialog = true"
-                      >
-                        Reset password here
-                      </v-btn>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-btn
-                        color="primary"
-                        class="ff-login__button mt-2 mb-2"
-                        type="submit"
-                        :loading="loading"
-                      >
-                        Login
-                      </v-btn>
-                    </v-flex>
-                    <v-flex>
-                      <p class="mb-1 mt-2">
-                        Not a member ?
-                      </p>
-                      <p>
-                        Sign up as a <router-link :to="{ path: '/register?type=customer'}">
-                          Customer
-                        </router-link> or <router-link :to="{ path: '/register?type=supplier'}">
-                          Join our fleet
-                        </router-link>
-                      </p>
-                    </v-flex>
-                  </v-layout>
-                </v-card-actions>
-              </div>
-
-              <v-snackbar
-                v-model="hasErrors"
-                :color="colorStatus"
-                :timeout="6000"
-                top
-              >
-                {{ error }}
-                <v-btn
-                  dark
-                  flat
-                  @click="hasErrors = false"
-                >
-                  Close
-                </v-btn>
-              </v-snackbar>
-            </v-card>
-          </v-form>
+                Close
+              </v-btn>
+            </v-snackbar>
+          </login>
         </v-flex>
       </v-layout>
     </v-container>
@@ -142,8 +59,12 @@
 
 <script>
 import BusAuth from 'fresh-bus/pages/auth/index.vue'
+import Login from '~/components/users/Login.vue'
+
+// TODO: move refactor to fresh-bus along with Login component
 
 export default {
+  components: { Login },
   extends: BusAuth,
   layout: 'blank',
   meta: { layout: 'blank' },
@@ -153,30 +74,35 @@ export default {
     }
   },
   methods: {
-    login () {
-      this.hasErrors = null
+    login (data) {
       this.error = null
-      this.colorStatus = null
       this.loading = true
       this.$auth.login({
         method: 'post',
         url: 'login',
-        data: { email: this.email, password: this.password },
+        data,
         rememberMe: true
       })
         .then(() => {
           this.$router.push({ path: this.loginSuccessRedirectPath })
           this.$router.go()
+          // TODO on login success set user menu items to the following
+          // - Dashboard
+          // - My Company
+          // - My Fleet
+          // - Events
+          // - Documents
         })
         .catch(error => {
           console.error(error)
-          this.hasErrors = true
-          this.colorStatus = 'error'
           this.error = 'Username and Password were not accepted'
         })
         .then(() => {
           this.loading = false
         })
+    },
+    registerAs (type) {
+      this.$router.push({ path: `/register?type=${type}` })
     }
   }
 }

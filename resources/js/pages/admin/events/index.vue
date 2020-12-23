@@ -93,6 +93,7 @@
           <event-calendar
             v-if="!isLoading"
             :events="events"
+            :statuses="statuses"
             :date="calendarDefaultDate"
             :year-range="calendarYearRange"
             @click-event="eventEdit"
@@ -223,7 +224,7 @@ export default {
       sortBy: 'sortBy'
     }),
     ...mapGetters('events', { event: 'item' }),
-    ...mapGetters('eventStatuses', { 'statuses': 'items' }),
+    ...mapGetters('eventStatuses', { statuses: 'items' }),
     ...mapGetters('eventTypes', { 'eventTypes': 'items' }),
     ...mapGetters('page', ['isLoading']),
     ...mapState('events', ['sortables']),
