@@ -70,7 +70,8 @@ $ cd foodfleet
 $ nvm install
 $ composer install
 $ php artisan foodfleet:install --dev
-$ php artisan passport-client:update-env
+$ # In case of login failed
+$ php artisan fresh-bus:install-auth
 $ yarn watch-poll
 ```
 
@@ -78,6 +79,16 @@ From this point on you'll most likely be executing this command
 ```bash
 $ php artisan fresh-bus:update --dev
 $ yarn watch-poll
+```
+
+### Additional steps if you're on windows
+```
+yarn global add @vue/cli
+php artisan foodlfeet:seed --quickstart
+php artisan fresh-bus:install-auth
+# restart your development server
+# then try login with demoadmin@example.com password: fresh123
+# if that's not working inspect your database 
 ```
 
 ## Media Library Configuration
