@@ -1365,4 +1365,51 @@ class EventTest extends TestCase
             ], $data[$idx]);
         }
     }
+
+    public function testValidationToCreateEventDoesNotRejectIncompleteDatesFormat()
+    {
+        //Given
+        //exists an admin
+
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+
+        // with venue and locations
+        $venue =  factory(Venue::class)->create([
+            'uuid' => 'cd1e36c1-426c-376a-a881-b91f2ce33d31',
+        ]);
+
+        $location = factory(Location::class)->create([
+            'venue_uuid' => $venue->uuid,
+            'uuid' => 'b4b34d44-c3ff-3494-8201-73b67b2263fe',
+        ]);
+
+        //When
+
+        //the admin decides to create a new event, with incomplete date formats
+
+        $event_payload = [
+            'name' => 'My Event',
+            'status_id' => 1,
+            'host_status' => 0,
+            'start_at' => '2020-12-24 00:00', //Y-m-d H:i
+            'end_at' => '2020-12-24 08:00', //Y-m-d H:i
+            'staff_notes' => 'only visible to you people',
+            'member_notes' => 'only fleet members aye',
+            'customer_notes' => 'nothing much to be said again',
+            'attendees' => '7',
+            'commission_rate' => 5,
+            'commission_type' => 1,
+            'type_id' => 1,
+            'location_uuid' => $location->uuid,
+            'venue_uuid' => $venue->uuid,
+        ];
+
+        $response = $this->postJson("/api/foodfleet/events", $event_payload)
+            ->assertStatus(201)->json('data');
+
+        //same goes for an update with date in such format
+        $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload)
+            ->assertStatus(200)->json('data');
+    }
 }
