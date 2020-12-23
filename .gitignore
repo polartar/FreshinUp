@@ -21,3 +21,4 @@ storage/testing.sqlite
 public/styleguide
 .DS_Store
 out/
+public/0.js
