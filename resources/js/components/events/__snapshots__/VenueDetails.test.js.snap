@@ -43,8 +43,7 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
           >
             <div
               class="v-input__control"
@@ -55,16 +54,12 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Venue"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -84,7 +79,7 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -122,8 +117,10 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -149,8 +146,7 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-disabled theme--light"
           >
             <div
               class="v-input__control"
@@ -161,17 +157,13 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      disabled="disabled"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    disabled="disabled"
+                    placeholder="Search / Select Location"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -191,7 +183,7 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -229,8 +221,10 @@ exports[`events/VenueDetails Snapshots Default 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -416,8 +410,7 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
           >
             <div
               class="v-input__control"
@@ -428,16 +421,12 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Venue"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -457,7 +446,7 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -544,8 +533,10 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -571,8 +562,7 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-disabled theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-disabled theme--light"
           >
             <div
               class="v-input__control"
@@ -583,17 +573,13 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      disabled="disabled"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    disabled="disabled"
+                    placeholder="Search / Select Location"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -613,7 +599,7 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -651,8 +637,10 @@ exports[`events/VenueDetails Snapshots NotSelected 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -850,8 +838,7 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-label-active v-input--is-dirty theme--light"
           >
             <div
               class="v-input__control"
@@ -862,21 +849,12 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <div
-                      class="v-select__selection v-select__selection--comma"
-                    >
-                      LA Stadium
-                    </div>
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Venue"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -896,7 +874,7 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -984,8 +962,10 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -1011,8 +991,7 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete theme--light"
           >
             <div
               class="v-input__control"
@@ -1023,16 +1002,12 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Location"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -1052,7 +1027,7 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -1107,8 +1082,10 @@ exports[`events/VenueDetails Snapshots SelectedVenue 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -1306,8 +1283,7 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-label-active v-input--is-dirty theme--light"
           >
             <div
               class="v-input__control"
@@ -1318,21 +1294,12 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <div
-                      class="v-select__selection v-select__selection--comma"
-                    >
-                      LA Stadium
-                    </div>
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Venue"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -1352,7 +1319,7 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -1440,8 +1407,10 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
@@ -1479,8 +1448,7 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
           </div>
            
           <div
-            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select v-input--is-label-active v-input--is-dirty theme--light"
-            role="combobox"
+            class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-text-field--placeholder v-select v-autocomplete v-input--is-label-active v-input--is-dirty theme--light"
           >
             <div
               class="v-input__control"
@@ -1491,21 +1459,12 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                 <div
                   class="v-select__slot"
                 >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <div
-                      class="v-select__selection v-select__selection--comma"
-                    >
-                      North Velmaville
-                    </div>
-                    <input
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
+                  <input
+                    autocomplete="off"
+                    placeholder="Search / Select Location"
+                    role="combobox"
+                    type="text"
+                  />
                   <div
                     class="v-input__append-inner"
                   >
@@ -1525,7 +1484,7 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                   class="v-menu"
                 >
                   <div
-                    class="v-menu__content theme--light "
+                    class="v-menu__content theme--light v-autocomplete__content"
                     style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                   >
                     <div
@@ -1581,8 +1540,10 @@ exports[`events/VenueDetails Snapshots SelectedVenueAndLocation 1`] = `
                 <div
                   class="v-messages theme--light"
                 >
-                  <div
+                  <span
                     class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
                   />
                 </div>
               </div>
