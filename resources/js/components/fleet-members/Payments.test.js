@@ -2,8 +2,8 @@ import { mount, shallowMount } from '@vue/test-utils'
 import * as Stories from './Payments.stories'
 
 import Component from './Payments.vue'
-import { FIXTURE_PAYMENTS } from 'tests/Javascript/__data__/payments'
-import { FIXTURE_PAYMENT_STATUSES } from 'tests/Javascript/__data__/paymentStatuses'
+import { FIXTURE_PAYMENTS } from 'tests/__data__/payments'
+import { FIXTURE_PAYMENT_STATUSES } from 'tests/__data__/paymentStatuses'
 import { PAYMENT_STATUS } from '../../store/modules/paymentStatuses'
 
 describe('fleet-members/Payments', () => {

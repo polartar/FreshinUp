@@ -1641,14 +1641,13 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       <button
                         class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
                         disabled="disabled"
-                        style="display: none;"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-            
+            Pay now
           
                         </div>
                       </button>
@@ -1695,14 +1694,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark grey grey-text--text"
+                        class="v-btn theme--dark warning warning-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Pending
+  Overdue
  
                           <i
                             aria-hidden="true"
@@ -1913,14 +1912,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark grey grey-text--text"
+                        class="v-btn theme--dark success success-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Pending
+  Paid
  
                           <i
                             aria-hidden="true"
