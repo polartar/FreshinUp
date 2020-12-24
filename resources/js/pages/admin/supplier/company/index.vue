@@ -1,5 +1,8 @@
 <template>
-  <v-layout align-center justify-center>
+  <v-layout
+    align-center
+    justify-center
+  >
     <v-card>
       <v-card-text>
         Coming soon
