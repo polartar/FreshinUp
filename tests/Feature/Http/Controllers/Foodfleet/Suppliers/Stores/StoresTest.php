@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Suppliers\Stores;
 
-use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store;
 use App\User;
 use FreshinUp\FreshBusForms\Models\Company\Company;
@@ -61,7 +60,8 @@ class StoresTest extends TestCase
                 'supplier_uuid' => $company->uuid
             ]
         );
-        $url = "/api/foodfleet/supplier/" . $supplier->company->uuid . "/stores?include=tags,addresses,events,supplier,supplier.admin,status,owner,type";
+        $include = "tags,addresses,events,supplier,supplier.admin,status,owner,type";
+        $url = "/api/foodfleet/supplier/" . $supplier->company->uuid . "/stores?include=" . $include;
         $response = $this->json('GET', $url);
         $data = $response
             ->assertStatus(200)

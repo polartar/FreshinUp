@@ -7,7 +7,6 @@ use App\User;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 
-
 class DocumentTest extends TestCase
 {
     public function testGetList()
@@ -42,5 +41,4 @@ class DocumentTest extends TestCase
             ], $data[$idx]);
         }
     }
-
 }

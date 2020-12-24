@@ -60,7 +60,8 @@ class EventTest extends TestCase
                 'host_uuid' => $company->uuid
             ]
         );
-        $url = "/api/foodfleet/supplier/" . $supplier->company->uuid . "/events?include=location,status,host,location.venue,manager,event_tags,type,venue";
+        $include = "location,status,host,location.venue,manager,event_tags,type,venue";
+        $url = "/api/foodfleet/supplier/" . $supplier->company->uuid . "/events?include=" . $include;
         $response = $this->json('get', $url);
         $data = $response
             ->assertStatus(200)
@@ -77,7 +78,6 @@ class EventTest extends TestCase
             $status = $event->status;
             $host = $event->host;
             $manager = $event->manager;
-            $event_tags = $event->event_tags;
             $venue = $event->venue;
             $type = $event->type;
             $this->assertArraySubset([
