@@ -1,10 +1,10 @@
 export const FIXTURE_COMPANY = {
   'data': {
-    'id': 9,
+    'id': 1,
     'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
-    type_id: 1,
+    type_id: 2,
     'created_at': '2019-07-10 15:34:30',
-    'status': 1,
+    'status': 2,
     'name': 'FreshBus',
     'address': '1832 Test Ave',
     'address2': 'unit 10',
@@ -769,9 +769,8 @@ export const FIXTURE_COMPANY = {
     },
     'company_types': [],
     type: {
-      'id': 9,
-      'name': 'Supplier',
-      'key_id': 'supplier'
+      'id': 1,
+      'name': 'Registered Representative'
     }
   },
   'meta': {

@@ -24,7 +24,7 @@
     </v-flex>
 
     <v-flex class="mt-5">
-      <basic-information/>
+      <basic-information />
     </v-flex>
 
     <v-flex
@@ -40,42 +40,42 @@
 </template>
 
 <script>
-  import get from 'lodash/get'
+import get from 'lodash/get'
 
-  import BasicInformation from './BasicInformation.vue'
-  import CompanyOverview from '~/components/companies/CompanyOverview.vue'
-  import { mapGetters } from 'vuex'
+import BasicInformation from './BasicInformation.vue'
+import CompanyOverview from '~/components/companies/CompanyOverview.vue'
+import { mapGetters } from 'vuex'
 
-  export default {
-    components: {
-      BasicInformation,
-      CompanyOverview
+export default {
+  components: {
+    BasicInformation,
+    CompanyOverview
+  },
+  layout: 'admin',
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters(['currentUser']),
+    pageTitle () {
+      return this.isNew ? 'New User' : 'User Details'
     },
-    layout: 'admin',
-    data () {
-      return {}
-    },
-    computed: {
-      ...mapGetters(['currentUser']),
-      pageTitle () {
-        return this.isNew ? 'New User' : 'User Details'
-      },
-      isNew () {
-        return get(this.$route, 'params.id', 'new') === 'new'
-      }
-    },
-    methods: {
-      backToList () {
-        this.$router.push({ path: '/admin/users' })
-      },
-      viewCompany (company) {
-        this.$router.push({ path: `/admin/companies/${company.uuid}` })
-      }
-    },
-    beforeRouteEnterOrUpdate (vm, to, from, next) {
-      next && next()
+    isNew () {
+      return get(this.$route, 'params.id', 'new') === 'new'
     }
+  },
+  methods: {
+    backToList () {
+      this.$router.push({ path: '/admin/users' })
+    },
+    viewCompany (company) {
+      this.$router.push({ path: `/admin/companies/${company.uuid}` })
+    }
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    next && next()
   }
+}
 </script>
 
 <style scoped>

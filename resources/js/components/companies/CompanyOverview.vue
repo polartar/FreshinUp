@@ -74,7 +74,7 @@
                 {{ admin.email }}
               </div>
               <div class="grey--text caption">
-                {{ admin.level_name }} @{{ admin.company_name }}
+                {{ admin.level_name }} @{{ name }}
               </div>
             </v-flex>
           </v-layout>
@@ -97,7 +97,6 @@ export const DEFAULT_COMPANY = {
   admin: {
     name: '',
     email: '',
-    company_name: '',
     avatar: '',
     level_name: ''
   }
@@ -127,12 +126,28 @@ export default {
       return this.logo || DEFAULT_IMAGE
     },
     typeName () {
-      let type = this.types.find(t => t.id === this.type_id)
-      return type ? type.name : undefined
+      console.log('type', this.type_id)
+      console.log(this.typesById)
+      const type = this.typesById[this.type_id] || {}
+      return type.name
+    },
+    typesById () {
+      return this.types.reduce((map, type) => {
+        map[type.id] = type
+        return map
+      })
+    },
+    statusesById () {
+      return this.statuses.reduce((map, status) => {
+        map[status.id] = status
+        return map
+      })
     },
     statusName () {
-      let status = this.statuses.find(s => s.id === this.status)
-      return status ? status.name : undefined
+      console.log('status', this.status)
+      console.log(this.statusesById)
+      const status = this.statusesById[this.status] || {}
+      return status.name
     },
     emptyCompany () {
       return !this.name
