@@ -1,5 +1,6 @@
-import module, { DEFAULT_USER_MENU_ITEMS } from './navigation'
-describe('store/modules/navigation', () => {
+import module, { DEFAULT_ITEMS } from './navigationAdmin'
+
+describe('store/modules/navigationAdmin', () => {
   test('is a namespaced module', () => {
     const store = module({})
     expect(store).toHaveProperty('namespaced', true)
@@ -11,35 +12,35 @@ describe('store/modules/navigation', () => {
       expect(store).toHaveProperty('state')
       expect(store.state).toHaveProperty('title', 'FreshPlatform')
     })
-    test('drawerItems', () => {
+    test('logo', () => {
       const store = module({})
       expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('drawerItems', [])
+      expect(store.state).toHaveProperty('logo', 'https://freshinup.com/wp-content/uploads/2018/08/logo_Freshinup_final-1.png')
     })
-    test('userMenuItems', () => {
+    test('headerImage', () => {
       const store = module({})
       expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('userMenuItems', DEFAULT_USER_MENU_ITEMS)
+      expect(store.state).toHaveProperty('headerImage')
     })
-    test('isConsumerViewAvailable', () => {
+    test('footerColor', () => {
       const store = module({})
       expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('isConsumerViewAvailable', true)
-    })
-    test('hideUserLevel', () => {
-      const store = module({})
-      expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('hideUserLevel', false)
-    })
-    test('displayedUserField', () => {
-      const store = module({})
-      expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('displayedUserField', 'title,company_name')
+      expect(store.state).toHaveProperty('footerColor', 'accent')
     })
     test('items', () => {
       const store = module({})
       expect(store).toHaveProperty('state')
-      expect(store.state).toHaveProperty('items', [])
+      expect(store.state).toHaveProperty('items', DEFAULT_ITEMS)
+    })
+    test('isDrawerOpen', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('isDrawerOpen', true)
+    })
+    test('hideIcons', () => {
+      const store = module({})
+      expect(store).toHaveProperty('state')
+      expect(store.state).toHaveProperty('hideIcons', false)
     })
     test('breadcrumbs', () => {
       const store = module({})
@@ -50,17 +51,22 @@ describe('store/modules/navigation', () => {
   })
 
   describe('Mutations', () => {
-    test('SET_USER_MENU_ITEMS', () => {
+    test('breadcrumbs', () => {
       const store = module({})
-      expect(store.state.userMenuItems).toMatchObject(DEFAULT_USER_MENU_ITEMS)
-
       const items = [
         { title: 'My Profile', to: { name: 'myprofile' } }
       ]
-      store.mutations.SET_USER_MENU_ITEMS(store.state, items)
-      expect(store.state.userMenuItems).toMatchObject(items)
+      store.mutations.breadcrumbs(store.state, items)
+      expect(store.state.breadcrumbs).toMatchObject(items)
     })
-
+    test('SET_ITEMS', () => {
+      const store = module({})
+      const items = [
+        { title: 'My Profile', to: { name: 'myprofile' } }
+      ]
+      store.mutations.SET_ITEMS(store.state, items)
+      expect(store.state.items).toMatchObject(items)
+    })
     test('SET_DRAWER_ITEMS', () => {
       const store = module({})
       const items = [
@@ -72,16 +78,15 @@ describe('store/modules/navigation', () => {
   })
 
   describe('Actions', () => {
-    test('setUserMenuItems', () => {
+    test('setItems', () => {
       const store = module({})
       const commit = jest.fn()
       const items = [
         { title: 'My Profile', to: { name: 'myprofile' } }
       ]
-      store.actions.setUserMenuItems({ commit }, items)
-      expect(commit).toHaveBeenCalledWith('SET_USER_MENU_ITEMS', items)
+      store.actions.setItems({ commit }, items)
+      expect(commit).toHaveBeenCalledWith('SET_ITEMS', items)
     })
-
     test('setDrawerItems', () => {
       const store = module({})
       const commit = jest.fn()

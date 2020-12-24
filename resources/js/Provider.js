@@ -36,6 +36,7 @@ import mapbox from './store/modules/mapbox'
 import userTypes from './store/modules/userTypes'
 import users from './store/modules/users'
 import navigation from './store/modules/navigation'
+import navigationAdmin from './store/modules/navigationAdmin'
 
 export default () => {
   return {
@@ -79,6 +80,7 @@ export default () => {
       mapbox,
       menuItems,
       navigation,
+      navigationAdmin,
       users,
       userTypes
     }
