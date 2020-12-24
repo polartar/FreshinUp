@@ -23,6 +23,11 @@
 
 # Changes
 
+## Dec 24, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+
+<br/>
+
 ## Dec 22, 2020
 - **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
 - **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
