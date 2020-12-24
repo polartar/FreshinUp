@@ -23,8 +23,8 @@
 
 # Changes
 
-## Dec 23, 2020
-- **FIX** Can't search for venues on event details page [615](https://github.com/FreshinUp/foodfleet/issues/615)
+## Dec 24, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
 
 <br/>
 
