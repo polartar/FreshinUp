@@ -1,7 +1,8 @@
 export const FIXTURE_COMPANY = {
   'data': {
-    'id': 1,
+    'id': 9,
     'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
+    type_id: 1,
     'created_at': '2019-07-10 15:34:30',
     'status': 1,
     'name': 'FreshBus',
@@ -766,7 +767,12 @@ export const FIXTURE_COMPANY = {
       'joined_at': '2019-07-10 15:34:30',
       'industry_roles': []
     },
-    'company_types': []
+    'company_types': [],
+    type: {
+      'id': 9,
+      'name': 'Supplier',
+      'key_id': 'supplier'
+    }
   },
   'meta': {
     'types': [

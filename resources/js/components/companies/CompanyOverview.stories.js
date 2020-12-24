@@ -3,11 +3,10 @@ import { action } from '@storybook/addon-actions'
 
 import CompanyOverview from './CompanyOverview.vue'
 
-import { FIXTURE_USER_TYPES } from '../../../../tests/Javascript/__data__/userTypes'
 import { FIXTURE_COMPANY } from '../../../../tests/Javascript/__data__/companies'
 
 const methods = {
-  onViewDetails (payload) {
+  onManageView (payload) {
     action('viewDetails')(payload)
   }
 }
@@ -36,8 +35,9 @@ export const Populated = () => ({
   components: { CompanyOverview },
   data () {
     return {
-      company: { ...FIXTURE_COMPANY['data'] },
-      companyTypes: FIXTURE_USER_TYPES
+      company: FIXTURE_COMPANY['data'],
+      companyTypes: FIXTURE_COMPANY['meta']['types'],
+      companyStatuses: FIXTURE_COMPANY['meta']['statuses']
     }
   },
   methods,
@@ -46,6 +46,7 @@ export const Populated = () => ({
         <company-overview
           :value="company"
           :types="companyTypes"
+          :statuses="companyStatuses"
           @manage-view="onManageView"/>
       </v-container>
     `

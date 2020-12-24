@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/fleet-members/StoreAreaList Snapshots Empty 1`] = `
-<div>
+<div
+  item-key="id"
+>
   <div
     class="ui-datatable elevation-1"
   >
@@ -391,7 +393,9 @@ exports[`components/fleet-members/StoreAreaList Snapshots Empty 1`] = `
 `;
 
 exports[`components/fleet-members/StoreAreaList Snapshots Loading 1`] = `
-<div>
+<div
+  item-key="id"
+>
   <div
     class="ui-datatable elevation-1"
   >
@@ -809,7 +813,9 @@ exports[`components/fleet-members/StoreAreaList Snapshots Loading 1`] = `
 `;
 
 exports[`components/fleet-members/StoreAreaList Snapshots Populated 1`] = `
-<div>
+<div
+  item-key="id"
+>
   <div
     class="ui-datatable elevation-1"
   >

@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/companies/CompanyOverview Snapshots Empty 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title justify-space-between px-4 py-1"
+    >
+      <span
+        class="grey--text subheading font-weight-bold"
+      >
+        Company overview
+      </span>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View Details
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <!---->
+       
+      <div
+        class="layout pa-4 align-center justify-center"
+      >
+        
+      Empty company
+    
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/companies/CompanyOverview Snapshots Loading 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title justify-space-between px-4 py-1"
+    >
+      <span
+        class="grey--text subheading font-weight-bold"
+      >
+        Company overview
+      </span>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View Details
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        aria-valuemax="100"
+        aria-valuemin="0"
+        class="v-progress-linear"
+        role="progressbar"
+        style="height: 7px;"
+      >
+        <div
+          class="v-progress-linear__background primary"
+          style="height: 7px; opacity: 0.3; width: 100%;"
+        />
+        <div
+          class="v-progress-linear__bar"
+        >
+          <div
+            class="v-progress-linear__bar__indeterminate v-progress-linear__bar__indeterminate--active"
+          >
+            <div
+              class="v-progress-linear__bar__indeterminate long primary"
+            />
+            <div
+              class="v-progress-linear__bar__indeterminate short primary"
+            />
+          </div>
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="layout pa-4 align-center justify-center"
+      >
+        
+      Empty company
+    
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/companies/CompanyOverview Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title justify-space-between px-4 py-1"
+    >
+      <span
+        class="grey--text subheading font-weight-bold"
+      >
+        Company overview
+      </span>
+       
+      <button
+        class="v-btn v-btn--depressed theme--light primary"
+        type="button"
+      >
+        <div
+          class="v-btn__content"
+        >
+          
+      View Details
+    
+        </div>
+      </button>
+    </div>
+     
+    <hr
+      class="v-divider theme--light"
+    />
+     
+    <div
+      class="v-card__text"
+    >
+      <!---->
+       
+      <div
+        class="layout pa-4 align-center justify-center"
+      >
+        
+      Empty company
+    
+      </div>
+    </div>
+  </div>
+</div>
+`;

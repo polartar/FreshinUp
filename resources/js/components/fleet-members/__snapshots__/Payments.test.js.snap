@@ -126,7 +126,9 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >
@@ -679,7 +681,9 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >
@@ -1264,7 +1268,9 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
       <div
         class="flex xs12"
       >
-        <div>
+        <div
+          item-key="uuid"
+        >
           <div
             class="ui-datatable elevation-1"
           >
@@ -1576,7 +1582,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            accusantium
+            
           
                       </div>
                        
@@ -1584,7 +1590,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Dec 10, 2020
+            
           
                       </div>
                        
@@ -1592,224 +1598,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Tremblayland
-          
-                      </div>
-                    </td>
-                    <td
-                      class="text-xs-undefined"
-                    >
-                      <div
-                        class="grey--text"
-                      >
-                        
-            Event venue fee
-          
-                      </div>
-                    </td>
-                    <td
-                      class="text-xs-undefined"
-                    >
-                      <div
-                        class="grey--text"
-                      >
-                        
-            Jul 08, 2020
-          
-                      </div>
-                    </td>
-                    <td
-                      class="text-xs-undefined"
-                    >
-                      <div
-                        class="grey--text"
-                      >
-                        
-            $3.00
-          
-                      </div>
-                    </td>
-                    <td
-                      class="justify-center text-xs-center"
-                    >
-                      <button
-                        class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-            Pay now
-          
-                        </div>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div
-                        class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
-                        primary=""
-                      >
-                        <div
-                          class="v-input__control"
-                        >
-                          <div
-                            class="v-input__slot"
-                          >
-                            <div
-                              class="v-input--selection-controls__input"
-                            >
-                              <input
-                                aria-checked="false"
-                                primary=""
-                                role="checkbox"
-                                type="checkbox"
-                                value=""
-                              />
-                              <div
-                                class="v-input--selection-controls__ripple"
-                              />
-                              <i
-                                aria-hidden="true"
-                                class="v-icon material-icons theme--light"
-                              >
-                                check_box_outline_blank
-                              </i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                     
-                    <td
-                      class="text-xs-undefined"
-                    >
-                      <button
-                        class="v-btn theme--dark warning warning-text--text"
-                        type="button"
-                      >
-                        <div
-                          class="v-btn__content"
-                        >
-                          
-  Overdue
- 
-                          <i
-                            aria-hidden="true"
-                            class="v-icon v-icon--right material-icons theme--dark"
-                          >
-                            arrow_drop_down
-                          </i>
-                        </div>
-                      </button>
-                      <div
-                        class="v-menu"
-                      >
-                        <div
-                          class="v-menu__content theme--light "
-                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                        >
-                           
-                          <div
-                            class="v-list theme--light"
-                            role="list"
-                          >
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Pending
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Overdue
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Paid
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Failed
-                                </div>
-                              </a>
-                            </div>
-                            <div
-                              role="listitem"
-                            >
-                              <a
-                                class="v-list__tile v-list__tile--link theme--light"
-                              >
-                                <div
-                                  class="v-list__tile__title"
-                                >
-                                  Refunded
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="text-xs-undefined"
-                    >
-                      <div
-                        class="subheading primary--text"
-                      >
-                        
-            saepe
-          
-                      </div>
-                       
-                      <div
-                        class="grey--text"
-                      >
-                        
-            Oct 10, 2019
-          
-                      </div>
-                       
-                      <div
-                        class="grey--text"
-                      >
-                        
-            @ North Chelsey
+            
           
                       </div>
                     </td>
@@ -1906,14 +1695,14 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                       class="text-xs-undefined"
                     >
                       <button
-                        class="v-btn theme--dark success success-text--text"
+                        class="v-btn theme--dark grey grey-text--text"
                         type="button"
                       >
                         <div
                           class="v-btn__content"
                         >
                           
-  Paid
+  Pending
  
                           <i
                             aria-hidden="true"
@@ -2011,7 +1800,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            ipsum
+            
           
                       </div>
                        
@@ -2019,7 +1808,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Oct 10, 2019
+            
           
                       </div>
                        
@@ -2027,7 +1816,225 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Lake Elbert
+            
+          
+                      </div>
+                    </td>
+                    <td
+                      class="text-xs-undefined"
+                    >
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Event venue fee
+          
+                      </div>
+                    </td>
+                    <td
+                      class="text-xs-undefined"
+                    >
+                      <div
+                        class="grey--text"
+                      >
+                        
+            Jul 08, 2020
+          
+                      </div>
+                    </td>
+                    <td
+                      class="text-xs-undefined"
+                    >
+                      <div
+                        class="grey--text"
+                      >
+                        
+            $3.00
+          
+                      </div>
+                    </td>
+                    <td
+                      class="justify-center text-xs-center"
+                    >
+                      <button
+                        class="v-btn v-btn--disabled v-btn--depressed theme--light primary--text"
+                        disabled="disabled"
+                        style="display: none;"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
+            
+          
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                        primary=""
+                      >
+                        <div
+                          class="v-input__control"
+                        >
+                          <div
+                            class="v-input__slot"
+                          >
+                            <div
+                              class="v-input--selection-controls__input"
+                            >
+                              <input
+                                aria-checked="false"
+                                primary=""
+                                role="checkbox"
+                                type="checkbox"
+                                value=""
+                              />
+                              <div
+                                class="v-input--selection-controls__ripple"
+                              />
+                              <i
+                                aria-hidden="true"
+                                class="v-icon material-icons theme--light"
+                              >
+                                check_box_outline_blank
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                     
+                    <td
+                      class="text-xs-undefined"
+                    >
+                      <button
+                        class="v-btn theme--dark grey grey-text--text"
+                        type="button"
+                      >
+                        <div
+                          class="v-btn__content"
+                        >
+                          
+  Pending
+ 
+                          <i
+                            aria-hidden="true"
+                            class="v-icon v-icon--right material-icons theme--dark"
+                          >
+                            arrow_drop_down
+                          </i>
+                        </div>
+                      </button>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                           
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Pending
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Overdue
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Paid
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Failed
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link theme--light"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  Refunded
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="text-xs-undefined"
+                    >
+                      <div
+                        class="subheading primary--text"
+                      >
+                        
+            
+          
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+            
+          
+                      </div>
+                       
+                      <div
+                        class="grey--text"
+                      >
+                        
+            
           
                       </div>
                     </td>

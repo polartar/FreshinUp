@@ -89,7 +89,7 @@ import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 
 export const DEFAULT_COMPANY = {
-  type: 0,
+  type_id: 0,
   status: 0,
   name: '',
   logo: '',
@@ -112,9 +112,10 @@ export default {
   mixins: [MapValueKeysToData],
   props: {
     // overriding value prop to define default value
-    value: { type: Object, default: () =>  DEFAULT_COMPANY },
+    value: { type: Object, default: DEFAULT_COMPANY },
     isLoading: { type: Boolean, default: false },
-    types: { type: Array, default: () => [] }
+    types: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
@@ -126,10 +127,12 @@ export default {
       return this.logo || DEFAULT_IMAGE
     },
     typeName () {
-      return 'Supplier'
+      let type = this.types.find(t => t.id === this.type_id)
+      return type ? type.name : undefined
     },
     statusName () {
-      return 'Active'
+      let status = this.statuses.find(s => s.id === this.status)
+      return status ? status.name : undefined
     },
     emptyCompany () {
       return !this.name
