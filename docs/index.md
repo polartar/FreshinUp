@@ -24,7 +24,8 @@
 # Changes
 
 ## Dec 25, 2020
-- **MOD** Event not saving when date are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
 
 <br/>
 
