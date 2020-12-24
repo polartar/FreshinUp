@@ -13,7 +13,7 @@ class AddTypeIdToCompany extends Migration
      */
     public function up()
     {
-        Schema::table('company', function (Blueprint $table) {
+        Schema::table('companies', function (Blueprint $table) {
             $table->string('type_id')->nullable();
             //
         });
@@ -26,7 +26,7 @@ class AddTypeIdToCompany extends Migration
      */
     public function down()
     {
-        Schema::table('company', function (Blueprint $table) {
+        Schema::table('companies', function (Blueprint $table) {
             //
         });
     }

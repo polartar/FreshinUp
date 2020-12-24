@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="`fresh-company__edit fresh-company__edit--${company ? company.status : ''}`">
-      <create-update :is-admin="isCurrentUserAdmin" />
+      <create-update :is-admin="isCurrentUserAdmin" :company-type="companyType"/>
     </div>
 
     <v-container
@@ -55,27 +55,10 @@
         -->
       </v-card>
 
-      <v-card
-        v-if="isCustomer"
-        class="mb-5"
-      >
-        <v-card-title>
-          <h3>Company Venues</h3>
-        </v-card-title>
-
-        <v-divider />
-
-        <v-alert
-          :value="true"
-          color="warning"
-          icon="warning"
-        >
-          Coming soon
-        </v-alert>
-      </v-card>
+    
 
       <v-card
-        v-if="isSupplier"
+        v-if="companyType==='Supplier'"
         class="mb-5"
       >
         <v-card-title>
@@ -92,7 +75,24 @@
           Coming soon
         </v-alert>
       </v-card>
+      <v-card
+        v-if="companyType==='Customer'" 
+        class="mb-5"
+      >
+        <v-card-title>
+          <h3>Company Venues</h3>
+        </v-card-title>
 
+        <v-divider />
+
+        <v-alert
+          :value="true"
+          color="warning"
+          icon="warning"
+        >
+          Coming soon
+        </v-alert>
+      </v-card>
       <v-card>
         <v-card-title>
           <h3>Company Events</h3>
@@ -114,7 +114,7 @@
 
 <script>
 import CreateUpdate from '~/components/companies/CreateUpdate.vue'
-import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
+// import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
 import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
 // import UserList from 'fresh-bus/components/datatable/user-list.vue'
 import { mapActions, mapGetters } from 'vuex'
@@ -125,7 +125,7 @@ export default {
     // UserList
   },
   mixins: [UsersPage],
-  layout: BusCreateUpdate.layout,
+  layout: CreateUpdate.layout,
 
   data () {
     return {
@@ -136,7 +136,7 @@ export default {
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.companyId = to.params.id
 
-    BusCreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
+    CreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
       if (vm.companyId) {
         vm.$store.dispatch('companyDetails/users/getItems', { params: { companyId: vm.companyId } }).then(() => {
           Promise.all([
@@ -160,24 +160,17 @@ export default {
     ...mapGetters('companies', {
       company: 'item'
     }),
+    ...mapGetters('userTypes', { 'userTypes': 'items' }),
     ...mapGetters('companyDetails/users', {
       users: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
       sortBy: 'sortBy'
     }),
-    isSupplier () {
-      return this.company.company_types.reduce((result, type) => {
-        return result || (type.key_id === 'supplier')
-      }, false)
-    },
-    isCustomer () {
-      return this.company.company_types.reduce((result, type) => {
-        return result || (type.key_id === 'host')
-      }, false)
-    }
+    companyType () {
+      return this.userTypes.length===0?"":this.userTypes.filter(user=>user.id === this.company.admin.type)[0].name;
+   },
   },
-
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
