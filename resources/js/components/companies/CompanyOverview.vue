@@ -126,8 +126,6 @@ export default {
       return this.logo || DEFAULT_IMAGE
     },
     typeName () {
-      console.log('type', this.type_id)
-      console.log(this.typesById)
       const type = this.typesById[this.type_id] || {}
       return type.name
     },
@@ -144,8 +142,6 @@ export default {
       })
     },
     statusName () {
-      console.log('status', this.status)
-      console.log(this.statusesById)
       const status = this.statusesById[this.status] || {}
       return status.name
     },
