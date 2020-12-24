@@ -23,6 +23,11 @@
 
 # Changes
 
+## Dec 25, 2020
+- **MOD** Event not saving when date are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+
+<br/>
+
 ## Dec 24, 2020
 - **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
 
