@@ -24,6 +24,7 @@
 # Changes
 
 ## Dec 25, 2020
+- **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
 
 <br/>
 
