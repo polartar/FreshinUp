@@ -13,70 +13,74 @@
         </p>
       </v-flex>
     </v-layout>
-    <v-layout
-      v-show="isSupplier"
-    >
-      <v-flex
+
+    <v-layout v-show="isSupplier && !isDashboardComplete">
+        <v-flex
         pa-2
         xs12
         sm4
-      >
-        <steps-card
-          :content="{
-            title: '1. Update Your Profile',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editUserRoute"
-          :icon="{
-            name: 'icon-users',
-            size: 175
-          }"
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm4
-      >
-        <steps-card
-          :content="{
-            title: '2. Register Your Company',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="editCompanyRoute"
-          :icon="{
-            name: 'icon-companies',
-            size: 175
-          }"
-          :disabled='isPersonalComplete'
-        />
-      </v-flex>
-      <v-flex
-        pa-2
-        xs12
-        sm4
-      >
-        <steps-card
-          :content="{
-            title: '3. Submit Your Fleet',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-            button: 'Take me there!'
-          }"
-          :nav-to="'/admin/fleet-members/new'"
-          :icon="{
-            name: 'icon-trucks',
-            size: 175
-          }"
-          :disabled='isPersonalComplete || isCompanyComplete'
-        />
-        <admin-dashboard v-show='isDashboardComplete'/>
-      </v-flex>
+        >
+          <steps-card
+            :content="{
+              title: '1. Update Your Profile',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+              button: 'Take me there!'
+            }"
+            :nav-to="editUserRoute"
+            :icon="{
+              name: 'icon-users',
+              size: 175
+            }"
+          />
+        </v-flex>
+        <v-flex
+          pa-2
+          xs12
+          sm4
+        >
+          <steps-card
+            :content="{
+              title: '2. Register Your Company',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+              button: 'Take me there!'
+            }"
+            :nav-to="editCompanyRoute"
+            :icon="{
+              name: 'icon-companies',
+              size: 175
+            }"
+            :disabled='!isPersonalComplete'
+          />
+        </v-flex>
+        <v-flex
+          pa-2
+          xs12
+          sm4
+        >
+          <steps-card
+            :content="{
+              title: '3. Submit Your Fleet',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+              button: 'Take me there!'
+            }"
+            :nav-to="'/admin/fleet-members/new'"
+            :icon="{
+              name: 'icon-trucks',
+              size: 175
+            }"
+            :disabled='!isPersonalComplete || !isCompanyComplete'
+          />
+        
+        </v-flex>
+           
+     
     </v-layout>
-    <v-layout
-      v-show="!isSupplier"
-    >
+
+    <v-layout v-show="isSupplier && isDashboardComplete">
+        <admin-dashboard />
+    </v-layout>
+
+    <v-layout v-show="!isSupplier">
       <admin-dashboard />
     </v-layout>
   </v-container>
@@ -100,6 +104,7 @@ export default {
   },
   computed: {
     ...mapGetters(['currentUser']),
+    ...mapGetters('stores', { stores: 'items' }),
     ...mapGetters('page', ['isLoading']),
     editUserRoute () {
       if (this.currentUser && this.currentUser.company_id) {
@@ -130,7 +135,12 @@ export default {
       return company.name && company.status &&  company.company_types.length ? true : false;
     },
     isDashboardComplete(){
-      return isPersonalComplete && isCompanyComplete
+      const store = this.stores.filter(store=>store.owner_uuid === this.currentUser.uuid)
+
+      if(this.stores.length ===0 || store.length === 0 )
+        return false;
+
+      return this.isPersonalComplete && this.isCompanyComplete ? true : false;
     },
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
