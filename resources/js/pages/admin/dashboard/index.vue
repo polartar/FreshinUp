@@ -67,14 +67,12 @@
   </div>
 </template>
 <script>
-
 import { mapGetters } from 'vuex'
 import UpcomingEventsCalendar from '~/components/supplier/UpcomingEventsCalendar.vue'
 import UpcomingEventsTable from '~/components/supplier/UpcomingEventsTable.vue'
 import SupplierFleets from '~/components/supplier/SupplierFleets.vue'
 import get from 'lodash/get'
 import moment from 'moment'
-
 export default {
   layout: 'admin',
   name: 'Dashboard',
@@ -115,7 +113,6 @@ export default {
   },
   methods: {
     get,
-
     // store
     viewFleet (store) {
       this.$router.push({ path: `/admin/fleet-members/${store.uuid}` })
@@ -167,7 +164,6 @@ export default {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems')
     },
-
     // event
     onEventPaginate (value) {
       this.$store.dispatch('events/setPagination', value)
@@ -233,7 +229,6 @@ export default {
     }
     const promises = []
     // TODO check/guard that vm.currentUser.type = UserType.SUPPLIER
-
     // events
     const today = moment().format('YYYY-MM-DD')
     vm.$store.dispatch('events/setPagination', {
@@ -246,7 +241,6 @@ export default {
     })
     promises.push(vm.$store.dispatch('eventStatuses/getItems'))
     promises.push(vm.$store.dispatch('events/getItems'))
-
     // stores (=fleets)
     vm.$store.dispatch('stores/setPagination', {
       rowsPerPage: 5
@@ -258,12 +252,10 @@ export default {
     promises.push(vm.$store.dispatch('stores/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
     promises.push(vm.$store.dispatch('stores/stats/getItems'))
-
     //
     Promise.all(promises)
       .then()
       .catch(error => console.error(error))
   }
-
 }
 </script>

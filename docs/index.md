@@ -23,6 +23,17 @@
 
 # Changes
 
+## Dec 25, 2020
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+
+<br/>
+
+## Dec 24, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+
+<br/>
+
 ## Dec 22, 2020
 - **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
 - **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
