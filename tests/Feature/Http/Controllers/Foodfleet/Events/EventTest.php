@@ -1396,7 +1396,7 @@ class EventTest extends TestCase
             '2020-12-26T08:20:00.000000Z', '2020-12-27T08:20:00.000000Z', '2020-12-24 00:00', '2020-12-25 08:00',
         ];
 
-        for($i = 0; $i < count($dates); $i += 2) {
+        for ($i = 0; $i < count($dates); $i += 2) {
             $event_payload = [
                 'name' => 'My Event',
                 'status_id' => 1,
@@ -1427,31 +1427,52 @@ class EventTest extends TestCase
             $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload);
 
             $final = $updated->assertStatus(200)->assertJsonStructure(['data'])->json('data');
-        }    
+        }
     }
 
-    /*public function testUpdatingAnEventWithoutTagsRemovesExistingTagsAsWell()
+    public function testUpdatingAnEventWithoutTagsRemovesExistingTagsAsWell()
     {
+        //Given
+        //exists an admin
+        $company = factory(Company::class)->create();
+
+        $user = factory(User::class)->create([
+            'company_id' => $company->id,
+        ]);
+        // with venue and locations
+        $venue =  factory(Venue::class)->create([
+            'uuid' => 'cd1e36c1-426c-376a-a881-b91f2ce33d31',
+        ]);
+
+        $location = factory(Location::class)->create([
+            'venue_uuid' => $venue->uuid,
+            'uuid' => 'b4b34d44-c3ff-3494-8201-73b67b2263fe',
+        ]);
+
         $tags = ['food', 'working', 'code'];
 
         $event = [
             'name' => 'Another Ticket',
             'created_at' => '2020-12-25 20:23:04',
-            'updated_at' => '2020-12-25 20:23:04',
-            'deleted_at' => NULL,
-            'location_uuid' => NULL,
+            'updated_at' => '2020-12-26 20:23:04',
+            'deleted_at' => null,
             'start_at' => '2020-12-26 00:00:00',
             'end_at' => '2020-12-26 08:20:00',
-            'host_uuid' => NULL,
             'status_id' => 1,
-            'manager_uuid' => NULL,
-            'budget' => NULL,
+            'manager_uuid' => null,
+            'budget' => null,
             'attendees' => 100,
             'commission_rate' => 5,
             'commission_type' => 1,
             'type_id' => 1,
             'event_tags' => $tags,
+            'host_uuid' => $company->uuid,
+            'manager_uuid' => $user->uuid,
+            'location_uuid' => $location->uuid,
+            'venue_uuid' => $venue->uuid,
         ];
+
+        Passport::actingAs($user);
 
         $response = $this->postJson('api/foodfleet/events', $event)->assertStatus(201)
                 ->assertJsonStructure([
@@ -1460,16 +1481,36 @@ class EventTest extends TestCase
 
         //assert the tags were created
         $created_event = Event::where('name', $event['name'])->latest()->first();
-        $the_tags = $created_event->eventTags->pluck('name')->toArray();
+        $temp_tags = $created_event->eventTags;
+        $the_tags = $temp_tags->pluck('name')->toArray();
 
         $this->assertSame($tags, $the_tags);
-dd(['here' =>  $updated = $this->putJson('api/foodfleet/events/' . $response['uuid'], $event)->json()]);
         //Can Update A Ticket To Remove All Tags
+        //empty the event_tags and submit
+        $event = array_merge($event, [
+            'event_tags' => null, //doesn't make sense right?
+        ]);
+
         $updated = $this->putJson('api/foodfleet/events/' . $response['uuid'], $event)->assertStatus(200)
             ->assertJsonStructure([
                 'data'
             ])->json('data');
 
-        dd(['response' => $updated]);
-    }*/
+        //assert event (refreshed) no longer has tags
+        $deleted_tags = $created_event->fresh()->eventTags->toArray();
+
+        foreach ($temp_tags as $tag) {
+            $this->assertDatabaseMissing('events_event_tags', [
+                'event_uuid' => $response['uuid'],
+                'event_tag_uuid' => $tag->uuid,
+            ]);
+
+            //also assert that, the actual tags are not deleted
+            $this->assertDatabaseHas('event_tags', [
+                'uuid' => $tag->uuid,
+            ]);
+        }
+
+        $this->assertCount(0, $deleted_tags);
+    }
 }

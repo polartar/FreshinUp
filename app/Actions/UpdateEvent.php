@@ -3,12 +3,13 @@
 namespace App\Actions;
 
 use App\Helpers\SquareHelper;
-use App\Helpers\EventScheduleHelper;
-use FreshinUp\FreshBusForms\Actions\Action;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
+use Illuminate\Support\Facades\DB;
+use App\Helpers\EventScheduleHelper;
 use App\Models\Foodfleet\EventSchedule;
 use App\Models\Foodfleet\EventOccurrence;
+use FreshinUp\FreshBusForms\Actions\Action;
 
 class UpdateEvent implements Action
 {
@@ -21,6 +22,7 @@ class UpdateEvent implements Action
         $event->update($updateData);
 
         $tags = $collection->get('event_tags');
+
         if ($tags) {
             foreach ($tags as $tag) {
                 if (!empty($tag['uuid'])) {
@@ -32,6 +34,14 @@ class UpdateEvent implements Action
             }
 
             $event->eventTags()->sync($tagUuids);
+        } else {
+            //if no tags are brought to be updated, then remove all existing ones
+            $tags = $event->eventTags;
+
+            foreach ($tags as $tag) {
+                DB::table('events_event_tags')->where('event_uuid', $event->uuid)
+                    ->where('event_tag_uuid', $tag->uuid)->delete();
+            }
         }
 
         $storeUuids = $collection->get('store_uuids');
