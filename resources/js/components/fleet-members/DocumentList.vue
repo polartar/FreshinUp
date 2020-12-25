@@ -36,7 +36,7 @@
             <v-card>
               <v-divider />
               <v-card-text class="grey--text">
-                Coming Soon
+                <FleetMemberDocuemnt />
               </v-card-text>
               <v-divider />
             </v-card>
@@ -289,6 +289,7 @@ import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import StatusSelect from '~/components/docs/StatusSelect'
 import FilterSorter from '~/components/docs/FilterSorter.vue'
+import FleetMemberDocuemnt from '~/components/docs/FleetMemberDocs.vue'
 
 export const HEADERS = [
   {
