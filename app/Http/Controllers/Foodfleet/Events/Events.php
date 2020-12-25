@@ -155,6 +155,7 @@ class Events extends Controller
                 'schedule.description' => 'string'
             ];
         }
+        
         $this->validate($request, $validationRules);
 
         $inputs = $request->input();

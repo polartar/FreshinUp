@@ -1370,8 +1370,12 @@ class EventTest extends TestCase
     {
         //Given
         //exists an admin
+        $company = factory(Company::class)->create();
 
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'company_id' => $company->id,
+        ]);
+
         Passport::actingAs($user);
 
         // with venue and locations
@@ -1389,10 +1393,10 @@ class EventTest extends TestCase
         //the admin decides to create a new event, with incomplete date formats
 
         $dates = [
-            '2020-12-26T08:20:00.000000Z', '2020-12-27T08:20:00.000000Z', '2020-12-24 00:00', '2020-12-24 08:00',
+            '2020-12-26T08:20:00.000000Z', '2020-12-27T08:20:00.000000Z', '2020-12-24 00:00', '2020-12-25 08:00',
         ];
 
-        for($i = 0; $i < count($dates) / 2; ++$i) {
+        for($i = 0; $i < count($dates); $i += 2) {
             $event_payload = [
                 'name' => 'My Event',
                 'status_id' => 1,
@@ -1414,8 +1418,15 @@ class EventTest extends TestCase
                 ->assertStatus(201)->json('data');
     
             //same goes for an update with date in such format
-            $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload)
-                ->assertStatus(200)->json('data');
+            //include the host
+            $event_payload = array_merge($event_payload, [
+                'host_uuid' => $company->uuid,
+                'manager_uuid' => $user->uuid,
+            ]);
+
+            $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload);
+
+            $final = $updated->assertStatus(200)->assertJsonStructure(['data'])->json('data');
         }    
     }
 
