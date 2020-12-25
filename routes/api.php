@@ -92,3 +92,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 });
+
+//Reset Password
+Route::post('password/reset', 'Auth\\PasswordsController@reset');
