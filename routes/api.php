@@ -85,14 +85,13 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::apiResource('menu-items', 'Foodfleet\MenuItems');
 
-
     Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
 
     Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 
-    Route::get('supplier/{supplier}/stores', 'Foodfleet\Suppliers\Stores@index');
-    Route::get('supplier/{supplier}/events', 'Foodfleet\Suppliers\Events@index');
-    Route::get('supplier/{supplier}/documents', 'Foodfleet\Suppliers\Documents@index');
+    Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
+    Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
+    Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
 });
