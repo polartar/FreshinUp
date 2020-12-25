@@ -168,7 +168,8 @@ export default {
       sortBy: 'sortBy'
     }),
     companyType () {
-      return this.userTypes.length===0?"":this.userTypes.filter(user=>user.id === this.company.admin.type)[0].name;
+      console.log(this.company)
+      return this.company.is_supplier?'Supplier':'Customer';
    },
   },
   methods: {
