@@ -159,8 +159,8 @@ export default {
       headers: [
         { text: 'Status', value: 'status', sortable: false, align: 'center' },
         { text: 'Name', value: 'name', align: 'left' },
-        { text: 'Company type', value: 'tags', sortable: false, align: 'left' },
-        { text: 'Members', value: 'users_count', sortable: true, align: 'center' },
+        { text: 'Company type', value: 'type.name', sortable: false, align: 'left' },
+        { text: 'Members', value: 'members_count', sortable: true, align: 'center' },
         { text: 'Manage', value: 'manage', sortable: false, align: 'center' }
       ]
     }

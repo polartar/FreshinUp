@@ -297,7 +297,7 @@ export const DEFAULT_HEADERS = [
 ]
 
 export const DEFAULT_ITEM_ACTIONS = [
-  { action: 'view', text: 'View' },
+  { action: 'view', text: 'View / Edit' },
   { action: 'edit', text: 'Edit' },
   { action: 'teams', text: 'Assign Team(s)' },
   { action: 'delete', text: 'Delete' }

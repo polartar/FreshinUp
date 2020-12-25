@@ -127,8 +127,7 @@ export const HEADERS = [
   { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
-  { action: 'view', text: 'View' },
-  { action: 'edit', text: 'Edit' },
+  { action: 'edit', text: 'View / Edit' },
   { action: 'delete', text: 'Delete' }
 ]
 export default {
