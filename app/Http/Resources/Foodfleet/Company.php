@@ -45,6 +45,8 @@ class Company extends JsonResource
             'logo' => $this->logo,
             'admin' => new $userResourceClass($this->whenLoaded('admin')),
             'company_types' => CompanyTypeResource::collection($this->company_types()->get()),
+            'company_type' => new CompanyTypeResource($this->company_type),
+            'company_status' => new \FreshinUp\FreshBusForms\Http\Resources\Company\CompanyStatus($this->company_status)
         ];
     }
 

@@ -51,4 +51,8 @@ class Company extends BusCompany
     {
         return $this->hasMany(Event::class, 'host_uuid', 'uuid');
     }
+
+    public function company_type () {
+        return $this->belongsTo(CompanyType::class);
+    }
 }

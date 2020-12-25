@@ -32,7 +32,7 @@
       class="mt-4"
     >
       <company-overview
-        :value="currentUser.company"
+        :value="company"
         @manage-view="viewCompany"
       />
     </v-flex>
@@ -57,6 +57,13 @@ export default {
   },
   computed: {
     ...mapGetters(['currentUser']),
+    company () {
+      // TODO: company should include:
+      //  - company.company_type.name because type is already taken
+      //  - company.company_status.name because status is already taken
+      // Make API request that will do that
+      return this.currentUser.company
+    },
     pageTitle () {
       return this.isNew ? 'New User' : 'User Details'
     },

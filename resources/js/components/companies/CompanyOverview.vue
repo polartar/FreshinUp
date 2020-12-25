@@ -17,7 +17,7 @@
         indeterminate
       />
       <v-layout
-        v-if="emptyCompany"
+        v-if="isEmptyCompany"
         class="pa-4"
         align-center
         justify-center
@@ -125,31 +125,27 @@ export default {
     companyLogo () {
       return this.logo || DEFAULT_IMAGE
     },
-    typeName () {
-      console.log('type', this.type_id)
-      console.log(this.typesById)
-      const type = this.typesById[this.type_id] || {}
-      return type.name
-    },
     typesById () {
       return this.types.reduce((map, type) => {
         map[type.id] = type
         return map
-      })
+      }, {})
+    },
+    typeName () {
+      const type = this.typesById[this.type_id] || {}
+      return type.name
     },
     statusesById () {
       return this.statuses.reduce((map, status) => {
         map[status.id] = status
         return map
-      })
+      }, {})
     },
     statusName () {
-      console.log('status', this.status)
-      console.log(this.statusesById)
       const status = this.statusesById[this.status] || {}
       return status.name
     },
-    emptyCompany () {
+    isEmptyCompany () {
       return !this.name
     }
   },
