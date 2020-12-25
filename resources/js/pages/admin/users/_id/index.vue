@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UserProfile from 'fresh-bus/components/users/UserProfile'
+import UserProfile from '~/components/users/UserProfile'
 import { mapGetters } from 'vuex'
 
 export default {

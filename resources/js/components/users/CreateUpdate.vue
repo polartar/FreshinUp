@@ -24,7 +24,13 @@
     </v-flex>
 
     <v-flex class="mt-5">
-      <basic-information />
+      <basic-information
+        :value="user"
+        :is-loading="userLoading"
+        :levels="levels"
+        :types="types"
+        @input="createOrUpdate"
+      />
     </v-flex>
 
     <v-flex
@@ -46,6 +52,12 @@ import BasicInformation from './BasicInformation.vue'
 import CompanyOverview from '~/components/companies/CompanyOverview.vue'
 import { mapGetters } from 'vuex'
 
+const USER_INCLUDES = [
+  'company'
+  // TODO company api should allow retrieval of company_type and company_status
+  // 'company_type',
+  // 'company_status'
+].join(',')
 export default {
   components: {
     BasicInformation,
@@ -57,12 +69,22 @@ export default {
   },
   computed: {
     ...mapGetters(['currentUser']),
+    ...mapGetters('users', {
+      user: 'item',
+      userLoading: 'itemLoading'
+    }),
+    ...mapGetters('userLevels', {
+      levels: 'items'
+    }),
+    ...mapGetters('userTypes', {
+      types: 'items'
+    }),
     company () {
       // TODO: company should include:
       //  - company.company_type.name because type is already taken
       //  - company.company_status.name because status is already taken
       // Make API request that will do that
-      return this.currentUser.company
+      return get(this.user, 'company')
     },
     pageTitle () {
       return this.isNew ? 'New User' : 'User Details'
@@ -77,10 +99,53 @@ export default {
     },
     viewCompany (company) {
       this.$router.push({ path: `/admin/companies/${company.uuid}` })
+    },
+    createOrUpdate (payload) {
+      // TODO: exclude level and type for now. At some point we will need to add them back
+      const { level, type, ...data } = payload
+      const id = this.$route.params.id
+      const action = this.isNew
+        ? this.$store.dispatch('users/createItem', { data })
+        : this.$store.dispatch('users/updateItem', {
+          params: { id },
+          data
+        })
+      action
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+          this.$store.dispatch('users/getItem', {
+            params: {
+              id,
+              include: USER_INCLUDES
+            }
+          })
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    next && next()
+    const id = vm.$route.params.id
+    const promises = []
+    promises.push(vm.$store.dispatch('userLevels/getItems'))
+    promises.push(vm.$store.dispatch('userTypes/getItems'))
+    if (id !== 'new') {
+      promises.push(vm.$store.dispatch('users/getItem', {
+        params: {
+          id,
+          include: USER_INCLUDES
+        }
+      }))
+    }
+    Promise.all(promises)
+      .then()
+      .catch()
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+        next && next()
+      })
   }
 }
 </script>

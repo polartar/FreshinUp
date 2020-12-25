@@ -1,8 +1,7 @@
-export const FIXTURE_COMPANY = {
+export const FIXTURE_COMPANY_RESPONSE = {
   'data': {
     'id': 1,
     'uuid': 'deae5b25-60ad-4ff4-b01b-05558f7aec33',
-    type_id: 2,
     'created_at': '2019-07-10 15:34:30',
     'status': 2,
     'name': 'FreshBus',
@@ -768,6 +767,7 @@ export const FIXTURE_COMPANY = {
       'industry_roles': []
     },
     'company_types': [],
+    type_id: 2,
     type: {
       'id': 1,
       'name': 'Registered Representative'
@@ -832,6 +832,8 @@ export const FIXTURE_COMPANY = {
     ]
   }
 }
+
+export const FIXTURE_COMPANY = FIXTURE_COMPANY_RESPONSE.data
 
 export const FIXTURE_COMPANIES_RESPONSE = {
   'data': [

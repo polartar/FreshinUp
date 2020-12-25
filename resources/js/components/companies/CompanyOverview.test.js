@@ -4,6 +4,7 @@ import Component, { DEFAULT_COMPANY, DEFAULT_IMAGE } from './CompanyOverview'
 import { FIXTURE_COMPANY_TYPES } from 'tests/__data__/companyTypes'
 import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import { FIXTURE_COMPANY_STATUSES } from '../../../../tests/Javascript/__data__/companyStatuses'
+import omit from 'lodash/omit'
 
 describe('components/companies/CompanyOverview', () => {
   describe('Snapshots', () => {
@@ -149,9 +150,9 @@ describe('components/companies/CompanyOverview', () => {
   })
 
   describe('Methods', () => {
-    test('viewDetails(item)', async () => {
+    test('viewDetails()', async () => {
       const wrapper = shallowMount(Component)
-      const item = FIXTURE_COMPANY
+      const item = omit(FIXTURE_COMPANY, ['admin', 'members'])
       wrapper.setProps({
         value: item
       })

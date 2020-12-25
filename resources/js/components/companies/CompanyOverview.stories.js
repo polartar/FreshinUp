@@ -35,9 +35,7 @@ export const Populated = () => ({
   components: { CompanyOverview },
   data () {
     return {
-      company: FIXTURE_COMPANY['data'],
-      companyTypes: FIXTURE_COMPANY['meta']['types'],
-      companyStatuses: FIXTURE_COMPANY['meta']['statuses']
+      company: FIXTURE_COMPANY['data']
     }
   },
   methods,
@@ -45,8 +43,6 @@ export const Populated = () => ({
       <v-container>
         <company-overview
           :value="company"
-          :types="companyTypes"
-          :statuses="companyStatuses"
           @manage-view="onManageView"/>
       </v-container>
     `

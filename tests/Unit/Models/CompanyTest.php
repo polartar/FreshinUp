@@ -44,6 +44,5 @@ class CompanyTest extends TestCase
             'uuid' => $store->uuid,
             'supplier_uuid' => $foodFleetCompany->uuid
         ]);
-        $this->assertEquals($foodFleetCompany->type_id, $foodFleetCompany->type->id);
     }
 }
