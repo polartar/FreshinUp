@@ -23,11 +23,11 @@ class CompanyTypeSeeder extends Seeder
         );
         CompanyType::updateOrCreate(
             [
-                'key_id' => 'host'
+                'key_id' => 'customer'
             ],
             [
                 'name' => 'Customer',
-                'key_id' => 'host'
+                'key_id' => 'customer'
             ]
         );
     }

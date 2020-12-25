@@ -35,8 +35,7 @@ export const FIXTURE_PAYMENTS = [
   return {
     ...payment,
     store_uuid: FIXTURE_STORES[i].uuid,
-    event_uuid: FIXTURE_EVENTS[i].uuid,
-    event: FIXTURE_EVENTS[i]
+    event_uuid: FIXTURE_EVENTS[i].uuid
   }
 })
 
