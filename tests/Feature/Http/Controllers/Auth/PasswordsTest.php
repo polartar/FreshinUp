@@ -53,7 +53,10 @@ class PasswordsTest extends TestCase
             'message', 'status',
         ])->json();
 
-        $this->assertStringContainsString("User may not be allowed to access or may not be found.", $response['message']);
+        $this->assertStringContainsString(
+            "User may not be allowed to access or may not be found.",
+            $response['message']
+        );
     }
 
     /**
@@ -138,7 +141,10 @@ class PasswordsTest extends TestCase
             'message', 'errors',
         ])->json();
 
-        $this->assertStringContainsString("The password confirmation does not match.", $response['errors']['password'][0]);
+        $this->assertStringContainsString(
+            "The password confirmation does not match.",
+            $response['errors']['password'][0]
+        );
     }
 
     /**
