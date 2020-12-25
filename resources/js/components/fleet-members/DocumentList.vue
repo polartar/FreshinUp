@@ -321,6 +321,10 @@ export default {
       type: Array,
       default: () => []
     },
+    totalItems:{
+      type:Array,
+      default:()=>[]
+    },
     statuses: {
       type: Array,
       default: () => [] // { text: '', value: 0 }
