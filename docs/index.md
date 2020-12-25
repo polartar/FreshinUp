@@ -24,13 +24,16 @@
 # Changes
 
 ## Dec 25, 2020
-- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
-- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+- **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
 
 <br/>
 
 ## Dec 24, 2020
 - **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+- **MOD** Correcting user details layout
+ [596](https://github.com/FreshinUp/foodfleet/issues/596)
 
 <br/>
 
