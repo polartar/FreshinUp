@@ -1388,28 +1388,77 @@ class EventTest extends TestCase
 
         //the admin decides to create a new event, with incomplete date formats
 
-        $event_payload = [
-            'name' => 'My Event',
+        $dates = [
+            '2020-12-26T08:20:00.000000Z', '2020-12-27T08:20:00.000000Z', '2020-12-24 00:00', '2020-12-24 08:00',
+        ];
+
+        for($i = 0; $i < count($dates) / 2; ++$i) {
+            $event_payload = [
+                'name' => 'My Event',
+                'status_id' => 1,
+                'host_status' => 0,
+                'start_at' => $dates[$i], //Y-m-d H:i or in ISO format
+                'end_at' => $dates[$i + 1], //Y-m-d H:i
+                'staff_notes' => 'only visible to you people',
+                'member_notes' => 'only fleet members aye',
+                'customer_notes' => 'nothing much to be said again',
+                'attendees' => '70',
+                'commission_rate' => 5,
+                'commission_type' => 1,
+                'type_id' => 1,
+                'location_uuid' => $location->uuid,
+                'venue_uuid' => $venue->uuid,
+            ];
+    
+            $response = $this->postJson("/api/foodfleet/events", $event_payload)
+                ->assertStatus(201)->json('data');
+    
+            //same goes for an update with date in such format
+            $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload)
+                ->assertStatus(200)->json('data');
+        }    
+    }
+
+    /*public function testUpdatingAnEventWithoutTagsRemovesExistingTagsAsWell()
+    {
+        $tags = ['food', 'working', 'code'];
+
+        $event = [
+            'name' => 'Another Ticket',
+            'created_at' => '2020-12-25 20:23:04',
+            'updated_at' => '2020-12-25 20:23:04',
+            'deleted_at' => NULL,
+            'location_uuid' => NULL,
+            'start_at' => '2020-12-26 00:00:00',
+            'end_at' => '2020-12-26 08:20:00',
+            'host_uuid' => NULL,
             'status_id' => 1,
-            'host_status' => 0,
-            'start_at' => '2020-12-24 00:00', //Y-m-d H:i
-            'end_at' => '2020-12-24 08:00', //Y-m-d H:i
-            'staff_notes' => 'only visible to you people',
-            'member_notes' => 'only fleet members aye',
-            'customer_notes' => 'nothing much to be said again',
-            'attendees' => '7',
+            'manager_uuid' => NULL,
+            'budget' => NULL,
+            'attendees' => 100,
             'commission_rate' => 5,
             'commission_type' => 1,
             'type_id' => 1,
-            'location_uuid' => $location->uuid,
-            'venue_uuid' => $venue->uuid,
+            'event_tags' => $tags,
         ];
 
-        $response = $this->postJson("/api/foodfleet/events", $event_payload)
-            ->assertStatus(201)->json('data');
+        $response = $this->postJson('api/foodfleet/events', $event)->assertStatus(201)
+                ->assertJsonStructure([
+                    'data'
+                ])->json('data');
 
-        //same goes for an update with date in such format
-        $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload)
-            ->assertStatus(200)->json('data');
-    }
+        //assert the tags were created
+        $created_event = Event::where('name', $event['name'])->latest()->first();
+        $the_tags = $created_event->eventTags->pluck('name')->toArray();
+
+        $this->assertSame($tags, $the_tags);
+dd(['here' =>  $updated = $this->putJson('api/foodfleet/events/' . $response['uuid'], $event)->json()]);
+        //Can Update A Ticket To Remove All Tags
+        $updated = $this->putJson('api/foodfleet/events/' . $response['uuid'], $event)->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])->json('data');
+
+        dd(['response' => $updated]);
+    }*/
 }
