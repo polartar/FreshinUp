@@ -9,7 +9,7 @@
           {{ pageTitle }}
         </h2>
         <p class="white--text">
-          We need to walk you through these steps before you can {{ youCanText }}.
+          We need to walk you through these steps before you can join our fleet.
         </p>
       </v-flex>
     </v-layout>
@@ -101,27 +101,13 @@ export default {
   },
   computed: {
     ...mapGetters(['currentUser']),
-    ...mapGetters('stores', { stores: 'items' }),
+    ...mapGetters('supplier/stores', { stores: 'items' }),
     ...mapGetters('page', ['isLoading']),
     editUserRoute () {
-      if (this.currentUser && this.currentUser.company_id) {
         return '/admin/users/' + this.currentUser.id + '/edit'
-      } else {
-        return '/admin/dashboard'
-      }
     },
     editCompanyRoute () {
-      if (this.currentUser && this.currentUser.company_id) {
         return '/admin/companies/' + this.currentUser.company_id + '/edit'
-      } else {
-        return '/admin/dashboard'
-      }
-    },
-    isSupplier () {
-      return this.currentUser.type !== 2
-    },
-    youCanText () {
-      return this.isSupplier ? 'join our fleet' : 'book an event'
     },
     isPersonalComplete(){
       const currentUser = this.currentUser;
@@ -132,12 +118,7 @@ export default {
       return company.name && company.status &&  company.company_types.length ? true : false;
     },
     isDashboardComplete(){
-      const store = this.stores.filter(store=>store.owner_uuid === this.currentUser.uuid)
-
-      if(this.stores.length ===0 || store.length === 0 )
-        return false;
-
-      return this.isPersonalComplete && this.isCompanyComplete ? true : false;
+      return this.stores && this.stores.length && this.isPersonalComplete && this.isCompanyComplete ? true : false;
     },
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
