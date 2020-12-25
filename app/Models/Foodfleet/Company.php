@@ -35,6 +35,8 @@ use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
  */
 class Company extends BusCompany
 {
+    protected $appends = ['is_supplier', 'is_customer'];
+
     public function getMorphClass()
     {
         return BusCompany::class;
@@ -45,11 +47,20 @@ class Company extends BusCompany
         return $this->hasMany(Store::class, 'supplier_uuid', 'uuid');
     }
 
-    public function type()
+    public function getIsSupplierAttribute ()
     {
-        return $this->belongsTo(CompanyType::class);
+        return array_reduce($this->attributes['company_types'], function($result, $type){
+            return $result || ($type->key_id ==='supplier');
+        }, false);
+        
     }
-
+    public function getIsCustomerAttribute ()
+    {
+        return array_reduce($this->attributes['company_types'], function($result, $type){
+            return $result || ($type->key_id ==='host');
+        }, false);
+        
+    }
     public function events()
     {
         return $this->hasMany(Event::class, 'host_uuid', 'uuid');
