@@ -26,7 +26,7 @@ $factory->define(Store::class, function (Faker $faker) {
         'facebook' => $faker->url,
         'instagram' => $faker->url,
         'staff_notes' => $faker->text,
-        "square_id" => $faker->uuid,
+        // "square_id" => $faker->uuid,
         "status_id" => function () {
             return factory(StoreStatus::class)->create()->id;
         },
