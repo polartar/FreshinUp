@@ -12,6 +12,7 @@ class CompanyTypeSeeder extends Seeder
      */
     public function run()
     {
+        CompanyType::truncate();
         CompanyType::updateOrCreate(
             [
                 'key_id' => 'supplier'
@@ -30,5 +31,6 @@ class CompanyTypeSeeder extends Seeder
                 'key_id' => 'host'
             ]
         );
+       
     }
 }
