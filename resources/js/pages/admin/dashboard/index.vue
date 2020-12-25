@@ -121,7 +121,17 @@ export default {
     youCanText () {
       return this.isSupplier ? 'join our fleet' : 'book an event'
     },
-
+    isPersonalComplete(){
+      const currentUser = this.currentUser;
+      return currentUser.email && currentUser.first_name && currentUser.last_name ? true : false;
+    },
+    isCompanyComplete(){
+      const company = this.currentUser.company;
+      return company.name && company.status &&  company.company_types.length ? true : false;
+    },
+    isDashboardComplete(){
+      return isPersonalComplete && isCompanyComplete
+    },
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
