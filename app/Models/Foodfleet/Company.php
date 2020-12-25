@@ -49,7 +49,6 @@ class Company extends BusCompany
 
     public function getIsSupplierAttribute ()
     {
-        return 'aaa';
         return array_reduce($this->company_types(), function($result, $type){
             return $result || ($type->key_id ==='supplier');
         }, false);

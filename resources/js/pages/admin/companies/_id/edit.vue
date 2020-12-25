@@ -167,7 +167,6 @@ export default {
       sortBy: 'sortBy'
     }),
     companyType () {
-      console.log(this.company)
       return this.company.is_supplier?'Supplier':'Customer';
    },
   },
