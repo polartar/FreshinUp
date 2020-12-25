@@ -160,8 +160,7 @@ export default {
     ...mapGetters('companies', {
       company: 'item'
     }),
-    ...mapGetters('userTypes', { 'userTypes': 'items' }),
-    ...mapGetters('companyDetails/users', {
+     ...mapGetters('companyDetails/users', {
       users: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
