@@ -172,7 +172,7 @@
               {{ createdAt }} by {{ ownerName }}
             </div>
           </v-flex>
-          <v-flex
+          <!-- <v-flex
             xs12
           >
             <h4
@@ -186,7 +186,7 @@
               @assign-change="selectAssigned"
               @type-change="changeAssignedType"
             />
-          </v-flex>
+          </v-flex> -->
           <v-flex
             xs12
           >
@@ -255,6 +255,7 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
+import { mapGetters, mapActions } from 'vuex'
 
 export const DEFAULT_DOCUMENT = {
   uuid: null,
@@ -270,7 +271,7 @@ export const DEFAULT_DOCUMENT = {
   created_at: null,
   assigned: null,
   assigned_uuid: null,
-  assigned_type: 1,
+  assigned_type: 2,
   expiration_at: null,
   event_store_uuid: null
 }
@@ -304,6 +305,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['currentUser']),
     submitLabel () {
       return this.isNew ? 'Submit' : 'Save changes'
     },
@@ -326,7 +328,9 @@ export default {
     }
   },
   mounted(){
-    console.log("start");
+    console.log("start", this.currentUser);
+    this.assigned_uuid = this.currentUser.uuid;
+    this.event_store_uuid = this.currentUser.event_store_uuid
   },
   methods: {
     previewOrDownload () {
@@ -340,10 +344,6 @@ export default {
     },
     cancel () {
       this.$emit('cancel')
-    },
-    selectAssigned (assigned) {
-      this.assigned_uuid = assigned.uuid
-      this.event_store_uuid = assigned.event_store_uuid
     },
     changeAssignedType (value) {
       this.assigned_type = value

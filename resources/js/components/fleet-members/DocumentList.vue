@@ -1,6 +1,7 @@
 <template>
   <!--  TODO: Replace with FDataTable -->
-  <v-card>
+  <div>
+    {{currentUser}}
     <v-card-title class="px-3">
       <v-layout
         align-center
@@ -16,7 +17,7 @@
         <v-flex shrink>
           <v-dialog
             v-model="newDocumentDialog"
-            max-width="400"
+            max-width="800"
           >
             <template v-slot:activator="{ on }">
               <v-btn
@@ -35,11 +36,24 @@
             </template>
             <v-card>
               <v-divider />
+              
               <v-card-text class="grey--text">
-                <FleetMemberDocuemnt />
+                Hello
+                Hello! 
+        <CreateDocument
+          ref="basicInfo"
+          :is-loading="isLoading"
+          :types="types"
+          :templates="templates"
+          :value="doc"
+          @input="onSaveClick"
+          @download="downloadDocument"
+          @preview="previewDialog = true"     
+                />
               </v-card-text>
               <v-divider />
             </v-card>
+             
           </v-dialog>
         </v-flex>
       </v-layout>
@@ -280,16 +294,18 @@
         </template>
       </v-data-table>
     </v-card-text>
-  </v-card>
+  </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import StatusSelect from '~/components/docs/StatusSelect'
 import FilterSorter from '~/components/docs/FilterSorter.vue'
-import FleetMemberDocuemnt from '~/components/docs/FleetMemberDocs.vue'
+// import FleetMemberDocuemnt from '~/components/docs/FleetMemberDocs.vue'
+import CreateDocument, {DEFAULT_DOCUMENT} from './CreateDocument.vue'
 
 export const HEADERS = [
   {
@@ -314,7 +330,7 @@ export const ITEM_ACTIONS = [
   // disabled for now { action: 'delete', text: 'Delete' }
 ]
 export default {
-  components: { FBtnMenu, StatusSelect, FilterSorter },
+  components: { FBtnMenu, StatusSelect, FilterSorter, CreateDocument },
   mixins: [Pagination, FormatDate],
   props: {
     docs: {
@@ -322,8 +338,7 @@ export default {
       default: () => []
     },
     totalItems:{
-      type:Array,
-      default:()=>[]
+      default:0
     },
     statuses: {
       type: Array,
@@ -348,14 +363,40 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('documents', { doc_: 'item' }),
+    ...mapGetters('documentTemplates', { templates: 'items' }),
     selectedDocActions () {
       if (!this.selected.length) return []
       let actions = []
       actions.push({ action: 'delete', text: 'Delete' })
       return actions
-    }
+    },
+    doc () {
+      return Object.assign({}, DEFAULT_DOCUMENT, this.doc_)
+    },
   },
   methods: {
+    downloadDocument () {
+      // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
+    },
+    async onSaveClick (payload) {
+      
+      // const data = omitBy(payload, (value, key) => {
+      //   const extra = ['created_at', 'updated_at', 'assigned', 'owner']
+      //   return extra.includes(key) || isNull(value)
+      // })
+      // if (this.isNew) {
+      //   await this.$store.dispatch('documents/createItem', { data })
+      //   await this.$store.dispatch('generalMessage/setMessage', 'Created.')
+      //   this.backToList()
+      // } else {
+      //   await this.$store.dispatch('documents/updateItem', {
+      //     data,
+      //     params: { id: data.uuid }
+      //   })
+      //   await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
+      // }
+    },
     manage (item, doc) {
       this.$emit('manage-' + item.action, doc)
       this.$emit('manage', item.action, doc)
