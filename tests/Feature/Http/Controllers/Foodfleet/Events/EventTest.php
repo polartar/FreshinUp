@@ -741,7 +741,6 @@ class EventTest extends TestCase
         ];
     }
 
-
     /**
      * @dataProvider getDuplicateProvider
      * @param $payload
@@ -1413,10 +1412,10 @@ class EventTest extends TestCase
                 'location_uuid' => $location->uuid,
                 'venue_uuid' => $venue->uuid,
             ];
-    
+
             $response = $this->postJson("/api/foodfleet/events", $event_payload)
                 ->assertStatus(201)->json('data');
-    
+
             //same goes for an update with date in such format
             //include the host
             $event_payload = array_merge($event_payload, [
@@ -1432,76 +1431,38 @@ class EventTest extends TestCase
 
     public function testUpdatingAnEventWithoutTagsRemovesExistingTagsAsWell()
     {
-        //Given
-        //exists an admin
         $company = factory(Company::class)->create();
-
         $user = factory(User::class)->create([
             'company_id' => $company->id,
         ]);
-        // with venue and locations
-        $venue =  factory(Venue::class)->create([
-            'uuid' => 'cd1e36c1-426c-376a-a881-b91f2ce33d31',
-        ]);
 
-        $location = factory(Location::class)->create([
-            'venue_uuid' => $venue->uuid,
-            'uuid' => 'b4b34d44-c3ff-3494-8201-73b67b2263fe',
-        ]);
-
-        $tags = ['food', 'working', 'code'];
-
-        $event = [
-            'name' => 'Another Ticket',
-            'created_at' => '2020-12-25 20:23:04',
-            'updated_at' => '2020-12-26 20:23:04',
-            'deleted_at' => null,
-            'start_at' => '2020-12-26 00:00:00',
-            'end_at' => '2020-12-26 08:20:00',
-            'status_id' => 1,
-            'manager_uuid' => null,
-            'budget' => null,
-            'attendees' => 100,
-            'commission_rate' => 5,
-            'commission_type' => 1,
-            'type_id' => 1,
-            'event_tags' => $tags,
+        $tagNames = ['food', 'working', 'code'];
+        /** @var Event $event */
+        $event = factory(Event::class)->create([
             'host_uuid' => $company->uuid,
-            'manager_uuid' => $user->uuid,
-            'location_uuid' => $location->uuid,
-            'venue_uuid' => $venue->uuid,
-        ];
+        ]);
+        $tags = array_map(function ($name) {
+            return EventTag::firstOrCreate(['name' => $name])->uuid;
+        }, $tagNames);
+        $event->eventTags()->sync($tags);
+        $tags = $event->eventTags()->get();
+        $payload = array_merge($event->toArray(), [
+            'event_tags' => []
+        ]);
 
         Passport::actingAs($user);
-
-        $response = $this->postJson('api/foodfleet/events', $event)->assertStatus(201)
-                ->assertJsonStructure([
-                    'data'
-                ])->json('data');
-
-        //assert the tags were created
-        $created_event = Event::where('name', $event['name'])->latest()->first();
-        $temp_tags = $created_event->eventTags;
-        $the_tags = $temp_tags->pluck('name')->toArray();
-
-        $this->assertSame($tags, $the_tags);
-        //Can Update A Ticket To Remove All Tags
-        //empty the event_tags and submit
-        $event = array_merge($event, [
-            'event_tags' => null, //doesn't make sense right?
-        ]);
-
-        $updated = $this->putJson('api/foodfleet/events/' . $response['uuid'], $event)->assertStatus(200)
+        $data = $this->json('PUT', 'api/foodfleet/events/' . $event->uuid, $payload)
+            ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
-            ])->json('data');
+            ])
+            ->json('data');
+
 
         //assert event (refreshed) no longer has tags
-        $deleted_tags = $created_event->fresh()->eventTags->toArray();
-
-        foreach ($temp_tags as $tag) {
+        foreach ($tags as $tag) {
             $this->assertDatabaseMissing('events_event_tags', [
-                'event_uuid' => $response['uuid'],
+                'event_uuid' => $event->uuid,
                 'event_tag_uuid' => $tag->uuid,
             ]);
 
@@ -1511,6 +1472,6 @@ class EventTest extends TestCase
             ]);
         }
 
-        $this->assertCount(0, $deleted_tags);
+        $this->assertEquals(0, $event->eventTags()->count());
     }
 }

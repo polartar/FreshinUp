@@ -15,6 +15,7 @@ class UpdateEvent implements Action
 {
     public function execute(array $data)
     {
+        /** @var Event $event */
         $event = Event::where('uuid', $data['uuid'])->first();
 
         $collection = collect($data);
@@ -22,7 +23,6 @@ class UpdateEvent implements Action
         $event->update($updateData);
 
         $tags = $collection->get('event_tags');
-
         if ($tags) {
             foreach ($tags as $tag) {
                 if (!empty($tag['uuid'])) {
@@ -32,16 +32,9 @@ class UpdateEvent implements Action
                     $tagUuids[] = $record->uuid;
                 }
             }
-
             $event->eventTags()->sync($tagUuids);
-        } else {
-            //if no tags are brought to be updated, then remove all existing ones
-            $tags = $event->eventTags;
-
-            foreach ($tags as $tag) {
-                DB::table('events_event_tags')->where('event_uuid', $event->uuid)
-                    ->where('event_tag_uuid', $tag->uuid)->delete();
-            }
+        } elseif ($collection->has('event_tags')) {
+            $event->eventTags()->sync([]);
         }
 
         $storeUuids = $collection->get('store_uuids');
@@ -74,7 +67,7 @@ class UpdateEvent implements Action
             empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
         }
-        
+
         if (empty($schedule)) {
             $schedule = new EventSchedule;
         } else {
