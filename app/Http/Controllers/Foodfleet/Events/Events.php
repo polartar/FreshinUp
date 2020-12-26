@@ -125,12 +125,7 @@ class Events extends Controller
      */
     public function store(Request $request, CreateEvent $action)
     {
-        \Log::debug("::NEW_EVENTS:: Request", [
-            'payload' => $request->all(),
-        ]);
-
         $request = $this->prepareDatesForValidation($request);
-
         if ($request->get('status_id') == EventStatusEnum::DRAFT) {
             $validationRules = ['name' => 'required'];
         } else {
@@ -155,7 +150,7 @@ class Events extends Controller
                 'schedule.description' => 'string'
             ];
         }
-        
+
         $this->validate($request, $validationRules);
 
         $inputs = $request->input();
@@ -192,11 +187,7 @@ class Events extends Controller
      */
     public function update(Request $request, $uuid, UpdateEvent $action)
     {
-        \Log::debug("::UPDATED_TICKET_REQUEST", [
-            'update' => $request->all(),
-        ]);
         $request = $this->prepareDatesForValidation($request);
-
         $this->validate($request, [
             'name' => 'string',
             'manager_uuid' => 'string|exists:users,uuid',
