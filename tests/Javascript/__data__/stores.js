@@ -32,12 +32,20 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: false,
-    events: [
+    event_stores: [
       {
-        uuid: 'bc',
-        start_at: '2019-07-12 08:31:00',
-        end_at: '2030-07-12 23:59:59',
-        declined: false
+        uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b9877',
+        event_uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b9877',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
+      },
+      {
+        uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533',
+        event_uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533e',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
       }
     ],
     store_tags: [
@@ -83,7 +91,7 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: false,
-    events: [],
+    event_stores: [],
     store_tags: [
       {
         uuid: '1',
@@ -129,7 +137,7 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: true,
-    events: [],
+    event_stores: [],
     store_tags: [
       {
         uuid: '1',
@@ -182,12 +190,20 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: false,
-    events: [
+    event_stores: [
       {
-        uuid: 'bdsgc',
-        start_at: '2019-07-12 08:31:00',
-        end_at: '2030-07-12 23:59:59',
-        declined: false
+        uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b987',
+        event_uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b9877',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
+      },
+      {
+        uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533e',
+        event_uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533e',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
       }
     ],
     store_tags: [
@@ -233,12 +249,20 @@ export const FIXTURE_STORES = [
     instagram: 'www.instagram.com/restaurantinc',
     staff_notes: 'Only visible for Food Fleet Staff',
     has_expired_licences_docs: false,
-    events: [
+    event_stores: [
       {
-        uuid: 'bc',
-        start_at: '2019-07-12 08:31:00',
-        end_at: '2030-07-12 23:59:59',
-        declined: true
+        uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b9877',
+        event_uuid: 'efe8189b-b8d0-36a7-bc96-6a53436b9877',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
+      },
+      {
+        uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533e',
+        event_uuid: '1da1b683-8ce3-31f1-ab9f-a8eefe64533e',
+        store_uuid: '06928f72-23b6-48f0-b853-f4c46aa44c31',
+        commission_rate: null,
+        commission_type: null
       }
     ],
     location_uuid: 'af7eb46a-7bc1-3b00-8d56-e22a23d1fe23',

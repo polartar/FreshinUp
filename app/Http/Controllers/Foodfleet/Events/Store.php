@@ -30,7 +30,7 @@ class Store extends Controller
             $event->stores()
             ->pluck('stores.uuid')->toArray()
         ), $request)
-            ->with('tags')
+            ->with(['tags','events'])
             ->allowedIncludes([
                 'addresses',
                 'owner'

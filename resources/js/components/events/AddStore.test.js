@@ -181,7 +181,7 @@ describe('Add member (store) in event component', () => {
       const wrapper = shallowMount(Component, {
         localVue: localVue,
         propsData: {
-          event: FIXTURE_STORES[0].events[0]
+          event: FIXTURE_STORES[0].event_stores[0]
         }
       })
 
@@ -194,10 +194,10 @@ describe('Add member (store) in event component', () => {
         localVue: localVue
       })
       wrapper.setProps({
-        event: FIXTURE_STORES[0].events[0]
+        event: FIXTURE_STORES[0].event_stores[0]
       })
 
-      expect(wrapper.vm.isEligible(FIXTURE_STORES[0])).toBeTruthy()
+      expect(wrapper.vm.isEligible(FIXTURE_STORES[0])).toBeFalsy()
       expect(wrapper.vm.isEligible(FIXTURE_STORES[1])).toBeTruthy()
       expect(wrapper.vm.isEligible(FIXTURE_STORES[2])).toBeFalsy()
     })
@@ -208,7 +208,7 @@ describe('Add member (store) in event component', () => {
       })
 
       wrapper.setProps({
-        event: FIXTURE_STORES[0].events[0]
+        event: FIXTURE_STORES[0].event_stores[0]
       })
 
       expect(wrapper.vm.isAssignedToThisEvent(FIXTURE_STORES[0])).toBeTruthy()
@@ -222,10 +222,10 @@ describe('Add member (store) in event component', () => {
       })
 
       wrapper.setProps({
-        event: FIXTURE_STORES[4].events[0]
+        event: FIXTURE_STORES[4].event_stores[0]
       })
 
-      expect(wrapper.vm.isDeclined(FIXTURE_STORES[4])).toBeTruthy()
+      expect(wrapper.vm.isDeclined(FIXTURE_STORES[4])).toBeFalsy()
       expect(wrapper.vm.isDeclined(FIXTURE_STORES[1])).toBeFalsy()
     })
 
@@ -235,14 +235,13 @@ describe('Add member (store) in event component', () => {
       })
 
       wrapper.setProps({
-        event: FIXTURE_STORES[0].events[0]
+        event: FIXTURE_STORES[0].event_stores[0]
       })
 
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[0])).toBe('Assigned')
       expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[1])).toBe('Assign')
       expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[2])).toBe('Expired')
       expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[3])).toBe('Booked')
-      expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[4])).toBe('Declined')
+      // expect(wrapper.vm.manageButtonLabel(FIXTURE_STORES[4])).toBe('Declined')
     })
 
     test('manageButtonClass(store)', () => {
@@ -251,13 +250,13 @@ describe('Add member (store) in event component', () => {
       })
 
       wrapper.setProps({
-        event: FIXTURE_STORES[4].events[0]
+        event: FIXTURE_STORES[4].event_stores[0]
       })
 
       const expectedClassObject = {
-        'blue-grey lighten-3 white--text': true,
+        'blue-grey lighten-3 white--text': false,
         'primary': false,
-        'blue-grey lighten-5': false
+        'blue-grey lighten-5': true
       }
 
       expect(wrapper.vm.manageButtonClass(FIXTURE_STORES[4])).toMatchObject(expectedClassObject)

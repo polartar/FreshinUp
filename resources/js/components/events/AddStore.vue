@@ -97,6 +97,7 @@
         :headers="headers"
         :items="filteredStores"
         :search="searchText"
+        :multi-item-actions="itemActions"
         item-key="uuid"
         hide-actions
         select-all
@@ -190,7 +191,8 @@ export default {
       page: 1,
       showFilters: false,
       selected: [],
-      headers: HEADERS
+      headers: HEADERS,
+      itemActions: []
     }
   },
   computed: {
@@ -245,16 +247,16 @@ export default {
       this.selectedTags = []
     },
     hasBookedAnEvent (member) {
-      return member.events.findIndex(e => e.uuid !== this.event.uuid) !== -1
+      return member.event_stores.findIndex(e => e.event_uuid !== this.event.uuid) !== -1
     },
     isEligible (member) {
       return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
     },
     isAssignedToThisEvent (member) {
-      return member.events.findIndex(e => e.uuid === this.event.uuid) !== -1
+      return member.event_stores.findIndex(e => e.event_uuid === this.event.uuid) !== -1
     },
     isDeclined (member) {
-      return member.events.findIndex(e => e.uuid === this.event.uuid && e.declined) !== -1
+      return member.event_stores.findIndex(e => e.event_uuid === this.event.uuid && e.declined) !== -1
     },
     manageButtonLabel (item) {
       if (this.isEligible(item)) {
