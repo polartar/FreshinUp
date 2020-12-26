@@ -3,6 +3,7 @@ import Component from '~/components/events/Stores.vue'
 import { FIXTURE_STORES } from 'tests/__data__/stores'
 import { STORE_TYPES } from 'tests/__data__/storeTypes'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
+import { FIXTURE_EVENT } from '../../../../tests/Javascript/__data__/event'
 
 describe('Store List component', () => {
   // Component instance "under test"
@@ -15,7 +16,8 @@ describe('Store List component', () => {
         propsData: {
           types: STORE_TYPES,
           statuses: FIXTURE_STORE_STATUSES,
-          stores: FIXTURE_STORES
+          stores: FIXTURE_STORES,
+          event: FIXTURE_EVENT
         }
       })
       expect(wrapper.element).toMatchSnapshot()
