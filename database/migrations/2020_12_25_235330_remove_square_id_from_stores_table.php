@@ -16,7 +16,7 @@ class RemoveSquareIdFromStoresTable extends Migration
         if (Schema::hasColumn('stores', 'square_id')) {
 
             Schema::table('stores', function (Blueprint $table) {
-                $table->dropColumn('square_id');
+                $table->dropColumn(['square_id']);
             });
         }
     }
@@ -28,8 +28,10 @@ class RemoveSquareIdFromStoresTable extends Migration
      */
     public function down()
     {
-        Schema::table('stores', function (Blueprint $table) {
-            //
-        });
+        if (!(Schema::hasColumn('stores', 'square_id'))) {
+            Schema::table('stores', function (Blueprint $table) {
+                $table->string('square_id')->nullable();
+            });
+        }
     }
 }
