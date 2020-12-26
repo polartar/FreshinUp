@@ -54,7 +54,8 @@ class SupplierTest extends TestCase
             'host_uuid' => $company->uuid
         ]);
         $include = "location,status,host,location.venue,manager,event_tags,type,venue";
-        $data = $this->json('get', "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/events?include=" . $include)
+        $url = "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/events?include=" . $include;
+        $data = $this->json('GET', $url)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -184,7 +185,8 @@ class SupplierTest extends TestCase
             'supplier_uuid' => $company->uuid
         ]);
         $include = "tags,addresses,events,supplier,supplier.admin,status,owner,type";
-        $data = $this->json('GET', "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/stores?include=" . $include)
+        $url = "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/stores?include=" . $include;
+        $data = $this->json('GET', $url)
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
