@@ -92,7 +92,7 @@
       class="px-4"
       style="border-top: 1px solid gainsboro;"
     >
-      <v-data-table
+      <f-data-table
         v-model="selected"
         :headers="headers"
         :items="filteredStores"
@@ -100,89 +100,69 @@
         item-key="uuid"
         hide-actions
         select-all
-        :pagination.sync="pagination"
       >
-        <template v-slot:items="props">
-          <td>
-            <v-checkbox
-              v-model="props.selected"
-              primary
-              hide-details
-            />
-          </td>
-          <td
-            class="py-2"
-            nowrap
-          >
-            <div style="position: relative;">
-              <v-tooltip top>
-                <template v-slot:activator="{ on, attrs }">
-                  <router-link
-                    class="primary--text"
-                    :to="{ path: '/admin/fleet-members/'}"
-                    target="_blank"
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    {{ get(props, 'item.name') }}
-                  </router-link>
-                </template>
-                View fleet member details (new tab)
-              </v-tooltip>
-            </div>
-            <div
-              class="grey--text text--darken-2"
-            >
-              {{ get(storeTypesById, 'props.item.type_id') }}
-            </div>
-          </td>
-          <td class="py-2">
-            {{ get(props, 'item.state_of_incorporation') }}
-          </td>
-          <td class="py-2">
-            <div>
-              <v-chip
-                v-for="(tag, index) of get(props, 'item.tags', [])"
-                :key="index"
-                color="secondary"
-                text-color="white"
-              >
-                {{ tag }}
-              </v-chip>
-            </div>
-          </td>
-          <td class="py-2">
-            <v-btn
-              :depressed="manageButtonLabel(props.item) !== 'Assign'"
-              :disabled="!isEligible(props.item)"
-              :class="manageButtonClass(props.item)"
-              @click="onManageClicked(props.item)"
-            >
-              {{ manageButtonLabel(props.item) }}
-            </v-btn>
-          </td>
+        <template v-slot:item-inner-name="{ item }">
+          <div style="position: relative;">
+            <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <router-link
+                  class="primary--text"
+                  :to="{ path: '/admin/fleet-members/'}"
+                  target="_blank"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ get(item, 'name') }}
+                </router-link>
+              </template>
+              View fleet member details (new tab)
+            </v-tooltip>
+          </div>
         </template>
-      </v-data-table>
-      <div class="text-xs-center pt-2">
-        <v-pagination
-          v-model="pagination.page"
-          :length="pages"
-        />
-      </div>
+        <template v-slot:item-inner-tags="{ item }">
+          <div>
+            <v-chip
+              v-for="(tag, index) of get(item, 'tags', [])"
+              :key="index"
+              color="secondary"
+              text-color="white"
+            >
+              {{ tag.name }}
+            </v-chip>
+          </div>
+        </template>
+        <template v-slot:item-inner-state_of_incorporation="{ item }">
+          <div class="grey--text">
+            {{ get(item, 'state_of_incorporation') }}
+          </div>
+        </template>
+        <template v-slot:item-inner-manage="{ item }">
+          <v-btn
+            :depressed="manageButtonLabel(item) !== 'Assign'"
+            :disabled="!isEligible(item)"
+            :class="manageButtonClass(item)"
+            @click="onManageClicked(item)"
+          >
+            {{ manageButtonLabel(item) }}
+          </v-btn>
+        </template>
+      </f-data-table>
     </div>
   </div>
 </template>
 <script>
 import get from 'lodash/get'
 import _uniq from 'lodash/uniq'
+import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 
 export const HEADERS = [
   { text: 'Fleet member', value: 'name' },
   { text: 'State of incorporation', value: 'state_of_incorporation' },
   { text: 'Tags', value: 'tags' },
-  { text: 'Manage' }
+  { text: 'Manage', value: 'manage' }
 ]
 export default {
+  components: { FDataTable },
   props: {
     stores: {
       type: Array,

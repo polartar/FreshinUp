@@ -1,4 +1,5 @@
 ## Dec 26, 2020
+- **ADD** Add new fleet member button & dialog are not created on Event Detail page [379](https://github.com/FreshinUp/foodfleet/issues/379)
 - **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
 
 <br/>

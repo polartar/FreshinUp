@@ -500,14 +500,14 @@ exports[`Store List component Snapshots stores assigned 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark warning warning-text--text"
+                class="v-btn theme--dark accent accent-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Pending
+  Draft
  
                   <i
                     aria-hidden="true"
@@ -802,14 +802,14 @@ exports[`Store List component Snapshots stores assigned 1`] = `
               class="v-menu"
             >
               <button
-                class="v-btn theme--dark success success-text--text"
+                class="v-btn theme--dark accent accent-text--text"
                 type="button"
               >
                 <div
                   class="v-btn__content"
                 >
                   
-  Revision
+  Draft
  
                   <i
                     aria-hidden="true"

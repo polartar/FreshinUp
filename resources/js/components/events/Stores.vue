@@ -46,6 +46,8 @@
           <hr>
           <add-store
             :event="event"
+            :stores="stores"
+            :store-types="types"
             class="mb-2"
           />
         </v-card>

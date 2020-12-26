@@ -70,7 +70,7 @@
       </td>
       <td class="select-td">
         <status-select
-          :value="props.item.status"
+          :value="props.item.status_id"
           :options="statuses"
         />
       </td>

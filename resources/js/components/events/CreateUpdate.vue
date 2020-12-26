@@ -183,6 +183,7 @@
           :types="storeTypes"
           :statuses="storeStatuses"
           :stores="stores"
+          :event="event"
           @manage-view-details="viewDetails"
         />
       </v-flex>
