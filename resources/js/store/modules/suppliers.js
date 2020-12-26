@@ -2,10 +2,10 @@ import makeRestStore from '../utils/makeRestStore'
 
 export default ({ items, item }) => {
   const store = makeRestStore(
-    'supplier',
+    'suppliers',
     { items, item },
     {
-      itemsPath: () => `/foodfleet/supplier`
+      itemsPath: () => `/foodfleet/suppliers`
     }
   )
 
@@ -13,25 +13,25 @@ export default ({ items, item }) => {
     namespaced: true,
     ...store,
     modules: {
-      summary: makeRestStore(
+      stores: makeRestStore(
         'stores',
         { item },
         {
-          itemPath: ({ supplier }) => `/foodfleet/supplier/${supplier}/stores`
+          itemPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/stores`
         }
       ),
-      serviceSummary: makeRestStore(
+      documents: makeRestStore(
         'documents',
         { item },
         {
-          itemPath: ({ supplier }) => `/foodfleet/supplier/${supplier}/documents`
+          itemPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/documents`
         }
       ),
       events: makeRestStore(
         'events',
         { item },
         {
-          itemsPath: ({ supplier }) => `/foodfleet/supplier/${supplier}/events`
+          itemsPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/events`
         }
       )
     }
