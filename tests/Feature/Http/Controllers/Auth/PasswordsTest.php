@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Notification;
-use App\Notifications\CustomResetNotification;
+use App\Notifications\PasswordResetNotification;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -81,7 +81,7 @@ class PasswordsTest extends TestCase
 
         $this->assertStringContainsString("link was sent", $response['message']);
 
-        Notification::assertSentTo($user, CustomResetNotification::class);
+        Notification::assertSentTo($user, PasswordResetNotification::class);
     }
 
     /**

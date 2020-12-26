@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use App\Models\Foodfleet\Company;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\FinancialReport;
-use App\Notifications\CustomResetNotification;
+use App\Notifications\PasswordResetNotification;
 use FreshinUp\FreshBusForms\Models\User\UserStatus;
 use FreshinUp\FreshBusForms\Http\Resources\User\Level;
 
@@ -68,6 +68,6 @@ class User extends \FreshinUp\FreshBusForms\Models\User\User
 
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new CustomResetNotification($token));
+        $this->notify(new PasswordResetNotification($token));
     }
 }

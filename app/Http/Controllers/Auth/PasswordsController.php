@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Str;
 
 class PasswordsController extends Controller
 {
@@ -41,5 +44,23 @@ class PasswordsController extends Controller
         return $response == Password::PASSWORD_RESET
                     ? $this->sendResetResponse($request, $response)
                     : $this->sendResetFailedResponse($request, $response);
+    }
+
+
+    /**
+     * @param \App\User $user
+     * @param $password
+     */
+    protected function resetPassword($user, $password)
+    {
+        $user->password = Hash::make($password);
+        $user->setRememberToken(Str::random(60));
+        $user->save();
+
+        // Omit triggering this event so that the listener in Bus won't fire
+        // see https://github.com/FreshinUp/fresh-bus-forms/blob/master/src/Listeners/UserPasswordReset.php
+        // event(new PasswordReset($user));
+
+        $this->guard()->login($user);
     }
 }
