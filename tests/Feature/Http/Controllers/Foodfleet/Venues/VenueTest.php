@@ -229,16 +229,12 @@ class VenueTest extends TestCase
     public function testGetListWithIncludeStatusAndOwner()
     {
         $user = factory(User::class)->create();
-
         Passport::actingAs($user);
-
         $status = factory(VenueStatus::class)->create();
-
         $venue = factory(Venue::class)->create([
             'owner_uuid' => $user->uuid,
             'status_id' => $status->id,
         ]);
-
         $data = $this->json('GET', '/api/foodfleet/venues?include=status,owner')
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -255,6 +251,11 @@ class VenueTest extends TestCase
             'uuid' => $user->uuid,
             'name' => $user->name,
         ], $data[0]['owner']);
+
+        $this->assertArraySubset([
+            'id' => $status->id,
+            'name' => $status->name,
+        ], $data[0]['status']);
     }
 
     public function testUpdateNonExisting()
