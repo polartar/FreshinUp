@@ -1,7 +1,6 @@
 <template>
   <!--  TODO: Replace with FDataTable -->
   <div>
-    {{currentUser}}
     <v-card-title class="px-3">
       <v-layout
         align-center
@@ -298,6 +297,7 @@
 </template>
 
 <script>
+import { omitBy, isNull, get } from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
@@ -380,22 +380,16 @@ export default {
       // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
     },
     async onSaveClick (payload) {
+     
+       const data = omitBy(payload, (value, key) => {
+        const extra = ['created_at', 'updated_at', 'assigned', 'owner']
+        return extra.includes(key) || isNull(value)
+      })
       
-      // const data = omitBy(payload, (value, key) => {
-      //   const extra = ['created_at', 'updated_at', 'assigned', 'owner']
-      //   return extra.includes(key) || isNull(value)
-      // })
-      // if (this.isNew) {
-      //   await this.$store.dispatch('documents/createItem', { data })
-      //   await this.$store.dispatch('generalMessage/setMessage', 'Created.')
-      //   this.backToList()
-      // } else {
-      //   await this.$store.dispatch('documents/updateItem', {
-      //     data,
-      //     params: { id: data.uuid }
-      //   })
-      //   await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-      // }
+      const a= await this.$store.dispatch('documents/createItem', { data })
+      await this.$store.dispatch('generalMessage/setMessage', 'Created.')
+      this.backToList()
+      
     },
     manage (item, doc) {
       this.$emit('manage-' + item.action, doc)

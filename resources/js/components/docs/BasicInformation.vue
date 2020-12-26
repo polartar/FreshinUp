@@ -325,9 +325,6 @@ export default {
       return !get(this.value, 'uuid')
     }
   },
-  mounted(){
-    console.log("start");
-  },
   methods: {
     previewOrDownload () {
       return this.downloadable ? this.download() : this.preview()

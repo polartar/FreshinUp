@@ -328,9 +328,9 @@ export default {
     }
   },
   mounted(){
-    console.log("start", this.currentUser);
     this.assigned_uuid = this.currentUser.uuid;
     this.event_store_uuid = this.currentUser.event_store_uuid
+    this.assigned = this.currentUser;
   },
   methods: {
     previewOrDownload () {
