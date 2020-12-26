@@ -90,4 +90,8 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
         ->name('square.authorize');
 
     Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
+
+    Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
+    Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
+    Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
 });
