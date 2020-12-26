@@ -3,7 +3,7 @@
 exports[`Edit Company Page Snapshots mocked 1`] = `
 <div>
   <div
-    class="fresh-company__edit fresh-company__edit--1"
+    class="fresh-company__edit fresh-company__edit--2"
   >
     <div
       class="container fluid fill-height justify-space-between"
@@ -74,7 +74,7 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                                       class="v-select__selections"
                                     >
                                       
-                            ACTIVE
+                            INACTIVE
                           
                                       <input
                                         aria-label="Status"
@@ -115,11 +115,10 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                                           role="list"
                                         >
                                           <div
-                                            class="primary--text"
                                             role="listitem"
                                           >
                                             <a
-                                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                                              class="v-list__tile v-list__tile--link theme--light"
                                             >
                                               <div
                                                 class="v-list__tile__content"
@@ -129,10 +128,11 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                                             </a>
                                           </div>
                                           <div
+                                            class="primary--text"
                                             role="listitem"
                                           >
                                             <a
-                                              class="v-list__tile v-list__tile--link theme--light"
+                                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
                                             >
                                               <div
                                                 class="v-list__tile__content"

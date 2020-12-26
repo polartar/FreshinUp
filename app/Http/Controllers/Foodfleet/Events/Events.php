@@ -126,7 +126,6 @@ class Events extends Controller
     public function store(Request $request, CreateEvent $action)
     {
         $request = $this->prepareDatesForValidation($request);
-
         if ($request->get('status_id') == EventStatusEnum::DRAFT) {
             $validationRules = ['name' => 'required'];
         } else {
@@ -151,6 +150,7 @@ class Events extends Controller
                 'schedule.description' => 'string'
             ];
         }
+
         $this->validate($request, $validationRules);
 
         $inputs = $request->input();
@@ -188,7 +188,6 @@ class Events extends Controller
     public function update(Request $request, $uuid, UpdateEvent $action)
     {
         $request = $this->prepareDatesForValidation($request);
-
         $this->validate($request, [
             'name' => 'string',
             'manager_uuid' => 'string|exists:users,uuid',
@@ -322,7 +321,7 @@ class Events extends Controller
                 //NB: 2020-12-23 is in the format of Y-m-d and has a length of 10
                 //NB: 2020-12-24 00:00 is in the format of Y-m-d H:i without :s and has a length of 16
                 $param = $request->get($dt);
-                if (strlen($param) == 16) {
+                if (($len = strlen($param)) == 16 || $len == 27) {
                     $new_date = Carbon::parse($param)->toDateTimeString();
 
                     $updated_dates[$dt] = $new_date;
