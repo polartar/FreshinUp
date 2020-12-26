@@ -8,11 +8,16 @@ use App\Models\Foodfleet\Store;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use App\Models\Foodfleet\Event;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 
 class SupplierTest extends TestCase
 {
+    use RefreshDatabase, WithFaker, WithoutMiddleware;
+
     public function testGetEventList()
     {
         $company = factory(Company::class)->create();
