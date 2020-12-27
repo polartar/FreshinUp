@@ -745,10 +745,6 @@ class StoresTest extends TestCase
         // TODO a better way of asserting the following
     }
 
-    /**
-     * Get the statistics of stores by their status
-     * @group statistics
-     */
     public function testCanGetStatsOfStoresByStatuses()
     {
         //Given

@@ -94,6 +94,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
     Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
     Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
+    Route::get('suppliers/{uuid}/stores/stats', 'Foodfleet\Suppliers@stats');
 });
 
 Route::post('/password/reset', 'Auth\PasswordsController@reset');

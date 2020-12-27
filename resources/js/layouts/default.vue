@@ -260,6 +260,7 @@ export default {
       const isAdmin = authUser.has_admin_access
       if (isAdmin) {
         // TODO: should set admin menus
+        console.warn('auth user has admin access so aborting...')
         return false
       }
       if (authUser.type === USER_TYPE.SUPPLIER) {

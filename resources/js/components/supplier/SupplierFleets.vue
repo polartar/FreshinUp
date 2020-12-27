@@ -18,7 +18,6 @@
     <v-divider />
     <v-layout
       row
-      wrap
       class="px-4 py-2"
     >
       <v-flex
