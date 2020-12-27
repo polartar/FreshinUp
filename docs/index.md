@@ -1,3 +1,8 @@
+## Dec 26, 2020
+- **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
+
+<br/>
+
 ## Dec 25, 2020
 - **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
 - **ADD** Dashboard - Supplier scoped resource [668](https://github.com/FreshinUp/foodfleet/issues/668)
@@ -5,7 +10,6 @@
 <br/>
 
 ## Dec 24, 2020
-- **ADD** Dashboard - Supplier scoped resource[668](https://github.com/FreshinUp/foodfleet/issues/668)
 - **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
 - **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
 - **MOD** Correcting user details layout
