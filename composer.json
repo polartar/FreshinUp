@@ -77,7 +77,7 @@
     "phpcs": "phpcs --standard=phpcs.xml --ignore=app/Console/**,app/Helpers/**",
     "lint": "vendor/bin/phpcs --ignore=database/migrations/** && composer lint2",
     "lint:fix": "vendor/bin/phpcbf && composer lint2:fix",
-    "lint2": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --dry-run --using-cache=no --diff",
+    "lint2": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --dry-run --using-cache=no",
     "lint2:fix": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --using-cache=no",
     "test:coverage-check": "vendor/bin/coverage-check tests/.reports/coverage/clover.xml 63",
     "test": "composer test:all-coverage && composer test:coverage-check",
