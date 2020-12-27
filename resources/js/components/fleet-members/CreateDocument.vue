@@ -244,6 +244,19 @@
         </v-layout>
       </v-card>
     </v-flex>
+    <v-dialog
+      v-model="previewDialog"
+      max-width="1200"
+    >
+      <document-preview
+        :value="value"
+        :templates="templates"
+        :events="events"
+        :is-loading="documentLoading"
+        @accept-contract="acceptContract"
+        @close="previewDialog=false"
+      />
+    </v-dialog>
   </v-layout>
 </template>
 <script>
@@ -256,7 +269,7 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import { mapGetters, mapActions } from 'vuex'
-
+import DocumentPreview from '~/components/docs/DocumentPreview.vue'
 export const DEFAULT_DOCUMENT = {
   uuid: null,
   title: null,
@@ -289,7 +302,8 @@ export default {
   components: {
     FileUploader,
     VueCtkDateTimePicker,
-    AssignedSearch
+    AssignedSearch,
+    DocumentPreview
   },
   mixins: [Validate, FormatDate, MapValueKeysToData],
   props: {
@@ -301,11 +315,14 @@ export default {
   },
   data () {
     return {
-      ...DEFAULT_DOCUMENT
+      ...DEFAULT_DOCUMENT,
+       previewDialog: false,
+       documentLoading:false
     }
   },
   computed: {
     ...mapGetters(['currentUser']),
+     ...mapGetters('events', { events: 'items' }),
     submitLabel () {
       return this.isNew ? 'Submit' : 'Save changes'
     },
@@ -333,14 +350,30 @@ export default {
     this.assigned = this.currentUser;
   },
   methods: {
+       acceptContract () {
+      this.documentLoading = true
+      this.$store.dispatch('documents/acceptContract', { params: { id: this.$route.params.id } })
+        .then(() => {
+          this.previewDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Contract accepted.')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.documentLoading = false
+        })
+    },
     previewOrDownload () {
       return this.downloadable ? this.download() : this.preview()
     },
     download () {
-      this.$emit('download')
+      //Todo download
     },
     preview () {
-      this.$emit('preview')
+      // this.$emit('preview')
+      this.previewDialog = true;
     },
     cancel () {
       this.$emit('cancel')

@@ -1,6 +1,6 @@
 <template>
   <!--  TODO: Replace with FDataTable -->
-  <div>
+  <div> 
     <v-card-title class="px-3">
       <v-layout
         align-center
@@ -16,7 +16,7 @@
         <v-flex shrink>
           <v-dialog
             v-model="newDocumentDialog"
-            max-width="800"
+            max-width="1000"
           >
             <template v-slot:activator="{ on }">
               <v-btn
@@ -37,18 +37,16 @@
               <v-divider />
               
               <v-card-text class="grey--text">
-                Hello
-                Hello! 
-        <CreateDocument
-          ref="basicInfo"
-          :is-loading="isLoading"
-          :types="types"
-          :templates="templates"
-          :value="doc"
-          @input="onSaveClick"
-          @download="downloadDocument"
-          @preview="previewDialog = true"     
-                />
+               
+              <CreateDocument
+                ref="basicInfo"
+                :is-loading="isLoading"
+                :types="types"
+                :templates="templates"
+                :value="doc"
+                @input="onSaveClick"
+                @cancel="newDocumentDialog = false"     
+                      />
               </v-card-text>
               <v-divider />
             </v-card>
@@ -57,7 +55,7 @@
         </v-flex>
       </v-layout>
     </v-card-title>
-    <hr>
+    <hr />
 
     <v-card-text class="ma-2">
       <filter-sorter
@@ -306,6 +304,7 @@ import StatusSelect from '~/components/docs/StatusSelect'
 import FilterSorter from '~/components/docs/FilterSorter.vue'
 // import FleetMemberDocuemnt from '~/components/docs/FleetMemberDocs.vue'
 import CreateDocument, {DEFAULT_DOCUMENT} from './CreateDocument.vue'
+import DocumentPreview from '~/components/docs/DocumentPreview.vue'
 
 export const HEADERS = [
   {
@@ -330,7 +329,7 @@ export const ITEM_ACTIONS = [
   // disabled for now { action: 'delete', text: 'Delete' }
 ]
 export default {
-  components: { FBtnMenu, StatusSelect, FilterSorter, CreateDocument },
+  components: { FBtnMenu, StatusSelect, FilterSorter, CreateDocument, DocumentPreview },
   mixins: [Pagination, FormatDate],
   props: {
     docs: {
@@ -359,7 +358,7 @@ export default {
       headers: HEADERS,
       itemActions: ITEM_ACTIONS,
       actionBtnTitle: 'Manage',
-      newDocumentDialog: false
+      newDocumentDialog: false,
     }
   },
   computed: {
@@ -376,9 +375,6 @@ export default {
     },
   },
   methods: {
-    downloadDocument () {
-      // TODO: see https://github.com/FreshinUp/foodfleet/issues/531
-    },
     async onSaveClick (payload) {
      
        const data = omitBy(payload, (value, key) => {
@@ -412,6 +408,30 @@ export default {
     searchInput (val) {
       this.$emit('searchInput', val)
     }
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.setPageLoading(true)
+    const promises = []
+      vm.$store.dispatch('documents/setFilters', {
+        include: 'template'
+      })
+      promises.push(vm.$store.dispatch('documents/getItem', {
+        params: { id }
+      }))
+    promises.push(vm.$store.dispatch('documentStatuses/getItems'))
+    promises.push(vm.$store.dispatch('documentTypes/getItems'))
+    promises.push(vm.$store.dispatch('events/getItems'))
+    vm.$store.dispatch('documentTemplates/setFilters', {
+      status_id: vm.$store.getters['documentTemplates/STATUS'].PUBLISHED
+    })
+    promises.push(vm.$store.dispatch('documentTemplates/getItems'))
+    Promise.all(promises)
+      .then(() => {})
+      .catch((error) => { console.error(error) })
+      .then(() => {
+        if (next) next()
+        vm.$store.dispatch('page/setLoading', false)
+      })
   }
 }
 </script>
