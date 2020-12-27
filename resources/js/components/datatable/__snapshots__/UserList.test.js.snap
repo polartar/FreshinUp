@@ -1139,7 +1139,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -1671,7 +1671,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -2203,7 +2203,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -2729,7 +2729,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -3255,7 +3255,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -3787,7 +3787,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -4313,7 +4313,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -4839,7 +4839,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -5371,7 +5371,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>
@@ -5903,7 +5903,7 @@ exports[`User List component Snapshots Set 1`] = `
                         <div
                           class="v-list__tile__title"
                         >
-                          View
+                          View / Edit
                         </div>
                       </a>
                     </div>

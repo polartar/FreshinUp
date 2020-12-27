@@ -3,17 +3,19 @@
 namespace App\Actions;
 
 use App\Helpers\SquareHelper;
-use App\Helpers\EventScheduleHelper;
-use FreshinUp\FreshBusForms\Actions\Action;
 use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\EventTag;
+use Illuminate\Support\Facades\DB;
+use App\Helpers\EventScheduleHelper;
 use App\Models\Foodfleet\EventSchedule;
 use App\Models\Foodfleet\EventOccurrence;
+use FreshinUp\FreshBusForms\Actions\Action;
 
 class UpdateEvent implements Action
 {
     public function execute(array $data)
     {
+        /** @var Event $event */
         $event = Event::where('uuid', $data['uuid'])->first();
 
         $collection = collect($data);
@@ -30,8 +32,9 @@ class UpdateEvent implements Action
                     $tagUuids[] = $record->uuid;
                 }
             }
-
             $event->eventTags()->sync($tagUuids);
+        } elseif ($collection->has('event_tags')) {
+            $event->eventTags()->sync([]);
         }
 
         $storeUuids = $collection->get('store_uuids');
@@ -64,7 +67,7 @@ class UpdateEvent implements Action
             empty($ends_on) || empty($description)) || empty($repeat_on) && $interval_unit != 'Year(s)') {
             return;
         }
-        
+
         if (empty($schedule)) {
             $schedule = new EventSchedule;
         } else {

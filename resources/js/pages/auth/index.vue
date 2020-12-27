@@ -20,21 +20,37 @@
             :is-loading="loading"
             :logo="logo"
             :title="title"
+            :value="auth"
             @password-forgot="forgotPwDialog = true"
             @input="login"
             @register-as="registerAs"
           >
             <v-snackbar
-              :value="Boolean(error)"
+              v-model="isMessageVisible"
+              color="success"
+              :timeout="6000"
+              top
+            >
+              {{ message }}
+              <v-btn
+                dark
+                flat
+                @click="setMessageVisibility(false)"
+              >
+                Close
+              </v-btn>
+            </v-snackbar>
+            <v-snackbar
+              v-model="isVisible"
               color="error"
               :timeout="6000"
               top
             >
-              Wrong login or password
+              {{ errorMessages }}
               <v-btn
                 dark
                 flat
-                @click="error = null"
+                @click="setErrorVisibility(false)"
               >
                 Close
               </v-btn>
@@ -51,7 +67,7 @@
       <forgot-password
         ref="forgotpasswordmodal"
         @close="forgotPwDialog = false"
-        @showstatus="showstatus"
+        @showstatus="showMessage"
       />
     </v-dialog>
   </v-content>
@@ -60,8 +76,20 @@
 <script>
 import BusAuth from 'fresh-bus/pages/auth/index.vue'
 import Login from '~/components/users/Login.vue'
+import { mapActions, mapGetters } from 'vuex'
+import { createHelpers } from 'vuex-map-fields'
 
 // TODO: move refactor to fresh-bus along with Login component
+
+const generalErrorMessageFields = createHelpers({
+  getterType: 'generalErrorMessages/getField',
+  mutationType: 'generalErrorMessages/updateField'
+}).mapFields
+
+const generalMessageFields = createHelpers({
+  getterType: 'generalMessage/getField',
+  mutationType: 'generalMessage/updateField'
+}).mapFields
 
 export default {
   components: { Login },
@@ -70,10 +98,34 @@ export default {
   meta: { layout: 'blank' },
   data () {
     return {
-      loading: false
+      loading: false,
+      auth: {
+        email: '',
+        password: ''
+      }
     }
   },
+  computed: {
+    ...generalErrorMessageFields([
+      'isVisible'
+    ]),
+    ...generalMessageFields({
+      isMessageVisible: 'isVisible'
+    }),
+    ...mapGetters('generalErrorMessages', {
+      errorMessages: 'errorMessages'
+    }),
+    ...mapGetters('generalMessage', {
+      message: 'message'
+    })
+  },
   methods: {
+    ...mapActions('generalMessage', {
+      setMessageVisibility: 'setVisibility'
+    }),
+    ...mapActions('generalMessage', {
+      setMessageVisibility: 'setVisibility'
+    }),
     login (data) {
       this.error = null
       this.loading = true
@@ -86,16 +138,9 @@ export default {
         .then(() => {
           this.$router.push({ path: this.loginSuccessRedirectPath })
           this.$router.go()
-          // TODO on login success set user menu items to the following
-          // - Dashboard
-          // - My Company
-          // - My Fleet
-          // - Events
-          // - Documents
         })
-        .catch(error => {
-          console.error(error)
-          this.error = 'Username and Password were not accepted'
+        .catch(() => {
+          this.$store.dispatch('generalErrorMessages/setErrors', 'Username and Password were not accepted')
         })
         .then(() => {
           this.loading = false
@@ -103,7 +148,18 @@ export default {
     },
     registerAs (type) {
       this.$router.push({ path: `/register?type=${type}` })
+    },
+    showMessage (message, type) {
+      if (type === 'error') {
+        this.$store.dispatch('generalErrorMessages/setErrors', message)
+      } else {
+        this.$store.dispatch('generalMessage/setMessage', message)
+      }
     }
+  },
+  beforeRouteEnterOrUpdate (vm, from, to, next) {
+    vm.$store.dispatch('page/setLoading', false)
+    vm.auth.email = vm.$route.query.email
   }
 }
 </script>
