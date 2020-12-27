@@ -1,5 +1,6 @@
 <template>
   <v-container v-if="!isLoading">
+    Stroes{{stores}}
     <v-layout row>
       <v-flex
         xs12
@@ -111,11 +112,11 @@ export default {
     },
     isPersonalComplete(){
       const currentUser = this.currentUser;
-      return currentUser.email && currentUser.first_name && currentUser.last_name ? true : false;
+      return currentUser && currentUser.email && currentUser.first_name && currentUser.last_name ? true : false;
     },
     isCompanyComplete(){
       const company = this.currentUser.company;
-      return company.name && company.status &&  company.company_types.length ? true : false;
+      return company && company.name && company.status &&  company.company_types.length ? true : false;
     },
     isDashboardComplete(){
       return this.stores && this.stores.length && this.isPersonalComplete && this.isCompanyComplete ? true : false;
@@ -123,8 +124,10 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
+    vm.$store.dispatch('supplier/stores/getItems')
     vm.$store.dispatch('currentUser/getCurrentUser').then(() => {
     vm.$store.dispatch('page/setLoading', false)
+       
     })
   }
 }
