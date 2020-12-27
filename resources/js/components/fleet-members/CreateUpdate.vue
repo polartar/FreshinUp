@@ -763,6 +763,12 @@ export default {
           'filter[assigned_uuid]': id
         }
       }))
+
+      vm.$store.dispatch('documentTemplates/setFilters', {
+       status_id: vm.$store.getters['documentTemplates/STATUS'].PUBLISHED
+      })
+      promises.push(vm.$store.dispatch('documentTemplates/getItems'))
+
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
         params: {
@@ -797,6 +803,7 @@ export default {
       })
       promises.push(vm.$store.dispatch('payments/getItems'))
     }
+    promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))

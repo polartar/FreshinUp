@@ -409,30 +409,6 @@ export default {
       this.$emit('searchInput', val)
     }
   },
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.setPageLoading(true)
-    const promises = []
-      vm.$store.dispatch('documents/setFilters', {
-        include: 'template'
-      })
-      promises.push(vm.$store.dispatch('documents/getItem', {
-        params: { id }
-      }))
-    promises.push(vm.$store.dispatch('documentStatuses/getItems'))
-    promises.push(vm.$store.dispatch('documentTypes/getItems'))
-    promises.push(vm.$store.dispatch('events/getItems'))
-    vm.$store.dispatch('documentTemplates/setFilters', {
-      status_id: vm.$store.getters['documentTemplates/STATUS'].PUBLISHED
-    })
-    promises.push(vm.$store.dispatch('documentTemplates/getItems'))
-    Promise.all(promises)
-      .then(() => {})
-      .catch((error) => { console.error(error) })
-      .then(() => {
-        if (next) next()
-        vm.$store.dispatch('page/setLoading', false)
-      })
-  }
 }
 </script>
 
