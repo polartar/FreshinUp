@@ -95,6 +95,11 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
     Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
     Route::get('suppliers/{uuid}/stores/stats', 'Foodfleet\Suppliers@stats');
+
+    // TODO: move to fresh-bus
+    // move store modules: companyStatuses, companyTypes
+    Route::get('company/types', 'Foodfleet\Companies\CompanyTypes@index');
+    Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
 });
 
 Route::post('/password/reset', 'Auth\PasswordsController@reset');

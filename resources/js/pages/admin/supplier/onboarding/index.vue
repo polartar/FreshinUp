@@ -6,7 +6,7 @@
         pa-2
       >
         <h2 class="f-page__title f-page__title--admin">
-          {{ pageTitle }}
+          Welcome to Food Fleet!
         </h2>
         <p class="white--text">
           We need to walk you through these steps before you can join our fleet.
@@ -14,7 +14,7 @@
       </v-flex>
     </v-layout>
 
-    <v-layout>
+    <v-layout v-if="!isLoading">
         <v-flex
         pa-2
         xs12
@@ -80,18 +80,12 @@ import StepsCard from '~/components/dashboard/StepsCard.vue'
 
 export default {
   layout: 'admin',
-  name: 'Dashboard',
   components: {
     StepsCard,
   },
-  data () {
-    return {
-      pageTitle: 'Welcome to Food Fleet!'
-    }
-  },
   computed: {
     ...mapGetters(['currentUser']),
-    ...mapGetters('supplier/stores', { stores: 'items' }),
+    ...mapGetters('suppliers/stores', { stores: 'items' }),
     ...mapGetters('page', ['isLoading']),
     editUserRoute () {
         return '/admin/users/' + this.currentUser.id + '/edit'
@@ -101,27 +95,24 @@ export default {
     },
     isPersonalComplete(){
       const currentUser = this.currentUser;
-      return currentUser && currentUser.email && currentUser.first_name && currentUser.last_name ? true : false;
+      return currentUser && currentUser.email && currentUser.first_name && currentUser.last_name
     },
     isCompanyComplete(){
       const company = this.currentUser.company;
-      return company && company.name && company.status &&  company.company_types.length ? true : false;
+      return company && company.name && company.status &&  company.company_types.length
     },
     isDashboardComplete(){
-      return this.stores && this.stores.length && this.isPersonalComplete && this.isCompanyComplete ? true : false;
+      return this.stores && this.stores.length && this.isPersonalComplete && this.isCompanyComplete
     },
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     vm.$store.dispatch('page/setLoading', true)
-    vm.$store.dispatch('supplier/stores/getItems', {
-      params: {
-        supplierId: this.currentUser.uuid
-      }
-    })
+    vm.$store.dispatch('currentUser/getCurrentUser')
       .then()
-      .catch()
+      .catch(console.error)
       .then(() => {
         vm.$store.dispatch('page/setLoading', false)
+        next && next()
       })
   }
 }

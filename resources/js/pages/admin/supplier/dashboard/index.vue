@@ -111,6 +111,10 @@ export default {
   },
   methods: {
     get,
+    toOnBoardingPage () {
+      this.$store.dispatch('generalErrorMessages/setErrors', 'User profile not ready yet.')
+      this.$router.push({ path: '/admin/supplier/onboarding' })
+    },
     // store
     viewFleet (store) {
       this.$router.push({ path: `/admin/fleet-members/${store.uuid}` })
@@ -256,11 +260,17 @@ export default {
         supplierId: vm.currentUser.uuid
       }
     }))
-    promises.push(vm.$store.dispatch('suppliers/stores/getItems', {
+    vm.$store.dispatch('suppliers/stores/getItems', {
       params: {
         supplierId: vm.currentUser.uuid
       }
-    }))
+    })
+      .then(() => {
+        if (vm.stores.length === 0) {
+          vm.toOnBoardingPage()
+        }
+      })
+      .catch(console.error)
     promises.push(vm.$store.dispatch('suppliers/stores/stats/getItems', {
       params: {
         supplierId: vm.currentUser.uuid
