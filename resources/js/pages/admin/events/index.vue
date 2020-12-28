@@ -163,8 +163,9 @@ import EventList from '~/components/events/EventList.vue'
 import EventCalendar from '~/components/events/EventCalendar.vue'
 import SimpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
+import { USER_TYPE } from '../../../store/modules/userTypes'
 
-const INCLUDE = [
+export const INCLUDE = [
   'status',
   'host',
   'location',
@@ -221,20 +222,20 @@ export default {
       events: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
-      sortBy: 'sortBy'
+      sortBy: 'sortBy',
+      sortables: 'sortables'
     }),
     ...mapGetters('events', { event: 'item' }),
     ...mapGetters('eventStatuses', { statuses: 'items' }),
     ...mapGetters('eventTypes', { 'eventTypes': 'items' }),
     ...mapGetters('page', ['isLoading']),
-    ...mapState('events', ['sortables']),
     deleteDialogTitle () {
       return this.deleteTemp.length < 2 ? 'Are you sure you want to delete this event?' : 'Are you sure you want to delete the following events?'
     },
     role () {
       if (this.currentUser.isAdmin) return 'admin'
-      if (this.currentUser.type === 1) return 'supplier'
-      if (this.currentUser.type === 2) return 'host'
+      if (this.currentUser.type === USER_TYPE.SUPPLIER) return 'supplier'
+      if (this.currentUser.type === USER_TYPE.CUSTOMER) return 'host'
       return 'admin'
     }
   },
@@ -274,8 +275,7 @@ export default {
           this.editingEvent = null
           const eventUuid = get(data, 'data.uuid')
           if (eventUuid) {
-            const path = `/admin/events/${eventUuid}/edit`
-            this.$router.push({ path })
+            this.eventEdit({ uuid: eventUuid })
             this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
           }
         })

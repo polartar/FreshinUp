@@ -31,7 +31,9 @@ class Suppliers extends Controller
 {
     public function documents(Request $request, $uuid)
     {
+        // TODO: might want to retrieve documents for all fleet members for this supplier
         $documents = QueryBuilder::for(Document::class, $request)
+            // TODO this uuid might company one
             ->where('assigned_uuid', $uuid)
             ->with('assigned')
             ->allowedSorts([
@@ -62,7 +64,7 @@ class Suppliers extends Controller
     {
         $supplier = User::where('uuid', $uuid)->firstOrFail();
         $events = QueryBuilder::for(Event::class, $request)
-            ->where('host_uuid', $supplier->company->uuid)
+            ->where('host_uuid', optional($supplier->company)->uuid)
             ->with('stores')
             ->allowedIncludes([
                 'status',
@@ -104,7 +106,7 @@ class Suppliers extends Controller
     {
         $supplier = User::where('uuid', $uuid)->firstOrFail();
         $stores = QueryBuilder::for(StoreModel::class, $request)
-            ->where('supplier_uuid', $supplier->company->uuid)
+            ->where('supplier_uuid', optional($supplier->company)->uuid)
             ->allowedIncludes([
                 'tags',
                 'addresses',

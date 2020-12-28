@@ -57,7 +57,7 @@
       :descending="storeSorting.descending"
       @paginate="onStorePaginate"
       @change-status="changeStoreStatus"
-      @manage-view="viewFleet"
+      @manage-edit="editFleet"
       @manage-delete="deleteFleet"
       @manage-multiple-view="viewFleets"
       @manage-multiple-status="changeStoresStatus"
@@ -116,11 +116,23 @@ export default {
       this.$router.push({ path: '/admin/supplier/onboarding' })
     },
     // store
-    viewFleet (store) {
-      this.$router.push({ path: `/admin/fleet-members/${store.uuid}` })
+    getFleets () {
+      this.$store.dispatch('suppliers/stores/getItems', {
+        params: {
+          supplierId: this.currentUser.uuid
+        }
+      })
+      this.$store.dispatch('suppliers/stores/stats/getItems', {
+        params: {
+          supplierId: this.currentUser.uuid
+        }
+      })
+    },
+    editFleet (store) {
+      this.$router.push({ path: `/admin/supplier/fleet-members/${store.uuid}/edit` })
     },
     viewFleets () {
-      this.$router.push({ path: `/admin/fleet-members` })
+      this.$router.push({ path: `/admin/supplier/fleet-members` })
     },
     deleteFleet (store) {
       this.$store.dispatch('stores/deleteItem', {
@@ -128,6 +140,9 @@ export default {
           id: store.uuid
         }
       })
+        .then(() => {
+          this.getFleets()
+        })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
           this.$store.dispatch('generalErrorMessages/setErrors', message)
@@ -137,7 +152,7 @@ export default {
       // TODO: bulk delete for stores https://github.com/FreshinUp/foodfleet/issues/645
       Promise.all(stores.map(this.deleteFleet))
         .then(() => {
-          this.$store.dispatch('suppliers/stores/getItems')
+          this.getFleets()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -153,12 +168,19 @@ export default {
           id: store.uuid
         }
       })
+        .then(() => {
+          this.$store.dispatch('suppliers/stores/stats/getItems', {
+            params: {
+              supplierId: this.currentUser.uuid
+            }
+          })
+        })
     },
     changeStoresStatus (stores, status) {
       // TODO: bulk update on store https://github.com/FreshinUp/foodfleet/issues/647
       Promise.all(stores.map(store => this.changeStoreStatus(status.id, store)))
         .then(() => {
-          this.$store.dispatch('suppliers/stores/getItems')
+          this.getFleets()
         })
         .catch(error => console.error(error))
     },
@@ -232,7 +254,7 @@ export default {
   async beforeRouteEnterOrUpdate (vm, to, from, next) {
     await vm.$store.dispatch('currentUser/getCurrentUser')
     if (!get(vm.currentUser, 'company.uuid')) {
-      console.error('Auth user does not have company uuid')
+      vm.toOnBoardingPage()
       return false
     }
     vm.$store.dispatch('page/setLoading', false)

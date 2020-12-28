@@ -9,7 +9,6 @@
       <v-btn
         color="primary"
         round
-        disabled
         @click="viewAll"
       >
         View All
@@ -42,10 +41,10 @@
       >
         <v-flex xs12>
           <f-data-table
-            :headers="HEADERS"
+            :headers="headers"
             :items="stores"
-            :item-actions="ITEM_ACTIONS"
-            :multi-item-actions="ITEMS_ACTIONS"
+            :item-actions="itemActions"
+            :multi-item-actions="itemsActions"
             :is-loading="isLoading"
             v-bind="$attrs"
             v-on="$listeners"
@@ -100,7 +99,7 @@ export const HEADERS = [
 ]
 
 export const ITEM_ACTIONS = [
-  { action: 'view', text: 'View / Edit' },
+  { action: 'edit', text: 'View / Edit' },
   { action: 'delete', text: 'Delete' }
 ]
 
@@ -119,14 +118,10 @@ export default {
     isLoading: { type: Boolean, default: false },
     stores: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] },
-    statusStats: { type: Array, default: () => [] }
-  },
-  data () {
-    return {
-      HEADERS,
-      ITEM_ACTIONS,
-      ITEMS_ACTIONS
-    }
+    statusStats: { type: Array, default: () => [] },
+    headers: { type: Array, default: () => HEADERS },
+    itemActions: { type: Array, default: () => ITEM_ACTIONS },
+    itemsActions: { type: Array, default: () => ITEMS_ACTIONS },
   },
   methods: {
     get,

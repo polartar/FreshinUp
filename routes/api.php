@@ -89,7 +89,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
 
-    Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 
     Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
     Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
@@ -102,4 +101,5 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
 });
 
+Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 Route::post('/password/reset', 'Auth\PasswordsController@reset');
