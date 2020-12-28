@@ -54,7 +54,6 @@ class VenueTest extends TestCase
     public function testVenueOnlyHasEventsThroughLocations()
     {
         //Given
-
         //there exists a venue
         $venue = factory(Venue::class)->create();
 
@@ -69,7 +68,7 @@ class VenueTest extends TestCase
         ]);
 
         //there are currently 7 locations but only 3 events
-        foreach($locations as $location) {
+        foreach ($locations as $location) {
             $new_events = factory(Event::class)->create([
                 'location_uuid' => $location->uuid,
             ]);
