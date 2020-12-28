@@ -1,27 +1,34 @@
-# Roadmap
-
-## Document template page
-## Document page
-
-## Venue Page
-- Venues can be search by (this is unknown)
+## Dec 26, 2020
+- **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
 
 <br/>
 
-## Event Page
-
-## Event Edit Page
-### Event Fleet
-- As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
-
-### Components
-- Event Fleet _(Requires Fleet Members to be completed)_
-- Customer
+## Dec 25, 2020
+- **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
+- **ADD** Dashboard - Supplier scoped resource [668](https://github.com/FreshinUp/foodfleet/issues/668)
 
 <br/>
 
+## Dec 24, 2020
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+- **MOD** Correcting user details layout
+ [596](https://github.com/FreshinUp/foodfleet/issues/596)
 
-# Changes
+
+<br/>
+
+## Dec 23, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+<br/>
+
+## Dec 22, 2020
+- **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+- **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
+
+<br/>
 
 ## Dec 19, 2020
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
@@ -39,6 +46,7 @@
 - **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
 
 <br/>
+
 
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
@@ -83,7 +91,6 @@
 
 ## Nov 25, 2020
 - **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
-- **ADD** Food Fleet Members: Create Request payment function [#570](https://github.com/FreshinUp/foodfleet/issues/570)
 
 <br/>
 

@@ -741,7 +741,6 @@ class EventTest extends TestCase
         ];
     }
 
-
     /**
      * @dataProvider getDuplicateProvider
      * @param $payload
@@ -1364,5 +1363,115 @@ class EventTest extends TestCase
                 ]
             ], $data[$idx]);
         }
+    }
+
+    public function testValidationToCreateEventDoesNotRejectIncompleteDatesFormat()
+    {
+        //Given
+        //exists an admin
+        $company = factory(Company::class)->create();
+
+        $user = factory(User::class)->create([
+            'company_id' => $company->id,
+        ]);
+
+        Passport::actingAs($user);
+
+        // with venue and locations
+        $venue =  factory(Venue::class)->create([
+            'uuid' => 'cd1e36c1-426c-376a-a881-b91f2ce33d31',
+        ]);
+
+        $location = factory(Location::class)->create([
+            'venue_uuid' => $venue->uuid,
+            'uuid' => 'b4b34d44-c3ff-3494-8201-73b67b2263fe',
+        ]);
+
+        //When
+
+        //the admin decides to create a new event, with incomplete date formats
+
+        $dates = [
+            '2020-12-26T08:20:00.000000Z', '2020-12-27T08:20:00.000000Z', '2020-12-24 00:00', '2020-12-25 08:00',
+        ];
+
+        for ($i = 0; $i < count($dates); $i += 2) {
+            $event_payload = [
+                'name' => 'My Event',
+                'status_id' => 1,
+                'host_status' => 0,
+                'start_at' => $dates[$i], //Y-m-d H:i or in ISO format
+                'end_at' => $dates[$i + 1], //Y-m-d H:i
+                'staff_notes' => 'only visible to you people',
+                'member_notes' => 'only fleet members aye',
+                'customer_notes' => 'nothing much to be said again',
+                'attendees' => '70',
+                'commission_rate' => 5,
+                'commission_type' => 1,
+                'type_id' => 1,
+                'location_uuid' => $location->uuid,
+                'venue_uuid' => $venue->uuid,
+            ];
+
+            $response = $this->postJson("/api/foodfleet/events", $event_payload)
+                ->assertStatus(201)->json('data');
+
+            //same goes for an update with date in such format
+            //include the host
+            $event_payload = array_merge($event_payload, [
+                'host_uuid' => $company->uuid,
+                'manager_uuid' => $user->uuid,
+            ]);
+
+            $updated = $this->putJson("/api/foodfleet/events/" . $response['uuid'], $event_payload);
+
+            $final = $updated->assertStatus(200)->assertJsonStructure(['data'])->json('data');
+        }
+    }
+
+    public function testUpdatingAnEventWithoutTagsRemovesExistingTagsAsWell()
+    {
+        $company = factory(Company::class)->create();
+        $user = factory(User::class)->create([
+            'company_id' => $company->id,
+        ]);
+
+        $tagNames = ['food', 'working', 'code'];
+        /** @var Event $event */
+        $event = factory(Event::class)->create([
+            'host_uuid' => $company->uuid,
+        ]);
+        $tags = array_map(function ($name) {
+            return EventTag::firstOrCreate(['name' => $name])->uuid;
+        }, $tagNames);
+        $event->eventTags()->sync($tags);
+        $tags = $event->eventTags()->get();
+        $payload = array_merge($event->toArray(), [
+            'event_tags' => []
+        ]);
+
+        Passport::actingAs($user);
+        $data = $this->json('PUT', 'api/foodfleet/events/' . $event->uuid, $payload)
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+
+
+        //assert event (refreshed) no longer has tags
+        foreach ($tags as $tag) {
+            $this->assertDatabaseMissing('events_event_tags', [
+                'event_uuid' => $event->uuid,
+                'event_tag_uuid' => $tag->uuid,
+            ]);
+
+            //also assert that, the actual tags are not deleted
+            $this->assertDatabaseHas('event_tags', [
+                'uuid' => $tag->uuid,
+            ]);
+        }
+
+        $this->assertEquals(0, $event->eventTags()->count());
     }
 }
