@@ -257,9 +257,19 @@ export default {
   watch: {
     '$store.getters.currentUser' (authUser) {
       // TODO: ultimately this should be call just after login
+      const isAdmin = authUser.has_admin_access
+      if (isAdmin) {
+        // TODO: should set admin menus
+        return false
+      }
       if (authUser.type === USER_TYPE.SUPPLIER) {
         this.$store.dispatch('navigation/setUserMenuItems', SUPPLIER_USER_MENU_ITEMS)
         this.$store.dispatch('navigation/setDrawerItems', SUPPLIER_ITEMS)
+      } else if (authUser.type === USER_TYPE.CUSTOMER) {
+
+      } else {
+        this.$store.dispatch('navigation/setUserMenuItems', [])
+        this.$store.dispatch('navigation/setDrawerItems', [])
       }
     }
   },

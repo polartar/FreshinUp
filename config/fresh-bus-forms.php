@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\UserPermissions;
 use App\Http\Controllers\Auth\LoginController;
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
 use FreshinUp\FreshBusForms\Http\Controllers\ConsumerController;
@@ -47,5 +48,8 @@ return [
             'user'                  => 'customer.index'
         ],
         'policies' => 'policies'
+    ],
+    'helpers' => [
+        'user_permissions' => UserPermissions::class
     ]
 ];

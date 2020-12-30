@@ -37,6 +37,7 @@ import userTypes from './store/modules/userTypes'
 import users from './store/modules/users'
 import navigation from './store/modules/navigation'
 import navigationAdmin from './store/modules/navigationAdmin'
+import suppliers from './store/modules/suppliers'
 
 export default () => {
   return {
@@ -82,7 +83,8 @@ export default () => {
       navigation,
       navigationAdmin,
       users,
-      userTypes
+      userTypes,
+      suppliers
     }
   }
 }
