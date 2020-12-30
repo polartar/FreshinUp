@@ -1,5 +1,5 @@
 <script>
-import CreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
+import CreateUpdate from './BusCreateUpdate.vue'
 
 export default {
   extends: CreateUpdate,
