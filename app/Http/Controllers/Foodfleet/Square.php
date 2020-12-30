@@ -38,10 +38,17 @@ class Square extends Controller
         $this->validate($request, [
             'code' => 'required'
         ]);
-        /** @var User $authUser */
         $authUser = $request->user();
-        if (!$authUser || !$authUser->isAdmin() || $authUser->company == null) {
-            throw new AuthorizationException();
+        if (!$authUser) {
+            return response()->json([
+                'message' => 'Not authenticated'
+            ], 401);
+        }
+        /** @var User $authUser */
+        if (!$authUser->isAdmin() || $authUser->company == null) {
+            return response()->json([
+                'message' => 'Not authorized'
+            ], 403);
         }
         /** @var SquareClient $client */
         $client = app(SquareClient::class);
@@ -60,11 +67,7 @@ class Square extends Controller
         }
         $result = $apiResponse->getResult();
 
-        $user = $request->user();
-        if (!$user) {
-            throw new AuthenticationException();
-        }
-        $company = $user->company;
+        $company = $authUser->company;
 
         $company->square_access_token = $result->getAccessToken();
         $company->square_refresh_token = $result->getRefreshToken();

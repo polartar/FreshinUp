@@ -3,7 +3,7 @@
 exports[`components/fleet-members/StoreAreaList Snapshots Empty 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -393,7 +393,7 @@ exports[`components/fleet-members/StoreAreaList Snapshots Empty 1`] = `
 exports[`components/fleet-members/StoreAreaList Snapshots Loading 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -811,7 +811,7 @@ exports[`components/fleet-members/StoreAreaList Snapshots Loading 1`] = `
 exports[`components/fleet-members/StoreAreaList Snapshots Populated 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"

@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Admin Docs Page Mount snapshot 1`] = `
-<div>
+<v-container-stub
+  class="px-4"
+  tag="div"
+>
   <v-flex-stub
     align-center=""
     d-flex=""
@@ -42,7 +45,7 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
    
   <doc-filter-stub
     autocompleteurl=""
-    sortables="[object Object],[object Object],[object Object],[object Object]"
+    sortables=""
     statuses=""
     types=""
   />
@@ -63,5 +66,5 @@ exports[`Admin Docs Page Mount snapshot 1`] = `
     oncanceldelete="function () { [native code] }"
     onsubmitdelete="function () { [native code] }"
   />
-</div>
+</v-container-stub>
 `;

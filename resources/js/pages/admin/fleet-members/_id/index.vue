@@ -29,7 +29,7 @@
 
     <fleet-member-docs
       :docs="docs"
-      :statuses="docsStatusesWithColors"
+      :statuses="docsStatuses"
       :sortables="docsSortables"
       :rows-per-page="docsPagination.rowsPerPage"
       :page="docsPagination.page"

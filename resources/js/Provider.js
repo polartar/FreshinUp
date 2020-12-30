@@ -13,7 +13,9 @@ import documentStatuses from './store/modules/documentStatuses'
 import documentTemplates from './store/modules/documentTemplates'
 import documentTypes from './store/modules/documentTypes'
 import transactions from './store/modules/transactions'
+import companyTypes from './store/modules/companyTypes'
 import companyDetails from './store/modules/companyDetails'
+import companyStatuses from './store/modules/companyStatuses'
 import eventSummary from './store/modules/eventSummary'
 import eventTypes from './store/modules/eventTypes'
 import events from './store/modules/events'
@@ -62,6 +64,8 @@ export default () => {
       transactions,
       companies,
       companyDetails,
+      companyTypes,
+      companyStatuses,
       companyOwners,
       events,
       eventStatuses,

@@ -2,7 +2,7 @@
 
 exports[`Companies CreateUpdate Component Snapshots mocked company admin 1`] = `
 <div
-  class="container fluid fill-height justify-space-between"
+  class="px-4 py-2 fresh-company__edit fresh-company__edit--2"
 >
   <div
     class="layout column"
@@ -1478,12 +1478,14 @@ exports[`Companies CreateUpdate Component Snapshots mocked company admin 1`] = `
       </div>
     </div>
   </div>
+   
+  <!---->
 </div>
 `;
 
 exports[`Companies CreateUpdate Component Snapshots mocked company non admin 1`] = `
 <div
-  class="container fluid fill-height justify-space-between"
+  class="px-4 py-2 fresh-company__edit fresh-company__edit--2"
 >
   <div
     class="layout column"
@@ -2960,5 +2962,7 @@ exports[`Companies CreateUpdate Component Snapshots mocked company non admin 1`]
       </div>
     </div>
   </div>
+   
+  <!---->
 </div>
 `;

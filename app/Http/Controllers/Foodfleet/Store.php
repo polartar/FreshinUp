@@ -173,6 +173,7 @@ class Store extends Controller
 
     public function store(Request $request)
     {
+        $authUser = $request->user();
         $rules = [
             'owner_uuid' => 'exists:users,uuid',
             'type_id' => 'exists:store_types,id',
@@ -192,6 +193,7 @@ class Store extends Controller
         ];
         $this->validate($request, $rules);
         $data = $request->only(array_diff(array_keys($rules), ['tags']));
+        $data['supplier_uuid'] = optional($authUser->company)->uuid;
         /** @var StoreModel $store */
         $store = StoreModel::create($data);
 
