@@ -10,6 +10,7 @@ import { FIXTURE_USER_TYPES } from '../../../../tests/Javascript/__data__/userTy
 
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import { FIXTURE_USER_STATUSES } from '../../../../tests/Javascript/__data__/userStatuses'
 
 const mock = new MockAdapter(axios)
 
@@ -59,7 +60,8 @@ export const ForSupplier = () => ({
     return {
       user: { ...FIXTURE_USER, type: USER_TYPE.SUPPLIER },
       levels: FIXTURE_USER_LEVELS,
-      types: FIXTURE_USER_TYPES
+      types: FIXTURE_USER_TYPES,
+      statuses: FIXTURE_USER_STATUSES
     }
   },
   methods,
@@ -69,6 +71,7 @@ export const ForSupplier = () => ({
           :value="user"
           :levels="levels"
           :types="types"
+          :statuses="statuses"
           @input="onSave"
           @cancel="onCancel"
           @delete="onDelete"
@@ -84,7 +87,9 @@ export const ForCustomer = () => ({
     return {
       user: { ...FIXTURE_USER, type: USER_TYPE.CUSTOMER },
       levels: FIXTURE_USER_LEVELS,
-      types: FIXTURE_USER_TYPES
+      types: FIXTURE_USER_TYPES,
+      statuses: FIXTURE_USER_STATUSES,
+      isAdmin: true
     }
   },
   template: `
@@ -93,6 +98,8 @@ export const ForCustomer = () => ({
           :value="user"
           :levels="levels"
           :types="types"
+          :statuses="statuses"
+          :is-admin="isAdmin"
           @input="onSave"
           @cancel="onCancel"
           @delete="onDelete"

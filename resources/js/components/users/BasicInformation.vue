@@ -29,11 +29,32 @@
               sm6
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Status
+              </div>
+              <v-select
+                v-model="status"
+                :items="statuses"
+                placeholder="Status"
+                data-vv-name="status"
+                item-value="id"
+                item-text="name"
+                outline
+              />
+            </v-flex>
+            <v-flex
+              xs12
+              sm6
+            />
+            <v-flex
+              xs12
+              sm6
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 First name
               </div>
               <v-text-field
                 v-model="first_name"
-                placeholder="Name"
+                placeholder="First Name"
                 single-line
                 outline
               />
@@ -48,7 +69,7 @@
               </div>
               <v-text-field
                 v-model="last_name"
-                placeholder="Name"
+                placeholder="Last Name"
                 single-line
                 outline
               />
@@ -59,19 +80,22 @@
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Company
               </div>
-              <v-text-field
-                v-if="forCustomer"
-                :value="get(company, 'name')"
-                placeholder="Name"
+              <simple
+                class="mb-2"
                 single-line
                 outline
+                url="companies"
+                term-param="filter[name]"
+                results-id-key="uuid"
+                :value="get(company, 'name')"
+                :disabled="!isAdmin"
+                placeholder="Search / Select Company"
+                height="48"
+                not-clearable
+                solo
+                flat
+                @input="selectCompany"
               />
-              <div
-                v-else
-                class="grey--text pt-4"
-              >
-                {{ get(company, 'name') }}
-              </div>
             </v-flex>
             <v-flex
               xs6
@@ -82,13 +106,13 @@
               </div>
               <v-text-field
                 v-model="title"
-                placeholder="Name"
+                placeholder="Title"
                 single-line
                 outline
               />
             </v-flex>
             <v-flex
-              v-if="forCustomer"
+              v-if="isAdmin"
               xs6
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -105,7 +129,7 @@
               />
             </v-flex>
             <v-flex
-              v-if="forCustomer"
+              v-if="isAdmin"
               xs6
               class="pl-2"
             >
@@ -123,7 +147,7 @@
               />
             </v-flex>
             <v-flex
-              v-if="forCustomer"
+              v-if="isAdmin"
               xs6
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -137,7 +161,7 @@
                 term-param="term"
                 results-id-key="uuid"
                 :value="manager_uuid"
-                placeholder="Manager"
+                placeholder="Search / select user"
                 height="48"
                 not-clearable
                 flat
@@ -145,7 +169,7 @@
               />
             </v-flex>
             <v-flex
-              :class="{'pl-2': forCustomer, 'sm-6': forCustomer, 'xs-12': !forCustomer}"
+              :class="{'pl-2': isAdmin, 'sm-6': isAdmin, 'xs-12': !isAdmin}"
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Email
@@ -160,7 +184,7 @@
             <v-flex
               xs12
               sm6
-              :class="{'pl-2': !forCustomer}"
+              :class="{'pl-2': !isAdmin}"
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Office phone
@@ -175,7 +199,7 @@
             <v-flex
               xs12
               sm6
-              :class="{'pl-2': forCustomer}"
+              :class="{'pl-2': isAdmin}"
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 Mobile phone
@@ -188,7 +212,7 @@
               />
             </v-flex>
             <v-flex
-              v-if="forCustomer"
+              v-if="isAdmin"
               xs12
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -288,6 +312,7 @@
       <v-flex class="text-xs-right">
         <v-btn
           :loading="isLoading"
+          :disabled="!editing"
           depressed
           @click="onDelete"
         >
@@ -302,7 +327,6 @@ import get from 'lodash/get'
 import Simple from 'fresh-bus/components/search/simple'
 
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
-import { USER_TYPE } from '~/store/modules/userTypes'
 
 export const DEFAULT_USER = {
   id: null,
@@ -337,10 +361,12 @@ export default {
   mixins: [MapValueKeysToData],
   props: {
     isLoading: { type: Boolean, default: false },
+    isAdmin: { type: Boolean, default: false },
     // Overriding value prop from mixin MapValueKeysToData to grab the default values
     value: { type: Object, default: () => DEFAULT_USER },
     levels: { type: Array, default: () => [] },
-    types: { type: Array, default: () => [] }
+    types: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
   },
   data () {
     return {
@@ -348,9 +374,6 @@ export default {
     }
   },
   computed: {
-    forCustomer () {
-      return this.type === USER_TYPE.CUSTOMER
-    },
     editing () {
       return !!get(this.value, 'uuid')
     },
@@ -358,7 +381,7 @@ export default {
       return !!this.avatar && this.avatar !== DEFAULT_IMAGE
     },
     storeImage () {
-      return this.hasImage ? this.avatar : '/images/default.png'
+      return this.hasImage ? this.avatar : DEFAULT_IMAGE
     }
   },
   methods: {
@@ -400,6 +423,9 @@ export default {
     },
     selectManager (user) {
       this.manager_uuid = user ? user.uuid : null
+    },
+    selectCompany (company) {
+      this.company = company || null
     }
   }
 }

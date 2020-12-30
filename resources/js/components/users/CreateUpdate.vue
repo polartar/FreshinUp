@@ -29,6 +29,8 @@
         :is-loading="userLoading"
         :levels="levels"
         :types="types"
+        :statuses="statuses"
+        :is-admin="isAdmin"
         @input="createOrUpdate"
       />
     </v-flex>
@@ -70,6 +72,9 @@ export default {
     return {}
   },
   computed: {
+    ...mapGetters('currentUser', {
+      isAdmin: 'isAdmin'
+    }),
     ...mapGetters(['currentUser']),
     ...mapGetters('users', {
       user: 'item',
@@ -86,6 +91,9 @@ export default {
     }),
     ...mapGetters('companyStatuses', {
       companyStatuses: 'items'
+    }),
+    ...mapGetters('userStatuses', {
+      statuses: 'items'
     }),
     company () {
       // TODO: company should include:
@@ -108,12 +116,11 @@ export default {
     viewCompany (company) {
       this.$router.push({ path: `/admin/companies/${company.uuid}` })
     },
-    createOrUpdate (payload) {
+    createOrUpdate (data) {
       // TODO: exclude level and type for now. At some point we will need to add them back
-      const { level, type, ...data } = payload
-      const id = this.$route.params.id
+      const id = this.$route.params.id || 'new'
       const action = this.isNew
-        ? this.$store.dispatch('users/createItem', { data })
+        ? this.$store.dispatch('users/createItem', { data: { ...data, id: 'new' } })
         : this.$store.dispatch('users/updateItem', {
           params: { id },
           data
@@ -135,20 +142,23 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    const id = vm.$route.params.id
+    const id = vm.$route.params.id || 'new'
+    let params = { id }
     const promises = []
     promises.push(vm.$store.dispatch('userLevels/getItems'))
     promises.push(vm.$store.dispatch('userTypes/getItems'))
     promises.push(vm.$store.dispatch('companyTypes/getItems'))
     promises.push(vm.$store.dispatch('companyStatuses/getItems'))
+    promises.push(vm.$store.dispatch('userStatuses/getItems'))
     if (id !== 'new') {
-      promises.push(vm.$store.dispatch('users/getItem', {
-        params: {
-          id,
-          include: USER_INCLUDES
-        }
-      }))
+      params = {
+        id,
+        include: USER_INCLUDES
+      }
     }
+    promises.push(vm.$store.dispatch('users/getItem',
+      { params }
+    ))
     Promise.all(promises)
       .then()
       .catch()
