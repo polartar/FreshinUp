@@ -43,7 +43,6 @@ class StoreTest extends TestCase
             'supplier_uuid' => $store->supplier_uuid,
             'owner_uuid' => $store->owner_uuid,
             'type_id' => $store->type_id,
-            'square_id' => $store->square_id,
             'contact_phone' => $store->contact_phone,
             'size' => $store->size,
             'name' => $store->name,

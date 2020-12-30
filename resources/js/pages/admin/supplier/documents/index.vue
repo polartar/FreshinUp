@@ -1,25 +1,37 @@
-<template>
-  <v-layout
-    align-center
-    justify-center
-  >
-    <v-card>
-      <v-card-text>
-        Coming soon
-      </v-card-text>
-    </v-card>
-  </v-layout>
-</template>
-
 <script>
+import Page from '~/pages/admin/docs/index.vue'
+import { mapGetters } from 'vuex'
 export default {
-  beforeRouteEnterOrUpdate (vm, from, to, next) {
-    vm.$store.dispatch('page/setLoading', false)
-    next && next()
+  extends: Page,
+  computed: {
+    ...mapGetters(['currentUser']),
+    ...mapGetters('suppliers/documents', {
+      docs: 'items',
+      pagination: 'pagination',
+      sorting: 'sorting',
+      sortBy: 'sortBy',
+      sortables: 'sortables'
+    })
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.$store.dispatch('suppliers/documents/setFilters', {
+      ...vm.$route.query
+    })
+    vm.setPageLoading(true)
+    Promise.all([
+      vm.$store.dispatch('suppliers/documents/getItems', {
+        params: {
+          supplierId: vm.currentUser.uuid
+        }
+      }),
+      vm.$store.dispatch('documentStatuses/getItems'),
+      vm.$store.dispatch('documentTypes/getItems')
+    ])
+      .then(() => {
+        if (next) next()
+      })
+      .catch(error => console.error(error))
+      .then(() => vm.setPageLoading(false))
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container class="px-4">
     <v-flex
       d-flex
       align-center
@@ -55,11 +55,11 @@
       :on-cancel-delete="docsOnCancelDelete"
       :dialog-title="deleteDialogTitle"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import DocFilter from '~/components/docs/FilterSorter.vue'
 import DoctableList from '~/components/docs/DoctableList.vue'
 import get from 'lodash/get'
@@ -97,12 +97,12 @@ export default {
       docs: 'items',
       pagination: 'pagination',
       sorting: 'sorting',
-      sortBy: 'sortBy'
+      sortBy: 'sortBy',
+      sortables: 'sortables'
     }),
     ...mapGetters('documentTypes', { types: 'items' }),
     ...mapGetters('documentStatuses', { statuses: 'items' }),
     ...mapGetters('page', ['isLoading']),
-    ...mapState('documents', ['sortables']),
     deleteDialogTitle () {
       return this.docsDeleteTemp.length < 2
         ? 'Are you sure you want to delete this document?'

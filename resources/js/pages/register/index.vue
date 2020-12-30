@@ -64,7 +64,7 @@ export default {
         })
     },
     onClose () {
-      this.$router.push({ path: '/' })
+      this.$router.push({ path: '/auth' })
     }
   }
 }

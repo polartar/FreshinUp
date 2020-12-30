@@ -128,7 +128,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
@@ -681,7 +681,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
@@ -1266,7 +1266,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
