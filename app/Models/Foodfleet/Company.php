@@ -24,8 +24,6 @@ use FreshinUp\FreshBusForms\Models\Company\CompanyType;
  * @property string country
  * @property string website
  * @property string notes
- * @property string square_access_token
- * @property string square_refresh_token
  * @property Carbon deleted_at
  * @property Carbon created_at
  * @property Carbon updated_at

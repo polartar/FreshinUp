@@ -1,6 +1,20 @@
+## Dec 30, 2020
+- **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
+- **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
+- **FIX** Cannot connect to Square [519](https://github.com/FreshinUp/foodfleet/issues/519)
+- **MOD** Admin Dashboard [689](https://github.com/FreshinUp/foodfleet/issues/689)
+
+<br/>
+
+## Dec 29, 2020
+- **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
+
+<br/>
+
 ## Dec 26, 2020
 - **ADD** Add new fleet member button & dialog are not created on Event Detail page [379](https://github.com/FreshinUp/foodfleet/issues/379)
 - **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
+- **FIX** Cannot reset password [610](https://github.com/FreshinUp/foodfleet/issues/610)
 
 <br/>
 

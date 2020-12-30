@@ -36,12 +36,20 @@ class Square extends Controller
     public function authorizeApp(Request $request)
     {
         $this->validate($request, [
-            'code' => 'required'
+            'code' => 'required',
+            'store_uuid' => 'required|exists:stores,uuid'
         ]);
-        /** @var User $authUser */
         $authUser = $request->user();
-        if (!$authUser || !$authUser->isAdmin() || $authUser->company == null) {
-            throw new AuthorizationException();
+        if (!$authUser) {
+            return response()->json([
+                'message' => 'Not authenticated'
+            ], 401);
+        }
+        /** @var User $authUser */
+        if (!$authUser->isAdmin()) {
+            return response()->json([
+                'message' => 'Not authorized'
+            ], 403);
         }
         /** @var SquareClient $client */
         $client = app(SquareClient::class);
@@ -60,56 +68,14 @@ class Square extends Controller
         }
         $result = $apiResponse->getResult();
 
-        $user = $request->user();
-        if (!$user) {
-            throw new AuthenticationException();
-        }
-        $company = $user->company;
+        $store = \App\Models\Foodfleet\Store::where('uuid', $request->input('store_uuid'))
+            ->firstOrFail();
 
-        $company->square_access_token = $result->getAccessToken();
-        $company->square_refresh_token = $result->getRefreshToken();
+        $store->square_access_token = $result->getAccessToken();
+        $store->square_refresh_token = $result->getRefreshToken();
         // TODO: save this info $result->getExpiresAt() so that we can refresh the token
         // after expiration in 30 days
-        $company->save();
+        $store->save();
         return response()->json(null);
-    }
-
-
-    /**
-     * @param  Request  $request
-     * @param  Company  $company
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\AnonymousResourceCollection|JsonResource
-     * @throws \Exception
-     */
-    public function locations(Request $request, Company $company)
-    {
-        if (!$company->square_access_token) {
-            return response()->json([
-                'message' => "Square not setup yet."
-            ])->setStatusCode(400);
-        }
-        $client = new SquareClient([
-            'accessToken' => $company->square_access_token,
-            'environment' => config('services.square.environment'),
-        ]);
-        try {
-            $locationsApi = $client->getLocationsApi();
-            $apiResponse = $locationsApi->listLocations();
-            if (!$apiResponse->isSuccess()) {
-                return (new JsonResource($apiResponse->getErrors()))
-                    ->toResponse($request)
-                    ->setStatusCode(400);
-            }
-
-            // expected output []{ square_id: string, name: string }
-            $listLocationsResponse = $apiResponse->getResult();
-            $locations = $listLocationsResponse->getLocations();
-
-            // name: string, // business name
-            // id: string, // location id
-            return new JsonResource($locations);
-        } catch (ApiException $e) {
-            throw new \Exception("Received error while calling Square: " . $e->getMessage());
-        }
     }
 }

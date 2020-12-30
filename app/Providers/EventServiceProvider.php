@@ -8,6 +8,7 @@ use App\Models\Foodfleet\Store;
 use App\Observers\EventObserver;
 use App\Observers\StoreObserver;
 use App\Observers\TemplateObserver;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

@@ -403,12 +403,8 @@ class StoresTest extends TestCase
             ->json('PUT', '/api/foodfleet/stores/' . $store->uuid, $payload)
             ->assertStatus(200);
 
-        $url = 'api/foodfleet/stores/' . $store->uuid;
-        $returnedStore = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
-
-        $this->assertEquals(2, $returnedStore['status_id']);
+        $store->refresh();
+        $this->assertEquals(2, $store->status_id);
     }
 
     public function testGetListBySorts()
@@ -498,6 +494,9 @@ class StoresTest extends TestCase
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
     }
 
+    /**
+     * @group failed
+     */
     public function testUpdateCommission()
     {
         $user = factory(User::class)->create();
@@ -595,7 +594,9 @@ class StoresTest extends TestCase
 
     public function testCreate()
     {
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'company_id' => factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create()->id
+        ]);
         Passport::actingAs($user);
         $payload = factory(Store::class)->make()->toArray();
         $data = $this
@@ -604,13 +605,11 @@ class StoresTest extends TestCase
             ->json('data');
         $this->assertArraySubset([
             'status_id' => $payload['status_id'],
-            'supplier_uuid' => $payload['supplier_uuid'],
             'address_uuid' => $payload['address_uuid'],
             'contact_phone' => $payload['contact_phone'],
             'size' => $payload['size'],
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
-            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'state_of_incorporation' => $payload['state_of_incorporation'],
             'website' => $payload['website'],
@@ -618,6 +617,12 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            // Should not take it from the payload
+            // 'supplier_uuid' => $payload['supplier_uuid'],
+            'supplier_uuid' => $user->company->uuid,
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
     }
 
@@ -640,7 +645,6 @@ class StoresTest extends TestCase
         $this->assertArraySubset([
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
-            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'size' => $payload['size'],
             'contact_phone' => $payload['contact_phone'],
@@ -650,6 +654,9 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
         $this->assertArrayHasKey('tags', $data);
         $this->assertArraySimilar(array_map(function ($tag) {
@@ -680,7 +687,6 @@ class StoresTest extends TestCase
         $this->assertArraySubset([
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
-            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'size' => $payload['size'],
             'contact_phone' => $payload['contact_phone'],
@@ -690,8 +696,13 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
+
         $this->assertArrayHasKey('tags', $data);
+
         $this->assertArraySimilar(array_map(function ($tag) {
             return [
                 'uuid' => $tag['uuid'],
@@ -709,7 +720,6 @@ class StoresTest extends TestCase
             ->assertStatus(204);
         $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
     }
-
 
     public function testGetEventListOnNotExistingStore()
     {
@@ -745,10 +755,6 @@ class StoresTest extends TestCase
         // TODO a better way of asserting the following
     }
 
-    /**
-     * Get the statistics of stores by their status
-     * @group statistics
-     */
     public function testCanGetStatsOfStoresByStatuses()
     {
         //Given

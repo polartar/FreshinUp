@@ -153,7 +153,7 @@
             :event="event"
             :errors="errors"
             @data-change="changeBasicInfo"
-            @cancel="onCancel"
+            @cancel="backToList"
             @save="onSave"
             @delete="onDelete"
           />
@@ -283,6 +283,9 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    editEvent (event) {
+      this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
+    },
     onDuplicate (options) {
       this.duplicating = true
       this.$store.dispatch('events/duplicate', {
@@ -295,8 +298,7 @@ export default {
           this.duplicateDialog = false
           const eventUuid = get(data, 'data.uuid')
           if (eventUuid) {
-            const path = `/admin/events/${eventUuid}/edit`
-            this.$router.push({ path })
+            this.editEvent({ uuid: eventUuid })
             this.$store.dispatch('generalMessage/setMessage', 'Duplicated.')
           }
         })
@@ -365,7 +367,7 @@ export default {
         if (this.isNew) {
           await this.$store.dispatch('events/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          this.$router.push({ path: '/admin/events/' })
+          this.backToList()
         } else {
           await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
@@ -377,13 +379,10 @@ export default {
         this.eventLoading = false
       }
     },
-    onCancel () {
-      this.$router.push({ path: '/admin/events' })
-    },
     async onDelete () {
       await this.$store.dispatch('events/deleteItem', { getItems: false, params: { id: this.event.uuid } })
       await this.$store.dispatch('generalMessage/setMessage', 'Deleted.')
-      this.$router.push({ path: '/admin/events/' })
+      this.backToList()
     },
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
@@ -429,7 +428,7 @@ export default {
       .then()
       .catch(error => {
         console.error(error)
-        vm.$router.push({ path: '/admin/events' })
+        vm.backToList()
       })
       .then(() => {
         vm.eventLoading = false

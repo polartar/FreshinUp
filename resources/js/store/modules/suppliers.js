@@ -9,22 +9,36 @@ export default ({ items, item }) => {
     }
   )
 
+  const storeModule = makeRestStore(
+    'stores',
+    { item },
+    {
+      itemsPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/stores`
+    }
+  )
+
   return {
     namespaced: true,
     ...store,
     modules: {
-      stores: makeRestStore(
-        'stores',
-        { item },
-        {
-          itemPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/stores`
+      stores: {
+        ...storeModule,
+        modules: {
+          ...storeModule.modules,
+          stats: makeRestStore(
+            'stats',
+            { item },
+            {
+              itemsPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/stores/stats`
+            }
+          )
         }
-      ),
+      },
       documents: makeRestStore(
         'documents',
         { item },
         {
-          itemPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/documents`
+          itemsPath: ({ supplierId }) => `/foodfleet/suppliers/${supplierId}/documents`
         }
       ),
       events: makeRestStore(

@@ -39,6 +39,8 @@
     >
       <company-overview
         :value="company"
+        :types="companyTypes"
+        :statuses="companyStatuses"
         @manage-view="viewCompany"
       />
     </v-flex>
@@ -78,6 +80,12 @@ export default {
     }),
     ...mapGetters('userTypes', {
       types: 'items'
+    }),
+    ...mapGetters('companyTypes', {
+      companyTypes: 'items'
+    }),
+    ...mapGetters('companyStatuses', {
+      companyStatuses: 'items'
     }),
     company () {
       // TODO: company should include:
@@ -131,6 +139,8 @@ export default {
     const promises = []
     promises.push(vm.$store.dispatch('userLevels/getItems'))
     promises.push(vm.$store.dispatch('userTypes/getItems'))
+    promises.push(vm.$store.dispatch('companyTypes/getItems'))
+    promises.push(vm.$store.dispatch('companyStatuses/getItems'))
     if (id !== 'new') {
       promises.push(vm.$store.dispatch('users/getItem', {
         params: {

@@ -147,7 +147,7 @@ exports[`components/venues/Events Snapshots Empty 1`] = `
      
     <div>
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
       >
         <div
           class="v-table__overflow"
@@ -717,7 +717,7 @@ exports[`components/venues/Events Snapshots Loading 1`] = `
      
     <div>
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
       >
         <div
           class="v-table__overflow"
@@ -1318,7 +1318,7 @@ exports[`components/venues/Events Snapshots Populated 1`] = `
       sortables="status,name,start_at,manager,host"
     >
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
         sortables="status,name,start_at,manager,host"
       >
         <div

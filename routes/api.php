@@ -42,8 +42,9 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('event/status/histories', 'Foodfleet\EventHistory@index');
 
     Route::get('stores/stats', 'Foodfleet\Store@stats');
-    Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/new', 'Foodfleet\Store@showNewRecommendation');
+    Route::get('stores/{uuid}/square-locations', 'Foodfleet\Store@locations');
+    Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/{uuid}/events', 'Foodfleet\Store@events');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
@@ -85,13 +86,20 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::apiResource('menu-items', 'Foodfleet\MenuItems');
 
-    Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
 
-    Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 
     Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
     Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
     Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
+    Route::get('suppliers/{uuid}/stores/stats', 'Foodfleet\Suppliers@stats');
+
+    // TODO: move to fresh-bus
+    // move store modules: companyStatuses, companyTypes
+    Route::get('company/types', 'Foodfleet\Companies\CompanyTypes@index');
+    Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
 });
+
+Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
+Route::post('/password/reset', 'Auth\PasswordsController@reset');
