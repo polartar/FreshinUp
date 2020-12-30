@@ -55,7 +55,6 @@ describe('Companies CreateUpdate Component', () => {
         store
       })
 
-
       await wrapper.vm.$store.dispatch('companies/getItem', { params: { id: 1 } })
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()

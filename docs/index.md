@@ -1,4 +1,4 @@
-## Dec 27, 2020
+## Dec 29, 2020
 - **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
 
 <br/>

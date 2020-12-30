@@ -311,116 +311,123 @@
         </v-card>
       </v-dialog>
     </v-layout>
-    <v-layout column v-if="companyId && company ">
+    <v-layout
+      v-if="companyId && company "
+      column
+    >
       <v-flex class="pt-4">
-      <v-card
-        class="mb-5"
-      >
-        <v-card-title>
-          <h3>Company Members</h3>
-        </v-card-title>
-
-        <v-divider />
-
-        <v-alert
-          :value="true"
-          color="warning"
-          icon="warning"
+        <v-card
+          class="mb-5"
         >
-          Coming soon
-        </v-alert>
-        <!-- Commented out for now
-        <user-filter
-          v-if="!isLoading"
-          :sortables="sortables"
-          @runFilter="filterUsers"
-        />
-        <user-list
-          v-if="!isLoading"
-          :users="users"
-          :levels="userlevels"
-          :statuses="userstatuses"
-          :is-loading="isLoading || isLoadingList"
-          :rows-per-page="pagination.rowsPerPage"
-          :page="pagination.page"
-          :total-items="pagination.totalItems"
-          :sort-by="sorting.sortBy"
-          :descending="sorting.descending"
-          :headers="headers"
-          :item-actions="itemActions"
-          class="users-list"
-          must-sort
-          @paginate="onUsersPaginate"
-          @change-status="changeStatus"
-          @change-level="changeLevel"
-          @manage-teams="showUserTeamsAssigner"
-          @manage-view="userView"
-          @manage-edit="userEdit"
-          @manage-delete="deleteUser"
-          @manage-multiple-delete="deleteMultiple"
-        />
-        -->
-      </v-card>
+          <v-card-title>
+            <h3>Company Members</h3>
+          </v-card-title>
+
+          <v-divider />
+
+          <v-alert
+            :value="true"
+            color="warning"
+            icon="warning"
+          >
+            Coming soon
+          </v-alert>
+          <!-- Commented out for now
+          <user-filter
+            v-if="!isLoading"
+            :sortables="sortables"
+            @runFilter="filterUsers"
+          />
+          <user-list
+            v-if="!isLoading"
+            :users="users"
+            :levels="userlevels"
+            :statuses="userstatuses"
+            :is-loading="isLoading || isLoadingList"
+            :rows-per-page="pagination.rowsPerPage"
+            :page="pagination.page"
+            :total-items="pagination.totalItems"
+            :sort-by="sorting.sortBy"
+            :descending="sorting.descending"
+            :headers="headers"
+            :item-actions="itemActions"
+            class="users-list"
+            must-sort
+            @paginate="onUsersPaginate"
+            @change-status="changeStatus"
+            @change-level="changeLevel"
+            @manage-teams="showUserTeamsAssigner"
+            @manage-view="userView"
+            @manage-edit="userEdit"
+            @manage-delete="deleteUser"
+            @manage-multiple-delete="deleteMultiple"
+          />
+          -->
+        </v-card>
       </v-flex>
 
-      <v-flex class="pt-4"
-              v-if="isCustomer">
-      <v-card
-        class="mb-5"
+      <v-flex
+        v-if="isCustomer"
+        class="pt-4"
       >
-        <v-card-title>
-          <h3>Company Venues</h3>
-        </v-card-title>
-
-        <v-divider />
-
-        <v-alert
-          :value="true"
-          color="warning"
-          icon="warning"
+        <v-card
+          class="mb-5"
         >
-          Coming soon
-        </v-alert>
-      </v-card>
+          <v-card-title>
+            <h3>Company Venues</h3>
+          </v-card-title>
+
+          <v-divider />
+
+          <v-alert
+            :value="true"
+            color="warning"
+            icon="warning"
+          >
+            Coming soon
+          </v-alert>
+        </v-card>
       </v-flex>
 
-      <v-flex class="pt-4"
-              v-if="isSupplier">
-      <v-card
-        class="mb-5"
+      <v-flex
+        v-if="isSupplier"
+        class="pt-4"
       >
-        <v-card-title>
-          <h3>Company Fleet</h3>
-        </v-card-title>
-
-        <v-divider />
-
-        <v-alert
-          :value="true"
-          color="warning"
-          icon="warning"
+        <v-card
+          class="mb-5"
         >
-          Coming soon
-        </v-alert>
-      </v-card>
+          <v-card-title>
+            <h3>Company Fleet</h3>
+          </v-card-title>
+
+          <v-divider />
+
+          <v-alert
+            :value="true"
+            color="warning"
+            icon="warning"
+          >
+            Coming soon
+          </v-alert>
+        </v-card>
       </v-flex>
 
       <v-flex class="pt-4">
-      <v-card>
-        <v-card-title>
-          <h3>Company Events</h3>
-        </v-card-title>
+        <v-card>
+          <v-card-title>
+            <h3>Company Events</h3>
+          </v-card-title>
 
-        <v-divider />
+          <v-divider />
 
-        <v-alert
-          :value="true"
-          color="warning"
-          icon="warning"
-        >
-          Coming soon
-        </v-alert>
-      </v-card>
+          <v-alert
+            :value="true"
+            color="warning"
+            icon="warning"
+          >
+            Coming soon
+          </v-alert>
+        </v-card>
       </v-flex>
     </v-layout>
   </div>
@@ -429,6 +436,7 @@
 import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
 import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
 import { mapActions, mapGetters } from 'vuex'
+import get from 'lodash/get'
 
 export default {
   extends: BusCreateUpdate,
@@ -471,6 +479,7 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    get,
     onUsersPaginate (value) {
       this.$store.dispatch('companyDetails/users/setPagination', value)
       this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
