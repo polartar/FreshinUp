@@ -32,7 +32,7 @@
           </v-flex>
           <v-flex grow>
             <div class="caption font-weight-bold secondary--text">
-              {{ admin.name }}
+              {{ admin.title ?admin.title:'No title' }}
             </div>
             <v-chip
               class="ma-0 font-weight-bold text-uppercase small-caption"
@@ -41,7 +41,7 @@
               dark
               depressed
             >
-              {{ admin.level_name }}
+              {{ admin.company.name }}
             </v-chip>
           </v-flex>
         </v-layout>
@@ -169,6 +169,9 @@ export default {
     isDividerVisible () {
       return !this.hideDivider
     }
+  },
+  mounted(){
+    console.log(this.admin)
   }
 }
 </script>
