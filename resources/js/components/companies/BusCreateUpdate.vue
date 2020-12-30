@@ -72,24 +72,7 @@
                             label="Name"
                           />
                         </v-flex>
-                        <v-flex
-                          v-if="!isNew"
-                          md6
-                          sm12
-                        >
-                          <div>
-                            Member Since1: <code>{{ dateFormatted(company.created_at) }}</code>
-                          </div>
-                        </v-flex>
-                        <v-flex
-                          v-if="!isNew"
-                          md6
-                          sm12
-                        >
-                          <div class="text-lg-right text-md-right">
-                            Members: {{ company.members_count }}
-                          </div>
-                        </v-flex>
+                         
                         <v-flex
                           md12
                           sm12
@@ -319,7 +302,7 @@ import { mapActions, mapGetters } from 'vuex'
 import { createHelpers } from 'vuex-map-fields'
 import moment from 'moment'
 import ImageUploader from 'fresh-bus/components/ImageUploader'
-import ManagedBy from 'fresh-bus/components/companies/ManagedBy'
+import ManagedBy from './ManagedBy'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
