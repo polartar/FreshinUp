@@ -35,6 +35,7 @@
         <template v-slot:item-inner-name="{ item }">
           <a
             href="#manage-view"
+            title="view item"
             class="primary--text text-not-underline font-weight-bold"
             @click.prevent="viewItem(item)"
           >{{ item.name }}</a>

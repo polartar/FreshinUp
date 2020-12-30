@@ -1,5 +1,6 @@
 ## Dec 30, 2020
 - **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
+- **FIX** Cannot connect to Square [519](https://github.com/FreshinUp/foodfleet/issues/519)
 
 <br/>
 

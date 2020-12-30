@@ -34,10 +34,12 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string instagram
  * @property string staff_notes
  * @property int status_id
- * @property int square_id
  * @property int type_id
  * @property string supplier_uuid
  * @property string owner_uuid
+ * @property int square_id - square location id
+ * @property string square_access_token
+ * @property string square_refresh_token
  *
  *
  * @property StoreStatus status
@@ -55,7 +57,32 @@ class Store extends Model implements HasMedia
     use HasAddresses;
     use HasMediaTrait;
 
-    protected $guarded = ['id', 'uuid'];
+    const FILLABLES = [
+         'name',
+         'address_uuid',
+         'website',
+         'contact_phone',
+         'size',
+         'created_at',
+         'updated_at',
+         'deleted_at',
+         'phone',
+         'state_of_incorporation',
+         'facebook',
+         'twitter',
+         'instagram',
+         'staff_notes',
+         'status_id',
+         'type_id',
+         'supplier_uuid',
+         'owner_uuid',
+         'square_id',
+         'square_access_token',
+         'square_refresh_token',
+    ];
+
+    protected $fillable = self::FILLABLES;
+
     protected $dates = ['deleted_at'];
     protected $appends = ['image'];
 

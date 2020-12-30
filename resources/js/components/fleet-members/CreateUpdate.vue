@@ -375,7 +375,6 @@ export default {
         return acc
       }, {}),
 
-      loading: false,
       sortables: [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
@@ -413,7 +412,8 @@ export default {
       eventStatuses: 'items'
     }),
     ...mapGetters('stores', {
-      store_: 'item'
+      store_: 'item',
+      loading: 'itemLoading'
     }),
     ...mapGetters('stores/events', {
       events: 'items',
@@ -429,7 +429,7 @@ export default {
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
-    ...mapGetters('companies/squareLocations', { squareLocations: 'items' }),
+    ...mapGetters('stores/squareLocations', { squareLocations: 'items' }),
     ...mapFields('stores', [
       'status_id'
     ]),
@@ -487,29 +487,12 @@ export default {
       return Array.isArray(this.areas) ? this.areas : []
     }
   },
-  watch: {
-    '$store.getters.currentUser' (user) {
-      if (user && user.company_id) {
-        this.getSquareLocations(user.company_id)
-      }
-    }
-  },
   methods: {
     onViewDocument (document) {
       this.$router.push({ path: `/admin/docs/${document.uuid}` })
     },
     onPaymentManagePay (item) {},
     onPaymentManageRetry (item) {},
-    getSquareLocations (companyId) {
-      this.$store.dispatch('companies/squareLocations/getItems', {
-        params: {
-          companyId: companyId
-        }
-      })
-        .then()
-        .catch(error => console.error(error))
-        .then()
-    },
 
     // store
     async saveOrCreate (data) {
@@ -583,10 +566,32 @@ export default {
       this.deletable[resource].temp = []
     },
     onConnectSquare () {
+      window.localStorage.setItem('store_uuid', this.$route.params.id)
       window.location = this.squareUrl
     },
     onDisconnectSquare () {
-      // TODO delay to a later time
+      this.$store.dispatch('stores/patchItem', {
+        params: {
+          id: this.$route.params.id
+        },
+        data: {
+          square_id: null,
+          square_access_token: null,
+          square_refresh_token: null
+        }
+      })
+        .then(() => {
+          this.getSquareLocations()
+        })
+        .catch(console.error)
+    },
+    getSquareLocations () {
+      return this.$store.dispatch('stores/squareLocations/getItems', {
+        params: {
+          id: this.$route.params.id
+        }
+      })
+        .catch(console.error)
     },
 
     // store areas
@@ -757,12 +762,15 @@ export default {
     const id = to.params.id || 'new'
     const promises = []
     if (id !== 'new') {
+      vm.getSquareLocations()
       promises.push(vm.$store.dispatch('eventStatuses/getItems'))
       promises.push(vm.$store.dispatch('stores/events/getItems', {
         params: {
           id
         }
       }))
+      // TODO: security: user can display documents for other users
+      // front end request are clear
       promises.push(vm.$store.dispatch('documents/getItems', {
         params: {
           'filter[assigned_uuid]': id
@@ -792,10 +800,6 @@ export default {
         store_uuid: id
       })
       promises.push(vm.$store.dispatch('menuItems/getItems'))
-      const currentUser = vm.$store.getters['currentUser']
-      if (currentUser) {
-        vm.getSquareLocations(currentUser.company_id)
-      }
       vm.$store.dispatch('payments/setFilters', {
         store_uuid: id,
         include: PAYMENT_INCLUDES
