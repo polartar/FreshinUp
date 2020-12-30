@@ -1,3 +1,9 @@
+## Dec 30, 2020
+- **FIX** Move square link from company level to fleet member (store) [626](https://github.com/FreshinUp/foodfleet/issues/626)
+- **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
+
+<br/>
+
 ## Dec 29, 2020
 - **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
 
