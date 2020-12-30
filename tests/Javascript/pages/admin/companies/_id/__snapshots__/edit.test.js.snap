@@ -1484,7 +1484,416 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
                         class="v-menu__content theme--light "
                         style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
                       >
-                        <!---->
+                        <div
+                          class="v-select-list v-card theme--light"
+                        >
+                          <div
+                            class="v-list theme--light"
+                            role="list"
+                          >
+                            <div
+                              class="primary--text"
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar v-list__tile--active theme--light primary--text"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Demo Admin"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Demo Admin
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 1 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 1 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 2 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 2 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 3 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 3 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 4 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 4 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 5 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 5 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 6 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 6 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Level 7 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Level 7 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 1 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 1 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 2 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 2 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 3 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 3 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 4 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 4 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 5 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 5 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 6 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 6 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 7 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 7 User
+              
+                                </div>
+                              </a>
+                            </div>
+                            <div
+                              role="listitem"
+                            >
+                              <a
+                                class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light"
+                              >
+                                <div
+                                  class="v-avatar"
+                                  style="height: 24px; width: 24px;"
+                                >
+                                  <img
+                                    alt="Colleague 8 User"
+                                    src="https://via.placeholder.com/800x600.png"
+                                  />
+                                </div>
+                                 
+                                <div
+                                  class="pl-1"
+                                >
+                                  
+                Colleague 8 User
+              
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1610,8 +2019,8 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
           </i>
           <div>
             
-        Coming soon
-      
+          Coming soon
+        
           </div>
         </div>
       </div>
@@ -1650,8 +2059,8 @@ exports[`Edit Company Page Snapshots mocked 1`] = `
           </i>
           <div>
             
-        Coming soon
-      
+          Coming soon
+        
           </div>
         </div>
       </div>
