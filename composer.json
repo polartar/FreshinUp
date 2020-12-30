@@ -83,11 +83,11 @@
     "test": "composer test:all-coverage && composer test:coverage-check",
     "test:all-coverage": [
       "touch storage/testing.sqlite",
-      "phpdbg -qrr vendor/bin/phpunit --configuration phpunit.xml --testsuite Package -d memory_limit=512M"
+      "phpdbg -qrr vendor/bin/phpunit --configuration phpunit.xml --testsuite Package -d memory_limit=2G"
     ],
     "test:feature": [
       "touch storage/testing.sqlite",
-      "vendor/bin/phpunit --configuration phpunit.xml --testsuite Feature --no-coverage -d memory_limit=512M"
+      "vendor/bin/phpunit --configuration phpunit.xml --testsuite Feature --no-coverage -d memory_limit=2G"
     ],
     "test:unit": [
       "touch storage/testing.sqlite",
