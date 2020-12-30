@@ -9,7 +9,6 @@
       <v-btn
         color="primary"
         round
-        disabled
         @click="viewAll()"
       >
         View all

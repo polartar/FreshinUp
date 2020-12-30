@@ -7,7 +7,7 @@ export default {
   beforeRouteEnterOrUpdate: CreateUpdate.beforeRouteEnterOrUpdate,
   data () {
     return {
-      isNew: false
+      isNew: true
     }
   }
 }

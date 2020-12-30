@@ -3,7 +3,7 @@
 exports[`components/menu-items/MenuItemList Snapshots Empty 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -372,7 +372,7 @@ exports[`components/menu-items/MenuItemList Snapshots Empty 1`] = `
 exports[`components/menu-items/MenuItemList Snapshots Loading 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -769,7 +769,7 @@ exports[`components/menu-items/MenuItemList Snapshots Loading 1`] = `
 exports[`components/menu-items/MenuItemList Snapshots Populated 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"

@@ -1,3 +1,8 @@
+## Dec 29, 2020
+- **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
+
+<br/>
+
 ## Dec 26, 2020
 - **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
 - **FIX** Cannot reset password [610](https://github.com/FreshinUp/foodfleet/issues/610)

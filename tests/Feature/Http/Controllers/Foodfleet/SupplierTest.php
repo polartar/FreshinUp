@@ -5,12 +5,15 @@ namespace Tests\Feature\Http\Controllers\Foodfleet;
 use App\Enums\UserType;
 use App\Models\Foodfleet\Document;
 use App\Models\Foodfleet\Store;
+use App\Models\Foodfleet\StoreStatus;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use App\Models\Foodfleet\Event;
 use App\User;
+use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Arr;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 
@@ -30,7 +33,7 @@ class SupplierTest extends TestCase
         $events = factory(Event::class, 5)->create([
             'host_uuid' => $company->uuid
         ]);
-        $data = $this->json('GET', "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/events")
+        $data = $this->json('GET', "/api/foodfleet/suppliers/" . $supplier->uuid . "/events")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -59,7 +62,7 @@ class SupplierTest extends TestCase
             'host_uuid' => $company->uuid
         ]);
         $include = "location,status,host,location.venue,manager,event_tags,type,venue";
-        $url = "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/events?include=" . $include;
+        $url = "/api/foodfleet/suppliers/" . $supplier->uuid . "/events?include=" . $include;
         $data = $this->json('GET', $url)
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -160,7 +163,7 @@ class SupplierTest extends TestCase
         $stores = factory(Store::class, 5)->create([
             'supplier_uuid' => $company->uuid
         ]);
-        $data = $this->json('GET', "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/stores")
+        $data = $this->json('GET', "/api/foodfleet/suppliers/" . $supplier->uuid . "/stores")
             ->assertStatus(200)
             ->assertJsonStructure([
                 'data'
@@ -190,7 +193,7 @@ class SupplierTest extends TestCase
             'supplier_uuid' => $company->uuid
         ]);
         $include = "tags,addresses,events,supplier,supplier.admin,status,owner,type";
-        $url = "/api/foodfleet/suppliers/" . $supplier->company->uuid . "/stores?include=" . $include;
+        $url = "/api/foodfleet/suppliers/" . $supplier->uuid . "/stores?include=" . $include;
         $data = $this->json('GET', $url)
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -230,6 +233,60 @@ class SupplierTest extends TestCase
                     'email' => $owner->email,
                 ],
             ], $data[$idx]);
+        }
+    }
+
+    public function testCanGetStatsOfStoresByStatuses()
+    {
+        // dummy values that should be part of the stats
+        $statuses = StoreStatus::all();
+        foreach ($statuses as $status) {
+            factory(Store::class)->create([
+                'status_id' => $status->id
+            ]);
+        }
+        $supplier = factory(User::class)->create([
+            'company_id' => factory(Company::class)->create()->id
+        ]);
+        $storesCountByStatuses = [
+            \App\Enums\StoreStatus::DRAFT => 6,
+            \App\Enums\StoreStatus::PENDING => 5,
+            \App\Enums\StoreStatus::REVISION => 3,
+            \App\Enums\StoreStatus::APPROVED => 5,
+            \App\Enums\StoreStatus::ON_HOLD => 1,
+        ];
+        foreach ($storesCountByStatuses as $status => $count) {
+            factory(Store::class, $count)->create([
+                'status_id' => $status,
+                'supplier_uuid' => $supplier->company->uuid
+            ]);
+        }
+        $this->assertEquals(20 + $statuses->count(), Store::count());
+
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $data = $this->getJson("/api/foodfleet/suppliers/{$supplier->uuid}/stores/stats")
+            ->assertStatus(200)
+            ->assertJsonStructure([ 'data' ])
+            ->json('data');
+
+        foreach ($data as $id => $state) {
+            Assert::assertArraySubset([
+                'label' => $state['label'],
+                'color' => $state['color'],
+                'value' => $state['value']
+            ], $data[$id]);
+        }
+
+        foreach ($storesCountByStatuses as $status => $count) {
+            factory(Store::class, $count)->create([
+                'status_id' => $status,
+                'supplier_uuid' => $supplier->company->uuid
+            ]);
+            $stat = array_filter($data, function ($item) use ($status) {
+                return $item['label'] == \App\Enums\StoreStatus::getDescription($status);
+            });
+            $this->assertEquals($count, Arr::first($stat)['value']);
         }
     }
 }
