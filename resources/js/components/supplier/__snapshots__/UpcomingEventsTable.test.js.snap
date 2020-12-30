@@ -1309,6 +1309,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
                     <a
                       class="primary--text text-not-underline font-weight-bold"
                       href="#manage-view"
+                      title="view item"
                     >
                       accusantium
                     </a>
@@ -1602,6 +1603,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
                     <a
                       class="primary--text text-not-underline font-weight-bold"
                       href="#manage-view"
+                      title="view item"
                     >
                       saepe
                     </a>
@@ -1895,6 +1897,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
                     <a
                       class="primary--text text-not-underline font-weight-bold"
                       href="#manage-view"
+                      title="view item"
                     >
                       ipsum
                     </a>
@@ -2188,6 +2191,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
                     <a
                       class="primary--text text-not-underline font-weight-bold"
                       href="#manage-view"
+                      title="view item"
                     >
                       quibusdam
                     </a>
@@ -2481,6 +2485,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
                     <a
                       class="primary--text text-not-underline font-weight-bold"
                       href="#manage-view"
+                      title="view item"
                     >
                       lorem
                     </a>

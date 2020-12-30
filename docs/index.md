@@ -1,6 +1,7 @@
 ## Dec 30, 2020
-- **FIX** Move square link from company level to fleet member (store) [626](https://github.com/FreshinUp/foodfleet/issues/626)
+- **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
 - **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
+- **FIX** Cannot connect to Square [519](https://github.com/FreshinUp/foodfleet/issues/519)
 
 <br/>
 

@@ -18,6 +18,8 @@ export const FIXTURE_STORES = [
       }
     ],
     square_id: 'abc1',
+    square_access_token: '125a3116-9616-32e4-9ba3-6102cc45d25b',
+    square_refresh_token: '5cce8c0a-897c-3c5f-a541-2e9232e08d3a',
     size: 200,
     owner_uuid: 'o111',
     owner: {
@@ -69,6 +71,8 @@ export const FIXTURE_STORES = [
       }
     ],
     square_id: 'abc1',
+    square_access_token: '24080d4e-e9b5-3789-a80e-095209fc48e3',
+    square_refresh_token: '178b810b-0271-3543-afa9-faa80fc9f245',
     size: 150,
     owner_uuid: 'o222',
     owner: {
@@ -115,6 +119,8 @@ export const FIXTURE_STORES = [
       name: 'ASIAN'
     }],
     square_id: 'abc1',
+    square_access_token: 'e5bb3383-7f8d-37b1-acd6-f7964588c784',
+    square_refresh_token: 'ded50e01-c5cd-33d2-a93e-20ca2cd6ec23',
     size: 340,
     owner_uuid: 'o333',
     owner: {
@@ -168,6 +174,8 @@ export const FIXTURE_STORES = [
       name: 'VEGAN'
     }],
     square_id: 'abc1',
+    square_access_token: '8c8ffcd5-02b5-3b57-a417-18b048fddc02',
+    square_refresh_token: '2815523a-a6f2-3fa4-aa65-641a69f9bea1',
     size: 123,
     owner_uuid: 'o444',
     owner: {
@@ -219,6 +227,8 @@ export const FIXTURE_STORES = [
       }
     ],
     square_id: 'abc1',
+    square_access_token: 'a66c22b0-f98d-3dd7-bfce-cc2a1502ede1',
+    square_refresh_token: '96edcfad-d6b3-3ee1-812a-502082cf5cb1',
     size: '',
     owner_uuid: 'o555',
     owner: {
