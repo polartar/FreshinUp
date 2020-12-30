@@ -34,6 +34,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string instagram
  * @property string staff_notes
  * @property int status_id
+ * @property int square_id
  * @property int type_id
  * @property string supplier_uuid
  * @property string owner_uuid

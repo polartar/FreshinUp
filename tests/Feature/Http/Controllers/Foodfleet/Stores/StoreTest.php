@@ -611,6 +611,7 @@ class StoresTest extends TestCase
             'size' => $payload['size'],
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'state_of_incorporation' => $payload['state_of_incorporation'],
             'website' => $payload['website'],
@@ -643,6 +644,7 @@ class StoresTest extends TestCase
         $this->assertArraySubset([
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'size' => $payload['size'],
             'contact_phone' => $payload['contact_phone'],
@@ -682,6 +684,7 @@ class StoresTest extends TestCase
         $this->assertArraySubset([
             'owner_uuid' => $payload['owner_uuid'],
             'type_id' => $payload['type_id'],
+            'square_id' => $payload['square_id'],
             'name' => $payload['name'],
             'size' => $payload['size'],
             'contact_phone' => $payload['contact_phone'],
