@@ -55,7 +55,7 @@ exports[`components/venues/Documents Snapshots Empty 1`] = `
   >
     <div>
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
       >
         <div
           class="v-table__overflow"
@@ -520,7 +520,7 @@ exports[`components/venues/Documents Snapshots Loading 1`] = `
   >
     <div>
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
       >
         <div
           class="v-table__overflow"
@@ -1013,7 +1013,7 @@ exports[`components/venues/Documents Snapshots Populated 1`] = `
   >
     <div>
       <div
-        class="ui-datatable elevation-1"
+        class="ui-datatable"
       >
         <div
           class="v-table__overflow"

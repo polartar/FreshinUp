@@ -16,7 +16,8 @@ class CompanyMembers extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
+     * @param $id
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request, $id)
@@ -40,7 +41,7 @@ class CompanyMembers extends Controller
                 'last_name',
                 'email'
             ]);
-        
+
         $searchTerm = null;
         if ($request->has('q')) {
             $searchTerm = $request->get('q');

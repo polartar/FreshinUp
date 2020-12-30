@@ -595,7 +595,9 @@ class StoresTest extends TestCase
 
     public function testCreate()
     {
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'company_id' => factory(\FreshinUp\FreshBusForms\Models\Company\Company::class)->create()->id
+        ]);
         Passport::actingAs($user);
         $payload = factory(Store::class)->make()->toArray();
         $data = $this
@@ -604,7 +606,6 @@ class StoresTest extends TestCase
             ->json('data');
         $this->assertArraySubset([
             'status_id' => $payload['status_id'],
-            'supplier_uuid' => $payload['supplier_uuid'],
             'address_uuid' => $payload['address_uuid'],
             'contact_phone' => $payload['contact_phone'],
             'size' => $payload['size'],
@@ -617,6 +618,9 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            // Should not take it from the payload
+            // 'supplier_uuid' => $payload['supplier_uuid'],
+            'supplier_uuid' => $user->company->uuid,
         ], $data);
     }
 
@@ -744,10 +748,6 @@ class StoresTest extends TestCase
         // TODO a better way of asserting the following
     }
 
-    /**
-     * Get the statistics of stores by their status
-     * @group statistics
-     */
     public function testCanGetStatsOfStoresByStatuses()
     {
         //Given

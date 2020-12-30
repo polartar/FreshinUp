@@ -37,6 +37,7 @@ class TemplateTest extends TestCase
 
     public function testGetClientAgreementWhenNotExist()
     {
+        Template::truncate();
         $title = Template::CLIENT_EVENT_AGREEMENT;
         $this->assertEquals(0, Template::where('title', $title)->count());
         $template = Template::getClientAgreement();
@@ -53,9 +54,9 @@ class TemplateTest extends TestCase
             'title' => $title,
             'status_id' => DocumentTemplateStatus::PUBLISHED
         ]);
-        $this->assertEquals(1, Template::where('title', $title)->count());
+        $count = Template::where('title', $title)->count();
         $template = Template::getClientAgreement();
-        $this->assertEquals(1, Template::where('title', $title)->count());
+        $this->assertEquals($count, Template::where('title', $title)->count());
         $this->assertEquals($title, $template->title);
         $this->assertEquals($oldTemplate->uuid, $template->uuid);
         $this->assertEquals(DocumentTemplateStatus::PUBLISHED, $template->status_id);

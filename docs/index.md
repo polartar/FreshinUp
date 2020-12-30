@@ -1,40 +1,33 @@
-# Roadmap
-
-## Document template page
-## Document page
-
-## Venue Page
-- Venues can be search by (this is unknown)
+## Dec 29, 2020
+- **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
 
 <br/>
 
-## Event Page
-
-## Event Edit Page
-### Event Fleet
-- As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
-
-### Components
-- Event Fleet _(Requires Fleet Members to be completed)_
-- Customer
+## Dec 26, 2020
+- **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
+- **FIX** Cannot reset password [610](https://github.com/FreshinUp/foodfleet/issues/610)
 
 <br/>
-
-
-# Changes
 
 ## Dec 25, 2020
 - **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
+- **ADD** Dashboard - Supplier scoped resource [668](https://github.com/FreshinUp/foodfleet/issues/668)
 
 <br/>
 
 ## Dec 24, 2020
-- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
 - **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
 - **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
 - **MOD** Correcting user details layout
  [596](https://github.com/FreshinUp/foodfleet/issues/596)
 
+
+<br/>
+
+## Dec 23, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
 <br/>
 
 ## Dec 22, 2020

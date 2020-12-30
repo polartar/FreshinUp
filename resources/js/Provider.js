@@ -13,7 +13,9 @@ import documentStatuses from './store/modules/documentStatuses'
 import documentTemplates from './store/modules/documentTemplates'
 import documentTypes from './store/modules/documentTypes'
 import transactions from './store/modules/transactions'
+import companyTypes from './store/modules/companyTypes'
 import companyDetails from './store/modules/companyDetails'
+import companyStatuses from './store/modules/companyStatuses'
 import eventSummary from './store/modules/eventSummary'
 import eventTypes from './store/modules/eventTypes'
 import events from './store/modules/events'
@@ -37,6 +39,7 @@ import userTypes from './store/modules/userTypes'
 import users from './store/modules/users'
 import navigation from './store/modules/navigation'
 import navigationAdmin from './store/modules/navigationAdmin'
+import suppliers from './store/modules/suppliers'
 
 export default () => {
   return {
@@ -61,6 +64,8 @@ export default () => {
       transactions,
       companies,
       companyDetails,
+      companyTypes,
+      companyStatuses,
       companyOwners,
       events,
       eventStatuses,
@@ -82,7 +87,8 @@ export default () => {
       navigation,
       navigationAdmin,
       users,
-      userTypes
+      userTypes,
+      suppliers
     }
   }
 }

@@ -71,7 +71,7 @@
             @connect-square="onConnectSquare"
             @disconnect-square="onDisconnectSquare"
             @delete="deleteMember"
-            @cancel="onCancel"
+            @cancel="backToList"
           />
         </v-flex>
         <v-flex
@@ -326,13 +326,13 @@ const DELETABLE_RESOURCE = {
   AREA: 'storeAreas'
 }
 
-const PAYMENT_INCLUDES = [
+export const PAYMENT_INCLUDES = [
   'status',
   'event'
 ]
 
-const SQUARE_APP_ID = process.env.SQUARE_APP_ID
-const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
+export const SQUARE_APP_ID = process.env.SQUARE_APP_ID
+export const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 
 export default {
   layout: 'admin',
@@ -412,6 +412,9 @@ export default {
     ...mapGetters('eventStatuses', {
       eventStatuses: 'items'
     }),
+    ...mapGetters('stores', {
+      store_: 'item'
+    }),
     ...mapGetters('stores/events', {
       events: 'items',
       eventPagination: 'pagination',
@@ -471,7 +474,7 @@ export default {
     },
     store () {
       // This allow us to have the the object to have the wanted keys in case of creation
-      return Object.assign({}, DEFAULT_STORE, this.$store.getters['stores/item'])
+      return Object.assign({}, DEFAULT_STORE, this.store_)
     },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
@@ -503,7 +506,9 @@ export default {
           companyId: companyId
         }
       })
+        .then()
         .catch(error => console.error(error))
+        .then()
     },
 
     // store
@@ -513,7 +518,7 @@ export default {
         if (this.isNew) {
           await this.$store.dispatch('stores/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          this.$router.push({ path: '/admin/fleet-members' })
+          this.backToList()
         } else {
           await this.$store.dispatch('stores/updateItem', { data, params: { id: this.$route.params.id } })
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
@@ -535,14 +540,11 @@ export default {
           const message = get(error, 'response.data.message', error.message)
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
-      this.$router.push({ path: '/admin/fleet-members' })
+      this.backToList()
     },
     onMenuItemManageView (item) {
       this.menuItem = Object.assign({}, DEFAULT_MENU_ITEM, item)
       this.menuItemDialog = true
-    },
-    onCancel () {
-      this.$router.push({ path: '/admin/fleet-members' })
     },
     backToList () {
       this.$router.push({ path: '/admin/fleet-members' })
@@ -716,6 +718,7 @@ export default {
         .then(() => {
           this.duplicateEventDialog = false
           this.editingEvent = null
+          this.onDuplicateSuccess()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -725,6 +728,8 @@ export default {
           this.duplicatingEvent = false
         })
     },
+    // overriding in supplier/CreateOrUpdate
+    onDuplicateSuccess () {},
     onManageDuplicate (event) {
       this.editingEvent = event
       this.duplicateEventDialog = true
@@ -773,7 +778,7 @@ export default {
         .then()
         .catch(error => {
           console.error(error)
-          vm.$router.push({ path: '/admin/fleet-members' })
+          vm.backToList()
         })
         .then(() => {
           vm.fleetMemberLoading = false
