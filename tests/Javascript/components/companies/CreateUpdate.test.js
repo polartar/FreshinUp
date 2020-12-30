@@ -3,9 +3,10 @@ import { FIXTURE_COMPANY } from 'tests/__data__/companies'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Component from '~/components/companies/CreateUpdate.vue'
 import createStore from 'tests/createStore'
+import { FIXTURE_USER } from '../../__data__/user'
 
 describe('Companies CreateUpdate Component', () => {
-  let localVue, mock, store
+  let localVue, mock, store, storeWithAdmin
 
   describe('Snapshots', () => {
     beforeEach(() => {
@@ -19,7 +20,16 @@ describe('Companies CreateUpdate Component', () => {
           return [404, {}]
         })
 
-      store = createStore({})
+      store = createStore({
+        currentUser: {
+          ...FIXTURE_USER, has_admin_access: false
+        }
+      })
+      storeWithAdmin = createStore({
+        currentUser: {
+          ...FIXTURE_USER, has_admin_access: true
+        }
+      })
     })
     afterEach(() => {
       mock.restore()
@@ -28,10 +38,7 @@ describe('Companies CreateUpdate Component', () => {
     it('mocked company admin', async () => {
       const wrapper = mount(Component, {
         localVue,
-        store,
-        propsData: {
-          isAdmin: true
-        }
+        store: storeWithAdmin
       })
 
       await wrapper.vm.$store.dispatch('companies/getItem', { params: { id: 1 } })
@@ -45,16 +52,13 @@ describe('Companies CreateUpdate Component', () => {
     it('mocked company non admin', async () => {
       const wrapper = mount(Component, {
         localVue,
-        store,
-        propsData: {
-          isAdmin: false
-        }
+        store
       })
+
 
       await wrapper.vm.$store.dispatch('companies/getItem', { params: { id: 1 } })
       await wrapper.vm.$store.dispatch('page/setLoading', false)
       await wrapper.vm.$nextTick()
-
       expect(wrapper.element).toMatchSnapshot()
       expect(wrapper.find('input[aria-label="Status"]').attributes('disabled')).toBe('disabled')
     })

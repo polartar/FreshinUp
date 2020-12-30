@@ -24,6 +24,8 @@
           :total-items="eventPagination.totalItems"
           :sort-by="eventSorting.sortBy"
           :descending="eventSorting.descending"
+          without-elevation
+          without-pagination
           @paginate="onEventPaginate"
           @change-status="changeEventStatus"
           @manage-view="viewEvent"
@@ -42,6 +44,7 @@
           :class="{'mt-4': $vuetify.breakpoint.smOnly}"
           :events="events"
           :statuses="eventStatuses"
+          @manage-multiple-view="viewEvents"
         />
       </v-flex>
     </v-layout>
@@ -55,6 +58,8 @@
       :total-items="storePagination.totalItems"
       :sort-by="storeSorting.sortBy"
       :descending="storeSorting.descending"
+      without-elevation
+      without-pagination
       @paginate="onStorePaginate"
       @change-status="changeStoreStatus"
       @manage-edit="editFleet"
@@ -195,17 +200,13 @@ export default {
     // event
     onEventPaginate (value) {
       this.$store.dispatch('suppliers/events/setPagination', value)
-      this.$store.dispatch('suppliers/events/getItems', {
-        params: {
-          supplierId: this.currentUser.uuid
-        }
-      })
+      this.getSupplierEvents()
     },
     viewEvent (event) {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
     },
     viewEvents () {
-      this.$router.push({ path: `/admin/suppliers/events` })
+      this.$router.push({ path: `/admin/supplier/events` })
     },
     deleteEvent (event) {
       this.$store.dispatch('events/deleteItem', {
@@ -218,11 +219,22 @@ export default {
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
     },
+    getSupplierEvents () {
+      const userUuid = get(this.currentUser, 'uuid')
+      if (!userUuid) {
+        return Promise.reject(new Error('[getSupplierEvents] No auth user. Aborting...'))
+      }
+      return this.$store.dispatch('suppliers/events/getItems', {
+        params: { supplierId: userUuid }
+        // TODO add date filter to query events for a particular date period
+        //   ie upcoming 15 days
+      })
+    },
     deleteEvents (events) {
       // TODO: bulk delete for events https://github.com/FreshinUp/foodfleet/issues/645
       Promise.all(events.map(this.deleteEvent))
         .then(() => {
-          this.$store.dispatch('suppliers/events/getItems')
+          this.getSupplierEvents()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -243,7 +255,7 @@ export default {
       // TODO: bulk update on events https://github.com/FreshinUp/foodfleet/issues/646
       Promise.all(events.map(event => this.changeEventStatus(status.id, event)))
         .then(() => {
-          this.$store.dispatch('suppliers/events/getItems')
+          this.getSupplierEvents()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -252,6 +264,10 @@ export default {
     }
   },
   async beforeRouteEnterOrUpdate (vm, to, from, next) {
+    // TODO: already called in default.vue.
+    // TODO: override getCurrentUser method
+    //   should return ongoing request if there is any
+    //   otherwise send request
     await vm.$store.dispatch('currentUser/getCurrentUser')
     if (!get(vm.currentUser, 'company.uuid')) {
       vm.toOnBoardingPage()
@@ -277,11 +293,7 @@ export default {
     vm.$store.dispatch('suppliers/stores/setFilters', {
       include: 'type'
     })
-    promises.push(vm.$store.dispatch('suppliers/events/getItems', {
-      params: {
-        supplierId: vm.currentUser.uuid
-      }
-    }))
+    promises.push(vm.getSupplierEvents())
     vm.$store.dispatch('suppliers/stores/getItems', {
       params: {
         supplierId: vm.currentUser.uuid

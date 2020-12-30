@@ -5,11 +5,11 @@ export default ({ items, item }) => {
     'companyTypes',
     { items, item },
     {
-      itemsPath: () => `/foodfleet/company/types`,
+      itemsPath: () => `/foodfleet/company/types`
     }
   )
   return {
     ...store,
-    namespaced: true,
+    namespaced: true
   }
 }

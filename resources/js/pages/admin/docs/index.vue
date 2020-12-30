@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import DocFilter from '~/components/docs/FilterSorter.vue'
 import DoctableList from '~/components/docs/DoctableList.vue'
 import get from 'lodash/get'

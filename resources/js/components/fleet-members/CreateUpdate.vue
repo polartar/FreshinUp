@@ -412,6 +412,9 @@ export default {
     ...mapGetters('eventStatuses', {
       eventStatuses: 'items'
     }),
+    ...mapGetters('stores', {
+      store_: 'item'
+    }),
     ...mapGetters('stores/events', {
       events: 'items',
       eventPagination: 'pagination',
@@ -471,7 +474,7 @@ export default {
     },
     store () {
       // This allow us to have the the object to have the wanted keys in case of creation
-      return Object.assign({}, DEFAULT_STORE, this.$store.getters['stores/item'])
+      return Object.assign({}, DEFAULT_STORE, this.store_)
     },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
@@ -715,6 +718,7 @@ export default {
         .then(() => {
           this.duplicateEventDialog = false
           this.editingEvent = null
+          this.onDuplicateSuccess()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -724,6 +728,8 @@ export default {
           this.duplicatingEvent = false
         })
     },
+    // overriding in supplier/CreateOrUpdate
+    onDuplicateSuccess () {},
     onManageDuplicate (event) {
       this.editingEvent = event
       this.duplicateEventDialog = true

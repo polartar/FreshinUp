@@ -22,15 +22,15 @@
       >
         <steps-card
           :content="{
-              title: '1. Update Your Profile',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-              button: 'Take me there!'
-            }"
+            title: '1. Update Your Profile',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+            button: 'Take me there!'
+          }"
           :nav-to="editUserRoute"
           :icon="{
-              name: 'icon-users',
-              size: 175
-            }"
+            name: 'icon-users',
+            size: 175
+          }"
         />
       </v-flex>
       <v-flex
@@ -40,16 +40,16 @@
       >
         <steps-card
           :content="{
-              title: '2. Register Your Company',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-              button: 'Take me there!'
-            }"
+            title: '2. Register Your Company',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+            button: 'Take me there!'
+          }"
           :nav-to="companyRoute"
           :icon="{
-              name: 'icon-companies',
-              size: 175
-            }"
-          :disabled='!userProfileCompleted'
+            name: 'icon-companies',
+            size: 175
+          }"
+          :disabled="!userProfileCompleted"
         />
       </v-flex>
       <v-flex
@@ -59,66 +59,66 @@
       >
         <steps-card
           :content="{
-              title: '3. Submit Your Fleet',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
-              button: 'Take me there!'
-            }"
+            title: '3. Submit Your Fleet',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tincidunt magna, sed pharetra neque. Mauris ultrices felis quis elit aliquet, dapibus fringilla.',
+            button: 'Take me there!'
+          }"
           :nav-to="'/admin/supplier/fleet-members/new'"
           :icon="{
-              name: 'icon-trucks',
-              size: 175
-            }"
-          :disabled='true || !fleetAvailable'
+            name: 'icon-trucks',
+            size: 175
+          }"
+          :disabled="!fleetAvailable"
         />
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 <script>
-  import { mapGetters } from 'vuex'
-  import StepsCard from '~/components/dashboard/StepsCard.vue'
-  import get from 'lodash/get'
+import { mapGetters } from 'vuex'
+import StepsCard from '~/components/dashboard/StepsCard.vue'
+import get from 'lodash/get'
 
-  export default {
-    layout: 'admin',
-    components: {
-      StepsCard,
+export default {
+  layout: 'admin',
+  components: {
+    StepsCard
+  },
+  computed: {
+    ...mapGetters(['currentUser']),
+    ...mapGetters('suppliers/stores', { stores: 'items' }),
+    ...mapGetters('page', ['isLoading']),
+    fleetAvailable () {
+      return this.userProfileCompleted &&
+          this.userCompanyCompleted
     },
-    computed: {
-      ...mapGetters(['currentUser']),
-      ...mapGetters('suppliers/stores', { stores: 'items' }),
-      ...mapGetters('page', ['isLoading']),
-      fleetAvailable () {
-        return this.userProfileCompleted
-          && this.userCompanyCompleted
-      },
-      editUserRoute () {
-        return '/admin/users/' + this.currentUser.id + '/edit'
-      },
-      companyRoute () {
-        const uuid = get(this.currentUser, 'company.uuid')
-        return uuid
-          ? `/admin/companies/${uuid}/edit`
-          : '/admin/companies/new'
-      },
-      userProfileCompleted () {
-        const currentUser = this.currentUser
-        return currentUser && currentUser.email && currentUser.first_name && currentUser.last_name
-      },
-      userCompanyCompleted () {
-        // TODO: we might want to wait for company.status to be approved/active first
-        return Boolean(get(this.currentUser, 'company'))
-      },
+    editUserRoute () {
+      return '/admin/users/' + this.currentUser.id + '/edit'
     },
-    beforeRouteEnterOrUpdate (vm, to, from, next) {
-      vm.$store.dispatch('page/setLoading', true)
-      vm.$store.dispatch('currentUser/getCurrentUser')
-        .then()
-        .catch(console.error)
-        .then(() => {
-          vm.$store.dispatch('page/setLoading', false)
-          next && next()
-        })
+    companyRoute () {
+      const uuid = get(this.currentUser, 'company.uuid')
+      return uuid
+        ? `/admin/companies/${uuid}/edit`
+        : '/admin/companies/new'
+    },
+    userProfileCompleted () {
+      const currentUser = this.currentUser
+      return currentUser && currentUser.email && currentUser.first_name && currentUser.last_name
+    },
+    userCompanyCompleted () {
+      // TODO: we might want to wait for company.status to be approved/active first
+      return Boolean(get(this.currentUser, 'company'))
     }
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.$store.dispatch('page/setLoading', true)
+    vm.$store.dispatch('currentUser/getCurrentUser')
+      .then()
+      .catch(console.error)
+      .then(() => {
+        vm.$store.dispatch('page/setLoading', false)
+        next && next()
+      })
   }
+}
 </script>

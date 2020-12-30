@@ -13,6 +13,7 @@ use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Arr;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 
@@ -285,7 +286,7 @@ class SupplierTest extends TestCase
             $stat = array_filter($data, function ($item) use ($status) {
                 return $item['label'] == \App\Enums\StoreStatus::getDescription($status);
             });
-            $this->assertEquals($count, $stat[0]['value']);
+            $this->assertEquals($count, Arr::first($stat)['value']);
         }
     }
 }

@@ -121,7 +121,7 @@ export default {
     statusStats: { type: Array, default: () => [] },
     headers: { type: Array, default: () => HEADERS },
     itemActions: { type: Array, default: () => ITEM_ACTIONS },
-    itemsActions: { type: Array, default: () => ITEMS_ACTIONS },
+    itemsActions: { type: Array, default: () => ITEMS_ACTIONS }
   },
   methods: {
     get,

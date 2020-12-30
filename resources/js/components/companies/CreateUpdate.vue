@@ -1,10 +1,8 @@
 <template>
-  <v-container
-    :class="`fresh-company__edit fresh-company__edit--${company ? company.status : ''}`"
+  <div
     v-if="!isLoading"
-    fluid
-    fill-height
-    justify-space-between
+    class="px-4 py-2"
+    :class="`fresh-company__edit fresh-company__edit--${company ? company.status : ''}`"
   >
     <v-layout column>
       <h3 class="f-page__title f-page__title--admin">
@@ -42,7 +40,7 @@
                             item-text="name"
                             item-value="id"
                             label="Status"
-                            :disabled="disableStatus"
+                            :disabled="!isAdmin"
                           >
                             <template
                               slot="selection"
@@ -54,7 +52,7 @@
                               slot="item"
                               slot-scope="data"
                             >
-                              <v-list-tile-content v-text="data.item.name"/>
+                              <v-list-tile-content v-text="data.item.name" />
                             </template>
                           </v-select>
                         </v-flex>
@@ -62,7 +60,7 @@
                           md6
                           hidden-sm-and-down
                         >
-                          <v-spacer/>
+                          <v-spacer />
                         </v-flex>
                         <v-flex
                           md12
@@ -223,9 +221,9 @@
                 </v-flex>
               </v-layout>
             </v-card-text>
-            <v-divider class="mb-2"/>
+            <v-divider class="mb-2" />
             <v-card-actions class="mb-2">
-              <v-spacer/>
+              <v-spacer />
               <v-btn
                 v-if="!isNew"
                 flat
@@ -270,12 +268,12 @@
               >
                 <v-avatar size="24">
                   <img
-                    :src="data.item.avatar"
-                    :alt="data.item.name"
+                    :src="get(data, 'item.avatar')"
+                    :alt="get(data, 'item.name')"
                   >
                 </v-avatar>
                 <div class="pl-1">
-                  {{ data.item.name }}
+                  {{ get(data, 'item.name') }}
                 </div>
               </template>
             </v-select>
@@ -294,7 +292,7 @@
             Company: {{ name }}
           </v-card-text>
           <v-card-actions>
-            <v-spacer/>
+            <v-spacer />
             <v-btn
               color="success"
               flat="flat"
@@ -313,15 +311,16 @@
         </v-card>
       </v-dialog>
     </v-layout>
-    <v-layout>
-
-      <v-card class="mb-5"
-              v-if="companyId && company">
+    <v-layout column v-if="companyId && company ">
+      <v-flex class="pt-4">
+      <v-card
+        class="mb-5"
+      >
         <v-card-title>
           <h3>Company Members</h3>
         </v-card-title>
 
-        <v-divider/>
+        <v-divider />
 
         <v-alert
           :value="true"
@@ -362,16 +361,18 @@
         />
         -->
       </v-card>
+      </v-flex>
 
+      <v-flex class="pt-4"
+              v-if="isCustomer">
       <v-card
-        v-if="companyId && company && isCustomer"
         class="mb-5"
       >
         <v-card-title>
           <h3>Company Venues</h3>
         </v-card-title>
 
-        <v-divider/>
+        <v-divider />
 
         <v-alert
           :value="true"
@@ -381,16 +382,18 @@
           Coming soon
         </v-alert>
       </v-card>
+      </v-flex>
 
+      <v-flex class="pt-4"
+              v-if="isSupplier">
       <v-card
-        v-if="companyId && company && isSupplier"
         class="mb-5"
       >
         <v-card-title>
           <h3>Company Fleet</h3>
         </v-card-title>
 
-        <v-divider/>
+        <v-divider />
 
         <v-alert
           :value="true"
@@ -400,13 +403,15 @@
           Coming soon
         </v-alert>
       </v-card>
+      </v-flex>
 
-      <v-card v-if="companyId && company">
+      <v-flex class="pt-4">
+      <v-card>
         <v-card-title>
           <h3>Company Events</h3>
         </v-card-title>
 
-        <v-divider/>
+        <v-divider />
 
         <v-alert
           :value="true"
@@ -416,99 +421,96 @@
           Coming soon
         </v-alert>
       </v-card>
+      </v-flex>
     </v-layout>
-  </v-container>
+  </div>
 </template>
 <script>
-  import CreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
-  import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
-  import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
-  import { mapActions, mapGetters } from 'vuex'
+import BusCreateUpdate from 'fresh-bus/components/pages/admin/companies/CreateUpdate.vue'
+import UsersPage from 'fresh-bus/pages/admin/users/index.vue'
+import { mapActions, mapGetters } from 'vuex'
 
-  export default {
-    extends: CreateUpdate,
-    mixins: [UsersPage],
-    data () {
-      return {
-        isNew: true,
-        companyId: null,
-        disableStatus: !this.isAdmin
-      }
-    },
-    computed: {
-      ...mapGetters('currentUser', {
-        isCurrentUserAdmin: 'isAdmin'
-      }),
-      ...mapGetters('companies', {
-        company: 'item'
-      }),
-      ...mapGetters('companyDetails/users', {
-        users: 'items',
-        pagination: 'pagination',
-        sorting: 'sorting',
-        sortBy: 'sortBy'
-      }),
-      disableStatus () {
-        return !this.isAdmin
-      },
-      // TODO: replace with backend implementation
-      isSupplier () {
-        return this.company.company_types.reduce((result, type) => {
-          return result || (type.key_id === 'supplier')
-        }, false)
-      },
-      isCustomer () {
-        return this.company.company_types.reduce((result, type) => {
-          return result || (type.key_id === 'host')
-        }, false)
-      }
-    },
-
-    methods: {
-      ...mapActions('page', {
-        setPageLoading: 'setLoading'
-      }),
-      onUsersPaginate (value) {
-        this.$store.dispatch('companyDetails/users/setPagination', value)
-        this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
-      },
-      filterUsers (params) {
-        this.lastFilterParams = params
-        this.$store.dispatch('companyDetails/users/setSort', params.sort)
-        this.$store.dispatch('companyDetails/users/setFilters', {
-          ...this.$route.query,
-          ...this.lastFilterParams
-        })
-        this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
-      }
-    },
-
-    beforeRouteEnterOrUpdate (vm, to, from, next) {
-      vm.companyId = to.params.id
-      BusCreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
-        if (!vm.companyId) {
-          return next && next()
-        }
-        Promise.all([
-          vm.$store.dispatch('companyDetails/users/getItems', {
-            params: {
-              companyId: vm.companyId
-            }
-          }),
-          vm.$store.dispatch('userLevels/getItems'),
-          vm.$store.dispatch('userStatuses/getItems')
-        ])
-          .then()
-          .catch(console.error)
-          .then(() => {
-            vm.$store.dispatch('page/setLoading', false)
-            next && next()
-          })
-      })
+export default {
+  extends: BusCreateUpdate,
+  mixins: [UsersPage],
+  data () {
+    return {
+      companyId: null
     }
-  }
-</script>
+  },
+  computed: {
+    isNew () {
+      return get(this.$route, 'params.id', 'new') === 'new'
+    },
+    ...mapGetters('currentUser', {
+      isAdmin: 'isAdmin'
+    }),
+    ...mapGetters('companies', {
+      company: 'item'
+    }),
+    ...mapGetters('companyDetails/users', {
+      users: 'items',
+      pagination: 'pagination',
+      sorting: 'sorting',
+      sortBy: 'sortBy'
+    }),
+    // TODO: replace with backend implementation
+    isSupplier () {
+      return this.company.company_types.reduce((result, type) => {
+        return result || (type.key_id === 'supplier')
+      }, false)
+    },
+    isCustomer () {
+      return this.company.company_types.reduce((result, type) => {
+        return result || (type.key_id === 'host')
+      }, false)
+    }
+  },
 
+  methods: {
+    ...mapActions('page', {
+      setPageLoading: 'setLoading'
+    }),
+    onUsersPaginate (value) {
+      this.$store.dispatch('companyDetails/users/setPagination', value)
+      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
+    },
+    filterUsers (params) {
+      this.lastFilterParams = params
+      this.$store.dispatch('companyDetails/users/setSort', params.sort)
+      this.$store.dispatch('companyDetails/users/setFilters', {
+        ...this.$route.query,
+        ...this.lastFilterParams
+      })
+      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
+    }
+  },
+
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.companyId = to.params.id
+    BusCreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
+      if (!vm.companyId) {
+        return next && next()
+      }
+      Promise.all([
+        vm.$store.dispatch('companyDetails/users/getItems', {
+          params: {
+            companyId: vm.companyId
+          }
+        }),
+        vm.$store.dispatch('userLevels/getItems'),
+        vm.$store.dispatch('userStatuses/getItems')
+      ])
+        .then()
+        .catch(console.error)
+        .then(() => {
+          vm.$store.dispatch('page/setLoading', false)
+          next && next()
+        })
+    })
+  }
+}
+</script>
 
 <style lang="scss">
   .fresh-company__edit--1 .v-select__selections {

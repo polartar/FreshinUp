@@ -155,7 +155,7 @@
 <script>
 import get from 'lodash/get'
 import moment from 'moment'
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { deletables } from 'fresh-bus/components/mixins/Deletables'
 import FilterSorter from '~/components/events/FilterSorter.vue'
 import FilterSorterForCalendar from '~/components/events/FilterSorterForCalendar.vue'
@@ -257,12 +257,12 @@ export default {
       this.deleteDialog = true
     },
     /**
-     * @param {object} options
-     * @param {boolean} [options.basicInformation]
-     * @param {boolean} [options.venue]
-     * @param {boolean} [options.fleetMember]
-     * @param {boolean} [options.customer]
-     */
+       * @param {object} options
+       * @param {boolean} [options.basicInformation]
+       * @param {boolean} [options.venue]
+       * @param {boolean} [options.fleetMember]
+       * @param {boolean} [options.customer]
+       */
     onDuplicate (options) {
       this.duplicating = true
       this.$store.dispatch('events/duplicate', {

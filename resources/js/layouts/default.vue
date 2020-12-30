@@ -256,7 +256,7 @@ export default {
   },
   watch: {
     '$store.getters.currentUser' (authUser) {
-      // TODO: ultimately this should be call just after login
+      // TODO: ultimately this should be call in method currentUser/getCurrentUser
       const isAdmin = authUser.has_admin_access
       if (isAdmin) {
         // TODO: should set admin menus

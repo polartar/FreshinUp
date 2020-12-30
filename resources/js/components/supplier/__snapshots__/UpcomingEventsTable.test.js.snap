@@ -23,8 +23,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Default 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -46,7 +45,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Default 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"
@@ -472,8 +471,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Loading 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -495,7 +493,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Loading 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"
@@ -949,8 +947,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -972,7 +969,7 @@ exports[`components/supplier/UpcomingEventsTable Snapshots Populated 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"
