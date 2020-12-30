@@ -794,7 +794,7 @@ export default {
       promises.push(vm.$store.dispatch('menuItems/getItems'))
       const currentUser = vm.$store.getters['currentUser']
       if (currentUser) {
-        // vm.getSquareLocations(currentUser.company_id)
+        vm.getSquareLocations(currentUser.company_id)
       }
       vm.$store.dispatch('payments/setFilters', {
         store_uuid: id,
