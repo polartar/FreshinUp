@@ -56,7 +56,8 @@ class Store extends Controller
         return StoreResource::collection($stores);
     }
 
-    public function store (Request $request, $uuid) {
+    public function store(Request $request, $uuid)
+    {
         $event = Event::where('uuid', $uuid)->firstOrFail();
         $this->validate($request, [
             'store_uuid' => 'required|exists:stores,uuid'

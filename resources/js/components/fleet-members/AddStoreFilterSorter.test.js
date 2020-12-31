@@ -4,7 +4,6 @@ import Component from './AddStoreFilterSorter'
 import * as Stories from './AddStoreFilterSorter.stories'
 
 describe('components/fleet-members/AddStoreFilterSorter', () => {
-
   describe('Snapshots', () => {
     test('Default', async () => {
       const wrapper = mount(Stories.Default())
@@ -19,7 +18,6 @@ describe('components/fleet-members/AddStoreFilterSorter', () => {
   })
 
   describe('Methods', () => {
-
     test('showFilters()', () => {
       const wrapper = shallowMount(Component)
 

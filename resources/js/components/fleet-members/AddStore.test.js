@@ -83,11 +83,10 @@ describe('components/fleet-members/AddStore', () => {
   })
 
   describe('Methods', () => {
-
     test('runFilters(payload)', () => {
       const wrapper = shallowMount(Component)
       const filters = {
-        name: 'Magnolia',
+        name: 'Magnolia'
       }
       wrapper.vm.runFilters(filters)
       const emitted = wrapper.emitted()['run-filter']

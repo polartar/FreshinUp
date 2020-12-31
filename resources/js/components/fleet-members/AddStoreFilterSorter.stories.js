@@ -33,7 +33,7 @@ export const Populated = () => ({
   methods: {
     runFilters (payload) {
       action('run-filter')(payload)
-    },
+    }
   },
   template: `
     <filter-sorter
