@@ -236,7 +236,7 @@ export default {
       if (this.currentUser.isAdmin) return 'admin'
       if (this.currentUser.type === USER_TYPE.SUPPLIER) return 'supplier'
       if (this.currentUser.type === USER_TYPE.CUSTOMER) return 'host'
-      return 'admin'
+      return ''
     }
   },
   methods: {

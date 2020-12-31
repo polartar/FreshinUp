@@ -148,7 +148,7 @@
           md8
           sm12
         >
-          <BasicInformation
+          <basic-information
             ref="basicInfo"
             :event="event"
             :errors="errors"
@@ -162,7 +162,7 @@
           md4
           sm12
         >
-          <VenueDetails
+          <venue-details
             class="ml-4"
             :venue-uuid="get(event, 'venue_uuid')"
             :location-uuid="get(event, 'location_uuid')"
@@ -183,8 +183,55 @@
           :types="storeTypes"
           :statuses="storeStatuses"
           :stores="stores"
-          @manage-view-details="viewDetails"
+          @manage-view="viewDetails"
+          @manage-create="showNewMemberDialog = true"
         />
+        <v-dialog
+          v-model="showNewMemberDialog"
+          max-width="900"
+        >
+          <v-card>
+            <v-card-title class="justify-space-between px-4 py-2">
+              <span
+                class="subheading font-weight-bold grey--text text--darken-1"
+              >
+                Add fleet member
+              </span>
+              <v-btn
+                small
+                round
+                depressed
+                color="blue-grey lighten-3 white--text"
+                @click="showNewMemberDialog = false"
+              >
+                <v-icon
+                  left
+                  class="white--text"
+                >
+                  close
+                </v-icon>
+                Close
+              </v-btn>
+            </v-card-title>
+            <v-divider />
+            <add-store
+              :is-loading="eventStoreLoading"
+              :event="event"
+              :stores="allStores"
+              :types="storeTypes"
+              class="mb-2"
+              :rows-per-page="allStorePagination.rowsPerPage"
+              :page="allStorePagination.page"
+              :total-items="allStorePagination.totalItems"
+              :sort-by="allStoreSorting.sortBy"
+              :descending="allStoreSorting.descending"
+              @paginate="paginateAllStores"
+              @run-filter="filterStores"
+              @manage-view="viewStore"
+              @manage-assign="assignEvent"
+            />
+          </v-card>
+        </v-dialog>
       </v-flex>
     </v-layout>
 
@@ -194,11 +241,23 @@
       py-4
     >
       <v-flex>
-        <customers
-          :customers="customers"
-          :statuses="statuses"
-          @manage-view-details="viewDocuments"
-        />
+        <v-card>
+          <v-card-title class="justify-space-between px-4">
+            <span class="grey--text font-weight-bold title text-uppercase">Customer</span>
+          </v-card-title>
+          <v-divider />
+          <v-layout
+            row
+          >
+            <v-flex>
+              <customer-list
+                :customers="customers"
+                :statuses="statuses"
+                @manage-view="viewDocuments"
+              />
+            </v-flex>
+          </v-layout>
+        </v-card>
       </v-flex>
     </v-layout>
   </div>
@@ -213,12 +272,13 @@ import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
-import Customers from '~/components/events/Customers.vue'
+import CustomerList from '~/components/events/CustomerList.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
+import AddStore from '~/components/fleet-members/AddStore.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -228,10 +288,11 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
+    AddStore,
     Stores,
     StatusSelect,
     BasicInformation,
-    Customers,
+    CustomerList,
     EventStatusTimeline,
     VenueDetails,
     DuplicateEventDialog
@@ -239,7 +300,7 @@ export default {
   mixins: [Validate, FormatDate],
   data () {
     return {
-      eventLoading: false,
+      showNewMemberDialog: false,
       duplicating: false,
       duplicateDialog: false,
       questDialog: false,
@@ -247,9 +308,20 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('events', { event: 'item' }),
-    ...mapGetters('events/stores', { storeItems: 'items' }),
-    ...mapGetters('eventTypes', { storeTypes: 'items' }),
+    ...mapGetters('events', {
+      event: 'item',
+      eventLoading: 'itemLoading'
+    }),
+    ...mapGetters('events/stores', {
+      storeItems: 'items',
+      eventStoreLoading: 'itemLoading'
+    }),
+    ...mapGetters('stores', {
+      allStores: 'items',
+      allStorePagination: 'pagination',
+      allStoreSorting: 'sorting'
+    }),
+    ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('venues', { 'venues': 'items' }),
@@ -258,7 +330,7 @@ export default {
       'status_id'
     ]),
     isLoading () {
-      return this.$store.getters['page/isLoading'] || this.eventLoading
+      return this.$store.getters['page/isLoading']
     },
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
@@ -282,6 +354,40 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    filterStores (payload) {
+      this.$store.dispatch('stores/patchFilters', payload)
+      this.$store.dispatch('stores/getItems')
+    },
+    viewStore (store) {
+      const route = this.$router.resolve({ path: `/admin/fleet-members/${store.uuid}/edit` })
+      window.open(route.href, '_blank')
+    },
+    paginateAllStores (value) {
+      this.$store.dispatch('stores/setPagination', value)
+      this.$store.dispatch('stores/getItems')
+    },
+    assignEvent (store) {
+      const id = this.$route.params.id
+      this.$store.dispatch('events/stores/createItem', {
+        params: {
+          eventId: id
+        },
+        data: {
+          store_uuid: store.uuid
+        }
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Fleet member added to event.')
+          this.$store.dispatch('events/stores/getItems', {
+            params: { eventId: id }
+          })
+          this.showNewMemberDialog = false
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
     editEvent (event) {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
     },
@@ -362,7 +468,6 @@ export default {
         return false
       }
       try {
-        this.eventLoading = true
         if (this.isNew) {
           await this.$store.dispatch('events/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
@@ -374,8 +479,6 @@ export default {
       } catch (error) {
         const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
-      } finally {
-        this.eventLoading = false
       }
     },
     async onDelete () {
@@ -410,6 +513,7 @@ export default {
         include: 'manager,host,event_tags,venue,location'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promises.push(vm.$store.dispatch('storeTypes/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))
@@ -422,15 +526,11 @@ export default {
     promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
-    vm.eventLoading = true
     vm.$store.dispatch('events/getItem', { params })
       .then()
       .catch(error => {
         console.error(error)
         vm.backToList()
-      })
-      .then(() => {
-        vm.eventLoading = false
       })
     Promise.all(promises)
       .then(() => {})

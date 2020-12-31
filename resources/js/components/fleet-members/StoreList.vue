@@ -77,7 +77,7 @@ export const HEADERS = [
   { text: 'Tags', sortable: false, value: 'tags' },
   { text: 'Owned By', sortable: true, value: 'owner' },
   { text: 'State Of Incorporation', sortable: true, value: 'state_of_incorporation' },
-  { text: 'Manage', sortable: false, value: 'manage' }
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
   { action: 'view', text: 'View / Edit' },
