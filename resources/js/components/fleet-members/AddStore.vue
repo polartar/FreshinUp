@@ -97,24 +97,24 @@
         :headers="headers"
         :items="filteredStores"
         :search="searchText"
-        :multi-item-actions="itemActions"
+        :multi-item-actions="multipleItemActions"
         item-key="uuid"
         hide-actions
         select-all
+        v-bind="$attrs"
+        v-on="$listeners"
       >
         <template v-slot:item-inner-name="{ item }">
           <div style="position: relative;">
             <v-tooltip top>
               <template v-slot:activator="{ on, attrs }">
-                <router-link
+                <a
                   class="primary--text"
-                  :to="{ path: '/admin/fleet-members/'}"
-                  target="_blank"
-                  v-bind="attrs"
-                  v-on="on"
+                  href="#"
+                  @click.prevent="viewItem"
                 >
                   {{ get(item, 'name') }}
-                </router-link>
+                </a>
               </template>
               View fleet member details (new tab)
             </v-tooltip>
@@ -155,6 +155,7 @@
 import get from 'lodash/get'
 import _uniq from 'lodash/uniq'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
+import MapValueKeysToData from '../../mixins/MapValueKeysToData'
 
 export const HEADERS = [
   { text: 'Fleet member', value: 'name' },
@@ -162,63 +163,44 @@ export const HEADERS = [
   { text: 'Tags', value: 'tags' },
   { text: 'Manage', value: 'manage' }
 ]
+export const DEFAULT_EVENT = {
+
+}
+
+export const MULTIPLE_ITEM_ACTIONS = []
 export default {
   components: { FDataTable },
+  mixins: [MapValueKeysToData],
   props: {
-    stores: {
-      type: Array,
-      default: () => []
-    },
-    event: {
-      type: Object,
-      required: true
-    },
-    storeTypes: {
-      type: Array,
-      default: () => []
-    }
+    headers: { type: Array, default: () => HEADERS },
+    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS },
+    value: { type: Object, default: () => DEFAULT_EVENT },
+    stores: { type: Array, default: () => [] },
+    storeTypes: { type: Array, default: () => [] }
   },
   data () {
     return {
+      ...DEFAULT_EVENT,
       searchText: '',
       selectedState: '',
       selectedType: '',
       selectedTags: [],
-      pagination: {
-        rowsPerPage: 5,
-        page: 1
-      },
-      page: 1,
       showFilters: false,
-      selected: [],
-      headers: HEADERS,
-      itemActions: []
     }
   },
   computed: {
-    pages () {
-      if (this.pagination.rowsPerPage == null ||
-          this.totalItems == null
-      ) return 0
-
-      return Math.ceil(this.totalItems / this.pagination.rowsPerPage)
-    },
-
     filteredStores () {
       let items = this.stores
       if (this.selectedState) {
-        items = items.filter(store => store['state_of_incorporation'] === this.selectedState)
+        items = items.filter(store => get(store, 'state_of_incorporation') === this.selectedState)
       }
       if (this.selectedType) {
-        items = items.filter(store => store['type_id'] === this.selectedType)
+        items = items.filter(store => get(store, 'type_id') === this.selectedType)
       }
       if (this.selectedTags.length) {
-        items = items.filter(store => store['tags'].some(tag => this.selectedTags.findIndex(t => t.uuid === tag.uuid) !== -1))
+        items = items.filter(store => get(store, 'tags').some(tag => this.selectedTags.findIndex(t => t.uuid === tag.uuid) !== -1))
       }
       return items
-    },
-    totalItems () {
-      return this.filteredStores.length
     },
     locations () {
       return _uniq(this.stores.map(s => s['state_of_incorporation']))
@@ -237,15 +219,19 @@ export default {
   },
   methods: {
     get,
+    viewItem (item) {
+      this.$emit('manage', 'view', item)
+      this.$emit('manage-view', item)
+    },
     toggleShowFilter () {
       this.showFilters = !this.showFilters
     },
-
     clearAllFilters () {
       this.selectedState = ''
       this.selectedType = ''
       this.selectedTags = []
     },
+    // TODO: methods need more attention at some point later in the future
     hasBookedAnEvent (member) {
       return member.event_stores.findIndex(e => e.event_uuid !== this.event.uuid) !== -1
     },

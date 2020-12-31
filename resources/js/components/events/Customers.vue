@@ -6,21 +6,20 @@
       <v-card-title class="justify-space-between px-4">
         <span class="black--text font-weight-bold title text-uppercase">Customer</span>
       </v-card-title>
-      <hr>
-      <div class="pa-4">
-        <v-layout
-          row
-        >
-          <v-flex v-if="statuses.length">
-            <customer-list
-              :customers="customers"
-              :statuses="statuses"
-              @change-status="changeStatus"
-              @view-details="viewDetails"
-            />
-          </v-flex>
-        </v-layout>
-      </div>
+      <v-divider/>
+      <v-layout
+        row
+        class="pa-4"
+      >
+        <v-flex v-if="statuses.length">
+          <customer-list
+            :customers="customers"
+            :statuses="statuses"
+            v-bind="$attrs"
+            v-on="$listeners"
+          />
+        </v-flex>
+      </v-layout>
     </v-card>
   </v-layout>
 </template>
@@ -32,22 +31,8 @@ export default {
     CustomerList
   },
   props: {
-    customers: {
-      type: Array,
-      default: () => []
-    },
-    statuses: {
-      type: Array,
-      default: () => []
-    }
+    customers: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] }
   },
-  methods: {
-    changeStatus (params) {
-
-    },
-    viewDetails (params) {
-      this.$emit('manage-view-details', params)
-    }
-  }
 }
 </script>

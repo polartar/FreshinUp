@@ -6,7 +6,7 @@
         <v-btn
           depressed
           color="primary"
-          @click.stop="showNewMemberDialog = true"
+          @click="addNew"
         >
           <v-icon
             left
@@ -16,42 +16,6 @@
           Add new fleet member
         </v-btn>
       </v-card-title>
-      <v-dialog
-        v-model="showNewMemberDialog"
-        max-width="900"
-      >
-        <v-card>
-          <v-card-title class="justify-space-between px-4 py-2">
-            <span
-              class="subheading font-weight-bold grey--text text--darken-1"
-            >
-              Add fleet member
-            </span>
-            <v-btn
-              small
-              round
-              depressed
-              color="blue-grey lighten-3 white--text"
-              @click="showNewMemberDialog = false"
-            >
-              <v-icon
-                left
-                class="white--text"
-              >
-                close
-              </v-icon>
-              Close
-            </v-btn>
-          </v-card-title>
-          <hr>
-          <add-store
-            :event="event"
-            :stores="stores"
-            :store-types="types"
-            class="mb-2"
-          />
-        </v-card>
-      </v-dialog>
       <hr>
       <div class="pa-4">
         <v-layout
@@ -86,38 +50,26 @@
 <script>
 import StoreList from './StoreList.vue'
 import StoreFilter from './StoreFilter.vue'
-import AddStore from './AddStore'
 
 export default {
   components: {
     StoreList,
     StoreFilter,
-    AddStore
   },
   props: {
-    types: {
-      type: Array,
-      default: () => []
-    },
-    statuses: {
-      type: Array,
-      default: () => []
-    },
-    stores: {
-      type: Array,
-      default: () => []
-    },
-    event: {
-      type: Object,
-      default: null
-    }
-  },
-  data () {
-    return {
-      showNewMemberDialog: false
-    }
+    types: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] },
+    stores: { type: Array, default: () => [] },
   },
   methods: {
+    addNew () {
+      this.$emit('manage-create')
+      this.$emit('manage', 'create')
+    },
+    viewItem (item) {
+      this.$emit('manage', 'view', item)
+      this.$emit('manage-view', item)
+    },
     filterStores (params) {
       this.$emit('filter-stores', params)
     },

@@ -148,7 +148,7 @@
           md8
           sm12
         >
-          <BasicInformation
+          <basic-information
             ref="basicInfo"
             :event="event"
             :errors="errors"
@@ -162,7 +162,7 @@
           md4
           sm12
         >
-          <VenueDetails
+          <venue-details
             class="ml-4"
             :venue-uuid="get(event, 'venue_uuid')"
             :location-uuid="get(event, 'location_uuid')"
@@ -183,9 +183,46 @@
           :types="storeTypes"
           :statuses="storeStatuses"
           :stores="stores"
-          :event="event"
-          @manage-view-details="viewDetails"
+          @manage-view="viewDetails"
+          @add-fleet="showNewMemberDialog = true"
         />
+        <v-dialog
+          v-model="showNewMemberDialog"
+          max-width="900"
+        >
+          <v-card>
+            <v-card-title class="justify-space-between px-4 py-2">
+            <span
+              class="subheading font-weight-bold grey--text text--darken-1"
+            >
+              Add fleet member
+            </span>
+              <v-btn
+                small
+                round
+                depressed
+                color="blue-grey lighten-3 white--text"
+                @click="showNewMemberDialog = false"
+              >
+                <v-icon
+                  left
+                  class="white--text"
+                >
+                  close
+                </v-icon>
+                Close
+              </v-btn>
+            </v-card-title>
+            <v-divider/>
+            <add-store
+              :value="event"
+              :stores="stores"
+              :store-types="types"
+              class="mb-2"
+              @manage-view="viewItem"
+            />
+          </v-card>
+        </v-dialog>
       </v-flex>
     </v-layout>
 
@@ -220,6 +257,7 @@ import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
+import AddStore from '~/components/AddStore.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -229,6 +267,7 @@ const { mapFields } = createHelpers({
 export default {
   layout: 'admin',
   components: {
+    AddStore,
     Stores,
     StatusSelect,
     BasicInformation,
@@ -240,7 +279,7 @@ export default {
   mixins: [Validate, FormatDate],
   data () {
     return {
-      eventLoading: false,
+      showNewMemberDialog: false,
       duplicating: false,
       duplicateDialog: false,
       questDialog: false,
@@ -248,7 +287,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('events', { event: 'item' }),
+    ...mapGetters('events', {
+      event: 'item',
+      eventLoading: 'itemLoading'
+    }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
     ...mapGetters('eventTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
@@ -259,7 +301,7 @@ export default {
       'status_id'
     ]),
     isLoading () {
-      return this.$store.getters['page/isLoading'] || this.eventLoading
+      return this.$store.getters['page/isLoading']
     },
     pageTitle () {
       return (this.isNew ? 'New Event' : 'Event Details')
@@ -363,7 +405,6 @@ export default {
         return false
       }
       try {
-        this.eventLoading = true
         if (this.isNew) {
           await this.$store.dispatch('events/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
@@ -375,8 +416,6 @@ export default {
       } catch (error) {
         const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
-      } finally {
-        this.eventLoading = false
       }
     },
     async onDelete () {
@@ -423,15 +462,11 @@ export default {
     promises.push(vm.$store.dispatch('venues/getItems', { params: { include: 'locations' } }))
 
     vm.$store.dispatch('page/setLoading', true)
-    vm.eventLoading = true
     vm.$store.dispatch('events/getItem', { params })
       .then()
       .catch(error => {
         console.error(error)
         vm.backToList()
-      })
-      .then(() => {
-        vm.eventLoading = false
       })
     Promise.all(promises)
       .then(() => {})
