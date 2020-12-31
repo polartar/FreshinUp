@@ -12,81 +12,39 @@ class UserLevelTypeEnforcerSeederTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @group user_roles
-     * @test
-     */
-    public function testUserLevelTypesAreLimitedToOnlyThree()
+    public function testWhenEmptyDatabase()
     {
+        $this->assertEquals(0, UserLevel::count());
         Artisan::call("db:seed --class=UserLevelTypeEnforcerSeeder");
-
-        //ensure there are only 3 roles, SuperAdmin, Company Owner and Company Employee
-        $this->assertCount(3, UserLevel::get());
+        $this->assertEquals(0, UserLevel::count());
     }
 
-    /**
-     * @group user_roles
-     * @test
-     */
-    public function testUserLevelTypesAreDeletedOrAddedIfTheRequiredRolesAreNotAvailableInDB()
+    public function testWhenUserLevelAlreadySeeded()
     {
-        //Given
-
-        //there are existing roles in DB which include or exclude the required roles
-        $levels = [
-            1 => 'Super Admin',
-            2 => 'Manager',
-            5 => 'Company Owner',
-            8 => 'Company Employee',
-            9 => 'Another Unwanted Role',
-            10 => 'Same For This Guy',
-        ];
-
-        UserLevel::unguard(true);
-
-        foreach ($levels as $id => $name) {
-            $forPlatform = $id < 5 ? 1 : 0;
-            $forCompany = $id > 4 ? 1 : 0;
-
-            UserLevel::updateOrCreate(
-                ['display_id' => $id],
-                [
-                    'name' => $name,
-                    'enabled' => 1,
-                    'default' => 1,
-                    'forPlatform' => $forPlatform,
-                    'forCompany' => $forCompany,
-                ]
-            );
-        }
-
-        UserLevel::reguard();
-
-        //ensure all those roles have been saved
-        $this->assertCount(6, UserLevel::get());
-
+        Artisan::call("db:seed --class=UserLevelTypeSeeder");
         Artisan::call("db:seed --class=UserLevelTypeEnforcerSeeder");
-
-        //ensure only 3 roles exist after this
-        $this->assertCount(3, UserLevel::get());
-
-        //also ensure these are the only roles in DB
-        $accepted_roles = [
-            "Super Admin",
-            "Company Owner",
-            "Company Employee",
-        ];
-
-        $this->assertSame($accepted_roles, UserLevel::get()->pluck('name')->toArray());
+        $this->assertEquals(3, UserLevel::count());
+        $this->assertEquals(1, UserLevel::where('name', 'Super Admin')->count());
+        $this->assertEquals(1, UserLevel::where('name', 'Company Owner')->count());
+        $this->assertEquals(1, UserLevel::where('name', 'Company Employee')->count());
     }
 
-    /**
-     * @test
-     * @group user_roles
-     */
+    public function testWhenSeededTwice()
+    {
+        Artisan::call("db:seed --class=UserLevelTypeSeeder");
+        Artisan::call("db:seed --class=UserLevelTypeEnforcerSeeder");
+        $this->assertEquals(3, UserLevel::count());
+        Artisan::call("db:seed --class=UserLevelTypeEnforcerSeeder");
+        $this->assertEquals(3, UserLevel::count());
+        $this->assertEquals(1, UserLevel::where('name', 'Super Admin')->count());
+        $this->assertEquals(1, UserLevel::where('name', 'Company Owner')->count());
+        $this->assertEquals(1, UserLevel::where('name', 'Company Employee')->count());
+    }
+
+
     public function testThatTheEnforcerSeederIsRunWhenAllSeedsAreRun()
     {
-        Artisan::call("db:seed");//all seeders
+        Artisan::call("db:seed");
 
         $accepted_roles = [
             "Super Admin",
