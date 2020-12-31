@@ -3,66 +3,46 @@ import { action } from '@storybook/addon-actions'
 
 // Components
 import CustomerList from './CustomerList'
+import { FIXTURE_CUSTOMER_STATUSES } from '../../../../tests/Javascript/__data__/customerStatuses'
+import { FIXTURE_CUSTOMERS } from '../../../../tests/Javascript/__data__/customers'
 
-let customers = [
-  {
-    uuid: '6c3a3242-7158-408c-a7c7-8051100db64f',
-    status: 1,
-    created_at: '2019-09-24T06:33:05.000000Z',
-    updated_at: '2019-09-24T11:14:21.000000Z'
-  }
-]
+export const Default = () => ({
+  components: { CustomerList },
+  template: `
+      <customer-list />
+    `
+})
 
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Approved' },
-  { id: 4, name: 'Required' },
-  { id: 5, name: 'Rejected' }
-]
+export const Populated = () => ({
+  components: { CustomerList },
+  data () {
+    return {
+      customers: FIXTURE_CUSTOMERS,
+      statuses: FIXTURE_CUSTOMER_STATUSES
+    }
+  },
+  methods: {
+    changeStatus (status, customer) {
+      action('change-status')(status, customer)
+    },
+    manage (act, item) {
+      action('manage')(act, item)
+    }
+  },
+  template: `
+      <customer-list
+        :customers="customers"
+        :statuses="statuses"
+        @change-status="changeStatus"
+        @manage="manage"
+      />`
+})
 
-storiesOf('FoodFleet|components/event/CustomerList', module)
+storiesOf('FoodFleet|components/events/CustomerList', module)
   .addParameters({
     backgrounds: [
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('without customer', () => ({
-    components: { CustomerList },
-    data () {
-      return {
-        customers: [],
-        statuses: statuses
-      }
-    },
-    template: `
-      <customer-list
-        :customers="customers"
-        :statuses="statuses"
-      />
-    `
-  }))
-  .add('with customers', () => ({
-    components: { CustomerList },
-    data () {
-      return {
-        customers: customers,
-        statuses: statuses
-      }
-    },
-    methods: {
-      changeStatus (status, customer) {
-        action('change-status')(status, customer)
-      },
-      viewDetails (value) {
-        action('view-details')(value)
-      }
-    },
-    template: `
-      <customer-list
-        :customers="customers"
-        :statuses="statuses"
-        @change-status="changeStatus"
-        @view-details="viewDetails"
-      />`
-  }))
+  .add('Default', Default)
+  .add('Populated', Populated)
