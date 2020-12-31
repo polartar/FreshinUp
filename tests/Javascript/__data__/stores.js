@@ -6,6 +6,7 @@ export const FIXTURE_STORES = [
     uuid: 'abc111',
     name: 'Da Lobster',
     type_id: 1,
+    status_id: 1,
     radius: 41,
     tags: [
       {
@@ -24,7 +25,10 @@ export const FIXTURE_STORES = [
     owner_uuid: 'o111',
     owner: {
       uuid: 'o111',
-      name: 'Josh Smith @ Restaurant Inc'
+      name: 'Josh Smith',
+      company: {
+        name: 'Restaurant Inc'
+      }
     },
     contact_phone: '938 374822',
     state_of_incorporation: 'California',
@@ -71,6 +75,7 @@ export const FIXTURE_STORES = [
     uuid: 'abc222',
     name: 'Rekindler',
     type_id: 2,
+    status_id: 2,
     radius: 96,
     tags: [
       {
@@ -85,7 +90,10 @@ export const FIXTURE_STORES = [
     owner_uuid: 'o222',
     owner: {
       uuid: 'o222',
-      name: 'Josh Smith @ Dibitery Inc'
+      name: 'Josh Smith',
+      company: {
+        name: 'Dibitery Inc'
+      }
     },
     contact_phone: '938 374822',
     state_of_incorporation: 'New York',
@@ -121,6 +129,7 @@ export const FIXTURE_STORES = [
     uuid: 'abc333',
     name: 'Fiora',
     type_id: 2,
+    status_id: 2,
     radius: 37,
     tags: [{
       uuid: 'a111',
@@ -133,7 +142,10 @@ export const FIXTURE_STORES = [
     owner_uuid: 'o333',
     owner: {
       uuid: 'o333',
-      name: 'Josh Smith @ Dibitery Inc'
+      name: 'Josh Smith',
+      company: {
+        name: 'Dibitery Inc'
+      }
     },
     contact_phone: '938 374822',
     state_of_incorporation: 'California',
@@ -173,6 +185,7 @@ export const FIXTURE_STORES = [
     uuid: 'abc444',
     name: 'Trundle',
     type_id: 2,
+    status_id: 3,
     radius: 14,
     tags: [{
       uuid: 'a111',
@@ -188,7 +201,10 @@ export const FIXTURE_STORES = [
     owner_uuid: 'o444',
     owner: {
       uuid: 'o444',
-      name: 'Josh Smith @ Restaurant Inc'
+      name: 'Josh Smith',
+      company: {
+        name: 'Restaurant Inc'
+      }
     },
     contact_phone: '938 374822',
     state_of_incorporation: 'California',
@@ -235,6 +251,7 @@ export const FIXTURE_STORES = [
     uuid: 'abc555',
     name: 'La fourchette',
     type_id: 2,
+    status_id: 4,
     radius: 32,
     tags: [
       {
@@ -249,7 +266,10 @@ export const FIXTURE_STORES = [
     owner_uuid: 'o555',
     owner: {
       uuid: 'o555',
-      name: 'Josh Smith @ Restaurant Inc'
+      name: 'Josh Smith',
+      company: {
+        name: 'Restaurant Inc'
+      }
     },
     contact_phone: '938 374822',
     state_of_incorporation: 'California',

@@ -184,7 +184,7 @@
           :statuses="storeStatuses"
           :stores="stores"
           @manage-view="viewDetails"
-          @add-fleet="showNewMemberDialog = true"
+          @manage-create="showNewMemberDialog = true"
         />
         <v-dialog
           v-model="showNewMemberDialog"
@@ -219,7 +219,6 @@
               :stores="stores"
               :store-types="types"
               class="mb-2"
-              @manage-view="viewItem"
             />
           </v-card>
         </v-dialog>
@@ -232,11 +231,24 @@
       py-4
     >
       <v-flex>
-        <customers
-          :customers="customers"
-          :statuses="statuses"
-          @manage-view-details="viewDocuments"
-        />
+        <v-card
+        >
+          <v-card-title class="justify-space-between px-4">
+            <span class="grey--text font-weight-bold title text-uppercase">Customer</span>
+          </v-card-title>
+          <v-divider/>
+          <v-layout
+            row
+          >
+            <v-flex>
+              <customer-list
+                :customers="customers"
+                :statuses="statuses"
+                @manage-view="viewDocuments"
+              />
+            </v-flex>
+          </v-layout>
+        </v-card>
       </v-flex>
     </v-layout>
   </div>
@@ -251,13 +263,13 @@ import { createHelpers } from 'vuex-map-fields'
 import Validate from 'fresh-bus/components/mixins/Validate'
 import BasicInformation from '~/components/events/BasicInformation.vue'
 import Stores from '~/components/events/Stores.vue'
-import Customers from '~/components/events/Customers.vue'
+import CustomerList from '~/components/events/CustomerList.vue'
 import StatusSelect from '~/components/events/StatusSelect.vue'
 import VenueDetails from '~/components/events/VenueDetails.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import EventStatusTimeline from '~/components/events/EventStatusTimeline'
 import DuplicateEventDialog from '~/components/events/DuplicateEventDialog.vue'
-import AddStore from '~/components/AddStore.vue'
+import AddStore from '~/components/fleet-members/AddStore.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'getField',
@@ -271,7 +283,7 @@ export default {
     Stores,
     StatusSelect,
     BasicInformation,
-    Customers,
+    CustomerList,
     EventStatusTimeline,
     VenueDetails,
     DuplicateEventDialog
@@ -292,7 +304,7 @@ export default {
       eventLoading: 'itemLoading'
     }),
     ...mapGetters('events/stores', { storeItems: 'items' }),
-    ...mapGetters('eventTypes', { storeTypes: 'items' }),
+    ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
     ...mapGetters('venues', { 'venues': 'items' }),
@@ -450,6 +462,7 @@ export default {
         include: 'manager,host,event_tags,venue,location'
       }
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
+      promises.push(vm.$store.dispatch('storeTypes/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
         params: { eventId: id }
       }))

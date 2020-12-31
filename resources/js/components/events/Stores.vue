@@ -2,7 +2,7 @@
   <v-layout>
     <v-card width="100%">
       <v-card-title class="justify-space-between px-4 py-2">
-        <span class="black--text font-weight-bold title text-uppercase">Event Fleet</span>
+        <span class="grey--text font-weight-bold title text-uppercase">Event Fleet</span>
         <v-btn
           depressed
           color="primary"
@@ -16,9 +16,10 @@
           Add new fleet member
         </v-btn>
       </v-card-title>
-      <hr>
-      <div class="pa-4">
+      <v-divider/>
+      <div>
         <v-layout
+          class="pa-4"
           row
         >
           <v-flex>
@@ -36,6 +37,8 @@
             <store-list
               :stores="stores"
               :statuses="statuses"
+              v-bind="$attrs"
+              v-on="$listeners"
               @manage-view-details="viewDetails"
               @manage-unassign="unassign"
               @manage-multiple-unassign="multipleUnassign"

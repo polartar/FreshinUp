@@ -9,6 +9,9 @@ describe('Store List component', () => {
   // Component instance "under test"
   let localVue
   describe('Snapshots', () => {
+    test('', () => {
+
+    })
     test('stores assigned', () => {
       localVue = createLocalVue()
       const wrapper = mount(Component, {

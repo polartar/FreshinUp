@@ -6,6 +6,7 @@ import axios from 'axios/index'
 // Components
 import Stores from './Stores.vue'
 import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
+import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
 
 const mock = new MockAdapter(axios)
 mock.onGet('foodfleet/store-tags').reply(200, {
@@ -35,18 +36,53 @@ mock.onGet('foodfleet/owners').reply(200, {
   ]
 })
 
-let types = [
+const types = [
   { uuid: 1, name: 'Mobil' },
   { uuid: 2, name: 'Car' },
   { uuid: 3, name: 'Architecto' }
 ]
 
-let statuses = [
-  { id: 1, name: 'Draft' },
-  { id: 2, name: 'Pending' },
-  { id: 3, name: 'Confirmed' },
-  { id: 4, name: 'Declined' }
-]
+export const Default = () => ({
+  components: { Stores },
+  template: `
+      <v-container>
+        <stores
+        />
+      </v-container>
+    `
+})
+
+export const Populated = () => ({
+  components: { Stores },
+  data () {
+    return {
+      types: types,
+      statuses: FIXTURE_STORE_STATUSES,
+      stores: FIXTURE_STORES
+    }
+  },
+  methods: {
+    runFilter (params) {
+      action('filter-stores')(params)
+    },
+    manage (act, params) {
+      action('manage')(act, params)
+    },
+  },
+  template: `
+    <v-container>
+      <stores
+        :types="types"
+        :statuses="statuses"
+        :stores="stores"
+        @filter-stores="runFilter"
+        @manage-view-details="manage"
+        @manage-unassign="manage"
+        @manage-multiple-unassign="manage"
+      />
+    </v-container>
+    `
+})
 
 storiesOf('FoodFleet|components/event/Stores', module)
   .addParameters({
@@ -54,78 +90,5 @@ storiesOf('FoodFleet|components/event/Stores', module)
       { name: 'default', value: '#f1f3f6', default: true }
     ]
   })
-  .add('default', () => ({
-    components: { Stores },
-    data () {
-      return {
-        types: types,
-        statuses: statuses,
-        stores: []
-      }
-    },
-    methods: {
-      runFilter (params) {
-        action('filter-stores')(params)
-      },
-      viewDetails (params) {
-        action('manage-view-details')(params)
-      },
-      unassign (params) {
-        action('manage-unassign')(params)
-      },
-      multipleUnassign (params) {
-        action('manage-multiple-unassign')(params)
-      }
-    },
-    template: `
-      <v-container>
-        <stores
-          :types="types"
-          :statuses="statuses"
-          :stores="stores"
-          @filter-stores="runFilter"
-          @manage-view-details="viewDetails"
-          @manage-unassign="unassign"
-          @manage-multiple-unassign="multipleUnassign"
-        />
-      </v-container>
-    `
-  }))
-  .add('stores', () => ({
-    components: { Stores },
-    data () {
-      return {
-        types: types,
-        statuses: statuses,
-        stores: FIXTURE_STORES
-      }
-    },
-    methods: {
-      runFilter (params) {
-        action('filter-stores')(params)
-      },
-      viewDetails (params) {
-        action('manage-view-details')(params)
-      },
-      unassign (params) {
-        action('manage-unassign')(params)
-      },
-      multipleUnassign (params) {
-        action('manage-multiple-unassign')(params)
-      }
-    },
-    template: `
-    <v-container>
-      <stores
-        :types="types"
-        :statuses="statuses"
-        :stores="stores"
-        :event="event"
-        @filter-stores="runFilter"
-        @manage-view-details="viewDetails"
-        @manage-unassign="unassign"
-        @manage-multiple-unassign="multipleUnassign"
-      />
-    </v-container>
-    `
-  }))
+  .add('Default', Default)
+  .add('Populated', Populated)
