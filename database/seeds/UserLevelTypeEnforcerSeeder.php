@@ -24,8 +24,7 @@ class UserLevelTypeEnforcerSeeder extends Seeder
 
         UserLevel::whereNotIn('name', array_values($accepted_roles))->delete();
         
-        //dd(['user_levels' => $userLevels]);
-        foreach($accepted_roles as $id => $role) {
+        foreach ($accepted_roles as $id => $role) {
             $level = UserLevel::whereName($role)->first();
 
             if (!$level) {
