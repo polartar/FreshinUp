@@ -7,8 +7,8 @@
     :multi-item-actions="multipleItemActions"
     item-key="uuid"
     v-bind="$attrs"
-    v-on="$listeners">
-
+    v-on="$listeners"
+  >
     <template v-slot:item-inner-status_id="{ item }">
       <status-select
         :value="item.status_id"
@@ -61,7 +61,6 @@
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FChip from 'fresh-bus/components/ui/FChip'
-import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
 import FormatRangeDate from '~/components/mixins/FormatRangeDate'
 import StatusSelect from '~/components/fleet-members/StatusSelect.vue'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
@@ -84,7 +83,7 @@ export const MULTIPLE_ITEM_ACTIONS = [
   { action: 'unassign', text: 'Unassign' }
 ]
 export default {
-  components: { FChip, FBtnMenu, StatusSelect, FDataTable },
+  components: { FChip, StatusSelect, FDataTable },
   mixins: [
     Pagination,
     FormatRangeDate
@@ -94,7 +93,7 @@ export default {
     statuses: { type: Array, default: () => [] },
     headers: { type: Array, default: () => HEADERS },
     itemActions: { type: Array, default: () => ITEM_ACTIONS },
-    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS },
+    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS }
   },
   methods: {
     get,
@@ -104,7 +103,7 @@ export default {
     },
     changeStatus (value, store) {
       this.$emit('change-status', value, store)
-    },
+    }
   }
 }
 </script>

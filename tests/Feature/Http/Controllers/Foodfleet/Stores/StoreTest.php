@@ -797,4 +797,40 @@ class StoresTest extends TestCase
             ], $data[$id]);
         }
     }
+
+    public function testAssignStoreToEventWhenPayloadIsNotValid()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+
+        $payload = [];
+        $errors = $this
+            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
+            ->assertStatus(422)
+            ->json('errors');
+        $this->assertArrayHasKey('store_uuid', $errors);
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+    }
+
+    public function testAssignStoreToEvent()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+
+        $payload = [
+            'store_uuid' => $store->uuid
+        ];
+        $data = $this
+            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload);
+        $data->dump();
+//            ->assertStatus(201)
+//            ->json('data');
+        $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
+    }
 }

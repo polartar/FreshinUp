@@ -1,102 +1,18 @@
 <template>
   <div>
-    <div class="px-4 pt-4">
-      <v-text-field
-        v-model="searchText"
-        label="Search by Fleet Member name"
-        single-line
-        outline
+    <div class="px-2 py-2">
+      <filter-sorter
+        :types="types"
+        @input="runFilters"
       />
-      <div>
-        <div class="pb-4">
-          <button
-            style="font-weight: bold; color: lightslategray; outline: 0;"
-            @click="toggleShowFilter"
-          >
-            <span v-if="showFilters">
-              <v-flex>
-                <v-icon small>fa-caret-down</v-icon>
-                Hide Filters
-              </v-flex>
-            </span>
-            <span v-else>
-              <v-flex>
-                <v-icon small>fa-caret-right</v-icon>
-                Show Filters
-              </v-flex>
-            </span>
-          </button>
-        </div>
-        <div
-          v-show="showFilters"
-        >
-          <v-layout
-            row
-            wrap
-          >
-            <v-flex
-              sm3
-              pr-2
-            >
-              <v-select
-                v-model="selectedState"
-                :items="locations"
-                label="State of incorporation"
-                outline
-                single-line
-              />
-            </v-flex>
-            <v-flex
-              sm3
-              pr-2
-            >
-              <v-select
-                v-model="selectedType"
-                :items="storeTypes"
-                item-value="id"
-                item-text="name"
-                label="Type"
-                outline
-                single-line
-              />
-            </v-flex>
-            <v-flex
-              sm3
-              pr-2
-            >
-              <v-select
-                v-model="selectedTags"
-                :items="tags"
-                label="Tags"
-                outline
-                single-line
-                multiple
-              />
-            </v-flex>
-            <v-flex
-              sm3
-            >
-              <v-btn
-                large
-                depressed
-                @click="clearAllFilters"
-              >
-                Clear all filters
-              </v-btn>
-            </v-flex>
-          </v-layout>
-        </div>
-      </div>
     </div>
     <div
-      class="px-4"
+      class="px-2"
       style="border-top: 1px solid gainsboro;"
     >
       <f-data-table
-        v-model="selected"
         :headers="headers"
-        :items="filteredStores"
-        :search="searchText"
+        :items="stores"
         :multi-item-actions="multipleItemActions"
         item-key="uuid"
         hide-actions
@@ -153,9 +69,8 @@
 </template>
 <script>
 import get from 'lodash/get'
-import _uniq from 'lodash/uniq'
 import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
-import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import AddStoreFilterSorter from './AddStoreFilterSorter'
 
 export const HEADERS = [
   { text: 'Fleet member', value: 'name' },
@@ -163,102 +78,63 @@ export const HEADERS = [
   { text: 'Tags', value: 'tags' },
   { text: 'Manage', value: 'manage' }
 ]
-export const DEFAULT_EVENT = {
-
-}
 
 export const MULTIPLE_ITEM_ACTIONS = []
 export default {
-  components: { FDataTable },
-  mixins: [MapValueKeysToData],
+  components: {
+    FDataTable,
+    FilterSorter: AddStoreFilterSorter
+  },
   props: {
     headers: { type: Array, default: () => HEADERS },
     multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS },
-    value: { type: Object, default: () => DEFAULT_EVENT },
+    event: { type: Object, required: true, default: () => ({}) },
     stores: { type: Array, default: () => [] },
-    storeTypes: { type: Array, default: () => [] }
+    types: { type: Array, default: () => [] }
   },
   data () {
     return {
-      ...DEFAULT_EVENT,
-      searchText: '',
-      selectedState: '',
-      selectedType: '',
-      selectedTags: [],
-      showFilters: false,
-    }
-  },
-  computed: {
-    filteredStores () {
-      let items = this.stores
-      if (this.selectedState) {
-        items = items.filter(store => get(store, 'state_of_incorporation') === this.selectedState)
-      }
-      if (this.selectedType) {
-        items = items.filter(store => get(store, 'type_id') === this.selectedType)
-      }
-      if (this.selectedTags.length) {
-        items = items.filter(store => get(store, 'tags').some(tag => this.selectedTags.findIndex(t => t.uuid === tag.uuid) !== -1))
-      }
-      return items
-    },
-    locations () {
-      return _uniq(this.stores.map(s => s['state_of_incorporation']))
-    },
-    tags () {
-      const tags = []
-      this.stores.forEach(store => tags.push(...get(store, 'tags', [])))
-      return _uniq(tags.map(tag => tag.name))
-    },
-    storeTypesById () {
-      return this.storeTypes.reduce((map, type) => {
-        map[type.id] = type
-        return map
-      }, {})
+      showFilters: false
     }
   },
   methods: {
     get,
+    runFilters (payload) {
+      this.$emit('run-filter', payload)
+    },
     viewItem (item) {
       this.$emit('manage', 'view', item)
       this.$emit('manage-view', item)
     },
-    toggleShowFilter () {
-      this.showFilters = !this.showFilters
-    },
-    clearAllFilters () {
-      this.selectedState = ''
-      this.selectedType = ''
-      this.selectedTags = []
-    },
     // TODO: methods need more attention at some point later in the future
     hasBookedAnEvent (member) {
-      return member.event_stores.findIndex(e => e.event_uuid !== this.event.uuid) !== -1
+      const stores = get(member, 'event_stores', [])
+      return stores.findIndex(e => e.event_uuid !== this.event.uuid) !== -1
     },
     isEligible (member) {
       return !this.hasBookedAnEvent(member) && !member['has_expired_licences_docs']
     },
     isAssignedToThisEvent (member) {
-      return member.event_stores.findIndex(e => e.event_uuid === this.event.uuid) !== -1
+      const stores = get(member, 'event_stores', [])
+      return stores.findIndex(e => e.event_uuid === this.event.uuid) !== -1
     },
     isDeclined (member) {
-      return member.event_stores.findIndex(e => e.event_uuid === this.event.uuid && e.declined) !== -1
+      const stores = get(member, 'event_stores', [])
+      return stores.findIndex(e => e.event_uuid === this.event.uuid && e.declined) !== -1
     },
     manageButtonLabel (item) {
       if (this.isEligible(item)) {
         if (this.isDeclined(item)) { return 'Declined' }
         if (!this.isAssignedToThisEvent(item)) { return 'Assign' } else { return 'Assigned' }
       }
-
       if (this.hasBookedAnEvent(item)) { return 'Booked' }
-
       if (item['has_expired_licences_docs']) { return 'Expired' }
-
       return ''
     },
     onManageClicked (item) {
       if (this.manageButtonLabel(item) === 'Assign') {
-        this.$emit('assign', item)
+        this.$emit('manage', 'assign', item)
+        this.$emit('manage-assign', item)
       }
     },
     manageButtonClass (item) {

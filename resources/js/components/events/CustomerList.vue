@@ -31,7 +31,6 @@
         View Details
       </v-btn>
     </template>
-
   </f-data-table>
 </template>
 
@@ -47,7 +46,7 @@ export const HEADERS = [
   { text: 'MANAGE', sortable: false, value: 'manage', align: 'center' }
 ]
 export const ITEM_ACTIONS = [
-  { action: 'view', text: 'View' },
+  { action: 'view', text: 'View' }
 ]
 
 export const MULTIPLE_ITEM_ACTIONS = []
@@ -62,7 +61,7 @@ export default {
     statuses: { type: Array, default: () => [] },
     headers: { type: Array, default: () => HEADERS },
     itemActions: { type: Array, default: () => ITEM_ACTIONS },
-    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS },
+    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS }
   },
   methods: {
     changeStatus (value, customer) {

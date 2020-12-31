@@ -1,0 +1,2363 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/fleet-members/AddStore Snapshots Basic 1`] = `
+<div
+  class="container"
+>
+  <div>
+    <div
+      class="px-2 py-2"
+    >
+      <div
+        class="px-4 pt-4"
+      >
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <label
+                  aria-hidden="true"
+                  class="v-label theme--light"
+                  style="left: 0px; position: absolute;"
+                >
+                  Search by Fleet Member name
+                </label>
+                <input
+                  aria-label="Search by Fleet Member name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div>
+          <div
+            class="pb-4"
+          >
+            <button
+              class="font-weight-bold grey--text"
+            >
+              <span>
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fa fa-caret-right theme--light"
+                    style="font-size: 16px;"
+                  />
+                  
+            Show Filters
+          
+                </div>
+              </span>
+            </button>
+          </div>
+           
+          <div
+            style="display: none;"
+          >
+            <div
+              class="layout row wrap align-center justify-center"
+            >
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              State
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          State of incorporation
+                        </label>
+                        <input
+                          aria-label="State of incorporation"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              Type
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Type
+                        </label>
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-label="Type"
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <div
+                                  class="v-list__tile theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      No data available
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              Tags
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot white"
+                      style="height: 48px;"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          not-clearable=""
+                          ouline=""
+                          placeholder="Search Tag"
+                          readonly="readonly"
+                          results-id-key="uuid"
+                          term-param="filter[name]"
+                          type="text"
+                          url="foodfleet/store-tags"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon fas fa-caret-down theme--light"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  background-color="white"
+                  class="v-menu mt-0 pt-0 mb-4"
+                  flat=""
+                  height="48"
+                  not-clearable=""
+                  ouline=""
+                  placeholder="Search Tag"
+                  results-id-key="uuid"
+                  solo=""
+                  term-param="filter[name]"
+                  url="foodfleet/store-tags"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      autofocus="autofocus"
+                      background-color="white"
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-focused theme--light primary--text"
+                      flat=""
+                      height="48"
+                      menu-props="[object Object]"
+                      ouline=""
+                      solo=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot white"
+                          style="height: 48px;"
+                        >
+                          <div
+                            class="v-select__slot"
+                          >
+                            <div
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                autofocus="autofocus"
+                                ouline=""
+                                placeholder="Search Tag"
+                                role="combobox"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
+                              >
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        SELECTION
+                                      </span>
+                                    </div>
+                                  </div>
+                                    
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        RESULTS
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3"
+              >
+                <button
+                  class="v-btn v-btn--large v-btn--depressed theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Clear all filters
+          
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="px-2"
+      style="border-top: 1px solid gainsboro;"
+    >
+      <div
+        hide-actions=""
+        select-all=""
+      >
+        <div
+          class="ui-datatable"
+        >
+          <div
+            class="v-table__overflow"
+          >
+            <table
+              class="v-datatable v-table v-datatable--select-all theme--light"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    aria-label="Fleet member: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Fleet member
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="State of incorporation: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        State of incorporation
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="Tags: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Tags
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="Manage: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Manage
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                </tr>
+                <tr
+                  class="v-datatable__progress"
+                >
+                  <th
+                    class="column"
+                    colspan="5"
+                  />
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-xs-center"
+                    colspan="5"
+                  >
+                    No matching records found
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+         
+        <div
+          class="layout align-center"
+        >
+          <div
+            class="flex grow justify-center"
+          >
+            <div
+              class="layout justify-center"
+            >
+              <ul
+                class="v-pagination theme--light"
+              >
+                <li>
+                  <button
+                    class="v-pagination__navigation v-pagination__navigation--disabled"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_left
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="v-pagination__item v-pagination__item--active primary"
+                    type="button"
+                  >
+                    1
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="v-pagination__navigation v-pagination__navigation--disabled"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_right
+                    </i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+           
+          <div
+            class="flex shrink"
+          >
+            <div
+              class="v-input v-text-field v-select v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label v-label--active theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Results Per Page
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Results Per Page"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/fleet-members/AddStore Snapshots Populated 1`] = `
+<div
+  class="container"
+>
+  <div>
+    <div
+      class="px-2 py-2"
+    >
+      <div
+        class="px-4 pt-4"
+      >
+        <div
+          class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+        >
+          <div
+            class="v-input__control"
+          >
+            <div
+              class="v-input__slot"
+            >
+              <div
+                class="v-text-field__slot"
+              >
+                <label
+                  aria-hidden="true"
+                  class="v-label theme--light"
+                  style="left: 0px; position: absolute;"
+                >
+                  Search by Fleet Member name
+                </label>
+                <input
+                  aria-label="Search by Fleet Member name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="v-text-field__details"
+            >
+              <div
+                class="v-messages theme--light"
+              >
+                <div
+                  class="v-messages__wrapper"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div>
+          <div
+            class="pb-4"
+          >
+            <button
+              class="font-weight-bold grey--text"
+            >
+              <span>
+                <div
+                  class="flex"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon fa fa-caret-right theme--light"
+                    style="font-size: 16px;"
+                  />
+                  
+            Show Filters
+          
+                </div>
+              </span>
+            </button>
+          </div>
+           
+          <div
+            style="display: none;"
+          >
+            <div
+              class="layout row wrap align-center justify-center"
+            >
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              State
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          State of incorporation
+                        </label>
+                        <input
+                          aria-label="State of incorporation"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              Type
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outline v-select theme--light"
+                  role="combobox"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot"
+                    >
+                      <div
+                        class="v-select__slot"
+                      >
+                        <label
+                          aria-hidden="true"
+                          class="v-label theme--light"
+                          style="left: 0px; position: absolute;"
+                        >
+                          Type
+                        </label>
+                        <div
+                          class="v-select__selections"
+                        >
+                          <input
+                            aria-label="Type"
+                            aria-readonly="false"
+                            autocomplete="on"
+                            readonly="readonly"
+                            type="text"
+                          />
+                        </div>
+                        <div
+                          class="v-input__append-inner"
+                        >
+                          <div
+                            class="v-input__icon v-input__icon--append"
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              arrow_drop_down
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="v-menu"
+                      >
+                        <div
+                          class="v-menu__content theme--light "
+                          style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                        >
+                          <div
+                            class="v-select-list v-card theme--light"
+                          >
+                            <div
+                              class="v-list theme--light"
+                              role="list"
+                            >
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Mobile
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div
+                                role="listitem"
+                              >
+                                <a
+                                  class="v-list__tile v-list__tile--link theme--light"
+                                >
+                                  <div
+                                    class="v-list__tile__content"
+                                  >
+                                    <div
+                                      class="v-list__tile__title"
+                                    >
+                                      Stationery
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="v-text-field__details"
+                    >
+                      <div
+                        class="v-messages theme--light"
+                      >
+                        <div
+                          class="v-messages__wrapper"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3 pr-2"
+              >
+                <div
+                  class="layout row justify-space-between mb-2"
+                >
+                  <div
+                    class="grey--text white--text"
+                  >
+                    <strong
+                      class="no-wrap"
+                    >
+                      
+              Tags
+            
+                    </strong>
+                  </div>
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-input--hide-details v-input--is-readonly theme--light"
+                >
+                  <div
+                    class="v-input__control"
+                  >
+                    <div
+                      class="v-input__slot white"
+                      style="height: 48px;"
+                    >
+                      <div
+                        class="v-text-field__slot"
+                      >
+                        <input
+                          not-clearable=""
+                          ouline=""
+                          placeholder="Search Tag"
+                          readonly="readonly"
+                          results-id-key="uuid"
+                          term-param="filter[name]"
+                          type="text"
+                          url="foodfleet/store-tags"
+                        />
+                      </div>
+                      <div
+                        class="v-input__append-inner"
+                      >
+                        <div
+                          class="v-input__icon v-input__icon--append"
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="v-icon fas fa-caret-down theme--light"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  background-color="white"
+                  class="v-menu mt-0 pt-0 mb-4"
+                  flat=""
+                  height="48"
+                  not-clearable=""
+                  ouline=""
+                  placeholder="Search Tag"
+                  results-id-key="uuid"
+                  solo=""
+                  term-param="filter[name]"
+                  url="foodfleet/store-tags"
+                >
+                  <div
+                    class="v-menu__content theme--light "
+                    style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                  >
+                     
+                    <div
+                      autofocus="autofocus"
+                      background-color="white"
+                      class="v-input v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--enclosed v-text-field--placeholder v-select v-autocomplete v-input--hide-details v-input--is-focused theme--light primary--text"
+                      flat=""
+                      height="48"
+                      menu-props="[object Object]"
+                      ouline=""
+                      solo=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot white"
+                          style="height: 48px;"
+                        >
+                          <div
+                            class="v-select__slot"
+                          >
+                            <div
+                              class="v-select__selections"
+                            >
+                              <input
+                                aria-label=""
+                                autocomplete="off"
+                                autofocus="autofocus"
+                                ouline=""
+                                placeholder="Search Tag"
+                                role="combobox"
+                                type="text"
+                              />
+                            </div>
+                            <div
+                              class="v-input__append-inner"
+                            >
+                              <div
+                                class="v-input__icon v-input__icon--append"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="v-icon material-icons theme--light primary--text"
+                                >
+                                  arrow_drop_down
+                                </i>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="v-menu"
+                          >
+                            <div
+                              class="v-menu__content theme--light v-autocomplete__content"
+                              style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                            >
+                              <div
+                                class="v-select-list v-card theme--light"
+                              >
+                                <div
+                                  class="v-list theme--light"
+                                  role="list"
+                                >
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        SELECTION
+                                      </span>
+                                    </div>
+                                  </div>
+                                    
+                                  <div
+                                    role="listitem"
+                                    style="display: none;"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <span
+                                        class="search-section-title"
+                                      >
+                                        RESULTS
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    role="listitem"
+                                  >
+                                    <div
+                                      class="v-list__tile theme--light"
+                                    >
+                                      <div
+                                        class="v-list__tile__content"
+                                      >
+                                        <div
+                                          class="v-list__tile__title"
+                                        >
+                                          No data available
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="flex sm3"
+              >
+                <button
+                  class="v-btn v-btn--large v-btn--depressed theme--light"
+                  type="button"
+                >
+                  <div
+                    class="v-btn__content"
+                  >
+                    
+            Clear all filters
+          
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="px-2"
+      style="border-top: 1px solid gainsboro;"
+    >
+      <div
+        hide-actions=""
+        select-all=""
+      >
+        <div
+          class="ui-datatable"
+        >
+          <div
+            class="v-table__overflow"
+          >
+            <table
+              class="v-datatable v-table v-datatable--select-all theme--light"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    aria-label="Fleet member: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Fleet member
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="State of incorporation: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        State of incorporation
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="Tags: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Tags
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                  <th
+                    aria-label="Manage: Not sorted. Activate to sort ascending."
+                    aria-sort="none"
+                    class="column sortable text-xs-left"
+                    role="columnheader"
+                    scope="col"
+                    tabindex="0"
+                  >
+                    <span>
+                      
+        Manage
+      
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                      style="font-size: 16px;"
+                    >
+                      arrow_upward
+                    </i>
+                  </th>
+                </tr>
+                <tr
+                  class="v-datatable__progress"
+                >
+                  <th
+                    class="column"
+                    colspan="5"
+                  />
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                      primary=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              primary=""
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      style="position: relative;"
+                    >
+                      <a
+                        class="primary--text"
+                        href="#"
+                      >
+                        
+                Da Lobster
+              
+                      </a>
+                      <span
+                        class="v-tooltip v-tooltip--top"
+                      >
+                        <div
+                          class="v-tooltip__content"
+                          style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                        >
+                          
+            View fleet member details (new tab)
+          
+                        </div>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      class="grey--text"
+                    >
+                      
+          California
+        
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            ASIAN
+          
+                        </span>
+                      </span>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            VEGAN
+          
+                        </span>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="justify-center text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--disabled v-btn--depressed theme--light blue-grey lighten-5"
+                      disabled="disabled"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Booked
+        
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                      primary=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              primary=""
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      style="position: relative;"
+                    >
+                      <a
+                        class="primary--text"
+                        href="#"
+                      >
+                        
+                Rekindler
+              
+                      </a>
+                      <span
+                        class="v-tooltip v-tooltip--top"
+                      >
+                        <div
+                          class="v-tooltip__content"
+                          style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                        >
+                          
+            View fleet member details (new tab)
+          
+                        </div>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      class="grey--text"
+                    >
+                      
+          New York
+        
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            VEGAN
+          
+                        </span>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="justify-center text-xs-center"
+                  >
+                    <button
+                      class="v-btn theme--light primary"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Assign
+        
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                      primary=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              primary=""
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      style="position: relative;"
+                    >
+                      <a
+                        class="primary--text"
+                        href="#"
+                      >
+                        
+                Fiora
+              
+                      </a>
+                      <span
+                        class="v-tooltip v-tooltip--top"
+                      >
+                        <div
+                          class="v-tooltip__content"
+                          style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                        >
+                          
+            View fleet member details (new tab)
+          
+                        </div>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      class="grey--text"
+                    >
+                      
+          California
+        
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            ASIAN
+          
+                        </span>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="justify-center text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--disabled v-btn--depressed theme--light blue-grey lighten-5"
+                      disabled="disabled"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Expired
+        
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                      primary=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              primary=""
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      style="position: relative;"
+                    >
+                      <a
+                        class="primary--text"
+                        href="#"
+                      >
+                        
+                Trundle
+              
+                      </a>
+                      <span
+                        class="v-tooltip v-tooltip--top"
+                      >
+                        <div
+                          class="v-tooltip__content"
+                          style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                        >
+                          
+            View fleet member details (new tab)
+          
+                        </div>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      class="grey--text"
+                    >
+                      
+          California
+        
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            ASIAN
+          
+                        </span>
+                      </span>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            VEGAN
+          
+                        </span>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="justify-center text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--disabled v-btn--depressed theme--light blue-grey lighten-5"
+                      disabled="disabled"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Booked
+        
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="v-input v-input--selection-controls v-input--checkbox v-input--hide-details theme--light"
+                      primary=""
+                    >
+                      <div
+                        class="v-input__control"
+                      >
+                        <div
+                          class="v-input__slot"
+                        >
+                          <div
+                            class="v-input--selection-controls__input"
+                          >
+                            <input
+                              aria-checked="false"
+                              primary=""
+                              role="checkbox"
+                              type="checkbox"
+                              value=""
+                            />
+                            <div
+                              class="v-input--selection-controls__ripple"
+                            />
+                            <i
+                              aria-hidden="true"
+                              class="v-icon material-icons theme--light"
+                            >
+                              check_box_outline_blank
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                   
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      style="position: relative;"
+                    >
+                      <a
+                        class="primary--text"
+                        href="#"
+                      >
+                        
+                La fourchette
+              
+                      </a>
+                      <span
+                        class="v-tooltip v-tooltip--top"
+                      >
+                        <div
+                          class="v-tooltip__content"
+                          style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"
+                        >
+                          
+            View fleet member details (new tab)
+          
+                        </div>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div
+                      class="grey--text"
+                    >
+                      
+          California
+        
+                    </div>
+                  </td>
+                  <td
+                    class="text-xs-undefined"
+                  >
+                    <div>
+                      <span
+                        class="v-chip theme--light secondary white--text"
+                        tabindex="0"
+                      >
+                        <span
+                          class="v-chip__content"
+                        >
+                          
+            VEGAN
+          
+                        </span>
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="justify-center text-xs-center"
+                  >
+                    <button
+                      class="v-btn v-btn--disabled v-btn--depressed theme--light blue-grey lighten-5"
+                      disabled="disabled"
+                      type="button"
+                    >
+                      <div
+                        class="v-btn__content"
+                      >
+                        
+          Booked
+        
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+         
+        <div
+          class="layout align-center"
+        >
+          <div
+            class="flex grow justify-center"
+          >
+            <div
+              class="layout justify-center"
+            >
+              <ul
+                class="v-pagination theme--light"
+              >
+                <li>
+                  <button
+                    class="v-pagination__navigation v-pagination__navigation--disabled"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_left
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="v-pagination__item v-pagination__item--active primary"
+                    type="button"
+                  >
+                    1
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="v-pagination__navigation v-pagination__navigation--disabled"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon material-icons theme--light"
+                    >
+                      chevron_right
+                    </i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+           
+          <div
+            class="flex shrink"
+          >
+            <div
+              class="v-input v-text-field v-select v-input--is-label-active v-input--is-dirty theme--light"
+              role="combobox"
+            >
+              <div
+                class="v-input__control"
+              >
+                <div
+                  class="v-input__slot"
+                >
+                  <div
+                    class="v-select__slot"
+                  >
+                    <label
+                      aria-hidden="true"
+                      class="v-label v-label--active theme--light"
+                      style="left: 0px; position: absolute;"
+                    >
+                      Results Per Page
+                    </label>
+                    <div
+                      class="v-select__selections"
+                    >
+                      <div
+                        class="v-select__selection v-select__selection--comma"
+                      >
+                        10
+                      </div>
+                      <input
+                        aria-label="Results Per Page"
+                        aria-readonly="false"
+                        autocomplete="on"
+                        readonly="readonly"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="v-input__append-inner"
+                    >
+                      <div
+                        class="v-input__icon v-input__icon--append"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="v-icon material-icons theme--light"
+                        >
+                          arrow_drop_down
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="v-menu"
+                  >
+                    <div
+                      class="v-menu__content theme--light "
+                      style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+                    >
+                      <div
+                        class="v-select-list v-card theme--light"
+                      >
+                        <div
+                          class="v-list theme--light"
+                          role="list"
+                        >
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  5
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="primary--text"
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  10
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  15
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  25
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  30
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            role="listitem"
+                          >
+                            <a
+                              class="v-list__tile v-list__tile--link theme--light"
+                            >
+                              <div
+                                class="v-list__tile__content"
+                              >
+                                <div
+                                  class="v-list__tile__title"
+                                >
+                                  50
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__details"
+                >
+                  <div
+                    class="v-messages theme--light"
+                  >
+                    <div
+                      class="v-messages__wrapper"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

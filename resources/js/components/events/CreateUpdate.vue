@@ -192,11 +192,11 @@
         >
           <v-card>
             <v-card-title class="justify-space-between px-4 py-2">
-            <span
-              class="subheading font-weight-bold grey--text text--darken-1"
-            >
-              Add fleet member
-            </span>
+              <span
+                class="subheading font-weight-bold grey--text text--darken-1"
+              >
+                Add fleet member
+              </span>
               <v-btn
                 small
                 round
@@ -213,12 +213,22 @@
                 Close
               </v-btn>
             </v-card-title>
-            <v-divider/>
+            <v-divider />
             <add-store
-              :value="event"
-              :stores="stores"
-              :store-types="types"
+              :is-loading="eventStoreLoading"
+              :event="event"
+              :stores="allStores"
+              :types="storeTypes"
               class="mb-2"
+              :rows-per-page="allStorePagination.rowsPerPage"
+              :page="allStorePagination.page"
+              :total-items="allStorePagination.totalItems"
+              :sort-by="allStoreSorting.sortBy"
+              :descending="allStoreSorting.descending"
+              @paginate="paginateAllStores"
+              @run-filter="filterStores"
+              @manage-view="viewStore"
+              @manage-assign="assignEvent"
             />
           </v-card>
         </v-dialog>
@@ -231,12 +241,11 @@
       py-4
     >
       <v-flex>
-        <v-card
-        >
+        <v-card>
           <v-card-title class="justify-space-between px-4">
             <span class="grey--text font-weight-bold title text-uppercase">Customer</span>
           </v-card-title>
-          <v-divider/>
+          <v-divider />
           <v-layout
             row
           >
@@ -303,7 +312,15 @@ export default {
       event: 'item',
       eventLoading: 'itemLoading'
     }),
-    ...mapGetters('events/stores', { storeItems: 'items' }),
+    ...mapGetters('events/stores', {
+      storeItems: 'items',
+      eventStoreLoading: 'itemLoading'
+    }),
+    ...mapGetters('stores', {
+      allStores: 'items',
+      allStorePagination: 'pagination',
+      allStoreSorting: 'sorting'
+    }),
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
     ...mapGetters('eventStatuses', { 'statuses': 'items' }),
@@ -337,6 +354,40 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    filterStores (payload) {
+      this.$store.dispatch('stores/patchFilters', payload)
+      this.$store.dispatch('stores/getItems')
+    },
+    viewStore (store) {
+      const route = this.$router.resolve({ path: `/admin/fleet-members/${store.uuid}/edit` })
+      window.open(route.href, '_blank')
+    },
+    paginateAllStores (value) {
+      this.$store.dispatch('stores/setPagination', value)
+      this.$store.dispatch('stores/getItems')
+    },
+    assignEvent (store) {
+      const id = this.$route.params.id
+      this.$store.dispatch('events/stores/createItem', {
+        params: {
+          eventId: id
+        },
+        data: {
+          store_uuid: store.uuid
+        }
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Fleet member added to event.')
+          this.$store.dispatch('events/stores/getItems', {
+            params: { eventId: id }
+          })
+          this.showNewMemberDialog = false
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
     editEvent (event) {
       this.$router.push({ path: `/admin/events/${event.uuid}/edit` })
     },

@@ -16,7 +16,7 @@
           Add new fleet member
         </v-btn>
       </v-card-title>
-      <v-divider/>
+      <v-divider />
       <div>
         <v-layout
           class="pa-4"
@@ -39,7 +39,7 @@
               :statuses="statuses"
               v-bind="$attrs"
               v-on="$listeners"
-              @manage-view-details="viewDetails"
+              @manage-view="viewDetails"
               @manage-unassign="unassign"
               @manage-multiple-unassign="multipleUnassign"
             />
@@ -57,12 +57,12 @@ import StoreFilter from './StoreFilter.vue'
 export default {
   components: {
     StoreList,
-    StoreFilter,
+    StoreFilter
   },
   props: {
     types: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] },
-    stores: { type: Array, default: () => [] },
+    stores: { type: Array, default: () => [] }
   },
   methods: {
     addNew () {

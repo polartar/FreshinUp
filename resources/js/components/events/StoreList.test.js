@@ -40,7 +40,7 @@ describe('components/events/StoreList', () => {
       expect(wrapper.vm.headers).toMatchObject(HEADERS)
 
       const headers = [
-        { text: 'STATUS', sortable: true, value: 'status_id', align: 'left' },
+        { text: 'STATUS', sortable: true, value: 'status_id', align: 'left' }
       ]
       wrapper.setProps({
         headers
@@ -52,7 +52,7 @@ describe('components/events/StoreList', () => {
       expect(wrapper.vm.itemActions).toMatchObject(ITEM_ACTIONS)
 
       const itemActions = [
-        { action: 'edit', text: 'Edit' },
+        { action: 'edit', text: 'Edit' }
       ]
       wrapper.setProps({
         itemActions
@@ -64,7 +64,7 @@ describe('components/events/StoreList', () => {
       expect(wrapper.vm.multipleItemActions).toMatchObject(MULTIPLE_ITEM_ACTIONS)
 
       const multipleItemActions = [
-        { action: 'delete', text: 'Delete' },
+        { action: 'delete', text: 'Delete' }
       ]
       wrapper.setProps({
         multipleItemActions

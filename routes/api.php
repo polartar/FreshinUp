@@ -33,9 +33,10 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::get('events/new', 'Foodfleet\Events\Events@showNewRecommendation');
     Route::get('events/{event}/stores', 'Foodfleet\Events\Store@index');
+    Route::post('events/{event}/stores', 'Foodfleet\Events\Store@store');
     Route::get('event-summary/{uuid}', 'Foodfleet\Events\Events@summary');
-    Route::apiResource('events', 'Foodfleet\Events\Events');
     Route::post('/events/{uuid}/duplicate', 'Foodfleet\Events\Events@duplicate');
+    Route::apiResource('events', 'Foodfleet\Events\Events');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('event/types', 'Foodfleet\EventType@index');

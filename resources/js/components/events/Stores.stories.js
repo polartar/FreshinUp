@@ -67,7 +67,7 @@ export const Populated = () => ({
     },
     manage (act, params) {
       action('manage')(act, params)
-    },
+    }
   },
   template: `
     <v-container>

@@ -5,7 +5,6 @@ import { FIXTURE_CUSTOMERS } from '../../../../tests/Javascript/__data__/custome
 import { FIXTURE_CUSTOMER_STATUSES } from '../../../../tests/Javascript/__data__/customerStatuses'
 
 describe('components/events/CustomerList', () => {
-
   describe('Snapshots', () => {
     test('Default', () => {
       const wrapper = mount(Stories.Default())
@@ -41,7 +40,7 @@ describe('components/events/CustomerList', () => {
       expect(wrapper.vm.headers).toMatchObject(HEADERS)
 
       const headers = [
-        { text: 'CONTRACT STATUS', sortable: true, value: 'status', align: 'left' },
+        { text: 'CONTRACT STATUS', sortable: true, value: 'status', align: 'left' }
       ]
       wrapper.setProps({
         headers
@@ -53,7 +52,7 @@ describe('components/events/CustomerList', () => {
       expect(wrapper.vm.itemActions).toMatchObject(ITEM_ACTIONS)
 
       const itemActions = [
-        { action: 'edit', text: 'Edit' },
+        { action: 'edit', text: 'Edit' }
       ]
       wrapper.setProps({
         itemActions
@@ -65,7 +64,7 @@ describe('components/events/CustomerList', () => {
       expect(wrapper.vm.multipleItemActions).toMatchObject(MULTIPLE_ITEM_ACTIONS)
 
       const multipleItemActions = [
-        { action: 'delete', text: 'Delete' },
+        { action: 'delete', text: 'Delete' }
       ]
       wrapper.setProps({
         multipleItemActions
