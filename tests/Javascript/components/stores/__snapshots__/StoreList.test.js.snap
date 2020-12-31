@@ -146,7 +146,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -570,7 +570,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -801,7 +801,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Restaurant Inc
+      Josh Smith
     
               </div>
                
@@ -928,14 +928,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark warning warning-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Pending
  
                     <i
                       aria-hidden="true"
@@ -1082,7 +1082,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Dibitery Inc
+      Josh Smith
     
               </div>
                
@@ -1209,14 +1209,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark warning warning-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Pending
  
                     <i
                       aria-hidden="true"
@@ -1363,7 +1363,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Dibitery Inc
+      Josh Smith
     
               </div>
                
@@ -1490,14 +1490,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark success success-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Revision
  
                     <i
                       aria-hidden="true"
@@ -1656,7 +1656,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Restaurant Inc
+      Josh Smith
     
               </div>
                
@@ -1783,14 +1783,14 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark error error-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Rejected
  
                     <i
                       aria-hidden="true"
@@ -1937,7 +1937,7 @@ exports[`Store List component Snapshots stores set 1`] = `
                 class="grey--text"
               >
                 
-      Josh Smith @ Restaurant Inc
+      Josh Smith
     
               </div>
                
