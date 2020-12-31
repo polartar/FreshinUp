@@ -1,3 +1,8 @@
+## Dec 31, 2020
+- **FIX** Submit' button label must be updated [519](https://github.com/FreshinUp/foodfleet/issues/619)
+
+<br/
+
 ## Dec 30, 2020
 - **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
 - **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
