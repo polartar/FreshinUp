@@ -44,7 +44,7 @@ class UserLevelTypeEnforcerSeederTest extends TestCase
 
         UserLevel::unguard(true);
 
-        foreach($levels as $id => $name) {
+        foreach ($levels as $id => $name) {
             $forPlatform = $id < 5 ? 1 : 0;
             $forCompany = $id > 4 ? 1 : 0;
 
