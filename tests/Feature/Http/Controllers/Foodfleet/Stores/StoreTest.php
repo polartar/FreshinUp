@@ -830,7 +830,6 @@ class StoresTest extends TestCase
             ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
             ->assertStatus(201)
             ->json('data');
-        $this->assertEquals($store->uuid, $data['uuid']);
         $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
     }
 }
