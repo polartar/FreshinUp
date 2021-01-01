@@ -152,7 +152,7 @@
                 v-else
                 depressed
                 color="error"
-                disabled
+                :disabled="loading"
                 @click="disconnectSquare"
               >
                 Disconnect

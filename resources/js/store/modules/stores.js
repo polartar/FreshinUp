@@ -104,6 +104,13 @@ export default ({ items, item }) => {
         {
           itemsPath: () => `/foodfleet/stores/stats`
         }
+      ),
+      squareLocations: makeRestStore(
+        'squareLocations',
+        { items, item },
+        {
+          itemsPath: ({ id }) => `/foodfleet/stores/${id}/square-locations`
+        }
       )
     }
   }

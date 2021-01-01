@@ -20,8 +20,11 @@ export default {
     })
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
+    const storeUuid = window.localStorage.getItem('store_uuid')
+    window.localStorage.removeItem('store_uuid')
     const data = {
-      code: vm.$route.query.code
+      code: vm.$route.query.code,
+      store_uuid: storeUuid
     }
     vm.$store.dispatch('page/setLoading', true)
     vm.$store.dispatch('squares/authorize', { data })
@@ -36,7 +39,7 @@ export default {
         vm.$store.dispatch('page/setLoading', false)
         // by default it is redirecting to this path but if square authorization
         // was to be used elsewhere we would take that path as query params
-        vm.$router.push({ path: '/admin/fleet-members' })
+        vm.$router.push({ path: `/admin/fleet-members/${storeUuid}/edit` })
         if (next) next()
       })
   }
