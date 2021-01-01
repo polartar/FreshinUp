@@ -507,7 +507,11 @@ export default {
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
         }
       } catch (error) {
-        const message = get(error, 'response.data.message', error.message)
+        let message = get(error, 'response.data.message', error.message)
+        const status = get(error, 'response.status')
+        if (status === 422) {
+          message = 'Please fill in the name'
+        }
         this.$store.dispatch('generalErrorMessages/setErrors', message)
       } finally {
         this.loading = false
@@ -606,7 +610,11 @@ export default {
           this.$store.dispatch('storeAreas/getItems')
         })
         .catch(error => {
-          const message = get(error, 'response.data.message', error.message)
+          let message = get(error, 'response.data.message', error.message)
+          const status = get(error, 'response.status')
+          if (status === 422) {
+            message = 'Please fill in all the input fields'
+          }
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
@@ -646,7 +654,11 @@ export default {
           this.menuItemDialog = false
         })
         .catch(error => {
-          const message = get(error, 'response.data.message', error.message)
+          let message = get(error, 'response.data.message', error.message)
+          const status = get(error, 'response.status')
+          if (status === 422) {
+            message = 'Please fill in all the input fields'
+          }
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {

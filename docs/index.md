@@ -1,3 +1,9 @@
+
+## Jan 01, 2021
+- **FIX** Menu error snackbar is not clear [614](https://github.com/FreshinUp/foodfleet/issues/614)
+
+<br/>
+
 ## Dec 31, 2020
 - **ADD** Add new fleet member button & dialog are not created on Event Detail page [379](https://github.com/FreshinUp/foodfleet/issues/379)
 - **MOD** User roles (levels) to keep only "Super admin", "Company owner", "Company Employee" [681](https://github.com/FreshinUp/foodfleet/issues/681)
