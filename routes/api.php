@@ -107,6 +107,6 @@ Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCusto
 Route::post('/password/reset', 'Auth\PasswordsController@reset');
 
 // overridden from fresh-bus
-//Route::group(['middleware' => 'auth:api'], function () {
-//    Route::get('/currentUser', 'Auth\AuthUser@currentUser');
-//});
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/currentUser', 'Auth\AuthUser@currentUser');
+});
