@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tests\Feature\Http\Resources\Foodfleet;
+namespace Tests\Feature\Http\Resources;
 
 use App\Http\Resources\User as UserResource;
 use App\User;
@@ -12,7 +12,10 @@ class UserTest extends TestCase
 {
     public function testResource()
     {
-        $user = factory(User::class)->create();
+        $manager = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'manager_uuid' => $manager->uuid
+        ]);
         $resource = new UserResource($user);
         $expected = [
             "uuid" => $user->uuid,

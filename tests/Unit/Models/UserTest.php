@@ -18,7 +18,10 @@ class UserTest extends TestCase
     public function testModel()
     {
         /** @var User $user */
-        $user = factory(User::class)->create();
+        $manager = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'manager_uuid' => $manager->uuid
+        ]);
         $this->assertDatabaseHas('users', [
             'manager_uuid' => $user->manager_uuid,
             // other fields are (should be) tested on fresh bus

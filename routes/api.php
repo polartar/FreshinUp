@@ -102,5 +102,11 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
 });
 
+// non auth routes
 Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 Route::post('/password/reset', 'Auth\PasswordsController@reset');
+
+// overridden from fresh-bus
+//Route::group(['middleware' => 'auth:api'], function () {
+//    Route::get('/currentUser', 'Auth\AuthUser@currentUser');
+//});
