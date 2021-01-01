@@ -301,7 +301,7 @@
           :disabled="readOnly || !isValid"
           @click="whenValid(save)"
         >
-          {{ edit ? 'Save changes' : 'Submit' }}
+          Save Changes
         </v-btn>
         <v-spacer />
         <v-btn

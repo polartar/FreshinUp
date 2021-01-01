@@ -962,7 +962,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
           class="v-btn__content"
         >
           
-        Save changes
+        Save Changes
       
         </div>
       </button>
@@ -7454,7 +7454,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
           class="v-btn__content"
         >
           
-        Save changes
+        Save Changes
       
         </div>
       </button>
@@ -13860,7 +13860,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
           class="v-btn__content"
         >
           
-        Save changes
+        Save Changes
       
         </div>
       </button>
@@ -14736,7 +14736,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
           class="v-btn__content"
         >
           
-        Save changes
+        Save Changes
       
         </div>
       </button>
@@ -15572,7 +15572,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
           class="v-btn__content"
         >
           
-        Save changes
+        Save Changes
       
         </div>
       </button>
