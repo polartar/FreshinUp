@@ -57,7 +57,8 @@ import CompanyOverview from '~/components/companies/CompanyOverview.vue'
 import { mapGetters } from 'vuex'
 
 const USER_INCLUDES = [
-  'company'
+  'company',
+  'company.users'
   // TODO company api should allow retrieval of company_type and company_status
   // 'company_type',
   // 'company_status'
@@ -114,7 +115,7 @@ export default {
       this.$router.push({ path: '/admin/users' })
     },
     viewCompany (company) {
-      this.$router.push({ path: `/admin/companies/${company.uuid}` })
+      this.$router.push({ path: `/admin/companies/${company.id}/edit` })
     },
     createOrUpdate (data) {
       // TODO: exclude level and type for now. At some point we will need to add them back
@@ -143,7 +144,6 @@ export default {
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
     const id = vm.$route.params.id || 'new'
-    let params = { id }
     const promises = []
     promises.push(vm.$store.dispatch('userLevels/getItems'))
     promises.push(vm.$store.dispatch('userTypes/getItems'))
@@ -151,14 +151,15 @@ export default {
     promises.push(vm.$store.dispatch('companyStatuses/getItems'))
     promises.push(vm.$store.dispatch('userStatuses/getItems'))
     if (id !== 'new') {
-      params = {
-        id,
-        include: USER_INCLUDES
-      }
+      vm.$store.dispatch('users/getItem',
+        { params: {
+            id,
+            include: USER_INCLUDES
+          }
+        }
+      )
+        .catch()
     }
-    promises.push(vm.$store.dispatch('users/getItem',
-      { params }
-    ))
     Promise.all(promises)
       .then()
       .catch()

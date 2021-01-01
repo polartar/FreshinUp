@@ -4,39 +4,43 @@ import { action } from '@storybook/addon-actions'
 import { FIXTURE_USER } from '../../../../tests/Javascript/__data__/user'
 
 import BasicInformation from './BasicInformation.vue'
-import { USER_TYPE } from '../../store/modules/userTypes'
 import { FIXTURE_USER_LEVELS } from '../../../../tests/Javascript/__data__/userLevels'
 import { FIXTURE_USER_TYPES } from '../../../../tests/Javascript/__data__/userTypes'
 
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import { FIXTURE_USER_STATUSES } from '../../../../tests/Javascript/__data__/userStatuses'
+import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
+import { FIXTURE_COMPANIES } from '../../../../tests/Javascript/__data__/companies'
 
 const mock = new MockAdapter(axios)
 
 mock.onGet(/users/)
   .reply(200, {
-    uuid: 'f9ecb331-28b4-3d1b-a4c7-132be8c0e677',
-    first_name: 'John',
-    last_name: 'Doe'
+    data: FIXTURE_USERS
+  })
+
+mock.onGet(/companies/)
+  .reply(200, {
+    data: FIXTURE_COMPANIES
   })
 
 export const Default = () => ({
   components: { BasicInformation },
   template: `
-      <v-container>
-        <basic-information/>
-      </v-container>
-    `
+    <v-container>
+      <basic-information/>
+    </v-container>
+  `
 })
 
 export const IsLoading = () => ({
   components: { BasicInformation },
   template: `
-      <v-container>
-        <basic-information is-loading/>
-      </v-container>
-    `
+    <v-container>
+      <basic-information is-loading/>
+    </v-container>
+  `
 })
 
 const methods = {
@@ -54,11 +58,11 @@ const methods = {
   }
 }
 
-export const ForSupplier = () => ({
+export const BasicView = () => ({
   components: { BasicInformation },
   data () {
     return {
-      user: { ...FIXTURE_USER, type: USER_TYPE.SUPPLIER },
+      user: FIXTURE_USER,
       levels: FIXTURE_USER_LEVELS,
       types: FIXTURE_USER_TYPES,
       statuses: FIXTURE_USER_STATUSES
@@ -66,48 +70,47 @@ export const ForSupplier = () => ({
   },
   methods,
   template: `
-      <v-container>
-        <basic-information
-          :value="user"
-          :levels="levels"
-          :types="types"
-          :statuses="statuses"
-          @input="onSave"
-          @cancel="onCancel"
-          @delete="onDelete"
-          @change-password="onChangePassword"
-        />
-      </v-container>
-    `
+    <v-container>
+      <basic-information
+        :value="user"
+        :levels="levels"
+        :types="types"
+        :statuses="statuses"
+        @input="onSave"
+        @cancel="onCancel"
+        @delete="onDelete"
+        @change-password="onChangePassword"
+      />
+    </v-container>
+  `
 })
 
-export const ForCustomer = () => ({
+export const AdminView = () => ({
   components: { BasicInformation },
   data () {
     return {
-      user: { ...FIXTURE_USER, type: USER_TYPE.CUSTOMER },
+      user: FIXTURE_USER,
       levels: FIXTURE_USER_LEVELS,
       types: FIXTURE_USER_TYPES,
-      statuses: FIXTURE_USER_STATUSES,
-      isAdmin: true
+      statuses: FIXTURE_USER_STATUSES
     }
   },
+  methods,
   template: `
-      <v-container>
-        <basic-information
-          :value="user"
-          :levels="levels"
-          :types="types"
-          :statuses="statuses"
-          :is-admin="isAdmin"
-          @input="onSave"
-          @cancel="onCancel"
-          @delete="onDelete"
-          @change-password="onChangePassword"
-        />
-      </v-container>
-    `,
-  methods
+    <v-container>
+      <basic-information
+        :value="user"
+        :levels="levels"
+        :types="types"
+        :statuses="statuses"
+        is-admin
+        @input="onSave"
+        @cancel="onCancel"
+        @delete="onDelete"
+        @change-password="onChangePassword"
+      />
+    </v-container>
+  `
 })
 
 storiesOf('FoodFleet|components/users/BasicInformation', module)
@@ -118,5 +121,5 @@ storiesOf('FoodFleet|components/users/BasicInformation', module)
   })
   .add('Default', Default)
   .add('IsLoading', IsLoading)
-  .add('ForSupplier', ForSupplier)
-  .add('ForCustomer', ForCustomer)
+  .add('BasicView', BasicView)
+  .add('AdminView', AdminView)

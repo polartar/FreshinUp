@@ -833,7 +833,12 @@ export const FIXTURE_COMPANY_RESPONSE = {
   }
 }
 
+
 export const FIXTURE_COMPANY = FIXTURE_COMPANY_RESPONSE.data
+
+export const FIXTURE_COMPANIES = [
+  FIXTURE_COMPANY
+]
 
 export const FIXTURE_COMPANIES_RESPONSE = {
   'data': [

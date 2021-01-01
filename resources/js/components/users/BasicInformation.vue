@@ -29,27 +29,6 @@
               sm6
             >
               <div class="mb-2 text-uppercase grey--text font-weight-bold">
-                Status
-              </div>
-              <v-select
-                v-model="status"
-                :items="statuses"
-                placeholder="Status"
-                data-vv-name="status"
-                item-value="id"
-                item-text="name"
-                outline
-              />
-            </v-flex>
-            <v-flex
-              xs12
-              sm6
-            />
-            <v-flex
-              xs12
-              sm6
-            >
-              <div class="mb-2 text-uppercase grey--text font-weight-bold">
                 First name
               </div>
               <v-text-field
@@ -87,7 +66,7 @@
                 url="companies"
                 term-param="filter[name]"
                 results-id-key="uuid"
-                :value="get(company, 'name')"
+                :value="company_id + ''"
                 :disabled="!isAdmin"
                 placeholder="Search / Select Company"
                 height="48"
@@ -283,6 +262,25 @@
                 Delete Image
               </v-btn>
             </v-flex>
+            <v-flex
+                xs12
+                pl-2
+                v-if="isAdmin"
+              >
+                <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                  Status
+                </div>
+                <v-select
+                  class="pt-0"
+                  v-model="status"
+                  :items="statuses"
+                  placeholder="Status"
+                  data-vv-name="status"
+                  item-value="id"
+                  item-text="name"
+                  outline
+                />
+              </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
@@ -312,7 +310,7 @@
       <v-flex class="text-xs-right">
         <v-btn
           :loading="isLoading"
-          :disabled="!editing"
+          :disabled="!isEditing"
           depressed
           @click="onDelete"
         >
@@ -374,7 +372,7 @@ export default {
     }
   },
   computed: {
-    editing () {
+    isEditing () {
       return !!get(this.value, 'uuid')
     },
     hasImage () {
@@ -425,13 +423,17 @@ export default {
       this.manager_uuid = user ? user.uuid : null
     },
     selectCompany (company) {
-      this.company = company || null
+      this.company_id = company ? company.id : null
     }
   }
 }
 </script>
-<style lang="scss" scoped>
+<style  scoped>
   .ff-profile-picture__image_input {
     display: none;
+  }
+
+  >>> .v-select__selections {
+    padding-top: 0!important;
   }
 </style>

@@ -20,7 +20,7 @@ return [
         'policy_agreements' => FreshinUp\FreshBusForms\Models\PolicyAgreement::class,
     ],
     'resources' => [
-        'user'          => FreshinUp\FreshBusForms\Http\Resources\User\User::class,
+        'user'          => \App\Http\Resources\User::class,
         'current_user'  => \App\Http\Resources\CurrentUser::class
     ],
     'controllers' => [
