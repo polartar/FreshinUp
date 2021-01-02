@@ -1,3 +1,8 @@
+## Jan 2, 2021
+- **FIX** Display snackbar instead of redirecting [620](https://github.com/FreshinUp/foodfleet/issues/620)
+
+<br/>
+
 ## Jan 1, 2021
 - **FIX** User basic information fields are incorrect [688](https://github.com/FreshinUp/foodfleet/issues/688)
 
