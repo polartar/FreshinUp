@@ -16,8 +16,8 @@ class HostCompaniesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $companyType = CompanyType::where('key_id', 'host')->get()->first();
-        for ($i = 0; $i < 50; $i++) {
+        $companyType = CompanyType::where('key_id', 'customer')->get()->first();
+        for ($i = 0; $i < 15; $i++) {
             $company = Company::updateOrCreate(
                 [
                     'name' => $faker->company

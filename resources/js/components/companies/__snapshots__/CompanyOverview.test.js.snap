@@ -16,18 +16,7 @@ exports[`components/companies/CompanyOverview Snapshots Empty 1`] = `
         Company overview
       </span>
        
-      <button
-        class="v-btn v-btn--depressed theme--light primary"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          
-      View Details
-    
-        </div>
-      </button>
+      <!---->
     </div>
      
     <hr
@@ -67,18 +56,7 @@ exports[`components/companies/CompanyOverview Snapshots Loading 1`] = `
         Company overview
       </span>
        
-      <button
-        class="v-btn v-btn--depressed theme--light primary"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          
-      View Details
-    
-        </div>
-      </button>
+      <!---->
     </div>
      
     <hr
@@ -144,18 +122,7 @@ exports[`components/companies/CompanyOverview Snapshots Populated 1`] = `
         Company overview
       </span>
        
-      <button
-        class="v-btn v-btn--depressed theme--light primary"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          
-      View Details
-    
-        </div>
-      </button>
+      <!---->
     </div>
      
     <hr

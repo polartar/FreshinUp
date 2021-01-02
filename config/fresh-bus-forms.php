@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UserStatus;
 use App\Helpers\UserPermissions;
 use App\Http\Controllers\Auth\LoginController;
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
@@ -20,8 +21,15 @@ return [
         'policy_agreements' => FreshinUp\FreshBusForms\Models\PolicyAgreement::class,
     ],
     'resources' => [
-        'user'          => FreshinUp\FreshBusForms\Http\Resources\User\User::class,
-        'current_user'  => \App\Http\Resources\CurrentUser::class
+        'user'          => \App\Http\Resources\User::class,
+        'current_user'  => \App\Http\Resources\CurrentUser::class,
+        'user_status_colors' => [
+            UserStatus::LEAD => 'grey',
+            UserStatus::PENDING_INVITATION => 'warning',
+            UserStatus::PENDING_REVIEW => 'warning',
+            UserStatus::APPROVED => 'success',
+            UserStatus::ON_HOLD => 'error',
+        ]
     ],
     'controllers' => [
         'login'         => LoginController::class,

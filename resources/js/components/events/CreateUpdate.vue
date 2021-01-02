@@ -215,6 +215,7 @@
             </v-card-title>
             <v-divider />
             <add-store
+              v-if="event"
               :is-loading="eventStoreLoading"
               :event="event"
               :stores="allStores"
