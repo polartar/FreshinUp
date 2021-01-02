@@ -73,7 +73,7 @@ class User extends \FreshinUp\FreshBusForms\Models\User\User
         $this->notify(new PasswordResetNotification($token));
     }
 
-    public function manager ()
+    public function manager()
     {
         return $this->belongsTo(User::class, 'manager_uuid', 'uuid');
     }

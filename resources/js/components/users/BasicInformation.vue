@@ -263,24 +263,24 @@
               </v-btn>
             </v-flex>
             <v-flex
-                xs12
-                pl-2
-                v-if="isAdmin"
-              >
-                <div class="mb-2 text-uppercase grey--text font-weight-bold">
-                  Status
-                </div>
-                <v-select
-                  class="pt-0"
-                  v-model="status"
-                  :items="statuses"
-                  placeholder="Status"
-                  data-vv-name="status"
-                  item-value="id"
-                  item-text="name"
-                  outline
-                />
-              </v-flex>
+              v-if="isAdmin"
+              xs12
+              pl-2
+            >
+              <div class="mb-2 text-uppercase grey--text font-weight-bold">
+                Status
+              </div>
+              <v-select
+                v-model="status"
+                class="pt-0"
+                :items="statuses"
+                placeholder="Status"
+                data-vv-name="status"
+                item-value="id"
+                item-text="name"
+                outline
+              />
+            </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
@@ -323,7 +323,6 @@
 <script>
 import get from 'lodash/get'
 import Simple from 'fresh-bus/components/search/simple'
-
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 
 export const DEFAULT_USER = {
@@ -342,10 +341,7 @@ export const DEFAULT_USER = {
   notes: null,
   title: null,
   avatar: '',
-  requested_company: null,
   company: null,
-  last_login: '',
-  has_admin_access: false,
   joined_at: '',
   manager_uuid: ''
 }

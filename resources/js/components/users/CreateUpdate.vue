@@ -52,7 +52,7 @@
 <script>
 import get from 'lodash/get'
 
-import BasicInformation from './BasicInformation.vue'
+import BasicInformation, { DEFAULT_USER } from './BasicInformation.vue'
 import CompanyOverview from '~/components/companies/CompanyOverview.vue'
 import { mapGetters } from 'vuex'
 
@@ -78,7 +78,7 @@ export default {
     }),
     ...mapGetters(['currentUser']),
     ...mapGetters('users', {
-      user: 'item',
+      user_: 'item',
       userLoading: 'itemLoading'
     }),
     ...mapGetters('userLevels', {
@@ -96,6 +96,9 @@ export default {
     ...mapGetters('userStatuses', {
       statuses: 'items'
     }),
+    user () {
+      return this.isNew ? DEFAULT_USER : this.user_
+    },
     company () {
       // TODO: company should include:
       //  - company.company_type.name because type is already taken
@@ -153,9 +156,9 @@ export default {
     if (id !== 'new') {
       vm.$store.dispatch('users/getItem',
         { params: {
-            id,
-            include: USER_INCLUDES
-          }
+          id,
+          include: USER_INCLUDES
+        }
         }
       )
         .catch()

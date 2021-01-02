@@ -11,11 +11,18 @@ class UserPermissions extends BusUserPermissions
         return array_merge(
             parent::getProperties($filters),
             [
-            'avatar' => [
-                'label' => 'Avatar',
-                'readonly' => false,
-                'rules' => []
-            ]
+                'avatar' => [
+                    'label' => 'Avatar',
+                    'readonly' => false,
+                    'rules' => []
+                ],
+                'manager_uuid' => [
+                    'label' => 'Manager',
+                    'readonly' => false,
+                    'rules' => [
+                        'exists:users,uuid'
+                    ]
+                ]
             ]
         );
     }

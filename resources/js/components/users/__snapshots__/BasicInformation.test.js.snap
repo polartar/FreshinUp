@@ -987,8 +987,8 @@ exports[`components/users/BasicInformation Snapshots AdminView 1`] = `
                 class="mb-2 text-uppercase grey--text font-weight-bold"
               >
                 
-                Status
-              
+              Status
+            
               </div>
                
               <div

@@ -152,7 +152,7 @@ describe('components/companies/CompanyOverview', () => {
   describe('Methods', () => {
     test('viewDetails()', async () => {
       const wrapper = shallowMount(Component)
-      const item = omit(FIXTURE_COMPANY, ['admin', 'members'])
+      const item = omit(FIXTURE_COMPANY, ['admin', 'members', 'members_count'])
       wrapper.setProps({
         value: item
       })
