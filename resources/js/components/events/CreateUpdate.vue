@@ -471,11 +471,10 @@ export default {
       try {
         if (this.isNew) {
           await this.$store.dispatch('events/createItem', { data })
-          await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          this.backToList()
+          await this.$store.dispatch('generalMessage/setMessage', 'Event Saved.')
         } else {
           await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
-          await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
+          await this.$store.dispatch('generalMessage/setMessage', 'Event Updated.')
         }
       } catch (error) {
         const message = get(error, 'response.data.message', error.message)
