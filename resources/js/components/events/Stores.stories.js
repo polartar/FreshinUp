@@ -7,40 +7,23 @@ import axios from 'axios/index'
 import Stores from './Stores.vue'
 import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
 import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
+import { FIXTURE_USERS } from '../../../../tests/Javascript/__data__/users'
+import { FIXTURE_STORE_TAGS } from '../../../../tests/Javascript/__data__/storeTags'
+import { FIXTURE_LOCATIONS } from '../../../../tests/Javascript/__data__/locations'
+import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
 
 const mock = new MockAdapter(axios)
 mock.onGet('foodfleet/store-tags').reply(200, {
-  data: [
-    { uuid: 1, name: 'aperiam' },
-    { uuid: 2, name: 'iure' },
-    { uuid: 3, name: 'dicta' },
-    { uuid: 4, name: 'voluptate' }
-  ]
+  data: FIXTURE_STORE_TAGS
 })
 
 mock.onGet('foodfleet/locations').reply(200, {
-  data: [
-    { uuid: 1, name: 'South Abagail' },
-    { uuid: 2, name: 'Lindseymouth' },
-    { uuid: 3, name: 'Fredrickstad' },
-    { uuid: 4, name: 'Zanderstad' }
-  ]
+  data: FIXTURE_LOCATIONS
 })
 
 mock.onGet('foodfleet/owners').reply(200, {
-  data: [
-    { id: 1, name: 'Level1 User' },
-    { id: 2, name: 'Level2 User' },
-    { id: 3, name: 'Level3 User' },
-    { id: 4, name: 'Level4 User' }
-  ]
+  data: FIXTURE_USERS
 })
-
-const types = [
-  { uuid: 1, name: 'Mobil' },
-  { uuid: 2, name: 'Car' },
-  { uuid: 3, name: 'Architecto' }
-]
 
 export const Default = () => ({
   components: { Stores },
@@ -56,7 +39,7 @@ export const Populated = () => ({
   components: { Stores },
   data () {
     return {
-      types: types,
+      types: FIXTURE_STORE_TYPES,
       statuses: FIXTURE_STORE_STATUSES,
       stores: FIXTURE_STORES
     }
@@ -76,7 +59,7 @@ export const Populated = () => ({
         :statuses="statuses"
         :stores="stores"
         @filter-stores="runFilter"
-        @manage-view-details="manage"
+        @manage-view="manage"
         @manage-unassign="manage"
         @manage-multiple-unassign="manage"
       />

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aeb66f0f5e445794774366f3a67e54aa",
+    "content-hash": "56344eced3da5d3377ea018d24e4d230",
     "packages": [
         {
             "name": "apimatic/jsonmapper",
@@ -1195,16 +1195,16 @@
         },
         {
             "name": "freshinup/fresh-bus-forms",
-            "version": "2.56.2",
+            "version": "2.56.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:FreshinUp/fresh-bus-forms.git",
-                "reference": "ee55265c5098917596f2bd4704de8cade1928e19"
+                "reference": "ea82d18e25b1b88a45b049c891822c00d49417fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/ee55265c5098917596f2bd4704de8cade1928e19",
-                "reference": "ee55265c5098917596f2bd4704de8cade1928e19",
+                "url": "https://api.github.com/repos/FreshinUp/fresh-bus-forms/zipball/ea82d18e25b1b88a45b049c891822c00d49417fc",
+                "reference": "ea82d18e25b1b88a45b049c891822c00d49417fc",
                 "shasum": ""
             },
             "require": {
@@ -1317,10 +1317,10 @@
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.56.2",
+                "source": "https://github.com/FreshinUp/fresh-bus-forms/tree/2.56.3",
                 "issues": "https://github.com/FreshinUp/fresh-bus-forms/issues"
             },
-            "time": "2020-11-22T11:00:42+00:00"
+            "time": "2021-01-01T17:00:12+00:00"
         },
         {
             "name": "fzaninotto/faker",

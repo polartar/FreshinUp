@@ -1474,4 +1474,36 @@ class EventTest extends TestCase
 
         $this->assertEquals(0, $event->eventTags()->count());
     }
+
+    public function testAssignStoreToEvent () {
+        $user = factory(User::class)->create();
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        Passport::actingAs($user);
+
+        $this->assertEquals(0, $event->stores()->count());
+        $data = $this->json('POST', "/api/foodfleet/events/{$event->uuid}/stores/{$store->uuid}")
+            ->assertStatus(201)
+            ->assertJsonStructure([
+                'data'
+            ])
+            ->json('data');
+        $this->assertEquals($event->uuid, $data['uuid']);
+        $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
+    }
+
+    public function testUnassignStoreToEvent () {
+        $user = factory(User::class)->create();
+        /** @var Event $event */
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        Passport::actingAs($user);
+
+        $event->stores()->attach($store->uuid);
+
+        $this->assertEquals(1, $event->stores()->count());
+        $this->json('DELETE', "/api/foodfleet/events/{$event->uuid}/stores/{$store->uuid}")
+            ->assertStatus(204);
+        $this->assertEquals(0, $event->stores()->count());
+    }
 }

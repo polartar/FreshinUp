@@ -9,7 +9,7 @@
     />
     <v-layout>
       <v-flex
-        v-if="!withoutServings ? 'xs8': 'xs10'"
+        :class="!withoutServings ? 'xs8': 'xs10'"
         px-2
       >
         <div class="mb-2 text-uppercase grey--text font-weight-bold">

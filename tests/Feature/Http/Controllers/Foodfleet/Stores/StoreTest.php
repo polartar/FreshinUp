@@ -715,10 +715,23 @@ class StoresTest extends TestCase
     {
         $user = factory(User::class)->create();
         Passport::actingAs($user);
-        $area = factory(StoreArea::class)->create();
-        $this->json('DELETE', 'api/foodfleet/store/areas/' . $area->id)
+        $store = factory(Store::class)->create();
+        $this->json('DELETE', 'api/foodfleet/stores/' . $store->uuid)
             ->assertStatus(204);
-        $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
+        $this->assertEquals(0, Store::where('uuid', $store->uuid)->count());
+    }
+
+    public function testDeleteItemWhenAssignedToEvents()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $event = factory(Event::class)->create();
+        /** @var Store $store */
+        $store = factory(Store::class)->create();
+        $store->events()->attach($event->uuid);
+        $this->json('DELETE', 'api/foodfleet/stores/' . $store->uuid)
+            ->assertStatus(405);
+        $this->assertEquals(1, Store::where('uuid', $store->uuid)->count());
     }
 
     public function testGetEventListOnNotExistingStore()
@@ -796,40 +809,5 @@ class StoresTest extends TestCase
                 'value' => $state['value']
             ], $data[$id]);
         }
-    }
-
-    public function testAssignStoreToEventWhenPayloadIsNotValid()
-    {
-        $user = factory(User::class)->create();
-        Passport::actingAs($user);
-        $event = factory(Event::class)->create();
-        $store = factory(Store::class)->create();
-        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
-
-        $payload = [];
-        $errors = $this
-            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
-            ->assertStatus(422)
-            ->json('errors');
-        $this->assertArrayHasKey('store_uuid', $errors);
-        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
-    }
-
-    public function testAssignStoreToEvent()
-    {
-        $user = factory(User::class)->create();
-        Passport::actingAs($user);
-        $event = factory(Event::class)->create();
-        $store = factory(Store::class)->create();
-        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
-
-        $payload = [
-            'store_uuid' => $store->uuid
-        ];
-        $data = $this
-            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
-            ->assertStatus(201)
-            ->json('data');
-        $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
     }
 }

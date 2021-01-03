@@ -33,7 +33,8 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::get('events/new', 'Foodfleet\Events\Events@showNewRecommendation');
     Route::get('events/{event}/stores', 'Foodfleet\Events\Store@index');
-    Route::post('events/{event}/stores', 'Foodfleet\Events\Store@store');
+    Route::post('events/{event}/stores/{store}', 'Foodfleet\Events\Store@store');
+    Route::delete('events/{event}/stores/{store}', 'Foodfleet\Events\Store@destroy');
     Route::get('event-summary/{uuid}', 'Foodfleet\Events\Events@summary');
     Route::post('/events/{uuid}/duplicate', 'Foodfleet\Events\Events@duplicate');
     Route::apiResource('events', 'Foodfleet\Events\Events');
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('items', 'Foodfleet\Items@index');
+    Route::get('permissions/menu-items', 'Foodfleet\MenuItemPermissions@index');
 
 
     Route::get('location/categories', 'Foodfleet\LocationCategory@index');
@@ -102,5 +104,11 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
 });
 
+// non auth routes
 Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
 Route::post('/password/reset', 'Auth\PasswordsController@reset');
+
+// overridden from fresh-bus
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/currentUser', 'Auth\AuthUser@currentUser');
+});
