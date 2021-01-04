@@ -5,8 +5,10 @@ namespace Tests\Unit\Helpers;
 use App\Helpers\Permissions\MenuItemPermissions;
 use App\User;
 
-class MenuItemPermissionsTest extends \Tests\TestCase {
-    public function testGetProperties () {
+class MenuItemPermissionsTest extends \Tests\TestCase
+{
+    public function testGetProperties()
+    {
         $expected = [
             'store_uuid' => [
                 'label' => 'Store uuid',

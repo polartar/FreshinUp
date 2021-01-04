@@ -11,7 +11,7 @@ export default ({ items, item }) => {
     'menuItemPermissions',
     { items, item },
     {
-      itemsPath: () => `/permissions/menu-items`
+      itemsPath: () => `/foodfleet/permissions/menu-items`
     }
   )
 

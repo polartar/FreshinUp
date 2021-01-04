@@ -17,7 +17,7 @@
         </div>
         <v-text-field
           v-model="title"
-          v-validate="'required'"
+          v-validate="validationRules.title"
           :error-messages="errors.collect('title')"
           data-vv-name="title"
           background-color="white"
@@ -36,6 +36,7 @@
         </div>
         <v-text-field
           v-model="servings"
+          v-validate="validationRules.servings"
           background-color="white"
           single-line
           outline
@@ -50,7 +51,7 @@
         </div>
         <v-text-field
           v-model="cost"
-          v-validate="'required'"
+          v-validate="validationRules.cost"
           :error-messages="errors.collect('cost')"
           data-vv-name="cost"
           background-color="white"
@@ -69,7 +70,7 @@
         </div>
         <v-textarea
           v-model="description"
-          v-validate="'required'"
+          v-validate="validationRules.description"
           :error-messages="errors.collect('description')"
           data-vv-name="description"
           background-color="white"
@@ -101,6 +102,7 @@
 
 <script>
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import FieldMeta from '@freshinup/core-ui/src/mixins/FieldMeta'
 import Validate from 'fresh-bus/components/mixins/Validate'
 
 export const DEFAULT_MENU_ITEM = {
@@ -120,7 +122,7 @@ export const DEFAULT_MENU_ITEM = {
  * @property {Number} cost
  */
 export default {
-  mixins: [MapValueKeysToData, Validate],
+  mixins: [MapValueKeysToData, Validate, FieldMeta],
   props: {
     // overriding value prop from mixin to set default value
     value: { type: Object, default: () => DEFAULT_MENU_ITEM },

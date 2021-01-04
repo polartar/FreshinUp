@@ -202,6 +202,7 @@
                 without-servings
                 :is-loading="menuItemLoading"
                 :value="menuItem"
+                :validation-rules="menuItemValidationRules"
                 @input="createOrUpdateMenuItem"
                 @cancel="menuItemDialog = false"
               />
@@ -389,6 +390,10 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('menuItemPermissions', {
+      menuItemValidationRules: 'validationRules'
+    }),
+
     ...mapGetters('storeAreas', {
       areas: 'items',
       storeAreaPagination: 'pagination',
@@ -507,11 +512,7 @@ export default {
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
         }
       } catch (error) {
-        let message = get(error, 'response.data.message', error.message)
-        const status = get(error, 'response.status')
-        if (status === 422) {
-          message = 'Please fill in the name'
-        }
+        const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
       } finally {
         this.loading = false
@@ -654,11 +655,7 @@ export default {
           this.menuItemDialog = false
         })
         .catch(error => {
-          let message = get(error, 'response.data.message', error.message)
-          const status = get(error, 'response.status')
-          if (status === 422) {
-            message = 'Please fill in all the input fields'
-          }
+          const message = get(error, 'response.data.message', error.message)
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
@@ -823,6 +820,7 @@ export default {
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
     promises.push(vm.$store.dispatch('paymentStatuses/getItems'))
+    promises.push(vm.$store.dispatch('menuItemPermissions/getItems'))
 
     if (!SQUARE_APP_ID) {
       vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')

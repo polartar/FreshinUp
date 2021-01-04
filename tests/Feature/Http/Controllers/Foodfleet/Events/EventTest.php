@@ -1475,7 +1475,8 @@ class EventTest extends TestCase
         $this->assertEquals(0, $event->eventTags()->count());
     }
 
-    public function testAssignStoreToEvent () {
+    public function testAssignStoreToEvent()
+    {
         $user = factory(User::class)->create();
         $event = factory(Event::class)->create();
         $store = factory(Store::class)->create();
@@ -1492,7 +1493,8 @@ class EventTest extends TestCase
         $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
     }
 
-    public function testUnassignStoreToEvent () {
+    public function testUnassignStoreToEvent()
+    {
         $user = factory(User::class)->create();
         /** @var Event $event */
         $event = factory(Event::class)->create();

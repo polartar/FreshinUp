@@ -38,13 +38,15 @@ class MenuItemPermissions extends Permissions
                 'label' => 'Cost',
                 'rules' => [
                     'required',
-                    'integer',
+                    'numeric',
+                    'gt:0'
                 ],
                 'readonly' => false
             ],
             'description' => [
                 'label' => 'Description',
                 'rules' => [
+                    'nullable',
                     'string',
                 ],
                 'readonly' => false
