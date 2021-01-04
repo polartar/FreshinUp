@@ -1,159 +1,98 @@
 <template>
-  <div>
-    <v-data-table
-      v-model="selected"
-      class="elevation-1"
-      :headers="headers"
-      :items="stores"
-      :rows-per-page-items="[5, 10, 15, 25, 30, 50]"
-      :pagination.sync="pagination"
-      :loading="isLoading"
-      :total-items="totalItems"
-      item-key="uuid"
-      select-all
-      disable-initial-sort
-    >
-      <v-progress-linear
-        slot="progress"
-        indeterminate
-        height="10"
+  <f-data-table
+    :headers="headers"
+    :items="stores"
+    :item-actions="itemActions"
+    :multi-item-actions="multipleItemActions"
+    item-key="uuid"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
+    <template v-slot:header-inner-status_id="{ items }">
+      <span
+        v-if="items.length <= 1"
+        class="grey--text"
+      >Status</span>
+      <f-manage-multiple
+        v-else
+        :items="statuses"
+        item-label="name"
+        label="Change status"
+        @item="manageMultiple('status', items, $event)"
       />
-      <template
-        slot="headerCell"
-        slot-scope="props"
-      >
-        <span v-if="selected.length > 1 && props.header.value === 'manage'">
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              color="primary"
-              dark
-            >
-              Manage Multiple
-            </v-btn>
-            <v-list>
-              <v-list-tile
-                v-for="(item, index) in selectedStoreActions"
-                :key="index"
-                @click="manageMultiple(item.action)"
-              >
-                <v-list-tile-title>
-                  {{ item.text }}
-                </v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-        </span>
-        <span v-else-if="selected.length > 1 && props.header.value === 'status'">
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              light
-            >
-              Change Statuses
-            </v-btn>
-            <v-list>
-              <v-list-tile
-                v-for="(item, index) in statuses"
-                :key="index"
-                @click="changeStatusMultiple(item.id)"
-              >
-                <v-list-tile-title>
-                  {{ item.name }}
-                </v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-        </span>
+    </template>
 
-        <span v-else>
-          {{ props.header.text }}
-        </span>
-      </template>
-      <template slot="no-data">
-        <v-alert
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          Sorry, nothing to display here :(
-        </v-alert>
-      </template>
+    <template v-slot:item-inner-status_id="{ item }">
+      <status-select
+        :value="item.status_id"
+        :options="statuses"
+        @input="changeStatus($event, item)"
+      />
+    </template>
 
-      <template
-        slot="items"
-        slot-scope="props"
+    <template v-slot:item-inner-name="{ item }">
+      <div class="subheading primary--text">
+        <a
+          href="#manage-view"
+          title="view item"
+          class="font-weight-bold text-not-underline"
+          @click.prevent="manage({ action: 'view'}, item)"
+        >{{ item.name }}</a>
+      </div>
+      <div class="grey--text">
+        {{ get(item, 'type.name') }}
+      </div>
+    </template>
+
+    <template v-slot:item-inner-tags="{ item }">
+      <v-chip
+        v-for="(tag, index) in item.tags"
+        :key="index"
       >
-        <td>
-          <v-checkbox
-            v-model="props.selected"
-            primary
-            hide-details
-          />
-        </td>
-        <td class="justify-center text-xs-left select-td">
-          <status-select
-            :value="props.item.status_id"
-            :options="statuses"
-            @input="changeStatus($event, props.item)"
-          />
-        </td>
-        <td>
-          <div class="subheading primary--text">
-            {{ props.item.name }}
-          </div>
-          <div class="grey--text">
-            {{ props.item.type && props.item.type.name }}
-          </div>
-        </td>
-        <td>
-          <v-chip
-            v-for="(tag, index) in props.item.tags"
-            :key="index"
-          >
-            {{ tag.name }}
-          </v-chip>
-        </td>
-        <td class="text-xs-center">
-          <div class="grey--text">
-            {{ props.item.owner && props.item.owner.name }}
-          </div>
-          <div class="grey--text">
-            {{ props.item.owner && props.item.owner.company_name }}
-          </div>
-        </td>
-        <td>
-          {{ props.item.state_of_incorporation }}
-        </td>
-        <td class="justify-center text-xs-center">
-          <f-btn-menu
-            :items="itemActions"
-            item-label="text"
-            @item="manage($event, props.item)"
-          >
-            Manage
-          </f-btn-menu>
-        </td>
-      </template>
-    </v-data-table>
-  </div>
+        {{ tag.name }}
+      </v-chip>
+    </template>
+
+    <template v-slot:item-inner-owner="{ item }">
+      <div class="grey--text">
+        {{ get(item, 'owner.name') }}
+      </div>
+      <div class="grey--text">
+        {{ get(item, 'owner.company_name') }}
+      </div>
+    </template>
+  </f-data-table>
 </template>
 
 <script>
 import Pagination from 'fresh-bus/components/mixins/Pagination'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
-import FBtnMenu from 'fresh-bus/components/ui/FBtnMenu'
+import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
+import FManageMultiple from '@freshinup/core-ui/src/components/FManageMultiple'
 import StatusSelect from './StatusSelect'
+import get from 'lodash/get'
 export const HEADERS = [
   { text: 'Status', sortable: true, value: 'status_id' },
-  { text: 'Fleet Member Name / Type', sortable: true, value: 'name,type' },
+  { text: 'Fleet Member Name / Type', sortable: true, value: 'name' },
   { text: 'Tags', sortable: false, value: 'tags' },
   { text: 'Owned By', sortable: true, value: 'owner' },
   { text: 'State Of Incorporation', sortable: true, value: 'state_of_incorporation' },
-  { text: 'Manage', sortable: false, value: 'manage' }
+  { text: 'Manage', sortable: false, value: 'manage', align: 'center' }
 ]
+export const ITEM_ACTIONS = [
+  { action: 'view', text: 'View / Edit' },
+  { action: 'delete', text: 'Delete' }
+]
+export const MULTIPLE_ITEM_ACTIONS = [
+  { action: 'delete', text: 'Delete' }
+]
+
 export default {
-  components: { FBtnMenu, StatusSelect },
+  components: {
+    FManageMultiple,
+    FDataTable,
+    StatusSelect
+  },
   mixins: [
     Pagination,
     FormatDate
@@ -172,10 +111,8 @@ export default {
     return {
       selected: [],
       headers: HEADERS,
-      itemActions: [
-        { action: 'view', text: 'View / Edit' },
-        { action: 'delete', text: 'Delete' }
-      ],
+      itemActions: ITEM_ACTIONS,
+      multipleItemActions: MULTIPLE_ITEM_ACTIONS,
       actionBtnTitle: 'Manage'
     }
   },
@@ -188,6 +125,7 @@ export default {
     }
   },
   methods: {
+    get,
     manage (item, store) {
       this.$emit('manage-' + item.action, store)
       this.$emit('manage', item.action, store)

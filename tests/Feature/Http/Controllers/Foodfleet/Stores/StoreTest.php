@@ -403,12 +403,8 @@ class StoresTest extends TestCase
             ->json('PUT', '/api/foodfleet/stores/' . $store->uuid, $payload)
             ->assertStatus(200);
 
-        $url = 'api/foodfleet/stores/' . $store->uuid;
-        $returnedStore = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
-
-        $this->assertEquals(2, $returnedStore['status_id']);
+        $store->refresh();
+        $this->assertEquals(2, $store->status_id);
     }
 
     public function testGetListBySorts()
@@ -498,6 +494,9 @@ class StoresTest extends TestCase
         $this->assertEquals($data[0]['uuid'], $store3->uuid);
     }
 
+    /**
+     * @group failed
+     */
     public function testUpdateCommission()
     {
         $user = factory(User::class)->create();
@@ -621,6 +620,9 @@ class StoresTest extends TestCase
             // Should not take it from the payload
             // 'supplier_uuid' => $payload['supplier_uuid'],
             'supplier_uuid' => $user->company->uuid,
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
     }
 
@@ -652,6 +654,9 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
         $this->assertArrayHasKey('tags', $data);
         $this->assertArraySimilar(array_map(function ($tag) {
@@ -691,6 +696,9 @@ class StoresTest extends TestCase
             'facebook' => $payload['facebook'],
             'instagram' => $payload['instagram'],
             'staff_notes' => $payload['staff_notes'],
+            'square_id' => $payload['square_id'],
+            'square_access_token' => $payload['square_access_token'],
+            'square_refresh_token' => $payload['square_refresh_token'],
         ], $data);
 
         $this->assertArrayHasKey('tags', $data);
@@ -712,7 +720,6 @@ class StoresTest extends TestCase
             ->assertStatus(204);
         $this->assertEquals(0, StoreArea::where('id', $area->id)->count());
     }
-
 
     public function testGetEventListOnNotExistingStore()
     {
@@ -789,5 +796,40 @@ class StoresTest extends TestCase
                 'value' => $state['value']
             ], $data[$id]);
         }
+    }
+
+    public function testAssignStoreToEventWhenPayloadIsNotValid()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+
+        $payload = [];
+        $errors = $this
+            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
+            ->assertStatus(422)
+            ->json('errors');
+        $this->assertArrayHasKey('store_uuid', $errors);
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+    }
+
+    public function testAssignStoreToEvent()
+    {
+        $user = factory(User::class)->create();
+        Passport::actingAs($user);
+        $event = factory(Event::class)->create();
+        $store = factory(Store::class)->create();
+        $this->assertEquals(0, $event->stores()->where('uuid', $store->uuid)->count());
+
+        $payload = [
+            'store_uuid' => $store->uuid
+        ];
+        $data = $this
+            ->json('POST', "/api/foodfleet/events/{$event->uuid}/stores", $payload)
+            ->assertStatus(201)
+            ->json('data');
+        $this->assertEquals(1, $event->stores()->where('uuid', $store->uuid)->count());
     }
 }

@@ -16,7 +16,6 @@ class StoreTest extends TestCase {
             'id' => $store->id,
             'uuid' => $store->uuid,
             'name' => $store->name,
-            'square_id' => $store->square_id,
             'status_id' => $store->status_id,
             'type_id' => $store->type_id,
             'supplier_uuid' => $store->supplier_uuid,
@@ -30,6 +29,9 @@ class StoreTest extends TestCase {
             'twitter' => $store->twitter,
             'instagram' => $store->instagram,
             'staff_notes' => $store->staff_notes,
+            'square_id' => $store->square_id,
+            'square_access_token' => $store->square_access_token,
+            'square_refresh_token' => $store->square_refresh_token,
         ];
         $request = app()->make(Request::class);
         $result = $resource->toArray($request);

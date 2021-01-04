@@ -99,7 +99,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="inherit--text"
+                    class="grey--text font-weight-bold white--text"
                   >
                     <strong
                       class="no-wrap"
@@ -284,7 +284,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="inherit--text"
+                    class="grey--text font-weight-bold white--text"
                   >
                     <strong
                       class="no-wrap"
@@ -401,7 +401,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="inherit--text"
+                    class="grey--text font-weight-bold white--text"
                   >
                     <strong
                       class="no-wrap"
@@ -594,7 +594,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="inherit--text"
+                    class="grey--text font-weight-bold white--text"
                   >
                     <strong
                       class="no-wrap"
@@ -694,7 +694,7 @@ exports[`event Store Filter Sorter component Snapshots default 1`] = `
                   class="layout row justify-space-between align-center mb-2"
                 >
                   <div
-                    class="inherit--text"
+                    class="grey--text font-weight-bold white--text"
                   >
                     <strong
                       class="no-wrap"

@@ -1,85 +1,85 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
-import Component from '~/components/events/StoreList.vue'
-import { FIXTURE_ASSIGNED_STORES } from 'tests/__data__/assignedStores'
+import Component, { HEADERS, ITEM_ACTIONS, MULTIPLE_ITEM_ACTIONS } from '~/components/events/StoreList.vue'
+import * as Stories from '~/components/events/StoreList.stories'
 import { FIXTURE_STORE_STATUSES } from 'tests/__data__/storeStatuses'
+import { FIXTURE_STORES } from 'tests/__data__/stores'
 
-describe('Store List component', () => {
-  // Component instance "under test"
-  let localVue
+describe('components/events/StoreList', () => {
   describe('Snapshots', () => {
-    beforeEach(() => {
-      localVue = createLocalVue().vue
-    })
-    test('stores assigned', () => {
-      const wrapper = mount(Component, {
-        localVue,
-        propsData: {
-          statuses: FIXTURE_STORE_STATUSES,
-          stores: FIXTURE_ASSIGNED_STORES
-        }
-      })
+    test('Default', () => {
+      const wrapper = mount(Stories.Default())
       expect(wrapper.element).toMatchSnapshot()
     })
-    test('stores empty', () => {
-      const wrapper = mount(Component, {
-        localVue,
-        propsData: {
-          statuses: FIXTURE_STORE_STATUSES,
-          stores: []
-        }
-      })
+    test('Populated', () => {
+      const wrapper = mount(Stories.Populated())
       expect(wrapper.element).toMatchSnapshot()
+    })
+  })
+
+  describe('Props & Computed', () => {
+    test('stores', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.stores).toMatchObject([])
+
+      wrapper.setProps({
+        stores: FIXTURE_STORES
+      })
+      expect(wrapper.vm.stores).toMatchObject(FIXTURE_STORES)
+    })
+    test('statuses', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.statuses).toMatchObject([])
+
+      wrapper.setProps({
+        statuses: FIXTURE_STORE_STATUSES
+      })
+      expect(wrapper.vm.statuses).toMatchObject(FIXTURE_STORE_STATUSES)
+    })
+    test('headers', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.headers).toMatchObject(HEADERS)
+
+      const headers = [
+        { text: 'STATUS', sortable: true, value: 'status_id', align: 'left' }
+      ]
+      wrapper.setProps({
+        headers
+      })
+      expect(wrapper.vm.headers).toMatchObject(headers)
+    })
+    test('itemActions', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.itemActions).toMatchObject(ITEM_ACTIONS)
+
+      const itemActions = [
+        { action: 'edit', text: 'Edit' }
+      ]
+      wrapper.setProps({
+        itemActions
+      })
+      expect(wrapper.vm.itemActions).toMatchObject(itemActions)
+    })
+    test('multipleItemActions', () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.multipleItemActions).toMatchObject(MULTIPLE_ITEM_ACTIONS)
+
+      const multipleItemActions = [
+        { action: 'delete', text: 'Delete' }
+      ]
+      wrapper.setProps({
+        multipleItemActions
+      })
+      expect(wrapper.vm.multipleItemActions).toMatchObject(multipleItemActions)
     })
   })
 
   describe('Methods', () => {
-    beforeEach(() => {
-      localVue = createLocalVue().vue
-    })
-
-    test('manage function emitted single action', () => {
-      const wrapper = shallowMount(Component, {
-        localVue
-      })
-
-      const itemActions = [
-        { action: 'view-details', text: 'View details' },
-        { action: 'unassign', text: 'Unassign' }
-      ]
-
-      wrapper.vm.manage(itemActions[0], FIXTURE_ASSIGNED_STORES[0])
-      wrapper.vm.manage(itemActions[1], FIXTURE_ASSIGNED_STORES[1])
-
-      expect(wrapper.emitted()['manage-view-details']).toBeTruthy()
-      expect(wrapper.emitted()['manage-unassign']).toBeTruthy()
-
-      expect(wrapper.emitted()['manage-view-details'][0][0]).toEqual(FIXTURE_ASSIGNED_STORES[0])
-      expect(wrapper.emitted()['manage-unassign'][0][0]).toEqual(FIXTURE_ASSIGNED_STORES[1])
-    })
-
-    test('manageMultiple function emitted multiple manage action', () => {
-      const wrapper = shallowMount(Component, {
-        localVue
-      })
-
-      wrapper.vm.manageMultiple('unassign')
-
-      expect(wrapper.emitted()['manage-multiple-unassign']).toBeTruthy()
-    })
-  })
-
-  describe('Computed', () => {
-    beforeEach(() => {
-      localVue = createLocalVue().vue
-    })
-    test('selectedActions', () => {
+    test('viewItem(item)', () => {
       const wrapper = shallowMount(Component)
-      wrapper.setData({ selected: [] })
-      expect(wrapper.vm.selectedActions).toEqual([])
-      wrapper.setData({ selected: [ 1 ] })
-      expect(wrapper.vm.selectedActions[0].action).toBe('unassign')
-      expect(wrapper.vm.selectedActions[0].text).toBe('Unassign')
+      const item = FIXTURE_STORES[0]
+      wrapper.vm.viewItem(item)
+      expect(wrapper.emitted()['manage-view']).toBeTruthy()
+      expect(wrapper.emitted()['manage-view'][0][0]).toMatchObject(FIXTURE_STORES[0])
     })
   })
 })

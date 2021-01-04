@@ -3,6 +3,7 @@
     <v-card-title class="justify-space-between px-4 py-1">
       <span class="grey--text subheading font-weight-bold">Company overview</span>
       <v-btn
+        v-if="!isEmptyCompany"
         depressed
         color="primary"
         @click="viewDetails"
@@ -61,8 +62,7 @@
             >
               <f-user-avatar
                 :tile="false"
-                :user="admin.avatar"
-                class="ff-venue-details__owner"
+                :user="admin"
                 :size="80"
               />
             </v-flex>
@@ -85,6 +85,7 @@
 </template>
 <script>
 import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
+import get from 'lodash/get'
 
 import MapValueKeysToData from '~/mixins/MapValueKeysToData'
 
@@ -93,7 +94,7 @@ export const DEFAULT_COMPANY = {
   status: 0,
   name: '',
   logo: '',
-  members_count: 0,
+  // members_count: 0, is included but we exclude it here to manually return it
   admin: {
     name: '',
     email: '',
@@ -111,7 +112,7 @@ export default {
   mixins: [MapValueKeysToData],
   props: {
     // overriding value prop to define default value
-    value: { type: Object, default: DEFAULT_COMPANY },
+    value: { type: Object, default: () => DEFAULT_COMPANY },
     isLoading: { type: Boolean, default: false },
     types: { type: Array, default: () => [] },
     statuses: { type: Array, default: () => [] }
@@ -122,6 +123,9 @@ export default {
     }
   },
   computed: {
+    members_count () {
+      return get(this, 'members.length')
+    },
     companyLogo () {
       return this.logo || DEFAULT_IMAGE
     },

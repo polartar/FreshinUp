@@ -2382,8 +2382,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Populated 1`] = `
               </div>
                
               <button
-                class="v-btn v-btn--disabled v-btn--depressed theme--light error--text"
-                disabled="disabled"
+                class="v-btn v-btn--depressed theme--light error"
                 type="button"
               >
                 <div

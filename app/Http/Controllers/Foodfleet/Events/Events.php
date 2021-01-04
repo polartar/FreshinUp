@@ -212,7 +212,7 @@ class Events extends Controller
             'schedule.description' => 'string'
         ]);
 
-        $inputs = $request->input();
+        $inputs = $request->all();
         $inputs['uuid'] = $uuid;
 
         $event = $action->execute($inputs);
