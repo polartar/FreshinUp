@@ -95,7 +95,8 @@ export default ({ items, item }) => {
         'events',
         { item },
         {
-          itemsPath: ({ id }) => `/foodfleet/stores/${id}/events`
+          itemsPath: ({ id }) => `/foodfleet/stores/${id}/events`,
+          itemPath: ({ id, eventId }) => `/foodfleet/stores/${id}/events/${eventId}`
         }
       ),
       stats: makeRestStore(

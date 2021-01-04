@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="grey--text font-weight-bold">
+    <v-card-title class="grey--text font-weight-bold text-uppercase">
       <h3>Basic Information</h3>
       <v-progress-linear
         v-if="loading"

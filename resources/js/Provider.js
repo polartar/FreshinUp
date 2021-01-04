@@ -33,6 +33,7 @@ import eventStatuses from './store/modules/eventStatuses'
 import eventMenuItems from './store/modules/eventMenuItems'
 import locationCategories from './store/modules/locationCategories'
 import menuItems from './store/modules/menuItems'
+import menuItemPermissions from './store/modules/menuItemPermissions'
 import messages from './store/modules/messages'
 import mapbox from './store/modules/mapbox'
 import userTypes from './store/modules/userTypes'
@@ -84,6 +85,7 @@ export default () => {
       messages,
       mapbox,
       menuItems,
+      menuItemPermissions,
       navigation,
       navigationAdmin,
       users,

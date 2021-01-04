@@ -56,16 +56,31 @@ class Store extends Controller
         return StoreResource::collection($stores);
     }
 
-    public function store(Request $request, $uuid)
+    public function store(Request $request, $eventUuid, $storeUuid)
     {
-        $event = Event::where('uuid', $uuid)->firstOrFail();
-        $this->validate($request, [
-            'store_uuid' => 'required|exists:stores,uuid'
-        ]);
+        $event = Event::where('uuid', $eventUuid)->firstOrFail();
         Db::table('events_stores')->insert([
-            'store_uuid' => $request->get('store_uuid'),
+            'store_uuid' => $storeUuid,
             'event_uuid' => $event->uuid
         ]);
-        return response()->json(new EventResource($event), 201);
+        // TODO: until we know a nicer way to return the data
+        return response()->json([
+            'data' => new EventResource($event),
+        ], 201);
+    }
+
+    public function destroy(Request $request, $eventUuid, $storeUuid)
+    {
+        $event = Event::where('uuid', $eventUuid)->firstOrFail();
+        Db::table('events_stores')
+            ->where([
+                'store_uuid' => $storeUuid,
+                'event_uuid' => $event->uuid
+            ])
+            ->delete();
+        // TODO: until we know a nicer way to return the data
+        return response()->json([
+            'data' => new EventResource($event),
+        ], 204);
     }
 }

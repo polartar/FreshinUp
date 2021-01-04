@@ -5,7 +5,7 @@ exports[`event/BasicInformation Snapshots default 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title grey--text font-weight-bold"
+    class="v-card__title grey--text font-weight-bold text-uppercase"
   >
     <h3>
       Basic Information
@@ -993,7 +993,7 @@ exports[`event/BasicInformation Snapshots event as draft 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title grey--text font-weight-bold"
+    class="v-card__title grey--text font-weight-bold text-uppercase"
   >
     <h3>
       Basic Information
@@ -7485,7 +7485,7 @@ exports[`event/BasicInformation Snapshots event as no draft 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title grey--text font-weight-bold"
+    class="v-card__title grey--text font-weight-bold text-uppercase"
   >
     <h3>
       Basic Information
@@ -13891,7 +13891,7 @@ exports[`event/BasicInformation Snapshots event set 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title grey--text font-weight-bold"
+    class="v-card__title grey--text font-weight-bold text-uppercase"
   >
     <h3>
       Basic Information
@@ -14767,7 +14767,7 @@ exports[`event/BasicInformation Snapshots event set and read-only 1`] = `
   class="v-card v-sheet theme--light"
 >
   <div
-    class="v-card__title grey--text font-weight-bold"
+    class="v-card__title grey--text font-weight-bold text-uppercase"
   >
     <h3>
       Basic Information

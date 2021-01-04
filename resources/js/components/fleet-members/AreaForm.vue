@@ -6,11 +6,14 @@
     />
     <v-flex>
       <div class="mb-2 text-uppercase grey--text font-weight-bold">
-        Area address
+        Area Name
       </div>
       <v-text-field
         v-model="name"
-        placeholder="Enter an address"
+        v-validate="'required'"
+        :error-messages="errors.collect('name')"
+        data-vv-name="name"
+        placeholder="Enter the area name"
         single-line
         outline
       />
@@ -46,7 +49,7 @@
         :loading="isLoading"
         depressed
         color="primary"
-        @click="save"
+        @click="whenValid(save)"
       >
         Save changes
       </v-btn>
@@ -56,6 +59,7 @@
 <script>
 
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import Validate from 'fresh-bus/components/mixins/Validate'
 export const DEFAULT_AREA = {
   id: '',
   name: '',
@@ -64,7 +68,7 @@ export const DEFAULT_AREA = {
   store_uuid: ''
 }
 export default {
-  mixins: [MapValueKeysToData],
+  mixins: [MapValueKeysToData, Validate],
   props: {
     isLoading: { type: Boolean, default: false },
     // Override value prop to give default object mapping

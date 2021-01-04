@@ -9,7 +9,7 @@ class StoreStatus extends JsonResource
 {
     public static function getColorFor ($id) {
         $colors = [
-            StoreStatusEnum::DRAFT => 'accent',
+            StoreStatusEnum::DRAFT => 'grey',
             StoreStatusEnum::PENDING => 'warning',
             StoreStatusEnum::REVISION => 'success',
             StoreStatusEnum::REJECTED => 'error',

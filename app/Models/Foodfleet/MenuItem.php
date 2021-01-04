@@ -28,8 +28,16 @@ class MenuItem extends Model
 {
     use SoftDeletes;
     use GeneratesUuid;
-    protected $guarded = ['id', 'uuid'];
     protected $dates = ['deleted_at'];
+
+    const FILLABLES = [
+        'store_uuid',
+        'title',
+        'description',
+        'servings',
+        'cost',
+    ];
+    protected $fillable = self::FILLABLES;
 
     public function store()
     {
