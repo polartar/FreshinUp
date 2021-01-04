@@ -184,6 +184,7 @@
           :statuses="storeStatuses"
           :stores="stores"
           @manage-view="viewDetails"
+          @manage-unassign="unassignStore"
           @manage-create="showNewMemberDialog = true"
         />
         <v-dialog
@@ -229,7 +230,7 @@
               @paginate="paginateAllStores"
               @run-filter="filterStores"
               @manage-view="viewStore"
-              @manage-assign="assignEvent"
+              @manage-assign="assignStore"
             />
           </v-card>
         </v-dialog>
@@ -254,7 +255,7 @@
               <customer-list
                 :customers="customers"
                 :statuses="statuses"
-                @manage-view="viewDocuments"
+                @manage-view="viewCustomer"
               />
             </v-flex>
           </v-layout>
@@ -367,22 +368,39 @@ export default {
       this.$store.dispatch('stores/setPagination', value)
       this.$store.dispatch('stores/getItems')
     },
-    assignEvent (store) {
+    assignStore (store) {
       const id = this.$route.params.id
       this.$store.dispatch('events/stores/createItem', {
         params: {
-          eventId: id
-        },
-        data: {
-          store_uuid: store.uuid
+          id,
+          storeId: store.uuid
         }
       })
         .then(() => {
           this.$store.dispatch('generalMessage/setMessage', 'Fleet member added to event.')
           this.$store.dispatch('events/stores/getItems', {
-            params: { eventId: id }
+            params: { id }
           })
           this.showNewMemberDialog = false
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+    },
+    unassignStore (store) {
+      const id = this.$route.params.id
+      this.$store.dispatch('events/stores/deleteItem', {
+        params: {
+          id,
+          storeId: store.uuid
+        }
+      })
+        .then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Fleet member removed from event.')
+          this.$store.dispatch('events/stores/getItems', {
+            params: { id }
+          })
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -476,6 +494,7 @@ export default {
           await this.$store.dispatch('events/updateItem', { data, params: { id: data.uuid } })
           await this.$store.dispatch('generalMessage/setMessage', 'Event Updated.')
         }
+        // maybe retrieve again the event to get the latest change with loaded relationship
       } catch (error) {
         const message = get(error, 'response.data.message', error.message)
         this.$store.dispatch('generalErrorMessages/setErrors', message)
@@ -489,7 +508,7 @@ export default {
     viewDetails (store) {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/stores/' + store.uuid })
     },
-    viewDocuments () {
+    viewCustomer () {
       this.$router.push({ path: '/admin/events/' + this.event.uuid + '/customers' })
     },
     backToList () {
@@ -515,7 +534,7 @@ export default {
       promises.push(vm.$store.dispatch('storeStatuses/getItems'))
       promises.push(vm.$store.dispatch('storeTypes/getItems'))
       promises.push(vm.$store.dispatch('events/stores/getItems', {
-        params: { eventId: id }
+        params: { id }
       }))
       await vm.$store.dispatch('eventHistories/setFilters', {
         event_uuid: id

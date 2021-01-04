@@ -1,7 +1,6 @@
 <?php
 
 use App\Enums\UserStatus;
-use App\Helpers\UserPermissions;
 use App\Http\Controllers\Auth\LoginController;
 use FreshinUp\FreshBusForms\Http\Controllers\Auth\PasswordsController;
 use FreshinUp\FreshBusForms\Http\Controllers\ConsumerController;
@@ -58,6 +57,6 @@ return [
         'policies' => 'policies'
     ],
     'helpers' => [
-        'user_permissions' => UserPermissions::class
+        'user_permissions' => App\Helpers\Permissions\UserPermissions::class
     ]
 ];

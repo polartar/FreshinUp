@@ -150,6 +150,13 @@ class Store extends Controller
     public function destroy($uuid)
     {
         $store = StoreModel::where('uuid', $uuid)->firstOrFail();
+        $events_count = $store->events->count();
+        if ($events_count > 0) {
+            return response()->json([
+                'message' => 'This Fleet Member is currently assigned to an Event,
+                please unassign it from the event first.'
+            ], 405);
+        }
         $store->delete();
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
@@ -249,6 +256,8 @@ class Store extends Controller
     {
         $store = StoreModel::where('uuid', $uuid)->firstOrFail();
         if (!$store->square_access_token) {
+            // TODO: not returning error because front end has trouble catching it
+            // this should be a 4xx
             return new JsonResource([]);
         }
         $client = new SquareClient([
@@ -259,9 +268,12 @@ class Store extends Controller
             $locationsApi = $client->getLocationsApi();
             $apiResponse = $locationsApi->listLocations();
             if (!$apiResponse->isSuccess()) {
-                return (new JsonResource($apiResponse->getErrors()))
-                    ->toResponse($request)
-                    ->setStatusCode(400);
+                return new JsonResource([]);
+                // TODO: not returning error because front end has trouble catching it
+                // this should be a 4xx
+                // return (new JsonResource($apiResponse->getErrors()))
+                //    ->toResponse($request)
+                //    ->setStatusCode(400);
             }
 
             // expected output []{ square_id: string, name: string }

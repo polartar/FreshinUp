@@ -202,6 +202,7 @@
                 without-servings
                 :is-loading="menuItemLoading"
                 :value="menuItem"
+                :validation-rules="menuItemValidationRules"
                 @input="createOrUpdateMenuItem"
                 @cancel="menuItemDialog = false"
               />
@@ -389,6 +390,10 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('menuItemPermissions', {
+      menuItemValidationRules: 'validationRules'
+    }),
+
     ...mapGetters('storeAreas', {
       areas: 'items',
       storeAreaPagination: 'pagination',
@@ -606,7 +611,11 @@ export default {
           this.$store.dispatch('storeAreas/getItems')
         })
         .catch(error => {
-          const message = get(error, 'response.data.message', error.message)
+          let message = get(error, 'response.data.message', error.message)
+          const status = get(error, 'response.status')
+          if (status === 422) {
+            message = 'Please fill in all the input fields'
+          }
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
@@ -811,6 +820,7 @@ export default {
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
     promises.push(vm.$store.dispatch('paymentStatuses/getItems'))
+    promises.push(vm.$store.dispatch('menuItemPermissions/getItems'))
 
     if (!SQUARE_APP_ID) {
       vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')

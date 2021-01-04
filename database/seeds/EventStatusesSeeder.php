@@ -15,7 +15,6 @@ class EventStatusesSeeder extends Seeder
     public function run()
     {
         $statuses = EventStatusEmums::toKeyedSelectArray();
-
         foreach($statuses as $id => $name) {
             EventStatus::updateOrCreate(
                 ['id' => $id],

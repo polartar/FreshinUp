@@ -16,7 +16,7 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
-      Area address
+      Area Name
     
       </div>
        
@@ -33,7 +33,8 @@ exports[`components/fleet-members/AreaForm Snapshots Default 1`] = `
               class="v-text-field__slot"
             >
               <input
-                placeholder="Enter an address"
+                data-vv-name="name"
+                placeholder="Enter the area name"
                 type="text"
               />
             </div>
@@ -228,7 +229,7 @@ exports[`components/fleet-members/AreaForm Snapshots Loading 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
-      Area address
+      Area Name
     
       </div>
        
@@ -245,7 +246,8 @@ exports[`components/fleet-members/AreaForm Snapshots Loading 1`] = `
               class="v-text-field__slot"
             >
               <input
-                placeholder="Enter an address"
+                data-vv-name="name"
+                placeholder="Enter the area name"
                 type="text"
               />
             </div>
@@ -445,7 +447,7 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
         class="mb-2 text-uppercase grey--text font-weight-bold"
       >
         
-      Area address
+      Area Name
     
       </div>
        
@@ -462,7 +464,8 @@ exports[`components/fleet-members/AreaForm Snapshots WithData 1`] = `
               class="v-text-field__slot"
             >
               <input
-                placeholder="Enter an address"
+                data-vv-name="name"
+                placeholder="Enter the area name"
                 type="text"
               />
             </div>

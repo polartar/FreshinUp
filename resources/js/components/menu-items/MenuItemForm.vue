@@ -9,7 +9,7 @@
     />
     <v-layout>
       <v-flex
-        v-if="!withoutServings ? 'xs8': 'xs10'"
+        :class="!withoutServings ? 'xs8': 'xs10'"
         px-2
       >
         <div class="mb-2 text-uppercase grey--text font-weight-bold">
@@ -17,6 +17,9 @@
         </div>
         <v-text-field
           v-model="title"
+          v-validate="validationRules.title"
+          :error-messages="errors.collect('title')"
+          data-vv-name="title"
           background-color="white"
           placeholder="Enter menu item title"
           single-line
@@ -33,6 +36,7 @@
         </div>
         <v-text-field
           v-model="servings"
+          v-validate="validationRules.servings"
           background-color="white"
           single-line
           outline
@@ -47,6 +51,9 @@
         </div>
         <v-text-field
           v-model="cost"
+          v-validate="validationRules.cost"
+          :error-messages="errors.collect('cost')"
+          data-vv-name="cost"
           background-color="white"
           single-line
           outline
@@ -63,6 +70,9 @@
         </div>
         <v-textarea
           v-model="description"
+          v-validate="validationRules.description"
+          :error-messages="errors.collect('description')"
+          data-vv-name="description"
           background-color="white"
           single-line
           outline
@@ -82,7 +92,7 @@
         depressed
         :loading="isLoading"
         color="primary"
-        @click="save"
+        @click="whenValid(save)"
       >
         Save
       </v-btn>
@@ -92,6 +102,8 @@
 
 <script>
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import FieldMeta from '@freshinup/core-ui/src/mixins/FieldMeta'
+import Validate from 'fresh-bus/components/mixins/Validate'
 
 export const DEFAULT_MENU_ITEM = {
   uuid: '',
@@ -110,7 +122,7 @@ export const DEFAULT_MENU_ITEM = {
  * @property {Number} cost
  */
 export default {
-  mixins: [MapValueKeysToData],
+  mixins: [MapValueKeysToData, Validate, FieldMeta],
   props: {
     // overriding value prop from mixin to set default value
     value: { type: Object, default: () => DEFAULT_MENU_ITEM },

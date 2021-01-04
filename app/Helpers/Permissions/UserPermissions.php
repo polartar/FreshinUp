@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Helpers\Permissions;
 
 use FreshinUp\FreshBusForms\Helpers\UserPermissions as BusUserPermissions;
 

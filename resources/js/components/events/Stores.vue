@@ -39,9 +39,6 @@
               :statuses="statuses"
               v-bind="$attrs"
               v-on="$listeners"
-              @manage-view="viewDetails"
-              @manage-unassign="unassign"
-              @manage-multiple-unassign="multipleUnassign"
             />
           </v-flex>
         </v-layout>
@@ -69,21 +66,8 @@ export default {
       this.$emit('manage-create')
       this.$emit('manage', 'create')
     },
-    viewItem (item) {
-      this.$emit('manage', 'view', item)
-      this.$emit('manage-view', item)
-    },
     filterStores (params) {
       this.$emit('filter-stores', params)
-    },
-    viewDetails (params) {
-      this.$emit('manage-view-details', params)
-    },
-    unassign (params) {
-      this.$emit('manage-unassign', params)
-    },
-    multipleUnassign (params) {
-      this.$emit('manage-multiple-unassign', params)
     }
   }
 }

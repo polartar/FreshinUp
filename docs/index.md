@@ -1,5 +1,12 @@
+## Jan 4, 2021
+- **MOD** Menu error snackbar is not clear [614](http s://github.com/FreshinUp/foodfleet/issues/614)
+- **MOD** Make throttle limit customizable via env variable. Increase throttle limit for API from 60 to 120 on stage server [697](https://github.com/FreshinUp/foodfleet/issues/697)
+
+<br/>
+
 ## Jan 2, 2021
 - **FIX** Display snackbar instead of redirecting [620](https://github.com/FreshinUp/foodfleet/issues/620)
+- **FIX** Menu error snackbar is not clear [614](https://github.com/FreshinUp/foodfleet/issues/614)
 
 <br/>
 

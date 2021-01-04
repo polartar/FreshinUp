@@ -34,6 +34,9 @@
             </div>
             <v-text-field
               v-model="name"
+              v-validate="'required'"
+              :error-messages="errors.collect('name')"
+              data-vv-name="name"
               placeholder="Name"
               single-line
               outline
@@ -395,7 +398,7 @@
           :loading="loading"
           depressed
           color="primary"
-          @click="save"
+          @click="whenValid(save)"
         >
           {{ editing ? 'Save changes' : 'Submit' }}
         </v-btn>
@@ -422,6 +425,7 @@ import pick from 'lodash/pick'
 import keys from 'lodash/keys'
 import get from 'lodash/get'
 import MapValueKeysToData from '../../mixins/MapValueKeysToData'
+import Validate from 'fresh-bus/components/mixins/Validate'
 
 export const DEFAULT_STORE = {
   name: '',
@@ -444,7 +448,7 @@ export const DEFAULT_IMAGE = 'https://via.placeholder.com/800x600.png'
 
 export default {
   components: { FAutocomplete, Simple },
-  mixins: [MapValueKeysToData],
+  mixins: [MapValueKeysToData, Validate],
   props: {
     loading: { type: Boolean, default: false },
     types: { type: Array, default: () => [] },
