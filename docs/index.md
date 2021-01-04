@@ -1,5 +1,5 @@
 ## Jan 4, 2021
-- **MOD** Make throttle limit customizeable via env variable. Increase throttle limit for API from 60 to 120 on stage server [620](https://github.com/FreshinUp/foodfleet/issues/620)
+- **MOD** Make throttle limit customizable via env variable. Increase throttle limit for API from 60 to 120 on stage server [697](https://github.com/FreshinUp/foodfleet/issues/697)
 
 <br/>
 
