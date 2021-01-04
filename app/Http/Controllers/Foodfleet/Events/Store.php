@@ -63,7 +63,10 @@ class Store extends Controller
             'store_uuid' => $storeUuid,
             'event_uuid' => $event->uuid
         ]);
-        return response(new EventResource($event), 201);
+        // TODO: until we know a nicer way to return the data
+        return response()->json([
+            'data' => new EventResource($event),
+        ], 201);
     }
 
     public function destroy(Request $request, $eventUuid, $storeUuid)
@@ -75,6 +78,9 @@ class Store extends Controller
                 'event_uuid' => $event->uuid
             ])
             ->delete();
-        return response(new EventResource($event), 204);
+        // TODO: until we know a nicer way to return the data
+        return response()->json([
+            'data' => new EventResource($event),
+        ], 204);
     }
 }

@@ -119,7 +119,8 @@ class MenuItemTest extends TestCase
             'title' => 'create menu title test',
             'servings' => 5,
             'cost' => 123,
-            'description' => 'This is special food for you'
+            'description' => 'This is special food for you',
+            'store_uuid' => $store->uuid
         ];
         $data = $this
             ->json('PUT', 'api/foodfleet/menu-items/' . $item->uuid, $payload)
@@ -135,6 +136,7 @@ class MenuItemTest extends TestCase
         $this->assertEquals($payload['cost'], $item->cost);
         $this->assertEquals($store->uuid, $item->store_uuid);
     }
+
     public function testDeleteItem()
     {
         $user = factory(User::class)->create();
