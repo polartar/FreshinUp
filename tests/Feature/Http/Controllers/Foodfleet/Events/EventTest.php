@@ -973,57 +973,35 @@ class EventTest extends TestCase
 
     public function testUpdateItem()
     {
-        $user = factory(User::class)->create();
+        $event = factory(Event::class)->create();
 
+        $user = factory(User::class)->create();
         Passport::actingAs($user);
 
-        $company = factory(Company::class)->create();
-        $location = factory(Location::class)->create();
-        $venue = factory(Venue::class)->create();
+        $payload = factory(Event::class)->make()->toArray();
         $eventTag = factory(EventTag::class)->create();
-
-        $user2 = factory(User::class)->create();
-        $company2 = factory(Company::class)->create();
-        $location2 = factory(Location::class)->create();
-        $venue2 = factory(Venue::class)->create();
         $eventTag2 = factory(EventTag::class)->create();
-
-        $event = factory(Event::class)->create([
-            'status_id' => 1,
-            'manager_uuid' => $user->uuid,
-            'host_uuid' => $company->uuid,
-            'location_uuid' => $location->uuid,
-            'venue_uuid' => $venue->uuid
-        ]);
-
+        $payload['event_tags'] = [
+            [
+                'uuid' => $eventTag2->uuid
+            ]
+        ];
         $event->eventTags()->save($eventTag);
 
         $data = $this
-            ->json('PUT', 'api/foodfleet/events/'.$event->uuid, [
-                'name' => 'test event',
-                'manager_uuid' => $user2->uuid,
-                'host_uuid' => $company2->uuid,
-                'location_uuid' => $location2->uuid,
-                'venue_uuid' => $venue2->uuid,
-                'event_tags' => [$eventTag2->name],
-                'status_id' => 2
-            ])
+            ->json('PUT', 'api/foodfleet/events/'.$event->uuid, $payload)
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/events/'.$event->uuid.'?include=manager,host,location,event_tags,venue';
-        $returnedEvent = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
+        $event->refresh();
 
-        $this->assertEquals('test event', $returnedEvent['name']);
-        $this->assertEquals(2, $returnedEvent['status_id']);
-        $this->assertEquals($user2->uuid, $returnedEvent['manager']['uuid']);
-        $this->assertEquals($company2->uuid, $returnedEvent['host']['uuid']);
-        $this->assertEquals($location2->uuid, $returnedEvent['location']['uuid']);
-        $this->assertEquals($eventTag2->uuid, $returnedEvent['event_tags'][0]['uuid']);
-        $this->assertEquals($eventTag2->name, $returnedEvent['event_tags'][0]['name']);
-        $this->assertEquals($venue2->uuid, $returnedEvent['venue']['uuid']);
+        $this->assertEquals($data['name'], $event->name);
+        $this->assertEquals($data['manager_uuid'], $event->manager_uuid);
+        $this->assertEquals($data['host_uuid'], $event->host_uuid);
+        $this->assertEquals($data['location_uuid'], $event->location_uuid);
+        $this->assertEquals($data['venue_uuid'], $event->venue_uuid);
+        $this->assertEquals($data['status_id'], $event->status_id);
+        $this->assertEquals(1, $event->eventTags()->where('uuid', $eventTag2->uuid)->count());
     }
 
     public function testUpdateItemWithSchedule()

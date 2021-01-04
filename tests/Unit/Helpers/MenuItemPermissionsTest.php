@@ -39,13 +39,15 @@ class MenuItemPermissionsTest extends \Tests\TestCase
                 'label' => 'Cost',
                 'rules' => [
                     'required',
-                    'integer',
+                    'numeric',
+                    'gt:0',
                 ],
                 'readonly' => false
             ],
             'description' => [
                 'label' => 'Description',
                 'rules' => [
+                    'nullable',
                     'string',
                 ],
                 'readonly' => false
