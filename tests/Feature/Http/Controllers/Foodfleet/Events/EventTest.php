@@ -981,7 +981,11 @@ class EventTest extends TestCase
         $payload = factory(Event::class)->make()->toArray();
         $eventTag = factory(EventTag::class)->create();
         $eventTag2 = factory(EventTag::class)->create();
-        $payload['tags'] = [$eventTag2];
+        $payload['event_tags'] = [
+            [
+                'uuid' => $eventTag2->uuid
+            ]
+        ];
         $event->eventTags()->save($eventTag);
 
         $data = $this
