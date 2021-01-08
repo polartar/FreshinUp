@@ -1,8 +1,9 @@
 <template>
-  <div
+  <v-container
     v-if="!isLoading"
-    class="px-4 py-2"
-    :class="`fresh-company__edit fresh-company__edit--${company ? company.status : ''}`"
+    fluid
+    fill-height
+    justify-space-between
   >
     <v-layout column>
       <h3 class="f-page__title f-page__title--admin">
@@ -40,7 +41,7 @@
                             item-text="name"
                             item-value="id"
                             label="Status"
-                            :disabled="!isAdmin"
+                            :disabled="disableStatus"
                           >
                             <template
                               slot="selection"
@@ -71,24 +72,7 @@
                             label="Name"
                           />
                         </v-flex>
-                        <v-flex
-                          v-if="!isNew"
-                          md6
-                          sm12
-                        >
-                          <div>
-                            Member Since: <code>{{ dateFormatted(company.created_at) }}</code>
-                          </div>
-                        </v-flex>
-                        <v-flex
-                          v-if="!isNew"
-                          md6
-                          sm12
-                        >
-                          <div class="text-lg-right text-md-right">
-                            Members: {{ company.members_count }}
-                          </div>
-                        </v-flex>
+                         
                         <v-flex
                           md12
                           sm12
@@ -245,7 +229,6 @@
         </v-flex>
       </v-layout>
       <v-dialog
-        v-if="company"
         v-model="isAdminSelectDialogOpen"
         max-width="400"
       >
@@ -268,12 +251,12 @@
               >
                 <v-avatar size="24">
                   <img
-                    :src="get(data, 'item.avatar')"
-                    :alt="get(data, 'item.name')"
+                    :src="data.item.avatar"
+                    :alt="data.item.name"
                   >
                 </v-avatar>
                 <div class="pl-1">
-                  {{ get(data, 'item.name') }}
+                  {{ data.item.name }}
                 </div>
               </template>
             </v-select>
@@ -311,224 +294,115 @@
         </v-card>
       </v-dialog>
     </v-layout>
-    <v-layout
-      v-if="companyId && company "
-      column
-    >
-      <v-flex class="pt-4">
-        <v-card
-          class="mb-5"
-        >
-          <v-card-title>
-            <h3>Company Members</h3>
-          </v-card-title>
-
-          <v-divider />
-
-          <v-alert
-            :value="true"
-            color="warning"
-            icon="warning"
-          >
-            Coming soon
-          </v-alert>
-          <!-- Commented out for now
-          <user-filter
-            v-if="!isLoading"
-            :sortables="sortables"
-            @runFilter="filterUsers"
-          />
-          <user-list
-            v-if="!isLoading"
-            :users="users"
-            :levels="userlevels"
-            :statuses="userstatuses"
-            :is-loading="isLoading || isLoadingList"
-            :rows-per-page="pagination.rowsPerPage"
-            :page="pagination.page"
-            :total-items="pagination.totalItems"
-            :sort-by="sorting.sortBy"
-            :descending="sorting.descending"
-            :headers="headers"
-            :item-actions="itemActions"
-            class="users-list"
-            must-sort
-            @paginate="onUsersPaginate"
-            @change-status="changeStatus"
-            @change-level="changeLevel"
-            @manage-teams="showUserTeamsAssigner"
-            @manage-view="userView"
-            @manage-edit="userEdit"
-            @manage-delete="deleteUser"
-            @manage-multiple-delete="deleteMultiple"
-          />
-          -->
-        </v-card>
-      </v-flex>
-
-      <v-flex
-        v-if="isCustomer"
-        class="pt-4"
-      >
-        <v-card
-          class="mb-5"
-        >
-          <v-card-title>
-            <h3>Company Venues</h3>
-          </v-card-title>
-
-          <v-divider />
-
-          <v-alert
-            :value="true"
-            color="warning"
-            icon="warning"
-          >
-            Coming soon
-          </v-alert>
-        </v-card>
-      </v-flex>
-
-      <v-flex
-        v-if="isSupplier"
-        class="pt-4"
-      >
-        <v-card
-          class="mb-5"
-        >
-          <v-card-title>
-            <h3>Company Fleet</h3>
-          </v-card-title>
-
-          <v-divider />
-
-          <v-alert
-            :value="true"
-            color="warning"
-            icon="warning"
-          >
-            Coming soon
-          </v-alert>
-        </v-card>
-      </v-flex>
-
-      <v-flex class="pt-4">
-        <v-card>
-          <v-card-title>
-            <h3>Company Events</h3>
-          </v-card-title>
-
-          <v-divider />
-
-          <v-alert
-            :value="true"
-            color="warning"
-            icon="warning"
-          >
-            Coming soon
-          </v-alert>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </div>
+  </v-container>
 </template>
-<script>
 
-import CreateUpdate from './BusCreateUpdate.vue'
+<script>
+import { mapActions, mapGetters } from 'vuex'
+import { createHelpers } from 'vuex-map-fields'
+import moment from 'moment'
+import ImageUploader from 'fresh-bus/components/ImageUploader'
+import ManagedBy from './ManagedBy'
+
+const { mapFields } = createHelpers({
+  getterType: 'getField',
+  mutationType: 'updateField'
+})
 
 export default {
-  extends: BusCreateUpdate,
-  mixins: [UsersPage],
+  layout: 'admin',
+  $_veeValidate: {
+    validator: 'new'
+  },
+  beforeRouteEnterOrUpdate (vm, to, from, next) {
+    vm.setPageLoading(true)
+    const id = to.params.id || 'new'
+    Promise.all([
+      vm.$store.dispatch('companies/getItem', { params: { id, include: 'admin,users' } })
+    ]).then(() => {
+      vm.setPageLoading(false)
+      if (next) next()
+    })
+  },
+  components: {
+    ImageUploader,
+    ManagedBy
+  },
   data () {
     return {
-      companyId: null
+      isNew: false,
+      isValid: true,
+      isDeleteDialogOpen: false,
+      isAdminSelectDialogOpen: false,
+      disableStatus: false
     }
   },
   computed: {
-    isNew () {
-      return get(this.$route, 'params.id', 'new') === 'new'
+    id () {
+      return this.$store.getters['companies/item'].id
     },
-    ...mapGetters('currentUser', {
-      isAdmin: 'isAdmin'
-    }),
     ...mapGetters('companies', {
       company: 'item'
     }),
-    ...mapGetters('companyDetails/users', {
-      users: 'items',
-      pagination: 'pagination',
-      sorting: 'sorting',
-      sortBy: 'sortBy'
-    }),
-    // TODO: replace with backend implementation
-    isSupplier () {
-      return this.company.company_types.reduce((result, type) => {
-        return result || (type.key_id === 'supplier')
-      }, false)
-    },
-    isCustomer () {
-      return this.company.company_types.reduce((result, type) => {
-        return result || (type.key_id === 'host')
-      }, false)
-    }
+    ...mapGetters('companies', [
+      'statuses',
+      'types'
+    ]),
+    ...mapFields('companies', [
+      'name',
+      'status',
+      'company_types',
+      'address',
+      'address2',
+      'city',
+      'state',
+      'notes',
+      'zip',
+      'website',
+      'logo',
+      'admin'
+    ]),
+    ...mapGetters('page', ['isLoading'])
   },
-
   methods: {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
-    get,
-    onUsersPaginate (value) {
-      this.$store.dispatch('companyDetails/users/setPagination', value)
-      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
-    },
-    filterUsers (params) {
-      this.lastFilterParams = params
-      this.$store.dispatch('companyDetails/users/setSort', params.sort)
-      this.$store.dispatch('companyDetails/users/setFilters', {
-        ...this.$route.query,
-        ...this.lastFilterParams
-      })
-      this.$store.dispatch('companyDetails/users/getItems', { params: { companyId: this.companyId } })
-    }
-  },
-
-  beforeRouteEnterOrUpdate (vm, to, from, next) {
-    vm.companyId = to.params.id
-    BusCreateUpdate.beforeRouteEnterOrUpdate(vm, to, from, () => {
-      if (!vm.companyId) {
-        return next && next()
-      }
-      Promise.all([
-        vm.$store.dispatch('companyDetails/users/getItems', {
-          params: {
-            companyId: vm.companyId
-          }
-        }),
-        vm.$store.dispatch('userLevels/getItems'),
-        vm.$store.dispatch('userStatuses/getItems')
-      ])
-        .then()
-        .catch(console.error)
+    deleteItem () {
+      this.$store.dispatch('companies/deleteItem', { params: { id: this.id } })
         .then(() => {
-          vm.$store.dispatch('page/setLoading', false)
-          next && next()
+          this.$router.push('/admin/companies/')
         })
-    })
+    },
+    onAdminChange (value) {
+      this.isAdminSelectDialogOpen = false
+      this.admin = value
+    },
+    logoChanged (image) {
+      this.logo = image
+    },
+    logoRemoved () {
+      this.logo = null
+    },
+    onSaveClick () {
+      let data = {
+        ...this.company
+      }
+      if (this.isNew) {
+        this.$store.dispatch('companies/createItem', { data }).then((result) => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          this.$router.push(`/admin/companies/${result.data.data.id}`)
+        })
+      } else {
+        this.$store.dispatch('companies/updateItem', { data, params: { id: data.id } }).then(() => {
+          this.$store.dispatch('generalMessage/setMessage', 'Saved')
+          this.$store.dispatch('companies/getItem', { params: { id: data.id, include: 'admin,users' } })
+        })
+      }
+    },
+    dateFormatted (date) {
+      return date && date !== 'Invalid date' ? moment(date).format('YYYY-MM-DD') : null
+    }
   }
 }
 </script>
-
-<style lang="scss">
-  .fresh-company__edit--1 .v-select__selections {
-    color: #71b179 !important;
-  }
-
-  .fresh-company__edit--4 .v-select__selections {
-    color: #f9ad36 !important;
-  }
-
-  .fresh-company__edit--3 .v-select__selections {
-    color: #888888 !important;
-  }
-</style>

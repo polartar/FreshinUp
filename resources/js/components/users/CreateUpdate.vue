@@ -152,10 +152,10 @@ export default {
     promises.push(vm.$store.dispatch('userTypes/getItems'))
     promises.push(vm.$store.dispatch('companyTypes/getItems'))
     promises.push(vm.$store.dispatch('companyStatuses/getItems'))
-    promises.push(vm.$store.dispatch('userStatuses/getItems'))
-    if (id !== 'new') {
-      vm.$store.dispatch('users/getItem',
-        { params: {
+
+  if (id && id !== 'new') {
+      promises.push(vm.$store.dispatch('users/getItem', {
+        params: {
           id,
           include: USER_INCLUDES
         }

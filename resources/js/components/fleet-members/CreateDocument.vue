@@ -97,7 +97,6 @@
               item-value="uuid"
               data-vv-name="template_uuid"
               label="Document Template"
-              @input="changeTemplate"
             />
           </v-flex>
           <v-flex
@@ -173,7 +172,7 @@
               {{ createdAt }} by {{ ownerName }}
             </div>
           </v-flex>
-          <v-flex
+          <!-- <v-flex
             xs12
           >
             <h4
@@ -187,7 +186,7 @@
               @assign-change="selectAssigned"
               @type-change="changeAssignedType"
             />
-          </v-flex>
+          </v-flex> -->
           <v-flex
             xs12
           >
@@ -221,6 +220,7 @@
               >
                 <v-btn
                   block
+                  :disabled="downloadable"
                   @click="previewOrDownload"
                 >
                   {{ previewOrDownloadLabel }}
@@ -244,6 +244,19 @@
         </v-layout>
       </v-card>
     </v-flex>
+    <v-dialog
+      v-model="previewDialog"
+      max-width="1200"
+    >
+      <document-preview
+        :value="value"
+        :templates="templates"
+        :events="events"
+        :is-loading="documentLoading"
+        @accept-contract="acceptContract"
+        @close="previewDialog=false"
+      />
+    </v-dialog>
   </v-layout>
 </template>
 <script>
@@ -255,7 +268,8 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
 import AssignedSearch from '~/components/docs/AssignedSearch.vue'
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
-
+import { mapGetters, mapActions } from 'vuex'
+import DocumentPreview from '~/components/docs/DocumentPreview.vue'
 export const DEFAULT_DOCUMENT = {
   uuid: null,
   title: null,
@@ -270,7 +284,7 @@ export const DEFAULT_DOCUMENT = {
   created_at: null,
   assigned: null,
   assigned_uuid: null,
-  assigned_type: 1,
+  assigned_type: 2,
   expiration_at: null,
   event_store_uuid: null
 }
@@ -288,7 +302,8 @@ export default {
   components: {
     FileUploader,
     VueCtkDateTimePicker,
-    AssignedSearch
+    AssignedSearch,
+    DocumentPreview
   },
   mixins: [Validate, FormatDate, MapValueKeysToData],
   props: {
@@ -300,10 +315,14 @@ export default {
   },
   data () {
     return {
-      ...DEFAULT_DOCUMENT
+      ...DEFAULT_DOCUMENT,
+       previewDialog: false,
+       documentLoading:false
     }
   },
   computed: {
+    ...mapGetters(['currentUser']),
+     ...mapGetters('events', { events: 'items' }),
     submitLabel () {
       return this.isNew ? 'Submit' : 'Save changes'
     },
@@ -325,28 +344,42 @@ export default {
       return !get(this.value, 'uuid')
     }
   },
+  mounted(){
+    this.assigned_uuid = this.currentUser.uuid;
+    this.event_store_uuid = this.currentUser.event_store_uuid
+    this.assigned = this.currentUser;
+  },
   methods: {
+       acceptContract () {
+      this.documentLoading = true
+      this.$store.dispatch('documents/acceptContract', { params: { id: this.$route.params.id } })
+        .then(() => {
+          this.previewDialog = false
+          this.$store.dispatch('generalMessage/setMessage', 'Contract accepted.')
+        })
+        .catch(error => {
+          const message = get(error, 'response.data.message', error.message)
+          this.$store.dispatch('generalErrorMessages/setErrors', message)
+        })
+        .then(() => {
+          this.documentLoading = false
+        })
+    },
     previewOrDownload () {
       return this.downloadable ? this.download() : this.preview()
     },
     download () {
-      this.$emit('download')
+      //Todo download
     },
     preview () {
-      this.$emit('preview', this.template_uuid)
+      // this.$emit('preview')
+      this.previewDialog = true;
     },
     cancel () {
       this.$emit('cancel')
     },
-    selectAssigned (assigned) {
-      this.assigned_uuid = assigned.uuid
-      this.event_store_uuid = assigned.event_store_uuid
-    },
     changeAssignedType (value) {
       this.assigned_type = value
-    },
-    changeTemplate (template) {
-      this.$emit('selectTemplate', template)
     }
   }
 }

@@ -5369,6 +5369,10 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                 <div
                   class="flex xs4 ml-2 layout justify-end"
                 >
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
                   <button
                     class="mx-1 v-btn v-btn--disabled theme--light primary--text"
                     disabled="disabled"
@@ -5398,6 +5402,12 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
 
                     </div>
                   </button>
+<<<<<<< HEAD
+=======
+=======
+                  <!---->
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
                 </div>
               </div>
 
@@ -5436,6 +5446,10 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
 
 
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
 
                 <div
                   class="flex body-2 text-xs-right sm3"
@@ -5444,6 +5458,13 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
           Expiration Date: 10 / 09 / 2019
 
                 </div>
+<<<<<<< HEAD
+=======
+=======
+                 
+                <!---->
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
               </div>
 
               <hr
@@ -5536,9 +5557,21 @@ exports[`components/docs/CreateUpdate Mount mount edit page 1`] = `
                     <div
                       class="body-1 mt-2"
                     >
+<<<<<<< HEAD
 
               Restaurant Owner Name: eligendi
 
+=======
+<<<<<<< HEAD
+
+              Restaurant Owner Name: eligendi
+
+=======
+                      
+              Restaurant Owner Name: 
+            
+>>>>>>> 653965ed6f7d2d684ffa4c5ef2fd3f0981f76b93
+>>>>>>> 817d574119519388f1b7fbe710f0e0b5a6c1135e
                     </div>
                   </div>
 
