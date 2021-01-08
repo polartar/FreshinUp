@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Enums\UserStatus;
+use App\Enums\UserType;
 use App\Http\Controllers\Controller;
 use App\User;
 use FreshinUp\FreshBusForms\Enums\UserLevel;
@@ -14,12 +15,18 @@ class Users extends Controller
     public function storeCustomerOrSupplier(Request $request)
     {
         // sending all because action is filtering payload
+        if (!$request->has('type')) {
+            $request->merge([
+                'type' => UserType::CUSTOMER
+            ]);
+        }
         $rules = [
             'email' => 'required|email',
             'first_name' => 'required',
             'last_name' => 'required',
             'mobile_phone' => 'sometimes',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
+            'type' => 'required|in:' . implode(',', [UserType::CUSTOMER, UserType::SUPPLIER])
         ];
         $this->validate($request, $rules);
         $payload = $request->only(array_keys($rules));

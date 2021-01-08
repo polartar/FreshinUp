@@ -20,7 +20,7 @@
           <img :src="logo">
         </div>
         <navigation-drawer-list
-          :items="items"
+          :items="drawerItems"
           :no-actions="navDrawerNoActions"
         />
       </v-navigation-drawer>
@@ -172,6 +172,7 @@ import FreshBusFooter from 'fresh-bus/components/Footer.vue'
 import FUserMenu from '@freshinup/core-ui/src/components/FUserMenu'
 import FUserAvatar from '@freshinup/core-ui/src/components/FUserAvatar'
 import { USER_TYPE } from '../store/modules/userTypes'
+import { SUPPLIER_ITEMS, SUPPLIER_USER_MENU_ITEMS } from '../store/modules/navigation'
 
 const generalErrorMessageFields = createHelpers({
   getterType: 'generalErrorMessages/getField',
@@ -213,7 +214,7 @@ export default {
       isMessageVisible: 'isVisible'
     }),
     ...mapState('navigation', {
-      items: 'drawerItems',
+      drawerItems: 'drawerItems',
       logo: 'logo',
       userMenuItems: 'userMenuItems'
     }),
@@ -255,10 +256,21 @@ export default {
   },
   watch: {
     '$store.getters.currentUser' (authUser) {
+      // TODO: ultimately this should be call in method currentUser/getCurrentUser
+      const isAdmin = authUser.has_admin_access
+      if (isAdmin) {
+        // TODO: should set admin menus
+        console.warn('auth user has admin access so aborting...')
+        return false
+      }
       if (authUser.type === USER_TYPE.SUPPLIER) {
-        this.$store.dispatch('navigation/setUserMenuItems', [
-          { title: 'My Profile', to: { name: 'myprofile' } }
-        ])
+        this.$store.dispatch('navigation/setUserMenuItems', SUPPLIER_USER_MENU_ITEMS)
+        this.$store.dispatch('navigation/setDrawerItems', SUPPLIER_ITEMS)
+      } else if (authUser.type === USER_TYPE.CUSTOMER) {
+
+      } else {
+        this.$store.dispatch('navigation/setUserMenuItems', [])
+        this.$store.dispatch('navigation/setDrawerItems', [])
       }
     }
   },

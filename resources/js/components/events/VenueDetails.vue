@@ -1,6 +1,6 @@
 <template>
   <v-card class="ff-venue_details">
-    <v-card-title class="font-weight-bold">
+    <v-card-title class="grey--text font-weight-bold text-uppercase">
       Venue Details
     </v-card-title>
     <v-divider />
@@ -26,9 +26,10 @@
               @clear="onVenueCleared"
             />
           </v-layout>
-          <v-select
-            :value="location.venue_uuid"
+          <v-autocomplete
+            v-model="location.venue_uuid"
             :items="venues"
+            placeholder="Search / Select Venue"
             item-text="name"
             item-value="uuid"
             single-line
@@ -52,10 +53,11 @@
               @clear="onLocationCleared"
             />
           </v-layout>
-          <v-select
-            :value="location.uuid"
+          <v-autocomplete
+            v-model="location.uuid"
             :disabled="!location.venue_uuid"
             :items="selectedVenueLocations"
+            placeholder="Search / Select Location"
             item-text="name"
             item-value="uuid"
             single-line
@@ -191,6 +193,7 @@
 import ClearButton from '../ClearButton'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
+
 export const DEFAULT_LOCATION = {
   uuid: '',
   name: '',

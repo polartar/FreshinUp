@@ -23,8 +23,6 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::apiResource('document-types', 'Foodfleet\DocumentTypes');
     Route::apiResource('document/template/statuses', 'Foodfleet\Document\Template\Statuses')
         ->only('index');
-    Route::apiResource('document/template/types', 'Foodfleet\Document\Template\Types')
-        ->only('index');
     Route::apiResource('document/templates', 'Foodfleet\Document\Template\Templates')
         ->only('index', 'show', 'store', 'update', 'destroy');
     Route::apiResource('documents', 'Foodfleet\Documents');
@@ -35,17 +33,20 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::get('events/new', 'Foodfleet\Events\Events@showNewRecommendation');
     Route::get('events/{event}/stores', 'Foodfleet\Events\Store@index');
+    Route::post('events/{event}/stores/{store}', 'Foodfleet\Events\Store@store');
+    Route::delete('events/{event}/stores/{store}', 'Foodfleet\Events\Store@destroy');
     Route::get('event-summary/{uuid}', 'Foodfleet\Events\Events@summary');
-    Route::apiResource('events', 'Foodfleet\Events\Events');
     Route::post('/events/{uuid}/duplicate', 'Foodfleet\Events\Events@duplicate');
+    Route::apiResource('events', 'Foodfleet\Events\Events');
     Route::get('event-tags', 'Foodfleet\EventTags@index');
     Route::get('event-statuses', 'Foodfleet\EventStatuses@index');
     Route::get('event/types', 'Foodfleet\EventType@index');
     Route::get('event/status/histories', 'Foodfleet\EventHistory@index');
 
     Route::get('stores/stats', 'Foodfleet\Store@stats');
-    Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/new', 'Foodfleet\Store@showNewRecommendation');
+    Route::get('stores/{uuid}/square-locations', 'Foodfleet\Store@locations');
+    Route::apiResource('stores', 'Foodfleet\Store');
     Route::get('stores/{uuid}/events', 'Foodfleet\Store@events');
     Route::get('store-statuses', 'Foodfleet\StoreStatuses@index');
     Route::get('store-tags', 'Foodfleet\StoreTags@index');
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
     Route::get('categories', 'Foodfleet\Categories@index');
     Route::get('customers', 'Foodfleet\Customers@index');
     Route::get('items', 'Foodfleet\Items@index');
+    Route::get('permissions/menu-items', 'Foodfleet\MenuItemPermissions@index');
 
 
     Route::get('location/categories', 'Foodfleet\LocationCategory@index');
@@ -87,10 +89,26 @@ Route::group(['prefix' => 'foodfleet', 'as' => 'api.foodfleet', "middleware" => 
 
     Route::apiResource('menu-items', 'Foodfleet\MenuItems');
 
-
-    Route::get('companies/{company}/square-locations', 'Foodfleet\Square@locations');
     Route::post('/squares/authorize', 'Foodfleet\Square@authorizeApp')
         ->name('square.authorize');
 
-    Route::post('/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
+
+    Route::get('suppliers/{uuid}/stores', 'Foodfleet\Suppliers@stores');
+    Route::get('suppliers/{uuid}/events', 'Foodfleet\Suppliers@events');
+    Route::get('suppliers/{uuid}/documents', 'Foodfleet\Suppliers@documents');
+    Route::get('suppliers/{uuid}/stores/stats', 'Foodfleet\Suppliers@stats');
+
+    // TODO: move to fresh-bus
+    // move store modules: companyStatuses, companyTypes
+    Route::get('company/types', 'Foodfleet\Companies\CompanyTypes@index');
+    Route::get('company/statuses', 'Foodfleet\Companies\CompanyStatuses@index');
+});
+
+// non auth routes
+Route::post('/foodfleet/users/customer-or-supplier', 'Foodfleet\Users@storeCustomerOrSupplier');
+Route::post('/password/reset', 'Auth\PasswordsController@reset');
+
+// overridden from fresh-bus
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/currentUser', 'Auth\AuthUser@currentUser');
 });

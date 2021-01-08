@@ -46,7 +46,7 @@ IF you are on staging:
 `https://connect.squareup(sandbox).com?client_id=$clientId`
 (if in dev)
 It is important that you're sign in to your square dashboard when try the authorization
-- the redirect url should be set to `$baseUrl/admin/contractor/check`. $baseUrl being your https server (use ngrok if needed) ie https://foodfleet.freshinup.com/admin/contractor/check, http://c5e152320a0b.ngrok.io/admin/contractor/check but not localhost
+- the redirect url should be set to `$baseUrl/admin/contractor/check` (ie `https://foodfleet.freshinup.com/admin/contractor/check`). $baseUrl being your https server (use ngrok if needed) ie https://foodfleet.freshinup.com/admin/contractor/check, http://c5e152320a0b.ngrok.io/admin/contractor/check but not localhost
 
 Login->fleet member detail page -> connect square -> callback -> redirect back
 
@@ -58,7 +58,7 @@ Login->fleet member detail page -> connect square -> callback -> redirect back
 ### Development Setup
 #### Requirements
 * Git (https://git-scm.com/downloads)
-* PHP 7.1+ (https://www.php.net/downloads.php)
+* PHP 7.3 (https://www.php.net/downloads.php)
 * Composer (https://getcomposer.org/download/)
 * Yarn (https://yarnpkg.com/en/docs/getting-started)
 * Node 8 (https://nodejs.org/en/download/)
@@ -70,6 +70,8 @@ $ cd foodfleet
 $ nvm install
 $ composer install
 $ php artisan foodfleet:install --dev
+$ # In case of login failed
+$ php artisan fresh-bus:install-auth
 $ yarn watch-poll
 ```
 
@@ -77,6 +79,16 @@ From this point on you'll most likely be executing this command
 ```bash
 $ php artisan fresh-bus:update --dev
 $ yarn watch-poll
+```
+
+### Additional steps if you're on windows
+```
+yarn global add @vue/cli
+php artisan foodlfeet:seed --quickstart
+php artisan fresh-bus:install-auth
+# restart your development server
+# then try login with demoadmin@example.com password: fresh123
+# if that's not working inspect your database 
 ```
 
 ## Media Library Configuration

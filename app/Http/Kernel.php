@@ -35,11 +35,12 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-
         'api' => [
-            'throttle:60,1',
+            // TODO use env variables RATE_LIMIT_AMOUNT and RATE_LIMIT_PERIOD
+            "throttle:180,1",
             'bindings',
         ],
+
     ];
 
     /**

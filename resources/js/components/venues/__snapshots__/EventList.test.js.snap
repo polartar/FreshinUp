@@ -3,7 +3,7 @@
 exports[`components/venues/EventList Snapshots Empty 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -427,7 +427,7 @@ exports[`components/venues/EventList Snapshots Empty 1`] = `
 exports[`components/venues/EventList Snapshots Loading 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -879,7 +879,7 @@ exports[`components/venues/EventList Snapshots Loading 1`] = `
 exports[`components/venues/EventList Snapshots Populated 1`] = `
 <div>
   <div
-    class="ui-datatable elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"

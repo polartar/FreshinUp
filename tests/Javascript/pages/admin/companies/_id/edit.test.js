@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import createStore from 'tests/createStore'
-import { FIXTURE_COMPANY } from 'tests/__data__/companies'
+import { FIXTURE_COMPANY, FIXTURE_COMPANY_RESPONSE } from 'tests/__data__/companies'
 import { FIXTURE_USERS_RESPONSE } from 'tests/__data__/users'
 import createLocalVue from 'vue-cli-plugin-freshinup-ui/utils/testing/createLocalVue'
 import Page from '~/pages/admin/companies/_id/edit.vue'
@@ -13,7 +13,7 @@ describe('Edit Company Page', () => {
     localVue = vue.localVue
     mock = vue.mock
     mock
-      .onGet('api/companies/1').reply(200, FIXTURE_COMPANY)
+      .onGet('api/companies/1').reply(200, FIXTURE_COMPANY_RESPONSE)
       .onGet('api/foodfleet/companies/1/members').reply(200, FIXTURE_USERS_RESPONSE)
       .onGet('api/userlevels').reply(200, { data: [] })
       .onGet('api/userstatuses').reply(200, { data: [] })
@@ -36,7 +36,7 @@ describe('Edit Company Page', () => {
       })
       Page.beforeRouteEnterOrUpdate(wrapper.vm, { params: { id: 1 } }, null, async () => {
         await wrapper.vm.$nextTick()
-        expect(wrapper.find('.fresh-company__edit').classes()).toContain(`fresh-company__edit--${FIXTURE_COMPANY.data.status}`)
+        expect(wrapper.find('.fresh-company__edit').classes()).toContain(`fresh-company__edit--${FIXTURE_COMPANY.status}`)
         expect(wrapper.element).toMatchSnapshot()
         done()
       })

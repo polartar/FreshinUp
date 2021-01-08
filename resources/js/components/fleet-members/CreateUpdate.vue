@@ -71,7 +71,7 @@
             @connect-square="onConnectSquare"
             @disconnect-square="onDisconnectSquare"
             @delete="deleteMember"
-            @cancel="onCancel"
+            @cancel="backToList"
           />
         </v-flex>
         <v-flex
@@ -202,6 +202,7 @@
                 without-servings
                 :is-loading="menuItemLoading"
                 :value="menuItem"
+                :validation-rules="menuItemValidationRules"
                 @input="createOrUpdateMenuItem"
                 @cancel="menuItemDialog = false"
               />
@@ -326,13 +327,13 @@ const DELETABLE_RESOURCE = {
   AREA: 'storeAreas'
 }
 
-const PAYMENT_INCLUDES = [
+export const PAYMENT_INCLUDES = [
   'status',
   'event'
 ]
 
-const SQUARE_APP_ID = process.env.SQUARE_APP_ID
-const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
+export const SQUARE_APP_ID = process.env.SQUARE_APP_ID
+export const SQUARE_ENVIRONMENT = process.env.SQUARE_ENVIRONMENT
 
 export default {
   layout: 'admin',
@@ -375,7 +376,6 @@ export default {
         return acc
       }, {}),
 
-      loading: false,
       sortables: [
         { value: '-created_at', text: 'Newest' },
         { value: 'created_at', text: 'Oldest' },
@@ -390,6 +390,10 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('menuItemPermissions', {
+      menuItemValidationRules: 'validationRules'
+    }),
+
     ...mapGetters('storeAreas', {
       areas: 'items',
       storeAreaPagination: 'pagination',
@@ -412,6 +416,10 @@ export default {
     ...mapGetters('eventStatuses', {
       eventStatuses: 'items'
     }),
+    ...mapGetters('stores', {
+      store_: 'item',
+      loading: 'itemLoading'
+    }),
     ...mapGetters('stores/events', {
       events: 'items',
       eventPagination: 'pagination',
@@ -426,7 +434,7 @@ export default {
     ...mapGetters('storeTypes', { storeTypes: 'items' }),
     ...mapGetters('documentStatuses', { documentStatuses: 'items' }),
     ...mapGetters('storeStatuses', { storeStatuses: 'items' }),
-    ...mapGetters('companies/squareLocations', { squareLocations: 'items' }),
+    ...mapGetters('stores/squareLocations', { squareLocations: 'items' }),
     ...mapFields('stores', [
       'status_id'
     ]),
@@ -471,7 +479,7 @@ export default {
     },
     store () {
       // This allow us to have the the object to have the wanted keys in case of creation
-      return Object.assign({}, DEFAULT_STORE, this.$store.getters['stores/item'])
+      return Object.assign({}, DEFAULT_STORE, this.store_)
     },
     isLoading () {
       return this.$store.getters['page/isLoading'] || this.fleetMemberLoading
@@ -484,27 +492,12 @@ export default {
       return Array.isArray(this.areas) ? this.areas : []
     }
   },
-  watch: {
-    '$store.getters.currentUser' (user) {
-      if (user && user.company_id) {
-        this.getSquareLocations(user.company_id)
-      }
-    }
-  },
   methods: {
     onViewDocument (document) {
       this.$router.push({ path: `/admin/docs/${document.uuid}` })
     },
     onPaymentManagePay (item) {},
     onPaymentManageRetry (item) {},
-    getSquareLocations (companyId) {
-      this.$store.dispatch('companies/squareLocations/getItems', {
-        params: {
-          companyId: companyId
-        }
-      })
-        .catch(error => console.error(error))
-    },
 
     // store
     async saveOrCreate (data) {
@@ -513,7 +506,7 @@ export default {
         if (this.isNew) {
           await this.$store.dispatch('stores/createItem', { data })
           await this.$store.dispatch('generalMessage/setMessage', 'Saved.')
-          this.$router.push({ path: '/admin/fleet-members' })
+          this.backToList()
         } else {
           await this.$store.dispatch('stores/updateItem', { data, params: { id: this.$route.params.id } })
           await this.$store.dispatch('generalMessage/setMessage', 'Modified.')
@@ -535,14 +528,11 @@ export default {
           const message = get(error, 'response.data.message', error.message)
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
-      this.$router.push({ path: '/admin/fleet-members' })
+      this.backToList()
     },
     onMenuItemManageView (item) {
       this.menuItem = Object.assign({}, DEFAULT_MENU_ITEM, item)
       this.menuItemDialog = true
-    },
-    onCancel () {
-      this.$router.push({ path: '/admin/fleet-members' })
     },
     backToList () {
       this.$router.push({ path: '/admin/fleet-members' })
@@ -581,10 +571,32 @@ export default {
       this.deletable[resource].temp = []
     },
     onConnectSquare () {
+      window.localStorage.setItem('store_uuid', this.$route.params.id)
       window.location = this.squareUrl
     },
     onDisconnectSquare () {
-      // TODO delay to a later time
+      this.$store.dispatch('stores/patchItem', {
+        params: {
+          id: this.$route.params.id
+        },
+        data: {
+          square_id: null,
+          square_access_token: null,
+          square_refresh_token: null
+        }
+      })
+        .then(() => {
+          this.getSquareLocations()
+        })
+        .catch(console.error)
+    },
+    getSquareLocations () {
+      return this.$store.dispatch('stores/squareLocations/getItems', {
+        params: {
+          id: this.$route.params.id
+        }
+      })
+        .catch(console.error)
     },
 
     // store areas
@@ -599,7 +611,11 @@ export default {
           this.$store.dispatch('storeAreas/getItems')
         })
         .catch(error => {
-          const message = get(error, 'response.data.message', error.message)
+          let message = get(error, 'response.data.message', error.message)
+          const status = get(error, 'response.status')
+          if (status === 422) {
+            message = 'Please fill in all the input fields'
+          }
           this.$store.dispatch('generalErrorMessages/setErrors', message)
         })
         .then(() => {
@@ -716,6 +732,7 @@ export default {
         .then(() => {
           this.duplicateEventDialog = false
           this.editingEvent = null
+          this.onDuplicateSuccess()
         })
         .catch(error => {
           const message = get(error, 'response.data.message', error.message)
@@ -725,6 +742,8 @@ export default {
           this.duplicatingEvent = false
         })
     },
+    // overriding in supplier/CreateOrUpdate
+    onDuplicateSuccess () {},
     onManageDuplicate (event) {
       this.editingEvent = event
       this.duplicateEventDialog = true
@@ -733,12 +752,14 @@ export default {
     // Payment
     changePaymentStatus (value, payment) {
       this.$store.dispatch('payments/patchItem', {
-        getItems: true,
         params: { id: payment.uuid },
         data: {
           status_id: value
         }
       })
+        .then(() => {
+          this.$store.dispatch('payments/getItems')
+        })
         .catch(error => console.error(error))
     },
     onPaymentPaginate (value) {
@@ -750,17 +771,26 @@ export default {
     const id = to.params.id || 'new'
     const promises = []
     if (id !== 'new') {
+      vm.getSquareLocations()
       promises.push(vm.$store.dispatch('eventStatuses/getItems'))
       promises.push(vm.$store.dispatch('stores/events/getItems', {
         params: {
           id
         }
       }))
+      // TODO: security: user can display documents for other users
+      // front end request are clear
       promises.push(vm.$store.dispatch('documents/getItems', {
         params: {
           'filter[assigned_uuid]': id
         }
       }))
+
+      vm.$store.dispatch('documentTemplates/setFilters', {
+       status_id: vm.$store.getters['documentTemplates/STATUS'].PUBLISHED
+      })
+      promises.push(vm.$store.dispatch('documentTemplates/getItems'))
+
       vm.fleetMemberLoading = true
       vm.$store.dispatch('stores/getItem', {
         params: {
@@ -771,7 +801,7 @@ export default {
         .then()
         .catch(error => {
           console.error(error)
-          vm.$router.push({ path: '/admin/fleet-members' })
+          vm.backToList()
         })
         .then(() => {
           vm.fleetMemberLoading = false
@@ -785,21 +815,19 @@ export default {
         store_uuid: id
       })
       promises.push(vm.$store.dispatch('menuItems/getItems'))
-      const currentUser = vm.$store.getters['currentUser']
-      if (currentUser) {
-        vm.getSquareLocations(currentUser.company_id)
-      }
       vm.$store.dispatch('payments/setFilters', {
         store_uuid: id,
         include: PAYMENT_INCLUDES
       })
       promises.push(vm.$store.dispatch('payments/getItems'))
     }
+    promises.push(vm.$store.dispatch('documentTemplates/statuses/getItems'))
     promises.push(vm.$store.dispatch('documentStatuses/getItems'))
     promises.push(vm.$store.dispatch('documentTypes/getItems'))
     promises.push(vm.$store.dispatch('storeTypes/getItems'))
     promises.push(vm.$store.dispatch('storeStatuses/getItems'))
     promises.push(vm.$store.dispatch('paymentStatuses/getItems'))
+    promises.push(vm.$store.dispatch('menuItemPermissions/getItems'))
 
     if (!SQUARE_APP_ID) {
       vm.$store.dispatch('generalErrorMessages/setErrors', 'Unable to find square application id')

@@ -12,7 +12,7 @@ class CompanyTypeSeeder extends Seeder
      */
     public function run()
     {
-        CompanyType::updateOrCreate(
+        $supplier = CompanyType::updateOrCreate(
             [
                 'key_id' => 'supplier'
             ],
@@ -21,14 +21,15 @@ class CompanyTypeSeeder extends Seeder
                 'key_id' => 'supplier'
             ]
         );
-        CompanyType::updateOrCreate(
+        $customer = CompanyType::updateOrCreate(
             [
-                'key_id' => 'host'
+                'key_id' => 'customer'
             ],
             [
                 'name' => 'Customer',
-                'key_id' => 'host'
+                'key_id' => 'customer'
             ]
         );
+        CompanyType::whereNotIn('id', [$supplier->id, $customer->id])->delete();
     }
 }

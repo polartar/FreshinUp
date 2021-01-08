@@ -221,7 +221,6 @@
               >
                 <v-btn
                   block
-                  :disabled="downloadable"
                   @click="previewOrDownload"
                 >
                   {{ previewOrDownloadLabel }}

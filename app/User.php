@@ -2,12 +2,13 @@
 
 namespace App;
 
-use App\Models\Foodfleet\Company;
-use App\Models\Foodfleet\FinancialReport;
-use App\Models\Foodfleet\Document;
 use Carbon\Carbon;
-use FreshinUp\FreshBusForms\Http\Resources\User\Level;
+use App\Models\Foodfleet\Company;
+use App\Models\Foodfleet\Document;
+use App\Models\Foodfleet\FinancialReport;
+use App\Notifications\PasswordResetNotification;
 use FreshinUp\FreshBusForms\Models\User\UserStatus;
+use FreshinUp\FreshBusForms\Http\Resources\User\Level;
 
 /**
  * Class User
@@ -37,11 +38,13 @@ use FreshinUp\FreshBusForms\Models\User\UserStatus;
  * @property int company_id
  * @property string data_visibility // json
  * @property int company_branch_id
+ * @property string manager_uuid
  *
  *
  * @property UserStatus user_status
  * @property Level user_level
  * @property Company company
+ * @property User manager
  * // and so on ...
  */
 class User extends \FreshinUp\FreshBusForms\Models\User\User
@@ -63,5 +66,15 @@ class User extends \FreshinUp\FreshBusForms\Models\User\User
     public function documents()
     {
         return $this->morphMany(Document::class, 'assigned', 'assigned_type', 'assigned_uuid', 'uuid');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordResetNotification($token));
+    }
+
+    public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_uuid', 'uuid');
     }
 }

@@ -1,27 +1,72 @@
-# Roadmap
-
-## Document template page
-## Document page
-
-## Venue Page
-- Venues can be search by (this is unknown)
+## Jan 4, 2021
+- **MOD** Menu error snackbar is not clear [614](http s://github.com/FreshinUp/foodfleet/issues/614)
+- **MOD** Make throttle limit customizable via env variable. Increase throttle limit for API from 60 to 120 on stage server [697](https://github.com/FreshinUp/foodfleet/issues/697)
 
 <br/>
 
-## Event Page
-
-## Event Edit Page
-### Event Fleet
-- As a user editing an Event, Fleet Members can be added and removed in the Event Fleet section.
-
-### Components
-- Event Fleet _(Requires Fleet Members to be completed)_
-- Customer
+## Jan 2, 2021
+- **FIX** Display snackbar instead of redirecting [620](https://github.com/FreshinUp/foodfleet/issues/620)
+- **FIX** Menu error snackbar is not clear [614](https://github.com/FreshinUp/foodfleet/issues/614)
 
 <br/>
 
+## Jan 1, 2021
+- **FIX** User basic information fields are incorrect [688](https://github.com/FreshinUp/foodfleet/issues/688)
 
-# Changes
+<br/>
+
+## Dec 31, 2020
+- **ADD** Add new fleet member button & dialog are not created on Event Detail page [379](https://github.com/FreshinUp/foodfleet/issues/379)
+- **MOD** User roles (levels) to keep only "Super admin", "Company owner", "Company Employee" [681](https://github.com/FreshinUp/foodfleet/issues/681)
+- **FIX** Event form - "Submit" label [519](https://github.com/FreshinUp/foodfleet/issues/619)
+
+<br/>
+
+## Dec 30, 2020
+- **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
+- **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
+- **FIX** Cannot connect to Square [519](https://github.com/FreshinUp/foodfleet/issues/519)
+- **MOD** Admin Dashboard [689](https://github.com/FreshinUp/foodfleet/issues/689)
+
+<br/>
+
+## Dec 29, 2020
+- **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
+
+<br/>
+
+## Dec 26, 2020
+- **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
+- **FIX** Cannot reset password [610](https://github.com/FreshinUp/foodfleet/issues/610)
+
+<br/>
+
+## Dec 25, 2020
+- **FIX** Role dropdown menu is not displaying the proper role options [594](https://github.com/FreshinUp/foodfleet/issues/594)
+- **ADD** Dashboard - Supplier scoped resource [668](https://github.com/FreshinUp/foodfleet/issues/668)
+
+<br/>
+
+## Dec 24, 2020
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+- **MOD** Correcting user details layout
+ [596](https://github.com/FreshinUp/foodfleet/issues/596)
+
+
+<br/>
+
+## Dec 23, 2020
+- **MOD** Edit venues & location on event details page by searching [615](https://github.com/FreshinUp/foodfleet/issues/615)
+- **MOD** Event not saving when dates are sent [617](https://github.com/FreshinUp/foodfleet/issues/617)
+- **FIX** Supplier main nav must be set [582](https://github.com/FreshinUp/foodfleet/issues/582)
+<br/>
+
+## Dec 22, 2020
+- **FIX** Login issue [657](https://github.com/FreshinUp/foodfleet/issues/657)
+- **ADD** Add payment statuses [#569](https://github.com/FreshinUp/foodfleet/issues/569)
+
+<br/>
 
 ## Dec 19, 2020
 - **MOD** My Profile screen must be updated [585](https://github.com/FreshinUp/foodfleet/issues/585)
@@ -39,6 +84,7 @@
 - **FIx** User top navigation menu [#583](https://github.com/FreshinUp/foodfleet/issues/583)
 
 <br/>
+
 
 ## Dec 12, 2020
 - **MOD** Login screen [#579](https://github.com/FreshinUp/foodfleet/issues/579)
@@ -83,7 +129,6 @@
 
 ## Nov 25, 2020
 - **FIX** Not loading document templates [#499](https://github.com/FreshinUp/foodfleet/issues/499)
-- **ADD** Food Fleet Members: Create Request payment function [#570](https://github.com/FreshinUp/foodfleet/issues/570)
 
 <br/>
 

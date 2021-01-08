@@ -1,89 +1,75 @@
 <template>
-  <v-data-table
+  <f-data-table
     :headers="headers"
     :items="customers"
-    hide-actions
-    disable-initial-sort
+    :item-actions="itemActions"
+    :multi-item-actions="multipleItemActions"
+    item-key="uuid"
+    v-bind="$attrs"
+    v-on="$listeners"
   >
-    <template
-      slot="headerCell"
-      slot-scope="props"
-    >
-      {{ props.header.text }}
+    <template v-slot:item-inner-status="{ item }">
+      <status-select
+        v-model="item.status"
+        :options="statuses"
+        @input="changeStatus(item.status, item)"
+      />
     </template>
 
-    <template slot="no-data">
-      <v-alert
-        :value="true"
-        color="error"
-        icon="warning"
+    <template v-slot:item-inner-created_at="{ item }">
+      {{ formatDate(item.created_at) }}
+    </template>
+    <template v-slot:item-inner-updated_at="{ item }">
+      {{ formatDate(item.updated_at) }}
+    </template>
+
+    <template v-slot:item-inner-manage="{ item }">
+      <v-btn
+        class="primary ml-0"
+        @click="viewItem(item)"
       >
-        Sorry, nothing to display here :(
-      </v-alert>
+        View Details
+      </v-btn>
     </template>
-
-    <template
-      slot="items"
-      slot-scope="props"
-    >
-      <td class="py-3">
-        <status-select
-          v-model="props.item.status"
-          :options="statuses"
-          @input="changeStatus(props.item.status, props.item)"
-        />
-      </td>
-      <td class="py-3">
-        {{ formatDate(props.item.updated_at) }}
-      </td>
-      <td class="text-xs-left py-3">
-        {{ formatDate(props.item.created_at) }}
-      </td>
-      <td class="text-xs-left py-3">
-        <v-btn
-          class="primary ml-0"
-          @click="viewDetails(props.item.uuid)"
-        >
-          View Details
-        </v-btn>
-      </td>
-    </template>
-  </v-data-table>
+  </f-data-table>
 </template>
 
 <script>
 import FormatDate from '@freshinup/core-ui/src/mixins/FormatDate'
 import StatusSelect from '~/components/events/StatusSelect.vue'
+import FDataTable from '@freshinup/core-ui/src/components/FDataTable'
 
+export const HEADERS = [
+  { text: 'CONTRACT STATUS', sortable: true, value: 'status', align: 'left' },
+  { text: 'LAST UPDATED ON', sortable: false, value: 'updated_at', align: 'left' },
+  { text: 'SUBMITTED ON', sortable: true, value: 'created_at', align: 'left' },
+  { text: 'MANAGE', sortable: false, value: 'manage', align: 'center' }
+]
+export const ITEM_ACTIONS = [
+  { action: 'view', text: 'View' }
+]
+
+export const MULTIPLE_ITEM_ACTIONS = []
 export default {
-  components: { StatusSelect },
+  components: {
+    FDataTable,
+    StatusSelect
+  },
   mixins: [ FormatDate ],
   props: {
-    customers: {
-      type: Array,
-      default: () => []
-    },
-    statuses: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data () {
-    return {
-      headers: [
-        { text: 'CONTRACT STATUS', sortable: true, value: 'status', align: 'left' },
-        { text: 'LAST UPDATED ON', sortable: false, value: 'updated_at', align: 'left' },
-        { text: 'SUBMITTED ON', sortable: true, value: 'created_at', align: 'left' },
-        { text: 'MANAGE', sortable: false, value: 'manage', align: 'left' }
-      ]
-    }
+    customers: { type: Array, default: () => [] },
+    statuses: { type: Array, default: () => [] },
+    headers: { type: Array, default: () => HEADERS },
+    itemActions: { type: Array, default: () => ITEM_ACTIONS },
+    multipleItemActions: { type: Array, default: () => MULTIPLE_ITEM_ACTIONS }
   },
   methods: {
     changeStatus (value, customer) {
       this.$emit('change-status', value, customer)
     },
-    viewDetails (value) {
-      this.$emit('view-details', value)
+    viewItem (item) {
+      this.$emit('manage', 'view', item)
+      this.$emit('manage-view', item)
     }
   }
 }

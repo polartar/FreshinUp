@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Actions\CreateEvent;
 use App\Actions\UpdateEvent;
 use App\Models\Foodfleet\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Spatie\QueryBuilder\Filter;
@@ -124,6 +125,7 @@ class Events extends Controller
      */
     public function store(Request $request, CreateEvent $action)
     {
+        $request = $this->prepareDatesForValidation($request);
         if ($request->get('status_id') == EventStatusEnum::DRAFT) {
             $validationRules = ['name' => 'required'];
         } else {
@@ -148,6 +150,7 @@ class Events extends Controller
                 'schedule.description' => 'string'
             ];
         }
+
         $this->validate($request, $validationRules);
 
         $inputs = $request->input();
@@ -184,6 +187,7 @@ class Events extends Controller
      */
     public function update(Request $request, $uuid, UpdateEvent $action)
     {
+        $request = $this->prepareDatesForValidation($request);
         $this->validate($request, [
             'name' => 'string',
             'manager_uuid' => 'string|exists:users,uuid',
@@ -208,7 +212,7 @@ class Events extends Controller
             'schedule.description' => 'string'
         ]);
 
-        $inputs = $request->input();
+        $inputs = $request->all();
         $inputs['uuid'] = $uuid;
 
         $event = $action->execute($inputs);
@@ -303,5 +307,34 @@ class Events extends Controller
             $duplicate->eventTags()->sync($tagUuids);
         }
         return new EventResource($duplicate);
+    }
+
+    protected function prepareDatesForValidation(Request $request)
+    {
+        $dates = ['start_at', 'end_at'];
+
+        $updated_dates = [];
+
+        foreach ($dates as $dt) {
+            if ($request->has($dt)) {
+                //check the length
+                //NB: 2020-12-23 is in the format of Y-m-d and has a length of 10
+                //NB: 2020-12-24 00:00 is in the format of Y-m-d H:i without :s and has a length of 16
+                $param = $request->get($dt);
+                if (($len = strlen($param)) == 16 || $len == 27) {
+                    $new_date = Carbon::parse($param)->toDateTimeString();
+
+                    $updated_dates[$dt] = $new_date;
+                }
+            }
+        }
+
+        if (count($updated_dates) > 0) {
+            //at least one of the two dates was updated.
+
+            $request->merge($updated_dates);
+        }
+
+        return $request;
     }
 }

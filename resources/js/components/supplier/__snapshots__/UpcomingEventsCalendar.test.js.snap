@@ -23,8 +23,7 @@ exports[`components/supplier/UpcomingEventsCalendar Snapshots Default 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -493,8 +492,7 @@ exports[`components/supplier/UpcomingEventsCalendar Snapshots Loading 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -963,8 +961,7 @@ exports[`components/supplier/UpcomingEventsCalendar Snapshots Populated 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div

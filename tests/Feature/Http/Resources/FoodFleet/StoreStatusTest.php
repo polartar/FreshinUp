@@ -13,7 +13,7 @@ class StoreStatusTest extends TestCase {
 
     public function getDataProvider () {
         return [
-            [StoreStatus::DRAFT, 'accent'],
+            [StoreStatus::DRAFT, 'grey'],
             [StoreStatus::PENDING, 'warning'],
             [StoreStatus::REVISION, 'success'],
             [StoreStatus::REJECTED, 'error'],
