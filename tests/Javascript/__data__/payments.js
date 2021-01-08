@@ -1,8 +1,6 @@
-import { FIXTURE_EVENTS } from './events'
-import { FIXTURE_STORES } from './stores'
 export const FIXTURE_PAYMENTS = [
   {
-    status_id: 1,
+    status: 1,
     event_name: 'Random event name',
     name: 'Event venue fee',
     due_date: '2020-07-08',
@@ -12,7 +10,7 @@ export const FIXTURE_PAYMENTS = [
     description: 'Pariatur et similique mollitia quia nihil'
   },
   {
-    status_id: 2,
+    status: 2,
     event_name: 'Random event name',
     name: 'Event venue fee',
     due_date: '2020-07-08',
@@ -22,7 +20,7 @@ export const FIXTURE_PAYMENTS = [
     description: 'Pariatur et similique mollitia quia nihil'
   },
   {
-    status_id: 3,
+    status: 3,
     event_name: 'Random event name',
     name: 'Event venue fee',
     due_date: '2020-07-08',
