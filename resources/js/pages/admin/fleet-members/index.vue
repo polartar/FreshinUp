@@ -16,7 +16,7 @@
         <v-btn
           slot="activator"
           color="white"
-          href="/admin/fleet-members/new"
+          :href="newLink"
         >
           <span class="primary--text">Add New Fleet Member</span>
         </v-btn>
@@ -31,6 +31,7 @@
 
     <store-list
       v-if="!isLoading"
+      class="px-4"
       :stores="stores"
       :statuses="statuses"
       :is-loading="storesLoading"
@@ -95,7 +96,7 @@ import StoreList from '~/components/fleet-members/StoreList.vue'
 import simpleConfirm from 'fresh-bus/components/SimpleConfirm.vue'
 import FilterSorter from '~/components/fleet-members/FilterSorter.vue'
 
-const INCLUDE = [
+export const INCLUDE = [
   'tags',
   'addresses',
   'status',
@@ -127,6 +128,9 @@ export default {
     }
   },
   computed: {
+    newLink () {
+      return '/admin/fleet-members/new'
+    },
     ...mapGetters('stores', {
       stores: 'items',
       pagination: 'pagination',
@@ -147,6 +151,9 @@ export default {
     ...mapActions('page', {
       setPageLoading: 'setLoading'
     }),
+    backToList () {
+      this.$router.push({ path: '/admin/fleet-members/new' })
+    },
     storeViewOrEdit (store) {
       this.$router.push({ path: `/admin/fleet-members/${store.uuid}/edit` })
     },
@@ -210,9 +217,7 @@ export default {
     },
     onPaginate (value) {
       this.$store.dispatch('stores/setPagination', value)
-      this.$store.dispatch('stores/getItems', {
-        params: { include: INCLUDE }
-      })
+      this.$store.dispatch('stores/getItems')
     },
     runFilter (params) {
       this.filterStores(params)
@@ -240,10 +245,12 @@ export default {
       })
     ])
       .then(() => {
-        if (next) next()
       })
       .catch((error) => console.error(error))
-      .then(() => vm.setPageLoading(false))
+      .then(() => {
+        vm.setPageLoading(false)
+        if (next) next()
+      })
   }
 }
 </script>

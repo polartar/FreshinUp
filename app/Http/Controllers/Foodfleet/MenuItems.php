@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Foodfleet;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MenuItemStoreRequest;
 use App\Models\Foodfleet\MenuItem;
-use App\Models\Foodfleet\Store;
 use App\Http\Resources\Foodfleet\MenuItem as MenuItemResource;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -34,29 +34,19 @@ class MenuItems extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return MenuItemResource|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MenuItemStoreRequest $request)
     {
-        $this->validate($request, [
-            'store_uuid' => 'string|required|exists:stores,uuid',
-            'title' => 'string|required',
-            'servings' => 'integer|required',
-            'cost' => 'integer|required',
-            'description' => 'string'
-        ]);
-
-        $inputs = $request->input();
-        $menuItem = MenuItem::create($inputs);
-
-        return new \App\Http\Resources\Foodfleet\MenuItem($menuItem);
+        $menuItem = MenuItem::create($request->validated());
+        return new MenuItemResource($menuItem);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $uuid
-     * @return \Illuminate\Http\Response
+     * @param  string  $uuid
+     * @return MenuItemResource|\Illuminate\Http\Response
      */
     public function show(Request $request, $uuid)
     {
@@ -71,22 +61,14 @@ class MenuItems extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string $uuid
-     * @return \Illuminate\Http\Response
+     * @param  MenuItemStoreRequest  $request
+     * @param  string  $uuid
+     * @return MenuItemResource
      */
-    public function update(Request $request, $uuid)
+    public function update(MenuItemStoreRequest $request, $uuid)
     {
-        $this->validate($request, [
-            'title' => 'string',
-            'servings' => 'integer',
-            'cost' => 'integer',
-            'description' => 'string'
-        ]);
-
-        $inputs = $request->input();
         $menuItem = MenuItem::where('uuid', $uuid)->firstOrFail();
-        $menuItem->update($inputs);
+        $menuItem->update($request->validated());
         return new MenuItemResource($menuItem);
     }
 

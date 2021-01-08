@@ -1,6 +1,6 @@
 <template>
   <v-card class="ff-venue_details">
-    <v-card-title class="font-weight-bold">
+    <v-card-title class="grey--text font-weight-bold text-uppercase">
       Venue Details
     </v-card-title>
     <v-divider />

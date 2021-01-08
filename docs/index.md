@@ -1,3 +1,40 @@
+## Jan 4, 2021
+- **MOD** Menu error snackbar is not clear [614](http s://github.com/FreshinUp/foodfleet/issues/614)
+- **MOD** Make throttle limit customizable via env variable. Increase throttle limit for API from 60 to 120 on stage server [697](https://github.com/FreshinUp/foodfleet/issues/697)
+
+<br/>
+
+## Jan 2, 2021
+- **FIX** Display snackbar instead of redirecting [620](https://github.com/FreshinUp/foodfleet/issues/620)
+- **FIX** Menu error snackbar is not clear [614](https://github.com/FreshinUp/foodfleet/issues/614)
+
+<br/>
+
+## Jan 1, 2021
+- **FIX** User basic information fields are incorrect [688](https://github.com/FreshinUp/foodfleet/issues/688)
+
+<br/>
+
+## Dec 31, 2020
+- **ADD** Add new fleet member button & dialog are not created on Event Detail page [379](https://github.com/FreshinUp/foodfleet/issues/379)
+- **MOD** User roles (levels) to keep only "Super admin", "Company owner", "Company Employee" [681](https://github.com/FreshinUp/foodfleet/issues/681)
+- **FIX** Event form - "Submit" label [519](https://github.com/FreshinUp/foodfleet/issues/619)
+
+<br/>
+
+## Dec 30, 2020
+- **MOD** Move square link from company level to fleet member (store) [584](https://github.com/FreshinUp/foodfleet/issues/584)
+- **FIX** Venues only have events through locations [635](https://github.com/FreshinUp/foodfleet/issues/635)
+- **FIX** Cannot connect to Square [519](https://github.com/FreshinUp/foodfleet/issues/519)
+- **MOD** Admin Dashboard [689](https://github.com/FreshinUp/foodfleet/issues/689)
+
+<br/>
+
+## Dec 29, 2020
+- **ADD** Supplier onboarding page [584](https://github.com/FreshinUp/foodfleet/issues/584)
+
+<br/>
+
 ## Dec 26, 2020
 - **FIX** Event not saving tags [671](https://github.com/FreshinUp/foodfleet/issues/671)
 - **FIX** Cannot reset password [610](https://github.com/FreshinUp/foodfleet/issues/610)

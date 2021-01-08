@@ -21,7 +21,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
       class="layout"
     >
       <div
-        class="flex px-2"
+        class="flex px-2 xs8"
       >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -44,6 +44,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="title"
                   placeholder="Enter menu item title"
                   type="text"
                 />
@@ -131,6 +132,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="cost"
                   type="text"
                 />
               </div>
@@ -178,6 +180,7 @@ exports[`components/menu-items/MenuItemForm Default Default 1`] = `
                 class="v-text-field__slot"
               >
                 <textarea
+                  data-vv-name="description"
                   rows="5"
                 />
               </div>
@@ -278,7 +281,7 @@ exports[`components/menu-items/MenuItemForm Default Loading 1`] = `
       class="layout"
     >
       <div
-        class="flex px-2"
+        class="flex px-2 xs8"
       >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -301,6 +304,7 @@ exports[`components/menu-items/MenuItemForm Default Loading 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="title"
                   placeholder="Enter menu item title"
                   type="text"
                 />
@@ -388,6 +392,7 @@ exports[`components/menu-items/MenuItemForm Default Loading 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="cost"
                   type="text"
                 />
               </div>
@@ -435,6 +440,7 @@ exports[`components/menu-items/MenuItemForm Default Loading 1`] = `
                 class="v-text-field__slot"
               >
                 <textarea
+                  data-vv-name="description"
                   rows="5"
                 />
               </div>
@@ -540,7 +546,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
       class="layout"
     >
       <div
-        class="flex px-2"
+        class="flex px-2 xs8"
       >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -563,6 +569,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="title"
                   placeholder="Enter menu item title"
                   type="text"
                 />
@@ -650,6 +657,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="cost"
                   type="text"
                 />
               </div>
@@ -697,6 +705,7 @@ exports[`components/menu-items/MenuItemForm Default WithData 1`] = `
                 class="v-text-field__slot"
               >
                 <textarea
+                  data-vv-name="description"
                   rows="5"
                 />
               </div>
@@ -771,7 +780,7 @@ exports[`components/menu-items/MenuItemForm WithServings 1`] = `
       class="layout"
     >
       <div
-        class="flex px-2"
+        class="flex px-2 xs8"
       >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -794,6 +803,7 @@ exports[`components/menu-items/MenuItemForm WithServings 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="title"
                   placeholder="Enter menu item title"
                   type="text"
                 />
@@ -881,6 +891,7 @@ exports[`components/menu-items/MenuItemForm WithServings 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="cost"
                   type="text"
                 />
               </div>
@@ -928,6 +939,7 @@ exports[`components/menu-items/MenuItemForm WithServings 1`] = `
                 class="v-text-field__slot"
               >
                 <textarea
+                  data-vv-name="description"
                   rows="5"
                 />
               </div>
@@ -1002,7 +1014,7 @@ exports[`components/menu-items/MenuItemForm WithoutServings 1`] = `
       class="layout"
     >
       <div
-        class="flex px-2"
+        class="flex px-2 xs10"
       >
         <div
           class="mb-2 text-uppercase grey--text font-weight-bold"
@@ -1025,6 +1037,7 @@ exports[`components/menu-items/MenuItemForm WithoutServings 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="title"
                   placeholder="Enter menu item title"
                   type="text"
                 />
@@ -1071,6 +1084,7 @@ exports[`components/menu-items/MenuItemForm WithoutServings 1`] = `
                 class="v-text-field__slot"
               >
                 <input
+                  data-vv-name="cost"
                   type="text"
                 />
               </div>
@@ -1118,6 +1132,7 @@ exports[`components/menu-items/MenuItemForm WithoutServings 1`] = `
                 class="v-text-field__slot"
               >
                 <textarea
+                  data-vv-name="description"
                   rows="5"
                 />
               </div>

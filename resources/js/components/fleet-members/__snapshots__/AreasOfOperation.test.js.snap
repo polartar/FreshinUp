@@ -37,7 +37,7 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Default 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"
@@ -468,7 +468,7 @@ exports[`components/fleet-members/AreasOfOperation Snapshots IsLoading 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"
@@ -927,7 +927,7 @@ exports[`components/fleet-members/AreasOfOperation Snapshots Populated 1`] = `
     >
       <div>
         <div
-          class="ui-datatable elevation-1"
+          class="ui-datatable"
         >
           <div
             class="v-table__overflow"

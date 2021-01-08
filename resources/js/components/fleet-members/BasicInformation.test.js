@@ -6,17 +6,36 @@ import { FIXTURE_STORE } from 'tests/__data__/stores'
 describe('components/fleet-members/BasicInformation', () => {
   describe('Snapshots', () => {
     test('Default', async () => {
-      const wrapper = mount(Stories.Default())
+      const wrapper = mount(Stories.Default(),
+        {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
     test('Populated', async () => {
-      const wrapper = mount(Stories.Populated())
+      const wrapper = mount(Stories.Populated(), {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
     test('Loading', async () => {
-      const wrapper = mount(Stories.Loading())
+      const wrapper = mount(Stories.Loading(), {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -24,7 +43,13 @@ describe('components/fleet-members/BasicInformation', () => {
 
   describe('Props & Computed', () => {
     test('loading', async () => {
-      const wrapper = shallowMount(Component)
+      const wrapper = shallowMount(Component, {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       expect(wrapper.vm.loading).toBe(false)
 
       wrapper.setProps({
@@ -34,7 +59,13 @@ describe('components/fleet-members/BasicInformation', () => {
       expect(wrapper.vm.loading).toBe(true)
     })
     test('value', async () => {
-      const wrapper = shallowMount(Component)
+      const wrapper = shallowMount(Component, {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       wrapper.setProps({
         value: FIXTURE_STORE
       })
@@ -43,7 +74,13 @@ describe('components/fleet-members/BasicInformation', () => {
     })
     describe('editing', () => {
       test('when set', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setProps({
           value: { uuid: 'abc' }
         })
@@ -51,7 +88,13 @@ describe('components/fleet-members/BasicInformation', () => {
         expect(wrapper.vm.editing).toBe(true)
       })
       test('when null', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setProps({
           value: { uuid: null }
         })
@@ -61,7 +104,13 @@ describe('components/fleet-members/BasicInformation', () => {
     })
     describe('hasImage', () => {
       test('when image=DEFAULT_IMAGE', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setData({
           image: DEFAULT_IMAGE
         })
@@ -69,7 +118,13 @@ describe('components/fleet-members/BasicInformation', () => {
         expect(wrapper.vm.hasImage).toBe(false)
       })
       test('when image=null', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setData({
           image: null
         })
@@ -77,7 +132,13 @@ describe('components/fleet-members/BasicInformation', () => {
         expect(wrapper.vm.hasImage).toBe(false)
       })
       test('otherwise', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setData({
           image: 'https://sfo2.digitaloceanspaces.com/foodfleet-stage/bus/9/2020-09-17-18%3A24%3A01-61?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=XBMT2IFUXPF4Y6J7CSAI%2F20200917%2Fnyc%2Fs3%2Faws4_request&X-Amz-Date=20200917T182404Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=49025518742b5b11cbc40a695c869dfd29c7b00afe5553f957e933ce0e700bcb'
 
@@ -88,7 +149,13 @@ describe('components/fleet-members/BasicInformation', () => {
     })
     describe('storeImage', () => {
       test('when image=DEFAULT_IMAGE', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setData({
           image: DEFAULT_IMAGE
         })
@@ -96,7 +163,13 @@ describe('components/fleet-members/BasicInformation', () => {
         expect(wrapper.vm.storeImage).toEqual('/images/default.png')
       })
       test('when image=null', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         wrapper.setData({
           image: null
         })
@@ -104,7 +177,13 @@ describe('components/fleet-members/BasicInformation', () => {
         expect(wrapper.vm.storeImage).toEqual('/images/default.png')
       })
       test('otherwise', async () => {
-        const wrapper = shallowMount(Component)
+        const wrapper = shallowMount(Component, {
+          mocks: {
+            errors: {
+              collect: jest.fn()
+            }
+          }
+        })
         const image = 'https://sfo2.digitaloceanspaces.com/foodfleet-stage/bus/9/2020-09-17-18%3A24%3A01-61'
         wrapper.setData({
           image
@@ -124,7 +203,12 @@ describe('components/fleet-members/BasicInformation', () => {
 
     test('save()', async () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
       })
       wrapper.setProps({
         value: FIXTURE_STORE
@@ -139,7 +223,12 @@ describe('components/fleet-members/BasicInformation', () => {
 
     test('onCancel()', async () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
       })
       await wrapper.vm.$nextTick()
       wrapper.vm.onCancel()
@@ -149,7 +238,12 @@ describe('components/fleet-members/BasicInformation', () => {
 
     test('onDeleteMember()', async () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
       })
       wrapper.setProps({
         value: FIXTURE_STORE

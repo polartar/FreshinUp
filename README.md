@@ -46,7 +46,7 @@ IF you are on staging:
 `https://connect.squareup(sandbox).com?client_id=$clientId`
 (if in dev)
 It is important that you're sign in to your square dashboard when try the authorization
-- the redirect url should be set to `$baseUrl/admin/contractor/check`. $baseUrl being your https server (use ngrok if needed) ie https://foodfleet.freshinup.com/admin/contractor/check, http://c5e152320a0b.ngrok.io/admin/contractor/check but not localhost
+- the redirect url should be set to `$baseUrl/admin/contractor/check` (ie `https://foodfleet.freshinup.com/admin/contractor/check`). $baseUrl being your https server (use ngrok if needed) ie https://foodfleet.freshinup.com/admin/contractor/check, http://c5e152320a0b.ngrok.io/admin/contractor/check but not localhost
 
 Login->fleet member detail page -> connect square -> callback -> redirect back
 

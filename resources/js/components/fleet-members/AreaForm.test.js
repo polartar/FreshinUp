@@ -5,17 +5,35 @@ import Component from './AreaForm.vue'
 describe('components/fleet-members/AreaForm', () => {
   describe('Snapshots', () => {
     test('Default', async () => {
-      const wrapper = mount(Stories.Default())
+      const wrapper = mount(Stories.Default(), {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
     test('Loading', async () => {
-      const wrapper = mount(Stories.Loading())
+      const wrapper = mount(Stories.Loading(), {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
     test('WithData', async () => {
-      const wrapper = mount(Stories.WithData())
+      const wrapper = mount(Stories.WithData(), {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       await wrapper.vm.$nextTick()
       expect(wrapper.element).toMatchSnapshot()
     })
@@ -23,7 +41,13 @@ describe('components/fleet-members/AreaForm', () => {
 
   describe('Props & Data', () => {
     test('isLoading', async () => {
-      const wrapper = shallowMount(Component)
+      const wrapper = shallowMount(Component, {
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
+      })
       expect(wrapper.vm.isLoading).toBe(false)
 
       wrapper.setProps({
@@ -43,7 +67,12 @@ describe('components/fleet-members/AreaForm', () => {
 
     test('onCancel()', async () => {
       const wrapper = shallowMount(Component, {
-        localVue: localVue
+        localVue: localVue,
+        mocks: {
+          errors: {
+            collect: jest.fn()
+          }
+        }
       })
       wrapper.vm.onCancel()
       await wrapper.vm.$nextTick()
