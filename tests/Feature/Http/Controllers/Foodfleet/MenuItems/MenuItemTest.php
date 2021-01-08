@@ -115,27 +115,28 @@ class MenuItemTest extends TestCase
             'store_uuid' => $store->uuid
         ]);
 
+        $payload = [
+            'title' => 'create menu title test',
+            'servings' => 5,
+            'cost' => 123,
+            'description' => 'This is special food for you',
+            'store_uuid' => $store->uuid
+        ];
         $data = $this
-            ->json('PUT', 'api/foodfleet/menu-items/' . $item->uuid, [
-                'title' => 'create menu title test',
-                'servings' => 5,
-                'cost' => 123,
-                'description' => 'This is special food for you'
-            ])
+            ->json('PUT', 'api/foodfleet/menu-items/' . $item->uuid, $payload)
             ->assertStatus(200)
             ->json('data');
 
-        $url = 'api/foodfleet/menu-items/' . $item->uuid . '?include=store';
-        $result = $this->json('GET', $url)
-            ->assertStatus(200)
-            ->json('data');
+        $this->assertEquals($item->uuid, $data['uuid']);
+        $item->refresh();
 
-        $this->assertEquals('create menu title test', $result['title']);
-        $this->assertEquals('This is special food for you', $result['description']);
-        $this->assertEquals(5, $result['servings']);
-        $this->assertEquals(123, $result['cost']);
-        $this->assertEquals($store->uuid, $result['store']['uuid']);
+        $this->assertEquals($payload['title'], $item->title);
+        $this->assertEquals($payload['description'], $item->description);
+        $this->assertEquals($payload['servings'], $item->servings);
+        $this->assertEquals($payload['cost'], $item->cost);
+        $this->assertEquals($store->uuid, $item->store_uuid);
     }
+
     public function testDeleteItem()
     {
         $user = factory(User::class)->create();

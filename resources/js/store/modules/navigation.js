@@ -23,7 +23,7 @@ export const SUPPLIER_ITEMS = [
   {
     action: 'icon-trucks',
     title: 'My Fleet',
-    to: '/admin/supplier/stores' // create page with coming soon
+    to: '/admin/supplier/fleet-members' // create page with coming soon
   },
   {
     action: 'icon-events',

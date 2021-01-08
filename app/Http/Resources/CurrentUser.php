@@ -15,7 +15,10 @@ class CurrentUser extends CurrentUserResource
     public function toArray($request)
     {
         $data = [
-            'data_visibility' => $this->data_visibility
+            'data_visibility' => $this->data_visibility,
+            'manager_uuid' => $this->manager_uuid,
+            // maybe load this all the times
+            'manager' => new User($this->whenLoaded('manager')),
         ];
         return array_merge(parent::toArray($request), $data);
 

@@ -13,7 +13,7 @@ class StatisticTest extends TestCase
 
     public function getStatuses () {
         return [
-            [StoreStatusEnum::DRAFT, 'Draft', 'accent'],
+            [StoreStatusEnum::DRAFT, 'Draft', 'grey'],
             [StoreStatusEnum::PENDING, 'Pending', 'warning'],
             [StoreStatusEnum::REVISION, 'Revision', 'success'],
             [StoreStatusEnum::REJECTED, 'Rejected', 'error'],

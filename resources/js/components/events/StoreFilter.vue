@@ -25,7 +25,7 @@
               mb-2
             >
               <filter-label
-                color="inherit"
+                class="grey--text font-weight-bold"
               >
                 STATUS
               </filter-label>
@@ -58,7 +58,7 @@
               mb-2
             >
               <filter-label
-                color="inherit"
+                class="grey--text font-weight-bold"
               >
                 FLLET MEMBER TYPE
               </filter-label>
@@ -91,7 +91,7 @@
               mb-2
             >
               <filter-label
-                color="inherit"
+                class="grey--text font-weight-bold"
               >
                 TAGS
               </filter-label>
@@ -126,7 +126,7 @@
               mb-2
             >
               <filter-label
-                color="inherit"
+                class="grey--text font-weight-bold"
               >
                 OWNER
               </filter-label>
@@ -162,7 +162,7 @@
               mb-2
             >
               <filter-label
-                color="inherit"
+                class="grey--text font-weight-bold"
               >
                 LOCATION
               </filter-label>

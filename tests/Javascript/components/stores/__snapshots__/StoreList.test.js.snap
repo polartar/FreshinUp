@@ -3,7 +3,7 @@
 exports[`Store List component Snapshots stores empty 1`] = `
 <div>
   <div
-    class="elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -146,7 +146,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -178,201 +178,24 @@ exports[`Store List component Snapshots stores empty 1`] = `
         </tbody>
       </table>
     </div>
+  </div>
+   
+  <div
+    class="layout align-center"
+  >
     <div
-      class="v-datatable v-table v-datatable--select-all theme--light"
+      class="flex grow justify-center"
     >
       <div
-        class="v-datatable__actions"
+        class="layout justify-center"
       >
-        <div
-          class="v-datatable__actions__select"
+        <ul
+          class="v-pagination theme--light"
         >
-          Rows per page:
-          <div
-            class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-            role="combobox"
-          >
-            <div
-              class="v-input__control"
-            >
-              <div
-                class="v-input__slot"
-              >
-                <div
-                  class="v-select__slot"
-                >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <div
-                      class="v-select__selection v-select__selection--comma"
-                    >
-                      10
-                    </div>
-                    <input
-                      aria-label="Rows per page:"
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
-                  <div
-                    class="v-input__append-inner"
-                  >
-                    <div
-                      class="v-input__icon v-input__icon--append"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                      >
-                        arrow_drop_down
-                      </i>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-menu"
-                >
-                  <div
-                    class="v-menu__content theme--light v-menu__content--auto "
-                    style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                  >
-                    <div
-                      class="v-select-list v-card theme--light"
-                    >
-                      <div
-                        class="v-list theme--light"
-                        role="list"
-                      >
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                5
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          class="primary--text"
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                10
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                15
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                25
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                30
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                50
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="v-datatable__actions__range-controls"
-        >
-          <div
-            class="v-datatable__actions__pagination"
-          >
-            1-10 of 10
-          </div>
-          <button
-            aria-label="Previous page"
-            class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-            disabled="disabled"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
+          <li>
+            <button
+              class="v-pagination__navigation v-pagination__navigation--disabled"
+              type="button"
             >
               <i
                 aria-hidden="true"
@@ -380,16 +203,20 @@ exports[`Store List component Snapshots stores empty 1`] = `
               >
                 chevron_left
               </i>
-            </div>
-          </button>
-          <button
-            aria-label="Next page"
-            class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-            disabled="disabled"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
+            </button>
+          </li>
+          <li>
+            <button
+              class="v-pagination__item v-pagination__item--active primary"
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              class="v-pagination__navigation v-pagination__navigation--disabled"
+              type="button"
             >
               <i
                 aria-hidden="true"
@@ -397,8 +224,199 @@ exports[`Store List component Snapshots stores empty 1`] = `
               >
                 chevron_right
               </i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+     
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-input v-text-field v-select v-input--is-label-active v-input--is-dirty theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <label
+                aria-hidden="true"
+                class="v-label v-label--active theme--light"
+                style="left: 0px; position: absolute;"
+              >
+                Results Per Page
+              </label>
+              <div
+                class="v-select__selections"
+              >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  10
+                </div>
+                <input
+                  aria-label="Results Per Page"
+                  aria-readonly="false"
+                  autocomplete="on"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
             </div>
-          </button>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            5
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="primary--text"
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            10
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            15
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            25
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            30
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            50
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -409,7 +427,7 @@ exports[`Store List component Snapshots stores empty 1`] = `
 exports[`Store List component Snapshots stores set 1`] = `
 <div>
   <div
-    class="elevation-1"
+    class="ui-datatable"
   >
     <div
       class="v-table__overflow"
@@ -552,7 +570,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             <th
               aria-label="Manage: Not sorted."
               aria-sort="none"
-              class="column text-xs-left"
+              class="column text-xs-center"
               role="columnheader"
               scope="col"
             >
@@ -611,7 +629,7 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-left select-td"
+              class="text-xs-undefined"
             >
               <div
                 class="v-menu"
@@ -725,26 +743,32 @@ exports[`Store List component Snapshots stores set 1`] = `
                 </div>
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <div
                 class="subheading primary--text"
               >
-                
-          Da Lobster
-        
+                <a
+                  class="font-weight-bold text-not-underline"
+                  href="#manage-view"
+                  title="view item"
+                >
+                  Da Lobster
+                </a>
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          Mobile
-        
+      Mobile
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <span
                 class="v-chip theme--light"
                 tabindex="0"
@@ -753,8 +777,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          ASIAN
-        
+      ASIAN
+    
                 </span>
               </span>
               <span
@@ -765,38 +789,37 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          VEGAN
-        
+      VEGAN
+    
                 </span>
               </span>
             </td>
-             
             <td
-              class="text-xs-center"
+              class="text-xs-undefined"
             >
               <div
                 class="grey--text"
               >
                 
-          Josh Smith @ Restaurant Inc
-        
+      Josh Smith
+    
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          
-        
+      
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               
-        California
-      
+              California
+            
             </td>
-             
             <td
               class="justify-center text-xs-center"
             >
@@ -811,8 +834,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                     class="v-btn__content"
                   >
                     
-          Manage
-         
+                Manage
+               
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--right material-icons theme--dark"
@@ -899,20 +922,20 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-left select-td"
+              class="text-xs-undefined"
             >
               <div
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark warning warning-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Pending
  
                     <i
                       aria-hidden="true"
@@ -1013,26 +1036,32 @@ exports[`Store List component Snapshots stores set 1`] = `
                 </div>
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <div
                 class="subheading primary--text"
               >
-                
-          Rekindler
-        
+                <a
+                  class="font-weight-bold text-not-underline"
+                  href="#manage-view"
+                  title="view item"
+                >
+                  Rekindler
+                </a>
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          Stationery
-        
+      Stationery
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <span
                 class="v-chip theme--light"
                 tabindex="0"
@@ -1041,38 +1070,37 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          VEGAN
-        
+      VEGAN
+    
                 </span>
               </span>
             </td>
-             
             <td
-              class="text-xs-center"
+              class="text-xs-undefined"
             >
               <div
                 class="grey--text"
               >
                 
-          Josh Smith @ Dibitery Inc
-        
+      Josh Smith
+    
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          
-        
+      
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               
-        New York
-      
+              New York
+            
             </td>
-             
             <td
               class="justify-center text-xs-center"
             >
@@ -1087,8 +1115,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                     class="v-btn__content"
                   >
                     
-          Manage
-         
+                Manage
+               
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--right material-icons theme--dark"
@@ -1175,20 +1203,20 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-left select-td"
+              class="text-xs-undefined"
             >
               <div
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark warning warning-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Pending
  
                     <i
                       aria-hidden="true"
@@ -1289,26 +1317,32 @@ exports[`Store List component Snapshots stores set 1`] = `
                 </div>
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <div
                 class="subheading primary--text"
               >
-                
-          Fiora
-        
+                <a
+                  class="font-weight-bold text-not-underline"
+                  href="#manage-view"
+                  title="view item"
+                >
+                  Fiora
+                </a>
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          Stationery
-        
+      Stationery
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <span
                 class="v-chip theme--light"
                 tabindex="0"
@@ -1317,38 +1351,37 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          ASIAN
-        
+      ASIAN
+    
                 </span>
               </span>
             </td>
-             
             <td
-              class="text-xs-center"
+              class="text-xs-undefined"
             >
               <div
                 class="grey--text"
               >
                 
-          Josh Smith @ Dibitery Inc
-        
+      Josh Smith
+    
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          
-        
+      
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               
-        California
-      
+              California
+            
             </td>
-             
             <td
               class="justify-center text-xs-center"
             >
@@ -1363,8 +1396,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                     class="v-btn__content"
                   >
                     
-          Manage
-         
+                Manage
+               
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--right material-icons theme--dark"
@@ -1451,20 +1484,20 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-left select-td"
+              class="text-xs-undefined"
             >
               <div
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark success success-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Revision
  
                     <i
                       aria-hidden="true"
@@ -1565,26 +1598,32 @@ exports[`Store List component Snapshots stores set 1`] = `
                 </div>
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <div
                 class="subheading primary--text"
               >
-                
-          Trundle
-        
+                <a
+                  class="font-weight-bold text-not-underline"
+                  href="#manage-view"
+                  title="view item"
+                >
+                  Trundle
+                </a>
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          Stationery
-        
+      Stationery
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <span
                 class="v-chip theme--light"
                 tabindex="0"
@@ -1593,8 +1632,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          ASIAN
-        
+      ASIAN
+    
                 </span>
               </span>
               <span
@@ -1605,38 +1644,37 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          VEGAN
-        
+      VEGAN
+    
                 </span>
               </span>
             </td>
-             
             <td
-              class="text-xs-center"
+              class="text-xs-undefined"
             >
               <div
                 class="grey--text"
               >
                 
-          Josh Smith @ Restaurant Inc
-        
+      Josh Smith
+    
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          
-        
+      
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               
-        California
-      
+              California
+            
             </td>
-             
             <td
               class="justify-center text-xs-center"
             >
@@ -1651,8 +1689,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                     class="v-btn__content"
                   >
                     
-          Manage
-         
+                Manage
+               
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--right material-icons theme--dark"
@@ -1739,20 +1777,20 @@ exports[`Store List component Snapshots stores set 1`] = `
             </td>
              
             <td
-              class="justify-center text-xs-left select-td"
+              class="text-xs-undefined"
             >
               <div
                 class="v-menu"
               >
                 <button
-                  class="v-btn theme--dark accent accent-text--text"
+                  class="v-btn theme--dark error error-text--text"
                   type="button"
                 >
                   <div
                     class="v-btn__content"
                   >
                     
-  Draft
+  Rejected
  
                     <i
                       aria-hidden="true"
@@ -1853,26 +1891,32 @@ exports[`Store List component Snapshots stores set 1`] = `
                 </div>
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <div
                 class="subheading primary--text"
               >
-                
-          La fourchette
-        
+                <a
+                  class="font-weight-bold text-not-underline"
+                  href="#manage-view"
+                  title="view item"
+                >
+                  La fourchette
+                </a>
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          Stationery
-        
+      Stationery
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               <span
                 class="v-chip theme--light"
                 tabindex="0"
@@ -1881,38 +1925,37 @@ exports[`Store List component Snapshots stores set 1`] = `
                   class="v-chip__content"
                 >
                   
-          VEGAN
-        
+      VEGAN
+    
                 </span>
               </span>
             </td>
-             
             <td
-              class="text-xs-center"
+              class="text-xs-undefined"
             >
               <div
                 class="grey--text"
               >
                 
-          Josh Smith @ Restaurant Inc
-        
+      Josh Smith
+    
               </div>
                
               <div
                 class="grey--text"
               >
                 
-          
-        
+      
+    
               </div>
             </td>
-             
-            <td>
+            <td
+              class="text-xs-undefined"
+            >
               
-        California
-      
+              California
+            
             </td>
-             
             <td
               class="justify-center text-xs-center"
             >
@@ -1927,8 +1970,8 @@ exports[`Store List component Snapshots stores set 1`] = `
                     class="v-btn__content"
                   >
                     
-          Manage
-         
+                Manage
+               
                     <i
                       aria-hidden="true"
                       class="v-icon v-icon--right material-icons theme--dark"
@@ -1980,201 +2023,24 @@ exports[`Store List component Snapshots stores set 1`] = `
         </tbody>
       </table>
     </div>
+  </div>
+   
+  <div
+    class="layout align-center"
+  >
     <div
-      class="v-datatable v-table v-datatable--select-all theme--light"
+      class="flex grow justify-center"
     >
       <div
-        class="v-datatable__actions"
+        class="layout justify-center"
       >
-        <div
-          class="v-datatable__actions__select"
+        <ul
+          class="v-pagination theme--light"
         >
-          Rows per page:
-          <div
-            class="v-input v-text-field v-select v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light"
-            role="combobox"
-          >
-            <div
-              class="v-input__control"
-            >
-              <div
-                class="v-input__slot"
-              >
-                <div
-                  class="v-select__slot"
-                >
-                  <div
-                    class="v-select__selections"
-                  >
-                    <div
-                      class="v-select__selection v-select__selection--comma"
-                    >
-                      10
-                    </div>
-                    <input
-                      aria-label="Rows per page:"
-                      aria-readonly="false"
-                      autocomplete="on"
-                      readonly="readonly"
-                      type="text"
-                    />
-                  </div>
-                  <div
-                    class="v-input__append-inner"
-                  >
-                    <div
-                      class="v-input__icon v-input__icon--append"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="v-icon material-icons theme--light"
-                      >
-                        arrow_drop_down
-                      </i>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="v-menu"
-                >
-                  <div
-                    class="v-menu__content theme--light v-menu__content--auto "
-                    style="max-height: 200px; min-width: 75px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
-                  >
-                    <div
-                      class="v-select-list v-card theme--light"
-                    >
-                      <div
-                        class="v-list theme--light"
-                        role="list"
-                      >
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                5
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          class="primary--text"
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                10
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                15
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                25
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                30
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div
-                          role="listitem"
-                        >
-                          <a
-                            class="v-list__tile v-list__tile--link theme--light"
-                          >
-                            <div
-                              class="v-list__tile__content"
-                            >
-                              <div
-                                class="v-list__tile__title"
-                              >
-                                50
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="v-datatable__actions__range-controls"
-        >
-          <div
-            class="v-datatable__actions__pagination"
-          >
-            1-10 of 10
-          </div>
-          <button
-            aria-label="Previous page"
-            class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-            disabled="disabled"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
+          <li>
+            <button
+              class="v-pagination__navigation v-pagination__navigation--disabled"
+              type="button"
             >
               <i
                 aria-hidden="true"
@@ -2182,16 +2048,20 @@ exports[`Store List component Snapshots stores set 1`] = `
               >
                 chevron_left
               </i>
-            </div>
-          </button>
-          <button
-            aria-label="Next page"
-            class="v-btn v-btn--disabled v-btn--flat v-btn--icon theme--light"
-            disabled="disabled"
-            type="button"
-          >
-            <div
-              class="v-btn__content"
+            </button>
+          </li>
+          <li>
+            <button
+              class="v-pagination__item v-pagination__item--active primary"
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              class="v-pagination__navigation v-pagination__navigation--disabled"
+              type="button"
             >
               <i
                 aria-hidden="true"
@@ -2199,8 +2069,199 @@ exports[`Store List component Snapshots stores set 1`] = `
               >
                 chevron_right
               </i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+     
+    <div
+      class="flex shrink"
+    >
+      <div
+        class="v-input v-text-field v-select v-input--is-label-active v-input--is-dirty theme--light"
+        role="combobox"
+      >
+        <div
+          class="v-input__control"
+        >
+          <div
+            class="v-input__slot"
+          >
+            <div
+              class="v-select__slot"
+            >
+              <label
+                aria-hidden="true"
+                class="v-label v-label--active theme--light"
+                style="left: 0px; position: absolute;"
+              >
+                Results Per Page
+              </label>
+              <div
+                class="v-select__selections"
+              >
+                <div
+                  class="v-select__selection v-select__selection--comma"
+                >
+                  10
+                </div>
+                <input
+                  aria-label="Results Per Page"
+                  aria-readonly="false"
+                  autocomplete="on"
+                  readonly="readonly"
+                  type="text"
+                />
+              </div>
+              <div
+                class="v-input__append-inner"
+              >
+                <div
+                  class="v-input__icon v-input__icon--append"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon material-icons theme--light"
+                  >
+                    arrow_drop_down
+                  </i>
+                </div>
+              </div>
             </div>
-          </button>
+            <div
+              class="v-menu"
+            >
+              <div
+                class="v-menu__content theme--light "
+                style="max-height: 300px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"
+              >
+                <div
+                  class="v-select-list v-card theme--light"
+                >
+                  <div
+                    class="v-list theme--light"
+                    role="list"
+                  >
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            5
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="primary--text"
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link v-list__tile--active theme--light primary--text"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            10
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            15
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            25
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            30
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      role="listitem"
+                    >
+                      <a
+                        class="v-list__tile v-list__tile--link theme--light"
+                      >
+                        <div
+                          class="v-list__tile__content"
+                        >
+                          <div
+                            class="v-list__tile__title"
+                          >
+                            50
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="v-text-field__details"
+          >
+            <div
+              class="v-messages theme--light"
+            >
+              <div
+                class="v-messages__wrapper"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

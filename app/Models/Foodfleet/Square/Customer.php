@@ -9,7 +9,7 @@ use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PaymentType
+ * Class Customer
  *
  * @property int $id
  * @property string $uuid

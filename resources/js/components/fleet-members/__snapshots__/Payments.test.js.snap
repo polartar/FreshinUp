@@ -128,7 +128,7 @@ exports[`fleet-members/Payments Snapshots Default 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
@@ -681,7 +681,7 @@ exports[`fleet-members/Payments Snapshots Loading 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
@@ -1266,7 +1266,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
       >
         <div>
           <div
-            class="ui-datatable elevation-1"
+            class="ui-datatable"
           >
             <div
               class="v-table__overflow"
@@ -1576,7 +1576,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            accusantium
+            
           
                       </div>
                        
@@ -1584,7 +1584,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Dec 10, 2020
+            
           
                       </div>
                        
@@ -1592,7 +1592,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Tremblayland
+            
           
                       </div>
                     </td>
@@ -1793,7 +1793,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            saepe
+            
           
                       </div>
                        
@@ -1801,7 +1801,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Oct 10, 2019
+            
           
                       </div>
                        
@@ -1809,7 +1809,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ North Chelsey
+            
           
                       </div>
                     </td>
@@ -2011,7 +2011,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="subheading primary--text"
                       >
                         
-            ipsum
+            
           
                       </div>
                        
@@ -2019,7 +2019,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            Oct 10, 2019
+            
           
                       </div>
                        
@@ -2027,7 +2027,7 @@ exports[`fleet-members/Payments Snapshots Populated 1`] = `
                         class="grey--text"
                       >
                         
-            @ Lake Elbert
+            
           
                       </div>
                     </td>

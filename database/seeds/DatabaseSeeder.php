@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             FinancialModifiersTableSeeder::class,
             StatusesSeeder::class,
             UserLevelTypeSeeder::class,
+            UserLevelTypeEnforcerSeeder::class,
             CompanyTypeSeeder::class,
             EventStatusesSeeder::class,
             EventTypeSeeder::class,

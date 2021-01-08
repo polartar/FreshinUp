@@ -1,12 +1,20 @@
 import { storiesOf } from '@storybook/vue'
-
+import { action } from '@storybook/addon-actions'
 import AddStore from './AddStore'
 
 import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
 import { FIXTURE_EVENT } from '../../../../tests/Javascript/__data__/event'
 import { FIXTURE_STORE_TYPES } from '../../../../tests/Javascript/__data__/storeTypes'
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
+import { FIXTURE_STORE_TAGS } from '../../../../tests/Javascript/__data__/storeTags'
 
-export const Default = () => ({
+const mock = new MockAdapter(axios)
+mock.onGet(/.*\/store-tags.*/).reply(200, {
+  data: FIXTURE_STORE_TAGS
+})
+
+export const Basic = () => ({
   components: { AddStore },
   data () {
     return {
@@ -20,7 +28,7 @@ export const Default = () => ({
   `
 })
 
-export const WithData = () => ({
+export const Populated = () => ({
   components: { AddStore },
   data () {
     return {
@@ -29,16 +37,27 @@ export const WithData = () => ({
       event: FIXTURE_EVENT
     }
   },
+  methods: {
+    onFilter (payload) {
+      action('run-filter')(payload)
+    },
+    manage () {
+      action('manage')(arguments)
+    }
+  },
   template: `
     <v-container>
       <add-store
         :stores="stores"
-        :store-types="types"
-        :event="event"/>
+        :types="types"
+        :event="event"
+        @run-filter="onFilter"
+        @manage="manage"
+      />
     </v-container>
   `
 })
 
 storiesOf('FoodFleet|components/event/AddStore', module)
-  .add('Default', Default)
-  .add('WithData', WithData)
+  .add('Basic', Basic)
+  .add('Populated', Populated)

@@ -4,6 +4,7 @@ namespace App\Models\Foodfleet;
 
 use Carbon\Carbon;
 use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
+use FreshinUp\FreshBusForms\Models\Company\CompanyType;
 
 /**
  * Class Company
@@ -12,7 +13,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
  *
  * @property string uuid
  * @property int id
- * @property int users_id
+ * @property int users_id - Manager
  * @property int status
  * @property string name
  * @property string address
@@ -23,8 +24,6 @@ use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
  * @property string country
  * @property string website
  * @property string notes
- * @property string square_access_token
- * @property string square_refresh_token
  * @property Carbon deleted_at
  * @property Carbon created_at
  * @property Carbon updated_at
@@ -32,6 +31,7 @@ use FreshinUp\FreshBusForms\Models\Company\Company as BusCompany;
  *
  * @property Store[] stores
  * @property Event[] events
+ * @property CompanyType type
  */
 class Company extends BusCompany
 {

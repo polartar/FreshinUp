@@ -23,8 +23,7 @@ exports[`components/supplier/SupplierFleets Snapshots Default 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -42,7 +41,7 @@ exports[`components/supplier/SupplierFleets Snapshots Default 1`] = `
     />
      
     <div
-      class="layout px-4 py-2 row wrap"
+      class="layout px-4 py-2 row"
     />
      
     <hr
@@ -60,7 +59,7 @@ exports[`components/supplier/SupplierFleets Snapshots Default 1`] = `
         >
           <div>
             <div
-              class="ui-datatable elevation-1"
+              class="ui-datatable"
             >
               <div
                 class="v-table__overflow"
@@ -475,8 +474,7 @@ exports[`components/supplier/SupplierFleets Snapshots Loading 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -494,7 +492,7 @@ exports[`components/supplier/SupplierFleets Snapshots Loading 1`] = `
     />
      
     <div
-      class="layout px-4 py-2 row wrap"
+      class="layout px-4 py-2 row"
     />
      
     <hr
@@ -512,7 +510,7 @@ exports[`components/supplier/SupplierFleets Snapshots Loading 1`] = `
         >
           <div>
             <div
-              class="ui-datatable elevation-1"
+              class="ui-datatable"
             >
               <div
                 class="v-table__overflow"
@@ -955,8 +953,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
       />
        
       <button
-        class="v-btn v-btn--disabled v-btn--round theme--light primary--text"
-        disabled="disabled"
+        class="v-btn v-btn--round theme--light primary"
         type="button"
       >
         <div
@@ -974,7 +971,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
     />
      
     <div
-      class="layout px-4 py-2 row wrap"
+      class="layout px-4 py-2 row"
     >
       <div
         class="flex xs12 sm6 md3"
@@ -1085,7 +1082,7 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
         >
           <div>
             <div
-              class="ui-datatable elevation-1"
+              class="ui-datatable"
             >
               <div
                 class="v-table__overflow"
@@ -1494,14 +1491,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark warning warning-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Pending
  
                             <i
                               aria-hidden="true"
@@ -1732,14 +1729,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark warning warning-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Pending
  
                             <i
                               aria-hidden="true"
@@ -1970,14 +1967,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark success success-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Revision
  
                             <i
                               aria-hidden="true"
@@ -2208,14 +2205,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark error error-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Rejected
  
                             <i
                               aria-hidden="true"

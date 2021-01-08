@@ -43,7 +43,6 @@ class StoreTest extends TestCase
             'supplier_uuid' => $store->supplier_uuid,
             'owner_uuid' => $store->owner_uuid,
             'type_id' => $store->type_id,
-            'square_id' => $store->square_id,
             'contact_phone' => $store->contact_phone,
             'size' => $store->size,
             'name' => $store->name,
@@ -53,6 +52,9 @@ class StoreTest extends TestCase
             'facebook' => $store->facebook,
             'instagram' => $store->instagram,
             'staff_notes' => $store->staff_notes,
+            'square_id' => $store->square_id,
+            "square_access_token" => $store->square_access_token,
+            "square_refresh_token" => $store->square_refresh_token,
         ]);
 
         $this->assertDatabaseHas('events_stores', [

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers\Foodfleet\Squares;
 
+use App\Models\Foodfleet\Store;
 use App\User;
 use FreshinUp\FreshBusForms\Models\Company\Company;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -43,81 +44,72 @@ class SquaresTest extends TestCase
 
     public function testVerifyWithNotValidToken()
     {
-        $company = factory(Company::class)->create();
+        $store = factory(Store::class)->create();
         $user = factory(User::class)->create([
             'level' => 1,
-            'company_id' => $company->id
         ]);
 
         Passport::actingAs($user);
         $this->mockSquare(false);
         $response = $this->json('POST', "/api/foodfleet/squares/authorize", [
-            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
+            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q',
+            'store_uuid' => $store->uuid
         ]);
         $response->assertStatus(400);
     }
 
     public function testVerifyWithNoTokenInTheRequest()
     {
-        $company = factory(Company::class)->create();
         $user = factory(User::class)->create([
             'level' => 1,
-            'company_id' => $company->id
         ]);
 
         Passport::actingAs($user);
-        $response = $this->json('post', "/api/foodfleet/squares/authorize");
-        $response->assertStatus(422);
+        $errors = $this->json('post', "/api/foodfleet/squares/authorize")
+            ->assertStatus(422)
+            ->json('errors');
+        $this->assertArrayHasKey('code', $errors);
+        $this->assertArrayHasKey('store_uuid', $errors);
     }
 
     public function testVerifyWithUserThatItIsNotAnAdmin()
     {
-        $company = factory(Company::class)->create();
+        $store = factory(Store::class)->create();
         $user = factory(User::class)->create([
             'level' => 8,
-            'company_id' => $company->id
         ]);
 
         Passport::actingAs($user);
 
-        $response = $this->json('post', "/api/foodfleet/squares/authorize", [
-            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
-        ]);
-        $response->assertStatus(403);
-    }
-
-    public function testVerifyWithUserThatDoesNotHaveACompany()
-    {
-        $user = factory(User::class)->create([
-            'level' => 1,
-            'company_id' => null
-        ]);
-
-        Passport::actingAs($user);
-
-        $response = $this->json('post', "/api/foodfleet/squares/authorize", [
-            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
-        ]);
-        $response->assertStatus(403);
+        $this->json('post', "/api/foodfleet/squares/authorize", [
+            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q',
+            'store_uuid' => $store->uuid
+        ])
+            ->assertStatus(403);
     }
 
     public function testVerifyOk()
     {
-        $company = factory(Company::class)->create();
+        $store = factory(Store::class)->create([
+            'square_access_token' => null,
+            'square_refresh_token' => null,
+        ]);
         $user = factory(User::class)->create([
             'level' => 1,
-            'company_id' => $company->id
         ]);
 
         $result = $this->mockSquare(true);
-
         Passport::actingAs($user);
 
-        $response = $this->json('post', "/api/foodfleet/squares/authorize", [
-            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q'
+        $this->assertNull($store->square_access_token);
+        $this->assertNull($store->square_refresh_token);
+        $response = $this->json('POST', "/api/foodfleet/squares/authorize", [
+            'code' => 'sandbox-sq0cgb-XZFtOnjgZe4Dt5XZGbs93Q',
+            'store_uuid' => $store->uuid
         ]);
         $response->assertStatus(200);
-        $this->assertEquals($result['accessToken'], $user->company->square_access_token);
-        $this->assertEquals($result['refreshToken'], $user->company->square_refresh_token);
+        $store->refresh();
+        $this->assertEquals($result['accessToken'], $store->square_access_token);
+        $this->assertEquals($result['refreshToken'], $store->square_refresh_token);
     }
 }

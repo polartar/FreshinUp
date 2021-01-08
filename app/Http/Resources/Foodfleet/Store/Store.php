@@ -34,7 +34,6 @@ class Store extends JsonResource
             "menuItems" => EventMenuItem::collection($this->whenLoaded('menuItems')),
             "documents" => Document::collection($this->whenLoaded('documents')),
             "messages" => Message::collection($this->whenLoaded('messages')),
-            "square_id" => $this->square_id,
             "events_count" => $this->when($this->events_count, $this->events_count),
             "type" => new Type($this->whenLoaded('type')),
             'type_id' => $this->type_id,
@@ -54,6 +53,9 @@ class Store extends JsonResource
             'instagram' => $this->instagram,
             'staff_notes' => $this->staff_notes,
             'areas' => StoreArea::collection($this->whenLoaded('areas')),
+            'square_id' => $this->square_id,
+            'square_access_token' => $this->square_access_token,
+            'square_refresh_token' => $this->square_refresh_token,
         ];
     }
 }

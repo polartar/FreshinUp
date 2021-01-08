@@ -1,6 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import * as Stories from './SupplierFleets.stories'
-import Component from './SupplierFleets.vue'
+import Component, { HEADERS, ITEM_ACTIONS, ITEMS_ACTIONS } from './SupplierFleets.vue'
 import { FIXTURE_STORE_STATUS_STATS } from 'tests/__data__/storeStatusStats'
 import { FIXTURE_STORE_STATUSES } from '../../../../tests/Javascript/__data__/storeStatuses'
 import { FIXTURE_STORES } from '../../../../tests/Javascript/__data__/stores'
@@ -64,6 +64,36 @@ describe('components/supplier/SupplierFleets', () => {
       })
       await wrapper.vm.$nextTick()
       expect(wrapper.vm.statusStats).toMatchObject(FIXTURE_STORE_STATUS_STATS)
+    })
+    test('headers', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.headers).toMatchObject(HEADERS)
+
+      wrapper.setProps({
+        headers: []
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.headers).toMatchObject([])
+    })
+    test('itemActions', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.itemActions).toMatchObject(ITEM_ACTIONS)
+
+      wrapper.setProps({
+        itemActions: []
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.itemActions).toMatchObject([])
+    })
+    test('itemsActions', async () => {
+      const wrapper = shallowMount(Component)
+      expect(wrapper.vm.itemsActions).toMatchObject(ITEMS_ACTIONS)
+
+      wrapper.setProps({
+        itemsActions: []
+      })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.itemsActions).toMatchObject([])
     })
   })
 
