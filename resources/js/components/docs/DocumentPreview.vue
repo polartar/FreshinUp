@@ -204,7 +204,7 @@
             </v-flex>
           </v-layout>
         </v-layout>
-        <v-layout class="mx-2">
+         <v-layout class="mx-2">
           <v-layout>
             <v-flex
               sm4
@@ -282,9 +282,10 @@ export default {
   mixins: [FormatDate, MapValueKeysToData],
   props: {
     value: { type: Object, default: () => DEFAULT_DOCUMENT },
-    isLoading: { type: Boolean, default: () => false },
+    currentTemplateUuid: { type: String, default: () => '' },
     templates: { type: Array, default: () => [] },
     events: { type: Array, default: () => [] },
+    template_uuid:{type:String},
     variables: { type: Object, default: () => {} }
   },
   data () {
@@ -295,7 +296,8 @@ export default {
   },
   computed: {
     templateTitle () {
-      return get(this, 'template.title')
+      return get(this.selectedTemplate, 'title', '');
+      // return get(this, 'template.title')
     },
     attachment () {
       return get(this, 'file.src')
@@ -317,7 +319,7 @@ export default {
       }, {})
     },
     selectedTemplate () {
-      return this.templatesByUuid[this.template_uuid]
+        return this.templatesByUuid[this.template_uuid]
     },
     content () {
       const html = get(this.selectedTemplate, 'content', '')
@@ -327,15 +329,10 @@ export default {
       return Boolean(this.signed_at)
     }
   },
-  mounted () {
-    const self = this
-    const onDestroy = scrollEnd({
-      element: document.querySelector('.ff-document-preview__content'),
-      onScrollEnd (endOfScroll) {
-        self.endOfScroll = endOfScroll
-      }
-    })
-    this.$once('hook:destroyed', onDestroy)
+  watch: {
+    currentTemplateUuid: function (value) {
+      this.template_uuid = value
+    }
   },
   methods: {
     get,

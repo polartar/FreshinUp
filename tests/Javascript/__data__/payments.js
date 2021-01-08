@@ -29,12 +29,6 @@ export const FIXTURE_PAYMENTS = [
     venue_due_date: '2020-09-09',
     description: 'Pariatur et similique mollitia quia nihil'
   }
-].map((payment, i) => {
-  return {
-    ...payment,
-    store_uuid: FIXTURE_STORES[i].uuid,
-    event_uuid: FIXTURE_EVENTS[i].uuid
-  }
-})
+]
 
 export const FIXTURE_PAYMENT = FIXTURE_PAYMENTS[0]
