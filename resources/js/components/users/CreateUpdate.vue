@@ -29,6 +29,8 @@
         :is-loading="userLoading"
         :levels="levels"
         :types="types"
+        :statuses="statuses"
+        :is-admin="isAdmin"
         @input="createOrUpdate"
       />
     </v-flex>
@@ -50,12 +52,13 @@
 <script>
 import get from 'lodash/get'
 
-import BasicInformation from './BasicInformation.vue'
+import BasicInformation, { DEFAULT_USER } from './BasicInformation.vue'
 import CompanyOverview from '~/components/companies/CompanyOverview.vue'
 import { mapGetters } from 'vuex'
 
 const USER_INCLUDES = [
-  'company'
+  'company',
+  'company.users'
   // TODO company api should allow retrieval of company_type and company_status
   // 'company_type',
   // 'company_status'
@@ -70,9 +73,12 @@ export default {
     return {}
   },
   computed: {
+    ...mapGetters('currentUser', {
+      isAdmin: 'isAdmin'
+    }),
     ...mapGetters(['currentUser']),
     ...mapGetters('users', {
-      user: 'item',
+      user_: 'item',
       userLoading: 'itemLoading'
     }),
     ...mapGetters('userLevels', {
@@ -87,6 +93,12 @@ export default {
     ...mapGetters('companyStatuses', {
       companyStatuses: 'items'
     }),
+    ...mapGetters('userStatuses', {
+      statuses: 'items'
+    }),
+    user () {
+      return this.isNew ? DEFAULT_USER : this.user_
+    },
     company () {
       // TODO: company should include:
       //  - company.company_type.name because type is already taken
@@ -106,14 +118,13 @@ export default {
       this.$router.push({ path: '/admin/users' })
     },
     viewCompany (company) {
-      this.$router.push({ path: `/admin/companies/${company.uuid}` })
+      this.$router.push({ path: `/admin/companies/${company.id}/edit` })
     },
-    createOrUpdate (payload) {
+    createOrUpdate (data) {
       // TODO: exclude level and type for now. At some point we will need to add them back
-      const { level, type, ...data } = payload
-      const id = this.$route.params.id
+      const id = this.$route.params.id || 'new'
       const action = this.isNew
-        ? this.$store.dispatch('users/createItem', { data })
+        ? this.$store.dispatch('users/createItem', { data: { ...data, id: 'new' } })
         : this.$store.dispatch('users/updateItem', {
           params: { id },
           data
@@ -135,19 +146,22 @@ export default {
     }
   },
   beforeRouteEnterOrUpdate (vm, to, from, next) {
-    const id = vm.$route.params.id
+    const id = vm.$route.params.id || 'new'
     const promises = []
     promises.push(vm.$store.dispatch('userLevels/getItems'))
     promises.push(vm.$store.dispatch('userTypes/getItems'))
     promises.push(vm.$store.dispatch('companyTypes/getItems'))
     promises.push(vm.$store.dispatch('companyStatuses/getItems'))
-    if (id && id !== 'new') {
+
+  if (id && id !== 'new') {
       promises.push(vm.$store.dispatch('users/getItem', {
         params: {
           id,
           include: USER_INCLUDES
         }
-      }))
+        }
+      )
+        .catch()
     }
     Promise.all(promises)
       .then()

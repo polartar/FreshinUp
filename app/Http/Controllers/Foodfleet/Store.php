@@ -16,12 +16,14 @@ use App\Models\Foodfleet\Event;
 use App\Models\Foodfleet\Store as StoreModel;
 use App\Models\Foodfleet\StoreStatus;
 use App\Sorts\Stores\OwnerNameSort;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 use Spatie\QueryBuilder\Filter;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\Sort;
+use Square\Exceptions\ApiException;
+use Square\SquareClient;
 
 class Store extends Controller
 {
@@ -70,16 +72,9 @@ class Store extends Controller
             'tags' => 'array'
         ]);
 
-        // TODO: avoid using all. Use only model::fillable
-        $data = $request->all();
-        $collection = collect($data);
-        $updateData = $collection->except(['image', 'tags', 'event_uuid', 'commission_rate', 'commission_type'])->all();
         /** @var StoreModel $store */
-        $store = StoreModel::where('uuid', $uuid)->first();
-        if (!$store) {
-            throw new ModelNotFoundException('No fleet member found to update.');
-        }
-        $store->update($updateData);
+        $store = StoreModel::where('uuid', $uuid)->firstOrFail();
+        $store->update($request->only(StoreModel::FILLABLES));
 
         // File upload in base 64
         $store->setImage($request->input('image'), $request->has('image'));
@@ -90,10 +85,9 @@ class Store extends Controller
             $store->tags()->sync($request->input('tags'));
         }
 
-
-        $event_uuid = $collection->get('event_uuid');
-        $commission_rate = $collection->get('commission_rate');
-        $commission_type = $collection->get('commission_type');
+        $event_uuid = $request->get('event_uuid');
+        $commission_rate = $request->get('commission_rate');
+        $commission_type = $request->get('commission_type');
         if (!empty($event_uuid) && !empty($commission_rate) && !empty($commission_type)) {
             $event = Event::where('uuid', $event_uuid)->first();
             $store->events()->updateExistingPivot(
@@ -156,6 +150,13 @@ class Store extends Controller
     public function destroy($uuid)
     {
         $store = StoreModel::where('uuid', $uuid)->firstOrFail();
+        $events_count = $store->events->count();
+        if ($events_count > 0) {
+            return response()->json([
+                'message' => 'This Fleet Member is currently assigned to an Event,
+                please unassign it from the event first.'
+            ], 405);
+        }
         $store->delete();
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
@@ -192,7 +193,7 @@ class Store extends Controller
             'staff_notes' => 'string',
         ];
         $this->validate($request, $rules);
-        $data = $request->only(array_diff(array_keys($rules), ['tags']));
+        $data = $request->only(StoreModel::FILLABLES);
         $data['supplier_uuid'] = optional($authUser->company)->uuid;
         /** @var StoreModel $store */
         $store = StoreModel::create($data);
@@ -243,5 +244,47 @@ class Store extends Controller
         $states = StoreStatus::withCount('stores')->get();
 
         return Statistic::collection($states);
+    }
+
+    /**
+     * @param  Request  $request
+     * @param  String $uuid
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\AnonymousResourceCollection|JsonResource
+     * @throws \Exception
+     */
+    public function locations(Request $request, $uuid)
+    {
+        $store = StoreModel::where('uuid', $uuid)->firstOrFail();
+        if (!$store->square_access_token) {
+            // TODO: not returning error because front end has trouble catching it
+            // this should be a 4xx
+            return new JsonResource([]);
+        }
+        $client = new SquareClient([
+            'accessToken' => $store->square_access_token,
+            'environment' => config('services.square.environment'),
+        ]);
+        try {
+            $locationsApi = $client->getLocationsApi();
+            $apiResponse = $locationsApi->listLocations();
+            if (!$apiResponse->isSuccess()) {
+                return new JsonResource([]);
+                // TODO: not returning error because front end has trouble catching it
+                // this should be a 4xx
+                // return (new JsonResource($apiResponse->getErrors()))
+                //    ->toResponse($request)
+                //    ->setStatusCode(400);
+            }
+
+            // expected output []{ square_id: string, name: string }
+            $listLocationsResponse = $apiResponse->getResult();
+            $locations = $listLocationsResponse->getLocations();
+
+            // name: string, // business name
+            // id: string, // location id
+            return new JsonResource($locations);
+        } catch (ApiException $e) {
+            throw new \Exception("Received error while calling Square: " . $e->getMessage());
+        }
     }
 }

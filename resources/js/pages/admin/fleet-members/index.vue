@@ -31,6 +31,7 @@
 
     <store-list
       v-if="!isLoading"
+      class="px-4"
       :stores="stores"
       :statuses="statuses"
       :is-loading="storesLoading"

@@ -70,8 +70,8 @@ export default ({ items, item }) => {
         'stores',
         { items, item },
         {
-          itemsPath: ({ eventId }) => `/foodfleet/events/${eventId}/stores`,
-          itemPath: ({ eventId, id }) => `/foodfleet/events/${eventId}/stores/${id}`
+          itemsPath: ({ id }) => `/foodfleet/events/${id}/stores`,
+          itemPath: ({ id, storeId }) => `/foodfleet/events/${id}/stores/${storeId}`
         }
       )
     }

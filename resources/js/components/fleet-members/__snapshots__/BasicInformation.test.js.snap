@@ -58,6 +58,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Default 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
+                      data-vv-name="name"
                       placeholder="Name"
                       type="text"
                     />
@@ -1031,6 +1032,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Loading 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
+                      data-vv-name="name"
                       placeholder="Name"
                       type="text"
                     />
@@ -2009,6 +2011,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Populated 1`] = `
                     class="v-text-field__slot"
                   >
                     <input
+                      data-vv-name="name"
                       placeholder="Name"
                       type="text"
                     />
@@ -2382,8 +2385,7 @@ exports[`components/fleet-members/BasicInformation Snapshots Populated 1`] = `
               </div>
                
               <button
-                class="v-btn v-btn--disabled v-btn--depressed theme--light error--text"
-                disabled="disabled"
+                class="v-btn v-btn--depressed theme--light error"
                 type="button"
               >
                 <div

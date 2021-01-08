@@ -1491,14 +1491,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark warning warning-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Pending
  
                             <i
                               aria-hidden="true"
@@ -1729,14 +1729,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark warning warning-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Pending
  
                             <i
                               aria-hidden="true"
@@ -1967,14 +1967,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark success success-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Revision
  
                             <i
                               aria-hidden="true"
@@ -2205,14 +2205,14 @@ exports[`components/supplier/SupplierFleets Snapshots Populated 1`] = `
                         class="text-xs-left"
                       >
                         <button
-                          class="v-btn theme--dark accent accent-text--text"
+                          class="v-btn theme--dark error error-text--text"
                           type="button"
                         >
                           <div
                             class="v-btn__content"
                           >
                             
-  Draft
+  Rejected
  
                             <i
                               aria-hidden="true"
